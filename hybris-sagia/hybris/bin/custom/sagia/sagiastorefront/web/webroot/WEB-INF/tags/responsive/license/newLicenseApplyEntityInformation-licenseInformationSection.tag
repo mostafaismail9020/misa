@@ -12,7 +12,7 @@
 <!--  License Information  -->
 <div class="contentModule-section" id="licenseInformationSection" style="display: none">
     <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.title"/></div>
-
+<hr class="hr">
     <div class="formRadioBox-wrapper">
         <div class="row">
             <div class="col-md-6"><span><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.text"/></span></div>
@@ -21,20 +21,20 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="isEntrepreneur" id="isEntrepreneurYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isEntrepreneur == true ? 'checked' : ''}/>
-                            <label for="isEntrepreneurYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
+                            <label for="isEntrepreneurYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="isEntrepreneur" id="isEntrepreneurNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isEntrepreneur == false ? 'checked' : ''}/>
-                            <label for="isEntrepreneurNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
+                            <label for="isEntrepreneurNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="formRadioBox-wrapper">
+
+    <div class="formRadioBox-wrapper pb-5">
         <div class="row">
             <div class="col-md-6"><span><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.preApprovalNumber.text"/></span></div>
             <div class="col-md-6">
@@ -42,12 +42,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="isPreApprovalNumber" id="isPreApprovalNumberYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isPreApprovalNumber == true ? 'checked' : ''}/>
-                            <label for="isPreApprovalNumberYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
+                            <label for="isPreApprovalNumberYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="isPreApprovalNumber" id="isPreApprovalNumberNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.isPreApprovalNumber == false ? 'checked' : ''}/>
-                            <label for="isPreApprovalNumberNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
+                            <label for="isPreApprovalNumberNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                                             inputCSS="text validate__numbers-only" mandatory="true" maxlength="15" />
         </div>
     </div>
-    
+
     <div class="formRadioBox-wrapper"  id="hasProfessionalLicenseSection" style="display: none">
         <div class="row">
             <div class="col-md-6"><span><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.text"/></span></div>
@@ -71,20 +71,20 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="hasProfessionalLicenseCr" id="hasProfessionalLicenseCrYES" value="yes" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.hasProfessionalLicenseCr == true ? 'checked' : ''}/>
-                            <label for="hasProfessionalLicenseCrYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.yes"/></label>
+                            <label for="hasProfessionalLicenseCrYES" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="hasProfessionalLicenseCr" id="hasProfessionalLicenseCrNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType && sagiaApplyEntityInfoForm.hasProfessionalLicenseCr == false ? 'checked' : ''}/>
-                            <label for="hasProfessionalLicenseCrNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.no"/></label>
+                            <label for="hasProfessionalLicenseCrNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.hasProfessionalLicense.no"/></label>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
-    
+
     <div class="contentModule-section" id="professionalLicenseCrSection" style="display: none">
 		<div class="row">
 			<div class="col-md-6">
@@ -114,5 +114,5 @@
 		    </div>
 	    </div>
     </div>
-    
+
 </div>

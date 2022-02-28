@@ -1,0 +1,39 @@
+
+INSERT_UPDATE Governmentlead; code[unique=true]	; name		;
+							; Z08				; Identify Opportunity & Proposal;
+							; Z02				; Pre-feasibility Study;
+							; Z06				; Opportunity Finalization;
+							; Z07				; Campaign Ready;
+							; NA				; Not Available;
+
+
+INSERT_UPDATE Investorlead  ; code[unique=true] ; name		;
+							; Z08				; Identify Opportunity & Proposal;
+							; Z02				; Pre-feasibility Study;
+							; Z06				; Opportunity Finalization;
+							; NA 				; Not Available;
+
+
+INSERT_UPDATE PartnerType   ; code[unique=true]	; name			;
+							; Enabler			; Enabler		;
+							; Accelerator		; Accelerator	;
+							; Incubator			; Incubator		;
+
+
+INSERT_UPDATE CsInterventionType; code[unique=true]	; name		;
+								; NotesForCustomer	; Note For Customer	;
+
+
+INSERT_UPDATE ServiceCategory 	; code[unique=true] ; name		;
+								; CA_1				; Service Request Categorization;
+
+
+INSERT_UPDATE IncidentCategory 	; code[unique=true]	; name		;
+								; CA_2				; Request Site visits		;
+								; CA_3				; Request Meetings			;
+								; CA_4				; Request Matchmaking		;
+								; CA_5				; Request Information (Cost);
+								; CA_6				; Sign Deal					;
+								; CA_7				; General Enquiries			;
+
+

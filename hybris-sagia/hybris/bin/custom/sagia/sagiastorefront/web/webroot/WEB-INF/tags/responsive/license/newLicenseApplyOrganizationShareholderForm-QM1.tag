@@ -20,11 +20,8 @@
     <input type="hidden" name="code" value="${sagiaApplyOrganizationShareholderForm.code}">
     <div class="contentModule-section">
         <div class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details"/></div>
-        
-        
-        
-        
-		<div class="row" style= ${not empty sagiaApplyOrganizationShareholderForm.division ? "display:none" : ""} >
+<hr class="hr">
+		<div class="row mt-5" style= ${not empty sagiaApplyOrganizationShareholderForm.division ? "display:none" : ""} >
 		  <div class="col-md-6">
                 <%--TODO: create companyCountryData--%>
                 <formElement:formSelectBoxCustom idKey="companyCountry" labelKey="general.country"
@@ -38,11 +35,11 @@
 <%--                    <div class="help-block"></div>--%>
 <%--                </div>--%>
             </div>
-            
+
             <div class="col-md-6">
             </div>
-            
-            
+
+
 			<div class="col-md-6">
 		        <div class="formInputBox">
 	                <div class="form-group cr-validation">
@@ -58,10 +55,10 @@
 	            </div>
 		    </div>
 		    <div class="col-md-6">
-		        <div class="formInputBox">
+		        <div class="formInputBox mt-4">
 		            <div class="form-group">
 		                <div class="form-item">
-		                    <button id="load-investor" type="button" class="btn load-investor" disabled="disabled" ><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.validatecr" /></button>
+		                    <button id="load-investor" type="button" class="btn btn-bg btn-normal btn_bold btn-ctrl w-50 load-investor" disabled="disabled" ><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.validatecr" /></button>
 		                    <input type="hidden" id="professionalLicenseCrVerified" name="professionalLicenseCrVerified" value="${sagiaApplyOrganizationShareholderForm.professionalLicenseCrVerified}" />
 		                    <%-- <input type="checkbox" id="professionalLicenseCrVerified" name="professionalLicenseCrVerified" value="true" class="hidden" ${sagiaApplyEntityInfoForm.professionalLicenseCrVerified ? "checked=checked" : 0}> --%>
 		                </div>
@@ -69,9 +66,9 @@
 		        </div>
 		    </div>
 	    </div>
-    
-    
-    
+
+
+
         <div class="row" id="dataSectionCompany" style= ${not empty sagiaApplyOrganizationShareholderForm.division ? "display:display" : "display:none"}  >
             <div class="col-md-6">
                 <formElement:formInputBox idKey="organizationNameEnglish" labelKey="general.organization.name.english"
@@ -387,7 +384,9 @@
     </div>
     <!--  Attachment  -->
     <div class="contentModule-section" id="dataSectionAttachment" style="display: none">
-        <div class="contentModule-headline contentModule-headline_smallMargin" id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div>
+        <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.attachments"/></div>
+        <!--<div class="contentModule-headline contentModule-headline_smallMargin" id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div>-->
+        <hr class="hr">
         <div class="row">
             <div class="col-md-6" id="companyRegistrationFileSection"  style="display:none">
                 <div class="formInputFile ${not empty sagiaApplyOrganizationShareholderForm.commercialRegCopy ? "active" : ""}">
@@ -450,13 +449,14 @@
                 </div>
             </div>
         </div>
+        <span class="spl-notes">Note - The Maximum File Size should not exceed 2 MB</span>
     </div>
     <div id="dataSectionDelegate" style="display: none">
     <license:newLicenseApplyShareholders-delegate shareholderType="Organization" organizationData="${sagiaApplyOrganizationShareholderForm}"/>
     </div>
-    
+
     <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-        <button class="cancelButton btn btn_outline" type="button"><spring:theme code="general.cancel"/></button>
-        <a class="addButton btn"><spring:theme code="licence.apply.savenewshareholder"/></a>
+        <button class="cancelButton btn btn-outline btn-normal btn_bold w-25" type="button"><spring:theme code="general.cancel"/></button>
+        <a class="addButton btn btn-ctrl btn-bg btn-normal btn_bold w-25"><spring:theme code="licence.apply.savenewshareholder"/></a>
     </div>
 </form:form>

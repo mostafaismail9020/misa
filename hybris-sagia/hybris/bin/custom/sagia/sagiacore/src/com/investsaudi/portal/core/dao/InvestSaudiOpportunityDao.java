@@ -4,6 +4,7 @@ import com.investsaudi.portal.core.model.OpportunityProductModel;
 import de.hybris.platform.core.servicelayer.data.PaginationData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
 import de.hybris.platform.servicelayer.internal.dao.Dao;
+import de.hybris.platform.catalog.model.CatalogVersionModel;
 
 import java.util.List;
 
@@ -16,6 +17,8 @@ public interface InvestSaudiOpportunityDao extends Dao {
      * @return List<OpportunityProductModel> list class model with both catalog versions
      */
     List<OpportunityProductModel> findProductsByCode(final String code);
+	
+	OpportunityProductModel findProductByCodeAndCatalogVersion(final CatalogVersionModel catalogVersion, final String code);
 
 
     /**

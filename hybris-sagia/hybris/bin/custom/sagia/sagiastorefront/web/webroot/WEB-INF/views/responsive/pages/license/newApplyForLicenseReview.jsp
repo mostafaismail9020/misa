@@ -22,14 +22,58 @@
     var controllerUrl = '${controllerUrl}';
 </script>
 
-<div class="mainSection mainSection_narrow mainSection_white">
-    <div class="container">      
-        <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="license.apply.sagialicenseapplication"/></h1>
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="license.apply.sagialicenseapplication"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"  class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content" >
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
+
+
+<div class="mainSection mainSection_narrow mainSection_white">
+    <div class="container">
+        <div class="mainSection-header">
+            <!-- <h1 class="mainSection-headline"><spring:theme code="license.apply.sagialicenseapplication"/></h1> -->
+        </div>
+        
         <c:if test="${not empty processingTime}">
             <div class="serviceTime">
-                <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
+                <!-- <div class="serviceTime-label"><spring:theme code="average.service.time" /></div> -->
                 <div class="serviceTime-detail">
                     <c:choose>
                         <c:when test="${(processingTime.days > 0)  ||  (processingTime.hours > 0)}">
@@ -47,7 +91,7 @@
                     </c:choose>
                 </div>
             </div>
-        </c:if>         
+        </c:if>
     </div>
     <c:if test="${'/simulator' eq controllerUrl}">
         <div class="container">
@@ -74,7 +118,7 @@
             display: none;
         }
     </style>
-    <div class="panelTabs-navigation">
+    <div class="panelTabs-navigation container">
         <ul class="clearfix tabs-list tabamount4">
             <li id="accessibletabsnavigation0-0" class="first last">
                 <c:url value="/my-sagia/license/entity" var="entityInfoLink"/>
@@ -114,7 +158,7 @@
 	<div  class="panelTabs-content container">
     <license:newLicenseApplyReview/>
     </div>
-    <!-- 
+    <!--
     <modal:ratingWithComments/>
      -->
 </div>
@@ -247,7 +291,7 @@
                 <icon:close/>
             </button>
             <div class="modal-body">
-                <div class="modal-heroImage"><icon:payment01/></div>
+                <!-- <div class="modal-heroImage"><icon:payment01/></div> -->
                 <div class="modal-description" style="text-align: initial !important;">
 					<table class="table table-striped" id="tblGrid" style="width:100%">
 						<tbody>
@@ -258,13 +302,13 @@
 					<ul>
 					  <li><spring:theme code="license.apply.payment.entrepreneur.line1"/></li>
 					  <li><spring:theme code="license.apply.payment.entrepreneur.line2"/></li>
-					</ul> 
-					
+					</ul>
+
 					<h2 style="color: red;"><spring:theme code="license.apply.payment.other.certificate.title"/></h2>
 					<ul>
 					  <li><spring:theme code="license.apply.payment.other.line1"/></li>
 					  <li><spring:theme code="license.apply.payment.other.line2"/></li>
-					</ul> --%> 
+					</ul> --%>
 
                     <div class="tableModule tableModule_footer" style="display:none;">
                         <table class="tableModule-table" id="paymentModal">
@@ -284,11 +328,11 @@
             <div class="modal-secondaryContent pay-buttons" style="display: none">
                 <div class="modal-footer modal-footer_centered modal-footer_iconButton">
                     <div class="text-center">
-                        <span class="iconElement iconElement_iconButton"><icon:creditCard/></span>
+                       <!--<span class="iconElement iconElement_iconButton"><icon:creditCard/></span>-->
                         <button type="button" class="btn btn_slim" data-dismiss="modal" onclick="displayPaymentModel()"><spring:theme code="license.apply.paywithcc"/></button>
                     </div>
                     <div class="text-center">
-                        <span class="iconElement iconElement_iconButton"><icon:sadad/></span>
+                        <!--<span class="iconElement iconElement_iconButton"><icon:sadad/></span>-->
                         <button type="button" class="btn btn_slim" data-dismiss="modal" onclick="SAGIA.payment.displayPayWithSadadMessage()"><spring:theme code="license.apply.paywithsadad"/></button>
                     </div>
                 </div>
@@ -296,7 +340,7 @@
             <div class="modal-secondaryContent apply" style="display: none">
                 <div class="modal-footer modal-footer_centered modal-footer_iconButton">
                     <div class="text-center">
-                        <span class="iconElement iconElement_iconButton"><icon:licensing/></span>
+                        <!--<span class="iconElement iconElement_iconButton"><icon:licensing/></span>-->
                         <button type="button" class="btn btn_slim btn-apply" data-dismiss="modal"><spring:theme code="register.submit"/></button>
                     </div>
                 </div>

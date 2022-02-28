@@ -181,9 +181,13 @@ SAGIA.sagiaNavigation = {
 	},
 
 	toggle:function(){
-		$(".js-sagiaNavigationToggle").on('click',function(){
+		$(".js-sagiaNavigationToggle").on('click',function(e){
 			var target = $(this).attr('data-target') ?  ($(this).attr('data-target') === "self" ? $(this) : $(this).parents('.' + $(this).attr('data-target'))) : $(this).parent();
 			target.toggleClass('active');
+			if(target.hasClass('active'))
+			$(".my-msg-popup").css("display","block");
+			else
+			$(".my-msg-popup").css("display","none");
 		});
 	}
 };

@@ -10,16 +10,23 @@
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
-<div id="global-alerts" class="global-alerts">
-    <c:if test="${not empty errorMessageKey}">
-        <div class="alert alert-danger alert-dismissable getAccAlert">
-            <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">x</button><spring:theme code="${errorMessageKey}"/></div>
-    </c:if>
-    <c:if test="${createSuccess}">
-        <div class="alert alert-info alert-dismissable getAccAlert">
-            <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">x</button>User created successfully</div>
-    </c:if>
-</div>
+<div class="managerchildUser_page"> 
+    <div id="global-alerts" class="global-alerts">
+        <c:if test="${not empty errorMessageKey}">
+            <div class="alert alert-danger alert-dismissable getAccAlert">
+                <img src="/investsaudistorefront/_ui/responsive/common/images/danger.png">
+                <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+                </button><spring:theme code="${errorMessageKey}"/></div>
+        </c:if>
+        <c:if test="${createSuccess}">
+            <div class="alert alert-info alert-dismissable getAccAlert">
+                <img src="/investsaudistorefront/_ui/responsive/common/images/success.png">
+                <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+                </button>User created successfully</div>
+        </c:if>
+    </div>
 
 <c:url value = "#" var="manageUserForm" />
 <div id="global-alerts" class="global-alerts"></div>
@@ -33,13 +40,13 @@
     <div class="row">
     <div class="col-md-12">
         <%-- this start of manager user page --%>
-        <div class="headline" style="font-weight: 700;"> <spring:theme code="text.account.childUnits.manage.user.title" text="Manage Users" /></div>
+        <div class="headline header-account"> <spring:theme code="text.account.childUnits.manage.user.title" text="Manage Users" /></div>
         <div class="row">
             <div class="form-group" style = "float:right;">
-                <button style = "width:200px; background-color:gray;" style = "width:200px;" class="btn btn-sagia btn-sagia-green" type="button" id="lockUser">
+                <button  class="btn btn-sagia btn-sagia-green lock_button" type="button" id="lockUser">
                     <spring:theme code="text.account.childUnits.lock.button.label" text="Lock User" />
                 </button>
-                <button style = "width:200px;" class="btn btn-sagia btn-sagia-green" type="button" id="unLockUser">
+                <button class="btn btn-sagia btn-sagia-green unlock_button" type="button" id="unLockUser">
                     <spring:theme code="text.account.childUnits.unlock.button.label" text="Unlock User" />
                 </button>
             </div>
@@ -97,3 +104,4 @@
     <%-- End of manager user page --%>
 </form:form>
 <common:globalMessagesTemplates/>
+</div>

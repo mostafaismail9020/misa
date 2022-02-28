@@ -93,6 +93,9 @@ hybris/bin/custom/**/rebel.xml
 # ignore jalo classes which are generated during build
 hybris/bin/custom/**/jalo/*.java
 !hybris/bin/custom/investsaudiportal/investsaudiportalcore/src/com/investsaudi/portal/core/jalo/InvestSaudiComponentContainer.java
+hybris/bin/custom/sagia/investsaudisecureportal/src/de/hybris/platform/commerceservices/jalo/process/InvestSaudi2FactorAuthProcess.java
+hybris/bin/custom/sagia/sagiacore/src/de/hybris/platform/commerceservices/jalo/process/TwoFactorAuthenticationProcess.java
+hybris/bin/custom/sagia/sagiacore/src/de/hybris/platform/acceleratorcms/jalo/components/SectorKeyDetailsComponent.java
 hybris/bin/custom/sagia/sagiastorefront/web/webroot/*cockpit/*
 
 # ignore backoffice files which are generated during build
@@ -166,6 +169,11 @@ hybris/bin/custom/sagia/sagiafacades/lib/json-taglib-0.4.1.jar
 **/addontestsrc
 
 # ignore auto generated theme style.css from .less files
-hybris/bin/custom/sagia/investsaudistorefront/web/webroot/_ui/responsive/**/style.css
+!hybris/bin/custom/sagia/investsaudistorefront/web/webroot/_ui/responsive/**/style.css
+hybris-sagia/hybris/bin/custom/sagia/sagiastorefront/web/webroot/_ui/responsive/theme-alpha/css/style.css
+hybris-sagia/hybris/bin/custom/sagia/investsaudistorefront/web/webroot/_ui/responsive/theme-alpha/css/style.css
 
 **/node_modules
+
+# Ignore Media in Redesign data
+hybris/bin/custom/sagia/sagiainvestsaudistore/resources/sagiainvestsaudistore/import/redesign/media/*

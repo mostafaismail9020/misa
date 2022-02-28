@@ -8,6 +8,7 @@ import com.investsaudi.portal.core.model.SuccessStoryProductModel;
 import com.investsaudi.portal.core.service.InvestSaudiProductService;
 import de.hybris.platform.core.servicelayer.data.PaginationData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
+import de.hybris.platform.catalog.model.CatalogVersionModel;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -39,6 +40,13 @@ public class InvestSaudiProductServiceImpl implements InvestSaudiProductService
             opportunityProductModel = opportunityProductModelOptional.get();
         }
         return opportunityProductModel;
+    }
+	
+	@Override
+    public OpportunityProductModel getOpportunityForCodeAndCatalogVersion(CatalogVersionModel catalogVersion, String code) {
+
+        return investSaudiOpportunityDao.findProductByCodeAndCatalogVersion(catalogVersion, code);
+        
     }
 
     @Override

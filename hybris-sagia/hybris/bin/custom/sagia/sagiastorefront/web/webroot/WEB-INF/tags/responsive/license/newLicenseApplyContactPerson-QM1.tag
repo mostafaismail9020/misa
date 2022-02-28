@@ -36,7 +36,7 @@
          
           <div class="row contentModule-section" id="delegateDetails" >
 					
-					<div class="col-md-6">
+					<div class="col-md-6 pl-0">
 					<input id="savedContactIdType" type="hidden" value="${contactPersonsData.idType}">
 				        <formElement:formSelectBoxCustom idKey="idType"
 					    labelKey="license.apply.shareholder.idType"
@@ -46,7 +46,7 @@
 					      selectedDataValue="${contactPersonsData.idType}" />
 			         </div>
 			
-					<div class="col-md-6" id="idNumberection">
+					<div class="col-md-6 pl-0" id="idNumberection">
 						<div class="formInputBox">
 							<div class="form-group">
 								<input id="idNumber" name="delegate.idNumber" class="form-control"
@@ -57,7 +57,7 @@
 							<div class="help-block"></div>
 						</div>
 					</div>
-					<div class="col-md-6" id="delegateDateofBirthSection">
+					<div class="col-md-6 pl-0" id="delegateDateofBirthSection">
 						<div class="formInputBox formInputBox_group ">
 							<div class="form-group">
 								<input id="delegateDateofBirth" name="delegate.dateofBirth"
@@ -193,8 +193,10 @@
     </div>
 
     <div id="contactSection" class="contentModule-section">
-        <div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.qm1.contactInformation"/></div>
-        <div class="row">
+        <div class="licensecontactperson_bottomboarder">
+            <div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.qm1.contactInformation"/></div>
+        </div>
+		<div class="row">
             <div class="col-md-6">
             
                <formElement:formSelectBoxCustom idKey="qm1Country"

@@ -9,8 +9,49 @@
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsApplyModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
 
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="text.account.followup.violationReplies"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="mainSection mainSection_dark">
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="text.account.followup.violationReplies"/></h1>
@@ -26,21 +67,21 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
-<div class="mainSection mainSection_dark mainSection_noPadding">
+<div class="container mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="./" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme
+            <a href="./" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span><spring:theme
                     code="text.account.followup.backViolationReplies"/></a>
         </div>
     </div>
 </div>
 
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
-    <div class="container">
+<div class="container mainSection mainSection_dark mainSection_pdt16">
+    <div class="">
 
         <form:form action="" id="${formName}" class="js-followup-form" modelAttribute="violationReplyForm">
           <input type="hidden" id="serviceId"/>
@@ -48,7 +89,7 @@
                 <div class="contentModule">
                     <div class="contentModule-section">
                         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline headline-text">
                                 <span class="iconElement iconElement_info"><icon:info/></span>
                                 <spring:theme code="text.account.followup.info"/>
                             </div>
@@ -87,7 +128,7 @@
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
                         <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline headline-text">
                                 <span class="iconElement iconElement_loading"><icon:loading/></span>
                                 <spring:theme code="violation.violationstatus"/>
                             </div>
@@ -138,7 +179,7 @@
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
                         <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline headline-text">
                                 <span class="iconElement iconElement_chat"><icon:chat/></span>
                                 <spring:theme code="text.account.followup.comments"/>
                             </div>
@@ -162,7 +203,7 @@
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
                         <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline">
+                            <div class="contentModule-headline headline-text">
                                 <icon:documents/>
                                 <spring:theme code="text.account.followup.supportDocuments"/>
                             </div>
@@ -175,18 +216,18 @@
             </div>
 
 
-            <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
                 <button type="button" class="btn btn-secondary" onclick="window.history.back()">
                     <spring:theme code="general.cancel"/>
                 </button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+                <button type="submit" class="btn btn-primary js-followup-vr-create full-width-responsive">
+                    <spring:theme code="general.submit"/>
+                </button>
+                <div class="formCheckBox formCheckBox_belowPanel full-width-responsive">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="FOLLOW_UP" id="termsAndConditions" path="termsAndConditionsChecked"/>
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary js-followup-vr-create">
-                    <spring:theme code="general.submit"/>
-                </button>
+                </div>                
             </div>
         </form:form>
     </div>
@@ -197,6 +238,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title js-message"><spring:theme code="text.account.followup.error"/></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body modal-body-center">
                 <div class="modal-heroImage image-medium">
@@ -215,6 +259,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title"><spring:theme code="general.requestsubmitted"/></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="modal-heroImage">

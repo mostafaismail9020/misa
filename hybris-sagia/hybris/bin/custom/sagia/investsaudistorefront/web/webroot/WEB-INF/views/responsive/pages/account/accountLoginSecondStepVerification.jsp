@@ -168,7 +168,7 @@ img.accountLogin-headline-logo {
 }
 
 [dir] .contentModule-actions {
-    margin-bottom: 32px;
+    margin-bottom: 2px;
 }
 .contentModule-actions_centered {
     -webkit-box-pack: center;
@@ -274,7 +274,7 @@ $(document).ready(function(){
                 </a>
             </div>
 
-            <div class="panelModule panelModule_halfRadius accountLogin-content">
+            <div class="panelModule_halfRadius accountLogin-content second-step-auth">
                 <div>
 					<div class="login-section">
 					    <user:loginSecondStepVerification/>

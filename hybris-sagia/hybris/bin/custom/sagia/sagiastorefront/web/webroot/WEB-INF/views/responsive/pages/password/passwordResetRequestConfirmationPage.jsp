@@ -38,7 +38,7 @@
                 </a>
             </div>
 
-            <div class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small">
+            <div class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small reset-pw-wrapper-dt">
 
                 <h1 class="accountLogin-title headline login-page__headline text-center"><spring:theme code="forgottenPwd.title"/></h1>
 
@@ -52,7 +52,7 @@
                     <a href="${loginUrl}" class="btn btn_wide"><spring:theme code="register.back.login"/></a>
                 </div>
                 <div class="accountLogin-linkWrapper">
-                    <a href="https://investsaudi.sa/en/contact/" class="btn btn_link btn_link_text">
+                    <a href="https://investsaudi.sa/en/contact/" class=" btn_link btn_link_text ">
                         <spring:theme code="general.contactus"/></a>
                 </div>                
 

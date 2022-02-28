@@ -20,9 +20,13 @@
 <div class="contentModule-section">
     <div class="contentModule-headline contentModule-headline_smallMargin">
         <spring:theme code="license.apply.shareholder.delegate"/>
-        <a class="btn btn_link js-tip" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip"
+            </div>
+    <hr class="hr">
+    <div class="row">
+    <div class="col-md-12 justify-content-center">
+    <a class="btn btn_link js-tip d-block w-100 delegate-entity" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip"
            data-tip-class="delegateToolTip" data-trigger="click"><spring:theme
-                code="text.account.profile.license.shareholders.tooltip.heading"/></a>
+                code="text.account.profile.license.shareholders.tooltip.heading"/><icon:tipInfo/></a>
         <div class="tooltip_content" id="delegateToolTip">
             <h2><span><spring:theme code="text.account.profile.license.shareholders.tooltip.heading"/></span></h2>
             <p style="margin: 10px">
@@ -30,26 +34,27 @@
             </p>
         </div>
     </div>
+    </div>
     <div class="formRadioBox-wrapper" id="delegateSectionQuestion">
        <div class="row">
             <div class="col-md-6">
                 <span><spring:theme code="text.account.profile.license.shareholders.que.wantdelegate"/></span>
-            </div> 
+            </div>
             <div class="col-md-6">
                 <div class="formRadioBox">
                     <div class="form-group" <c:if test="${not empty data.delegateInfo}"> data-delegate="${data.delegateInfo.delegate eq true}"</c:if>>
                         <div class="form-item">
                             <input type="radio" name="delegateInfo.delegate" id="${shareholderType.concat('DelegateYES')}" class="form-control delegateYES" value="true" ${not empty data.delegateInfo && data.delegateInfo.delegate eq true ? 'checked="checked"' : ''}/>
-                            <label for="${shareholderType.concat('DelegateYES')}" class="control-label" id="${shareholderType.concat('DelegateYESLable')}"><spring:theme code="text.account.profile.license.shareholders.delegate.yes"/></label>
+                            <label for="${shareholderType.concat('DelegateYES')}" class="btn-ctrl btn-outline btn_bold control-label" id="${shareholderType.concat('DelegateYESLable')}"><spring:theme code="text.account.profile.license.shareholders.delegate.yes"/></label>
                         </div>
                         <div class="form-item">
                             <input type="radio" name="delegateInfo.delegate" id="${shareholderType.concat('DelegateNO')}" value="false" class="form-control delegateNO" ${not empty data.delegateInfo && data.delegateInfo.delegate eq false ? 'checked="checked"' : ''}/>
-                            <label for="${shareholderType.concat('DelegateNO')}" id="${shareholderType.concat('DelegateNOLable')}" class="control-label"><spring:theme code="text.account.profile.license.shareholders.delegate.no"/></label>
+                            <label for="${shareholderType.concat('DelegateNO')}" id="${shareholderType.concat('DelegateNOLable')}" class="btn-ctrl btn-bg btn_bold control-label"><spring:theme code="text.account.profile.license.shareholders.delegate.no"/></label>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
     <div id="delegateSection">
         <div class="formRadioBox-wrapper" id="showDelegateQuestion" >
@@ -62,11 +67,11 @@
                         <div class="form-group">
                             <div class="form-item">
                                 <input type="radio" name="delegateInfo.delegateYourself" id="hasDelegateYES" value="true" class="form-control" ${not empty data.delegateInfo  && data.delegateInfo.delegateYourself eq true ? 'checked="checked"' : ''}/>
-                                <label for="hasDelegateYES" id="hasDelegateYESLabel" class="control-label"><spring:theme code="text.account.profile.license.shareholders.hasDelegate.yes"/></label>
+                                <label for="hasDelegateYES" id="hasDelegateYESLabel" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="text.account.profile.license.shareholders.hasDelegate.yes"/></label>
                             </div>
                             <div class="form-item">
                                 <input type="radio" name="delegateInfo.delegateYourself" id="hasDelegateNO" value="false" class="form-control" ${not empty data.delegateInfo  && data.delegateInfo.delegateYourself eq false ? 'checked="checked"' : ''}/>
-                                <label for="hasDelegateNO" id="hasDelegateNOLabel" class="control-label"><spring:theme code="text.account.profile.license.shareholders.hasDelegate.no"/></label>
+                                <label for="hasDelegateNO" id="hasDelegateNOLabel" class="btn btn-ctrl btn_bold control-label"><spring:theme code="text.account.profile.license.shareholders.hasDelegate.no"/></label>
                             </div>
                         </div>
                     </div>
@@ -75,7 +80,7 @@
         </div>
         <div id="delegate">
             <div class="row" id="delegateDetails" >
-                <div class="col-md-6">
+                <div class="col-md-6 pt-2">
 					<formElement:formSelectBoxCustom idKey="idType" labelKey="license.apply.shareholder.idType"
 													 path="delegateInfo.delegateIdentityType"
 													 selectCSSClass="js-select2-oneColumn validate__delegate-mandatory" labelCSS="control-label_mandatory"
@@ -124,14 +129,14 @@
 <%--                    </div>--%>
                 </div>
                 <div class="col-md-6" id="nicVerifyBtnSection">
-                    <a style="margin-top: 15px" class="btn" id="verifyDetailsShow" data-nic-verified="false"><spring:theme code="license.apply.shareholder.verify"/></a>
+                    <a class="btn btn_bold pt-2 mt-4" id="verifyDetailsShow" data-nic-verified="false"><spring:theme code="license.apply.shareholder.verify"/></a>
                     <input type="checkbox" id="isNicVerified" name="delegateInfo.nicVerified" value="true" class="hidden" ${data.delegateInfo.nicVerified ? "checked=checked" : 0}>
                     <div class="inputValidationError" style="display: none;color: #ff4c4a;line-height: 1.2;margin-top: 10px;">
                         <spring:theme code="validation.licenseApply.shareholder.invalidInputValidation"
                                       text="Please click on 'Input Validation' to save Shareholder"/>
                     </div>
                 </div>
-            </div>                                                 
+            </div>
             <div id="verifyDelegateDetails" ${not empty data.delegateInfo  && data.delegateInfo.delegateYourself eq false ? '' : 'style="display: none;"'}>
                 <div class="row">
                     <div class="col-md-6">
@@ -141,6 +146,7 @@
                         </div>
                     </div>
                 </div>
+                <hr class="hr">
                 <div class="row">
                     <div class="col-md-6">
                         <formElement:formInputBox path="delegateInfo.delegateFirstNameArabic"
@@ -347,6 +353,7 @@
                         </div>
                     </div>
                 </div>
+                <hr class="hr">
                 <div class="row">
                     <div class="col-md-6" id="loaFileDiv" style="display: none;">
                         <div class="formInputFile ${not empty data.delegateInfo.authorisationLetter ? "active" : ""}">

@@ -4,6 +4,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
 <c:if test="${component.visible}">
@@ -24,6 +25,11 @@
              </c:if> --%>                               
 		</div>
 		
+		<c:url value="false" var="userLoggedIn"/>
+		<sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
+		    <c:url value="true" var="userLoggedIn"/>
+		</sec:authorize>
+		
         <section class="footer-menu-faq">
             <div class="footerContent">
                 <div class="container">
@@ -32,29 +38,31 @@
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.invest.saudi.label"/></h2>
                             <p class="text"><spring:theme code="portal.footer.invest.saudi.text"/></p>
                             <p><a class="link text-uppercase px-0" href="/${language}/sectors-opportunities/opportunities"><spring:theme code="portal.footer.explore.opportunities.label"/> &nbsp; &nbsp;
-						    		<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+						    		<img class="transform-180-degree p-0" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                             </p>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.regional.hq.label"/></h2>
                             <p class="text "><spring:theme code="portal.footer.regional.hq.text"/></p>
                             <p><a class="link text-uppercase px-0" href="/${language}/sectors-opportunities/regionalHQ"><spring:theme code="portal.footer.start.now.label"/> &nbsp; &nbsp;
-                            		<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                            		<img class="transform-180-degree p-0" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                             </p>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.business.support.label"/></h2>
                             <p class="text"><spring:theme code="portal.footer.business.support.text"/></p>
                             <p><a class="link text-uppercase px-0" href="/${language}/investor/guide"><spring:theme code="portal.footer.investment.guide.label"/> &nbsp; &nbsp;
-                            		<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                            		<img class="transform-180-degree p-0" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                             </p>
                         </div>
                         <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.apply.license.label"/></h2>
                             <p class="text"><spring:theme code="portal.footer.journey.start.text"/></p>
                             <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
-                                <li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                            	<c:if test="${userLoggedIn eq 'false'}">
+                                	<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
+                                	<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                                </c:if>
                                 <li class="list-inline-item border-0"><a class="text-uppercase" href="/${language}/contactUs" role="button"><spring:theme code="portal.footer.contact.us.label"/></a></li>
                             </ul>
                         </div>
@@ -69,7 +77,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-5 mb-lg-0 float-left text-left ft-logo">
                         <img src="${commonResourcePath}/images/footer_logo.png" alt="" class="footer_logo" />
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 float-left text-left first-list">
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 float-left text-left first-list text-right-ar">
                         <ul class="footer-menu">
                             <c:forEach items="${component.navigationLinks.children}" var="childLevel1" varStatus="childLevel1index">
                                 <c:forEach items="${childLevel1.entries}" var="childlink1">
@@ -80,7 +88,7 @@
                     </div>
 
                     <c:forEach items="${component.navigationNodesList}" var="NavigationNode">
-                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 float-left text-left">
+                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 float-left text-left text-right-ar">
                             <ul class="footer-menu">
                                 <li><p>${NavigationNode.title}</p></li>
                                 <c:forEach items="${NavigationNode.children}" var="childLevel1" varStatus="childLevel1index">
@@ -116,8 +124,8 @@
     <div class="copyright py-4 text-center text-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 copyrightText">${component.copyrightText}</div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-6 col-sm-6 copyrightText  d-flex d-sm-block">${component.copyrightText}</div>
+                <div class="col-md-6 col-sm-6  d-flex d-sm-block">
                     <ul class="nav-bottom-footer clearfix">
                         <c:forEach items="${component.navigationMapPolicy.children}" var="childLevel1" varStatus="childLevel1index">                       
                             <c:forEach items="${childLevel1.entries}" var="childlink1">
@@ -131,7 +139,7 @@
     </div>
     
 	<!-- Floating button -->
-   	<button class="float-button"><spring:theme code="portal.footer.invest.now.label"/></button>
+   	<button class="float-button"><spring:theme code="portal.footer.contact.us.label"/></button>
    	<div class="popup">
 		<footer id="footer" class="footer-popup">
 			<section class="footer-menu-faq">
@@ -142,29 +150,31 @@
                             	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.invest.saudi.label"/></h2>
                                	<p class="text"><spring:theme code="portal.footer.invest.saudi.text"/></p>
                                	<p><a class="link text-uppercase px-0" href="/${language}/sectors-opportunities/opportunities"><spring:theme code="portal.footer.explore.opportunities.label"/> &nbsp; &nbsp;
-               							<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+               							<img class="transform-180-degree" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                                	</p>
                            </div>
                            <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                                	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.regional.hq.label"/></h2>
                                	<p class="text "><spring:theme code="portal.footer.regional.hq.text"/></p>
                                	<p><a class="link text-uppercase px-0" href="/${language}/sectors-opportunities/regionalHQ"><spring:theme code="portal.footer.start.now.label"/> &nbsp; &nbsp;
-                               			<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                               			<img class="transform-180-degree" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                                	</p>
                            </div>
                            <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                                	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.business.support.label"/></h2>
                                	<p class="text"><spring:theme code="portal.footer.business.support.text"/></p>
                                	<p><a class="link text-uppercase px-0" href="/${language}/investor/guide"><spring:theme code="portal.footer.investment.guide.label"/> &nbsp; &nbsp;
-                               			<img src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                               			<img class="transform-180-degree" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
                                	</p>
                            </div>
                            <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                                	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.apply.license.label"/></h2>
                                	<p class="text"><spring:theme code="portal.footer.journey.start.text"/></p>
                                	<ul class="list-unstyled list-inline">
-                                   	<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
-                                   	<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                                   	<c:if test="${userLoggedIn eq 'false'}">
+                                   		<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
+                                   		<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                                   	</c:if>
                                    	<li class="list-inline-item border-0"><a class="text-uppercase" href="/${language}/contactUs" role="button"><spring:theme code="portal.footer.contact.us.label"/></a></li>
                                	</ul>
                            	</div>

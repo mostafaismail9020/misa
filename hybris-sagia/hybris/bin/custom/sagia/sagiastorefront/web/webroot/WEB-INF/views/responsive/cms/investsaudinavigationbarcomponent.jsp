@@ -4,7 +4,12 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<c:url value="false" var="userLoggedIn"/>
+<sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
+    <c:url value="true" var="userLoggedIn"/>
+</sec:authorize>
 
 <c:if test="${component.visible}">
 	<c:set var="pageLabel" value="${cmsPage.itemtype eq 'ContentPage' ? cmsPage.label : ''}" />
@@ -15,18 +20,44 @@
 				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
 				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
 				 -->
-				 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr"> A-</span>
-				 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				 <a href="#" class="skype d-none d-sm-inline">
+					<span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
+					<span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				</a>
+				 <!-- <c:if test="${userLoggedIn eq 'false'}">
+					 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
+					 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				 </c:if> -->
 				<a href="#" class="skype">
-					<span class="btn-group btn-group-toggle btn-trans" data-toggle="buttons">
+					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
 						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
-						<label class="btn lang-btn lang-en active" onclick="LanguageToggle('en')"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label>
-						<label class="btn lang-btn" onclick="LanguageToggle('ar')"><input type="radio" name="options" id="option2" autocomplete="off"><img src="${commonResourcePath}/images/ar_text.png"/></label>
+						<label class="lang-btn lang-en active" onclick="LanguageToggle('en')">EN</label>
+						<label class="lang-btn" onclick="LanguageToggle('ar')"><img src="${commonResourcePath}/images/ar_text.png"/></label>
 					</span>
 				</a>
-				<a href="/en/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.login.label"/></span></a>
-				<a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener"><span><spring:theme code="portal.header.feedback.label"/></span></a>
-				<a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+				<c:choose>
+					<c:when test="${userLoggedIn}">
+						<a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user">
+					      	<img class="" src="${commonResourcePath}/images/User-icon.svg" /><span class="header-user-name">${user.name}</span>
+					    </a>
+	                    <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer">
+	                    	<span><spring:theme code="dashboard.logout.label"/></span>
+	                    </a>
+					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text" target="_blank" rel="nofollow noreferrer noopener">
+					    	<span><spring:theme code="portal.header.feedback.label"/></span>
+					    </a>
+					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+					</c:when>
+					<c:otherwise>
+					    <a href="/en/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener">
+					      	<span><spring:theme code="portal.header.login.label"/></span>
+						</a>
+					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener">
+					    	<span><spring:theme code="portal.header.feedback.label"/></span>
+					    </a>
+					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+				    </c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 	</div>
@@ -38,8 +69,34 @@
 					<img class="hd-scroll" src="${fn:escapeXml(component.visionImage.url)}" />
 				</a>
 			</div>
+			<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
 			<nav class="nav-menu d-none d-lg-block ">
 				<ul>
+				    <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" title=""><spring:theme code="portal.header.dashboard"/></a>
+					<ul class="dropdown-menu dropdown-large ">
+					     <div class="row g-3">
+										<div class="col-5 menu-img-item">
+											<img class="img-fluid w-100" src="${commonResourcePath}/images/B2C/background1.jpg" alt="">
+											<p>Text  for MY DASHBOARD Page</p>
+										</div>
+							            <div class="col-4 sub-items">
+							            <li>
+							            <c:if test="${hasLicense}">
+							            <a class="dropdown-item get_submenus" href="${encodedContextPath}/dashboard"
+																	title="My Dashboard"><spring:theme code="portal.header.mydashboard"/></a>
+									    </c:if>
+									    <c:if test="${!hasLicense}">
+									    <a class="dropdown-item get_submenus" href="${encodedContextPath}/dashboard-without-license"
+																	title="My Dashboard"><spring:theme code="portal.header.mydashboard"/></a>
+										</c:if>
+										</li>
+							            </div>
+						</div>
+						</ul>
+					</li>
+					</sec:authorize>
 					<c:forEach items="${component.navigationNode.children}" var="childLevel1" varStatus="childLevel1index">
 						<!-- <li class="nav-item dropdown"> -->
 						<%-- <c:choose>
@@ -48,11 +105,11 @@
 							<li class="nav-item dropdown">
 								<c:choose>
 									<c:when test="${not empty childlevel1link.url}">
-										<a class="nav-link dropdown-toggle" href="${childlevel1link.url}" 
+										<a class="nav-link dropdown-toggle" href="${childlevel1link.url}"
 											data-toggle="dropdown" title="${childLevel1.title}">${childLevel1.title}</a>
 									</c:when>
 									<c:otherwise>
-										<cms:component component="${childlevel1link}" evaluateRestriction="true" element="span" 
+										<cms:component component="${childlevel1link}" evaluateRestriction="true" element="span"
 											class="nav-link dropdown-toggle" />
 									</c:otherwise>
 								</c:choose>
@@ -68,7 +125,7 @@
 													<c:set var="childlevel2link" value="${childLevel2.cmsLink}" />
 													<c:choose>
 														<c:when test="${not empty childlevel2link.url}">
-															<li><a class="dropdown-item get_submenus" href="${childlevel2link.url}" 
+															<li><a class="dropdown-item get_submenus" href="${childlevel2link.url}"
 																	title="${childLevel2.title}">${childLevel2.title}</a>
 																<c:if test="${not empty childLevel2.links}">
 																	<ul class="submenu dropdown-menu get_submenus">
@@ -77,7 +134,7 @@
 																				<c:when test="${not empty childlevel3link.url}">
 																					<li><a class="dropdown-item" href="${childlevel3link.url}">${childlevel3link.linkName}</a></li>
 																				</c:when>
-																				<c:otherwise>                                                                                             
+																				<c:otherwise>
 																					<li><a class="dropdown-item" href="${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
 																				</c:otherwise>
 																			</c:choose>
@@ -96,7 +153,7 @@
 																			<c:when test="${not empty childlevel3link.url}">
 																				<li><a class="dropdown-item" href="/${language}${childlevel3link.url}">${childlevel3link.linkName}</a></li>
 																			</c:when>
-																			<c:otherwise>                                                                                             
+																			<c:otherwise>
 																				<li><a class="dropdown-item" href="${portal.cmsLinkUrl(childlevel3link)}">${childlevel3link.linkName}</a></li>
 																			</c:otherwise>
 																		</c:choose>
@@ -113,8 +170,84 @@
 							</ul>
 						</li>
 					</c:forEach>
-				</ul>                                   
+				</ul>
 			</nav>
+		</div>
+		<div id="user-icons" class="user-icons-header p-0 d-none">
+			<div class=" user-icon mr-1 mr-md-3">
+				<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
+				<c:if test="${hasLicense or hasAwaitingPayment}">
+					<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
+						<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
+					</a>
+				</c:if>
+			</div>
+			<div class=" user-icon mr-1 mr-md-3">
+				<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
+				
+
+				<div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+					<c:if test="${hasLicense or hasAwaitingPayment}">
+						<button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
+							<span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+							<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
+						</button>
+					</c:if>
+					<div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+				</div>
+			</div>
+			<div class=" user-icon mr-1">
+				<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
+					<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
+				</a>
+			</div>
 		</div>
 	</header>
 </c:if>
+
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
+        <div class="modal-content">
+            <form action="" class="js-formInputFileBox">
+                <div class="modal-header modal-header_smallPDB">
+                    <div class="modal-title"><spring:message code="text.logout.title"/></div>
+                    <button type="button" class="modal-close bttn_close" data-dismiss="modal" aria-label="Close"> 
+                        <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-description modal-description_largeMargin modal-description_smallText">
+                        <spring:message code="text.logout.description"/>
+                    </div>
+                </div>
+               <div class="modal-footer modal-footer_spaceBetween">
+                    <button type="button" class="btn-ctrl btn-warning noButton btn-outline p-0" data-dismiss="modal"><spring:message code="text.logout.no"/></button>
+                    <button type="button" class="btn btn-ctrl btn-bg p-0 yesButton"><spring:message code="text.logout.yes"/></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="${commonResourcePath}/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 10) {
+				$('#header').addClass('header-scrolled');
+				$('#topbar').addClass('topbar-scrolled');
+				$('#login-Navigation').addClass('login-scrolled');
+			} else {
+				$('#header').removeClass('header-scrolled');
+				$('#topbar').removeClass('topbar-scrolled');
+				$('#login-Navigation').removeClass('login-scrolled');
+			}
+		});
+
+		if ($(window).scrollTop() > 10) {
+			$('#header').addClass('header-scrolled');
+			$('#topbar').addClass('topbar-scrolled');
+			$('#login-Navigation').addClass('login-scrolled');
+		}
+	});
+</script>

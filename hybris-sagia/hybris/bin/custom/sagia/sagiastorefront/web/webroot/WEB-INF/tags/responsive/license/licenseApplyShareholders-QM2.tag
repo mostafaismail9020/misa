@@ -110,8 +110,8 @@
         </div>
 
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <button type="button" class="cancelButton btn btn_outline"><spring:theme code="general.cancel"/></button>
-            <button type="button" class="addButton btn"><spring:theme code="license.apply.review.save.shareholder"/></button>
+            <button type="button" class="cancelButton btn btn-outline btn_bold btn-ctrl"><spring:theme code="general.cancel"/></button>
+            <button type="button" class="addButton btn btn-bg btn_bold btn-ctrl"><spring:theme code="license.apply.review.save.shareholder"/></button>
         </div>
     </div>
 </div>

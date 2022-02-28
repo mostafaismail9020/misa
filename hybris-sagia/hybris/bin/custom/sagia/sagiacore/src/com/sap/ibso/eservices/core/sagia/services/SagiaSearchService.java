@@ -1,5 +1,6 @@
 package com.sap.ibso.eservices.core.sagia.services;
 
+import com.sap.ibso.eservices.core.model.SagiaCategoryModel;
 import com.sap.ibso.eservices.core.model.SagiaServiceModel;
 
 import java.util.Map;
@@ -39,4 +40,6 @@ public interface SagiaSearchService {
      * @return the map of service codes to Sagia services
      */
     Map<String, SagiaServiceModel> getAllServicesByCodes();
+
+    Set<SagiaCategoryModel> getSagiaCategoriesByLabel(String categoryLabel);
 }

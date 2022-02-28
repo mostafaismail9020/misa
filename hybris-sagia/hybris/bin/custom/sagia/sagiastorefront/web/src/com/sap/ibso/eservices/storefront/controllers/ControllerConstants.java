@@ -12,6 +12,7 @@ package com.sap.ibso.eservices.storefront.controllers;
 
 import de.hybris.platform.acceleratorcms.model.components.*;
 import com.sap.ibso.eservices.core.model.SagiaRealTimeOnlineSupportComponentModel;
+import com.sap.ibso.eservices.core.model.SagiaDashboardBannerCarouselComponentModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
 import de.hybris.platform.cms2.model.contents.components.CMSLinkComponentModel;
 /*
@@ -47,6 +48,7 @@ public interface ControllerConstants
 			String SimpleResponsiveBannerComponent = _Prefix + SimpleResponsiveBannerComponentModel._TYPECODE + _Suffix; 
 			String CMSTabParagraphContainer = _Prefix + CMSTabParagraphContainerModel._TYPECODE + _Suffix; 
 			String SagiaRealTimeOnlineSupportComponent = _Prefix + SagiaRealTimeOnlineSupportComponentModel._TYPECODE + _Suffix;
+			String SagiaDashboardBannerCarouselComponent = _Prefix + SagiaDashboardBannerCarouselComponentModel._TYPECODE + _Suffix;
 			
 			/** Invest Saudi Code */
 			String PurchasedCategorySuggestionComponent = _Prefix + PurchasedCategorySuggestionComponentModel._TYPECODE + _Suffix; // NOSONAR
@@ -72,7 +74,7 @@ public interface ControllerConstants
 			interface RealTime 
 			{
 				String SagiaRealTimeOnlineSupportComponent = ComponentPrefix + "sagiarealtimeonlinesupportcomponent";
-
+				String SagiaDashboardBannerCarouselComponent = ComponentPrefix + "sagiadashboardbannercarouselcomponent";
 			}
 		}
 

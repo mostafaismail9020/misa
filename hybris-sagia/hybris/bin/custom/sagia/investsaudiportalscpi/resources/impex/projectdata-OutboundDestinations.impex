@@ -6,6 +6,9 @@
 #*** LeadTicket URL ***#
 #************************#
 $leadTicketUrl = https://e650024-iflmap.hcisbt.sa1.hana.ondemand.com/gw/odata/SAP/REPLICATE-LEAD-FROM-SAP-COMMERCE-TO-SAP-SALES-CLOUD
+$cusomerEventUrl = https://e650024-iflmap.hcisbt.sa1.hana.ondemand.com/gw/odata/SAP/REPLICATE-OPPORTUNITY-NOTES-FROM-CUSTOMER-FROM-SAP-COMMERCE-TO-SAP-SALES-CLOUD_DEV_V1
+$serviceRequestUrl = https://e650024-iflmap.hcisbt.sa1.hana.ondemand.com/gw/odata/SAP/REPLICATE-SERVICE-REQUEST-FROM-SAP-COMMERCE-TO-SAP-SALES-CLOUD_DEV_V1
+
 $leadTicketVersion = v=1
 
 #******************#
@@ -13,10 +16,34 @@ $leadTicketVersion = v=1
 #******************#
 INSERT_UPDATE Endpoint; id[unique = true]       ; version[unique = true]; specUrl                                ; name
                       ; scpiLeadTicketEndpoint ; unknown               ; "$leadTicketUrl;$leadTicketVersion/" ; scpiLeadTicketEndpoint
-
+                      ; scpiCustomerEventEndpoint ; unknown             ; "$cusomerEventUrl;$leadTicketVersion/" ; Scpi Customer Event Endpoint
+                      ; scpiServiceRequestEndpoint ; unknown             ; "$serviceRequestUrl;$leadTicketVersion/" ; Scpi ServiceTicket Endpoint
 
 #*******************************#
 #***  Consumed Destinations  ***#
 #*******************************#
 INSERT_UPDATE ConsumedDestination; id[unique = true]          ; url                                                              ; endpoint(id, version)           ; credential(id)      ; additionalProperties(key, value)[map-delimiter = |]; destinationTarget(id)[default = scpiDestinationTarget]
                                  ; scpiLeadTicketDestination ; "$leadTicketUrl;$leadTicketVersion/CsTickets" ; scpiLeadTicketEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$leadTicketUrl;$leadTicketVersion/"    ;
+                                 ; scpiCsCustomerEventDestination ; "$cusomerEventUrl;$leadTicketVersion/CsCustomerEvents" ; scpiCustomerEventEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$cusomerEventUrl;$leadTicketVersion/"    ;
+                                 ; scpiServiceRequestEventDestination ; "$serviceRequestUrl;$leadTicketVersion/CsTickets" ; scpiServiceRequestEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$serviceRequestUrl;$leadTicketVersion/"    ;
+                                
+								
+								
+								
+
+$ticketAttachmenttUrl = https://e650024-iflmap.hcisbt.sa1.hana.ondemand.com/gw/odata/SAP/REPLICATE-OPPORTUNITY-ATTACHMENTS-FROM-SAP-COMMERCE-TO-SAP-SALES-CLOUD_DEV_V1;v=1
+
+$leadTicketVersion = v=1
+
+#******************#
+#***  Endpoints ***#
+#******************#
+INSERT_UPDATE Endpoint; id[unique = true]       ; version[unique = true]; specUrl                                ; name
+                     ; scpiTicketAttachmeEndpoint ; unknown             ; "$ticketAttachmenttUrl;$leadTicketVersion/" ; Scpi ServiceTicket Endpoint
+
+#*******************************#
+#***  Consumed Destinations  ***#
+#*******************************#
+INSERT_UPDATE ConsumedDestination; id[unique = true]          ; url                                                              ; endpoint(id, version)           ; credential(id)      ; additionalProperties(key, value)[map-delimiter = |]; destinationTarget(id)[default = scpiDestinationTarget]
+                                ; scpiTicketAttachmentDestination ; "$ticketAttachmenttUrl;$leadTicketVersion/ContactTickets" ; scpiTicketAttachmeEndpoint:unknown ; scpiOauthCredential ; "csrfURL->$ticketAttachmenttUrl;$leadTicketVersion/"    ;
+                                								

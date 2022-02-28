@@ -12,6 +12,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
+<%@ include file="/WEB-INF/tags/responsive/common/successModal.tag" %>
 <%@ taglib prefix="payment" tagdir="/WEB-INF/tags/responsive/payment" %>
 
 <script src = "${MIGS_Session_JS}"></script>
@@ -21,9 +22,15 @@
     <a href="#" class="dashboardPrintButton btn btn_outline btn_round btn_slim" style="float: right;"><spring:theme code="payment.pay" /></a>
 </div> --%>
 <div class="mainSection mainSection_grey">
-    <div class="container">
+    <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up mainSection-headline">
+                   <spring:theme code="payments.page.title"/>
+                </h1>
+            </div>
         <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="payments.page.title"/></h1>
+            
 
             <div class="col col-12" id="payments">
                 <div class="dashboardWidget js-dashboardWidget"
@@ -33,10 +40,10 @@
                      data-eServiceTutorial-borderradius='<spring:theme code="dashboard.tutorial.step1.border.radius" />'
                      data-eServiceTutorial-borderradius-sm='[0,13,0,13]'>
                     <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                        <spring:theme code="payments.page.title"/>
+                        <%--<spring:theme code="payments.page.title"/>
                         <div class="dashboardWidget-headline-icon">
                             <a href="" class="js-page-redirect" data-redirect="payments"><icon:payments/></a>
-                        </div>
+                        </div>--%>
                         <div class="dashboardWidget-filter">
                             <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control"
                                     onchange="sortPayments()">
@@ -74,14 +81,14 @@
                             <div class="paginationModule paginationModule_loading">
                                 <c:if test="${!pageIsDashboard}">
                                     <div class="dashboardWidget-filter">
-                                        <div style="width: 150px; position: absolute">
+                                        <div class="payment-overview-viewall-filter">
                                             <select class="paginationPicker js-select2-oneColumn form-control"></select>
                                         </div>
                                     </div>
                                 </c:if>
                                 <div class="paginationModule-wrapper">
                                     <button class="paginationModule-control paginationModule-control_left" disabled>
-                                        <icon:arrow_green_right/>
+                                        <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
                                     </button>
                                     <div class="paginationModule-items">
                                         <div class="loadingModule">
@@ -90,7 +97,7 @@
                                         </div>
                                     </div>
                                     <button class="paginationModule-control paginationModule-control_right">
-                                        <icon:arrow_green_right/>
+                                        <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" >
                                     </button>
                                 </div>
                                 <div class="tableModule-headline">
@@ -128,8 +135,8 @@
             <div class="dashboardWidgetPayments-status-icon"><icon:status-complete/></div>
         </td>
         <td>
-            <div class="dashboardWidgetPayments-amount"></div>
-            <div class="dashboardWidgetPayments-currency"></div>
+            <span class="dashboardWidgetPayments-amount"></span>
+            <span class="dashboardWidgetPayments-currency"></span>
         </td>
         <td>
             <div class="dashboardWidgetPayments-pay">

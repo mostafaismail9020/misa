@@ -2,7 +2,11 @@ package com.investsaudi.portal.core.service;
 
 import com.investsaudi.model.OpportunityUserEmailProcessModel;
 import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
+import com.sap.ibso.eservices.core.model.ScpiOutCsCustomerEventProcessModel;
+import com.sap.ibso.eservices.core.model.ScpiOutServiceRequestProcessModel;
+import com.sap.ibso.eservices.core.model.ScpiOutTicketAttachmentProcessModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSSiteService;
 import de.hybris.platform.comments.services.CommentService;
 import de.hybris.platform.core.model.user.CustomerModel;
@@ -143,5 +147,44 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
 
         getModelService().save(opportunityUserEmailProcessModel);
         businessProcessService.startProcess(opportunityUserEmailProcessModel);
+    }
+	
+	public void customerEvent2SCPI(CsCustomerEventModel customerEvent){
+        if (Config.getBoolean("customerEvent.scpi.interface.enable", true)) {
+            final ScpiOutCsCustomerEventProcessModel scpiOutCsCustomerEventProcessModel =
+                    (ScpiOutCsCustomerEventProcessModel) businessProcessService
+                    .createProcess("scpiOutCsCustomerEventProcess-" + customerEvent.getCode()
+                            + "-" + System.currentTimeMillis(), "scpiOutCsCustomerEventProcess");
+            scpiOutCsCustomerEventProcessModel.setCsCustomerEvent(customerEvent);
+            getModelService().save(scpiOutCsCustomerEventProcessModel);
+            businessProcessService.startProcess(scpiOutCsCustomerEventProcessModel);
+            sessionService.setAttribute("partnerSystem",null);
+        }
+    }
+	
+	public void servicerequest2SCPI(ServiceRequestModel serviceRequest){
+        if (Config.getBoolean("serviceRequest.scpi.interface.enable", true)) {
+            final ScpiOutServiceRequestProcessModel scpiOutServiceRequestProcessModel =
+                    (ScpiOutServiceRequestProcessModel) businessProcessService
+                            .createProcess("scpiOutServiceRequestProcess-" + serviceRequest.getId()
+                                    + "-" + System.currentTimeMillis(), "scpiOutServiceRequestProcess");
+            scpiOutServiceRequestProcessModel.setServiceRequest(serviceRequest);
+            getModelService().save(scpiOutServiceRequestProcessModel);
+            businessProcessService.startProcess(scpiOutServiceRequestProcessModel);
+            sessionService.setAttribute("partnerSystem",null);
+        }
+    }
+	
+	  public void ticketAttachment2SCPI(ContactTicketModel contactTicket){
+        if (Config.getBoolean("ticketAttachment.scpi.interface.enable", true)) {
+            final ScpiOutTicketAttachmentProcessModel scpiOutTicketAttachmentProcessModel =
+                    (ScpiOutTicketAttachmentProcessModel) businessProcessService
+                            .createProcess("scpiOutTicketAttachmentProcess-" + contactTicket.getTicketID()
+                                    + "-" + System.currentTimeMillis(), "scpiOutTicketAttachmentProcess");
+            scpiOutTicketAttachmentProcessModel.setContactTicket(contactTicket);
+            getModelService().save(scpiOutTicketAttachmentProcessModel);
+            businessProcessService.startProcess(scpiOutTicketAttachmentProcessModel);
+            sessionService.setAttribute("partnerSystem",null);
+        }
     }
 }

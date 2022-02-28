@@ -4515,7 +4515,7 @@ function setFont() {
 }
 
 function increaseFontSize(isSet = 0) {
-    var p = document.querySelectorAll('body div,body p,body span');
+    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');
 	var s;
 	if (increment < 3) {
 		increment = isSet === 0 ? (increment + 1) : parseFloat(getCookie("f_increment"));	
@@ -4538,7 +4538,7 @@ function increaseFontSize(isSet = 0) {
 	// }
 }
 function decreaseFontSize(isSet = 0) {
-    var p = document.querySelectorAll('body div,body p,body span');	
+    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');	
 	console.log(increment)
 	if (increment > 0) {
 		increment = isSet === 0 ? (increment - 1) : parseFloat(getCookie("f_increment"));
@@ -4611,12 +4611,18 @@ function OnChangeEnquiryType() {
 
 $("#contact-us-form-cancel").on('click',function(e){
 	e.preventDefault();
-	$(':input','#contact-us-form')
+	var lblError = document.getElementById("lblError");
+	lblError.innerHTML = "";
+
+  grecaptcha.reset(0);
+
+	$(':input','#contact-us-page-contact-us-form')
   .not(':button, :submit, :reset, :hidden')
-  .val('')
   .prop('checked', false)
-  .prop('selected', false);
+  .prop('selectedIndex', 0)
+  .val('').change()  	
 })
+
 
 
 
@@ -4629,5 +4635,157 @@ $('#downloadModal').on('hidden.bs.modal', function (e) {
 
 function recaptchaCallback(){
 	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorPageErrorCaptcha').text('')
-	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorErrorCaptcha').text('');		
+	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorErrorCaptcha').text('');	
+	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');			
 }
+
+
+
+
+$('#contactfile').change(function() {
+	var filez = $(this).val();
+	$('#contact-us-upload-file').text(filez.split("\\").pop());
+});
+
+$(document).ready(function(){
+	// if($("#CRMResponse").val() === 'true'){
+		if ($("#CRMObjectId").val() !== null && $("#CRMObjectId").val() !== "" && $("#CRMObjectId").val() !== undefined) {
+			// $("#contact-us-form-success").removeClass("d-none");
+			$('.contact-us-form-ticket').text("Your enquiry reference number : " + $("#CRMObjectId").val());
+			$("#contactusformModal").modal();
+		}
+	// }
+})
+
+
+$("#btnContactModalClose").on('hidden.bs.modal',function(){
+	$("#CRMObjectId").val('');
+	$(this).remove();	
+})
+
+function validateFormContactUs(){
+	var firstName = $("#contact-us-page-contact-us-form #firstName").val();
+	var lastName = $("#contact-us-page-contact-us-form #lastName").val();
+	var phoneNumber = $("#contact-us-page-contact-us-form #phoneNumber").val();
+	var email = $("#contact-us-page-contact-us-form #email").val();
+	var selectedEnquiryType = $("#contact-us-page-contact-us-form #selectedEnquiryType").val();
+	var selectedCategoryOne = $("#contact-us-page-contact-us-form #selectedCategoryOne").val();
+	var invalidCheck = $("#contact-us-page-contact-us-form #invalidCheck");
+	var lblError = document.getElementById("lblError");
+	lblError.innerHTML = "";
+	var isValid = true;
+
+	$("#lblErrorfirstName").text("");	
+	$("#lblErrorlastName").text("");	
+	$("#lblErrorPhoneNumber").text("");	
+	$("#lblErrorselectedEnquiryType").text("");	
+	$("#lblErrorselectedCategoryOne").text("");	
+	$("#lblErrorinvalidCheck").text("");	
+	if(firstName === ""){
+		$("#lblErrorfirstName").text("Only Letters Are Allowed");	
+		isValid = false;
+	}
+	if(lastName === ""){
+		$("#lblErrorlastName").text("Only Letters Are Allowed");
+		isValid = false;
+	}
+	if(phoneNumber === ""){
+		$("#lblErrorPhoneNumber").text("Invalid Mobile Number");
+		isValid = false;	
+	}
+	if(email === ""){
+		$("#lblError").text("Invalid Email Id");	
+		isValid = false;
+	}
+	if(selectedEnquiryType === ""){
+		$("#lblErrorselectedEnquiryType").text("Required");	
+		isValid = false;
+	}
+	if(selectedCategoryOne === ""){
+		$("#lblErrorselectedCategoryOne").text("Required");	
+		isValid = false;
+	}
+	if(!invalidCheck.is(":checked")){
+		$("#lblErrorinvalidCheck").text("Required");
+		isValid = false;
+	}
+
+	var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	if (email !== "" && !expr.test(email)) {
+		lblError.innerHTML = "Invalid email address.";
+		isValid = false;
+	}
+
+	var recaptcha = document.forms["contact-us-form"]["g-recaptcha-response"].value;
+	$("#lblErrorCaptcha").text("");	
+    if (recaptcha == "") {
+        $("#lblErrorCaptcha").text("Please fill reCAPTCHA");
+		isValid = false;
+    }
+	return isValid;
+}
+
+
+//-----------------------
+var role = 0;
+$(".login-role-selection .login-role-selection-box").on('click',function(){
+	$(".login-role-selection-box.active").removeClass("active"); 
+	$(this).addClass("active");
+	$('.img-ivestor-active').addClass('d-none');
+	$('.img-ivestor-inactive').removeClass('d-none');
+
+	$('.img-partner-active').addClass('d-none');
+	$('.img-partner-inactive').removeClass('d-none');
+
+	$('.login-role').attr('src','');
+	role = 0;
+
+	if($(this).hasClass('role-investor active')){
+		$('.img-ivestor-active').removeClass('d-none');
+		$('.img-ivestor-inactive').addClass('d-none');
+		$('.login-role').attr('src',$('.img-ivestor-inactive').attr('src'))
+		role = 1;
+	}
+	if($(this).hasClass('role-partner active')){
+		$('.img-partner-active').removeClass('d-none');
+		$('.img-partner-inactive').addClass('d-none');
+		$('.login-role').attr('src',$('.img-partner-inactive').attr('src'))
+		role = 2;
+	}
+	$('.login-btn-next').addClass('active')
+	$(".login-btn-next svg").removeClass('next-hide');
+	$(".role-selected-text").removeClass('next-hide');
+	$(".register-progress").removeClass('next-hide');
+	$(".register-progress span:nth-child(1)").addClass('register-progress-selection')
+})
+
+
+$(".login-cancel").on('click',function(){
+	$(".login-role-selection-box").removeClass("active"); 
+	
+	$('.img-ivestor-active').addClass('d-none');
+	$('.img-ivestor-inactive').removeClass('d-none');
+
+	$('.img-partner-active').addClass('d-none');
+	$('.img-partner-inactive').removeClass('d-none');
+
+	$('.login-role').attr('src','');
+	role = 0;
+
+	$('.login-btn-next').removeClass('active');
+	$(".login-btn-next svg").addClass('next-hide');
+	$(".role-selected-text").addClass('next-hide');
+	$(".register-progress").addClass('next-hide');
+	$(".register-progress span:nth-child(1)").removeClass('register-progress-selection')
+})
+
+$(".login-account-screen .login-btn-next").on('click',function(){
+	if ($('.role-investor.active').length > 0) {
+		window.location = "/en/login";
+	}
+	if ($('.role-partner.active').length > 0) {
+		window.location = '/investsaudistorefront/investsaudi/en/login';
+	}
+});
+
+//----------------------------

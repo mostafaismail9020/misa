@@ -419,7 +419,7 @@ ul.sagiaNavigation-subNav li svg {
 	position: relative;
 	color: #fff;
 	transition: 0.3s;
-	font-size: 12px;
+	font-size: 13px;
 	padding: 12px 12px 12px 28px;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -705,7 +705,7 @@ ul.dropdown-list li a {
 	padding: 6px 10px;
 }
 
-.btn-trans label.btn.lang-btn {
+.btn-trans label.lang-btn {
 	padding: 0;
 	color: #B9B9B9;
 	font-size: 10px;
@@ -714,7 +714,7 @@ ul.dropdown-list li a {
 	line-height: 16px;
 }
 
-.btn-trans label.btn.lang-btn.active {
+.btn-trans label.lang-btn.active {
 	color: #fff;
 }
 
@@ -22376,4 +22376,151 @@ table,th,tr,td{
 	width: 120px !important; 
 	cursor: pointer !important; 
 	border-radius: 30px;
+}
+
+
+#contact-us-form-success{
+	display: block;
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+	font-size: 25px;
+}
+.contact-us-form-ticket{
+	color: #00a6be;
+}
+
+.form-mand-text{
+	text-align: right;
+}
+#contact-us-upload-file{
+	text-align: right;
+}
+.custom-file-label::after{
+	right: initial;
+	left: 0;
+}
+.custom-file-input:lang(ar)~.custom-file-label::after {
+    content: "+";
+    color: #ffff;
+    font-size: 50px;
+    text-align: center;
+}
+
+@media (max-width:400px) {
+	.contact-form{
+		width: 90%;
+		margin-left: 15px;
+    	margin-right: 15px;
+	}
+	.contact-form .form-check input[type="checkbox"]{
+		width: 50px;
+	}
+	.contact-form .form-action-btn div:nth-child(1){
+		order:2;
+	}
+	.contact-form .form-action-btn div:nth-child(2){
+		order:1;
+		margin-bottom: 10px;
+	}
+}
+
+.page-portal .product-card{
+	background: #fff;
+    cursor: pointer;
+    padding: 45px 20px 50px;
+    -webkit-box-shadow: 0 15px 21px #00000029;
+    box-shadow: 0 15px 21px #00000029;
+    border-radius: 30px;
+}
+.page-portal .product-header{
+	background: #BF9B2E 0% 0% no-repeat padding-box;
+	opacity: 1;
+	padding: 10px 17px;
+	color: #fff;
+	width: max-content;
+}
+.page-portal .product-card a{
+	display: block;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+    color: #00a6be;
+    text-transform: uppercase;
+	margin-top: 10px;
+}
+.page-portal .product-card a:hover{
+	text-decoration: none;
+	color: #555;
+}
+
+
+.selected-flag{
+	top: -10px;
+}
+#contactusformModal .modal-dialog{
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+div#contactusformModal .modal-content{
+	background: #fff;
+    box-shadow: 0 18px 33px #00000029;
+    border: 1px solid #fff;
+    border-radius: 25px;
+}
+div#contactusformModal .modal-body{
+	color: #707070;
+    font-size: 25px;
+    line-height: 35px;
+    padding: 60px;
+    text-align: center;
+}
+
+#btnContactModalClose{
+	background-color: #00a6be;
+    color: #fff;
+    width: 200px;
+    border-radius: 113px;
+	padding: 10px;
+}
+@media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150% resolution*/
+	.nav-menu a{
+		font-size: 10px;
+	}
+}
+
+
+label.lang-btn{
+	margin-bottom: 2px;
+}
+.page-dashboard #dashboard-carousel .owl-nav .owl-prev {
+	left: 9% !important;
+}
+.page-dashboard #dashboard-carousel .owl-nav .owl-next {
+	right: 8% !important;
+}
+#logoutModal .js-formInputFileBox .modal-close.bttn_close{
+	border-radius: 25px!important;
+	border: 0px solid #00a6be!important;
+	top: 5px;
+	right: 10px;
+}
+@media screen and (max-width:640px) {
+	.header-user-name{
+		display: none;
+	}
+	.sagiaNavigation-user{
+		margin-right: 0;
+	}
+}
+@media screen and (min-width:1200px) {
+	.header-user-icon{
+		padding-right: 1rem;
+	}
+}
+
+body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
+    display: none !important;
 }

@@ -8,10 +8,13 @@
 <%@ taglib prefix="account" tagdir="/WEB-INF/tags/responsive/user" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
+
 <div class="contentModule-section" id="licenseTypeSection" style="display: none">
-    <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.title"/></div>
-    <div class="row">
+    <div class="contentModule-headline contentModule-headline_smallMargin mw2"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.title"/></div>
+    <hr class="hr"/>
+    <div class="row mt-5">
         <div class="col-md-6">
+        <a class="btn btn_link btn_formAligned js-tip" data-tip-id="demoTooltipListId" data-tip-width="auto" data-trigger="click"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.typeOfLicense"/><icon:tipInfo/></a>
             <formElement:formSelectBox idKey="licenseTypes"
                                        labelKey="license.apply.licenseType"
                                        path="licenseType"
@@ -22,8 +25,7 @@
                                        skipBlankMessageKey="form.select.empty"
                                        selectCSSClass="form-control"/>
         </div>
-        <div class="col-md-6">
-            <a class="btn btn_link btn_formAligned js-tip" data-tip-id="demoTooltipListId" data-tip-width="auto" data-trigger="click"><spring:theme code="licenseApplyEntityInformation.licenseTypeSection.typeOfLicense"/></a>
+        <div class="col-md-12">
             <div class="tooltip_content" id="demoTooltipListId">
                 <ul class="tooltip-list tooltip-list_collapsible">
                     <spring:message code="license.apply.licenseType.help" var="licenseTypesHelp"/>

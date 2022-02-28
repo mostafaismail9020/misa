@@ -2,6 +2,8 @@ package com.sap.ibso.eservices.storefront.controllers.pages;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.sap.ibso.eservices.core.model.SagiaServiceModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import com.sap.ibso.eservices.facades.data.financial.FinancialData;
 import com.sap.ibso.eservices.facades.sagia.AverageProcessingTimeFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaFinancialFacade;
@@ -34,9 +36,12 @@ public class FinancialController extends SagiaAbstractPageController {
     private SagiaFinancialFacade sagiaFinancialFacade;
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
+    @Resource(name = "sagiaSearchService")
+    private SagiaSearchService searchService;
 
     private static final String ENTITY_NAME = "FinanceHDRS";
     private static final String SAGIA_FINANCIAL_CMS_PAGE = "financial";
+    private static final String SERVICE_ID = "ZS11";
 
     /**
      * The page that contains all the financial data and history
@@ -72,6 +77,9 @@ public class FinancialController extends SagiaAbstractPageController {
         model.addAttribute("currency", CURRENCY_SAR); // hardcoded as currency is not recieved from CRM
         model.addAttribute("financialEntities", financialEntities);
         model.addAttribute("processingTime", averageProcessingTimeFacade.getAverageProcessingTimeData(ENTITY_NAME));
+
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
 
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_FINANCIAL_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_FINANCIAL_CMS_PAGE));

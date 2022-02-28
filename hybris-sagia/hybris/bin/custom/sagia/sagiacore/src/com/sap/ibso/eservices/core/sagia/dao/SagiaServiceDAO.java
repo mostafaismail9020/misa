@@ -1,5 +1,6 @@
 package com.sap.ibso.eservices.core.sagia.dao;
 
+import com.sap.ibso.eservices.core.model.SagiaCategoryModel;
 import com.sap.ibso.eservices.core.model.SagiaServiceModel;
 
 import java.util.List;
@@ -12,5 +13,7 @@ public interface SagiaServiceDAO {
     SagiaServiceModel getServiceForCode(String code);
 
     Set<SagiaServiceModel> searchSagiaServices(String text);
+
+    List<SagiaCategoryModel> getSagiaCategoriesByLabel(String categoryLabel);
 
 }

@@ -76,6 +76,8 @@ public class PortalProductPageController extends AbstractPageController {
         final String productCode = decodeWithScheme(encodedProductCode, UTF_8);
         ProductData productData = investSaudiProductFacade.getProductForCode(productCode);
 
+        investSaudiProductFacade.uploadPdfForOpportunity(productCode);
+
         if (productData == null) {
             final ContentPageModel errorPage = getContentPageForLabelOrId(ERROR_CMS_PAGE);
             storeCmsPageInModel(model, errorPage);

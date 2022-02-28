@@ -2,7 +2,17 @@
 
 var SAGIA = SAGIA || {};
 
-
+let limitChar = (element) => {
+    const maxChar = 10;
+    let ele = document.getElementById(element.id);
+    let charLen = ele.value.length;
+    if (charLen > maxChar) 
+    {
+        ele.value = ele.value.substring(0, maxChar);
+    }
+}
+$(".textAreaLabel").find(".skip").remove();
+$(".textAreaLabel").parent().find(".help-block").addClass(".error-text-alignment");
 SAGIA.profile = {
     init: function init() {
         $(document).on("click", "#infoModalClose", function (e) {
@@ -536,7 +546,16 @@ SAGIA.profile = {
                     if (profileData.profilePicture) {
 //                        myProfileTabData.find(".profilePicture").attr("src", profileData.profilePicture);
                         myProfileTabData.find(".js-profilePicture").css("background-image", 'url(' + profileData.profilePicture + ')');
+                        myProfileTabData.find(".myAccount-profilImage-img").css("height", '170px');
                     }
+                    else {
+                        myProfileTabData.find(".myAccount-profilImage-img").css("height", '0px');
+                    }
+                    $('#sagia_companyLogo_picture_title').text('Company Logo');
+
+                    if (profileData.companyLogo) {
+                         myProfileTabData.find(".js-companyLogo").css("background-image", 'url(' + profileData.companyLogo + ')');
+                     }
                     if (profileData.sagiaProfilePersonalForm && profileData.titles && profileData.countries && profileData.sectors) {
                         var sagiaProfilePersonalFormData = profileData.sagiaProfilePersonalForm;
                         myProfileTabData.find("#sagiaProfilePersonalFormTitle").text(sagiaProfilePersonalFormData.title.name);
@@ -547,6 +566,7 @@ SAGIA.profile = {
                         myProfileTabData.find("#sagiaProfilePersonalFormLastName").text(sagiaProfilePersonalFormData.lastName);
                         myProfileTabData.find("#sagiaProfilePersonalFormCompany").text(sagiaProfilePersonalFormData.company);
                         myProfileTabData.find("#sagiaProfilePersonalFormMobileCountryCode").text(sagiaProfilePersonalFormData.mobileCountryCode);
+						myProfileTabData.find("#sagiaProfilePersonalFormCompanyWebsite").text(sagiaProfilePersonalFormData.companyWebsite);
 
                         var sagiaProfilePersonalForm = $("#sagiaProfilePersonalForm");
                         var sagiaProfilePersonalFormTitle = sagiaProfilePersonalForm.find("#sagiaProfilePersonalFormSelectTitle");
@@ -594,8 +614,12 @@ SAGIA.profile = {
                         var sagiaProfilePersonalFormSelectMobileNumber = sagiaProfilePersonalForm.find("#sagiaProfilePersonalFormSelectMobileNumber");
                         sagiaProfilePersonalFormSelectMobileNumber.val(sagiaProfilePersonalFormData.mobileNumber);
 
+                          var sagiaProfilePersonalFormSelectCompanyWebsite = sagiaProfilePersonalForm.find("#sagiaProfilePersonalFormSelectCompanyWebsite");
+                          sagiaProfilePersonalFormSelectCompanyWebsite.val(sagiaProfilePersonalFormData.companyWebsite);
+
                         $("#sagiaProfilePersonalFormCancelUpdates").on("click", function () {
-                            $(".js-myAccount-edit").trigger("click");
+                            $(".js-myAccount-edit").trigger("click"); 
+                            window.scrollTo({top: 0, behavior: 'smooth' });
                         });
                         $("#sagiaProfilePersonalFormSaveUpdates").on("click", function () {
                             var objectToPost = {
@@ -616,7 +640,8 @@ SAGIA.profile = {
                                     name: sagiaProfilePersonalFormSector.find(":selected").text()
                                 },
                                 mobileCountryCode: sagiaProfilePersonalFormSelectMobileCountryCode.val(),
-                                mobileNumber: sagiaProfilePersonalFormSelectMobileNumber.val()
+                                mobileNumber: sagiaProfilePersonalFormSelectMobileNumber.val(),
+ 								companyWebsite : sagiaProfilePersonalFormSelectCompanyWebsite.val()
                             };
                             $.ajax(ACC.config.encodedContextPath + "/my-sagia/update-my-profile", {
                                 beforeSend: function beforeSend(xhr) {
@@ -627,7 +652,7 @@ SAGIA.profile = {
                                 method: 'POST',
                                 data: JSON.stringify(objectToPost),
                                 success: function success() {
-                                    var infoModal = $('#infoResponseModal');
+                                    var infoModal = $('#infoResponseModal'); 
                                     infoModal.find('.modal-description').text(getI18nText('general.details.updated'));
                                     infoModal.modal('show');
 
@@ -639,6 +664,7 @@ SAGIA.profile = {
                                     myProfileTabData.find("#sagiaProfilePersonalFormLastName").text(objectToPost.lastName);
                                     myProfileTabData.find("#sagiaProfilePersonalFormCompany").text(objectToPost.company);
                                     myProfileTabData.find("#sagiaProfilePersonalFormMobileCountryCode").text(objectToPost.mobileCountryCode);
+									myProfileTabData.find("#sagiaProfilePersonalFormCompanyWebsite").text(objectToPost.companyWebsite);
                                 },
                                 error: function error() {
                                     var errorModal = $('#errorResponseModal');
@@ -728,13 +754,14 @@ SAGIA.profile = {
                         },
                         checkPwd: {
                             required: true,
+                            regex: securityData.backendRegex,
                             equalTo: "#pwd"
                         }
                     },
                     messages: {
                         oldPwd: {
                             required: getI18nText("profile.password.enterOld"),
-                            validateExisting: getI18nText("password.incorrect")
+                            validateExisting: getI18nText("profile.password.incorrect")
                         },
                         pwd: {
                             required: getI18nText("profile.password.enterNew"),
@@ -743,7 +770,8 @@ SAGIA.profile = {
                         },
                         checkPwd: {
                             required: getI18nText("profile.password.confirmNew"),
-                            equalTo: getI18nText("password.equals")
+                            regex: securityData.backendRegexErrorMessage,
+                            equalTo: getI18nText("profile.password.equals")
                         }
                     }
                 });
@@ -807,6 +835,10 @@ SAGIA.profile = {
                 });
                 $('#cancelUpdateUsernameButton').click(function () {
                     $('#changeUsername').trigger("reset");
+                    $("#username-error").remove();
+                    $("#checkUsername-error").remove();
+                    $("#passwordForChangeUsername-error").remove();
+                    $("#changeUsername .form-group").removeClass('has-error');
                 });
                 $("#updateUsername").on("click", function () {
                     updateUsernameForm.validate().form();
@@ -850,6 +882,7 @@ SAGIA.profile = {
                         },
                         chkEmail: {
                             required: true,
+                            regex: /^([A-Za-z0-9._%+-])+@([A-Za-z0-9.-])+\.([A-Za-z]{2,4})$/,
                             equalTo: "#email"
                         },
                         passwordForChangeEmail: {
@@ -862,7 +895,8 @@ SAGIA.profile = {
                             regex: getI18nText("validation.valid.email")
                         },
                         chkEmail: {
-                            required: getI18nText("validation.confirm.new.email")
+                            required: getI18nText("validation.confirm.new.email"),
+                            regex: getI18nText("validation.valid.email")
                         },
                         passwordForChangeEmail: {
                             required: getI18nText("validation.password")
@@ -871,6 +905,16 @@ SAGIA.profile = {
                 });
                 $('#cancelUpdateEmailButton').click(function () {
                     $('#changeEmail').trigger("reset");
+                    $("#chkEmail-error").attr("style", "display: none");
+                    $("#email-error").attr("style", "display: none");
+                    $("#changeEmail .form-group").removeClass("has-error");
+                    $("#passwordForChangeEmail-error").remove();
+                });
+                $('.cancelPasswordUpdateButton').click(function () {
+                    $('#updatePwdForm').trigger("reset");
+                    $("#pwd-error").attr("style", "display: none");
+                    $("#checkPwd-error").attr("style", "display: none");
+                    $("#updatePwdForm .form-group").removeClass("has-error");
                 });
                 $("#updateEmail").on("click", function () {
                     updateEmailForm.validate().form();
@@ -1372,3 +1416,183 @@ $(function () {
 
     SAGIA.profile.init();
 });
+
+$(document).on("click", ".myAccount-profilImage-change", function () {
+     var actionUrl = $(this).data('action');
+     $('#modalPictureUploadForm').attr('action',actionUrl);
+// console.log(actionUrl);
+      $('#uploadFilePicture').modal('show');
+});
+
+$(document).on("change", "#fileBoxModalProfilePicture", function(e) {
+    var fuData = document.getElementById('fileBoxModalProfilePicture');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#updateProfilePicBtn").attr("disabled", true);
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+                $("#updateProfilePicBtn").attr("disabled", false);
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#updateProfilePicBtn").attr("disabled", true);
+            return;
+        }
+        
+    }
+});
+
+$(document).on("change", "#file0", function(e) {
+    var fuData = document.getElementById('file0');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#file0").val('');
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#file0").val('');
+            return;
+        }
+        
+    }
+});
+
+$(document).on("change", "#file1", function(e) {
+    var fuData = document.getElementById('file1');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#file1").val('');
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#file1").val('');
+            return;
+        }
+        
+    }
+});
+
+$(document).on("change", "#file2", function(e) {
+    var fuData = document.getElementById('file2');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#file2").val('');
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#file2").val('');
+            return;
+        }
+        
+    }
+});
+
+$(document).on("change", "#file3", function(e) {
+    var fuData = document.getElementById('file3');
+    var FileUploadPath = fuData.value;
+
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+
+    } else {
+        const fileSize = fuData.files[0].size / 1024 / 1024; // in MiB
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $("#file3").val('');
+            return;
+            // $(file).val(''); //for clearing with Jquery
+        }
+        var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        //The file uploaded is an image
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+            // To Display
+            if (fuData.files && fuData.files[0]) {
+            }
+        } 
+        //The file upload is NOT an image
+        else {
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            $("#file3").val('');
+            return;
+        }
+        
+    }
+});
+
+$("#resetPassword").on('click',function(){
+    $("#oldPwd-error").remove();
+    $("#pwd-error").remove();
+    $("#checkPwd-error").remove();
+    $("#updatePwdForm .form-group").removeClass('has-error');
+})

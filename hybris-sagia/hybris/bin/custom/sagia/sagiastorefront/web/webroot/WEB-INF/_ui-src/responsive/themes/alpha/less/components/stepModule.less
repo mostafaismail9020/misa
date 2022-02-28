@@ -32,7 +32,8 @@
 
 		&.active{
 			background-image: radial-gradient(circle at 44% 41%, #7acc61, #73c859 74%, #6dc452);
-			box-shadow: 0 15px 20px 0 rgba(160, 237, 152, 0.5);
+			// box-shadow: 0 15px 20px 0 rgba(160, 237, 152, 0.5);
+			box-shadow: 0 15px 20px 0 rgba(231, 252, 255, 0.5);
 			color: #fff;
 			cursor: default;
 			#media-breakpoint-down(sm, {
@@ -108,7 +109,7 @@
 		}
 
 		&.active:after{
-			border-left-color: #6dc452;
+			border-left-color: @color-primary;
 		}
 
 		&:last-child:after{

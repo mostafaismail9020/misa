@@ -107,7 +107,8 @@
 							<div class="mobile__nav__row--table-cell visible-xs mobile__nav__row--seperator">
 								<ycommerce:testId code="header_search_activation_button">
 									<button	class="mobile__nav__row--btn btn mobile__nav__row--btn-search js-toggle-xs-search hidden-sm hidden-md hidden-lg" type="button">
-										<span class="glyphicon glyphicon-search"></span>
+										<!--<span class="glyphicon glyphicon-search"></span>-->
+										<svg xmlns="http://www.w3.org/2000/svg" width="19.931" height="19.931" viewBox="0 0 19.931 19.931"><g transform="translate(20.3 -3.7)"><path d="M20.736,12.618A8.118,8.118,0,1,1,12.618,4.5,8.118,8.118,0,0,1,20.736,12.618Z" transform="translate(-24 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/><path d="M28.812,28.812l-3.837-3.837" transform="translate(-30.312 -6.312)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/></g></svg>
 									</button>
 								</ycommerce:testId>
 							</div>
@@ -135,7 +136,12 @@
 					<div class="row">
 						<div class="col-sm-2 hidden-xs visible-sm mobile-menu">
 							<button class="btn js-toggle-sm-navigation" type="button">
-								<span class="glyphicon glyphicon-align-justify"></span>
+								<!--<span class="glyphicon glyphicon-align-justify"></span>--> 
+								<span class="listView_white">
+									<svg id="listView_white" xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 26 18">
+										<path id="Path_2373" data-name="Path 2373" d="M0,14H26v4H0ZM0,7H26v4H0ZM0,0H26V4H0Z" fill="#fff" fill-rule="evenodd"/>
+									</svg>
+								</span>
 							</button>
 						</div>
 						<div class="col-sm-10">

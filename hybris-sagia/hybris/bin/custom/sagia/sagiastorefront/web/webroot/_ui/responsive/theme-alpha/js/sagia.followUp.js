@@ -70,7 +70,7 @@ $(function () {
         ).done(function (response) {
             var fileCodes = [];
 
-            response.parameters.forEach(
+            response.parameters !== undefined && response.parameters.forEach(
                 function(parameter) {
                     if (parameter.name === "docs" && parameter.type === "hidden") {
                         fileCodes.push(parameter);

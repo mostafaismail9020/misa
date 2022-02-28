@@ -59,7 +59,7 @@
                                     <div class="paginationModule paginationModule_loading">
                                         <div class="paginationModule-wrapper">
                                             <button class="paginationModule-control paginationModule-control_left" disabled>
-                                                <icon:arrow_green_right/>
+                                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
                                             </button>
                                             <div class="paginationModule-items">
                                                 <div class="loadingModule">
@@ -68,7 +68,7 @@
                                                 </div>
                                             </div>
                                             <button class="paginationModule-control paginationModule-control_right">
-                                                <icon:arrow_green_right/>
+                                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" >
                                             </button>
                                         </div>
                                     </div>

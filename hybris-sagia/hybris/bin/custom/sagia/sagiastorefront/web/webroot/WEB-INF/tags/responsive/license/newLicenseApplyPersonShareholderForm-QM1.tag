@@ -27,9 +27,8 @@
 		<div class="contentModule-headline">
 			<spring:theme code="licence.apply.shareholder.details" />
 		</div>
-
-
-		<div class="contentModule-section row" id="shareholderIdTypeSection">
+<hr class="hr">
+		<div class="contentModule-section row mt-5" id="shareholderIdTypeSection">
 
 
 			<div class="col-md-6">
@@ -73,8 +72,8 @@
 		     </div>
 
 
-			<div class="col-md-6" id="nicShareholderVerifyBtnSection">
-				<a style="margin-top: 15px" class="btn"
+			<div class="col-md-6 mt-2" id="nicShareholderVerifyBtnSection">
+				<a href="#" class="btn btn-bg btn-normal btn_bold btn-ctrl w-50 mt-4"
 					id="verifyShareholderDetailsShow" data-nic-verified="false"><spring:theme
 						code="license.apply.shareholder.verify" /></a>
 			</div>
@@ -82,30 +81,20 @@
 
 		</div>
 		<div class="row" style="display: none" id="dataSection">
-
-
-
-
 			<div class="col-md-6">
 				<div id="shareholderTitle" class="formRadioBox">
 					<div class="form-group">
 						<div class="formRadioBox-label">
 							<spring:theme code="general.license.title" />
 						</div>
-						<div class="form-item">
-							<input id="personTitle" name="shareHolderTitle"
-								class="form-control" type="radio" value="Mr."
-								${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mr.' ? 'checked="checked"' : ''} />
-							<label for="personTitle" class="control-label"><spring:theme
-									code="general.mr" /></label>
+						<div class="form-item mt-2 pr-0 mb-4">
+							<input id="personTitle" name="shareHolderTitle" class="form-control" type="radio" value="Mr." ${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mr.' ? 'checked="checked"' : ''} />
+							<label for="personTitle" class="btn-ctrl control-label"><spring:theme code="general.mr" /></label>
 						</div>
 
-						<div class="form-item">
-							<input id="organizationTitle" name="shareHolderTitle"
-								class="form-control" type="radio" value="Mrs."
-								${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mrs.' ? 'checked="checked"' : ''} />
-							<label for="organizationTitle" class="control-label"><spring:theme
-									code="general.mrs" /></label>
+						<div class="form-item mt-2 mb-4 pl-0">
+							<input id="organizationTitle" name="shareHolderTitle" class="form-control" type="radio" value="Mrs." ${sagiaApplyPersonShareholderForm.shareHolderTitle eq 'Mrs.' ? 'checked="checked"' : ''} />
+							<label for="organizationTitle" class="btn-ctrl control-label"><spring:theme code="general.mrs" /></label>
 						</div>
 					</div>
 					<div class="help-block"></div>
@@ -219,7 +208,7 @@
 					path="passportIssueDate" labelCSS="control-label_mandatory"
 					inputBoxCode="${calendar}" inputBoxCSS="formInputBox_group"
 					inputCSS="js-form-control_date validate__mandatory" />
-				
+
 			</div>
 
 			<div class="col-md-6">
@@ -434,26 +423,27 @@
                     </span>
                 </c:set>
                 <formElement:formInputBoxCustom idKey="mofaNumber" labelKey="license.apply.shareholder.mofaNumber"
-                                                path="mofaNumber" inputBoxCode="${mofaNumberTooltip}" inputBoxCSS="formInputBox_group" 
+                                                path="mofaNumber" inputBoxCode="${mofaNumberTooltip}" inputBoxCSS="formInputBox_group"
                                                 inputCSS="validate__numbers-only" maxlength="13"/>
                 <!-- <div class="help-block" id="mofaNumber-error"></div> -->
                 <input type="hidden" id="isMofaVerified" name="mofaNumberVerified" value="${sagiaApplyPersonShareholderForm.mofaNumberVerified}">
                 <%-- <input type="hidden" id="isMofaVerifiedPer" name="mofaNumberVerified" value="${sagiaApplyPersonShareholderForm.mofaNumberVerified}"> --%>
 			</div>
-			
-			
+
+
 
 		</div>
 
-        
+
 		<!--  Attachment  -->
 		<div class="contentModule-section" id="attachmentSection"
 			style="display: none">
-			<div
-				class="contentModule-headline contentModule-headline_smallMargin" id="personAttachmentTitle">
+			<div class="contentModule-headline contentModule-headline_smallMargin mw0"><spring:theme code="general.attachments" /></div>
+			<!--<div
+				class="contentModule-headline contentModule-headline_smallMargin mw0" id="personAttachmentTitle">
 				<spring:theme code="general.attachments" />
-			</div>
-
+			</div>-->
+			<hr class="hr">
 			<div class="row">
 				<div class="col-md-6" id="passportFileAttachment">
 					<div
@@ -511,7 +501,7 @@
 						<div class="help-block">${otherErrors}</div>
 					</div>
 				</div> --%>
-				
+
 				<div class="col-md-6" id="professionalLicenseFileAttachment"
 					style="display: none">
 					<div
@@ -542,8 +532,9 @@
 						<div class="help-block">${professionalLicenseErrors}</div>
 					</div>
 				</div>
-				
+
 			</div>
+			<span class="spl-notes">Note - The Maximum File Size should not exceed 2 MB</span>
 		</div>
 
 		<div id="delegateDivSection" style="display: none">
@@ -556,10 +547,10 @@
 
 	<div
 		class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-		<button type="button" class="cancelButton btn btn_outline">
+		<button type="button" class="cancelButton btn btn-outline btn-normal btn_bold w-25">
 			<spring:theme code="general.cancel" />
 		</button>
-		<button type="button" class="addButton btn">
+		<button type="button" class="addButton btn btn-bg btn-normal btn_bold w-25">
 			<spring:theme code="licence.apply.savenewshareholder" />
 		</button>
 	</div>

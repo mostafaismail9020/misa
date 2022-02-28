@@ -25,19 +25,19 @@
 		${content}
 	</div>
 	<br>
-	<div class="newsletterFormDiv">
-		<form id="subscribeNewsletter">
+	<div class="newsletterFormDiv row">
+		<div class="goBackLinkNews col-sm-6"> <a href="${blogHomePageUrl}" >&laquo; <spring:theme code="blog.page.goBack"/> </a></div>
+
+		<form id="subscribeNewsletter" class="col-sm-6">
 			<input type="hidden" id="eventDetailForNewsletter" name="eventDetailForNewsletter" value="${uniqueCode}" />
 			<input type="hidden" id="subscriptionFlag" name="subscriptionFlag" value="${newsletterSubscriptionFlag}" />
 			<div id="postNewsletterDiv">
 				<input type="submit" id="subscribe2NewsletterButton" class="btn btn-sagia btn-sagia-green" style="display:${newsletterSubscriptionFlag?'none':'block'}" value="<spring:theme code="blog.newsLetter.subsrcibe"/>">
 				<input type="submit" id="unSubscribe2NewsletterButton" class="btn btn-sagia btn-sagia-green" style="display:${newsletterSubscriptionFlag?'block':'none'}"  value="<spring:theme code="blog.newsLetter.unsubsrcibe"/>">
 			</div>
-		</form>
-	</div>
-	<div class="goBackLinkNews">
-	<br>
-	<br>
-	<a href="${blogHomePageUrl}" >&laquo; <spring:theme code="blog.page.goBack"/> </a>
-	</div>
-</div>
+		</form>	</div>
+	<!--<div class="goBackLinkNews">
+	<br><br>
+	
+	</div>-->
+</div> 

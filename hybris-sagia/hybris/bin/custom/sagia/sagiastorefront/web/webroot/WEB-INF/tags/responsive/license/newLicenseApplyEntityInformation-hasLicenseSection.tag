@@ -20,11 +20,11 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="hasGCCNationality" id="hasGCCNationalityYES" value="yes" class="form-control"/>
-                            <label for="hasGCCNationalityYES" id="hasGCCNationalityYESLabel" class="control-label"><spring:theme code="licenseApplyEntityInformation.hasLicenseSection.yes"/></label>
+                            <label for="hasGCCNationalityYES" id="hasGCCNationalityYESLabel" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.hasLicenseSection.yes"/></label>
                         </div>
                         <div class="form-item">
                             <input type="radio" name="hasGCCNationality" id="hasGCCNationalityNO" value="no" class="form-control" ${not empty sagiaApplyEntityInfoForm.licenseType ? 'checked="checked"' : ''}/>
-                            <label for="hasGCCNationalityNO" id="hasGCCNationalityNOLabel" class="control-label"><spring:theme code="licenseApplyEntityInformation.hasLicenseSection.no"/></label>
+                            <label for="hasGCCNationalityNO" id="hasGCCNationalityNOLabel" class="btn btn-ctrl btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.hasLicenseSection.no"/></label>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
-    </div> --> 
+    </div> -->
 </div>

@@ -15,16 +15,420 @@
 <%@ taglib prefix="userTags" tagdir="/WEB-INF/tags/responsive/user" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
-<%--@elvariable id="sagiaRegisterForm" type="de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm"--%>
 
+<%--@elvariable id="sagiaRegisterForm" type="de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm"--%>
 <%--<spring:url value="/termsAndConditions" var="getTermsAndConditionsUrl"/>--%>
-<!-- container, possibly to be elsewhere -->
+<%-- container, possibly to be elsewhere --%>
+
+
 <div class="panelTabs-head" id="register-quick">
-	<icon:register/><span class="panelTabs-label"><spring:theme code="quickRegistration.label"/></span>
+	<icon:register/><span class="panelTabs-label"><spring:theme code="quickRegistration.label"/></span> 
 </div>
 
 <c:url value="/register/ajax" var="registerAction" />
 <c:url value="/register/apply" var="applyAction" />
+<div class="row register_tab_container">
+	<div class="col-md-5 register_tab_view">
+		<div class="login-logo">
+			<a href="/${language}">
+				<img src="${commonResourcePath}/images/B2C/Login-logo.svg" alt="logo" class="img-fluid w-100" />
+			</a>
+		</div>
+		<div id="sagia-cms-help-quick-registration-helper"></div>
+	</div>
+	
+	<div class="col-md-7 register_tab_view">
+		<form:form method="post" id="sagiaRegisterFormQuickRegistration" name="sagiaRegisterFormQuickRegistration"  modelAttribute="sagiaRegisterForm" action="${registerAction}#register-quick" onsubmit="return validateRegisterForm()">
+			<div class=" register-account-screen r-sn ">
+				
+				<div class="login-right-wrapper">
+					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="register-progress">
+						<span class="circle register-progress-selection">1</span>
+						<hr />
+						<span class="circle">2</span>
+						<hr />
+						<span class="circle">3</span>
+						<%--
+						<hr />
+						<span class="circle">4</span>
+						--%>
+					</div>
+					<div class="login-register-role"><spring:theme code="investor.registration.select.role.label"/></div>
+					<div class="login-role-selection">
+						<div class="login-role-selection-box role-investor active">							
+							<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid img-ivestor-inactive d-none" />
+							<img src="${commonResourcePath}/images/B2C/Investor-icons.png" alt="Investor" class="img-fluid img-ivestor-active" />
+							<p class="role-text"><spring:theme code="investor.select.role.label"/></p>							
+						</div>
+						<div class="login-role-selection-box role-partner">
+							<img src="${commonResourcePath}/images/B2C/Partner.png" alt="Partner" class="img-fluid img-partner-inactive" />
+							<img src="${commonResourcePath}/images/B2C/Partner-icon.png" alt="Investor" class="img-fluid img-partner-active d-none" />
+							<p class="role-text"><spring:theme code="partner.select.role.label"/></p>
+						</div>
+					</div>
+					<div class="login-role-selection role-selected-text d-none">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse imperdiet sit
+					</div>
+					<spring:theme code="${registerFormError}" arguments=""/>
+					<div class="login-buttons">
+						<div class="col-md-6 col-12">
+							<a class="login-btn login-btn-cancel padding-top-10"><spring:theme code="investor.registration.cancel.button"/></a>
+						</div>
+						<div class="col-md-6 col-12">													
+							<a class="login-btn login-btn-next active padding-top-10" ><spring:theme code="investor.registration.next.button"/>&nbsp;
+								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
+									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
+										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
+										transform="translate(-7.875 -11.252)" fill="#fff">
+									</path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="register-account-investor-screen2 r-sn next-hide">
+				<div class="login-right-wrapper">
+					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="register-role-selection">
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
+						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
+					</div>
+					<div class="register-progress">
+						<span class="circle progress-completion">&#10003;</span>								
+						<hr />
+						<span class="circle">2</span>								
+						<span class="circle register-progress-selection">2</span>								
+						<hr />
+						<span class="circle">3</span>								
+						<hr />
+						<span class="circle">4</span>							
+					</div>
+					<div class="login-register-role">SELECT YOUR BUSINESS AREA / SECTOR</div>
+					<div class="login-role-selection">
+						<div class="bussiness-sector">					
+							<div class="bussiness-sector-btn" data-sectorname="Energy" data-sectorid="energy" data-selected="no">
+								<img class="bussiness-sector-item-icon deselected-img" src="/_ui/responsive/common/images/B2C/sector/Icons-blue/Energy.png" data-norm="/_ui/responsive/common/images/B2C/sector/Icons-blue/Energy.png" data-alt="/_ui/responsive/common/images/B2C/sector/Icons-blue/Energy.png" data-norm="/_ui/responsive/common/images/B2C/sector/Icons-blue/Energy.png" alt="Energy">
+								<img style="display: none;" class="bussiness-sector-item-icon selected-img" src="/_ui/responsive/common/images/B2C/sector/Icons-white/Energy.png" data-norm="/_ui/responsive/common/images/B2C/sector/Icons-white/Energy.png" data-norm="/_ui/responsive/common/images/B2C/sector/Icons-white/Energy.png" data-alt="/_ui/responsive/common/images/B2C/sector/Icons-white/Energy.png" alt="Energy">
+								<span class="bussiness-sector-list-text ">Energy</span>
+								<img class="img-fluid bussiness-sector-close-icon" src="/_ui/responsive/common/images/close_icon.png" alt="">
+							</div>
+							<%--
+							<formElement:formSelectBox idKey="quickregistration.register.sector" labelKey="register.sector" selectCSSClass="form-control jqSector js-select-required" path="sector" items="{sectors}" itemLabel="name"/>
+							--%>
+						</div>
+					</div>
+					<div class="login-buttons">
+						<div class="col-md-6 col-12">
+							<a class="login-btn register-investor-screen2-btn-back padding-top-10">BACK</a>
+						</div>
+						<div class="col-md-6 col-12">
+							<a class="login-btn register-investor-screen2-btn-next padding-top-10">NEXT&nbsp;
+								<svg xmlns="http://www.w3.org/2000/svg" width="15.835"
+										height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
+									<path id="Icon_ionic-ios-arrow-round-forward"
+										data-name="Icon ionic-ios-arrow-round-forward"
+										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
+										transform="translate(-7.875 -11.252)" fill="#fff">
+									</path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row col-lg-12 col-xl-12 col-12 register-account-investor-screen3 r-sn next-hide">
+				<div class="login-right-wrapper">
+					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="register-role-selection">
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
+						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
+					</div>
+					<div class="register-progress">
+						<span class="circle progress-completion register-progress-selection">&#10003;</span>
+						<hr />
+						<span class="circle register-progress-selection">2</span>								
+						<hr />
+						<span class="circle">3</span>								
+						<%--
+						<hr />
+						<span class="circle">4</span>
+						--%>
+					</div>
+					<div class="login-register-role"><spring:theme code="investor.registration.enter.details.label"/></div>
+					<div class="row register-user-info">
+						<%--
+						<div class="col-md-12 register-form focus-on-change register-forms-select">
+							<formElement:formSelectBox idKey="quickregistration.register.title"
+									labelKey="register.title" selectCSSClass="form-control jqTitle js-select-required register-user-details"
+									path="titleCode" mandatory="true" skipBlank="false" labelCSS="register-user-info-label"
+									skipBlankMessageKey="form.select.empty" items="${titles}"/>						
+						</div>
+						--%>
+						<div class="col-md-12 register-form register-form-names ">
+							<div class="col-2 register-form focus-on-change register-forms-select px-0 right_arrowdd">
+								<formElement:formSelectBox idKey="quickregistration.register.title"
+										labelKey="register.title" selectCSSClass="form-control jqTitle js-select-required register-user-details"
+										path="titleCode" mandatory="true" skipBlank="false" labelCSS="register-user-info-label select-label-mandatory"
+										skipBlankMessageKey="form.select.empty" items="${titles}"/>	
+							</div>
+							<div class="col-5 focus-on-change ">
+								<%--
+								<label class="register-user-info-label" for="reg-fName">First Name<span class="mandatory">*</span></label>
+								<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-fName" name="FName" />
+								--%>
+								<formElement:formInputBox idKey="quickregistration.register.firstName"
+										labelKey="register.firstName" path="firstName" inputCSS="js-quickregister-firstname register-user-details" labelCSS="control-label_mandatory register-user-info-label"
+										mandatory="true"/>
+							</div>
+							<div class="col-5 focus-on-change">
+								<%--
+								<label class="register-user-info-label" for="reg-lName">Last Name<span class="mandatory">*</span></label>
+								<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-lName" name="LName" />
+								--%>
+								<formElement:formInputBox idKey="quickregistration.register.lastName"
+										labelKey="register.lastName" path="lastName" inputCSS="js-quickregister-lastname register-user-details" labelCSS="control-label_mandatory register-user-info-label"
+										mandatory="true"/>
+							</div>
+							<div class="error-msg"></div>
+						</div>
+						<div class="col-md-6 register-form focus-on-change">
+							<%--
+							<label class="register-user-info-label" for="reg-Company">Company<span class="mandatory">*</span></label>
+							<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-Company" name="Company" />
+							--%>
+							<formElement:formInputBox idKey="quickregistration.register.company"
+										labelKey="register.company" path="company" inputCSS="js-quickregister-company register-user-details" labelCSS="control-label_mandatory register-user-info-label"
+										mandatory="true" />
+							<div class="error-msg"></div>
+						</div>
+						<div class="col-md-6 register-form focus-on-change register-forms-select">
+							<formElement:formSelectBox idKey="quickregistration.register.sector" 
+										labelKey="register.sector" selectCSSClass="form-control jqSector js-select-required register-user-details" path="sector"
+									   	items="${sectors}" itemLabel="name"  labelCSS="register-user-info-label select-label-mandatory"/>	
+						</div>
+						<div class="col-md-6 register-form focus-on-change">
+							<%--
+							<label class="register-user-info-label" for="reg-EmailId">Email Id<span class="mandatory">*</span></label>
+							<input type="text" class="register-user-details js-register-quick-email" data-val="true" data-val-required="Required"	id="reg-EmailId" name="EmailId" />
+							--%>
+							<formElement:formInputBox idKey="quickregistrationEmail"
+										labelKey="register.email" path="email"
+										inputCSS="register-user-details js-register-quick-email" helpBlockSuccessCSS="js-help-block-success" labelCSS="control-label_mandatory register-user-info-label"
+										mandatory="true" />
+							<div class="error-msg"></div>
+						</div>
+						<div class="col-md-6 register-form focus-on-change register-forms-select">
+							<formElement:formSelectBox idKey="quickregistration.register.country"
+									   labelKey="register.country" selectCSSClass="form-control countriesselect jqCountry js-select2-searchBegining js-select2-sortAlphabetically register-user-details" 
+									   labelCSS="control-label_mandatory register-user-info-label"
+									   path="countryCode" mandatory="true" skipBlank="false"
+									   skipBlankMessageKey="form.select.empty" items="${countries}" itemValue="code"/>	
+						</div>
+						<div class="row col-12 reg-country-code-div register-form form-floating country-code-mobile">
+							<div class="col-8  ml-0 pl-0 d-flex">
+								<%--
+								<input type="text" class="ddl-countryCode register-user-details register-contry-info" placeholder=" " autocomplete="off" id="reg-country">
+								<div class="input-wrapper focus-on-change">
+									<label class="register-user-info-label" for="reg-mobile">Contact No<span class="mandatory">*</span></label>
+									<input type="text" class="register-user-details validate-mobile mobile-number" id="reg-mobile" name="MobileNumber"  type="number"/>
+									<div class="error-msg"></div>
+								</div> 
+								--%>
+								<formElement:formInputBox idKey="quickregistration.register.mobileCountryCode"
+											labelKey="register.mobileCountryCode" path="mobileCountryCode" labelCSS="ddl-countrycode-label"
+											inputCSS="js-quickregister-countrycode form-control_preNumber js-mobile-coutry-code ddl-countryCode register-user-details register-contry-info" readonly = "true" />
+								<div class="input-wrapper focus-on-change">
+									<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
+												labelKey="register.mobileNumber" path="mobileNumber"
+												helpBlockSuccessCSS="js-help-block-success"  maxlength="10"
+												inputCSS="js-quick-mobile-number register-user-details validate-mobile mobile-number" labelCSS="control-label_mandatory register-user-info-label" inputBoxCSS="formInputBox_big"
+												mandatory="true"/>
+								</div>								
+							</div>
+							<div class="col-4 mx-0 px-0 register-language" id="registerQuickSelectLanguageDiv">
+								<span><spring:theme code="general.language"/></span>
+								<label class="switch">
+									<input type="checkbox" id="registerQuickSelectLanguageSelect">
+									<div class="slider round"></div>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="login-buttons user-info-buttons">
+						<div class="col-md-6 col-12">
+							<a class="login-btn register-investor-screen3-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
+						</div>
+						<div class="col-md-6 col-12">
+							<a class="login-btn register-investor-screen3-btn-next padding-top-10"><spring:theme code="investor.registration.next.button"/>&nbsp;
+								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
+									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
+										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
+										transform="translate(-7.875 -11.252)" fill="#fff">
+									</path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row col-lg-12 col-xl-12 col-12 register-account-investor-screen4 r-sn next-hide">
+				<div class="login-right-wrapper">
+					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="register-role-selection">
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
+						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
+					</div>
+					<div class="register-progress">
+						<span class="circle progress-completion register-progress-selection 1">&#10003;</span>
+						<hr />
+						<span class="circle progress-completion register-progress-selection 2">&#10003;</span>
+						<hr />
+						<span class="circle register-progress-selection 3">3</span>						
+						<%--
+						<hr />
+						<span class="circle register-progress-selection 4">4</span>
+						--%>
+					</div>
+					<div class="login-register-role"><spring:theme code="investor.registration.create.username.label"/></div>
+					<div class="row register-user-info">
+						<div class="col-md-12 register-form focus-on-change">
+							<%--
+							<label class="register-user-info-label" for="reg-username">User Name<span class="mandatory">*</span></label>
+							<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-username" name="username" />
+							--%>
+							<formElement:formInputBox idKey="quickregistrationUsername"
+										labelKey="register.userName" path="userName"
+										inputCSS="js-register-quick-user-name register-user-details" labelCSS="control-label_mandatory register-user-info-label"
+										mandatory="true"
+										helpBlockSuccessCSS="js-help-block-success"/>
+						</div>
+						<div class="col-md-12 register-form focus-on-change password-field-height">
+							<%--
+							<label class="register-user-info-label" for="reg-password">Password<span class="mandatory">*</span></label>
+							<input type="password" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-password" name="password" maxlength="30" />
+							<i class="far fa-eye" id="togglePassword"></i>
+							--%>
+							<%-- <i class="far fa-info-circle" aria-hidden="true"></i> --%>
+							<formElement:formPasswordBox idKey="quickregistration.password"
+										labelKey="register.pwd" path="pwd"
+										inputCSS=" quickregistrationPwd register-user-details" labelCSS="control-label_mandatory register-user-info-label"																
+										mandatory="true"/>
+							<i toggle="#password-field" class="fa fa-eye-slash toggle-password1" aria-hidden="true"  id="togglePassword"></i>
+							<meter max="4" id="password-strength-meter" value="0" class=""></meter>
+							<div class="error-msg"></div>
+						</div>
+						<div class="col-md-12 register-form focus-on-change">
+							<%--
+							<label class="register-user-info-label" for="reg-cpassword">Confirm Password<span class="mandatory">*</span></label>
+							<input type="password" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-cpassword" name="cpassword" maxlength="30" />
+							<i class="far fa-eye" id="toggleCPassword"></i>
+							--%>
+							<formElement:formPasswordBox idKey="quickregistration.register.checkPwd"
+										labelKey="register.checkPwd" path="checkPwd" inputCSS="quickregistrationCheckPwd register-user-details" labelCSS="control-label_mandatory register-user-info-label" 
+										mandatory="true" />
+							<i toggle="#password-field" class="fa fa-eye-slash toggle-password2" aria-hidden="true"  id="toggleCPassword"></i>
+							<div class="error-msg"></div>
+						</div>
+						<div class="col-md-12 register-form focus-on-change">
+							<div class="form-item register-form-terms-condition">
+								<input id="termsAndConditionsRegister" name="termsAndConditionsChecked" placeholder="." class="reg-terms-checkbox " type="checkbox" value="true">
+								<input type="hidden" name="_termsAndConditionsChecked" value="on">
+								<div class="col-md-1 reg-terms-checkbox-span">
+									<span for="termsAndConditionsRegister">
+										<svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+											<path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"></path>
+										</svg>
+									</span>
+								</div>
+								<div class="col-md-11 mx-0 px-0">															
+									<label class="register-terms uncased mb-0" for="termsAndConditionsRegister">
+										<spring:theme code="investor.registration.read.agree.label"/>
+										<a class="register-terms-link" data-toggle="modal" data-target="#termsAndConditionsModal" href=""><spring:theme code="investor.registration.tearm.label"/></a>
+									</label>
+									<div id="termsAndConditionsModal" class="modal fade" tabindex="-1" role="dialog">
+										<div class="modal-dialog">
+											<div class="modal-content">
+											<div class="modal-body terms-conditions-content">
+												<iframe width="100%" height="100%" src="/en/cms/sagia-cms-TandC-registration" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+											</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="col-md-12 captcha-pos">
+							<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
+							<div class="form_field-elements control-group js-recaptcha-captchaaddon" style="transform:scale(0.88);-webkit-transform:scale(0.88);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+							<span id="lblErrorCaptchareg" class="mandatory"></span>
+						</div>
+					</div>
+					<div class="login-buttons user-info-buttons">
+						<div class="col-md-6 col-12">
+							<a class="login-btn register-investor-screen4-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
+						</div>
+						<div class="col-md-6 col-12">
+							<button class="login-btn register-investor-screen4-btn-next" disabled><spring:theme code="investor.registration.submit.button"/> &nbsp;
+								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
+									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
+										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
+										transform="translate(-7.875 -11.252)" fill="#fff">
+									</path>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row col-lg-12 col-xl-12 col-12 register-account-investor-screen5 r-sn next-hide" id="requestSubmittedApply" >
+				<div class="login-right-wrapper">
+					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="register-role-selection">
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
+						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
+					</div>
+					<div class="login-register-role reg-sucess"><spring:theme code="investor.registration.success.label"/></div>
+					<div class="row register-user-info">
+						<span class="circle success-circle"><span class="sucess-checkmark">&#10003;</span></span>
+						<!-- 
+						<div class="col-md-12 register-form register-success-msg" dir="ltr">
+							<span>Thank you for registering with us. Your registration is Under review. One of our export will be in touch with you as soon as possible.</span>
+						</div>		
+						 -->											
+					</div>
+					<div class="login-buttons user-info-buttons">
+						<div class="col-md-6 col-12">
+							<a href="/en/" class="login-btn register-investor-screen5-btn-back website-from-register padding-top-10">
+								<spring:theme code="investor.registration.invest.saudi.button"/>
+							</a>
+						</div>
+						<div class="col-md-6 col-12">
+							<a href="/en/login" class="login-btn register-investor-screen5-btn-next active login-from-registration padding-top-10">
+								<spring:theme code="investor.registration.login.button"/>&nbsp;
+								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" >
+									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
+										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
+										transform="translate(-7.875 -11.252)" fill="#fff">
+									</path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>					
+		</form:form>
+	</div>
+</div>
+
+
+<%--
 <div class="panelTabs-body panelModule panelModule_halfRadius panelModule_transparent90">
 	<div class="row">
 		<div class="col-md-4">
@@ -64,10 +468,7 @@
 					<formElement:formSelectBox idKey="quickregistration.register.country"
 											   labelKey="register.country" selectCSSClass="form-control countriesselect jqCountry js-select2-searchBegining js-select2-sortAlphabetically" labelCSS="control-label_mandatory"
 											   path="countryCode" mandatory="true" skipBlank="false"
-											   skipBlankMessageKey="form.select.empty" items="${countries}" itemValue="code"/>											  
-
-					<%--<formElement:formSelectBox idKey="register.country" labelKey="register.country" selectCSSClass="form-control" path="SagiaCountryData"--%>
-											   <%--items="${countries}" itemLabel="code"/>--%>
+											   skipBlankMessageKey="form.select.empty" items="${countries}" itemValue="code"/>											  											 
 
 					<div class="formInputBox-split">
 						<formElement:formInputBox idKey="quickregistration.register.mobileCountryCode"
@@ -76,7 +477,7 @@
 						<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												  labelKey="register.mobileNumber" path="mobileNumber"
 												  helpBlockSuccessCSS="js-help-block-success"
-												  inputCSS="form-control js-quick-mobile-number" labelCSS="control-label_mandatory" inputBoxCSS="formInputBox_big"
+												  inputCSS="form-control js-quick-mobile-number" labelCSS="control-label_mandatory" inputBoxCSS="formInputBox_big" maxlength="15"
 												  mandatory="true"/>
 					</div>
 
@@ -107,20 +508,6 @@
 						</div>
 					</div>
 
-					<%--<c:if test="${ not empty consentTemplateData }">--%>
-						<%--<form:hidden path="consentForm.consentTemplateId" value="${consentTemplateData.id}" />--%>
-						<%--<form:hidden path="consentForm.consentTemplateVersion" value="${consentTemplateData.version}" />--l%>
-						<%--<div class="checkbox">--%>
-							<%--<label class="control-label uncased">--%>
-								<%--<form:checkbox path="quickregistration.consentForm.consentGiven" disabled="true"/>--%>
-								<%--<c:out value="${consentTemplateData.description}" />--%>
-							<%--</label>--%>
-						<%--</div>--%>
-						<%--<div class="help-block">--%>
-							<%--<spring:theme code="registration.consent.link" />--%>
-						<%--</div>--%>
-					<%--</c:if>--%>
-
 					<div class="accountLogin-content-formSubmitSection" >
 						<div class="accountLogin-content-formSubmitSection-checkbox formCheckBox">
 							<formElement:termsAndConditionsCheckbox id="termsAndConditionsRegister" path="termsAndConditionsChecked" event="REGISTRATION"/>
@@ -128,7 +515,6 @@
 						<input type="hidden" id="recaptchaChallangeAnswered"
 							value="${requestScope.recaptchaChallangeAnswered}" />
 						<div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
-						<span id="lblErrorCaptcha" class="mandatory"></span>
 						<div class="form-actions clearfix">
 							<ycommerce:testId code="register_Register_button">
 								<button type="submit" class="btn btn-default quick-register js-quick-register-btn font-weight-bold"><spring:theme code='${actionNameKey}'/></button>
@@ -139,14 +525,14 @@
 						</div>
 					</div>
 				</form:form>
-				<!-- end effective content -->
-				<!-- container, possibly to be elsewhere -->
 			</div>
 		</div>
 	</div>
 </div>
 
-<!-- TAB 2 -->
+--%>
+
+<%-- TAB 2 --%>
 <%-- <div class="panelTabs-head" id="register-apply">
 	<icon:apply/>
 	<!-- iconElement-colorBackground_stroke // stroke="#fff" -->
@@ -311,7 +697,7 @@
 <%-- <userTags:nationalInvestor/> --%>
 <!-- END TAB 3 -->
 
-
+<%--
 <div class="modal fade" id="requestSubmittedApply"  tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
 		<div class="modal-content">
@@ -332,6 +718,7 @@
 		</div>
 	</div>
 </div>
+--%>
 
 <div class="modal fade" id="failInformationModal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">

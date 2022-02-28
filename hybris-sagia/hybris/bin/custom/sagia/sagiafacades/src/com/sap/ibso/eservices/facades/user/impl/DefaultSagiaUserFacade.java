@@ -15,12 +15,20 @@ package com.sap.ibso.eservices.facades.user.impl;
 
 import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
 import com.sap.ibso.eservices.facades.user.SagiaUserFacade;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.commercefacades.user.data.CustomerData;
 import de.hybris.platform.search.restriction.SearchRestrictionService;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.session.SessionExecutionBody;
 import de.hybris.platform.servicelayer.session.SessionService;
+import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
+import com.sap.ibso.eservices.facades.populators.SagiaServiceRequestReversePopulator;
+import com.sap.ibso.eservices.core.enums.IncidentCategory;
+import com.sap.ibso.eservices.core.enums.ServiceCategory;
+import com.sap.ibso.eservices.core.enums.Priority;
+import de.hybris.platform.enumeration.EnumerationService;
+
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
@@ -29,6 +37,7 @@ import javax.annotation.Resource;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 /**
  * Default implementation for SagiaUserFacade
@@ -40,8 +49,42 @@ import java.util.Set;
  */
 public class DefaultSagiaUserFacade implements SagiaUserFacade {
     private static final Logger LOG = Logger.getLogger(DefaultSagiaUserFacade.class);
+	private static final String CA_1 = "CA_1";
     private SagiaUserService sagiaUserService;
-    private Converter<B2BCustomerModel, CustomerData> b2BCustomerConverter;
+    private SagiaServiceRequestReversePopulator sagiaServiceRequestReversePopulator;
+    
+
+	/**
+	 * @return the sagiaServiceRequestReversePopulator
+	 */
+	public SagiaServiceRequestReversePopulator getSagiaServiceRequestReversePopulator() {
+		return sagiaServiceRequestReversePopulator;
+	}
+
+	/**
+	 * @param sagiaServiceRequestReversePopulator the sagiaServiceRequestReversePopulator to set
+	 */
+	public void setSagiaServiceRequestReversePopulator(
+			SagiaServiceRequestReversePopulator sagiaServiceRequestReversePopulator) {
+		this.sagiaServiceRequestReversePopulator = sagiaServiceRequestReversePopulator;
+	}
+
+	private EnumerationService enumerationService;
+    /**
+	 * @return the enumerationService
+	 */
+	public EnumerationService getEnumerationService() {
+		return enumerationService;
+	}
+
+	/**
+	 * @param enumerationService the enumerationService to set
+	 */
+	public void setEnumerationService(EnumerationService enumerationService) {
+		this.enumerationService = enumerationService;
+	}
+
+	private Converter<B2BCustomerModel, CustomerData> b2BCustomerConverter;
     @Resource
     private SearchRestrictionService searchRestrictionService;
     @Resource
@@ -85,6 +128,41 @@ public class DefaultSagiaUserFacade implements SagiaUserFacade {
         }
 
         return childB2BCustomerDataList;
+    }
+	
+	@Override
+    public boolean validateSagiaUerFormData(SagiaServiceRequestFormData sagiaServiceRequestFormData, String ticketId) {
+
+    	boolean attachRequestToTicket = false;
+    	List<ServiceCategory> serviceCategories = getEnumerationService().getEnumerationValues(com.sap.ibso.eservices.core.enums.ServiceCategory.class);
+    	/* Defaulting Service Category to CA_1 */
+		if(serviceCategories != null) {
+			for (ServiceCategory serviceCategory : serviceCategories) {
+				if(serviceCategory.getCode() == CA_1) {
+					sagiaServiceRequestFormData.setServiceCategory(serviceCategory);
+				}
+			}
+		}
+		sagiaServiceRequestFormData.setCode((UUID.randomUUID().toString()).concat("_").concat(ticketId));
+		ServiceRequestModel serviceRequest = new ServiceRequestModel();
+		getSagiaServiceRequestReversePopulator().populate(sagiaServiceRequestFormData, serviceRequest);
+		attachRequestToTicket = getSagiaUserService().attachServiceRequestToContactTicket(serviceRequest, ticketId);
+    	return attachRequestToTicket;
+    }
+    
+    @Override
+    public List<IncidentCategory> getIncidentCategoryEnumValues() {
+    	return getEnumerationService().getEnumerationValues(com.sap.ibso.eservices.core.enums.IncidentCategory.class);
+    }
+    
+    @Override
+    public List<ServiceCategory> getServiceCategoryEnumValues() {
+    	return getEnumerationService().getEnumerationValues(com.sap.ibso.eservices.core.enums.ServiceCategory.class);
+    }
+    
+    @Override
+    public List<Priority> getPriorityEnumValues() {
+    	return getEnumerationService().getEnumerationValues(com.sap.ibso.eservices.core.enums.Priority.class);
     }
 
     /**

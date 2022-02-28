@@ -1,6 +1,7 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
 import com.sap.ibso.eservices.facades.sagia.SagiaDashboardWithoutLicenseFacade;
+import com.investsaudi.portal.core.service.InvestSaudiMediaCenterService;
 import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
 import com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData;
 import com.sap.ibso.eservices.sagiaservices.investor.InvestorMappingService;
@@ -11,9 +12,14 @@ import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPage
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cmsfacades.data.MediaData;
+import de.hybris.platform.commercefacades.product.data.OpportunityData;
 import de.hybris.platform.commercefacades.user.data.CustomerData;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.user.UserService;
+
+import org.springframework.util.StringUtils;
+import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -22,6 +28,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.investsaudi.portal.facades.product.InvestSaudiProductFacade;
+
+import java.util.List;
+import java.util.Objects;
 
 import javax.annotation.Resource;
 import java.util.Optional;
@@ -34,6 +44,7 @@ public class DashboardWithoutLicenseController extends SagiaAbstractPageControll
 
     private static final String SAGIA_DASHBOARD_CMS_PAGE = "dashboard-without-license";
     private static final String REDIRECT_TO_DASHBOARD = REDIRECT_PREFIX + "/dashboard";
+    private static final int NUMBER_OF_NEWS = 3;
 
     @Resource(name = "sagiaCustomerFacade")
     private SagiaCustomerFacade sagiaCustomerFacade;
@@ -43,12 +54,21 @@ public class DashboardWithoutLicenseController extends SagiaAbstractPageControll
 
     @Resource (name = "sagiaConfigurationFacade")
     private SagiaConfigurationFacade sagiaConfigurationFacade;
+    
+    @Resource
+    private InvestSaudiCategoryFacade investSaudiCategoryFacade;
 
     @Resource(name = "zQeemahService")
     private ZQeemahService qeemahService;
 
     @Resource(name = "defaultInvestorMappingService")
     private InvestorMappingService investorMappingService;
+    
+    @Resource
+    private InvestSaudiProductFacade investSaudiProductFacade;
+    
+    @Resource
+    private InvestSaudiMediaCenterService investSaudiMediaCenterService;
 
     @Resource(name = "userService")
     private UserService userService;
@@ -103,12 +123,25 @@ public class DashboardWithoutLicenseController extends SagiaAbstractPageControll
         }
         model.addAttribute("getEntityStatusDescription", entityStatusDescription);
         model.addAttribute("currentCustomerSector", customerData.getSector());
-        boolean hasUserAppliedForLicense = StringUtils.hasLength(((CustomerModel) userService.getCurrentUser()).getApplicationServiceRequestID());
-        model.addAttribute("hasUserAppliedForLicense", hasUserAppliedForLicense);
-        model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(((CustomerModel) userService.getCurrentUser()).getContactEmail()));
-
+        if (Objects.nonNull(customerData.getSector()) && Objects.nonNull(customerData.getSector().getSectorCode()) 
+        		&& !customerData.getSector().getSectorCode().isEmpty()){
+        	model.addAttribute("customerSectorCategory", investSaudiCategoryFacade.getCategoryForCode(customerData.getSector().getSectorCode()));
+        	List<OpportunityData> featuredOpportunities = investSaudiProductFacade.getFeaturedOpportunitiesByCategory(3, 
+        			customerData.getSector().getSectorCode() );
+        	model.addAttribute("featuredOpportunities", featuredOpportunities);
+        }
+        
+        model.addAttribute("lastNews", investSaudiMediaCenterService.getNews(NUMBER_OF_NEWS));
         //model.addAttribute("displayTutorial", sagiaCustomerFacade.displayDashboardNoLicenseTutorial());
-
+        
+        CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
+        if (null != customerModel) { 
+	        boolean hasUserAppliedForLicense = StringUtils.hasLength(customerModel.getApplicationServiceRequestID());
+	        model.addAttribute("hasUserAppliedForLicense", hasUserAppliedForLicense);
+	        model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(customerModel.getUserNameEmail()));               
+	        model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
+        }
+        
         return getViewForPage(model);
     }
 

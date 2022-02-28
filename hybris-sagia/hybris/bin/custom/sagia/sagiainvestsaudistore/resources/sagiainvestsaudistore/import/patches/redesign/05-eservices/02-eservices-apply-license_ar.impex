@@ -1,0 +1,152 @@
+#################### Apply License ###################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]            ; name                             	; masterTemplate(uid, $contentCV); label				      ; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; previewImage(code, $contentCV)[default = 'ContentPageModel__function_preview'];
+                         ;                          ; dashboard-without-license     ; Dashboard Without License         ; SagiaTemplate                  ; dashboard-without-license  ;
+
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                            ; name                                	; active; cmsComponents(&componentRef)                           ;
+                         ;                          ; MCM_CMS_OtherSlot-DashboardNoLicenseSlot      ; Dashboard No License Slot             ; true  ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent  ;
+
+
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]                      		; position[unique = true]	; page(uid, $contentCV)[unique = true]; contentSlot(uid, $contentCV)[unique = true]	;
+                                ;                          ; MCM_CMS_OtherSlot-DashboardNoLicenseSlot       ; MCM_CMS_OTHER             ; dashboard-without-license           ; MCM_CMS_OtherSlot-DashboardNoLicenseSlot    ;
+
+
+
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                                          ; name                                                          ; &componentRef  				                          ; content[lang = ar]	;
+                                   ;                          ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent       ; Sagia CMS Paragraph Dashboard No License Component            ; SagiaCMSParagraphDashBoardNoLicenseParagraphComponent   ;	"
+<div class=""js-dashboardWidget"">
+        <div class=""card dashboardWidget-body mb-5 p-0 no-border dashboardWidget-body-shadow"">
+            <ul  class=""nav nav-tabs w-100"" id=""tabs"">
+                <li class=""nav-item  col-6 p-0""> <a class="" nav-link text-center active"" href=""#1a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png""/>التقديم على الترخيص الاستثماري</a></li>
+                 <li class=""nav-item  col-6 p-0""><a class=""nav-link text-center"" href=""#2a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/>اشهادة مؤقتة للتقديم للعطاءات الحكومية </a></li>
+            </ul>
+              <div class=""process tab-content clearfix"">
+                  <div class=""tab-pane active"" id=""1a"">
+                      <div class=""text-center"">
+                        <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">طريق التقديم على الترخيص الاستثماري</h4>
+                        <h5 class=""pt-5 dashboard-paragraph-color"">حتى تبدأ نشاطك الاستثماري داخل المملكة، يجب عليك استخراج رخصة استثمارية. وتعد وزارة الاستثمار الجهة المسؤولة عن تقديم كافة الخدمات للمستثمرين. مع الأخذ بالاعتبار بأن التراخيص الاستثمارية تختلف باختلاف متطلباتها.
+                        </h5>
+                      </div>
+                      <div class=""d-flex justify-content-around pt-5"">
+                          <div class=""process-step col-2 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Register-icon.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""process-card-step-header mt-3"">01</div>
+                                <div class=""process-card-step-description mt-1"">التسجيل</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+
+                          <div class=""process-step col-2 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Complete-our-application-form.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""process-card-step-header mt-3"">02</div>
+                                <div class=""process-card-step-description mt-1""> أكمل نموذج الطلب</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+
+                          <div class=""process-step col-2 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Waiting-the-approval.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""process-card-step-header mt-3"">03</div>
+                                <div class=""process-card-step-description mt-1""> في انتظار الموافقة</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+
+                          <div class=""process-step col-2 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Payment.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""process-card-step-header mt-3"">04</div>
+                                <div class=""process-card-step-description mt-1"">الدفع</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+                          <div class=""process-step col-2 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Receive your License.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""process-card-step-header mt-3"">05</div>
+                                <div class=""process-card-step-description mt-1"">استلام الترخيص</div>
+                            </div>
+                          </div>
+                      </div>
+                       <div class=""text-center mt-5 mb-3""><button onclick=""biddingCertificate(event);"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">تقدم بطلب<img class=""pl-3 transform-180-degree""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
+                  </div>
+                  <div class=""tab-pane"" id=""2a"">
+                      <div class=""text-center"">
+                        <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">طريقة التقدم بطلب شهادة مؤقتة للتقديم على عطاءات المشاريع الحكومية</h4>
+                        <h5 class=""pt-5 dashboard-paragraph-color"">تُمنح شهادة العطاءات الحكومية للمنشآت التي ترغب بالتقديم على منافسات المشاريع الحكومية حسب الاشترطات الموضحة في دليل خدمات المستثمرين.
+                        </h5>
+                      </div>
+                      <div class=""d-flex justify-content-around pt-5"">
+                          <div class=""process-step col-2 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Register-icon.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""process-card-step-header mt-3"">01</div>
+                                <div class=""process-card-step-description mt-1"">التسجيل</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+
+                          <div class=""process-step col-2 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Complete-our-application-form.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""process-card-step-header mt-3"">02</div>
+                                <div class=""process-card-step-description mt-1""> أكمل نموذج الطلب</div>
+                            </div>
+                          </div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+
+                          <div class=""process-step col-2 col-xs-12"">
+                            <div class=""process-card"">
+                                <div class=""process-card-step"">
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Waiting-the-approval.png""/>
+                                </div>
+                            </div>
+                            <div  class=""text-center"">
+                                <div class=""process-card-step-header mt-3"">03</div>
+                                <div class=""process-card-step-description mt-1""> في انتظار الموافقة</div>
+                            </div>
+                          </div>                          
+                      </div>
+					  <div class=""text-center mt-5 mb-3""><button onclick=""biddingCertificate(event);"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">تقدم بطلب<img class=""pl-3 transform-180-degree""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
+                  </div>
+              </div>
+              <div class=""panel-group"" id=""accordion"" role=""tablist"" aria-multiselectable=""true""></div>
+        </div>
+    </div>";

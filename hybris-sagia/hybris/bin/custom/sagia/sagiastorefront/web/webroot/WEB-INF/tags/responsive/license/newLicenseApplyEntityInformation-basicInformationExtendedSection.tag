@@ -865,7 +865,8 @@
 <div>
 <div class="contentModule-section" id="basicInformationExtendedSection" style="display: none">
     <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.basicInformationExtendedSection.basicInformation"/></div>
-    <div class="row">
+   <hr class="hr">
+    <div class="row mt-5 pt-3">
         <div class="col-md-6">
             <formElement:formInputBoxCustom idKey="basicInformationExtendedEntityName"
                                       labelKey="profile.company.entityName" path="entityName"

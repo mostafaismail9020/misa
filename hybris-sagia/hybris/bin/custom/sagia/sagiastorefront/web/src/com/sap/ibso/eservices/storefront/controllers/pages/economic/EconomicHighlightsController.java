@@ -35,6 +35,8 @@ import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPage
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 
+import de.hybris.platform.acceleratorstorefrontcommons.util.XSSFilterUtil;
+
 @Controller
 @RequestMapping(value = "/economicHighlights")
 public class EconomicHighlightsController extends SagiaAbstractPageController {
@@ -180,22 +182,22 @@ public class EconomicHighlightsController extends SagiaAbstractPageController {
 		}
 
 		if ("Annually".equalsIgnoreCase(period)) {
-			List<AnnualValueData> annualValueListData = investmentDataFacade.getAnnualValueData(sector, period,
-					startYear, endYear);
+			List<AnnualValueData> annualValueListData = investmentDataFacade.getAnnualValueData(XSSFilterUtil.filter(sector), XSSFilterUtil.filter(period),
+					XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 			model.addAttribute("annualValueJson", new Gson().toJson(annualValueListData));
 
-			List<AnnualGrowthData> annualGrowthListData = investmentDataFacade.getAnnualGrowthData(sector, period,
-					startYear, endYear);
+			List<AnnualGrowthData> annualGrowthListData = investmentDataFacade.getAnnualGrowthData(XSSFilterUtil.filter(sector), XSSFilterUtil.filter(period),
+					XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 			model.addAttribute("annualGrowthJson", new Gson().toJson(annualGrowthListData));
 		}
 
 		if ("Quarterly".equalsIgnoreCase(period)) {
-			List<QuarterlyValueData> quarterlyValueListData = investmentDataFacade.getQuarterlyValueData(sector, period,
-					startYear, endYear);
+			List<QuarterlyValueData> quarterlyValueListData = investmentDataFacade.getQuarterlyValueData(XSSFilterUtil.filter(sector), XSSFilterUtil.filter(period),
+					XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 			model.addAttribute("quarterlyValueJson", new Gson().toJson(quarterlyValueListData));
 
-			List<QuarterlyGrowthData> quarterlyGrowthListData = investmentDataFacade.getQuarterlyGrowthData(sector,
-					period, startYear, endYear);
+			List<QuarterlyGrowthData> quarterlyGrowthListData = investmentDataFacade.getQuarterlyGrowthData(XSSFilterUtil.filter(sector),
+					XSSFilterUtil.filter(period), XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 			model.addAttribute("quarterlyGrowthJson", new Gson().toJson(quarterlyGrowthListData));
 		}
 
@@ -213,27 +215,27 @@ public class EconomicHighlightsController extends SagiaAbstractPageController {
 		model.addAttribute("foreignInvestmentGrowthJson", new Gson().toJson(foreignInvestmentGrowthListData));
 
 		if ("Annually".equalsIgnoreCase(period)) {
-			List<AnnualFundAssetsData> annualFundAssetsListData = investmentDataFacade.getAnnualFundAssetsData(sector,
-					period, startYear, endYear);
+			List<AnnualFundAssetsData> annualFundAssetsListData = investmentDataFacade.getAnnualFundAssetsData(XSSFilterUtil.filter(sector),
+					XSSFilterUtil.filter(period), XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 			model.addAttribute("annualFundAssetsJson", new Gson().toJson(annualFundAssetsListData));
 		}
 
 		if ("Quarterly".equalsIgnoreCase(period)) {
 			List<QuarterlyFundAssetsData> quarterlyFundAssetsListData = investmentDataFacade
-					.getQuarterlyFundAssetsData(sector, period, startYear, endYear);
+					.getQuarterlyFundAssetsData(XSSFilterUtil.filter(sector), XSSFilterUtil.filter(period), XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 			model.addAttribute("quarterlyFundAssetsJson", new Gson().toJson(quarterlyFundAssetsListData));
 		}
 
 		List<NumberOfCommercialRegisterData> numberOfCommercialRegisterListData = investmentDataFacade
-				.getNumberOfCommercialRegisterData(sector, startYear, endYear);
+				.getNumberOfCommercialRegisterData(XSSFilterUtil.filter(sector), XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 		model.addAttribute("numberOfCommercialRegisterJson", new Gson().toJson(numberOfCommercialRegisterListData));
 
 		List<CapitalOfCommercialRegisterData> capitalOfCommercialRegisterListData = investmentDataFacade
-				.getCapitalOfCommercialRegisterData(sector, startYear, endYear);
+				.getCapitalOfCommercialRegisterData(XSSFilterUtil.filter(sector), XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 		model.addAttribute("capitalOfCommercialRegisterJson", new Gson().toJson(capitalOfCommercialRegisterListData));
 
-		List<CapitalInformationData> capitalInformationListData = investmentDataFacade.getCapitalInformationData(sector,
-				startYear, endYear);
+		List<CapitalInformationData> capitalInformationListData = investmentDataFacade.getCapitalInformationData(XSSFilterUtil.filter(sector),
+				XSSFilterUtil.filter(startYear), XSSFilterUtil.filter(endYear));
 		model.addAttribute("capitalInformationJson", new Gson().toJson(capitalInformationListData));
 
 		final ContentPageModel economicCMSPage = getContentPageForLabelOrId(INVESTMENT_DATA_PAGE);

@@ -42,6 +42,7 @@ import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.util.localization.Localization;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -188,6 +189,18 @@ public class B2BRegistrationController extends AbstractB2BRegistrationController
 		getRegistrationValidator().validate(form, bindingResult);
 		if (bindingResult.hasErrors())
 		{
+			if(bindingResult.getGlobalError() != null && bindingResult.getGlobalError().getCodes() != null && bindingResult.getGlobalError().getCodes().length > 0  &&  Arrays.asList(bindingResult.getGlobalError().getCodes()).contains("recaptcha.challenge.field.invalid")) {
+				GlobalMessages.addFlashMessage(
+				          redirectModel,
+				          GlobalMessages.ERROR_MESSAGES_HOLDER,
+				          Localization.getLocalizedString("captcha.error.message.redirect.page"));
+
+				
+				return "redirect:/register";
+
+				
+
+			}
 			return getRegistrationView();
 		}
 

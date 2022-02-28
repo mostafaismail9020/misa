@@ -125,6 +125,8 @@ public class AboutSaudiPageController extends DefaultPageController {
 			GeneralInquirySet payload = contactUsService.createContactUsTicket(contactUsFormData);
 			generalInquirySetService.readContactUsSupportingAttachment(payload.getOBJECT_ID(),contactUsFormData);
 			LOG.info("Object_ID Created from CRM : "+payload.getOBJECT_ID());
+			model.addAttribute("CRMObjectId", payload.getOBJECT_ID());
+			model.addAttribute("CRMResponse", "true");
 		} catch (SagiaCRMException e) {
 			LOG.info(e.getMessage(), e);
 			//parseCRMException(redirectModel, e);

@@ -1,5 +1,6 @@
 package com.sap.ibso.eservices.core.sagia.services.impl;
 
+import com.sap.ibso.eservices.core.model.SagiaCategoryModel;
 import com.sap.ibso.eservices.core.model.SagiaServiceModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaServiceDAO;
 import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
@@ -60,5 +61,18 @@ public class DefaultSagiaSearchService extends AbstractBusinessService implement
         }
 
         return map;
+    }
+
+    /**
+     * Method to retrieve sagia categories by category label
+     *
+     * @param categoryLabel
+     * @return
+     */
+    @Override
+    public Set<SagiaCategoryModel> getSagiaCategoriesByLabel(final String categoryLabel) {
+
+        List<SagiaCategoryModel> sagiaCategoryList = getSagiaServiceDAO().getSagiaCategoriesByLabel(categoryLabel);
+        return  sagiaCategoryList == null || sagiaCategoryList.isEmpty() ? Collections.emptySet() : new HashSet<>(sagiaCategoryList);
     }
 }

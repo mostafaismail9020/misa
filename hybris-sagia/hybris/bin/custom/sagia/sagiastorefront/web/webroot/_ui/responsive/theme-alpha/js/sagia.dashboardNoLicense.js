@@ -1,12 +1,12 @@
 $(function () {
-    $("#dashboardNoLicenseHelper").load(ACC.config.encodedContextPath + '/cms/sagia-cms-dashboard-no-license main', function() {
-        SAGIA.dashboard.dashboardWidgetNoLicense();
-        SAGIA.dashboard.dashboardWidgetBannerTabs();
-    });
+    // $("#dashboardNoLicenseHelper").load(ACC.config.encodedContextPath + '/cms/sagia-cms-dashboard-no-license main', function() {
+    //     SAGIA.dashboard.dashboardWidgetNoLicense();
+    //     SAGIA.dashboard.dashboardWidgetBannerTabs();
+    // });
 
-    $(".dashboardUser-image-add").on("click", function() {
-        window.location.href = ACC.config.encodedContextPath + "/my-sagia/sagia-profile#myProfileTab";
-    });
+    // $(".dashboardUser-image-add").on("click", function() {
+    //     window.location.href = ACC.config.encodedContextPath + "/my-sagia/sagia-profile#myProfileTab";
+    // });
 
     $("#scheduleCallButton, #liveChatButton, #makeAnEnquiry").on("click", function(e) {
         e.preventDefault();

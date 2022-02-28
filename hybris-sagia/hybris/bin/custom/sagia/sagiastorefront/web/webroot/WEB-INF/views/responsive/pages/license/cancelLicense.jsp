@@ -16,20 +16,66 @@
     var cancellationMessage = '${licenseCancellationMessage}';
 </script>
 
-<div class="mainSection mainSection_white">
+<!-- <div class="mainSection mainSection_white">
     <div class="container">
         <div class="mainSection-header">
             <div class="mainSection-headline">
 
                 <spring:theme code="licenseCancellation.title"/>
             </div>
+           
+        </div>
+        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="mainSection-action">
                 <button class="btn btn_round"><spring:theme code="licenseCancellation.save.draft"/>
                     <icon:save/></button>
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="licenseCancellation.title"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <div class="mainSection mainSection_noPadding">
     <div class="container">
@@ -124,14 +170,14 @@
                     <ul id="attachmentList" class="downloadList">
                         <c:forEach items="${uploadedAttachments}" var="attachment">
                             <li class="downloadList-item">
-                                <div style="cursor: pointer;" class="downloadList-description"
+                                <div class="downloadList-description cursor-pointer"
                                      data-view-attachment-target data-object-id = "${attachment.objectId}"
                                      data-file-name="${attachment.filename}"
                                      data-document-id = "${attachment.documentID}">
                                     <span class="iconElement iconElement_pdf"><icon:pdf /></span>
                                         ${attachment.filename}
                                 </div>
-                                <div id = "attachmentsActionsDIV" class="downloadList-actions" style="cursor: pointer;"
+                                <div id = "attachmentsActionsDIV" class="downloadList-actions cursor-pointer"
                                      data-target
                                      data-object-id="${attachment.objectId}"
                                      data-document-id="${attachment.documentID}"
@@ -187,6 +233,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <%-- <div class="modal-title"><spring:theme code="general.requestsubmitted"/></div> --%>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="modal-description js-description-text">
@@ -194,7 +243,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
+                <a class="btn js-close-btn btn_outline" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
             </div>
         </div>
     </div>

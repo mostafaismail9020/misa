@@ -4,7 +4,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"></div>
-				<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+				<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" onClick="closeErrorModal()">
 					<icon:close/>
 				</button>
 			</div>
@@ -17,7 +17,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+				<button type="button" class="d-none"></button>
+				<button type="button" class="btn" data-dismiss="modal" onClick="closeErrorModal()">Close</button>
 			</div>		
 		</div>
 	</div>

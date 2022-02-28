@@ -3,6 +3,8 @@ package com.sap.ibso.eservices.storefront.controllers.pages;
 import atg.taglib.json.util.JSONException;
 import atg.taglib.json.util.JSONObject;
 import com.google.gson.Gson;
+import com.sap.ibso.eservices.core.model.SagiaServiceModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import com.sap.ibso.eservices.facades.constants.SagiaFacadesConstants;
 import com.sap.ibso.eservices.facades.sagia.AverageProcessingTimeFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaDraftFacade;
@@ -72,6 +74,8 @@ public class LicenseCancellationController extends SagiaAbstractPageController {
     private MessageSource messageSource;
     @Resource(name = "i18nService")
     private I18NService i18nService;
+    @Resource(name = "sagiaSearchService")
+    private SagiaSearchService searchService;
 
     private static final String SAGIA_CANCELLATION_CMS_PAGE = "license-cancellation";
     private static final String SAGIA_CANCELLATION_CMS_PAGE_1 = "license-cancellation_1";
@@ -89,6 +93,7 @@ public class LicenseCancellationController extends SagiaAbstractPageController {
     private static final String LICENSE_CANCEL_FORM_DATA = "licenseCancelFormData";
     private static final String ENTITY_NAME_CLEARANCE = "LicenseClearanceSet";
     private static final String ENTITY_NAME_CANCEL = "LicenseCancellationSet";
+    private static final String SERVICE_ID = "ZSR6";
     private static final Logger LOG = Logger.getLogger(LicenseCancellationController.class);
 
     /*
@@ -104,7 +109,9 @@ public class LicenseCancellationController extends SagiaAbstractPageController {
     public String getLicenseCancellation(final Model model) throws CMSItemNotFoundException, IOException {
         int srId;
         String cancellationMessage = "";
-        
+
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
         GlobalLicenseCancellation globalLicenseCancellation = sagiaLicenseCancellationFacade.getGlobalLicenseCancellation("","");
         if(globalLicenseCancellation != null && globalLicenseCancellation.getIsAllowed().equalsIgnoreCase("N")) {
         	cancellationMessage = globalLicenseCancellation.getMsgToInvestor();

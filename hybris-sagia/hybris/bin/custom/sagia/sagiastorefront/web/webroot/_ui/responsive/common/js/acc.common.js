@@ -156,5 +156,24 @@ function acceptNewLinceseTCAction(){
     	$("#spinnerMainDiv").removeClass("hidden");
     }
 }
+ 
+
+// $(document).on('focus blur change keyup', '.text', function (e) { 
+//     var $currEl = $(this); 
+//     $currEl.parent().addClass('focused_up-on-change'); 
+
+//     if (e.type === "keyup") {
+//         $(this).removeClass('required');
+//     }    
+//     if ($($currEl)[0].value !== undefined && $($currEl)[0].value.trim() !== "") {
+//         $currEl.parents('.focused_up-on-change').children('label').addClass('focused_up');
+//     }
+//     else if (e.type === "focusin") {
+//         $currEl.parents('.focused_up-on-change').children('label').addClass('focused_up'); 
+//     }
+//     else {
+//         $currEl.parents('.focused_up-on-change').children('label').toggleClass('focused_up');
+//     }
+// }).trigger('blur');
 
 

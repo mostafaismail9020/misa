@@ -176,6 +176,7 @@ public class SagiaLicenseConvertController extends SagiaAbstractPageController {
         model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
         model.addAttribute("convertToNationalsFormData", new ConvToNationalsFormData());
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);
+        model.addAttribute("sagiaService", sagiaService);
 
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_LICENSE_NEW_CONVERT_TO_NATIONALS_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_LICENSE_NEW_CONVERT_TO_NATIONALS_CMS_PAGE));

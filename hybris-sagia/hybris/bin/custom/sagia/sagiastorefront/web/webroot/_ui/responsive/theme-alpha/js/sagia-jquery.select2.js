@@ -947,6 +947,8 @@
             Results.prototype.option = function (data) {
                 var option = document.createElement('li');
                 option.className = 'select2-results__option';
+                var c_width = $('.ddl-wrap').width();
+                option.setAttribute('style', 'width:'+c_width +"px");
 
                 var attrs = {
                     'role': 'treeitem',
@@ -4288,7 +4290,7 @@
 
                 var css = {
                     left: offset.left,
-                    top: container.bottom
+                    top: container.bottom + 1
                 };
 
                 // Determine what the parent element is to use for calciulating the offset
@@ -4334,7 +4336,8 @@
 
             AttachBody.prototype._resizeDropdown = function () {
                 var css = {
-                    width: this.$container.outerWidth(false) + 'px'
+                    width: this.$container.outerWidth(false)-35 + 'px',
+                    marginLeft:"20px"
                 };
 
                 if (this.options.get('dropdownAutoWidth')) {

@@ -661,7 +661,7 @@
                                                 <div class="form-group">
                                                     <form:input path="dateString" cssClass="form-control js-form-control_date"/>
                                                     <label class="control-label control-label_mandatory" for="dateString"><spring:theme code="nationalInvestor.label.date"/></label>
-                                                    <div class="formInputBox-append">
+                                                    <div class="formInputBox-append" id="calendar-icon-pos">
                                                         <span class="formInputBox-text"><icon:calendar-gray/></span>
                                                     </div>
                                                 </div>
@@ -676,7 +676,7 @@
                                                                 cssClass="form-control js-form-control_timeslot"
                                                                 data-dates-enabled="09:00#16:00"/>
                                                     <label class="control-label control-label_mandatory" for="timeFromString"><spring:theme code="nationalInvestor.label.start"/></label>
-                                                    <%--<div class="formInputBox-append"><icon:calendar-gray/></div>--%>
+                                                    <%--<div class="formInputBox-append" id="calendar-icon-pos"><icon:calendar-gray/></div>--%>
                                                     <div class="help-block"></div>
                                                 </div>
                                             </div>

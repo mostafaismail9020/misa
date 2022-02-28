@@ -12,7 +12,7 @@
 <!--  License Information  -->
 <div class="contentModule-section" id="licenseInformationSection" style="display: none">
     <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.title"/></div>
-
+<hr class="hr"/>
     <div class="formRadioBox-wrapper">
         <div class="row">
             <div class="col-md-6"><span><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.text"/></span></div>
@@ -21,12 +21,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="isEntrepreneur" id="isEntrepreneurYES" value="yes" class="form-control"/>
-                            <label for="isEntrepreneurYES" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
+                            <label for="isEntrepreneurYES" class="btn btn-ctrl btn-bg btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="isEntrepreneur" id="isEntrepreneurNO" value="no" class="form-control"/>
-                            <label for="isEntrepreneurNO" class="control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
+                            <label for="isEntrepreneurNO" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.no"/></label>
                         </div>
                     </div>
                 </div>

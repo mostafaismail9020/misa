@@ -29,11 +29,54 @@
     var autoRenewalClearance = "${autoRenewalClearance}";
 </script>
 
-<div class="mainSection mainSection_dark">
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="renewlicense.licenserenewal"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mainSection mainSection_dark bg-white">
     <div class="container">
-        <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="renewlicense.licenserenewal"/></h1>
-            	<input type="hidden" id="serviceId"/>
+        <div class="mainSection-header row service-time">
+            <!-- <h1 class="mainSection-headline"><spring:theme code="renewlicense.licenserenewal"/></h1> -->
+            <input type="hidden" id="serviceId"/>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
@@ -59,89 +102,212 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
-    <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_right">
-            <div id="renewalButtons" style="display: none;">
-                <c:choose>
-                    <c:when test ="${autoRenewal}">
-                        <a class="btn btn_slim btn-warning btn_outline jqInstantRenewal" href="javascript:void(0);">
-                            <spring:theme code="renewlicense.instantrenew"/>
-                        </a>&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn_slim btn-warning btn_outline jqInstantRenewal" href="javascript:void(0);" style="display: none;">
-                            <spring:theme code="renewlicense.instantrenew"/>
-                        </a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test ="${autoRenewalClearance}">
-                        <a class="btn btn_slim btn-warning btn_outline jqInstantClearanceRenewal" href="javascript:void(0);">
-                            <spring:theme code="renewlicense.instantrenew.clearance"/>
-                        </a>
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn_slim btn-warning btn_outline jqInstantClearanceRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
-                            <spring:theme code="renewlicense.instantrenew.clearance"/>
-                        </a>
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test ="${governmentDocumentsCheck}">
-                        <a class="btn btn_slim btn-warning btn_outline jqGovDocsCheck" href="javascript:void(0);">
-                            <spring:theme code="renewlicense.govDocsCheck"/>
-                        </a>&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn_slim btn-warning btn_outline jqGovDocsCheck" href="javascript:void(0);" style="display: none;">
-                            <spring:theme code="renewlicense.govDocsCheck"/>
-                        </a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test ="${clearanceCheck}">
-                        <a class="btn btn_slim btn-warning btn_outline jqClearanceCheck" href="javascript:void(0);">
-                            <spring:theme code="renewlicense.clearanceCheck"/>
-                        </a>&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a class="btn btn_slim btn-warning btn_outline jqClearanceCheck" href="javascript:void(0);" style="display: none;">
-                            <spring:theme code="renewlicense.clearanceCheck"/>
-                        </a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
-                <a class="btn btn_slim jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
-                    <spring:theme code="dashboard.myLicense.renew"/>
-                </a>
-            </div>      
-        </div>
-    </div>
-</div>
-
-<div class="mainSection mainSection_dark mainSection_noPadding">
+<div class="mainSection mainSection_dark mainSection_noPadding bg-white">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(licenseRenew) > 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" id="historyList" data-expand-target="expand01">
-                    <div><spring:theme code="text.account.followup.hideServiceHistory"/><span>&#x27f6;</span></div>
-                    <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class="renewal-services w-100 row">
+                <div class="col-xl-3 col-md-6 col-12 ">
+                    <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                    </div>
+                </c:if>           
+                <div id="renewalButtons" style="display: none;">
+                        <c:choose>
+                            <c:when test ="${autoRenewal}">
+                                <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqInstantRenewal">
+                                <a class="btn btn_outline btn_slim a_btn back_to_service" href="javascript:void(0);">
+                                    <spring:theme code="renewlicense.instantrenew"/>
+                                </a>&nbsp;
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqInstantRenewal" style="display: none;">
+                                <a class="btn btn_outline btn_slim a_btn back_to_service" href="javascript:void(0);" >
+                                    <spring:theme code="renewlicense.instantrenew"/>
+                                </a>&nbsp;
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions">
+                        <a class="btn btn_outline btn_slim a_btn back_to_service jqCreateRenewal" href="${encodedContextPath}/my-sagia/license/renew/edit" style="display: none;">
+                            <spring:theme code="dashboard.myLicense.renew"/>
+                        </a>
+                    </div>
+                        <c:choose>
+                            <c:when test ="${autoRenewalClearance}">
+                                <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqInstantClearanceRenewal">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);">
+                                    <spring:theme code="renewlicense.instantrenew.clearance"/>
+                                </a>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqInstantClearanceRenewal" style="display: none;">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="${encodedContextPath}/my-sagia/license/renew/edit" >
+                                    <spring:theme code="renewlicense.instantrenew.clearance"/>
+                                </a>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                        <c:choose>
+                            <c:when test ="${governmentDocumentsCheck}">
+                                <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqGovDocsCheck">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);">
+                                    <spring:theme code="renewlicense.govDocsCheck"/>
+                                </a>&nbsp;
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqGovDocsCheck" style="display: none;">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns " href="javascript:void(0);" >
+                                    <spring:theme code="renewlicense.govDocsCheck"/>
+                                </a>&nbsp;
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                        <c:choose>
+                            <c:when test ="${clearanceCheck}">
+                                <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqClearanceCheck">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);">
+                                    <spring:theme code="renewlicense.clearanceCheck"/>
+                                </a>&nbsp;
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqClearanceCheck" style="display: none;">
+                                <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);" >
+                                    <spring:theme code="renewlicense.clearanceCheck"/>
+                                </a>&nbsp;
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
+<div class="container">
+    <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
+        <div class=" "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="service.overview.show"/></div>
+        <div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+    </button>
+</div>
+<!-- ${sagiaService.code} -->
+<div class="container service-wrapper service-wrapper-info mb-5" id="expand-03" style="display:none">
+	<div class="serviceModule serviceModule_list mx-5 pt-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.overview"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.description}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.document"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDocuments}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.rules.restrictions"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.rulesRestrictions}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.financial.fees"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceFinancialFees}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5 pb-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDuration}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mainSection mainSection_dark mainSection_pdt16 bg-white service-main">
+    <div class="container">
+        <c:if test="${fn:length(licenseRenew) > 1}">
+            <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" id="historyList" data-expand-target="expand01">
+                <div class="hidden"><span ><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div class=""><span class="iconElement iconElement_closeBack" id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+            </button>
+        </c:if>
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(licenseRenew) > 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_history"><icon:history/></span><spring:theme code="text.account.followup.history"/>
+                                <div class="contentModule-headline contentModule-headline-history">
+                                    <!-- <span class="iconElement iconElement_history"></span> -->
+                                    <spring:theme code="text.account.followup.history"/>
                                 </div>
                                 <div class="searchInputBox searchInputBox_slim">
                                     <input onkeyup="filterHistory(this)" class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
@@ -164,7 +330,7 @@
                                                     <div class="historyList-date">
                                                     ${licenseItem.dateData.dateFormatted}
                                                 </div>
-                                                <div class="historyList-status 
+                                                <div class="historyList-status
                                                   <c:choose>
         												<c:when test ="${fn:containsIgnoreCase(licenseItem.statusDescription, status_in_process)}">historyList-status_inprocess</c:when>
         												<c:when test ="${fn:containsIgnoreCase(licenseItem.statusDescription, status_rejected)}">historyList-status_rejected</c:when>
@@ -186,10 +352,12 @@
             <div class="expandableContent-main">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
-                        <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
+                        <div class="contentModule-section ">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                 <input type="hidden" name="csrfToken" value="${_csrf.token}"/>
-                                <div class="contentModule-headline"><icon:info/><spring:theme code="renewlicense.serviceinfo"/><span id="srID">${license.srID}</span></div>
+                                <div class="contentModule-headline contentModule-headline-service-info heightServiceInfo">
+                                    <!-- <icon:info/> -->
+                                    <spring:theme code="renewlicense.serviceinfo"/><span id="srID"> ${license.srID}</span></div>
                                 <c:if test="${fn:length(licenseRenew) gt 0}">
                                     <div id="currentStatus" class="statusIndicator
                                  <c:choose>
@@ -227,20 +395,20 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
-                                        <dt data-name="street"><spring:theme code="address.streetorunitno"/></dt>
-                                        <dd><span name="street">${license.address.street} / ${license.address.houseNo}</span></dd>
-                                        <dt><spring:theme code="general.country"/></dt>
-                                        <dd><span name="country">${license.address.country}</span></dd>
-                                        <dt><spring:theme code="address.postalcodeorcity"/></dt>
-                                        <dd><span name="zipCode">${license.address.zipCode}</span></dd>
+                                        <dt class="headline-golden" data-name="street"><spring:theme code="address.streetorunitno"/></dt>
+                                        <dd class=""><span name="street">${license.address.street} / ${license.address.houseNo}</span></dd>
+                                        <dt class="headline-golden"><spring:theme code="general.country"/></dt>
+                                        <dd class=""><span name="country">${license.address.country}</span></dd>
+                                        <dt class="headline-golden"><spring:theme code="address.postalcodeorcity"/></dt>
+                                        <dd class=""><span name="zipCode">${license.address.zipCode}</span></dd>
                                     </dl>
                                 </div>
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
-                                        <dt><spring:theme code="license.additionalnumber"/></dt>
-                                        <dd><span name="additNo">${license.address.additionalNotes}</span></dd>
-                                        <dt><spring:theme code="address.buildingno"/></dt>
-                                        <dd><span name="building">${license.address.building}</span></dd>
+                                        <dt class="headline-golden"><spring:theme code="license.additionalnumber"/></dt>
+                                        <dd class=""><span name="additNo">${license.address.additionalNotes}</span></dd>
+                                        <dt class="headline-golden"><spring:theme code="address.buildingno"/></dt>
+                                        <dd class=""><span name="building">${license.address.building}</span></dd>
                                     </dl>
                                 </div>
                             </div>
@@ -281,13 +449,11 @@
                     </div>
                 </div>
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
+                    <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                            <div class="contentModule-headline contentModule-headline_bordered">
-                                <icon:pictures/><spring:theme code="general.pictures"/>
-                            </div>
-                            <div id="documents-container1"></div>
-                            <ul class="pictureGrid" id="images-container">
+                            <span class="contentModule-headline contentModule-headline_bordered"><spring:theme code="general.pictures"/></span>
+                            <div id="documents-container1 "></div>
+                            <ul class="pictureGrid contentModule-headline-border mx-0" id="images-container">
                                 <c:forEach items="${license.attachedImages}" var="image">
                                     <li><img id="image" src="${encodedContextPath}/my-sagia/license/image/${image.objectID}/${image.documentID}"/></li>
                                 </c:forEach>
@@ -296,10 +462,10 @@
                     </div>
                 </div>
                 <div class="panelModule panelModule_halfRadius">
-                    <div class="contentModule">
+                    <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                            <div class="contentModule-headline contentModule-headline_bordered"><icon:documents/><spring:theme code="text.account.followup.supportDocuments"/></div>
-                            <ul class="downloadList" id="documents-container">
+                            <span class="contentModule-headline contentModule-headline_bordered"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                            <ul class="downloadList contentModule-headline-border" id="documents-container">
                                 <c:forEach items="${license.attachedDocuments}" var="document">
                                     <li class="downloadList-item js-download-service-attachment">
                                         <div class="downloadList-description">
@@ -332,20 +498,20 @@
 			</div>
 		 	<div class="modal-body">
 			 <div class="contentModule-section contentModule-section_paddingSide">
-						
+
                         <div class="documentModule js-upload-files-list" data-files-name="img">
-                            
+
                                <div class="formSelectBox">
 									<div class="form-group">
-									    
+
 										<select id="durationSelectInstant" name="durationSelectInstant" class="js-select2-oneColumn select2-hidden-accessible"  aria-hidden="true" onChange="updateExpiryDate(this, event)">
-										      <option></option>  
+										      <option></option>
 										       <c:forEach items="${durations}" var="duration">
-                                                        <option value="${duration.code}"> ${duration.name} </option>                                        
+                                                        <option value="${duration.code}"> ${duration.name} </option>
                                               </c:forEach>
 									    </select>
 									    <label class="control-label control-label_mandatory" for="durationSelectInstant"><spring:theme code="license.apply.entity.licenseYear"/></label>
-									    
+
 									</div>
 									<div class="help-block"></div>
 									 <span class="renewMessage" > <spring:theme code="license.apply.licenseYear.warning"/> </span>
@@ -361,12 +527,12 @@
                         </div>
 					</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" id="jqInstantRenewalSubmit" class="btn btn_slim" data-dismiss="modal"><spring:theme code="general.submit"/></button>
-				<button type="button" class="btn btn-secondary js-cancel-create-realEstate" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
-				
+			<div class="modal-footer1 mb-3">
+				<button type="button" class="btn btn-outline js-cancel-create-realEstate" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
+				<button type="button" id="jqInstantRenewalSubmit" class="btn btn-primary" data-dismiss="modal"><spring:theme code="general.submit"/></button>
+
 			</div>
-			
+
 		</div>
 	</div>
 </div>
@@ -399,7 +565,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn" href="${encodedContextPath}/dashboard">Close</a>
+                <a class="btn js-close-btn btn js-close-btn" href="${encodedContextPath}/dashboard">Close</a>
             </div>
         </div>
     </div>

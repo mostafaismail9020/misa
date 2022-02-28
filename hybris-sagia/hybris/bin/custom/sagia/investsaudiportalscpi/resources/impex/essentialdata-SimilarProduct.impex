@@ -1,0 +1,24 @@
+#To update similar products in hybris from commerce
+
+INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
+; InboundSimilarProduct; INBOUND 
+ 
+INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
+; InboundSimilarProduct	; CatalogVersion          	; CatalogVersion          	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundSimilarProduct	; ProductReferenceTypeEnum	; ProductReferenceTypeEnum	; 	; ALL_SUBTYPES           	;  
+; InboundSimilarProduct	; ProductReference        	; ProductReference        	; true	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundSimilarProduct	; Catalog                 	; Catalog                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundSimilarProduct	; Product                 	; Product                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+ 
+INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
+; InboundSimilarProduct:CatalogVersion          	; catalog       	; CatalogVersion:catalog        	; InboundSimilarProduct:Catalog                 	; true	;  
+; InboundSimilarProduct:CatalogVersion          	; version       	; CatalogVersion:version        	;                                               	; true	;  
+; InboundSimilarProduct:ProductReferenceTypeEnum	; code          	; ProductReferenceTypeEnum:code 	;                                               	; true	;  
+; InboundSimilarProduct:ProductReference        	; referenceType 	; ProductReference:referenceType	; InboundSimilarProduct:ProductReferenceTypeEnum	; true	;  
+; InboundSimilarProduct:ProductReference        	; target        	; ProductReference:target       	; InboundSimilarProduct:Product                 	; true	;  
+; InboundSimilarProduct:ProductReference        	; active        	; ProductReference:active       	;                                               	; 	;  
+; InboundSimilarProduct:ProductReference        	; preselected   	; ProductReference:preselected  	;                                               	; 	;  
+; InboundSimilarProduct:ProductReference        	; source        	; ProductReference:source       	; InboundSimilarProduct:Product                 	; true	;  
+; InboundSimilarProduct:Catalog                 	; id            	; Catalog:id                    	;                                               	; true	;  
+; InboundSimilarProduct:Product                 	; code          	; Product:code                  	;                                               	; true	;  
+; InboundSimilarProduct:Product                 	; catalogVersion	; Product:catalogVersion        	; InboundSimilarProduct:CatalogVersion          	; true	;  

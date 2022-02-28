@@ -111,3 +111,24 @@ INSERT_UPDATE Tax; code[unique = true]; value; currency(isocode)
 INSERT_UPDATE ServicelayerJob; code[unique = true]; springId[unique = true]
 ; cartRemovalJob  ; cartRemovalJob
 ; siteMapMediaJob ; siteMapMediaJob
+
+INSERT_UPDATE Governmentlead ;code[unique=true];name
+;Z08;Identify Opportunity & Proposal
+;Z02;Pre-feasibility Study
+;Z06;Opportunity Finalization
+;Z07;Campaign Ready
+;NA;Not Applicable
+
+INSERT_UPDATE Investorlead ;code[unique=true];name
+;Z08;Identify Opportunity & Proposal
+;Z02;Pre-feasibility Study
+;Z06;Opportunity Finalization
+;NA ; Not Applicable
+
+INSERT_UPDATE PartnerType ;code[unique=true];name
+;Enabler;Enabler
+;Accelerator;Accelerator
+;Incubator;Incubator
+
+INSERT_UPDATE CsInterventionType ;code[unique=true];name
+;NotesForCustomer;Notes For Customer

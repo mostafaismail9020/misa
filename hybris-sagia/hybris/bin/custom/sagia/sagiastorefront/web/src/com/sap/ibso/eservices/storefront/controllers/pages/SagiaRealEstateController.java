@@ -143,6 +143,8 @@ public class SagiaRealEstateController extends SagiaAbstractPageController {
             model.addAttribute("firstElement", selectedRealEstate);
         }
 
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_CREATE_REAL_ESTATE_TYPE_CODE);
+        model.addAttribute("sagiaService", sagiaService);
         model.addAttribute("inProcess", messageSource.getMessage("realEstate.status.inProcess", null, i18NService.getCurrentLocale()));
         model.addAttribute("rejected", messageSource.getMessage("realEstate.status.rejected", null, i18NService.getCurrentLocale()));
         model.addAttribute("completed", messageSource.getMessage("realEstate.status.completed", null, i18NService.getCurrentLocale()));

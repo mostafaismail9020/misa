@@ -1,0 +1,34 @@
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+
+###################################################### -----   B2C HEADER ----- ###############################################################
+
+UPDATE InvestSaudiNavigationBarComponent ; uid[unique = true] ; &componentRef ; $contentCV[unique = true] ;
+                                         ; portal-header-menu ; navigationbar ;                           ;
+
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true]	; uid[unique=true]	; active	; cmsComponents(&componentRef)[mode=replace];
+						  ;							; TopHeaderSlot		; true		; navigationbar								;
+
+
+INSERT_UPDATE PageTemplate ; $contentCV[unique = true] ; uid[unique = true]           ; name                                  ; restrictedPageTypes(code); active[default = true] ;
+                           ;                           ; SagiaProfileCompanyTemplate  ; Edit Company Profile Page Template    ; ContentPage                                       ;
+                           ;                           ; SagiaTemplate                ; Sagia Page Template                   ; ContentPage                                       ;
+                           ;                           ; SagiaCMSTemplate             ; Sagia CMS Page Template               ; ContentPage                                       ;
+                           ;                           ; SagiaCMSHeaderFooterTemplate ; Sagia CMS Header Footer Page Template ; ContentPage                                       ;
+
+
+INSERT_UPDATE ContentSlotForTemplate ; uid[unique = true]                         ; position[unique = true] ; contentSlot(uid, $contentCV)[unique = true] ; allowOverwrite ; $contentCV[unique = true] ; pageTemplate(uid, $contentCV)[unique = true] ;
+                                     ; TopHeaderSlot-SagiaProfileCompanyTemplate  ; TopHeader               ; TopHeaderSlot                               ; true           ;                           ; SagiaProfileCompanyTemplate                  ;
+                                     ; TopHeaderSlot-SagiaTemplate                ; TopHeader               ; TopHeaderSlot                               ; true           ;                           ; SagiaTemplate                                ;
+                                     ; TopHeaderSlot-SagiaCMSTemplate             ; TopHeader               ; TopHeaderSlot                               ; true           ;                           ; SagiaCMSTemplate                             ;
+                                     ; TopHeaderSlot-SagiaCMSHeaderFooterTemplate ; TopHeader               ; TopHeaderSlot                               ; true           ;                           ; SagiaCMSHeaderFooterTemplate                 ;
+
+
+INSERT_UPDATE ContentSlotName ; name[unique = true] ; compTypeGroup(code) ; validComponentTypes(code) ; template(uid, $contentCV)[unique = true] ;
+                              ; TopHeaderSlot       ; portalheaderlinks   ;                           ; SagiaProfileCompanyTemplate              ;
+                              ; TopHeaderSlot       ; portalheaderlinks   ;                           ; SagiaTemplate                            ;
+                              ; TopHeaderSlot       ; portalheaderlinks   ;                           ; SagiaCMSTemplate                         ;
+                              ; TopHeaderSlot       ; portalheaderlinks   ;                           ; SagiaCMSHeaderFooterTemplate             ;
+

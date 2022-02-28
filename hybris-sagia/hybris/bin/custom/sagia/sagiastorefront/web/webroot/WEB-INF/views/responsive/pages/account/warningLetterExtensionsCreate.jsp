@@ -7,11 +7,67 @@
 <%@ taglib prefix="format" tagdir="/WEB-INF/tags/responsive/format" %>
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
 
-<div class="mainSection mainSection_dark">
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="warningletter.extension"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="warningletter.extension"/></h1>
-            <div>
+            
+        </div>
+    </div>
+</div> -->
+
+<div class="mainSection mainSection_dark mainSection_noPadding">
+    <div class="container">
+        <div class="d-flex row renewal-services w-100">
+            <div class="col-md-4">
+                <a href="./" class="btn btn_leftIconLink btn_darkLink  w-100">
+                    <span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
+                    <spring:theme code="text.account.followup.backWarningLetters"/>
+                </a>
+            </div>
+            <div class="col-md-8 d-flex btn-drafts_list amend-service-link">
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${formName}"
                         data-service-id="${serviceId}">
@@ -27,17 +83,6 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPadding">
-    <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="./" class="btn btn_leftIconLink btn_darkLink">
-                <span class="iconElement iconElement_closeBack"><icon:close/></span>
-                <spring:theme code="text.account.followup.backWarningLetters"/>
-            </a>
-        </div>
-    </div>
-</div>
-
 
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
@@ -46,8 +91,8 @@
                 <div class="contentModule">
                     <div class="contentModule-section">
                         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                            <div class="contentModule-headline">
-                                <icon:info/>
+                            <div class="contentModule-headline headline-text">
+                                <!-- <icon:info/> -->
                                 <spring:theme code="general.info"/>
                             </div>
                         </div>
@@ -112,7 +157,7 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-headline">
+                        <div class="contentModule-headline headline-text">
                             <icon:enquiry2/>
                             <spring:theme code="text.account.followup.reason"/>
                         </div>
@@ -131,7 +176,7 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-headline">
+                        <div class="contentModule-headline headline-text">
                             <icon:documents/>
                             <spring:theme code="text.account.followup.supportDocuments"/>
                         </div>
@@ -140,13 +185,13 @@
                 </div>
             </div>
 
-            <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                <button type="button" class="btn btn-secondary" onclick="window.history.back()">Cancel</button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">                
+                <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
-                        <formElement:termsAndConditionsCheckbox name="termsAndConditionsChecked" path="termsAndConditionsChecked" event="FOLLOW_UP" id="termsAndConditions" cssClass="js-terms-agree"/>
+                        <formElement:termsAndConditionsCheckbox  event="GOVERNMENT_DOCUMENTS" id="termsAndConditions" path="termsAndConditionsChecked" name="termsAndConditionsChecked"   containerCssClass="js-terms-agree"/>
                     </div>
                 </div>
+                <button type="button" class="btn btn_leftIconLink btn_outline" onclick="window.history.back()">Cancel</button>
                 <button type="submit" class="btn js-followup-wl-create">
                     <spring:theme code="text.account.followup.submit"/>
                 </button>
@@ -160,10 +205,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title js-message"><spring:theme code="text.account.followup.error"/></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body modal-body-center">
                 <div class="modal-heroImage image-medium">
-                    <icon:status-cancelled/>
+                    <!-- <icon:status-cancelled/> -->
                 </div>
             </div>
             <div class="modal-footer">
@@ -178,6 +226,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title"><spring:theme code="warningLetterExtensionsCreate.reqSubmitted.text"/></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="modal-heroImage"><icon:modal02/></div>

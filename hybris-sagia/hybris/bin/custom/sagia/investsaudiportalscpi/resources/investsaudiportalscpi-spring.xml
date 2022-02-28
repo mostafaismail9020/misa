@@ -84,6 +84,25 @@
 
 	<bean id="defaultScpiOutboundService" class="com.investsaudiportal.scpi.outbound.services.ScpiOutboundServiceImpl" parent="sapCpiDefaultOutboundService">
 	</bean>
+	
+	<bean id="scpiOutCsCustomerEventProcessDefResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/investsaudiportalscpi/processes/scpiOutCsCustomerEventProcess.xml"/>
+	</bean>
 
-			
+	<bean id="sendCsCustomerEventToScpiAction" class="com.investsaudiportal.scpi.outbound.actions.SendCsCustomerEventToScpiAction" parent="abstractAction"/>
+		
+  
+	<bean id="scpiOutServiceRequestProcessDefResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/investsaudiportalscpi/processes/scpiOutServiceRequestProcess.xml"/>
+	</bean>
+
+	<bean id="sendServiceRequestToScpiAction" class="com.investsaudiportal.scpi.outbound.actions.SendServiceRequestToScpiAction" parent="abstractAction"/>
+		
+
+	<bean id="scpiOutTicketAttachmentProcessDefResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/investsaudiportalscpi/processes/scpiOutTicketAttachmentProcess.xml"/>
+	</bean>
+
+	<bean id="sendTicketAttachmentToScpiAction" class="com.investsaudiportal.scpi.outbound.actions.SendTicketAttachmentToScpiAction" parent="abstractAction"/>
+
 </beans>

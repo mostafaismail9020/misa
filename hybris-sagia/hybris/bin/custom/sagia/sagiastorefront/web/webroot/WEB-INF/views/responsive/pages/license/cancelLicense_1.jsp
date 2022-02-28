@@ -17,7 +17,7 @@
 </script>
 <c:set var="formName" value="formCancelLicenseStage1"/>
 
-<div class="mainSection mainSection_white">
+<!-- <div class="mainSection mainSection_white">
     <div class="container">
         <div class="mainSection-header">
             <div class="mainSection-headline">
@@ -34,7 +34,77 @@
             </div>
         </div>
     </div>
+</div> -->
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="licenseCancellation.title"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="container mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+    <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
+        <div class="row w-100 renewal-services">
+            <div class="col-md-3 col-12 px-0">
+                <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+            </div>
+            <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                <div class="col-xl-3 col-12 ml-1">
+                    <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                </div>
+            </c:if>
+        </div>	
+        <div class="row w-100 mt-4 d-none">
+            <div class="mainSection-linkActions mainSection-linkActions_right amend-service-link amend-btns-list">
+                <div class="btn-drafts_list">
+                    <button class="btn btn_round btn_slim js-save-draft" data-target-form="${formName}"><spring:theme code="general.savedraft"/>
+                        <span class="iconElement iconElement_save"><icon:save/></span>
+                    </button>
+    
+                    <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if> data-target-form="${formName}"><spring:theme code="general.loaddraft"/>
+                        <span class="iconElement iconElement_save"><icon:upload/></span>
+                    </button>
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="mainSection mainSection_noPadding">
     <div class="container">
@@ -82,8 +152,15 @@
             <input type="hidden" id="isInstant" name="isInstant" value="${isInstant}" />
             <div class="contentModule">
             <div class="contentModule-section contentModule-section_paddingSide">
-            	<div class="contentModule-headline">
+            	<!-- <div class="contentModule-headline">
                         <spring:theme code="licenseCancellation.basic.section"/>
+                    </div> -->
+                    
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="licenseCancellation.basic.section"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
                     </div>
 				<div class="row">
 					<div class="col-md-6">
@@ -109,14 +186,10 @@
 			</div>
             <c:choose>
             <c:when test ="${isInstant}">
-               		<div class="contentModule-section">
-                    	<!-- <div class="contentModule-headline"> -->
-                    	${licenseCancellationMessage}
-                    	<!-- </div> -->
-                    </div>
+               		<div class="contentModule-section no-data-remove">${licenseCancellationMessage}</div>
                 </c:when>
                	<c:otherwise>
-                <div class="contentModule-section">
+                <div class="contentModule-section no-data-remove">
                     <div class="contentModule-headline">
                         <spring:theme code="licenseCancellation.support.documents"/>
                     </div>
@@ -145,15 +218,16 @@
                 </c:otherwise>
                 </c:choose>
 
-                <div class="contentModule-actions contentModule-actions_spaceBetween">
-                    <button type="button" class="btn btn-secondary btn-back">
-                        <spring:theme code="licenseCancellation.back"/>
-                    </button>
-                    <div class="formCheckBox formCheckBox_belowPanel">
+                <div class="contentModule-actions mainSection-linkActions_flexend px-4 contentModule-actions">
+                    <div class="formCheckBox formCheckBox_belowPanel w-100">
                         <div class="form-group">
                             <formElement:termsAndConditionsCheckbox event="LICENSE_SERVICES" id="termsAndConditions1" path="termsAndConditionsChecked"/>
                         </div>
-                    </div>                    
+                    </div> 
+                    <button type="button" class="btn btn-outline btn-back">
+                        <spring:theme code="licenseCancellation.back"/>
+                    </button>
+                                       
                     <button type="submit" class="btn" <c:if test="${!allowCancellationLetter}">disabled</c:if>>
                         <spring:theme code="licenseCancellation.submit"/>
                     </button>
@@ -174,7 +248,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
+                <a class="btn js-close-btn btn_a" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
             </div>
         </div>
     </div>

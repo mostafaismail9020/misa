@@ -9,6 +9,7 @@
 <%@ attribute name="placeholder" required="false" type="java.lang.String"%>
 <%@ attribute name="disabled" required="false" type="java.lang.Boolean"%>
 <%@ attribute name="maxlength" required="false" type="java.lang.Integer"%>
+<%@ attribute name="spanClass" required="false" type="java.lang.String"%>
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -30,7 +31,7 @@
 				code="${labelKey}" /> <c:if
 				test="${mandatory != null && mandatory == false}">
 				<span>&nbsp;<spring:theme code="login.optional" /></span>
-			</c:if> <span class="skip"><form:errors path="${path}" /></span>
+			</c:if> <span class="skip ${spanClass}"><form:errors path="${path}" /></span>
 		</label>
 		<div class="help-block"></div>
 	</template:errorSpanField>

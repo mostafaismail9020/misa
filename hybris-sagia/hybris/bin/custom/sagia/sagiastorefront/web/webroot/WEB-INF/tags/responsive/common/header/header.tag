@@ -12,13 +12,15 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/responsive/common/header" %>
 
-<cms:pageSlot position="TopHeaderSlot" var="component" element="div">
+<cms:pageSlot position="TopHeader" var="component" element="div">
     <cms:component component="${component}"/>
 </cms:pageSlot>
+
+
 <c:url value="/dashboard" var="dashboardUrl"/>
 <c:url value="/dashboard-without-license" var="dashboardWithoutLicenceUrl"/>
 
-
+<!-- 
 <div class="sagiaHead">
     <div class="investsaudiHeader">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top fixed-header" id="insvest-navbar">
@@ -119,8 +121,7 @@
                         </li>
                     </c:if>
                     --%>
--->
-                    <c:if test="${currentLanguage.isocode == 'en'}">
+                    <!-- <c:if test="${currentLanguage.isocode == 'en'}">
                         <header:languageLink currentLanguage="en" newLanguage="ar" text="&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;" additionalCssClass="diff-color arabic"/>
                     </c:if>
                     <c:if test="${currentLanguage.isocode == 'ar'}">
@@ -152,52 +153,20 @@
                             <header:navigation/>
                         </c:if>
                     </ul>
-                    <div class="sagiaNavigation-right">
-                        <div class="sagiaNavigation-name">
-                            <%--<strong>${user.company}</strong> | ${user.name}--%>
-                        </div>
-                        <div class="sagiaNavigation-entry header-tutorial-header-btn">
-                            <a href="javascript:;" data-toggle="modal" data-target="#eServiceTour" class="sagiaNavigation-btn" title="<spring:message code='dashboard.tutorial.modal.button.text'/>">
-                                <icon:first-steps />
-                            </a>
-                        </div>
-                        <c:if test="${hasLicense}">
-                            <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
-                                <icon:calendarDate_stroke/>
-                            </a>
-                        </c:if>
-                        <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
-                            <c:if test="${hasLicense or hasAwaitingPayment}">
-                                <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
-                                    <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span><icon:mail/>
-                                </button>
-                            </c:if>
-                            <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
-                            <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible">
-                                <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
-                                <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
-                                <div class="sagiaNavigation-subPane-actions">
-                                    <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>"
-                           class="sagiaNavigation-btn sagiaNavigation-user"><icon:person_stroke/></a>
-                        <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="sagiaNavigation-btn sagiaNavigation-logout"><icon:logout/></a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </sec:authorize>
-</div>
+</div> 
 
-<div class="sagiaHead-paddingHelper"></div>
+<!-- <div class="sagiaHead-paddingHelper"></div>
 
 <div class="sagiaMobileNav" id="js-sagiaMobileNav">
     <div class="sagiaMobileNav-backdrop"></div>
     <div class="sagiaMobileNav-navigation">
         <div class="sagiaMobileNav-lvl0" id="js-sagiaMobileNav-lvl0">
-            <ul>
+            <ul> --> 
 <!--
 <%--
                 <li class="sagiaMobileNav-hasSub sagiaMobileNav-hasSub_main js-sagiaMobileNav_moveBack">
@@ -277,18 +246,18 @@
 
 
 
-                <li><a href="${dashboardUrl}"><span><spring:message code="header.mySagia.text"/></span></a></li>
-                <!--services-->
-                <li class="sagiaMobileNav-hasSub js-sagiaMobileNav_moveForwards">
+                <!-- <li><a href="${dashboardUrl}"><span><spring:message code="header.mySagia.text"/></span></a></li>
+                services-->
+                <!-- <li class="sagiaMobileNav-hasSub js-sagiaMobileNav_moveForwards">
                     <a href="#" class="sagiaMobileNav-hasSub-link_forwards"><spring:message code="header.services.text"/></a>
 
                     <div class="sagiaMobileNav-lvl1 sagiaMobileNav-lvl1_secondary">
                         <div class="sagiaMobileNav-headNav js-sagiaMobileNav_moveBack">
                             <a class="sagiaMobileNav-headNav-link sagiaMobileNav-headNav-link_back" href="#"><spring:message code="header.services.text"/></a>
                         </div>
-                        <div class="sagiaMobileNav-wrapper">
+                        <div class="sagiaMobileNav-wrapper"> -->
                             <!--services list-->
-                            <ul class="sagiaMobileNav-subNav js-mobileNavRender">
+                            <!-- <ul class="sagiaMobileNav-subNav js-mobileNavRender">
                                 <li class="sagiaMobileNav-subNav-title"><a href="${encodedContextPath}/service-search"><icon:your-services-requests-overview/>Overview</a></li>
                                 
                                 
@@ -372,7 +341,7 @@
                            
                            
                            
-<!--
+
                             <%--
                             <div class="sagiaMobileNav-subRight" id="sagiaMobileNav-serviceMenu">
 
@@ -384,9 +353,7 @@
                                     <a href="${encodedContextPath}/my-sagia/license/convert"><span><spring:message code="header.convertToNational.text"/></span></a>
                                     <a href="${encodedContextPath}/my-sagia/license/replace"><span><spring:message code="header.replace.text"/></span></a>
                                     <a href="${encodedContextPath}/my-sagia/license/renew"><span><spring:message code="header.renew.text"/></span></a>
-                                    <a href="${encodedContextPath}/my-sagia/license/bidding"><span><spring:message code="header.bidding.text"/></span></a>
-                                    <a href="${encodedContextPath}/my-sagia/license/stakeholders"><span><spring:message code="header.stakeholders.text"/></span></a>
-                                     TODO lancel cancellation should follow the same url pattern 
+                                    <a href="${encodedContextPath}/my-sagia/license/bidding"><span><spring:message code="header.bidding.text"/></span></a>                            <a href="${encodedContextPath}/my-sagia/license/stakeholders"><span><spring:message code="header.stakeholders.text"/></span></a>                                   TODO lancel cancellation should follow the same url pattern 
                                     <a href="${encodedContextPath}/my-sagia/license/cancel"><span><spring:message code="header.cancel.text"/></span></a>
                                 </div>
                                 
@@ -457,13 +424,13 @@
                             </div>
                             --%>
 -->
-                            
+<!--                             
                         </div>
                     </div>
                 </li>
                 
-                <!--language switch-->
-                <c:if test="${currentLanguage.isocode == 'en'}">
+                language switch-->
+                <!-- <c:if test="${currentLanguage.isocode == 'en'}">
                     <li><a href="${fn:replace(requestScope['javax.servlet.forward.request_uri'], '/en/', '/ar/')}"><span>&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span></a></li>
                 </c:if>
                 <c:if test="${currentLanguage.isocode == 'ar'}">
@@ -472,7 +439,7 @@
             </ul>
         </div>
     </div>
-</div>
+</div> --> 
 
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
@@ -489,9 +456,9 @@
                         <spring:message code="text.logout.description"/>
                     </div>
                 </div>
-                <div class="modal-footer modal-footer_spaceBetween">
-                    <button type="button" class="btn btn-warning btn_round btn_slim noButton" data-dismiss="modal"><spring:message code="text.logout.no"/></button>
-                    <button type="button" class="btn btn_round btn_slim yesButton"><spring:message code="text.logout.yes"/></button>
+               <div class="modal-footer modal-footer_spaceBetween">
+                    <button type="button" class="btn btn-ctrl btn-warning noButton btn-outline p-0" data-dismiss="modal"><spring:message code="text.logout.no"/></button>
+                    <button type="button" class="btn btn-ctrl btn-bg p-0 yesButton"><spring:message code="text.logout.yes"/></button>
                 </div>
             </form>
         </div>

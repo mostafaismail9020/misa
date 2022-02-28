@@ -18,6 +18,10 @@
     </c:otherwise>
 </c:choose>
 
-<h1 class="accountLogin-title headline login-page__headline text-center"><spring:theme code="text.account.profile.sagiaeservices"/></h1>
 
-<user:authenticate actionNameKey="authenticate.submit" action="${authenticateActionUrl}" />
+<div class="row login-screen-verify-mobile r-sn">
+	<div class="login-right-wrapper">
+        <h1 class="accountLogin-title headline login-page__headline text-center login-register-text "><spring:theme code="text.account.profile.sagiaeservices"/></h1>
+        <user:authenticate actionNameKey="authenticate.submit" action="${authenticateActionUrl}" />
+    </div>
+</div>

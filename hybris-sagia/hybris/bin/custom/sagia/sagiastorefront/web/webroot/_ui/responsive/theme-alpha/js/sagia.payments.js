@@ -61,12 +61,11 @@ SAGIA.payments = {
                                     '       </div>' +
                                     '    </td>' +
                                     '    <td>' +
-                                    '       <div class="dashboardWidgetPayments-amount">' + (payment.amount ? payment.amount.toLocaleString('en-US', {maximumFractionDigits: 2}) : 0) + "</div>" +
-                                    '       <div class="dashboardWidgetPayments-currency">' + payment.currency + "</div>" +
+                                    '       <span class="dashboardWidgetPayments-amount">' + (payment.amount ? payment.amount.toLocaleString('en-US', {maximumFractionDigits: 2}) : 0)+ "&nbsp;" + payment.currency  +"</span>" +
                                     '    </td>' +
                                     '    <td><div class="dashboardWidgetPayments-pay">';
                                 if (payment.status == 'E0003' && payment.hybrisStatusDescription != 'Paid') {
-                                	paymentsTableHtml +='<a onclick="SAGIA.payment.requestCreditBillPayment('+billId+',\''+billDesc+'\','+amount+',\''+payment.currency+'\')" class="print-not-link btn btn_outline btn_round btn_slim" style="float: left;">' + getI18nText("payment.pay") +'</a>';
+                                	paymentsTableHtml +='<a onclick="SAGIA.payment.requestCreditBillPayment('+billId+',\''+billDesc+'\','+amount+',\''+payment.currency+'\')" class="print-not-link payment-link" style="float: left;">' + getI18nText("payment.pay") +'</a>';
                                 }
                                 paymentsTableHtml +='</div></td></tr>';
                             }
@@ -78,7 +77,7 @@ SAGIA.payments = {
                         }
                         $(".dashboardWidgetPayments .paginationModule-items").empty().append(paginationHtml);
                         new CreatePagination($(".dashboardWidgetPayments .paginationModule"));
-                        $(".dashboardWidgetPayments .paginationPicker").append("<option selected='selected' value='" + payments.paymentsItemsPerPage + "'>" + getI18nText("dashboard.servicesRequest.viewAll") + "</option>")
+                        $(".dashboardWidgetPayments .paginationPicker").append("<option selected='selected' value='" + payments.paymentsItemsPerPage + "'>" + getI18nText("No of Items") + "</option>")
 
 
                         if(payments.showItemsPerPage != null && payments.showItemsPerPage.length > 0){

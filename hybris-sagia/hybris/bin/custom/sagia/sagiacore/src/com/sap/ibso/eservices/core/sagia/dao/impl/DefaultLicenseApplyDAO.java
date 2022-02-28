@@ -11,7 +11,14 @@ import de.hybris.platform.enumeration.EnumerationService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.SearchResult;
+<<<<<<< HEAD
 import org.apache.commons.collections4.CollectionUtils;
+=======
+import de.hybris.platform.catalog.CatalogVersionService;
+import javax.annotation.Resource;
+import java.util.Map;
+import com.sap.ibso.eservices.core.model.SagiaCMSParagraphMediaComponentModel;
+>>>>>>> refs/heads/feature/ui-revamp-resolution-merge
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,10 +27,26 @@ import java.util.Map;
 
 import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNull;
 
+import de.hybris.platform.catalog.CatalogVersionService;
+
+import com.sap.ibso.eservices.core.model.SagiaCMSParagraphMediaComponentModel;
+
 public class DefaultLicenseApplyDAO implements LicenseApplyDAO {
 
 	private FlexibleSearchService flexibleSearchService;
 	private EnumerationService enumerationService ;
+		
+	@Resource
+    private CatalogVersionService catalogVersionService;
+
+	
+	 private static final String CATALOG_ID = "sagiaContentCatalog";
+	 private static final String ONLINE = "Online";
+	
+	private static final String QUERY_DOWNLOAD_MEDIA_DETAILS = "SELECT {r:pk} FROM {SagiaCMSParagraphMediaComponent AS r} "
+    		+ "WHERE {r.uid}=?uid AND {r.catalogVersion} = ?catalogVersion" ;
+      
+	
 
 	@Override
 	public EntityInformationModel getLicenseApplyData(SagiaLicenseModel sagiaLicenseModel) {
@@ -191,4 +214,19 @@ public class DefaultLicenseApplyDAO implements LicenseApplyDAO {
 		}
 		return null;
 	}
+	
+	@Override
+    public SagiaCMSParagraphMediaComponentModel getParagraphLicenseMedia(String uid) {
+    	
+    	final Map<String, Object> params = new HashMap<String, Object>();
+        params.put("uid", uid);
+
+        final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(QUERY_DOWNLOAD_MEDIA_DETAILS, params);        
+        searchQuery.addQueryParameter("catalogVersion", catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
+        
+        final SearchResult<SagiaCMSParagraphMediaComponentModel> resultList = flexibleSearchService.search(searchQuery);
+
+        return (null != resultList && resultList.getResult().size() > 0) ? resultList.getResult().get(0) : null;
+    }
+			
 }

@@ -190,6 +190,7 @@ position: relative;
 .page-license-amend.modal-scroll.modal-open{
 	overflow: auto;
 }
+.page-license-amend .mainSection.bg-white.mainSection_loaded{padding-bottom: 0;}
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}
@@ -280,6 +281,11 @@ position: relative;
 @media (max-width: 640px) and (min-width: 100px){
 	
 }
+/* End */
+/* Dashboard */
+.page-dashboard .dashboard-tabs .dashboardWidget-filter .select2.select2-container{padding: 12px 10px !important; height: auto !important;}
+.page-dashboard .dashboard-tabs .dashboardWidget-filter .select2.select2-container .select2-selection--single{height: auto !important;}
+/* End */
 .errorPage-div{
     height: 100vh;
     background-image: url("../../../../_ui/responsive/common/images/B2C/background1.jpg");

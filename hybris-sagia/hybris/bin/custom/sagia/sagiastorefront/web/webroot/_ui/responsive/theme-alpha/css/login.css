@@ -209,8 +209,11 @@ position: relative;
 	}
 	[dir="ltr"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: left;}
 	[dir="rtl"] .page-license-amend #shareholderModalId #entityBasicInformation2 .formCheckBox{text-align: right;}
-	.page-license-amend #shareholderModalId #delegateDivSection .btn-tooltip{white-space: initial;}
+	.page-license-amend #shareholderModalId #delegateDivSection .btn-tooltip{white-space: initial;width: 100%;}
 	.page-license-amend #docsmodalId  .modal-title{font-size: 25px;}
+	.page-license-amend #shareholderModalId .formInputBox-split>div:not(.formInputBox_big) {flex: 0 0 35%;}
+	.page-license-amend #showDelegateQuestionOrganization .deligate-info-form.formRadioBox .form-item{padding: 0;}
+	.page-license-amend #showDelegateQuestionOrganization .deligate-info-form.formRadioBox .form-item label{margin: 0;}
 }
 @media (max-width: 991px) and (min-width: 641px){
 	.page-license-amend #shareholderModalId .panelModule,

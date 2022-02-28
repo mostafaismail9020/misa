@@ -1020,7 +1020,7 @@ var loadOrganizationForm = function () {
     $('#entityBasicInformation').hide();
     $('#entityBasicInformation2').hide();
 
-    $('.contentModule-headline').hide();
+    //$('.contentModule-headline').hide();
     $('#shareholderAddressId').hide();
 
     // Delegate section

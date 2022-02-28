@@ -34,7 +34,34 @@ SAGIA.dashboard = {
                     .removeClass("dashboardWidget_open");
             }
         });
+        $(document).on("click", ".js-dashboardWidget-headline-icon", function (e) {
+            e.preventDefault();
+            let idAttr = $(this).attr("id");
+            if (!$(this).parent().hasClass("dashboardWidget_open")) {
+                $(this)
+                    .parents()
+                    // .parents(".js-dashboard")
+                    .find(".panel.dashboardWidget_open")
+                    .removeClass("dashboardWidget_open");
+                    $(this)
+                    .parents().find(".panel-collapse.show").removeClass('show');
+                    // .parents(".js-dashboard").find(".panel-collapse.show").removeClass('show');
+                $(this)
+                    .parent()
+                    .addClass("dashboardWidget_open");
+                    $('.'+idAttr).addClass('show');
 
+                
+            } else {
+           
+                $(this)
+                    .parent()
+                    .removeClass("dashboardWidget_open");
+                    $('.'+idAttr).removeClass('show');
+            }
+            
+        });
+        
         //small match click on tabhead
 		$(document).on("click",".js-dashboardWidgetNoLicense-tabs .tabhead", function(e){
 			e.preventDefault();
@@ -74,6 +101,7 @@ SAGIA.dashboard = {
 
     unmatch: function () {
         $(document).off("click", ".js-dashboardWidget-headline");
+        $(document).off("click", ".js-dashboardWidget-headline-icon");
         $(document).off("click", ".js-dashboardWidgetNoLicense-tabs .tabhead");
         $(document).off("click", ".js-dashboardTabs .tabhead");
 
@@ -238,8 +266,15 @@ SAGIA.dashboard = {
             //add current state
             $(this).closest('.js-dashboardTabs')
                 .find('.dashboardTabs-content')
-                .find($(currentID))
+                .find('#'+$(currentID)[0].id)
+                // .find($(currentID))
                 .addClass('current');
+
+                $(".dashboardTabs .js-dashboardTabs .dashboardTabs-body").hide();
+
+                $(this).closest('.js-dashboardTabs')
+                .find('.dashboardTabs-content')
+                .find('#'+$(currentID)[0].id).next().show();
         });
     },
 
@@ -394,3 +429,230 @@ $(document).on("click", "#setCompanyPhotoAnchor", function () {
     });
     return false;
 });
+
+
+/*----dashboard-carousel---*/
+$(document).ready(function() {
+    $.fn.andSelf = function() {
+        return this.addBack.apply(this, arguments);
+      }
+$('#dashboard-carousel').owlCarousel({
+    loop: true,
+    margin: 20,
+    rtl:$("html").attr('lang') === 'en' ? false : true,
+     /*
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    */
+    responsiveClass: true,
+    autoplayTimeout: 7000,
+    smartSpeed: 800,
+    nav: false,
+    dots: true,
+    autoplay:true,
+    autoplayHoverPause:false,
+    // navText:["<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Left-arrow.png'/>", "<img src='/_ui/responsive/common/images/dashboard-media/Banner-icons/Right-arrow.png''/>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+  
+      600: {
+        items: 1
+      },
+  
+      1024: {
+        items: 1
+      },
+  
+      1366: {
+        items: 1
+      }
+    }
+  });
+  if($("html").attr('lang') === 'en'){
+    $('#dashboard-carousel').removeClass('owl-rtl')
+}
+else{
+      $('#dashboard-carousel').addClass('owl-rtl');
+  }
+});
+$(document).ready(function () {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+    var overflow = "hidden";
+    var footerHeight
+    $(".float-button").click(function () { 
+        $(".popup").toggleClass("popup-up");
+        $(".float-button").toggleClass("float-button-up");
+        $(".full-bg").fadeToggle();
+        $(this).html($(this).text() == 'Contact Us' ? "<img width='40' src=''>": 'Contact Us');
+        /*
+        $("body").css("overflow", overflow); 
+        $(this).html($(this).text() == 'Invest Now' ? "<img width='40' src='./images/close.png'>" : 'Invest Now');
+        $(this).html($(this).text() == "<img width='40' src='./img/close.png'>" ? 'Invest Now' : 'Invest Now');*/
+        overflow = (overflow == "hidden") ? "visible" : "hidden";
+    });
+
+    $(window).on('scroll', function () {
+		footerHeight = $("#footer").offset().top - 800;
+		// console.log($(this).scrollTop())
+		if ($(this).scrollTop() >= footerHeight) {
+			$('.float-button').css({"display":"none","opacity": "0"});
+		}
+		else {
+			$('.float-button').css({"display":"block","opacity": "1"});
+		}
+	});
+});
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+$(document).ready(function(){
+    // Floating Button 
+	$(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#header').addClass('header-scrolled');
+            $('#topbar').addClass('topbar-scrolled');
+            $('#user-icons').addClass('d-flex top-scrolled d-sm-none').find('d-none').removeClass('d-none');
+            $('#login-Navigation').addClass('login-scrolled');
+          } else {
+            $('#header').removeClass('header-scrolled');
+            $('#topbar').removeClass('topbar-scrolled');
+            $('#user-icons').removeClass('d-flex top-scrolled d-sm-none').find('user-icons-header').addClass('d-none');
+            $('#login-Navigation').removeClass('login-scrolled');
+          }
+        });
+      
+        if ($(window).scrollTop() > 100) {
+          $('#header').addClass('header-scrolled');
+          $('#topbar').addClass('topbar-scrolled');
+          $('#user-icons').addClass('top-scrolled');
+          $('#login-Navigation').addClass('login-scrolled');
+        }
+
+   // Video Modal Popup
+	var url = $("#cartoonVideo").attr('src');
+    $("#videoModal").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+    $("#videoModal").on('show.bs.modal', function(){
+        $("#cartoonVideo").attr('src', url);
+    });
+
+    //sub-menu show
+    $('.get_submenus').mouseover(function(){ 
+		$('.dropdown-large').addClass("show_height"); 
+	}).mouseout(function(){ 
+		$('.dropdown-large').removeClass("show_height"); 
+	}); 
+});
+
+
+
+
+
+$(document).on('click',".services-category-list .nav .nav-link",function(){
+    $(".service_tab_pane_show").removeClass("show").removeClass("active");
+      $("#"+$(this).attr('href').replace("#","")).addClass("show").addClass("active");
+      $("#"+$(this).attr('href').replace("#","")+"1").addClass("show").addClass("active");
+
+      $(".services-category-list .nav .nav-link").removeClass("active");
+      $(this).addClass("active");
+  });
+
+
+
+  
+
+$(document).ready(function () {
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+    var overflow = "hidden";
+    var footerHeight
+    $(".float-button").click(function () {
+        $(".popup").toggleClass("popup-up");
+        $(".float-button").toggleClass("float-button-up");
+        $(".full-bg").fadeToggle();
+        $("body").css("overflow",overflow);
+        $(this).html($(this).text() == 'Contact Us' ? "<img width='40' src=''>": 'Contact Us');
+        overflow = (overflow == "hidden") ? "visible" : "hidden";
+    });
+
+    $(window).on('scroll', function () {
+        footerHeight = $("#footer").offset().top - 800;
+        if ($(this).scrollTop() >= footerHeight) {
+            $('.float-button').css({"display":"none","opacity": "0"});
+        }
+        else {
+            $('.float-button').css({"display":"block","opacity": "1"});
+        }
+    });
+});
+
+
+
+function biddingCertificate(e){
+    window.location = ACC.config.encodedContextPath +  "/my-sagia/license/bidding?loadDraft=false";
+}
+
+
+function getAccordion(element_id,screen) 
+{
+
+	if ($(window).width() < screen) 
+	{
+		var concat = '';
+		obj_tabs = $( element_id + " li" ).toArray();
+		obj_cont = $( ".tab-content .tab-pane" ).not('.services-container-tabcontent').toArray();
+        
+		jQuery.each( obj_tabs, function( n, val ) 
+		{
+           
+			concat += '<div id="' + n + '" class="panel panel-default">';
+			concat += '<div class="panel-heading dashboardWidget-headline js-dashboardWidget-headline-icon" role="tab" id="heading' + n + '">';
+			concat += '<h5 class="panel-title"><img class="imageCertifcate" src="'+$(val).find("img").attr("src")+'" /><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
+			concat += '</div>';
+			concat += '<div id="collapse' + n + '" class="panel-collapse collapse heading' + n + '" role="tabpanel" aria-labelledby="heading' + n + '">';
+			concat += '<div class="panel-body">' + obj_cont[n].innerHTML + '</div>';
+			concat += '</div>';
+			concat += '</div>';
+		});
+		$("#accordion").empty().append(concat);
+		$("#accordion").find('.panel-collapse:first').addClass("in");
+		$("#accordion").find('.panel-title a').attr("aria-expanded","true");
+		$("#accordion").find('.panel-title a').removeClass("collapsed");
+		$(element_id).not('.services-container-tabcontent').hide();
+		$(".tab-content").not('.services-container-tabcontent').hide();
+	}	
+    else{
+        $("#accordion").empty();
+        $(element_id).show();
+		$(".tab-content").not('.services-container-tabcontent').show();
+    }
+}
+
+
+function getAccordionWithLicense(element_id,screen) 
+{    
+	if ($(window).width() < screen) 
+	{
+        $(element_id).hide();
+        $("#accordionDashboard").show();
+		$(".tab-content").not('.services-container-tabcontent').hide();
+	}
+    else{
+        $(element_id).show();
+        $("#accordionDashboard").hide();
+		$(".tab-content").not('.services-container-tabcontent').show();
+    }	
+}
+
+$(".sagiaNavigation-services .nav-link").on('click',function(){
+    $(this).toggleClass('show active');
+    var tab = $(this)[0].id;
+    $(".service_tab_pane_show[aria-labelledby='"+ tab + "']").toggleClass('show active');
+})

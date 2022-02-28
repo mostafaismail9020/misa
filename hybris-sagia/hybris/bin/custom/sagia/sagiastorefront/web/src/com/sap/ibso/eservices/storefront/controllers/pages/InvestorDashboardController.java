@@ -27,22 +27,37 @@ import de.hybris.platform.servicelayer.config.ConfigurationService;
 import com.sap.ibso.eservices.storefront.controllers.SagiaConstants;
 import de.hybris.platform.servicelayer.i18n.CommonI18NService;
 import de.hybris.platform.servicelayer.user.UserService;
+import com.investsaudi.portal.core.model.ContactTicketModel;
+
 import org.apache.commons.collections.MapUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import de.hybris.platform.commercefacades.product.data.OpportunityData;
+import org.springframework.util.StringUtils;
+import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
+
+import com.investsaudi.portal.facades.product.InvestSaudiProductFacade;
+import java.util.List;
+import java.util.Objects;
+import org.apache.log4j.Logger;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
+import com.investsaudi.portal.core.service.InvestSaudiMediaCenterService;
 
 @Controller
 @RequestMapping(value = "/dashboard")
 public class InvestorDashboardController extends SagiaAbstractPageController {
-    private static final String SAGIA_DASHBOARD_CMS_PAGE = "dashboard";
+	
+	private static final Logger LOG = Logger.getLogger(InvestorDashboardController.class);
+			
+    private static final int NUMBER_OF_NEWS = 3;
+	private static final String SAGIA_DASHBOARD_CMS_PAGE = "dashboard";
     private static final String SAGIA_FIRST_PAGE_INDEX = "1";
     private static final String REDIRECT_TO_DASHBOARD_WITHOUT_LICENSE = REDIRECT_PREFIX + "/dashboard-without-license";
     private static final String REDIRECT_TO_DASHBOARD_PAGE = REDIRECT_PREFIX + "/dashboard";
@@ -50,6 +65,9 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
 
     @Resource(name = "sagiaLicensePrintingFacade")
     private DefaultLicensePrintingFacade sagiaLicensePrintingFacade;
+    
+    @Resource
+    private InvestSaudiMediaCenterService investSaudiMediaCenterService;
 
     @Resource(name = "sagiaLicenseFacade")
     private SagiaLicenseFacade licenseFacade;
@@ -98,7 +116,13 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
 
     @Resource(name = "sagiaAccountFacade")
     private SagiaAccountFacade sagiaAccountFacade;
-
+    
+    @Resource
+    private InvestSaudiCategoryFacade investSaudiCategoryFacade;
+    
+    @Resource
+    private InvestSaudiProductFacade investSaudiProductFacade;
+    
     @Resource(name = "configurationService")
     private ConfigurationService configurationService;
 
@@ -346,7 +370,24 @@ public class InvestorDashboardController extends SagiaAbstractPageController {
             model.addAttribute("profilePicture", customerData.getProfilePicture().getUrl());
         }
         model.addAttribute("MIGS_Session_JS", configurationService.getConfiguration().getString(SagiaConstants.MIGS_SESSION_URL));
-        model.addAttribute("userOpportunityTickets", sagiaCustomerFacade.getUserRaisedOpportunities(((CustomerModel) userService.getCurrentUser()).getContactEmail()));
+        model.addAttribute("currentCustomerSector", customerData.getSector());
+        if (Objects.nonNull(customerData.getSector()) && Objects.nonNull(customerData.getSector().getSectorCode()) 
+        		&& !customerData.getSector().getSectorCode().isEmpty()) {
+        	model.addAttribute("customerSectorCategory", investSaudiCategoryFacade.getCategoryForCode(customerData.getSector().getSectorCode()));
+        	List<OpportunityData> featuredOpportunities = investSaudiProductFacade.getFeaturedOpportunitiesByCategory(3, 
+        			customerData.getSector().getSectorCode() );
+        	model.addAttribute("featuredOpportunities", featuredOpportunities);
+        }
+        model.addAttribute("lastNews", investSaudiMediaCenterService.getNews(NUMBER_OF_NEWS));
+        
+        CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
+        if (null != customerModel) {
+        	List<ContactTicketModel> contactTicketList = sagiaCustomerFacade.getUserRaisedOpportunities(customerModel.getUserNameEmail());
+        	LOG.debug("-------contactTicketList="+contactTicketList.size());
+        	model.addAttribute("userOpportunityTickets", contactTicketList);        
+        	model.addAttribute("customerLastLogon", customerModel.getLastSuccessLogin());
+        }
+        
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_DASHBOARD_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_DASHBOARD_CMS_PAGE));
         return getViewForPage(model);

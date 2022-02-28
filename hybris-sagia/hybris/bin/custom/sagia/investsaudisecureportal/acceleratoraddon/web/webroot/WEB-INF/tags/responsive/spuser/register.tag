@@ -35,12 +35,14 @@ function validateRegisterForm(){
     email.removeClass('hasError');
     confirm_email.removeClass('hasError');
 
-    var recaptcha = "";
-    if( document.forms["registerForm-MarCommUserGroup"]){
-    	recaptcha = document.forms["registerForm-MarCommUserGroup"]["g-recaptcha-response"].value;
-    }else{
-    	recaptcha =document.forms["registerForm-BDUserGroup"]["g-recaptcha-response"].value;
-    }
+    var recaptcha =  $("#registerForm-BDUserGroup .g-recaptcha-response").val()
+
+    //var recaptcha = "";
+    //if( document.forms["registerForm-MarCommUserGroup"]){
+    //	recaptcha = document.forms["registerForm-MarCommUserGroup"]["g-recaptcha-response"].value;
+   // }else{
+    //	recaptcha = document.forms["registerForm-BDUserGroup"]["g-recaptcha-response"].value;
+   // }
     
    var valid = true;
  
@@ -196,7 +198,7 @@ border-color:#fd7b7b;
         <span id="lblErrorCaptcha" class="mandatory d-flex"></span>
                  </div>
             </div>
-            <div class="col-xs-12 col-md-4 col-md-offset-4">
+            <div class="col-xs-12 col-md-4 col-md-offset-4 mt-4">
            
                 <ycommerce:testId code="register_Register_button">
                     <button data-theme="b"

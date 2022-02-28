@@ -187,6 +187,9 @@ position: relative;
 }
 [dir="ltr"] .page-license-amend .delegate-info-popover{text-align: left;}
 [dir="rtl"] .page-license-amend .delegate-info-popover{text-align: right;}
+.page-license-amend.modal-scroll.modal-open{
+	overflow: auto;
+}
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}

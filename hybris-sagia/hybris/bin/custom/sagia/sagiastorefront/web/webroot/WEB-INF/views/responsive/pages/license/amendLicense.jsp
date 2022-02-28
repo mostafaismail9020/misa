@@ -464,11 +464,11 @@
 																		<h5 class="modal-title" id="exampleModalLiveLabel"><spring:theme code="text.account.profile.license.shareholders.deleteShareholder" /></h5>
 																	  </div>
 																	  <div class="deleteDropdown-actions d-flex justify-content-center align-items-center my-4">
-																		<button type="button" class="btn btn_slim removeShareholderBtn">
-																			<spring:theme code="general.delete" />
-																		</button>
 																		<button type="button" class="btn btn_primary btn_outline js-deleteDropdown-cancel">
 																			<spring:theme code="general.cancel" />
+																		</button>
+																		<button type="button" class="btn btn_slim removeShareholderBtn">
+																			<spring:theme code="general.delete" />
 																		</button>
 																	</div>
 																	</div>
@@ -536,21 +536,24 @@
 														<button type="button" class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn service_action_btn">
 															<icon:remove />
 														</button>
-														<div class="deleteDropdown-drop">
-															<div class="deleteDropdown-text">
-																<spring:theme
-																	code="text.account.profile.license.branches.deletethebranch" />
-															</div>
-															<div class="deleteDropdown-actions">
-																<button type="button"
-																	class="btn btn_slim removeBranchBtn">
-																	<spring:theme code="general.delete" />
-																</button>
-																<button type="button"
-																	class="btn btn_outline btn_slim js-deleteDropdown-cancel mt-3">
-																	<spring:theme code="general.cancel" />
-																</button>																
-															</div>
+														<div class="deleteDropdown-drop modal">
+															<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+																<div class="modal-content">
+																  <div class="modal-header">
+																	<h5 class="modal-title" id="exampleModalLiveLabel"><spring:theme code="text.account.profile.license.branches.deletethebranch" /> </h5>
+																  </div>
+																  <div class="deleteDropdown-actions d-flex justify-content-center align-items-center my-4">
+																	<button type="button"
+																		class="btn btn_outline btn_slim js-deleteDropdown-cancel">
+																		<spring:theme code="general.cancel" />
+																	</button>
+																	<button type="button"
+																		class="btn btn_slim removeBranchBtn">
+																		<spring:theme code="general.delete" />
+																	</button>
+																</div>
+																</div>
+															  </div>
 														</div>
 													</div>
 												</td>
@@ -634,20 +637,24 @@
 															<button type="button"class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn service_action_btn">
 																<icon:remove />
 															</button>
-															<div class="deleteDropdown-drop">
-																<div class="deleteDropdown-text">
-																	<spring:theme code="products.deleteproduct" />
-																</div>
-																<div class="deleteDropdown-actions">
-																	<button type="button"
-																		class="btn btn_slim removeProductBtn">
-																		<spring:theme code="general.delete" />
-																	</button>
-																	<button type="button"
-																		class="btn btn_outline btn_slim js-deleteDropdown-cancel mt-3">
-																		<spring:theme code="general.cancel" />
-																	</button>
-																</div>
+															<div class="deleteDropdown-drop modal">
+																<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+																	<div class="modal-content">
+																	  <div class="modal-header">
+																		<h5 class="modal-title" id="exampleModalLiveLabel"><spring:theme code="products.deleteproduct" /> </h5>
+																	  </div>
+																	  <div class="deleteDropdown-actions d-flex justify-content-center align-items-center my-4">
+																			<button type="button"
+																				class="btn btn_outline btn_slim js-deleteDropdown-cancel">
+																				<spring:theme code="general.cancel" />
+																			</button>
+																			<button type="button"
+																				class="btn btn_slim removeProductBtn">
+																				<spring:theme code="general.delete" />
+																			</button>
+																	</div>
+																	</div>
+																  </div>
 															</div>
 														</div>
 													</td>
@@ -2357,4 +2364,11 @@
 <script>
 	var controllerUrl = '${controllerUrl}';
 	var srId = '${srId}';
+
+function closeErrorModal() {
+  if ($("body").hasClass("modal-open")) {
+	$('body').removeClass('modal-open');
+	$('body').addClass('modal-scroll');
+  }
+}
 </script>

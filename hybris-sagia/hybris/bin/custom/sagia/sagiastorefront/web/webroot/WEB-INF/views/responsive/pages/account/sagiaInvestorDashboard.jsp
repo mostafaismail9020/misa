@@ -214,7 +214,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="licensing1" role="tabpanel" aria-labelledby="pills-licensing-tab">
+                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="licensing1" role="tabpanel" aria-labelledby="pills-licensing-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
@@ -565,7 +565,7 @@
 	                                <div class="card-img">
 	                                    <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
 	                                </div>
-	                                <div class="card-box p-3 pr-5 home-news-updates-content">
+	                                <div class="card-box p-3 pr-3 home-news-updates-content">
 	                                    <!-- <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong> -->
 	                                    <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" />
                                             <!-- &nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /> -->

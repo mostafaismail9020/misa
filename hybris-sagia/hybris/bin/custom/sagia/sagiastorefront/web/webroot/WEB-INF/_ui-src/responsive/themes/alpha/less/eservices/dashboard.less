@@ -4010,7 +4010,7 @@ margin-right: 0;
         text-transform: uppercase;
     }
     .home-news-updates-content{
-        min-height: 25rem;
+        min-height: 10rem;
     }
     .home-news-updates-content-p{
         font-size: 20px;
@@ -4025,7 +4025,8 @@ margin-right: 0;
             text-overflow: ellipsis;
             white-space: normal;
             padding-bottom: initial !important;
-            min-height: 14rem;
+            min-height: 3rem;            
+            -webkit-line-clamp: 3;
         }
     }
     .firstBlock-text,.firstBlock-contact-local-label,.firstBlock-contact-local-number{
@@ -4034,7 +4035,7 @@ margin-right: 0;
     @media screen and (max-width:640px) {
         .dm-my-license-view{
             justify-content: space-around;
-            &a{
+            a{
                 border: 1px solid #00a6be;
                 background-color: transparent;
                 border-radius: 27px;

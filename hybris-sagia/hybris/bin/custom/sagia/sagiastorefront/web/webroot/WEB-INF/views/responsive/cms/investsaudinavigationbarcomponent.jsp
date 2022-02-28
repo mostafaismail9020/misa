@@ -5,7 +5,139 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+@media (min-width: 576px){
+	#logoutModal .modal-dialog {
+		max-width: 500px;
+		margin: 1.75rem auto;
+		position: relative;
+		width: auto;
+		pointer-events: none;
+		padding: 0 20px;
+	}
+	#logoutModal .modal-dialog-centered {
+		min-height: calc(100% - (1.75rem * 2));
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+	}
+}
 
+@media (min-width: 992px){
+	#logoutModal .modal-dialog-sm .modal-body, [dir] .modal-dialog-xs .modal-body {
+		padding: 0 60px;
+	}
+}
+@media (min-width: 992px){
+	#logoutModal .modal-dialog-sm .modal-footer, [dir] .modal-dialog-xs .modal-footer {
+		padding: 0 60px 32px 60px;
+	}
+}
+#logoutModal .modal-footer>a, .modal-footer>button,  .modal-footer>div{
+	margin-bottom: 0;
+}
+#logoutModal .modal-footer {
+	border-top: none;
+	margin: 0 -6px;
+	flex-wrap: wrap;
+	   width: calc(100% + 12px);
+}
+
+#logoutModal .modal-footer .btn-outline {
+	background: #fff!important;
+	border: 1px solid #00a6be!important;
+	border-radius: 27px;
+	margin: 0;
+	text-align: center;
+	padding: 10px 24px 14px;
+	cursor: pointer;
+	font-size: var(--content-font);
+	font-weight: 600;
+}
+#logoutModal .modal-footer	.btn-ctrl {
+	width: 159px!important;
+	height: 45px!important;
+	line-height: 45px!important;
+	border-radius: 27px!important;
+	color: #00a6be!important;
+}
+#logoutModal .modal-footer .btn-bg {
+	background-color: #00a6be!important;
+	color: #fff !important;
+}
+#logoutModal .modal-footer>:not(:last-child) {
+	margin-left: 6px;
+	margin-right: 6px;
+}
+#logoutModal .modal-footer>:not(:first-child) {
+	margin-left: 6px;
+	margin-right: 6px;
+}
+#logoutModal .modal-description_largeMargin {
+	margin-bottom: 48px;
+}
+#logoutModal .modal-content {
+	background: #fff;
+	-webkit-box-shadow: 0 18px 33px #00000029;
+	box-shadow: 0 18px 33px #00000029;
+	border: 1px solid #fff;
+	border-radius: 25px;
+	outline: 0;
+	flex-direction: column;
+	width: 100%;
+	pointer-events: auto;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	position: relative;
+}
+#logoutModal .modal-dialog .modal-header, [dir] .modal-dialog .modal-secondaryContent {
+	padding: 40px 60px;
+}
+#logoutModal .modal-dialog-centeredContent {
+		text-align: center;
+	}
+#logoutModal .modal-header_smallPDB {
+	padding-bottom: 16px!important;
+}
+#logoutModal .modal-dialog-centeredContent .modal-header {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	position: relative;
+	border-bottom: none !important;
+}
+#logoutModal .modal-header .modal-title {
+	font-size: 45px;
+	color: #bf9b2e;
+	text-transform: uppercase;
+}
+#logoutModal .js-formInputFileBox .modal-close.bttn_close {
+	right: 10px;
+	border-radius: 25px!important;
+	border: 0 solid #00a6be!important;
+	top: 5px;
+}
+
+#logoutModal .modal-close {
+	width: 42px;
+	height: 42px;
+	cursor: pointer;
+	background: 0 0;
+	position: absolute;
+}
+#logoutModal .modal-close svg {
+	margin-top: 6px;
+	overflow: hidden;
+	fill: #00a6be;
+}
+#logoutModal .modal-close path {
+	stroke: #00a6be;
+}
+#logoutModal .modal-footer_spaceBetween {
+	justify-content: space-between!important;
+}
+</style>
 <c:url value="false" var="userLoggedIn"/>
 <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
     <c:url value="true" var="userLoggedIn"/>
@@ -222,7 +354,7 @@
                 </div>
                <div class="modal-footer modal-footer_spaceBetween">
                     <button type="button" class="btn-ctrl btn-warning noButton btn-outline p-0" data-dismiss="modal"><spring:message code="text.logout.no"/></button>
-                    <button type="button" class="btn btn-ctrl btn-bg p-0 yesButton"><spring:message code="text.logout.yes"/></button>
+                    <button type="button" class="btn btn-ctrl btn-bg p-0 m-0 yesButton"><spring:message code="text.logout.yes"/></button>
                 </div>
             </form>
         </div>

@@ -526,10 +526,14 @@
         </div>
     </div>
 </section>
-
 <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard ">
     <div class="container px-0">
         <dashboard:opportunityTickets></dashboard:opportunityTickets>
+    </div>
+</section>
+<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard ">
+    <div class="container px-0">
+        <dashboard:financialSurvey></dashboard:financialSurvey>
     </div>
 </section>
 

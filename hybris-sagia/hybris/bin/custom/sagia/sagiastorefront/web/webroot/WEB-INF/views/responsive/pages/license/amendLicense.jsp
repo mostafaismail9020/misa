@@ -757,10 +757,11 @@
 		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<form id="shareholderFormId">
 			<div class="modal-dialog modal-dialog-centered modal-header text-center" role="document">
-				<div class="modal-content panelModule panelModule_halfRadius">
+				<div class="modal-content panelModule panelModule_halfRadius ">
 					<div class="modal-title">
 						<spring:theme code="license.shareholder" />
 					</div>
+					<div class="modal-body ">
 					<div class="border-top-line">
 						<div id="shareholderNewExistingTypeId" class="row amend-shareholder-wrapper">
 							<div class="col-md-12">
@@ -1835,8 +1836,7 @@
 							</div>
 						</div>
 						</div>
-
-
+					</div>
 						<div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection mt-5">
 							<button type="button" class="btn btn-sector-outline btn_outline cancelShareholderBtn" data-dismiss="modal">
 								<spring:theme code="general.cancel" />
@@ -1854,173 +1854,177 @@
 	<div class="modal fade" id="branchModalId" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content panelModule panelModule_halfRadius">
+			<div class="modal-content panelModule panelModule_halfRadius modal-header">
 				<form id="branchFormId">
 					<!-- <div class="contentModule-headline">
 						<spring:theme code="general.branch" />
 					</div> -->
+					<div class="modal-title text">
+						<spring:theme code="general.branch" />
+					</div>
 
 					<!-- <div class="contentModule-headline">
 						<spring:theme code="license.branchdetails" />
 					</div> -->
-					<div class="contentModule contentModule-wrap">
-						<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
-							<span class="contentModule-headline"><spring:theme code="license.branchdetails" /></span>
-							<div class="contentModule-headline-border"></div>
-						</div>
-					</div>
-					<div class="border-top-line">
-					<div class="row">
-						<div class="col-md-12 col-lg-6">
-							<div class="formSelectBox">
-								<div class="form-group">
-									<select id="branchTypeId" name="branchType"
-										class="js-select2-oneColumn form-control">
-									</select> <label class="control-label control-label_mandatory"
-										for="branchTypeId"><spring:theme
-											code="license.branchtype" /></label>
-								</div>
-								<div class="help-block"></div>
+					<div class="modal-body ">
+						<div class="contentModule contentModule-wrap">
+							<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+								<span class="contentModule-headline"><spring:theme code="license.branchdetails" /></span>
+								<div class="contentModule-headline-border"></div>
 							</div>
 						</div>
-						<div class="col-md-12 col-lg-6">
-							<div class="formInputBox">
-								<div class="form-group">
-									<input id="branchNameId" name="branchName" class="form-control"
-										placeholder="." value="" type="text"> <label
-										class="control-label control-label_mandatory" for=""> <spring:theme
-											code="license.branchname" />
-									</label>
-									<div class="help-block"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					</div>
-
-					<div class="contentModule-separator"></div>
-					<!-- <div class="contentModule-headline">
-						<spring:theme code="license.contactinformation" />
-					</div> -->
-					<div class="contentModule contentModule-wrap">
-						<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
-							<span class="contentModule-headline"><spring:theme code="license.contactinformation" /></span>
-							<div class="contentModule-headline-border"></div>
-						</div>
-					</div>
-					<div class="border-top-line">
-					<div class="row">
-						<div class="col-md-12 col-lg-6">
-							<div class="formSelectBox">
-								<div class="form-group">
-									<select id="branchCountryId" name="branchCountry"
-										class="js-select2-oneColumn form-control" disabled>
-										<option value="SA" selected>Saudi Arabia</option>
-									</select> <label class="control-label control-label_mandatory"
-										for="branchCountryId"><spring:theme
-											code="license.country" /></label>
-								</div>
-								<div class="help-block"></div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-6">
-							<div class="formInputBox-split">
-								<div class="formInputBox formInputBox_big">
+						<div class="border-top-line">
+						<div class="row">
+							<div class="col-md-12 col-lg-6">
+								<div class="formSelectBox">
 									<div class="form-group">
-										<input id="branchStreetId" name="branchStreet"
-											class="form-control form-control_labeled" placeholder="."
-											value="" type="text"> <label
-											class="control-label control-label_mandatory"
-											for="branchStreetId"> <spring:theme
-												code="license.street" />
-										</label>
+										<select id="branchTypeId" name="branchType"
+											class="js-select2-oneColumn form-control">
+										</select> <label class="control-label control-label_mandatory"
+											for="branchTypeId"><spring:theme
+												code="license.branchtype" /></label>
 									</div>
 									<div class="help-block"></div>
 								</div>
+							</div>
+							<div class="col-md-12 col-lg-6">
 								<div class="formInputBox">
 									<div class="form-group">
-										<input id="branchNumberId" name="branchNumber"
-											class="form-control form-control_preNumber" placeholder="."
-											value="" type="text"> <label
-											class="control-label control-label_mandatory"
-											for="branchNumberId"> <spring:theme
-												code="general.no.number" />
+										<input id="branchNameId" name="branchName" class="form-control"
+											placeholder="." value="" type="text"> <label
+											class="control-label control-label_mandatory" for=""> <spring:theme
+												code="license.branchname" />
 										</label>
-									</div>
-									<div class="help-block"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-6">
-							<div class="formSelectBox">
-								<div class="form-group">
-									<select id="branchRegionId" name="branchRegion"
-										class="js-select2-search form-control"></select> <label
-										class="control-label control-label_mandatory"
-										for="branchRegionId"><spring:theme
-											code="license.region" /></label>
-								</div>
-								<div class="help-block"></div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-6">
-							<div class="formSelectBox">
-								<div class="form-group">
-									<select id="branchCityId" name="branchCity"
-										class="js-select2-search form-control"></select> <label
-										class="control-label control-label_mandatory"
-										for="branchCityId"><spring:theme code="license.city" /></label>
-									<div class="help-block"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-6">
-							<div class="formInputBox">
-								<div class="form-group">
-									<input id="branchTelephoneId" name="branchTelephone"
-										class="form-control" placeholder="." value="" type="text">
-									<label class="control-label control-label_mandatory"
-										for="branchTelephoneId"> <spring:theme
-											code="license.telephoneno" />
-									</label>
-									<div class="help-block"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-6">
-							<div class="formInputBox">
-								<div class="form-group">
-									<input id="branchEmailId" name="branchEmail"
-										class="form-control" placeholder="." value="" type="text">
-									<label class="control-label control-label_mandatory"
-										for="branchEmailId"> <spring:theme code="license.email" />
-									</label>
-									<div class="help-block" id="branchEmailValidation"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-6">
-							<div class="formInputBox formInputBox_group">
-								<div class="form-group">
-									<input id="branchWebsiteId" name="branchWebsite"
-										class="form-control website" placeholder="." value=""
-										type="text"> <label
-										class="control-label control-label_mandatory"
-										for="branchWebsiteId"> <spring:theme
-											code="license.website" />
-									</label>
-									<div class="formInputBox-append d-none">
-										<span class="formInputBox-text formInputBox-text_tip js-tip tool-tip-info"
-											data-tip-title="Tooltip Information to be shown to the user."
-											data-original-title="" title=""><icon:tipInfo /> </span>
+										<div class="help-block"></div>
 									</div>
 								</div>
-								<div class="help-block"></div>
 							</div>
 						</div>
-					</div>
-					</div>
+						</div>
 
+						<div class="contentModule-separator"></div>
+						<!-- <div class="contentModule-headline">
+							<spring:theme code="license.contactinformation" />
+						</div> -->
+						<div class="contentModule contentModule-wrap">
+							<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+								<span class="contentModule-headline"><spring:theme code="license.contactinformation" /></span>
+								<div class="contentModule-headline-border"></div>
+							</div>
+						</div>
+						<div class="border-top-line">
+						<div class="row">
+							<div class="col-md-12 col-lg-6">
+								<div class="formSelectBox">
+									<div class="form-group">
+										<select id="branchCountryId" name="branchCountry"
+											class="js-select2-oneColumn form-control" disabled>
+											<option value="SA" selected>Saudi Arabia</option>
+										</select> <label class="control-label control-label_mandatory"
+											for="branchCountryId"><spring:theme
+												code="license.country" /></label>
+									</div>
+									<div class="help-block"></div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-6">
+								<div class="formInputBox-split">
+									<div class="formInputBox formInputBox_big">
+										<div class="form-group">
+											<input id="branchStreetId" name="branchStreet"
+												class="form-control form-control_labeled" placeholder="."
+												value="" type="text"> <label
+												class="control-label control-label_mandatory"
+												for="branchStreetId"> <spring:theme
+													code="license.street" />
+											</label>
+										</div>
+										<div class="help-block"></div>
+									</div>
+									<div class="formInputBox">
+										<div class="form-group">
+											<input id="branchNumberId" name="branchNumber"
+												class="form-control form-control_preNumber" placeholder="."
+												value="" type="text"> <label
+												class="control-label control-label_mandatory"
+												for="branchNumberId"> <spring:theme
+													code="general.no.number" />
+											</label>
+										</div>
+										<div class="help-block"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-6">
+								<div class="formSelectBox">
+									<div class="form-group">
+										<select id="branchRegionId" name="branchRegion"
+											class="js-select2-search form-control"></select> <label
+											class="control-label control-label_mandatory"
+											for="branchRegionId"><spring:theme
+												code="license.region" /></label>
+									</div>
+									<div class="help-block"></div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-6">
+								<div class="formSelectBox">
+									<div class="form-group">
+										<select id="branchCityId" name="branchCity"
+											class="js-select2-search form-control"></select> <label
+											class="control-label control-label_mandatory"
+											for="branchCityId"><spring:theme code="license.city" /></label>
+										<div class="help-block"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-6">
+								<div class="formInputBox">
+									<div class="form-group">
+										<input id="branchTelephoneId" name="branchTelephone"
+											class="form-control" placeholder="." value="" type="text">
+										<label class="control-label control-label_mandatory"
+											for="branchTelephoneId"> <spring:theme
+												code="license.telephoneno" />
+										</label>
+										<div class="help-block"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-6">
+								<div class="formInputBox">
+									<div class="form-group">
+										<input id="branchEmailId" name="branchEmail"
+											class="form-control" placeholder="." value="" type="text">
+										<label class="control-label control-label_mandatory"
+											for="branchEmailId"> <spring:theme code="license.email" />
+										</label>
+										<div class="help-block" id="branchEmailValidation"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-6">
+								<div class="formInputBox formInputBox_group">
+									<div class="form-group">
+										<input id="branchWebsiteId" name="branchWebsite"
+											class="form-control website" placeholder="." value=""
+											type="text"> <label
+											class="control-label control-label_mandatory"
+											for="branchWebsiteId"> <spring:theme
+												code="license.website" />
+										</label>
+										<div class="formInputBox-append d-none">
+											<span class="formInputBox-text formInputBox-text_tip js-tip tool-tip-info"
+												data-tip-title="Tooltip Information to be shown to the user."
+												data-original-title="" title=""><icon:tipInfo /> </span>
+										</div>
+									</div>
+									<div class="help-block"></div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
 					<div
 						class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
 						<button type="button"

@@ -66,7 +66,7 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
 		<a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink back_to_service">
-           	<span class="iconElement iconElement_closeBack image-pos">
+           	<span class="iconElement iconElement_closeBack" id="image-pos-arrow">
            		<img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/>
            	</span><spring:message code="myprofile.account.overview"/>
 		</a>
@@ -77,10 +77,12 @@
         <div class="panelModule panelModule_halfRadius">
             <div class="contentModule">
                 <div class="contentModule-section">
-                    <div class="contentModule-headline">
-                        <!-- <span class="iconElement iconElement_branches"><icon:branches/></span> -->
-                        <spring:theme code="dashboard.myLicense.branches"/>
-                        ${pageType}
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="dashboard.myLicense.branches"/>
+                                ${pageType}</span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
                     </div>
                     <div class="formError hidden" id="error-group">
                         <icon:messageError/><spring:theme code="govDocs.error.branchesNotCompleted"/>
@@ -130,7 +132,7 @@
             </div>
         </div>
 
-        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
+        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween justify-content-end ">
             <c:url value="/governmentDocuments" var="governmentDocs"/>
             <button type="submit" class="btn" onclick="sendBranches()" ${disabled}><spring:theme code="myprofile.submit"/></button>
  			<input type="hidden" id="serviceId"/>
@@ -335,7 +337,7 @@
             </div>
 
             <div class="modal-footer modal-footer_centered">
-                <button type="reset" class="btn btn_outline full-width-responsive" data-dismiss="modal">
+                <button type="reset" class="btn btn_outline btn_slim full-width-responsive" data-dismiss="modal">
                     <spring:message code="myprofile.cancel"/>
                 </button>
                 <button type="button" class="btn full-width-responsive" onclick="saveBranch()" ${disabled}>

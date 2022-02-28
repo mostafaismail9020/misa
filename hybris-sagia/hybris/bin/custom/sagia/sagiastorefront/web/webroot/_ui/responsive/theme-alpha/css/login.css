@@ -279,7 +279,7 @@ position: relative;
 }
 .errorPage-div{
     height: 100vh;
-    background-image: url(https://127.0.0.1:9002/_ui/responsive/theme-alpha/img/login-background.jpg);
+    background-image: url("../../../../_ui/responsive/common/images/B2C/background1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-size: cover;
@@ -302,3 +302,113 @@ padding: 50px !important;
 margin-top: 150px !important;
 }
 /* End */
+
+.page-verification #sagiaVerificationForm label.register-user-info-label.validate-mobile-label{
+   
+	left: 197px!important;
+
+}
+.page-verification  #sagiaVerificationForm .user-email-verify-sec{
+	padding: 0 3%;
+}
+.page-verification  #sagiaVerificationForm .verified,  #sagiaVerificationForm .mobile-not-verified{
+	margin-left: -52px;
+    position: relative;
+    top: 5px;
+}
+.page-verification  .login-btn-next:hover{
+color: #00a6de!important;
+}
+
+/* 150%  1 */
+
+@media (min-width: 1200px) and (max-width:1500px) {
+	.page-verification .login-register-text{
+		margin-top: 0;
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+	.page-verification .login-screen2 .register-user-info{
+
+		margin: 10px 0 !important;
+	}
+	.page-verification #sagiaVerificationForm .verification-info span {
+		margin-left: -46px;
+		position: relative;
+		top: 1px;
+		font-size: 11px !important;
+	}
+	.page-verification #sagiaVerificationForm .dotted-lines{
+		display: none;
+	}
+	.page-verification #sagiaVerificationForm .formInputBox_group .form-control{
+		font-size: 13px;
+	}
+	.formInputBox .register-user-details~.register-user-info-label.control-label[for="mobile"]{
+		transform: translate3d(11px,26px,0) scale(1);
+	}
+}
+
+/* 150%  2 */
+@media(min-width:992px) and (max-width:1199px){
+	.page-verification .login-register-text{
+		margin-top: 0;
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+	.page-verification .login-screen2 .register-user-info{
+
+		margin: 10px 0 !important;
+	}
+	.page-verification #sagiaVerificationForm .verification-info span {
+		margin-left: -46px;
+		position: relative;
+		top: 1px;
+		font-size: 11px !important;
+	}
+	.page-verification #sagiaVerificationForm .dotted-lines{
+		display: none;
+	}
+	.page-verification #sagiaVerificationForm .formInputBox_group .form-control{
+		font-size: 13px;
+	}
+	.page-verification #sagiaVerificationForm .formInputBox .register-user-details~.register-user-info-label.control-label[for="mobile"]{
+		transform: translate3d(11px,26px,0) scale(1);
+	}
+	.page-verification .login-screen2 .panelModule{
+		max-width: 531px ;
+	}
+}
+
+/* 125% */
+@media(min-width:1530px) and (max-width:1600px){
+
+	.page-verification .login-register-text{
+		margin-top: 0;
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+	.page-verification .login-screen2 .register-user-info{
+
+		margin: 10px 0 !important;
+	}
+	.page-verification #sagiaVerificationForm .verification-info span {
+		margin-left: -13px;
+		position: relative;
+		top: 1px;
+		font-size: 11px !important;
+	}
+	.page-verification #sagiaVerificationForm .dotted-lines{
+		display: none;
+	}
+	.page-verification #sagiaVerificationForm .formInputBox_group .form-control{
+		font-size: 13px;
+	}
+	.page-verification #sagiaVerificationForm .formInputBox .register-user-details~.register-user-info-label.control-label[for="mobile"]{
+		transform: translate3d(11px,26px,0) scale(1);
+	}
+	.page-verification .login-screen2 .panelModule{
+		max-width: 531px ;
+	}
+
+}

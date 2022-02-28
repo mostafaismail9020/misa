@@ -65,6 +65,7 @@
                         </a>
                     </div>
                 </li>
+                
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
                         <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
@@ -150,9 +151,9 @@
                                                         </div>
                                                     </div>
                                                 </c:forEach>
-                                          </div>
+                                          	</div>
                                         </div>
-                                      </div>
+                                	</div>
                                 </c:forEach>
                             </div>
                         </div>
@@ -169,7 +170,8 @@
                             </div>
                         </a>
                     </div>
-                </li>  
+                </li>
+                
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent1">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES1" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
@@ -212,9 +214,9 @@
                                                         </div>
                                                     </div>
                                                 </c:forEach>
-                                          </div>
+                                          	</div>
                                         </div>
-                                      </div>
+                                	</div>
                                 </c:forEach>
                             </div>
                         </div>
@@ -222,7 +224,9 @@
                 </li>
             </ul>
             </div>
+            
             <!--Desktop-->
+            <!-- Licensing Services -->
             <div class=" col-lg-8 tab-content desktop_services services-container-tabcontent" id="pills-tabContent">
                 <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show active pb-5 m-auto" id="FIRST" role="tabpanel" aria-labelledby="pills-licensing-tab">
@@ -249,8 +253,9 @@
                                 </c:forEach>
                             </div>
                         </div>
-                </c:forEach>
+                	</c:forEach>
                 
+                	<!-- Governmental Services -->
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
                         <div class="p-4 serviceModule-detail mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
@@ -271,7 +276,7 @@
                                     </h2>
                                     <div id="collapse-g${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-g${loop.index}" data-parent="#govtServices" data-bs-parent="#govtServices">
                                       <div class="accordion-body serviceModule-detail border-top-0">
-                                        <p class="service-para">${category.value[0].category.description}</p>
+                                        <p class="service-para"></p>
                                         <c:forEach items="${category.value}" var="service">
                                                 <div id="serviceModule" class="serviceModule serviceModule_list">
                                                     <div class="serviceModule-section">
@@ -291,16 +296,14 @@
                                                     </div>
                                                 </div>
                                             </c:forEach>
-                                      </div>
+                                      	</div>
                                     </div>
-                                  </div>
-
-                                
+                           		</div>                                
                             </c:forEach>
                         </div>
                     </div>
                    
-
+					<!-- MISA Services -->
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
                         <div class="p-4 serviceModule-detail  mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
@@ -321,35 +324,32 @@
                                     </h2>
                                     <div id="collapse-m${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-m${loop.index}" data-parent="#misaServices" data-bs-parent="#misaServices">
                                       <div class="accordion-body serviceModule-detail border-top-0">
-                                        <p class="service-para">${category.value[0].category.description}</p>
+                                        <p class="service-para"></p>
                                         <c:forEach items="${category.value}" var="service">
-                                                <div id="serviceModule" class="serviceModule serviceModule_list">
-                                                    <div class="serviceModule-section">
-                                                        <div class="serviceModule-content">
-                                                            <div class="serviceModule-description">
-                                                                <span class="serviceModule-headline cursor-pointer">${service.name}</span>
-                                                                <div class="serviceModule-detail service-search-module">
-                                                                    <div class="w-75">
-                                                                        <p>${service.description}</p>
-                                                                    </div>
-                                                                    <div class="w-25 serviceModule-request">
-                                                                        <a class="text-uppercase request-service" href=${encodedContextPath}/${service.url}><spring:theme code="sagia.services.request.service"/></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </c:forEach>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                
-                            </c:forEach>
-                        </div>
-                    </div>
-
+                                              <div id="serviceModule" class="serviceModule serviceModule_list">
+                                                  <div class="serviceModule-section">
+                                                      <div class="serviceModule-content">
+                                                          <div class="serviceModule-description">
+                                                              <span class="serviceModule-headline cursor-pointer">${service.name}</span>
+                                                              <div class="serviceModule-detail service-search-module">
+                                                                  <div class="w-75">
+                                                                      <p>${service.description}</p>
+                                                                  </div>
+                                                                  <div class="w-25 serviceModule-request">
+                                                                      <a class="text-uppercase request-service" href=${encodedContextPath}/${service.url}><spring:theme code="sagia.services.request.service"/></a>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                     	</c:forEach>
+                                 	</div>
+                               	</div>
+                            </div>                                
+                     	</c:forEach>
+                   	</div>
+             	</div>
             </div>
         </div>
     </div>

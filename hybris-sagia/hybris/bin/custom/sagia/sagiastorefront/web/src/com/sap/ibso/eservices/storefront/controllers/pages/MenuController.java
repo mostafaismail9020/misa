@@ -56,12 +56,14 @@ public class MenuController {
     }
 
     private boolean areEqual(SagiaCategoryData oldCategoryData, SagiaCategoryData newCategoryData) {
-        if(!oldCategoryData.getCategoryUrl().equals(newCategoryData.getCategoryUrl())
-                || !oldCategoryData.getDescription().equals(newCategoryData.getDescription())
-                || !oldCategoryData.getLabel().equals(newCategoryData.getLabel())
-                || !oldCategoryData.getName().equals(newCategoryData.getName())) {
-            return false;
-        }
+    	if (null != oldCategoryData && null != newCategoryData) {
+	        if(!oldCategoryData.getCategoryUrl().equals(newCategoryData.getCategoryUrl())
+	                //|| !oldCategoryData.getDescription().equals(newCategoryData.getDescription())
+	                || !oldCategoryData.getLabel().equals(newCategoryData.getLabel())
+	                || !oldCategoryData.getName().equals(newCategoryData.getName())) {
+	            return false;
+	        }
+    	}
         return true;
     }
 

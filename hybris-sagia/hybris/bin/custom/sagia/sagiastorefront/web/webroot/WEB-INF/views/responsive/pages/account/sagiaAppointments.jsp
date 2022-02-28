@@ -440,7 +440,7 @@ class="btn btn_link appointmentList-viewBtn appointmentList-icon_view">
         <td class="appointmentList-view">
             <a href="${encodedContextPath}/appointments/details/" class="btn btn_link appointmentList-viewBtn appointmentList-icon_view">
                 <span><spring:theme code="appointments.viewDetails"/></span>
-                <!-- <icon:view/>-->
+                <icon:view/>
             </a>
         </td>
     </tr>

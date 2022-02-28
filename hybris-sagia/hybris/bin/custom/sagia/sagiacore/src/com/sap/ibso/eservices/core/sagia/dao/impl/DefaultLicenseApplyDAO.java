@@ -11,14 +11,11 @@ import de.hybris.platform.enumeration.EnumerationService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.SearchResult;
-<<<<<<< HEAD
 import org.apache.commons.collections4.CollectionUtils;
-=======
 import de.hybris.platform.catalog.CatalogVersionService;
 import javax.annotation.Resource;
 import java.util.Map;
 import com.sap.ibso.eservices.core.model.SagiaCMSParagraphMediaComponentModel;
->>>>>>> refs/heads/feature/ui-revamp-resolution-merge
 
 import java.util.Arrays;
 import java.util.HashMap;

@@ -509,8 +509,6 @@
             <targetElement type="ScpiOutTicketAttachmentProcess" cardinality="many" qualifier="scpiOutTicketAttachmentProcess">
             </targetElement>
         </relation>
-	</relations>
-	
 
 		<relation code="ProvinceNewsRel" generate="true" localized="false" autocreate="true">
 			<deployment table="ProvinceNewsRel" typecode="30301" />
@@ -4019,8 +4017,31 @@
                         </persistence>
                     </attribute>
                 </attributes>
-            </itemtype> 
-            
+            </itemtype>
+
+            <itemtype code="OpportunityPartner" generate="true" autocreate="true">
+                <description>To identify list of partners available to a product</description>
+                <deployment table="OpportunityPartner" typecode="30210"/>
+                <attributes>
+                    <attribute qualifier="partnerType" type="PartnerType">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="productId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers optional="false" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="partnerRowId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers optional="false" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="customer" type="Customer">
+                        <persistence type="property" />
+                        <modifiers optional="false" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+
             <itemtype code="C4C2CommerceOpportunity" generate="true" autocreate="true">
                 <description>Invest Saudi C4C to Commerce Opportunity</description>
                 <deployment table="C4C2CommerceOpportunity" typecode="30501"/>
@@ -4037,9 +4058,101 @@
                         <persistence type="property"/>
                         <modifiers optional="false" unique="true"/>
                     </attribute>
+                    <attribute qualifier="processingTypeCodeText" type="java.lang.String">
                         <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="lifeCycleStatusCode" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="LifeCycleStatusCodeText" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="salesCycleCode" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="salesCycleCodeText" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="salesCyclePhaseCode" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="salesCyclePhaseCodeText" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="prospectPartyId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="prospectPartyName" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="sectorId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="sectorName" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="subSectorId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="subSectorName" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="customerId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="customerName" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="approvalStatusCode" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="approvalStatusCodeText" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="creationDateTime" type="java.util.Date">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="lastChangeDateTime" type="java.util.Date">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mainEmployeeResponsiblePartyId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mainEmployeeResponsiblePartyName" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="productCode" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="productName" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
                 </attributes>
-            </itemtype>                       
+            </itemtype>
+
         </typegroup>
 
 		<typegroup name="investsaudiportalcms">

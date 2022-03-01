@@ -23,8 +23,36 @@
 			align-items: center;
 			
 		}
+		
+	}
+	@media (max-width: 767px){
 		.mobile-nav a{
-			font-size: 18px !important;
+			font-size: 16px;
+		}
+		.mobile-nav .btn-outline{
+			width: 120px;
+			height: 50px;
+			border-radius: 10px !important;
+			padding: 10px ;
+			text-align: center;
+			border: 1px solid #00a6be;
+			margin-right: 5px;
+			text-transform: uppercase;
+		}
+		.mobile-nav .btn-dashboard{
+			width: 120px;
+			height: 50px;
+			border-radius: 10px !important;
+			padding: 15px;
+			background: #00a6be;
+			text-align: center;
+			display: flex;
+			align-items:center;
+			justify-content: center;
+		}
+
+		.mobile-nav .sagiaNavigation-user span{
+			display: block;
 		}
 	}
 
@@ -32,14 +60,46 @@
 		#logoutModal .modal-dialog-sm .modal-body, [dir] .modal-dialog-xs .modal-body {
 			padding: 0 60px;
 		}
-	}
-	@media (min-width: 992px){
 		#logoutModal .modal-dialog-sm .modal-footer, [dir] .modal-dialog-xs .modal-footer {
 			padding: 0 60px 32px 60px;
 		}
 	}
-	.mobile-nav a{
-		font-size: 20px !important;
+
+	@media screen and (min-width: 768px) and (max-width: 1024px) {
+		.sagiaNavigation-user .header-user-name{
+			display: block !important;
+		}
+
+		.mobile-nav .btn-outline{
+			width: 170px;
+			height: 60px;
+			border-radius: 10px !important;
+			padding: 15px ;
+			text-align: center;
+			border: 1px solid #00a6be;
+			margin-right: 10px;
+		}
+		.mobile-nav .btn-dashboard{
+			width: 170px;
+			height: 60px;
+			border-radius: 10px !important;
+			padding: 15px !important;
+			background: #00a6be;
+			text-align: center;
+			display: flex;
+			align-items: end;
+			justify-content: center;
+		}
+		.mobile-nav a{
+			font-size: 20px;
+		}
+		.mobile-nav .sagiaNavigation-user span{
+			display: block;
+		}
+	}
+
+	#topbar .social-links a{
+		line-height: normal;
 	}
 	#logoutModal .modal-footer>a, .modal-footer>button,  .modal-footer>div{
 		margin-bottom: 0;
@@ -164,21 +224,9 @@
 	.mobile-nav .btn-outline span{
 		color: #00a6be;
 	}
-	.mobile-nav .btn-dashboard{
-		width: 170px;
-		height: 60px;
-		border-radius: 10px !important;
-		padding: 15px !important;
-		background: #00a6be;
-		text-align: center;
-	}
-	.mobile-nav .btn-outline{
-		width: 170px;
-		height: 60px;
-		border-radius: 10px !important;
-		padding: 15px !important;
-		text-align: center;
-		border: 1px solid #00a6be;
+	
+	#topbar .social-links .sagiaNavigation-user img{
+		margin: 0 10px;
 	}
 	.mobile-nav .MobileNavUserIcon{
 		height: 40px;
@@ -187,7 +235,6 @@
 		margin-right: 20px;
 	}
 	.MobileNavUser{
-		padding: 10px 0 !important;
 		margin: 10px 0 !important;
 		border-top: 1px solid #707070;
 		border-bottom: 1px solid #707070;
@@ -197,11 +244,7 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-		
-	}
-	.sagiaNavigation-user .header-user-name{
-		display: block !important;
-	}
+	}	
 </style>
 <c:url value="false" var="userLoggedIn"/>
 <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
@@ -234,22 +277,22 @@
 				</a>
 				<c:choose>
 					<c:when test="${userLoggedIn}">
-						<a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user">
+						<a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user d-none d-lg-inline">
 					      	<img class="" src="${commonResourcePath}/images/User-icon.svg" /><span class="header-user-name">${user.name}</span>
 					    </a>
-	                    <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer">
+	                    <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer d-none d-lg-inline">
 	                    	<span><spring:theme code="dashboard.logout.label"/></span>
 	                    </a>
-					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text" target="_blank" rel="nofollow noreferrer noopener">
+					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener ">
 					    	<span><spring:theme code="portal.header.feedback.label"/></span>
 					    </a>
 					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 					</c:when>
 					<c:otherwise>
-					    <a href="${encodedContextPath}/investsaudi-login" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener">
+					    <a href="/${encodedContextPath}/investsaudi-login" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
 					      	<span><spring:theme code="portal.header.login.label"/></span>
 						</a>
-					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text" target="_blank" rel="nofollow noreferrer noopener">
+					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
 					    	<span><spring:theme code="portal.header.feedback.label"/></span>
 					    </a>
 					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
@@ -268,6 +311,21 @@
 			</div>
 			<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
 			<nav class="nav-menu d-none d-lg-block ">
+				<div class="d-block d-lg-none">
+					<c:choose>
+						<c:when test="${userLoggedIn}">
+							<div class="MobileNavUser">
+								<a href="${encodedContextPath}/my-sagia/sagia-profile"
+									title="${user.name}" class="login-details sagiaNavigation-user d-flex">
+									<img class="MobileNavUserIcon"
+									src="${commonResourcePath}/images/User-icon.svg" />
+									<span
+										class="header-user-name">${user.name}</span>
+								</a>
+							</div>
+						</c:when>
+					</c:choose>
+				</div>
 				<ul>
 				    <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
 					<li class="nav-item dropdown">
@@ -368,6 +426,41 @@
 						</li>
 					</c:forEach>
 				</ul>
+				<div class="p-3 d-flex  justify-content-center d-lg-none">
+					<c:choose>
+						<c:when test="${userLoggedIn}">
+							<a href="https://eservices.sagia.gov.sa:2443/gensurvey"
+								class="btn-outline login-details linkedin login-text" target="_blank"
+								rel="nofollow noreferrer noopener">
+								<span>
+									<spring:theme code="portal.header.feedback.label" />
+								</span>
+							</a>
+							<a data-toggle="modal" data-target="#logoutModal"
+								title="<spring:theme code='text.logout'/>"
+								class="btn-dashboard text-white login-details sagiaNavigation-logout cursor-pointer mr-3">
+								<span>
+									<spring:theme code="dashboard.logout.label" />
+								</span>
+							</a>
+						</c:when>
+						<c:otherwise>
+							<a href="https://eservices.sagia.gov.sa:2443/gensurvey"
+								class="linkedin login-text" target="_blank"
+								rel="btn-outline nofollow noreferrer noopener">
+								<span>
+									<spring:theme code="portal.header.feedback.label" />
+								</span>
+							</a>
+							<a href="/en/investsaudi-login" class="btn-dashboard linkedin login-text"
+								target="_blank" rel="nofollow noreferrer noopener">
+								<span>
+									<spring:theme code="portal.header.login.label" />
+								</span>
+							</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
 			</nav>
 		</div>
 		<div id="user-icons" class="user-icons-header p-0 d-none">

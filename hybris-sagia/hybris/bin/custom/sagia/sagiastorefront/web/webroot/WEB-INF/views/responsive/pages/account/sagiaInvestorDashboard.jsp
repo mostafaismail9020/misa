@@ -92,13 +92,13 @@
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry ml-md-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>&nbsp;<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy, hh:mm a"/></span></span>
+                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>&nbsp;&nbsp;<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy, hh:mm a"/></span></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="dashboardUser-right d-block d-sm-flex col-md-6 px-0">
+                <div class="dashboardUser-right d-block d-sm-flex col-md-6 px-0 mt-2">
                     <div class="col-12 col-md-6 p-0 px-md-3">
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->

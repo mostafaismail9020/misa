@@ -211,6 +211,8 @@ position: relative;
 	overflow: auto;
 }
 .page-license-amend .mainSection.bg-white.mainSection_loaded{padding-bottom: 0;}
+.page-license-amend #businessActivitiesModal .baList.baList_columns{columns: 3;}
+.page-license-amend #businessActivitiesModal .baList .baList-item a{text-align: left;}
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}
@@ -235,6 +237,8 @@ position: relative;
 	.page-license-amend #shareholderModalId .formInputBox-split>div:not(.formInputBox_big) {flex: 0 0 35%;}
 	.page-license-amend #showDelegateQuestionOrganization .deligate-info-form.formRadioBox .form-item{padding: 0;}
 	.page-license-amend #showDelegateQuestionOrganization .deligate-info-form.formRadioBox .form-item label{margin: 0;}
+	.page-license-amend .expandableContent-main.amend-ddl-list .panelTabs .panelTabs-navigation{display: none !important;}
+	.page-license-amend .js-panelTabs.panelTabs .panelTabs-content{padding: 0;border: none;}
 }
 @media (max-width: 991px) and (min-width: 641px){
 	.page-license-amend #shareholderModalId .panelModule,
@@ -305,6 +309,19 @@ position: relative;
 /* Dashboard */
 .page-dashboard .dashboard-tabs .dashboardWidget-filter .select2.select2-container{padding: 12px 10px !important; height: auto !important;}
 .page-dashboard .dashboard-tabs .dashboardWidget-filter .select2.select2-container .select2-selection--single{height: auto !important;}
+.page-dashboard .dashboard-tabs .dashboardWidget-filter .label-dashboardWidget-filter{
+	font-size: 12px;
+    margin-left: 20px !important;
+    margin: 0;
+}
+[dir="ltr"] .page-dashboard .dashboard-tabs .dashboardWidget-filter .select2.select2-container .select2-selection--single .select2-selection__rendered{
+	text-overflow: ellipsis;
+	padding-right: 12px;
+}
+[dir="rtl"] .page-dashboard .dashboard-tabs .dashboardWidget-filter .select2.select2-container .select2-selection--single .select2-selection__rendered{
+	text-overflow: ellipsis;
+	padding-left: 12px;
+}
 /* End */
 .errorPage-div{
     height: 100vh;

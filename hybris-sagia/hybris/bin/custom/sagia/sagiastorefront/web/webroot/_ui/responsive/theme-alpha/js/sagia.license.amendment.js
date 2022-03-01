@@ -809,7 +809,11 @@ $(document).on('click', '#showDelegateQuestionOrganization .formRadioBox .form-i
           $(this).toggleClass('btn-bg');  
          
 });
-
+$(document).on('click', '#showDelegateQuestion .formRadioBox .form-item label', function(event) {
+    $("#showDelegateQuestion .formRadioBox .form-item label").removeClass('btn-bg');
+          $(this).toggleClass('btn-bg');  
+         
+});
 
 
 

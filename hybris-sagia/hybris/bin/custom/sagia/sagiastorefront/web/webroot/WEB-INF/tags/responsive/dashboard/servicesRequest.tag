@@ -24,9 +24,10 @@
         </div>
 
         <div class="dashboardWidget-filter">
+        <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label>
         <c:if test="${!editable}">
             <select id="serviceSort" title="Services" class="js-select2-oneColumn form-control" onchange="sortServices()">
-                <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
+                <!--<option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>-->
                 <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.asc"/> </option>
                 <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.desc"/> </option>
                 <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>

@@ -66,7 +66,7 @@
                     <button class="paginationModule-control paginationModule-control_left" disabled>
                         <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
                     </button>
-                    <div class="paginationModule-items">
+                    <div class="paginationModule-items m-auto">
                         <div class="loadingModule">
                             <div class="loadingModule-icon"><icon:loading-spinner /></div>
                             <div class="loadingModule-msg">Loading content ...</div>

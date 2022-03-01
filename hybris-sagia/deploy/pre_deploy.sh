@@ -137,6 +137,7 @@ else
    ant addoninstall -Daddonnames=commerceorgaddon -DaddonStorefront.yacceleratorstorefront=investsaudistorefront
    ant addoninstall -Daddonnames=smarteditaddon -DaddonStorefront.yacceleratorstorefront=investsaudistorefront,sagiastorefront 
    ant addoninstall -Daddonnames=captchaaddon -DaddonStorefront.yacceleratorstorefront=sagiastorefront
+   ant addoninstall -Daddonnames=investsaudicaptchaddon -DaddonStorefront.yacceleratorstorefront=investsaudistorefront
   ./hybrisserver.sh start || handle_error "Hybris failed to start"
 fi
 

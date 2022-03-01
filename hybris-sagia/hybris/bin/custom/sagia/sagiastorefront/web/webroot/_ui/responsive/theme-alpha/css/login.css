@@ -195,6 +195,7 @@ position: relative;
 .page-license-amend .mainSection.bg-white.mainSection_loaded{padding-bottom: 0;}
 .page-license-amend #businessActivitiesModal .baList.baList_columns{columns: 3;}
 .page-license-amend #businessActivitiesModal .baList .baList-item a{text-align: left;}
+
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}

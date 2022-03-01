@@ -1,0 +1,40 @@
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $contentCatalog]), CatalogVersion.version[default = Online])[default = $contentCatalog:Online]
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms = $config-jarResourceCmsValue
+
+
+
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]                     ; name                                                     ; masterTemplate(uid, $contentCV); label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; previewImage(code, $contentCV)[default = 'ContentPageModel__function_preview'];
+
+
+
+
+						 ;                          ; financial-survey                          ; Financial Survey Page                                       ; SagiaTemplate                  ; financial-survey
+
+
+
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]                                   			; position[unique = true]; page(uid, $contentCV)[unique = true]; contentSlot(uid, $contentCV)[unique = true]          ; ; ;
+
+
+								;                           ; InnerPageContentSlot-FinancialSurvey                    			; InnerPageContentSlot   ; financial-survey                       ; InnerPageContentSlot-FinancialSurvey                    ; ; ;
+
+
+
+
+
+INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                            		; name                                       ; page                                                                        ; actions(uid, $contentCV); &componentRef
+
+								 ;                          ; SagiaFinancialSurveyComponent                    		; Fill Financial Survey                              ; /WEB-INF/views/responsive/pages/financialSurvey/completeFinancialSurvey.jsp                    ;                         ; SagiaFinancialSurveyComponent
+
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                                   		; name                                     		; active; cmsComponents(&componentRef)                  ; ; ;
+
+						 ;                          ; InnerPageContentSlot-FinancialSurvey                    		; SAGIA Financial Survey                      		; true  ; SagiaFinancialSurveyComponent                    ; ; ;
+
+

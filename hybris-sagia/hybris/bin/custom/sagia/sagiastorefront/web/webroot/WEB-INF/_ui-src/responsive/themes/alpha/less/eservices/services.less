@@ -962,7 +962,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
 }
 
 .dashboard-detail-text{
-    font-size: 18px!important;
+    font-size: 16px!important;
     font-weight: 500;
     color:@color-primary;
 }
@@ -1549,14 +1549,19 @@ div.invest-us-header:empty,.no-data-remove:empty{
     }
 }
 
-#shareholderFormId,#branchFormId,#branchEditModal{
-    .modal-content{
-        height: 70vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        margin: auto;
+// #shareholderFormId,#branchFormId,#branchEditModal{
+    .modal-content{        
         margin-top: 10vh;
+        margin: auto;
     }
+    .modal-body{
+        max-height: 60vh;
+        overflow-y: scroll;
+        overflow-x: hidden;        
+    }
+// }
+#enquiryDetail{
+    transform: translate(-10%,0);
 }
 #branchEditModal{
     .modal-footer{
@@ -1568,23 +1573,22 @@ div.invest-us-header:empty,.no-data-remove:empty{
         }        
     }
 }
+a.historyList-link{
+    text-decoration: none;
+}
 
-// .custom-modal{
-//     display: none; 
-//     position: fixed; 
-//     z-index: 1;
-//     left: 0;
-//     top: 0;
-//     width: 100%; 
-//     height: 100%; 
-//     overflow: auto; 
-//     background-color: rgb(0,0,0); 
-//     background-color: rgba(0,0,0,0.4);
-//     .custom-modal-content{
-//         background-color: #fefefe;
-//         margin: 15% auto; 
-//         padding: 20px;
-//         border: 1px solid #888;
-//         width: 80%;
-//     }
-// }
+#requestSubmittedComment{
+    .modal-dialog{
+        top: 5vh;
+    }
+    .submit-sucess-modal{
+        max-height: 60vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .modal-body{
+        max-height: unset;
+        overflow-y: initial;
+        overflow-x: initial;
+    }
+}

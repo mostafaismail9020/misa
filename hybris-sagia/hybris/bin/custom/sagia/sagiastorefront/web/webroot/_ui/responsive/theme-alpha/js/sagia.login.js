@@ -313,7 +313,9 @@ $(".register-investor-screen3-btn-back").on('click',function(){
 	$('.register-account-screen').removeClass('next-hide');
 	$('.register-account-investor-screen3').addClass('next-hide');
 })
-$(".register-account-investor-screen3 .register-form input").on('change',function(){
+$(".error, .js-quickregister-firstname, .js-quickregister-lastname , .js-quickregister-company, .js-quick-mobile-number, #quickregistrationEmail , .jqTitle , .jqSector, .jqCountry  ").on('change',function(){
+	var wto;
+	wto = setTimeout(function() {
 	var $fName = $(".js-quickregister-firstname").val();
 	var $lName = $(".js-quickregister-lastname").val();
 	var $Company = $(".js-quickregister-company").val();
@@ -331,6 +333,7 @@ $(".register-account-investor-screen3 .register-form input").on('change',functio
 		$('.register-investor-screen3-btn-next').removeClass('active')
 		$(".register-investor-screen3-btn-next svg").addClass('next-hide');
 	}
+}, 1500);
 })
 
 
@@ -462,7 +465,10 @@ $(document).ready(function() {
 	$("#sagiaLoginForm input").keyup(function (event) {
 		if (event.keyCode == 13) {
 		  event.preventDefault();
-		  validateLoginForm();
+		  if(validateLoginForm()){
+			$('form#sagiaLoginForm').submit();
+			return false;
+		}
 	  }
 	});
 

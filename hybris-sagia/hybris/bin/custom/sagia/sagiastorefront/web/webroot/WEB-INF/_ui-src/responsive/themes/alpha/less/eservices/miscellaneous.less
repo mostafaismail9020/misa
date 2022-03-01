@@ -246,14 +246,21 @@ ul.notificationList{
 	color: #707070;
 	font-size: var(--content-big-font);
 }
-#eServiceTour  .modal-dialog{
-	max-width: 700px !important;
-	position:  fixed;
-	top: 70px;
-	left: calc(50% - 20px);
-	bottom: 40px;
-	z-index: 100;
+.licenseSimulatorPopup  {
+	@media screen and (min-width:1200px) and (max-width:2000px) {
+	   .modal-content{
+		   transform: translate(-25%,0);
+	   }	 
+	}
 }
+// #eServiceTour  .modal-dialog{
+// 	max-width: 700px !important;
+// 	position:  fixed;
+// 	top: 70px;
+// 	left: calc(50% - 20px);
+// 	bottom: 40px;
+// 	z-index: 100;
+// }
 #eServiceTour  .modal-dialog .modal-title{
    font-size: var(--heading-font);
 }
@@ -915,18 +922,19 @@ label.btn.lang-btn.active {
 		font-weight: 500;
 	}
 	p{
-		font-size: var(--content-big-font);
+		font-size: 20px;
 	}
 		
 }
 .d-facts-figures{
+	background: rgba(0, 0, 0, 0.24);
 	p{
 		color: @color-white;
 		font-size: var(--content-big-font);
 	}
 }
 .section-counts h5,.section-counts h5 span.headline-golden {
-    font-size: 43px !important;
+    font-size: 40px !important;
     color: #bf9b2e;
     line-height: 48px;
     text-transform: uppercase;
@@ -1001,7 +1009,7 @@ label.btn.lang-btn.active {
 	}
 
 	.section-counts p.description {
-		font-size: var(--content-big-font);
+		font-size: 20px;
 		color: #fff;
 		line-height: 19px;
 		text-align: center;
@@ -1017,7 +1025,7 @@ label.btn.lang-btn.active {
 	}
 	.sectors-content p, .grid-section p {
 		color: #7B838C;
-		font-size: 16px;
+		font-size: 20px;
 		line-height: 25px;
 		font-weight: 400;
 		width: 96%;
@@ -1045,10 +1053,13 @@ label.btn.lang-btn.active {
 }
 #customer-sector-icon{	
 	float: left;	
+	// width: 40px;
+	// height: 40px;
+	margin-top: 5px;
 }	
 .d-invest-with-us h3{	
 	padding-left: 70px;	
-	font-size: 30px;	
+	font-size: 40px;	
 }
 
 //page appointments

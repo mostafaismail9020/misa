@@ -157,8 +157,8 @@
 									</div>
 
 									<c:if test="${not empty qeemahEmail}">
-										<div class="row"> 
-											<div class="col-xs-8 col-md-6">
+										<div class="row user-email-verify-sec register-user-info"> 
+											<div class="col-xs-8 col-md-10">
 												<div
 													class="formInputBox formInputBox_group ">
 													<div class="form-group">
@@ -179,7 +179,7 @@
 												</div>
 											</div>
 											<!--    <div class="col-6 col-md-2"> -->
-											<div class="col-6 col-md-3 verification-info" id="align">
+											<div class="col-6 col-md-2 verification-info" id="align">
 												<i class="fas fa-info-circle"></i>
 												<c:choose>
 													<c:when test='${qeemahEmailStatus == "VERIFIED"}'>

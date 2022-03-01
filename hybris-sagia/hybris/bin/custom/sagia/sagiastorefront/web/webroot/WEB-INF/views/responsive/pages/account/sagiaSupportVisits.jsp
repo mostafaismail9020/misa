@@ -126,14 +126,14 @@
 </div>
 <div class="mainSection mainSection_dark mainSection_pdt16 mt-5 service-main">
     <div class="container">
-        <c:if test="${fn:length(supportVisits) > 1}">
+        <c:if test="${fn:length(supportVisits) > 0}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
                 <div class="hidden"><span><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
                 <div class=""><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
         <div class="expandableContent expanded" id="expand01">
-            <c:if test="${fn:length(supportVisits) > 1}">
+            <c:if test="${fn:length(supportVisits) > 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
@@ -198,23 +198,28 @@
                             </div>
 
                             <div class="tableModule">
-                                <table class="tableModule-table">
-                                    <thead class="tableModule-head">
-                                    <tr>
-                                        <th><spring:theme code="text.account.followup.supportVisitsDate"/></th>
-                                        <th><spring:theme code="text.account.followup.description"/></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody class="tableModule-body">
+                                <c:if test="${fn:length(supportVisits) gt 0}">
+                                    <table class="tableModule-table">
+                                        <thead class="tableModule-head">
                                         <tr>
-                                            <td><span
-                                                    id="supportVisitDate">${selectedSupportVisit.visitDate.dateFormatted}</span>
-                                            </td>
-                                            <td class="tableModule-bodyItem-left"><span
-                                                    id="supportVisitMsg">${selectedSupportVisit.textMsg}</span></td>
+                                            <th><spring:theme code="text.account.followup.supportVisitsDate"/></th>
+                                            <th><spring:theme code="text.account.followup.description"/></th>
                                         </tr>
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody class="tableModule-body">
+                                            <tr>
+                                                <td><span
+                                                        id="supportVisitDate">${selectedSupportVisit.visitDate.dateFormatted}</span>
+                                                </td>
+                                                <td class="tableModule-bodyItem-left"><span
+                                                        id="supportVisitMsg">${selectedSupportVisit.textMsg}</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </c:if>
+                                <c:if test="${fn:length(supportVisits) lt 1}">
+                                    <div class="text-center"><span class="h5 text-center">No Data Available</span></div>
+                                </c:if>
                             </div>
 
                     </div>

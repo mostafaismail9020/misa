@@ -191,6 +191,10 @@ $(document).ready(function () {
     }
 });
 
+$(document).on("change", "#regularAmendmentDocsId .js-inputFile", function(e) {
+    var $submitAmendmentBtn = $('#submitAmendmentBtnId');
+    $submitAmendmentBtn.attr("disabled", false);    
+})
 function getCurrentLicenseData() {
     $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/amend/00", {
         beforeSend: function (xhr) {

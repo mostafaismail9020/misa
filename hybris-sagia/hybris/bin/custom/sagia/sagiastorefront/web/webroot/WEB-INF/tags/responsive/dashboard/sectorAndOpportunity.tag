@@ -37,7 +37,7 @@
 		                                            <p class="invest-with-us-description">${customerSectorCategory.overview} </p>
 		                                       	</c:if>
 		                                    <!-- <p class="invest-with-us-description">${sector.sectorDetails}</p> -->
-		                                    <div class="row m-auto justify-content-center d-d-invest-actions">	
+		                                    <div class="row m-auto d-d-invest-actions">	
 		                                       	<c:if test="${sector.sectorCode ne 'Others'}">
 		                                   			<div class="dashboardWidgetBanner-action">
 		                                   				<a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard">

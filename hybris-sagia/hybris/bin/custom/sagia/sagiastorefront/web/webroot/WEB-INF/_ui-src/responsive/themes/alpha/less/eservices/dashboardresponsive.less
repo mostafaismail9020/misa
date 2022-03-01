@@ -412,16 +412,16 @@
 	.dashboard-tabs .download-payment img{
 		vertical-align: sub;
 	}
-	.d-invest-with-us p{
-		font-size: 26px;
-	}
+	// .d-invest-with-us p{
+	// 	font-size: 26px;
+	// }
 	.invest-us-header, .page-dashboard .invest-with-us-description{
 		display: none;
 	}
-	.newsAndUpdateContainer .d-news-update-content{
-		font-size: 26px;
-		color: #707070;
-	}
+	// .newsAndUpdateContainer .d-news-update-content{
+	// 	font-size: 26px;
+	// 	color: #707070;
+	// }
 	.dashboard-tabs .dashboardWidget-filter{
 		width: 190px;
 	}
@@ -431,7 +431,7 @@
 	.firstBlock-text{
 		color: #707070;
 		letter-spacing: 0px;
-		font-size: 24px;
+		// font-size: 24px;
 	}
 	.license .tabs-list li.dashboardTabs-current a{
 		pointer-events: none;
@@ -500,24 +500,24 @@
 	overflow: hidden;
 }
 
-.page-dashboard-without-license .newsAndUpdateContainer .d-news-update-content{
-	font-size: 26px;
-    color: #707070;
-}
+// .page-dashboard-without-license .newsAndUpdateContainer .d-news-update-content{
+// 	font-size: 26px;
+//     color: #707070;
+// }
 
 .page-dashboard-without-license .firstBlock-text{
 	color: #707070;
     letter-spacing: 0;
-    font-size: 26px;
+    // font-size: 26px;
 }
 
-#license-application-simulator.modal{
-	top: 20%;
-}
+// #license-application-simulator.modal{
+// 	top: 20%;
+// }
 
-.page-dashboard-without-license .licenseSimulatorPopup  .modal-dialog{
-	top: 20%;
-}
+// .page-dashboard-without-license .licenseSimulatorPopup  .modal-dialog{
+// 	top: 20%;
+// }
 
 .page-dashboard .INS_letter_set_para{
 	overflow: hidden;
@@ -599,18 +599,18 @@
 	}
 	
 }
-.page-dashboard-without-license .licenseSimulatorPopup .modal-content{
+/*.page-dashboard-without-license .licenseSimulatorPopup .modal-content{
 	right: calc(-30%);
-}
+}*/
 @media (max-width: 640px) and (min-width: 100px){
 	.page-dashboard-without-license .licenseSimulatorPopup .modal-content{
-		right: calc(0%);
+		/*right: calc(0%);*/
 		width: 100%;
 		max-width: 100%;
 	}
 	
 	.page-dashboard{ 
-		.paginationModule-items, .page-dashboard .paginationModule-control{	
+		.paginationModule-items, .paginationModule-control{	
 			display: none;	
 		}
 		.dashboardUser{
@@ -638,6 +638,7 @@
 			border-top: none;;
 		}
 		.dashboardUser-wrapper{
+			overflow: hidden;
 			.dashboardUser-left{
 				.col{
 					padding-left: 0px;
@@ -645,13 +646,22 @@
 				}
 			}
 		}
+		.dashboardUser-col-alignment{
+			padding-left: 10px;
+		}
+	}
+	.dashboard-invest-btn{
+		margin-top: 0px !important;
+	}
+	::-webkit-scrollbar{
+		height:5px !important;
 	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.page-dashboard-without-license .licenseSimulatorPopup .modal-content{
 		max-width: 700px;
-		right: calc(-20%);
+		/*right: calc(-20%);*/
 		width: 700px;
 	}
 	.account-manager h4{

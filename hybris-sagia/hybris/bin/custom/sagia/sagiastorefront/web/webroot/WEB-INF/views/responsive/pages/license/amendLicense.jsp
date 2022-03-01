@@ -464,11 +464,11 @@
 																		<h5 class="modal-title" id="exampleModalLiveLabel"><spring:theme code="text.account.profile.license.shareholders.deleteShareholder" /></h5>
 																	  </div>
 																	  <div class="deleteDropdown-actions d-flex justify-content-center align-items-center my-4">
-																		<button type="button" class="btn btn_slim removeShareholderBtn">
-																			<spring:theme code="general.delete" />
-																		</button>
 																		<button type="button" class="btn btn_primary btn_outline js-deleteDropdown-cancel">
 																			<spring:theme code="general.cancel" />
+																		</button>
+																		<button type="button" class="btn btn_slim removeShareholderBtn">
+																			<spring:theme code="general.delete" />
 																		</button>
 																	</div>
 																	</div>
@@ -536,21 +536,24 @@
 														<button type="button" class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn service_action_btn">
 															<icon:remove />
 														</button>
-														<div class="deleteDropdown-drop">
-															<div class="deleteDropdown-text">
-																<spring:theme
-																	code="text.account.profile.license.branches.deletethebranch" />
-															</div>
-															<div class="deleteDropdown-actions">
-																<button type="button"
-																	class="btn btn_slim removeBranchBtn">
-																	<spring:theme code="general.delete" />
-																</button>
-																<button type="button"
-																	class="btn btn_outline btn_slim js-deleteDropdown-cancel mt-3">
-																	<spring:theme code="general.cancel" />
-																</button>																
-															</div>
+														<div class="deleteDropdown-drop modal">
+															<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+																<div class="modal-content">
+																  <div class="modal-header">
+																	<h5 class="modal-title" id="exampleModalLiveLabel"><spring:theme code="text.account.profile.license.branches.deletethebranch" /> </h5>
+																  </div>
+																  <div class="deleteDropdown-actions d-flex justify-content-center align-items-center my-4">
+																	<button type="button"
+																		class="btn btn_outline btn_slim js-deleteDropdown-cancel">
+																		<spring:theme code="general.cancel" />
+																	</button>
+																	<button type="button"
+																		class="btn btn_slim removeBranchBtn">
+																		<spring:theme code="general.delete" />
+																	</button>
+																</div>
+																</div>
+															  </div>
 														</div>
 													</div>
 												</td>
@@ -634,20 +637,24 @@
 															<button type="button"class="btn btn_link deleteDropdown-btn js-deleteDropdown-btn service_action_btn">
 																<icon:remove />
 															</button>
-															<div class="deleteDropdown-drop">
-																<div class="deleteDropdown-text">
-																	<spring:theme code="products.deleteproduct" />
-																</div>
-																<div class="deleteDropdown-actions">
-																	<button type="button"
-																		class="btn btn_slim removeProductBtn">
-																		<spring:theme code="general.delete" />
-																	</button>
-																	<button type="button"
-																		class="btn btn_outline btn_slim js-deleteDropdown-cancel mt-3">
-																		<spring:theme code="general.cancel" />
-																	</button>
-																</div>
+															<div class="deleteDropdown-drop modal">
+																<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+																	<div class="modal-content">
+																	  <div class="modal-header">
+																		<h5 class="modal-title" id="exampleModalLiveLabel"><spring:theme code="products.deleteproduct" /> </h5>
+																	  </div>
+																	  <div class="deleteDropdown-actions d-flex justify-content-center align-items-center my-4">
+																			<button type="button"
+																				class="btn btn_outline btn_slim js-deleteDropdown-cancel">
+																				<spring:theme code="general.cancel" />
+																			</button>
+																			<button type="button"
+																				class="btn btn_slim removeProductBtn">
+																				<spring:theme code="general.delete" />
+																			</button>
+																	</div>
+																	</div>
+																  </div>
 															</div>
 														</div>
 													</td>
@@ -885,18 +892,19 @@
 
 						<div id="contentNewShareholderForm">
 							<!-- <div class="contentModule-headline"><spring:theme code="license.basicinformation" /></div> -->
-							<div class="contentModule contentModule-wrap">
-								<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
-									<span class="contentModule-headline"><spring:theme code="license.basicinformation" /></span>
-									<div class="contentModule-headline-border"></div>
-								</div>
-							</div>
+							
 
 							<div class="border-top-line">
 
 							<%--Entity shareholder--%>
 							<div id="entityShareholderId">
 								<div class="row" id="companyVerificationSection">
+									<div class="contentModule contentModule-wrap col-md-12">
+										<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+											<span class="contentModule-headline"><spring:theme code="license.basicinformation" /></span>
+											<div class="contentModule-headline-border"></div>
+										</div>
+									</div>
 									<div class="col-md-6 mt-3">
 										<div class="formInputBox">
 											<div class="form-group">
@@ -940,9 +948,6 @@
 												<%-- <input type="checkbox" id="professionalLicenseCrVerified" name="professionalLicenseCrVerified" value="true" class="hidden" ${sagiaApplyEntityInfoForm.professionalLicenseCrVerified ? "checked=checked" : 0}> --%>
 											</div>
 										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="contentModule-separator"></div>
 									</div>
 								</div>
 
@@ -1282,15 +1287,16 @@
 						</div>
 
 							<!-- <div class="contentModule-headline"><spring:theme code="license.contactinformation" /></div> -->
-							<div class="contentModule contentModule-wrap">
-								<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
-									<span class="contentModule-headline"><spring:theme code="license.contactinformation"/></span>
-									<div class="contentModule-headline-border"></div>
-								</div>
-							</div>
+							
 
 							<div class="border-top-line">
 							<div id="shareholderAddressId" class="row">
+								<div class="contentModule contentModule-wrap col-md-12">
+									<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+										<span class="contentModule-headline"><spring:theme code="license.contactinformation"/></span>
+										<div class="contentModule-headline-border"></div>
+									</div>
+								</div>
 								<div class="col-md-12 col-lg-6">
 									<div class="formSelectBox">
 										<div class="form-group">
@@ -1413,6 +1419,7 @@
 										<div class="w-100 delegate-info-popover">
 											<a class="btn btn_link js-tip btn-tooltip" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click">
 												<spring:theme code="text.account.profile.license.shareholders.tooltip.heading" />
+												<svg version="1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#999ca4" d="M7.567 6.081c.407-.433.965-.649 1.674-.649.657 0 1.182.186 1.577.556s.592.844.592 1.42c0 .349-.07.632-.214.849-.144.218-.437.537-.88.958-.323.305-.533.564-.63.776-.098.213-.146.526-.146.94h-.879c0-.471.056-.85.167-1.138s.361-.618.748-.99l.402-.39c.122-.111.219-.227.295-.35.136-.213.205-.436.205-.666 0-.323-.099-.603-.295-.84s-.522-.355-.975-.355c-.561 0-.949.204-1.165.612-.121.228-.189.555-.207.983h-.878c0-.711.203-1.283.609-1.716zm1.074 5.67h.982v1.027h-.982v-1.027z" enable-background="new"></path><path fill="#999ca4" d="M9 17.389c-4.625 0-8.389-3.763-8.389-8.389 0-4.625 3.764-8.389 8.389-8.389 4.626 0 8.389 3.764 8.389 8.389 0 4.626-3.763 8.389-8.389 8.389zm0-16c-4.197 0-7.611 3.414-7.611 7.611 0 4.196 3.414 7.611 7.611 7.611 4.196 0 7.611-3.415 7.611-7.611 0-4.197-3.415-7.611-7.611-7.611z"></path></svg>
 											</a>
 											<div class="tooltip_content service_tooltip_content" id="delegateToolTip">
 												<h2>
@@ -1430,11 +1437,11 @@
 										<div class="formRadioBox-wrapper my-0 py-0" id="showDelegateQuestion"
 											${shareholderType eq "Organization" ? 'style="display: none"' : ''}>
 											<div class="row">
-												<div class="col-md-8 col-12">
+												<div class="col-md-12 col-lg-7 mb-4">
 													<span><spring:theme
 															code="text.account.profile.license.shareholders.isDelegate" /></span>
 												</div>
-												<div class="col-md-4 col-12">
+												<div class="col-md-12 col-lg-5">
 													<div class="formRadioBox deligate-info-form">
 														<div class="form-group">
 															<div class="form-item">
@@ -1442,7 +1449,7 @@
 																	id="hasDelegateYES" value="true" class="form-control"
 																	${not empty data.delegateInfo && data.delegateInfo.delegate != false && data.delegateInfo.delegateYourself eq true ? 'checked="checked"' : ''} />
 																<label for="hasDelegateYES" id="hasDelegateYESLabel"
-																	class="control-label"><spring:theme
+																	class="btn btn-ctrl btn_bold btn-bg control-label"><spring:theme
 																		code="text.account.profile.license.shareholders.hasDelegate.yes" /></label>
 															</div>
 															<div class="form-item">
@@ -1450,7 +1457,7 @@
 																	id="hasDelegateNO" value="false" class="form-control"
 																	${not empty data.delegateInfo && data.delegateInfo.delegate != false && data.delegateInfo.delegateYourself eq false ? 'checked="checked"' : 'checked'} />
 																<label for="hasDelegateNO" id="hasDelegateNOLabel"
-																	class="control-label"><spring:theme
+																	class="btn btn-ctrl btn_bold  control-label"><spring:theme
 																		code="text.account.profile.license.shareholders.hasDelegate.no" /></label>
 															</div>
 														</div>
@@ -1461,11 +1468,11 @@
 										<div class="formRadioBox-wrapper" id="showDelegateQuestionOrganization"
 											${shareholderType eq "Organization" ? 'style="display: none"' : ''}>
 											<div class="row">
-												<div class="col-md-6">
+												<div class="col-md-12 col-lg-6">
 													<span><spring:theme
 															code="text.account.profile.license.shareholders.que.wantdelegate" /></span>
 												</div>
-												<div class="col-md-6">
+												<div class="col-md-12 col-lg-6">
 													<div class="formRadioBox deligate-info-form">
 														<div class="form-group">
 															<div class="form-item">
@@ -2357,4 +2364,11 @@
 <script>
 	var controllerUrl = '${controllerUrl}';
 	var srId = '${srId}';
+
+function closeErrorModal() {
+  if ($("body").hasClass("modal-open")) {
+	$('body').removeClass('modal-open');
+	$('body').addClass('modal-scroll');
+  }
+}
 </script>

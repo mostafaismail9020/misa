@@ -613,17 +613,17 @@ INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
 
 #Production Data
 
-UPDATE SagiaCategory       ; code[unique = true]  ; name[lang = $langen]                               ; categoryUrl ;
-                           ; 7                    ; Rules & Regulation Advisory                        ; caturl      ;
-                           ; 6                    ; Government Data Update Service                     ; caturl      ;
-                           ; 4                    ; Property Ownership and Sale                        ; caturl      ;
-                           ; 2                    ; MISA Special Services                              ; caturl      ;
-                           ; 5                    ; Follow Up Services                                 ; caturl      ;
-                           ; 3                    ; Financial Statement                                ; caturl      ;
-                           ; labour               ; Ministry of Human Resource and Social Development  ; ZMOL        ;
-                           ; commerceAndIndustry  ; Ministry of Commerce                               ; ZMOCI       ;
-                           ; interiorAndPassport  ; General Department of Passports                    ; ZMOIP       ;
-                           ; 1                    ; Licensing Services                                 ; caturl      ;
+UPDATE SagiaCategory       ; code[unique = true]  ; name[lang = $langen]                               ; categoryUrl ; description[lang = $langen]	;
+                           ; 7                    ; Rules & Regulation Advisory                        ; caturl      ;		;
+                           ; 6                    ; Government Data Update Service                     ; caturl      ;		;
+                           ; 4                    ; Property Ownership and Sale                        ; caturl      ;		;
+                           ; 2                    ; MISA Special Services                              ; caturl      ;		;
+                           ; 5                    ; Follow Up Services                                 ; caturl      ;		;
+                           ; 3                    ; Financial Statement                                ; caturl      ;		;
+                           ; labour               ; Ministry of Human Resource and Social Development  ; ZMOL        ;		;
+                           ; commerceAndIndustry  ; Ministry of Commerce                               ; ZMOCI       ;		;
+                           ; interiorAndPassport  ; General Department of Passports                    ; ZMOIP       ;		;
+                           ; 1                    ; Licensing Services                                 ; caturl      ; MISA provides licensing services such as: Renewal, Amendment, convert to national and voluntary cancellation.;
 
 							
 

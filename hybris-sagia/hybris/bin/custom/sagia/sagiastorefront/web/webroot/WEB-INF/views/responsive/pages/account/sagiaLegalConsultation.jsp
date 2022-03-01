@@ -124,7 +124,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class=" row renewal-services w-100">
                 <div class="col-xl-3 col-md-6 col-12 px-0">
-                    <a href="/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                    <a href="/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
                     <div class="col-xl-3 col-md-6 col-12">
@@ -246,14 +246,14 @@
 
 <div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
-        <c:if test="${fn:length(legalConsultations) gt 1}">
-            <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
+        <c:if test="${fn:length(legalConsultations) gt 0}">
+            <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
                 <div class="hidden"><span><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
                 <div class=""><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
         <div class="expandableContent expanded" id="expand01">
-            <c:if test="${fn:length(legalConsultations) gt 1}">
+            <c:if test="${fn:length(legalConsultations) gt 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
@@ -421,7 +421,7 @@
      <span id= "currentID">{{srId}}</span>
     </div>
    <div>
-	<button class="btn btn_slim"
+	<button class="btn btn_slim d-none"
     onclick="window.location.href='${encodedContextPath}/legalconsultations/new'">
     <spring:theme code="legalConsultation.create"/>
     </button>

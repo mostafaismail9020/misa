@@ -1,4 +1,5 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div class="modal fade" id="termsAndConditionsResponseModal"  tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -20,7 +21,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="d-none"></button>
-                <button type="button" class="btn" data-dismiss="modal"><spring:message code="general.close"/></button>
+                <button type="button" class="btn" data-dismiss="modal"><spring:theme code="general.close" /></button>
             </div>
         </div>
     </div>

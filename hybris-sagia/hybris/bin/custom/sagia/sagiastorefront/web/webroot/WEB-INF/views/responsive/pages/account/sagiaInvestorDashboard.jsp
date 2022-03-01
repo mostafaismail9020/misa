@@ -92,13 +92,13 @@
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry ml-md-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/><span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
+                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>&nbsp;&nbsp;<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy, hh:mm a"/></span></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="dashboardUser-right d-block d-sm-flex col-md-6 px-0">
+                <div class="dashboardUser-right d-block d-sm-flex col-md-6 px-0 mt-2">
                     <div class="col-12 col-md-6 p-0 px-md-3">
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
@@ -214,7 +214,7 @@
                 </li>
                 <li class="mobile_services mb-5">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                        <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="licensing1" role="tabpanel" aria-labelledby="pills-licensing-tab">
+                        <div class="tab-pane fade service_tab_pane_show show active pb-5 m-auto" id="licensing1" role="tabpanel" aria-labelledby="pills-licensing-tab">
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
@@ -337,15 +337,16 @@
 
 <section class="container mainSection_noPaddingTop js-dashboard  p-0">
     <div class="container row p-0 m-0">
-        <div class="Inc-title-header pt-5 col-12">
+        <div class="Inc-title-header col-12">
             <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
                <spring:theme code="sagia.services.licenses.label"/>
             </h1>
 		</div>
         <div class="col-12 p-0">
-            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
+            <a class="float-right text-uppercase mb-3 mb-md-5"></a>
+            <!-- <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
             	<spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/>
-            </a>
+            </a> -->
         </div>
     </div>
 </section>
@@ -384,7 +385,7 @@
                                     </div> -->
                                     <div class="dashboardWidget-filter">
                                         <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
-                                            <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                            <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
                                             <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
                                             <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
                                             <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
@@ -463,7 +464,7 @@
                                     </div>
                                     <div class="dashboardWidget-filter">
                                         <select id="ticketSort" title="tickets" class="js-select2-oneColumn form-control" onchange="sortTickets()">
-                                            <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                            <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
                                             <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
                                             <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
                                             <option value="number_asc" data-sort="asc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
@@ -568,11 +569,13 @@
 	                                <div class="card-img">
 	                                    <img class="img-fluid" src="${fn:escapeXml(currentNews.newsDetailsImage.url)}" alt="">
 	                                </div>
-	                                <div class="card-box p-3 pr-5 home-news-updates-content">
+	                                <div class="card-box p-3 pr-3 home-news-updates-content">
 	                                    <!-- <strong><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" /></strong> -->
-	                                    <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMM" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /></span>
-	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,70)} ...</h3>
-	                                    <!-- <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p> -->
+	                                    <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" />
+                                            <!-- &nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /> -->
+                                        </span>
+	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,30)} ...</h3>
+	                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
 	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
 	                                </div>
 	                            </div>
@@ -802,7 +805,7 @@
                                 </div>
                                 <div class="dashboardWidget-filter">
                                     <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
-                                        <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                        <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
                                         <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
                                         <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
                                         <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
@@ -874,7 +877,7 @@
                                 </div>
                                 <div class="dashboardWidget-filter">
                                     <select id="ticketSort" title="tickets" class="js-select2-oneColumn form-control" onchange="sortTickets()">
-                                        <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                                        <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
                                         <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
                                         <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
                                         <option value="number_asc" data-sort="asc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>

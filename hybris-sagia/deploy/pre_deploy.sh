@@ -138,6 +138,7 @@ else
    ant addoninstall -Daddonnames=smarteditaddon -DaddonStorefront.yacceleratorstorefront=investsaudistorefront,sagiastorefront 
    ant addoninstall -Daddonnames=captchaaddon -DaddonStorefront.yacceleratorstorefront=sagiastorefront
    ant addoninstall -Daddonnames=investsaudicaptchaddon -DaddonStorefront.yacceleratorstorefront=investsaudistorefront
+   chmod 777 /hybris/bin/custom/sagia/sagiastorefront/node_modules/.bin/gulp
    ant sagiastorefront_compileuisrc
   ./hybrisserver.sh start || handle_error "Hybris failed to start"
 fi

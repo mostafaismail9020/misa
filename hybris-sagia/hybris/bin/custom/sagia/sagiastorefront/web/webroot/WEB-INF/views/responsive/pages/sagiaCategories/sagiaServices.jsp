@@ -152,11 +152,11 @@
 </div>
 <div class="container">
     <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
-        <div class=" "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
-        <div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+        <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+        <div class=""><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
     </button>
 </div>
-<div class="container service-wrapper service-wrapper-info mb-5"  id="expand-03" style="display:none">
+<div class="container service-wrapper service-wrapper-info mb-5 expanded"  id="expand-03">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -252,7 +252,6 @@
                 <div><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
-
         <div class="expandableContent expanded" id="expand01">
             <c:if test="${fn:length(serviceList) gt 1}">
                 <div class="expandableContent-aside">
@@ -421,8 +420,14 @@
 
                         <c:if test="${fn:length(attachments) gt 0}">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                <div class="contentModule-headline contentModule-headline_bordered">
+                                <!-- <div class="contentModule-headline contentModule-headline_bordered">
                                     <icon:documents/><spring:theme code="text.account.followup.supportDocuments"/>
+                                </div> -->
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
                                 </div>
                             </div>
 

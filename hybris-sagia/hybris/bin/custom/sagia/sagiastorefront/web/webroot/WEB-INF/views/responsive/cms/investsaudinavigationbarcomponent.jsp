@@ -268,7 +268,7 @@
 					 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
 					 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
 				 </c:if> -->
-				<a href="#" class="skype">
+				<a href="#" class="skype text-decoration-none">
 					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
 						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
 						<label class="lang-btn lang-en active cursor-pointer" onclick="LanguageToggle('en')">EN</label>

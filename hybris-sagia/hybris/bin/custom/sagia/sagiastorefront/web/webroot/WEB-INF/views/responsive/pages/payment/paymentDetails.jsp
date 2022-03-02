@@ -225,7 +225,7 @@
                 </div>
                 <div class="contentModule-actions contentModule-actions_centered">
                     <c:if test="${hasInvoice}">
-                        <a href="${encodedContextPath}/payment/pdf/${paymentData.serviceId}" target="_blank" class="btn btn_round btn_outline">
+                        <a href="${encodedContextPath}/payment/pdf/${paymentData.serviceId}" target="_blank" class="btn btn_round btn_outline w-25">
                             Print SADAD invoice<span class="iconElement iconElement_print"><icon:print/></span>
                         </a>
                     </c:if>

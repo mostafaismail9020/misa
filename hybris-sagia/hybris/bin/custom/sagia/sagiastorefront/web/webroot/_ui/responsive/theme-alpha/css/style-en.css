@@ -697,7 +697,7 @@ ul.dropdown-list li a {
 
 .btn-trans label.lang-btn {
 	padding: 0;
-	color: #b9b9b9;
+	color: #fff;
 	font-size: 10px;
 	margin: 0 10px;
 	border: 0;
@@ -705,6 +705,11 @@ ul.dropdown-list li a {
 	cursor: pointer;
 }
 
+.btn-trans label.lang-btn:hover{
+	text-decoration: underline;
+	text-decoration-color: #00A6BE;
+	text-decoration-thickness:3px;
+}
 .btn-trans label.lang-btn.active {
 	color: #fff;
 }

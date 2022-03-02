@@ -313,6 +313,18 @@ position: relative;
 .page-dashboard .paginationModule-items .loadingModule-msg svg circle{fill: #00a6be;}
 /* End */
 /* login page */
+[dir=rtl] .page-login .register-form .slider:after {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-right: 0;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+[dir=rtl] .page-login .register-form .slider:before{
+	border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-right: 0;
+}
 @media (max-width: 640px) and (min-width: 100px){
 	[dir] .login-register-text{
 		margin-top: 30px;

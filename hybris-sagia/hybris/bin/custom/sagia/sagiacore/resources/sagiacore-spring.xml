@@ -1563,6 +1563,9 @@
 		  class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultInvestmentDataDAO">
 		  <property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
+	<bean id="serviceRequest2ScpiJob" class="com.sap.ibso.eservices.core.job.ServiceRequest2ScpiJob"/>
+    <bean id="contactTicket2ScpiJob" class="com.sap.ibso.eservices.core.job.ContactTicket2ScpiJob"/>
+
 	
     <!-- Economic Highlights Changes Ends -->
 

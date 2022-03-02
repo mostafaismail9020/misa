@@ -47,10 +47,7 @@ import org.fest.util.Strings;
 import java.nio.charset.StandardCharsets;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Default implementation of UserService
@@ -244,7 +241,7 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 			final MediaModel mediaModel) {
 		ContactTicketModel contactTicketModel = getContactTicketForTicketId(ticketId);
         if(null != bytes) {
-        	contactTicketModel.setAttachmentStream(new String(bytes, StandardCharsets.UTF_8));
+        	contactTicketModel.setAttachmentStream(new String(Base64.getEncoder().encode(bytes)));
         }
         LOG.info("contactTicketModel is " +contactTicketModel);
         CsTicketModel ticket = (CsTicketModel)contactTicketModel;

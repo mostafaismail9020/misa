@@ -12,22 +12,6 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
  
-
-<style>
-    .page-service-request .Back_to_Dashboardss .potential_svg_arrow4{width:10px!important;height:17px!important}
-    .page-service-request .Back_to_Dashboardss .potential_svg_arrow4{-webkit-transform:rotateX(181deg)!important;transform:rotateX(181deg)!important;}
-    .page-service-request .Back_to_Dashboardss a:hover svg.potential_svg_arrow4 path{fill: #fff !important;}
-    .page-service-request .Back_to_Dashboardss a.btn.btn_leftIconLink.btn_darkLink.back_to_service:hover {color:#fff!important;background-color: #00a6be !important;} 
-	.page-service-request .Back_to_Dashboardss a.btn.btn_leftIconLink.btn_darkLink.back_to_service{padding: 10px 20px !important; width:450px !important;}
-	.page-service-request .formInputBox .description.form-control{height: 286px;border-radius: 25px;}
-	.page-service-request .formSelectBox .select2.select2-container.select2-container--disabled+.control-label { top: -18px!important;}
-
-	.page-service-request .formSelectBox .select2.select2-container.select2-container--disabled.select2Container_selected+.control-label, 
-	.page-service-request .formSelectBox .select2.select2-container.select2-container--focus+.control-label, .formSelectBox .select2.select2-container.select2-container--open+.control-label, 
-	.page-service-request .formSelectBox .select2.select2-container.select2Container_selected+.control-label{font-size: 16px;}
-	.page-service-request .select2.select2-container.select2.select2-container--disabled { margin-top: 0px !important;}
-</style>
-
 <div class="mainSection mainSection potential_opportunity_section">
     <div class="achievement_header">
         <img class="achievement_header_icon page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
@@ -88,7 +72,7 @@
 	<div class="row w-75 m-auto">
 		<div class="Back_to_Dashboardss">
 			<c:url value="/potentialOpportunity/${ticketId}" var="potentialOpportunityURL"/>
-			<a href="${potentialOpportunityURL}" class="btn btn_leftIconLink btn_darkLink back_to_service">
+			<a href="${potentialOpportunityURL}" class="btn btn_leftIconLink btn_darkLink">
 				<!-- <span class="iconElement iconElement_closeBack"><icon:close/></span> -->
 				<svg class="potential_svg_arrow4" xmlns="http://www.w3.org/2000/svg" width="10" height="17.116" viewBox="0 0 10 17.116">
 					<path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M14.265,14.749l6.618-6.471a1.2,1.2,0,0,0,0-1.727,1.275,1.275,0,0,0-1.77,0l-7.5,7.332a1.2,1.2,0,0,0-.036,1.687l7.53,7.383a1.277,1.277,0,0,0,1.77,0,1.2,1.2,0,0,0,0-1.727Z" transform="translate(-11.251 -6.194)" fill="#00a6be"/>

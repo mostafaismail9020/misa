@@ -424,7 +424,7 @@
                                                     <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;"> -->
                                                     <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
                                                 </button>
-                                                <div class="paginationModule-items m-auto">
+                                                <div class="paginationModule-items">
                                                     <div class="loadingModule">
                                                         <div class="loadingModule-icon"><icon:loading-spinner /></div>
                                                         <div class="loadingModule-msg">Loading content ...</div>
@@ -501,7 +501,7 @@
                                                 <button class="paginationModule-control paginationModule-control_left" disabled>
                                                     <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
                                                 </button>
-                                                <div class="paginationModule-items m-auto">
+                                                <div class="paginationModule-items">
                                                     <div class="loadingModule">
                                                         <div class="loadingModule-icon"><icon:loading-spinner /></div>
                                                         <div class="loadingModule-msg">Loading content ...</div>
@@ -840,7 +840,7 @@
                                             <button class="paginationModule-control paginationModule-control_left" disabled>
                                                 <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
                                             </button>
-                                            <div class="paginationModule-items m-auto">
+                                            <div class="paginationModule-items">
                                                 <div class="loadingModule">
                                                     <div class="loadingModule-icon"><icon:loading-spinner /></div>
                                                     <div class="loadingModule-msg">Loading content ...</div>
@@ -912,7 +912,7 @@
                                             <button class="paginationModule-control paginationModule-control_left" disabled>
                                                 <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
                                             </button>
-                                            <div class="paginationModule-items m-auto">
+                                            <div class="paginationModule-items">
                                                 <div class="loadingModule">
                                                     <div class="loadingModule-icon"><icon:loading-spinner /></div>
                                                     <div class="loadingModule-msg">Loading content ...</div>
@@ -994,7 +994,7 @@
 </div>
 
 <div class="modal fade" id="enquiryDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document"></div>
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-sm" role="document"></div>
 </div>
 
 <payment:paymentModal/>

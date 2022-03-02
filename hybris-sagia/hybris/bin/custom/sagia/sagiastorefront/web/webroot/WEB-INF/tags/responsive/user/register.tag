@@ -72,19 +72,25 @@
 					</div>
 					<spring:theme code="${registerFormError}" arguments=""/>
 					<div class="login-buttons">
-						<div class="col-md-6 col-12">
-							<a class="login-btn login-btn-cancel padding-top-10"><spring:theme code="investor.registration.cancel.button"/></a>
+					<div class="row">
+						<div class="col-lg-6 col-6">
+							<div class="w-100">													
+								<a class="login-btn login-btn-next active" ><spring:theme code="investor.registration.next.button"/>&nbsp;
+									<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
+										<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
+											d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
+											transform="translate(-7.875 -11.252)" fill="#fff">
+										</path>
+									</svg>
+								</a>
+							</div>
 						</div>
-						<div class="col-md-6 col-12">													
-							<a class="login-btn login-btn-next active padding-top-10" ><spring:theme code="investor.registration.next.button"/>&nbsp;
-								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
-									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
-										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
-										transform="translate(-7.875 -11.252)" fill="#fff">
-									</path>
-								</svg>
-							</a>
-						</div>
+						<div class="col-lg-6 col-6">
+						    	<div class="w-100">
+									<a class="login-btn login-btn-cancel"><spring:theme code="investor.registration.cancel.button"/></a>
+								</div>
+							</div>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -228,8 +234,8 @@
 									   path="countryCode" mandatory="true" skipBlank="false"
 									   skipBlankMessageKey="form.select.empty" items="${countries}" itemValue="code"/>	
 						</div>
-						<div class="row col-12 reg-country-code-div register-form form-floating country-code-mobile">
-							<div class="col-8  ml-0 pl-0 d-flex">
+						<div class="col-12 col-md-12 reg-country-code-div register-form form-floating country-code-mobile">
+							<div class="col-12 col-md-8  ml-0 pl-0 d-flex">
 								<%--
 								<input type="text" class="ddl-countryCode register-user-details register-contry-info" placeholder=" " autocomplete="off" id="reg-country">
 								<div class="input-wrapper focus-on-change">
@@ -249,7 +255,7 @@
 												mandatory="true"/>
 								</div>								
 							</div>
-							<div class="col-4 mx-0 px-0 register-language" id="registerQuickSelectLanguageDiv">
+							<div class="col-4 col-md-4 mx-0 px-0 register-language" id="registerQuickSelectLanguageDiv">
 								<span><spring:theme code="general.language"/></span>
 								<label class="switch">
 									<input type="checkbox" id="registerQuickSelectLanguageSelect">
@@ -258,11 +264,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="login-buttons user-info-buttons">
-						<div class="col-md-6 col-12">
-							<a class="login-btn register-investor-screen3-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
-						</div>
-						<div class="col-md-6 col-12">
+
+					<div class="login-buttons user-info-buttons mt-4">
+						<div class="row">
+							<div class="col-lg-6 col-6">
+								<a class="login-btn register-investor-screen3-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
+							</div>
+							<div class="col-lg-6 col-6">
 							<a class="login-btn register-investor-screen3-btn-next padding-top-10"><spring:theme code="investor.registration.next.button"/>&nbsp;
 								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
 									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
@@ -272,7 +280,9 @@
 								</svg>
 							</a>
 						</div>
+						</div>
 					</div>
+
 				</div>
 			</div>
 
@@ -370,18 +380,20 @@
 						</div>
 					</div>
 					<div class="login-buttons user-info-buttons">
-						<div class="col-md-6 col-12">
-							<a class="login-btn register-investor-screen4-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
-						</div>
-						<div class="col-md-6 col-12">
-							<button class="login-btn register-investor-screen4-btn-next" disabled><spring:theme code="investor.registration.submit.button"/> &nbsp;
-								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
-									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
-										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
-										transform="translate(-7.875 -11.252)" fill="#fff">
-									</path>
-								</svg>
-							</button>
+					    <div class="row">
+							<div class="col-lg-6 col-6">
+								<a class="login-btn register-investor-screen4-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
+							</div>
+							<div class="col-lg-6 col-6">
+								<button class="login-btn register-investor-screen4-btn-next" disabled><spring:theme code="investor.registration.submit.button"/> &nbsp;
+									<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
+										<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
+											d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
+											transform="translate(-7.875 -11.252)" fill="#fff">
+										</path>
+									</svg>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>

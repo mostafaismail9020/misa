@@ -271,8 +271,8 @@
 				<a href="#" class="skype">
 					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
 						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
-						<label class="lang-btn lang-en active" onclick="LanguageToggle('en')">EN</label>
-						<label class="lang-btn" onclick="LanguageToggle('ar')"><img src="${commonResourcePath}/images/ar_text.png"/></label>
+						<label class="lang-btn lang-en active cursor-pointer" onclick="LanguageToggle('en')">EN</label>
+						<label class="lang-btn cursor-pointer" onclick="LanguageToggle('ar')"><img src="${commonResourcePath}/images/ar_text.png"/></label>
 					</span>
 				</a>
 				<c:choose>
@@ -289,7 +289,7 @@
 					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 					</c:when>
 					<c:otherwise>
-					    <a href="/${encodedContextPath}/investsaudi-login" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
+					    <a href="${encodedContextPath}/investsaudi-login" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
 					      	<span><spring:theme code="portal.header.login.label"/></span>
 						</a>
 					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">

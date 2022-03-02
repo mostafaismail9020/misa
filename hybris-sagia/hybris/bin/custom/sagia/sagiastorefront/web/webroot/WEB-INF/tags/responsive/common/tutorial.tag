@@ -47,7 +47,7 @@
             </div>
             <div class="modal-footer modal-footer_wrap flex-column">
                 <button type="button" class="btn-outline js-eServiceTour-start" data-dismiss="modal"><spring:theme code="dashboard.tutorial.modal.button.text"/></button>
-                <a class=" btn_inFooterModal mt-3 js-skipTutorial" data-dismiss="modal" onclick="dismissTutorial();"><spring:theme code="general.dont.show.this.message.again"/></a>
+                <a class=" btn_inFooterModal mt-3 cursor-pointer js-skipTutorial" data-dismiss="modal" onclick="dismissTutorial();"><spring:theme code="general.dont.show.this.message.again"/></a>
             </div>
         </div>
     </div>

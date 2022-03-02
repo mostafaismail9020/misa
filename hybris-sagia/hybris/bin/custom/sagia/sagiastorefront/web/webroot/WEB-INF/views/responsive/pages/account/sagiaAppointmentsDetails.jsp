@@ -173,7 +173,7 @@
                                                                         </div>
                                                                     </c:if>
                                                                     <c:if test="${not empty appointmentData.serviceType2Description}">
-                                                                        <div class="row">
+                                                                        <div class="row service-hr-line mt-3">
                                                                             <div class="col-sm-4">
                                                                                 <dl class="dlList dlList_separated">
                                                                                     <dt><spring:theme code="appointments.service" /></dt>
@@ -195,7 +195,7 @@
                                                                         </div>
                                                                     </c:if>
                                                                     <c:if test="${not empty appointmentData.serviceType3Description}">
-                                                                        <div class="row">
+                                                                        <div class="row service-hr-line mt-3">
                                                                             <div class="col-sm-4">
                                                                                 <dl class="dlList dlList_separated">
                                                                                     <dt><spring:theme code="appointments.service" /></dt>

@@ -23,8 +23,8 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
 <div class=""js-dashboardWidget"">
         <div class=""card dashboardWidget-body mb-md-5 p-0 no-border dashboardWidget-body-shadow"">
             <ul  class=""nav nav-tabs w-100"" id=""tabs"">
-                <li class=""nav-item  col-md-6  col-xs-12 p-0""> <a class="" nav-link text-center active"" href=""#1a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png""/>Apply For a MISA License</a></li>
-                 <li class=""nav-item  col-md-6 col-xs-12 p-0""><a class=""nav-link text-center"" href=""#2a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/>Apply for a Bidding Certificate</a></li>
+                <li class=""nav-item  col-md-6  col-xs-12 p-0""> <a class="" nav-link text-center active"" href=""#1a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png""/>MISA License</a></li>
+                <li class=""nav-item  col-md-6 col-xs-12 p-0""><a class=""nav-link text-center"" href=""#2a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/>Bidding Certificate</a></li>
             </ul>
               <div class=""tab-content process clearfix"">
                   <div class=""tab-pane active"" id=""1a"">

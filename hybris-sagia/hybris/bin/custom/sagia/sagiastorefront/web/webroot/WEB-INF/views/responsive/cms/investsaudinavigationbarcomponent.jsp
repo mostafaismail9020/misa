@@ -272,7 +272,8 @@
 					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
 						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
 						<label class="lang-btn lang-en active cursor-pointer" onclick="LanguageToggle('en')">EN</label>
-						<label class="lang-btn cursor-pointer" onclick="LanguageToggle('ar')"><img src="${commonResourcePath}/images/ar_text.png"/></label>
+						<label class="lang-btn cursor-pointer lang-ar" onclick="LanguageToggle('ar')"><spring:theme code="header.arabic"/></label>
+						<!-- <label class="lang-btn cursor-pointer" onclick="LanguageToggle('ar')"><img src="${commonResourcePath}/images/ar_text.png"/></label> -->
 					</span>
 				</a>
 				<c:choose>

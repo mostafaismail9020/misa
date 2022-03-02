@@ -288,6 +288,42 @@ position: relative;
 .page-new-apply-review .contentModule-headline{ padding: 0 20px !important;}
 .page-new-license-apply .formRadioBox-wrapper{padding: 15px 10px;}
 .page-new-license-apply #businessActivitiesModal .baList_columns{columns: 3;}
+
+.page-new-license-apply .select2-dropdown_oneColumn_hasFilter.select2-dropdown--above .select2-search,
+.page-new-license-apply .select2-dropdown_oneColumn_hasFilter.select2-dropdown--below .select2-search,
+.page-shareholder-apply .select2-dropdown_oneColumn_hasFilter.select2-dropdown--above .select2-search,
+.page-shareholder-apply .select2-dropdown_oneColumn_hasFilter.select2-dropdown--below .select2-search,
+.page-new-apply-contactperson .select2-dropdown_oneColumn_hasFilter.select2-dropdown--above .select2-search,
+.page-new-apply-contactperson .select2-dropdown_oneColumn_hasFilter.select2-dropdown--below .select2-search,
+.page-new-apply-review .select2-dropdown_oneColumn_hasFilter.select2-dropdown--above .select2-search,
+.page-new-apply-review .select2-dropdown_oneColumn_hasFilter.select2-dropdown--below .select2-search{
+	border: 1px solid #f2f2f2;
+	background-color: #fff;
+	top: 0;
+	bottom: initial;
+	margin: 0;
+	width: 100%;
+	position: relative;
+}
+.page-new-license-apply .select2-dropdown_hasSearch.select2-dropdown--above .select2-search,
+.page-new-license-apply .select2-dropdown_hasSearch.select2-dropdown--below .select2-search,
+.page-shareholder-apply .select2-dropdown_hasSearch.select2-dropdown--above .select2-search,
+.page-shareholder-apply .select2-dropdown_hasSearch.select2-dropdown--below .select2-search,
+.page-new-apply-contactperson .select2-dropdown_hasSearch.select2-dropdown--above .select2-search,
+.page-new-apply-contactperson .select2-dropdown_hasSearch.select2-dropdown--below .select2-search,
+.page-new-apply-review .select2-dropdown_hasSearch.select2-dropdown--above .select2-search,
+.page-new-apply-review .select2-dropdown_hasSearch.select2-dropdown--below .select2-search{
+	border: 1px solid #f2f2f2;
+	background-color: #fff;
+	color: red;
+	top: 0;
+	bottom: initial;
+	margin: 0;
+	width: 100%;
+	position: relative;
+}
+
+
 @media (max-width: 640px) and (min-width: 100px){
 	
 }
@@ -357,20 +393,8 @@ position: relative;
 		margin: 0 25px 0px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* End */
+
 .errorPage-div{
     height: 100vh;
     background-image: url("../../../../_ui/responsive/common/images/B2C/background1.jpg");

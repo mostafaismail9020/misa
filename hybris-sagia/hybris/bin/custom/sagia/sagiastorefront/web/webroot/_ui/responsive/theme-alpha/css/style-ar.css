@@ -712,6 +712,7 @@ ul.dropdown-list li a {
 	margin: 0 10px;
 	border: 0;
 	line-height: 16px;
+	cursor: pointer;
 }
 
 .btn-trans label.lang-btn.active {
@@ -984,7 +985,7 @@ ul.dropdown-list li a {
 .copyright {
 	width: 100%;
 	background-color: #025635;
-	font-size: 19px;
+	font-size: 12px;
 	font-weight: bold;
 	color: #fff;
 	width: 100%;

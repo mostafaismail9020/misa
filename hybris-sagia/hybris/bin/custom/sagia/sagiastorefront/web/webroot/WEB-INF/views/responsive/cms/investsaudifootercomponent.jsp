@@ -121,7 +121,7 @@
          </section>
 	</footer>
 	
-    <div class="copyright py-4 text-center text-white">
+    <div class="copyright py-2 text-center text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 copyrightText  d-flex d-sm-block">${component.copyrightText}</div>

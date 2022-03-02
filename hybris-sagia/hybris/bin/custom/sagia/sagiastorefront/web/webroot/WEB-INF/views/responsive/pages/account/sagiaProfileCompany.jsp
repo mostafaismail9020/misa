@@ -27,19 +27,20 @@
                 </h1>
             </div>
             <div class="profile-icons float-right">
-                <c:if test="${hasLicense or hasAwaitingPayment}">
+                <c:if test="${hasLicense}">
                     <div class="calendar">
                         <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
                             <span></span>
                         </a>
                     </div>
+                </c:if>
+                <c:if test="${hasLicense or hasAwaitingPayment}">
                     <div class="calendar notification p-0">
-                        <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
-                        </c:if>
+                       
                         <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
                             <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
                             <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
@@ -49,6 +50,7 @@
                         </div>
                     </div>
                 </c:if>
+                
                 <div class="profile">
                     <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
                         <span></span>

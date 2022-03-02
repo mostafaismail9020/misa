@@ -20,7 +20,7 @@
 <%--@elvariable id="user" type="de.hybris.platform.commercefacades.user.data.CustomerData"--%>
 
 
-<div class="mainSection_grey mainSection_noPadding">
+<div class="mainSection_grey mainSection_noPadding pb-2">
     <div class="container">
         <div class="dashboardUser-wrapper col-12 dashboard-login">
             <div class="dashboardUser-left col-12 col-md-6 ">

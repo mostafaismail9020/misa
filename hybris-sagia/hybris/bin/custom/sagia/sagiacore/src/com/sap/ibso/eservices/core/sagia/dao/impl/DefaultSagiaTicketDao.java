@@ -1,7 +1,11 @@
 package com.sap.ibso.eservices.core.sagia.dao.impl;
 
-
+import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaTicketDao;
+import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
+import de.hybris.platform.servicelayer.search.FlexibleSearchService;
+import de.hybris.platform.servicelayer.search.SearchResult;
 import de.hybris.platform.ticket.dao.impl.DefaultTicketDao;
 import de.hybris.platform.ticket.enums.CsTicketState;
 import de.hybris.platform.ticket.model.CsTicketModel;
@@ -19,6 +23,8 @@ import java.util.*;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Required;
 import org.apache.commons.lang.StringUtils;
+
+import javax.annotation.Resource;
 
 public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTicketDao {
 	
@@ -200,6 +206,24 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 	{
 		this.searchRestrictionService = searchRestrictionService;
 	}
+    @Override
+	public List<ContactTicketModel> getScpiTickets() {
 
+		final String query = "SELECT {PK} FROM {ContactTicket} WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ";
+		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(query);
+		final SearchResult<ContactTicketModel> resultList = flexibleSearchService.search(searchQuery);
+
+		return resultList.getResult();
+	}
+
+	@Override
+	public List<ServiceRequestModel> getScpiServiceRequest() {
+
+		final String query = "SELECT {PK} FROM {ServiceRequest} WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ";
+		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(query);
+		final SearchResult<ServiceRequestModel> resultList = flexibleSearchService.search(searchQuery);
+
+		return resultList.getResult();
+	}
 
 }

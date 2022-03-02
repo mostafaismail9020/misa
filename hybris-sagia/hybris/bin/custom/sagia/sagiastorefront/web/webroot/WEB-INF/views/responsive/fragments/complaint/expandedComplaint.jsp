@@ -25,10 +25,16 @@
 <div class="modal-content modal-ticket-wrapper">
     <div class="modal-header">
         <div class="modal-title view-title modal-ticket-heading w-100" id="exampleModalLabel">
-            <div class="contentModule-headline w-50"> 
+            <!-- <div class="contentModule-headline w-50"> 
                 <spring:theme code="general.ticketNumber" /> : ${expandedComplaintFormData.srID}
             </div>
-            <hr class="hr">
+            <hr class="hr"> -->
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="general.ticketNumber" /> : ${expandedComplaintFormData.srID}</span>
+                    <div class="contentModule-headline-border"></div>
+                </div>
+            </div>
         </div>
         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" style="margin-top: -20px;" >
             <icon:close/>

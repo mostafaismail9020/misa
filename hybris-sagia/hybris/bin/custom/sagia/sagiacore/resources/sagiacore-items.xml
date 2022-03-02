@@ -958,6 +958,11 @@
             <persistence type="property"/>
             <modifiers optional="false" unique="true" read="true" write="true" search="true"/>
         </attribute>
+		<attribute qualifier="sent2Scpi" type="java.lang.Boolean">
+			<persistence type="property"/>
+			<modifiers read="true" write="true" search="true" optional="false"/>
+			<defaultvalue>Boolean.FALSE</defaultvalue>
+	    </attribute>
     </attributes>
 </itemtype>
 
@@ -4038,10 +4043,15 @@
                             </columntype>
                         </persistence>
                     </attribute>
-                </attributes>
-            </itemtype>
-
-            <itemtype code="OpportunityPartner" generate="true" autocreate="true">
+					<attribute qualifier="sent2Scpi" type="java.lang.Boolean">
+						<persistence type="property"/>
+						<modifiers read="true" write="true" search="true" optional="false"/>
+						<defaultvalue>Boolean.FALSE</defaultvalue>
+                   </attribute>
+				</attributes>
+            </itemtype> 
+                        
+			<itemtype code="OpportunityPartner" generate="true" autocreate="true">
                 <description>To identify list of partners available to a product</description>
                 <deployment table="OpportunityPartner" typecode="30210"/>
                 <attributes>

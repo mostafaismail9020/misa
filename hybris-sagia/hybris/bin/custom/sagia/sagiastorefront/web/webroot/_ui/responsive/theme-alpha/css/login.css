@@ -215,6 +215,7 @@ position: relative;
 .page-license-amend .mainSection.bg-white.mainSection_loaded{padding-bottom: 0;}
 .page-license-amend #businessActivitiesModal .baList.baList_columns{columns: 3;}
 .page-license-amend #businessActivitiesModal .baList .baList-item a{text-align: left;}
+
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}
@@ -330,6 +331,53 @@ position: relative;
 .page-dashboard .paginationModule-items .loadingModule-msg svg path{stroke: #00a6be;}
 .page-dashboard .paginationModule-items .loadingModule-msg svg path:nth-child(2){fill: #00a6be;}
 .page-dashboard .paginationModule-items .loadingModule-msg svg circle{fill: #00a6be;}
+/* End */
+/* login page */
+@media (max-width: 640px) and (min-width: 100px){
+	[dir] .login-register-text{
+		margin-top: 30px;
+	}
+	[dir] .register-language{
+		margin-top: 0%;
+	}
+	[dir] .login-buttons{
+		margin-bottom: 25px;
+	}
+	[dir] #lblErrorCaptcha{
+		margin: 0 25px 0px;
+	}
+	.page-login .register_tab_container a.login-btn{margin: initial;}
+	[dir] .register-account-investor-screen3 .select2-container .select2-selection--single .select2-selection__rendered {padding: 0px;}
+	[dir=ltr] .right_arrowdd .select2.select2-container .select2-selection:after {right: 0;}
+	[dir] .select2.select2-container .select2-selection:after {right: 0;}
+}
+@media (max-width: 991px) and (min-width: 641px){
+	[dir] .accountLogin-content-slot_left {
+		display: none!important;
+	}
+	[dir] .login-logo {
+		margin: 0 auto;
+	}
+	[dir] .login-screen .login-buttons{
+		margin: 0px auto 30px;
+	}
+	[dir] #lblErrorCaptcha{
+		margin: 0 25px 0px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* End */
 .errorPage-div{
     height: 100vh;

@@ -73,12 +73,12 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	private static final String POTENTIAL_OPPORTUNITY_CMS_PAGE = "potential-opportunity";
 	private static final String PATH_VARIABLE_PATTERN = "/{ticketId}";
 	private static final String SERVICE_REQUEST_CMS_PAGE = "service-request";
-        private static final String THIS_CONTROLLER_REDIRECTION_URL = "/potentialOpportunity/";
+    private static final String THIS_CONTROLLER_REDIRECTION_URL = "/potentialOpportunity/";
 	
-        @Resource(name = "sagiaUserService")
+    @Resource(name = "sagiaUserService")
 	private SagiaUserService sagiaUserService;
         
-        @Resource(name = "sagiaUserFacade")
+    @Resource(name = "sagiaUserFacade")
 	private SagiaUserFacade sagiaUserFacade;
 
 	@Resource(name = "investSaudiProductFacade")
@@ -196,59 +196,24 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	 
 	@RequestMapping(value = "/{ticketId}/uploadAttachment",method = RequestMethod.POST,consumes = { MediaType.MULTIPART_FORM_DATA_VALUE,MediaType.APPLICATION_FORM_URLENCODED_VALUE,MediaType.TEXT_PLAIN_VALUE})
     public String uploadAttachment(final Model model, @ModelAttribute("contactTicketForm") final ContactTicketForm contactTicketForm,
-    		final BindingResult bindingResult, @PathVariable("ticketId") final String ticketId, final HttpServletRequest request, final HttpServletResponse response) throws CMSItemNotFoundException {
+			final BindingResult bindingResult, @PathVariable("ticketId") final String ticketId,
+			final HttpServletRequest request, final HttpServletResponse response) throws CMSItemNotFoundException {
+
 		
-    	final CatalogVersionModel catalogVersion = catalogVersionService.getCatalogVersion(CATALOG_ID, VERSION_ONLINE);
-		final MediaModel mediaModel = modelService.create(MediaModel.class);
-          LOG.info("calling uploadAttachment controller");
-
-        if(null != contactTicketForm && null != contactTicketForm.getComment()) {
-            LOG.info("receieved the file");
-        }
-		byte[] bytes = null;
-        try
-        {
-        bytes = contactTicketForm.getPdfAttachment().getBytes();
-
-        if (null != bytes) {
-        	LOG.info("Entered into bytes != null :"+bytes.length);
-            final InputStream inputStream = new ByteArrayInputStream(bytes);
-            LOG.info("inputStream is: "+inputStream);
-            mediaModel.setCode("ticket_"+ticketId+"_"+System.currentTimeMillis());
-            mediaModel.setCatalogVersion(catalogVersion); // use catalogVersionService to get the online version
-            mediaModel.setRealFileName("ticket_"+ticketId+".pdf");
-            LOG.info("before saving media model");
-            modelService.save(mediaModel);
-            LOG.info("mediaModel "+mediaModel);
-            LOG.info("after saving media model");
-            mediaService.setStreamForMedia(mediaModel, inputStream);
-
-             inputStream.close();
-            }	
-        }
-            catch (final IOException ex)
-            {
-                LOG.error(ex.getMessage());
-                ex.printStackTrace();
-            }
-        ContactTicketModel contactTicketModel = sagiaUserService.getContactTicketForTicketId(ticketId);
-		contactTicketModel.setAttachmentStream(new String(bytes, StandardCharsets.UTF_8));
-        LOG.info("contactTicketModel is " +contactTicketModel);
-        CsTicketModel ticket = (CsTicketModel)contactTicketModel;
-        //in ticketmodel attachments is unmodifiable so , we need to always create new list and add both old and new attachments
-		final ArrayList<MediaModel> list = new ArrayList<MediaModel>();
-	    if (!CollectionUtils.isEmpty(ticket.getAttachments()))
-			{
-			list.addAll(ticket.getAttachments());
+		try {
+			if (null != contactTicketForm && null != contactTicketForm.getComment()) {
+				LOG.info("receieved the file");
 			}
-			list.add(mediaModel);
-			ticket.setAttachments(list);
-		modelService.save(ticket);
-		contactTicketBusinessService.ticketAttachment2SCPI(contactTicketModel);
-		
-         return  "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
-        // set the media model to attachments attribute in contact ticket model
-        }
+			sagiaUserFacade.saveTicketAttachments(contactTicketForm.getPdfAttachment().getBytes(), ticketId);
+		} catch (IOException ex) {
+			LOG.error("Exception in uploading attachment: " + ex);
+		}
+
+		return "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
+		// set the media model to attachments attribute in contact ticket model
+	}
+
+
 
         private File createFile(MultipartFile multipartFile)
         {

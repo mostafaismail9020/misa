@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
+<%@ include file="/WEB-INF/tags/responsive/common/successModal.tag" %>
 <%@ taglib prefix="payment" tagdir="/WEB-INF/tags/responsive/payment" %>
 
 <%-- TODO: SAH-890: Payments Detail - Creditcard --%>
@@ -24,11 +25,20 @@
                             <span></span>
                         </a>
                     </div>
-                    <div class="calendar notification">
-                        <div class="count-notification" id="unreadNotificationSpan"></div>
-                        <a href="${encodedContextPath}/my-sagia/notifications">
-                            <span></span>
-                        </a>
+                    <div class="calendar notification p-0">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
                     </div>
                 </c:if>
                 <div class="profile">
@@ -60,19 +70,21 @@
 
 <div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
     <div class="container">
-        <div class="panelModule panelModule_halfRadius mt-3">
+        <div class="panelModule panelModule_halfRadius mt-3 w-100">
             <div class="contentModule">
                 <!-- <div class="contentModule-headline contentModule-headline_big"> -->
                 <div class="contentModule-actions contentModule-actions_wrap w-100">
-                    <span class="contentModule-headline_small headline-text"><spring:theme code="payments.details.subscriptionFee"/>&nbsp;<c:out value="${paymentData.serviceDescription}"/></span>                    
+                    <span class="headline-text"><spring:theme code="payments.details.subscriptionFee"/>&nbsp;<c:out value="${paymentData.serviceDescription}"/></span>                    
                 </div>
                     <!-- </div> -->
                 <div class="contentModule-section">
-                    <div class="contentModule-headline">
-                       <!-- <span class="iconElement iconElement_questionaires"><icon:questionaires/></span> -->
-                        <spring:theme code="payments.details.generalData"/>
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="payments.details.generalData"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
                     </div>
-                    <div class="commentModule">
+                    <div class="commentModule_1">
                         <div class="col-md-6">
                             <dl class="dlList dlList_separated">
                                 <dt class="headline-golden"><spring:theme code="payments.details.serviceId"/></dt>
@@ -97,10 +109,13 @@
                        </span>
                         <spring:theme code="payments.details.processingData"/>
                     </div> -->
-                    <div class="contentModule-headline">
-                        <spring:theme code="payments.details.processingData"/>
-                     </div>
-                    <div class="commentModule">
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="payments.details.processingData"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
+                    <div class="commentModule_1">
                         <div class="col-md-6">
                             <dl class="dlList dlList_separated">
                                 <dt class="headline-golden"><spring:theme code="payments.details.serviceStatus"/></dt>
@@ -131,10 +146,14 @@
                        </span>
                         <spring:theme code="payments.details.value"/>
                     </div> -->
-                    <div class="contentModule-headline">
-                        <spring:theme code="payments.details.value"/>
-                     </div>
-                    <div class="commentModule">
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="payments.details.value"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
+
+                    <div class="commentModule_1">
                         <div class="col-md-6">
                             <dl class="dlList dlList_separated">
                                 <fmt:formatNumber var="ammount" value="${paymentData.amount}" maxFractionDigits="2" />
@@ -153,13 +172,19 @@
                        </span>
                         SADAD Payment Information
                     </div> -->
-                    <div class="contentModule-headline">
-                        SADAD Payment Information
-                     </div>
-                    <div class="row commentModule mx-0">
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline">SADAD Payment Information</span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
+                    <div class="row commentModule_1 mx-0">
                         <div class="col-md-6 mt-3">
-                            <div class="contentModule-headline contentModule-headline_small">
-                                SADAD Bill Payment Information
+                            <div class="contentModule contentModule-wrap">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline">SADAD Bill Payment Information</span>
+                                    <div class="contentModule-headline-border"></div>
+                                </div>
                             </div>
                             <dl class="dlList dlList_separated mt-3">
                                 <dt class="headline-golden">SADAD Bill Status</dt>
@@ -177,8 +202,11 @@
                             </dl>
                         </div>
                         <div class="col-md-6 mt-3">
-                            <div class="contentModule-headline contentModule-headline_small">
-                                SADAD Bill Bank Information
+                            <div class="contentModule contentModule-wrap">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline">SADAD Bill Bank Information</span>
+                                    <div class="contentModule-headline-border"></div>
+                                </div>
                             </div>
                             <dl class="dlList dlList_separated mt-3">
                                 <dt class="headline-golden">SADAD Transaction Date</dt>

@@ -396,7 +396,7 @@ div:not(.formInputBox-split) > .formSelectBox,div:not(.formInputBox-split)  > .f
 }
 
 [dir] .dlList dd {
-    font-size: var(--content-big-font);
+    font-size: var(--content-big-font) !important;
     color: #707070;
     line-height: normal;
 }
@@ -1670,9 +1670,9 @@ button:focus {
 }
 .page-appointments .appointmentList_hasTopBoder .appointmentList-entry .appointmentList-date-month,
 .page-appointments .appointmentList_hasTopBoder .appointmentList-entry .appointmentList-date-day{
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 20px;
+    /*font-weight: 600;
+    margin-bottom: 5px;*/
 }
 .page-appointments .appointmentList_hasTopBoder .appointmentList-entry td{
     width: 50px;
@@ -1793,17 +1793,17 @@ button:focus {
     font-weight: 600;
 }
 .page-appointment-details .appointmentDetails .dlList dt{
-    color: #707070;
-    font-weight: 600;
-    display: inline-block;
-    vertical-align: top;
-    width: 40%;
+    color: #bf9b2e;
+	font-weight: 600;
+	display: inline-block;
+	vertical-align: top;
+	width: auto; 
 }
 .page-appointment-details .appointmentDetails .dlList dd{
-    color: #000;
-    font-weight: 600;
-    display: inline-block;
-    vertical-align: top;
+    color: #707070;
+	font-weight: 100;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .page-appointment-details .service-main-div .dlList dt{
@@ -1826,7 +1826,7 @@ button:focus {
 
 .page-appointment-details .service-main-div .dlList dd{
     font-size: var(--content-big-font);
-    font-weight: 600;
+    font-weight: 100;
     color: #707070;
 }
 .page-appointment-details .service-main-div .service-hr-line{
@@ -2380,14 +2380,14 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
             }
           }
         }
-        .dlList{
+        /*.dlList{
             dt{
                 width: 20%;
             }
             dd{
                 width: 60%;
             }
-        }
+        }*/
         .appointmentDetails-properties{
             .appointmentList-location{
                 padding: 0;
@@ -2397,7 +2397,7 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
 
             }
             .appointmentList-date{
-                width: 120px;
+                /*width: 120px;*/
                 svg{
                     top:0;
                 }
@@ -2964,7 +2964,7 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
         top: 0;;
     }
     .page-appointment-details .appointmentDetails .dlList dt{
-        width: 35%;
+        width: auto;
     }
     .page-appointment-details .appointmentDetails .service-main-div .service-hr-line .dlList_separated dd{
         margin-top: 30px;
@@ -3024,3 +3024,47 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
         }
     }
 }
+/**01-03-2022**/
+
+.page-appointment-details .appointmentDetails .contentModule-section:not(:last-child) {
+	margin-bottom: 0px!important;
+}
+.page-appointment-details .appointmentList-status-value.process {
+	padding: 0 0px 55px!important;
+}
+.page-appointment-details  .appointmentDetails-properties span{
+	font-size: 20px !important;
+}
+.page-appointment-details .appointmentDetails-property_delimiter {
+	border-left: 0px solid #99abb5 !important;
+} 
+.page-appointment-details .appointmentDetails .appointmentDetails-properties .appointmentList-date .appointmentList-date-time {
+	margin: 10px !important;
+}
+.page-appointment-details .appointmentDetails .appointmentDetails-properties .appointmentList-date .appointmentList-date-day {
+	display: inline-block;
+	vertical-align: top; 
+	margin: 10px 0px 10px 10px;
+}
+.page-appointment-details .appointmentDetails .appointmentDetails-properties .appointmentList-date .appointmentList-date-month {
+	margin-bottom: 10px !important;
+	margin-top: 10px !important;
+}
+.page-appointment-details .appointmentDetails .appointmentDetails-properties .appointmentList-date {
+	width: 210px;
+	display: inline-flex;
+} 
+.page-appointment-create .formInputBox .formInputBox-append#calendar-icon-pos .formInputBox-text{
+	padding: 5px 20px;
+}
+.page-appointment-create .formInputBox .formInputBox-append#calendar-icon-pos{
+	left:0px;
+}  
+.page-appointment-create .formTextArea .form-control:focus + .control-label, 
+.page-appointment-create .formTextArea .form-control:not(:placeholder-shown) + .control-label, 
+.page-appointment-create .formTextArea .form-control:-webkit-autofill + .control-label {
+	top: -52px;
+	left: 20px; 
+	-webkit-transform:translate3d(0,-26px,0) scale(1)!important;
+	transform:translate3d(0,-26px,0) scale(1)!important; 
+} 

@@ -1,5 +1,8 @@
 package com.sap.ibso.eservices.core.sagia.services.impl;
 
+
+import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.b2b.services.B2BUnitService;
@@ -24,6 +27,7 @@ import com.sap.ibso.eservices.core.sagia.services.SagiaTicketService;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaTicketDao;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Set;
 
 public class DefaultSagiaTicketService extends DefaultTicketService implements SagiaTicketService {
@@ -138,5 +142,14 @@ public class DefaultSagiaTicketService extends DefaultTicketService implements S
 			}
 		}
 		return parentB2BUnit;
+	}
+	
+	@Override
+	public List<ContactTicketModel> getScpiTickets() {
+		return sagiaTicketDao.getScpiTickets();
+	}
+	@Override
+	public List<ServiceRequestModel> getScpiServiceRequest() {
+		return sagiaTicketDao.getScpiServiceRequest();
 	}
 }

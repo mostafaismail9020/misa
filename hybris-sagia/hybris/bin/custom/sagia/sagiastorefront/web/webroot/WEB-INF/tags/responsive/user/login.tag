@@ -86,15 +86,15 @@
                             </c:if>										
                         </div>
                     </div>
-                    <div class="login-buttons accountLogin-content-formSubmitSection">
-                        <div class="col-md-6 col-12">
-                            <button class="login-btn login-entry-cancel cancel-disabled"><spring:theme code="investor.registration.cancel.button"/></button>
-                        </div>
-                        <div class="col-md-6 col-12">													
+                    <div class="login-buttons accountLogin-content-formSubmitSection row">
+                        <div class="col-md-6 col-6">													
                             <!--<button class="login-btn login-btn-next" >LOGIN</button>-->
                             <ycommerce:testId code="loginAndCheckoutButton">
                                 <button type="submit" class="login-btn login-btn-next active" id="sagiaLoginBtn"><spring:theme code="${actionNameKey}"/></button>
                             </ycommerce:testId>
+                        </div>
+                        <div class="col-md-6 col-6">
+                            <button class="login-btn login-entry-cancel cancel-disabled"><spring:theme code="investor.registration.cancel.button"/></button>
                         </div>
                     </div>
                     <div class="col-md-12 login-register">

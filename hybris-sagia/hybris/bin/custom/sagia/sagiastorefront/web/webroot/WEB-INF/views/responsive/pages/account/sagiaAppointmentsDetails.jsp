@@ -88,12 +88,12 @@
                                                         <div class="panelModule panelModule_halfRadius appointmentDetails mt-4">
                                                             <div class="contentModule">
                                                                 <div class="contentModule-section contentModule-section_noDivider  contentModule-section_noMargin contentModule-section_noPadding">
-                                                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator border-0 mb-5">
-                                                                        <div class="personal-appointment-title w-100 text-center pb-4 mb-5 text-uppercase">
+                                                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator border-0 mb-2">
+                                                                        <div class="personal-appointment-title w-100 text-center pb-2 mb-4 text-uppercase">
                                                                             <!--    <icon:calendarProfile/>-->
                                                                             <spring:theme code="appointments.personalappointment" />
                                                                         </div>
-                                                                        <div class="appointmentDetails-properties w-100 pb-4">
+                                                                        <div class="appointmentDetails-properties w-100 pb-2">
                                                                             <div class="appointmentDetails-property appointmentList-date pl-5">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="32" viewBox="0 0 29 32">
                                                                                     <g id="Icon_feather-calendar" data-name="Icon feather-calendar" transform="translate(-3.5 -2)">
@@ -128,10 +128,14 @@
                                                                     <div class="row">
                                                                         <div class="col-sm-6 col-md-8">
                                                                             <dl class="dlList border-0">
-                                                                                <dt><spring:theme code="appointments.department" /></dt>
-                                                                                <dd>${appointmentData.departmentDescription}</dd>
-                                                                                <dt><spring:theme code="appointments.branch" /></dt>
-                                                                                <dd>${appointmentData.branchDescription}</dd>
+                                                                                <div class="w-100">
+                                                                                    <dt><spring:theme code="appointments.department" />&nbsp;:</dt> 
+                                                                                    <dd>${appointmentData.departmentDescription}</dd>
+                                                                                </div>
+                                                                                <div class="w-100">
+                                                                                    <dt><spring:theme code="appointments.branch" />&nbsp;:</dt>
+                                                                                    <dd>${appointmentData.branchDescription}</dd>
+                                                                                </div>
                                                                             </dl>
                                                                         </div>
                                                                         <div class="col-sm-6 col-md-4">
@@ -169,7 +173,7 @@
                                                                         </div>
                                                                     </c:if>
                                                                     <c:if test="${not empty appointmentData.serviceType2Description}">
-                                                                        <div class="row">
+                                                                        <div class="row service-hr-line mt-3">
                                                                             <div class="col-sm-4">
                                                                                 <dl class="dlList dlList_separated">
                                                                                     <dt><spring:theme code="appointments.service" /></dt>
@@ -191,7 +195,7 @@
                                                                         </div>
                                                                     </c:if>
                                                                     <c:if test="${not empty appointmentData.serviceType3Description}">
-                                                                        <div class="row">
+                                                                        <div class="row service-hr-line mt-3">
                                                                             <div class="col-sm-4">
                                                                                 <dl class="dlList dlList_separated">
                                                                                     <dt><spring:theme code="appointments.service" /></dt>

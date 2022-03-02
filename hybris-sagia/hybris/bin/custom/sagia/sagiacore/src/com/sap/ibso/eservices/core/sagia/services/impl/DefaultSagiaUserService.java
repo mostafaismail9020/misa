@@ -35,6 +35,7 @@ import de.hybris.platform.servicelayer.user.impl.DefaultUserService;
 
 import de.hybris.platform.comments.model.CommentModel;
 import de.hybris.platform.ticket.strategies.TicketEventStrategy;
+import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.ticket.enums.CsEventReason;
 import de.hybris.platform.ticket.enums.CsInterventionType;
@@ -43,12 +44,10 @@ import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 import org.fest.util.Strings;
+import java.nio.charset.StandardCharsets;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Default implementation of UserService
@@ -237,4 +236,24 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     	}
     	return attachRequest;
      }
+    
+    public void saveTicketAttachments(final byte[] bytes, final String ticketId,
+			final MediaModel mediaModel) {
+		ContactTicketModel contactTicketModel = getContactTicketForTicketId(ticketId);
+        if(null != bytes) {
+        	contactTicketModel.setAttachmentStream(new String(Base64.getEncoder().encode(bytes)));
+        }
+        LOG.info("contactTicketModel is " +contactTicketModel);
+        CsTicketModel ticket = (CsTicketModel)contactTicketModel;
+        //in ticketmodel attachments is unmodifiable so , we need to always create new list and add both old and new attachments
+		final ArrayList<MediaModel> list = new ArrayList<MediaModel>();
+	    if (!CollectionUtils.isEmpty(ticket.getAttachments()))
+			{
+			list.addAll(ticket.getAttachments());
+			}
+			list.add(mediaModel);
+			ticket.setAttachments(list);
+		modelService.save(ticket);
+		contactTicketBusinessService.ticketAttachment2SCPI(contactTicketModel);
+	}
 }

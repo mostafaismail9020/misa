@@ -14,6 +14,8 @@
 package com.sap.ibso.eservices.facades.user;
 
 import de.hybris.platform.commercefacades.user.data.CustomerData;
+import java.lang.String;
+
 import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
 import com.sap.ibso.eservices.core.enums.IncidentCategory;
 import com.sap.ibso.eservices.core.enums.ServiceCategory;
@@ -56,4 +58,8 @@ public interface SagiaUserFacade
 	List<ServiceCategory> getServiceCategoryEnumValues();
 	
 	List<Priority> getPriorityEnumValues();
+	
+	 void saveTicketAttachments(final byte[] bytes, final String ticketId);
+	
+	
 }

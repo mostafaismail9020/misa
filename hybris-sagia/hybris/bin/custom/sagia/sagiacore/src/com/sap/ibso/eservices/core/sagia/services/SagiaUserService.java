@@ -23,6 +23,8 @@ import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.user.UserService;
+import de.hybris.platform.core.model.media.MediaModel;
+import java.lang.String;
 
 /**
  * Provides access to the User Service
@@ -105,4 +107,16 @@ public interface SagiaUserService extends UserService
 	ContactTicketModel addContactTicketComments(String ticketId, String comments);
 
         boolean attachServiceRequestToContactTicket(ServiceRequestModel serviceRequest, String ticketId);
+        
+        
+        
+  	  /**
+    	 * Add comments to ContactTicket
+    	 * @param ticketId ticketId
+    	 * @param comments comments
+    	 * @return the ticket raised by the customer
+    	 */
+        public void saveTicketAttachments(final byte[] bytes, final String ticketId,
+    			final MediaModel mediaModel);
+        
 }

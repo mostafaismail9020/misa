@@ -5,15 +5,19 @@ import com.investsaudi.portal.core.model.ContactTicketModel;
 import de.hybris.platform.sap.sapcpiadapter.service.SapCpiOutboundService;
 import de.hybris.platform.sap.sapcpiadapter.service.impl.SapCpiOutboundServiceImpl;
 import com.investsaudi.portal.core.model.ServiceRequestModel;
+import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Resource;
 
 public class ScpiOutboundServiceImpl extends SapCpiOutboundServiceImpl {
 
     private static final Logger LOG = LoggerFactory.getLogger(ScpiOutboundServiceImpl.class);
+    @Resource
+    private ModelService modelService;
 
     // Lead Ticket Outbounds
     private static final String OUTBOUND_LEAD_TICKET_OBJECT = "LeadTicket";
@@ -27,15 +31,19 @@ public class ScpiOutboundServiceImpl extends SapCpiOutboundServiceImpl {
     private static final String COMMA = ",";
 
     public void sendLeadTicket(CsTicketModel leadTicket) {
+		ContactTicketModel contactTicket = (ContactTicketModel)leadTicket;
 
         getOutboundServiceFacade().send(leadTicket, OUTBOUND_LEAD_TICKET_OBJECT, OUTBOUND_LEAD_TICKET_DESTINATION).subscribe(
                 // onNext
                 responseEntityMap -> {
                     if (SapCpiOutboundService.isSentSuccessfully(responseEntityMap)) {
                         LOG.info("Lead Ticket [{}] has been sent to C4C through SCPI! {}",
-                                leadTicket.getTicketID(), SapCpiOutboundService.getPropertyValue(responseEntityMap, RESPONSE_MESSAGE));
+                                leadTicket.getTicketID(), SapCpiOutboundService.getPropertyValue(responseEntityMap, RESPONSE_MESSAGE)); 
+					contactTicket.setSent2Scpi(true);
+                    modelService.save(contactTicket);
+                    modelService.refresh(contactTicket);
                         if(LOG.isDebugEnabled()){
-                            ContactTicketModel contactTicket = (ContactTicketModel)leadTicket;
+                            
                             StringBuilder payload = new StringBuilder("ticketId : ".concat(contactTicket.getTicketID()).concat(COMMA).concat("Priority : ").concat(contactTicket.getPriority().toString())
                                     .concat(COMMA).concat("c4cAccountId : ").concat(contactTicket.getC4CAccountID()).concat(COMMA).concat("commerceUserid : ").concat(contactTicket.getCommerceUserID())
                                     .concat(COMMA).concat("company :").concat(contactTicket.getCompany()).concat(COMMA).concat("contactSubject : ").concat(contactTicket.getContactSubject()).concat(COMMA)
@@ -49,12 +57,18 @@ public class ScpiOutboundServiceImpl extends SapCpiOutboundServiceImpl {
                     } else {
                         LOG.error("Lead Ticket  [{}] has not been sent to C4C! {}",
                                 leadTicket.getTicketID(), SapCpiOutboundService.getPropertyValue(responseEntityMap, RESPONSE_MESSAGE));
+					contactTicket.setSent2Scpi(false);
+                    modelService.save(contactTicket);
+                    modelService.refresh(contactTicket);
                     }
                 }
                 // onError
                 , error -> {
                     LOG.error("Lead Ticket [{}] has not been sent to C4C through SCPI! {}",
                             leadTicket.getTicketID(), error.getMessage(), error);
+					contactTicket.setSent2Scpi(false);
+                    modelService.save(contactTicket);
+                    modelService.refresh(contactTicket);
                 }
         );
     }
@@ -92,6 +106,9 @@ public class ScpiOutboundServiceImpl extends SapCpiOutboundServiceImpl {
                     if (SapCpiOutboundService.isSentSuccessfully(responseEntityMap)) {
                         LOG.info("ServiceRequest [{}] has been sent to C4C through SCPI! {}",
                                 serviceRequest.getId(), SapCpiOutboundService.getPropertyValue(responseEntityMap, RESPONSE_MESSAGE));
+						serviceRequest.setSent2Scpi(true);
+                        modelService.save(serviceRequest);
+                        modelService.refresh(serviceRequest);
                         if(LOG.isDebugEnabled()){
                             StringBuilder payload = new StringBuilder("description : ".concat(serviceRequest.getDescription()).concat(COMMA).concat("incidentCategory : ").concat(serviceRequest.getIncidentCategory().getCode())
                                     .concat(COMMA).concat("partnerType : ").concat(serviceRequest.getPartnerType().getCode()).concat(COMMA)
@@ -104,12 +121,18 @@ public class ScpiOutboundServiceImpl extends SapCpiOutboundServiceImpl {
                     } else {
                         LOG.error("ServiceRequest  [{}] has not been sent to C4C! {}",
                                 serviceRequest.getId(), SapCpiOutboundService.getPropertyValue(responseEntityMap, RESPONSE_MESSAGE));
+					serviceRequest.setSent2Scpi(false);
+                    modelService.save(serviceRequest);
+                    modelService.refresh(serviceRequest);
                     }
                 }
                 // onError
                 , error -> {
                     LOG.error("ServiceRequest [{}] has not been sent to C4C through SCPI! {}",
                             serviceRequest.getId(), error.getMessage(), error);
+						serviceRequest.setSent2Scpi(false);
+                        modelService.save(serviceRequest);
+                        modelService.refresh(serviceRequest);
                 }
         );
     }

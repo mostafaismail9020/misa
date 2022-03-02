@@ -34,7 +34,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" style="border: 0px solid #00a6be !important;">
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                     <icon:close/>
                 </button>
             </div>

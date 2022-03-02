@@ -123,7 +123,7 @@ z-index: 0;
 
 .js-recaptcha-captchaaddon {
   /* margin: 20px 0; */
-  margin: 10px 0 0 10px;
+  margin: 10px 0;
 
 }
 
@@ -145,7 +145,7 @@ z-index: 0;
 /* Amenda license page */
 [dir="ltr"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-left: -65px;}
 [dir="rtl"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-right: -114px;}
-.page-license-amend .formSelectBox .form-group label{top: -20px;}
+/* .page-license-amend .formSelectBox .form-group label{top: -20px;} */
 [dir="ltr"] .page-license-amend #shareholderModalId .modal-content .modal-title{text-align: left;}
 .page-license-amend #docsmodalId .modal-dialog.modal-dialog-centered{min-width:40%;}
 .page-license-amend #docsmodalId  .modal-title{color: #bf9b2e;text-transform: uppercase;}
@@ -155,6 +155,8 @@ z-index: 0;
     box-shadow: none;
     background: none;
 }
+.page-license-amend .deleteDropdown-drop .modal-title{white-space: pre-wrap;}
+.page-license-amend .deleteDropdown-drop .deleteDropdown-actions button.btn{margin: 0px 10px}
 .page-license-amend .select2-dropdown_oneColumn_hasFilter.select2-dropdown--above .select2-search,
 .page-license-amend .select2-dropdown_oneColumn_hasFilter.select2-dropdown--below .select2-search{
 border: 1px solid #f2f2f2;
@@ -193,6 +195,7 @@ position: relative;
 .page-license-amend .mainSection.bg-white.mainSection_loaded{padding-bottom: 0;}
 .page-license-amend #businessActivitiesModal .baList.baList_columns{columns: 3;}
 .page-license-amend #businessActivitiesModal .baList .baList-item a{text-align: left;}
+
 @media (max-width: 640px) and (min-width: 100px){
 	.page-license-amend .contentModule-mob-btns button.btn{width: 44%;}
 	.page-license-amend #businessActivitiesModal .modal-header .modal-title{font-size: 22px;}
@@ -219,6 +222,9 @@ position: relative;
 	.page-license-amend #showDelegateQuestionOrganization .deligate-info-form.formRadioBox .form-item label{margin: 0;}
 	.page-license-amend .expandableContent-main.amend-ddl-list .panelTabs .panelTabs-navigation{display: none !important;}
 	.page-license-amend .js-panelTabs.panelTabs .panelTabs-content{padding: 0;border: none;}
+	.page-license-amend #businessActivitiesModal .baList.baList_columns {columns: 1;}
+	.page-license-amend #accessibletabscontent0-3 ~ .panelTabs-body #branchesTableId_wrapper #branchesTableId_filter{position: absolute;width: 100%;top: 0;left: 0;}
+	.page-license-amend #accessibletabscontent0-3 ~ .panelTabs-body #branchesTableId_wrapper{padding-top: 40px;}
 }
 @media (max-width: 991px) and (min-width: 641px){
 	.page-license-amend #shareholderModalId .panelModule,
@@ -302,6 +308,9 @@ position: relative;
 	text-overflow: ellipsis;
 	padding-left: 12px;
 }
+.page-dashboard .paginationModule-items .loadingModule-msg svg path{stroke: #00a6be;}
+.page-dashboard .paginationModule-items .loadingModule-msg svg path:nth-child(2){fill: #00a6be;}
+.page-dashboard .paginationModule-items .loadingModule-msg svg circle{fill: #00a6be;}
 /* End */
 .errorPage-div{
     height: 100vh;

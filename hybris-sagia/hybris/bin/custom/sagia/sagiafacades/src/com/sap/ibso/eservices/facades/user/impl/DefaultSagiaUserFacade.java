@@ -17,11 +17,22 @@ import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
 import com.sap.ibso.eservices.facades.user.SagiaUserFacade;
 import com.investsaudi.portal.core.model.ServiceRequestModel;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
+import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.commercefacades.user.data.CustomerData;
 import de.hybris.platform.search.restriction.SearchRestrictionService;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
+import de.hybris.platform.servicelayer.media.MediaService;
+import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.session.SessionExecutionBody;
 import de.hybris.platform.servicelayer.session.SessionService;
+import de.hybris.platform.catalog.CatalogVersionService;
+import de.hybris.platform.core.model.media.MediaModel;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.String;
+
 import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
 import com.sap.ibso.eservices.facades.populators.SagiaServiceRequestReversePopulator;
 import com.sap.ibso.eservices.core.enums.IncidentCategory;
@@ -31,6 +42,7 @@ import de.hybris.platform.enumeration.EnumerationService;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import javax.annotation.Resource;
@@ -50,8 +62,22 @@ import java.util.UUID;
 public class DefaultSagiaUserFacade implements SagiaUserFacade {
     private static final Logger LOG = Logger.getLogger(DefaultSagiaUserFacade.class);
 	private static final String CA_1 = "CA_1";
+	
+	private static final String CATALOG_ID = "sagiaContentCatalog";
+	private static final String VERSION_ONLINE = "Online";
+	
     private SagiaUserService sagiaUserService;
     private SagiaServiceRequestReversePopulator sagiaServiceRequestReversePopulator;
+    
+    @Autowired
+    private MediaService mediaService;
+	
+	@Autowired
+	private ModelService modelService;
+	
+	@Resource
+    private CatalogVersionService catalogVersionService;
+    
     
 
 	/**
@@ -164,6 +190,51 @@ public class DefaultSagiaUserFacade implements SagiaUserFacade {
     public List<Priority> getPriorityEnumValues() {
     	return getEnumerationService().getEnumerationValues(com.sap.ibso.eservices.core.enums.Priority.class);
     }
+    
+    
+    
+    
+    public void saveTicketAttachments(final byte[] bytes, final String ticketId) {
+		final MediaModel mediaModel = saveToMedia(bytes, ticketId);
+		if(mediaModel != null) {
+			sagiaUserService.saveTicketAttachments(bytes, ticketId, mediaModel);
+		}
+	}
+
+	
+    
+    private MediaModel saveToMedia(final byte[] bytes, final String ticketId) {
+		final CatalogVersionModel catalogVersion = catalogVersionService.getCatalogVersion(CATALOG_ID, VERSION_ONLINE);
+		 MediaModel mediaModel = null;
+          LOG.info("calling uploadAttachment controller");
+
+      try {
+
+        if (null != bytes) {
+        	 mediaModel = modelService.create(MediaModel.class);
+        	LOG.info("Entered into bytes != null :"+bytes.length);
+            final InputStream inputStream = new ByteArrayInputStream(bytes);
+            LOG.info("inputStream is: "+inputStream);
+            mediaModel.setCode("ticket_"+ticketId+"_"+System.currentTimeMillis());
+            mediaModel.setCatalogVersion(catalogVersion); // use catalogVersionService to get the online version
+            mediaModel.setRealFileName("ticket_"+ticketId+".pdf");
+            LOG.info("before saving media model");
+            modelService.save(mediaModel);
+            LOG.info("mediaModel "+mediaModel);
+            LOG.info("after saving media model");
+            mediaService.setStreamForMedia(mediaModel, inputStream);
+
+             inputStream.close();
+            }	
+        }
+            catch (final IOException ex)
+            {
+                LOG.error(ex.getMessage());
+                ex.printStackTrace();
+            }
+		return mediaModel;
+	}
+
 
     /**
      * Gets sagia user service.

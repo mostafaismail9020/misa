@@ -354,35 +354,35 @@
 							<div id="entityHistoryTabId" class="contentModule">
 								<div class="contentModule-section service-content-history">
 									<div class="row">
-										<div class="col-sm-4 text-right">
+										<div class="col col-sm-4">
 											<spring:theme code="general.capital" />
 										</div>
-										<div id="capitalNewId" class="col-sm-4"></div>
-										<div id="capitalOldId" class="col-sm-4"></div>
+										<div id="capitalNewId" class="col col-sm-4"></div>
+										<div id="capitalOldId" class="col col-sm-4"></div>
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4 text-right">
+										<div class="col col-sm-4">
 											<spring:theme code="license.labour" />
 										</div>
-										<div id="labourNewId" class="col-sm-4"></div>
-										<div id="labourOldId" class="col-sm-4"></div>
+										<div id="labourNewId" class="col col-sm-4"></div>
+										<div id="labourOldId" class="col col-sm-4"></div>
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4 text-right">
+										<div class="col col-sm-4">
 											<spring:theme code="license.entityname" />
 										</div>
-										<div id="entitynameNewId" class="col-sm-4"></div>
-										<div id="entitynameOldId" class="col-sm-4"></div>
+										<div id="entitynameNewId" class="col col-sm-4"></div>
+										<div id="entitynameOldId" class="col col-sm-4"></div>
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4 text-right">
+										<div class="col col-sm-4">
 											<spring:theme code="license.legalstatus" />
 										</div>
-										<div id="legalstatusNewId" class="col-sm-4"></div>
-										<div id="legalstatusOldId" class="col-sm-4"></div>
+										<div id="legalstatusNewId" class="col col-sm-4"></div>
+										<div id="legalstatusOldId" class="col col-sm-4"></div>
 									</div>
 								</div>
 							</div>
@@ -988,8 +988,9 @@
 													class="control-label control-label_mandatory"
 													for="shareholderSectorId"><spring:theme
 														code="license.sector" /></label>
+												<div class="help-block"></div>
 											</div>
-											<div class="help-block"></div>
+											
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -1015,8 +1016,9 @@
 													class="control-label control-label_mandatory"
 													for="shareholderMultinationalCompanyId"><spring:theme
 														code="license.multinational" /></label>
+												<div class="help-block"></div>
 											</div>
-											<div class="help-block"></div>
+											
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -1028,8 +1030,9 @@
 													class="control-label control-label_mandatory"
 													for="shareholderLegalStatusId"><spring:theme
 														code="license.legalstatus" /></label>
+												<div class="help-block"></div>
 											</div>
-											<div class="help-block"></div>
+											
 										</div>
 									</div>
 									<div class="col-md-6">

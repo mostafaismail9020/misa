@@ -1,5 +1,7 @@
 package com.sap.ibso.eservices.core.sagia.services;
 
+import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
 import de.hybris.platform.ticket.enums.CsTicketState;
@@ -7,6 +9,7 @@ import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.commerceservices.search.pagedata.SearchPageData;
 import de.hybris.platform.ticket.service.TicketException;
 
+import java.util.List;
 /**
  * The interface Sagia ticket service.
  */
@@ -61,4 +64,7 @@ public interface SagiaTicketService {
 	 */
 	boolean isCurrentUserValidApprover(String ticketId, B2BUnitModel ticketUserB2BUnitModel)
 			throws IllegalAccessException;
+			
+	List<ContactTicketModel> getScpiTickets();
+	List<ServiceRequestModel> getScpiServiceRequest();
 }

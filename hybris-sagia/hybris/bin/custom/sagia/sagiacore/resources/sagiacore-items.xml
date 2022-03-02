@@ -850,6 +850,11 @@
             <persistence type="property"/>
             <modifiers optional="false" unique="true" read="true" write="true" search="true"/>
         </attribute>
+		<attribute qualifier="sent2Scpi" type="java.lang.Boolean">
+			<persistence type="property"/>
+			<modifiers read="true" write="true" search="true" optional="false"/>
+			<defaultvalue>Boolean.FALSE</defaultvalue>
+	    </attribute>
     </attributes>
 </itemtype>
 
@@ -3739,6 +3744,11 @@
                             </columntype>
                         </persistence>
                     </attribute>
+					<attribute qualifier="sent2Scpi" type="java.lang.Boolean">
+						<persistence type="property"/>
+						<modifiers read="true" write="true" search="true" optional="false"/>
+						<defaultvalue>Boolean.FALSE</defaultvalue>
+                   </attribute>
 				</attributes>
             </itemtype> 
                         

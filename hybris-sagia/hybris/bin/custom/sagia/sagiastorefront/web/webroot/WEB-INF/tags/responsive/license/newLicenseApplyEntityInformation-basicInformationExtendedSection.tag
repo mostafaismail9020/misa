@@ -16,12 +16,14 @@
 
 
 <div class="rhqSelectBoxes" style="display:none">
+ <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.title"/></div>
+<hr class="hr">
 <div class="mncBranchTableJsonInputs"></div>
 <div class="mncBrandTableJsonInputs"></div>
 <div class="mncCostTableJsonInputs"></div>
 
 <!--Optional/Functions/Corporate  Activities start-->
-<div class="formSelectBox">
+<div class="formSelectBox" style="margin-top:40px">
 		<div class="form-group optionalActivity">
 			<select id="rhqCheckbox" name="listOfCorporateActivities"
 				class="form-control"
@@ -115,6 +117,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="rhq.edit.branch.label" /></div>
+				  <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"/></svg>
+                        </button>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -219,6 +224,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="rhq.add.new.branch.label" /></div>
+				  <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"/></svg>
+                        </button>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -311,6 +319,7 @@
 				</div>
 			</div>
 			<div class="modal-footer modal-footer_centered">
+			
 				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddBranch">Add</button>
 			</div>
 		</div>
@@ -327,6 +336,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="rhq.add.new.brand.label" /></div>
+				  <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"/></svg>
+                        </button>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -417,6 +429,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="rhq.edit.brand.label" /></div>
+				  <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"/></svg>
+                        </button>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -506,6 +521,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="rhq.add.estimated.cost.label" /></div>
+				  <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"/></svg>
+                        </button>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -622,6 +640,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="modal-title"><spring:theme code="rhq.edit.estimated.cost.label" /></div>
+				  <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                            <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"/></svg>
+                        </button>
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
@@ -733,6 +754,7 @@
 <div class="rqh-tables" style="display:none">
 
 <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.branches.label" /></div>
+ <hr class="hr">
 <div class="tableModule" >
 
 <div class="formInputBox">
@@ -758,11 +780,11 @@
   </table>
   <input type="hidden" id="rowToDelete" name="rowToDelete" value="0">
   	<div class="contentModule-actions contentModule-actions_centered contentModule-actions_noMargin w-100">
-				<a href="#" data-toggle="modal" data-target="#addBranchTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
-				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-      <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-    </svg> <spring:theme code="rhq.add.new.label" /></a>
+			
+					<button type="button" class="btn w-25" data-toggle="modal" data-target="#addBranchTable" style="margin-top: 23px;"><spring:theme code="rhq.add.new.label" /></button>
 				</div>
+
+			
 </div>
 
 </div>
@@ -770,6 +792,7 @@
 <!--MNC Brand Start-->
 <div class="rqh-tables" style="display:none">
 <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.brand.label" /></div>
+<hr class="hr">
 <div class="tableModule" >
 
 <div class="formInputBox">
@@ -798,10 +821,7 @@
   </table>
   <input type="hidden" id="rowToDelete" name="rowToDelete" value="0">
   	<div class="contentModule-actions contentModule-actions_centered contentModule-actions_noMargin w-100">
-				<a href="#" data-toggle="modal" data-target="#addBrandTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
-				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-      <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-    </svg><spring:theme code="rhq.add.new.label" /></a>
+				<button type="button" class="btn w-25" data-toggle="modal" data-target="#addBrandTable" style="margin-top: 23px;"><spring:theme code="rhq.add.new.label" /></button>
 				</div>
 </div>
 </div>
@@ -811,6 +831,7 @@
 <!--rhqCostTable-->
 <div class="rqh-tables" style="display:none;border-bottom: 1px solid #ccd0d4;margin-bottom: 48px;padding-bottom: 24px;">
 <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.estimated.cost.label" /></div>
+<hr class="hr">
 <div class="tableModule" >
 
 <div class="formInputBox">
@@ -852,10 +873,7 @@
   </table>
   <input type="hidden" id="rowToDelete" name="rowToDelete" value="0">
   	<div class="contentModule-actions contentModule-actions_centered contentModule-actions_noMargin w-100">
-			 <a href="#" data-toggle="modal" data-target="#addrhqCostTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
-				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-      <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-    </svg><spring:theme code="rhq.add.new.label" /></a>
+			<button type="button" class="btn w-25" data-toggle="modal" data-target="#addrhqCostTable" style="margin-top: 23px;"><spring:theme code="rhq.add.new.label" /></button>
 				</div>
 </div>
 </div>
@@ -1129,15 +1147,127 @@
 	top: -17px;
 }
 
-.page-new-license-apply .selectWrap > .select-content > .addedOption{border: 1px solid #5cc83b;}
+.page-new-license-apply .selectWrap{
+	padding-top: 5px;
+    border-radius: 113px!important;
+    background: #fff;
+    -webkit-box-shadow: 0 19px 47px #00000029;
+    box-shadow: 0 19px 47px #00000029;
+}
+.page-new-license-apply .selectWrap > .select-content > .addedOption{color: white;
+    background-color: #ffffff;
+    border:1px solid #00a6be4f !important;
+    padding: 3px 5px;
+    border-radius: 5px;
+    margin: 2px;
+    float: left;
+    cursor: pointer;}
 .page-new-license-apply .selectWrap > .select-content > .addedOption > .removeOption,
-.page-new-license-apply .select.modal .modal-body > .option.selected{color:#5cc83b;}
+.page-new-license-apply .selectWrap > .select-content > .addedOption > .removeOption >span,
+.page-new-license-apply .select.modal .modal-body > .option.selected{    
+	color: #00a6be !important;
+    font-size: 15px !important;}
 
 .page-new-license-apply .select .modal-dialog .modal-body{padding: 0 22px;}
 .page-new-license-apply .tooltip-listItem_expanded .tooltip-listItem-body {color:#000;}
 .page-new-license-apply  .tooltip.show {
        z-index: 999999999;
 }
+
+
+
+.page-new-license-apply .selectWrap > .open-options > span.icon{
+	color:#00a6be !important;
+}
+
+.page-new-license-apply .selectWrap > .select-content > .addedOption > .text {
+    color: #707070 !important;
+    font-size: 15px !important;
+}
+
+.page-new-license-apply #rhqSubsidiaryPresence .form-item .control-label span {
+	top:0 !important;
+
+}
+
+
+#addBranchTable .modal-dialog .modal-body,
+#EditBranchTable .modal-dialog .modal-body,
+#addBrandTable .modal-dialog .modal-body,
+#EditBrandTable .modal-dialog .modal-body,
+#addrhqCostTable .modal-dialog .modal-body,
+#EditrhqCostTable .modal-dialog .modal-body{
+padding-top:15px !important;
+max-height:unset !important;
+}
+
+#addBranchTable .modal-dialog .modal-body .formInputBox,
+#EditBranchTable .modal-dialog .modal-body .formInputBox,
+#addBrandTable .modal-dialog .modal-body .formInputBox,
+#EditBrandTable .modal-dialog .modal-body .formInputBox,
+#addrhqCostTable .modal-dialog .modal-body .formInputBox,
+#EditrhqCostTable .modal-dialog .modal-body .formInputBox{
+margin-bottom:20px !important
+}
+
+
+.page-new-license-apply .select.modal .modal-body > .option.selected > .option-tick .icon-ok,
+.page-new-license-apply .select.modal .modal-body > .option.selected >.option-text{
+	color: #00a6be !important;
+}
+
+.page-new-license-apply .rhqSelectBoxes .formSelectBox .form-group label {
+    top: -20px !important;
+}
+
+    
+      @media (min-width: 1200px) and (max-width:1500px) {
+	  
+	  .page-new-license-apply .selectWrap > .select-content > .addedOption > .removeOption, .page-new-license-apply .selectWrap > .select-content > .addedOption > .removeOption >span, .page-new-license-apply .select.modal .modal-body > .option.selected {
+    color: #00a6be !important;
+    font-size: 12px !important;
+}
+.page-new-license-apply .selectWrap > .select-content > .addedOption > .text {
+    color: #707070 !important;
+    font-size: 12px !important;
+}
+}
+
+@media (min-width: 320px) and (max-width:991.98px)  { 
+	  .page-new-license-apply .selectWrap > .select-content > .addedOption > .removeOption, .page-new-license-apply .selectWrap > .select-content > .addedOption > .removeOption >span, .page-new-license-apply .select.modal .modal-body > .option.selected {
+    color: #00a6be !important;
+    font-size: 12px !important;
+}
+.page-new-license-apply .selectWrap > .select-content > .addedOption > .text {
+    color: #707070 !important;
+    font-size: 12px !important;
+}
+.page-new-license-apply .selectWrap{
+border-radius: 0px!important;
+}
+ }
+
+ .page-new-license-apply .rqh-tables .help-block,
+.page-new-license-apply .rhqSelectBoxes .help-block	 {float:right !important;}
+
+.page-new-license-apply  .select.modal .modal-header > .close{
+color: #00a6be !important;
+    opacity: 1;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border: 2px solid #00a6be !important;
+    border-radius: 35px;
+    display: inline-block;
+    padding: 0 !important;
+    text-align: center;
+    font-weight: bold;
+}
+
+.page-new-license-apply  .select.modal .modal-header{    
+	display: flex;
+    justify-content: center;
+    align-items: center}
 </style>
 
 <script>

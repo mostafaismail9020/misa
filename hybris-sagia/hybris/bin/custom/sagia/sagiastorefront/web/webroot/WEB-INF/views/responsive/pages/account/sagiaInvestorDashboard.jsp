@@ -384,9 +384,9 @@
                                         <a href="" data-redirect="payments-overview" class="js-page-redirect"><icon:payments/></a>
                                     </div> -->
                                     <div class="dashboardWidget-filter">
-                                        <!-- <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label> -->
+                                        <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label>
                                         <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
-                                            <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
+                                            <!-- <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option> -->
                                             <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
                                             <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
                                             <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
@@ -464,9 +464,9 @@
                                         <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"><icon:your-tickets/></a>
                                     </div>
                                     <div class="dashboardWidget-filter">
-                                        <!-- <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label> -->
+                                        <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label>
                                         <select id="ticketSort" title="tickets" class="js-select2-oneColumn form-control" onchange="sortTickets()">
-                                            <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
+                                            <!-- <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option> -->
                                             <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
                                             <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
                                             <option value="number_asc" data-sort="asc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
@@ -802,9 +802,9 @@
                                     <a href="" data-redirect="payments-overview" class="js-page-redirect"><icon:payments/></a>
                                 </div>
                                 <div class="dashboardWidget-filter">
-                                    <!-- <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label> -->
+                                    <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label>
                                     <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
-                                        <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
+                                        <!-- <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option> -->
                                         <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
                                         <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
                                         <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
@@ -875,9 +875,9 @@
                                     <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"><icon:your-tickets/></a>
                                 </div>
                                 <div class="dashboardWidget-filter">
-                                    <!-- <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label> -->
+                                    <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label>
                                     <select id="ticketSort" title="tickets" class="js-select2-oneColumn form-control" onchange="sortTickets()">
-                                        <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
+                                        <!-- <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option> -->
                                         <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
                                         <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
                                         <option value="number_asc" data-sort="asc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>

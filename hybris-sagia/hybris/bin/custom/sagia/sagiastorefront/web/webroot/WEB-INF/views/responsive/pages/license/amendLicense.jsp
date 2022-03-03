@@ -962,7 +962,7 @@
 													\u0620-\u063F\u0641-\u064A\u066E-\u066F\u0671-\u06D3\u06D5\
 													\u06E5-\u06E6\u06EE-\u06EF\u06FA-\u06FC\u06FF\u0750-\u077F\
 													\u08A0\u08A2-\u08AC\uFB50-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\
-													\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC]{1,30}">
+													\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\s]+">
 												<label class="control-label control-label_mandatory"
 													for="shareholderNameId"> <spring:theme
 														code="license.nameinarabic" />
@@ -977,7 +977,7 @@
 												<input id="shareholderNameEnglishId"
 													name="shareholderNameEnglish" class="form-control"
 													placeholder="." value="" type="text"
-													dir="ltr" lang="en" pattern="[a-zA-Z]*"> <label
+													dir="ltr" lang="en" pattern="[a-zA-Z\s]+"> <label
 													class="control-label control-label_mandatory"
 													for="shareholderNameEnglishId"> <spring:theme
 														code="license.nameinenglish" />
@@ -1604,7 +1604,7 @@
 																	\u0620-\u063F\u0641-\u064A\u066E-\u066F\u0671-\u06D3\u06D5\
 																	\u06E5-\u06E6\u06EE-\u06EF\u06FA-\u06FC\u06FF\u0750-\u077F\
 																	\u08A0\u08A2-\u08AC\uFB50-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\
-																	\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC]{1,30}"/> <label
+																	\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\s]+"/> <label
 																	class="control-label control-label_mandatory"
 																	for="delegateFirstNameArabic"><spring:theme
 																		code="general.firstname.arabic" /></label>
@@ -1623,7 +1623,7 @@
 																	\u0620-\u063F\u0641-\u064A\u066E-\u066F\u0671-\u06D3\u06D5\
 																	\u06E5-\u06E6\u06EE-\u06EF\u06FA-\u06FC\u06FF\u0750-\u077F\
 																	\u08A0\u08A2-\u08AC\uFB50-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\
-																	\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC]{1,30}"/> <label
+																	\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\s]+"/> <label
 																	class="control-label control-label_mandatory"
 																	for="delegateLastNameArabic"><spring:theme
 																		code="general.lastname.arabic" /></label>
@@ -1638,7 +1638,7 @@
 																<input id="delegateFullNameEnglish"
 																	name="delegate.fullNameEnglish" class="form-control"
 																	placeholder="." value="" type="text" 
-																	dir="ltr" lang="en" pattern="[a-zA-Z]*"/> <label
+																	dir="ltr" lang="en" pattern="[a-zA-Z\s]+"/> <label
 																	class="control-label control-label_mandatory"
 																	for="delegateFullNameEnglish"><spring:theme
 																		code="general.fullname.english" /></label>

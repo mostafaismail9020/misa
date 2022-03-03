@@ -8,7 +8,7 @@
 <%@ attribute name="name" required="true" type="java.lang.String" %>
 <%@ attribute name="title" required="false" type="java.lang.String" %>
 
-<div class="documentModule js-upload-files-list" data-files-name="${name}">
+<div class="documentModule_1 js-upload-files-list" data-files-name="${name}">
     <c:if test="${not empty title}">
         <div class="contentModule-headline contentModule-headline_smallMargin"><icon:documents/>${title}</div>
     </c:if>
@@ -41,8 +41,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn_slim btn_round js-close-modal-btn"><spring:theme code="general.cancel"/></button>
-                    <button type="button" class="btn btn_slim btn_round js-confirm-modal-btn"><spring:theme code="general.confirm"/></button>
+                    <button type="button" class="btn btn_slim btn_round js-close-modal-btn"><spring:theme code="general.cancel"/></button>
+                    <button type="button" class="btn btn_round js-confirm-modal-btn"><spring:theme code="general.confirm"/></button>
                 </div>
             </div>
         </div>

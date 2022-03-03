@@ -1290,6 +1290,24 @@ color: #00a6be !important;
 	display: flex;
     justify-content: center;
     align-items: center}
+
+html[dir="rtl"] .page-new-license-apply .select.modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+html[dir="rtl"] .page-new-license-apply .select.modal .float-right.clickable.close{
+margin-left: unset;
+}
+
+html[dir="rtl"]  .page-new-license-apply .select.modal .modal-body > .option.selected {
+    color: #5cc83b;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 </style>
 
 <script>

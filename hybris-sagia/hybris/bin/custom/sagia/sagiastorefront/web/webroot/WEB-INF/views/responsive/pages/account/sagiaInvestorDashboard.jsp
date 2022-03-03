@@ -218,11 +218,10 @@
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
+                                        <spring:theme code="sagia.licenses.catagory.description"/>
                                     </p>
                                     <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
-                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/>
+                                    	<spring:theme code="dashboard.goto.services.label"/>
                                     </button>
                                 </div>
                             </div>
@@ -248,11 +247,10 @@
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
+                                        <spring:theme code="sagia.governmental.catagory.description"/>
                                     </p>
                                     <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
-                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/>
+                                    	<spring:theme code="dashboard.goto.services.label"/>
                                     </button>
                                 </div>
                             </div>
@@ -279,11 +277,10 @@
                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                 <div class="content-wrapper">
                                     <p class="INS_letter_set_para pb-3 mb-3">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                        industry's standard dummy text ever since the 1500s,
+                                    	<spring:theme code="sagia.misa.services.catagory.description"/>
                                     </p>
                                     <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
-                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/> 
+                                    	<spring:theme code="dashboard.goto.services.label"/> 
                                     </button>
                                 </div>
                             </div>
@@ -300,7 +297,7 @@
                                 <spring:theme code="sagia.licenses.catagory.description"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/FIRST';">
-                               <spring:theme code="portal.sector.opportunity.know.more.label"/>
+                               <spring:theme code="dashboard.goto.services.label"/>
                             </button>
                         </div>
                     </div>
@@ -313,7 +310,7 @@
                               <spring:theme code="sagia.governmental.catagory.description"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
-                            	<spring:theme code="portal.sector.opportunity.know.more.label"/>
+                            	<spring:theme code="dashboard.goto.services.label"/>
                             </button>
                         </div>
                     </div>
@@ -322,10 +319,10 @@
                     <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
                         <div class="content-wrapper">
                             <p class="INS_letter_set_para pb-3 mb-3">
-                               <spring:theme code="sagia.misa.services.catagory.descriptions"/>
+                               <spring:theme code="sagia.misa.services.catagory.description"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
-                            	<spring:theme code="portal.sector.opportunity.know.more.label"/>
+                            	<spring:theme code="dashboard.goto.services.label"/>
                             </button>
                         </div>
                     </div>
@@ -549,7 +546,7 @@
             <div class="dashboard-container">
                 <div class="row titleContainer">
                     <div class="col-md-12 title-heading aos-init aos-animate px-0" data-aos="fade-right" data-aos-delay="100">
-                        <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
+                        <h1 class="section-title text-center clr_gld"><spring:theme code="dashboard.license.news.updates.title"/></h1>
                         <!-- <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp; -->
                         <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
                         	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
@@ -574,7 +571,7 @@
                                         </span>
 	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,30)} ...</h3>
 	                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
-	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
+	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="dashboard.goto.services.label"/>&nbsp;<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
 	                                </div>
 	                            </div>
 	                        </div>
@@ -587,7 +584,7 @@
 </section>
 
 <section class="helpSection">
-    <div class="container mt-5">
+    <div class="container">
         <div class="firstBlock">
             <div class="firstBlock-widget">
                 <h1 class="text-center text-uppercase clr_gld">

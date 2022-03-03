@@ -221,7 +221,7 @@
 	    </section>
     
 	    <section class="helpSection">
-		    <div class="container mt-5">
+		    <div class="container">
 		        <div class="firstBlock">
 		            <div class="firstBlock-widget"> 
 		                <h1 class="text-center text-uppercase clr_gld">

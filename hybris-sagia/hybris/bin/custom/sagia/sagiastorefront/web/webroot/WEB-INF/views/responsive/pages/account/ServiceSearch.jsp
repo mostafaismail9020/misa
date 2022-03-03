@@ -178,7 +178,7 @@
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES1" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
                             <div class="p-4 serviceModule-detail border-top-0">
                                 <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
-                                    <spring:theme code="sagia.misa.services.catagory.descriptions"/>
+                                    <spring:theme code="sagia.misa.services.catagory.description"/>
                                 </p>
                             </div>
                             <div class="accordion pb-1" id="misaServices1">
@@ -308,7 +308,7 @@
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
                         <div class="p-4 serviceModule-detail  mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
-                                <spring:theme code="sagia.misa.services.catagory.descriptions"/>
+                                <spring:theme code="sagia.misa.services.catagory.description"/>
                             </p>
                         </div>
                         <div class="accordion pb-1" id="misaServices">

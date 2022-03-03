@@ -8,6 +8,7 @@ import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
 import de.hybris.platform.ticket.dao.impl.DefaultTicketDao;
 import de.hybris.platform.ticket.enums.CsTicketState;
+import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
@@ -212,7 +213,6 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 		final String query = "SELECT {PK} FROM {ContactTicket} WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ";
 		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(query);
 		final SearchResult<ContactTicketModel> resultList = flexibleSearchService.search(searchQuery);
-
 		return resultList.getResult();
 	}
 
@@ -222,7 +222,14 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 		final String query = "SELECT {PK} FROM {ServiceRequest} WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ";
 		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(query);
 		final SearchResult<ServiceRequestModel> resultList = flexibleSearchService.search(searchQuery);
+		return resultList.getResult();
+	}
 
+	@Override
+	public List<CsCustomerEventModel> getScpiCustomerEvents(){
+		final String query = "select {event.pk} from {CsCustomerEvent as event join CSInterventionType as type on {event.interventionType}={type.pk}} where {type.code}= 'TicketMessage' and {event.sent2Scpi} is null or {event.sent2Scpi} = 0";
+		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(query);
+		final SearchResult<CsCustomerEventModel> resultList = flexibleSearchService.search(searchQuery);
 		return resultList.getResult();
 	}
 

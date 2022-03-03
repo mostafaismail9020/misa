@@ -852,7 +852,7 @@
         </attribute>
 		<attribute qualifier="sent2Scpi" type="java.lang.Boolean">
 			<persistence type="property"/>
-			<modifiers read="true" write="true" search="true" optional="false"/>
+			<modifiers read="true" write="true" search="true" optional="true"/>
 			<defaultvalue>Boolean.FALSE</defaultvalue>
 	    </attribute>
     </attributes>
@@ -3746,7 +3746,7 @@
                     </attribute>
 					<attribute qualifier="sent2Scpi" type="java.lang.Boolean">
 						<persistence type="property"/>
-						<modifiers read="true" write="true" search="true" optional="false"/>
+						<modifiers read="true" write="true" search="true" optional="true"/>
 						<defaultvalue>Boolean.FALSE</defaultvalue>
                    </attribute>
 				</attributes>
@@ -10717,6 +10717,15 @@
             <itemtype code="ScpiOutCsCustomerEventProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
 			<itemtype code="ScpiOutServiceRequestProcess" autocreate="true" generate="true" extends="BusinessProcess"/> 
             <itemtype code="ScpiOutTicketAttachmentProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
+			   <itemtype code="CsCustomerEvent" autocreate="false" generate="false" extends="CsTicketEvent" abstract="false">
+                <attributes>
+                    <attribute qualifier="sent2Scpi" type="java.lang.Boolean">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <defaultvalue>Boolean.FALSE</defaultvalue>
+                    </attribute>
+                </attributes>
+            </itemtype>
         </typegroup>
 		
 		<!-- SiteMap Changes Ends -->

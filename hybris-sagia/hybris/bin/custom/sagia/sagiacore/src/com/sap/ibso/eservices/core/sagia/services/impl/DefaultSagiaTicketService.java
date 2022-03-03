@@ -13,6 +13,7 @@ import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.ticket.dao.TicketDao;
 import de.hybris.platform.ticket.enums.CsTicketState;
+import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.service.TicketService;
 import de.hybris.platform.ticket.service.impl.DefaultTicketService;
 import de.hybris.platform.ticket.model.CsTicketModel;
@@ -151,5 +152,10 @@ public class DefaultSagiaTicketService extends DefaultTicketService implements S
 	@Override
 	public List<ServiceRequestModel> getScpiServiceRequest() {
 		return sagiaTicketDao.getScpiServiceRequest();
+	}
+	
+	@Override
+	public List<CsCustomerEventModel> getScpiCustomerEvents(){
+		return sagiaTicketDao.getScpiCustomerEvents();
 	}
 }

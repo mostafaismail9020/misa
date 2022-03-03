@@ -58,12 +58,13 @@ INSERT_UPDATE ServicelayerJob; code[unique = true]     ; springId
                              ; workflowBDUserDisableServiceLayerJob ; workflowBDUserDisableJob
                              ; contactTicket2ScpiJob ; contactTicket2ScpiJob
                              ; serviceRequest2ScpiJob ; serviceRequest2ScpiJob
+							 ;customerEvent2ScpiJob  ;customerEvent2ScpiJob
                             
 INSERT_UPDATE CronJob; code[unique = true]                    ; job(code)                          ; sessionLanguage(isoCode)[default = en]
                      ; workflowBDUserDisableCronJob           ; workflowBDUserDisableServiceLayerJob           ;
                      ; contactTicket2ScpiCronJob    ; contactTicket2ScpiJob    ; 
 					 ; serviceRequest2ScpiCronJob    ; serviceRequest2ScpiJob    ;
-                     
+                     ;customerEvent2ScpiCronJob   ;customerEvent2ScpiJob
 
 INSERT_UPDATE Trigger; cronJob(code)[unique = true]           ; cronExpression
                      ; workflowBDUserDisableCronJob           ; 0 23 * * * ?

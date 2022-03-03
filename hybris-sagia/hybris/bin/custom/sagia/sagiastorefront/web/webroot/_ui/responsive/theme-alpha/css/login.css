@@ -326,6 +326,10 @@ position: relative;
 	width: 100%;
 	position: relative;
 }
+.page-new-license-apply input:disabled,
+.page-shareholder-apply input:disabled,
+.page-new-apply-contactperson input:disabled,
+.page-new-apply-review input:disabled{background-color: #ededed!important;}
 
 @media (min-width: 1200px){
 	.page-new-license-apply .formInputBox-split>div:not(.formInputBox_big) {

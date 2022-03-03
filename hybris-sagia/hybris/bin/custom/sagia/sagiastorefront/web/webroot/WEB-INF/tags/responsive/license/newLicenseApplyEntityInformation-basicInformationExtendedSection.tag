@@ -29,7 +29,7 @@
 				class="form-control"
 				multiple  data-value="${sagiaApplyEntityInfoForm.listOfCorporateActivities}">
 			</select>
-			<label class="control-label" for="rhqCheckbox"><spring:theme code="rhq.investor.activities.corporate.label"/></label>
+			<label class="control-label control-label_mandatory" for="rhqCheckbox"><spring:theme code="rhq.investor.activities.corporate.label"/></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -42,7 +42,7 @@
 				class="form-control"
 				multiple tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfStrategicActivities}">
 			</select>
-			<label class="control-label" for="rhqStrategicCheckbox"><spring:theme code="rhq.investor.activities.strategic.label"/></label>
+			<label class="control-label control-label_mandatory" for="rhqStrategicCheckbox"><spring:theme code="rhq.investor.activities.strategic.label"/></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -55,7 +55,7 @@
 				class="form-control"
 				multiple data-value="${sagiaApplyEntityInfoForm.listOfManagementActivities}">
 			</select>
-			<label class="control-label" for="rhqManagementFunCheckbox"><spring:theme code="rhq.investor.activities.management.label"/></label>
+			<label class="control-label control-label_mandatory" for="rhqManagementFunCheckbox"><spring:theme code="rhq.investor.activities.management.label"/></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
@@ -71,7 +71,7 @@
                      <option value="MENA">MENA</option>
                      <option value="Middle_East_ME">Middle East (ME)</option>
 				</select>
-				<label class="control-label" for="rhqCenterAdmin"><spring:theme code="rhq.investor.activities.center.of.administrative.label"/></label>
+				<label class="control-label control-label_mandatory" for="rhqCenterAdmin"><spring:theme code="rhq.investor.activities.center.of.administrative.label"/></label>
 				<div id="rhqCenterAdmin-error" class="help-block"></div>
 			</div>
 		</div>
@@ -91,14 +91,14 @@
 			<select id="branchInformationRhqRegionsSection" name="listOfRhqRegions"
 				class="form-control"
 				multiple data-value="${sagiaApplyEntityInfoForm.listOfRhqRegions}">
-			</select> <label class="control-label" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
+			</select> <label class="control-label control-label_mandatory" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
 		</div>
 		<div class="help-block"></div>
 	</div>
 
      <div class="formRadioButton">
          <div class="form-group optionalActivity ">
-		 <label class="control-label" for="rhqSubsidiaryPresence"><spring:theme code="rhq.mnc.subsidiaries.presence" /></label>
+		 <label class="control-label rhqSubsidiaryPresence-label control-label_mandatory" for="rhqSubsidiaryPresence"><spring:theme code="rhq.mnc.subsidiaries.presence" /></label>
 		 <div id="rhqSubsidiaryPresence">
 
 		  </div>
@@ -1189,6 +1189,28 @@
 	top:0 !important;
 
 }
+
+.page-new-license-apply .rhqSubsidiaryPresence-label{
+	font-size: 14px !important;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    line-height: 17px;
+    left: 20px;
+}
+
+.page-new-license-apply #rhqSubsidiaryPresence .control-label {
+	color: #707070 !important;
+    font-size: 15px !important;
+}
+
+.page-new-license-apply .rhqSelectBoxes .formSelectBox .form-group {
+	    padding-bottom: 8px !important;
+}
+
+.page-new-license-apply .rhqSelectBoxes .formRadioButton .form-group {
+	    padding-top: 0px;
+}
+
 
 
 #addBranchTable .modal-dialog .modal-body,

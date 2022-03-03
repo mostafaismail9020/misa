@@ -128,11 +128,11 @@
     <div class="container">
         <c:if test="${fn:length(supportVisits) > 0}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                <div class="hidden"><span><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
-                <div class=""><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+                <div class=""><span><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div class="hidden"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
-        <div class="expandableContent expanded" id="expand01">
+        <div class="expandableContent" id="expand01">
             <c:if test="${fn:length(supportVisits) > 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">

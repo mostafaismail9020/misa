@@ -82,7 +82,7 @@
             <c:url value="/my-sagia/sagia-profile" var="profileUrl"/>
             <div class="row w-100 renewal-services">
                 <div class="col-xl-3 col-12 px-0">
-                    <a href="${profileUrl}" class="btn btn_leftIconLink btn_darkLink back_to_profile"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a>
+                    <a href="${profileUrl}" class="btn btn_leftIconLink btn_darkLink back_to_profile"><span class="iconElement iconElement_closeBack " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a>
                 </div>
             </div>            
         </div>
@@ -164,7 +164,7 @@
             <div class="expandableContent-main js-support-visits">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule" id="supportVisitDetails">
-                        <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
+                        <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin  pb-0 mb-0">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                 <div class="contentModule-headline contentModule-headline-service-info">
                                     <!-- <icon:info/> -->

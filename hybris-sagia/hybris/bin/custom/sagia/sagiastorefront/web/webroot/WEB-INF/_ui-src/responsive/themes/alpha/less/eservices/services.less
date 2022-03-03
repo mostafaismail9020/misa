@@ -293,7 +293,8 @@
     }
     #srID,.srId{
         color: @color-golden;
-        font-size: var(--heading-font);
+        // font-size: var(--heading-font);
+        font-size: var(--content-big-font);
     }
     #currentStatus{
         font-weight: 500;
@@ -337,9 +338,12 @@
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
 	background-color: initial;
 }
-.back_to_profile{
-    width: 390px !important;
+@media screen and (min-width:767px){
+    .back_to_profile{
+        width: 390px !important;
+    }
 }
+
 
 .back_to_service {
     width: 300px !important;
@@ -1591,4 +1595,15 @@ a.historyList-link{
         overflow-y: initial;
         overflow-x: initial;
     }
+}
+.contentModule-actions_hasStatusIndicator .contentModule-headline{
+    margin-bottom: 0px;
+}
+
+@media (max-width: 767px) {
+    .page-contact-update-history{
+        .panelModule {
+            width: 100%;
+        }
+    }    
 }

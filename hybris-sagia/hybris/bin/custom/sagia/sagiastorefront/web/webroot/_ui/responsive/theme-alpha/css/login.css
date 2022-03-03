@@ -326,8 +326,13 @@ position: relative;
 	width: 100%;
 	position: relative;
 }
-@media (max-width: 640px) and (min-width: 100px){
-	
+
+@media (min-width: 1200px){
+	.page-new-license-apply .formInputBox-split>div:not(.formInputBox_big) {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 20%;
+		flex: 0 0 30%;
+	}
 }
 /* End */
 /* Bidding certificate */

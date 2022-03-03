@@ -408,7 +408,7 @@
                                              <b><spring:theme code="service.govt.moc.salutation"/></b>
                                              <spring:theme code="service.govt.moc.message"/>
                                              <br>
-                                             <a href="https://efile.mci.gov.sa/ar/Account/Login?client_ID=152b6467-1d78-497f-a03f-076172250b80">
+                                             <a href="https://mc.gov.sa/ar/eservices/Pages/ServiceDetails.aspx?sID=29">
                                                   <spring:theme code="service.govt.moc.link.name"/>
                                               </a>
                                           </c:if>

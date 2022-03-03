@@ -363,8 +363,11 @@
 									<div id="termsAndConditionsModal" class="modal fade" tabindex="-1" role="dialog">
 										<div class="modal-dialog">
 											<div class="modal-content">
+											<button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+                    							<svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg>
+											</button>
 											<div class="modal-body terms-conditions-content">
-												<iframe width="100%" height="100%" src="/en/cms/sagia-cms-TandC-registration" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+												<iframe id="tand_C" width="100%" height="100%" src="/en/cms/sagia-cms-TandC-registration" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 											</div>
 											</div>
 										</div>

@@ -549,7 +549,7 @@
             <div class="dashboard-container">
                 <div class="row titleContainer">
                     <div class="col-md-12 title-heading aos-init aos-animate px-0" data-aos="fade-right" data-aos-delay="100">
-                        <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
+                        <h1 class="section-title text-center clr_gld"><spring:theme code="dashboard.license.news.updates.title"/></h1>
                         <!-- <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp; -->
                         <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
                         	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
@@ -587,7 +587,7 @@
 </section>
 
 <section class="helpSection">
-    <div class="container mt-5">
+    <div class="container">
         <div class="firstBlock">
             <div class="firstBlock-widget">
                 <h1 class="text-center text-uppercase clr_gld">

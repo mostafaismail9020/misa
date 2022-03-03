@@ -68,7 +68,7 @@
                     <spring:theme code="text.account.followup.backWarningLetters"/>
                 </a>
             </div>
-            <div class="col-md-8 d-flex btn-drafts_list amend-service-link">
+            <div class="col-md-8 d-flex btn-drafts_list amend-service-link d-none">
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${formName}"
                         data-service-id="${serviceId}">
@@ -85,16 +85,22 @@
 </div>
 
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16  mt-5">
     <div class="container">
         <form:form action="" id="${formName}" class="js-followup-form" modelAttribute="createWarningLetterExtensionFormData">
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+                        <!-- <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
                             <div class="contentModule-headline headline-text">
-                                <!-- <icon:info/> -->
                                 <spring:theme code="general.info"/>
+                            </div>
+                        </div> -->
+                        
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="general.info"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
                         </div>
 
@@ -102,7 +108,7 @@
                             <div class="col">
                                 <div class="formRadioButton formRadioButton_block formRadioButton_slim">
                                     <div class="form-group">
-                                        <div class="formRadioButton-label">
+                                        <div class="formRadioButton-label services-warning-info-entry">
                                             <spring:theme code="text.account.followup.warningLetterNumber"/>
                                         </div>
 
@@ -126,7 +132,7 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <dl class="dlList dlList_separated">
-                                    <dt><spring:theme code="text.account.followup.warningLetterEndDate"/></dt>
+                                    <dt class="services-warning-info-entry"><spring:theme code="text.account.followup.warningLetterEndDate"/></dt>
                                     <dd>${selectedWarningLetter.endDate.dateFormatted}</dd>
                                 </dl>
                             </div>
@@ -135,7 +141,7 @@
                                     <div class="form-group">
                                         <input required name="daysExtension" type="range" min="0" max="100" value="0" step="1"
                                                class="js-days-range js-form-element" data-date="${selectedWarningLetter.endDate.dateFormatted}"/>
-                                        <div class="formRangeSlider-label control-label_mandatory">
+                                        <div class="formRangeSlider-label control-label_mandatory services-warning-info-entry">
                                            <spring:theme code="text.account.followup.warningLetterExtension"/>
                                         </div>
                                         <div class="formRangeSlider-value">
@@ -146,7 +152,7 @@
                             </div>
                             <div class="col-sm-3">
                                 <dl class="dlList dlList_separated">
-                                    <dt><spring:theme code="text.account.followup.warningLetterExtendedDate"/></dt>
+                                    <dt class="services-warning-info-entry"><spring:theme code="text.account.followup.warningLetterExtendedDate"/></dt>
                                     <dd class="js-end-date"></dd>
                                 </dl>
                             </div>
@@ -157,10 +163,12 @@
 
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
-                    <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-headline headline-text">
-                            <icon:enquiry2/>
-                            <spring:theme code="text.account.followup.reason"/>
+                    <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">                        
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.reason"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
                         <div class="formTextArea">
                             <div class="form-group">
@@ -177,9 +185,11 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-headline headline-text">
-                            <icon:documents/>
-                            <spring:theme code="text.account.followup.supportDocuments"/>
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
                         <formElement:uploadDocuments name="docs"/>
                     </div>
@@ -192,7 +202,7 @@
                         <formElement:termsAndConditionsCheckbox  event="GOVERNMENT_DOCUMENTS" id="termsAndConditions" path="termsAndConditionsChecked" name="termsAndConditionsChecked"   containerCssClass="js-terms-agree"/>
                     </div>
                 </div>
-                <button type="button" class="btn btn_leftIconLink btn_outline" onclick="window.history.back()">Cancel</button>
+                <button type="button" class="btn btn_outline" onclick="window.history.back()">Cancel</button>
                 <button type="submit" class="btn js-followup-wl-create">
                     <spring:theme code="text.account.followup.submit"/>
                 </button>

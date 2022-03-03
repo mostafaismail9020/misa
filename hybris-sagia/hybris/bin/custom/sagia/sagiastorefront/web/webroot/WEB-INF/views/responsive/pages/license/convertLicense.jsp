@@ -156,7 +156,7 @@
         <div class=""><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
     </button>
 </div>
-<div class="container service-wrapper service-wrapper-info expanded" id="expand-03">
+<div class="container service-wrapper service-wrapper-info expanded mb-5" id="expand-03">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">

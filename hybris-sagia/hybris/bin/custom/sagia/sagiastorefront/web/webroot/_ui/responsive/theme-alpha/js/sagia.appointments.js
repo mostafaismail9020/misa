@@ -500,7 +500,7 @@ if (!SAGIA.appointmentCalendar) {
                                     });
                                 }
                                 if(hasVisitLegend){
-                                    $('.calendar-legend').append('<li class="js-event-hasvisit">Sagia Supporting Visit</li>');
+                                    $('.calendar-legend').append('<li class="js-event-hasvisit">MISA Supporting Visit</li>');
                                 }
                             }
                         });

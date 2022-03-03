@@ -157,8 +157,9 @@
                 <div class="contentModule">
                     <div class="contentModule-section">
                         <div class="contentModule contentModule-wrap">
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap headline-background-wrapper w-100">
-                                <span class="headline-background"><spring:theme code="general.governmentdocuments.commercialregister"/></span>
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="general.governmentdocuments.commercialregister"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
                         </div>
                         <div class="row">
@@ -204,11 +205,12 @@
                     </div>
 
                     <div class="contentModule-section">
-                        <div class="contentModule-headline headline-background-wrapper">
-                            <!-- <span class="iconElement iconElement_momra"><icon:momra/></span> -->
-                            <span class="headline-background"><spring:theme code="govDocs.Momra"/></span> 
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="govDocs.Momra"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
-                        <hr class="hr">
                         <div class="row">
                             <div class="col">
                                 <div class="formRadioButton">
@@ -275,11 +277,12 @@
                     <div class="contentModule-section contentModule-section_slimDivider">
                         <div class="row">
                             <div class="col-md-5">
-                                <div class="contentModule-headline headline-background-wrapper">
-                                    <!-- <span class="iconElement iconElement_momra"><icon:momra/></span> -->
-                                    <span class="headline-background"><spring:message code="myprofile.wassel"/></span> 
-                                </div>
-                                <hr class="hr">                                
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:message code="myprofile.wassel"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
+                                </div>                             
                                 <div class="formRadioButton formRadioButton_block formRadioButton_slim">
                                     <div class="form-group">
 
@@ -311,11 +314,12 @@
                                     <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span>
                                     Physical address
                                 </div> -->
-                                <div class="contentModule-headline headline-background-wrapper w-50">
-                                    <!-- <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span> -->
-                                    <span class="headline-background"><spring:message code="myprofile.physical.address"/></span> 
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:message code="myprofile.physical.address"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
                                 </div>
-                                <hr class="hr">
                                 <div class="mapsModule">
                                     <div id="map" style="height: 350px"></div>
                                 </div>

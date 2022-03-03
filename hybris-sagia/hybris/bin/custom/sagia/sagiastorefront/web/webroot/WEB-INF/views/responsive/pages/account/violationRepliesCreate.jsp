@@ -74,7 +74,7 @@
 <div class="container mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="./" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span><spring:theme
+            <a href="./" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><span class="iconElement iconElement_closeBack " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span><spring:theme
                     code="text.account.followup.backViolationReplies"/></a>
         </div>
     </div>
@@ -89,10 +89,10 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                            <div class="contentModule-headline headline-text">
-                                <span class="iconElement iconElement_info"><icon:info/></span>
-                                <spring:theme code="text.account.followup.info"/>
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.info"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
                         </div>
 
@@ -128,11 +128,12 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline headline-text">
-                                <span class="iconElement iconElement_loading"><icon:loading/></span>
-                                <spring:theme code="violation.violationstatus"/>
-                            </div>
+            
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="violation.violationstatus"/></span>
+                                <div class="contentModule-headline-border"></div>
+                           </div>
                         </div>
 
 
@@ -179,11 +180,12 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline headline-text">
-                                <span class="iconElement iconElement_chat"><icon:chat/></span>
-                                <spring:theme code="text.account.followup.comments"/>
-                            </div>
+                        
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.comments"/></span>
+                                <div class="contentModule-headline-border"></div>
+                           </div>
                         </div>
 
                         <div class="formTextArea">
@@ -203,10 +205,10 @@
             <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                 <div class="contentModule">
                     <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween">
-                            <div class="contentModule-headline headline-text">
-                                <icon:documents/>
-                                <spring:theme code="text.account.followup.supportDocuments"/>
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
                         </div>
                     </div>
@@ -218,17 +220,17 @@
 
 
             <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions">
-                <button type="button" class="btn btn-secondary" onclick="window.history.back()">
-                    <spring:theme code="general.cancel"/>
-                </button>
-                <button type="submit" class="btn btn-primary js-followup-vr-create full-width-responsive">
-                    <spring:theme code="general.submit"/>
-                </button>
-                <div class="formCheckBox formCheckBox_belowPanel full-width-responsive">
+                <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <formElement:termsAndConditionsCheckbox event="FOLLOW_UP" id="termsAndConditions" path="termsAndConditionsChecked"/>
                     </div>
-                </div>                
+                </div>  
+                <button type="button" class="btn btn_outline" onclick="window.history.back()">
+                   <spring:theme code="general.cancel"/>
+                </button>
+                <button type="submit" class="btn js-followup-vr-create full-width-responsive">
+                    <spring:theme code="general.submit"/>
+                </button>              
             </div>
         </form:form>
     </div>

@@ -68,7 +68,7 @@
                     <spring:theme code="text.account.followup.backWarningLetters"/>
                 </a>
             </div>
-            <div class="col-md-8 d-flex btn-drafts_list amend-service-link d-none">
+            <div class="col-md-8 btn-drafts_list amend-service-link d-none">
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${formName}"
                         data-service-id="${serviceId}">
@@ -132,7 +132,7 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <dl class="dlList dlList_separated">
-                                    <dt class="services-warning-info-entry"><spring:theme code="text.account.followup.warningLetterEndDate"/></dt>
+                                    <dt id="services-warning-info-entry"><spring:theme code="text.account.followup.warningLetterEndDate"/></dt>
                                     <dd>${selectedWarningLetter.endDate.dateFormatted}</dd>
                                 </dl>
                             </div>
@@ -141,7 +141,7 @@
                                     <div class="form-group">
                                         <input required name="daysExtension" type="range" min="0" max="100" value="0" step="1"
                                                class="js-days-range js-form-element" data-date="${selectedWarningLetter.endDate.dateFormatted}"/>
-                                        <div class="formRangeSlider-label control-label_mandatory services-warning-info-entry">
+                                        <div class="formRangeSlider-label control-label_mandatory" id="services-warning-info-entry">
                                            <spring:theme code="text.account.followup.warningLetterExtension"/>
                                         </div>
                                         <div class="formRangeSlider-value">
@@ -152,7 +152,7 @@
                             </div>
                             <div class="col-sm-3">
                                 <dl class="dlList dlList_separated">
-                                    <dt class="services-warning-info-entry"><spring:theme code="text.account.followup.warningLetterExtendedDate"/></dt>
+                                    <dt id="services-warning-info-entry"><spring:theme code="text.account.followup.warningLetterExtendedDate"/></dt>
                                     <dd class="js-end-date"></dd>
                                 </dl>
                             </div>

@@ -201,7 +201,7 @@
                                 <formElement:formSelectBox idKey="govDocs.amanah" labelKey="govDocs.amanah"
                                     selectCSSClass="form-control gov-docs-amanah" path="amanah" mandatory="true"
                                     skipBlank="false" itemLabel="name" itemValue="key"
-                                    skipBlankMessageKey="form.select.empty" labelCSS="control-label_mandatory"
+                                    skipBlankMessageKey="form.select.empty" labelCSS="control-label_mandatory" removeSkip="d-none"
                                     items="${amanahs}" disabled="${disabledFields}" />
                             </div>
                         </div>

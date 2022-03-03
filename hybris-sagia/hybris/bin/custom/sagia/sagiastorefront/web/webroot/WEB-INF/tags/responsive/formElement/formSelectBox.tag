@@ -13,6 +13,7 @@
 <%@ attribute name="selectedValue" required="false" type="java.lang.String" %>
 <%@ attribute name="tabindex" required="false" rtexprvalue="true" %>
 <%@ attribute name="disabled" required="false" type="java.lang.Boolean" %>
+<%@ attribute name="removeSkip" required="false" type="java.lang.String" %>
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -40,7 +41,7 @@
 						<spring:theme code="login.required" var="loginRequiredText" />
 					</span>
 				</c:if>
-				<span class="skip">
+				<span class="skip ${removeSkip}">
 					<form:errors path="${escapedPath}"/>
 				</span>
 			</label>

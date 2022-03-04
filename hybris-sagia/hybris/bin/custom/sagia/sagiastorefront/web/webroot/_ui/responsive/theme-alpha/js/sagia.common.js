@@ -311,7 +311,7 @@ $(function() {
     $("#logoutModal .yesButton").on("click", function() {
         $.cookie('chatOpen', null, { path: ACC.config.encodedContextPath });
         $("#sap-ecf-client").toggle(false);
-        window.location.href = ACC.config.encodedContextPath + "/logout?site=sagia";
+        window.location.href = ACC.config.encodedContextPath + "/login";
     });
     $("#logoutModal .noButton").on("click", function() {
         $('#logoutModal').modal('hide');

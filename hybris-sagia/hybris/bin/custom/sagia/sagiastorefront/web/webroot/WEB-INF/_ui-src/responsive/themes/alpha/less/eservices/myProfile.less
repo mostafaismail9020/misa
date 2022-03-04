@@ -1181,7 +1181,9 @@ button:focus {
 
 .page-sagia-profile .dashboardWidget-filter {
     width: 25%;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    margin-right: auto;
+    margin-left: unset;
 }
 
 .page-sagia-profile .dashboardWidget-filter .select2-selection--single {
@@ -2628,8 +2630,8 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
             }
         }
         .dashboardWidget-filter{
-            position: relative;
-            top:35px;
+            position: absolute;
+            top:75px;
             .select2-container{
                 .select2-selection--single{
                     .select2-selection__rendered{
@@ -3068,3 +3070,14 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
 	-webkit-transform:translate3d(0,-26px,0) scale(1)!important;
 	transform:translate3d(0,-26px,0) scale(1)!important; 
 } 
+
+/**04-03-2022**/
+.control-label.document_padd_wid100{
+   padding-left:30px !important;
+   padding-right:30px !important;
+}
+@media (min-width: 300px) and (max-width:768px) { 
+    .contentModule-headline {
+        width: 100% !important;
+    }
+}

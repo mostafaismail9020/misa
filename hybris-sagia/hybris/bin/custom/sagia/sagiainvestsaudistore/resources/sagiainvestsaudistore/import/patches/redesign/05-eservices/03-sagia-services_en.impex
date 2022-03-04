@@ -660,4 +660,5 @@ UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	 
 							; ZSPLJAWA01									; Exit-Re-Entry Visas of the Investor whose License is Cancelled;	
 							; ZSPLJAWA04									; Final Exit of the Investor whose License is Cancelled;	
 							; ZSPLJAWA02									; Renewal of Residence Permit of the Investor whose License is Cancelled;	
-							   							   
+
+

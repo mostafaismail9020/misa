@@ -51,7 +51,7 @@
                             <c:if test="${hasLicense or hasAwaitingPayment}">
                                 <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
                                     <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                    <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/d-message-in-active.png"/>
+                                    <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
                                 </button>
                             </c:if>
                             <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -66,7 +66,7 @@
                     </div>
                     <div class=" user-icon mr-1 mr-sm-3">
                         <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
-                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/d-Account-User-icon.png"/>
+                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
                         </a>
                     </div>
                 </div>

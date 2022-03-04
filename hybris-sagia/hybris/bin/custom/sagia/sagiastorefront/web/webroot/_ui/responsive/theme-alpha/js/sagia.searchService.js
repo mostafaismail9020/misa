@@ -202,3 +202,10 @@ $(document).on('click',".services-category-list .nav .nav-link",function(){
           window.location = ACC.config.encodedContextPath + "/" + requestURL;
       }
   }
+
+  
+$(function () {
+    if (window.location.pathname === ACC.config.encodedContextPath + "/service-search") {
+        window.location =  window.location.pathname + "/FIRST";
+    }
+})

@@ -108,7 +108,7 @@
                                 <div class="form-group form-floating col-md-6 form-normal-item country-code-mobile">
                                   <input type="text" class="ddl-countryCode form-control" placeholder="+966" autocomplete="off">
                                   <div class="input-wrapper">
-                                    <label class="control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/><span class="mandatory">* </span></label>
+                                    <label class="control-label mob-control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/><span class="mandatory">* </span></label>
                                     <input type="text"  class="form-control r" id="phoneNumber" name="phoneNumber"  type="number" maxlength="20" onkeypress="return isNumber(event)" onCopy="return false" onpaste="return false;"/>
                                     <em><span id="lblErrorPhoneNumber" class="error-msg"></span></em>
                                   </div>    

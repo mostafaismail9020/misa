@@ -154,7 +154,7 @@
                                                                 </div>
 
                                                                 <div class="contentModule-actions contentModule-actions_spaceBetween">
-                                                                    <button id="nextFirstTabButtonId" type="button" class="btn btn_bold">Next</button>
+                                                                    <button id="nextFirstTabButtonId" type="button" class="btn btn_bold"><spring:theme code="general.next"/></button>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -16,7 +16,7 @@ public interface SagiaTicketDao {
 	SearchPageData<CsTicketModel> findTicketsByTicketCategory(PageableData pageableData, String ticketCategory, String sector);
 	SearchPageData<CsTicketModel> findTicketsByB2BUnit(PageableData pageableData, String b2bUnit);
 	SearchPageData<CsTicketModel> findUnApprovedTicketsByB2BUnit(PageableData pageableData, Set<B2BUnitModel> childB2BUnits);
-	List<ContactTicketModel> getScpiTickets();
-	List<ServiceRequestModel> getScpiServiceRequest();
-	List<CsCustomerEventModel> getScpiCustomerEvents();
+	List<ContactTicketModel> getScpiTickets(String convertedDate);
+	List<ServiceRequestModel> getScpiServiceRequest(String convertedDate);
+	List<CsCustomerEventModel> getScpiCustomerEvents(String convertedDate);
 }

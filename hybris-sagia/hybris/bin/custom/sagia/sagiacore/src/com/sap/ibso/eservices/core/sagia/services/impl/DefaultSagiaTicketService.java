@@ -28,6 +28,8 @@ import com.sap.ibso.eservices.core.sagia.services.SagiaTicketService;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaTicketDao;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 
@@ -147,15 +149,24 @@ public class DefaultSagiaTicketService extends DefaultTicketService implements S
 	
 	@Override
 	public List<ContactTicketModel> getScpiTickets() {
-		return sagiaTicketDao.getScpiTickets();
+		return sagiaTicketDao.getScpiTickets(getConvertedDate());
 	}
 	@Override
 	public List<ServiceRequestModel> getScpiServiceRequest() {
-		return sagiaTicketDao.getScpiServiceRequest();
+		return sagiaTicketDao.getScpiServiceRequest(getConvertedDate());
 	}
 	
 	@Override
 	public List<CsCustomerEventModel> getScpiCustomerEvents(){
-		return sagiaTicketDao.getScpiCustomerEvents();
+		return sagiaTicketDao.getScpiCustomerEvents(getConvertedDate());
+	}
+	
+	
+	public String getConvertedDate() {
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat destFormat=new SimpleDateFormat("YYYY-MM-dd HH:mm:ss.S");
+		// Substract 30 days from the calendar
+		cal.add(Calendar.DATE, -30);
+		return destFormat.format(cal.getTime());
 	}
 }

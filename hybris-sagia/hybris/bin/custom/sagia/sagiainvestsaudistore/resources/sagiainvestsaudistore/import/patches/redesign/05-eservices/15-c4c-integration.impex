@@ -37,3 +37,9 @@ INSERT_UPDATE IncidentCategory 	; code[unique=true]	; name		;
 								; CA_7				; General Enquiries			;
 
 
+INSERT_UPDATE Priority     ; code[unique=true]    ; name    ;
+;LOW;Low
+;NORMAL;Normal
+;URGENT;Urgent
+;IMMEDIATE;Immediate
+

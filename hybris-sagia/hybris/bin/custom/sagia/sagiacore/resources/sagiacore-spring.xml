@@ -1572,6 +1572,7 @@
 	</bean>
 	<bean id="serviceRequest2ScpiJob" class="com.sap.ibso.eservices.core.job.ServiceRequest2ScpiJob"/>
     <bean id="contactTicket2ScpiJob" class="com.sap.ibso.eservices.core.job.ContactTicket2ScpiJob"/>
+   <bean id="customerEvent2ScpiJob" class="com.sap.ibso.eservices.core.job.CustomerEvent2ScpiJob"/>
 
 	
     <!-- Economic Highlights Changes Ends -->

@@ -5,6 +5,7 @@ import com.investsaudi.portal.core.model.ServiceRequestModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
 import de.hybris.platform.ticket.enums.CsTicketState;
+import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.commerceservices.search.pagedata.SearchPageData;
 import de.hybris.platform.ticket.service.TicketException;
@@ -67,4 +68,5 @@ public interface SagiaTicketService {
 			
 	List<ContactTicketModel> getScpiTickets();
 	List<ServiceRequestModel> getScpiServiceRequest();
+	List<CsCustomerEventModel> getScpiCustomerEvents();
 }

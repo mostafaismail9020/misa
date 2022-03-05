@@ -27,6 +27,9 @@
     &-arrow{
         margin-right: 20px;
         margin-top: -20px;
+        @media screen and (min-width: 1200px) and (max-width: 1500px) {
+            margin-top: 0px;
+        }
     }
 }
 .btn.btn_slim.btn_outline{
@@ -74,6 +77,9 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        [dir ="rtl"] &{
+            right: 40%;
+        }
     }
     .nav-link{
         .service-icon-1{
@@ -293,7 +299,8 @@
     }
     #srID,.srId{
         color: @color-golden;
-        font-size: var(--heading-font);
+        // font-size: var(--heading-font);
+        font-size: var(--content-big-font);
     }
     #currentStatus{
         font-weight: 500;
@@ -337,9 +344,12 @@
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
 	background-color: initial;
 }
-.back_to_profile{
-    width: 390px !important;
+@media screen and (min-width:767px){
+    .back_to_profile{
+        width: 390px !important;
+    }
 }
+
 
 .back_to_service {
     width: 300px !important;
@@ -730,7 +740,7 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
         }
         >button{
             margin: auto;
-            width: 175px;
+            width: 200px;
         }
     }
 }
@@ -1591,4 +1601,25 @@ a.historyList-link{
         overflow-y: initial;
         overflow-x: initial;
     }
+}
+.contentModule-actions_hasStatusIndicator .contentModule-headline{
+    margin-bottom: 0px;
+}
+
+@media (max-width: 767px) {
+    .page-contact-update-history{
+        .panelModule {
+            width: 100%;
+        }
+    }    
+}
+
+#services-warning-info-entry{
+    font-size: 16px;
+    color: #bf9b2e;
+    line-height: 1.2;
+}
+
+.upload-doc-note{
+    font-size: 14px;
 }

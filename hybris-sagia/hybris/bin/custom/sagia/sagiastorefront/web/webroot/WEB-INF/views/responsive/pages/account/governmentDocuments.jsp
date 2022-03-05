@@ -25,13 +25,14 @@
                             <span></span>
                         </a>
                     </div>
-                    <div class="calendar notification p-0">
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
                         <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
                             <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
                             <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
@@ -89,7 +90,7 @@
         <div class="d-flex row renewal-services w-100">
             <div class="col-md-3">
                 <!-- <a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink w-auto back_to_service"><span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a> -->
-                <a href="/service-search/GOVERNMENTAL SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                <a href="${encodedContextPath}/service-search/GOVERNMENTAL SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
             </div>
             <c:if test="${fn:length(sagiaService.tabs) > 0}">
                 <div class="col-xl-3 col-12">
@@ -200,7 +201,7 @@
                                 <formElement:formSelectBox idKey="govDocs.amanah" labelKey="govDocs.amanah"
                                     selectCSSClass="form-control gov-docs-amanah" path="amanah" mandatory="true"
                                     skipBlank="false" itemLabel="name" itemValue="key"
-                                    skipBlankMessageKey="form.select.empty" labelCSS="control-label_mandatory"
+                                    skipBlankMessageKey="form.select.empty" labelCSS="control-label_mandatory" removeSkip="d-none"
                                     items="${amanahs}" disabled="${disabledFields}" />
                             </div>
                         </div>

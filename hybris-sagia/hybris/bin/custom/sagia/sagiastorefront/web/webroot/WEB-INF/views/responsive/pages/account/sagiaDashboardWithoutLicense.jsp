@@ -20,7 +20,7 @@
 <%--@elvariable id="user" type="de.hybris.platform.commercefacades.user.data.CustomerData"--%>
 
 
-<div class="mainSection_grey mainSection_noPadding">
+<div class="mainSection_grey mainSection_noPadding pb-2">
     <div class="container">
         <div class="dashboardUser-wrapper col-12 dashboard-login">
             <div class="dashboardUser-left col-12 col-md-6 ">
@@ -45,9 +45,31 @@
                 </div>
             </div>            
             <div class="dashboardUser-right col-12 col-md-6  pl-0 user-icon user-icon-without-license">
-            	<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
-                	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
-                </a>
+            	<div class="col-12 col-md-6 d-flex p-0 user-icons-block">
+                    <div class=" user-icon mr-1 mr-sm-3">
+                        <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                            <c:if test="${hasLicense or hasAwaitingPayment}">
+                                <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
+                                    <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                    <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
+                                </button>
+                            </c:if>
+                            <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                            <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup">
+                                <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                                <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                                <div class="sagiaNavigation-subPane-actions">
+                                    <a class="btn btn_slim btn_round btn_outline" href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" user-icon mr-1 mr-sm-3">
+                        <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
+                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -221,7 +243,7 @@
 	    </section>
     
 	    <section class="helpSection">
-		    <div class="container mt-5">
+		    <div class="container">
 		        <div class="firstBlock">
 		            <div class="firstBlock-widget"> 
 		                <h1 class="text-center text-uppercase clr_gld">

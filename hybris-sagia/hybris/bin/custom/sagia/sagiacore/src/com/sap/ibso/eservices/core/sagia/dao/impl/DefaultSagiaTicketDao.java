@@ -8,6 +8,7 @@ import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
 import de.hybris.platform.ticket.dao.impl.DefaultTicketDao;
 import de.hybris.platform.ticket.enums.CsTicketState;
+import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
@@ -206,24 +207,43 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 	{
 		this.searchRestrictionService = searchRestrictionService;
 	}
-    @Override
-	public List<ContactTicketModel> getScpiTickets() {
-
-		final String query = "SELECT {PK} FROM {ContactTicket} WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ";
-		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(query);
-		final SearchResult<ContactTicketModel> resultList = flexibleSearchService.search(searchQuery);
-
-		return resultList.getResult();
+  
+  @Override
+	public List<ContactTicketModel> getScpiTickets(String convertedDate) {
+		final StringBuilder query = new StringBuilder();
+		query.append(" SELECT {PK} FROM { ContactTicket ");
+		query.append(" } WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ");
+		query.append(" AND {creationtime} >= ?convertedDate ");
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("convertedDate", convertedDate);
+		final SearchResult<ContactTicketModel> result = getFlexibleSearchService().search(query.toString(), parameters);
+		return result.getResult();
 	}
 
 	@Override
-	public List<ServiceRequestModel> getScpiServiceRequest() {
+	public List<ServiceRequestModel> getScpiServiceRequest(String convertedDate) {
+		
+		final StringBuilder query = new StringBuilder();
+		query.append(" SELECT {PK} FROM { ServiceRequest ");
+		query.append(" } WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ");
+		query.append(" AND {creationtime} >= ?convertedDate ");
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("convertedDate", convertedDate);
+		final SearchResult<ServiceRequestModel> result = getFlexibleSearchService().search(query.toString(), parameters);
+		return result.getResult();
+	}
 
-		final String query = "SELECT {PK} FROM {ServiceRequest} WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ";
-		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(query);
-		final SearchResult<ServiceRequestModel> resultList = flexibleSearchService.search(searchQuery);
-
-		return resultList.getResult();
+	@Override
+	public List<CsCustomerEventModel> getScpiCustomerEvents(String convertedDate){
+		
+		final StringBuilder query = new StringBuilder();
+		query.append(" SELECT {PK} FROM { CsCustomerEvent ");
+		query.append(" } WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ");
+		query.append(" AND {creationtime} >= ?convertedDate ");
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("convertedDate", convertedDate);
+		final SearchResult<CsCustomerEventModel> result = getFlexibleSearchService().search(query.toString(), parameters);
+		return result.getResult(); 
 	}
 
 }

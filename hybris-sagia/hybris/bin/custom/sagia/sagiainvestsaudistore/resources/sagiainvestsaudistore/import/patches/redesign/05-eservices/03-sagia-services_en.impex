@@ -14,53 +14,53 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 #Licensing Service
 								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "Ministry of Investment provides the Licensed entities a license cancellation service as per the need of the entity  "   
 								  ; ZSR5               			 ; "Amendment of License"                           			  											; "User can submit a request to amend the license for entity that has a valid investment license and don't has any violations in the system. The system accept applying for the service 90 days before the investment license expires." 																																																																																			 
-								  ; ZSR7						 ; "Conversion of a Foreign Entity to a 100% National Entity"							  					; "This service is for any entity that wants toend its status with Ministry of Investment with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business."																																																																																													  	 
+								  ; ZSR7						 ; "100% Foreign Commercial License"							  											; "This service is for any entity that wants to end its status with Ministry of Investment with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business."																																																																																													  	 
 								  ; ZSR4               			 ; "Renewal of License"                           			  											    ; "This service is for all the entities licensed by Ministry of Investment and want to renew their investment licenses."																																																																																																																	 
 
 #General Department of Passports	
-							      ; ZMOIP_08					 ; "Addition of Subordinates to Paterfamilias"																; "This service is provided to companies' owners who desire to add a subordinate to paterfamilias."  
-							      ; ZMOIP_05					 ; "Information Transfer"																					; "This service is provided to companies' owners who desire to transfer the passport information."
-							      ; ZMOIP_10					 ; "Exit & Return Visa for Accompanies"																	    ; "This service is provided to companies' owners and employees who desire to issue an exit and return visa for the accompaniers."
-							      ; ZMOIP_17					 ; "Issuance of replacement copy of Damaged Passport"													    ; "This service is provided to companies' owners and employees who desire to issue another copy of the damaged passport." 
-							      ; ZMOIP_21					 ; "Wavier of Son or Daughter"																				; "This service is provided tocompanies' owners and employees who desire to dismiss their son or daughter."
-							      ; ZMOIP_23					 ; "Transfer KAFALA for GM of Branch of foreigner comp"														; "This service is provided to entities that desire to transfer the sponsorship or amend the profession for General Manager of Foreign Companies Branch."
-							      ; ZMOIP_15					 ; "Dismissal of an Subordinates Holding Separate Iqama"												    ; "This service is provided tocompanies' owners and employees who desire to dismiss any of their subordinates holding separate Iqama."
+							      ; ZMOIP_08					 ; "Addition of Subordinates to Paterfamilias"																; "This service is provided to companies owners who desire to add a subordinate to paterfamilias."  
+							      ; ZMOIP_05					 ; "Information Transfer"																					; "This service is provided to companies owners who desire to transfer the passport information."
+							      ; ZMOIP_10					 ; "Exit & Return Visa for Accompanies"																	    ; "This service is provided to companies owners and employees who desire to issue an exit and return visa for the accompaniers."
+							      ; ZMOIP_17					 ; "Issuance of replacement copy of Damaged Passport"													    ; "This service is provided to companies owners and employees who desire to issue another copy of the damaged passport." 
+							      ; ZMOIP_21					 ; "Wavier of Son or Daughter"																				; "This service is provided to companies owners and employees who desire to dismiss their son or daughter."
+							      ; ZMOIP_23					 ; "Transfer KAFALA for GM of Branch of Foreigner comp"														; "This service is provided to entities that desire to transfer the sponsorship or amend the profession for General Manager of Foreign Companies Branch."
+							      ; ZMOIP_15					 ; "Dismissal of an Subordinates Holding Separate Iqama"												    ; "This service is provided to companies owners and employees who desire to dismiss any of their subordinates holding separate Iqama."
 							      ; ZMOIP_06					 ; "Sponsorship Transfer and Profession Amendment for General Manager of Foreign Companies Branch"			; "This service is provided to entities that desire to transfer the sponsorship or amend the profession for General Manager of Foreign Companies Branch."
-							      ; ZMOIP_01					 ; "Issuance of New Iqama"																				    ; "This service is provided to companies' owners who desire to issue a new Iqama."
-							      ; ZMOIP_14					 ; "Amendment of entity name"																				; "View the financial statement of the investor represented bythe income statement, balance sheet and change equity with all the details.foreign entities that desire to amend its licensed name."
-                                  ; ZMOIP_13					 ; "Amendment of passport data modification"																; "This service is provided to companies' owners and employees who desire to amend the passport data."
-							      ; ZMOIP_09					 ; "Issuance of replacement copy of Damaged Iqama"															; "This service is provided tocompanies' owners and employees who desire to issue another copy of the damaged Iqama." 
-								  ; ZMOIP_03					 ; "Exit and Return Visa"																					; "This service is provided to companies' owners and employees who desire to issue an exit and return visa for the accompaniers."
-							      ; ZMOIP_02					 ; "Renewal of Iqama"																						; "This service is provided to companies' owners who desire to issue a new Iqama for the owners or employees."
-							      ; ZMOIP_11					 ; "Cancellation of Exit and Return Visa"																	; "This service is provided tocompanies' owners and employees who desire to cancel an exit and return visa that has been issued earlier."
-							      ; ZMOIP_18					 ; "Cancellation of Iqama for Person who has leaved and has not returned"									; "This service is provided to entitiesthat desire to cancel the Iqama of their employees who has leaved the Kingdom and has not returned during the visa period."
-							      ; ZMOIP_07					 ; "Issuance of Iqama for Private Driver or Maid"															; "This service is provided to companies' owners who desire to issue a new Iqama for the private driver or maid."
+							      ; ZMOIP_01					 ; "Issuance of New Iqama"																				    ; "This service is provided to companies owners who desire to issue a new Iqama."
+							      ; ZMOIP_14					 ; "Amendment of Entity Name"																				; "This service is provided to foreign entities that desire to amend its licensed name."
+                                  ; ZMOIP_13					 ; "Amendment of Passport Data"																				; "This service is provided to companies owners and employees who desire to amend the passport data."
+							      ; ZMOIP_09					 ; "Issuance of replacement Copy of Damaged Iqama"															; "This service is provided to companies owners and employees who desire to issue another copy of the damaged Iqama." 
+								  ; ZMOIP_03					 ; "Exit and Return Visa"																					; "This service is provided to companies owners and employees who desire to issue an exit and return visa for the accompaniers."
+							      ; ZMOIP_02					 ; "Renewal of Iqama"																						; "This service is provided to companies owners who desire to issue a new Iqama for the owners or employees."
+							      ; ZMOIP_11					 ; "Cancellation of Exit and Return Visa"																	; "This service is provided to companies owners and employees who desire to cancel an exit and return visa that has been issued earlier."
+							      ; ZMOIP_18					 ; "Cancellation of Iqama for Person who has leaved and has not returned"									; "This service is provided to entities that desire to cancel the Iqama of their employees who has leaved the Kingdom and has not returned during the visa period."
+							      ; ZMOIP_07					 ; "Issuance of Iqama for Private Driver or Maid"															; "This service is provided to companies owners who desire to issue a new Iqama for the private driver or maid."
 
 #Ministry of Commerce
-							      ; ZMOCI_19					 ; "Renewal of Est.'s Commercial Register"												                    ; "This service provided to companies that desire to provide its Articles of Association for study in order to establish a new or subsidiary investment entity in the Kingdom." 
-				                  ; ZMOCI_17					 ; "Issuance of Commercial Registration for Company"														; "This service provided to entity that desires to issue a commercial registration after obtaining the investment license."																																																																																																																	 
-								  ;	ZMOCI_07					 ; "Registration of a new Est.'s branch"																    ; "This service is provided to soleestablishments that wish to issue a commercial registration for its branch."																																																																																																
-								  ; ZMOCI_18					 ; "Renewal of Commercial Registration for Companies"														; "This service is provided to foreignentities that desire to renew their commercial registration."
-								  ; ZMOCI_15					 ; "Study of a New Company's Memorandum of Association"														; "This service is provided to companies that desire to provide its Articles of Association for study in order to establish a new or subsidiary investment entity in the Kingdom"																																																																																																																																																																																																				
-								  ;	ZMOCI_11					 ; "Changing the Establishment's Address"																    ; "This service is provided to soleestablishments that desire to amend its address."
-								  ;	ZMOCI_20					 ; "Conversion of Commercial Registration from Sole establishment to Company"								; "This service is provided to sole establishment that desires to be converted into a company."
-								  ;	ZMOCI_21					 ; "Registration of Company Branch" 																		; "This service is provided to soleestablishments that wish to issue a commercial registration for its branch"
-								  ;	ZMOCI_08					 ; "Amendment of a Company's Commercial Register"													        ; "This service is provided to foreignentities that desire to amend its commercial registration."
-								  ;	ZMOCI_09					 ; "Amendment of a Establishment's CR"					                                                    ; "This service is provided to soleestablishments that desire to amend its commercial registration."
-								  ;	ZMOCI_10					 ; "Changing the Company's Address"																			; "This service is provided to foreignentities that desire to amend its address."
+							      ; ZMOCI_19					 ; "Renewal of Commercial Register for Sole Establishments"												    ; "This service is provided to companies that desire to provide its Articles of Association for study in order to establish a new or subsidiary investment entity in the Kingdom." 
+				                  ; ZMOCI_17					 ; "Issuance of Commercial Registration for Company"														; "This service is provided to entity that desires to issue a commercial registration after obtaining the investment license."																																																																																																																	 
+								  ;	ZMOCI_07					 ; "Registration of Sole Establishment Branch"																; "This service is provided to sole establishments that wish to issue a commercial registration for its branch."																																																																																																
+								  ; ZMOCI_18					 ; "Renewal of Commercial Registration for Companies"														; "This service is provided to foreign entities that desire to renew their commercial registration."
+								  ; ZMOCI_15					 ; "Study of Articles of Association of New Company"														; "This service is provided to companies that desire to provide its Articles of Association for study in order to establish a new or subsidiary investment entity in the Kingdom"																																																																																																																																																																																																				
+								  ;	ZMOCI_11					 ; "Amendment of Sole Establishment Address"																; "This service is provided to sole establishments that desire to amend its address."
+								  ;	ZMOCI_20					 ; "Conversion of Commercial Registration from Sole Establishment to Company"								; "This service is provided to sole establishments that desires to be converted into a company."
+								  ;	ZMOCI_21					 ; "Registration of Company Branch" 																		; "This service is provided to foreign entities that desire to issue a commercial registration for its branch."
+								  ;	ZMOCI_08					 ; "Amendment of Commercial Registration for Companies"													    ; "This service is provided to foreign entities that desire to amend its commercial registration."
+								  ;	ZMOCI_09					 ; "Amendment of Commercial Registration for Sole Establishment for Sole Establishments"					; "This service is provided to sole establishments that desire to amend its commercial registration."
+								  ;	ZMOCI_10					 ; "Amendment of Company Address"																			; "This service is provided to foreign entities that desire to amend its address."
 
-#Ministry of Human Resources & So
-								  ; ZMOL_03						 ; "Transfer of an expatriate's services"																	; "This service is provided to foreignentities that desire to transfer the services of an expatriate to it."																																																																																																																					 																																																																																																																																																																																																																																																																																																																																																																			
+#Ministry of Human Resource and Social Development
+								  ; ZMOL_03						 ; "Services Transfer of Expatriates"																		; "This service is provided to foreign entities that desire to transfer the services of an expatriate to it."																																																																																																																					 																																																																																																																																																																																																																																																																																																																																																																			
 								  ; ZMOL_11						 ; "Data Updating"																							; "This service is provided to entities that desire to update their data."																																																																																																																													 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											
 
 #Financial Statement							  
-							  	  ; ZS11						 ; "Financial Statement"																					; "View the financial statement of the investor represented bythe income statement, balance sheet and change equity with all the details.foreign entities that desire to amend its licensed name."
+#							  	  ; ZS11						 ; "Financial Statement"																					; "View the financial statement of the investor represented bythe income statement, balance sheet and change equity with all the details.foreign entities that desire to amend its licensed name."
 
 #MISA Special Services 
-								  ; ZSPLJAWA01					 ; "Exit-Re-Entry Visas of the Investor whose License is Cancelled"                                         ; "Single exit-re-entry visa is grantedfor a period three (3) months to the resident foreign investor for whom a cancellation decision was issued (punitive / withdrawal of license / non-renewal/ conversion to national / voluntary), whenever it is necessary."																																																																															 
-								  ; ZSPLJAWA02                   ; "Renewal of Residence Permit of the Investor whose License is Cancelled"       							; "Renewal of the Residence permit for a maximum of one year for the foreign investor for whom a cancellation decision under the service no. (09.02) of this manual."																																																																																																						 																																																																																																																																																																						
-								  ;	ZSPLJAWA03					 ; "Transfer of Sponsorship of the Foreign Investor"				  										; "The services transfer is granted to the resident foreign investor who received a decision to cancel (punitive/withdrawal of license/non-renewal/optional/transfer to 100% national)."																																																																																																	 
-								  ; ZSPLJAWA04					 ; "Final Exit of the Investor whose Licens is Cancelled"													; "The final exit is granted to foreign investor for whom a cancellation decision was issued (punitive / withdrawal of license / non-renewal/ conversion to national / voluntary)."																																																																																																		 
+								  ; ZSPLJAWA01					 ; "Exit-Re-Entry Visas of the Investor whose License is Cancelled"                                         ; "Single exit-re-entry visa is granted for a period three(3) months to the resident foreign investor for whom a cancellation decision was issued (punitive / withdrawal of license / non-renewal/ conversion to national / voluntary), whenever it is necessary."																																																																															 
+								  ; ZSPLJAWA02                   ; "Renewal of Residence Permit of the Investor whose License is Cancelled"       							; "Renewal of the Residence permit for a maximum of one year for the foreign investor for whom a cancellation decision under the service no.(09.02) of this manual."																																																																																																						 																																																																																																																																																																						
+								  ;	ZSPLJAWA03					 ; "Transfer of Sponsorship of the Foreign Investor"				  										; "The services transfer is granted to the resident foreign investor who received a decision to cancel (punitive / withdrawal of license / non-renewal / optional / transfer to 100% national)."																																																																																																	 
+								  ; ZSPLJAWA04					 ; "Final Exit of the Investor whose Licens is Cancelled"													; "The final exit is granted to foreign investor for whom a cancellation decision was issued (punitive / withdrawal of license / non-renewal / conversion to national / voluntary)."																																																																																																		 
 
 #Government Data Update Service								  
 								  ; ZS14						 ; "Government Documents"															                         ;"This service aims to the Integrated E-service by updating the governmental data of the entity licensed by MISA to reach a reliable and updated governmental database through a direct linkage to YESSER system."
@@ -81,15 +81,16 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 								  ; ZSR6  						;									                                                                      ;
 								  ; ZSR7						;									                                                                      ;
 								  ; ZSR5						;								                                                                          ;
-								  ; ZSPLJAWA03					; <p>1.A letter from the entity that requires transfer of sponsorship of the investor, indicating the profession to be held by the investor authenticated by the Chamber of Commerce.</p>;
+								  ; ZSPLJAWA03					; "<p>1.A letter from the entity that requires transfer of sponsorship of the investor, indicating the profession to be held by the investor authenticated by the Chamber of Commerce.</p>";
 								  ; ZSR4						; 								                                                                          ;	
 								  ; ZSPLJAWA02					;								                                                                          ;
 								  ; ZSPLJAWA01					;								                                                                          ;
 								  ; ZSPLJAWA04				    ;								                                                                          ;
 								  ; ZMOL_11						; "<ol start= '1'>													
                                                                    <li>A copy or number of the commercial registration.</li>
-                                                                   <li>A copy of Social Insurances Certificate. </li>
-                                                                   <li> A copy of Municipality License. </li>
+																   <li>A copy of Zakat and Income Tax Certificate.</li>
+                                                                   <li>A copy of Social Insurances Certificate.</li>
+                                                                   <li>A copy of Municipality License.</li>
                                                                    </ol>";
 								  
 								  ; ZMOL_03						; "<ol start= '1'>
@@ -98,7 +99,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
                                                                    </ol>"; 
 								
 								  ; ZMOCI_17					; "<ol start= '1'>
-                                                                   <li> The original copy of Articles of Association after notarized by the Notary. </li>
+                                                                   <li>The original copy of Articles of Association after notarized by the Notary. </li>
                                                                    <li>Shareholders' resolution to appoint the general manager - if through a separate contract - authenticated by Ministry of commerce and Investment.</li>
                                                                    <li>Providing identity proof for the foreign shareholders and directors, a copy of national ID if any of the shareholders holds Saudi nationality and a document by 'ABSHAR' System to prove profession or a copy of the commercial registration, shareholders' resolution and the articles of association for the engaged Saudi companies.</li>
                                                                    <li>The original and a copy of 'Booking Commercial Name' according to Service No (10.1.1) of this Manual.</li>
@@ -110,7 +111,6 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
                                                                    </ol>";
 								
-
 								  ;	ZMOCI_21					; "<ol start= '1'>
                                                                    <li>A copy or number of the main commercial registration.</li>
                                                                    <li>Submit a letter to the partners decision to open the branch and appoint the branch manager certified by the Chamber of Commerce.</li>
@@ -120,25 +120,25 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
                                   ; ZMOCI_15					; "<ol start= '1'>
                                                                    <li>The Articles of Association of the company.</li>
                                                                    <li>Providing identity proof for the foreign shareholders and directors, a copy of national ID if any of the shareholders holds Saudi nationality and a document by 'ABSHAR' System to prove profession or a copy of the commercial registration, shareholders' resolution and the articles of association for the engaged Saudi companies.</li>
-                                                                   <li>A copy of  'Booking Commercial Name' according to Service No (10.01.01) of this Manual.</li>
+                                                                   <li>A copy of 'Booking Commercial Name' according to Service No (10.01.01) of this Manual.</li>
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
                                                                    </ol>";								 
 								 							
                                   ; ZMOCI_19	                ; "<ol start= '1'>
-                                                                   <li> A copy or number of the commercial registration.</li>
+                                                                   <li>A copy or number of the commercial registration.</li>
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
                                                                    </ol>";
 																   
                                   ; ZMOCI_18                    ; "<ol start= '1'>
-                                                                   <li> A copy or number of the commercial registration. </li>
+                                                                   <li>A copy or number of the commercial registration. </li>
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
                                                                    </ol>";
                                                                 		
                                   ;	ZMOCI_20                    ; "<ol start= '1'>
-                                                                   <li> A copy or number of the commercial registration.</li>
-                                                                   <li> The original copy of Articles of Association after notarized by the notary.</li>
+                                                                   <li>A copy or number of the commercial registration.</li>
+                                                                   <li>The original copy of Articles of Association after notarized by the notary.</li>
                                                                    <li>Providing identity proof for the foreign shareholders and directors, a copy of national ID if any of the shareholders holds Saudi nationality and a document by 'ABSHAR' System to prove profession or a copy of the commercial registration, shareholders' resolution and the articles of association for the engaged Saudi companies. </li>
-                                                                   <li> Providing a bank certificate in case of capital increase.</li>
+                                                                   <li>Providing a bank certificate in case of capital increase.</li>
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney. </li>
                                                                    </ol>";
                                                                 		
@@ -150,8 +150,8 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
                                   ;	ZMOCI_08                    ; "<ol start= '1'>
                                                                    <li>A copy or number of the commercial registration.</li>
                                                                    <li>A copy of Articles of Association.</li>
-                                                                   <li> Shareholders' resolution to amend after notarized by the notary and a copy of Articles of Association after the amendment notarized by the notary.</li>
-                                                                   <li> Delegation approved for the applicant with a proof of delegating person identity or power of attorney. </li>
+                                                                   <li>Shareholders' resolution to amend after notarized by the notary and a copy of Articles of Association after the amendment notarized by the notary.</li>
+                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney. </li>
                                                                    </ol>";
                                                                 		 
                                   ; ZMOCI_11                    ; "<ol start= '1'>
@@ -164,18 +164,16 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
                                                                    </ol>";				
 
-
-								  ; ZFLUP_02					; "<p>1.Any document that the entity deems that itsupports its application for extension of the period in the written notification (no mandatory document). </p>";
+								  ; ZFLUP_02					; "<p>1.Any document that the entity deems that it supports its application for extension of the period in the written notification (no mandatory document). </p>";
 																		  
 								  ; ZFLUP_03					; "<p>1.Any document that the entity deems that it supports its application for extension of the period in the written notification (no mandatory document).</p>"; 
 									 
-
 								  ; ZRES						; "<p> Property Ownership Service:1. Copy of the Municipality permit to build or an approval letter from the Municipality, indicating type of use of the land to be owned.</p>
-																   <p> Property Ownership Service for Property Investment :1. A report from an engineering office approved by the Saudi Council of Engineers locally, indicating the total cost of the project.</p>";
+																   <p> Property Ownership Service for Property Investment:1. A report from an engineering office approved by the Saudi Council of Engineers locally, indicating the total cost of the project.</p>";
 
 								  ; ZMOIP_03					; "<ol start= '1'>
 																   <li>A copy or number of the commercial registration.</li>
-																   <li>A copy of Iqama and passport. </li>
+																   <li>A copy of Iqama and passport.</li>
 																   </ol>";
 									
 								  ; ZMOIP_10					; "<ol start= '1'>
@@ -202,7 +200,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 																   <li>A copy or number of the commercial registration. </li>
 																   <li>A copy of the passport.</li>
 																   <li>The original copy of Paterfamilias's Iqama</li>
-																   <li> Submission of a study proof for male sons who have reached 18 years old.</li>
+																   <li>Submission of a study proof for male sons who have reached 18 years old.</li>
 																   </ol>";
 								
 								  ; ZMOIP_02					; "<ol start= '1'>
@@ -217,7 +215,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 																   
 								  ; ZMOIP_09					; "<ol start= '1'>
 																   <li>A copy or number of the commercial registration.</li>
-																   <li>A copy of Iqama.  </li>
+																   <li>A copy of Iqama.</li>
 																   </ol>";
 																   
 								  ; ZMOIP_08					; "<ol start= '1'>
@@ -272,7 +270,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 																   <li>A copy of Iqama.</li>
 																   <li>Submission of the waiver letter issued by the previous Employer authenticated by the Commerce Chamber. </li>
 																   <li>Submission of the letter issued by the entity to amend the profession and transfer the sponsorship</li>
-																   <li> Submission of the endorsement letter issued by the Ministry of Investment according to Service No (09.08) of this Manual. </li>
+																   <li>Submission of the endorsement letter issued by the Ministry of Investment according to Service No (09.08) of this Manual. </li>
 																   <li>Submission of the Labor Office' approval on the sponsorship transfer according to Service No (10.05.03) of this Manual and on the profession amendment according to Service No (10.05.05) of this Manual.</li>
 																   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
 																   </ol>";
@@ -287,13 +285,13 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 																   </ol>";
 
 
-UPDATE SagiaService              ; code[unique = true]           ; rulesRestrictions[lang = $langen]																																	;serviceFinancialFees[lang = $langen]										;serviceDuration[lang = $langen] 																																	   
-								 ; ZSR6             			 ;" <ol start= '1'>
+UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang = $langen]																																	; serviceFinancialFees[lang = $langen]										; serviceDuration[lang = $langen]	;
+								; ZSR6             			 	; "<ol start= '1'>
 																   <p>Notification for The Purpose of Voluntary Cancellation of the License:</p>																				    																	
 																   <li>Employees discharge.<li>                                                                                                                                                                                                                                                                                                                                                                       
 																   <li>Closure of the entity's location and stop the practice of activity.</li>                                                                                                                                                                                                                                                                                                                        																																																								           
 																   <li>Not to work or exercise activity directly or indirectly.</li>                                                                                                                                                                                                                                                                                                                                 
-																   <li> In case of non-issuance or CR for the company, then visiting the Ministry of Commerce will be satisfied.</li>                                                                                                                                                                                                                                                                              
+																   <li>In case of non-issuance or CR for the company, then visiting the Ministry of Commerce will be satisfied.</li>                                                                                                                                                                                                                                                                              
 																   <li>Letters are issued and the below governmental bodies will be visited with service number for having information:</li>
 																   </ol>
 																   <dl>
@@ -301,126 +299,99 @@ UPDATE SagiaService              ; code[unique = true]           ; rulesRestrict
 																   <dd>- Zakat and Income Tax Department </dd>                                                                                                                                                                                                                                                                                                                                                           
 																   <dd>- Chamber of Commerce </dd>                                                                                                                                                                                                                                                                                                                                                                         
 																   <dd>- Social insurance </dd>                                                                                                                                                                                                                                                                                                                                                                         																																													 ;													
-																   <dd> - Ministry of Human Resource and Social Development </dd>                                                                                                                                                                                                                                                                                                                                        
-																   <dd> - Municipality </dd>                                                                                                                                                                                                                                                                                                                                                                             
+																   <dd>- Ministry of Human Resource and Social Development </dd>                                                                                                                                                                                                                                                                                                                                        
+																   <dd>- Municipality </dd>                                                                                                                                                                                                                                                                                                                                                                             
 																   <p>Apply of voluntary cancellation of the license:</p> 
 																   <ol start= '1'>																   
 																   <li> Before applying for this service, the entity must verify the following:</li> 
 																   <dd>- Employees discharged.</dd>                                                                                                                                                                                                                                                                                                                                                                     	
-																   <dd> - Closure of the entity's location and stop the practice its business .</dd>
+																   <dd>- Closure of the entity's location and stop the practice its business .</dd>
 																   <li>Not to work or exercise activity directly or indirectly.</li>                                                                                                                                                                                                                                                                                                                               	
 																   <li>Deregistration of commercial registration of branches/ marketing centers that are intended to be closed .</li>
-																   </ol>"   																										          		  		                                                                                                                                                                                                                                                                          
-			                    	                                                                                                                                                                                                                                                                                                                                                                                                                                    
-								;ZSR7					          ;"<ol start= '1'>																																				     																																					                                                                                                                                             
+																   </ol>";
+
+								; ZSR7							; "<ol start= '1'>																																				     																																					                                                                                                                                             
 																	<li>Conversion to national entity shall be valid only for existing foreign entities with no violations.</li>
 																	<li>Conversion to national entity shall be valid only for entities after the payment of the fine (if any found).</li>
 																	<li>Once the decision to convert to national is announced it will be implemented immediately and the previous owners do not have the right to appeal or cancel the decision.</li>
 																	<li>This service is not provided to Foreign Company Branch.</li>
-																	</ol>"  ;
-										
-																																																										  								
-																	
-							     ;ZSPLJAWA03	                          ; "<ol start= '1'>																																				  																																																																															
+																	</ol>";
+
+							    ; ZSPLJAWA03	               	; "<ol start= '1'>																																				  																																																																															
 																   <li>If the transfer is for the Saudi wife/ mother, the applicant must submit (a copy of the wife's ID, and marriage contract and if he was the son then he should submit a birth certificate).</li>
 																   <li>The entity wishes to Transfer of Sponsorship of the Foreign Investor shall keep the Municipality License and of Zakat and Income Tax Certificate are valid.</li>
 																   <li>In the case of a decision to cancel the punitive / withdraw the license, proof of completion of the government documents procedures must be submitted (cancelling the commercial register, municipality license, social insurance, zakat and income, chamber of commerce, labor office, extract from file 700, and residence number).</li>
 																   <li>In the case if the investment license is transferred to a 100% national, a commercial register of the new entity must be submitted.</li>
 																   <li>Access of the investor(s) to the service is subject to the laws and regulations of the government agencies or institutions providing the service.</li>
 																   <li>The investor must complete the procedures for transferring the services within 30 days from the date of approval of the transfer of the services.</li>
-																   </ol>" ;
+																   </ol>";
 
-
-								; ZSR4  						    ;"<ol start= '1'>																																					  							
-								                                    <li> Investment entities requesting renewal shall be committed to update and adopt its data at the Ministry of Investment annually.</li>						   
-																																																										
+								; ZSR4  						; "<ol start= '1'>																																					  							
+								                                    <li> Investment entities requesting renewal shall be committed to update and adopt its data at the Ministry of Investment annually.</li>
 																	<li>The entity shall review the requirements of the license in section no. (03.00) of this manual before applying for renewal.</li>								   
 																	<li> Before applying for the service, the entity must be ensure that the Certificate of Zakat and Income is valid. </li>										   
 																	<li>A valid zakat certificate must be attached in case of a technical problem occurred while submitting the application.</li>
-																	</ol>"  ;
+																	</ol>";
 								
-
-                               ;	ZSPLJAWA02						    ;"<ol start= '1'>																																						  	 																																
+								; ZSPLJAWA02					; "<ol start= '1'>																																						  	 																																
 																	  <li> The investor (s) shall be granted residence renewal application for one time only.</li>
 																	  <li>Access of the investor (s) to the service is subject to the laws and regulations of government agencies or institutions providing the service. </li>
 																	  <li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no. (08.01) of this manual. </li>
 																	  </ol>";
 
-								; ZSPLJAWA01					    ;"<ol start= '1'>																																																																																							           
+								; ZSPLJAWA01					; "<ol start= '1'>																																																																																							           
 																	<li>The Residence of the applicant must be valid in order to applying for the service.</li>
 																	<li>This service is only provided under maximum imperative necessity and according to the discretion of Ministry of Investment, for the investors' need, while considering humanitarian conditions, for example, but not limited to:</li>
 																	 <dl>
 																	  <dd>- Sick conditions and provision of medical report .</dd>
 																	  <dd>- Marriage of one of the investor's first-class lineage.</dd>
 																	  <dd>- Request for exit-re-entry for family members.</dd>
-																	 <li> For investor/investors to acquire a service relays on the governmental agencies rules and procedures to obtain such a service.</li>
+																	 <li>For investor/investors to acquire a service relays on the governmental agencies rules and procedures to obtain such a service.</li>
 																	 <li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no. (08.01) of this manual.</li>
 																	  </dl>
 																	 </ol>";
 								
-								; ZSPLJAWA04						;"<ol start= '1'>																																																					                 																																																								
+								; ZSPLJAWA04					; "<ol start= '1'>																																																					                 																																																								
 																	  <li>For an investor/ investors to acquire a service relays on the governmental agencies rules and procedures to obtain such a service.</li>
 																	  <li>The entity shall Finalize the government documents (write-off record, municipal license, social insurance, Zakat and Income, the Chamber of Commerce, Labor Office, an extract of the 700 file, extract of the residence number) with the exception of voluntary cancellation.</li>
 																	  </ol>";
   
-								; ZMOL_11							;"1.Fill the  ' Data updating form ' authenticated by Ministry of Human Resource and Social Development and chamber of commerce."							                                                                     																																															   																																				 																																	
-							                                                                                                                                                                                                                                                                                                                                                                                                                                                
-																																																																																																																											                                                                                                                                                                                                                                                                                                                                                                                                                                            								                                                                                                                                                                                                                                                                                                                                                                                                                                            
-								
-								; ZMOL_03							;"<ol start= '1'>																																			 																																																														                                                                                                                
-																	  <li> Sponsorship transfer is carried out through the Electronic Labor Office except for engineers, accompaniers or any other profession included in the red range. </li>                                                                                                                                                                                                                             
+								; ZMOL_11						; "1.Fill the 'Data updating form' authenticated by Ministry of Human Resource and Social Development and chamber of commerce."							                                                                     																																															   																																				 																																	
+
+								; ZMOL_03						; "<ol start= '1'>																																			 																																																														                                                                                                                
+																	  <li>Sponsorship transfer is carried out through the Electronic Labor Office except for engineers, accompaniers or any other profession included in the red range. </li>                                                                                                                                                                                                                             
 																	  <li>The service is provided only to the accompaniers, subordinates and persons having problem with the system because of deletion or other reason.</li>                                                                                                                                                                                                                                              
-																	  <li>Fill the ' Services Transfer form'  authenticated by Ministry of Human Resource and Social Development.</li>                                                                                                                                                                                                                                                                                        
+																	  <li>Fill the 'Services Transfer form' authenticated by Ministry of Human Resource and Social Development.</li>                                                                                                                                                                                                                                                                                        
 																	  </ol>";
                               
-							  ; ZMOCI_17						    ;"<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment to summarize the contract of incorporation.</p>" 																									   
+								; ZMOCI_17						; "<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment to summarize the contract of incorporation.</p>";
 																																																																																																																			
-																																																																																																																			
-																																																																																																																			 
-							 ;	ZMOCI_21	                        ;"1 - The entity shall present a draft of the Articles of Association of the company in WORD version."																																													
-																																																																																																																		
-																																																																																																																		
-																																																																																																																		
-																																																																																																																		
-																																																																																																																			
-							; ZMOCI_15							   ;"1- The entity shall present a draft of the Articles of Association of the company in WORD version."													 																																		
-																																																																																																																			
-																																																																																																																			
-																																																																																																																	
-							; ZMOCI_18								;"1.The financial statements for the last three years must be addedon the portal of 'my business' on the website of Commerce and Investment."																																		
-																																																																																																																	
-																																																																																																																	
-																																																																																																																	
-																																																																																																																	
-							;	ZMOCI_20						   ;"<p>1.The company is committed to make an electronic publication through the portal of 'my business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>" 																							
-																																																																																																																	
-																																																																																																																	
-																																																																																																																		
-							;	ZMOCI_08							;"<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>"																								
-																																																																																																																	
-																																																																																																																	
-																																																																																																																			 
-							;	ZMOCI_10							;"<ol start= '1'>																																																																				
-																	  <li> The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</li>
-																	  <li>If the address is changed to another city, a copy of the Memorandum of Association shall be required after the amendment.</li>
-																	  </ol>" ;
+								; ZMOCI_15						; "1- The entity shall present a draft of the Articles of Association of the company in WORD version.";
 
+								; ZMOCI_18						; "1.The financial statements for the last three years must be added on the portal of 'my business' on the website of Commerce and Investment.";
+																																																																																																																
+								; ZMOCI_20						; "<p>1.The company is committed to make an electronic publication through the portal of 'my business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>";
+																																																																																																																		
+								; ZMOCI_08						; "<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>";
 																																																																																																																			 
-							;ZFLUP_02								;"<ol start= '1'>																																									
+								; ZMOCI_10						; "<ol start= '1'>																																																																				
+																	  <li>The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</li>
+																	  <li>If the address is changed to another city, a copy of the Memorandum of Association shall be required after the amendment.</li>
+																	  </ol>";
+																																																																																																																			 
+								; ZFLUP_02						; "<ol start= '1'>																																									
 																	     <li>The application shall be submitted during the grace period given in the written notification stating justification for the request in the designated box</li>
 																	     <li>If there is a request from the entity under study, it cannot submit a new application until deciding on the pending application.</li>
 																	     <li>The request to extend the grace period given in the written notification shall not be accepted except for one time only.</li>
 																	     </ol>";
 
-																																																																																															
-						;ZFLUP_03										;"<ol start= '1'>																																						
+								; ZFLUP_03						; "<ol start= '1'>																																						
 																		 <li>The application shall be submitted during the grace period given in the written notification stating justification for the request in the designated box</li>
-																		 <li> If there is a request from the entity under study, it cannot submit a new application until deciding on the pending application.</li>
-																		 <li> The request to extend the grace period given in the written notification shall not be accepted except for one time only</li>
+																		 <li>If there is a request from the entity under study, it cannot submit a new application until deciding on the pending application.</li>
+																		 <li>The request to extend the grace period given in the written notification shall not be accepted except for one time only</li>
 																		 </ol>";
 																		 
-					
-						;ZRES											;"<p>Property Ownership Service:</p>
+								; ZRES							; "<p>Property Ownership Service:</p>
 																		<ol start= '1'>
 																		<li>The property must be outside the perimeter of Makkah and Madinah Al-Munawarrah cities.</li>
 																		<li>The capital must not be less than the value of the property to be purchased, or the entity would have to submit a property preliminary funding from the funding agency.</li>
@@ -449,143 +420,140 @@ UPDATE SagiaService              ; code[unique = true]           ; rulesRestrict
 																		  <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
 																		  </ol>";
 
+								; ZS14							; "<p>1. Update - for once only - is mandatory for all licensed entities,holding a license of two years or more, that did not provide Ministry of Investment with the data in earlier time. 2. The service shall be suspended for licensed entities that have a shortage or mismatch in government documents figures with 'YESSER' data until updating their government data in the electronic system of Ministry of Investment, and verification of data on compliance with the 'YESSER' </p>";
+					 
+					 
+								; ZMOIP_03						; "<p>1.Fill the form of 'Exit and Return Visa' approved by General Department of Passports. </p>"														
+					 
+								; ZMOIP_10						; "<ol start= '1'>
+																	<li>This service is provided through ABSHER or MUQEEM System(in case of inability to issue, a proof for that shall be submitted).</li>														
+																	 <li>Fill the form of 'Exit and Return Visa' approved by General Department of Passports.<li>
+																   </ol>";
+					 
+								; ZMOIP_11						; "<p>1.If more than three months has passed from the visa period, a fineof (1,000 SR) is imposed and shall be paid through ATM</p>";
 
-
-					   ;ZS14										    ;"<p>1. Update - for once only - is mandatory for all licensed entities,holding a license of two years or more, that did not provide Ministry of Investment with the data in earlier time. 2. The service shall be suspended for licensed entities that have a shortage or mismatch in government documents figures with 'YESSER' data until updating their government data in the electronic system of Ministry of Investment, and verification of data on compliance with the 'YESSER' </p>"     
-					 
-					 
-					  ;ZMOIP_03										    ;"<p>1.Fill the form of 'Exit and Return Visa' approved by General Department of Passports. </p>"														
-					 
-					 ;ZMOIP_10											;"<ol start= '1'>
-					                                                      <li>This service is provided through ABSHER or MUQEEM System(in case of inability to issue, a proof for that shall be submitted).</li>														
-																		  <li>Fill the form of 'Exit and Return Visa' approved by General Department of Passports.<li>
-																		  </ol>";
-					 
-					;ZMOIP_11											;"<p>1.If more than three months has passed from the visa period, a fineof (1,000 SR) is imposed and shall be paid through ATM</p>"					
-																		
-																		
-					;ZMOIP_01											;"<ol start= '1'>																																		
-																		   <li>If there is no commercial registration, an applicant shall provide a commitment of issuing a commercial registration within a month.</li>
-																		   <li>If the Iqama is to be issued for the General Manager, a copy of the commercial registration shall be submitted after adding the name of the General Manager. </li>
-																		   <li> If the Iqama is to be issued for the General Manager, a worker card from the Working Office's official website shall be submitted.</li>
-																		   <li> The applicant should have an electronic overall medical report to be presented to the General Department of Passports.</li>
-																		   <li>The applicant should have an electronic of medical insurance be presented to the General Department of Passports.</li>
-																		   <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports.</li>
-																		   </ol>"
+								; ZMOIP_01						; "<ol start= '1'>																																		
+																   <li>If there is no commercial registration, an applicant shall provide a commitment of issuing a commercial registration within a month.</li>
+																   <li>If the Iqama is to be issued for the General Manager, a copy of the commercial registration shall be submitted after adding the name of the General Manager. </li>
+																   <li>If the Iqama is to be issued for the General Manager, a worker card from the Working Office's official website shall be submitted.</li>
+																   <li>The applicant should have an electronic overall medical report to be presented to the General Department of Passports.</li>
+																   <li>The applicant should have an electronic of medical insurance be presented to the General Department of Passports.</li>
+																   <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports.</li>
+																   </ol>";
 																		   
-					; ZMOIP_07											;"<ol start= '1'>																																	   																																		
-																		   <li>This service provided through 'Absher' or 'Muqeem' System (in case of inability to issue, a proof for that shall be submitted).  </li>
-																		   <li>The applicant should have an electronic overall medical report be presented to the General Department of Passports.</li>
-																		   <li>. Fill the 'Issuance of Iqama form' approved by General Department of Passports. </li>
-																		   </ol>"
+								; ZMOIP_07						; "<ol start= '1'>																																	   																																		
+																   <li>This service provided through 'Absher' or 'Muqeem' System (in case of inability to issue, a proof for that shall be submitted).  </li>
+																   <li>The applicant should have an electronic overall medical report be presented to the General Department of Passports.</li>
+																   <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports. </li>
+																   </ol>";
 
-					;ZMOIP_15 											;"1- Fill the 'Dismissal of an Employee Holding Separate Iqama form' approved by General Department of Passports." 							
+								; ZMOIP_15 						; "1- Fill the 'Dismissal of an Employee Holding Separate Iqama form' approved by General Department of Passports.";
 
-					; ZMOIP_02											;"<ol start= '1'>																																																												
-																		  <li>If the Iqama to be renewed is for the General Manager, the followingshall be submitted:</li>
-																		    <dl>
-																		   <dd> - Work card</dd>
-																		   <dd>- Commercial registration containing the name of the General Manager.</dd>
-																		   </dl>
-																		  <li>The applicant should have an electronic medical insurance to be presented to the General Department of Passports.</li>
-																		  <li>Fill the 'Renewal of Iqama form' approved by General Department of Passports. </li>
-																		  </ol>"
+								; ZMOIP_02						; "<ol start= '1'>																																																												
+																  <li>If the Iqama to be renewed is for the General Manager, the followingshall be submitted:</li>
+																	<dl>
+																   <dd>- Work card</dd>
+																   <dd>- Commercial registration containing the name of the General Manager.</dd>
+																   </dl>
+																  <li>The applicant should have an electronic medical insurance to be presented to the General Department of Passports.</li>
+																  <li>Fill the 'Renewal of Iqama form' approved by General Department of Passports. </li>
+																  </ol>";
 																		  
-					; ZMOIP_18										   ;"<ol start= '1'>																																																
-																		  <li>The application can be submitted only after (31) days from the expiry of return visa. </li>
-																		  <li>Submission of an accredited check against a fine of (1,000 SR) in case of Iqama loss. </li>
-																		  <li>Submission of endorsement letter issued by Government Relations Department in the Ministry of Investment if the profession is an investor or general manager.</li>
-																		  </ol>"
-					; ZMOIP_09											   ;"<ol start= '1'>																															
-																	     <li> Iqama will be delivered through Wasel Service. </li>
-																		 <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports.</li>
-																		 </ol>"
+								; ZMOIP_18						; "<ol start= '1'>																																																
+																  <li>The application can be submitted only after (31) days from the expiry of return visa. </li>
+																  <li>Submission of an accredited check against a fine of (1,000 SR) in case of Iqama loss. </li>
+																  <li>Submission of endorsement letter issued by Government Relations Department in the Ministry of Investment if the profession is an investor or general manager.</li>
+																  </ol>";
+
+								; ZMOIP_09						; "<ol start= '1'>																															
+																	 <li>Iqama will be delivered through Wasel Service. </li>
+																	 <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports.</li>
+																	 </ol>";
 																		 
-					;ZMOIP_08											;"<ol start= '1'>																																
-																	    <li>A copy of birth certificate shall be submitted if the subordinate is bornin the Kingdom of Saudi Arabia.</li>
-																		<li>The applicant should have an electronic medical report for person above 10 years old be presented to the General Department of Passports.</li>
-																		<li>Fill the 'Addition of Subordinate form' approved by General Department of Passports.</li>
-																		</ol>"
+								; ZMOIP_08						; "<ol start= '1'>																																
+																	<li>A copy of birth certificate shall be submitted if the subordinate is bornin the Kingdom of Saudi Arabia.</li>
+																	<li>The applicant should have an electronic medical report for person above 10 years old be presented to the General Department of Passports.</li>
+																	<li>Fill the 'Addition of Subordinate form' approved by General Department of Passports.</li>
+																	</ol>";
 																		
-					; ZMOIP_17											  ;"<ol start= '1'>																																
-																	     <li>Fill the 'Issuance Certificate of replacement Copy of Damaged Passport for Expatriates' approved by General Department of Passports.</li>
-																		 <li>Fill the 'Acknowledgment of Passport Loss form' approved by General Department of Passports.</li>
-																		 </ol>"
+								; ZMOIP_17						; "<ol start= '1'>																																
+																	 <li>Fill the 'Issuance Certificate of replacement Copy of Damaged Passport for Expatriates' approved by General Department of Passports.</li>
+																	 <li>Fill the 'Acknowledgment of Passport Loss form' approved by General Department of Passports.</li>
+																	 </ol>";
 																		 
-					; ZMOIP_13										   ;"<ol start = '1'>																															
-																	    <li>If there are accompaniers included in the passport, the original ofbirth certificate of the accompaniers born in the Kingdom shall be submitted as well as a copy thereof.</li>
-																		<li> Fill the 'Amendment of Data form' approved by General Department of Passports.</li>
-																		</ol>"
+								; ZMOIP_13						; "<ol start = '1'>																															
+																	<li>If there are accompaniers included in the passport, the original ofbirth certificate of the accompaniers born in the Kingdom shall be submitted as well as a copy thereof.</li>
+																	<li>Fill the 'Amendment of Data form' approved by General Department of Passports.</li>
+																	</ol>";
 																		
-					; ZMOIP_05											;"<ol start = '1'>																															
-																		<li>Fill the 'Information Transfer form' approved by General Department of Passports.</li>
-																		</ol>"
+								; ZMOIP_05						; "<ol start = '1'>																															
+																	<li>Fill the 'Information Transfer form' approved by General Department of Passports.</li>
+																	</ol>";
 																		
-					; ZMOIP_06											;"<ol start = '1'>																															
-																		  <li>Complete electronic procedures regarding the Employer's approval.</li>
-																		  <li>Fill the 'Sponsorship Transfer and Profession Amendment form' approved by General Department of Passports. </li>
-																		  </ol>"
+								; ZMOIP_06						; "<ol start = '1'>																															
+																  <li>Complete electronic procedures regarding the Employer's approval.</li>
+																  <li>Fill the 'Sponsorship Transfer and Profession Amendment form' approved by General Department of Passports. </li>
+																  </ol>";
 																		  																		
-					;ZMOIP_23											;"<ol start = '1'>																															
-																		<li>Complete electronic procedures regarding the Employer's approval.</li>
-																		<li>Fill the 'Sponsorship Transfer and Profession Amendment form' approved by General Department of Passports.</li>
-																		</ol>"
+								; ZMOIP_23						; "<ol start = '1'>																															
+																	<li>Complete electronic procedures regarding the Employer's approval.</li>
+																	<li>Fill the 'Sponsorship Transfer and Profession Amendment form' approved by General Department of Passports.</li>
+																	</ol>";
 																		
-					;ZMOIP_14											;"<ol start = '1'>																															
-																		  <li>If the Employer has passed away, the Principality's approval shall be obtained.</li>
-																		  <li> If the amendment is from a company to an sole establishment, a shareholders' waiver letter of their respective shares in employees authenticated by the Commerce Chamber shall be submitted.</li>									
-																		  </ol>"
+								; ZMOIP_14						; "<ol start = '1'>																															
+																  <li>If the Employer has passed away, the Principality's approval shall be obtained.</li>
+																  <li>If the amendment is from a company to an sole establishment, a shareholders' waiver letter of their respective shares in employees authenticated by the Commerce Chamber shall be submitted.</li>									
+																  </ol>";
 																		  
 																		  
-UPDATE SagiaService        ; code[unique = true]						;serviceFinancialFees[lang = $langen] 								;serviceDuration[lang = $langen]	;
-								  ; ZSR6								;																	;Notification for The Purpose of Voluntary Cancellation of the License:Two working days.Apply of voluntary cancellation of the license:Immediate
-								  ; ZSR7								;																    ;Immediate							
-								  ; ZSR5 						 	    ;                                  									;Immediate/one working day																																
-								  ; ZSPLJAWA03							;																	;Three working day				
-								  ; ZSR4 							    ;"<ul>														  																																				
-                                                                         <li> Payment of license fee of two thousand (2000) Saudi Riyals annual for 5 years as maximum.</li>
-                                                                         <li>Payment of ten thousand (60,000) Riyals for each year.
-                                                                         <li>Service fees shall be paid within (60) days from the date of bill issuance. In case of the payment's delay within the identified period, the service will be cancelled and the applicant have to apply again </li>
-                                                                         </ul> "															;Immediate
-								 ; ZSPLJAWA02							;																	;Three working day																	 
-								 ; ZSPLJAWA01							;																	;Three working day
-								 ; ZSPLJAWA04							;																	;Three working day.							
-								 ; ZMOL_11								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day								
-								 ; ZMOL_03								;<ul><li>Payment of fees for the service provider.</li></ul> 		;Two working day							
-								 ; ZMOCI_17								;<ul><li>Payment of fees for the service provider.</li></ul>  		;Two working day
-								 ; ZMOCI_07							    ;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day																																		
-								 ; ZMOCI_21							    ;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day
-								 ; ZMOCI_15								;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day									   
-								; ZMOCI_19							    ;<ul><li>Payment of fees for the service provider.</li></ul>	    ;Two working day																																
-								; ZMOCI_18				   				;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day
-								; ZMOCI_20								;<ul><li>Payment of fees for the service provider.</li></ul>  		;Two working day
-								; ZMOCI_09								;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day																																
-								; ZMOCI_08								;<ul><li>Payment of fees for the service provider.</li></ul> 	    ;Two working day
-								; ZMOCI_11							    ;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day																																
-								; ZMOCI_10								;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day
-								; ZFLUP_02								;																	;Three working day
-								; ZFLUP_03								;																	;Three working day
-								; ZRES									;																	;One working days
-								; ZS14									;                    												;Three working day		 
-                                ; ZMOIP_03								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day							 					 
-                                ; ZMOIP_10								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
-                                ; ZMOIP_11								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
-                                ; ZMOIP_01								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
-                                ; ZMOIP_07								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day				
-                                ; ZMOIP_15								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
-                                ; ZMOIP_02								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
-                                ; ZMOIP_18								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
-                                ; ZMOIP_09  							;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day   				
-                                ; ZMOIP_08								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
-                                ; ZMOIP_17								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
-                                ; ZMOIP_13								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
-                                ; ZMOIP_05								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
-                                ; ZMOIP_06								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
-                                ; ZMOIP_21								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
-                                ; ZMOIP_23								;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day	
-                                ; ZMOIP_14								;																	;Two  working day		
-                                			
-                  																		  
+UPDATE SagiaService				; code[unique = true]			; serviceFinancialFees[lang = $langen] 								;serviceDuration[lang = $langen]	;
+								; ZSR6							;																	;Notification for The Purpose of Voluntary Cancellation of the License:Two working days.Apply of voluntary cancellation of the license:Immediate
+								; ZSR7							;																    ;Immediate							
+								; ZSR5 						 	;                                  									;Immediate/One working day																																
+								; ZSPLJAWA03					;																	;Three working day				
+								; ZSR4 						    ;"<ul>														  																																				
+																	 <li> Payment of license fee of two thousand (2000) Saudi Riyals annual for 5 years as maximum.</li>
+																	 <li>Payment of ten thousand (60,000) Riyals for each year.
+																	 <li>Service fees shall be paid within (60) days from the date of bill issuance. In case of the payment's delay within the identified period, the service will be cancelled and the applicant have to apply again </li>
+																	 </ul>"															;Immediate
+								; ZSPLJAWA02					;																	;Three working day																	 
+								; ZSPLJAWA01					;																	;Three working day
+								; ZSPLJAWA04					;																	;Three working day							
+								; ZMOL_11						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day								
+								; ZMOL_03						;<ul><li>Payment of fees for the service provider.</li></ul> 		;Two working day							
+								; ZMOCI_17						;<ul><li>Payment of fees for the service provider.</li></ul>  		;Two working day
+								; ZMOCI_07						;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day																																		
+								; ZMOCI_21						;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day
+								; ZMOCI_15						;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day									   
+								; ZMOCI_19						;<ul><li>Payment of fees for the service provider.</li></ul>	    ;Two working day																																
+								; ZMOCI_18				   		;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day
+								; ZMOCI_20						;<ul><li>Payment of fees for the service provider.</li></ul>  		;Two working day
+								; ZMOCI_09						;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day																																
+								; ZMOCI_08						;<ul><li>Payment of fees for the service provider.</li></ul> 	    ;Two working day
+								; ZMOCI_11						;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day																																
+								; ZMOCI_10						;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day
+								; ZFLUP_02						;																	;Three working day
+								; ZFLUP_03						;																	;Three working day
+								; ZRES							;																	;One working days
+								; ZS14							;                    												;Three working day		 
+                                ; ZMOIP_03						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day							 					 
+                                ; ZMOIP_10						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
+                                ; ZMOIP_11						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
+                                ; ZMOIP_01						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
+                                ; ZMOIP_07						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day				
+                                ; ZMOIP_15						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
+                                ; ZMOIP_02						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
+                                ; ZMOIP_18						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
+                                ; ZMOIP_09  					;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day   				
+                                ; ZMOIP_08						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day			
+                                ; ZMOIP_17						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day
+                                ; ZMOIP_13						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
+                                ; ZMOIP_05						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
+                                ; ZMOIP_06						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
+                                ; ZMOIP_21						;																	;One working day		
+                                ; ZMOIP_23						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day	
+                                ; ZMOIP_14						;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day		
+
 
 
 INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
@@ -597,7 +565,7 @@ INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
 						
 							; labour				; GOVERNMENTAL SERVICES	; ZMOL_03,ZMOL_11;
 
-							; 3						; SAGIA SERVICES		; ZS11;
+#							; 3						; SAGIA SERVICES		; ZS11;
 							
 							; 2						; SAGIA SERVICES		; ZSPLJAWA01,ZSPLJAWA02,ZSPLJAWA03,ZSPLJAWA04;
 							
@@ -612,7 +580,6 @@ INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
 
 
 #Production Data
-
 UPDATE SagiaCategory       ; code[unique = true]  ; name[lang = $langen]                               ; categoryUrl ; description[lang = $langen]	;
                            ; 7                    ; Rules & Regulation Advisory                        ; caturl      ;		;
                            ; 6                    ; Government Data Update Service                     ; caturl      ;		;
@@ -639,13 +606,13 @@ INSERT_UPDATE SagiaServiceTab; code[unique = true] ; content[lang = $langen]    
 
 UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	                                                           ; tabs(code)	;
 #							; ZMOCI_22										; Ministry of commerce service forms;	
-							; ZMOIP_23										; Transfer KAFALA for GM of Branch of foreigner comp;	
-							; ZMOIP_21										; Wavier of Son or daughter;	
+							; ZMOIP_23										; Transfer KAFALA for GM of Branch of Foreigner comp;	
+							; ZMOIP_21										; Wavier of Son or Daughter;	
 							; ZMOIP_18										; Cancellation of Iqama for Person who has leaved and has not returned;	
 							; ZMOIP_17										; Issuance of replacement Copy of Damaged Passport;	
 							; ZMOIP_15										; Dismissal of an Subordinates Holding Separate Iqama;	
 							; ZMOIP_14										; Amendment of Entity Name;	
-							; ZMOIP_13										; Amendment of Passport Data modification;	
+							; ZMOIP_13										; Amendment of Passport Data;	
 							; ZMOIP_12										; Extension of Travel Visa Period;	
 							; ZMOIP_10										; Exit and Return Visa for Accompaniers;	
 							; ZMOIP_11										; Cancellation of Exit and Return Visa;	
@@ -654,24 +621,24 @@ UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	 
 							; ZMOIP_07										; Issuance of Iqama for Private Driver or Maid;	
 							; ZMOIP_06										; Sponsorship Transfer and Profession Amendment for General Manager of Foreign Companies Branch;	
 							; ZMOIP_02										; Renewal of Iqama;	
-							; ZMOIP_05										; Information transfer;	
+							; ZMOIP_05										; Information Transfer;	
 							; ZMOIP_03										; Exit and Return Visa;	
 							; ZMOIP_01										; Issuance of New Iqama;	
-							; ZMOIR_02										; Recruitment of High Professionsâ€™ Families;	
+							; ZMOIR_02										; Recruitment of High Professional Families;	
 							; ZMOIR_01										; Recruitment for investors Families;	
-							; ZMOL_03										; Transfer of an Expatriate's Services;	
+							; ZMOL_03										; Services Transfer of Expatriates;	
 							; ZMOL_11										; Data Updating;	
 							; ZMOCI_21										; Registration of Company Branch;	
-							; ZMOCI_20										; Conversion of Commercial Registration from Sole establishment to Company;	
-							; ZMOCI_19										; Renewal of Est.'s Commercial Register;	
+							; ZMOCI_20										; Conversion of Commercial Registration from Sole Establishment to Company;	
+							; ZMOCI_19										; Renewal of Commercial Register for Sole Establishments;	
 							; ZMOCI_18										; Renewal of Commercial Registration for Companies;	
 							; ZMOCI_17										; Issuance of Commercial Registration for Company;	
-							; ZMOCI_15										; Study of a New Company's Memorandum of Association;	
-							; ZMOCI_11										; Changing the Establishment's address;	
-							; ZMOCI_09										; Amendment of a Establishment's CR;	
-							; ZMOCI_10										; Changing the Company's Address;	
-							; ZMOCI_08										; Amendment of a Company's Commercial Register;	
-							; ZMOCI_07										; Registration of a new Est.'s branch;	
+							; ZMOCI_15										; Study of Articles of Association of New Company;	
+							; ZMOCI_11										; Amendment of Sole Establishment Address;	
+							; ZMOCI_09										; Amendment of Commercial Registration for Sole Establishment for Sole Establishments;	
+							; ZMOCI_10										; Amendment of Company Address;	
+							; ZMOCI_08										; Amendment of Commercial Registration for Companies;	
+							; ZMOCI_07										; Registration of Sole Establishment Branch;	
 							; ZMOCI_03										; Replacement of Company's damaged CR;	
 							; ZMOCI_04										; Replacement of Est.'s Damaged CR;	
 							; ZMOCI_05										; Replacement of Company's Lost CR;	
@@ -680,17 +647,18 @@ UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	 
 							; ZSR5											; Amendment Of License;	
 							; ZSVR											; Support Visits;	
 							; ZS14											; Government Documents;	
-							; ZFLUP_03										; Extension of The Written Notification Deadline;	
+							; ZFLUP_03										; Extension of the Written Notification Deadline;	
 							; ZFLUP_02										; Reply to the Written Notification;	
 							; ZRES											; Buy and sell Real Estate;	
 							; ZSR6											; Voluntary Cancellation of License;	
-							; ZS11											; Financial Statement;	
+#							; ZS11											; Financial Statement;	
 							; ZSR9											; Cancellation Support Letter;	
 							; ZSR1											; Investor Information Update;	
-							; ZSR7											; Conversion of a Foreign Entity to a 100% National Entity;	
+							; ZSR7											; 100% Foreign Commercial License;	
 							; ZSR4											; Renewal of License;	
 							; ZSPLJAWA03									; Transfer of Sponsorship of the Foreign Investor;	
 							; ZSPLJAWA01									; Exit-Re-Entry Visas of the Investor whose License is Cancelled;	
 							; ZSPLJAWA04									; Final Exit of the Investor whose License is Cancelled;	
 							; ZSPLJAWA02									; Renewal of Residence Permit of the Investor whose License is Cancelled;	
-							   							   
+
+

@@ -29,13 +29,14 @@
 													<span></span>
 											</a>
 									</div>
-									<div class="calendar notification p-0">
+									<div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
 										<c:if test="${hasLicense or hasAwaitingPayment}">
 											<button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
 												<span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
 												<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
 											</button>
 										</c:if>
+										<div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
 										<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
 											<div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
 											<ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
@@ -99,7 +100,7 @@
 		<div class="m-0 ml-custom-35">
 			<div class="row w-100 renewal-services">
 				<div class="col-md-6 col-12">
-                    <a href="/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                    <a href="${encodedContextPath}/service-search/FIRST" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
 				<c:if test="${fn:length(sagiaService.tabs) > 0}">
 					<div class="col-xl-3 col-12 ml-1">
@@ -136,11 +137,11 @@
 	</div>
 	<div class="container ml-0 ml-md-4">
 		<button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
-			<div class=" "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
-			<div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+			<div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+			<div class=""><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
 		</button>
 	</div>
-	<div class="service-wrapper service-wrapper-info mb-5 mx-0 mx-md-5" id="expand-03" style="display:none">
+	<div class="service-wrapper service-wrapper-info mb-5 mx-0 mx-md-5 expanded" id="expand-03">
 		<div class="serviceModule serviceModule_list mx-5 pt-4">
 			<div class="serviceModule-section">
 				<div class="serviceModule-content">
@@ -956,7 +957,12 @@
 										<div class="formInputBox">
 											<div class="form-group">
 												<input id="shareholderNameId" name="shareholderName"
-													class="form-control" placeholder="." value="" type="text">
+													class="form-control" placeholder="." value="" type="text"
+													dir="rtl" lang="ar" pattern="[\
+													\u0620-\u063F\u0641-\u064A\u066E-\u066F\u0671-\u06D3\u06D5\
+													\u06E5-\u06E6\u06EE-\u06EF\u06FA-\u06FC\u06FF\u0750-\u077F\
+													\u08A0\u08A2-\u08AC\uFB50-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\
+													\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\s]+">
 												<label class="control-label control-label_mandatory"
 													for="shareholderNameId"> <spring:theme
 														code="license.nameinarabic" />
@@ -970,7 +976,8 @@
 											<div class="form-group">
 												<input id="shareholderNameEnglishId"
 													name="shareholderNameEnglish" class="form-control"
-													placeholder="." value="" type="text"> <label
+													placeholder="." value="" type="text"
+													dir="ltr" lang="en" pattern="[a-zA-Z\s]+"> <label
 													class="control-label control-label_mandatory"
 													for="shareholderNameEnglishId"> <spring:theme
 														code="license.nameinenglish" />
@@ -1592,7 +1599,12 @@
 															<div class="form-group">
 																<input id="delegateFirstNameArabic"
 																	name="delegate.firstNameArabic" class="form-control"
-																	placeholder="." value="" type="text" /> <label
+																	placeholder="." value="" type="text" 
+																	dir="rtl" lang="ar" pattern="[\
+																	\u0620-\u063F\u0641-\u064A\u066E-\u066F\u0671-\u06D3\u06D5\
+																	\u06E5-\u06E6\u06EE-\u06EF\u06FA-\u06FC\u06FF\u0750-\u077F\
+																	\u08A0\u08A2-\u08AC\uFB50-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\
+																	\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\s]+"/> <label
 																	class="control-label control-label_mandatory"
 																	for="delegateFirstNameArabic"><spring:theme
 																		code="general.firstname.arabic" /></label>
@@ -1606,7 +1618,12 @@
 															<div class="form-group">
 																<input id="delegateLastNameArabic"
 																	name="delegate.lastNameArabic" class="form-control"
-																	placeholder="." value="" type="text" /> <label
+																	placeholder="." value="" type="text" 
+																	dir="rtl" lang="ar" pattern="[\
+																	\u0620-\u063F\u0641-\u064A\u066E-\u066F\u0671-\u06D3\u06D5\
+																	\u06E5-\u06E6\u06EE-\u06EF\u06FA-\u06FC\u06FF\u0750-\u077F\
+																	\u08A0\u08A2-\u08AC\uFB50-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\
+																	\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\s]+"/> <label
 																	class="control-label control-label_mandatory"
 																	for="delegateLastNameArabic"><spring:theme
 																		code="general.lastname.arabic" /></label>
@@ -1620,7 +1637,8 @@
 															<div class="form-group">
 																<input id="delegateFullNameEnglish"
 																	name="delegate.fullNameEnglish" class="form-control"
-																	placeholder="." value="" type="text" /> <label
+																	placeholder="." value="" type="text" 
+																	dir="ltr" lang="en" pattern="[a-zA-Z\s]+"/> <label
 																	class="control-label control-label_mandatory"
 																	for="delegateFullNameEnglish"><spring:theme
 																		code="general.fullname.english" /></label>

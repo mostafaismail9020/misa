@@ -154,7 +154,7 @@
                                                                 </div>
 
                                                                 <div class="contentModule-actions contentModule-actions_spaceBetween">
-                                                                    <button id="nextFirstTabButtonId" type="button" class="btn btn_bold">Next</button>
+                                                                    <button id="nextFirstTabButtonId" type="button" class="btn btn_bold"><spring:theme code="general.next"/></button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -209,7 +209,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text on "Pledge for complete documentation and cr". You can also go to our <a href="#">help center</a>.'
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text on "Pledge for complete documentation and cr". You can also go to our <a href="#">help center</a>.'
                                                                                             data-original-title="" title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -229,7 +229,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text on "Classification Letter from the ultimatecountry". You can also go to our <a href="#">help center</a>.'
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text on "Classification Letter from the ultimatecountry". You can also go to our <a href="#">help center</a>.'
                                                                                             data-original-title="" title="">
                                             <icon:tipInfo/>
                                         </span>
@@ -251,7 +251,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -271,7 +271,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -291,7 +291,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -311,7 +311,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -331,7 +331,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -351,7 +351,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -371,7 +371,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -391,7 +391,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -411,7 +411,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>
@@ -431,7 +431,7 @@
                                                                                         <icon:cross/>
                                                                                     </div>
                                                                                     <div class="formInputFile-append">
-                                                                                        <span class="formInputFile-text formInputFile-text_tip js-tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
+                                                                                        <span class="formInputFile-text formInputFile-text_tip" style="position: relative;z-index: 1000;" data-tip-trigger="click click-outside" data-tip-title='This is a short explanation text. You can also go to our <a href="#">help center</a>.' data-original-title=""
                                                                                             title=""><icon:tipInfo/></span>
                                                                                     </div>
                                                                                 </div>

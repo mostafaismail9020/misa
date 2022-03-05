@@ -20,13 +20,14 @@
                             <span></span>
                         </a>
                     </div>
-                    <div class="calendar notification p-0">
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
                         <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
                             <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
                             <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
@@ -82,7 +83,7 @@
             <c:url value="/my-sagia/sagia-profile" var="profileUrl"/>
             <div class="row w-100 renewal-services">
                 <div class="col-xl-3 col-12 px-0">
-                    <a href="${profileUrl}" class="btn btn_leftIconLink btn_darkLink back_to_profile"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a>
+                    <a href="${profileUrl}" class="btn btn_leftIconLink btn_darkLink back_to_profile"><span class="iconElement iconElement_closeBack " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="profileCompany.button.back.text"/></a>
                 </div>
             </div>            
         </div>
@@ -93,11 +94,11 @@
     <div class="container">
         <c:if test="${fn:length(contactUpdateHistory) gt 1}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand02">
-                <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
-                <div><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+                <div class=""><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div class="hidden"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
             </c:if>
-        <div class="expandableContent expanded" id="expand02">
+        <div class="expandableContent" id="expand02">
             <c:if test="${fn:length(contactUpdateHistory) gt 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
@@ -164,7 +165,7 @@
             <div class="expandableContent-main js-support-visits">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule" id="supportVisitDetails">
-                        <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
+                        <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin  pb-0 mb-0">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
                                 <div class="contentModule-headline contentModule-headline-service-info">
                                     <!-- <icon:info/> -->

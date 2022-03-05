@@ -372,7 +372,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <dl class="dlList dlList_separated">
-                                    <dt><spring:theme code="general.current.primary.contact"/></dt>
+                                   <dt class="d-none"><spring:theme code="general.current.primary.contact"/></dt>
                                     <dd id="primaryContactLabel"></dd>
                                 </dl>
                             </div>

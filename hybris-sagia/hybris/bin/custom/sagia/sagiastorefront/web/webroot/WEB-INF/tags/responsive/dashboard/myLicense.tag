@@ -5,13 +5,13 @@
 <%@ attribute name="editable" required="false" type="java.lang.Boolean"%>
 <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags/responsive/dashboard" %>
 
-<div class="dashboardWidget js-dashboardWidget no-border">
+<div class="dashboardWidget js-dashboardWidget no-border mt-0 pb-0">
     <c:if test="${editable}"><dashboard:addAndRemoveComponent checkboxIndex="1"/></c:if>
     <div class="dashboardWidget-headline js-dashboardWidget-headline  d-none d-md-flex">
         <div class="dashboardWidget-headline-text"><spring:theme code="myLicense.title"/></div>
         <div class="dashboardWidget-headline-icon"><icon:my-license/></div>
         <div class="dashboardWidget-headline-action text-right mt-3 d-none d-sm-flex text-ar-left">
-            <a href="${encodedContextPath}/my-sagia/license/convert" class="btn-outline dashboardWidget-headline-action-link pt-2">
+            <a href="${encodedContextPath}/my-sagia/license/convert" class="btn-outline dashboardWidget-headline-action-link pt-2 d-none">
                 <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
             </a>
             <a href="${encodedContextPath}/my-sagia/license/print" class="btn-outline dashboardWidget-headline-action-link download-payment" download>
@@ -26,7 +26,7 @@
     <div class="dashboardWidget-body myLicenseBody">
     <%-- start dashboardWidgetLicense --%>
         <div class="dashboardWidget-headline-action dm-my-license-view">
-            <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link">
+            <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link d-none">
                 <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
             </a>
             <a href="${encodedContextPath}/my-sagia/license/download" class="dashboardWidget-headline-action-link">
@@ -206,7 +206,7 @@
                 </div>
             </div>
 
-            <div class="dashboardWidgetLicense-action">
+            <div class="dashboardWidgetLicense-action d-none">
                 <button type="button" class="btn" onclick="window.location.href='${encodedContextPath}/my-sagia/license/amend'">
                     <spring:theme code='dashboard.myLicense.amend'/><icon:edit/>
                 </button>

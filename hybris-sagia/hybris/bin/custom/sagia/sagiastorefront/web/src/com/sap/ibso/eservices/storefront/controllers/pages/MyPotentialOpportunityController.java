@@ -197,18 +197,25 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	@RequestMapping(value = "/{ticketId}/uploadAttachment",method = RequestMethod.POST,consumes = { MediaType.MULTIPART_FORM_DATA_VALUE,MediaType.APPLICATION_FORM_URLENCODED_VALUE,MediaType.TEXT_PLAIN_VALUE})
     public String uploadAttachment(final Model model, @ModelAttribute("contactTicketForm") final ContactTicketForm contactTicketForm,
 			final BindingResult bindingResult, @PathVariable("ticketId") final String ticketId,
-			final HttpServletRequest request, final HttpServletResponse response) throws CMSItemNotFoundException {
+			final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel) throws CMSItemNotFoundException {
 
-		
+		boolean uploadAttachment = false;
 		try {
 			if (null != contactTicketForm && null != contactTicketForm.getComment()) {
 				LOG.info("receieved the file");
 			}
+			byte[] bytes = contactTicketForm.getPdfAttachment().getBytes();
+			if(null !=bytes && bytes.length > 0) {
+        		uploadAttachment = true;
+        	}
 			sagiaUserFacade.saveTicketAttachments(contactTicketForm.getPdfAttachment().getBytes(), ticketId);
 		} catch (IOException ex) {
 			LOG.error("Exception in uploading attachment: " + ex);
 		}
-
+        if (uploadAttachment) {
+			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER,
+					"Document Uploaded Successfully");
+		}
 		return "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
 		// set the media model to attachments attribute in contact ticket model
 	}

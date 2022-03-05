@@ -28,13 +28,14 @@
                             <span></span>
                         </a>
                     </div>
-                    <div class="calendar notification p-0">
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
                                 <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png" class="notification_b2b_img"/>
                             </button>
                         </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
                         <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
                             <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
                             <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
@@ -116,7 +117,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
                 <div class="col-xl-3 col-md-6 col-12">
-                    <a href="/service-search/GOVERNMENTAL SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                    <a href="${encodedContextPath}/service-search/GOVERNMENTAL SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
                     <div class="col-xl-3 col-md-6 col-12">
@@ -152,11 +153,11 @@
 </div>
 <div class="container">
     <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
-        <div class=" "><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
-        <div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+        <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+        <div class=""><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
     </button>
 </div>
-<div class="container service-wrapper service-wrapper-info mb-5"  id="expand-03" style="display:none">
+<div class="container service-wrapper service-wrapper-info mb-5 expanded"  id="expand-03">
 	<div class="serviceModule serviceModule_list mx-5 pt-4">
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
@@ -248,12 +249,11 @@
     <div class="container">
         <c:if test="${fn:length(serviceList) gt 1}">
             <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
-                <div><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+                <div class=""><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
             </button>
         </c:if>
-
-        <div class="expandableContent expanded" id="expand01">
+        <div class="expandableContent" id="expand01">
             <c:if test="${fn:length(serviceList) gt 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
@@ -409,7 +409,7 @@
                                              <b><spring:theme code="service.govt.moc.salutation"/></b>
                                              <spring:theme code="service.govt.moc.message"/>
                                              <br>
-                                             <a href="https://efile.mci.gov.sa/ar/Account/Login?client_ID=152b6467-1d78-497f-a03f-076172250b80">
+                                             <a href="https://mc.gov.sa/ar/eservices/Pages/ServiceDetails.aspx?sID=29">
                                                   <spring:theme code="service.govt.moc.link.name"/>
                                               </a>
                                           </c:if>
@@ -421,8 +421,14 @@
 
                         <c:if test="${fn:length(attachments) gt 0}">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                <div class="contentModule-headline contentModule-headline_bordered">
+                                <!-- <div class="contentModule-headline contentModule-headline_bordered">
                                     <icon:documents/><spring:theme code="text.account.followup.supportDocuments"/>
+                                </div> -->
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
                                 </div>
                             </div>
 

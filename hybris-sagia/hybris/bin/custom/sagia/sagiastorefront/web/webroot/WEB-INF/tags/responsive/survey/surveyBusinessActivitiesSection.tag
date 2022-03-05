@@ -11,7 +11,7 @@
 
 <div class="contentModule-section" id="businessActivitiesSection">
     <div class="contentModule-headline"><spring:theme code="financial.survey.business.activities"/></div>
-
+<hr class="hr w-100">
 <%--     <div id="businessTypeSection" class="row">
         <div class="col-md-6">
             <div class="formSelectBox">
@@ -226,7 +226,7 @@
                     </div>
                     <div class="modal-footer modal-footer_centered">
                         <button type="button" type="submit" class="btn btn_outline btn_slim" data-dismiss="modal"><spring:theme code="general.cancel"/></button>
-                        <button id="nextButton" type="button" type="submit" class="btn btn_slim"><spring:theme code="general.next"/></button>
+                        <button id="nextButton" type="button" type="submit" class="btn btn_slim btn-bg"><spring:theme code="general.next"/></button>
                     </div>
                 </form>
             </div>

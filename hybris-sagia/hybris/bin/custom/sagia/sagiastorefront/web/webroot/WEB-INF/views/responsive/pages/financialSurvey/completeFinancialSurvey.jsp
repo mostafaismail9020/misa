@@ -1185,7 +1185,7 @@
                         <div class="contentModule">
 
                             <div class="contentModule-section">
-                                <div class="tableModule tableModule_noOverflow">
+                                <div class="tableModule">
                                     <table class="tableModule-table">
                                         <thead class="tableModule-head">
                                         <tr>
@@ -1255,7 +1255,7 @@
 
 
                             <div class="contentModule-section">
-                                <div class="tableModule tableModule_noOverflow">
+                                <div class="tableModule">
                                     <table class="tableModule-table">
                                         <thead class="tableModule-head">
                                         <tr>
@@ -1355,7 +1355,7 @@
                                             <div class="contentModule-headline">
                                                 <icon:documents/><spring:theme code="general.attachments"/>
                                             </div>
-
+                                            <hr class="hr w-100">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="formInputFile">
@@ -1472,6 +1472,7 @@
                     <div class="contentModule-headline">
                         <spring:theme code="financial.survey.shareholder"/>
                     </div>
+                    <hr class="hr w-100">
                     <div id="shareholderPersonEntityTypeId" class="row">
                         <div class="col-md-8">
                             <div class="formRadioBox">
@@ -1500,7 +1501,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="license.basicinformation"/>
                         </div>
-
+                        <hr class="hr w-100">
                         <%--Entity shareholder--%>
                         <div id="entityShareholderId">
 
@@ -1624,6 +1625,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareinformation"/>
                         </div>
+                        <hr class="hr w-100">
 
                         <div id="shareholderAddressId" class="row">
 
@@ -1751,7 +1753,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareholderTransaction"/>
                         </div>
-
+                        <hr class="hr w-100">
                         <tags:transaction/>
 
 
@@ -1759,6 +1761,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="general.shareholderequity"/>
                         </div>
+                        <hr class="hr w-100">
 
                         <div  class="row">
                         <div class="col-md-12">
@@ -1941,6 +1944,7 @@
                     <div class="contentModule-headline">
                         <spring:theme code="license.branchdetails"/>
                     </div>
+                    <hr class="hr w-100">
 
                     <div class="row">
                         <div class="col-md-6">
@@ -1988,6 +1992,7 @@
                     <div class="contentModule-headline">
                         <spring:theme code="license.contactinformation"/>
                     </div>
+                    <hr class="hr w-100">
 
                     <div class="row">
                         <div class="col-md-6">
@@ -2450,6 +2455,7 @@
                     <div class="contentModule-headline">
                         <spring:theme code="financial.survey.affiliate"/>
                     </div>
+                    <hr class="hr w-100">
                     <div id="affiliatePersonEntityTypeId" class="row">
                         <div class="col-md-8">
                             <div class="formRadioBox">
@@ -2478,6 +2484,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="license.basicinformation"/>
                         </div>
+                        <hr class="hr w-100">
 
                         <%--Entity affiliate--%>
                         <div id="entityAffiliateId">
@@ -2616,7 +2623,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareholderTransaction"/>
                         </div>
-
+                        <hr class="hr w-100">
                         <tags:transaction/>
 
 

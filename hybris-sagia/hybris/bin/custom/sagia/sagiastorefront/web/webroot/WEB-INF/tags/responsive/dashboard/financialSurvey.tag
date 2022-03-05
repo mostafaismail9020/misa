@@ -7,14 +7,14 @@
 <%@ taglib prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="container">
-  <div class="row">
+  <div class="">
      <div class="Inc-title-header  py-3 py-sm-5 mt-3 mt-sm-0">
 		   <h1 class="Inc-secdetil-enop-header text-uppercase text-center clr_gld">
 			  <spring:theme code="dashboard.yourfinancialsurveys"/>
 		   </h1>
       </div>
-      <div class="col col-12" id="yourFinancialSurveys">
-        <div class="dashboardWidget js-dashboardWidget">
+      <div class="col col-12 p-0" id="yourFinancialSurveys">
+        <div class="dashboardWidget dash-fdi-survey js-dashboardWidget pt-3">
 		 <div class="dashboardWidget-body">
 		    <div class="dashboardWidgetTickets">
 		      <div class="tableModule tableModule_slim dashboardWidgetTickets-table">

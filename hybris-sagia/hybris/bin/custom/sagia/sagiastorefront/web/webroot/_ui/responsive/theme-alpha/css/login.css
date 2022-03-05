@@ -489,6 +489,13 @@ color: #00a6de!important;
 /* 150%  1 */
 
 @media (min-width: 1200px) and (max-width:1500px) {
+
+	
+	.dash-fdi-survey .tableModule .tableModule-body .btn.btn_slim.draftContinueBtn{
+		width: 160px;
+	}
+
+
 	.page-verification .login-register-text{
 		margin-top: 0;
 		font-size: 24px;
@@ -517,6 +524,12 @@ color: #00a6de!important;
 
 /* 150%  2 */
 @media(min-width:992px) and (max-width:1199px){
+
+	.dash-fdi-survey .tableModule .tableModule-body .btn.btn_slim.draftContinueBtn{
+		width: 160px;
+	}
+
+
 	.page-verification .login-register-text{
 		margin-top: 0;
 		font-size: 24px;
@@ -549,6 +562,15 @@ color: #00a6de!important;
 /* 125% */
 @media(min-width:1530px) and (max-width:1600px){
 
+	.dash-fdi-survey .tableModule .tableModule-body .btn.btn_slim.draftContinueBtn{
+		width: 160px;
+	}
+
+
+
+
+
+
 	.page-verification .login-register-text{
 		margin-top: 0;
 		font-size: 24px;
@@ -578,3 +600,43 @@ color: #00a6de!important;
 	}
 
 }
+
+
+/*FDI Survey Page*/
+.dash-fdi-survey .tableModule {
+	margin-bottom: 0;
+}
+.dash-fdi-survey{
+	border-radius: 22px !important;
+}
+
+.page-financial-survey .panelTabs_noPanelInBody .panelTabs-navigation .tabs-list,
+.page-financial-survey .mainSection_narrow,
+.page-financial-survey .panelTabs-navigation{
+max-width :100% ;
+
+}
+
+.page-financial-survey .deleteDropdown-drop{
+	top: -39px;
+		width: 200px;
+		
+	}
+	.page-financial-survey .deleteDropdown-drop .deleteDropdown-actions .btn{
+	
+		font-size: 12px;
+		padding: 2px 13px;
+	    margin-bottom: 5px !important;
+    margin: auto;
+	
+	}
+
+	.page-financial-survey .btn.btn_link.editAffiliateBtn:hover{
+		background-color: transparent !important;
+	}
+
+	.page-financial-survey #individualShareholderId .formSelectBox .form-group, .page-financial-survey #individualAffiliateId .formSelectBox .form-group{
+		margin-bottom: 0;
+	}
+
+	

@@ -1039,14 +1039,20 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             for (HashMap<String, String> isicActivity : businessActivitiesList) {
                 jsonStringifiedList.add(gson.toJson(isicActivity));
             }
-            for (EntitiesManagedByRhq entities : entityList) {
-                jsonStringifiedList.add(gson.toJson(entities));
+            if(null!=entityList) {
+                for (EntitiesManagedByRhq entities : entityList) {
+                    jsonStringifiedList.add(gson.toJson(entities));
+                }
             }
-            for (BrandPresenceInMENARegion brand : brandList) {
-                jsonStringifiedList.add(gson.toJson(brand));
+            if(null!=brandList) {
+                for (BrandPresenceInMENARegion brand : brandList) {
+                    jsonStringifiedList.add(gson.toJson(brand));
+                }
             }
-            for (EstimatedOperatingCostForRhq cost : estimatedList) {
-                jsonStringifiedList.add(gson.toJson(cost));
+            if(null!=estimatedList) {
+                for (EstimatedOperatingCostForRhq cost : estimatedList) {
+                    jsonStringifiedList.add(gson.toJson(cost));
+                }
             }
 
             sagiaLicenseApplyFacade.repopulateEntityInfoMediaOnFormError(sagiaApplyEntityInfoForm);

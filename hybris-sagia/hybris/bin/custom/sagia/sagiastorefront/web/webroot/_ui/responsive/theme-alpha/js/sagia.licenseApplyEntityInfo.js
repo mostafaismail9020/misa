@@ -171,8 +171,8 @@ SAGIA.licenseApplyEntityInfo = {
     },
 
     preApprovalNumberYesEvent: function () {
-    	//this.attachmentSection.show();
-    	this.attachmentSection.hide();
+    	this.attachmentSection.show();
+    	//this.attachmentSection.hide();
         this.isPreApprovalNumberSection.show();
         this.isPreApprovalNumberSection.find("input").focus();
         this.preApprovalNrAttachment.show();
@@ -1641,9 +1641,19 @@ bindRhqCountryInformationEvents: function () {
     	if(isEntrepreneur === 'yes'){
     		self.loadYearsDropDownForEntrepreneur();
     		self.licenseYearSection.find("#licenseYear").val("1").prop("disabled", true).trigger('change');
+            this.attachmentSection.show();
+        	this.entrepreneurAttachment.show();
     	}else{
     		self.loadYearsDropDown();
     	}
+
+        if(isPreApprovalNumber === 'yes'){
+    	         self.preApprovalNumberYesEvent();
+    	}else{
+            self.preApprovalNumberNoEvent();
+    	}
+
+
 		self.branchInformationSection.find('input[name=isMoreThan2Branch]').prop("disabled", true);
 		self.branchInformationSection.find('input[name=isEntityListedInStockMarket]').prop("disabled", true);
 		self.branchInformationSection.find('input[name=isEntityRevenueMoreThanThreshold]').prop("disabled", true);
@@ -1831,12 +1841,14 @@ if($("#licenseTypes").val() === "11"){
 		if ($('[name=isMoreThan6Branch]').filter(':checked').val() == 'yes'){
         	this.entityBranchAttachment.show();
         }
+        this.preApprovalNrAttachment.hide();
 		this.attachmentSection.show();
        	this.loadYearsDropDownForRHQ();
 
+
 	}else{
         	this.loadYearsDropDown();
-			this.attachmentSection.hide();
+			//this.attachmentSection.hide();
 	}
 //bqureshi
         $("#licenseYearSection").find("#licenseYear").prop("disabled", false);
@@ -2588,10 +2600,12 @@ if($("#licenseTypes").val() === "11"){
             entityForm.find('[name=advanceLicenseNr]').parents('.form-group').addClass('has-error');
         }
 
-        if (entityForm.find('[name=isPreApprovalNumber]').filter(':checked').val() === 'yes' && !entityForm.find('[name=preApprovalNumber]').val()) {
-		hasErrors = true;
-            entityForm.find('[name=preApprovalNumber]').parents('.formInputBox').find('.help-block').text(getI18nText("validate.licenseApply.entityInfo.advanceLicenseNumber.error"));
-            entityForm.find('[name=preApprovalNumber]').parents('.form-group').addClass('has-error');
+        if($("#licenseTypes").val() != "11"){
+            if (entityForm.find('[name=isPreApprovalNumber]').filter(':checked').val() === 'yes' && !entityForm.find('[name=preApprovalNumber]').val()) {
+            hasErrors = true;
+                entityForm.find('[name=preApprovalNumber]').parents('.formInputBox').find('.help-block').text(getI18nText("validate.licenseApply.entityInfo.advanceLicenseNumber.error"));
+                entityForm.find('[name=preApprovalNumber]').parents('.form-group').addClass('has-error');
+            }
         }
 
         if (!entityForm.find('[name=licenseType]').val()) {

@@ -204,9 +204,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			//If user selects RHQ first and saves the Shareholder section and again come back to Entity page and selects any other license type then
 			// The financial statement file which is mandatory in CRM will be causing data issue in new License
 			//Also Professional License also needs to be enabled which will not be case if user have already saved shareholder section.
+/*			Commenting this as this needs Business revisit this section for RHQ
 			List<ShareHolderModel> shareHolders=licenseApplyService.getShareHolders();
 			modelService.removeAll(shareHolders);
-
+*/
 			if(entityInformationModel.getLicenseType().getCode().equals("11"))
 			{
 				saveEntityFinancialStatementEntityInfo(request, entityInformationModel);

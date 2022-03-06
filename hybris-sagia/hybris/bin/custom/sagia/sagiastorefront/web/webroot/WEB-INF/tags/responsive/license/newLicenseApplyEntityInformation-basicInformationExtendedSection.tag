@@ -96,7 +96,7 @@
 		<div class="help-block"></div>
 	</div>
 
-     <div class="formRadioButton">
+     <div class="formRadioButton rhqSubsidiaryPresence-formRadioButtonDiv">
          <div class="form-group optionalActivity ">
 		 <label class="control-label rhqSubsidiaryPresence-label control-label_mandatory" for="rhqSubsidiaryPresence"><spring:theme code="rhq.mnc.subsidiaries.presence" /></label>
 		 <div id="rhqSubsidiaryPresence">
@@ -1197,10 +1197,24 @@
     line-height: 17px;
     left: 20px;
 }
-
+.page-new-license-apply .formRadioButton .form-group.has-error .control-label.rhqSubsidiaryPresence-label {color: #707070;}
 .page-new-license-apply #rhqSubsidiaryPresence .control-label {
 	color: #707070 !important;
     font-size: 15px !important;
+}
+
+[dir=ltr] .page-new-license-apply  .rhqSubsidiaryPresence-formRadioButtonDiv .help-block {
+        text-align: left;
+	    margin-bottom: 19px !important;
+		margin-top: 0p !important;
+	   font-size: var(--label-font);
+}
+
+[dir=rtl] .page-new-license-apply  .rhqSubsidiaryPresence-formRadioButtonDiv .help-block {
+        text-align: right !important;
+	    margin-bottom: 19px !important;
+		margin-top: 0px !important;
+	   font-size: var(--label-font);
 }
 
 .page-new-license-apply .rhqSelectBoxes .formSelectBox .form-group {
@@ -1270,7 +1284,9 @@ border-radius: 0px!important;
  }
 
  .page-new-license-apply .rqh-tables .help-block,
-.page-new-license-apply .rhqSelectBoxes .help-block	 {float:right !important;}
+.page-new-license-apply .rhqSelectBoxes .help-block	 {
+	margin-top: 6px;
+}
 
 .page-new-license-apply  .select.modal .modal-header > .close{
 color: #00a6be !important;

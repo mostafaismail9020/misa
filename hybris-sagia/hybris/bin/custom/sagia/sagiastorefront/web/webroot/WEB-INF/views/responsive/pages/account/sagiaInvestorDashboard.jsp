@@ -575,7 +575,10 @@
                                         </span>
 	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,30)} ...</h3>
 	                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
-	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="dashboard.goto.services.label"/>&nbsp;<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
+	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}">
+	                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;
+	                                    	<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a>
+	                                    </p>
 	                                </div>
 	                            </div>
 	                        </div>

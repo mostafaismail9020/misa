@@ -75,8 +75,8 @@
 <section class="mainSection mainSection_noPadding userDetail-block" style="overflow: visible;">
     <div class="container">
         <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder pb-0" style="overflow: visible;">
-            <div class="dashboardUser-wrapper col-md-12 mr-0 pt-md-3 px-0">
-                <div class="dashboardUser-left col-md-6 pr-0">
+            <div class="dashboardUser-wrapper col-md-12 mr-0 px-0">
+                <div class="dashboardUser-left col-md-6 pr-0 mt-2">
                     <div class="col">
                         <div class="dashboardUser-image">
                             <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">

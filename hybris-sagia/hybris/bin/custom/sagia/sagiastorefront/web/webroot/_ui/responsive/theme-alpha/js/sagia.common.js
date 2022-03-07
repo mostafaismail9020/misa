@@ -733,11 +733,11 @@ $("#simulator-close").on('click',function(){
 
 function LanguageToggle(lang){
     if(lang === "en"){
-        var url = window.location.href.replace('ar','en');
+        var url = window.location.href.replace('/ar/','/en/');
         window.location.href = url;
     }
     else if(lang === "ar"){
-        var url = window.location.href.replace('en', 'ar');
+        var url = window.location.href.replace('/en/', '/ar/');
         window.location.href = url;
     }
 }

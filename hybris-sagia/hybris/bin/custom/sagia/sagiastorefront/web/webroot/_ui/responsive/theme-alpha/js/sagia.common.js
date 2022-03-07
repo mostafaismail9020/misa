@@ -705,7 +705,7 @@ $(document).ready(function () {
         $(".float-button").toggleClass("float-button-up");
         $(".full-bg").fadeToggle();
         $("body").css("overflow",overflow);
-        $(this).html($(this).text() == 'Contact Us' ? "<img width='40' src=''>": 'Contact Us');
+        // $(this).html($(this).text() == 'Contact Us' ? "<img width='40' src=''>": 'Contact Us');
         overflow = (overflow == "hidden") ? "visible" : "hidden";
     });
 

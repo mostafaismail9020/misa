@@ -487,7 +487,7 @@ $(document).ready(function () {
         $(".popup").toggleClass("popup-up");
         $(".float-button").toggleClass("float-button-up");
         $(".full-bg").fadeToggle();
-        $(this).html($(this).text() == 'Contact Us' ? "<img width='40' src=''>": 'Contact Us');
+        // $(this).html($(this).text() == 'Contact Us' ? "<img width='40' src=''>": 'Contact Us');
         /*
         $("body").css("overflow", overflow); 
         $(this).html($(this).text() == 'Invest Now' ? "<img width='40' src='./images/close.png'>" : 'Invest Now');

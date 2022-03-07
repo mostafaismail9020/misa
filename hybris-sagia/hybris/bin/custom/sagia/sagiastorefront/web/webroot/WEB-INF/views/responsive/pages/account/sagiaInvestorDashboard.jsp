@@ -75,8 +75,8 @@
 <section class="mainSection mainSection_noPadding userDetail-block" style="overflow: visible;">
     <div class="container">
         <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder pb-0" style="overflow: visible;">
-            <div class="dashboardUser-wrapper col-md-12 mr-0 pt-md-3 px-0">
-                <div class="dashboardUser-left col-md-6 pr-0">
+            <div class="dashboardUser-wrapper col-md-12 mr-0 px-0">
+                <div class="dashboardUser-left col-md-6 pr-0 mt-2">
                     <div class="col">
                         <div class="dashboardUser-image">
                             <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
@@ -575,7 +575,10 @@
                                         </span>
 	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,30)} ...</h3>
 	                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
-	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="dashboard.goto.services.label"/>&nbsp;<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
+	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}">
+	                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;
+	                                    	<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a>
+	                                    </p>
 	                                </div>
 	                            </div>
 	                        </div>

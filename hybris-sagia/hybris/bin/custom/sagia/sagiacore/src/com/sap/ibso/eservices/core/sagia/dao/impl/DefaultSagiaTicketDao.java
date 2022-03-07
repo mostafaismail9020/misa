@@ -237,9 +237,9 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 	public List<CsCustomerEventModel> getScpiCustomerEvents(String convertedDate){
 		
 		final StringBuilder query = new StringBuilder();
-		query.append(" SELECT {PK} FROM { CsCustomerEvent ");
-		query.append(" } WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ");
-		query.append(" AND {creationtime} >= ?convertedDate ");
+		query.append(" SELECT {event.PK} FROM { CsCustomerEvent as event join CSInterventionType as type on {event.interventionType}={type.pk}");
+		query.append("} WHERE {event.sent2Scpi} is null or {sent2Scpi} = 0 ");
+		query.append(" AND {type.code}= 'TicketMessage' AND {event.creationtime} >= ?convertedDate ");
 		final Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("convertedDate", convertedDate);
 		final SearchResult<CsCustomerEventModel> result = getFlexibleSearchService().search(query.toString(), parameters);

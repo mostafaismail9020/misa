@@ -175,13 +175,13 @@
 						</div>
 						--%>
 						<div class="col-md-12 register-form register-form-names ">
-							<div class="col-12 col-md-2 register-form focus-on-change register-forms-select px-0 right_arrowdd">
+							<div class="col-12 col-xl-2 register-form focus-on-change register-forms-select px-0 right_arrowdd">
 								<formElement:formSelectBox idKey="quickregistration.register.title"
 										labelKey="register.title" selectCSSClass="form-control jqTitle js-select-required register-user-details"
 										path="titleCode" mandatory="true" skipBlank="false" labelCSS="register-user-info-label select-label-mandatory"
 										skipBlankMessageKey="form.select.empty" items="${titles}"/>	
 							</div>
-							<div class="col-12 col-md-5 focus-on-change ">
+							<div class="col-12 col-xl-5 focus-on-change ">
 								<%--
 								<label class="register-user-info-label" for="reg-fName">First Name<span class="mandatory">*</span></label>
 								<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-fName" name="FName" />
@@ -190,7 +190,7 @@
 										labelKey="register.firstName" path="firstName" inputCSS="js-quickregister-firstname register-user-details" labelCSS="control-label_mandatory register-user-info-label"
 										mandatory="true"/>
 							</div>
-							<div class="col-12 col-md-5 focus-on-change">
+							<div class="col-12 col-xl-5 focus-on-change">
 								<%--
 								<label class="register-user-info-label" for="reg-lName">Last Name<span class="mandatory">*</span></label>
 								<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-lName" name="LName" />
@@ -344,7 +344,7 @@
 							<i toggle="#password-field" class="fa fa-eye-slash toggle-password2" aria-hidden="true"  id="toggleCPassword"></i>
 							<div class="error-msg"></div>
 						</div>
-						<div class="col-md-12 register-form focus-on-change">
+						<div class="col-md-12 register-form focus-on-change d-flex">
 							<div class="form-item register-form-terms-condition">
 								<input id="termsAndConditionsRegister" name="termsAndConditionsChecked" placeholder="." class="reg-terms-checkbox " type="checkbox" value="true">
 								<input type="hidden" name="_termsAndConditionsChecked" value="on">

@@ -138,6 +138,9 @@
 	.login-right-wrapper{
 		width: 800px;
 	}
+	.formSelectBox .form-group label{
+		left: 30px!important;
+	}
   }
 
   .register-account-investor-screen3,.register-account-investor-screen4{	
@@ -187,9 +190,9 @@
 	font-weight: 500;
 	margin-top: 8%;
   }
-    .register-account-investor-screen3 .select2-container .select2-selection--single .select2-selection__rendered{
-        padding: 10px;;
-    }
+    // .register-account-investor-screen3 .select2-container .select2-selection--single .select2-selection__rendered{
+    //     padding: 10px;;
+    // }
 
   .login-role-selection{
 	display: flex;
@@ -383,7 +386,7 @@
   }
   [dir="rtl"] .register-user-info-label{
 	margin-left: initial !important;
-	margin-right: 25px !important;
+	// margin-right: 25px !important;
   }
 //   .register-forms-select .formSelectBox .form-group{
 // 	margin-bottom: 0px !important;
@@ -527,6 +530,7 @@
   }
   [dir="rtl"] .register-terms{
 	  text-align: right;
+	  margin-right: 20px !important;
   }
   .reg-terms-checkbox-span span{
 	width: 24px;
@@ -1086,6 +1090,11 @@
 	  }
 
 }
+@media screen and (min-width: 768px) and (max-width: 1023.9px) {
+	.right_arrowdd .select2.select2-container .select2-selection:after{
+		right: 15px;
+	}
+}
   @media (min-width:992px) and (max-width:1200px) {
 	.captcha-pos{
 		// transform: translateX(20%);
@@ -1139,9 +1148,9 @@
 	.accountLogin-content-headline, #sagia-cms-help-quick-registration-helper p, #sagia-cms-help-quick-registration-helper ul{
 	  width: 94%;
 	}
-	.login-right-wrapper{
-	  margin: 3% auto;
-	}
+	.login-right-wrapper,.login-screen{
+		margin: auto;
+	  }
 	.login-container{
 	  margin: 0;
 	}
@@ -1149,14 +1158,17 @@
 	  margin: 0;
 	  padding: 0;
 	}
+	.forgotPassword-container .panelModule,  .reset-pw-wrapper-dt{
+		margin-top:auto;
+	}
 	
-	.country-code-mobile{
-	  display: block;
-	}
-	.country-code-mobile div:nth-child(1){
-		padding-left: 0px;
-		padding-right: 0px;
-	}
+	// .country-code-mobile{
+	//   display: block;
+	// }
+	// .country-code-mobile div:nth-child(1){
+	// 	padding-left: 0px;
+	// 	padding-right: 0px;
+	// }
 
 	.register-language{
 	  margin-top: 0%;

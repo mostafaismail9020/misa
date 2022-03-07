@@ -37,9 +37,11 @@
                         <div class="dashboardUser-entry">
                             <div class="dashboardUser-label d-none"><spring:theme code="general.company"/></div>
                             <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                            <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>
-                            	<span class="clr_gld">&nbsp;<fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span>
-                            </span>
+                            <c:if test="${not empty customerLastLogon}">
+                                <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>
+                                    <span class="clr_gld">&nbsp;<fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span>
+                                </span>
+                            </c:if>
                         </div>
                     </div>
                 </div>

@@ -92,7 +92,11 @@
                             <div class="dashboardUser-col">
                                 <div class="dashboardUser-entry ml-md-3">
                                     <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>&nbsp;&nbsp;<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy, hh:mm a"/></span></span>
+                                    <c:if test="${not empty customerLastLogon}">
+                                        <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>&nbsp;&nbsp;
+                                            <span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy, hh:mm a"/></span>
+                                        </span>
+                                    </c:if>
                                 </div>
                             </div>
                         </div>
@@ -573,7 +577,7 @@
 	                                    <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" />
                                             <!-- &nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /> -->
                                         </span>
-	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,30)} ...</h3>
+	                                    <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,27)} ...</h3>
 	                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
 	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}">
 	                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;

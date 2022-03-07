@@ -55,7 +55,7 @@
                         </div>
                     
                         <div class="col-md-12 register-form form-floating country-code-mobile">														
-                            <div class="col-xl-5 col-12 mx-0 px-0 register-language" id="loginSelectLanguageDiv">
+                            <div class="col-xl-5 col-8 mx-0 px-0 register-language" id="loginSelectLanguageDiv">
                                 <span ><spring:theme code="general.language"/></span>
                                 <label class="switch">
                                     <input type="checkbox" id="loginSelectLanguageSelect">

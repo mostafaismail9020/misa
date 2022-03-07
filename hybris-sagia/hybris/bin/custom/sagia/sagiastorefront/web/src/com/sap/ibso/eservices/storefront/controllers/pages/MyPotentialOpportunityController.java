@@ -62,6 +62,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.investsaudi.portal.core.service.ContactTicketBusinessService;
+import de.hybris.platform.enumeration.EnumerationService;
+import java.util.stream.Collectors;
+
 
 
 @Controller
@@ -92,6 +95,9 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	
 	@Autowired
 	private ModelService modelService;
+	
+	@Autowired
+	private EnumerationService  enumerationService;
 	
 	
 	@Autowired
@@ -168,9 +174,9 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 		List<Priority> priorities = sagiaUserFacade.getPriorityEnumValues();
 
 		model.addAttribute("ticketId", ticketId);
-		model.addAttribute("incidentCategories", incidentCategories);
-		model.addAttribute("serviceCategories", serviceCategories);
-		model.addAttribute("priorities", priorities);
+		model.addAttribute("incidentCategories", incidentCategories.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value))));
+		model.addAttribute("serviceCategories", serviceCategories.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value))));
+		model.addAttribute("priorities", priorities.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value))));
 
 		model.addAttribute("sagiaServiceRequestFormData", sagiaServiceRequestFormData);
 		storeCmsPageInModel(model, getContentPageForLabelOrId(SERVICE_REQUEST_CMS_PAGE));
@@ -197,25 +203,18 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	@RequestMapping(value = "/{ticketId}/uploadAttachment",method = RequestMethod.POST,consumes = { MediaType.MULTIPART_FORM_DATA_VALUE,MediaType.APPLICATION_FORM_URLENCODED_VALUE,MediaType.TEXT_PLAIN_VALUE})
     public String uploadAttachment(final Model model, @ModelAttribute("contactTicketForm") final ContactTicketForm contactTicketForm,
 			final BindingResult bindingResult, @PathVariable("ticketId") final String ticketId,
-			final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel) throws CMSItemNotFoundException {
+			final HttpServletRequest request, final HttpServletResponse response) throws CMSItemNotFoundException {
 
-		boolean uploadAttachment = false;
+		
 		try {
 			if (null != contactTicketForm && null != contactTicketForm.getComment()) {
 				LOG.info("receieved the file");
 			}
-			byte[] bytes = contactTicketForm.getPdfAttachment().getBytes();
-			if(null !=bytes && bytes.length > 0) {
-        		uploadAttachment = true;
-        	}
 			sagiaUserFacade.saveTicketAttachments(contactTicketForm.getPdfAttachment().getBytes(), ticketId);
 		} catch (IOException ex) {
 			LOG.error("Exception in uploading attachment: " + ex);
 		}
-        if (uploadAttachment) {
-			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER,
-					"Document Uploaded Successfully");
-		}
+
 		return "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
 		// set the media model to attachments attribute in contact ticket model
 	}

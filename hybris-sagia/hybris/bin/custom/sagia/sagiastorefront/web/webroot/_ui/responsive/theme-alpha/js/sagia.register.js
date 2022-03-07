@@ -1610,3 +1610,19 @@ var _updateSlot = function (picker, data) {
 function recaptchaCallback(){
 	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');	
 }
+
+$("#quickregistrationEmail").on('blur',function(){
+    if($(this).parent().hasClass('has-error')){
+        var $element = $(".js-register-quick-email");
+
+        $element.closest('.formInputBox').find('input').css('width','100%');
+        $element.closest('.formInputBox').find('.form-group').css('display','block');
+        $($element).closest('.formInputBox').find('.verified').remove();
+    }
+    else{
+        $element.closest('.formInputBox').find('input').css('width','90%');
+        $element.closest('.formInputBox').find('.form-group').css('display','flex');
+        $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
+    }
+})

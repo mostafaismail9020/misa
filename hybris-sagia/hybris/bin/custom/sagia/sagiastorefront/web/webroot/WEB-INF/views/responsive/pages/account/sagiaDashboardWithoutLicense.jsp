@@ -37,9 +37,11 @@
                         <div class="dashboardUser-entry">
                             <div class="dashboardUser-label d-none"><spring:theme code="general.company"/></div>
                             <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
-                            <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>
-                            	<span class="clr_gld">&nbsp;<fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span>
-                            </span>
+                            <c:if test="${not empty customerLastLogon}">
+                                <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/>
+                                    <span class="clr_gld">&nbsp;<fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span>
+                                </span>
+                            </c:if>
                         </div>
                     </div>
                 </div>
@@ -151,7 +153,8 @@
                         <c:otherwise>
                         	<div class="globalMessage-action d-flex">
                         		<button data-target="#license-application-simulator" data-toggle="modal" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 mr-sm-3 btn-simulator">
-                        			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
+                        			<!--<spring:theme code="dashboard.withoutlicense.startsimulation"/>-->
+                                    Invest Saudi Overview
                         			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
                         		</button> 
                                 <button class="btn-dashboard text-uppercase js-license-apply" onclick="applyNewTnC(event,'NewApply');">
@@ -440,16 +443,19 @@
 </section>
 
 <div class="modal fade licenseSimulatorPopup" id="license-application-simulator"  tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
+    <button type="button" data-dismiss="modal" id="simulator-close" class="license-simulator-modal-close right-close  top-0 end-0">
+        X
+    </button>
+	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
         <div class="modal-content dashboard-pop-up">
-            <div class="modal-header">
+            <!--<div class="modal-header">
                 <button type="button" data-dismiss="modal" id="simulator-close" class="license-simulator-modal-close right-close  top-0 end-0">
                     <img class="" src="${commonResourcePath}/images/Close.png"/>
                 </button>
-            </div>
+            </div>-->
             <div class="modal-body">
                 <div class=" ">
-                    <div class="embed-responsive embed-responsive-16by9 mb-3">
+                    <div class="embed-responsive embed-responsive-16by9">
                         <iframe id="simulator-video" class="embed-responsive-item" src="https://www.youtube.com/embed/u3sQ7TDFUWs" allowfullscreen></iframe>
                     </div>
                 </div>

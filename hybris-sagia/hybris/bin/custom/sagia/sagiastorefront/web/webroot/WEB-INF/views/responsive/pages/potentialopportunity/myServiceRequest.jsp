@@ -99,7 +99,7 @@
 						<div class="form-group">
 							<form:select path="incidentCategory" id="incidentCategory" class="js-select2-oneColumn js-select2-oneColumn form-control select2-hidden-accessible">
 								<c:forEach var="incidentCategoryValue" items="${incidentCategories}">
-									<form:option value="${incidentCategoryValue}">${incidentCategoryValue}</form:option>
+									<form:option value="${incidentCategoryValue.key}">${incidentCategoryValue.value}</form:option>
 								</c:forEach>
 							</form:select> 
 							<label class="control-label control-label_mandatory" for="qm1Role">
@@ -112,8 +112,9 @@
 					<div class="formSelectBox">
 						<div class="form-group">
 							<form:select path="serviceCategory" id="serviceCategory" disabled="true" class="js-select2-oneColumn js-select2-oneColumn form-control select2-hidden-accessible">
-								<c:forEach var="serviceCategoryValue" items="${serviceCategories}">
-									<form:option value="${serviceCategoryValue}">${serviceCategoryValue}</form:option>
+								<c:forEach var="serviceCategoryValue" items="${serviceCategories}"> 
+									<form:option value="${serviceCategoryValue.key}">${serviceCategoryValue.value}
+									</form:option>
 								</c:forEach>
 							</form:select> 
 							<label class="control-label control-label_mandatory" for="qm1Role">
@@ -128,7 +129,7 @@
 						<div class="form-group">
 							<form:select path="priority" id="priority" class="js-select2-oneColumn js-select2-oneColumn form-control select2-hidden-accessible">
 								<c:forEach var="priorityValue" items="${priorities}">
-									<form:option value="${priorityValue}">${priorityValue}</form:option>
+									<form:option value="${priorityValue.key}">${priorityValue.value}</form:option>
 								</c:forEach>
 							</form:select>
 							<label class="control-label control-label_mandatory" for="qm1Role">

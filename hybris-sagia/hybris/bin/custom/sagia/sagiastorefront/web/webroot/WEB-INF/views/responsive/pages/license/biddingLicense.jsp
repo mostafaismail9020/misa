@@ -12,9 +12,7 @@
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 
 <script>
-    var configuredFileSize = $ {
-        maxUploadSize
-    };
+    var configuredFileSize = ${maxUploadSize};
 </script>
 
 <div class="mainSection mainSection_white">

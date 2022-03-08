@@ -117,7 +117,7 @@
                         <div class=" user-icon mr-1 mr-sm-3 icon-appointments">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
                             <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg"/>
                             </a>
                         </div>
                         <div class=" user-icon mr-1 mr-sm-3 icon-notification">
@@ -128,7 +128,7 @@
                                 <c:if test="${hasLicense or hasAwaitingPayment}">
                                     <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
                                         <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                        <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
+                                        <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg"/>
                                     </button>
                                 </c:if>
                                 <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -143,7 +143,7 @@
                         </div>
                         <div class=" user-icon mr-1 mr-sm-3 icon-profile">
                             <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
-                            	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
+                            	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/>
                             </a>
                         </div>
                     </div>

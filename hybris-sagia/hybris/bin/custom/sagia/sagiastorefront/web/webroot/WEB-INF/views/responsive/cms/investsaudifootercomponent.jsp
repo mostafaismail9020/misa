@@ -170,7 +170,7 @@
                            <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-3 f-coll">
                                	<h2 class="text-uppercase display-7"><spring:theme code="portal.footer.apply.license.label"/></h2>
                                	<p class="text"><spring:theme code="portal.footer.journey.start.text"/></p>
-                               	<ul class="list-unstyled list-inline">
+                               	<ul class="list-unstyled list-inline footer-column-text">
                                    	<c:if test="${userLoggedIn eq 'false'}">
                                    		<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
                                    		<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>

@@ -250,6 +250,9 @@
 			font-size: 11px!important;
 		}
 	}	
+	[dir=rtl] #topbar .social-links a{
+   		 margin-left: 15px;
+	}
 </style>
 <c:url value="false" var="userLoggedIn"/>
 <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">

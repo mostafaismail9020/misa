@@ -244,6 +244,11 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+	}
+	@media (min-width: 1200px) and (max-width: 1500px){
+		.social-links #logutModal span, .social-links .login-details span {
+			font-size: 11px!important;
+		}
 	}	
 </style>
 <c:url value="false" var="userLoggedIn"/>

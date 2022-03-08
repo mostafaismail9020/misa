@@ -19,16 +19,16 @@
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
                 <h1 data-aos="fade-up"><spring:theme code="my.potential.opportunity.label"/></h1>
             </div>
-            <div class="profile-icons float-right">
-				<div class="dashboardUser-right col-md-6">
-					<div class="col-6 d-flex">
-						<div class=" user-icon mr-5">
+             <div class="row profile-icons float-right">
+				<div class="dashboardUser-right">
+					<div class="d-flex">
+						<div class=" user-icon ml-1 mr-2">
 							<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
 							<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
 								<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg"/>
 							</a>
 						</div>
-						<div class=" user-icon mr-5">
+						<div class=" user-icon mr-3 ml-3">
 							<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
 							<div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
 								<c:if test="${hasLicense or hasAwaitingPayment}">

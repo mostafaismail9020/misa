@@ -452,8 +452,8 @@
   }
 .page-dashboard-without-license .licenseSimulatorPopup .modal-content .modal-body{
 	height: 100vh;
-	overflow-y: auto;
-	overflow-x: auto;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 .page-dashboard-without-license .licenseSimulatorPopup .modal-content .modal-header{
   text-align: right;
@@ -731,4 +731,10 @@
 #license-application-simulator .license-simulator-modal-close.right-close:hover{
 	background-color: #0097a9; 
 	color: #fff;
+}
+
+/***08-03-2022***/ 
+#license-application-simulator {
+	z-index: 99999;
+	background-color: rgba(0, 0, 0, 0.33);
 }

@@ -7,13 +7,13 @@
 <div class="modal fade" id="termsAndConditionsResponseApplyModal"  tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header d-none">
                 <div class="modal-title"></div>
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                     <icon:close/>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body terms-conditions-content">
                 <div class="scrollWrapper popup-body">
                     <div class="scrollWrapper-inner pt-0">
                     <h4 class="title-top pb-3"><spring:message code="apply.for.new.license.terms.conditions"/></h4>

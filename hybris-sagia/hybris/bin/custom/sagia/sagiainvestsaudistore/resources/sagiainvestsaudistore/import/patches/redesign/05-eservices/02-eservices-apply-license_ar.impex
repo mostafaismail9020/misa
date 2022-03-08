@@ -30,7 +30,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                   <div class=""tab-pane active"" id=""1a"">
                       <div class=""text-center"">
                         <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">طريق التقديم على الترخيص الاستثماري</h4>
-                        <h5 class=""pt-5 dashboard-paragraph-color"">حتى تبدأ نشاطك الاستثماري داخل المملكة، يجب عليك استخراج رخصة استثمارية. وتعد وزارة الاستثمار الجهة المسؤولة عن تقديم كافة الخدمات للمستثمرين. مع الأخذ بالاعتبار بأن التراخيص الاستثمارية تختلف باختلاف متطلباتها.
+                        <h5 class=""dashboard-paragraph-color"">حتى تبدأ نشاطك الاستثماري داخل المملكة، يجب عليك استخراج رخصة استثمارية. وتعد وزارة الاستثمار الجهة المسؤولة عن تقديم كافة الخدمات للمستثمرين. مع الأخذ بالاعتبار بأن التراخيص الاستثمارية تختلف باختلاف متطلباتها.
                         </h5>
                       </div>
                       <div class=""d-flex justify-content-around pt-5"">

@@ -8,7 +8,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true"/>
 <form id="changeUsername">
- <div class="user-status pt-3 pb-5">
+ <div class="user-status py-3">
                 <spring:theme code="updateUsername.current"/>&nbsp;
                 <span id="currentUsername"></span>
             </div>

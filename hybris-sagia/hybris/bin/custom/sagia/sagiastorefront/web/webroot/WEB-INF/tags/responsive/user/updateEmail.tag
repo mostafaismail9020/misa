@@ -9,7 +9,7 @@
 <spring:url value="/my-sagia/update-email" var="updateEmailURL"/>
 
 <form id="changeEmail" name="changeEmail">
-<div class="user-status pt-3 pb-5">
+<div class="user-status py-3">
   <spring:theme code="updateEmail.current"/>&nbsp;
                  <span id="currentEmail"></span>
             </div>

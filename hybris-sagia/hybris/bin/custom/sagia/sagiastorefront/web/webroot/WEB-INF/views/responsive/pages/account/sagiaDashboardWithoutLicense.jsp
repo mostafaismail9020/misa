@@ -256,7 +256,7 @@
 		                   <spring:theme code="dashboard.license.letus.help.you.text"/>
 		                </span>
 		            </div>
-		            <div class="firstBlock-contact d-flex row my-5">
+		            <div class="firstBlock-contact d-flex row mt-5 mb-3">
                         <div class="firstBlock-contact-local line-after col-md-4">
                             <div>
                                 <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>

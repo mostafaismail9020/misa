@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" user-icon mr-1 mr-sm-3">
+                    <div class=" user-icon mr-1 mr-sm-3 icon-profile">
                         <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
                             <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
                         </a>

@@ -303,7 +303,7 @@
                             </div>
                         </div>
 		            </div>
-                    <div class="row ">
+                    <div class="row mb-3">
                         <div class="col-12 text-center">                            
                             <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
                         </div>

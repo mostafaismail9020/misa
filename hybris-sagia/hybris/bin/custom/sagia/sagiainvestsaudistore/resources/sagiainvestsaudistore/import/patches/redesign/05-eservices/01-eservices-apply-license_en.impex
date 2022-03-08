@@ -102,7 +102,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                   <div class=""tab-pane"" id=""2a"">
                       <div class=""text-center"">
                         <h4 class=""apply-license-header pt-5 dashboard-heading-title-color"">How to apply for a Bidding Certificate</h4>
-                        <h5 class=""pt-5 dashboard-paragraph-color"">The Bidding Certificate granted to entities that wishing to submit bids for governmental projects according to the terms on investment services manual
+                        <h5 class=""dashboard-paragraph-color"">The Bidding Certificate granted to entities that wishing to submit bids for governmental projects according to the terms on investment services manual
                         </h5>
                       </div>
                       <div class=""d-flex justify-content-around pt-5"">

@@ -398,7 +398,7 @@ SAGIA.eServiceTour = {
 					}
 
 					panelWidth = bodyWidth+'px';
-					panelTransform = 'translate(' + (moveByPanel > 0 ? 100 : -50 ) +'px,100%)';
+					panelTransform = 'translate(' + (moveByPanel > 0 ? 120 : -50 ) +'px,100%)';
 
 					panelElement.css({
 						transform: panelTransform,

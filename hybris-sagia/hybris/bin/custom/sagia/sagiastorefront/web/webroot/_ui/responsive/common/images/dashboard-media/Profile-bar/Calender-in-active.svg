@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Calender-w-50x50" transform="translate(13.869 16.293)">
+    <line id="Line_388" data-name="Line 388" x2="2.708" transform="translate(13.938 -1.005)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_389" data-name="Line 389" x2="2.143" transform="translate(9.371 -1.005)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_390" data-name="Line 390" x2="2.702" transform="translate(4.228 -1.005)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+    <g id="Group_1324" data-name="Group 1324" transform="translate(-13.869 -16.293)">
+      <g id="Ellipse_119" data-name="Ellipse 119" fill="#fff" stroke="#00a6be" stroke-width="3">
+        <circle cx="25" cy="25" r="25" stroke="none"/>
+        <circle cx="25" cy="25" r="23.5" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_1358" data-name="Group 1358" transform="translate(-3.145 -3.582)">
+      <g id="Group_1360" data-name="Group 1360" transform="translate(0)">
+        <path id="Path_2207" data-name="Path 2207" d="M58.126,34v1.106a1.573,1.573,0,0,1-3.126,0V34" transform="translate(-50.556 -31.569)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2208" data-name="Path 2208" d="M55,3.435V2.4a1.573,1.573,0,0,1,3.126,0V3.435" transform="translate(-50.556 -1.004)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2209" data-name="Path 2209" d="M122.126,34v1.106a1.573,1.573,0,0,1-3.126,0V34" transform="translate(-109.289 -31.569)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2210" data-name="Path 2210" d="M119,3.435V2.4a1.573,1.573,0,0,1,3.126,0V3.435" transform="translate(-109.289 -1.004)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2211" data-name="Path 2211" d="M181.126,34v1.106a1.573,1.573,0,0,1-3.126,0V34" transform="translate(-163.433 -31.569)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2212" data-name="Path 2212" d="M178,3.435V2.4a1.573,1.573,0,0,1,3.126,0V3.435" transform="translate(-163.433 -1.004)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2213" data-name="Path 2213" d="M245.126,34v1.106a1.573,1.573,0,0,1-3.126,0V34" transform="translate(-222.166 -31.569)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2214" data-name="Path 2214" d="M242,3.435V2.4a1.573,1.573,0,0,1,3.126,0V3.435" transform="translate(-222.166 -1.004)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_391" data-name="Line 391" x2="27.54" transform="translate(0.097 6.969)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_392" data-name="Line 392" x2="2.977" transform="translate(4.563 10.691)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_393" data-name="Line 393" x2="2.977" transform="translate(9.773 10.691)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_394" data-name="Line 394" x2="2.977" transform="translate(14.983 10.691)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_395" data-name="Line 395" x2="3.722" transform="translate(19.449 10.691)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2215" data-name="Path 2215" d="M23.962,34h3a1.691,1.691,0,0,1,1.775,1.591V53.358a1.691,1.691,0,0,1-1.775,1.591H2.775A1.691,1.691,0,0,1,1,53.358V35.591A1.691,1.691,0,0,1,2.775,34H5.444" transform="translate(-1 -31.568)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_396" data-name="Line 396" x2="2.18" transform="translate(17.666 2.431)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_397" data-name="Line 397" x2="1.709" transform="translate(12.884 2.431)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_398" data-name="Line 398" x2="2.191" transform="translate(7.554 2.431)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_399" data-name="Line 399" x2="2.977" transform="translate(4.563 13.668)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_400" data-name="Line 400" x2="2.977" transform="translate(9.773 13.668)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_401" data-name="Line 401" x2="2.977" transform="translate(14.983 13.668)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_402" data-name="Line 402" x2="3.722" transform="translate(19.449 13.668)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_403" data-name="Line 403" x2="2.977" transform="translate(4.563 16.645)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_404" data-name="Line 404" x2="2.977" transform="translate(9.773 16.645)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_405" data-name="Line 405" x2="2.977" transform="translate(14.983 16.645)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_406" data-name="Line 406" x2="3.722" transform="translate(19.449 16.645)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_2216" data-name="Path 2216" d="M4,0" transform="translate(8.751 17.344)" fill="none" stroke="#00a6be" stroke-width="2"/>
+        <line id="Line_411" data-name="Line 411" x2="2.977" transform="translate(4.563 19.623)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_412" data-name="Line 412" x2="2.977" transform="translate(9.773 19.623)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_413" data-name="Line 413" x2="2.977" transform="translate(14.983 19.623)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_414" data-name="Line 414" x2="3.722" transform="translate(19.449 19.623)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

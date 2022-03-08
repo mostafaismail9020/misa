@@ -53,7 +53,7 @@
                             <c:if test="${hasLicense or hasAwaitingPayment}">
                                 <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
                                     <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                    <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
+                                    <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg"/>
                                 </button>
                             </c:if>
                             <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class=" user-icon mr-1 mr-sm-3 icon-profile">
                         <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
-                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>
+                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/>
                         </a>
                     </div>
                 </div>
@@ -231,7 +231,7 @@
 		                                        <span class="d-news-update-date"><fmt:formatDate value="${currentNews.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="MMMM" />
                                                     <!-- &nbsp;<fmt:formatDate value="${currentNews.newsDate}" pattern="YY" /> -->
                                                 </span>
-                                                <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,28)} ...</h3>
+                                                <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,25)} ...</h3>
 		                                        <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
 		                                        <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
 		                                    </div>

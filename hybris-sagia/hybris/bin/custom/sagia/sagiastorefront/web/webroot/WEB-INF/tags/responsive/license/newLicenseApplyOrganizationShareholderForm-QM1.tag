@@ -185,7 +185,7 @@
 <%--                    <div class="help-block"></div>--%>
 <%--                </div>--%>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6"  id="parent-company-wrapper">
                 <c:set var="parentCompanyNameTooltip">
                     <span class="formInputBox-text formInputBox-text_tip js-tip"
                           style="position: relative;z-index: 1000;"

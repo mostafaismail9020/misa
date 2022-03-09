@@ -201,7 +201,7 @@
                     </div>
                 </div>
 
-                <button type="reset" class="btn btn_outline btn_action_width" onclick="window.location.href='${encodedContextPath}">
+                <button type="reset" class="btn btn_outline btn_action_width" onclick="window.location.href='${encodedContextPath}/legalconsultations/new'">
                     <spring:theme code="general.cancel"/>
                 </button>
 

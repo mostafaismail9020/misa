@@ -1451,7 +1451,7 @@
 													<span><spring:theme
 															code="text.account.profile.license.shareholders.isDelegate" /></span>
 												</div>
-												<div class="col-md-12 col-lg-5">
+												<div class="col-md-12 col-lg-5 deligate-info-wrapper">
 													<div class="formRadioBox deligate-info-form">
 														<div class="form-group">
 															<div class="form-item">

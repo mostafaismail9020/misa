@@ -121,13 +121,13 @@
 			<button  class="btn-dashboard responsive-btn-sector dashboard-invest-btn explore-all-btn">
 				<c:if test="${empty featuredOpportunities}">
 					<a class="text-white text-uppercase" href="${encodedContextPath}/sectors-opportunities/opportunities" >
-						<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
+						<spring:theme code="text.dashboard.without.license.exploreOpportunities"/>&nbsp;
 						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
 					</a>
 				</c:if>
 				<c:if test="${not empty featuredOpportunities}">
 					<a class="text-white text-uppercase" href="${encodedContextPath}/sectors-opportunities/${customerSectorCategory.code}">
-						<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
+						<spring:theme code="text.dashboard.without.license.exploreOpportunities"/>&nbsp;
 						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
 					</a>
 				</c:if>

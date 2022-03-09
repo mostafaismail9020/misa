@@ -278,12 +278,14 @@
                         </dl>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div id="reviewLicenseYearSection">
-                        <dl class="dlList">
-                            <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
-                                	<dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
-                       </dl>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div id="reviewLicenseYearSection">
+                            <dl class="dlList">
+                                <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
+                                        <dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
+                        </dl>
+                        </div>
                     </div>
                 </div>
 

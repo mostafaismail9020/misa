@@ -313,9 +313,10 @@ $(".register-investor-screen3-btn-back").on('click',function(){
 	$('.register-account-screen').removeClass('next-hide');
 	$('.register-account-investor-screen3').addClass('next-hide');
 })
-$(".error, .js-quickregister-firstname, .js-quickregister-lastname , .js-quickregister-company, .js-quick-mobile-number, #quickregistrationEmail , .jqTitle , .jqSector, .jqCountry  ").on('change',function(){
+$(".error, .jqTitle, .js-quickregister-firstname, .js-quickregister-lastname , .js-quickregister-company, .js-quick-mobile-number, #quickregistrationEmail , .jqTitle , .jqSector, .jqCountry  ").on('change',function(){
 	var wto;
 	wto = setTimeout(function() {
+	var $fNametitle = $(".jqTitle").val();
 	var $fName = $(".js-quickregister-firstname").val();
 	var $lName = $(".js-quickregister-lastname").val();
 	var $Company = $(".js-quickregister-company").val();
@@ -325,7 +326,7 @@ $(".error, .js-quickregister-firstname, .js-quickregister-lastname , .js-quickre
 	var $error = $(".error").text() === "" ? true : false; 
 
 
-	if($fName && $lName && $Company && $EmailId && $country && $mobile&& $error){
+	if(($fNametitle && $fName && $lName && $Company && $EmailId && $country && $mobile&& $error){
 		$('.register-investor-screen3-btn-next').addClass('active')
 		$(".register-investor-screen3-btn-next svg").removeClass('next-hide');
 	}

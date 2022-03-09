@@ -212,8 +212,7 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 	public List<ContactTicketModel> getScpiTickets(String convertedDate) {
 		final StringBuilder query = new StringBuilder();
 		query.append(" SELECT {PK} FROM { ContactTicket ");
-		query.append(" } WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ");
-		query.append(" AND {creationtime} >= ?convertedDate ");
+		query.append(" } WHERE {creationtime} >= ?convertedDate AND {sent2Scpi} is null OR {sent2Scpi} = 0 ");
 		final Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("convertedDate", convertedDate);
 		final SearchResult<ContactTicketModel> result = getFlexibleSearchService().search(query.toString(), parameters);
@@ -225,8 +224,7 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 		
 		final StringBuilder query = new StringBuilder();
 		query.append(" SELECT {PK} FROM { ServiceRequest ");
-		query.append(" } WHERE {sent2Scpi} is null or {sent2Scpi} = 0 ");
-		query.append(" AND {creationtime} >= ?convertedDate ");
+		query.append(" } WHERE {creationtime} >= ?convertedDate AND {sent2Scpi} is null OR {sent2Scpi} = 0 ");
 		final Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("convertedDate", convertedDate);
 		final SearchResult<ServiceRequestModel> result = getFlexibleSearchService().search(query.toString(), parameters);
@@ -238,8 +236,7 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 		
 		final StringBuilder query = new StringBuilder();
 		query.append(" SELECT {event.PK} FROM { CsCustomerEvent as event join CSInterventionType as type on {event.interventionType}={type.pk}");
-		query.append("} WHERE {event.sent2Scpi} is null or {sent2Scpi} = 0 ");
-		query.append(" AND {type.code}= 'TicketMessage' AND {event.creationtime} >= ?convertedDate ");
+		query.append("} WHERE {type.code}= 'TicketMessage' AND {event.creationtime} >= ?convertedDate AND {event.sent2Scpi} is null OR {sent2Scpi} = 0 ");
 		final Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("convertedDate", convertedDate);
 		final SearchResult<CsCustomerEventModel> result = getFlexibleSearchService().search(query.toString(), parameters);

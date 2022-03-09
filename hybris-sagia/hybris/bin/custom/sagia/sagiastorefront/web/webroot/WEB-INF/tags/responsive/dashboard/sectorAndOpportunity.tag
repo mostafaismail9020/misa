@@ -142,7 +142,7 @@
 		        <div class="page-main-content mt-0">
 		            <div class="row">                                   
 		                 <c:forEach var="featuredOpportunity" items="${featuredOpportunities}" varStatus="status">
-		                     <div class="col-lg-4 col-md-6 col-sm-12 col-10 my-4">
+		                     <div class="col-lg-4 col-md-6 col-sm-12 col-10 mx-sm-auto my-4">
 		                         <!-- <a href="${encodedContextPath}${featuredOpportunity.opportunity.url}"> -->
 		                             <div class=" Inc-fearured-opp d-opportunities">
 		                                 <h2 class="Inc-fearured-opp-headtitle" title="${featuredOpportunity.opportunity.name}">${featuredOpportunity.opportunity.name}</h2>

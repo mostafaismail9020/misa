@@ -17,7 +17,7 @@
         <div class="dashboardWidget dash-fdi-survey js-dashboardWidget pt-3">
 		 <div class="dashboardWidget-body">
 		    <div class="dashboardWidgetTickets">
-		      <div class="tableModule tableModule_slim dashboardWidgetTickets-table">
+		      <div class="tableModule tableModule_slim dashboardWidgetTickets-table overflow-x-hidden">
 				<div class="dashboardWidget-body">
                   <div class="dashboardWidgetTickets">
                     <div class="tableModule tableModule_slim dashboardWidgetTickets-table">

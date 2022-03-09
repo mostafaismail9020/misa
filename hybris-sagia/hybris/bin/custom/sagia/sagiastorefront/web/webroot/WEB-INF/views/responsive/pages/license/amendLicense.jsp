@@ -15,50 +15,47 @@
 
 <div class="mainSection bg-white">
 	<div class="achievement_header">
-			<img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
-			<div class="container">
-					<div class="banner-container aos-init aos-animate container" data-aos="fade-up">
-							<h1 data-aos="fade-up">
-								<spring:theme code="license.amendlicense" />
-							</h1>
-					</div>
-					<div class="profile-icons float-right">
-							<c:if test="${hasLicense or hasAwaitingPayment}">
-									<div class="calendar">
-											<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
-													<span></span>
-											</a>
-									</div>
-									<div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
-										<c:if test="${hasLicense or hasAwaitingPayment}">
-											<button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
-												<span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-												<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
-											</button>
-										</c:if>
-										<div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
-										<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
-											<div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
-											<ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
-											<div class="sagiaNavigation-subPane-actions">
-												<a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
-											</div>
-										</div>
-									</div>
-							</c:if>
-							<div class="profile">
-									<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
-											<span></span>
-									</a>
-							</div>
-					</div>
+		<img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+		<div class="container">
+			<div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+				<h1 data-aos="fade-up"><spring:theme code="license.amendlicense" /></h1>
 			</div>
+			<div class="profile-icons float-right">
+				<c:if test="${hasLicense or hasAwaitingPayment}">
+						<div class="calendar">
+							<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+								<span></span>
+							</a>
+						</div>
+						<div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+							<c:if test="${hasLicense or hasAwaitingPayment}">
+								<button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+									<span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+									<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+								</button>
+							</c:if>
+							<div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+							<div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+								<div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+								<ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+								<div class="sagiaNavigation-subPane-actions">
+									<a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+								</div>
+							</div>
+						</div>
+				</c:if>
+				<div class="profile">
+					<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+						<span></span>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
 
 <div class="container">
-
 	<div class="mainSection mainSection_white mainSection_narrow mainSection_noPadding">
 		<div class="container">
 			<!-- <div class="mainSection-header">
@@ -145,20 +142,16 @@
 		<div class="serviceModule serviceModule_list mx-5 pt-4">
 			<div class="serviceModule-section">
 				<div class="serviceModule-content">
-					<div class="serviceModule-description">
-						<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.overview"/> </span>
-						<c:choose>
-							<c:when test="${empty sagiaService.description}">
-								<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
-							</c:when>
-							<c:otherwise>
-								<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
-							</c:otherwise>
-						</c:choose>
+					<div class="serviceModule-description">					
+						<c:if test="${not empty sagiaService.description}">	
+							<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.overview"/> </span>													
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
+						</c:if>
 					</div>
 				</div>
 			</div>
 		</div>
+		<%--  
 		<div class="serviceModule serviceModule_list mx-5">
 			<div class="serviceModule-section">
 				<div class="serviceModule-content">
@@ -227,11 +220,11 @@
 				</div>
 			</div>
 		</div>
+		--%>
 	</div>
 
 	<!-- <div class="mainSection mainSection_white mainSection_narrow">
-		<div class="container d-flex service-history">
-			
+		<div class="container d-flex service-history">			
 		</div>
 	</div> -->
 	<!-- <div class="mainSection mainSection_white mainSection_narrow mainSection_xsmallPaddingTop service-request service-wrapper service-wrapper-info mw-100 w-100 mt-5 mb-3"> -->
@@ -2393,5 +2386,5 @@ function closeErrorModal() {
   }
 }
 
-
 </script>
+

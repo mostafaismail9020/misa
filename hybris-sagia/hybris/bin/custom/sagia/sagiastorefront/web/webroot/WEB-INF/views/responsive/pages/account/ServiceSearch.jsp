@@ -234,13 +234,13 @@
                             <div class="p-4 serviceModule-detail  mx-2 border-top-0">
                                 <p class="INS_letter_set_para pb-3 mb-3 text-center">${category.value[0].category.description}</p>
                                 <c:forEach items="${category.value}" var="service">
-                                    <div id="serviceModule" class="serviceModule serviceModule_list mr-5">
+                                    <div id="serviceModule" class="serviceModule serviceModule_list license-service-list">
                                         <div class="serviceModule-section">
                                             <div class="serviceModule-content">
                                                 <div class="serviceModule-description">
                                                     <span class="serviceModule-headline cursor-pointer">${service.name}</span>
                                                     <div class="serviceModule-detail service-search-module">
-                                                        <div class="w-75 mr-2">
+                                                        <div class="w-75">
                                                             <p>${service.description}</p>
                                                         </div>
                                                         <div class="w-25 serviceModule-request">

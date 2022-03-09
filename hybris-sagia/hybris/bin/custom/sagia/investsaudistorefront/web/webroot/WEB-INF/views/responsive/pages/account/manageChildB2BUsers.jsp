@@ -72,17 +72,20 @@
         <tbody>
             <c:forEach items="${childB2BCustomers}" var="childUnit">
                 <tr class="responsive-table-item">
-                    <td ><input id ="${childUnit.uid}" name="b2bUsers" type = "checkbox" style="width:20px; height:20px"/></td>
-                    <td>${childUnit.title}</td>
-                    <td>${childUnit.firstName}</td>
-                    <td>${childUnit.lastName}</td>
-                    <td>${childUnit.email}</td>
-                    <td>${childUnit.mobileCountryCode} - ${childUnit.mobileNumber}</td>
-                    <td>${childUnit.role}</td>
-                    <td>${childUnit.unit.name}</td>
+                    <td><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.id" text="" /> -</span><input id ="${childUnit.uid}" name="b2bUsers" type = "checkbox" style="width:20px; height:20px"/></td>
+                    <td><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.Title" text="Title" /> -</span>${childUnit.title}</td>
+                    <td><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.firstName" text="First Name" /> -</span>${childUnit.firstName}</td>
+                    <td><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.lastName" text="Last Name" /> -</span>${childUnit.lastName}</td>
+                    <td><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.email" text="Email" /> -</span>${childUnit.email}</td>
+                    <td><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.mobileNumber" text="Mobile" /> -</span>${childUnit.mobileCountryCode} - ${childUnit.mobileNumber}</td>
+                    <td><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.role" text="Role" /> -</span>${childUnit.role}</td>
+                    <td><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.unit" text="Parent Unit" /> -</span>${childUnit.unit.name}</td>
                     <c:choose>
                         <c:when test="${childUnit.active}">
                             <td id="status">
+                                <span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b">
+                                    <spring:theme code="text.account.childUnits.status" text="User Status" /> -
+                                </span>
                                 <span id="status-${childUnit.uid}">
                                     <spring:theme code="text.account.childUnits.active.status" text="Unlocked" />
                                 </span>
@@ -90,6 +93,9 @@
                         </c:when>
                         <c:otherwise>
                             <td id="status">
+                                <span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b">
+                                    <spring:theme code="text.account.childUnits.status" text="User Status" /> -
+                                </span>
                                 <span id="status-${childUnit.uid}">
                                     <spring:theme code="text.account.childUnits.inactive.status" text="Locked" />
                                 </span>

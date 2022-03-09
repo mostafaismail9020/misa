@@ -35,11 +35,11 @@
                     </thead>
                         <tbody>
                             <c:forEach items="${existingChildUnits}" var="childUnit">
-                                <tr class="responsive-table-item">
-                                    <td class="">${childUnit.id}</td>
-                                    <td class="">${childUnit.name}</td>
-                                    <td class="">${childUnit.parentUnitId} [${childUnit.parentUnitName}]</td>
-                                    </tr>
+                                 <tr class="responsive-table-item">
+                                    <td class=""><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.id" text="ID" /> -</span>${childUnit.id}</td>
+                                    <td class=""><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.name" text="Name" /> -</span>${childUnit.name}</td>
+                                    <td class=""><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.parent.name" text="Parent Unit" /> -</span>${childUnit.parentUnitId} [${childUnit.parentUnitName}]</td>
+                                </tr>
                             </c:forEach>
                             </tbody>
                     </table>

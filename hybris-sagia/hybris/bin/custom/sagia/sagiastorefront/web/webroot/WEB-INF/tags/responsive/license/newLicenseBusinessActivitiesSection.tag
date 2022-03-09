@@ -106,7 +106,7 @@
                                 <div class="baModule-title"><spring:theme code="license.apply.choose.section"/></div>
                                 <div class="baModule-search">
                                     <div class="searchInputBox searchInputBox_dark">
-                                        <input class="searchInputBox-input" type="text" placeholder="Search"/>
+                                        <input class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                                 <div class="baModule-title"><spring:theme code="license.apply.choose.division"/></div>
                                 <div class="baModule-search">
                                     <div class="searchInputBox searchInputBox_dark">
-                                        <input class="searchInputBox-input" type="text" placeholder="Search"/>
+                                        <input class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                                 <div class="baModule-title"><spring:theme code="license.apply.choose.group"/></div>
                                 <div class="baModule-search">
                                     <div class="searchInputBox searchInputBox_dark">
-                                        <input class="searchInputBox-input" type="text" placeholder="Search"/>
+                                        <input class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +169,7 @@
                                 <div class="baModule-title"><spring:theme code="license.apply.choose.class"/></div>
                                 <div class="baModule-search">
                                     <div class="searchInputBox searchInputBox_dark">
-                                        <input class="searchInputBox-input" type="text" placeholder="Search"/>
+                                        <input class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@
                                 <div class="baModule-title"><spring:theme code="license.apply.choose.branch"/></div>
                                 <div class="baModule-search">
                                     <div class="searchInputBox searchInputBox_dark">
-                                        <input class="searchInputBox-input" type="text" placeholder="Search"/>
+                                        <input class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +219,7 @@
                                 <div class="baModule-title"><spring:theme code="license.apply.choose.activities"/></div>
                                 <div class="baModule-search">
                                     <div class="searchInputBox searchInputBox_dark">
-                                        <input class="searchInputBox-input" type="text" placeholder="Search"/>
+                                        <input class="searchInputBox-input" type="text" placeholder="<spring:theme code='storeFinder.search'/>"/>
                                     </div>
                                 </div>
                             </div>

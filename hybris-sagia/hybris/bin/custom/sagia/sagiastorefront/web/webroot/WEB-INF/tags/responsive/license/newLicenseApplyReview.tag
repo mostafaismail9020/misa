@@ -278,12 +278,14 @@
                         </dl>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div id="reviewLicenseYearSection">
-                        <dl class="dlList">
-                            <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
-                                	<dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
-                       </dl>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div id="reviewLicenseYearSection">
+                            <dl class="dlList">
+                                <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
+                                        <dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
+                        </dl>
+                        </div>
                     </div>
                 </div>
 
@@ -462,7 +464,7 @@
                 <hr class="contentModule-separator">
             </div>
         </div>
-
+		</c:if>
 
             <div id="reviewBasicInformationExtendedSection">
                 <div class="row">
@@ -665,7 +667,7 @@
                 </c:otherwise>
             </c:choose>
         </div>
-       </c:if>
+
         <div class="contentModule-section contentModule-section_noDivider" id="reviewShareholdersSection">
             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
                 <div class="contentModule-headline"><spring:theme code="license.apply.review.shareholders"/></div>
@@ -792,13 +794,7 @@
             </div>
             </div>
 
-            <div class="contentModule-actions contentModule-actions_spaceBetween">
-            <span>
-                <button id="requirementSubmitButton" type="button" class="btn" disabled="disabled"><spring:theme code="text.consent.button.accept"/></button>
-
-            </span>
-
-            </div>
+            
 
         </div>
 

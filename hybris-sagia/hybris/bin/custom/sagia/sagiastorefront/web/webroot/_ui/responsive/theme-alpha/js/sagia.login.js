@@ -326,7 +326,7 @@ $(".error, .jqTitle, .js-quickregister-firstname, .js-quickregister-lastname , .
 	var $error = $(".error").text() === "" ? true : false; 
 
 
-	if(($fNametitle && $fName && $lName && $Company && $EmailId && $country && $mobile&& $error){
+	if($fNametitle && $fName && $lName && $Company && $EmailId && $country && $mobile&& $error){
 		$('.register-investor-screen3-btn-next').addClass('active')
 		$(".register-investor-screen3-btn-next svg").removeClass('next-hide');
 	}

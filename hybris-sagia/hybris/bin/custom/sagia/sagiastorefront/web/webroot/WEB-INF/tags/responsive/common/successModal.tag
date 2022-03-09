@@ -17,7 +17,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn_slim" data-dismiss="modal"><spring:theme code="general.close"/></button>
 			</div>		
 		</div>
 	</div>

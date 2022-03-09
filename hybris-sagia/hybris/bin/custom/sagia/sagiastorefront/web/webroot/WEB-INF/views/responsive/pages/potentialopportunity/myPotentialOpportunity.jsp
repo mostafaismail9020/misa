@@ -175,7 +175,7 @@
            </span>
        </label>
 	
-       <button type="submit" id="submit" class="btn btn_submit_whitess" value="Upload" >Upload Documents</button>
+       <button type="submit" id="submit" class="btn btn_submit_whitess" value="Upload" ><spring:theme code="temporaryBiddingLicense.uploadDocuments"/></button>
 </div>
 </div> 
 </form:form>-->
@@ -190,7 +190,7 @@
 								<div class="serviceModule-section">
 									<div class="serviceModule-content">
 										<div class="serviceModule-description">
-											<span class="serviceModule-headline">Documents</span> 
+											<span class="serviceModule-headline"><spring:theme code="general.documents"/></span>
 											<div class="serviceModule-detail serviceList-description">
 												<div class="w-75"><p>N/A</p></div>
 											</div> 
@@ -281,7 +281,7 @@
 					<div class="serviceModule-section">
 						<div class="serviceModule-content">
 							<div class="serviceModule-description">
-								<span class="serviceModule-headline">Documents</span> 
+								<span class="serviceModule-headline"><spring:theme code="general.documents"/></span>
 								<div class="serviceModule-detail serviceList-description">
 									<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 									<form:form action="${encodedContextPath}/potentialOpportunity/${ticketId}/uploadAttachment" modelAttribute="contactTicketForm" method="POST" enctype="multipart/form-data">
@@ -293,7 +293,7 @@
 													<!--<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.png"/>-->
 													<input  id="pdfAttachment" name="pdfAttachment" class="form-control js-inputFile" type="file" accept="application/pdf" value=""/>
 													<input id="text08" name="text08" class="form-control" type="text" value="" placeholder="" readonly tabindex="-1"/>
-													<label class="control-label document_padd_wid100" for="">Choose File</label>
+													<label class="control-label document_padd_wid100" for=""><spring:theme code="my.potential.opportunity.upload.documents" /> </label>
 													<div class="form-icon form-icon_browse">
 														<svg xmlns="http://www.w3.org/2000/svg" class="" width="29" height="29" viewBox="0 0 29 29">
 														<g id="Icon_feather-upload" data-name="Icon feather-upload" transform="translate(-3.5 -3.5)">
@@ -308,7 +308,7 @@
 													</div> 
 													</div>
 													<div class="col-sm-6">
-														<button type="submit" id="submit" class="btn btn_Upload_Documents_height" value="Upload">Upload Documents</button>  
+														<button type="submit" id="submit" class="btn btn_Upload_Documents_height" value="Upload"><spring:theme code="temporaryBiddingLicense.uploadDocuments"/></button>
 													</div>
 													</div>
 												</div>

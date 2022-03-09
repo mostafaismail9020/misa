@@ -160,7 +160,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12"> NOTE: The file size must be under 2 MB </div>
+                            <div class="col-md-12"><spring:theme code="profile.enquiry.size"/></div>
                         </div>
 
                         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">

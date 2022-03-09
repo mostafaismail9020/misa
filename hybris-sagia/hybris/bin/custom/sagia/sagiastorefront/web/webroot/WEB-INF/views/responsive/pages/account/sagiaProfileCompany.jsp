@@ -23,7 +23,7 @@
         <div class="container">
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
                 <h1 data-aos="fade-up">
-                    <spring:theme code="general.account"/>
+                    <spring:theme code="genral.dashboard.profile"/>
                 </h1>
             </div>
             <div class="profile-icons float-right">

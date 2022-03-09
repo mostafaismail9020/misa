@@ -205,7 +205,7 @@
                                 <span class="contentModule-headline"><spring:theme code="realEstate.headertext.propinfo"/></span>
                                 <div class="contentModule-headline-border"></div>
                             </div>
-                            <div class="tableModule tableModule_striped" >
+                            <div class="tableModule tableModule_striped real-estate-table" >
 					            <table class="tableModule-table" id="deedTable">
 					                <thead class="tableModule-head">
 					                    <tr>

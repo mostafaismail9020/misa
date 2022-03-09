@@ -267,7 +267,7 @@ SAGIA.eServiceTour = {
 					}
 
 					panelWidth = bodyWidth+'px';
-					panelTransform = 'translate(' + (moveByPanel > 0 ? 50 : -50 ) +'px,-100%)';
+					panelTransform = 'translate(' + (moveByPanel > 0 ? 100 : -100 ) +'px,-100%)';
 
 					panelElement.css({
 						transform: panelTransform,
@@ -297,6 +297,7 @@ SAGIA.eServiceTour = {
 						
 						var leftValue = '50%'
 						var rightValue = 'auto';
+						var moveByPanel = 0;
 						
 						//not enough space on the right side but enough space in viewport for full panel width. Move if overflowing viewport
 						if (bodyWidth > maxPanelWidth) {
@@ -307,6 +308,7 @@ SAGIA.eServiceTour = {
 								
 								var moveBy = maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) > 0 ? maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) : containerPadding;
 								panelTransform = 'translate(-' + moveBy +'px,-100%)';
+								moveByPanel = -moveBy;
 								
 							} else {
 								
@@ -315,6 +317,7 @@ SAGIA.eServiceTour = {
 								
 								var moveBy = maxPanelWidth - focusDimensions.right > 0 ? maxPanelWidth - focusDimensions.right : containerPadding;
 								panelTransform = 'translate(+' + moveBy +'px,-100%)';
+								moveByPanel = moveBy;
 							}
 
 						} else {
@@ -324,7 +327,9 @@ SAGIA.eServiceTour = {
 						}
 						
 						panelWidth = bodyWidth+'px';
-						panelTransform = 'translate(-' + (focusDimensions.left) +'px,-100%)';
+						panelTransform = 'translate(' + (moveByPanel > 0 ? -450 : 400 ) +'px,-100%)';
+						
+						// panelTransform = 'translate(-' + (focusDimensions.left) +'px,-100%)';
 						panelElement.css({
 							transform: panelTransform,
 							width: panelWidth,
@@ -398,7 +403,7 @@ SAGIA.eServiceTour = {
 					}
 
 					panelWidth = bodyWidth+'px';
-					panelTransform = 'translate(' + (moveByPanel > 0 ? 120 : -50 ) +'px,100%)';
+					panelTransform = 'translate(' + (moveByPanel > 0 ? 125 : -50 ) +'px,100%)';
 
 					panelElement.css({
 						transform: panelTransform,

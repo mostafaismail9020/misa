@@ -785,7 +785,7 @@
                     </div>
 
                 </div>
-                <div class="contentModule-actions contentModule-actions_spaceBetween">
+                <div class="contentModule-actions contentModule-actions_spaceBetween justify-content-center">
                 <span>
                     <button id="requirementSubmitButton" type="button" class="btn" disabled="disabled"><spring:theme code="text.consent.button.accept"/></button>
 

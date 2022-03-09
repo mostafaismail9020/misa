@@ -164,7 +164,7 @@ z-index: 0;
 }
 /* Amenda license page */
 [dir="ltr"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-left: -65px;}
-[dir="rtl"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-right: -114px;}
+/* [dir="rtl"] .page-license-amend .form-control+.control-label+.formInputBox-append {margin-right: -114px;} */
 /* .page-license-amend .formSelectBox .form-group label{top: -20px;} */
 [dir="ltr"] .page-license-amend #shareholderModalId .modal-content .modal-title{text-align: left;}
 .page-license-amend #docsmodalId .modal-dialog.modal-dialog-centered{min-width:40%;}

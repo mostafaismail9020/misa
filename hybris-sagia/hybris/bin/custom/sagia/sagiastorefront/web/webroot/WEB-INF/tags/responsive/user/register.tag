@@ -409,12 +409,12 @@
 					</div>
 					<div class="login-buttons user-info-buttons">
 						<div class="col-md-6 col-12">
-							<a href="/en/" class="login-btn register-investor-screen5-btn-back website-from-register padding-top-10">
+							<a href="/${language}/" class="login-btn register-investor-screen5-btn-back website-from-register padding-top-10">
 								<spring:theme code="investor.registration.invest.saudi.button"/>
 							</a>
 						</div>
 						<div class="col-md-6 col-12">
-							<a href="/en/login" class="login-btn register-investor-screen5-btn-next active login-from-registration padding-top-10">
+							<a href="/${language}/login" class="login-btn register-investor-screen5-btn-next active login-from-registration padding-top-10">
 								<spring:theme code="investor.registration.login.button"/>&nbsp;
 								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" >
 									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"

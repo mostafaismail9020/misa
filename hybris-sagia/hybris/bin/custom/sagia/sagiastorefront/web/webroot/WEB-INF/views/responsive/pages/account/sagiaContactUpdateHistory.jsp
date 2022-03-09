@@ -307,7 +307,7 @@
                                             </div>
                                             <div class="downloadList-actions">
                                                 <a class="link link_nowrap" href='${attachment}' download>
-                                                    <span class="iconElement iconElement_cloud"><icon:download/></span>Download
+                                                    <span class="iconElement iconElement_cloud"><icon:download/></span><spring:theme code="general.download"/>
                                                 </a>
                                             </div>
                                         </li>

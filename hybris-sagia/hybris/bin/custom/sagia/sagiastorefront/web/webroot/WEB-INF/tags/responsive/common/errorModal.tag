@@ -18,7 +18,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="d-none"></button>
-				<button type="button" class="btn" data-dismiss="modal" onClick="closeErrorModal()">Close</button>
+				<button type="button" class="btn" data-dismiss="modal" onClick="closeErrorModal()"><spring:theme code="general.close"/></button>
 			</div>		
 		</div>
 	</div>

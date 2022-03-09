@@ -118,7 +118,7 @@
                         <div class="formTextArea w-100">
                             <div class="form-group <c:if test="${status.error}">has-error</c:if>">
                                 <form:textarea id="" class="form-control form-control_slim" placeholder="." path="textMsg"/>
-                                <form:label class="control-label control-label_mandatory" for="" path="textMsg">Message</form:label>
+                                <form:label class="control-label control-label_mandatory" for="" path="textMsg"><spring:theme code="services.legalConsultation.message.text"/></form:label>
                                 <span class="help-block"><form:errors path="textMsg"/></span>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                                     <div class="form-group">
                                         <input id="file0" data-id="0" name="files[0]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text05" name="text05" class="form-control" type="text" value="" placeholder="" readonly="" tabindex="-1"/>
-                                        <label class="control-label " for="">Label for file </label>
+                                        <label class="control-label " for=""><spring:theme code="general.labelforfile"/></label>
                                         <div class="form-icon form-icon_browse"><icon:upload/></div>
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
 										<div class="help-block"></div>
@@ -154,7 +154,7 @@
                                     <div class="form-group">
                                         <input id="file1" data-id="1" name="files[1]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text02" name="text02" class="form-control" type="text" value="" placeholder="" readonly="" tabindex="-1"/>
-                                        <label class="control-label " for="">Label for file</label>
+                                        <label class="control-label " for=""><spring:theme code="general.labelforfile"/></label>
                                         <div class="form-icon form-icon_browse"><icon:upload/></div>
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
 										<div class="help-block"></div>
@@ -167,7 +167,7 @@
                                     <div class="form-group">
                                         <input id="file2" data-id="2" name="files[2]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text03" name="text03" class="form-control" type="text" value="" placeholder="" readonly="" tabindex="-1"/>
-                                        <label class="control-label " for="">Label for file</label>
+                                        <label class="control-label " for=""><spring:theme code="general.labelforfile"/></label>
                                         <div class="form-icon form-icon_browse"><icon:upload/></div>
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
 										<div class="help-block"></div>
@@ -180,7 +180,7 @@
                                     <div class="form-group">
                                         <input id="file3" data-id="3" name="files[3]" class="form-control js-inputFile" type="file" accept="image/jpeg,application/pdf" value=""/>
                                         <input id="text04" name="text04" class="form-control" type="text" value="" placeholder="" readonly="" tabindex="-1"/>
-                                        <label class="control-label " for="">Label for file</label>
+                                        <label class="control-label " for=""><spring:theme code="general.labelforfile"/></label>
                                         <div class="form-icon form-icon_browse"><icon:upload/></div>
                                         <div class="form-icon form-icon_reset js-inputFile-reset"><icon:cross/></div>
 										<div class="help-block"></div>

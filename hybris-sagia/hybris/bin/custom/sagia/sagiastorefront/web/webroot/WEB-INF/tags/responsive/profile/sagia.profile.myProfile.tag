@@ -75,7 +75,7 @@
                     </div>
                     <div class="row">
                         <div class="myAccount-profilImage">
-                        <h4 id="sagia_companyLogo_picture_title"  class="sagia_profile_picture_title"></h4>
+                        <h4 id="sagia_companyLogo_picture_title"  class="sagia_profile_picture_title"><spring:theme code="my.profile.company.logo"/></h4>
                         <div class="myAccount-profilImage-img"><div class="companyLogo js-companyLogo"></div></div>
                     </div></div>
 

@@ -551,7 +551,7 @@ SAGIA.profile = {
                     else {
                         myProfileTabData.find(".myAccount-profilImage-img").css("height", '0px');
                     }
-                    $('#sagia_companyLogo_picture_title').text('Company Logo');
+                    // $('#sagia_companyLogo_picture_title').text('Company Logo');//adding spring theme
 
                     if (profileData.companyLogo) {
                          myProfileTabData.find(".js-companyLogo").css("background-image", 'url(' + profileData.companyLogo + ')');

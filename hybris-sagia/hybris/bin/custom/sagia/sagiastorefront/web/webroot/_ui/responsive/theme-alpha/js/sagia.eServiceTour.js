@@ -53,7 +53,8 @@ SAGIA.eServiceTour = {
 		$(document).on("click",".js-eServiceTour-start", function(e) {
 			e.preventDefault();
 			$('body').width() >= 768 ? SAGIA.eServiceTour.isSmall = false : SAGIA.eServiceTour.isSmall = true;
-			
+
+			$('body').append('<div class="modal-backdrop fade show"></div>')
 			setFocusElement();
 			setPanelDimensions();
 		});
@@ -75,7 +76,7 @@ SAGIA.eServiceTour = {
 			$('.eServiceTutorial-highlight').addClass('eServiceTutorial-highlight_close').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
 				$(this).remove();
 			});
-			
+			$('.modal-backdrop').remove();
 			tourStep = 0;
 		
 		});

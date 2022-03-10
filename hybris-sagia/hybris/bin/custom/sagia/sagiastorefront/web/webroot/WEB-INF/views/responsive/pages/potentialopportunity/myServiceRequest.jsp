@@ -88,7 +88,7 @@
 <div class="container">
 	<div class="w-75 m-auto">
 		<div class="licensecontactperson_bottomboarder">
-			<div class="contentModule-headline">Basic Information</div>
+			<div class="contentModule-headline"><spring:theme code="general.basicinformation" /></div>
 		</div>
 		<form:form class="contact-form pt-3" action="${submitServiceRequestAction}" id="js-quick-tialoppor_new" method="post" modelAttribute="sagiaServiceRequestFormData">
 			<!-- onsubmit="return validateFormsetting()" id="js-quick-tialoppor_new" -->
@@ -103,7 +103,7 @@
 								</c:forEach>
 							</form:select> 
 							<label class="control-label control-label_mandatory" for="qm1Role">
-									Incident Category  
+									<spring:theme code="my.potential.opertunity.incidentCategory.name" />
 							</label> 
 						</div>
 					</div> 
@@ -118,7 +118,7 @@
 								</c:forEach>
 							</form:select> 
 							<label class="control-label control-label_mandatory" for="qm1Role">
-								Service Category 
+								<spring:theme code="my.potential.opertunity.service.Category.name" />
 							</label> 
 						</div>
 					</div> 
@@ -133,7 +133,7 @@
 								</c:forEach>
 							</form:select>
 							<label class="control-label control-label_mandatory" for="qm1Role">
-								Priority
+								<spring:theme code="my.potential.opertunity.priority" />
 							</label> 
 						</div>
 					</div> 
@@ -145,7 +145,7 @@
 							name="subject" id="subject" /> 
 							<!-- onkeypress="return onlyAlphabets(event)" -->
 							<label class="control-label control-label_mandatory" for="Subject " required>
-								Subject 
+								<spring:theme code="my.potential.opertunity.subject.name" />
 							</label> 
 							<div class="help-block"></div>
 						</div> 
@@ -158,7 +158,7 @@
 						name="description" id="description" required /></textarea>	
 						<!-- onkeypress="return onlyAlphabets(event)"  -->
 						   <label class="control-label control-label_mandatory" for="Description">
-							Description 
+						       <spring:theme code="my.potential.opertunity.description.name" />
 						   </label> 
 						   <div class="help-block1"></div>
 					   </div> 

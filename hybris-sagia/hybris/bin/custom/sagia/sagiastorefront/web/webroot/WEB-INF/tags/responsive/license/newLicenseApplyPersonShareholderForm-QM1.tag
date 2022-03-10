@@ -534,7 +534,7 @@
 				</div>
 
 			</div>
-			<span class="spl-notes">Note - The Maximum File Size should not exceed 2 MB</span>
+			<span class="spl-notes"><spring:theme code="profile.enquiry.size" /></span>
 		</div>
 
 		<div id="delegateDivSection" style="display: none">

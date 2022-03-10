@@ -646,4 +646,8 @@ max-width :100% ;
         margin-right: -113px;
     }
 }
-	
+
+[dir="rtl"] .register-user-info .fa-eye:before, [dir="rtl"] .register-user-info .fa-eye-slash:before{
+	float: left;
+	margin-left: 0px;
+}	

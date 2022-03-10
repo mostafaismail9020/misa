@@ -7,13 +7,13 @@ $siteResource =jar:com.sagia.investsaudi.portal.core.setup.Sagiainvestsaudistore
 
 # Banner images for Sagia Dashbard with and without License
 INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]  ; mime[default = 'image/jpeg']  ; realfilename             ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; folder(qualifier)[default = $mediafolder]; altText;
-                   ;                          ; header-banner-image1 ; image/jpg                     ; Header-banner-image1.jpg ; $siteResource/Header-banner-image1.jpg                                       ;                                          ; ""     ;
+#                   ;                          ; header-banner-image1 ; image/jpg                     ; Header-banner-image1.jpg ; $siteResource/Header-banner-image1.jpg                                       ;                                          ; ""     ;
                    ;                          ; header-banner-image2 ; image/jpg                     ; Header-banner-image2.jpg ; $siteResource/Header-banner-image2.jpg                                       ;                                          ; ""     ;
                    ;                          ; header-banner-image3 ; image/jpg                     ; Header-banner-image3.jpg ; $siteResource/Header-banner-image3.jpg                                       ;                                          ; ""     ;
 
 
 INSERT_UPDATE SagiaDashboardBannerCarouselComponent; $contentCV[unique = true]	; uid[unique = true]   			  ; bannerImage(code, $contentCV)[mode=replace]																	; &componentRef
-												    ; 							; sagiaDashboardCarouselComponent ; header-banner-image1,header-banner-image2,header-banner-image3								; sagiaDashboardCarouselComponent
+												    ; 							; sagiaDashboardCarouselComponent ; header-banner-image2,header-banner-image3								; sagiaDashboardCarouselComponent
 
 
 INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                            	; name                                       ; page                                                                        ; actions(uid, $contentCV); &componentRef			;

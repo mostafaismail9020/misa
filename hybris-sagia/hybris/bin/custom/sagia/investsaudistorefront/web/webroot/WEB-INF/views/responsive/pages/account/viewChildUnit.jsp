@@ -22,23 +22,23 @@
             <div style="text-align:center; margin:20px;">No Child units to display!</div>
         </c:when>
         <c:otherwise>
-        <table class="manage-user-table responsive-table " id="table"
+        <table class="manage-user-table responsive-table  table-striped" id="table"
                 data-toggle="table"
                 data-toolbar=".toolbar"
                 data-sortable="true">
-                    <thead>
-                        <tr class="responsive-table-head hidden-xs">
-                            <th class="th-sm" data-field="id" data-sortable="true"><spring:theme code="text.account.childUnits.id" text="ID" /></th>
-                            <th class="th-sm" data-field="name" data-sortable="true"><spring:theme code="text.account.childUnits.name" text="Name" /></th>
-                            <th class="th-sm" data-field="parentUnitId" data-sortable="true"><spring:theme code="text.account.parent.name" text="Parent Unit" /></th>
-                        </tr>
-                    </thead>
+						<thead>
+							<tr class="">
+								<th class="th-sm" data-field="id" data-sortable="true"><spring:theme code="text.account.childUnits.id" text="ID" /></th>
+								<th class="th-sm" data-field="name" data-sortable="true"><spring:theme code="text.account.childUnits.name" text="Name" /></th>
+								<th class="th-sm" data-field="parentUnitId" data-sortable="true"><spring:theme code="text.account.parent.name" text="Parent Unit" /></th>
+							</tr>
+						</thead>
                         <tbody>
                             <c:forEach items="${existingChildUnits}" var="childUnit">
-                                 <tr class="responsive-table-item">
-                                    <td class=""><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.id" text="ID" /> -</span>${childUnit.id}</td>
-                                    <td class=""><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.name" text="Name" /> -</span>${childUnit.name}</td>
-                                    <td class=""><span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.parent.name" text="Parent Unit" /> -</span>${childUnit.parentUnitId} [${childUnit.parentUnitName}]</td>
+                                <tr class="">
+                                    <td class="th-sm">${childUnit.id}</td>
+                                    <td class="th-sm">${childUnit.name}</td>
+                                    <td class="th-sm">${childUnit.parentUnitId} [${childUnit.parentUnitName}]</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

@@ -146,3 +146,10 @@
   </form:form>
   <common:globalMessagesTemplates/>
 </div> 
+
+<script>
+  $("button:reset").on("click", function() {
+    this.form.reset(); 
+    $('#parentUnit').attr('disabled', false); 
+});
+</script>

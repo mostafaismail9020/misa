@@ -286,7 +286,7 @@
 		        </div>
                 <hr class="contentModule-section-delimiter"/>
                 <div class="contentModule-actions contentModule-actions_centered contentModule_spaceTop contentModule-actions_noMargin">
-                    <button type="submit" class="btn btn--primary btn--half-radius" ><spring:theme code="appointments.saveappointment"/></button>
+                    <button type="submit" class="btn btn--primary btn--half-radius" disabled><spring:theme code="appointments.saveappointment"/></button>
                 </div>
                 </form:form>
             </div>

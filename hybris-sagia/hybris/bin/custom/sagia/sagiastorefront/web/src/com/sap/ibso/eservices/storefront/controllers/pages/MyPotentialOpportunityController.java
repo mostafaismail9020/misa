@@ -15,6 +15,7 @@ import com.sap.ibso.eservices.core.enums.ServiceCategory;
 import com.sap.ibso.eservices.core.enums.Priority;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.ticket.strategies.TicketEventStrategy;
+import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
 import de.hybris.platform.enumeration.EnumerationService;
 import de.hybris.platform.core.Registry;
 import de.hybris.platform.servicelayer.media.MediaService;
@@ -86,6 +87,9 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 
 	@Resource(name = "investSaudiProductFacade")
 	private InvestSaudiProductFacade investSaudiProductFacade;
+	
+	@Resource
+    private InvestSaudiCategoryFacade investSaudiCategoryFacade;
 
 	@Resource(name = "contactTicketEventStrategy")
 	private TicketEventStrategy ticketEventStrategy;
@@ -115,6 +119,9 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 			throws CMSItemNotFoundException {
 
 		ContactTicketModel contactTicketDetails = sagiaUserService.getContactTicketForTicketId(ticketId);
+		if(null!= contactTicketDetails && StringUtils.isNotEmpty(contactTicketDetails.getSectorCategoryCode())) {
+                        model.addAttribute("categoryData", investSaudiCategoryFacade.getCategoryForCode(contactTicketDetails.getSectorCategoryCode()));
+                }
 		List<CommentModel> comments = contactTicketDetails.getComments();
 		CopyOnWriteArrayList<CommentModel> commentsModified = new CopyOnWriteArrayList<>(comments);
 		LOG.info("comments before sorting "+commentsModified);
@@ -151,6 +158,9 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 			Collections.reverse(comments);
 			model.addAttribute("comments", comments);
 			model.addAttribute("contactTicketDetails", contactTicket);
+			if(null!= contactTicket && StringUtils.isNotEmpty(contactTicket.getSectorCategoryCode())) {
+                                model.addAttribute("categoryData", investSaudiCategoryFacade.getCategoryForCode(contactTicket.getSectorCategoryCode()));
+                        }
 			if (StringUtils.isNotEmpty(contactTicket.getOpportunityCode())) {
 				ProductData opportunityProductDetails = investSaudiProductFacade.getProductForCode(contactTicket.getOpportunityCode());
 				model.addAttribute("opportunityDetails", opportunityProductDetails);
@@ -203,18 +213,25 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	@RequestMapping(value = "/{ticketId}/uploadAttachment",method = RequestMethod.POST,consumes = { MediaType.MULTIPART_FORM_DATA_VALUE,MediaType.APPLICATION_FORM_URLENCODED_VALUE,MediaType.TEXT_PLAIN_VALUE})
     public String uploadAttachment(final Model model, @ModelAttribute("contactTicketForm") final ContactTicketForm contactTicketForm,
 			final BindingResult bindingResult, @PathVariable("ticketId") final String ticketId,
-			final HttpServletRequest request, final HttpServletResponse response) throws CMSItemNotFoundException {
+			final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel) throws CMSItemNotFoundException {
 
-		
+		boolean uploadAttachment = false;
 		try {
 			if (null != contactTicketForm && null != contactTicketForm.getComment()) {
 				LOG.info("receieved the file");
 			}
+			byte[] bytes = contactTicketForm.getPdfAttachment().getBytes();
+			if(null !=bytes && bytes.length > 0) {
+        		uploadAttachment = true;
+        	}
 			sagiaUserFacade.saveTicketAttachments(contactTicketForm.getPdfAttachment().getBytes(), ticketId);
 		} catch (IOException ex) {
 			LOG.error("Exception in uploading attachment: " + ex);
 		}
-
+        if (uploadAttachment) {
+			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER,
+					"Document Uploaded Successfully");
+		}
 		return "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
 		// set the media model to attachments attribute in contact ticket model
 	}

@@ -90,7 +90,7 @@
 						<span class="goldcolor">${contactTicketDetails.ticketID}</span>
 					</h5> 
 					<h5 class="status"><span class="goldcolor">
-						${contactTicketDetails.sectorCategoryName}
+					<c:out value="${categoryData.name}"/>
 						<c:if test="${not empty opportunityDetails.name}">
 							- ${opportunityDetails.name}
 						</c:if>

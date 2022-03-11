@@ -343,7 +343,7 @@
 
 		$(window).on('scroll', function () {
 			footerHeight = $("#footer").offset().top - 800;
-			console.log($(this).scrollTop())
+			// console.log($(this).scrollTop())
 			if ($(this).scrollTop() >= footerHeight) {
 				$('.float-button').css("opacity", "0");
 			}

@@ -14665,7 +14665,7 @@ form .forgotten-password {
 {
   display: none;
 }
-.main__inner-wrapper {
+body:not('.page-login-second-step') .main__inner-wrapper {
   margin-top: 57px;
 }
 .page-login .main__inner-wrapper,
@@ -27711,7 +27711,7 @@ select.form-control option {
   .register-user-info{
 	position: relative;
 	top:20%;
-	width: 96%;
+	width: 86%;
 	align-items: center;
 	margin: auto;
   }
@@ -28565,7 +28565,7 @@ body:is(.page-productGrid) .breadcrumb-section.mt-breadcrumb {
 
 
 .register-user-info {
-  width: 96%;
+  width: 86%;
   align-items: center;
   margin: auto;
 }
@@ -29001,5 +29001,291 @@ select.form-control {
     .footerContent .f-coll p {
       padding-bottom: 0px;
       text-align: center;
+  }
+}
+
+
+/*************************/
+.page-login-second-step .js-mainHeader{
+  display:none;
+}
+.border-header{
+  padding: 60px 0px;
+}
+
+@media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
+  .login-screen .login-right-wrapper{
+    width: 85%;
+  }
+  .register-user-details,select.form-control{
+    height: 70px;
+  }
+  .login-register-text{
+    font-size: 24px;
+  }
+  .login-btn, #forgottenPwdForm .btn,.btn.btn-sagia.btn-sagia-green{
+    height: 45px;
+    font-size: 14px;
+  }
+  .login-forgot{
+    font-size: 14px;
+  }
+  .accountLogin-content-headline{
+    font-size: 40px !important;
+  }
+  .headline,h4, .h4{
+    font-size: 16px;
+  }
+  .page-SecureCustomerPortalRegisterPage .content, .page-updatePassword .content, .page-login .content{
+    font-size: 11px;
+  }
+  .register-user-info-label,select.form-control{
+    font-size: 14px;
+    transform: translate3d(0, 10px, 0) scale(1);
+  }
+  .role-text,.login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3{
+    font-size: 18px;
+  }
+  .login-role-selection-box{
+    width: 140px;
+    height: 130px;
+  }
+  .register-user-info-label.focused, .register-user-info-label.focused-country{
+    font-size: 10px;
+  }
+  .register-user-info-label{
+    /* margin-left: 15px; */
+  }
+  .login-screen2 .login-right-wrapper{
+    width: 90%;
+    margin: auto;
+  }
+  .register-role-selection{
+    padding-bottom: 30px;
+  }
+  .page-login-second-step .accountLogin-headline-logo{
+    margin: 0px auto;
+  }
+  .r-sn .login-right-wrapper{
+    padding-bottom: 10px;
+  }
+  .mobile-code-text{
+    padding: 20px 24px 14px 60px !important;
+  }
+  body:not(.page-homepage) .banner-heading h1{
+    font-size: 50px;
+  }
+  .header-account{
+    font-size: 40px;
+  }
+  .container,.account-section{
+    width: 1200px;
+  }
+  .request-responsive-table .responsive-table-head th{
+    font-size: 16px;
+  }
+  .request-responsive-table tbody .responsive-table-item .break-word a,.request-responsive-table tbody .responsive-table-item td
+  ,.request-responsive-table tbody .responsive-table-item .responsive-table-link
+  ,.managerchildUser_page table.manage-user-table td{
+    font-size: 16px;
+    word-break: break-word;
+  }
+  .request-responsive-table .responsive-table-head th{
+    height: 60px;
+  }
+  .width-350{
+    width: 300px;
+    min-width: 300px;
+  }
+  .newUser_page .headline,.newchildUser_page .headline,.viewchildUser_page .headline
+  ,.managerchildUser_page .headline{
+    padding: 50px 0px 40px 0px;
+  }
+  #createTicket-subject{
+    height: 70px;
+  }
+  label,.managerchildUser_page table.manage-user-table th.th-sm{
+    font-size: 16px;
+  }
+  .addNewUser_group button.cancel,.addNewUser_group button.Submit,.managerchildUser_page button.lock_button,.managerchildUser_page button.unlock_button{
+    padding: 8px 20px;
+    width: 190px;
+  }
+  .account-section-content .form-group,#createTicket-subject,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia.btn-sagia-green
+  ,.btn,.breadcrumb-section .breadcrumb li.active,.file-upload__input
+  ,ul.admin-menu li a{
+    font-size: 14px;
+  }
+  .float-button{
+    width: 110px;
+    height: 110px;
+    font-size: 13px;
+  }
+  .fixed-table-body::-webkit-scrollbar {
+    height: 6px;
+  }
+  .file-upload-button{
+    height: 40px;
+  }
+  .btn{
+    padding: 8px 15px;
+  }
+  .account-section .account-section-content .help-block{
+    font-size: 12px;
+  }
+  .product__list--wrapper .title-heading{
+    font-size: 40px;
+  }
+  #contact-us .email-call h2{
+    font-size: 37px;
+  }
+  body.page-contact .heading{
+    font-size: 25px;
+  }
+}
+
+@media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150%*/
+  .login-screen .login-right-wrapper{
+    width: 90%;
+    padding-bottom:0px;
+  }
+  .register-user-details,select.form-control{
+    height: 55px;
+    padding-left: 25px;
+  }
+  .login-register-text{
+    font-size: 20px;
+  }
+  .login-btn, #forgottenPwdForm .btn,.btn.btn-sagia.btn-sagia-green{
+    height: 40px;
+    font-size: 12px;
+  }
+  .login-forgot{
+    font-size: 12px;
+  }
+  .accountLogin-content-headline{
+    font-size: 30px !important;
+  }
+  .headline,h4, .h4{
+    font-size: 14px;
+  }
+  .page-SecureCustomerPortalRegisterPage .content, .page-updatePassword .content, .page-login .content{
+    font-size: 9px;
+  }
+  .login-forgot{
+    padding: 20px;
+  }
+  .register-user-info-label,select.form-control{
+    font-size: 12px;
+    transform: translate3d(0, 2px, 0) scale(1);
+  }
+  .role-text,.login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3{
+    font-size: 16px;
+  }
+  .login-role-selection-box{
+    width: 130px;
+    height: 120px;
+  }
+  .register-user-info-label.focused, .register-user-info-label.focused-country{
+    font-size: 8px;
+    transform: translate3d(-10px, -7px, 0) scale(0.9);
+  }
+  .register-account-partner-screen3 .login-right-wrapper{
+    width: 500px;
+  }
+  .login-btn-cancel, .login-btn-next{
+    padding: 11px 0px;
+  }
+  .register-user-info-label{
+    margin-left: 15px;
+  }
+  .registerForm .register-user-info-label.focused{
+    left: 16px !important;
+  }
+  .login-screen2 .login-right-wrapper{
+    width: 80%;
+    margin: auto;
+  }
+  .register-role-selection{
+    padding-bottom: 20px;
+  }
+  .page-login-second-step .accountLogin-headline-logo{
+    margin: 0px auto;
+  }
+  .r-sn .login-right-wrapper{
+    padding-bottom: 10px;
+  }
+  .mobile-code-text{
+    padding: 20px 24px 14px 60px !important;
+  }
+  body:not(.page-homepage) .banner-heading h1{
+    font-size: 40px;
+  }
+  .header-account{
+    font-size: 35px;
+  }
+  .container,.account-section{
+    width: 1100px;
+  }
+  .request-responsive-table .responsive-table-head th{
+    font-size: 14px;
+  }
+  .request-responsive-table tbody .responsive-table-item .break-word a,.request-responsive-table tbody .responsive-table-item td
+  ,.request-responsive-table tbody .responsive-table-item .responsive-table-link
+  ,.managerchildUser_page table.manage-user-table td{
+    font-size: 14px;
+    word-break: break-word;
+  }
+  .request-responsive-table .responsive-table-head th{
+    height: 50px;
+  }
+  .width-350{
+    width: 270px;
+    min-width: 270px;
+  }
+  .newUser_page .headline,.newchildUser_page .headline,.viewchildUser_page .headline
+  ,.managerchildUser_page .headline{
+    padding: 60px 0px 40px 0px;
+  }
+  #createTicket-subject{
+    height: 55px;
+  }
+  label,.managerchildUser_page table.manage-user-table th.th-sm{
+    font-size: 14px;
+  }
+  .addNewUser_group button.cancel,.addNewUser_group button.Submit,.managerchildUser_page button.lock_button,.managerchildUser_page button.unlock_button{
+    padding: 8px 20px;
+    width: 180px;
+  }
+  .account-section-content .form-group,#createTicket-subject,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia.btn-sagia-green
+  ,.btn,.breadcrumb-section .breadcrumb li.active,.file-upload__input
+  ,ul.admin-menu li a{
+    font-size: 12px;
+  }
+  .float-button{
+    width: 90px;
+    height: 90px;
+    font-size: 10px;
+  }
+  .fixed-table-body::-webkit-scrollbar {
+    height: 6px;
+  }
+  .file-upload-button{
+    height: 35px;
+  }
+  .btn{
+    padding: 6px 15px;
+  }
+  .account-section .account-section-content .help-block{
+    font-size: 10px;
+  }
+  .product__list--wrapper .title-heading{
+    font-size: 35px;
+  }
+  #contact-us .email-call h2{
+    font-size: 32px;
+  }
+  body.page-contact .heading{
+    font-size: 20px;
   }
 }

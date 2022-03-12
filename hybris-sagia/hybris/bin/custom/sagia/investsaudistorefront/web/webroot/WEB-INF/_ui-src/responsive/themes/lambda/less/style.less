@@ -29012,7 +29012,27 @@ select.form-control {
 .border-header{
   padding: 60px 0px;
 }
-
+.searchEmptyPageTop{
+  .search-empty{
+    .headline{
+      text-align: center;
+    }
+    .js-shopping-button,.js-shopping-button:hover{
+      background: #00a6be 0% 0% no-repeat padding-box;
+      border: none;
+      border-radius: 27px !important;
+      color: #fff !important;
+    }
+  }
+}
+.searchEmptyPageMiddle{
+  .searchEmptyPageMiddle-component{
+    h2,p,ul li{
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
 @media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
   .login-screen .login-right-wrapper{
     width: 85%;
@@ -29027,7 +29047,9 @@ select.form-control {
     height: 45px;
     font-size: 14px;
   }
-  .login-forgot{
+  .login-forgot,.product-category .facet .facet__values .facet__list li:first-child
+  ,.product-category .facet .facet__values .facet__list li span span.facet__value__count
+  ,.product-category .facet .facet__values .facet__list li span a{
     font-size: 14px;
   }
   .accountLogin-content-headline{
@@ -29043,7 +29065,10 @@ select.form-control {
     font-size: 14px;
     transform: translate3d(0, 10px, 0) scale(1);
   }
-  .role-text,.login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3{
+  .role-text,.login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3
+  ,#products-wrapper .details .name
+  ,.popularPostHeading
+  ,.blogPostTitle{
     font-size: 18px;
   }
   .login-role-selection-box{
@@ -29104,7 +29129,8 @@ select.form-control {
   #createTicket-subject{
     height: 70px;
   }
-  label,.managerchildUser_page table.manage-user-table th.th-sm{
+  label,.managerchildUser_page table.manage-user-table th.th-sm,.pagination-bar .pagination-bar-results
+  ,.pagination-main .sort-refine-bar .form-group #sortOptions1{
     font-size: 16px;
   }
   .addNewUser_group button.cancel,.addNewUser_group button.Submit,.managerchildUser_page button.lock_button,.managerchildUser_page button.unlock_button{
@@ -29113,7 +29139,8 @@ select.form-control {
   }
   .account-section-content .form-group,#createTicket-subject,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia.btn-sagia-green
   ,.btn,.breadcrumb-section .breadcrumb li.active,.file-upload__input
-  ,ul.admin-menu li a{
+  ,ul.admin-menu li a
+  ,.featureDiv .blogContainerBackGround .blogExtract, .blogContainerDiv .blogContainerBackGround .blogExtract, .featureDiv .featureBack .blogExtract, .blogContainerDiv .featureBack .blogExtract{
     font-size: 14px;
   }
   .float-button{
@@ -29130,7 +29157,7 @@ select.form-control {
   .btn{
     padding: 8px 15px;
   }
-  .account-section .account-section-content .help-block{
+  .account-section .account-section-content .help-block,.blogReadMore{
     font-size: 12px;
   }
   .product__list--wrapper .title-heading{
@@ -29142,6 +29169,10 @@ select.form-control {
   body.page-contact .heading{
     font-size: 25px;
   }
+  .section-bg .product-category .facet__name{
+    font-size: 24px;
+  }
+  
 }
 
 @media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150%*/
@@ -29160,7 +29191,9 @@ select.form-control {
     height: 40px;
     font-size: 12px;
   }
-  .login-forgot{
+  .login-forgot,.product-category .facet .facet__values .facet__list li:first-child
+  ,.product-category .facet .facet__values .facet__list li span span.facet__value__count
+  ,.product-category .facet .facet__values .facet__list li span a{
     font-size: 12px;
   }
   .accountLogin-content-headline{
@@ -29179,7 +29212,10 @@ select.form-control {
     font-size: 12px;
     transform: translate3d(0, 2px, 0) scale(1);
   }
-  .role-text,.login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3{
+  .role-text,.login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3
+  ,#products-wrapper .details .name
+  ,.popularPostHeading
+  ,.blogPostTitle{
     font-size: 16px;
   }
   .login-role-selection-box{
@@ -29250,7 +29286,8 @@ select.form-control {
   #createTicket-subject{
     height: 55px;
   }
-  label,.managerchildUser_page table.manage-user-table th.th-sm{
+  label,.managerchildUser_page table.manage-user-table th.th-sm,.pagination-bar .pagination-bar-results
+  ,.pagination-main .sort-refine-bar .form-group #sortOptions1{
     font-size: 14px;
   }
   .addNewUser_group button.cancel,.addNewUser_group button.Submit,.managerchildUser_page button.lock_button,.managerchildUser_page button.unlock_button{
@@ -29259,7 +29296,9 @@ select.form-control {
   }
   .account-section-content .form-group,#createTicket-subject,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia.btn-sagia-green
   ,.btn,.breadcrumb-section .breadcrumb li.active,.file-upload__input
-  ,ul.admin-menu li a{
+  ,ul.admin-menu li a
+  ,.featureDiv .blogContainerBackGround .blogExtract, .blogContainerDiv .blogContainerBackGround .blogExtract, .featureDiv .featureBack .blogExtract, .blogContainerDiv .featureBack .blogExtract
+  {
     font-size: 12px;
   }
   .float-button{
@@ -29276,7 +29315,7 @@ select.form-control {
   .btn{
     padding: 6px 15px;
   }
-  .account-section .account-section-content .help-block{
+  .account-section .account-section-content .help-block,.blogReadMore{
     font-size: 10px;
   }
   .product__list--wrapper .title-heading{
@@ -29287,5 +29326,8 @@ select.form-control {
   }
   body.page-contact .heading{
     font-size: 20px;
+  }
+  .section-bg .product-category .facet__name{
+    font-size: 22px;
   }
 }

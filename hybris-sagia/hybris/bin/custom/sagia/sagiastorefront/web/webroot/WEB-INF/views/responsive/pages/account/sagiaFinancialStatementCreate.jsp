@@ -68,7 +68,7 @@
                     <span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="legalConsultationCreate.backToAccountOverview.text"/>
                 </a>
             </div>
-            <div class="col-xl-9 col-12 btn-drafts_list amend-service-link">
+            <div class="col-xl-9 d-none col-12 btn-drafts_list amend-service-link">
                 <button class="btn btn_round btn_slim js-save-draft"
                         data-target-form="${serviceId}"
                         data-service-id="${serviceId}"><spring:theme code="general.savedraft"/><span

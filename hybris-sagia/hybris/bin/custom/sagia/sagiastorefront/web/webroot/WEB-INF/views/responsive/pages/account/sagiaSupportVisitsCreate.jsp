@@ -128,7 +128,7 @@
                                     <div class="formInputBox formInputBox_group">
                                         <div class="form-group <c:if test='${status.error}'>has-error</c:if>">
                                             <form:input path="dateString" cssClass="form-control js-form-control_date js-supportVisit-select-date"/>
-                                            <label class="control-label control-label_mandatory" for="dateString">Date:</label>
+                                            <label class="control-label control-label_mandatory" for="dateString"><spring:theme code="text.account.followup.supportVisitAddInfo.date"/></label>
                                             <div class="formInputBox-append" id="calendar-icon-pos">
                                                 <span class="formInputBox-text"><icon:calendar-gray/></span>
                                             </div>

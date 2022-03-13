@@ -121,14 +121,14 @@
                                 <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqInstantRenewal">
                                 <a class="btn btn_outline btn_slim a_btn back_to_service" href="javascript:void(0);">
                                     <spring:theme code="renewlicense.instantrenew"/>
-                                </a>&nbsp;
+                                </a>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqInstantRenewal" style="display: none;">
                                 <a class="btn btn_outline btn_slim a_btn back_to_service" href="javascript:void(0);" >
                                     <spring:theme code="renewlicense.instantrenew"/>
-                                </a>&nbsp;
+                                </a>
                                 </div>
                             </c:otherwise>
                         </c:choose>
@@ -158,14 +158,14 @@
                                 <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqGovDocsCheck">
                                 <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);">
                                     <spring:theme code="renewlicense.govDocsCheck"/>
-                                </a>&nbsp;
+                                </a>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqGovDocsCheck" style="display: none;">
                                 <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns " href="javascript:void(0);" >
                                     <spring:theme code="renewlicense.govDocsCheck"/>
-                                </a>&nbsp;
+                                </a>
                                 </div>
                             </c:otherwise>
                         </c:choose>
@@ -174,14 +174,14 @@
                                 <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqClearanceCheck">
                                 <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);">
                                     <spring:theme code="renewlicense.clearanceCheck"/>
-                                </a>&nbsp;
+                                </a>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div class="col-xl-3 col-md-6 col-12 mainSection-linkActions jqClearanceCheck" style="display: none;">
                                 <a class="btn btn-warning btn_outline btn_slim a_btn renew-license-btns" href="javascript:void(0);" >
                                     <spring:theme code="renewlicense.clearanceCheck"/>
-                                </a>&nbsp;
+                                </a>
                                 </div>
                             </c:otherwise>
                         </c:choose>

@@ -1423,7 +1423,7 @@
                                                 </div>
 
                                             </div>
-                                            <div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
+                                            <div class="form-condition-spl-notes"><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
                                         </div>
                                     </div>
                                 </div>

@@ -483,7 +483,7 @@
                                     <formElement:formInputBox idKey="realEstate.additionalDetails" labelKey="realEstate.additionalDetails" labelCSS="control-label_mandatory" path="remarks"/>
                                 </div>
                             </div>
-                            <div><spring:theme code="realEstate.type.note" /></div>
+                            <div class="form-condition-spl-notes"><spring:theme code="realEstate.type.note" /></div>
                         </div>
                     </div>
                 </div>
@@ -537,7 +537,7 @@
                                     </c:forEach>
                                 </c:if>
                             </div>
-							<div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
+							<div class="form-condition-spl-notes"><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
                         </div>
                     </div>
                 </div>

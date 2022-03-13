@@ -448,7 +448,7 @@
                                         </div>
                                     </div>
                                 </c:forEach>
-								 <div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
+								 <div class="form-condition-spl-notes"><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="undertakingLetter contentModule-actions">

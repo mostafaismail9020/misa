@@ -22,7 +22,8 @@ SAGIA.eServiceTour = {
 
 	init: function(){
 		var self = this;
-		if(tutorialJson !== "undefined" && tutorialJson.length !== 0 && tutorialJson.steps.length > 0 && displayTutorial) {
+		if(tutorialJson !== "undefined" && tutorialJson.length !== 0 && tutorialJson.steps.length > 0 && displayTutorial && (window.location.href).indexOf("dash") > -1) {
+			console.log('dasboard page..'+(window.location.href).indexOf("dash"));
 			$('.header-tutorial-header-btn').show();
 			var idx = 0;
 			$.each(tutorialJson.steps, function (index, item) {

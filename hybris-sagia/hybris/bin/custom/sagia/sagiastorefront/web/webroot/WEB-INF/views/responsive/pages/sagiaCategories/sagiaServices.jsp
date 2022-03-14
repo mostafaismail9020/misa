@@ -162,15 +162,10 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"><spring:theme code="sagia.services.service.overview"/></span>
-					<c:choose>
-						<c:when test="${empty sagiaService.description}">
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
-						</c:when>
-						<c:otherwise>
-							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
-						</c:otherwise>
-					</c:choose>
+					<c:if test="${not empty sagiaService.description}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.overview"/> </span>	
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
+					</c:if>
 				</div>
 			</div>
 		</div>
@@ -179,15 +174,10 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"><spring:theme code="sagia.services.service.document"/></span>
-					<c:choose>
-						<c:when test="${empty sagiaService.serviceDocuments}">
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
-						</c:when>
-						<c:otherwise>
-							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
-						</c:otherwise>
-					</c:choose>
+					<c:if test="${not empty sagiaService.serviceDocuments}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.document"/> </span>
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
+					</c:if>
 				</div>
 			</div>
 		</div>
@@ -196,15 +186,10 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"><spring:theme code="sagia.services.rules.restrictions"/></span>
-					<c:choose>
-						<c:when test="${empty sagiaService.rulesRestrictions}">
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
-						</c:when>
-						<c:otherwise>
-							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
-						</c:otherwise>
-					</c:choose>
+					<c:if test="${not empty sagiaService.rulesRestrictions}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.rules.restrictions"/></span>
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
+					</c:if>
 				</div>
 			</div>
 		</div>
@@ -213,15 +198,10 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"><spring:theme code="sagia.services.financial.fees"/></span>
-					<c:choose>
-						<c:when test="${empty sagiaService.serviceFinancialFees}">
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
-						</c:when>
-						<c:otherwise>
-							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
-						</c:otherwise>
-					</c:choose>
+					<c:if test="${not empty sagiaService.serviceFinancialFees}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.financial.fees"/> </span>
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+					</c:if>
 				</div>
 			</div>
 		</div>
@@ -230,15 +210,11 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<span class="serviceModule-headline"><spring:theme code="sagia.services.duration"/></span>
-					<c:choose>
-						<c:when test="${empty sagiaService.serviceDuration}">
-							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
-						</c:when>
-						<c:otherwise>
-							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
-						</c:otherwise>
-					</c:choose>
+					<div class="serviceModule-description">
+					<c:if test="${not empty sagiaService.serviceDuration}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
+					</c:if>
 				</div>
 			</div>
 		</div>

@@ -55,9 +55,8 @@
 <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header row service-time">
-           <h1 class="mainSection-headline">
-                <!-- <spring:theme code="general.governmentdocuments" /> -->
-                NEW SERVICE REQUEST
+           	<h1 class="mainSection-headline">
+           		<spring:theme code="services.government.documents.create" />
             </h1>
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
@@ -237,7 +236,7 @@
                         <formElement:termsAndConditionsCheckbox event="GOVERNMENT_DOCUMENTS" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition" disabled="${disabledTnC}" />
                     </div>
                 </div>
-                <button type="reset" class="btn btn_outline full-width-responsive">Cancel</button>
+                <button type="reset" class="btn btn_outline full-width-responsive"><spring:theme code="services.government.documents.cancel" /></button>
                 
                 <ycommerce:testId code="nextButton">
                     <button type="submit" class="btn btn-bg btn_bold btn-normal full-width-responsive"><spring:theme code="govDocs.nextButton" /></button>

@@ -12,9 +12,9 @@ $langen = en
  
 INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $langen]               							  											; description[lang = $langen]																																																																																																																																								 
 #Licensing Service
-								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "Ministry of Investment provides the Licensed entities a license cancellation service as per the need of the entity  "   
-								  ; ZSR5               			 ; "Amendment of License"                           			  											; "User can submit a request to amend the license for entity that has a valid investment license and don't has any violations in the system. The system accept applying for the service 90 days before the investment license expires." 																																																																																			 
-								  ; ZSR7						 ; "100% Foreign Commercial License"							  											; "This service is for any entity that wants to end its status with Ministry of Investment with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business."																																																																																													  	 
+								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "Ministry of Investment provides the Licensed entities a license cancellation service as per the need of the entity."   
+								  ; ZSR5               			 ; "Amendment of License"                           			  											;  																																																																																			 
+								  ; ZSR7						 ; "CONVERSION OF FOREIGN ENTITY TO 100% NATIONAL ENTITY"							  						; "This service is for any entity that wants to end its status with Ministry of Investment with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business."																																																																																													  	 
 								  ; ZSR4               			 ; "Renewal of License"                           			  											    ; "This service is for all the entities licensed by Ministry of Investment and want to renew their investment licenses."																																																																																																																	 
 
 #General Department of Passports	
@@ -22,15 +22,15 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 							      ; ZMOIP_05					 ; "Information Transfer"																					; "This service is provided to companies owners who desire to transfer the passport information."
 							      ; ZMOIP_10					 ; "Exit & Return Visa for Accompanies"																	    ; "This service is provided to companies owners and employees who desire to issue an exit and return visa for the accompaniers."
 							      ; ZMOIP_17					 ; "Issuance of replacement copy of Damaged Passport"													    ; "This service is provided to companies owners and employees who desire to issue another copy of the damaged passport." 
-							      ; ZMOIP_21					 ; "Wavier of Son or Daughter"																				; "This service is provided to companies owners and employees who desire to dismiss their son or daughter."
-							      ; ZMOIP_23					 ; "Transfer KAFALA for GM of Branch of Foreigner comp"														; "This service is provided to entities that desire to transfer the sponsorship or amend the profession for General Manager of Foreign Companies Branch."
-							      ; ZMOIP_15					 ; "Dismissal of an Subordinates Holding Separate Iqama"												    ; "This service is provided to companies owners and employees who desire to dismiss any of their subordinates holding separate Iqama."
+							      ; ZMOIP_21					 ; "Wavier of Son or Daughter"																				; 
+							      ; ZMOIP_23					 ; "Transfer KAFALA for General manager of Branch of foreigner company"										; "This service is provided to entities that desire to transfer the sponsorship or amend the profession for General Manager of Foreign Companies Branch."
+							      ; ZMOIP_15					 ; "Dismissal of a Subordinates Holding Separate Iqama"												    	; "This service is provided to companies owners and employees who desire to dismiss any of their subordinates holding separate Iqama."
 							      ; ZMOIP_06					 ; "Sponsorship Transfer and Profession Amendment for General Manager of Foreign Companies Branch"			; "This service is provided to entities that desire to transfer the sponsorship or amend the profession for General Manager of Foreign Companies Branch."
 							      ; ZMOIP_01					 ; "Issuance of New Iqama"																				    ; "This service is provided to companies owners who desire to issue a new Iqama."
 							      ; ZMOIP_14					 ; "Amendment of Entity Name"																				; "This service is provided to foreign entities that desire to amend its licensed name."
                                   ; ZMOIP_13					 ; "Amendment of Passport Data"																				; "This service is provided to companies owners and employees who desire to amend the passport data."
 							      ; ZMOIP_09					 ; "Issuance of replacement Copy of Damaged Iqama"															; "This service is provided to companies owners and employees who desire to issue another copy of the damaged Iqama." 
-								  ; ZMOIP_03					 ; "Exit and Return Visa"																					; "This service is provided to companies owners and employees who desire to issue an exit and return visa for the accompaniers."
+								  ; ZMOIP_03					 ; "Exit and Return Visa"																					; "This service is provided to companies owners who desire to issue a new exit and return visa for the owners or employees."
 							      ; ZMOIP_02					 ; "Renewal of Iqama"																						; "This service is provided to companies owners who desire to issue a new Iqama for the owners or employees."
 							      ; ZMOIP_11					 ; "Cancellation of Exit and Return Visa"																	; "This service is provided to companies owners and employees who desire to cancel an exit and return visa that has been issued earlier."
 							      ; ZMOIP_18					 ; "Cancellation of Iqama for Person who has leaved and has not returned"									; "This service is provided to entities that desire to cancel the Iqama of their employees who has leaved the Kingdom and has not returned during the visa period."
@@ -58,22 +58,22 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 
 #MISA Special Services 
 								  ; ZSPLJAWA01					 ; "Exit-Re-Entry Visas of the Investor whose License is Cancelled"                                         ; "Single exit-re-entry visa is granted for a period three(3) months to the resident foreign investor for whom a cancellation decision was issued (punitive / withdrawal of license / non-renewal/ conversion to national / voluntary), whenever it is necessary."																																																																															 
-								  ; ZSPLJAWA02                   ; "Renewal of Residence Permit of the Investor whose License is Cancelled"       							; "Renewal of the Residence permit for a maximum of one year for the foreign investor for whom a cancellation decision under the service no.(09.02) of this manual."																																																																																																						 																																																																																																																																																																						
+								  ; ZSPLJAWA02                   ; "Renewal of Residence Permit of the Investor whose License is Cancelled"       							; "Renewal of the Residence permit for a maximum of one year for the foreign investor for whom a cancellation decision under the service no.(09.02) of services manual."																																																																																																						 																																																																																																																																																																						
 								  ;	ZSPLJAWA03					 ; "Transfer of Sponsorship of the Foreign Investor"				  										; "The services transfer is granted to the resident foreign investor who received a decision to cancel (punitive / withdrawal of license / non-renewal / optional / transfer to 100% national)."																																																																																																	 
 								  ; ZSPLJAWA04					 ; "Final Exit of the Investor whose Licens is Cancelled"													; "The final exit is granted to foreign investor for whom a cancellation decision was issued (punitive / withdrawal of license / non-renewal / conversion to national / voluntary)."																																																																																																		 
 
 #Government Data Update Service								  
-								  ; ZS14						 ; "Government Documents"															                         ;"This service aims to the Integrated E-service by updating the governmental data of the entity licensed by MISA to reach a reliable and updated governmental database through a direct linkage to YESSER system."
+								  ; ZS14						 ; "Government Documents"															                        ;"This service aims to the Integrated E-service by updating the governmental data of the entity licensed by MISA to reach a reliable and updated governmental database through a direct linkage to YESSER system."
 				  
 #Rules & Regulation Advisory 								  
-								  ; ZS20               			 ; "Rules & Regulation"    							  											            ; "This service aims to provide the relevant consultations to the investment regulations in Saudi Arabia."                         							 				  
+								  ; ZS20               			 ; "Rules & Regulation Advisory"    							  											;                        							 				  
 
 #Property Ownership & Sale
-								  ; ZRES						 ; "Buy and Sell Real Estate"																				; "This service is provided for the user who wish to buy or sell real state registed in the entity's name."
+								  ; ZRES						 ; "Buy and Sell Real state"																				; "This service is provided for the user who wish to buy or sell real state registed in the entity's name."
 
 #Follow Up Services
 								  ; ZFLUP_02					 ; "Reply to the Written Notification" 																		; "This service is provided to reply to the written notification through which the entity was informed about the existence of irregularities and grant it a corrective grace period. The entity can respond to irregularities by providing reasons."
-								  ; ZSVR						 ; "Support Visits"																							; "The ministry of invesment represented by the follow-up and supporting department that provides field visit to provide all aspects of support and facilites."
+								  ; ZSVR						 ; "Support Visits"																							; 
 								  ; ZFLUP_03					 ; "Extention of the Written Notification Deadline"															; "This service provided to extend the grace period issued by Ministry of Investment in the written notification through which the entity informed about the existence of irregularities and granting a grace period to the entity to take corrective actions."
                                
 
@@ -86,6 +86,8 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 								  ; ZSPLJAWA02					;								                                                                          ;
 								  ; ZSPLJAWA01					;								                                                                          ;
 								  ; ZSPLJAWA04				    ;								                                                                          ;
+								  ; ZS20						;																										  ;	
+								  
 								  ; ZMOL_11						; "<ol start= '1'>													
                                                                    <li>A copy or number of the commercial registration.</li>
 																   <li>A copy of Zakat and Income Tax Certificate.</li>
@@ -102,7 +104,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
                                                                    <li>The original copy of Articles of Association after notarized by the Notary. </li>
                                                                    <li>Shareholders' resolution to appoint the general manager - if through a separate contract - authenticated by Ministry of commerce and Investment.</li>
                                                                    <li>Providing identity proof for the foreign shareholders and directors, a copy of national ID if any of the shareholders holds Saudi nationality and a document by 'ABSHAR' System to prove profession or a copy of the commercial registration, shareholders' resolution and the articles of association for the engaged Saudi companies.</li>
-                                                                   <li>The original and a copy of 'Booking Commercial Name' according to Service No (10.1.1) of this Manual.</li>
+                                                                   <li>The original and a copy of 'Booking Commercial Name' according to Service No (10.1.1) of services manual .</li>
 								                                   <li>Delegation approved for the applicant with a proof of delegating person identity.</li>
                                                                    </ol>";
 								  
@@ -120,7 +122,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
                                   ; ZMOCI_15					; "<ol start= '1'>
                                                                    <li>The Articles of Association of the company.</li>
                                                                    <li>Providing identity proof for the foreign shareholders and directors, a copy of national ID if any of the shareholders holds Saudi nationality and a document by 'ABSHAR' System to prove profession or a copy of the commercial registration, shareholders' resolution and the articles of association for the engaged Saudi companies.</li>
-                                                                   <li>A copy of 'Booking Commercial Name' according to Service No (10.01.01) of this Manual.</li>
+                                                                   <li>A copy of 'Booking Commercial Name' according to Service No (10.01.01) of services manual.</li>
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
                                                                    </ol>";								 
 								 							
@@ -168,8 +170,8 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 																		  
 								  ; ZFLUP_03					; "<p>1.Any document that the entity deems that it supports its application for extension of the period in the written notification (no mandatory document).</p>"; 
 									 
-								  ; ZRES						; "<p> Property Ownership Service:1. Copy of the Municipality permit to build or an approval letter from the Municipality, indicating type of use of the land to be owned.</p>
-																   <p> Property Ownership Service for Property Investment:1. A report from an engineering office approved by the Saudi Council of Engineers locally, indicating the total cost of the project.</p>";
+								  ; ZRES						; "<p><b>Property Ownership Service:</b>1. Copy of the Municipality permit to build or an approval letter from the Municipality, indicating type of use of the land to be owned.</p>
+																   <p><b>Property Ownership Service for Property Investment:</b>1. A report from an engineering office approved by the Saudi Council of Engineers locally, indicating the total cost of the project.</p>";
 
 								  ; ZMOIP_03					; "<ol start= '1'>
 																   <li>A copy or number of the commercial registration.</li>
@@ -240,7 +242,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 																   </ol>";
 																   
 								  ; ZMOIP_05					; "<ol start= '1'>
-																   <li>A copy or number of the commercial registration. </li>
+																   <li>A copy or number of the commercial registration.</li>
 																   <li>Submission of the original and a copy of the old passport (all previous passports).</li>
 																   </ol>";
 																	 
@@ -249,29 +251,24 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 																   <li>A copy or number of the commercial registration.</li>
 																   <li>A copy of passports.</li>
 																   <li>A copy of Iqama.</li>
-																   <li>Submission of the waiver letter issued by the previous Employer authenticated by the Commerce Chamber. </li>
-																   <li>Submission of the letter issued by the entity to amend the profession and transfer the sponsorship</li>
-																   <li>Submission of the endorsement letter issued by the Ministry of Investment according to Service No (09.08) of this Manual. </li>
+																   <li>Submission of the waiver letter issued by the previous Employer authenticated by the Commerce Chamber.</li>
+																   <li>Submission of the letter issued by the entity to amend the profession and transfer the sponsorship.</li>
+																   <li>Submission of the endorsement letter issued by the Ministry of Investment according to Service No (09.08) of this Manual.</li>
 																   <li>Submission of the Labor Office' approval on the sponsorship transfer according to Service No (10.05.03) of this Manual and on the profession amendment according to Service No (10.05.05) of this Manual.</li>
 																   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
 																   </ol>";
 																	   
-								  ; ZMOIP_21					; "<ol start= '1'>
-																   <li>approved letter from the company/establishment.</li>
-																   <li>out print for verification of information</li>
-																   <li>copy of vaild invesment license and commercial  registeration. </li>
-																   <li>processing of the standared form.</li>
-																   </ol>";
+								  ; ZMOIP_21					; 					;
 																	
 								  ; ZMOIP_23					; "<ol start= '1'>
-																   <li>A copy of the Companies' Articles of Association authenticated by the Saudi Embassy or a copy of Shareholders' Resolution authenticated by the Saudi Embassy and Articles of Association of the Parent Company in its country authenticated by the Saudi Embassy if shareholders include companies. </li>
+																   <li>A copy of the Companies’ Articles of Association authenticated by the Saudi Embassy or a copy of Shareholders’ Resolution authenticated by the Saudi Embassy and Articles of Association of the Parent Company in its country authenticated by the Saudi Embassy if shareholders include companies.</li>
 																   <li>A copy or number of the commercial registration.</li>
 																   <li>A copy of passports.</li>
 																   <li>A copy of Iqama.</li>
-																   <li>Submission of the waiver letter issued by the previous Employer authenticated by the Commerce Chamber. </li>
-																   <li>Submission of the letter issued by the entity to amend the profession and transfer the sponsorship</li>
-																   <li>Submission of the endorsement letter issued by the Ministry of Investment according to Service No (09.08) of this Manual. </li>
-																   <li>Submission of the Labor Office' approval on the sponsorship transfer according to Service No (10.05.03) of this Manual and on the profession amendment according to Service No (10.05.05) of this Manual.</li>
+																   <li>Submission of the waiver letter issued by the previous Employer authenticated by the Commerce Chamber.</li>
+																   <li>Submission of the letter issued by the entity to amend the profession and transfer the sponsorship.</li>
+																   <li>Submission of the endorsement letter issued by the Ministry of Investment according to Service No (09.08) of this Manual service manual.</li>
+																   <li>Submission of the Labor Office’ approval on the sponsorship transfer according to Service No (10.05.03) of this Manual service manual and on the profession amendment according to Service No (10.05.05) of this Manual services manual.</li>
 																   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
 																   </ol>";
 																	   
@@ -305,9 +302,9 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																   <ol start= '1'>																   
 																   <li> Before applying for this service, the entity must verify the following:</li> 
 																   <dd>- Employees discharged.</dd>                                                                                                                                                                                                                                                                                                                                                                     	
-																   <dd>- Closure of the entity's location and stop the practice its business .</dd>
+																   <dd>- Closure of the entity's location and stop the practice its business.</dd>
 																   <li>Not to work or exercise activity directly or indirectly.</li>                                                                                                                                                                                                                                                                                                                               	
-																   <li>Deregistration of commercial registration of branches/ marketing centers that are intended to be closed .</li>
+																   <li>Deregistration of commercial registration of branches/ marketing centers that are intended to be closed.</li>
 																   </ol>";
 
 								; ZSR7							; "<ol start= '1'>																																				     																																					                                                                                                                                             
@@ -328,15 +325,15 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 
 								; ZSR4  						; "<ol start= '1'>																																					  							
 								                                    <li> Investment entities requesting renewal shall be committed to update and adopt its data at the Ministry of Investment annually.</li>
-																	<li>The entity shall review the requirements of the license in section no. (03.00) of this manual before applying for renewal.</li>								   
-																	<li> Before applying for the service, the entity must be ensure that the Certificate of Zakat and Income is valid. </li>										   
+																	<li>The entity shall review the requirements of the license in section no. (03.00) of services manual before applying for renewal.</li>								   
+																	<li>Before applying for the service, the entity must be ensure that the Certificate of Zakat and Income is valid.</li>										   
 																	<li>A valid zakat certificate must be attached in case of a technical problem occurred while submitting the application.</li>
 																	</ol>";
 								
 								; ZSPLJAWA02					; "<ol start= '1'>																																						  	 																																
 																	  <li> The investor (s) shall be granted residence renewal application for one time only.</li>
-																	  <li>Access of the investor (s) to the service is subject to the laws and regulations of government agencies or institutions providing the service. </li>
-																	  <li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no. (08.01) of this manual. </li>
+																	  <li>Access of the investor (s) to the service is subject to the laws and regulations of government agencies or institutions providing the service.</li>
+																	  <li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no.(08.01) of services manual.</li>
 																	  </ol>";
 
 								; ZSPLJAWA01					; "<ol start= '1'>																																																																																							           
@@ -347,7 +344,7 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																	  <dd>- Marriage of one of the investor's first-class lineage.</dd>
 																	  <dd>- Request for exit-re-entry for family members.</dd>
 																	 <li>For investor/investors to acquire a service relays on the governmental agencies rules and procedures to obtain such a service.</li>
-																	 <li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no. (08.01) of this manual.</li>
+																	 <li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no. (08.01) of services manual.</li>
 																	  </dl>
 																	 </ol>";
 								
@@ -368,14 +365,14 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																																																																																																																			
 								; ZMOCI_15						; "1- The entity shall present a draft of the Articles of Association of the company in WORD version.";
 
-								; ZMOCI_18						; "1.The financial statements for the last three years must be added on the portal of 'my business' on the website of Commerce and Investment.";
+								; ZMOCI_18						; "1.The financial statements for the last three years must be added on the portal of 'my business' on the website of Commerce.";
 																																																																																																																
-								; ZMOCI_20						; "<p>1.The company is committed to make an electronic publication through the portal of 'my business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>";
+								; ZMOCI_20						; "<p>1.The company is committed to make an electronic publication through the portal of 'my business' on the website of the Ministry of Commerce of the summary of the Memorandum of Association.</p>";
 																																																																																																																		
-								; ZMOCI_08						; "<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</p>";
+								; ZMOCI_08						; "<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce of the summary of the Memorandum of Association.</p>";
 																																																																																																																			 
 								; ZMOCI_10						; "<ol start= '1'>																																																																				
-																	  <li>The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment of the summary of the Memorandum of Association.</li>
+																	  <li>The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce of the summary of the Memorandum of Association.</li>
 																	  <li>If the address is changed to another city, a copy of the Memorandum of Association shall be required after the amendment.</li>
 																	  </ol>";
 																																																																																																																			 
@@ -391,42 +388,43 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																		 <li>The request to extend the grace period given in the written notification shall not be accepted except for one time only</li>
 																		 </ol>";
 																		 
-								; ZRES							; "<p>Property Ownership Service:</p>
+								; ZRES							; "<p><b>Property Ownership Service:</b></p>
 																		<ol start= '1'>
-																		<li>The property must be outside the perimeter of Makkah and Madinah Al-Munawarrah cities.</li>
-																		<li>The capital must not be less than the value of the property to be purchased, or the entity would have to submit a property preliminary funding from the funding agency.</li>
-																		 <li> The area must be within the perimeter of imperative need.</li>
-																		 <li> The property to be owned must be in one of the industrial cities approved (for factories).</li>
-																		 <li>The project shall be active and there is no violation of the foreign investment law.</li>
-																		 <li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application</p>
-																		 <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
-																		 </ol>
-																		 <p>Sale of Property:</p>
-																		  <ol start= '1'>
-																		  <li>The purpose of such sales shall not be commercial.</li>
-																		  <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
-																		  <li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
-																		<p>Property Ownership Service for Property Investment:</p>
-																		  <ol start= '1'>
+																			<li>The property must be outside the perimeter of Makkah and Madinah Al-Munawarrah cities.</li>
+																			<li>The capital must not be less than the value of the property to be purchased, or the entity would have to submit a property preliminary funding from the funding agency.</li>
+																			<li>The area must be within the perimeter of imperative need.</li>
+																			<li>The property to be owned must be in one of the industrial cities approved (for factories).</li>
+																			<li>The project shall be active and there is no violation of the foreign investment law.</li>
+																			<li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</p>
+																			<li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
+																		</ol>
+																	<p><b>Sale of Property:</b></p>
+																		<ol start= '1'>
+																			<li>The purpose of such sales shall not be commercial.</li>
+																			<li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
+																			<li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
+																		</ol>
+																	<p><b>Property Ownership Service for Property Investment:</b></p>
+																		<ol start= '1'>
 																		  <li>The cost of the project must not be less than thirty (30) million Saudi Riyals (land and building).</li>
 																		  <li>The property must be outside the boundary of Makkah and Madinah Al-Munawarrah cities.</li>
 																		  <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
-																		  <li> A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
+																		  <li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
 																		  <li>The applicant shall commit to utilize the land for the specified purpose within five (5) years.</li>
-																		  </ol>
-																		  <p>Property Selling Service for Property Investment:</p>
-																		  <ol start= '1'>
+																		</ol>
+																	<p>Property Selling Service for Property Investment:</p>
+																		<ol start= '1'>
 																		  <li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
 																		  <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
-																		  </ol>";
+																		</ol>";
 
-								; ZS14							; "<p>1. Update - for once only - is mandatory for all licensed entities,holding a license of two years or more, that did not provide Ministry of Investment with the data in earlier time. 2. The service shall be suspended for licensed entities that have a shortage or mismatch in government documents figures with 'YESSER' data until updating their government data in the electronic system of Ministry of Investment, and verification of data on compliance with the 'YESSER' </p>";
+								; ZS14							; "<p>1. Update - for once only - is mandatory for all licensed entities,holding a license of two years or more, that did not provide Ministry of Investment with the data in earlier time. 2. The service shall be suspended for licensed entities that have a shortage or mismatch in government documents figures with 'YESSER' data until updating their government data in the electronic system of Ministry of Investment, and verification of data on compliance with the 'YESSER'.</p>";
 					 
 					 
-								; ZMOIP_03						; "<p>1.Fill the form of 'Exit and Return Visa' approved by General Department of Passports. </p>"														
+								; ZMOIP_03						; "<p>1.Fill the form of 'Exit and Return Visa' approved by General Department of Passports.</p>"														
 					 
 								; ZMOIP_10						; "<ol start= '1'>
-																	<li>This service is provided through ABSHER or MUQEEM System(in case of inability to issue, a proof for that shall be submitted).</li>														
+																	 <li>This service is provided through ABSHER or MUQEEM System(in case of inability to issue, a proof for that shall be submitted).</li>														
 																	 <li>Fill the form of 'Exit and Return Visa' approved by General Department of Passports.<li>
 																   </ol>";
 					 
@@ -434,7 +432,7 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 
 								; ZMOIP_01						; "<ol start= '1'>																																		
 																   <li>If there is no commercial registration, an applicant shall provide a commitment of issuing a commercial registration within a month.</li>
-																   <li>If the Iqama is to be issued for the General Manager, a copy of the commercial registration shall be submitted after adding the name of the General Manager. </li>
+																   <li>If the Iqama is to be issued for the General Manager, a copy of the commercial registration shall be submitted after adding the name of the General Manager.</li>
 																   <li>If the Iqama is to be issued for the General Manager, a worker card from the Working Office's official website shall be submitted.</li>
 																   <li>The applicant should have an electronic overall medical report to be presented to the General Department of Passports.</li>
 																   <li>The applicant should have an electronic of medical insurance be presented to the General Department of Passports.</li>
@@ -442,9 +440,9 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																   </ol>";
 																		   
 								; ZMOIP_07						; "<ol start= '1'>																																	   																																		
-																   <li>This service provided through 'Absher' or 'Muqeem' System (in case of inability to issue, a proof for that shall be submitted).  </li>
+																   <li>This service provided through 'Absher' or 'Muqeem' System (in case of inability to issue, a proof for that shall be submitted).</li>
 																   <li>The applicant should have an electronic overall medical report be presented to the General Department of Passports.</li>
-																   <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports. </li>
+																   <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports.</li>
 																   </ol>";
 
 								; ZMOIP_15 						; "1- Fill the 'Dismissal of an Employee Holding Separate Iqama form' approved by General Department of Passports.";
@@ -456,17 +454,17 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																   <dd>- Commercial registration containing the name of the General Manager.</dd>
 																   </dl>
 																  <li>The applicant should have an electronic medical insurance to be presented to the General Department of Passports.</li>
-																  <li>Fill the 'Renewal of Iqama form' approved by General Department of Passports. </li>
+																  <li>Fill the 'Renewal of Iqama form' approved by General Department of Passports.</li>
 																  </ol>";
 																		  
 								; ZMOIP_18						; "<ol start= '1'>																																																
-																  <li>The application can be submitted only after (31) days from the expiry of return visa. </li>
-																  <li>Submission of an accredited check against a fine of (1,000 SR) in case of Iqama loss. </li>
+																  <li>The application can be submitted only after (31) days from the expiry of return visa.</li>
+																  <li>Submission of an accredited check against a fine of (1,000 SR) in case of Iqama loss.</li>
 																  <li>Submission of endorsement letter issued by Government Relations Department in the Ministry of Investment if the profession is an investor or general manager.</li>
 																  </ol>";
 
 								; ZMOIP_09						; "<ol start= '1'>																															
-																	 <li>Iqama will be delivered through Wasel Service. </li>
+																	 <li>Iqama will be delivered through Wasel Service.</li>
 																	 <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports.</li>
 																	 </ol>";
 																		 
@@ -491,8 +489,15 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																	</ol>";
 																		
 								; ZMOIP_06						; "<ol start = '1'>																															
-																  <li>Complete electronic procedures regarding the Employer's approval.</li>
-																  <li>Fill the 'Sponsorship Transfer and Profession Amendment form' approved by General Department of Passports. </li>
+																	<li>A copy of the Companies’ Articles of Association authenticated by the Saudi Embassy or a copy of Shareholders’ Resolution authenticated by the Saudi Embassy and Articles of Association of the Parent Company in its country authenticated by the Saudi Embassy if shareholders include companies.</li>
+																	<li>A copy or number of the commercial registration.</li>
+																	<li>A copy of passports.</li>
+																	<li>A copy of Iqama.</li>
+																	<li>Submission of the waiver letter issued by the previous Employer authenticated by the Commerce Chamber.</li>
+																	<li>Submission of the letter issued by the entity to amend the profession and transfer the sponsorship.</li>
+																	<li>Submission of the endorsement letter issued by the Ministry of Investment according to Service No (09.08) of this Manual service manual.</li>
+																	<li>Submission of the Labor Office’ approval on the sponsorship transfer according to Service No (10.05.03) of this Manual service manual and on the profession amendment according to Service No (10.05.05) of this Manual services manual.</li>
+																	<li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
 																  </ol>";
 																		  																		
 								; ZMOIP_23						; "<ol start = '1'>																															
@@ -504,16 +509,19 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																  <li>If the Employer has passed away, the Principality's approval shall be obtained.</li>
 																  <li>If the amendment is from a company to an sole establishment, a shareholders' waiver letter of their respective shares in employees authenticated by the Commerce Chamber shall be submitted.</li>									
 																  </ol>";
+																		 
+								; ZS20							;			;
+																		  
 																		  
 																		  
 UPDATE SagiaService				; code[unique = true]			; serviceFinancialFees[lang = $langen] 								;serviceDuration[lang = $langen]	;
 								; ZSR6							;																	;Notification for The Purpose of Voluntary Cancellation of the License:Two working days.Apply of voluntary cancellation of the license:Immediate
 								; ZSR7							;																    ;Immediate							
-								; ZSR5 						 	;                                  									;Immediate/One working day																																
+								; ZSR5 						 	;                                  									;																																
 								; ZSPLJAWA03					;																	;Three working day				
 								; ZSR4 						    ;"<ul>														  																																				
-																	 <li> Payment of license fee of two thousand (2000) Saudi Riyals annual for 5 years as maximum.</li>
-																	 <li>Payment of ten thousand (60,000) Riyals for each year.
+																	 <li>Payment of license fee of (2000) Saudi Riyals annual for 5 years as maximum.</li>
+																	 <li>Payment of (60,000) Riyals for each year.
 																	 <li>Service fees shall be paid within (60) days from the date of bill issuance. In case of the payment's delay within the identified period, the service will be cancelled and the applicant have to apply again </li>
 																	 </ul>"															;Immediate
 								; ZSPLJAWA02					;																	;Three working day																	 
@@ -550,10 +558,10 @@ UPDATE SagiaService				; code[unique = true]			; serviceFinancialFees[lang = $la
                                 ; ZMOIP_13						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
                                 ; ZMOIP_05						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
                                 ; ZMOIP_06						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day		
-                                ; ZMOIP_21						;																	;One working day		
+                                ; ZMOIP_21						;																	;		
                                 ; ZMOIP_23						;<ul><li>Payment of fees for the service provider.</li></ul>		;One working day	
                                 ; ZMOIP_14						;<ul><li>Payment of fees for the service provider.</li></ul>		;Two working day		
-
+								; ZS20							;																	;
 
 
 INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
@@ -606,11 +614,11 @@ INSERT_UPDATE SagiaServiceTab; code[unique = true] ; content[lang = $langen]    
 
 UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	                                                           ; tabs(code)	;
 #							; ZMOCI_22										; Ministry of commerce service forms;	
-							; ZMOIP_23										; Transfer KAFALA for GM of Branch of Foreigner comp;	
+							; ZMOIP_23										; Transfer KAFALA for General manager of Branch of foreigner company;	
 							; ZMOIP_21										; Wavier of Son or Daughter;	
 							; ZMOIP_18										; Cancellation of Iqama for Person who has leaved and has not returned;	
 							; ZMOIP_17										; Issuance of replacement Copy of Damaged Passport;	
-							; ZMOIP_15										; Dismissal of an Subordinates Holding Separate Iqama;	
+							; ZMOIP_15										; Dismissal of a Subordinates Holding Separate Iqama;	
 							; ZMOIP_14										; Amendment of Entity Name;	
 							; ZMOIP_13										; Amendment of Passport Data;	
 							; ZMOIP_12										; Extension of Travel Visa Period;	
@@ -643,13 +651,13 @@ UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	 
 							; ZMOCI_04										; Replacement of Est.'s Damaged CR;	
 							; ZMOCI_05										; Replacement of Company's Lost CR;	
 							; ZMOCI_02										; Issuance of a New CR for Establishment;	
-							; ZS20											; Rules and regulations;	
+							; ZS20											; Rules & Regulation Advisory;	
 							; ZSR5											; Amendment Of License;	
 							; ZSVR											; Support Visits;	
 							; ZS14											; Government Documents;	
 							; ZFLUP_03										; Extension of the Written Notification Deadline;	
 							; ZFLUP_02										; Reply to the Written Notification;	
-							; ZRES											; Buy and sell Real Estate;	
+							; ZRES											; Buy and Sell Real state;	
 							; ZSR6											; Voluntary Cancellation of License;	
 #							; ZS11											; Financial Statement;	
 							; ZSR9											; Cancellation Support Letter;	
@@ -660,5 +668,4 @@ UPDATE SagiaService         ; code[unique = true]							; name[lang = $langen]	 
 							; ZSPLJAWA01									; Exit-Re-Entry Visas of the Investor whose License is Cancelled;	
 							; ZSPLJAWA04									; Final Exit of the Investor whose License is Cancelled;	
 							; ZSPLJAWA02									; Renewal of Residence Permit of the Investor whose License is Cancelled;	
-
 

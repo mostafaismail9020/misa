@@ -1,5 +1,8 @@
 #To send service request to cpi from hybris
-
+ 
+INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
+; ServiceRequest; INBOUND 
+ 
 INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
 ; ServiceRequest	; ServiceCategory 	; ServiceCategory 	; 	; ALL_SUBTYPES           	;  
 ; ServiceRequest	; IncidentCategory	; IncidentCategory	; 	; ALL_SUBTYPES           	;  

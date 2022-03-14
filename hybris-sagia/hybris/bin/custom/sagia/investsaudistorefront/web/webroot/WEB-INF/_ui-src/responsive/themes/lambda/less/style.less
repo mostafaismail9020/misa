@@ -28942,7 +28942,7 @@ select.form-control {
 .btn.btn-sagia.reset-btn{
   font-size: 16px !important;
 }
-.btn.btn-sagia.btn-sagia-green {
+.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia {
   font-size: 16px !important;
 }
 /**24-02-2022**/
@@ -29010,7 +29010,7 @@ select.form-control {
   display:none;
 }
 .border-header{
-  padding: 60px 0px;
+  padding: 30px 0px;
 }
 .searchEmptyPageTop{
   .search-empty{
@@ -29033,6 +29033,9 @@ select.form-control {
     }
   }
 }
+.account-section .account-section-content{
+  margin-top: 5rem;
+}
 @media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
   .login-screen .login-right-wrapper{
     width: 85%;
@@ -29043,7 +29046,7 @@ select.form-control {
   .login-register-text{
     font-size: 24px;
   }
-  .login-btn, #forgottenPwdForm .btn,.btn.btn-sagia.btn-sagia-green{
+  .login-btn, #forgottenPwdForm .btn,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia{
     height: 45px;
     font-size: 14px;
   }
@@ -29122,10 +29125,10 @@ select.form-control {
     width: 300px;
     min-width: 300px;
   }
-  .newUser_page .headline,.newchildUser_page .headline,.viewchildUser_page .headline
-  ,.managerchildUser_page .headline{
-    padding: 50px 0px 40px 0px;
-  }
+  // .newchildUser_page .headline,.viewchildUser_page .headline
+  // ,.managerchildUser_page .headline{
+  //   padding: 50px 0px 40px 0px;
+  // }
   #createTicket-subject{
     height: 70px;
   }
@@ -29140,7 +29143,8 @@ select.form-control {
   .account-section-content .form-group,#createTicket-subject,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia.btn-sagia-green
   ,.btn,.breadcrumb-section .breadcrumb li.active,.file-upload__input
   ,ul.admin-menu li a
-  ,.featureDiv .blogContainerBackGround .blogExtract, .blogContainerDiv .blogContainerBackGround .blogExtract, .featureDiv .featureBack .blogExtract, .blogContainerDiv .featureBack .blogExtract{
+  ,.featureDiv .blogContainerBackGround .blogExtract, .blogContainerDiv .blogContainerBackGround .blogExtract, .featureDiv .featureBack .blogExtract, .blogContainerDiv .featureBack .blogExtract
+  ,body.page-contact .brach-location ul.list-unstyled li{
     font-size: 14px;
   }
   .float-button{
@@ -29169,10 +29173,9 @@ select.form-control {
   body.page-contact .heading{
     font-size: 25px;
   }
-  .section-bg .product-category .facet__name{
+  .section-bg .product-category .facet__name,body.page-contact .brach-location p{
     font-size: 24px;
-  }
-  
+  }  
 }
 
 @media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150%*/
@@ -29187,7 +29190,7 @@ select.form-control {
   .login-register-text{
     font-size: 20px;
   }
-  .login-btn, #forgottenPwdForm .btn,.btn.btn-sagia.btn-sagia-green{
+  .login-btn, #forgottenPwdForm .btn,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia{
     height: 40px;
     font-size: 12px;
   }
@@ -29224,7 +29227,10 @@ select.form-control {
   }
   .register-user-info-label.focused, .register-user-info-label.focused-country{
     font-size: 8px;
-    transform: translate3d(-10px, -7px, 0) scale(0.9);
+    transform: translate3d(0px, -7px, 0) scale(0.9);
+  }
+  .page-SecureCustomerPortalRegisterPage  .register-user-info-label.focused{
+    transform: translate3d(-10px, -7px, 0) scale(0.9)
   }
   .register-account-partner-screen3 .login-right-wrapper{
     width: 500px;
@@ -29279,10 +29285,10 @@ select.form-control {
     width: 270px;
     min-width: 270px;
   }
-  .newUser_page .headline,.newchildUser_page .headline,.viewchildUser_page .headline
-  ,.managerchildUser_page .headline{
-    padding: 60px 0px 40px 0px;
-  }
+  // .newchildUser_page .headline,.viewchildUser_page .headline
+  // ,.managerchildUser_page .headline{
+  //   padding: 60px 0px 40px 0px;
+  // }
   #createTicket-subject{
     height: 55px;
   }
@@ -29298,6 +29304,7 @@ select.form-control {
   ,.btn,.breadcrumb-section .breadcrumb li.active,.file-upload__input
   ,ul.admin-menu li a
   ,.featureDiv .blogContainerBackGround .blogExtract, .blogContainerDiv .blogContainerBackGround .blogExtract, .featureDiv .featureBack .blogExtract, .blogContainerDiv .featureBack .blogExtract
+  ,body.page-contact .brach-location ul.list-unstyled li
   {
     font-size: 12px;
   }
@@ -29327,7 +29334,7 @@ select.form-control {
   body.page-contact .heading{
     font-size: 20px;
   }
-  .section-bg .product-category .facet__name{
+  .section-bg .product-category .facet__name,body.page-contact .brach-location p{
     font-size: 22px;
   }
 }

@@ -317,7 +317,7 @@
         <%-- </form:select> --%>
         <%-- </c:if> --%>
 
-        <div>
+        <div class="form-note">
           <spring:theme code="text.account.supporttickets.createTicket.note" />
         </div>
 

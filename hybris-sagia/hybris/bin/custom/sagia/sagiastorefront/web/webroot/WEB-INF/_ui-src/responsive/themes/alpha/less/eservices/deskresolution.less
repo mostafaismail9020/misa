@@ -7021,3 +7021,12 @@
 .page-license-renew #instantRenewal  .modal-dialog{
     max-width: 700px !important;
 }
+
+ /* Add the below two css conditions to hide the misaligned checkbox design*/
+ .page-new-apply-review #sagiaApplyReviewForm #termsAndConditions[disabled]{
+    height: 0px;
+}
+.page-new-apply-review #sagiaApplyReviewForm #termsAndConditions:not([disabled]){
+    height: unset;
+}
+ /*End of  Add the below two css conditions to hide the misaligned checkbox design*/

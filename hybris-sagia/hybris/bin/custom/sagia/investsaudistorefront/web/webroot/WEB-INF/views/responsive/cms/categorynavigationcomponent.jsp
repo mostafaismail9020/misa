@@ -26,12 +26,12 @@
 								</cms:pageSlot>
 								<%--<a href="<c:url value="/my-account/orders"/>">My Account</a>--%>
 								<span>|</span>
-								<a class="header-link" href="<c:url value="/logout"/>">Logout</a>
+								<a class="header-link"  data-toggle="modal" data-target="#logoutModal_b2b">Logout</a>
 							</sec:authorize>
 							<sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')">
 								<a class="header-link" href="<c:url value="/login"/>">Login</a>
 							</sec:authorize>
-							<img src="${commonResourcePath}/images/vision-2030.png" class="padd_left_10">
+							<a href="http://vision2030.gov.sa/ar/" target="_blank"><img src="${commonResourcePath}/images/vision-2030.png" class="padd_left_10"></a>
 						</div>						
 						<c:if test="${NIPCUser || MarCommUser}">
 							<div class="nav__right text-center header-search-area">
@@ -141,6 +141,41 @@
 		</div>
 	</nav>
 </c:if>
+								
+<div class="modal fade" id="logoutModal_b2b" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
+        <div class="modal-content">
+            <form action="" class="js-formInputFileBox">
+                <div class="modal-header modal-header_smallPDB">
+                    <div class="modal-title">
+						<!--<spring:message code="text.logout.title"/>-->
+						Logout?
+					</div>
+                    <button type="button" class="modal-close bttn_close" data-dismiss="modal" aria-label="Close"> 
+                        <svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-description modal-description_largeMargin modal-description_smallText">
+                        <!--<spring:message code="text.logout.description"/> --> 
+						 Are you sure you want to logout?
+                    </div>
+                </div>
+               <div class="modal-footer modal-footer_spaceBetween">
+                    <button type="button" class="btn-ctrl btn-warning noButton btn-outline p-0" data-dismiss="modal">
+						<!-- <spring:message code="text.logout.no"/>-->
+						NO
+					</button> 
+                    <button type="button" class="btn btn-ctrl btn-bg p-0 m-0 yesButton">
+						<!-- <spring:message code="text.logout.yes"/> href="<c:url value="/logout"/>" -->
+						YES
+					</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> 
+
 
 <script src="/investsaudistorefront/_ui/responsive/common/js/jquery-3.2.1.min.js"></script>
 <script>
@@ -184,4 +219,13 @@
       $(".main__inner-wrapper").addClass("scrolled-body").fadeIn('slow');
     }
   });
+</script>
+
+<script>
+	$("#logoutModal_b2b .yesButton").on("click", function() { 
+	window.location.href = "<c:url value='/logout'/>";
+});
+$("#logoutModal_b2b .noButton").on("click", function() {
+	$('#logoutModal').modal('hide');
+});
 </script>

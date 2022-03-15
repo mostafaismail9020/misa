@@ -122,7 +122,10 @@ public class SagiaLicenseConvertController extends SagiaAbstractPageController {
             model.addAttribute("requestFeedback", "true");
         }
         model.addAttribute("serviceDescription", getServiceDescription(request.getServletPath()));
-
+        
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_CREATE_TO_NATIONALS_SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
+        
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_LICENSE_CONVERT_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_LICENSE_CONVERT_CMS_PAGE));
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);
@@ -160,10 +163,8 @@ public class SagiaLicenseConvertController extends SagiaAbstractPageController {
         }else {
         	attachments = customizationListService.readConvToNationalsSupportingAttachments();
         }
-        
-        
-        model.addAttribute("attachments", attachments);
-        
+                
+        model.addAttribute("attachments", attachments);        
         model.addAttribute("isAllowed", emptyServiceRequest.getIsAllowed());
         model.addAttribute("isInstant", emptyServiceRequest.getIsInstant());
         model.addAttribute("disclaimer", emptyServiceRequest.getMsgToInvestor());
@@ -173,11 +174,11 @@ public class SagiaLicenseConvertController extends SagiaAbstractPageController {
         model.addAttribute("serviceId", SAGIA_CREATE_TO_NATIONALS_SERVICE_ID);
 	
 		SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_CREATE_TO_NATIONALS_SERVICE_ID);
+		model.addAttribute("sagiaService", sagiaService);
         model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
         model.addAttribute("convertToNationalsFormData", new ConvToNationalsFormData());
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);
-        model.addAttribute("sagiaService", sagiaService);
-
+       
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_LICENSE_NEW_CONVERT_TO_NATIONALS_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_LICENSE_NEW_CONVERT_TO_NATIONALS_CMS_PAGE));
         return getViewForPage(model);

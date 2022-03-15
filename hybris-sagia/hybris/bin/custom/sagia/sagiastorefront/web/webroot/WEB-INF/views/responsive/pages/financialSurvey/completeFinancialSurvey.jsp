@@ -1572,7 +1572,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="formInputBox">
+                                    <div class="formSelectBox">
                                         <div class="form-group">
                                             <select id="companyCountry" name="companyCountry"
                                                     class="js-select2-oneColumn form-control"></select> <label
@@ -1596,7 +1596,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="formInputBox">
+                                    <div class="formSelectBox">
                                         <div class="form-group">
                                             <select id="nationalityOfUCPId" name="nationalityOfUCP"
                                                     class="js-select2-oneColumn form-control"></select> <label

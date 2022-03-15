@@ -586,7 +586,7 @@ SAGIA.dashboardWithLicense = {
                                     //template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("class","btn btn_slim draftContinueBtn");
-                                    template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("style","float: left;");
+                                    // template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("style","float: left;");
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr('href', ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/display/" + survey.quarterCode);
                                 }
                                 template.find(".dashboardWidgetFinancialSurveys-btn").attr("data-complaint-Id", survey.quarterCode);

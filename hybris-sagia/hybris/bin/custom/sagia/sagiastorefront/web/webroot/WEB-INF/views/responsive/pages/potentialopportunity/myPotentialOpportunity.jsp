@@ -73,7 +73,7 @@
 		</div>
 		<div class="col-md-6  pull-right text-right">
 			<c:url value="/potentialOpportunity/${contactTicketDetails.ticketID}/serviceRequest" var="serviceRequestURL"/>
-			<a href="${serviceRequestURL}" class="btn-dashboard text-uppercase potentialOpportunityServiceReq" style="float: right;"> 
+			<a href="${serviceRequestURL}" class="btn-dashboard text-uppercase potentialOpportunityServiceReq" > 
 				<spring:theme code="my.potential.opportunity.service.request.button" />
 			</a>
 		</div>
@@ -345,7 +345,7 @@
 				
 				<h5 class="serviceModule-description">
 					<span class="serviceModule-headline"><spring:theme code="my.potential.opportunity.comments.label"/></span>
-					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase my-3 my-md-0">
+					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase my-3 my-md-0" style="position: relative; top: -9px; ">
 						<spring:theme code="my.potential.opportunity.add.comments"/>
 					</button>
  				</h5> 

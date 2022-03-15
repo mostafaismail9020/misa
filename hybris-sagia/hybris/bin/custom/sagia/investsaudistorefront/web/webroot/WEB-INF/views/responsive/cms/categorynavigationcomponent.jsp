@@ -142,7 +142,7 @@
 	</nav>
 </c:if>
 								
-<div class="modal fade" id="logoutModal_b2b" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal1 fade" id="logoutModal_b2b" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
         <div class="modal-content">
             <form action="" class="js-formInputFileBox">
@@ -162,11 +162,11 @@
                     </div>
                 </div>
                <div class="modal-footer modal-footer_spaceBetween">
-                    <button type="button" class="btn-ctrl btn-warning noButton btn-outline p-0" data-dismiss="modal">
+                    <button type="button" class="btn-ctrl btn-warning noButton btn-outline p-0 m-0" data-dismiss="modal">
 						<!-- <spring:message code="text.logout.no"/>-->
 						NO
 					</button> 
-                    <button type="button" class="btn btn-ctrl btn-bg p-0 m-0 yesButton">
+                    <button type="button" class="btn btn-ctrl btn-bg p-0 mb-0 yesButton">
 						<!-- <spring:message code="text.logout.yes"/> href="<c:url value="/logout"/>" -->
 						YES
 					</button>

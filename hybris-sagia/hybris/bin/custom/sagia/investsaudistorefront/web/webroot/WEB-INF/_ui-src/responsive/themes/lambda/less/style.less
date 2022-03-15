@@ -27836,9 +27836,9 @@ select.form-control option {
   .dottedList.dottedList_green .dottedList-item:before{
 	background-color: #00A6BE;
   }
-  #cboxOverlay{
+  /*#cboxOverlay{
 	height: 100vh;
-  }
+  }*/
   #colorbox .forgotten-password .btn-primary{
 	margin: 2% auto auto;
 	width: 100% !important;
@@ -28118,7 +28118,7 @@ select.form-control option {
   margin: auto;
   justify-content: center;
   text-align: center;
-  padding: 40px;
+  padding: 20px;
 }
 .footer__top .footer__nav--container .footer__nav--links{
   font-size: 14px;
@@ -29188,6 +29188,9 @@ select.form-control {
   .section-bg .product-category .facet__name,body.page-contact .brach-location p{
     font-size: 24px;
   }  
+  select.form-control{
+    background-size: 12px;
+  }
 }
 
 @media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150%*/
@@ -29218,10 +29221,10 @@ select.form-control {
     font-size: 14px;
   }
   .page-SecureCustomerPortalRegisterPage .content, .page-updatePassword .content, .page-login .content{
-    font-size: 9px;
+    font-size: 14px;
   }
   .login-forgot{
-    padding: 20px;
+    padding: 10px;
   }
   .register-user-info-label,select.form-control{
     font-size: 12px;
@@ -29349,6 +29352,9 @@ select.form-control {
   .section-bg .product-category .facet__name,body.page-contact .brach-location p{
     font-size: 22px;
   }
+  select.form-control{
+    background-size: 14px;
+  }
 }
 
 /*logoutModal_b2b 14-03-2022*/
@@ -29389,3 +29395,58 @@ select.form-control {
     background-color: #00a6be!important;
     color: #fff !important;
 } 
+
+
+/**15-03-2022**/ 
+.register-user-info-label.focused-country {
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  width: 65%;
+}
+
+#termsAndConditionsResponseModal .modal-footer{
+  width: 35%;
+  margin: 0px auto;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 640px) {
+  .register-user-info .text-center {
+    padding: 0px !important;
+  }
+  .login-forgot {
+    padding: 0px !important;
+  }
+  .login-buttons {
+    margin-bottom: 0px !important;
+  }
+  select.form-control{ 
+    background-size: 12px;
+  }
+}
+.accountLogin-content-headline { 
+  margin-bottom: 30px;
+}
+.page-login p {
+  margin: 0 0 20px;
+}
+.page-SecureCustomerPortalRegisterPage select.form-control{ 
+  background-size: 16px;
+}
+.page-SecureCustomerPortalRegisterPage select.form-control option {
+  font-size: 10px;
+} 
+.modal1 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 20249;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  margin: 0px auto;
+}

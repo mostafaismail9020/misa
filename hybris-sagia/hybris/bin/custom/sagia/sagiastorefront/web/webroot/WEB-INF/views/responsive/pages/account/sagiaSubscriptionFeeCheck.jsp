@@ -37,7 +37,7 @@
                 </a>
             </div>
 
-            <div class="panelModule panelModule_halfRadius accountLogin-content" style="max-width: 600px;">
+            <div class="panelModule panelModule_halfRadius accountLogin-content verification-div-sub" style="max-width: 600px;margin-top: 200px;">
                 <div>
                     <%-- <h4 class="accountLogin-title headline login-page__headline text-center"><spring:theme code="text.subscriptionfeecheck.title"/></h4> --%>
                     <p><spring:theme code="text.subscriptionfeecheck.title"/></p>
@@ -56,7 +56,7 @@
                     <p><spring:theme code="text.subscriptionfeecheck.message4"/></p>
                 </div>
                 
-                	<div class="row">
+                	<div class="row" style="justify-content: center;">
 	                   <div class="accountLogin-buttonWrapper">
 	                       <a class="btn" style="margin-left: 35px;" href="${emailSubscriptionFeeUrl}"><spring:theme code="text.subscriptionfeecheck.sendemail"/></a>
 	                   </div>
@@ -65,11 +65,11 @@
 	                   </div>
                    </div>
                    <div class="accountLogin-linkWrapper" style="margin-top: 6px;margin-bottom: 11px;">
-                     <a href="${backToLoginActionUrl}" class="btn btn_link btn_link_text">
+                     <a href="${backToLoginActionUrl}" class="btn_link_text">
                          <spring:theme code="text.verification.backtologin"/></a>
                    </div>
                    <div class="accountLogin-linkWrapper" style="margin-top: 6px;margin-bottom: 11px;">
-                     <a href="${contactUs}" class="btn btn_link btn_link_text">
+                     <a href="${contactUs}" class="btn_link_text">
                          <spring:theme code="support.contactus"/></a>
                    </div>      
 				

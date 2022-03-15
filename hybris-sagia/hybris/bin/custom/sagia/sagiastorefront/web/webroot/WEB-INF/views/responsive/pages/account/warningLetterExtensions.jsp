@@ -106,6 +106,78 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
+        <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+        <div class=""><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+    </button>
+</div>
+<div class="container service-wrapper service-wrapper-info mb-5 expanded"  id="expand-03">
+	<div class="serviceModule serviceModule_list mx-5 pt-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<c:if test="${not empty sagiaService.description}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.overview"/> </span>	
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
+					</c:if>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<c:if test="${not empty sagiaService.serviceDocuments}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.document"/> </span>
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
+					</c:if>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<c:if test="${not empty sagiaService.rulesRestrictions}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.rules.restrictions"/></span>
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
+					</c:if>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<c:if test="${not empty sagiaService.serviceFinancialFees}">
+						<span class="serviceModule-headline"> <spring:theme code="sagia.services.financial.fees"/> </span>
+						<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+					</c:if>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5 pb-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<div class="serviceModule-description">
+						<c:if test="${not empty sagiaService.serviceDuration}">
+							<span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
     <c:if test="${fn:length(warningLetters) > 1}">

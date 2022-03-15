@@ -24,6 +24,9 @@ import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLo
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.user.UserService;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
+import com.sap.ibso.eservices.core.model.SagiaServiceModel;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
@@ -55,25 +58,37 @@ public class SagiaWarningLettersExtensionController extends SagiaAbstractPageCon
     private static final String WARNING_LETTERS_EXTENSION_CREATE_PAGE = "warning-letters-create";
     private static final String WARNING_LETTERS_EXTENSION_CREATE_FORM = "warningLetterExtensionCreate";
     private static final String WARNING_LETTERS_EXTENSION_SERVICE_ID = "ZFLUP_03";
-
     private static final String ENTITY_NAME = "FollowupServices";
+    
+    
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
+    
     @Resource(name = "sagiaFollowUpFacade")
     private SagiaFollowUpFacade sagiaFollowUpFacade;
+    
     @Resource(name = "warningLettersExtensionValidator")
     private Validator warningLettersExtensionValidator;
+    
     @Resource(name = "sagiaDraftFacade")
     private SagiaDraftFacade sagiaDraftFacade;
+    
     @Resource(name = "sagiaTermsAndConditionsFacade")
     private SagiaTermsAndConditionsFacade sagiaTermsAndConditionsFacade;
+    
     @Resource(name = "userService")
     private UserService userService;
+    
+    @Resource(name = "sagiaSearchService")
+    private SagiaSearchService searchService;
+    
 
     @RequestMapping(value = {"", "/display/{srId}"}, method = RequestMethod.GET)
     @RequireHardLogIn
     @LicenseRequired
-    public String warningLettersPage(@PathVariable(name = "srId", required = false) final String srId, final Model model) throws CMSItemNotFoundException {
+    public String warningLettersPage(@PathVariable(name = "srId", required = false) final String srId, final Model model) 
+    		throws CMSItemNotFoundException {
+    	
         model.addAttribute("processingTime", averageProcessingTimeFacade.getAverageProcessingTimeData(ENTITY_NAME));
         storeCmsPageInModel(model, getContentPageForLabelOrId(WARNING_LETTERS_EXTENSION_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(WARNING_LETTERS_EXTENSION_PAGE));
@@ -111,6 +126,8 @@ public class SagiaWarningLettersExtensionController extends SagiaAbstractPageCon
             model.addAttribute("selectedItem", selectedItem);
         }
 
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(WARNING_LETTERS_EXTENSION_SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
         return getViewForPage(model);
     }
 
@@ -151,6 +168,10 @@ public class SagiaWarningLettersExtensionController extends SagiaAbstractPageCon
             if (warningLettersData != null && !warningLettersData.isEmpty()) {
                 model.addAttribute("selectedWarningLetter", warningLettersData.get(0));
             }
+            
+            SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(WARNING_LETTERS_EXTENSION_SERVICE_ID);
+            model.addAttribute("sagiaService", sagiaService);
+            
         } catch (SagiaCRMException e) { // This exception is thrown when you have a one request with the status "in process"
             LOG.error(e.getMessage(), e);
             return REDIRECT_PREFIX + "/warning-letters";

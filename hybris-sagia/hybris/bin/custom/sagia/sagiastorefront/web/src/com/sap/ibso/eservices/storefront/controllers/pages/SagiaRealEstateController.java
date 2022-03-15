@@ -55,17 +55,25 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.*;
 
+
 @Controller
 @RequestMapping(value = "/real-estate")
 public class SagiaRealEstateController extends SagiaAbstractPageController {
 
+	private static final Logger LOG = Logger.getLogger(SagiaRealEstateController.class);
+	 
     private static final String SAGIA_REAL_ESTATE_FORM = "sagiaRealEstateForm";
     private static final String REAL_ESTATE = "realEstate";
     private static final String CONSENT = "consent";
     private static final String REAL_ESTATE_CREATE = "/real-estate/create";
     public static final String REAL_ESTATE_RESUBMITTED_ATTACHMENTS = "realEstateResubmittedAttachments";
     public static final String DOCUMENTS_TO_UPLOAD = "documentsToUpload";
-
+    
+    private static final String SAGIA_REAL_ESTATE_CMS_PAGE = "realestate";
+    private static final String SAGIA_CREATE_REAL_ESTATE_CMS_PAGE = "realestate-create";
+	private static final String SAGIA_CREATE_REAL_ESTATE_TYPE_CODE = "ZRES";
+	
+	
     @Resource
     private MessageSource messageSource;
 
@@ -89,18 +97,14 @@ public class SagiaRealEstateController extends SagiaAbstractPageController {
 
     @Resource
     private SagiaRealEstateAttachmentService sagiaRealEstateAttachmentService;
-
-    private static final Logger LOG = Logger.getLogger(SagiaRealEstateController.class);
-    private static final String SAGIA_REAL_ESTATE_CMS_PAGE = "realestate";
-    private static final String SAGIA_CREATE_REAL_ESTATE_CMS_PAGE = "realestate-create";
-		private static final String SAGIA_CREATE_REAL_ESTATE_TYPE_CODE = "ZRES";
-
+    
     @Autowired
     private SagiaTermsAndConditionsFacade sagiaTermsAndConditionsFacade;
 
     @Autowired
     private UserService userService;
 
+    
     /**
      * Get Real Estate info from CRM and add it to the model.
      *

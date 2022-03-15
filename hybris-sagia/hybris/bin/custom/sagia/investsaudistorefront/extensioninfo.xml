@@ -9,7 +9,8 @@
  Information and shall use it only in accordance with the terms of the
  license agreement you entered into with SAP.
 --><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
-                                	
+                                    	
+    
     
     
     
@@ -18,7 +19,7 @@
     
     
     <extension abstractclassprefix="Generated" classprefix="Investsaudistorefront" name="investsaudistorefront" usemaven="false">
-                                                                		
+                                                                        		
  
 
         
@@ -29,9 +30,12 @@
         
         
         
+        
+        <requires-extension name="investsaudicaptchaddon"/>
         <requires-extension name="commerceorgaddon"/>
-        <requires-extension name="smarteditaddon"/>
                 
+        <requires-extension name="smarteditaddon"/>
+                        
                                 
                         
         
@@ -39,8 +43,10 @@
         
         
         
+        
         <requires-extension name="customerticketingaddon"/>
-                                                        
+                                                                
+        
         
         
         
@@ -48,7 +54,8 @@
         
         
         <requires-extension name="investsaudisecureportal"/>
-                                                        
+                                                                
+        
         
         
         
@@ -56,7 +63,7 @@
         
         
         <requires-extension name="casblogaddon"/>
-                                                        
+                                                                
 
 
         
@@ -68,8 +75,10 @@
         
         
         
+        
         <requires-extension name="b2bacceleratoraddon"/>
-                                                        
+                                                                
+        
         
         
         
@@ -77,15 +86,18 @@
         
         
         <requires-extension name="acceleratorstorefrontcommons"/>
-                                                        		
+                                                                		
+        
         
         
         
         
         
         <requires-extension name="sagiaservices"/>
+                
         <!-- <requires-extension name="sagiafacades"/> -->
-                                                        		
+                                                                		
+        
         
         
         
@@ -93,7 +105,7 @@
         
         
         <requires-extension name="yacceleratorfacades"/>
-                                                                 
+                                                                         
        
         
         
@@ -101,8 +113,10 @@
         
         
         
+        
         <!--   <requires-extension name="sagiasecchat"/>-->
-                                                                
+                                                                        
+        
         
         
         
@@ -111,7 +125,8 @@
         
         
         <requires-extension name="personalizationsearchsamplesaddon"/>
-                                                                
+                                                                        
+        
         
         
         
@@ -120,7 +135,8 @@
         
         
         <requires-extension name="pcmbackofficesamplesaddon"/>
-                                                                
+                                                                        
+        
         
         
         
@@ -131,7 +147,7 @@
         
         
         <!-- <requires-extension name="sagiafacades"/> -->
-                                                                		
+                                                                        		
 
         		
         
@@ -141,8 +157,10 @@
         
         
         
+        
         <webmodule jspcompile="false" webroot="/investsaudistorefront"/>
-                                                                		
+                                                                        		
+        
         
         
         
@@ -151,7 +169,7 @@
         
         
         <meta key="modulegen-name" value="accelerator"/>
-                                                                		
+                                                                        		
 
 	
     
@@ -161,8 +179,10 @@
     
     
     
+    
     </extension>
-                                
+                                    
+
 
 
 

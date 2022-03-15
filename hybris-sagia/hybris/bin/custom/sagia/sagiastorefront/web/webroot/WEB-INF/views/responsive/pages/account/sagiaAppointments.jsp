@@ -68,7 +68,7 @@
             <form action="${encodedContextPath}/appointments">
                 <div class="searchInputBox searchInputBox_limited">
                     <input name="searchParameter" id="searchParameter" class="searchInputBox-input" type="text" placeholder="" value="${searchParameter}" />
-                    <button class="btn-search searchInputBox-switchModeBtn no-background" type="submit">Search</button>
+                    <button class="btn-search searchInputBox-switchModeBtn no-background" type="submit"><spring:theme code="portal.opportunity.search.label"/></button>
                 </div>
             </form>
         </div>
@@ -87,7 +87,7 @@
                                 <h2 class="clr_gld text-center text-uppercase">
                                     <spring:theme code="appointments.appointmentoverview" /> </h2>
                             </div>
-                            <div class="contentModule-filter">
+                            <div class="contentModule-filter sortBox-appointment">
                                 <select id="appointmentSort" class="js-select2-oneColumn form-control" onchange="sortAppointments()">
                                     <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>
                                     <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>

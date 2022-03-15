@@ -119,7 +119,7 @@
                         <div class="contentModule-section_noDivider contentModule-section_noMargin m-0">
                             <h2 class=" contentModule-headline_noMargin clr_gld text-uppercase pb-3"><spring:theme code="account.notifications.yourMessages"/></div>
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_right contentModule-actions_noMargin px-5 mr--50">
-                                <a id="readAllNotificationsButton" class=" btn_link_text"><spring:theme code="account.notifications.markAll"/></a>
+                               
                             </div>
 
                             <ul id="history-list" class="notificationList notificationList_smallMarginTop">

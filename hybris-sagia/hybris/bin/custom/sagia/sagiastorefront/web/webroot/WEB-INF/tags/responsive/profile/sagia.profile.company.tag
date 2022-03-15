@@ -500,7 +500,7 @@
                     <div class="modal-footer modal-footer_right text-center">
                     
                         <button type="button" class="btn btn-dashboard text-uppercase w-50 mx-auto" data-dismiss="modal" aria-label="Close" style="background: #00a6be !important;color: #fff;">
-                            Close
+                             <spring:theme code="general.close"/>
                         </button>
                     </div>
                 </div>

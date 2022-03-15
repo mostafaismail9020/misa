@@ -136,12 +136,10 @@
 		<div class="serviceModule-section">
 			<div class="serviceModule-content">
 				<div class="serviceModule-description">
-					<div class="serviceModule-description">
-						<c:if test="${not empty sagiaService.serviceDuration}">
-							<span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
-							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
-						</c:if>
-					</div>
+                    <c:if test="${not empty sagiaService.serviceDuration}">
+                        <span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
+                        <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
+                    </c:if>
 				</div>
 			</div>
 		</div>

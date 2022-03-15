@@ -132,6 +132,8 @@
 			</div>
 		</div>
 	</div>
+	
+<c:if test="${not empty sagiaService.description || not empty sagiaService.serviceDocuments || not empty sagiaService.rulesRestrictions || not empty sagiaService.serviceFinancialFees || not empty sagiaService.serviceDuration}">  
 	<div class="container ml-0 ml-md-4">
 		<button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
 			<div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
@@ -222,6 +224,7 @@
 		</div>
 		--%>
 	</div>
+</c:if>
 
 	<!-- <div class="mainSection mainSection_white mainSection_narrow">
 		<div class="container d-flex service-history">			

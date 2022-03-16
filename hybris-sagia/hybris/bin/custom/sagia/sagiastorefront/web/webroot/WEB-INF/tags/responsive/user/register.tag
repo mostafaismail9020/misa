@@ -43,6 +43,10 @@
 				
 				<div class="login-right-wrapper">
 					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="register-role-selection">
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.svg" alt="Investor" class="img-fluid" />
+						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
+					</div>
 					<div class="register-progress">
 						<span class="circle register-progress-selection">1</span>
 						<hr />
@@ -57,13 +61,13 @@
 					<div class="login-register-role"><spring:theme code="investor.registration.select.role.label"/></div>
 					<div class="login-role-selection">
 						<div class="login-role-selection-box role-investor active">							
-							<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid img-ivestor-inactive d-none" />
-							<img src="${commonResourcePath}/images/B2C/Investor-icons.png" alt="Investor" class="img-fluid img-ivestor-active" />
+							<img src="${commonResourcePath}/images/B2C/Investor-icon.svg" alt="Investor" class="img-fluid img-ivestor-inactive d-none" />
+							<img src="${commonResourcePath}/images/B2C/Investor-icons.svg" alt="Investor" class="img-fluid img-ivestor-active" />
 							<p class="role-text"><spring:theme code="investor.select.role.label"/></p>							
 						</div>
 						<div class="login-role-selection-box role-partner">
-							<img src="${commonResourcePath}/images/B2C/Partner.png" alt="Partner" class="img-fluid img-partner-inactive" />
-							<img src="${commonResourcePath}/images/B2C/Partner-icon.png" alt="Investor" class="img-fluid img-partner-active d-none" />
+							<img src="${commonResourcePath}/images/B2C/Partner.svg" alt="Partner" class="img-fluid img-partner-inactive" />
+							<img src="${commonResourcePath}/images/B2C/Partner-icon.svg" alt="Investor" class="img-fluid img-partner-active d-none" />
 							<p class="role-text"><spring:theme code="partner.select.role.label"/></p>
 						</div>
 					</div>
@@ -99,7 +103,7 @@
 				<div class="login-right-wrapper">
 					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-role-selection">
-						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.svg" alt="Investor" class="img-fluid" />
 						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
 					</div>
 					<div class="register-progress">
@@ -150,7 +154,7 @@
 				<div class="login-right-wrapper">
 					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-role-selection">
-						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.svg" alt="Investor" class="img-fluid" />
 						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
 					</div>
 					<div class="register-progress">
@@ -290,7 +294,7 @@
 				<div class="login-right-wrapper">
 					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-role-selection">
-						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.svg" alt="Investor" class="img-fluid" />
 						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
 					</div>
 					<div class="register-progress">
@@ -395,7 +399,7 @@
 				<div class="login-right-wrapper">
 					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-role-selection">
-						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
+						<img src="${commonResourcePath}/images/B2C/Investor-icon.svg" alt="Investor" class="img-fluid" />
 						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
 					</div>
 					<div class="login-register-role reg-sucess"><spring:theme code="investor.registration.success.label"/></div>

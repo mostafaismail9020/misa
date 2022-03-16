@@ -33,7 +33,7 @@
                 <div class="login-right-wrapper">
                     <div class="login-register-text"><spring:theme code="dashboard.login.label"/></div>
                     <div class="register-role-selection"> 
-                        <img src="${commonResourcePath}/images/B2C/Partner.png" alt="Investor" class="img-fluid img-partner-active login-role" />
+                        <img src="${commonResourcePath}/images/B2C/Investor-icon.svg" alt="Investor" class="img-fluid img-partner-active login-role" />
                     </div>	 
                     
                     

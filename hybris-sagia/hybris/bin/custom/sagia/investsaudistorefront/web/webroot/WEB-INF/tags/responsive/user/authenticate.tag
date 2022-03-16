@@ -15,7 +15,7 @@
 	<div class="login-right-wrapper auth-screen-height">
         <div class="login-register-text">AUTHENTICATE</div>
         <div class="register-role-selection">
-            <img src="${commonResourcePath}/images/Partner.png" alt="Partner" class="img-fluid" />
+            <img src="${commonResourcePath}/images/Partner.svg" alt="Partner" class="img-fluid" />
         </div>
          <div class="login-register-role">Mobile Number VERFICATION</div>
         <div class="row register-user-info ">

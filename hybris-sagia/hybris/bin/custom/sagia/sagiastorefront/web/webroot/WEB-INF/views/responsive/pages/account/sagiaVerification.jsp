@@ -32,7 +32,7 @@
 							<spring:theme code="text.verification.verify" />
 						</h1>
 						<div class="register-role-selection">
-							<img src="${commonResourcePath}/images/B2C/Partner.png" alt="Investor" class="img-fluid login-role" />
+							<img src="${commonResourcePath}/images/B2C/Investor-icon.svg" alt="Investor" class="img-fluid login-role" />
 						</div>
 						<form:form method="post" modelAttribute="sagiaVerificationForm">
 							<div class="login-verification-processs">

@@ -31,7 +31,7 @@
                     <div class="login-right-wrapper">
                         <div class="login-register-text">REGISTER YOUR ACCOUNT</div>
                         <div class="register-role-selection">
-                            <img src="${commonResourcePath}/images/Partner.png" alt="Partner" class="img-fluid" />
+                            <img src="${commonResourcePath}/images/Partner.svg" alt="Partner" class="img-fluid" />
                         </div>
                         <div class="register-progress">
                             <span class="circle register-progress-selection">1</span>
@@ -43,13 +43,13 @@
                         <div class="login-register-role">SELECT YOUR ROLE</div>
                         <div class="login-role-selection">
                             <div class="login-role-selection-box role-investor">
-                                    <img src="${commonResourcePath}/images/Investor-icon.png" alt="Investor" class="img-fluid img-ivestor-inactive" />
-                                    <img src="${commonResourcePath}/images/Investor-icons.png" alt="Investor" class="img-fluid img-ivestor-active d-none" />
+                                    <img src="${commonResourcePath}/images/Investor-icon.svg" alt="Investor" class="img-fluid img-ivestor-inactive" />
+                                    <img src="${commonResourcePath}/images/Investor-icons.svg" alt="Investor" class="img-fluid img-ivestor-active d-none" />
                                     <p class="role-text">Investor</p>
                             </div>
                             <div class="login-role-selection-box role-partner active">
-                                <img src="${commonResourcePath}/images/Partner.png" alt="Partner" class="img-fluid img-partner-inactive d-none" />
-                                <img src="${commonResourcePath}/images/Partner-icon.png" alt="Investor" class="img-fluid img-partner-active" />
+                                <img src="${commonResourcePath}/images/Partner.svg" alt="Partner" class="img-fluid img-partner-inactive d-none" />
+                                <img src="${commonResourcePath}/images/Partner-icon.svg" alt="Investor" class="img-fluid img-partner-active" />
                                 <p class="role-text">Partner</p>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                     <div class="login-right-wrapper">
                         <div class="login-register-text">REGISTER YOUR ACCOUNT</div>
                         <div class="register-role-selection">
-                            <img src="${commonResourcePath}/images/Partner.png" alt="Partner" class="img-fluid" />
+                            <img src="${commonResourcePath}/images/Partner.svg" alt="Partner" class="img-fluid" />
                             <img src="" class="img-fluid function-selected" alt=""/>
                         </div>
                         <div class="register-progress">
@@ -125,7 +125,7 @@
                     <div class="login-right-wrapper">
                         <div class="login-register-text">REGISTER YOUR ACCOUNT</div>
 							<div class="register-role-selection">
-								<img src="${commonResourcePath}/images/Partner.png" alt="Partner" class="img-fluid" />
+								<img src="${commonResourcePath}/images/Partner.svg" alt="Partner" class="img-fluid" />
                                 <img src="" class="img-fluid function-selected" alt=""/>
 							</div>
 							<div class="register-progress">
@@ -152,7 +152,7 @@
                     <div class="login-right-wrapper">
                         <div class="login-register-text">REGISTER YOUR ACCOUNT</div>
 							<div class="register-role-selection">
-								<img src="${commonResourcePath}/images/Partner.png" alt="Partner" class="img-fluid" />
+								<img src="${commonResourcePath}/images/Partner.svg" alt="Partner" class="img-fluid" />
                                 <img src="" class="img-fluid function-selected" alt=""/>
 							</div>
 							<div class="login-register-role">ACCOUNT REGISTRATION SUCCESSFUL</div>

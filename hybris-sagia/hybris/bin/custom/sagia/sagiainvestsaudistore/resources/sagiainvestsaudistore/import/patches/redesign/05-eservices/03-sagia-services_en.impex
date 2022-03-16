@@ -166,9 +166,9 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
                                                                    </ol>";				
 
-								  ; ZFLUP_02					; "<p>1.Any document that the entity deems that it supports its application for extension of the period in the written notification (no mandatory document). </p>";
+								  ; ZFLUP_02					; "<p>1. Any document that the entity deems that it supports its application for extension of the period in the written notification (no mandatory document). </p>";
 																		  
-								  ; ZFLUP_03					; "<p>1.Any document that the entity deems that it supports its application for extension of the period in the written notification (no mandatory document).</p>"; 
+								  ; ZFLUP_03					; "<p>1. Any document that the entity deems that it supports its application for extension of the period in the written notification (no mandatory document).</p>"; 
 									 
 								  ; ZRES						; "<p><b>Property Ownership Service:</b>1. Copy of the Municipality permit to build or an approval letter from the Municipality, indicating type of use of the land to be owned.</p>
 																   <p><b>Property Ownership Service for Property Investment:</b>1. A report from an engineering office approved by the Saudi Council of Engineers locally, indicating the total cost of the project.</p>";
@@ -185,7 +185,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 																   <li>Submission of a study proof for male sons who desire to have a visa period more than 6 months</li>
 																   </ol>";
 																		 
-								  ; ZMOIP_11					; "<p>1.Submission of a letter from the entity stating the application.</p>";
+								  ; ZMOIP_11					; "<p>1. Submission of a letter from the entity stating the application.</p>";
 
 								  ; ZMOIP_01					; "<ol start= '1'>
 																   <li>A copy or number of the commercial registration.</li>
@@ -284,7 +284,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true] 		; serviceDocuments[lan
 
 UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang = $langen]																																	; serviceFinancialFees[lang = $langen]										; serviceDuration[lang = $langen]	;
 								; ZSR6             			 	; "<ol start= '1'>
-																   <p>Notification for The Purpose of Voluntary Cancellation of the License:</p>																				    																	
+																   <p><b>Notification for The Purpose of Voluntary Cancellation of the License:</b></p>																				    																	
 																   <li>Employees discharge.<li>                                                                                                                                                                                                                                                                                                                                                                       
 																   <li>Closure of the entity's location and stop the practice of activity.</li>                                                                                                                                                                                                                                                                                                                        																																																								           
 																   <li>Not to work or exercise activity directly or indirectly.</li>                                                                                                                                                                                                                                                                                                                                 
@@ -292,13 +292,14 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																   <li>Letters are issued and the below governmental bodies will be visited with service number for having information:</li>
 																   </ol>
 																   <dl>
-																   <dd>- Ministry of Commerce </dd>                                                                                                                                                                                                                                                                                                                                                                    																																																																		
-																   <dd>- Zakat and Income Tax Department </dd>                                                                                                                                                                                                                                                                                                                                                           
-																   <dd>- Chamber of Commerce </dd>                                                                                                                                                                                                                                                                                                                                                                         
-																   <dd>- Social insurance </dd>                                                                                                                                                                                                                                                                                                                                                                         																																													 ;													
-																   <dd>- Ministry of Human Resource and Social Development </dd>                                                                                                                                                                                                                                                                                                                                        
-																   <dd>- Municipality </dd>                                                                                                                                                                                                                                                                                                                                                                             
-																   <p>Apply of voluntary cancellation of the license:</p> 
+																   <dd>- Ministry of Commerce</dd>                                                                                                                                                                                                                                                                                                                                                                    																																																																		
+																   <dd>- Zakat and Income Tax Department</dd>                                                                                                                                                                                                                                                                                                                                                           
+																   <dd>- Chamber of Commerce</dd>                                                                                                                                                                                                                                                                                                                                                                         
+																   <dd>- Social insurance</dd>                                                                                                                                                                                                                                                                                                                                                                         																																													 ;													
+																   <dd>- Ministry of Human Resource and Social Development</dd>                                                                                                                                                                                                                                                                                                                                        
+																   <dd>- Municipality</dd>
+																   </dl>
+																   <p><b>Apply of voluntary cancellation of the license:</b></p> 
 																   <ol start= '1'>																   
 																   <li> Before applying for this service, the entity must verify the following:</li> 
 																   <dd>- Employees discharged.</dd>                                                                                                                                                                                                                                                                                                                                                                     	
@@ -324,7 +325,7 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																   </ol>";
 
 								; ZSR4  						; "<ol start= '1'>																																					  							
-								                                    <li> Investment entities requesting renewal shall be committed to update and adopt its data at the Ministry of Investment annually.</li>
+								                                    <li>Investment entities requesting renewal shall be committed to update and adopt its data at the Ministry of Investment annually.</li>
 																	<li>The entity shall review the requirements of the license in section no. (03.00) of services manual before applying for renewal.</li>								   
 																	<li>Before applying for the service, the entity must be ensure that the Certificate of Zakat and Income is valid.</li>										   
 																	<li>A valid zakat certificate must be attached in case of a technical problem occurred while submitting the application.</li>
@@ -334,42 +335,42 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																	  <li> The investor (s) shall be granted residence renewal application for one time only.</li>
 																	  <li>Access of the investor (s) to the service is subject to the laws and regulations of government agencies or institutions providing the service.</li>
 																	  <li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no.(08.01) of services manual.</li>
-																	  </ol>";
+																   </ol>";
 
 								; ZSPLJAWA01					; "<ol start= '1'>																																																																																							           
 																	<li>The Residence of the applicant must be valid in order to applying for the service.</li>
 																	<li>This service is only provided under maximum imperative necessity and according to the discretion of Ministry of Investment, for the investors' need, while considering humanitarian conditions, for example, but not limited to:</li>
-																	 <dl>
-																	  <dd>- Sick conditions and provision of medical report .</dd>
-																	  <dd>- Marriage of one of the investor's first-class lineage.</dd>
-																	  <dd>- Request for exit-re-entry for family members.</dd>
-																	 <li>For investor/investors to acquire a service relays on the governmental agencies rules and procedures to obtain such a service.</li>
-																	 <li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no. (08.01) of services manual.</li>
-																	  </dl>
-																	 </ol>";
+																		<dl>
+																			<dd>- Sick conditions and provision of medical report.</dd>
+																			<dd>- Marriage of one of the investor's first-class lineage.</dd>
+																			<dd>- Request for exit-re-entry for family members.</dd>
+																		</dl>
+																	<li>For investor/investors to acquire a service relays on the governmental agencies rules and procedures to obtain such a service.</li>
+																	<li>In case that the entity's owners presented the request to voluntary cancellation, only checks the application on cancellation support letters service under the service no. (08.01) of services manual.</li>
+																   </ol>";
 								
 								; ZSPLJAWA04					; "<ol start= '1'>																																																					                 																																																								
 																	  <li>For an investor/ investors to acquire a service relays on the governmental agencies rules and procedures to obtain such a service.</li>
 																	  <li>The entity shall Finalize the government documents (write-off record, municipal license, social insurance, Zakat and Income, the Chamber of Commerce, Labor Office, an extract of the 700 file, extract of the residence number) with the exception of voluntary cancellation.</li>
 																	  </ol>";
   
-								; ZMOL_11						; "1.Fill the 'Data updating form' authenticated by Ministry of Human Resource and Social Development and chamber of commerce."							                                                                     																																															   																																				 																																	
+								; ZMOL_11						; "<p>1. Fill the 'Data updating form' authenticated by Ministry of Human Resource and Social Development and chamber of commerce.</p>"
 
 								; ZMOL_03						; "<ol start= '1'>																																			 																																																														                                                                                                                
-																	  <li>Sponsorship transfer is carried out through the Electronic Labor Office except for engineers, accompaniers or any other profession included in the red range. </li>                                                                                                                                                                                                                             
+																	  <li>Sponsorship transfer is carried out through the Electronic Labor Office except for engineers, accompaniers or any other profession included in the red range.</li>                                                                                                                                                                                                                             
 																	  <li>The service is provided only to the accompaniers, subordinates and persons having problem with the system because of deletion or other reason.</li>                                                                                                                                                                                                                                              
 																	  <li>Fill the 'Services Transfer form' authenticated by Ministry of Human Resource and Social Development.</li>                                                                                                                                                                                                                                                                                        
 																	  </ol>";
                               
-								; ZMOCI_17						; "<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment to summarize the contract of incorporation.</p>";
+								; ZMOCI_17						; "<p>1. The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce and Investment to summarize the contract of incorporation.</p>";
 																																																																																																																			
-								; ZMOCI_15						; "1- The entity shall present a draft of the Articles of Association of the company in WORD version.";
+								; ZMOCI_15						; "<p>1. The entity shall present a draft of the Articles of Association of the company in WORD version.</p>";
 
-								; ZMOCI_18						; "1.The financial statements for the last three years must be added on the portal of 'my business' on the website of Commerce.";
+								; ZMOCI_18						; "<p>1. The financial statements for the last three years must be added on the portal of 'my business' on the website of Commerce.</p>";
 																																																																																																																
-								; ZMOCI_20						; "<p>1.The company is committed to make an electronic publication through the portal of 'my business' on the website of the Ministry of Commerce of the summary of the Memorandum of Association.</p>";
+								; ZMOCI_20						; "<p>1. The company is committed to make an electronic publication through the portal of 'my business' on the website of the Ministry of Commerce of the summary of the Memorandum of Association.</p>";
 																																																																																																																		
-								; ZMOCI_08						; "<p>1.The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce of the summary of the Memorandum of Association.</p>";
+								; ZMOCI_08						; "<p>1. The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce of the summary of the Memorandum of Association.</p>";
 																																																																																																																			 
 								; ZMOCI_10						; "<ol start= '1'>																																																																				
 																	  <li>The company is committed to make an electronic publication through the portal of 'my Business' on the website of the Ministry of Commerce of the summary of the Memorandum of Association.</li>
@@ -412,23 +413,22 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																		  <li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
 																		  <li>The applicant shall commit to utilize the land for the specified purpose within five (5) years.</li>
 																		</ol>
-																	<p>Property Selling Service for Property Investment:</p>
+																	<p><b>Property Selling Service for Property Investment:</b></p>
 																		<ol start= '1'>
 																		  <li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
 																		  <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
 																		</ol>";
 
 								; ZS14							; "<p>1. Update - for once only - is mandatory for all licensed entities,holding a license of two years or more, that did not provide Ministry of Investment with the data in earlier time. 2. The service shall be suspended for licensed entities that have a shortage or mismatch in government documents figures with 'YESSER' data until updating their government data in the electronic system of Ministry of Investment, and verification of data on compliance with the 'YESSER'.</p>";
-					 
-					 
-								; ZMOIP_03						; "<p>1.Fill the form of 'Exit and Return Visa' approved by General Department of Passports.</p>"														
+
+								; ZMOIP_03						; "<p>1. Fill the form of 'Exit and Return Visa' approved by General Department of Passports.</p>"														
 					 
 								; ZMOIP_10						; "<ol start= '1'>
 																	 <li>This service is provided through ABSHER or MUQEEM System(in case of inability to issue, a proof for that shall be submitted).</li>														
 																	 <li>Fill the form of 'Exit and Return Visa' approved by General Department of Passports.<li>
 																   </ol>";
 					 
-								; ZMOIP_11						; "<p>1.If more than three months has passed from the visa period, a fineof (1,000 SR) is imposed and shall be paid through ATM</p>";
+								; ZMOIP_11						; "<p>1. If more than three months has passed from the visa period, a fineof (1,000 SR) is imposed and shall be paid through ATM.</p>";
 
 								; ZMOIP_01						; "<ol start= '1'>																																		
 																   <li>If there is no commercial registration, an applicant shall provide a commitment of issuing a commercial registration within a month.</li>
@@ -445,7 +445,7 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																   <li>Fill the 'Issuance of Iqama form' approved by General Department of Passports.</li>
 																   </ol>";
 
-								; ZMOIP_15 						; "1- Fill the 'Dismissal of an Employee Holding Separate Iqama form' approved by General Department of Passports.";
+								; ZMOIP_15 						; "<p>1. Fill the 'Dismissal of an Employee Holding Separate Iqama form' approved by General Department of Passports.</p>";
 
 								; ZMOIP_02						; "<ol start= '1'>																																																												
 																  <li>If the Iqama to be renewed is for the General Manager, the followingshall be submitted:</li>
@@ -564,8 +564,8 @@ UPDATE SagiaService				; code[unique = true]			; serviceFinancialFees[lang = $la
 								; ZS20							;																	;
 
 
-INSERT_UPDATE SagiaCategory	; code[unique = true]	; label ; services(code)		;
-							; 1						; FIRST	; ZSR6,ZSR5,ZSR7,ZSR4	;
+INSERT_UPDATE SagiaCategory	; code[unique = true]	; label 				; services(code)		;
+							; 1						; FIRST					; ZSR6,ZSR5,ZSR7,ZSR4	;
 							
 							; interiorAndPassport	; GOVERNMENTAL SERVICES	; ZMOIP_08,ZMOIP_05,ZMOIP_10,ZMOIP_17,ZMOIP_21,ZMOIP_23,ZMOIP_15,ZMOIP_06,ZMOIP_01,ZMOIP_14,ZMOIP_13,ZMOIP_09,ZMOIP_03,ZMOIP_02,ZMOIP_11,ZMOIP_18,ZMOIP_07;
 

@@ -14,17 +14,25 @@
     <div id="global-alerts" class="global-alerts">
         <c:if test="${not empty errorMessageKey}">
             <div class="alert alert-danger alert-dismissable getAccAlert">
-                <img src="/investsaudistorefront/_ui/responsive/common/images/danger.png">
                 <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
                     <img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
-                </button><spring:theme code="${errorMessageKey}"/></div>
+                </button>
+                <div class="alert-wrapper">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/danger.png">
+                    <span><spring:theme code="${errorMessageKey}"/></span>
+                </div>
+            </div>
         </c:if>
         <c:if test="${createSuccess}">
             <div class="alert alert-info alert-dismissable getAccAlert">
-                <img src="/investsaudistorefront/_ui/responsive/common/images/success.png">
                 <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
                     <img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
-                </button>User created successfully</div>
+                </button>
+                <div class="alert-wrapper">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/success.png">
+                    <span>User created successfully</span>
+                </div>
+            </div>
         </c:if>
     </div>
 

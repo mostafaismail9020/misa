@@ -26,7 +26,7 @@
 								</cms:pageSlot>
 								<%--<a href="<c:url value="/my-account/orders"/>">My Account</a>--%>
 								<span>|</span>
-								<a class="header-link"  data-toggle="modal" data-target="#logoutModal_b2b">Logout</a>
+								<a class="header-link"  data-toggle="modal" data-target="#logoutModal_b2b" href="">Logout</a>
 							</sec:authorize>
 							<sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')">
 								<a class="header-link" href="<c:url value="/login"/>">Login</a>

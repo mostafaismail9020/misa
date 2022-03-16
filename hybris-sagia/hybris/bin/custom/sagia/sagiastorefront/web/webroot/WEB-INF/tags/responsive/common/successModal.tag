@@ -1,5 +1,5 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
-<div class="modal fade" id="successResponseModal"  tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
+<div class="modal fade pay-sad-success-popup" id="successResponseModal"  tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
 		<div class="modal-content">
 			<div class="modal-header">

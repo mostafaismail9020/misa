@@ -10,11 +10,13 @@
 		<c:if test="${not empty accConfMsgs}">
 			<c:forEach items="${accConfMsgs}" var="msg">
 				<div class="alert alert-info alert-dismissable getAccAlert">
-					<img src="/investsaudistorefront/_ui/responsive/common/images/primary.png">
 					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
 						<img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
 					</button>
-					<spring:theme code="${msg.code}" arguments="${msg.attributes}"/>
+					<div class="alert-wrapper">
+						<img src="/investsaudistorefront/_ui/responsive/common/images/primary.png">
+						<span><spring:theme code="${msg.code}" arguments="${msg.attributes}"/></span>
+					</div>
 				</div>
 			</c:forEach>
 		</c:if>
@@ -23,11 +25,13 @@
 		<c:if test="${not empty accInfoMsgs}">
 			<c:forEach items="${accInfoMsgs}" var="msg">
 				<div class="alert alert-warning alert-dismissable getAccAlert">
-				    <img src="/investsaudistorefront/_ui/responsive/common/images/warning.png">
 					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
 						<img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
 					</button>
-					<spring:theme code="${msg.code}" arguments="${msg.attributes}"/>
+					<div class="alert-wrapper">
+						<img src="/investsaudistorefront/_ui/responsive/common/images/warning.png">
+						<span><spring:theme code="${msg.code}" arguments="${msg.attributes}"/></span>
+					</div>
 				</div>
 			</c:forEach>
 		</c:if>
@@ -36,11 +40,13 @@
 		<c:if test="${not empty accErrorMsgs}">
 			<c:forEach items="${accErrorMsgs}" var="msg">
 				<div class="alert alert-danger alert-dismissable getAccAlert">
-					<img src="/investsaudistorefront/_ui/responsive/common/images/danger.png">
 					<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
 						<img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
 					</button>
-					<spring:theme code="${msg.code}" arguments="${msg.attributes}"/>
+					<div class="alert-wrapper">
+						<img src="/investsaudistorefront/_ui/responsive/common/images/danger.png">
+						<span><spring:theme code="${msg.code}" arguments="${msg.attributes}"/></span>
+					</div>
 				</div>
 			</c:forEach>
 		</c:if>

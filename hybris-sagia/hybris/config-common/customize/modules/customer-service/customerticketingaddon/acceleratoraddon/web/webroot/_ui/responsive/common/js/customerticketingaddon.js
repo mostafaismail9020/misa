@@ -11,9 +11,9 @@ ACC.investsaudicustomerticketing = {
         "bindBeforeSubmitFunctions",
         "bindQuestionsToSectorChange",
         "bindCloseToQuestionMessages",
-        "bindSubSectorsToSectorChange"
+        "bindSubSectorsToSectorChange",
+		"showConfirmBox"
     ],
-
 
     disableMessage: function(_this){
         var currentTicketStatus = $('input[id="currentTicketStatus"]').val();
@@ -64,7 +64,7 @@ ACC.investsaudicustomerticketing = {
     },
 
     postNewMessage: function () {
-    	
+
         var title = $('#ct-overlay-title').html();
         $('.ct-add-new-msg-btn').on('click touchstart', function(e) {
             e.preventDefault();
@@ -156,6 +156,10 @@ ACC.investsaudicustomerticketing = {
         if (typeof options.messageId !== 'undefined') {
             $('#global-alerts').append($(alertTemplateSelector).tmpl({message: $('#' + options.messageId).text()}));
         }
+
+        if (typeof options.errorMessage !== 'undefined') {
+            $('#global-alerts').append($(alertTemplateSelector).tmpl({message: options.errorMessage}));
+        }
     },
 
     bindTicketAddActions: function () {
@@ -170,41 +174,41 @@ ACC.investsaudicustomerticketing = {
     bindTicketUpdateActions: function () {
         $(document).on('click', '#updateTicket',
             function (event) {
-                event.preventDefault();             
+                event.preventDefault();
                 ACC.investsaudicustomerticketing.formPostAction('?ticketUpdated=true');
             });
     },
 
     formPostAction: function (successRedirectUrl) {
-    	
-        ACC.investsaudicustomerticketing.clearAlerts();
-        
-        if(successRedirectUrl !==  '?ticketUpdated=true'){
-        	
-        
-        var error = ACC.investsaudicustomerticketing.bindErrorMessagesToOtherFields();
 
-        if ($('.ticket-questions-area').find('textarea').length > 0) {
-            error = ACC.investsaudicustomerticketing.bindErrorMessagesToQuestions();
+        ACC.investsaudicustomerticketing.clearAlerts();
+
+        if(successRedirectUrl !==  '?ticketUpdated=true'){
+
+
+            var error = ACC.investsaudicustomerticketing.bindErrorMessagesToOtherFields();
+
+            if ($('.ticket-questions-area').find('textarea').length > 0) {
+                error = ACC.investsaudicustomerticketing.bindErrorMessagesToQuestions();
+
+                if (error) {
+                    return false;
+                }
+
+                ACC.investsaudicustomerticketing.bindQuestionsToJsonInput();
+            }
 
             if (error) {
                 return false;
             }
 
-            ACC.investsaudicustomerticketing.bindQuestionsToJsonInput();
-        }
-
-        if (error) {
-            return false;
-        }
-        
         }
 
         var form = document.getElementById("supportTicketForm");
         var formData = new window.FormData(form);
-        
+
         if(successRedirectUrl ===  '?ticketUpdated=true'){
-        	formData.append("question1", "?");
+            formData.append("question1", "?");
             formData.append("question2", "?");
             formData.append("question3", "?");
             formData.append("question4", "?");
@@ -212,7 +216,7 @@ ACC.investsaudicustomerticketing = {
             formData.append("question6", "?");
             formData.append("question7", "?");
             formData.append("question8", "?");
-			formData.append("question9", "?");
+            formData.append("question9", "?");
             formData.append("question10", "?");
             formData.append("question11", "?");
             formData.append("question12", "?");
@@ -271,8 +275,7 @@ ACC.investsaudicustomerticketing = {
             }
             $('.ticket-questions-area').parents('.account-section-content').find('.global-alerts').append('' +
                 '<div class="question-messages"><div class="alert alert-danger alert-dismissable getAccAlert">' +
-                '<img src="/investsaudistorefront/_ui/responsive/common/images/danger.png" />'+
-                '<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button"><img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png"/></button>' +
+                '<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">×</button>' +
                 'Please fill all required questions.</div></div>');
         }
 
@@ -305,7 +308,7 @@ ACC.investsaudicustomerticketing = {
         if (error) {
             form.parents('.account-section-content').find('.global-alerts').append('' +
                 '<div class="question-messages"><div class="alert alert-danger alert-dismissable getAccAlert">' +
-                '<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button"><img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png"></button>' +
+                '<button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">×</button>' +
                 'Please fill all required fields.</div></div>');
         }
 
@@ -327,7 +330,7 @@ ACC.investsaudicustomerticketing = {
                     var target = '#' + k;
                     $(target).show();
                     $(target).text(v);
-                  
+
                     if (k === 'NotEmpty-supportTicketForm-subject'
                         || k === 'Size-supportTicketForm-subject'
                         || k === 'NotEmpty-BDSupportTicketForm-message'
@@ -339,7 +342,7 @@ ACC.investsaudicustomerticketing = {
                         || k === 'NotEmpty-BDSupportTicketForm-question6'
                         || k === 'NotEmpty-BDSupportTicketForm-question7'
                         || k === 'NotEmpty-BDSupportTicketForm-question8'
-						|| k === 'NotEmpty-BDSupportTicketForm-question9'
+                        || k === 'NotEmpty-BDSupportTicketForm-question9'
                         || k === 'NotEmpty-BDSupportTicketForm-question10'
                         || k === 'NotEmpty-BDSupportTicketForm-question11'
                         || k === 'NotEmpty-BDSupportTicketForm-question12'
@@ -377,7 +380,7 @@ ACC.investsaudicustomerticketing = {
         var self = this;
 
         var form = $("#supportTicketForm");
-        
+
         form.find("#addTicket").on('click', function () {
             self.bindGroupingQuestionsFunction(form);
 
@@ -391,10 +394,10 @@ ACC.investsaudicustomerticketing = {
 
         form.find(".ticket-questions,#question2,#createTicket-question4").each(function () {
             if (groupedValue === "") {
-            	var question = "Q: "+$(this).parent().parent().find(".control-label,.label-ticket,.label-ticket-tight").text().trim();
+                var question = "Q: "+$(this).parent().parent().find(".control-label,.label-ticket,.label-ticket-tight").text().trim();
                 groupedValue = question + "\n   A: "+$(this).val()+ "\n\n"
             } else {
-            	var question = "Q: "+$(this).parent().parent().find(".control-label,.label-ticket,.label-ticket-tight").text().trim();
+                var question = "Q: "+$(this).parent().parent().find(".control-label,.label-ticket,.label-ticket-tight").text().trim();
                 groupedValue += question+"\n    A: "+$(this).val()+ "\n\n"
             }
         });
@@ -420,10 +423,10 @@ ACC.investsaudicustomerticketing = {
 
         sectorSelect.trigger('change');
     },
-    
+
     bindSubSectorsToSectorChange: function () {
         var sectorSelect = $('#parentSector');
-        
+
         sectorSelect.on('change', function () {
             $.ajax({
                 method: "GET",
@@ -432,23 +435,90 @@ ACC.investsaudicustomerticketing = {
                     sector: sectorSelect.val()
                 }
             }).done(function (data){
-                
+
                 var sector = $("#sector");
-               
+
                 sector.find("option").remove();
-               
+
                 var jsonData = JSON.parse(data);
-                
+
                 jsonData.forEach(function (currentValue) {
-              	  sector.append(new Option(currentValue.name, currentValue.id, false, false));
+                    sector.append(new Option(currentValue.name, currentValue.id, false, false));
                 });
                 sector.trigger('change');
-               
-            
+
+
             })
         })
 
         sectorSelect.trigger('change');
-    }
-    
+    },
+   
+    executeOpportunityStatusChangeOps : function (actionUrl, form) {
+        $.ajax({
+            url: actionUrl,
+            type: 'GET',
+            data: form.serialize(),
+            contentType: false,
+            processData: false,
+            success: function () {
+	            
+                 location.assign("../support-tickets");
+                   
+            },
+            error: function(data) {
+                ACC.investsaudicustomerticketing.processErrorResponse(data);
+            }
+        });
+    },
+	showConfirmBox: function(e) {
+        $(document).on('click', '#confirmationModal',function (event) {
+            $("#cboxOverlay").css("display", "none");
+            $("#colorbox").css("display", "none");
+            event.stopPropagation();
+            event.preventDefault();
+            return false;
+
+        });
+
+         
+      	}
 };
+
+$(document).on('click', '#launch-approve-confirm',
+			  function (event) {
+				  event.preventDefault();
+				  var form = $("#opportunitySupportTicketForm");
+				  var confirmationModal = $('#confirmationModal');
+						confirmationModal.find('.modal-title').text("Confirm");
+						confirmationModal.find('.modal-description').text("Do you really want approve?");
+						confirmationModal.modal('show');
+						confirmationModal.find('.yesButton').on('click', function (e) {
+						    event.preventDefault();
+						    confirmationModal.modal('hide');
+						    ACC.investsaudicustomerticketing.executeOpportunityStatusChangeOps(ACC.config.encodedContextPath+"/opportunity/approve", form);
+						});
+						confirmationModal.find('.noButton').on('click', function (e) {
+							event.preventDefault();
+							confirmationModal.modal('hide');
+						});
+			  })
+
+            $(document).on('click', '#launch-reject-confirm',
+                      function (event) {
+                          event.preventDefault();
+                          var confirmationModal = $('#confirmationModal');
+                          var form = $("#opportunitySupportTicketForm");
+                            confirmationModal.find('.modal-title').text("Confirm");
+                            confirmationModal.find('.modal-description').text("Do you really want to reject?");
+                            confirmationModal.modal('show');
+                            confirmationModal.find('.yesButton').on('click', function (e) {
+                                event.preventDefault();
+                                confirmationModal.modal('hide');
+                                ACC.investsaudicustomerticketing.executeOpportunityStatusChangeOps(ACC.config.encodedContextPath+"/opportunity/reject", form);
+                            });
+                            confirmationModal.find('.noButton').on('click', function (e) {
+                                event.preventDefault();
+                                confirmationModal.modal('hide');
+                            });
+                      })

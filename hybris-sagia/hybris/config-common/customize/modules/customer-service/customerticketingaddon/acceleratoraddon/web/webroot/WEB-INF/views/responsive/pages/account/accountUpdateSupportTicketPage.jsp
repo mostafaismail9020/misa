@@ -163,7 +163,7 @@
                 </c:if>
   </div>
 </div>
-<c:if test="${ticketData.status.id eq 'WOAGPENDINGAPPROVAL'}">
+<c:if test="${(woagUserGroup eq 'WOAGUserGroup') && (ticketData.status.id eq 'WOAGPENDINGAPPROVAL')}">
   <form:form method="get" modelAttribute="supportTicketForm" enctype="multipart/form-data"
     id="opportunitySupportTicketForm" action="#">
     <form:hidden path="id" value="${ticketData.id}" />

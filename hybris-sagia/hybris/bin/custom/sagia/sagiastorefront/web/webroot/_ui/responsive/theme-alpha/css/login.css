@@ -461,7 +461,12 @@ justify-content: center !important;
 align-items: center !important;
 flex-direction: column !important;
 padding: 50px !important;
-margin-top: 150px !important;
+margin: auto;
+/* margin-top: 150px !important; */
+}
+
+.errorPage .errorPage-actions .btn.btn_wide{
+	width: 15vw;
 }
 /* End */
 

@@ -286,3 +286,4 @@ UPDATE CMSNavigationNode ; uid[unique=true]           ; $contentCV[unique=true] 
 
 UPDATE CMSNavigationNode ; uid[unique=true]                ; $contentCV[unique=true] ; nodeDescription[lang = en]                                       ; &nodeRef                        ;
                          ; AdminstrationNavNode            ;                         ;                                                                  ; AdminstrationNavNode            ;
+

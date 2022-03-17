@@ -41,9 +41,10 @@
 <div class="customer-ticketing account-overview-table">
 	<c:if test="${not empty searchPageData.results}">
 		<nav:pagination top="true" msgKey="text.account.supportTickets.page" showCurrentPageInfo="true" hideRefineButton="true" supportShowPaged="${isShowPageAllowed}" supportShowAll="${isShowAllAllowed}" searchPageData="${searchPageData}" searchUrl="${searchUrl}"  numberPagesShown="${numberPagesShown}"/>
-		<table class="responsive-table">
+		<div class="table_overflowin_support"> 
+        <table class="table responsive-table table-striped">
             <thead>
-                <tr class="responsive-table-head hidden-xs">
+                <tr >
                 	<th><spring:theme code="text.account.${requestType}.ticketId" text="Ticket ID" /></th>
                     <th><spring:theme code="text.account.supporttickets.subject" text="Subject" /></th>
                     <th><spring:theme code="text.account.supporttickets.dateCreated" text="Date Created" /></th>
@@ -60,33 +61,26 @@
             <tbody>
                 <c:forEach items="${searchPageData.results}" var="supportTicket">
                     <c:url value="/my-account/support-ticket/${supportTicket.id}" var="myAccountsupportTicketDetailsUrl" />
-                    <tr class="responsive-table-item">
-                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.ticketId" text="Ticket ID" /></td>
-                        <td><a href="${myAccountsupportTicketDetailsUrl}" class="responsive-table-link"><c:out value="${supportTicket.id}" /></a></td>
+                    <tr >
+                         <td><a href="${myAccountsupportTicketDetailsUrl}" class="responsive-table-link"><c:out value="${supportTicket.id}" /></a></td>
+                         <td class="break-word"><a href="${myAccountsupportTicketDetailsUrl}" class="responsive-table-link"><c:out value="${supportTicket.subject}" /></a></td>
                         
-                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.subject" text="Subject" /></td>
-                        <td class="break-word"><a href="${myAccountsupportTicketDetailsUrl}" class="responsive-table-link"><c:out value="${supportTicket.subject}" /></a></td>
+                         <td><fmt:formatDate value="${supportTicket.creationDate}" pattern="dd-MM-yy hh:mm a" /></td>
                         
-                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.dateCreated" text="Date Created" /></td>
-                        <td><fmt:formatDate value="${supportTicket.creationDate}" pattern="dd-MM-yy hh:mm a" /></td>
+                         <td><fmt:formatDate value="${supportTicket.lastModificationDate}" pattern="dd-MM-yy hh:mm a" /></td>
                         
-                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.dateUpdated" text="Date Updated" /></td>
-                        <td><fmt:formatDate value="${supportTicket.lastModificationDate}" pattern="dd-MM-yy hh:mm a" /></td>
-                        
-                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.status" text="Status" /></td>
-                        <td><spring:message code="ticketstatus.${fn:toUpperCase(supportTicket.status.id)}"/></td>
+                         <td><spring:message code="ticketstatus.${fn:toUpperCase(supportTicket.status.id)}"/></td>
                         
                         <c:if test="${isNipcMember or isWOAUGMember}">
-	                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.sector" text="Sector" /></td>
 	                        <td><c:out value="${supportTicket.sector}" /></td>
 	                        
-	                        <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.unit" text="Entity" /></td>
-	                        <td><c:out value="${supportTicket.unit}" /></td>
+	                         <td><c:out value="${supportTicket.unit}" /></td>
                         </c:if>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
+		</div>
         <nav:pagination top="false" msgKey="text.account.supportTickets.page" showCurrentPageInfo="true" hideRefineButton="true" supportShowPaged="${isShowPageAllowed}" supportShowAll="${isShowAllAllowed}" searchPageData="${searchPageData}" searchUrl="${searchUrl}"  numberPagesShown="${numberPagesShown}"/>
 	</c:if>	
 </div>

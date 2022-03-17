@@ -270,3 +270,19 @@ INSERT_UPDATE BannerComponent ; $contentCV[unique=true] ; uid[unique=true]    ; 
 
 UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]      ; cmsComponents(uid, $contentCV) ;
                    ;                         ; Section1Slot-Homepage ; home-main-rotating-banner      ;
+
+
+###  REMOVING THE NODE DESCRIPTION FOR B2B FLOW TO ALL THE NAVIGATION NODES ##################
+UPDATE CMSNavigationNode ; uid[unique=true]          ; $contentCV[unique=true] ; nodeDescription[lang = en] ;         
+                         ; ContentHubNavNode         ;                         ;                            ;
+                         ; CompanyReportsNavNode     ;                         ;                            ;
+                         ; EventsCalenderNavNode     ;                         ;                            ;
+                         ; ServicesNavNode           ;                         ;                            ;
+                         ; ContactUsDirectoryNavNode ;                         ;                            ;
+                         ; OpportunitiesNavNode      ;                         ;                            ;
+
+UPDATE CMSNavigationNode ; uid[unique=true]           ; $contentCV[unique=true] ; nodeDescription[lang = en] ;      
+                         ; NipcOpportunitiesNavNode   ;                         ;                            ;      
+
+UPDATE CMSNavigationNode ; uid[unique=true]                ; $contentCV[unique=true] ; nodeDescription[lang = en]                                       ; &nodeRef                        ;
+                         ; AdminstrationNavNode            ;                         ;                                                                  ; AdminstrationNavNode            ;

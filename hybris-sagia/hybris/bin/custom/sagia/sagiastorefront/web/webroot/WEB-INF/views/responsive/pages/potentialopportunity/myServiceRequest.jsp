@@ -17,7 +17,7 @@
         <img class="achievement_header_icon page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
         <div class="container">
             <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
-                <h1 data-aos="fade-up">New Service Request</h1>
+                <h1 data-aos="fade-up"><spring:theme code="services.government.documents.create"/></h1>
             </div>
             <div class="profile-icons float-right">
 				<div class="dashboardUser-right col-md-6">
@@ -77,7 +77,7 @@
 				<svg class="potential_svg_arrow4" xmlns="http://www.w3.org/2000/svg" width="10" height="17.116" viewBox="0 0 10 17.116">
 					<path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M14.265,14.749l6.618-6.471a1.2,1.2,0,0,0,0-1.727,1.275,1.275,0,0,0-1.77,0l-7.5,7.332a1.2,1.2,0,0,0-.036,1.687l7.53,7.383a1.277,1.277,0,0,0,1.77,0,1.2,1.2,0,0,0,0-1.727Z" transform="translate(-11.251 -6.194)" fill="#00a6be"/>
 				</svg>
-				Back to Potential Opportunities
+				<spring:theme code="my.potential.opertunity.back.button" />
 			</a>
 		</div>
 	</div>
@@ -169,7 +169,7 @@
 					Submit
 				</button> -->
 				
-				<input type="submit"  id="submit" class="btn btn-block btn-primary positive adv_search_button w-25 m-auto mb-5" value="Submit"   onclick="validateFormsetting()" />
+				<input type="submit"  id="submit" class="btn btn-block btn-primary positive adv_search_button w-25 m-auto mb-5" value="<spring:theme code="general.submit" />" onclick="validateFormsetting()" />
 			</div>
 		</form:form>
 	</div>

@@ -138,8 +138,10 @@
 							<button class="btn js-toggle-sm-navigation" type="button">
 								<!--<span class="glyphicon glyphicon-align-justify"></span>--> 
 								<span class="listView_white">
-									<svg id="listView_white" xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 26 18">
-										<path id="Path_2373" data-name="Path 2373" d="M0,14H26v4H0ZM0,7H26v4H0ZM0,0H26V4H0Z" fill="#fff" fill-rule="evenodd"/>
+									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+										<g fill="#0097A9" fill-rule="evenodd">
+											<path d="M0 14h26v4H0zM0 7h26v4H0zM0 0h26v4H0z"/>
+										</g>
 									</svg>
 								</span>
 							</button>

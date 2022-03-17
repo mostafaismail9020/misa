@@ -133,6 +133,23 @@
 											</ul>
 										</li>
 								</c:forEach>
+								<li class="nav-item dropdown display-xs">
+									<img src="/investsaudistorefront/_ui/responsive/common/images/mobile-navarrow.png" class="d-none mobile-nav">
+									<div class="nav-link dropdown dropdown-toggle">
+										<sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
+											<cms:pageSlot position="HeaderLinks" var="headerLinks" limit="1">
+												
+												<cms:component component="${headerLinks}" />
+													</cms:pageSlot>
+										</sec:authorize>
+									</div>
+								</li>
+								<sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
+									<a class="btn btn-logout-xs header-link display-xs"  data-toggle="modal" data-target="#logoutModal_b2b">Logout</a>
+								</sec:authorize>
+								<sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')">
+									<a class="btn-logout-xs header-link" href="<c:url value="/login"/>">Login</a>
+								</sec:authorize>
 							</ul>
 						</div>
 					</div>

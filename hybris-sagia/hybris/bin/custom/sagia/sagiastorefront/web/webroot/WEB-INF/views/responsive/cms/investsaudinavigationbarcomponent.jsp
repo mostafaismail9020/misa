@@ -343,7 +343,7 @@
 					     <div class="row g-3">
 										<div class="col-5 menu-img-item">
 											<img class="img-fluid w-100" src="${commonResourcePath}/images/B2C/background1.jpg" alt="">
-											<p>Text  for MY DASHBOARD Page</p>
+											<p><spring:theme code="portal.header.mydashboardpage"/></p>
 										</div>
 							            <div class="col-4 sub-items">
 							            <li>

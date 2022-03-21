@@ -64,6 +64,7 @@ import de.hybris.platform.ticket.model.CsTicketModel;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.investsaudi.portal.core.service.ContactTicketBusinessService;
 import de.hybris.platform.enumeration.EnumerationService;
+import de.hybris.platform.util.localization.Localization;
 import java.util.stream.Collectors;
 
 
@@ -78,6 +79,9 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 	private static final String PATH_VARIABLE_PATTERN = "/{ticketId}";
 	private static final String SERVICE_REQUEST_CMS_PAGE = "service-request";
     private static final String THIS_CONTROLLER_REDIRECTION_URL = "/potentialOpportunity/";
+	private static final String SERVICE_REQUEST_ADDED_TO_PO = "service.request.addedto.potential.opportunity";
+    private static final String UPLOAD_DOCUMENT_SUCCESSFULLY = "upload.document.successfully";
+
 	
     @Resource(name = "sagiaUserService")
 	private SagiaUserService sagiaUserService;
@@ -202,8 +206,7 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
         boolean attachRequestToTicket = false;
 		attachRequestToTicket = sagiaUserFacade.validateSagiaUerFormData(sagiaServiceRequestFormData, ticketId);
 		if (attachRequestToTicket) {
-			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER,
-					"Service Request added successfully to Contact Ticket");
+			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER,Localization.getLocalizedString(SERVICE_REQUEST_ADDED_TO_PO));
 		}
 		return "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
 	}
@@ -229,8 +232,7 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 			LOG.error("Exception in uploading attachment: " + ex);
 		}
         if (uploadAttachment) {
-			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER,
-					"Document Uploaded Successfully");
+			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER,Localization.getLocalizedString(UPLOAD_DOCUMENT_SUCCESSFULLY));
 		}
 		return "redirect:" + THIS_CONTROLLER_REDIRECTION_URL + ticketId;
 		// set the media model to attachments attribute in contact ticket model

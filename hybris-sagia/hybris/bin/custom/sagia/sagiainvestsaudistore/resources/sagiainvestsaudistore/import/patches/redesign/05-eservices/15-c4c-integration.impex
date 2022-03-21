@@ -27,14 +27,14 @@ INSERT_UPDATE CsInterventionType; code[unique=true]	; name		;
 INSERT_UPDATE ServiceCategory 	; code[unique=true] ; name		;
 								; CA_1				; Service Request Categorization;
 
+INSERT_UPDATE IncidentCategory 	; code[unique=true]	; name[lang=en]		;name[lang=ar]
+								; CA_2				; Request Site Visits		;طلب زيارة الموقع
+								; CA_3				; Request a meeting  		;طلب اجتماع
+								; CA_4				; Request Matchmaking		;؟؟ ask Business
+                                ; CA_5				; Request Information (Cost);طلب معلومه (تكلفه )
+								; CA_6				; Sign Deal					;توقيع صفقه
+								; CA_7				; General Enquiries			;استفسارات عامة
 
-INSERT_UPDATE IncidentCategory 	; code[unique=true]	; name		;
-								; CA_2				; Request Site visits		;
-								; CA_3				; Request Meetings			;
-								; CA_4				; Request Matchmaking		;
-								; CA_5				; Request Information (Cost);
-								; CA_6				; Sign Deal					;
-								; CA_7				; General Enquiries			;
 
 
 INSERT_UPDATE Priority 		    ; code[unique=true] ; name    		;

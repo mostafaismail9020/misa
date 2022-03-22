@@ -191,7 +191,7 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 		List<IncidentCategory> incidentCategories = sagiaUserFacade.getIncidentCategoryEnumValues();
 		List<ServiceCategory> serviceCategories = sagiaUserFacade.getServiceCategoryEnumValues();
 		List<Priority> priorities = sagiaUserFacade.getPriorityEnumValues(); 
-		String locale = sessionService.getAttribute("locale");
+		Locale locale = sessionService.getAttribute("locale");
 		model.addAttribute("ticketId", ticketId);
 		model.addAttribute("incidentCategories", incidentCategories.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value,locale))));
 		model.addAttribute("serviceCategories", serviceCategories.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value,locale))));

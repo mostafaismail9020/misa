@@ -461,10 +461,16 @@ ACC.investsaudicustomerticketing = {
             data: form.serialize(),
             contentType: false,
             processData: false,
-            success: function () {
-	            
-                 location.assign("../support-tickets");
+            success: function (data) {
+			location.assign("../support-tickets");
+                /*if(data.ticketStatus !== undefined && data.ticketStatus === 'Error') {
+                    ACC.investsaudicustomerticketing.displayGlobalAlert({type: 'error', errorMessage: data.message});
+                    $("#ct-add-new-msg").removeAttr("style");
                    
+                } else if(data.ticketStatus !== undefined && data.ticketStatus === 'Success') {
+                    window.location.assign("../support-tickets");
+                    location.reload();
+                }*/
             },
             error: function(data) {
                 ACC.investsaudicustomerticketing.processErrorResponse(data);

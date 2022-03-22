@@ -131,6 +131,7 @@ public class DefaultSagiaTicketService extends DefaultTicketService implements S
 		return isValidApprover;
 	}
 
+	
 	private B2BUnitModel getParentB2BUnit(B2BUnitModel b2BUnitModel) {
 		B2BUnitModel parentB2BUnit = null;
 		Set<PrincipalGroupModel> parentB2BUnitModels = b2BUnitModel.getAllGroups();
@@ -169,4 +170,5 @@ public class DefaultSagiaTicketService extends DefaultTicketService implements S
 		cal.add(Calendar.DATE, -30);
 		return destFormat.format(cal.getTime());
 	}
+	
 }

@@ -68,7 +68,7 @@
 				<svg class="potential_svg_arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="17.116" viewBox="0 0 10 17.116">
 					<path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M14.265,14.749l6.618-6.471a1.2,1.2,0,0,0,0-1.727,1.275,1.275,0,0,0-1.77,0l-7.5,7.332a1.2,1.2,0,0,0-.036,1.687l7.53,7.383a1.277,1.277,0,0,0,1.77,0,1.2,1.2,0,0,0,0-1.727Z" transform="translate(-11.251 -6.194)" fill="#00a6be"/>
 				  </svg>
-				<spring:theme code="general.backtodashboard" />
+				<spring:theme code="my.potential.opertunity.dashboard.button" />
 			</a>
 		</div>
 		<div class="col-md-6  pull-right text-right">

@@ -13,7 +13,9 @@ import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
 import com.sap.ibso.eservices.core.enums.IncidentCategory;
 import com.sap.ibso.eservices.core.enums.ServiceCategory;
 import com.sap.ibso.eservices.core.enums.Priority;
+import de.hybris.platform.servicelayer.i18n.CommonI18NService;
 import de.hybris.platform.servicelayer.model.ModelService;
+import de.hybris.platform.servicelayer.session.SessionService;
 import de.hybris.platform.ticket.strategies.TicketEventStrategy;
 import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
 import de.hybris.platform.enumeration.EnumerationService;
@@ -43,6 +45,7 @@ import java.util.Collections;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -113,6 +116,8 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 
 	@Resource
     private CatalogVersionService catalogVersionService;
+	@Autowired
+	private SessionService sessionService; 
 
 	private static final String CATALOG_ID = "sagiaContentCatalog";
 	private static final String VERSION_ONLINE = "Online";
@@ -185,12 +190,12 @@ public class MyPotentialOpportunityController extends SagiaAbstractPageControlle
 
 		List<IncidentCategory> incidentCategories = sagiaUserFacade.getIncidentCategoryEnumValues();
 		List<ServiceCategory> serviceCategories = sagiaUserFacade.getServiceCategoryEnumValues();
-		List<Priority> priorities = sagiaUserFacade.getPriorityEnumValues();
-
+		List<Priority> priorities = sagiaUserFacade.getPriorityEnumValues(); 
+		String locale = sessionService.getAttribute("locale");
 		model.addAttribute("ticketId", ticketId);
-		model.addAttribute("incidentCategories", incidentCategories.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value))));
-		model.addAttribute("serviceCategories", serviceCategories.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value))));
-		model.addAttribute("priorities", priorities.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value))));
+		model.addAttribute("incidentCategories", incidentCategories.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value,locale))));
+		model.addAttribute("serviceCategories", serviceCategories.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value,locale))));
+		model.addAttribute("priorities", priorities.stream().collect(Collectors.toMap(key -> key, value -> enumerationService.getEnumerationName(value,locale))));
 
 		model.addAttribute("sagiaServiceRequestFormData", sagiaServiceRequestFormData);
 		storeCmsPageInModel(model, getContentPageForLabelOrId(SERVICE_REQUEST_CMS_PAGE));

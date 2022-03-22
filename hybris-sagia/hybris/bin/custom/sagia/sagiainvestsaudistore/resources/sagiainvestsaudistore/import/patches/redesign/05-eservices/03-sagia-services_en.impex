@@ -12,7 +12,7 @@ $langen = en
  
 INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $langen]               							  											; description[lang = $langen]																																																																																																																																								 
 #Licensing Service
-								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "Ministry of Investment provides the Licensed entities a license cancellation service as per the need of the entity."   
+								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "Entity will be able to submit Notification of Voluntary Cancellation of the License, and apply for Voluntary Cancellation of the License after revoked the CR."   
 								  ; ZSR5               			 ; "Amendment of License"                           			  											;  																																																																																			 
 								  ; ZSR7						 ; "Conversion of Foreign Entity to 100% National Entity"							  						; "This service is for any entity that wants to end its status with Ministry of Investment with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business."																																																																																													  	 
 								  ; ZSR4               			 ; "Renewal of License"                           			  											    ; "This service is for all the entities licensed by Ministry of Investment and want to renew their investment licenses."																																																																																																																	 

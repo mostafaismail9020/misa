@@ -321,19 +321,17 @@
           <spring:theme code="text.account.supporttickets.createTicket.note" />
         </div>
 
-        <div id="customer-ticketing-buttons"
-          class="form-actions">
+        <div id="customer-ticketing-buttons" class="form-actions">
           <div class="accountActions">
-            <div class="d-flex space-around align-center flex-wrap">
-              <div class="col-md-3 accountButtons">
-                <a href="support-tickets" class="btn btn-sagia btn-block width-350">
+            <div class="d-flex justify-content-center align-center flex-wrap support-ticket-page-btn">
+              <div class="col-md-3 col-sm-6 accountButtons d-flex">
+                <a href="support-tickets" class="btn btn-outline btn-width btn-block">
                   <spring:theme code="text.account.supporttickets.createTicket.back" text="Cancel" />
                 </a>
               </div>
-              <div class="col-md-3 accountButtons">
-                <ycommerce:testId
-                  code="supportTicket_create_button">
-                  <button class="btn btn-sagia btn-sagia-green btn-block width-350" type="button" id="addTicket">
+              <div class="col-md-3 col-sm-6 accountButtons d-flex">
+                <ycommerce:testId code="supportTicket_create_button">
+                  <button class="btn btn-sagia btn-sagia-green btn-width btn-block" type="button" id="addTicket">
                     <spring:theme code="text.account.supporttickets.createTicket.submit" text="Submit" />
                   </button>
                 </ycommerce:testId>

@@ -23230,10 +23230,12 @@ footer .footer-wrapper .links {
   border-radius: 27px !important;
   /* padding: 9px 24px 7px;
   font-size: 13px; */
-  text-transform: none;
   border: 0;
   color: #fff;
-  background-color: #929292;
+  background: #00A6BE 0% 0% no-repeat padding-box;
+  border-color: #00A6BE;  
+  text-transform: uppercase;
+  padding: 10px 0px;
 }
 .btn.btn-sagia:hover {
   background-color: #A1A1A1;
@@ -26437,7 +26439,7 @@ label {
   background: #00A6BE 0% 0% no-repeat padding-box;
   border-radius: 27px !important;
   border: 1px solid #00A6BE;
-  margin-left: auto;
+  margin-left: 0;
 }
 .btn.btn-sagia.btn-sagia-green:hover {
   background: #fff 0% 0% no-repeat padding-box;
@@ -29065,7 +29067,7 @@ select.form-control {
   }
   .login-btn, #forgottenPwdForm .btn,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia{
     height: 45px;
-    font-size: 14px;
+    font-size: 14px !important;
   }
   .login-forgot,.product-category .facet .facet__values .facet__list li:first-child
   ,.product-category .facet .facet__values .facet__list li span span.facet__value__count
@@ -29175,8 +29177,8 @@ select.form-control {
   .file-upload-button{
     height: 40px;
   }
-  .btn{
-    padding: 8px 15px;
+  .btn, .btn.btn-sagia{
+    padding: 12px 15px;
   }
   .account-section .account-section-content .help-block,.blogReadMore,.form-note{
     font-size: 12px;
@@ -29212,7 +29214,7 @@ select.form-control {
   }
   .login-btn, #forgottenPwdForm .btn,.btn.btn-sagia.btn-sagia-green,.btn.btn-sagia{
     height: 40px;
-    font-size: 12px;
+    font-size: 12px !important;
   }
   .login-forgot,.product-category .facet .facet__values .facet__list li:first-child
   ,.product-category .facet .facet__values .facet__list li span span.facet__value__count
@@ -29339,8 +29341,8 @@ select.form-control {
   .file-upload-button{
     height: 35px;
   }
-  .btn{
-    padding: 6px 15px;
+  .btn, .btn.btn-sagia{
+    padding: 10px 15px;
   }
   .account-section .account-section-content .help-block,.blogReadMore.form-note{
     font-size: 10px;
@@ -29578,7 +29580,7 @@ input[type=text]#createTicket-subject:disabled {
 @media screen and (min-width:700px){
   #lblErrorCaptcha{
     margin-left: 23%;
-  }
+  }  
 }
 @media screen and (max-width:1000px) {
   .accountLogin-content-headline{
@@ -29633,7 +29635,12 @@ input[type=text]#createTicket-subject:disabled {
   #loginForm .login-right-wrapper{
     margin-bottom: 5rem;
   }
-  
+  .col-sm-6{
+    width: 50%;
+  }
+  .btn.btn-sagia.btn-sagia-green, .btn.btn-sagia{
+    margin-top: 0px;
+  }
 }
 
 @media screen and (min-width:641px) and (max-width:800px){
@@ -29651,4 +29658,26 @@ input[type=text]#createTicket-subject:disabled {
 }
 .alert{
   margin: auto;
+}
+.btn.btn-outline{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #00A6BE;
+  border-radius: 27px;
+  border-radius: 27px !important;
+  text-align: center;
+  letter-spacing: 0.58px;
+  color: #00A6BE;
+  text-transform: uppercase;
+}
+
+.btn-width{
+  width: 175px;
+}
+.support-ticket-page-btn{
+  div:first-child{
+    justify-content: flex-end;
+  }
+  div:last-child{
+    justify-content: flex-start;
+  }
 }

@@ -12,8 +12,8 @@ $langen = en
  
 INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $langen]               							  											; description[lang = $langen]																																																																																																																																								 
 #Licensing Service
-								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "Entity will be able to submit Notification of Voluntary Cancellation of the License, and apply for Voluntary Cancellation of the License after revoked the CR."   
-								  ; ZSR5               			 ; "Amendment of License"                           			  											;  																																																																																			 
+								  ; ZSR6               			 ; "Voluntary Cancellation of License"                         											    ; "Entity will be able to submit Notification of Voluntary Cancellation of the License, and Apply for Voluntary Cancellation of the License after revoked the CR."   
+								  ; ZSR5               			 ; "Amendment of License"                           			  											; "User can submit a request to amend the license for entity that has a valid investment license and don't has any violations in the systems. Investors can apply for license amendment 7 days before license expiration." 																																																																																			 
 								  ; ZSR7						 ; "Conversion of Foreign Entity to 100% National Entity"							  						; "This service is for any entity that wants to end its status with Ministry of Investment with the exit of the foreign shareholders and conversion of the entity into a 100% national owned business."																																																																																													  	 
 								  ; ZSR4               			 ; "Renewal of License"                           			  											    ; "This service is for all the entities licensed by Ministry of Investment and want to renew their investment licenses."																																																																																																																	 
 
@@ -22,7 +22,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 							      ; ZMOIP_05					 ; "Information Transfer"																					; "This service is provided to companies owners who desire to transfer the passport information."
 							      ; ZMOIP_10					 ; "Exit & Return Visa for Accompanies"																	    ; "This service is provided to companies owners and employees who desire to issue an exit and return visa for the accompaniers."
 							      ; ZMOIP_17					 ; "Issuance of replacement copy of Damaged Passport"													    ; "This service is provided to companies owners and employees who desire to issue another copy of the damaged passport." 
-							      ; ZMOIP_21					 ; "Wavier of Son or Daughter"																				; 
+							      ; ZMOIP_21					 ; "Wavier of Son or Daughter"																				; "This service is provided to companies owners and employees who desire to dismiss their son or daughter."
 							      ; ZMOIP_23					 ; "Transfer KAFALA for General manager of Branch of foreigner company"										; "This service is provided to entities that desire to transfer the sponsorship or amend the profession for General Manager of Foreign Companies Branch."
 							      ; ZMOIP_15					 ; "Dismissal of a Subordinates Holding Separate Iqama"												    	; "This service is provided to companies owners and employees who desire to dismiss any of their subordinates holding separate Iqama."
 							      ; ZMOIP_06					 ; "Sponsorship Transfer and Profession Amendment for General Manager of Foreign Companies Branch"			; "This service is provided to entities that desire to transfer the sponsorship or amend the profession for General Manager of Foreign Companies Branch."
@@ -63,17 +63,17 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 								  ; ZSPLJAWA04					 ; "Final Exit of the Investor whose Licens is Cancelled"													; "The final exit is granted to foreign investor for whom a cancellation decision was issued (punitive / withdrawal of license / non-renewal / conversion to national / voluntary)."																																																																																																		 
 
 #Government Data Update Service								  
-								  ; ZS14						 ; "Government Documents"															                        ;"This service aims to the Integrated E-service by updating the governmental data of the entity licensed by MISA to reach a reliable and updated governmental database through a direct linkage to YESSER system."
+								  ; ZS14						 ; "Government Documents"															                        ; "This service aims to the Integrated E-service by updating the governmental data of the entity licensed by MISA to reach a reliable and updated governmental database through a direct linkage to YESSER system."
 				  
 #Rules & Regulation Advisory 								  
-								  ; ZS20               			 ; "Rules & Regulation Advisory"    							  											;                        							 				  
+								  ; ZS20               			 ; "Rules & Regulation Advisory"    							  											; "This service aims to provide advice related to investment regulations in the Kingdom."                       							 				  
 
 #Property Ownership & Sale
-								  ; ZRES						 ; "Buy and Sell Real state"																				; "This service is provided for the user who wish to buy or sell real state registed in the entity's name."
+								  ; ZRES						 ; "Buy and Sell Real state"																				; "This service is provided for the users who wish to buy or sell real state registered in the entity's name."
 
 #Follow Up Services
 								  ; ZFLUP_02					 ; "Reply to the Written Notification" 																		; "This service is provided to reply to the written notification through which the entity was informed about the existence of irregularities and grant it a corrective grace period. The entity can respond to irregularities by providing reasons."
-								  ; ZSVR						 ; "Support Visits"																							; 
+								  ; ZSVR						 ; "Support Visits"																							; "The ministry of investment represented by the follow-up and supporting department that provides field visit to provide all aspects of support and facilities."
 								  ; ZFLUP_03					 ; "Extention of the Written Notification Deadline"															; "This service provided to extend the grace period issued by Ministry of Investment in the written notification through which the entity informed about the existence of irregularities and granting a grace period to the entity to take corrective actions."
                                
 

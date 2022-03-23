@@ -18,21 +18,21 @@
 			 <a href="${encodedUrl}"><!--<img title="${fn:escapeXml(media.altText)}"
 				alt="${fn:escapeXml(media.altText)}" src="${media.url}"> -->
 				<sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
-				<div class=" display-xs js-logged_in">
-					<img title="${fn:escapeXml(media.altText)}" alt="${fn:escapeXml(media.altText)}"
-					src="/investsaudistorefront/_ui/responsive/common/images/logo_green.png">
-				</div>
-				</sec:authorize>
-				<sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')">
-					<div class=" display-xs">
-					<img title="${fn:escapeXml(media.altText)}" alt="${fn:escapeXml(media.altText)}"
+					<div class=" display-xs display-sm js-logged_in">
+						<img title="${fn:escapeXml(media.altText)}" alt="${fn:escapeXml(media.altText)}"
+						src="/investsaudistorefront/_ui/responsive/common/images/logo_green.png">
+					</div>
+					</sec:authorize>
+					<sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')">
+						<div class=" display-xs display-sm">
+						<img title="${fn:escapeXml(media.altText)}" alt="${fn:escapeXml(media.altText)}"
+							src="/investsaudistorefront/_ui/responsive/common/images/INV-logo-white-en.svg">
+						</div>
+					</sec:authorize>
+					<div class="register-page-logo display-md">
+						<img title="${fn:escapeXml(media.altText)}" alt="${fn:escapeXml(media.altText)}"
 						src="/investsaudistorefront/_ui/responsive/common/images/INV-logo-white-en.svg">
 					</div>
-				</sec:authorize>
-				<div class="register-page-logo display-sm">
-					<img title="${fn:escapeXml(media.altText)}" alt="${fn:escapeXml(media.altText)}"
-					src="/investsaudistorefront/_ui/responsive/common/images/INV-logo-white-en.svg">
-				</div>
 			
 			</a>
 		</c:otherwise>

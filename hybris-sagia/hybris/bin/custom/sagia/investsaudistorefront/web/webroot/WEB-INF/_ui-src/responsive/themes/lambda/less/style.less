@@ -29539,10 +29539,16 @@ input[type=text]#createTicket-subject:disabled {
 .display-xs{
   display: none;
 }
+.display-md{
+  display: block;
+}
 
 @media (max-width: 767px){
   .display-sm{
     display: none;
+  }
+  .display-md{
+    display: none !important;
   }
   .display-xs{
     display: flex !important;
@@ -29562,7 +29568,39 @@ input[type=text]#createTicket-subject:disabled {
       text-align: left;
       text-transform: uppercase !important;
       outline: none;
-  }                  
+  }    
+  .branding-mobile{
+    border-bottom: 2px solid #000;
+  }              
+}
+
+@media (max-width: 1024px) and (min-width: 768px){
+  .float-button{
+    bottom:150px;
+  }
+  .display-sm{
+    display: block;
+  }
+  .display-md{
+    display: none !important;
+  }
+  .register-page-logo {
+    width: 95vw;
+    justify-content: left;
+    display: flex;
+  }
+  .branding-mobile .js-mobile-logo .btn{
+    position: relative;
+    top: 17px;
+  }
+  .branding-mobile {
+    background-color: #fff;
+    border: 0;
+    position: fixed;
+    width: 100%;
+    top: -17px;
+    border-bottom: 2px solid #000;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 768px){

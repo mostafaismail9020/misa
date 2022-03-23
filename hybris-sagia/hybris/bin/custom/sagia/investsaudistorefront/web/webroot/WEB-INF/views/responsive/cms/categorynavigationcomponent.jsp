@@ -133,7 +133,7 @@
 											</ul>
 										</li>
 								</c:forEach>
-								<li class="nav-item dropdown display-xs">
+								<li class="nav-item dropdown display-xs display-sm">
 									<img src="/investsaudistorefront/_ui/responsive/common/images/mobile-navarrow.png" class="d-none mobile-nav">
 									<div class="nav-link dropdown dropdown-toggle">
 										<sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">

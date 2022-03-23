@@ -5,7 +5,7 @@
 <div class="investsaudi--my-account-menu-wrapper">
     <cms:component component="${component.navigationNode.links[0]}" />
 
-    <div class="hidden investsaudi--my-account-menu display-sm">
+    <div class="hidden investsaudi--my-account-menu display-md">
         <ul>
             <c:forEach items="${component.navigationNode.children[0].links}" var="link">
                 <li>
@@ -14,7 +14,7 @@
             </c:forEach>
         </ul>
     </div>
-    <div class="hidden investsaudi--my-account-menu-mobile display-xs">
+    <div class="hidden investsaudi--my-account-menu-mobile display-xs display-sm">
         <ul class="dropdown-menu dropdown-large">
             <c:forEach items="${component.navigationNode.children[0].links}" var="link">
                 <div class="row g-3">

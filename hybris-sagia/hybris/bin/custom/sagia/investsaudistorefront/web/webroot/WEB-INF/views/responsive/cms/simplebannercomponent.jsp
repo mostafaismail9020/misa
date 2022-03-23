@@ -29,7 +29,7 @@
 						src="/investsaudistorefront/_ui/responsive/common/images/INV-logo-white-en.svg">
 					</div>
 				</sec:authorize>
-				<div class="display-sm">
+				<div class="register-page-logo display-sm">
 					<img title="${fn:escapeXml(media.altText)}" alt="${fn:escapeXml(media.altText)}"
 					src="/investsaudistorefront/_ui/responsive/common/images/INV-logo-white-en.svg">
 				</div>

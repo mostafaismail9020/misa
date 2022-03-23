@@ -16006,7 +16006,8 @@ fieldset#startDate .form-group .control-label {
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
 #cboxOverlay {
-  background: #000;
+  background: #343a4a;
+  opacity: 0.5;
 }
 #colorbox {
   outline: 0;
@@ -29438,6 +29439,7 @@ select.form-control {
     padding: 0px !important;
   }
   .login-buttons {
+    margin-top: 10px;
     margin-bottom: 0px !important;
   }
   select.form-control{ 
@@ -29541,7 +29543,7 @@ input[type=text]#createTicket-subject:disabled {
     display: none;
   }
   .display-xs{
-    display: block !important;
+    display: flex !important;
   }
   .modal-backdrop{
     opacity: 0 !important;
@@ -29565,4 +29567,88 @@ input[type=text]#createTicket-subject:disabled {
   .float-button{
     bottom:150px;
   }
+}
+
+
+.register-page-left-content{
+  .content{
+    margin-top: 90px;
+  }
+}
+@media screen and (min-width:700px){
+  #lblErrorCaptcha{
+    margin-left: 23%;
+  }
+}
+@media screen and (max-width:1000px) {
+  .accountLogin-content-headline{
+    font-size: 35px !important;
+  }
+
+  .banner__component.simple-banner{
+    .display-xs{
+      img{
+        margin: auto;
+      }
+    }
+  }
+
+  .login-register-text{
+    font-size: 25px;
+  }
+  .r-sn{
+    .login-buttons{
+      padding: 25px 7px;
+      display: flex;
+    }
+  }
+  .login-screen{
+    .login-buttons div:first-child{
+      order: 2;
+    }
+  }
+  .page-SecureCustomerPortalRegisterPage{
+    .side-content-slot.cms_disp-img_slot{
+      .headline.accountLogin-content-headline_sub,.dottedList.dottedList_green{
+        display: none;
+      }
+    }
+    .register-page-logo.display-sm{
+      display: flex;
+    }
+    
+  }
+  .register-page-logo{
+    width: 95vw;
+    justify-content: center;
+    display: flex;
+  }
+  .register-user-details{
+    height: 66px;
+  }
+  .register-user-info-label{
+    transform: translate3d(0, 6px, 0) scale(1);
+  }
+
+  #loginForm .login-right-wrapper{
+    margin-bottom: 5rem;
+  }
+  
+}
+
+@media screen and (min-width:641px) and (max-width:800px){
+  .page-SecureCustomerPortalRegisterPage{
+    .login-buttons{
+      width: 60vw;
+      margin: auto;
+    }
+  }
+}
+
+.forgotten-password.alert{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.alert{
+  margin: auto;
 }

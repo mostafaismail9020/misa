@@ -86,7 +86,7 @@ border-color:#fd7b7b;
         <c:set var="loginBtnClasses" value="col-sm-12 col-md-6 col-md-push-6"/>
 
         <c:if test="${enableRegistration}">
-            <c:set var="loginBtnClasses" value="col-sm-6 col-sm-push-6"/>
+            <c:set var="loginBtnClasses" value="col-sm-6 col-md-push-6"/>
         </c:if>
 
         <div class="${loginBtnClasses}">
@@ -97,7 +97,7 @@ border-color:#fd7b7b;
             </ycommerce:testId>
         </div>
 
-        <div class="col-sm-6 col-sm-pull-6">
+        <div class="col-sm-6 col-md-pull-6">
             <c:if test="${enableRegistration}">
                 <a href="<c:url value='/register'/>">
                     <button type="button" class="login-btn login-entry-register">

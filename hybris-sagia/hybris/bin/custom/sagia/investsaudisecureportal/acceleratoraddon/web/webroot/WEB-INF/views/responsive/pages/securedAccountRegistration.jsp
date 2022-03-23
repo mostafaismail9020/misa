@@ -8,25 +8,31 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 <sptemplate:page pageTitle="${pageTitle}">
     <jsp:body>
-        <div class="login-logo text-left">
-            <cms:pageSlot position="SiteLogo" var="logo" limit="1">
-                <cms:component component="${logo}"/>
-            </cms:pageSlot>
-        </div>
+        
         <div class="row container-fluid">
             <div class="col-md-6">
                 <div class="item_container group1">
-                    <cms:pageSlot position="LeftContentSlot" var="feature" element="div" class="side-content-slot cms_disp-img_slot">
+                    <cms:pageSlot position="LeftContentSlot" var="feature" element="div" class="side-content-slot cms_disp-img_slot register-page-left-content">
+                        <div class="login-logo text-left">
+                            <cms:pageSlot position="SiteLogo" var="logo" limit="1">
+                                <cms:component component="${logo}"/>
+                            </cms:pageSlot>
+                        </div>
                         <cms:component component="${feature}"/>
                     </cms:pageSlot>
                 </div>
                 <div class="item_container group2 next-hide">
                     <cms:pageSlot position="LeftContentSlot02" var="feature" element="div" class="side-content-slot cms_disp-img_slot">
+                        <div class="login-logo text-left">
+                            <cms:pageSlot position="SiteLogo" var="logo" limit="1">
+                                <cms:component component="${logo}"/>
+                            </cms:pageSlot>
+                        </div>
                         <cms:component component="${feature}"/>
                     </cms:pageSlot>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-5">
                 <div class="row col-lg-12 col-xl-12 col-12 register-account-partner-screen r-sn ">
                     <div class="login-right-wrapper">
                         <div class="login-register-text">REGISTER YOUR ACCOUNT</div>

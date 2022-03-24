@@ -574,19 +574,19 @@
             <div class="modal-content">
                 <form action="" class="js-formInputFileBox">
                     <div class="modal-header modal-header_smallPDB">
-                        <div class="modal-title">You have unsaved changes</div>
+                        <div class="modal-title"><spring:theme code="sagia.profile.companytab.cancel.text"/></div>
                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                             <icon:close/>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="modal-description modal-description_largeMargin modal-description_smallText">
-                            There are still changes in the form that were not yet submitted. By dismissing the changes all data will be lost.
+                          <spring:theme code="sagia.profile.companytab.text"/>
                         </div>
                     </div>
                     <div class="modal-footer modal-footer_spaceBetween d-flex">
-                        <button type="submit" class="btn btn-outline btn-bg m-0 mb-3" id="dismissChanges">Dismiss Changes</button>
-                        <button type="submit" class="btn btn_round m-0 mb-3" data-dismiss="modal">Continue editing</button>
+                        <button type="submit" class="btn btn-outline btn-bg m-0 mb-3" id="dismissChanges"><spring:theme code="sagia.profile.companytab.dissmis.button"/> </button>
+                        <button type="submit" class="btn btn_round m-0 mb-3" data-dismiss="modal"><spring:theme code="sagia.profile.companytab.continue.button.text"/> </button>
                     </div>
                 </form>
             </div>

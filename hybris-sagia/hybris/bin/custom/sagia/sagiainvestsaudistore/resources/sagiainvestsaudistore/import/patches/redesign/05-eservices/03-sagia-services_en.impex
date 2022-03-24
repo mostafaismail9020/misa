@@ -66,7 +66,7 @@ INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $
 								  ; ZS14						 ; "Government Documents"															                        ; "This service aims to the Integrated E-service by updating the governmental data of the entity licensed by MISA to reach a reliable and updated governmental database through a direct linkage to YESSER system."
 				  
 #Rules & Regulation Advisory 								  
-								  ; ZS20               			 ; "Rules & Regulation Advisory"    							  											; "This service aims to provide advice related to investment regulations in the Kingdom."                       							 				  
+								  ; ZS20               			 ; "Rules & Regulation Advisory"    							  											; "This service aims to provide advice related to investment regulations in the Saudi Arabia."                       							 				  
 
 #Property Ownership & Sale
 								  ; ZRES						 ; "Buy and Sell Real state"																				; "This service is provided for the users who wish to buy or sell real state registered in the entity's name."

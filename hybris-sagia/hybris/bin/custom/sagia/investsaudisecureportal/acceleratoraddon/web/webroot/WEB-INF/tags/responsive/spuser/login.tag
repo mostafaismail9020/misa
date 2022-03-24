@@ -62,7 +62,7 @@ border-color:#fd7b7b;
         <div class="login-right-wrapper">
             <div class="login-register-text">LOGIN</div>
             <div class="register-role-selection">
-                <img src="${commonResourcePath}/images/Partner.svg" alt="Partner" class="img-fluid">
+                <img src="${commonResourcePath}/images/Partner.png" alt="Partner" class="img-fluid">
             </div>
 
 

@@ -401,8 +401,8 @@
                                 <!-- <div class="contentModule-headline contentModule-headline_bordered">
                                     <icon:documents/><spring:theme code="text.account.followup.supportDocuments"/>
                                 </div> -->
-                                <div class="contentModule contentModule-wrap">
-                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <div class="contentModule contentModule-wrap  w-100">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
                                         <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
                                         <div class="contentModule-headline-border"></div>
                                     </div>

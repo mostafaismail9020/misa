@@ -419,7 +419,10 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																		  <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
 																		</ol>";
 
-								; ZS14							; "<p>1. Update - for once only - is mandatory for all licensed entities,holding a license of two years or more, that did not provide Ministry of Investment with the data in earlier time. 2. The service shall be suspended for licensed entities that have a shortage or mismatch in government documents figures with 'YESSER' data until updating their government data in the electronic system of Ministry of Investment, and verification of data on compliance with the 'YESSER'.</p>";
+								; ZS14							; "<ol start= '1'>
+																    <li>Update - for once only - is mandatory for all licensed entities,holding a license of two years or more, that did not provide Ministry of Investment with the data in earlier time.</li>
+																	<li>The service shall be suspended for licensed entities that have a shortage or mismatch in government documents figures with 'YESSER' data until updating their government data in the electronic system of Ministry of Investment, and verification of data on compliance with the 'YESSER'.</li>
+																	</ol>";
 
 								; ZMOIP_03						; "<p>1. Fill the form of 'Exit and Return Visa' approved by General Department of Passports.</p>"														
 					 

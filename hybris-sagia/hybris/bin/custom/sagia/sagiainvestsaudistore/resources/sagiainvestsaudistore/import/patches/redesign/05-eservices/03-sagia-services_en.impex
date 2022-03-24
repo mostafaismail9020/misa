@@ -391,9 +391,9 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																		 
 								; ZRES							; "<p><b>Property Ownership Service:</b></p>
 																		<ol start= '1'>
-																			<li>The property must be outside the perimeter of Makkah and Madinah Al-Munawarrah cities.</li>
+																			<li>The property must be outside the borders of Makkah and Madinah Al-Munawarrah cities.</li>
 																			<li>The capital must not be less than the value of the property to be purchased, or the entity would have to submit a property preliminary funding from the funding agency.</li>
-																			<li>The area must be within the perimeter of imperative need.</li>
+																			<li>The area must be within the borders of imperative need.</li>
 																			<li>The property to be owned must be in one of the industrial cities approved (for factories).</li>
 																			<li>The project shall be active and there is no violation of the foreign investment law.</li>
 																			<li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</p>
@@ -408,7 +408,7 @@ UPDATE SagiaService             ; code[unique = true]			; rulesRestrictions[lang
 																	<p><b>Property Ownership Service for Property Investment:</b></p>
 																		<ol start= '1'>
 																		  <li>The cost of the project must not be less than thirty (30) million Saudi Riyals (land and building).</li>
-																		  <li>The property must be outside the boundary of Makkah and Madinah Al-Munawarrah cities.</li>
+																		  <li>The property must be outside the borders of Makkah and Madinah Al-Munawarrah cities.</li>
 																		  <li>The applicant shall follow up with Ministry of Justice afterward of decision issuance. The validity of the letter addressed to the notary at the Ministry of Justice must be six (6) months.</li>
 																		  <li>A Copy of a property deed must be attached in case of a technical problem occurred while submitting the application.</li>
 																		  <li>The applicant shall commit to utilize the land for the specified purpose within five (5) years.</li>

@@ -235,9 +235,13 @@ public class DefaultSagiaTicketBusinessService extends DefaultTicketBusinessServ
 		UserModel userModel = getUserService().getCurrentUser();
 		if(userModel instanceof B2BCustomerModel) {
 			B2BCustomerModel b2BCustomerModel = (B2BCustomerModel) userModel;
-			CompanyModel b2BUnitModel = b2bUnitService.getParent(b2BCustomerModel.getDefaultB2BUnit());
-			if(isWOBDUser() && b2BUnitModel != null && b2BUnitModel instanceof  B2BUnitModel
-					&& ((B2BUnitModel)b2BUnitModel).isOpportunityApprovalRequired()) {
+			CompanyModel b2BUnitModel =b2BCustomerModel.getDefaultB2BUnit();
+			CompanyModel parentB2BUnitModel = b2bUnitService.getParent(b2BCustomerModel.getDefaultB2BUnit());
+			boolean isBDUser=isWOBDUser();
+			if(isBDUser && b2BUnitModel != null && b2BUnitModel instanceof  B2BUnitModel && ((B2BUnitModel)b2BUnitModel).isOpportunityApprovalRequired()) {
+				isOpportunityWorkFlowEnabled = true;
+			}
+			if(isBDUser && parentB2BUnitModel != null && parentB2BUnitModel instanceof  B2BUnitModel && ((B2BUnitModel)parentB2BUnitModel).isOpportunityApprovalRequired()) {
 				isOpportunityWorkFlowEnabled = true;
 			}
 		}
@@ -250,7 +254,7 @@ public class DefaultSagiaTicketBusinessService extends DefaultTicketBusinessServ
 		if (currentUser != null) {
 			Set<PrincipalGroupModel> curGroups = currentUser.getGroups();
 			for (PrincipalGroupModel curGroup : curGroups) {
-				if (SagiaCoreConstants.WORKFLOW_BD_ID.equalsIgnoreCase(curGroup.getUid())) {
+				if (SagiaCoreConstants.WORKFLOW_BD_ID.equalsIgnoreCase(curGroup.getUid()) ||(SagiaCoreConstants.BD_USER_GROUP.equalsIgnoreCase(curGroup.getUid()))) {
 					result = Boolean.TRUE;
 					break;
 				}

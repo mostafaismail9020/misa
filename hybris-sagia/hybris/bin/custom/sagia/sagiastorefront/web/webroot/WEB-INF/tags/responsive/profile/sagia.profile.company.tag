@@ -584,9 +584,9 @@
                             There are still changes in the form that were not yet submitted. By dismissing the changes all data will be lost.
                         </div>
                     </div>
-                    <div class="modal-footer modal-footer_spaceBetween">
-                        <button type="submit" class="btn btn-warning btn-bg m-0 mb-3" id="dismissChanges">Dismiss Changes</button>
-                        <button type="submit" class="btn btn_round btn_slim m-0 mb-3" data-dismiss="modal">Continue editing</button>
+                    <div class="modal-footer modal-footer_spaceBetween d-flex">
+                        <button type="submit" class="btn btn-outline btn-bg m-0 mb-3" id="dismissChanges">Dismiss Changes</button>
+                        <button type="submit" class="btn btn_round m-0 mb-3" data-dismiss="modal">Continue editing</button>
                     </div>
                 </form>
             </div>

@@ -1237,10 +1237,10 @@ button:focus {
     border: 1px solid #EDEDED;
 }
 
-#unsavedChangesModal .modal-footer button:first-child {
-    border: 1px solid #00A6BE !important;
-    background: #00A6BE !important;
-}
+// #unsavedChangesModal .modal-footer button:first-child {
+//     border: 1px solid #00A6BE !important;
+//     background: #00A6BE !important;
+// }
 
 .js-contactUpdate-edit .close-edit {
     position: relative;
@@ -3079,5 +3079,17 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
 @media (min-width: 300px) and (max-width:768px) { 
     .contentModule-headline {
         width: 100% !important;
+    }
+}
+
+
+
+#unsavedChangesModal{
+    .modal-dialog-xs .modal-footer {
+        padding: 0 30px 32px 30px;
+    }
+
+    #dismissChanges:hover{
+        color: @color-primary !important;
     }
 }

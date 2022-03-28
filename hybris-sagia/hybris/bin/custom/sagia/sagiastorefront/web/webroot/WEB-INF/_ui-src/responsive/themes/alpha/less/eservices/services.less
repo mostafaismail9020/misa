@@ -1703,3 +1703,56 @@ input[type=radio]{
         margin-bottom: 10px;
     }
 }
+#termsAndConditionsResponseModal{
+    .modal-description, p{
+        color: #707070;
+        font-size: 20px;
+        line-height: 35px;
+        @media (min-width: 1200px) and (max-width: 1500px){
+            font-size: 15px!important;
+            line-height: 27px;
+        }
+        @media screen and (min-width: 1530px) and (max-width: 1600px) {
+            font-size: 15px!important;
+            line-height: 27px;
+        }
+    }
+    table{
+        table-layout: auto;
+        width: 100%;
+        max-width: 100%;
+
+        tbody tr:first-child{
+            td{
+                background: #f7f7f7 0 0 no-repeat padding-box;
+                text-align: left;
+                border: 1px solid #ededed;
+                font-weight: 600;
+                letter-spacing: 0;
+                color: #707070;
+                padding: 11px 10px;
+                @media (min-width: 1200px) and (max-width: 1500px){
+                    font-size: 15px!important;
+                }
+            }
+        }
+        tbody tr:not(:first-child){
+            td:first-child{
+                border-left: 1px solid #e4e4e4;
+            }
+            td{
+                text-align: left;
+                letter-spacing: 0;
+                color: #707070;
+                border-right: 1px solid #e4e4e4;
+                padding: 26px 10px 25px;
+                border-bottom: solid 1px #ebedee;
+                font-weight: 500;
+                @media (min-width: 1200px) and (max-width: 1500px){
+                    padding: 15px 10px 15px!important;
+                    font-size: 15px!important;
+                }
+            }
+        }        
+    }
+}

@@ -656,3 +656,10 @@ max-width :100% ;
 	float: left;
 	margin-left: 0px;
 }	
+
+
+
+/*as per the client requirement hidden below section*/
+.float-button,#dashboardNoLicenseHelper,.js-license-apply{
+    display: none !important;
+}

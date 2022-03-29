@@ -192,12 +192,14 @@
 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard scale-on-resize">
     <div class="container">
-    	<dashboard:opportunityTickets></dashboard:opportunityTickets>
-    	</br>
+    	
         <h1 class="section-title text-center clr_gld py-3 py-md-5"><spring:theme code="dashboard.license.my.license.title"/></h1>
         <cms:pageSlot position="MCM_CMS_OTHER" var="component">
         	<cms:component component="${component}"/>
      	</cms:pageSlot>
+
+        </br>
+        <dashboard:opportunityTickets></dashboard:opportunityTickets>
     
     	<!-- <div id="dashboardNoLicenseHelper"></div> -->
     	<dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>

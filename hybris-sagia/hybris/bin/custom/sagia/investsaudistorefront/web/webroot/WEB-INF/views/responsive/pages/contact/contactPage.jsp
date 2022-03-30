@@ -101,8 +101,8 @@
 			<h2>
 			EMAIL US
 			</h2>
-			<h3 class="text-center email_h3">                          
-				You can also mail us and will be pleased to assist you.<br></br> We are available for you 24 hrs, 7 days a week.
+			<h3 class="text-center email_h3 contact_line_height">                          
+				You can also mail us and will be pleased to assist you.<br> We are available for you 24 hrs, 7 days a week.
 			</h3>
 			<div class="text-center">
 				<div class="row">

@@ -28078,7 +28078,9 @@ select.form-control option {
   .success-circle{
 	justify-content: center;
 	text-align: center;
-	margin-top: 8% !important;
+  span img{	
+    margin-bottom: 4%;	
+  }
   }
   .register-success-msg span{
 	text-align: center;
@@ -28086,6 +28088,7 @@ select.form-control option {
 	letter-spacing: 0px;
 	color: #025635;
 	margin-top: 8% !important;
+  font-size: 23px;
   }
   /**12-01-2022**/
 
@@ -29055,6 +29058,110 @@ select.form-control {
   display: flex;
   justify-content: center;
 }
+
+.accountLogin-content-headline { 
+  margin-bottom: 30px;
+}
+.page-login p {
+  margin: 0 0 20px;
+}
+.page-SecureCustomerPortalRegisterPage select.form-control{ 
+  background-size: 16px;
+  border-radius: 113px;
+}
+.page-SecureCustomerPortalRegisterPage select.form-control option {
+  font-size: 10px;
+} 
+.modal1 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 20249;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  margin: 0px auto;
+}
+
+
+.global-alerts{
+  .alert-wrapper{
+    display:table-row;
+    img{
+      margin-top: 2rem;
+      display: inline-grid;
+      margin-right: 1rem;
+    }
+    span{
+      display:table-cell;
+    }
+  }
+} 
+
+input[type=text]#createTicket-subject:disabled {
+  background: #eeeeee;
+}
+
+.table_overflowin_support{
+	margin: 10px;
+	overflow: scroll; 
+}
+/*logoutModal_b2b 14-03-2022*/
+
+#logoutModal_b2b .modal-header .modal-title {
+  font-size: 45px;
+  color: #bf9b2e;
+  text-transform: uppercase;
+}
+#logoutModal_b2b .modal-close svg {
+  margin-top: 6px;
+  overflow: hidden;
+  fill: #00a6be;
+}
+#logoutModal_b2b .modal-footer>:not(:last-child) {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+#logoutModal_b2b .modal-footer .btn-ctrl {
+  width: 159px!important;
+  height: 45px!important;
+  line-height: 45px!important;
+  border-radius: 27px!important;
+  color: #00a6be!important;
+}
+#logoutModal_b2b .modal-footer .btn-outline {
+  background: #fff!important;
+  border: 1px solid #00a6be!important;
+  border-radius: 27px;
+  margin: 0;
+  text-align: center;
+  padding: 10px 24px 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+#logoutModal_b2b .modal-footer .btn-bg {
+  background-color: #00a6be!important;
+  color: #fff !important;
+} 
+
+
+/**15-03-2022**/ 
+.register-user-info-label.focused-country {
+pointer-events: none;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+position: absolute;
+width: 65%;
+}
+
+#termsAndConditionsResponseModal .modal-footer{
+width: 35%;
+margin: 0px auto;
+}
 @media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
   .login-screen .login-right-wrapper{
     width: 85%;
@@ -29077,8 +29184,11 @@ select.form-control {
   .accountLogin-content-headline{
     font-size: 40px !important;
   }
-  .headline,h4, .h4{
+  .headline,h4, .h4,.role-text{
     font-size: 16px;
+  }
+  .role-text{
+    top: 32px;
   }
   .page-SecureCustomerPortalRegisterPage .content, .page-updatePassword .content, .page-login .content{
     font-size: 11px;
@@ -29087,7 +29197,7 @@ select.form-control {
     font-size: 14px;
     transform: translate3d(0, 10px, 0) scale(1);
   }
-  .role-text,.login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3
+  .login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3
   ,#products-wrapper .details .name
   ,.popularPostHeading
   ,.blogPostTitle{
@@ -29115,6 +29225,11 @@ select.form-control {
   }
   .r-sn .login-right-wrapper{
     padding-bottom: 10px;
+  }
+  .register-account-partner-screen4{
+    .r-sn .login-right-wrapper{
+      padding-bottom: 50px;
+    }
   }
   .mobile-code-text{
     padding: 20px 24px 14px 60px !important;
@@ -29198,6 +29313,26 @@ select.form-control {
   select.form-control{
     background-size: 12px;
   }
+  .register-success-msg span{
+    font-size: 20px;
+  }
+  .login-btn-cancel, .login-btn-next{
+    padding: 12px 0px;
+  }
+  .register-user-info div.form-group:nth-child(2){
+    margin-top: -5px;
+    margin-bottom: 30px;
+  }
+  .page-login p{
+    margin: 0 0 16px;
+  }
+  h4, .h4, h5, .h5, h6, .h6{
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
+  .accountLogin-content-headline{
+    margin-bottom: 26px;
+  }
 }
 
 @media (min-width:1201px) and (max-width:1499px) and (max-height:700px) {/*150%*/
@@ -29224,8 +29359,11 @@ select.form-control {
   .accountLogin-content-headline{
     font-size: 30px !important;
   }
-  .headline,h4, .h4{
+  .headline,h4, .h4,.role-text{
     font-size: 14px;
+  }
+  .role-text{
+    top: 29px;
   }
   .page-SecureCustomerPortalRegisterPage .content, .page-updatePassword .content, .page-login .content{
     font-size: 14px;
@@ -29237,7 +29375,7 @@ select.form-control {
     font-size: 12px;
     transform: translate3d(0, 2px, 0) scale(1);
   }
-  .role-text,.login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3
+  .login-register-role,.mobile-code-label,#contact-us .email-call h3,#contact-us .email-call h3.email_h3
   ,#products-wrapper .details .name
   ,.popularPostHeading
   ,.blogPostTitle{
@@ -29278,6 +29416,11 @@ select.form-control {
   }
   .r-sn .login-right-wrapper{
     padding-bottom: 10px;
+  }
+  .register-account-partner-screen4{
+    .r-sn .login-right-wrapper{
+      padding-bottom: 50px;
+    }
   }
   .mobile-code-text{
     padding: 20px 24px 14px 60px !important;
@@ -29376,62 +29519,32 @@ select.form-control {
   .global-alerts .alert-wrapper img {
     margin-top: 0rem; 
   } 
+  .register-success-msg span{
+    font-size: 18px;
+  }
+  .register-user-info div.form-group:nth-child(2){
+    margin-bottom: 20px;
+  }
+  .page-login p{
+    margin: 0 0 12px;
+  }
+  h4, .h4, h5, .h5, h6, .h6{
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .accountLogin-content-headline{
+    margin-bottom: 22px;
+  }
+  .phone .control-label.control-label_mandatory.register-user-info-label{
+    margin-left: 28px;
+  }
+  .alert-dismissable .close, .alert-dismissible .close{
+    top: -6px !important;
+    right: -6px !important;
+  }
 }
 
-/*logoutModal_b2b 14-03-2022*/
 
-#logoutModal_b2b .modal-header .modal-title {
-    font-size: 45px;
-    color: #bf9b2e;
-    text-transform: uppercase;
-}
-#logoutModal_b2b .modal-close svg {
-    margin-top: 6px;
-    overflow: hidden;
-    fill: #00a6be;
-}
-#logoutModal_b2b .modal-footer>:not(:last-child) {
-    margin-left: 6px;
-    margin-right: 6px;
-}
-#logoutModal_b2b .modal-footer .btn-ctrl {
-    width: 159px!important;
-    height: 45px!important;
-    line-height: 45px!important;
-    border-radius: 27px!important;
-    color: #00a6be!important;
-}
-#logoutModal_b2b .modal-footer .btn-outline {
-    background: #fff!important;
-    border: 1px solid #00a6be!important;
-    border-radius: 27px;
-    margin: 0;
-    text-align: center;
-    padding: 10px 24px 14px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-}
-#logoutModal_b2b .modal-footer .btn-bg {
-    background-color: #00a6be!important;
-    color: #fff !important;
-} 
-
-
-/**15-03-2022**/ 
-.register-user-info-label.focused-country {
-  pointer-events: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  position: absolute;
-  width: 65%;
-}
-
-#termsAndConditionsResponseModal .modal-footer{
-  width: 35%;
-  margin: 0px auto;
-}
 
 @media only screen and (min-width: 320px) and (max-width: 640px) {
   .register-user-info .text-center {
@@ -29455,55 +29568,6 @@ select.form-control {
       word-break: break-word;
     }
   }
-}
-.accountLogin-content-headline { 
-  margin-bottom: 30px;
-}
-.page-login p {
-  margin: 0 0 20px;
-}
-.page-SecureCustomerPortalRegisterPage select.form-control{ 
-  background-size: 16px;
-  border-radius: 113px;
-}
-.page-SecureCustomerPortalRegisterPage select.form-control option {
-  font-size: 10px;
-} 
-.modal1 {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: 20249;
-  display: none;
-  overflow: hidden;
-  outline: 0;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  margin: 0px auto;
-}
-
-
-.global-alerts{
-  .alert-wrapper{
-    display:table-row;
-    img{
-      margin-top: 2rem;
-      display: inline-grid;
-      margin-right: 1rem;
-    }
-    span{
-      display:table-cell;
-    }
-  }
-} 
-
-input[type=text]#createTicket-subject:disabled {
-  background: #eeeeee;
-}
-
-.table_overflowin_support{
-	margin: 10px;
-	overflow: scroll; 
 }
 
 @media (max-width: 767px){

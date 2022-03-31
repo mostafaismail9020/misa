@@ -2,15 +2,9 @@ package com.sap.ibso.eservices.facades.sagia;
 
 
 
-import com.sap.ibso.eservices.core.model.ContactPersonModel;
-import com.sap.ibso.eservices.core.model.EntityInformationModel;
-import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
-import com.sap.ibso.eservices.core.model.ShareHolderModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation;
-import com.sap.ibso.eservices.sagiaservices.data.odata.BasicContactInformationData;
-import com.sap.ibso.eservices.sagiaservices.data.odata.EntityInformationData;
-import com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderAttachmentData;
-import com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderData;
+import com.sap.ibso.eservices.sagiaservices.data.odata.*;
 
 import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.user.CustomerModel;
@@ -42,4 +36,9 @@ public interface SagiaODataFacade {
     public String uploadAttachmentOData(MediaModel mediaModel,String delegate,String refid,String guid,String fileType,String objectid,String shCode);
 
     public void savesIsicInfoOData(SagiaLicenseModel license);
+
+    public void saveEntityManagedByRhqOData(EntitiesManagedByRhqModel entityModel, EntityInformationModel entityInformation);
+    public void saveBrandPresenceInMENARegion(BrandPresenceModel brandPresence, EntityInformationModel entityInformation);
+    public void saveEstimatedOperatingCostForRhq(OperatingCostForRhqModel operatingCost, EntityInformationModel entityInformation);
+
 }

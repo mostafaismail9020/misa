@@ -9,7 +9,860 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
+
+
 <!--Basic information extended-->
+<div>
+
+
+<div class="rhqSelectBoxes" style="display:none">
+<div class="mncBranchTableJsonInputs"></div>
+<div class="mncBrandTableJsonInputs"></div>
+<div class="mncCostTableJsonInputs"></div>
+
+<!--Optional/Functions/Corporate  Activities start-->
+<div class="formSelectBox">
+		<div class="form-group optionalActivity">
+			<select id="rhqCheckbox" name="listOfCorporateActivities"
+				class="form-control"
+				multiple  data-value="${sagiaApplyEntityInfoForm.listOfCorporateActivities}">
+			</select>
+			<label class="control-label" for="rhqCheckbox"><spring:theme code="rhq.investor.activities.corporate.label"/></label>
+		</div>
+		<div class="help-block"></div>
+	</div>
+<!--Optional/Functions/Corporate  Activities End-->
+
+<!--Strategic direction includes start-->
+<div class="formSelectBox">
+		<div class="form-group optionalActivity">
+			<select id="rhqStrategicCheckbox" name="listOfStrategicActivities"
+				class="form-control"
+				multiple tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfStrategicActivities}">
+			</select>
+			<label class="control-label" for="rhqStrategicCheckbox"><spring:theme code="rhq.investor.activities.strategic.label"/></label>
+		</div>
+		<div class="help-block"></div>
+	</div>
+<!--Strategic direction includes End-->
+
+<!--Management functions include start-->
+<div class="formSelectBox">
+		<div class="form-group optionalActivity">
+			<select id="rhqManagementFunCheckbox" name="listOfManagementActivities"
+				class="form-control"
+				multiple data-value="${sagiaApplyEntityInfoForm.listOfManagementActivities}">
+			</select>
+			<label class="control-label" for="rhqManagementFunCheckbox"><spring:theme code="rhq.investor.activities.management.label"/></label>
+		</div>
+		<div class="help-block"></div>
+	</div>
+<!--Management functions include End-->
+
+<!--Center of Administrative start-->
+
+
+	<div class="formSelectBox">
+			<div class="form-group">
+				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="form-control" multiple data-value="">
+					 <option value="GCC">GCC</option>
+                     <option value="MENA">MENA</option>
+                     <option value="Middle_East_ME">Middle East (ME)</option>
+				</select>
+				<label class="control-label" for="rhqCenterAdmin"><spring:theme code="rhq.investor.activities.center.of.administrative.label"/></label>
+				<div id="rhqCenterAdmin-error" class="help-block"></div>
+			</div>
+		</div>
+
+        <div class="formSelectBox">
+                <div class="form-group">
+                    <select id="branchInformationRhqCountry" name="listOfRhqCountries"
+                        class="form-control"
+                        multiple data-value="${sagiaApplyEntityInfoForm.listOfRhqCountries}">
+                    </select> <label class="control-label" for="branchInformationRhqCountry"><spring:theme code="profile.rhq.countries" /></label>
+                </div>
+                <div class="help-block"></div>
+            </div>
+
+		<div class="formSelectBox" id="rhqCountryRegion" >
+		<div class="form-group">
+			<select id="branchInformationRhqRegionsSection" name="listOfRhqRegions"
+				class="form-control"
+				multiple data-value="${sagiaApplyEntityInfoForm.listOfRhqRegions}">
+			</select> <label class="control-label" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
+		</div>
+		<div class="help-block"></div>
+	</div>
+
+     <div class="formRadioButton">
+         <div class="form-group optionalActivity ">
+		 <label class="control-label" for="rhqSubsidiaryPresence"><spring:theme code="rhq.mnc.subsidiaries.presence" /></label>
+		 <div id="rhqSubsidiaryPresence">
+
+		  </div>
+        </div>
+		<div class="help-block"></div>
+     </div>
+
+
+<!--Center of Administrative End-->
+</div>
+
+<!--Edit Branch Table Model-->
+
+<div class="modal fade" id="EditBranchTable"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="modal-title"><spring:theme code="rhq.edit.branch.label" /></div>
+			</div>
+			<div class="modal-body">
+				<div class="modal-heroImage">
+					<form action="">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="editBranchName" name="editBranchName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.company.label" />
+			                    </label>
+                                <div class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+							<div class="col-md-6">
+							<div class="formSelectBox">
+			<div class="form-group">
+				<select id="editBranchCountry" name="editBranchCountry" class="js-select2-search form-control" data-search-placeholder="Select a country">
+
+				</select>
+				<label class="control-label" for=""><spring:theme code="rhq.country.label" /></label>
+				<div id="editBranchCountry-error" class="help-block"></div>
+			</div>
+		</div>
+							</div>
+
+						</div>
+                        <div class="row">
+                        	<div class="col-md-6">
+							<div class="formSelectBox">
+			<div class="form-group">
+				<select id="editBranchBuz" name="editBranchBuz" class="js-select2-search form-control" >
+					<option></option>
+					 <option value="Joint Venture">Joint Venture</option>
+                     <option value="Affiliate">Affiliate</option>
+                     <option value="Distributor">Distributor</option>
+                     <option value="Others">Others</option>
+				</select>
+				<label class="control-label" for=""><spring:theme code="rhq.business.relationship.type.label" /></label>
+				<div id="editBranchBuz-error" class="help-block"></div>
+			</div>
+		</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="editBranchIndustry" name="editBranchIndustry"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.industry.label" />
+			                    </label>
+								<div id="editBranchIndustry-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-md-6">
+							<div class="formSelectBox">
+			<div class="form-group">
+				<select id="editBranchOperation" name="editBranchOperation" class="js-select2-search form-control" data-search-placeholder="">
+					<option></option>
+					 <option value="Manufacturing">Manufacturing</option>
+                    <option value="Assembly">Assembly</option>
+                    <option value="Others">Others</option>
+				</select>
+				<label class="control-label" for=""><spring:theme code="rhq.operation.label" /></label>
+				<div id="editBranchOperation-error" class="help-block"></div>
+			</div>
+		</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="editBranchRhqActivity" name="editBranchRhqActivity" class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				               <spring:theme code="rhq.rhq.activity.label" />
+			                    </label>
+								<div id="editBranchRhqActivity-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+                        </div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer modal-footer_centered">
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditBranch"><spring:theme code="rhq.update.label" /></button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Edit Branch Table Model End-->
+
+
+
+<!--Add Branch Table Model-->
+
+<div class="modal fade" id="addBranchTable"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="modal-title"><spring:theme code="rhq.add.new.branch.label" /></div>
+			</div>
+			<div class="modal-body">
+				<div class="modal-heroImage">
+
+
+					<form id="addBranchForm" name="addBranchForm" action="">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="addBranchName" name="addBranchName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+			                    <spring:theme code="rhq.company.label" />
+			                    </label>
+                                <div class="help-block">
+
+					</div>
+		                        </div>
+	                    </div>
+							</div>
+							<div class="col-md-6">
+							<div class="formSelectBox">
+			<div class="form-group">
+				<select id="addBranchCountry" name="addBranchCountry" class="js-select2-search form-control" data-search-placeholder="">
+
+				</select>
+				<label class="control-label" for=""><spring:theme code="rhq.country.label" /></label>
+				<div id="addBranchCountry-error" class="help-block"></div>
+			</div>
+		</div>
+							</div>
+
+						</div>
+                        <div class="row">
+                        	<div class="col-md-6">
+							<div class="formSelectBox">
+			<div class="form-group">
+				<select id="addBranchBuz" name="addBranchBuz" class="js-select2-search form-control" >
+					<option></option>
+					 <option value="Joint Venture">Joint Venture</option>
+                     <option value="Affiliate">Affiliate</option>
+                     <option value="Distributor">Distributor</option>
+                     <option value="Others">Others</option>
+				</select>
+				<label class="control-label" for=""><spring:theme code="rhq.business.relationship.type.label" /></label>
+				<div id="addBranchBuz-error" class="help-block"></div>
+			</div>
+		</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="addBranchIndustry" name="addBranchIndustry"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+			                    <spring:theme code="rhq.industry.label" />
+			                    </label>
+								<div id="addBranchIndustry-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-md-6">
+							<div class="formSelectBox">
+			<div class="form-group">
+				<select id="addBranchOperation" name="addBranchOperation" class="js-select2-search form-control" data-search-placeholder="">
+					<option></option>
+					 <option value="Manufacturing">Manufacturing</option>
+                    <option value="Assembly">Assembly</option>
+                    <option value="Others">Others</option>
+				</select>
+				<label class="control-label" for=""><spring:theme code="rhq.operation.label" /></label>
+				<div id="addBranchOperation-error" class="help-block"></div>
+			</div>
+		</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="addBranchRhqActivity" name="addBranchRhqActivity" class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+			                    <spring:theme code="rhq.rhq.activity.label" />
+			                    </label>
+								<div id="addBranchRhqActivity-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+                        </div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer modal-footer_centered">
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddBranch">Add</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Add Branch Table Model End-->
+
+
+
+<!--Add Brand Table Model-->
+
+<div class="modal fade" id="addBrandTable"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="modal-title"><spring:theme code="rhq.add.new.brand.label" /></div>
+			</div>
+			<div class="modal-body">
+				<div class="modal-heroImage">
+
+
+					<form id="addBrandForm" method ="post" name="addBrandForm" onsubmit="return false">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="addBrandName" name="addBrandName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.brand.name.label" />
+			                    </label>
+                                <div class="help-block">
+					</div>
+		                        </div>
+	                    </div>
+							</div>
+							<div class="col-md-6">
+							<div class="formSelectBox">
+			<div class="form-group">
+				<select id="addBrandCountry" name="addBrandCountry" class="js-select2-search form-control" data-search-placeholder="">
+				</select>
+				<label class="control-label" for=""><spring:theme code="rhq.country.label" /></label>
+				<div id="addBrandCountry-error" class="help-block"></div>
+			</div>
+		</div>
+							</div>
+
+						</div>
+                        <div class="row">
+                         <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="addBrandIndustry" name="addBrandIndustry"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+			                    <spring:theme code="rhq.industry.label" />
+			                    </label>
+								<div id="addBrandIndustry-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+                             <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="addBrandMena" name="addBrandMena"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                 <spring:theme code="rhq.company.brand.in.mena.region.label" />
+			                    </label>
+								<div id="addBrandMena-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+
+
+                        </div>
+                           <div class="row">
+                         <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="addBrandProvider" name="addBrandProvider"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                 <spring:theme code="rhq.rhq.activity.label" />
+			                    </label>
+								<div id="addBrandProvider-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+                            </div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer modal-footer_centered">
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddBrand">Add</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Add Brand Table Model End-->
+
+
+
+<!--Edit Brand Table Model-->
+
+<div class="modal fade" id="EditBrandTable"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="modal-title"><spring:theme code="rhq.edit.brand.label" /></div>
+			</div>
+			<div class="modal-body">
+				<div class="modal-heroImage">
+
+
+					<form action="">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="editBrandName" name="editBrandName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.brand.name.label" />
+			                    </label>
+                                <div class="help-block">
+
+					</div>
+		                        </div>
+	                    </div>
+							</div>
+							<div class="col-md-6">
+							<div class="formSelectBox">
+			<div class="form-group">
+				<select id="editBrandCountry" name="editBrandCountry" class="js-select2-search form-control" data-search-placeholder="">
+				</select>
+				<label class="control-label" for=""><spring:theme code="rhq.country.label" /></label>
+				<div id="editBrandCountry-error" class="help-block"></div>
+			</div>
+		</div>
+							</div>
+
+						</div>
+                        <div class="row">
+                         <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="editBrandIndustry" name="editBrandIndustry"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.industry.label" />
+			                    </label>
+								<div id="editBrandIndustry-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+                             <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="editBrandMena" name="editBrandMena"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                 <spring:theme code="rhq.company.brand.in.mena.region.label" />
+			                    </label>
+								<div id="editBrandMena-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+
+
+                        </div>
+                           <div class="row">
+                         <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="editBrandProvider" name="editBrandProvider"  class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                 <spring:theme code="rhq.rhq.activity.label" />
+			                    </label>
+								<div id="editBrandProvider-error" class="help-block"></div>
+		                        </div>
+	                    </div>
+							</div>
+                            </div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer modal-footer_centered">
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditBrand">Update</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Edit Brand Table Model End-->
+
+<!--Add Estimated operating costs for the RHQ Table Model-->
+
+<div class="modal fade" id="addrhqCostTable"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="modal-title"><spring:theme code="rhq.add.estimated.cost.label" /></div>
+			</div>
+			<div class="modal-body">
+				<div class="modal-heroImage">
+
+
+					<form id="addItemForm" name="addItemForm" action="">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="addItemName" name="addItemName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.item.name.label" />
+			                    </label>
+                                <div class="help-block">
+
+					</div>
+		                        </div>
+	                    </div>
+							</div>
+						<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="addUnitCost" name="addUnitCost" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.unit.cost.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+
+						</div>
+                        <div class="row">
+                        	<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="addNoUnits" name="addNoUnits" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.no.of.units.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+                             <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="addCostFreq" name="addCostFreq" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.cost.frequency.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+
+
+                        </div>
+                           <div class="row">
+                          <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="addYear1" name="addYear1" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.year.2022.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+                              <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="addYear2" name="addYear2" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.year.2023.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+                            </div>
+                             <div class="row">
+                          <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="addYear3" name="addYear3" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.year.2024.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+
+                            </div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer modal-footer_centered">
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddItem">Add</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Add Estimated operating costs for the RHQ Table Model End-->
+
+
+<!--Edit Estimated operating costs for the RHQ Table Model-->
+
+<div class="modal fade" id="EditrhqCostTable"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="modal-title"><spring:theme code="rhq.edit.estimated.cost.label" /></div>
+			</div>
+			<div class="modal-body">
+				<div class="modal-heroImage">
+
+
+					<form action="">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group">
+			                    <input id="editItemName" name="editItemName" class="form-control" placeholder="." value="" type="text" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.item.name.label" />
+			                    </label>
+                                <div class="help-block">
+
+					</div>
+		                        </div>
+	                    </div>
+							</div>
+						<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="editUnitCost" name="editUnitCost" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.unit.cost.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+
+						</div>
+                        <div class="row">
+                        	<div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="editNoUnits" name="editNoUnits" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				               <spring:theme code="rhq.no.of.units.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+                             <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="editCostFreq" name="editCostFreq" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.cost.frequency.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+
+
+                        </div>
+                           <div class="row">
+                          <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="editYear1" name="editYear1" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.year.2022.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+                              <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="editYear2" name="editYear2" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.year.2023.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+                            </div>
+                             <div class="row">
+                          <div class="col-md-6">
+								<div class="formInputBox">
+		                        <div class="form-group ">
+			                    <input id="editYear3" name="editYear3" class="form-control" placeholder="." value="" type="number" autocomplete="off">
+			                    <label class="control-label" for="">
+				                <spring:theme code="rhq.year.2024.label" />
+			                    </label>
+
+		                        </div>
+	                    </div>
+							</div>
+
+                            </div>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer modal-footer_centered">
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditItem">Update</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Edit Estimated operating costs for the RHQ Table Model End-->
+
+<div class="rqh-tables" style="display:none">
+
+<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.branches.label" /></div>
+<div class="tableModule" >
+
+<div class="formInputBox">
+ <div class="form-group ">
+ <div id="mncBranchTable-error" class="help-block"></div>
+ </div>
+</div>
+
+  <table class="tableModule-table" id="mncBranchTable">
+	<thead class="tableModule-head">
+	  <tr>
+		<th>Company Name</th>
+		<th>Country</th>
+		<th>Business</th>
+		<th>Industry</th>
+		<th>Operations</th>
+        <th>HRQ Activity Provided</th>
+        <th>Action</th>
+	  </tr>
+	</thead>
+	<tbody class="tableModule-body">
+	</tbody>
+  </table>
+  <input type="hidden" id="rowToDelete" name="rowToDelete" value="0">
+  	<div class="contentModule-actions contentModule-actions_centered contentModule-actions_noMargin w-100">
+				<a href="#" data-toggle="modal" data-target="#addBranchTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
+				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+      <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+    </svg> <spring:theme code="rhq.add.new.label" /></a>
+				</div>
+</div>
+
+</div>
+
+<!--MNC Brand Start-->
+<div class="rqh-tables" style="display:none">
+<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.brand.label" /></div>
+<div class="tableModule" >
+
+<div class="formInputBox">
+ <div class="form-group ">
+ <div id="mncBrandTable-error" class="help-block"></div>
+ </div>
+</div>
+
+  <table class="tableModule-table" id="mncBrandTable">
+	<thead class="tableModule-head">
+	  <tr>
+		<th>Brand Name</th>
+		<th>Country</th>
+		<th>Industry</th>
+		<th>Company owning the brand in MENA</th>
+		<th>RHQ activity Provided</th>
+        <th>Action</th>
+	  </tr>
+	</thead>
+	<tbody class="tableModule-body">
+
+
+
+
+	</tbody>
+  </table>
+  <input type="hidden" id="rowToDelete" name="rowToDelete" value="0">
+  	<div class="contentModule-actions contentModule-actions_centered contentModule-actions_noMargin w-100">
+				<a href="#" data-toggle="modal" data-target="#addBrandTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
+				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+      <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+    </svg><spring:theme code="rhq.add.new.label" /></a>
+				</div>
+</div>
+</div>
+<!--MNC Brand End-->
+
+
+<!--rhqCostTable-->
+<div class="rqh-tables" style="display:none;border-bottom: 1px solid #ccd0d4;margin-bottom: 48px;padding-bottom: 24px;">
+<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.estimated.cost.label" /></div>
+<div class="tableModule" >
+
+<div class="formInputBox">
+ <div class="form-group ">
+ <div id="rhqCostTable-error" class="help-block"></div>
+ </div>
+</div>
+
+  <table class="tableModule-table" id="rhqCostTable">
+	<thead class="tableModule-head">
+	  <tr>
+		<th>Item</th>
+		<th>Unit Cost</th>
+		<th>Number of units</th>
+		<th>Cost frequency</th>
+		<th>Year 2022</th>
+        <th>Year 2023</th>
+        <th>Year 2024</th>
+        <th>Action</th>
+	  </tr>
+	</thead>
+	<tbody class="tableModule-body">
+
+
+
+	</tbody>
+    <tfoot>
+    <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th id="rhqCostTable-totalText">Total</th>
+    <th id="rhqCostTable-sum1"></th>
+	<th id="rhqCostTable-sum2"></th>
+	<th id="rhqCostTable-sum3"></th>
+     <th></th>
+    </tr>
+    </tfoot>
+  </table>
+  <input type="hidden" id="rowToDelete" name="rowToDelete" value="0">
+  	<div class="contentModule-actions contentModule-actions_centered contentModule-actions_noMargin w-100">
+			 <a href="#" data-toggle="modal" data-target="#addrhqCostTable" style="margin-top: 16px; color: #73c859;display:flex;align-items:center;">
+				<svg class="icon icon-add" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+      <path  fill="#5CC83B" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+    </svg><spring:theme code="rhq.add.new.label" /></a>
+				</div>
+</div>
+</div>
+<!--rhqCostTable-->
+
+
+<div>
 <div class="contentModule-section" id="basicInformationExtendedSection" style="display: none">
     <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.basicInformationExtendedSection.basicInformation"/></div>
     <div class="row">
@@ -236,7 +1089,7 @@
 <%--                <div class="help-block"></div>--%>
 <%--            </div>--%>
         </div>
-        
+
         <div class="col-md-6">
             <formElement:formSelectBoxCustom idKey="basicInformationExtendedInvestment"
                                        labelKey="license.apply.expectedinvestment"
@@ -253,3 +1106,73 @@
         </div>
     </div>
 </div>
+<style>
+
+.page-new-license-apply.modal-open .select2-container--open.select2-container
+{
+	z-index:999999;
+}
+
+#rhqCostTable-sum1,#rhqCostTable-sum2,#rhqCostTable-sum3,#rhqCostTable-totalText{
+	font-weight: 600;
+    font-size: 14px;
+    color: #1c242c;
+	padding: 15px 10px 15px;
+}
+
+.page-new-license-apply .select.modal.in.fade.show{z-index:9999999999 !important;}
+.page-new-license-apply .fade.show{}
+.page-new-license-apply .modal-dialog.modal-sm{min-width:500px;}
+.page-new-license-apply label[for=rhqCheckbox],.page-new-license-apply label[for=rhqStrategicCheckbox],.page-new-license-apply label[for=rhqManagementFunCheckbox],
+.page-new-license-apply label[for=rhqCenterAdmin],.page-new-license-apply label[for=branchInformationRhqCountry],.page-new-license-apply label[for=branchInformationRhqRegionsSection]{
+	top: -17px;
+}
+
+.page-new-license-apply .selectWrap > .select-content > .addedOption{border: 1px solid #5cc83b;}
+.page-new-license-apply .selectWrap > .select-content > .addedOption > .removeOption,
+.page-new-license-apply .select.modal .modal-body > .option.selected{color:#5cc83b;}
+
+.page-new-license-apply .select .modal-dialog .modal-body{padding: 0 22px;}
+.page-new-license-apply .tooltip-listItem_expanded .tooltip-listItem-body {color:#000;}
+.page-new-license-apply  .tooltip.show {
+       z-index: 999999999;
+}
+</style>
+
+<script>
+	  objectBranchesString =  ('${entitiesManagedByRhq}');
+      objectBranchesString1 = objectBranchesString.replace(/("{)/g, '{');
+	  objectBranchesString2 = objectBranchesString1.replace(/(}")/g, '}');
+
+  	  console.log(objectBranchesString2);
+	  objectBranches = [];
+      objectBranches =  JSON.parse(objectBranchesString2);
+
+	  objectBrandString =  ('${brandPresenceInMENARegion}');
+      objectBrandString1 = objectBrandString.replace(/("{)/g, '{');
+	  objectBrandString2 = objectBrandString1.replace(/(}")/g, '}');
+
+	  console.log(objectBrandString2);
+	  objectBrands = [];
+      objectBrands =  JSON.parse(objectBrandString2);
+
+	  objectCostsString =  ('${estimatedOperatingCostForRhq}');
+      objectCostsString1 = objectCostsString.replace(/("{)/g, '{');
+	  objectCostsString2 = objectCostsString1.replace(/(}")/g, '}');
+
+	  console.log(objectCostsString2);
+	  objectCost = [];
+	  if(objectCostsString2!= "" &&  objectCostsString2 != undefined){
+ 	 objectCost =  JSON.parse(objectCostsString2);
+	  }
+
+
+	var listOfRhqCountriesInJS =  ('${sagiaApplyEntityInfoForm.listOfRhqCountries}');
+	var rhqCenterAdminInJS =  ('${sagiaApplyEntityInfoForm.rhqCenterAdmin}');
+	var rhqSubsidiaryPresenceInJS =  ('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}');
+	var listOfManagementActivitiesInJS = ('${sagiaApplyEntityInfoForm.listOfManagementActivities}');
+	console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
+
+
+
+</script>

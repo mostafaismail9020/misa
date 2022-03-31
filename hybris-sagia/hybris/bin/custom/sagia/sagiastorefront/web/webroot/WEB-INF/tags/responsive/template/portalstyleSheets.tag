@@ -33,7 +33,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/style-${currentLanguage.isocode eq 'ar' ? 'ar' : 'en'}.css" />
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.carousel.min.css" />
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.theme.default.min.css" />
-
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/popup-multiselect.css"/>
 
 
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/swiper.min.css"/>

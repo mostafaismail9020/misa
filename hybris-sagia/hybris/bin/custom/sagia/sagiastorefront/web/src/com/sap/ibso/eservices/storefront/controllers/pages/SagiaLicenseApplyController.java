@@ -1,28 +1,62 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
-import java.io.IOException;
-import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import atg.taglib.json.util.JSONArray;
+import atg.taglib.json.util.JSONException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.internal.LinkedTreeMap;
+import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
+import com.sap.ibso.eservices.core.event.SagiaPublishLicenseEvent;
+import com.sap.ibso.eservices.core.model.IsicMasterModel;
+import com.sap.ibso.eservices.core.model.PersonShareholderModel;
+import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
+import com.sap.ibso.eservices.core.model.ShareHolderModel;
+import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import com.sap.ibso.eservices.facades.data.*;
+import com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation;
+import com.sap.ibso.eservices.facades.data.zqeemah.DropdownValue;
+import com.sap.ibso.eservices.facades.data.zqeemah.Product;
+import com.sap.ibso.eservices.facades.data.zqeemah.*;
+import com.sap.ibso.eservices.facades.data.zqeemah2.*;
 import com.sap.ibso.eservices.facades.sagia.*;
 import com.sap.ibso.eservices.facades.sagia.impl.DefautSagiaLicenseApplyFacade;
+import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
+import com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData;
+import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ProductData;
+import com.sap.ibso.eservices.sagiaservices.investor.InvestorMappingService;
+import com.sap.ibso.eservices.sagiaservices.services.license.application.ZQeemahService;
+import com.sap.ibso.eservices.sagiaservices.utils.ObjectUtils;
 import com.sap.ibso.eservices.storefront.controllers.ControllerConstants;
+import com.sap.ibso.eservices.storefront.controllers.SagiaConstants;
+import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
+import com.sap.ibso.eservices.storefront.forms.SagiaApplyReviewForm;
+import com.sap.ibso.eservices.storefront.forms.validation.license.SagiaLicenseApplyValidator;
 import com.sap.ibso.eservices.storefront.forms.validation.license.contact.ContactPersonValidator;
+import com.sap.ibso.eservices.storefront.forms.validation.license.entity.EntityInfoValidator;
 import com.sap.ibso.eservices.storefront.forms.validation.license.shareholder.ExistingShareHoldersValidator;
 import com.sap.ibso.eservices.storefront.forms.validation.license.shareholder.OrganizationShareHoldersValidator;
 import com.sap.ibso.eservices.storefront.forms.validation.license.shareholder.PersonShareHoldersValidator;
+import com.sap.ibso.eservices.storefront.util.SagiaContextFormErrorsConverter;
+import com.sap.nic.NICUserData;
+import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
+import de.hybris.platform.acceleratorstorefrontcommons.util.XSSFilterUtil;
+import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
+import de.hybris.platform.core.Constants;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.servicelayer.config.ConfigurationService;
+import de.hybris.platform.servicelayer.event.EventService;
+import de.hybris.platform.servicelayer.i18n.I18NService;
+import de.hybris.platform.servicelayer.model.ModelService;
+import de.hybris.platform.servicelayer.user.UserService;
+import de.hybris.platform.site.BaseSiteService;
+import de.hybris.platform.util.Config;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
@@ -45,63 +79,13 @@ import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.reflect.TypeToken;
-import com.google.gson.Gson;
-import com.google.gson.internal.LinkedTreeMap;
-import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
-import com.sap.ibso.eservices.core.event.SagiaPublishLicenseEvent;
-import com.sap.ibso.eservices.core.model.IsicMasterModel;
-import com.sap.ibso.eservices.core.model.PersonShareholderModel;
-import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
-import com.sap.ibso.eservices.core.model.ShareHolderModel;
-import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
-import com.sap.ibso.eservices.facades.data.zqeemah.BasicContactInformation;
-import com.sap.ibso.eservices.facades.data.zqeemah.BusinessActivity;
-import com.sap.ibso.eservices.facades.data.zqeemah.DelegateAttachment;
-import com.sap.ibso.eservices.facades.data.zqeemah.DropdownValue;
-import com.sap.ibso.eservices.facades.data.zqeemah.IsicDetails;
-import com.sap.ibso.eservices.facades.data.zqeemah.Product;
-import com.sap.ibso.eservices.facades.data.zqeemah.ShareholderAttachment;
-import com.sap.ibso.eservices.facades.data.zqeemah.ShareholderInfo;
-import com.sap.ibso.eservices.facades.data.zqeemah2.Attachment;
-import com.sap.ibso.eservices.facades.data.zqeemah2.BasicOrganizationInformation;
-import com.sap.ibso.eservices.facades.data.zqeemah2.FinancialPost;
-import com.sap.ibso.eservices.facades.data.zqeemah2.FinancialQuestion;
-import com.sap.ibso.eservices.facades.data.zqeemah2.FininvisidPost;
-import com.sap.ibso.eservices.facades.data.zqeemah2.GeneralQuestionPost;
-import com.sap.ibso.eservices.facades.data.zqeemah2.ISICDetails;
-import com.sap.ibso.eservices.facades.data.zqeemah2.InvsIdPost;
-import com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation;
-import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
-import com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData;
-import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.license.amendment.ProductData;
-import com.sap.ibso.eservices.sagiaservices.investor.InvestorMappingService;
-import com.sap.ibso.eservices.sagiaservices.services.license.application.ZQeemahService;
-import com.sap.ibso.eservices.sagiaservices.utils.ObjectUtils;
-import com.sap.ibso.eservices.storefront.controllers.SagiaConstants;
-import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
-import com.sap.ibso.eservices.storefront.forms.SagiaApplyReviewForm;
-import com.sap.ibso.eservices.storefront.forms.validation.license.entity.EntityInfoValidator;
-import com.sap.ibso.eservices.storefront.forms.validation.license.SagiaLicenseApplyValidator;
-import com.sap.ibso.eservices.storefront.util.SagiaContextFormErrorsConverter;
-import com.sap.nic.NICUserData;
-
-import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
-import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
-import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
-import de.hybris.platform.acceleratorstorefrontcommons.util.XSSFilterUtil;
-import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
-import de.hybris.platform.core.Constants;
-import de.hybris.platform.core.model.user.CustomerModel;
-import de.hybris.platform.servicelayer.config.ConfigurationService;
-import de.hybris.platform.servicelayer.event.EventService;
-import de.hybris.platform.servicelayer.i18n.I18NService;
-import de.hybris.platform.servicelayer.model.ModelService;
-import de.hybris.platform.servicelayer.user.UserService;
-import de.hybris.platform.site.BaseSiteService;
-import de.hybris.platform.util.Config;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.net.URLDecoder;
+import java.util.*;
 
 @Controller
 @RequestMapping("/my-sagia/license")
@@ -329,6 +313,26 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         return new Gson().toJson(sagiaZqeemahFacade.getRhqRegionsList());
     }
 
+    @RequestMapping(path = "/dropdownsQeemah1/corporateActivities", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getDropdownsForCorporateActivties(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        return new Gson().toJson(sagiaZqeemahFacade.getCorporateActivities());
+    }
+
+    @RequestMapping(path = "/dropdownsQeemah1/strategicActivities", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getDropdownsForStrategicActivties(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        return new Gson().toJson(sagiaZqeemahFacade.getStrategicActivities());
+    }
+    @RequestMapping(path = "/dropdownsQeemah1/managementActivities", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getDropdownsForManagementActivties(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        return new Gson().toJson(sagiaZqeemahFacade.getManagementActivities());
+    }
+
     @RequestMapping(path = "/dropdownsQeemah1/cities/{region}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getCitiesQeemah1(@PathVariable String region, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
@@ -500,7 +504,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
 	        }
         }
-        
+ /*
         if(map.get("isMoreThan2Branch") != null)
         {
             Boolean isMoreThan2Branch = (Boolean)map.get("isMoreThan2Branch");
@@ -550,8 +554,17 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
 	        }
         }
-        
-        
+        */
+
+ //New RHQ Requirement Start
+        if(licenseTypeCode.equals("11"))
+        {
+            Collection<ShareholderAttachment> entrepreneurFiles = loadRHQCRFiles(map);
+            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
+        }
+//New RHQ Requirement End
+
+
         if(map.get("isPreApprovalNumber") != null)
         {
             Boolean isPreApprovalNumber = (Boolean)map.get("isPreApprovalNumber");
@@ -644,10 +657,59 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
     }
     
     private Collection<ShareholderAttachment> loadRHQCRFiles(Map<String, Object> map) {
-        Collection<ShareholderAttachment> branchCRFiles = new ArrayList<>();
+        Collection<ShareholderAttachment> rhqAttachmentFiles = new ArrayList<>();
         Map attachmentsData = (Map) map.get("attachments");
-        ShareholderAttachment mainBranchCR = new ShareholderAttachment();
 
+        ShareholderAttachment entityFinancialStatementFile = new ShareholderAttachment();
+        if(attachmentsData.get("entityFinancialStatementFileName") != null && attachmentsData.get("entityFinancialStatementFile") != null){
+            String fileName = attachmentsData.get("entityFinancialStatementFileName").toString();
+            if(fileName.contains("\\")){
+                fileName = StringUtils.substringAfterLast(fileName, "\\");
+            }
+            entityFinancialStatementFile.setFileName(fileName);
+            entityFinancialStatementFile.setFileContent(attachmentsData.get("entityFinancialStatementFile").toString());
+            entityFinancialStatementFile.setFileType("ENRHQFS");
+            rhqAttachmentFiles.add(entityFinancialStatementFile);
+        }
+
+        ShareholderAttachment commercialRegMainEntryFile = new ShareholderAttachment();
+        if(attachmentsData.get("commercialRegMainEntryFileName") != null && attachmentsData.get("commercialRegMainEntryFile") != null){
+            String fileName = attachmentsData.get("commercialRegMainEntryFileName").toString();
+            if(fileName.contains("\\")){
+                fileName = StringUtils.substringAfterLast(fileName, "\\");
+            }
+            commercialRegMainEntryFile.setFileName(fileName);
+            commercialRegMainEntryFile.setFileContent(attachmentsData.get("commercialRegMainEntryFile").toString());
+            commercialRegMainEntryFile.setFileType("ENCRME");
+            rhqAttachmentFiles.add(commercialRegMainEntryFile);
+        }
+
+        ShareholderAttachment commercialRegBranch1File = new ShareholderAttachment();
+        if(attachmentsData.get("commercialRegBranch1FileName") != null && attachmentsData.get("commercialRegBranch1File") != null){
+            String fileName = attachmentsData.get("commercialRegBranch1FileName").toString();
+            if(fileName.contains("\\")){
+                fileName = StringUtils.substringAfterLast(fileName, "\\");
+            }
+            commercialRegBranch1File.setFileName(fileName);
+            commercialRegBranch1File.setFileContent(attachmentsData.get("commercialRegBranch1File").toString());
+            commercialRegBranch1File.setFileType("ENCRBR1");
+            rhqAttachmentFiles.add(commercialRegBranch1File);
+        }
+
+        ShareholderAttachment commercialRegBranch2File = new ShareholderAttachment();
+        if(attachmentsData.get("commercialRegBranch2FileName") != null && attachmentsData.get("commercialRegBranch2File") != null){
+            String fileName = attachmentsData.get("commercialRegBranch2FileName").toString();
+            if(fileName.contains("\\")){
+                fileName = StringUtils.substringAfterLast(fileName, "\\");
+            }
+            commercialRegBranch2File.setFileName(fileName);
+            commercialRegBranch2File.setFileContent(attachmentsData.get("commercialRegBranch2File").toString());
+            commercialRegBranch2File.setFileType("ENCRBR2");
+            rhqAttachmentFiles.add(commercialRegBranch2File);
+        }
+
+
+        /*ShareholderAttachment mainBranchCR = new ShareholderAttachment();
         if(attachmentsData.get("mainBranchCRFileName") != null && attachmentsData.get("mainBranchCRFile") != null){
             String fileName = attachmentsData.get("mainBranchCRFileName").toString();
             if(fileName.contains("\\")){
@@ -762,9 +824,9 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             branchCR4.setFileContent(attachmentsData.get("branchCR4File").toString());
             branchCR4.setFileType("ENBCR4");
             branchCRFiles.add(branchCR4);
-        }       
+        }      */
 
-        return branchCRFiles;
+        return rhqAttachmentFiles;
     }
     
     private Collection<ShareholderAttachment> loadPreApprovalNumberFiles(Map<String, Object> map) {
@@ -903,10 +965,16 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
                                   final BindingResult result,
                                   final Model model, final RedirectAttributes redirectAttributes,
                                   HttpServletRequest request,
+                                  @RequestParam(name="entitiesManagedByRhq", required = false) String entitiesManagedByRhq,
+                                  @RequestParam(name="brandPresenceInMENARegion", required = false) String brandPresenceInMENARegion,
+                                  @RequestParam(name="estimatedOperatingCostForRhq", required = false) String estimatedOperatingCostForRhq,
                                   @RequestParam(name="businessActivities", required = false) String[] businessActivities,
                                   @RequestParam(name="businessActivities", required = false) String singleBusinessActivity,
-                                  @RequestParam(required = false) String businessActivitiesCounter, BindingResult bindingResult) throws CMSItemNotFoundException {
+                                  @RequestParam(required = false) String businessActivitiesCounter, BindingResult bindingResult) throws CMSItemNotFoundException, JsonProcessingException, JSONException {
         List<HashMap<String, String>> businessActivitiesListUnfiltered = new ArrayList<>();
+        List<EntitiesManagedByRhq> entityList = null;
+        List<BrandPresenceInMENARegion> brandList = null;
+        List<EstimatedOperatingCostForRhq> estimatedList = null;
         List<HashMap<String, String>> businessActivitiesList = new ArrayList<>();
         Gson gson = new Gson();
         
@@ -941,6 +1009,27 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             }
         }
 
+        if(null!=entitiesManagedByRhq)
+        {
+            Type type = new TypeToken< List<EntitiesManagedByRhq> >(){}.getType();
+            entityList = gson.fromJson( entitiesManagedByRhq, type );
+            sagiaApplyEntityInfoForm.setListOfEntitiesManagedByRhq(entityList);
+        }
+        if(null!=brandPresenceInMENARegion)
+        {
+            Type type = new TypeToken< List<BrandPresenceInMENARegion> >(){}.getType();
+            brandList = gson.fromJson( brandPresenceInMENARegion, type );
+            sagiaApplyEntityInfoForm.setListOfBrandPresenceInMENARegion(brandList);
+
+        }
+        if(null!=estimatedOperatingCostForRhq)
+        {
+            Type type = new TypeToken< List<EstimatedOperatingCostForRhq> >(){}.getType();
+            estimatedList = gson.fromJson( estimatedOperatingCostForRhq, type );
+            sagiaApplyEntityInfoForm.setListOfEstimatedOperatingCostForRhq(estimatedList);
+        }
+
+
         sagiaLicenseApplyFacade.validateMediasFromEntityInfo(sagiaApplyEntityInfoForm, request);
         entityInfoValidator.validate(sagiaApplyEntityInfoForm, bindingResult);
 
@@ -949,6 +1038,21 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
             for (HashMap<String, String> isicActivity : businessActivitiesList) {
                 jsonStringifiedList.add(gson.toJson(isicActivity));
+            }
+            if(null!=entityList) {
+                for (EntitiesManagedByRhq entities : entityList) {
+                    jsonStringifiedList.add(gson.toJson(entities));
+                }
+            }
+            if(null!=brandList) {
+                for (BrandPresenceInMENARegion brand : brandList) {
+                    jsonStringifiedList.add(gson.toJson(brand));
+                }
+            }
+            if(null!=estimatedList) {
+                for (EstimatedOperatingCostForRhq cost : estimatedList) {
+                    jsonStringifiedList.add(gson.toJson(cost));
+                }
             }
 
             sagiaLicenseApplyFacade.repopulateEntityInfoMediaOnFormError(sagiaApplyEntityInfoForm);
@@ -1026,9 +1130,22 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             List<String> isicActivities = sagiaLicenseApplyFacade.prepareBusinessActivitiesHashMap(sagiaApplyEntityInfoForm.getIsicActivities());
             model.addAttribute("isicActivities", isicActivities);
         }
+        if (null!=sagiaApplyEntityInfoForm.getListOfEntitiesManagedByRhq())
+        {
+            List<String> entitiesManagedByRhq = sagiaLicenseApplyFacade.prepareEntitiesManagedByRhqHashMap( sagiaApplyEntityInfoForm.getListOfEntitiesManagedByRhq());
+            model.addAttribute("entitiesManagedByRhq", new Gson().toJson(entitiesManagedByRhq));
+        }
+            if(null!=sagiaApplyEntityInfoForm.getListOfBrandPresenceInMENARegion())
+        {
+            List<String> brandPresenceInMENARegion = sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegionHashMap( sagiaApplyEntityInfoForm.getListOfBrandPresenceInMENARegion());
+            model.addAttribute("brandPresenceInMENARegion", new Gson().toJson(brandPresenceInMENARegion));
+        }
+        if(null!=sagiaApplyEntityInfoForm.getListOfEstimatedOperatingCostForRhq())
+        {
+            List<String> estimatedOperatingCostForRhq = sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhqHashMap( sagiaApplyEntityInfoForm.getListOfEstimatedOperatingCostForRhq());
+            model.addAttribute("estimatedOperatingCostForRhq", new Gson().toJson(estimatedOperatingCostForRhq));
+        }
 
-        
-        
         model.addAttribute("basicOrganizationInformation", new BasicOrganizationInformation());
         model.addAttribute("organizationInformationExtended", new OrganizationInformation());
         model.addAttribute("sagiaLicenseApplyForm", new ProfileCompanyData());
@@ -2036,7 +2153,44 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         model.addAttribute("temporaryLicenseConstant", temporaryLicenseConstant);
         model.addAttribute("regularQeemahChannel", regularQeemahChannel);
         model.addAttribute("immediateQeemahChannel", immediateQeemahChannel);
-    	
+
+        if (null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfEntitiesManagedByRhq())
+        {
+            List<String> entitiesManagedByRhq = sagiaLicenseApplyFacade.prepareEntitiesManagedByRhqHashMap( sagiaLicenseApplyFacade.getEntityInformationData().getListOfEntitiesManagedByRhq());
+            model.addAttribute("entitiesManagedByRhq", new Gson().toJson(entitiesManagedByRhq));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfBrandPresenceInMENARegion())
+        {
+            List<String> brandPresenceInMENARegion = sagiaLicenseApplyFacade.prepareBrandPresenceInMENARegionHashMap( sagiaLicenseApplyFacade.getEntityInformationData().getListOfBrandPresenceInMENARegion());
+            model.addAttribute("brandPresenceInMENARegion", new Gson().toJson(brandPresenceInMENARegion));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfEstimatedOperatingCostForRhq())
+        {
+            List<String> estimatedOperatingCostForRhq = sagiaLicenseApplyFacade.prepareEstimatedOperatingCostForRhqHashMap( sagiaLicenseApplyFacade.getEntityInformationData().getListOfEstimatedOperatingCostForRhq());
+            model.addAttribute("estimatedOperatingCostForRhq", new Gson().toJson(estimatedOperatingCostForRhq));
+        }
+
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfCorporateActivities())
+        {
+            model.addAttribute("selectedListOfCorporateActivities", sagiaLicenseApplyFacade.getSelectedListOfCorporateActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfCorporateActivities()));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfStrategicActivities())
+        {
+            model.addAttribute("selectedListOfStrategicActivities", sagiaLicenseApplyFacade.getSelectedListOfStrategicActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfStrategicActivities()));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfManagementActivities())
+        {
+            model.addAttribute("selectedListOfManagementActivities", sagiaLicenseApplyFacade.getSelectedListOfManagementActivities(sagiaLicenseApplyFacade.getEntityInformationData().getListOfManagementActivities()));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqRegions())
+        {
+            model.addAttribute("selectedListOfRegions", sagiaLicenseApplyFacade.getSelectedListOfRegions(sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqRegions()));
+        }
+        if(null!=sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqCountries())
+        {
+            model.addAttribute("selectedListOfCountries", sagiaLicenseApplyFacade.getSelectedListOfCountries(sagiaLicenseApplyFacade.getEntityInformationData().getListOfRhqCountries()));
+        }
+
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_LICENSE_REVIEW_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_LICENSE_REVIEW_CMS_PAGE));
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);

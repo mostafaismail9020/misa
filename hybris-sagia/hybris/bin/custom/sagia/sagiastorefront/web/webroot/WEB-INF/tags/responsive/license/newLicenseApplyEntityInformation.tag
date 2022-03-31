@@ -43,14 +43,14 @@
             </div>
             <license:newLicenseApplyEntityInformation-licenseTypeSection/>
             <license:newLicenseApplyEntityInformation-licenseInformationSection/>
-            <license:newLicenseApplyEntityInformation-branchInformationSection/>
+                <%--   <license:newLicenseApplyEntityInformation-branchInformationSection/> --%>
             <license:newLicenseApplyEntityInformation-attachmentSection/>
             <license:newLicenseApplyEntityInformation-licenseYearsSection/>
             <license:licenseApplyEntityInformation-stockMarketSection/>
             <license:licenseApplyEntityInformation-notOnStockMarketSection/>
             <license:newLicenseApplyEntityInformation-onStockMarketSection/>
             <license:licenseApplyEntityInformation-technicalAndFinancialCriteriaSection/>
-<%--            <license:newLicenseApplyEntityInformation-basicInformationSection/>--%>
+           <%--            <license:newLicenseApplyEntityInformation-basicInformationSection/>--%>
             <license:newLicenseApplyEntityInformation-basicInformationExtendedSection/>
             <div class="businessActivitiesJsonInputs">
                 <c:if test="${not empty isicActivities}">

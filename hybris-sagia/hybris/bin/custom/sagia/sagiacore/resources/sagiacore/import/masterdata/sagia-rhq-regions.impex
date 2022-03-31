@@ -1,18 +1,13 @@
-INSERT_UPDATE SagiaRhqRegion;code[unique=true];name[lang=en];name[lang=ar]
-;1;North America;شمال امريكا
-;2;South America;أمريكا الجنوبية
-;3;Central America;أمريكا الوسطى
-;4;Caribbean;الكاريبي
-;5;Central Asia;آسيا الوسطى
-;6;South Asia;جنوب آسيا
-;7;Northeastern Asia;شمال شرق آسيا
-;8;Southeastern Asia;جنوب شرق آسيا
-;9;Australia;أستراليا
-;10;Oceania;أوقيانوسيا
-;11;Northern Europe;شمال أوروبا
-;12;Southern Europe;جنوب اوروبا
-;13;Eastern Europe;أوروبا الشرقية
-;14;Western Europe;أوروبا الغربية
-;15;Middle East;الشرق الأوسط
-;16;Northern Africa;شمال أفريقيا
-;17;Southern Africa;جنوب افريقيا
+INSERT_UPDATE SagiaRhqRegion; code[unique = true]; name[lang = en]        ; name[lang = ar]
+                            ; 10                  ; North America          ; شمال امريكا
+                            ; 11                  ; Central America        ; أمريكا الوسطى
+                            ; 12                  ; South America          ; جنوب امريكا
+                            ; 13                  ; Europe                 ; أوروبا
+                            ; 14                  ; North Africa           ; شمال أفريقيا
+                            ; 15                  ; Central & South Africa ; وسط وجنوب أفريقيا
+                            ; 16                  ; Middle East            ; الشرق الأوسط
+                            ; 17                  ; Indian Subcontinent    ; شبه القارة الهندية
+                            ; 18                  ; CIS                    ; رابطة الدول المستقلة
+                            ; 19                 ; East Asia              ; شرق اسيا
+                            ; 20                 ; Southeast Asia         ; جنوب شرق آسيا
+                            ; 21                 ; Oceania                ; أوقيانوسيا

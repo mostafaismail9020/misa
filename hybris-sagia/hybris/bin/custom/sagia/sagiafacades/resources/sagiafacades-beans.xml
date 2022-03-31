@@ -85,6 +85,10 @@
 		<property name="letterOfSupportFileName" type="java.lang.String"/>
 		<property name="letterOfSupportFileMimeType" type="java.lang.String"/>
 		<property name="isConsolidated" type="Boolean"/>
+		<property name="isCompanyProfileSectionFilled" type="Boolean"/>
+		<property name="isBranchSectionFilled" type="Boolean"/>
+		<property name="isEquitySectionFilled" type="Boolean"/>
+		<property name="isShareholdersSectionFilled" type="Boolean"/>
 
 	</bean>
 
@@ -2919,6 +2923,8 @@
         <property name="professionalLicenseText" type="java.lang.String" />
         <property name="preApprovalNumberStatus" type="java.lang.String" />
         <property name="preApprovalNumberText" type="java.lang.String" />
+		<property name="id" type="java.lang.String" />
+		<property name="details" type="java.lang.String" />
     </bean>
 
 	<bean class="com.sap.ibso.eservices.facades.data.draft.DraftInfo">
@@ -3174,7 +3180,6 @@
 		<property name="rhqCR2" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="rhqCR3" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="rhqCR4" type="de.hybris.platform.cmsfacades.data.MediaData"/>
-		<property name="listOfRhqRegions" type="java.util.List&lt;String>"/>
 		<property name="listOfRhqCountries" type="java.util.List&lt;String>"/>
 		<property name="boardResolutionFileAdded" type="boolean"/>
 		<property name="letterOfSupportFileAdded" type="boolean"/>
@@ -3231,6 +3236,24 @@
 		<property name="gosiCertificateFileAdded" type="boolean"/>
 		<property name="noObjectionCertificateFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="noObjectionCertificateFileAdded" type="boolean"/>
+		<!-- New RHQ Requirement -->
+		<property name="listOfEntitiesManagedByRhq" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.EntitiesManagedByRhq&gt;"/>
+		<property name="listOfBrandPresenceInMENARegion" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.BrandPresenceInMENARegion&gt;"/>
+		<property name="listOfEstimatedOperatingCostForRhq" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.EstimatedOperatingCostForRhq&gt;"/>
+		<property name="listOfCorporateActivities" type="java.util.List&lt;String>"/>
+		<property name="listOfStrategicActivities" type="java.util.List&lt;String>"/>
+		<property name="listOfManagementActivities" type="java.util.List&lt;String>"/>
+		<property name="rhqCenterAdmin" type="java.util.List&lt;String>"/>
+		<property name="rhqSubsidiaryPresence" type="String"/>
+		<property name="listOfRhqRegions" type="java.util.List&lt;String>"/>
+		<property name="entityFinancialStatementFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
+		<property name="commercialRegMainEntryFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
+		<property name="commercialRegBranch1File" type="de.hybris.platform.cmsfacades.data.MediaData"/>
+		<property name="commercialRegBranch2File" type="de.hybris.platform.cmsfacades.data.MediaData"/>
+		<property name="entityFinancialStatementFileAdded" type="boolean"/>
+		<property name="commercialRegMainEntryFileAdded" type="boolean"/>
+		<property name="commercialRegBranch1FileAdded" type="boolean"/>
+		<property name="commercialRegBranch2FileAdded" type="boolean"/>
 	</bean>
 
 	<!-- Shareholder -->
@@ -4216,4 +4239,37 @@
 	</bean>
 
 	<!-- Site Map Changes Ends -->
+
+	<bean class="com.sap.ibso.eservices.facades.data.EntitiesManagedByRhq">
+		<property name="companyName" type="java.lang.String"/>
+		<property name="country" type="java.lang.String"/>
+		<property name="businessRelationshipType" type="java.lang.String"/>
+		<property name="industry" type="java.lang.String"/>
+		<property name="operations" type="java.lang.String"/>
+		<property name="RhqActivityProvided" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.facades.data.BrandPresenceInMENARegion">
+		<property name="brandName" type="java.lang.String"/>
+		<property name="country" type="java.lang.String"/>
+		<property name="industry" type="java.lang.String"/>
+		<property name="companyOwningBrandInMENA" type="java.lang.String"/>
+		<property name="RhqActivityProvided" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.facades.data.EstimatedOperatingCostForRhq">
+		<property name="item" type="java.lang.String"/>
+		<property name="unitCost" type="java.lang.String"/>
+		<property name="noOfUnits" type="java.lang.String"/>
+		<property name="costFrequency" type="java.lang.String"/>
+		<property name="year2022" type="java.lang.String"/>
+		<property name="year2023" type="java.lang.String"/>
+		<property name="year2024" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.facades.data.RhqActivities">
+		<property name="id" type="java.lang.String"/>
+		<property name="details" type="java.lang.String"/>
+	</bean>
+
 </beans>

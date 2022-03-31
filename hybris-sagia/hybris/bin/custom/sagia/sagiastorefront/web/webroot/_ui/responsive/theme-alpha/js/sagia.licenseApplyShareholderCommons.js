@@ -154,7 +154,40 @@ SAGIA.licenseApplyShareholderCommons = {
                 var isRHQ = false;
                 if(licenseType === "11"){
                   isRHQ = true;
+                  try {
+                        setTimeout(function () {
+                            $("#companyFinancialStatementFile").removeClass('validate__file');
+                            $("#labelForCompanyFinancialStatementFileName").removeClass('control-label_mandatory');
+                            // console.log("companyFinancialStatementFile validation & Mandatory is removed");
+                        }, 1500);
+
                 }
+                catch (error) { console.log(error) }
+                }
+                if($('#organizationType').val() === "Organization"){
+                try{
+                    var newFileSection = $("#companyCheckFileAttachment");
+                    // if($("#companyCountry").val()) {
+                     //   SAGIA.licenseApplyShareholderCommons.loadNewFile($("#companyCountry"), newFileSection);
+                        $.ajax(ACC.config.encodedContextPath + controllerUrl + "/shareHolderCountryCheck", {
+                            type: "GET",
+                            responseType: "application/json;charset=utf-8",
+                            contentType: "application/json;charset=utf-8",
+                            cache: false,
+                            success: function (data) {
+                                var jsonData = JSON.parse(data);
+                                var selectedCountry = $("#companyCountry").val();
+                                jsonData.forEach(function (currentValue) {
+                                    if(selectedCountry == currentValue.code){
+                                        newFileSection.show();
+                                        $("#companyMemoAssociationFile").addClass('validate__file');
+
+                                    }
+                                });
+                            }
+                        });
+                   // }
+                }catch(error){console.log(error)} }
 
                 jsonData.countries.forEach(function (currentValue) {
                   if(isRHQ === true && currentValue.country === "SA"){
@@ -338,7 +371,7 @@ SAGIA.licenseApplyShareholderCommons = {
             }
         });
     },
-    
+
     bindMofaNumberValidation: function () {
     	var isMofaVerified = $('#isMofaVerified').val();
     	//$("#isMofaVerified").val(false);
@@ -367,58 +400,58 @@ SAGIA.licenseApplyShareholderCommons = {
                     	if(validMofaNumber.isMofaVerified === "X"){
                     		$("#isMofaVerified").val(true);
                     		//$("#mofaNumber-error").addClass("has-error").text("Valid MOFA Number");d
-                    		
+
                             messageElements.addClass("success-message-block").text(getI18nText('shareholder.mofaNumber.valid'));
                             messageElements.show();
-                    		
+
                     		$("#delegateSection #loaFileDiv").hide();
                     		$("#delegateSection #authorizationLetterFile").removeClass('validate__delegate-file');
                     		//element.find('#loaFileDiv').hide();
-                    		
+
                     		if($('#organizationType').val() === "Organization"){
-                    			$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").hide();                	
-                            	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").removeClass('validate__file');                        	
+                    			$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").hide();
+                            	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").removeClass('validate__file');
                             	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").hide();
                              	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").removeClass('validate__file');
-                             	
+
                              	$("#addShareholderQM1NewOrganizationSection #orgAttachmentTitle").hide();
                     		}
-                    		
+
                     	}else{
                     		$("#isMofaVerified").val(false);
                     		//$("#mofaNumber-error").addClass("has-error").text("Invalid MOFA Number");
-                    		
+
                             messageElements.removeClass('success-message-block').addClass("has-error").text(getI18nText('shareholder.mofaNumber.invalid'));
                             messageElements.show();
-                    		
+
                     		$("#delegateSection #loaFileDiv").show();
                     		$("#delegateSection #authorizationLetterFile").addClass('validate__delegate-file');
-                    		
+
                     		if($('#organizationType').val() === "Organization"){
                     			if($("#addShareholderQM1NewOrganizationSection").find("#companyCountry").val() !== "SA")
                                 {
 		                    		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").show();
-		                        	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');                        	
+		                        	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');
 		                        	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").show();
 		                         	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").addClass('validate__file');
                                 }
                     		}
                     	}
-                    	
+
                     } else {
                     	$("#isMofaVerified").val(false);
                     	//$("#mofaNumber-error").addClass("has-error").text("Invalid MOFA Number");
                     	messageElements.removeClass('success-message-block').addClass("has-error").text(getI18nText('shareholder.mofaNumber.invalid'));
                         messageElements.show();
-                        
+
                     	$("#delegateSection #loaFileDiv").show();
                     	$("#delegateSection #authorizationLetterFile").addClass('validate__delegate-file');
-                    	
+
                     	if($('#organizationType').val() === "Organization"){
                     		if($("#addShareholderQM1NewOrganizationSection").find("#companyCountry").val() !== "SA")
                             {
 	                    		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").show();
-	                        	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');                        	
+	                        	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');
 	                        	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").show();
 	                         	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").addClass('validate__file');
                             }
@@ -429,43 +462,43 @@ SAGIA.licenseApplyShareholderCommons = {
                 	//$("#mofaNumber-error").addClass("has-error").text("Invalid MOFA Number");
                 	messageElements.removeClass('success-message-block').addClass("has-error").text(getI18nText('shareholder.mofaNumber.invalid'));
                     messageElements.show();
-                    
+
                 	$("#delegateSection #loaFileDiv").show();
                 	$("#delegateSection #authorizationLetterFile").addClass('validate__delegate-file');
-                	
+
                 	if($('#organizationType').val() === "Organization"){
                 		if($("#addShareholderQM1NewOrganizationSection").find("#companyCountry").val() !== "SA")
                         {
 	                		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").show();
-	                    	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');                        	
+	                    	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');
 	                    	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").show();
 	                     	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").addClass('validate__file');
                         }
             		}
                 });
-           	 	
+
            	}
     		/*else{
     			$("#isMofaVerified").val(false);
     			//messageElements.removeClass('success-message-block').addClass("has-error").text(getI18nText('shareholder.mofaNumber.invalid'));
                 //messageElements.show();
-                
+
                 $("#delegateSection #loaFileDiv").show();
                 $("#delegateSection #authorizationLetterFile").addClass('validate__delegate-file');
-    			
+
     			if($('#organizationType').val() === "Organization"){
     				if($("#addShareholderQM1NewOrganizationSection").find("#companyCountry").val() !== "SA")
                     {
 	            		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").show();
-	                	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');                        	
+	                	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');
 	                	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").show();
 	                 	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").addClass('validate__file');
                     }
         		}
     		}*/
-    		
+
     	});
-    	
+
     },
 
     bindSelect2ShareholderForms: function (element) {
@@ -545,7 +578,7 @@ SAGIA.licenseApplyShareholderCommons = {
         })
     },
     loadPersonShareholderOnUpdate: function() {
-    	 
+
     	 $('#addShareholderQM1NewPersonSection #delegateSectionQuestion').hide();
     	 $('#addShareholderQM1NewPersonSection #shareholderIdTypeSection').show();
     	 //diable shareholder id type sectio
@@ -555,7 +588,7 @@ SAGIA.licenseApplyShareholderCommons = {
     	 $('#addShareholderQM1NewPersonSection #nicShareholderVerifyBtnSection').hide();
     	 $('#addShareholderQM1NewPersonSection #shareholderDateofBirthSection').hide();
     	 $('#addShareholderQM1NewPersonSection #shareholderIdNumberSection').hide();
-         
+
     	 // check whether there is a delegate:
     	 var isDelegate = $("#addShareholderQM1NewPersonSection #hasDelegateNO").attr('checked');
     	 if(isDelegate){
@@ -574,44 +607,44 @@ SAGIA.licenseApplyShareholderCommons = {
     		 $("#addShareholderQM1NewPersonSection #delegateCountry").attr('disabled','disabled');
     		 $("#addShareholderQM1NewPersonSection #delegateNationality").attr('disabled','disabled');
     		 $("#addShareholderQM1NewPersonSection #delegateCountry").trigger("blur").trigger('change');
-    		 	 
+
     	 }
-    	 
-    	 
+
+
     	var itType = $("#addShareholderQM1NewPersonSection #shareholderIdType").attr('data-value');
     	var element = $("#addShareholderQM1NewPersonSection #dataSection");
-    	
-    	
-    	
+
+
+
     	var toggleUmmAlQuraOrNormalCalInShareholderSection = function(itType,element){
             if(itType==="1"){
                 bindUmmAlQuraCal($('#addShareholderQM1NewPersonSection #shareholderDateofBirth'));
                 bindUmmAlQuraCal($('#addShareholderQM1NewPersonSection #dateOfBirth'));
-            
+
             }
-           
+
         };
-        
+
     	toggleUmmAlQuraOrNormalCalInShareholderSection(itType,element);
-    	
-    	 
-         
-         
+
+
+
+
     	if(itType === '4' ){ //id type is  4
-    		
+
     		 $('#addShareholderQM1NewPersonSection #delegateSection').show();
     		 $('#addShareholderQM1NewPersonSection #delegateDivSection').show();
         //     $('#verifyDelegateDetails').hide();
         //     $('#delegateDetails').hide();
-             
+
              $('#addShareholderQM1NewPersonSection #attachmentSection').show();
-             
+
              var passportFileAttachment = $("#addShareholderQM1NewPersonSection #passportFileAttachment");
          	$("#addShareholderQM1NewPersonSection #passportFileAttachment").show();
          	passportFileAttachment.find('[name=passportFile]').addClass('validate__file');
-    		
+
          	$('#addShareholderQM1NewPersonSection #mofaNumberSection').show();
-    	
+
     	}else {
     		 $('#addShareholderQM1NewPersonSection #dateOfBirth').attr('disabled','disabled');
         	 $('#addShareholderQM1NewPersonSection #passportExpiryDate').attr('disabled','disabled');
@@ -624,43 +657,43 @@ SAGIA.licenseApplyShareholderCommons = {
         	 $('#addShareholderQM1NewPersonSection #premiumResident').attr('disabled','disabled');
         	 $('#addShareholderQM1NewPersonSection #attachmentSection').show();
         	 $('[name=shareHolderTitle]').filter(':not(:checked)').attr('disabled', 'disabled');
-        	 
+
         	var passportFileAttachment = $("#addShareholderQM1NewPersonSection #passportFileAttachment");
            	$("#addShareholderQM1NewPersonSection #passportFileAttachment").hide();
            	passportFileAttachment.find('[name=passportFile]').removeClass('validate__file');
-    		
+
            	$('#addShareholderQM1NewPersonSection #mofaNumberSection').hide();
     	}
-    	
+
     },
-    
+
     loadOrganizationShareholderOnUpdate: function(hascode) {
-    	
+
    	 $('#addShareholderQM1NewOrganizationSection #shareholderIdTypeSection').show();
    	 var country = $("#companyCountry").attr('data-value');
-     
+
    	 if(country == "SA")
      {
-       
+
      	$('#addShareholderQM1NewOrganizationSection #dataSectionDelegate').hide();
      	$('#addShareholderQM1NewOrganizationSection #dataSectionAttachment').show();
      	$('#addShareholderQM1NewOrganizationSection #dataSectionCapital').show();
      	$('#addShareholderQM1NewOrganizationSection #dataSectionCompany').show();
-     	
+
      	$("#addShareholderQM1NewOrganizationSection #inputCRNumber").prop('disabled', false);
      	$("#addShareholderQM1NewOrganizationSection #companyRegistrationNumber").prop('disabled', true);
      	$("#addShareholderQM1NewOrganizationSection #organizationNameEnglish").prop('disabled', true);
      	$("#addShareholderQM1NewOrganizationSection #organizationNameArabic").prop('disabled', true);
      	$("#addShareholderQM1NewOrganizationSection #companyCapital").prop('disabled', true);
      	$("#addShareholderQM1NewOrganizationSection #companyCountryOfRegistration").prop('disabled', true);
- 
+
      	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").hide();
-     	
+
      	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").removeClass('validate__file');
-     	
+
      	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").hide();
-     	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").removeClass('validate__file');     	
-     	
+     	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").removeClass('validate__file');
+
      	$('#addShareholderQM1NewOrganizationSection #mofaNumberSection').hide();
      	//$("#addShareholderQM1NewOrganizationSection #orgAttachmentTitle").hide();
      }
@@ -672,35 +705,35 @@ SAGIA.licenseApplyShareholderCommons = {
      	$('#addShareholderQM1NewOrganizationSection #dataSectionCompany').show();
      	$("#addShareholderQM1NewOrganizationSection #load-investor").attr("disabled", true);
      	$("#addShareholderQM1NewOrganizationSection #inputCRNumber").attr("disabled", true);
-     	
+
      	//$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").show();
      	//$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');
      	$('#addShareholderQM1NewOrganizationSection #mofaNumberSection').show();
     	if($('#isMofaVerified').val() === "true"){
-    		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").hide();                	
+    		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").hide();
         	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").removeClass('validate__file');
-        	
+
         	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").hide();
          	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").removeClass('validate__file');
-    		
+
     	}else{
     		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").show();
         	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');
-        	
+
         	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").show();
         	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").addClass('validate__file');
     	}
-     	
+
      	 $('#addShareholderQM1NewOrganizationSection #verifyDelegateDetails').show();
-     	 
+
      	// check whether there is a delegate:
     	 var isDelegate = $("#addShareholderQM1NewOrganizationSection #OrganizationDelegateYES").attr('checked');
     	 if(isDelegate){
     		 $('#addShareholderQM1NewOrganizationSection #verifyDelegateDetails').show();
     		 $('#addShareholderQM1NewOrganizationSection #showDelegateQuestion').hide();
-    		 
+
     		 var idType = $('#addShareholderQM1NewOrganizationSection #idType').attr('data-value');
-    		 
+
     		 if(idType !== "4"){
     		 $('#addShareholderQM1NewOrganizationSection #delegateFullNameEnglish').attr('disabled','disabled');
     		 $('#addShareholderQM1NewOrganizationSection #delegateLastNameArabic').attr('disabled','disabled');
@@ -709,19 +742,19 @@ SAGIA.licenseApplyShareholderCommons = {
     		 $('#addShareholderQM1NewOrganizationSection #delegateIssueDate').attr('disabled','disabled');
     		 $('#addShareholderQM1NewOrganizationSection #delegateExpiryDate').attr('disabled','disabled');
     		 }
-    	
-    		 
+
+
     	 }else {
-    	
+
     		 $('#addShareholderQM1NewOrganizationSection #delegateSection').hide();
-    		 
+
     	 }
-     	       
+
      }
-   	 
-   	 
+
+
    },
-   
+
     loadIdAndGenderDropDown: function() {
         var shareholdersQM1 = $("#shareholdersQM1");
         var personDelegateGender = shareholdersQM1.find("#addShareholderQM1NewPersonSection #delegateGender");
@@ -751,14 +784,14 @@ SAGIA.licenseApplyShareholderCommons = {
         var previousOrganizationDelegateIdType  = organizationDelegateIdType.attr('data-value');
         organizationDelegateIdType.find("option").remove();
         organizationDelegateIdType.append(new Option("", "", false, false));
-        
+
         var personShareholderIdType = shareholdersQM1.find("#addShareholderQM1NewPersonSection #shareholderIdType");
         var previousPersonShareholderIdType = personShareholderIdType.attr('data-value');
         personShareholderIdType.find("option").remove();
         personShareholderIdType.append(new Option("", "", false, false));
-        
+
         var contactPersonQM1 = $("#contactPersonQM1");
-        
+
         var contactGender = contactPersonQM1.find("#delegateGender");
         var previousContactGender = contactGender.attr('data-value');
         if (previousContactGender) {
@@ -767,18 +800,18 @@ SAGIA.licenseApplyShareholderCommons = {
         }
         contactGender.find("option").remove();
         contactGender.append(new Option("", "", false, false));
-        
+
         var contactIdType = contactPersonQM1.find("#idType");
         var previousContactIdType = contactIdType.attr('data-value');
         contactIdType.find("option").remove();
         contactIdType.append(new Option("", "", false, false));
-        
+
 
         personDelegateGender.append(new Option(getI18nText("license.shareholder.delegate.male"), "Male", false, false));
         personDelegateGender.append(new Option(getI18nText("license.shareholder.delegate.female"), "Female", false, false));
         organizationDelegateGender.append(new Option(getI18nText("license.shareholder.delegate.male"), "Male", false, false));
         organizationDelegateGender.append(new Option(getI18nText("license.shareholder.delegate.female"), "Female", false, false));
-        
+
         personShareholderIdType.append(new Option(getI18nText("license.shareholder.delegate.saudiId"), "1", false, false));
         personShareholderIdType.append(new Option(getI18nText("license.shareholder.delegate.iqamaId"), "2", false, false));
         personShareholderIdType.append(new Option(getI18nText("license.shareholder.delegate.gccId"), "3", false, false));
@@ -788,12 +821,12 @@ SAGIA.licenseApplyShareholderCommons = {
         personDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.iqamaId"), "2", false, false));
         personDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.gccId"), "3", false, false));
        // personDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.passportId"), "4", false, false));
-       
+
         organizationDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.saudiId"), "1", false, false));
         organizationDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.iqamaId"), "2", false, false));
         organizationDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.gccId"), "3", false, false));
         organizationDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.passportId"), "4", false, false));
-        
+
         contactIdType.append(new Option(getI18nText("license.shareholder.delegate.saudiId"), "1", false, false));
         contactIdType.append(new Option(getI18nText("license.shareholder.delegate.iqamaId"), "2", false, false));
         contactIdType.append(new Option(getI18nText("license.shareholder.delegate.gccId"), "3", false, false));
@@ -822,24 +855,24 @@ SAGIA.licenseApplyShareholderCommons = {
         } else {
             personDelegateIdType.val(null);
         }
-        
+
         if(previousPersonShareholderIdType) {
         	personShareholderIdType.val(previousPersonShareholderIdType).trigger("blur").trigger('change');
         } else {
         	personShareholderIdType.val(null);
         }
-        
+
         if(previousContactIdType) {
         	contactIdType.val(previousContactIdType).trigger("blur").trigger('change');
         } else {
         	contactIdType.val(null);
         }
-        
-        
+
+
     },
 
     bindDelegateEvents: function (hascode) {
-    	
+
         $("#addShareholderQM1NewPersonSection #delegateSection").find("#idType").change(function(){
             var type = "Person";
             var element = $("#addShareholderQM1NewPersonSection #delegateSection");
@@ -856,7 +889,7 @@ SAGIA.licenseApplyShareholderCommons = {
             onchangeOfContactIdType(element, type);
         });
 
-        
+
         if(!hascode) {  // hide the id type section when editing an
             $("#addShareholderQM1NewPersonSection").find("#shareholderIdType").change(function(){
                 var type = "Person";
@@ -872,7 +905,7 @@ SAGIA.licenseApplyShareholderCommons = {
                 onchangeOfShareholderIdType(element, type);
             });
         }
-        
+
         if(!hascode) {  // hide the id type section when editing an
         $("#addShareholderQM1NewOrganizationSection").find("#companyCountry").change(function(){
             var type = "Organization";
@@ -889,8 +922,8 @@ SAGIA.licenseApplyShareholderCommons = {
             onchangeOfCompanyCountry();
         });
         }
-        
-        
+
+
         var onchangeOfContactIdType = function(element, type)
         {
         	//resetContactEvent();
@@ -901,9 +934,9 @@ SAGIA.licenseApplyShareholderCommons = {
             element.find("#idNumberection").show();
             element.find("#contactDetails").hide();
             element.find("#contactSection").hide();
-            
-            
-            
+
+
+
             var initialEditEvents = false;
             var form = element.find('form');
 
@@ -930,8 +963,8 @@ SAGIA.licenseApplyShareholderCommons = {
                     element.find("#idNumberection").hide();
                     element.find("#contactDetails").show();
                     element.find("#contactSection").show();
-                    
-                   // make fields Editable:   	
+
+                   // make fields Editable:
               	    $("#qm1PassportNumber").removeAttr('disabled');
               		$("#qm1Email").removeAttr('disabled');
               		$("#qm1CountryCodeForMobileNumber").removeAttr('disabled');
@@ -947,7 +980,7 @@ SAGIA.licenseApplyShareholderCommons = {
                     $("#qm1DateOfBirth").removeAttr('disabled');
                     $("#qm1PassportExpiryDate").removeAttr('disabled');
                     $("#qm1PassportIssueDate").removeAttr('disabled');
-                    // 
+                    //
                 }
 
                 element.find("#verifyDelegateDetails").show();
@@ -957,7 +990,7 @@ SAGIA.licenseApplyShareholderCommons = {
                     toggleTheNICFieldsEditable(element, type, false);
                     element.find("#contactDetails").hide();
                     element.find("#contactSection").hide();
-                    
+
                 }
             } else {
                 if(element.find("#idType").val()==="4"){
@@ -1003,8 +1036,8 @@ SAGIA.licenseApplyShareholderCommons = {
             toggleFieldsOnValue(element);
            // resetDataSectionFields(element,type);
         }
-        
-        
+
+
         var onchangeOfIdType = function(element, type)
         {
             toggleUmmAlQuraOrNormalCalInDelegateSection(element);
@@ -1014,9 +1047,9 @@ SAGIA.licenseApplyShareholderCommons = {
             element.find("#idNumberection").show();
             element.find("#contactDetails").hide();
             element.find("#contactSection").hide();
-            
-            
-            
+
+
+
             var initialEditEvents = false;
             var form = element.find('form');
 
@@ -1024,7 +1057,7 @@ SAGIA.licenseApplyShareholderCommons = {
                 initialEditEvents = form.hasClass('edit-initial') &&
                     form.find('input[name=delegateInfo\\.delegate]').filter(':checked').val() === 'true';
             } else {
-                initialEditEvents = form.hasClass('edit-initial') &&                 
+                initialEditEvents = form.hasClass('edit-initial') &&
                     form.find('input[name=delegateInfo\\.delegateYourself]').filter(':checked').val() === 'false';
             }
 
@@ -1042,13 +1075,13 @@ SAGIA.licenseApplyShareholderCommons = {
                     element.find("#idNumberection").hide();
                     element.find("#contactDetails").show();
                     element.find("#contactSection").show();
-                    
+
                     var passportFileAttachment = $("#delegateSection #passportFileAttachment");
                    	$("#delegateSection #passportFileAttachment").show();
                    	passportFileAttachment.find('[name=passportFile]').addClass('validate__file');
                    	element.find(".idCopyFile").text(getI18nText("license.apply.shareholder.idCopyFile.passport"));
                     element.find('#idCopyFileDiv').show();
-                    // 
+                    //
                     if($('#isMofaVerified').val() === "true"){
                    		element.find('#loaFileDiv').hide();
                    		$("#delegateSection #authorizationLetterFile").removeClass('validate__delegate-file');
@@ -1060,7 +1093,7 @@ SAGIA.licenseApplyShareholderCommons = {
 
                 element.find("#verifyDelegateDetails").show();
                 form.removeClass('edit-initial');
-                
+
                 if($('#isMofaVerified').val() === "true"){
                		element.find('#loaFileDiv').hide();
                		$("#delegateSection #authorizationLetterFile").removeClass('validate__delegate-file');
@@ -1076,7 +1109,7 @@ SAGIA.licenseApplyShareholderCommons = {
                     toggleTheNICFieldsEditable(element, type, false);
                     element.find("#contactDetails").hide();
                     element.find("#contactSection").hide();
-                    
+
                 }
             } else {
                 if(element.find("#idType").val()==="4"){
@@ -1087,14 +1120,14 @@ SAGIA.licenseApplyShareholderCommons = {
                     element.find("#idNumberection").hide();
                     element.find("#contactDetails").show();
                     element.find("#contactSection").show();
-                    
+
                     element.find(".idCopyFile").text(getI18nText("license.apply.shareholder.idCopyFile.passport"));
                     element.find('#idCopyFileDiv').show();
-                    
+
                     var passportFileAttachment = $("#delegateSection #passportFileAttachment");
                    	$("#delegateSection #passportFileAttachment").show();
                    	passportFileAttachment.find('[name=passportFile]').addClass('validate__file');
-                   	
+
                    	if($('#isMofaVerified').val() === "true"){
                    		element.find('#loaFileDiv').hide();
                    		$("#delegateSection #authorizationLetterFile").removeClass('validate__delegate-file');
@@ -1102,11 +1135,11 @@ SAGIA.licenseApplyShareholderCommons = {
                    		element.find('#loaFileDiv').show();
                    		$("#delegateSection #authorizationLetterFile").addClass('validate__delegate-file');
                    	}
-                   	
+
                 }else {
                     element.find('#idCopyFileDiv').hide();
                     element.find("#attachmentSection").show();
-                    
+
                     if($('#isMofaVerified').val() === "true"){
                    		element.find('#loaFileDiv').hide();
                    		$("#delegateSection #authorizationLetterFile").removeClass('validate__delegate-file');
@@ -1115,7 +1148,7 @@ SAGIA.licenseApplyShareholderCommons = {
                    		element.find('#loaFileDiv').show();
                    		$("#delegateSection #authorizationLetterFile").addClass('validate__delegate-file');
                    	}
-                    
+
                     var passportFileAttachment = $("#delegateSection #passportFileAttachment");
                    	$("#delegateSection #passportFileAttachment").hide();
                    	passportFileAttachment.find('[name=passportFile]').removeClass('validate__file');
@@ -1128,16 +1161,16 @@ SAGIA.licenseApplyShareholderCommons = {
             toggleFieldsOnValue(element);
            // resetDataSectionFields(element,type);
         }
-        
-        
+
+
         var  resetContactEvent =  function() {
-         	
+
         	$("#qm1DateOfBirth").removeAttr('readOnly');
         	$("#qm1DateOfBirth").val("") ;
     		$("#qm1PassportNumber").val("").removeAttr('readOnly');
     		$("#qm1Email").val("").removeAttr('readOnly');
     		$("#qm1CountryCodeForMobileNumber").val("").removeAttr('readOnly');
-    		$("#qm1MobileNumber").val("").removeAttr('readOnly');	
+    		$("#qm1MobileNumber").val("").removeAttr('readOnly');
     		$("#qm1CountryCodeForTelephone").val("").removeAttr('readOnly');
     		$("#qm1Telephone").val("").removeAttr('readOnly');
     		$("#qm1City").val("").removeAttr('readOnly');
@@ -1147,8 +1180,8 @@ SAGIA.licenseApplyShareholderCommons = {
     		$("#qm1PassportIssueDate").val("").removeAttr('readOnly');
     		$("#qm1Country").val("").removeAttr('readOnly');
         }
-        
-        
+
+
         var toggleUmmAlQuraOrNormalCalInDelegateSection = function(element){
             if(element.find("#idType").val()==="1"){
                 bindUmmAlQuraCal(element.find('#delegateDateofBirth'));
@@ -1162,7 +1195,7 @@ SAGIA.licenseApplyShareholderCommons = {
                 bindNormalCal(element.find('#delegateExpiryDate'));
             }
         };
-        
+
         var toggleUmmAlQuraOrNormalCalInShareholderSection = function(element){
             if(element.find("#shareholderIdType").val()==="1"){
                 bindUmmAlQuraCal(element.find('#shareholderDateofBirth'));
@@ -1176,10 +1209,10 @@ SAGIA.licenseApplyShareholderCommons = {
                 bindNormalCal(element.find('#passportExpiryDate'));
             }
         };
-        
+
         var toggleUmmAlQuraOrNormalCalInContactSection = function(element){
             if(element.find("#idType").val()==="1"){
-                bindUmmAlQuraCal($('#delegateDateofBirth'));              
+                bindUmmAlQuraCal($('#delegateDateofBirth'));
                 bindUmmAlQuraCal($('#qm1DateOfBirth'));
                 bindNormalCal($('#qm1PassportExpiryDate'));
                 bindNormalCal($('#qm1PassportIssueDate'));
@@ -1192,8 +1225,8 @@ SAGIA.licenseApplyShareholderCommons = {
                 bindNormalCal($('#qm1PassportIssueDate'));
             }
         };
-        
-        
+
+
 
         var bindCalendarsToInputs = function (element) {
             var isUmmAlQura = false;
@@ -1212,7 +1245,7 @@ SAGIA.licenseApplyShareholderCommons = {
                 bindCustomFlatpickr(element.find('#delegateExpiryDate'));
             }
         };
-        
+
         var bindShareholderCalendarsToInputs = function (element) {
             var isUmmAlQura = false;
 
@@ -1240,13 +1273,13 @@ SAGIA.licenseApplyShareholderCommons = {
                 }
             }
         };
-        
-        
-        
+
+
+
      // Start of onchangeOfShareholderIdType --> shareholderIdType
         var onchangeOfShareholderIdType = function(element, type)
         {
-            
+
             toggleUmmAlQuraOrNormalCalInShareholderSection(element);
 
             element.find("#nicShareholderVerifyBtnSection").show();
@@ -1278,7 +1311,7 @@ SAGIA.licenseApplyShareholderCommons = {
                     element.find("#shareholderDateofBirthSection").hide();
                     element.find("#shareholderIdNumberSection").hide();
                     element.find("#delegateSectionQuestion").hide();
-                    
+
                 }
 
                 element.find("#verifyDelegateDetails").show();
@@ -1301,8 +1334,8 @@ SAGIA.licenseApplyShareholderCommons = {
                     element.find("#shareholderDateofBirthSection").hide();
                     element.find("#shareholderIdNumberSection").hide();
                     element.find("#delegateSectionQuestion").hide();
-                    
-                    
+
+
                 }
 
                 resetShareholderDetails(element, type);
@@ -1313,11 +1346,11 @@ SAGIA.licenseApplyShareholderCommons = {
             toggleSectionsOnValue(element);
             resetDataSectionFields(element,type);
         };
-        
-        var onchangeOfCompanyCountry = function() 
-        
+
+        var onchangeOfCompanyCountry = function()
+
         {
-        	
+
 
             var shareholdersQM1 = $("#shareholdersQM1");
             var newFileSection = $("#companyCheckFileAttachment");
@@ -1325,30 +1358,30 @@ SAGIA.licenseApplyShareholderCommons = {
                 newFileSection.hide();
                 SAGIA.licenseApplyShareholderCommons.loadNewFile(shareholdersQM1.find("#companyCountry"), newFileSection);
                 newFileSection.find('[name=companyMemoAssociationFile]').removeClass('validate__file');
-            }  
+            }
                 if($("#addShareholderQM1NewOrganizationSection").find("#companyCountry").val() == "SA")
                 {
                 	$("#addShareholderQM1NewOrganizationSection #showDelegateQuestion").hide();
                 	$("#addShareholderQM1NewOrganizationSection #delegateSectionQuestion").hide();
-                	
-                  
+
+
                 	$('#addShareholderQM1NewOrganizationSection #dataSectionDelegate').hide();
-                	
-                	
+
+
                 		$('#addShareholderQM1NewOrganizationSection #dataSectionAttachment').hide();
                     	$('#addShareholderQM1NewOrganizationSection #dataSectionCapital').hide();
                     	$('#addShareholderQM1NewOrganizationSection #dataSectionCompany').hide();
-                
-                	
-                	
+
+
+
                 	$("#addShareholderQM1NewOrganizationSection #inputCRNumber").prop('disabled', false);
                 	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").hide();
-                	
+
                 	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").removeClass('validate__file');
-                	
+
                 	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").hide();
-                 	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").removeClass('validate__file'); 
-                	
+                 	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").removeClass('validate__file');
+
                  	$("#addShareholderQM1NewOrganizationSection #mofaNumberSection").hide();
                  	$("#addShareholderQM1NewOrganizationSection #orgAttachmentTitle").hide();
                  	$("#addShareholderQM1NewOrganizationSection #isMofaVerified").val(false);
@@ -1359,74 +1392,85 @@ SAGIA.licenseApplyShareholderCommons = {
                 	$("#addShareholderQM1NewOrganizationSection #delegateSectionQuestion").show();
                 	$('#addShareholderQM1NewOrganizationSection #dataSectionDelegate').show();
                  	$('#addShareholderQM1NewOrganizationSection #dataSectionDelegate').show();
-                	
+
                 	if (!hascode) {
                 		$('#addShareholderQM1NewOrganizationSection #dataSectionDelegate').show();
                 		$('#addShareholderQM1NewOrganizationSection #showDelegateQuestion').hide();
                 		$('#addShareholderQM1NewOrganizationSection #delegateSection').hide();
-                		
-                		
+
+
                 	}
-                	
-                	
-                 	$('#addShareholderQM1NewOrganizationSection #delegateDetails').hide();              
+
+
+                 	$('#addShareholderQM1NewOrganizationSection #delegateDetails').hide();
                  	$("#addShareholderQM1NewOrganizationSection #verifyDelegateDetails").hide();
                 	$('#addShareholderQM1NewOrganizationSection #dataSectionAttachment').show();
                 	$('#addShareholderQM1NewOrganizationSection #showDelegateQuestion').hide();
-                	
+
                 	$('#addShareholderQM1NewOrganizationSection #dataSectionCapital').show();
                 	$('#addShareholderQM1NewOrganizationSection #dataSectionCompany').show();
                 	$("#addShareholderQM1NewOrganizationSection #load-investor").attr("disabled", true);
                 	$("#addShareholderQM1NewOrganizationSection #inputCRNumber").attr("disabled", true);
-                
+
                 	$("#addShareholderQM1NewOrganizationSection #mofaNumberSection").show();
                  	//$("#addShareholderQM1NewOrganizationSection #isMofaVerified").val(false);
-                
+
 //RHQ CHANGES START
 			    var isicSectionsElement=$('#organizationShareholderForm #companySection')
 				var licenseType = isicSectionsElement.parents('#shareholdersQM1').attr('data-licensetype') ? isicSectionsElement.parents('#shareholdersQM1').attr('data-licensetype') : 1;
 					 if(licenseType === "11")
 					{
-						var sharesPercentage = shareholdersQM1.find("#companySharesPercentage");
+						//var sharesPercentage = shareholdersQM1.find("#companySharesPercentage");
 						var professionalLicense = shareholdersQM1.find("#companyProfessionalLicense");
-						sharesPercentage.attr("disabled", true);
-	                	sharesPercentage.val("100").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
+						//sharesPercentage.attr("disabled", true);
+	                	//sharesPercentage.val("100").trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
 	                	professionalLicense.attr("disabled", true);
 	                	professionalLicense.val('no').trigger("blur").trigger("change").next().addClass('select2Container_selected'); //hardcoded
+
 					}
- //RHQ CHANGES END               	    
+ //RHQ CHANGES END
                 	if($('#isMofaVerified').val() === "true"){
-                		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").hide();                	
+                		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").hide();
                     	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").removeClass('validate__file');
-                    	
+
                     	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").hide();
                      	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").removeClass('validate__file');
-                     	
+
                      	$("#addShareholderQM1NewOrganizationSection #orgAttachmentTitle").hide();
-                		
+
                 	}else{
                 		$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").show();
                     	$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');
-                    	
+
                     	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFileSection").show();
                     	$("#addShareholderQM1NewOrganizationSection #companyFinancialStatementFile").addClass('validate__file');
                 	}
                 	//$("#addShareholderQM1NewOrganizationSection #companyRegistrationFileSection").show();
                 	//$("#addShareholderQM1NewOrganizationSection #companyRegistrationFile").addClass('validate__file');
-   
+
                 }
-                
+
                 if($("#addShareholderQM1NewOrganizationSection #professionalLicenseCrVerified").val() == 'true'){
             		$("#addShareholderQM1NewOrganizationSection #organizationNameEnglish").val("").removeAttr('disabled');
             		$("#addShareholderQM1NewOrganizationSection #organizationNameArabic").val("").removeAttr('disabled');
-            		$("#addShareholderQM1NewOrganizationSection #companyCapital").val("").removeAttr('disabled');	
+            		$("#addShareholderQM1NewOrganizationSection #companyCapital").val("").removeAttr('disabled');
             		$("#addShareholderQM1NewOrganizationSection #professionalLicenseCrVerified").val(false);
             		$("#addShareholderQM1NewOrganizationSection #inputCRNumber").val("");
             		$("#addShareholderQM1NewOrganizationSection#companyRegistrationNumber").val("").removeAttr('disabled');
             		$("#addShareholderQM1NewOrganizationSection #companyCountryOfRegistration").val("").removeAttr('disabled');
-            		
+
             	}
-            
+
+           try {
+                if (licenseType === "11") {
+                    setTimeout(function () {
+                        $("#companyFinancialStatementFile").removeClass('validate__file');
+                        $("#labelForCompanyFinancialStatementFileName").removeClass('control-label_mandatory');
+                        console.log("companyFinancialStatementFile validation is removed");
+                    }, 1500);
+                }
+            }
+            catch (error) { console.log(error) }
         
         	
         	

@@ -321,6 +321,8 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
         // fetch the FinancialSurvey for the given quarter
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurveyData.getQuarterCode());
+        financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.IN_PROGRESS);
+        financialSurveyModel.setIsCompanyProfileSectionFilled(true);
         savetBusinessActivities(financialSurveyData, financialSurveyModel);
         saveFinancialSurveyModel(financialSurveyData, financialSurveyModel);
 
@@ -340,6 +342,10 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         saveBranches(financialSurveyData, financialSurveyModel);
         saveSubsidiaries(financialSurveyData, financialSurveyModel);
 
+        financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.IN_PROGRESS);
+        financialSurveyModel.setIsBranchSectionFilled(true);
+        modelService.save(financialSurveyModel);
+
     }
 
     @Override
@@ -350,6 +356,10 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
         saveShareholders(financialSurveyData,financialSurveyModel);
         saveAffiliates(financialSurveyData,financialSurveyModel);
+
+        financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.IN_PROGRESS);
+        financialSurveyModel.setIsShareholdersSectionFilled(true);
+        modelService.save(financialSurveyModel);
 
     }
 
@@ -382,6 +392,8 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     @Override
     public void saveFinancialSurveyShareholderEquity(FinancialSurvey financialSurvey) {
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurvey.getQuarterCode());
+        financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.IN_PROGRESS);
+        financialSurveyModel.setIsEquitySectionFilled(true);
         saveShareholderEquity(financialSurvey,financialSurveyModel);
     }
 

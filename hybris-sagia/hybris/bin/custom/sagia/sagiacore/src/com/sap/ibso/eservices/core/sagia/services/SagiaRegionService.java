@@ -1,6 +1,5 @@
 package com.sap.ibso.eservices.core.sagia.services;
 
-import com.sap.ibso.eservices.core.model.SagiaCountryModel;
 import com.sap.ibso.eservices.core.model.SagiaRegionModel;
 import com.sap.ibso.eservices.core.model.SagiaRhqRegionModel;
 
@@ -38,5 +37,7 @@ public interface SagiaRegionService {
      * @return - A list containing all the regions.
      */
     List<SagiaRhqRegionModel> getRhqRegionsList();
+
+    String getRhqRegionForCode(String code);
 
 }

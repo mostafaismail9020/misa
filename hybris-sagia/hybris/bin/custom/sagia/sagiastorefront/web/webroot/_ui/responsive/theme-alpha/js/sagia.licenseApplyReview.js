@@ -9,7 +9,7 @@ SAGIA.licenseApplyReview = {
     requirementSubmitButton : $("#requirementSubmitButton"),
     termsAndConditions :  $("#termsAndConditions"),
     reviewSubmitButton : $("#reviewSubmitButton"),
-    
+
     bindAll: function () {
         this.bindButtonClickEvents();
         this.bindLicenseTypeEvent();
@@ -18,15 +18,16 @@ SAGIA.licenseApplyReview = {
         this.bindTermsAndConditions();
 		this.bindScrollContentRequirement();
 		this.bindSubmitButtonEvent();
+		this.rhqReviewSectionCreation()
 
 		$("#printButton").on("click", function() {
 			window.print();
 		});
     },
-    
+
     bindButtonClickEvents: function () {
     	var self = this;
-    	
+
         $("#editEntityInformationButton").on("click", function() {
             $("#entityInformationTab").trigger("click");
         });
@@ -37,7 +38,7 @@ SAGIA.licenseApplyReview = {
             $("#contactPersonTab").trigger("click");
         });
     },
-    
+
     bindLicenseTypeEvent: function () {
     	var self = this;
         if(sagiaData.licenseType && (sagiaData.licenseType == SAGIA.config.temporaryLicenseConstant)){
@@ -46,7 +47,7 @@ SAGIA.licenseApplyReview = {
         	self.temporaryLicenseTextBoxSection.show();
         }
     },
-    
+
     bindRequirementSubmitButton: function () {
     	var self = this;
     	self.requirementSubmitButton.on("click", function() {
@@ -54,14 +55,14 @@ SAGIA.licenseApplyReview = {
         	self.reviewSubmitButton.attr("disabled", true);
         	if(self.termsAndConditions.is(":checked"))
         		self.reviewSubmitButton.attr("disabled", false);
-        	
+
         	self.requirementSubmitButton.attr("disabled", true);
         	self.requirementSubmitButton.text(getI18nText("requirements.status.accepted"));
         	// requirementSubmitButton  Accepted!
-        	
+
         });
     },
-    
+
     bindRequirementTextEvent: function () {
     	var self = this;
     	self.typeRequirementSection.hide();
@@ -69,7 +70,7 @@ SAGIA.licenseApplyReview = {
     	self.reviewSubmitButton.attr("disabled", true);
     	if($("#licenseType").val() != SAGIA.config.temporaryLicenseConstant && sagiaData.businessActivities.selectedActivities)
     	{
-    		
+
     		var requirementListIds = [];
     		for (var indexActivity in sagiaData.businessActivities.selectedActivities) {
 				if (sagiaData.businessActivities.selectedActivities[indexActivity].splrequirementId != '0000') {
@@ -77,7 +78,7 @@ SAGIA.licenseApplyReview = {
 				}
 			}
 
-		    if(requirementListIds.length > 0) 
+		    if(requirementListIds.length > 0)
 		    {
 			    $.ajax(ACC.config.encodedContextPath + controllerUrl + "/sagiaLicenseTypeRequirementList/"+requirementListIds, {
 			        type: "GET",
@@ -89,7 +90,7 @@ SAGIA.licenseApplyReview = {
 			            var jsonEmptyData = jsonData != null && jsonData.length === 1 && jsonData[0].id === '0000';
 
 			            if (jsonData != null && !jsonEmptyData) {
-			               
+
 			            	var licenseContent = "";
 			        	   	$.each(jsonData, function(key,value) {
 						  		if(value.content != '' ) {
@@ -129,18 +130,18 @@ SAGIA.licenseApplyReview = {
 			 						licenseContent += value.content;
 								}
 							});
-			
-			            	   
+
+
 			            	if(self.requirementSubmitButton.text() != getI18nText("requirements.status.accepted")){
 			            		self.termsAndConditions.attr("disabled", true);
 			            		self.requirementSubmitButton.attr("disabled", true);
-			            		 
+
 			            	}else {
 			            		if(self.termsAndConditions.is(":checked"))
 			                		$("#reviewSubmitButton").attr("disabled", false);
 			            		self.termsAndConditions.attr("disabled", false);
 			            	}
-			            	
+
 			            	self.typeRequirementSection.show();
 			            	//typeRequirementSection.find("#requirementContent").html( jsonData.content );
 			            	$("#contentRequirement").html( licenseContent );
@@ -151,7 +152,7 @@ SAGIA.licenseApplyReview = {
 			        }
 			    });
 	    	}
-    	}    
+    	}
     },
 
 	bindTermsAndConditions: function () {
@@ -292,7 +293,130 @@ SAGIA.licenseApplyReview = {
 			}
 		});
 	},
+	rhqReviewSectionCreation: function (){
+		if(sagiaData.licenseType && (sagiaData.licenseType == '11')){
 
+			$("#reviewMncBranchSection", "#reviewMncCostTable", "#reviewMncBranchSection","#reviewRHQBranchesTable", "#reviewMncBrandTable", "#reviewMncBranchSection", ".rhq-review-items").show();
+	   //RHQ review starts - DT
+
+		if (typeof objectBranches == "undefined") {
+			objectBranches = [];
+		}
+
+		if (typeof objectBrands == "undefined") {
+			objectBrands = [];
+		}
+
+		if (typeof objectCost == "undefined") {
+			objectCost = [];
+		}
+
+		if (typeof subsidiaryString == "undefined") {
+			subsidiaryString = '';
+		}
+
+
+
+		$("#reviewRHQBranchesTable tbody").html('');
+		try {
+			if(typeof objectBranches !== "undefined"){
+			if (objectBranches.length > 0) {
+				for (var idx = 0; idx < objectBranches.length; idx++) {
+					$("#reviewRHQBranchesTable tbody").append('<tr><td>' + objectBranches[idx]['companyName'] + '</td><td>' + objectBranches[idx]['country'] + '</td><td>' + objectBranches[idx]['businessRelationshipType'] + '</td><td>' + objectBranches[idx]['industry'] + '</td><td>' + objectBranches[idx]['operations'] + '</td><td>' + objectBranches[idx]['RhqActivityProvided'] + '</td></tr>');
+				}
+			}}
+		}
+		catch (error) {
+			console.log(error)
+		}
+
+
+
+		$("#reviewMncBrandTable tbody").html('');
+		try {
+			if(typeof objectBrands !== "undefined"){
+			if (objectBrands.length > 0) {
+				for (var idx = 0; idx < objectBrands.length; idx++) {
+					$("#reviewMncBrandTable tbody").append('<tr><td>' + objectBrands[idx]['brandName'] + '</td><td>' + objectBrands[idx]['country'] + '</td><td>' + objectBrands[idx]['industry'] + '</td><td>' + objectBrands[idx]['companyOwningBrandInMENA'] + '</td><td>' + objectBrands[idx]['RhqActivityProvided'] + '</td></tr>');
+
+				}
+			}}
+		}
+		catch (err) {
+			console.log(err);
+		}
+
+
+		$("#reviewMncCostTable tbody").html('');
+		try {
+			if(typeof objectCost !== "undefined"){
+			if (objectCost.length > 0) {
+				for (var idx = 0; idx < objectCost.length; idx++) {
+					$("#reviewMncCostTable tbody").append('<tr><td>' + objectCost[idx]['item'] + '</td><td>' + objectCost[idx]['unitCost'] + '</td><td>' + objectCost[idx]['noOfUnits'] + '</td><td>' + objectCost[idx]['costFrequency'] + '</td><td>' + objectCost[idx]['year2022'] + '</td><td>' + objectCost[idx]['year2023'] + '</td><td>' + objectCost[idx]['year2024'] + '</td></tr>');
+
+				}
+				Array.prototype.sum = function (prop) {
+					var total = 0
+					for (var i = 0, _len = this.length; i < _len; i++) {
+						total += parseInt(this[i][prop]);
+					}
+					return total
+				}
+				$('#rhqCostTable-totalText').text('Total');
+				$('#rhqCostTable-sum1').text(objectCost.sum("year2022"));
+				$('#rhqCostTable-sum2').text(objectCost.sum("year2023"));
+				$('#rhqCostTable-sum3').text(objectCost.sum("year2024"));
+			}
+		}
+		}
+		catch (err) {
+			console.log(err);
+		}
+
+		$("#rhqSubsidiaryPresenceDiv").html('');
+		try {
+
+			$('#rhqSubsidiaryPresenceDiv').html(subsidiaryString);
+			switch (subsidiaryString) {
+				case "only_one_country":
+					$('#rhqSubsidiaryPresenceDiv').html('Only one country');
+					break;
+				case "2_to_5_countries":
+					$('#rhqSubsidiaryPresenceDiv').html('2 to 5 countries');
+					break;
+				case "6_to_10_countries":
+					$('#rhqSubsidiaryPresenceDiv').html('6 to 10 countries');
+					break;
+				case "over_10_countries":
+					$('#rhqSubsidiaryPresenceDiv').html('over 10 countries');
+					break;
+				default:
+					$("#rhqSubsidiaryPresenceDiv").html('');
+			}
+
+		}
+		catch (err) {
+			console.log(err);
+		}
+
+		try{$(".centre-of-admin").each(function() {
+			var text = $(this).text();
+			text = text.replace("Middle_East_ME", "Middle East (ME)");
+			$(this).text(text);
+		});}
+		catch(e){console.log(e);}
+
+	}
+	else{
+		try{
+			$("#reviewMncBranchSection", "#reviewMncCostTable", "#reviewMncBranchSection","#reviewRHQBranchesTable", "#reviewMncBrandTable", "#reviewMncBranchSection", ".rhq-review-items").hide();
+
+		}catch (err) {
+			console.log(err);
+		}
+		}
+    //RHQ Ends -DT
+	},
 	requestPaymentDetails: function (reviewMode, serviceType, qeemah, callback) {
 		if(reviewMode){
 			$("#licenseApplicationPayment").find('.apply').show();
@@ -324,21 +448,6 @@ SAGIA.licenseApplyReview = {
 					"<td width='40%'><span style='font-weight:bold'>" + getI18nText("license.apply.payment.entrepreneur.total."+sagiaData.licenseYear) + "</span></td>" +
 					"</tr>");
 
-			}else if(sagiaData.licenseType=='11'){
-				$("#tblGrid").find("tbody").append("<tr>" +
-					"<th width='50%'>" + getI18nText("license.apply.payment.service") + "</th>" +
-					"<th width='20%'>" + getI18nText("license.apply.payment.duration") + "</th>" +
-					"<th width='30%'>" + getI18nText("license.apply.payment.price") + "</th>" +
-					"</tr>" +
-					"<tr>" +
-					"<td width='40%' >" + getI18nText("license.apply.payment.license.fee") + "</td>" +
-					"<td width='20%' >" + getI18nText("license.apply.payment.license.fee.duration."+sagiaData.licenseYear) + "</td>" +
-					"<td width='40%' >" + getI18nText("license.apply.payment.license.fee.price."+sagiaData.licenseYear) + "</td>" +
-					"</tr>" +
-					"<td width='40%'><span style='font-weight:bold'>" + getI18nText("license.apply.payment.total") + "</span></td>" +
-					"<td width='20%'>" +  "</td>" +
-					"<td width='40%'><span style='font-weight:bold'>" + getI18nText("license.apply.payment.license.fee.price."+sagiaData.licenseYear) + "</span></td>" +
-					"</tr>");
 			}
 			else{
             				$("#tblGrid").find("tbody").append("<tr>" +

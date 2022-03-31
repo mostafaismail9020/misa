@@ -4,8 +4,10 @@ import static com.sap.ibso.eservices.storefront.forms.validation.SagiaValidation
 
 import javax.annotation.Resource;
 
+import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import com.sap.ibso.eservices.facades.data.EntityInformationData;
 import com.sap.ibso.eservices.storefront.util.SagiaLicenseFieldsUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -25,7 +27,10 @@ public class EntityInfoValidator implements Validator {
 
     @Resource(name= "sagiaLicenseFieldsUtils")
     private SagiaLicenseFieldsUtils sagiaLicenseFieldsUtils;
-    
+
+    @Resource
+    private LicenseApplyService licenseApplyService;
+
     @Override
     public boolean supports(Class<?> aClass) {
         return OrganizationInformation.class.equals(aClass);
@@ -56,10 +61,10 @@ public class EntityInfoValidator implements Validator {
                 || !sagiaLicenseFieldsUtils.isMaxLength(entityInformationData.getEntityNameArabic(), 80))) {
             errors.rejectValue("entityNameArabic", "validation.basicinformation.entityNameArabic");
         }
-        if(entityInformationData.getLicenseType().toString().equals("11"))
+        /*if(entityInformationData.getLicenseType().toString().equals("11"))
         {
             entityInformationData.setLegalStatus("BRFC");
-        }
+        }*/
         entityInformationData.setLegalStatus(XSSFilterUtil.filter(entityInformationData.getLegalStatus()));
         
         if(StringUtils.isEmpty(entityInformationData.getLegalStatus())) {
@@ -149,17 +154,11 @@ public class EntityInfoValidator implements Validator {
 
         final boolean boardResolutionFileAdded = entityInformationData.isBoardResolutionFileAdded();
         final boolean letterOfSupportFileAdded = entityInformationData.isLetterOfSupportFileAdded();
-        final boolean mainBranchCRFileAdded = entityInformationData.isMainBranchCRFileAdded();
-        final boolean otherBranchCR1FileAdded = entityInformationData.isOtherBranchCR1FileAdded();
-        final boolean otherBranchCR2FileAdded = entityInformationData.isOtherBranchCR2FileAdded();
-        
-        /*final boolean rhqStockMarketAttachmentFileAdded = entityInformationData.isRhqStockMarketAttachmentFileAdded();
-        final boolean rhqEntityAssetAttachmentFileAdded = entityInformationData.isRhqEntityAssetAttachmentFileAdded();
-        final boolean rhqEntityRevenueAttachmentFileAdded = entityInformationData.isRhqEntityRevenueAttachmentFileAdded();
-        final boolean rhqCR1FileAdded = entityInformationData.isRhqCR1FileAdded();
-        final boolean rhqCR2FileAdded = entityInformationData.isRhqCR2FileAdded();
-        final boolean rhqCR3FileAdded = entityInformationData.isRhqCR3FileAdded();
-        final boolean rhqCR4FileAdded = entityInformationData.isRhqCR4FileAdded();*/
+        final boolean entityFinancialFileAdded = entityInformationData.isEntityFinancialStatementFileAdded();
+        final boolean commercialRegMainEntryFileAdded = entityInformationData.isCommercialRegMainEntryFileAdded();
+        final boolean commercialRegBranch1EntryFileAdded = entityInformationData.isCommercialRegBranch1FileAdded();
+        final boolean commercialRegBranch2EntryFileAdded = entityInformationData.isCommercialRegBranch2FileAdded();
+
 
         final boolean financialStatementFileAdded = entityInformationData.isFinancialStatementFileAdded();
         final boolean iqamaFileAdded = entityInformationData.isIqamaFileAdded();
@@ -206,36 +205,46 @@ public class EntityInfoValidator implements Validator {
             }
         }
         if(entityInformationData.getLicenseType() != null && entityInformationData.getLicenseType().equals("11")) {
-            if (!mainBranchCRFileAdded) {
-                errors.rejectValue("mainBranchCRFileAdded", "validation.basicinformation.file");
+
+            if(CollectionUtils.isEmpty(entityInformationData.getListOfRhqRegions())) {
+                errors.rejectValue("listOfRhqRegions", "rhq.region.validation");
             }
-            if (!otherBranchCR1FileAdded) {
-                errors.rejectValue("otherBranchCR1FileAdded", "validation.basicinformation.file");
+            if(CollectionUtils.isEmpty(entityInformationData.getListOfEntitiesManagedByRhq())) {
+                errors.rejectValue("listOfEntitiesManagedByRhq", "rhq.entities.managed.by.rhq.validation");
             }
-            if (!otherBranchCR2FileAdded) {
-                errors.rejectValue("otherBranchCR2FileAdded", "validation.basicinformation.file");
+            if(CollectionUtils.isEmpty(entityInformationData.getListOfBrandPresenceInMENARegion())) {
+                errors.rejectValue("listOfBrandPresenceInMENARegion", "rhq.brand.presence.validation");
             }
-          /*if (!rhqStockMarketAttachmentFileAdded) {
-              errors.rejectValue("rhqStockMarketAttachmentFileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqEntityAssetAttachmentFileAdded) {
-              errors.rejectValue("rhqEntityAssetAttachmentFileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqEntityRevenueAttachmentFileAdded) {
-              errors.rejectValue("rhqEntityRevenueAttachmentFileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqCR1FileAdded) {
-              errors.rejectValue("rhqCR1FileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqCR2FileAdded) {
-              errors.rejectValue("rhqCR2FileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqCR3FileAdded) {
-              errors.rejectValue("rhqCR3FileAdded", "validation.basicinformation.file");
-          }
-          if (!rhqCR4FileAdded) {
-              errors.rejectValue("rhqCR4FileAdded", "validation.basicinformation.file");
-          }*/
+            if(CollectionUtils.isEmpty(entityInformationData.getListOfEstimatedOperatingCostForRhq())) {
+                errors.rejectValue("listOfEstimatedOperatingCostForRhq", "rhq.estimatied.operating.cost.validation");
+            }
+            if((entityInformationData.getListOfCorporateActivities().size()<3)) {
+                errors.rejectValue("listOfCorporateActivities", "rhq.corporate.activity.validation");
+            }
+            if(!(licenseApplyService.getStrategicActivities().size()==(entityInformationData.getListOfStrategicActivities().size()))) {
+                errors.rejectValue("listOfStrategicActivities", "rhq.strategic.activity.validation");
+            }
+            if(!(licenseApplyService.getManagementActivities().size()==(entityInformationData.getListOfManagementActivities().size()))) {
+                errors.rejectValue("listOfManagementActivities", "rhq.management.activity.validation");
+            }
+            if(CollectionUtils.isEmpty(entityInformationData.getRhqCenterAdmin())) {
+                errors.rejectValue("rhqCenterAdmin", "rhq.center.of.administration.validation");
+            }
+            if(StringUtils.isEmpty(entityInformationData.getRhqSubsidiaryPresence())) {
+                errors.rejectValue("rhqSubsidiaryPresence", "rhq.subsidiary.presence.validation");
+            }
+            if (!entityFinancialFileAdded) {
+                errors.rejectValue("entityFinancialStatementFileAdded", "validation.basicinformation.file");
+            }
+            if (!commercialRegMainEntryFileAdded) {
+                errors.rejectValue("commercialRegMainEntryFileAdded", "validation.basicinformation.file");
+            }
+            if (!commercialRegBranch1EntryFileAdded) {
+                errors.rejectValue("commercialRegBranch1FileAdded", "validation.basicinformation.file");
+            }
+            if (!commercialRegBranch2EntryFileAdded) {
+                errors.rejectValue("commercialRegBranch2FileAdded", "validation.basicinformation.file");
+            }
         }
 
     }

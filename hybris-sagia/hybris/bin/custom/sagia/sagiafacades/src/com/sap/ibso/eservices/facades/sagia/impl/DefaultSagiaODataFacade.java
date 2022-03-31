@@ -6,16 +6,14 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.sap.ibso.eservices.core.model.*;
+import com.sap.ibso.eservices.sagiaservices.data.odata.*;
+import com.sap.ibso.eservices.sagiaservices.services.odata.*;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
 import com.sap.ibso.eservices.core.event.SagiaPublishLicenseEvent;
-import com.sap.ibso.eservices.core.model.ContactPersonModel;
-import com.sap.ibso.eservices.core.model.EntityInformationModel;
-import com.sap.ibso.eservices.core.model.IsicMasterModel;
-import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
-import com.sap.ibso.eservices.core.model.ShareHolderModel;
 import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation;
 import com.sap.ibso.eservices.facades.data.zqeemah.BusinessActivity;
@@ -23,19 +21,7 @@ import com.sap.ibso.eservices.facades.data.zqeemah2.Attachment;
 import com.sap.ibso.eservices.facades.populators.odata.ServiceRequestCreationReverseODataPopulator;
 import com.sap.ibso.eservices.facades.populators.odata.ServiceRequestODataCreationPopulator;
 import com.sap.ibso.eservices.facades.sagia.SagiaODataFacade;
-import com.sap.ibso.eservices.sagiaservices.data.odata.ODataServiceRequestCreationData;
-import com.sap.ibso.eservices.sagiaservices.data.odata.BasicContactInformationData;
-import com.sap.ibso.eservices.sagiaservices.data.odata.EntityInformationData;
-import com.sap.ibso.eservices.sagiaservices.data.odata.IsicInfoData;
-import com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderData;
 import com.sap.ibso.eservices.sagiaservices.data.zqeemah.IsicDetPsSetData;
-import com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderAttachmentData;
-import com.sap.ibso.eservices.sagiaservices.services.odata.BasicContactInformationService;
-import com.sap.ibso.eservices.sagiaservices.services.odata.EntityInformationService;
-import com.sap.ibso.eservices.sagiaservices.services.odata.IsicInformationService;
-import com.sap.ibso.eservices.sagiaservices.services.odata.ShareHolderODataService;
-import com.sap.ibso.eservices.sagiaservices.services.odata.ShareHolderInfoAttService;
-import com.sap.ibso.eservices.sagiaservices.services.odata.ServiceRequestODataCreationDataService;
 
 import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
 import de.hybris.platform.core.model.media.MediaModel;
@@ -75,7 +61,14 @@ public class DefaultSagiaODataFacade implements SagiaODataFacade {
     
     @Resource
     private EntityInformationService odataEntityInformationService ;
-    
+
+    @Resource
+	private EntitiesManagedByRhqService entitiesManagedByRhqService;
+	@Resource
+	private BrandPresenceInMENARegionService brandPresenceInMENARegionService;
+	@Resource
+	private EstimatedOperatingCostForRhqService estimatedOperatingCostForRhqService;
+
     @Resource
     private ShareHolderODataService shareHolderODataService ;
     
@@ -88,7 +81,7 @@ public class DefaultSagiaODataFacade implements SagiaODataFacade {
     
     @Resource
     private IsicInformationService odataIsicInformationService;
-    
+
 
 	@Resource(name = "baseSiteService")
 	private BaseSiteService baseSiteService;
@@ -100,7 +93,13 @@ public class DefaultSagiaODataFacade implements SagiaODataFacade {
 	
 	@Resource
 	private Converter<IsicMasterModel, IsicInfoData> isicInfoODataPopulatorConverter;
-	
+	@Resource
+	private Converter<EntitiesManagedByRhqModel, EntitiesManagedByRhq> entitiesManagedByRhqODataPopulatorConverter;
+	@Resource
+	private Converter<BrandPresenceModel, BrandPresenceInMENARegion> brandPresenceInMENARegionODataPopulatorConverter;
+	@Resource
+	private Converter<OperatingCostForRhqModel, EstimatedOperatingCostForRhq> estimatedOperatingCostForRhqODataPopulatorConverter;
+
     @Autowired
     private EventService eventService;
     
@@ -152,7 +151,27 @@ public class DefaultSagiaODataFacade implements SagiaODataFacade {
         EntityInformationData entityInformationData = entityODataConverter.convert(entityInformationModel);
         return odataEntityInformationService.saveEntity(entityInformationData,entityInformationModel);
     }
-	
+
+	@Override
+	public void saveEntityManagedByRhqOData(EntitiesManagedByRhqModel entityModel,EntityInformationModel entityInformationModel) {
+		EntitiesManagedByRhq entitiesManagedByRhq = entitiesManagedByRhqODataPopulatorConverter.convert(entityModel);
+		entitiesManagedByRhq.setGuid(entityInformationModel.getLicense().getGuid());
+		entitiesManagedByRhqService.saveEntityManagedByRhqEntity(entitiesManagedByRhq,entityInformationModel);
+	}
+
+	@Override
+	public void saveBrandPresenceInMENARegion(BrandPresenceModel brandPresence,EntityInformationModel entityInformationModel) {
+		BrandPresenceInMENARegion brandPresenceData= brandPresenceInMENARegionODataPopulatorConverter.convert(brandPresence);
+		brandPresenceData.setGuid(entityInformationModel.getLicense().getGuid());
+		brandPresenceInMENARegionService.saveBrandPresenceInMENARegion(brandPresenceData,entityInformationModel);
+	}
+
+	@Override
+	public void saveEstimatedOperatingCostForRhq(OperatingCostForRhqModel entityModel,EntityInformationModel entityInformationModel) {
+		EstimatedOperatingCostForRhq estimatedOperatingCostForRhq = estimatedOperatingCostForRhqODataPopulatorConverter.convert(entityModel);
+		estimatedOperatingCostForRhq.setGuid(entityInformationModel.getLicense().getGuid());
+		estimatedOperatingCostForRhqService.saveEstimatedOperatingCostForRhq(estimatedOperatingCostForRhq,entityInformationModel);
+	}
 	@Override 
 	public ShareholderData saveShareHolderOData(ShareHolderModel shareHolderModel) {
         if (shareHolderModel == null ) {

@@ -1,10 +1,7 @@
 package com.sap.ibso.eservices.core.sagia.services.impl;
 
 import com.sap.ibso.eservices.core.enums.LicenseStatus;
-import com.sap.ibso.eservices.core.model.ContactPersonModel;
-import com.sap.ibso.eservices.core.model.EntityInformationModel;
-import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
-import com.sap.ibso.eservices.core.model.ShareHolderModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.core.sagia.dao.LicenseApplyDAO;
 import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
 import de.hybris.platform.catalog.CatalogService;
@@ -209,6 +206,36 @@ public class DefaultLicenseApplyService implements LicenseApplyService {
 		
 		return draft;
 	
+	}
+
+	@Override
+	public List<RhqActivitiesModel> getCorporateActivities() {
+		return licenseApplyDAO.getCorporateActivities();
+	}
+
+	@Override
+	public List<RhqActivitiesModel> getStrategicActivities() {
+		return licenseApplyDAO.getStrategicActivities();
+	}
+
+	@Override
+	public List<RhqActivitiesModel> getManagementActivities() {
+		return licenseApplyDAO.getManagementActivities();
+	}
+
+	@Override
+	public String getSelectedCorporateActivities(String activity) {
+		return licenseApplyDAO.getActivityDetailsForCode(activity).getDetails();
+	}
+
+	@Override
+	public String getSelectedStrategicActivities(String activity) {
+		return licenseApplyDAO.getActivityDetailsForCode(activity).getDetails();
+	}
+
+	@Override
+	public String getSelectedManagementActivities(String activity) {
+		return licenseApplyDAO.getActivityDetailsForCode(activity).getDetails();
 	}
 
 	private String generateLicenseCode(){

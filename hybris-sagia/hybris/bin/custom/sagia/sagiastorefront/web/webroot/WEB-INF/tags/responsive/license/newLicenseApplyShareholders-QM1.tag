@@ -19,9 +19,7 @@
         <span class="iconElement iconElement_shareholderProfile text-center"><icon:shareholderProfile/></span>
         <p class="text-center"><spring:theme code="licence.apply.noshareholder"/></p>
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <c:if test="${entityInformationData.licenseType ne 11}">
-                <button type="button" class="addExistingButton btn" data-url="<c:url value="/my-sagia/license/existing-shareholder-form"/>">+ <spring:theme code="license.apply.review.existing.shareholder"/></button>
-            </c:if>
+           <button type="button" class="addExistingButton btn" data-url="<c:url value="/my-sagia/license/existing-shareholder-form"/>">+ <spring:theme code="license.apply.review.existing.shareholder"/></button>
            <button type="button" class="addNewButton btn">+ <spring:theme code="license.apply.review.new.shareholder"/></button>
         </div>
     </div>
@@ -49,9 +47,7 @@
         </div>
 
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-        	<c:if test="${entityInformationData.licenseType ne 11}">
-           		 <button type="button" class="addExistingButton btn">+ <spring:theme code="license.apply.review.existing.shareholder"/></button>
-            </c:if>
+           	<button type="button" class="addExistingButton btn">+ <spring:theme code="license.apply.review.existing.shareholder"/></button>
             <button type="button" class="addNewButton btn">+ <spring:theme code="license.apply.review.new.shareholder"/></button>
         </div>
     </div>
@@ -88,7 +84,7 @@
                 <div class="formRadioBox" id="shareholderType">
                     <div class="form-group">
                         <div class="formRadioBox-label control-label_mandatory"><spring:theme code="licence.apply.shareholder.type"/></div>
-                        <div class="form-item ${entityInformationData.legalStatus eq 'BRFC' ? 'hidden' : ''}">
+                        <div class="form-item">
                             <input id="personType" name="ShareholderRadioBox01" class="form-control" type="radio" value="Person"/>
                             <label for="personType" class="control-label"><spring:theme code="license.apply.shareholder.person"/></label>
                         </div>

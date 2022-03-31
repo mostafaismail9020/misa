@@ -1440,7 +1440,6 @@
 		<property name="oDataPopulator" ref="shareHoldersODataPopulator"/>
 	</bean>
 
-
 	<bean id="basicContactInformationODataModelPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.BasicContactInformationODataPopulator"/>
 	<bean id="odataBasicContactInformationService" class="com.sap.ibso.eservices.sagiaservices.services.odata.BasicContactInformationService">
 		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
@@ -1799,6 +1798,35 @@
 		<property name="entityUrl" value="LicTypeSet"/>
 		<property name="oDataPopulator" ref="licenseTypeDataPopulator"/>
 	</bean>
+
+
+	<!--RHQ Table Data Start-->
+	<bean id="entitiesManagedByRhqODataModelPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.EntitiesManagedByRhqODataPopulator"/>
+	<bean id="entitiesManagedByRhqService" class="com.sap.ibso.eservices.sagiaservices.services.odata.EntitiesManagedByRhqService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
+		<property name="entityUrl" value="EntitiesManagedByRhqSet"/>
+		<property name="entitySetName" value="EntitiesManagedByRhqSet"/>
+		<property name="oDataPopulator" ref="entitiesManagedByRhqODataModelPopulator"/>
+	</bean>
+
+	<bean id="brandPresenceODataModelPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.BrandPresenceInMENARegionODataPopulator"/>
+	<bean id="brandPresenceInMENARegionService" class="com.sap.ibso.eservices.sagiaservices.services.odata.BrandPresenceInMENARegionService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
+		<property name="entityUrl" value="BrandPresenceInMENARegionSet"/>
+		<property name="entitySetName" value="BrandPresenceInMENARegionSet"/>
+		<property name="oDataPopulator" ref="brandPresenceODataModelPopulator"/>
+	</bean>
+
+	<bean id="estimatedOperatingCostODataModelPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.odata.EstimatedOperatingCostForRhqODataPopulator"/>
+	<bean id="estimatedOperatingCostForRhqService" class="com.sap.ibso.eservices.sagiaservices.services.odata.EstimatedOperatingCostForRhqService" parent="abstractSagiaService">
+		<property name="oDataService" ref="zCRM_QEEMAH_SUBMIT_SRV"/>
+		<property name="entityUrl" value="EstimatedOperatingCostSet"/>
+		<property name="entitySetName" value="EstimatedOperatingCostSet"/>
+		<property name="oDataPopulator" ref="estimatedOperatingCostODataModelPopulator"/>
+	</bean>
+	<!--RHQ Table Data End-->
+
+
 	<!--/ZQEEMAH 2-->
 
 

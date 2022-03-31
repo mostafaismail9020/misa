@@ -4,8 +4,6 @@ import com.sap.ibso.eservices.core.model.EntityInformationModel;
 import com.sap.ibso.eservices.sagiaservices.data.odata.EntityInformationData;
 import com.sap.ibso.eservices.sagiaservices.services.AbstractSagiaService;
 
-import de.hybris.platform.core.model.user.CustomerModel;
-
 /**
  * IsicMasterDataService
  * @package com.sap.ibso.eservices.sagiaservices.services
@@ -24,7 +22,4 @@ public class EntityInformationService extends AbstractSagiaService<EntityInforma
 	    	entityInformationData.setRefid(entityInformationModel.getLicense().getApplicantReferenceID());
 	        return super.saveAndParseResponse(entityInformationData, EntityInformationData.class);
 	    }
-
-	    
-
 }

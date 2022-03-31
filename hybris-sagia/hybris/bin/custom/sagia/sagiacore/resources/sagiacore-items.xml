@@ -33,9 +33,12 @@
 		<collectiontype code="InvestSaudiSiteMapLevel2List" elementtype="InvestSaudiSiteMapLevel2" autocreate="true" type="list"/>
         <collectiontype code="InvestSaudiSiteMapLevel3List" elementtype="InvestSaudiSiteMapLevel3" autocreate="true" type="list"/>
         <collectiontype code="InvestSaudiSiteMapLevel4List" elementtype="InvestSaudiSiteMapLevel4" autocreate="true" type="list"/>
+       <collectiontype code="EntitiesManagedByRhqList" elementtype="EntitiesManagedByRhq" autocreate="true" type="list"/>
+       <collectiontype code="BrandPresenceInMENARegionList" elementtype="BrandPresence" autocreate="true" type="list"/>
+       <collectiontype code="EstimatedOperatingCostForRhqList" elementtype="OperatingCostForRhq" autocreate="true" type="list"/>
+       <collectiontype code="RhqActivitiesList" elementtype="RhqActivities" autocreate="true" type="list"/>
 
-    </collectiontypes>
-
+   </collectiontypes>
 
     <enumtypes>
         <enumtype generate="true" code="ServiceRequestsStatusEnum" autocreate="true" dynamic="true">
@@ -181,6 +184,7 @@
 
         <enumtype code="FinancialSurveyStatus" dynamic="true">
             <value code="OPEN"/>
+            <value code="IN_PROGRESS"/>
             <value code="SUBMITTED"/>
             <value code="WAITING_FOR_CUSTOMER_ACTION"/>
             <value code="PROCESSED"/>
@@ -2752,6 +2756,50 @@
                     <attribute qualifier="noObjectionCertificateFile" type="Media">
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="listOfEntitiesManagedByRhq" type="EntitiesManagedByRhqList">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="listOfBrandPresenceInMENARegion" type="BrandPresenceInMENARegionList">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="listOfEstimatedOperatingCostForRhq" type="EstimatedOperatingCostForRhqList">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="listOfCorporateActivties" type="StringsList">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="listOfStrategicActivties" type="StringsList">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="listOfManagementActivties" type="StringsList">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="entityFinancialStatementFile" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="commercialRegMainEntryFile" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="commercialRegBranch1File" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="commercialRegBranch2File" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="rhqCenterAdmin" type="StringsList">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="rhqSubsidiaryPresence" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
                 </attributes>
             </itemtype>
 
@@ -3244,6 +3292,153 @@
 					</attribute>
 				</attributes>
 			</itemtype>
+
+            <!-- New RHQ Changes Start -->
+            <itemtype code="RhqActivities" generate="true" autocreate="true">
+                <description>RHQ Activities List</description>
+                <deployment table="RhqActivities" typecode="32080"/>
+                <attributes>
+                    <attribute qualifier="id" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="details" type="localized:java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="isCorporate" type="boolean" >
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property" />
+                        <defaultvalue>false</defaultvalue>
+                        <description>Indicates if the RHQ Activity is Optional/Functions/Corporate</description>
+                    </attribute>
+                    <attribute qualifier="isStrategic" type="boolean" >
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property" />
+                        <defaultvalue>false</defaultvalue>
+                        <description>Indicates if the RHQ Activity is Strategic</description>
+                    </attribute>
+                    <attribute qualifier="isManagement" type="boolean" >
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property" />
+                        <defaultvalue>false</defaultvalue>
+                        <description>Indicates if the RHQ Activity is Management</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="EntitiesManagedByRhq">
+                <description>Entities Managed By Rhq</description>
+                <deployment table="EntitiesManagedByRhq" typecode="32081"/>
+                <attributes>
+                    <attribute qualifier="companyName" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Name Of Company whose entity is managed by RHQ</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="country" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Country of the company whose entity is managed by RHQ</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="businessRelationshipType" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Business Relationship Type</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="industry" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Industry Type</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="operations" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Operations Performed by the company</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="rhqActivityProvided" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>RHQ Activity Provided</description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="BrandPresence" generate="true" autocreate="true">
+                <description>Brand Presence in MENA Region</description>
+                <deployment table="BrandPresence" typecode="32082"/>
+                <attributes>
+                    <attribute qualifier="brandName" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Brand Name</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="country" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Country</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="industry" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Industry Type</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="companyOwningBrandInMENA" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Company Owning Brand in MENA Region</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="rhqActivityProvided" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>RHQ Activity Provided</description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="OperatingCostForRhq" generate="true" autocreate="true">
+                <description>Estimated Operating Cost for RHQ</description>
+                <deployment table="OperatingCostForRhq" typecode="32083"/>
+                <attributes>
+                    <attribute qualifier="item" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Item for which Operating cost is getting Estimated</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="unitCost" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Unit Cost of the Item</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="noOfUnits" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>No Of Units</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="costFrequency" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Cost Frequency</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year2022" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Operating cost for Year 2022</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year2023" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Operating cost for Year 2023</description>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year2024" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Operating cost for Year 2024</description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <!-- New RHQ Changes End -->
         </typegroup>
 
 		<!-- Start Invest Saudi Portal Changes -->
@@ -10730,6 +10925,37 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="isCompanyProfileSectionFilled" type="boolean">
+                        <description>Is Company Profile Section Filled</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" />
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isBranchSectionFilled" type="boolean">
+                        <description>Is Branch Section Filled</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" />
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isEquitySectionFilled" type="boolean">
+                        <description>Is Equity Section Filled</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" />
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                    </attribute>
+                    <attribute qualifier="isShareholdersSectionFilled" type="boolean">
+                        <description>Is Shareholders Section Filled</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="false" />
+                        <persistence type="property"/>
+                        <defaultvalue>false</defaultvalue>
+                    </attribute>
+
+
+
 
                 </attributes>
             </itemtype>

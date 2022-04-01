@@ -134,13 +134,13 @@ SAGIA.dashboardWithLicense = {
                     $("#accordionDashboard").empty().append(spinner);
                 }
 
-                $( document ).ajaxStop(function() {                  
+                $( document ).ajaxStop(function() {
                     var element_id = $("body").hasClass("page-dashboard") ? "#tabsDasboard" :"#tabs";
-                                        
+
                     var concat = '';
                     obj_tabs = $( element_id + " li" ).toArray();
                     obj_cont = $( ".dashboard-tabs .tab-content .tab-pane" ).toArray();
-                    jQuery.each( obj_tabs, function( n, val ) 
+                    jQuery.each( obj_tabs, function( n, val )
                     {
                         concat += '<div id="' + n + '" class="panel panel-default">';
                         concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline-icon text-upercase" role="tab" id="heading' + n + '">';
@@ -322,7 +322,7 @@ SAGIA.dashboardWithLicense = {
 
                     if (licenseAndEmployee.license && licenseAndEmployee.license.branches) {
                         var branchesTable = $("#branchesTable").empty();
-                        if(licenseAndEmployee.license.branches.length > 5) 
+                        if(licenseAndEmployee.license.branches.length > 5)
                         $(".d-license-branch").show();
                         else
                         $(".d-license-branch").hide();
@@ -551,7 +551,7 @@ SAGIA.dashboardWithLicense = {
         }
 
 
-        var financialSurveysTable = $("#financialSurveysTable");
+        /*var financialSurveysTable = $("#financialSurveysTable");
         var financialSurveysSection = $("#yourFinancialSurveys");
         if(financialSurveysSection.closest('.js-component').css('display') !== 'none') {
             $.ajax({
@@ -603,7 +603,7 @@ SAGIA.dashboardWithLicense = {
                     $('.dashboardWidgetTickets .loadingModule .loadingModule-msg').html("<svg width=\"68\" height=\"60\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 68 60\"><g transform=\"translate(2 2)\" fill=\"none\" fill-rule=\"evenodd\"><path stroke=\"#5CC83B\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M63.173 55.36H.8l10.077-17.845h.003L31.987.134l21.109 37.381h.002z\"></path><path d=\"M32 17c-1.104 0-2 .902-2 2.018v18.146c0 1.116.896 2.018 2 2.018s2-.902 2-2.018V19.018A2.009 2.009 0 0 0 32 17z\" fill=\"#32465A\" fill-rule=\"nonzero\"></path><circle fill=\"#32465A\" cx=\"32\" cy=\"46\" r=\"2\"></circle></g></svg>&nbsp;<span>"+getI18nText('general.couldnot.load.tickets')+"</span>");
                 }
             });
-        }
+        }*/
 
         var serviceRequestsTable = $("#serviceRequestsTable");
         var secriceRequestSection = $("#servicesRequest");

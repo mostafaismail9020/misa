@@ -15,7 +15,6 @@ import com.sap.ibso.eservices.sagiaservices.services.complaints.dto.UpdatableCom
 import com.sap.ibso.eservices.sagiaservices.services.legalconsultation.dto.FinancialStatementForm;
 import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
 import com.sap.ibso.eservices.storefront.forms.validation.SagiaFinancialSurveyValidator;
-import com.sap.ibso.eservices.storefront.interceptors.beforecontroller.LicenseRequired;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
@@ -90,7 +89,6 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     private static final String FORM_SURVEY_GLOBAL_ERROR = "financial.survey.global.error";
 
     @RequestMapping(value = {"", "/display/{quarterCode}"}, method = RequestMethod.GET)
-    @LicenseRequired
     @RequireHardLogIn
     public String completeFinancialSurvey(final Model model, final HttpServletRequest request, @PathVariable(name="quarterCode", required = false) String quarterCode) throws CMSItemNotFoundException {
 

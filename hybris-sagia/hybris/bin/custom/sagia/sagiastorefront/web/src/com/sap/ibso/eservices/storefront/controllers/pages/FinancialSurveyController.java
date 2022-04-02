@@ -293,6 +293,8 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
         //financialStatementValidator.validate(financialStatementForm, result);
 
         LOG.info("saveAttachment");
+        if(1 == 1 )
+         return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab1";
 
         FinancialSurvey financialSurvey = sagiaFinancialSurveyFacade.getFinancialSurvey(financialStatementForm.getSrId());
         if (! ( financialSurvey.getIsCompanyProfileSectionFilled() && financialSurvey.getIsEquitySectionFilled()

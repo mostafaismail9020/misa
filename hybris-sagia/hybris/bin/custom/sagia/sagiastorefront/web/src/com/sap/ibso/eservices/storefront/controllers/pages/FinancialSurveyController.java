@@ -292,6 +292,8 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
                          final BindingResult result, RedirectAttributes redirectModel)  throws JSONException {
         //financialStatementValidator.validate(financialStatementForm, result);
 
+        LOG.info("saveAttachment");
+
         FinancialSurvey financialSurvey = sagiaFinancialSurveyFacade.getFinancialSurvey(financialStatementForm.getSrId());
         if (! ( financialSurvey.getIsCompanyProfileSectionFilled() && financialSurvey.getIsEquitySectionFilled()
                 && financialSurvey.getIsShareholdersSectionFilled() && financialSurvey.getIsBranchSectionFilled() ))  {
@@ -308,6 +310,8 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
             }
             return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab5";
         }
+
+        LOG.info("saveAttachment Start Processing");
 
         if (financialStatementForm.getFiles().size() <= 0) {
             GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER, Localization.getLocalizedString(FORM_GLOBAL_ERROR));

@@ -1180,7 +1180,7 @@
     padding-bottom: 15px;
 }
 #_asm .ASM-btn.ASM-btn-start-session {
-    background: #19bc33;
+    background: #00a6be;
     color: #fff;
     font-weight: 400;
     font-size: 18px;
@@ -1641,10 +1641,10 @@ select[multiple]#_asm .ASM-input {
     content: '\e806';
 }
 #_asm .ASM_control.ASM_control_session_active {
-    background-color: #19bc33;
+    background-color: #00a6be;
 }
 #_asm .ASM_control.ASM_control_session_active .ASM_control_collapse_indicator {
-    color: #19bc33;
+    color: #00a6be;
 }
 #_asm.ASM-collapsed {
     -webkit-transform: translate(0, -100%);
@@ -1677,7 +1677,7 @@ select[multiple]#_asm .ASM-input {
     content: '\e805';
 }
 #_asm.ASM-collapsed .ASM_control.ASM_control_session_active .ASM_control_collapse .ASM_control_collapse_indicator {
-    color: #19bc33;
+    color: #00a6be;
 }
 
 /* autocomplete */

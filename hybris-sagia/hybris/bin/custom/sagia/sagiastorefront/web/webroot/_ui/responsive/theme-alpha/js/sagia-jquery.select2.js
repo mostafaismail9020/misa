@@ -4336,8 +4336,8 @@
 
             AttachBody.prototype._resizeDropdown = function () {
                 var css = {
-                    width: this.$container.outerWidth(false)-35 + 'px',
-                    marginLeft:"20px"
+                    width: this.$container.outerWidth(false)-25 + 'px',
+                    marginLeft:"15px"
                 };
 
                 if (this.options.get('dropdownAutoWidth')) {

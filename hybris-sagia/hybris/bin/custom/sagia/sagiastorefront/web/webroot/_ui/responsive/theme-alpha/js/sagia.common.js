@@ -925,7 +925,7 @@ function setFont() {
 
 function increaseFontSize(isSet = 0) {
   
-    var p = document.querySelectorAll('body div,body p,body span');
+    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');
 	var s;
 	if (increment < 3) {
 		increment = isSet === 0 ? (increment + 1) : parseFloat(getCookie("f_increment"));	
@@ -948,7 +948,7 @@ function increaseFontSize(isSet = 0) {
 	// }
 }
 function decreaseFontSize(isSet = 0) {
-    var p = document.querySelectorAll('body div,body p,body span');	
+    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');	
 	
 	if (increment > 0) {
 		increment = isSet === 0 ? (increment - 1) : parseFloat(getCookie("f_increment"));

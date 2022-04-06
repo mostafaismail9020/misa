@@ -148,10 +148,10 @@
                         <table class="tableModule-table">
                             <thead class="tableModule-head">
                             <tr>
-                                <th>Name</th>
-                                <th>Mobile number</th>
-                                <th>Email</th>
-                                <th>National ID</th>
+                                <th><spring:theme code="text.account.profile.license.contactPerson.name"/></th>
+                                <th><spring:theme code="text.account.profile.license.contactPerson.mobileNumber"/></th>
+                                <th><spring:theme code="text.account.profile.license.contactPerson.email"/></th>
+                                <th><spring:theme code="text.account.profile.license.contactPerson.nationalId"/></th>
                             </tr>
                             </thead>
                             <tbody class="tableModule-body"  id="contactPersonTable"></tbody>

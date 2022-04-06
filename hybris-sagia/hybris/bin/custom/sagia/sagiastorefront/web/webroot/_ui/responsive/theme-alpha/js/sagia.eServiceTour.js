@@ -501,8 +501,10 @@ SAGIA.eServiceTour = {
 		};
 		
 		function updateHighlight() {
+			var d_top = 0;
 			if((focusDimensions.top - highLightOffset) < 0){
 				document.body.scrollTop = document.documentElement.scrollTop = 0;
+				d_top = 50;
 			}
 			$('.eServiceTutorial-highlight').css({
 				width: focusDimensions.width + highLightOffset*2,

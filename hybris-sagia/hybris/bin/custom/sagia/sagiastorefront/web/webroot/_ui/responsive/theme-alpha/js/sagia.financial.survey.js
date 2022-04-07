@@ -94,6 +94,34 @@ $(document).ready(function () {
 
     if ($('body').hasClass("page-financial-survey")) {
 
+        /* NEEDS TO BE IMPROVED TEMP WORKAROUND TO DISABLE HEADS NAVIGATION*/
+        document.getElementById("tab1").style["cursor"] = "default";
+        document.getElementById("tab1").style["pointer-events"] = "none";
+        document.getElementById("tab2").style["cursor"] = "default";
+        document.getElementById("tab2").style["pointer-events"] = "none";
+        document.getElementById("tab3").style["cursor"] = "default";
+        document.getElementById("tab3").style["pointer-events"] = "none";
+        document.getElementById("tab4").style["cursor"] = "default";
+        document.getElementById("tab4").style["pointer-events"] = "none";
+
+
+
+        $(document).on("click", "#cancelTabSubsidiariesBtnId", function () {
+            $('a[href="#accessibletabscontent0-0"]').click();
+        });
+        $(document).on("click", "#cancelTabShareholdersEquityBtnId", function () {
+            $('a[href="#accessibletabscontent0-1"]').click();
+        });
+        $(document).on("click", "#cancelTabShareholdersBtnId", function () {
+            $('a[href="#accessibletabscontent0-2"]').click();
+        });
+        $(document).on("click", "#cancelSubmit", function () {
+            $('a[href="#accessibletabscontent0-3"]').click();
+        });
+
+
+
+
 
 
      /*   var attachmentSection = $("#attachmentSection");
@@ -689,13 +717,13 @@ $(document).ready(function () {
 
 
 
-        // Cancel amendment
+        /*// Cancel amendment
         $(document).on("click", ".cancelAmendmentBtn", function () {
 
                 window.location.href = ACC.config.encodedContextPath + "/dashboard";
 
         });
-
+*/
         $(document).on("click", "#dismissChangesBtnId, .showHistoryBtn", function () {
             window.location.href = ACC.config.encodedContextPath + "/dashboard";
         });

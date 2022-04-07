@@ -509,7 +509,7 @@ SAGIA.eServiceTour = {
 			$('.eServiceTutorial-highlight').css({
 				width: focusDimensions.width + highLightOffset*2,
 				height: focusDimensions.height + highLightOffset*2,
-				top: focusDimensions.top - highLightOffset,
+				top: (focusDimensions.top - highLightOffset) + d_top ,
 				left: focusDimensions.left - highLightOffset,
 				'z-index':'99999',
 				'border-radius': function() {

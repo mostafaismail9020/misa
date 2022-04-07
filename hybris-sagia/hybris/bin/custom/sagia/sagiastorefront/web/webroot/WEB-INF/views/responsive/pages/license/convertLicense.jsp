@@ -501,7 +501,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn js-close-btn btn_a" href="${encodedContextPath}/dashboard">Close</a>
+                <a class="btn js-close-btn btn_a" href="${encodedContextPath}/dashboard"><spring:theme code="sagia.license.convert"/></a>
             </div>
         </div>
     </div>

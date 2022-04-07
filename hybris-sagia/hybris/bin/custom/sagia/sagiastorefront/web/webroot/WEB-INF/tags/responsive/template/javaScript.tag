@@ -23,6 +23,7 @@
 		<script type="text/javascript" src="${themeResourcePath}/js/owl.carousel.js"></script>
 		<script type="text/javascript" src="${themeResourcePath}/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="${themeResourcePath}/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="${themeResourcePath}/js/flatpickr_v4.6.11.min.js"></script>
 	</c:when>
 	<c:otherwise>
 		<script type="text/javascript" src="${themeResourcePath}/js/polyfill.js${version}"></script>
@@ -120,6 +121,12 @@
 		<c:forEach items="${cmsActionsJsFiles}" var="actionJsFile">
 		    <script type="text/javascript" src="${commonResourcePath}/js/cms/${actionJsFile}${version}"></script>
 		</c:forEach>
+
+		
+		<script type="text/javascript" src="${themeResourcePath}/js/owl.carousel.js"></script>
+		<script type="text/javascript" src="${themeResourcePath}/js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="${themeResourcePath}/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="${themeResourcePath}/js/flatpickr_v4.6.11.min.js"></script>
 
 	</c:otherwise>
 </c:choose>

@@ -226,6 +226,7 @@ function addASMHandlers() {
                 carts = ui.item.carts;
                 if ($("input[name='cartId']").attr("orig_value") == null) {
                 	$("input[name='cartId']").val('');
+					if (carts != undefined) {
                 	if (carts != null) {
 		                if (carts.length == 1) {
 		                    $("input[name='cartId']").val(carts[0]);
@@ -238,6 +239,7 @@ function addASMHandlers() {
 		                $("input[name='cartId']").autocomplete('search', '');
 		                $("input[name='cartId']").focus();
 		            }
+					}
                 }
 
                 toggleBind(true);

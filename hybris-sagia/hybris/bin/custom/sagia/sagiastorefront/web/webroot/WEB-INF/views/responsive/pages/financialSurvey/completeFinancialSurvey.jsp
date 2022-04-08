@@ -62,7 +62,7 @@
                         </c:if>
                         <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
                     </div>-->
-               
+
                 <div class="profile">
                     <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
                         <span></span>
@@ -458,7 +458,7 @@
                             </div>
                             <div
                                     class="contentModule-actions contentModule-actions_spaceBetween">
-                                <button type="button"
+                                <button type="button" id="cancelTabEntityBtnId"
                                         class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
                                     <spring:theme code="general.cancel"/>
                                 </button>
@@ -629,8 +629,8 @@
 
                             <div
                                     class="contentModule-actions contentModule-actions_spaceBetween">
-                                <button type="button"
-                                        class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+                                <button type="button" id="cancelTabSubsidiariesBtnId"
+                                        class="btn btn-secondary  newAmendmentBtn">
                                     <spring:theme code="general.cancel"/>
                                 </button>
                                 <button id="nextTabSubsidiariesBtnId" type="button"
@@ -1212,8 +1212,8 @@
 
                             <div
                                     class="contentModule-actions contentModule-actions_spaceBetween">
-                                <button type="button"
-                                        class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+                                <button type="button" id="cancelTabShareholdersEquityBtnId"
+                                        class="btn btn-secondary  newAmendmentBtn">
                                     <spring:theme code="general.cancel"/>
                                 </button>
 
@@ -1375,8 +1375,8 @@
 
                             <div
                                     class="contentModule-actions contentModule-actions_spaceBetween">
-                                <button type="button"
-                                        class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+                                <button type="button" id="cancelTabShareholdersBtnId"
+                                        class="btn btn-secondary  newAmendmentBtn">
                                     <spring:theme code="general.cancel"/>
                                 </button>
                                 <button id="nextTabShareholdersBtnId" type="button"
@@ -1388,7 +1388,7 @@
                     </div>
 
 
-                    <div class="panelTabs-head" id="tab5">
+                    <div class="panelTabs-head" style="pointer-events: none;cursor: default;" id="tab5">
                         <icon:documentsUpload/>
                         <span class="panelTabs-label"><spring:theme code="license.attachments"/></span>
                     </div>
@@ -1431,7 +1431,7 @@
                                     <formElement:termsAndConditionsCheckbox event="FINANCIAL_STATEMENT" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                                 </div>
                                 <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                                    <button type="reset" class="btn btn-secondary" onclick="window.location.href='${encodedContextPath}">
+                                    <button type="reset" class="btn btn-secondary" id="cancelSubmit">
                                         <spring:theme code="general.cancel"/>
                                     </button>
                                     <button type="submit" value="Submit request" class="btn js-submit-financialStatement" disabled><spring:theme code="general.submit"/></button>

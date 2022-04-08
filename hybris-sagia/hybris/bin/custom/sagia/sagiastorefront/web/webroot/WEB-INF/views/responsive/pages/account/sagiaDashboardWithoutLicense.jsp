@@ -100,11 +100,11 @@
                         <c:if test="${entityStatusDescription != null && not empty entityStatusDescription}">
                             <c:out value="${entityStatusDescription}"/>&nbsp;
                             <c:if test = "${fn:containsIgnoreCase(entityStatusDescription, 'rejected')}">
-                               	<div class="globalMessage-action">
+                               	<div class="globalMessage-action d-none">
                                		<a href="${encodedContextPath}/simulator/license-apply" class="btn btn_round btn-warning btn_outline">
                                			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                                		</a>
-                                 	<button class="btn btn_round" onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
+                                 	<button class="btn btn_round " onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
                           		</div>
                             </c:if>
                         </c:if>
@@ -131,7 +131,7 @@
                             </div>
                         </c:when>
                         <c:when test="${hasUserAppliedForLicense && fn:containsIgnoreCase(applicationStatus.statusDesc, 'rejected') }">
-                            <div class="globalMessage-action">
+                            <div class="globalMessage-action d-none">
                                	<a href="${encodedContextPath}/simulator/license-apply" class="btn btn_round btn-warning btn_outline">
                                		<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                                	</a>

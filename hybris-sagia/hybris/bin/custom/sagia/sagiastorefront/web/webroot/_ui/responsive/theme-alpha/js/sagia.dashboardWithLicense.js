@@ -457,7 +457,7 @@ SAGIA.dashboardWithLicense = {
                                 if (payment.status == 'E0003' && payment.hybrisStatusDescription != 'Paid') {
                                 	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
                                 	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link");
-                                	template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
+                                	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
                                 	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+payment.serviceId+",'"+payment.name+"',"+payment.amount+",'"+payment.currency+"')");
                                 	isAwaitingPayment = true;
                                 }

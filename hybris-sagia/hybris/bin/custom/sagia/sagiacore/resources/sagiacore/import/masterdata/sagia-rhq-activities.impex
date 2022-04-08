@@ -1,5 +1,5 @@
 INSERT_UPDATE RHQActivities; id[unique = true]; details[lang = en]                                                   ; details[lang = ar]                                                   ; isCorporate; isStrategic; isManagement
-                           ; 10                ; Sales and Marketing Support                                          ; Sales and Marketing Support                                          ; true       ; false      ; false
+                           ; 10               ; Sales and Marketing Support                                         ; Sales and Marketing Support                                          ; true       ; false      ; false
                            ; 11               ; Human Resources, and Personnel Management                            ; Human Resources, and Personnel Management                            ; true       ; false      ; false
                            ; 12               ; Training Services                                                    ; Training Services                                                    ; true       ; false      ; false
                            ; 13               ; Financial Management, Foreign Exchange, and Treasury Centre Services ; Financial Management, Foreign Exchange, and Treasury Centre Services ; true       ; false      ; false

@@ -449,6 +449,9 @@ SAGIA.licenseApplyReview = {
 					"</tr>");
 
 			}
+        if(sagiaData.licenseType && (sagiaData.licenseType == '11')){
+                                $("#tblGrid").find("tbody").append("<tr>" +"<th width='50%'>" + getI18nText("license.apply.payment.service.rhq.message") + "</th>"+"</tr>" );
+          }
 			else{
             				$("#tblGrid").find("tbody").append("<tr>" +
             					"<th width='50%'>" + getI18nText("license.apply.payment.service") + "</th>" +

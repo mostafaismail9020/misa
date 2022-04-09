@@ -283,7 +283,7 @@
                         <div id="reviewLicenseYearSection">
                             <dl class="dlList">
                                 <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
-                                        <dd><spring:theme code="license.entity.rhq.year.${entityInformation.licenseDuration}"/></dd>
+                                        <dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
                         </dl>
                         </div>
                     </div>

@@ -1373,7 +1373,7 @@ bindRhqCountryInformationEvents: function () {
             });
 
             $("#branchInformationRhqCountry").multiselect({
-                title: "Select / تحديد",
+                title: "Select Options",
                 modalSize: "md"
             });
           //  self.updateSelectValues($("#branchInformationRhqCountry"));
@@ -1411,7 +1411,7 @@ bindRhqCountryInformationEvents: function () {
                     }
                     setTimeout(function () {
                     $("#rhqCheckbox").multiselect({
-                        title: "Select / تحديد",
+                        title: "Select Options",
                         modalSize: "md"
                     });},500);
 
@@ -1445,7 +1445,7 @@ bindRhqCountryInformationEvents: function () {
                            });
                        }
                        $("#branchInformationRhqRegionsSection").multiselect({
-                           title: "Select / تحديد",
+                           title: "Select Options",
                            modalSize: "md"
                        });
 
@@ -1484,7 +1484,7 @@ bindRhqCountryInformationEvents: function () {
                            }
 
                         $("#rhqStrategicCheckbox").multiselect({
-                            title: "Select / تحديد",
+                            title: "Select Options",
                             modalSize: "md"
                         });
 
@@ -1536,7 +1536,7 @@ bindRhqCountryInformationEvents: function () {
 
 
                 $("#rhqManagementFunCheckbox").multiselect({
-                    title: "Select / تحديد",
+                    title: "Select Options",
                     modalSize: "md"
                 });
             },1500);
@@ -1578,7 +1578,7 @@ bindRhqCountryInformationEvents: function () {
                 catch(e){console.log(e);}
 
                 $("#rhqCenterAdmin").multiselect({
-                    title: "Select / تحديد",
+                    title: "Select Options",
                     modalSize: "md"
                 });
             },1500);
@@ -2068,14 +2068,15 @@ if($("#licenseTypes").val() === "11"){
     loadYearsDropDownForRHQ: function () {
         var entityLicenseYear = this.licenseYearSection.find("#licenseYear");
         var previousEntityLicenseYear = entityLicenseYear.val();
+
         entityLicenseYear.find("option").remove();
         entityLicenseYear.append(new Option("", "", false, false));
 
-        entityLicenseYear.append(new Option(getI18nText("license.entity.rhq.year.1"), "1", false, false));
-        //entityLicenseYear.append(new Option(getI18nText("license.entity.year.2"), "2", false, false));
-        //entityLicenseYear.append(new Option(getI18nText("license.entity.year.3"), "3", false, false));
-        //entityLicenseYear.append(new Option(getI18nText("license.entity.year.4"), "4", false, false));
-        //entityLicenseYear.append(new Option(getI18nText("license.entity.year.5"), "5", false, false));
+        entityLicenseYear.append(new Option(getI18nText("license.entity.year.1"), "1", false, false));
+        entityLicenseYear.append(new Option(getI18nText("license.entity.year.2"), "2", false, false));
+        entityLicenseYear.append(new Option(getI18nText("license.entity.year.3"), "3", false, false));
+        entityLicenseYear.append(new Option(getI18nText("license.entity.year.4"), "4", false, false));
+        entityLicenseYear.append(new Option(getI18nText("license.entity.year.5"), "5", false, false));
 
         if(previousEntityLicenseYear) {
             entityLicenseYear.val(previousEntityLicenseYear).trigger("blur").trigger('change');
@@ -2306,14 +2307,14 @@ if($("#licenseTypes").val() === "11"){
             $('#rhqManagementFunCheckbox').parents('.form-group').removeClass('has-error');
         }
 
-/*        if($('#branchInformationRhqRegionsSection').val().length <1){
+        if($('#branchInformationRhqRegionsSection').val().length <1){
             hasErrors = true;
             $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText("rhq.region.validation"));
             $('#branchInformationRhqRegionsSection').parents('.form-group').addClass('has-error');
         } else {
             $('#branchInformationRhqRegionsSection').parents('.formSelectBox').find('.help-block').text(getI18nText(""));
             $('#branchInformationRhqRegionsSection').parents('.form-group').removeClass('has-error');
-        }*/
+        }
 
 
 

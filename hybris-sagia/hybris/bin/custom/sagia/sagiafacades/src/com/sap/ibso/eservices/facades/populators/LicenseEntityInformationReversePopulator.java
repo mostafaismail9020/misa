@@ -74,7 +74,7 @@ public class LicenseEntityInformationReversePopulator
 		//target.setIsEntityAssetMoreThanThreshold(source.isIsEntityAssetMoreThanThreshold());
 		//target.setIsEntityListedInStockMarket(source.isIsEntityListedInStockMarket());
 		//target.setIsEntityRevenueMoreThanThreshold(source.isIsEntityRevenueMoreThanThreshold());
-		/*if(null!=source.getListOfRhqCountries())
+		if(null!=source.getListOfRhqCountries())
 		{
 			final List<String> listOfRhqCountries = new ArrayList<String>();
 			for (final String country : source.getListOfRhqCountries())
@@ -86,10 +86,10 @@ public class LicenseEntityInformationReversePopulator
 		else
 		{
 			target.setListOfRhqCountries(null);
-		}*/
-		target.setListOfRhqCountries(null);
+		}
+
 //New RHQ Start
-		/*if(null!=source.getListOfRhqRegions())
+		if(null!=source.getListOfRhqRegions())
 		{
 			final List<String> listOfRhqRegions = new ArrayList<String>();
 			for (final String region : source.getListOfRhqRegions())
@@ -101,8 +101,8 @@ public class LicenseEntityInformationReversePopulator
 		else
 		{
 			target.setListOfRhqRegions(null);
-		}*/
-		target.setListOfRhqRegions(null);
+		}
+
 		if(null!=source.getListOfCorporateActivities())
 		{
 			final List<String> listOfCorporateActivities = new ArrayList<String>();

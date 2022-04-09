@@ -62,7 +62,7 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 		
 		//RHQ Requirement START
 
-		/*if(!source.getListOfRhqCountries().isEmpty())
+		if(!source.getListOfRhqCountries().isEmpty())
 		{
 			final List<String> listOfRhqCountries = new ArrayList<String>();
 			for (final String country : source.getListOfRhqCountries())
@@ -80,7 +80,7 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 				listOfRhqRegions.add(sagiaRegionDAO.getRhqRegionCodeForName(region).getCode());
 			}
 		target.setListOfRhqRegions(listOfRhqRegions);
-		}*/
+		}
 			
 		//RHQ Requirement END
 

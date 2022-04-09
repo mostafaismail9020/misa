@@ -96,9 +96,9 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 				listOfRhqCountries.append(",");
 			}
 			target.setListOfRhqCountries(listOfRhqCountries.deleteCharAt(listOfRhqCountries.length() - 1).toString());
-
-		}
 			target.setRhqSubsidiaryPresence(source.getRhqSubsidiaryPresence());
+		}
+
 		    target.setLicenseDuration(source.getLicenseDuration());
 		    target.setEntityName(source.getEntityName());
 		    target.setEntityNameArabic(source.getEntityNameArabic());

@@ -114,25 +114,25 @@
         </div>
     </div> 
 
-	<%-- <div class="formSelectBox">
-          		<div class="form-group">
-          			<select id="branchInformationRhqRegionsSection" name="listOfRhqRegions"
-          				class="js-select2-multi form-control select2-hidden-accessible"
-          				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfRhqRegions}">
-          			</select> <label class="control-label" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
-          		</div>
-          		<div class="help-block"></div>
-          	</div>
+	<div class="formSelectBox">
+		<div class="form-group">
+			<select id="branchInformationRhqRegionsSection" name="listOfRhqRegions"
+				class="js-select2-multi form-control select2-hidden-accessible"
+				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfRhqRegions}">
+			</select> <label class="control-label" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
+		</div>
+		<div class="help-block"></div>
+	</div>
 
-          	<div class="formSelectBox">
-          		<div class="form-group">
-          			<select id="branchInformationRhqCountry" name="listOfRhqCountries"
-          				class="js-select2-multi form-control select2-hidden-accessible"
-          				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfRhqCountries}">
-          			</select> <label class="control-label" for="branchInformationRhqCountry"><spring:theme code="profile.rhq.countries" /></label>
-          		</div>
-          		<div class="help-block"></div>
-          	</div> --%>
+	<div class="formSelectBox">
+		<div class="form-group">
+			<select id="branchInformationRhqCountry" name="listOfRhqCountries"
+				class="js-select2-multi form-control select2-hidden-accessible"
+				multiple="" tabindex="-1" aria-hidden="true" data-value="${sagiaApplyEntityInfoForm.listOfRhqCountries}">
+			</select> <label class="control-label" for="branchInformationRhqCountry"><spring:theme code="profile.rhq.countries" /></label>
+		</div>
+		<div class="help-block"></div>
+	</div>
 		
 </div>
 <script>

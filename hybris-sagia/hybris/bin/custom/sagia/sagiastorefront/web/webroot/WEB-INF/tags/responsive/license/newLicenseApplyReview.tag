@@ -283,14 +283,7 @@
                         <div id="reviewLicenseYearSection">
                             <dl class="dlList">
                                 <dt><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></dt>
-                                <c:choose>
-                                	<c:when test="${entityInformation.licenseType == '11'}">
-                                		 <dd><spring:theme code="license.entity.rhq.year.${entityInformation.licenseDuration}"/></dd>
-                                	</c:when>
-                                	<c:otherwise>
-                                		 <dd><spring:theme code="license.entity.year.${entityInformation.licenseDuration}"/></dd>
-                                	</c:otherwise>
-                                </c:choose>
+                                        <dd><spring:theme code="license.entity.rhq.year.${entityInformation.licenseDuration}"/></dd>
                         </dl>
                         </div>
                     </div>
@@ -353,7 +346,7 @@
                             </c:forEach>
                        </dl>
                     </div>
-                 <%--         <div class="col-md-6">
+                    <div class="col-md-6">
                         <dl class="dlList">
                             <dt><spring:theme code="review.profile.rhq.countries"/></dt>
                                 <c:forEach items="${selectedListOfCountries}" var="selectedCountries">
@@ -368,7 +361,7 @@
                                 <dd class="rhqListItems">${selectedRegions}</dd>
                         </c:forEach>
                        </dl>
-                    </div>  --%>
+                    </div>
                      <div class="col-md-6">
                         <dl class="dlList">
                             <dt><spring:theme code="review.rhq.mnc.subsidiaries.presence"/></dt>

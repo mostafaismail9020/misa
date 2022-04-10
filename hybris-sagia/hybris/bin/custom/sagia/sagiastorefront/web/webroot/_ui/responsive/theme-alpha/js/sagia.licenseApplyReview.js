@@ -379,9 +379,6 @@ SAGIA.licenseApplyReview = {
 
 			$('#rhqSubsidiaryPresenceDiv').html(subsidiaryString);
 			switch (subsidiaryString) {
-				case "only_one_country":
-					$('#rhqSubsidiaryPresenceDiv').html('Only one country');
-					break;
 				case "2_to_5_countries":
 					$('#rhqSubsidiaryPresenceDiv').html('2 to 5 countries');
 					break;

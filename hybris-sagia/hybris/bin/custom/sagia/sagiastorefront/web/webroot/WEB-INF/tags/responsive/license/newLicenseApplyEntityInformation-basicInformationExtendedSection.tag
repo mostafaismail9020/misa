@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
@@ -76,7 +77,7 @@
 			</div>
 		</div>
 
-        <div class="formSelectBox">
+<%--         <div class="formSelectBox">
                 <div class="form-group">
                     <select id="branchInformationRhqCountry" name="listOfRhqCountries"
                         class="form-control"
@@ -94,7 +95,7 @@
 			</select> <label class="control-label control-label_mandatory" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
 		</div>
 		<div class="help-block"></div>
-	</div>
+	</div> --%>
 
      <div class="formRadioButton rhqSubsidiaryPresence-formRadioButtonDiv">
          <div class="form-group optionalActivity ">
@@ -753,9 +754,10 @@
 
 <div class="rqh-tables" style="display:none">
 
-<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.branches.label" /></div>
+<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.table.header.label" /></div>
  <hr class="hr">
 <div class="tableModule" >
+<div class="control-label rhqSubsidiaryPresence-label control-label_mandatory"><spring:theme code="rhq.mnc.branches.label" /></div>
 
 <div class="formInputBox">
  <div class="form-group ">
@@ -791,10 +793,9 @@
 
 <!--MNC Brand Start-->
 <div class="rqh-tables" style="display:none">
-<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.brand.label" /></div>
-<hr class="hr">
+ <hr class="hr">
 <div class="tableModule" >
-
+<div class="control-label rhqSubsidiaryPresence-label control-label_mandatory"><spring:theme code="rhq.mnc.brand.label" /></div>
 <div class="formInputBox">
  <div class="form-group ">
  <div id="mncBrandTable-error" class="help-block"></div>
@@ -830,9 +831,9 @@
 
 <!--rhqCostTable-->
 <div class="rqh-tables" style="display:none;border-bottom: 1px solid #ccd0d4;margin-bottom: 48px;padding-bottom: 24px;">
-<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.estimated.cost.label" /></div>
 <hr class="hr">
 <div class="tableModule" >
+<div class="control-label rhqSubsidiaryPresence-label control-label_mandatory"><spring:theme code="rhq.estimated.cost.label" /></div>
 
 <div class="formInputBox">
  <div class="form-group ">

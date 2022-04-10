@@ -103,6 +103,9 @@ $(document).ready(function () {
         document.getElementById("tab3").style["pointer-events"] = "none";
         document.getElementById("tab4").style["cursor"] = "default";
         document.getElementById("tab4").style["pointer-events"] = "none";
+        document.getElementById("tab5").style["cursor"] = "default";
+        document.getElementById("tab5").style["pointer-events"] = "none";
+        
 
 
 

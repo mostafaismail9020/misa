@@ -266,6 +266,54 @@
                                                 </div>
                                               </div>
                                             </div>
+											
+											
+											<div class="card">
+                                              <div class="card-header" id="headingEight">
+                                                <h5 class="mb-0">
+                                                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                                    <spring:theme code="portal.regional.hq.faqs.question8"/>
+                                                  </button>
+                                                </h5>
+                                              </div>
+                                              <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+                                                <div class="card-body">                                                   												   
+													<p><spring:theme code="portal.regional.hq.faqs.answer8"/></p>
+													<p>&nbsp;</p>
+													<ol>
+													<li><spring:theme code="portal.regional.hq.faqs.answer8.1"/></li>
+													</ol>
+													<ol start="2">
+													<li><spring:theme code="portal.regional.hq.faqs.answer8.2"/></li>
+													</ol>
+													<ol start="3">
+													<li><spring:theme code="portal.regional.hq.faqs.answer8.3"/></li>
+													</ol>
+													<ol start="4">
+													<li><spring:theme code="portal.regional.hq.faqs.answer8.4"/></li>
+													</ol>
+													<ol start="5">
+													<li><spring:theme code="portal.regional.hq.faqs.answer8.5"/></li>
+													</ol>
+													<ol start="6">
+													<li><spring:theme code="portal.regional.hq.faqs.answer8.6"/></li>
+													</ol>
+													<ol start="7">
+													<li><spring:theme code="portal.regional.hq.faqs.answer8.7"/></li>
+													</ol>
+													<!-- <ol start="8">
+													<li><spring:theme code="portal.regional.hq.faqs.answer8.8"/></li>
+													</ol> -->
+													<p>&nbsp;</p>
+													<p><u><spring:theme code="portal.regional.hq.faqs.answer8.9"/></u></p>
+													<p>&nbsp;</p>
+													<p><u><spring:theme code="portal.regional.hq.faqs.answer8.10"/></u></p>
+													<p>&nbsp;</p>
+													<p><u><spring:theme code="portal.regional.hq.faqs.answer8.11"/></u></p>												   
+                                                </div>
+                                              </div>
+                                            </div>
+											
 
                                             <h3 class="rhq-Faq-header clr_gld my-4"><spring:theme code="portal.regional.hq.license.heading"/></h3>
                                             <div class="card">

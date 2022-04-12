@@ -372,9 +372,9 @@ SAGIA.licenseApplyContactPerson = {
     		self.setAndDisableFieldIfValueNotBlank($("#qm1Country"), data.delegateCountry);    		
     		self.setAndDisableFieldIfValueNotBlank($("#qm1FirstName"), data.delegateFirstNameArabic);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1LastName"), data.delegateLastNameArabic);
-    		self.setAndDisableFieldIfValueNotBlank($("#qm1DateOfBirth"), data.delegateDateOfBirth);
-    		self.setAndDisableFieldIfValueNotBlank($("#qm1PassportExpiryDate"), data.idExpiryDate);
-    		self.setAndDisableFieldIfValueNotBlank($("#qm1PassportIssueDate"), data.idIssueDate);
+    		self.setFieldIfValueNotBlank($("#qm1DateOfBirth"), data.delegateDateOfBirth);
+    		self.setFieldIfValueNotBlank($("#qm1PassportExpiryDate"), data.idExpiryDate);
+    		self.setFieldIfValueNotBlank($("#qm1PassportIssueDate"), data.idIssueDate);
     		
     		
     		

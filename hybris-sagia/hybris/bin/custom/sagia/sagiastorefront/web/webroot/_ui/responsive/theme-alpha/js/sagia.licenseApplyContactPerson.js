@@ -356,9 +356,9 @@ SAGIA.licenseApplyContactPerson = {
     		self.setAndDisableFieldIfValueNotBlank($("#qm1Country"), data.country);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1FirstName"), data.firstNameArabic);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1LastName"), data.lastNameArabic);
-    		self.setAndDisableFieldIfValueNotBlank($("#qm1DateOfBirth"), data.dateOfBirth);
-    		self.setAndDisableFieldIfValueNotBlank($("#qm1PassportExpiryDate"), data.passportExpiryDate);
-    		self.setAndDisableFieldIfValueNotBlank($("#qm1PassportIssueDate"), data.passportIssueDate);
+    		self.setFieldIfValueNotBlank($("#qm1DateOfBirth"), data.dateOfBirth);
+    		self.setFieldIfValueNotBlank($("#qm1PassportExpiryDate"), data.passportExpiryDate);
+    		self.setFieldIfValueNotBlank($("#qm1PassportIssueDate"), data.passportIssueDate);
     	} else if (contactID.startsWith("DEL-") ) {
     		 	
     		self.setAndDisableFieldIfValueNotBlank($("#qm1PassportNumber"), data.delegateIdentityNumber);
@@ -404,6 +404,27 @@ SAGIA.licenseApplyContactPerson = {
             element.prop('disabled', true);
         }
     },
+        setFieldIfValueNotBlank : function(element, value){
+            if(value)
+            {
+                element.val(value);
+                if(element.is( "select" ))
+                {
+                    element.val(value).trigger("blur").trigger('change');
+                }
+
+                if (element.is('[type=radio]')) {
+                    element.filter('[value='+value+']').trigger('click');
+                }
+
+                if(element.hasClass("flatpickr-input"))
+                {
+                    var dateParser = document.querySelector("#"+element.attr('id'))._flatpickr; // this flatpickr is used for parsing the date
+                    dateParser.setDate(dateParser.parseDate(value, ACC.formatUIDate));
+                }
+                //element.prop('disabled', true);
+            }
+        },
 
      resetContactDetails: function() {
 

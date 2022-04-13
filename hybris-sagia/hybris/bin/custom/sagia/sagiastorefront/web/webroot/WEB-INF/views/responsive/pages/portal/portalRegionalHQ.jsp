@@ -301,15 +301,15 @@
 													<ol start="7">
 													<li><spring:theme code="portal.regional.hq.faqs.answer8.7"/></li>
 													</ol>
-													<!-- <ol start="8">
+													<ol start="8">
 													<li><spring:theme code="portal.regional.hq.faqs.answer8.8"/></li>
-													</ol> -->
+													</ol>
 													<p>&nbsp;</p>
 													<p><u><spring:theme code="portal.regional.hq.faqs.answer8.9"/></u></p>
 													<p>&nbsp;</p>
 													<p><u><spring:theme code="portal.regional.hq.faqs.answer8.10"/></u></p>
 													<p>&nbsp;</p>
-													<p><u><spring:theme code="portal.regional.hq.faqs.answer8.11"/></u></p>												   
+													<p><em><u><spring:theme code="portal.regional.hq.faqs.answer8.11"/></u></em></p>												   
                                                 </div>
                                               </div>
                                             </div>
@@ -461,7 +461,7 @@
                                                             <td>2</td>
                                                             <td><spring:theme code="portal.regional.hq.faqs.license.table.answer9.2"/></td>
                                                           </tr>
-														  <tr>
+														  <!-- <tr>
                                                             <td>3</td>
                                                             <td>
 																<spring:theme code="portal.regional.hq.faqs.license.table.answer9.3.description3"/>
@@ -471,9 +471,9 @@
 																	<li><spring:theme code="portal.regional.hq.faqs.license.table.answer9.3.description3.3"/></li>
 																</ul>
 															</td>
-                                                          </tr>
+                                                          </tr> -->
 														  <tr>
-                                                            <td>4</td>
+                                                            <td>3</td>
                                                             <td><spring:theme code="portal.regional.hq.faqs.license.table.answer9.3.description4"/></td>
                                                           </tr>
                                                         </tbody>

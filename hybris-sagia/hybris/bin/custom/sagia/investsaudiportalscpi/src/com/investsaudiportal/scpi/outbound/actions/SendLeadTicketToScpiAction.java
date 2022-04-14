@@ -1,11 +1,22 @@
+/**
+ *
+ */
 package com.investsaudiportal.scpi.outbound.actions;
 
 import com.investsaudiportal.model.scpi.outbound.process.ScpiOutLeadTicketProcessModel;
+/*
+ * [y] hybris Platform
+ *
+ * Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+ *
+ * This software is the confidential and proprietary information of SAP
+ * ("Confidential Information"). You shall not disclose such Confidential
+ * Information and shall use it only in accordance with the terms of the
+ * license agreement you entered into with SAP.
+ */
 import com.investsaudiportal.scpi.outbound.services.ScpiOutboundServiceImpl;
 
-import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.processengine.action.AbstractAction;
-import de.hybris.platform.sap.sapcpicustomerexchangeb2b.outbound.services.impl.SapCpiB2BCustomerOutboundService;
 import de.hybris.platform.task.RetryLaterException;
 import de.hybris.platform.ticket.model.CsTicketModel;
 
@@ -13,8 +24,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Resource;
-import java.util.Objects;
 import java.util.Set;
+
+/**
+ * SendLeadTicketToScpiAction providing a common implementation for the execute method.
+ */
 
 public class SendLeadTicketToScpiAction extends AbstractAction<ScpiOutLeadTicketProcessModel> {
 

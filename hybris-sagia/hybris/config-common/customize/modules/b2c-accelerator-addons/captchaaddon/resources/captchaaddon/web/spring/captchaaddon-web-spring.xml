@@ -60,6 +60,10 @@
 			<aop:around method="prepare"
 			            pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.misc.ContactUsController.contactus(..))"/>
 		</aop:aspect>
+		<aop:aspect id="prepPartnerContactUsReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare"
+						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages.portal.PartnerContactUsController.showInterest(..))"/>
+		</aop:aspect>
 		<aop:aspect id="contactUsReCaptchaAspect" ref="reCaptchaAspect">
 			<aop:around method="advise"
 			            pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.misc.ContactUsController.contactus(..))"/>

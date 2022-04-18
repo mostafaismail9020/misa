@@ -1,9 +1,3 @@
-/**
- *
- */
-package com.investsaudiportal.scpi.outbound.actions;
-
-import com.investsaudiportal.model.scpi.outbound.process.ScpiOutLeadTicketProcessModel;
 /*
  * [y] hybris Platform
  *
@@ -14,6 +8,9 @@ import com.investsaudiportal.model.scpi.outbound.process.ScpiOutLeadTicketProces
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with SAP.
  */
+package com.investsaudiportal.scpi.outbound.actions;
+
+import com.investsaudiportal.model.scpi.outbound.process.ScpiOutLeadTicketProcessModel;
 import com.investsaudiportal.scpi.outbound.services.ScpiOutboundServiceImpl;
 
 import de.hybris.platform.processengine.action.AbstractAction;

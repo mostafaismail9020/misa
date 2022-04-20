@@ -461,19 +461,19 @@
                                                             <td>2</td>
                                                             <td><spring:theme code="portal.regional.hq.faqs.license.table.answer9.2"/></td>
                                                           </tr>
-														  <!-- <tr>
+														  <tr>
                                                             <td>3</td>
                                                             <td>
 																<spring:theme code="portal.regional.hq.faqs.license.table.answer9.3.description3"/>
-																<ul>
+																<!-- <ul>
 																	<li><spring:theme code="portal.regional.hq.faqs.license.table.answer9.3.description3.1"/></li>
 																	<li><spring:theme code="portal.regional.hq.faqs.license.table.answer9.3.description3.2"/></li>
 																	<li><spring:theme code="portal.regional.hq.faqs.license.table.answer9.3.description3.3"/></li>
-																</ul>
+																</ul> -->
 															</td>
-                                                          </tr> -->
+                                                          </tr>
 														  <tr>
-                                                            <td>3</td>
+                                                            <td>4</td>
                                                             <td><spring:theme code="portal.regional.hq.faqs.license.table.answer9.3.description4"/></td>
                                                           </tr>
                                                         </tbody>

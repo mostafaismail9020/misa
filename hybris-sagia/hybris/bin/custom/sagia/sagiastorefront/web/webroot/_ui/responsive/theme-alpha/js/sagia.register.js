@@ -891,6 +891,16 @@ $(function () {
             return false;
         }
     });
+
+    $("#quickregistrationUsername, #applyForLicenseUsername").keypress(function(event) {
+                var regex = new RegExp("^[ A-Za-z0-9@#$&*\-\_+]*$");
+                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                if (!regex.test(key)) {
+                    event.preventDefault();
+                    return false;
+                }
+    });
+
     $("#quickregistrationUsername, #applyForLicenseUsername").on("change", function(e) {
         $(this).val($(this).val().replace(/\s/g, "")); //for copy paste, remove space
     });
@@ -1221,7 +1231,8 @@ $(function () {
                     return $(".js-quick-mobile-number").val();
                 },
                 mobileCountryCode: function () {
-                    return $(".js-quick-mobile-number").closest('.formInputBox-split').find('.js-mobile-coutry-code').val();
+                    return $(".js-mobile-coutry-code").val();
+                    //return $(".js-quick-mobile-number").closest('.formInputBox-split').find('.js-mobile-coutry-code').val();
                 }
             },
             cache: false,

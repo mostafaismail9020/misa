@@ -58,13 +58,21 @@
                         <div class="col-12 col-md-3 col-lg-3 col-xl-3 mx-auto pt-3 pb-1 f-coll">
                             <h2 class="text-uppercase display-7"><spring:theme code="portal.footer.apply.license.label"/></h2>
                             <p class="text"><spring:theme code="portal.footer.journey.start.text"/></p>
-                            <ul class="list-unstyled list-inline footer-column-text">
-                            	<c:if test="${userLoggedIn eq 'false'}">
-                                	<li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
-                                	<li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
-                                </c:if>
-                                <li class="list-inline-item border-0"><a class="text-uppercase" href="/${language}/contactUs" role="button"><spring:theme code="portal.footer.contact.us.label"/></a></li>
-                            </ul>
+                             <c:choose>
+                                <c:when test="${userLoggedIn eq 'false'}">
+                                    <ul class="list-unstyled list-inline footer-column-text">
+                                        <li class="list-inline-item"><a class="text-uppercase px-0" href="/en/investsaudi-login" role="button"><spring:theme code="portal.footer.login.label"/></a></li>
+                                        <li class="list-inline-item"><a class="text-uppercase" href="/en/login#register-quick" role="button"><spring:theme code="portal.footer.register.label"/></a></li>
+                                        <li class="list-inline-item border-0"><a class="text-uppercase" href="/${language}/contactUs" role="button"><spring:theme code="portal.footer.contact.us.label"/></a></li>
+                                    </ul> 
+                                </c:when> 
+                                <c:otherwise>
+                                    <p><a class="link text-uppercase px-0" href="/${language}/contactUs">
+                                        <spring:theme code="portal.footer.contact.us.label"/> &nbsp; &nbsp;
+                                        <img class="transform-180-degree p-0" src="${commonResourcePath}/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
+                                    </p>                           
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                     </div>
                 </div>

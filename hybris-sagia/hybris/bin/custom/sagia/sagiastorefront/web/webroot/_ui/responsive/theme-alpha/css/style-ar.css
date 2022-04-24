@@ -2315,6 +2315,7 @@ p.contowl {
 	text-decoration: none;
 	text-transform: uppercase;
 	background-color: #00A6BE;
+	z-index: 1;
 }
 
 .rounded-pill svg {

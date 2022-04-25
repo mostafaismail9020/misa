@@ -304,8 +304,8 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="mt-5 contentModule-actions contentModule-actions_centered contentModule_spaceTop contentModule-actions_noMargin">
-                                                                                    <button type="submit" class="btn bnt_bold btn_slim btn-normal w-25"><spring:theme code="appointments.saveappointment"/></button>
-																					<%-- <button type="submit" class="btn bnt_bold btn_slim btn-normal w-25" disabled><spring:theme code="appointments.saveappointment"/></button>  --%>
+                                                                                    <%-- <button type="submit" class="btn bnt_bold btn_slim btn-normal w-25"><spring:theme code="appointments.saveappointment"/></button>  --%>
+																					<button type="submit" class="btn bnt_bold btn_slim btn-normal w-25" disabled><spring:theme code="appointments.saveappointment"/></button>
                                                                                 </div>
                                                                     </form:form>
                                                                     </div>

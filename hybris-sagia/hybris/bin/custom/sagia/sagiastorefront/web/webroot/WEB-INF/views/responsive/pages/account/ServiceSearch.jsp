@@ -264,7 +264,7 @@
                             </p>
                         </div>
 						
-						<div class="p-4 serviceModule-detail mx-2 border-top-0">
+						<!-- <div class="p-4 serviceModule-detail mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center" style="color:red">
                                 <spring:theme code="services.government.create.disclaimer.title"/>
 								<br>
@@ -272,9 +272,9 @@
 								<br>
 								<spring:theme code="services.government.create.disclaimer.greet"/>
                             </p>
-                        </div>
-						
-                        <!-- <div class="accordion pb-1" id="govtServices">
+                        </div> -->
+
+                        <div class="accordion pb-1" id="govtServices">
                             <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                                 <c:set value="${category.value[0].category.code}" var="categoryCode"></c:set>
                                 <div class="accordion-item">
@@ -310,9 +310,9 @@
                                             </c:forEach>
                                       	</div>
                                     </div>
-                           		</div>                                
+                           		</div>
                             </c:forEach>
-                        </div> -->
+                        </div>
                     </div>
                    
 					<!-- MISA Services -->

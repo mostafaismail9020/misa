@@ -477,7 +477,7 @@ $(function() {
         });
     };
 
-    console.log(SAGIA.config.hasAwaitingPayment);
+    /*console.log(SAGIA.config.hasAwaitingPayment);*/
     if(SAGIA.config.hasLicense || SAGIA.config.hasAwaitingPayment) {
         SAGIA.notifications.updateNotifications();
         setInterval(function(){

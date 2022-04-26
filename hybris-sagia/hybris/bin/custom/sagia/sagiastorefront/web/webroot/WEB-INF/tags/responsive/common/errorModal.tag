@@ -25,3 +25,14 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+function closeErrorModal() {
+  if ($("body").hasClass("modal-open")) {
+	$('body').removeClass('modal-open');
+	$('body').addClass('modal-scroll');
+  }
+}
+
+</script>

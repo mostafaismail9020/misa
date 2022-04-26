@@ -107,13 +107,13 @@
                         <div class="paginationModule-wrapper">
                             <!-- <button class="paginationModule-control paginationModule-control_left" disabled><icon:arrow_green_right/></button> -->
                             <button class="paginationModule-control paginationModule-control_left" disabled>
-                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" id="firstimg">
+                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" id="firstimg" alt="arrow">
                             </button>
                             <div class="paginationModule-items" id="branchesPagesSection">
                                 <div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link branch active">1</a></div>
                             </div>
                             <button class="paginationModule-control paginationModule-control_right">
-                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive">
+                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" alt="arrow">
                             </button>
                             <!-- <button class="paginationModule-control paginationModule-control_right">
                                 <icon:arrow_green_right/>

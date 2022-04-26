@@ -64,7 +64,7 @@
                 </c:if>
                 <div class="paginationModule-wrapper">
                     <button class="paginationModule-control paginationModule-control_left" disabled>
-                        <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
+                        <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree"  alt="know more">
                     </button>
                     <div class="paginationModule-items">
                         <div class="loadingModule">
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <button class="paginationModule-control paginationModule-control_right">
-                        <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" >
+                        <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" alt="know more" >
                     </button>
                 </div>
                 <c:if test="${pageIsDashboard}">

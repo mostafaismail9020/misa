@@ -384,7 +384,7 @@
     </div>
     <!--  Attachment  -->
     <div class="contentModule-section" id="dataSectionAttachment" style="display: none">
-        <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.attachments"/></div>
+        <div class="contentModule-headline contentModule-headline_smallMargin"  id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div>
         <!--<div class="contentModule-headline contentModule-headline_smallMargin" id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div>-->
         <hr class="hr">
         <div class="row">

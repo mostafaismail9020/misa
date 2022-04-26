@@ -26,7 +26,7 @@
                         <div class="serviceModule-icon">
                             <a href="" data-target-submenu="${category.name}">
                                 <c:if test="${not empty category.menuIcon.url}">
-                                    <img src="${category.menuIcon.url}" width="25" height="25"/>
+                                    <img src="${category.menuIcon.url}" width="25" height="25" alt=""/>
                                 </c:if>
                                 <c:choose>
                                     <c:when test="${fn:length(category.name) gt 0}">
@@ -50,7 +50,7 @@
                             <div class="serviceModule-icon">
                                 <a href="" data-target-submenu="${category.name}">
                                     <c:if test="${not empty category.menuIcon.url}">
-                                        <img src="${category.menuIcon.url}" width="25" height="25"/>
+                                        <img src="${category.menuIcon.url}" width="25" height="25" alt=""/>
                                     </c:if>
                                     <c:choose>
                                         <c:when test="${fn:length(category.name) gt 0}">

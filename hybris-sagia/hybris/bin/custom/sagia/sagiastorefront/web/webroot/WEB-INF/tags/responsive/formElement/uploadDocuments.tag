@@ -61,7 +61,7 @@
                         <span class="iconElement iconElement_cloud02"><icon:remove/></span>
                         <spring:theme code="general.remove"/>
                     </a>
-                    <img class="js-loading-spinner" src="${commonResourcePath}/images/spinner.gif"/>
+                    <img class="js-loading-spinner" src="${commonResourcePath}/images/spinner.gif" alt="loading"/>
                 </div>
             </li>
         </ul>

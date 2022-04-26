@@ -19,7 +19,7 @@
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span>Back to Dashboard</a>
+            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack"><icon:close/></span>Back to Dashboard</a>
             <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
                 <div>Show Service History<span>&#x27f6;</span></div>
                 <div class="hidden">Hide Service History<span class="iconElement iconElement_closeBack"><icon:close/></span></div>

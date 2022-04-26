@@ -53,16 +53,16 @@
                     <div class="col-6">
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                                 <!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
-                                <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
-                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
-                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
+                                <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png" alt="Profile"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
+                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png" alt="Email"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
+                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png" alt="mobile"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
                         </div>
                     </div>
                     <div class="col-6 d-flex justify-content-around">
                         <div class=" user-icon mr-3">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
                             <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg" alt="calender"/>
                             </a>
                         </div>
                         <div class=" user-icon mr-3">
@@ -71,7 +71,7 @@
                                 <c:if test="${hasLicense or hasAwaitingPayment}">
                                     <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
                                         <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                        <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg"/>
+                                        <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" alt="message"/>
                                     </button>
                                 </c:if>
                                 <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -86,7 +86,7 @@
                         </div>
                         <div class=" user-icon mr-1">
                             <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>"
-                            class="sagiaNavigation-btn sagiaNavigation-user"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/></a>
+                            class="sagiaNavigation-btn sagiaNavigation-user"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg" alt="account"/></a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                 <button class="btn btn_round" onclick="location.href='${encodedContextPath}/my-sagia/notifications'"><spring:theme code="dashboard.edit.action.name"/></button>
             </div>
             <div class="globalMessage-msg">
-                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
+                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png" alt=""/></div>
                 <spring:theme code="dashboard.message.text"/>
             </div>
         </div>
@@ -245,11 +245,11 @@
                                     </div>
 									<div class="paginationModule-wrapper">
 										<button class="paginationModule-control paginationModule-control_left" disabled>
-											<img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+											<img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" alt="arrow">
 										</button>
 										<div class="paginationModule-items"><spring:theme code="text.loadingMessage"/></div>
 										<button class="paginationModule-control paginationModule-control_right">
-											<img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" >
+											<img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" alt="arrow" >
 										</button>
 									</div>
 								</div>

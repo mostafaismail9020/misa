@@ -40,7 +40,7 @@
             </div>
             <div class="modal-body">
                 <div class="modal-heroImage">
-                    <img src="${commonResourcePath}/images/dashboard-media/show-me-around.png"/>
+                    <img src="${commonResourcePath}/images/dashboard-media/show-me-around.png" alt="show me around"/>
                 </div>
                 <div class="modal-title clr_gld"></div>
                 <div class="modal-description modal-description_eService"></div>

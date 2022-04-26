@@ -6,6 +6,17 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
+
+<div class="mainSection bg-white">
+	<div class="achievement_header">
+		<img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+		<div class="container">
+			<div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+				<h1 data-aos="fade-up"><spring:theme code="account.notifications.title" /></h1>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-6">

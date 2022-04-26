@@ -18,14 +18,14 @@
                         <div class="investsaudiFooter-section investsaudiFooter-section_first">
                             <div class="investsaudiFooter-section-item">
                                 <a class="nav-link" target="_blank" href="https://investsaudi.sa/en/">
-                                    <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.svg"/>
+                                    <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.svg" alt="logo"/>
                                 </a>
                             </div>
                             <div class="investsaudiFooter-section-item">
-                                <img class="sagia" src="${themeResourcePath}/img/SAGIA.png">
+                                <img class="sagia" src="${themeResourcePath}/img/SAGIA.png" alt="">
                             </div>
                             <div class="investsaudiFooter-section-item hide_lg_up">
-                                <a class="nav-link" href="http://vision2030.gov.sa/ar/" target="_blank"><img src="${themeResourcePath}/img/roya.svg" class="sagia2"></a>
+                                <a class="nav-link" href="http://vision2030.gov.sa/ar/" target="_blank"><img src="${themeResourcePath}/img/roya.svg" class="sagia2" alt="logo"></a>
                             </div>
                         </div>
                     </div>
@@ -99,14 +99,14 @@
                         <div class="investsaudiFooter-section investsaudiFooter-section_first">
                             <div class="investsaudiFooter-section-item">
                                 <a class="nav-link" target="_blank" href="https://investsaudi.sa/ar/">
-                                    <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.svg" />
+                                    <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.svg" alt="logo" />
                                 </a>
                             </div>
                             <div class="investsaudiFooter-section-item">
-                                <img class="sagia" src="${themeResourcePath}/img/SAGIA.png">
+                                <img class="sagia" src="${themeResourcePath}/img/SAGIA.png" alt="">
                             </div>
                             <div class="investsaudiFooter-section-item hide_lg_up">
-                                <a class="nav-link" href="#"><img src="${themeResourcePath}/img/roya.svg" class="sagia2"></a>
+                                <a class="nav-link" href="#"><img src="${themeResourcePath}/img/roya.svg" class="sagia2" alt=""></a>
                             </div>
                         </div>
                     </div>

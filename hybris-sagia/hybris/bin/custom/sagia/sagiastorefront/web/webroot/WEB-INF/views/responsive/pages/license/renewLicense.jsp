@@ -49,7 +49,7 @@
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img" alt="message"/>
                             </button>
                         </c:if>
                         <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -456,7 +456,7 @@
                             <div id="documents-container1 "></div>
                             <ul class="pictureGrid contentModule-headline-border mx-0" id="images-container">
                                 <c:forEach items="${license.attachedImages}" var="image">
-                                    <li><img id="image" src="${encodedContextPath}/my-sagia/license/image/${image.objectID}/${image.documentID}"/></li>
+                                    <li><img id="image" src="${encodedContextPath}/my-sagia/license/image/${image.objectID}/${image.documentID}" alt=""/></li>
                                 </c:forEach>
                             </ul>
                         </div>

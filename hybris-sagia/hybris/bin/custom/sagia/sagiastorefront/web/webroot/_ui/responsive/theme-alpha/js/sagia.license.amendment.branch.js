@@ -40,8 +40,8 @@ var setupBranchesTable = function() {
             $pagination.find('span a.current').addClass('active');
 
             var $icon = $('#paginationElementId').find('svg').attr('height', '24').attr('width', '24');
-            var $prev = '<button class="paginationModule-control paginationModule-control_left" disabled><img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree"></button>'
-            var $next = '<button class="paginationModule-control paginationModule-control_right"><img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree"></button>'
+            var $prev = '<button class="paginationModule-control paginationModule-control_left" disabled><img src="/_ui/responsive/common/images/arrow-right.png" alt="" class="img-responsive transform-180-degree"></button>'
+            var $next = '<button class="paginationModule-control paginationModule-control_right"><img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" alt="" class="img-responsive transform-180-degree"></button>'
             $pagination.find('a.previous').empty().html($prev).prop("disabled", true).addClass('paginationModule-control paginationModule-control_left');
             $pagination.find('a.next').empty().html($next).addClass('paginationModule-control paginationModule-control_right');
             // $pagination.find('a.previous').empty().html($icon.clone()).prop("disabled", true).addClass('paginationModule-control paginationModule-control_left');

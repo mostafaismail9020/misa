@@ -12,7 +12,7 @@
         <div class="container forgotPassword-container">
             <div class="accountLogin-headline">
                 <a href="${encodedContextPath}/" class="accountLogin-headline-logo">
-                    <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png">
+                    <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" alt="logo">
                 </a>
             </div>
 

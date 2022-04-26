@@ -15,7 +15,7 @@
        	</c:if>
    	</h1>
 	<a href="/${language}/sectors-opportunities/opportunities" class="btn-dashboard text-uppercase  explore-all-btn">
-		<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/><img class="pl-3 transform-180-degree" src="${commonResourcePath}/images/arow_btn.png"/>
+		<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/><img class="pl-3 transform-180-degree" src="${commonResourcePath}/images/arow_btn.png"  alt="know more"/>
 	</a>	
 </div>
 
@@ -42,7 +42,7 @@
 		                                   			<div class="dashboardWidgetBanner-action">
 		                                   				<a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard">
 		                                   					<spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/>
-		                                   					<img class="pl-3 transform-180-degree"  src="${commonResourcePath}/images/arow_btn.png"/>
+		                                   					<img class="pl-3 transform-180-degree"  src="${commonResourcePath}/images/arow_btn.png"  alt="arrow"/>
 		                                   				</a>
 		                                   			</div>
 		                                       	</c:if>
@@ -70,7 +70,7 @@
 												<div class="dashboardWidgetBanner-action">
 													<a href="https://investsaudi.sa/en/sectors-opportunities/${sector.sectorCode}" class="btn-dashboard">
 														<spring:theme code="text.dashboard.without.license.exploreThisOpportunities"/>
-														<img class="pl-3 transform-180-degree"  src="${commonResourcePath}/images/arow_btn.png"/>
+														<img class="pl-3 transform-180-degree"  src="${commonResourcePath}/images/arow_btn.png" alt="arrow"/>
 													</a>
 												</div>
 											</c:if>
@@ -122,13 +122,13 @@
 				<c:if test="${empty featuredOpportunities}">
 					<a class="text-white text-uppercase" href="${encodedContextPath}/sectors-opportunities/opportunities" >
 						<spring:theme code="text.dashboard.without.license.exploreOpportunities"/>&nbsp;
-						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
+						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree" alt="">
 					</a>
 				</c:if>
 				<c:if test="${not empty featuredOpportunities}">
 					<a class="text-white text-uppercase" href="${encodedContextPath}/sectors-opportunities/${customerSectorCategory.code}">
 						<spring:theme code="text.dashboard.without.license.exploreOpportunities"/>&nbsp;
-						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
+						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree" alt="">
 					</a>
 				</c:if>
 				<img class="img-fluid arrow-icon transform-180-degree" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">

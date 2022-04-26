@@ -10,10 +10,9 @@
 
 
 		<div class="panelModule panelModule_halfRadius appointmentDetails">
-			<div class="contentModule">
-				<div class="contentModule-section contentModule-section_noDivider  contentModule-section_noMargin contentModule-section_noPadding">
-					<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-						<div class="contentModule-headline"><icon:calendarProfile/>Personal Appointment</div>
+			<div class="contentModule contentModule-wrap">
+				<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+						<span class="contentModule-headline"><icon:calendarProfile/>Personal Appointment</span>
 						<div class="appointmentDetails-properties">
 							<div class="appointmentDetails-property appointmentList-location">
 								<button class="appointmentList-locationBtn"><icon:location-pin/></button>
@@ -28,13 +27,18 @@
 								<span class="appointmentList-date-day">07</span>
 							</div>
 						</div>
-					</div>
+						<div class="contentModule-headline-border"></div>
 			  </div>
-			  				
-			  <div class="contentModule-section">
-					<div class="contentModule-headline contentModule-subheadline">Services</div>
-					<hr class="contentModule-section-rowDelimiter">
-					<div class="row">
+				<div class="">
+					<div class="contentModule contentModule-wrap">
+						<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+							<span class="contentModule-headline">Services</span>
+							<div class="contentModule-headline-border"></div>
+						</div>
+					</div>
+				</div>
+				<div class="contentModule-section">
+					<div class="row w-100">
 						<div class="col-sm-3">
 							<dl class="dlList dlList_separated">
 								<dt>Service</dt>
@@ -63,7 +67,7 @@
 				</div>
 
 				<div class="contentModule-actions contentModule-actions_centered contentModule-actions_noMargin">
-					<button class="btn btn_link">
+					<button class="btn btn_link back_to_service">
 						<icon:download/> Download .ics file
 					</button>
 				</div>

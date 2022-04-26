@@ -997,7 +997,7 @@ $(function () {
                         for (var key in obj) {
                             if(obj.hasOwnProperty(key)) {
                                 resultList.append(
-                                    "<h1>" + "<img src='" + obj[key][0].category.icon.url + "' height=\"42\" width=\"42\" >" + key + " (" + obj[key].length + " services)" + "</h1>");
+                                    "<h1>" + "<img src='" + obj[key][0].category.icon.url + "' alt=\"icon\" height=\"42\" width=\"42\" >" + key + " (" + obj[key].length + " services)" + "</h1>");
                                 for (var item in obj[key]) {
                                     if(obj[key].hasOwnProperty(item)) {
                                         resultList.append(

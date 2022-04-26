@@ -58,7 +58,7 @@
 		<a href="#" class="notificationList-link">
 			<div class="notificationList-thumb">
 				<span class="iconElement">
-					<icon:user_system/>
+					<img alt="" src="${commonResourcePath}/images/Survey-list-icon.png"/>
 				</span>
 			</div>
 			<div class="notificationList-note">
@@ -77,7 +77,7 @@
 		<a href="#" class="notificationList-link">
 			<div class="notificationList-thumb">
 				<span class="iconElement">
-					<icon:user_calendar/>
+					<img alt="" src="${commonResourcePath}/images/Appointment-list-icon.png"/>
 				</span>
 			</div>
 			<div class="notificationList-note">

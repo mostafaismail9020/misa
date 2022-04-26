@@ -21,7 +21,7 @@
                                             <a href="${encodedContextPath}${successStoryData.successStory.url}">
                                                 <div class="content-box fearured-opp">
                                                     <div>
-                                                        <img src="${successStoryData.successStory.logo.url}" class="mx-auto d-block mt-3">
+                                                        <img src="${successStoryData.successStory.logo.url}" class="mx-auto d-block mt-3" alt="">
                                                         <div class="button btn org-button btn-green"><spring:theme code="success.story.button.text"/></div>
                                                     </div>
                                                 </div>
@@ -51,7 +51,7 @@
                                 <a href="${encodedContextPath}${successStoryData.successStory.url}">
                                     <div class="content-box fearured-opp">
                                         <div>
-                                            <img src="${successStoryData.successStory.logo.url}" class="mx-auto d-block mt-3">
+                                            <img src="${successStoryData.successStory.logo.url}" class="mx-auto d-block mt-3" alt="">
                                             <div class="button btn org-button btn-green"><spring:theme code="success.story.button.text"/></div>
                                         </div>
                                     </div>

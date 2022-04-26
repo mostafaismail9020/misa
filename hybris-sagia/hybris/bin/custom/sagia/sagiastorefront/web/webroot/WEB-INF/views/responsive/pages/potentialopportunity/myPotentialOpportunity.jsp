@@ -25,7 +25,7 @@
 						<div class=" user-icon ml-1 mr-2">
 							<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
 							<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
-								<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg"/>
+								<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg"  alt="calender"/>
 							</a>
 						</div>
 						<div class=" user-icon mr-3 ml-3">
@@ -34,7 +34,7 @@
 								<c:if test="${hasLicense or hasAwaitingPayment}">
 									<button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
 										<span id="unreadNotificationSpan" class="notifyCount notifyCount_small potential_opportunity_span"></span>
-										<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg"/>
+										<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" alt="message"/>
 									</button>
 								</c:if>
 								<div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -50,7 +50,7 @@
 						<div class=" user-icon mr-1">
 							<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>"
 									class="sagiaNavigation-btn sagiaNavigation-user"> 
-								<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/>
+								<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg" alt="account"/>
 							</a>
 						</div>
 					</div>
@@ -112,8 +112,8 @@
 									<span class="nav-link" href="#Interest" role="tab" aria-selected="false">
 										<spring:theme code="my.potential.opportunity.phase.interest"/>
 									</span>
-									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
-									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
+									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp"  alt="potential">
+									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive" alt="arrow">
 								</li>
 								
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02'}">
@@ -125,8 +125,8 @@
 										<span class="nav-link" href="#NDA" role="tab" aria-selected="false">
 											<spring:theme code="my.potential.opportunity.phase.nda"/>
 										</span>
-										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
-										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
+										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp"  alt="potential">
+										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive"  alt="arrow">
 									</li>
 									
 								<c:if test="${investorlead eq 'Z08' or investorlead eq 'Z02'}">
@@ -138,22 +138,22 @@
 										<span class="nav-link" href="#Letter_of_intent" role="tab" aria-selected="false">
 											<spring:theme code="my.potential.opportunity.phase.letter"/>
 										</span>
-										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
-										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
+										<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp"  alt="potential">
+										<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive"  alt="arrow">
 									</li>
 									
 								<li class="nav-item d-in-table">
 									<span class="nav-link" href="#Business_plan" role="tab" aria-selected="false">
 										<spring:theme code="my.potential.opportunity.phase.business"/>
 									</span>
-									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
-									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive">
+									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp"  alt="potential">
+									<img src="${commonResourcePath}/images/arrow-round-forward.png" class="img-responsive"  alt="arrow">
 								</li>								
 								<li class="nav-item d-in-table">
 									<span class="nav-link" href="#Deal" role="tab" aria-selected="false">
 										<spring:theme code="my.potential.opportunity.phase.deal"/>
 									</span>
-									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp">
+									<img src="${commonResourcePath}/images/dashboard-media/potential.png" class="img-responsive img-pot-opp"  alt="potential">
 								</li>								
 							</ul>
 						</div>

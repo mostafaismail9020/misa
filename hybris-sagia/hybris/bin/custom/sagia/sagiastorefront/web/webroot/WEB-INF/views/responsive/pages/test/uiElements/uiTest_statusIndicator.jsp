@@ -14,42 +14,42 @@
 	<p class="uiTest-description"></p>
 </div>
 <!-- End of Module description-->
-	<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-	    <div class="contentModule-headline"><icon:info/> headline</div>
-		<div>
-	    	<button type="submit" class="btn btn_slim">
-	    	    Replace
-	    	</button>
-	    </div>
-	    <div class="statusIndicator statusIndicator_rejected">
-	        Status: <span>Rejected</span>
-	    </div>
+	<div class="contentModule contentModule-wrap">
+		<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+			<span class="contentModule-headline"><icon:info/> headline</span>
+				<button type="submit" class="btn btn_slim">
+					Replace
+				</button>
+			<div class="statusIndicator statusIndicator_rejected">
+				Status: <span>Rejected</span>
+			</div>
+			<div class="contentModule-headline-border"></div>
+		</div>
 	</div>
 	<br><br><br>
-	<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-	    <div class="contentModule-headline"><icon:info/> headline</div>
-		<div>
-	    	<button type="submit" class="btn btn_slim">
-	    	    Replace
-	    	</button>
-	    </div>
-	    <div class="statusIndicator statusIndicator_accepted">
-	        Status: <span>Accepted</span>
-	    </div>
+	<div class="contentModule contentModule-wrap">
+		<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+			<span class="contentModule-headline"><icon:info/> headline</span>
+				<button type="submit" class="btn btn_slim">
+					Replace
+				</button>
+			<div class="statusIndicator statusIndicator_accepted">
+				Status: <span>Accepted</span>
+			</div>
+			<div class="contentModule-headline-border"></div>
+		</div>
 	</div>
 	<br><br><br>
-	<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-	    <div class="contentModule-headline"><icon:info/> headline</div>
-		<div>
-	    	<button type="submit" class="btn btn_slim">
-	    	    Replace
-	    	</button>
-	    </div>
-	    <div class="statusIndicator statusIndicator_process">
-	        Status: <span>In Process</span>
-	    </div>
+	<div class="contentModule contentModule-wrap">
+		<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+			<span class="contentModule-headline"><icon:info/> headline</span>
+				<button type="submit" class="btn btn_slim">
+					Replace
+				</button>
+			<div class="statusIndicator statusIndicator_process">
+				Status: <span>In Process</span>
+			</div>
+			<div class="contentModule-headline-border"></div>
+		</div>
 	</div>
-
- 
-
  </div>

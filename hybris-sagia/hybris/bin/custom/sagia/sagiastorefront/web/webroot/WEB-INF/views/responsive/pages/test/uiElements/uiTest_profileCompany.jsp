@@ -1068,7 +1068,8 @@
                     <div class="paginationModule">
                         <div class="paginationModule-wrapper">
                             <button class="paginationModule-control paginationModule-control_left" disabled>
-                                <icon:arrow_green_right/></button>
+                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
+                            </button>
 
                             <div class="paginationModule-items">
                                 <div class="paginationModule-item"><a href="javascript:void(0);"
@@ -1081,7 +1082,8 @@
                                 </c:forEach>
                             </div>
                             <button class="paginationModule-control paginationModule-control_right">
-                                <icon:arrow_green_right/></button>
+                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" id="ss_right_arrow">
+                            </button>
                         </div>
                     </div>
                 </div>

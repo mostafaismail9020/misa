@@ -17,7 +17,7 @@
                         <a href="${encodedContextPath}${result.successStory.url}">
                             <div class="content-box fearured-opp">
                                 <div style="font-size: 15px;">
-                                    <img src="${result.successStory.logo.url}" class="mx-auto d-block mt-3">
+                                    <img src="${result.successStory.logo.url}" class="mx-auto d-block mt-3" alt="logo">
                                     <div class="button btn org-button btn-green"><spring:theme code="success.story.button.text"/></div>
                                 </div>
                             </div>

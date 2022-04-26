@@ -30,7 +30,7 @@
 				<icon:loading-spinner />
 			</c:when>
 			<c:otherwise>
-				<img src="${spinnerUrl}" class="spinner-icon"/>
+				<img src="${spinnerUrl}" class="spinner-icon" alt=""/>
 			</c:otherwise>
 		</c:choose>
 		<span id="spinnerMessage" class="spinner-message"><spring:theme code="text.loadingMessage"/></span>

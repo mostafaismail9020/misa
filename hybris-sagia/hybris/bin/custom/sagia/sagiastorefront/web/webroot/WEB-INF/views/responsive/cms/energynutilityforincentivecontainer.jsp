@@ -20,7 +20,7 @@
                         <div class="col mb-4">
                             <div class="INS_shadow_pad">
                                 <div class="text-center pt-2 pb-4">
-                                    <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid">
+                                    <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid" alt="logo">
                                 </div> 
                             </div>
                         </div>

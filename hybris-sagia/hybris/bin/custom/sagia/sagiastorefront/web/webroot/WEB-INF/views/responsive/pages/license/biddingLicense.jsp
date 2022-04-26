@@ -27,7 +27,7 @@
             <div class="profile-icons float-right">
                 <div class="calendar">
                     <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
-                        <img class="profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender.png" />
+                        <img class="profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender.png"  alt="calender" />
                     </a>
                 </div>
                 <!-- <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">

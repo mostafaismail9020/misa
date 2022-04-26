@@ -473,7 +473,7 @@ $(function () {
                 for (var attribute in images) {
                     if(images.hasOwnProperty(attribute)) {
                         var image = images[attribute];
-                        imagesHTML += "<li> <img id=\"image\" src=\" " +
+                        imagesHTML += "<li> <img alt=\"\" id=\"image\" src=\" " +
                             ACC.config.encodedContextPath + "/my-sagia/license/image/" + image.objectID + "/" + image.documentID + "/" +
                             "\"/>  </li> ";
                     }

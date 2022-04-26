@@ -40,7 +40,7 @@
             </span>
             <span>
                 <%--<button type="button" class="btn btn-secondary btn_link btn_bold">Skip</button>--%>
-                <button id="contactPersonNextButton" type="button" class="btn"><spring:theme code="licenseApply.contactPerson.button.next.text"/></button>
+                <button id="contactPersonNextButton" type="button" class="btn btn-ctrl"><spring:theme code="licenseApply.contactPerson.button.next.text"/></button>
             </span>
         </div>
     </div>

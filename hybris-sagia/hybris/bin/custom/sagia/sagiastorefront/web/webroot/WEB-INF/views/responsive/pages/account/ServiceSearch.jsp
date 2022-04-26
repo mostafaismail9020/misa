@@ -27,7 +27,7 @@
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img" alt="message"/>
                             </button>
                         </c:if>
                         <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -67,7 +67,7 @@
                     </div>
                 </li>
                 
-                <li class="mobile_services mb-5">
+                <li class="mobile_services">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
                         <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
                                 <div class="tab-pane fade service-wrapper service_tab_pane_show show active pb-5 m-auto" id="FIRST1" role="tabpanel" aria-labelledby="pills-licensing-tab">
@@ -110,7 +110,7 @@
                     </div>
                 </li>
 
-                <li class="mobile_services mb-5">
+                <li class="mobile_services">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent1">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES1" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
                             <div class="p-4 serviceModule-detail border-top-0">
@@ -173,7 +173,7 @@
                     </div>
                 </li>
                 
-                <li class="mobile_services mb-5">
+                <li class="mobile_services">
                     <div class="tab-content services-container-tabcontent" id="pills-tabContent1">
                         <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES1" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
                             <div class="p-4 serviceModule-detail border-top-0">

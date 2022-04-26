@@ -98,7 +98,7 @@
 									<c:choose>
 										<c:when test="${importCartIsProcessing}">
 											<span class="file-importing js-file-importing">
-												<img src="${commonResourcePath}/images/3dots.gif" width="25" height="25" />
+												<img src="${commonResourcePath}/images/3dots.gif" width="25" height="25" alt="" />
 											</span>
 										</c:when>
 										<c:otherwise>

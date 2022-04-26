@@ -26,7 +26,7 @@
             <div class="dashboardUser-left col-12 col-md-6 ">
                 <div class="dashboard-login">
                     <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
-                        <button type="button" id="btnfile" class="dashboardUser-image-add cursor-pointer"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>
+                        <button type="button" id="btnfile" class="dashboardUser-image-add cursor-pointer"><img src="${commonResourcePath}/images/change-profile-icon.png" alt=""/><span id="fname"></span></button>
                         <div class="myAccount-profilImage">
                             <div class="myAccount-profilImage-img">
                                 <div class="profilePicture js-profilePicture" style="background-image:url(${profilePicture})"></div>
@@ -53,7 +53,7 @@
                             <c:if test="${hasLicense or hasAwaitingPayment}">
                                 <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
                                     <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                    <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg"/>
+                                    <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" alt="message"/>
                                 </button>
                             </c:if>
                             <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class=" user-icon mr-1 mr-sm-3 icon-profile">
                         <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user">
-                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/>
+                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg" alt="account"/>
                         </a>
                     </div>
                 </div>
@@ -155,14 +155,14 @@
                         		<button data-target="#license-application-simulator" data-toggle="modal" id="dashboardNoLicenseHelper" class="btn-outline text-uppercase mr-5 mr-sm-3 btn-simulator">
                         			<!--<spring:theme code="dashboard.withoutlicense.startsimulation"/>-->
                                     <spring:theme code="dashboard.withoutlicense.investsaudiOverview"/>
-                        			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
+                        			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"  alt="play"/>
                         		</button>
                                 <button class="btn-dashboard text-uppercase js-license-apply" onclick="applyNewTnC(event,'NewApply');">
                                 	<spring:theme code="dashboard.withoutlicense.applyfornewlicense"/>
                                 </button>
                         	</div>
                             <div class="globalMessage-msg">
-                            	<img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/>
+                            	<img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"  alt="alert"/>
                               	<h5 class="pl-3"><spring:theme code="dashboard.withoutlicense.notappliedforlicenseyet"/></h5>
                             </div>
                         </c:otherwise>
@@ -217,7 +217,7 @@
 	                            <h1 class="section-title text-center clr_gld pt-5"><spring:theme code="dashboard.license.news.updates.title"/></h1>
 		                        <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5  explore-all-btn">
 		                        	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
-		                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
+		                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree" alt="">
 		                    	</a>
 	                        </div>
 	                    </div>
@@ -238,7 +238,7 @@
                                                 </span>
                                                 <h3 class="d-news-update-content my-3">${fn:substring(currentNews.newsTitle,0,25)} ...</h3>
 		                                        <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
-		                                        <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a></p>
+		                                        <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png" alt=""></a></p>
 		                                    </div>
 		                                </div>
 		                            </div>

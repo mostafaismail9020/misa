@@ -262,10 +262,13 @@
         </div>
 
         <div class="contentModule-section contentModule-section_noDivider">
-            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
-                <div class="contentModule-headline"><spring:theme code="licenseApplyEntityInformation.entityInformation.title"/></div>
-                <c:url value="/my-sagia/license/entity" var="entityInfoLink"/>
-                <a id="editEntityInformationButton" type="button" class="btn btn_link iconElement iconElement_edit03" href="${entityInfoLink}"><icon:edit/></a>
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="licenseApplyEntityInformation.entityInformation.title"/></span>
+                    <c:url value="/my-sagia/license/entity" var="entityInfoLink"/>
+                    <a id="editEntityInformationButton" type="button" class="btn btn_link iconElement iconElement_edit03" href="${entityInfoLink}"><icon:edit/></a>
+                    <div class="contentModule-headline-border"></div>
+                </div>
             </div>
 
             <div id="reviewLicenseTypeSection">
@@ -676,11 +679,13 @@
         </div>
 
         <div class="contentModule-section contentModule-section_noDivider" id="reviewShareholdersSection">
-            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
-                <div class="contentModule-headline"><spring:theme code="license.apply.review.shareholders"/></div>
-                <c:url value="/my-sagia/license/shareholders" var="shareHolderLink"/>
-                <a id="editShareholdersButton" type="button" class="btn btn_link iconElement iconElement_edit03" href="${shareHolderLink}"><icon:edit/>
-                </a>
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="license.apply.review.shareholders"/></span>
+                    <c:url value="/my-sagia/license/shareholders" var="shareHolderLink"/>
+                <a id="editShareholdersButton" type="button" class="btn btn_link iconElement iconElement_edit03" href="${shareHolderLink}"><icon:edit/></a>
+                    <div class="contentModule-headline-border"></div>
+                </div>
             </div>
 
             <div class="tableModule">
@@ -717,10 +722,13 @@
 
 
         <div class="contentModule-section" id="reviewContactQeemah1Section">
-            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
-                <div class="contentModule-headline"><spring:theme code="license.apply.review.contactperson"/></div>
-                <c:url value="/my-sagia/license/contactperson" var="contactPersonLink"/>
-                <a type="button" class="editContactPersonButton btn btn_link iconElement iconElement_edit03" href="${contactPersonLink}"><icon:edit/></a>
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="license.apply.review.contactperson"/></span>
+                    <c:url value="/my-sagia/license/contactperson" var="contactPersonLink"/>
+                    <a type="button" class="editContactPersonButton btn btn_link iconElement iconElement_edit03" href="${contactPersonLink}"><icon:edit/></a>
+                    <div class="contentModule-headline-border"></div>
+                </div>
             </div>
 
             <div class="row">
@@ -768,8 +776,11 @@
         </div>
 
         <div class="contentModule-section" style="display:none;">
-            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
-                <div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.unifiedLicenseUrl"/></div>
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.unifiedLicenseUrl"/></span>
+                    <div class="contentModule-headline-border"></div>
+                </div>
             </div>
 
             <h3 style="font-size:15px;">
@@ -779,9 +790,12 @@
         </div>
 
         <div   id="typeRequirementSection" style="display: none;">
-            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered_green">
-            		<div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.typeRequirement"/></div>
-        	</div>
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.typeRequirement"/></span>
+                    <div class="contentModule-headline-border"></div>
+                </div>
+            </div>
 
 
       		<h3 style="color:red;font-size:15px;"> <spring:theme code="licenseApply.contactPerson.readAllRequirement"/></h3>
@@ -826,15 +840,15 @@
         <div class="contentModule-actions contentModule-actions_spaceBetween">
             <span>
                 <c:url value="/my-sagia/license/contactperson" var="contactPersonLink"/>
-                <a id="reviewBackButton" type="button" class="btn btn-secondary" href="${contactPersonLink}"><spring:theme code="license.apply.review.back"/></a>
+                <a id="reviewBackButton" type="button" class="btn btn-ctrl btn-outline" href="${contactPersonLink}"><spring:theme code="license.apply.review.back"/></a>
                 <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
-                    <button id="reviewCancelButton" type="button" class="btn btn-secondary btn_link btn_bold" style="display: none"><spring:theme code="license.apply.review.cancel"/></button>
+                    <button id="reviewCancelButton" type="button" class="btn btn-ctrl" style="display: none"><spring:theme code="license.apply.review.cancel"/></button>
                 </sec:authorize>
             </span>
             <%--<button id="reviewPayButton" type="button" class="btn" data-toggle="modal" onclick="requestPaymentDetails()">(TEST) Pay Again</button>--%>
             <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
                 <c:if test="${'/simulator' ne controllerUrl}">
-                    <button id="reviewSubmitButton" type="button" disabled="disabled" class="btn" ><spring:theme code="license.apply.review.submit"/></button>
+                    <button id="reviewSubmitButton" type="button" disabled="disabled" class="btn btn-ctrl" ><spring:theme code="license.apply.review.submit"/></button>
                 </c:if>
             </sec:authorize>
         </div>

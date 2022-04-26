@@ -287,7 +287,7 @@
 				<c:choose>
 					<c:when test="${userLoggedIn}">
 						<a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user d-none d-lg-inline">
-					      	<img class="" src="${commonResourcePath}/images/User-icon.svg" /><span class="header-user-name">${user.name}</span>
+					      	<img class="" src="${commonResourcePath}/images/User-icon.svg" alt=""/><span class="header-user-name">${user.name}</span>
 					    </a>
 	                    <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer d-none d-lg-inline">
 	                    	<span><spring:theme code="dashboard.logout.label"/></span>
@@ -295,7 +295,7 @@
 					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener ">
 					    	<span><spring:theme code="portal.header.feedback.label"/></span>
 					    </a>
-					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" alt=""/></a>
 					</c:when>
 					<c:otherwise>
 					    <a href="${encodedContextPath}/investsaudi-login" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
@@ -304,7 +304,7 @@
 					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
 					    	<span><spring:theme code="portal.header.feedback.label"/></span>
 					    </a>
-					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" alt=""/></a>
 				    </c:otherwise>
 				</c:choose>
 			</div>
@@ -314,8 +314,8 @@
 		<div class="container d-flex align-items-center">
 			<div class="logo mr-auto">
 				<a href="/${language}">
-					<img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" />
-					<img class="hd-scroll" src="${fn:escapeXml(component.visionImage.url)}" />
+					<img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" alt="logo"/>
+					<img class="hd-scroll" src="${fn:escapeXml(component.visionImage.url)}" alt="logo"/>
 				</a>
 			</div>
 			<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
@@ -327,7 +327,7 @@
 								<a href="${encodedContextPath}/my-sagia/sagia-profile"
 									title="${user.name}" class="login-details sagiaNavigation-user d-flex">
 									<img class="MobileNavUserIcon"
-									src="${commonResourcePath}/images/User-icon.svg" />
+									src="${commonResourcePath}/images/User-icon.svg" alt="icon"/>
 									<span
 										class="header-user-name">${user.name}</span>
 								</a>
@@ -477,7 +477,7 @@
 				<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
 				<c:if test="${hasLicense or hasAwaitingPayment}">
 					<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
-						<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg"/>
+						<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg" alt="calender"/>
 					</a>
 				</c:if>
 			</div>
@@ -489,7 +489,7 @@
 					<c:if test="${hasLicense or hasAwaitingPayment}">
 						<button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
 							<span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-							<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg"/>
+							<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" alt="message"/>
 						</button>
 					</c:if>
 					<div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -497,7 +497,7 @@
 			</div>
 			<div class=" user-icon mr-1">
 				<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
-					<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/>
+					<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg" alt="account"/>
 				</a>
 			</div>
 		</div>

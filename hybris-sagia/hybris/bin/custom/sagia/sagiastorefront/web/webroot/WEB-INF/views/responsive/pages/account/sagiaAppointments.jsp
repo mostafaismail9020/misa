@@ -31,7 +31,7 @@
                         <c:if test="${hasLicense or hasAwaitingPayment}">
                             <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
                                 <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img" alt="message"/>
                             </button>
                         </c:if>
                         <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -174,7 +174,7 @@ class="btn btn_link appointmentList-viewBtn appointmentList-icon_view">
                                         <button class="paginationModule-control paginationModule-control_left" disabled>
                                             <!-- <img src="${commonResourcePath}/images/arrow-left.svg" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
                                             <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;"> -->
-                                            <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                            <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" alt="arrow">
                                         </button>
 
                                         <div class="paginationModule-items">
@@ -185,7 +185,7 @@ class="btn btn_link appointmentList-viewBtn appointmentList-icon_view">
                                         </div>
 
                                         <button class="paginationModule-control paginationModule-control_right">
-                                            <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" id="ss_right_arrow">
+                                            <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" id="ss_right_arrow" alt="arrow">
                                                         <!-- <img src="${commonResourcePath}/images/arrow-left.svg" class="img-responsive" id="ss_right_arrow" style="transform: rotate(180deg);"> -->
                                         </button>
                                     </div>

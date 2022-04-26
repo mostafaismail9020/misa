@@ -17,7 +17,7 @@
 			<div>
 				<h3>
 					<spring:theme code="checkout.multi.hostedOrderPostPage.header.wait"/>
-					<img src="${commonResourcePath}/images/spinner.gif" />
+					<img src="${commonResourcePath}/images/spinner.gif" alt="" />
 				</h3>
 				<hr/>
 			</div>

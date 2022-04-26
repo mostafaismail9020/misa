@@ -82,7 +82,7 @@
 						</c:if>
 						<%-- <c:if test="${not empty productData.imageUrl}"> 
 							<p class="text-center"><spring:theme code="text.scan.mobile"/>: <br>&nbsp;
-								<img style="width: 158px; height: 158px;" src="${productData.imageUrl}">
+								<img style="width: 158px; height: 158px;" src="${productData.imageUrl}" alt="">
 							</p>
 						</c:if> --%>
 					</div>

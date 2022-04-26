@@ -13,7 +13,7 @@
         <div class="container">
          <div class="accountLogin-headline">
                         <a href="${encodedContextPath}/" class="accountLogin-headline-logo">
-                            <img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/common/images/logo-en.svg">
+                            <img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/common/images/logo-en.svg" alt="logo">
                         </a>
                     </div>
             <div class="row">

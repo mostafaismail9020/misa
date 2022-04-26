@@ -29,7 +29,7 @@ $("#searchInputBox").on('input', function () {
                                 "<li class=\"serviceMenu-item\">" +
                                 "<a href=\"\" class=\"serviceMenu-head js-serviceMenu\">" +
                                 "<span class=\"serviceMenu-head-icon\">" +
-                                "<img src='" + icon + "' height=\"22\" width=\"22\" >" +
+                                "<img src='" + icon + "' alt=\"icon\" height=\"22\" width=\"22\" >" +
                                 "</span>" +
                                 "<div class=\"serviceMenu-head-title\">" + key + "</div>" +
                                 "<div class=\"serviceMenu-head-action\">" +
@@ -44,7 +44,7 @@ $("#searchInputBox").on('input', function () {
                                 "<div class=\"serviceModule-section\">" +
                                 "<div class=\"serviceModule-content\">" +
                                 "<div class=\"serviceModule-icon\">" +
-                                "<img src='" + icon + "'>" +
+                                "<img src='" + icon + "' alt=\"icon\">" +
                                 "</div>" +
                                 "<div class=\"serviceModule-description\">" +
                                 "<div class=\"serviceModule-headline\">" + key + "</div>" +
@@ -192,6 +192,7 @@ $(document).on('click',".services-category-list .nav .nav-link",function(){
 
               $(active_attr).addClass('show');
               $(active_attr).addClass('d-block');
+             
           }
       })
   })

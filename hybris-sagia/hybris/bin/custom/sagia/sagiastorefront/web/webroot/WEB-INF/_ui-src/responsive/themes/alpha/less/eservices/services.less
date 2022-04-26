@@ -34,6 +34,7 @@
 }
 .btn.btn_slim.btn_outline{
     background-color: @color-primary;
+    color:#FFF;
 }
 .service-wrapper{
 	background: @color-white 0% 0% no-repeat padding-box;
@@ -180,6 +181,9 @@
             width: 100%;
             justify-content: center;
         }
+        .service-para{
+            font-size: 18px;
+        }
     }
 }
 .serviceModule-request{
@@ -308,9 +312,9 @@
         color: @color-text;
     }
 }
-.contentModule-actions .contentModule-headline{
-    max-width: 70%;
-}
+// .contentModule-actions .contentModule-headline{
+//     max-width: 70%;
+// }
 .contentModule-headline-service-info{
     background: none !important;
     color: @color-text;
@@ -955,7 +959,11 @@ button.btn.btn_link.btn-edit-branch:hover,.btn.editShareholderBtn:hover,button.e
             width: auto;
         }
     }
-    
+    .page-license-amend{
+        .service-wrapper{
+            width: 100%;
+        }
+    }
 }
 
 
@@ -1492,6 +1500,12 @@ body:not('.page-new-apply-review') .contentModule-actions_wrap,.contentModule .c
     .renewal-services .mainSection-linkActions_right{
         display: flex !important;
     }
+    .services-container-tabcontent .accordion-item .accordion-button h5{
+        font-size: 20px;
+    }
+    .container.service-wrapper.service-wrapper-info{	
+        max-width: 86%;	
+    }
 }
 
 
@@ -1815,3 +1829,66 @@ a#printLink{
     display: flex;
     justify-content: flex-start;
 }
+
+
+.btn.btn-secondary.btn_outline{
+        color: #32465a;
+        background-color: transparent;
+        border-color: #32465a;
+    }
+    .btn.btn-warning.btn_outline{
+        color: #FFF;
+        background-color: #d0021b;
+        border-color: #d0021b;
+    }
+    .btn.btn_outline{
+        color: #00a6be;
+        border: 1px solid #00a6be;
+        background-color: #fff;
+    }
+    .btn.btn_slim.btn_outline:hover{
+        color: #FFF;
+    }
+    .btn.btn_link{
+        color: #00a6be;
+    }
+
+    .btn.btn-secondary.btn_outline:hover,
+     .btn.btn-secondary.btn_outline:hover, 
+    .btn.btn-secondary:hover{
+        color: #FFF !important;
+    }
+    .btn.btn-secondary.btn_link:hover{
+        color: #4b5a69;
+    }
+
+    .page-ui-test a.btn{
+        padding: 12px;
+    }
+
+    // .formCheckBox .form-control:checked+.control-label span:hover, /*MMJ */
+    .btn.btn_link.appointmentList-locationBtn, .btn.btn_link.appointmentList-locationBtn:hover,.btn.btn_link.iconElement:hover{
+        background-color: initial !important;
+        border: initial;
+    }
+    .btn.btn-secondary.js-stepsList-prev:hover{
+        color:#cacaca !important;
+    }
+    .btn.btn_link.iconElement{
+        border: initial;
+    }
+    .iconElement_edit02 svg{
+        top:0;
+    }
+    .formCheckBox .form-control:checked+.control-label span {
+        background-color: #00a6be;
+    }
+    .formCheckBox_switch .form-control:checked+.control-label span{
+        background-color: initial;
+    }
+    .panelTabs_tip_right .panelTabs-navigation .tabs-list li.active a:after{
+        display: none;
+    }
+    .page-ui-test .form-control:disabled{
+        opacity:0;
+    }

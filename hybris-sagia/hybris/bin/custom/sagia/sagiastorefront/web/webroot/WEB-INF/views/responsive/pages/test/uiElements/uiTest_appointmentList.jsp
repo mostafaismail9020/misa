@@ -8,10 +8,12 @@
 	<!-- End of Module description-->
 	<div class="row">
 		<div class="panelModule panelModule_halfRadius">
-                <div class="contentModule-actions">
-                    <div class="contentModule-headline"><icon:calendarDate/> Your Appointment Overview</div>
+                <div class="contentModule contentModule-wrap">
+                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                        <span class="contentModule-headline"><icon:calendarDate/>Your Appointment Overview</span>
+                        <div class="contentModule-headline-border"></div>
+                    </div>
                 </div>
-<!--                 <hr/> -->
                 <table class="appointmentList appointmentList_hasTopBoder" id="appointmentList">
                     <tbody><tr class="appointmentList-entry">
                             <td class="appointmentList-date" data-date="2018-03-27" data-time="" data-duration="">

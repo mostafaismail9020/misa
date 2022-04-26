@@ -42,13 +42,13 @@
                     
                     <c:if test="${currentLanguage.isocode == 'en'}">
                         <a class="nav-link logo-postion-fix" target="_blank" href="https://investsaudi.sa/en/">
-                            <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" />
+                            <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" alt="logo" />
                         </a>                       
                     </c:if>
 
                     <c:if test="${currentLanguage.isocode == 'ar'}">
                         <a class="nav-link logo-postion-fix" target="_blank" href="https://investsaudi.sa/ar/">
-                            <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" />
+                            <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" alt="logo"/>
                         </a>                       
                     </c:if>                                           
                     
@@ -58,13 +58,13 @@
 
                         <c:if test="${currentLanguage.isocode == 'en'}">
                             <a class="nav-link logo-postion-fix" target="_blank" href="/en/">
-                                <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" />
+                                <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" alt="logo"/>
                             </a>
 						</c:if>
 
                         <c:if test="${currentLanguage.isocode == 'ar'}">
                             <a class="nav-link logo-postion-fix" target="_blank" href="/ar/">
-                                <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" />
+                                <img src="${themeResourcePath}/img/${currentLanguage.isocode}/logo.png" alt="logo"/>
                             </a>                      
                         </c:if>                        
 
@@ -130,7 +130,7 @@
                 </ul>
                 <ul class="navbar-nav img-roya-nav investNavigation-right">
                     <li class="nav-item img-roya">
-                        <a class="nav-link" href="http://vision2030.gov.sa/ar/" target="_blank"><img src="${themeResourcePath}/img/roya.svg" class="roya-height" width="97"></a>
+                        <a class="nav-link" href="http://vision2030.gov.sa/ar/" target="_blank"><img src="${themeResourcePath}/img/roya.svg" class="roya-height" width="97" alt=""></a>
                     </li>
                 </ul>
             </div>
@@ -267,7 +267,7 @@
                                         <li class="js-sagiaMobileNav_moveForwards sagiaMobileNav-subNav-icon">
                                             <a href="#" data-target-submenu="${category.name}" data-target-menuID="#sagiaMobileNav-serviceMenu" class="sagiaMobileNav-hasSub-link_forwards">
                                                 <c:if test="${not empty category.menuIcon.url}">
-                                                    <img src="${category.menuIcon.url}" width="25" height="25"/>
+                                                    <img src="${category.menuIcon.url}" width="25" height="25" alt="icon"/>
                                                 </c:if>                                                
                                                 <c:choose>
                                                     <c:when test="${fn:length(category.name) gt 0}">
@@ -292,7 +292,7 @@
                                             <li class="js-sagiaMobileNav_moveForwards sagiaMobileNav-subNav-icon">
                                                 <a href="#" data-target-submenu="${category.name}" data-target-menuID="#sagiaMobileNav-serviceMenu" class="sagiaMobileNav-hasSub-link_forwards">
                                                    <c:if test="${not empty category.menuIcon.url}">
-                                                        <img src="${category.menuIcon.url}" width="25" height="25"/>
+                                                        <img src="${category.menuIcon.url}" width="25" height="25" alt="icon"/>
                                                     </c:if>
                                                     <c:choose>
                                                         <c:when test="${fn:length(category.name) gt 0}">

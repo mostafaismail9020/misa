@@ -53,7 +53,9 @@
 </div>
 
 <script>
-    $(document).on('click',"#feedbackDashboardButtonId",function(){
-        window.location ='${encodedContextPath}/dashboard';
+     window.addEventListener('load', function () {
+        $(document).on('click',"#feedbackDashboardButtonId",function(){
+            window.location ='${encodedContextPath}/dashboard';
+        })    
     })
 </script>

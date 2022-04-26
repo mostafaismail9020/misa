@@ -61,11 +61,11 @@
     <div class="row">
         <div class="col-12 owl-slider">
             <div class="owl-carousel owl-theme" id="dashboard-carousel">
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg"></div>
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image2.jpg"></div>
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image3.jpg"></div>
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image4.jpg"></div>
-                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image5.jpg"></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg" alt=""></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image2.jpg" alt=""></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image3.jpg" alt=""></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image4.jpg" alt=""></div>
+                <div class="item"><img src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image5.jpg" alt=""></div>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
                     <div class="col">
                         <div class="dashboardUser-image">
                             <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
-                                <button type="button"  id="btnfile" class="dashboardUser-image-add cursor-pointer"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>
+                                <button type="button"  id="btnfile" class="dashboardUser-image-add cursor-pointer"><img src="${commonResourcePath}/images/change-profile-icon.png"  alt="profile"/><span id="fname"></span></button>
                                 
                                 <div class="myAccount-profilImage">
                                     <div class="myAccount-profilImage-img">
@@ -107,9 +107,9 @@
                         <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
                         	<!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
                             <div class="account-manager"><h4 class="clr_gld"><spring:theme code="dashboard.license.account.manager.title"/></h4></div>
-                            <div class="dashboardUser-label profile-detail dashboardUser-label-xs pt-1"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-name"><b><c:out value='${user.name}'/></b></span></div>
-                            <div class="dashboardUser-label profile-detail pt-1"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
-                            <div class="dashboardUser-label profile-detail pt-1"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
+                            <div class="dashboardUser-label profile-detail dashboardUser-label-xs pt-1"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"  alt="profile"/><span class="dashboardUser-name"><b><c:out value='${user.name}'/></b></span></div>
+                            <div class="dashboardUser-label profile-detail pt-1"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"  alt="email"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
+                            <div class="dashboardUser-label profile-detail pt-1"><img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png" alt="mobile"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
                             <!--  <button class="btn-dashboard text-uppercase">service request</button> -->
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                         <div class=" user-icon mr-1 mr-sm-3 icon-appointments">
                             <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
                             <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
-                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg" alt="calender"/>
                             </a>
                         </div>
                         <div class=" user-icon mr-1 mr-sm-3 icon-notification">
@@ -128,7 +128,7 @@
                                 <c:if test="${hasLicense or hasAwaitingPayment}">
                                     <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
                                         <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
-                                        <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg"/>
+                                        <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" alt="message"/>
                                     </button>
                                 </c:if>
                                 <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
@@ -143,7 +143,7 @@
                         </div>
                         <div class=" user-icon mr-1 mr-sm-3 icon-profile">
                             <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
-                            	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/>
+                            	<img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg" alt="account"/>
                             </a>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                 <a onclick="awaitingPayment()" class="btn btn_round d-flex justify-content-center"><spring:theme code="awaiting.payment.pay" /></a>
             </div>
             <div class="globalMessage-msg">
-                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
+                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png" alt="icon"/></div>
                 <spring:theme code="dashboard.message.awaitingpayment.text"/>
             </div>
         </div>
@@ -423,7 +423,7 @@
                                                 <button class="paginationModule-control paginationModule-control_left" disabled>
                                                     <!-- <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
                                                     <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;"> -->
-                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
+                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree" alt="arrow">
                                                 </button>
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
@@ -433,7 +433,7 @@
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
                                                     <!-- <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow"> -->
-                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" id="ss_right_arrow">
+                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" id="ss_right_arrow" alt="arrow">
                                                 </button>
                                             </div>
                                             <div class="tableModule-headline">
@@ -500,7 +500,7 @@
                                             </c:if>
                                             <div class="paginationModule-wrapper">
                                                 <button class="paginationModule-control paginationModule-control_left" disabled>
-                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
+                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree" alt="arrow">
                                                 </button>
                                                 <div class="paginationModule-items">
                                                     <div class="loadingModule">
@@ -509,7 +509,7 @@
                                                     </div>
                                                 </div>
                                                 <button class="paginationModule-control paginationModule-control_right">
-                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" >
+                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" alt="arrow">
                                                 </button>
                                             </div>
                                             <c:if test="${pageIsDashboard}">
@@ -559,7 +559,7 @@
                         <!-- <a href="/${language}/mediaCenter/news" class="btn-primary explore-btn explore-gia-btn">Explore All&nbsp; -->
                         <a href="/${language}/mediaCenter/news" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
                         	<spring:theme code="text.dashboard.without.license.exploreAllOpportunities"/>&nbsp;
-                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree">
+                            <img src="/_ui/responsive/common/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive transform-180-degree" alt="">
                     	</a>
                     </div>
                 </div>
@@ -582,7 +582,7 @@
 	                                    <p class="home-news-updates-content-p">${currentNews.newsShortInformation}</p>
 	                                    <p><a class="know-more-link" href="${newsUrl}/${currentNews.uid}">
 	                                    	<spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;
-	                                    	<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png"></a>
+	                                    	<img class="ml-3 transform-180-degree" src="${commonResourcePath}/images/btn-sector-outline.png" alt=""></a>
 	                                    </p>
 	                                </div>
 	                            </div>
@@ -847,7 +847,7 @@
                                         </c:if>
                                         <div class="paginationModule-wrapper">
                                             <button class="paginationModule-control paginationModule-control_left" disabled>
-                                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" alt="arrow">
                                             </button>
                                             <div class="paginationModule-items">
                                                 <div class="loadingModule">
@@ -856,7 +856,7 @@
                                                 </div>
                                             </div>
                                             <button class="paginationModule-control paginationModule-control_right">
-                                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" >
+                                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" alt="arrow" >
                                             </button>
                                         </div>
                                             <div class="tableModule-headline">
@@ -919,7 +919,7 @@
                                         </c:if>
                                         <div class="paginationModule-wrapper">
                                             <button class="paginationModule-control paginationModule-control_left" disabled>
-                                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
+                                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" alt="arrow">
                                             </button>
                                             <div class="paginationModule-items">
                                                 <div class="loadingModule">
@@ -928,7 +928,7 @@
                                                 </div>
                                             </div>
                                             <button class="paginationModule-control paginationModule-control_right">
-                                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive">
+                                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" alt="arrow">
                                             </button>
                                         </div>
                                         <c:if test="${pageIsDashboard}">

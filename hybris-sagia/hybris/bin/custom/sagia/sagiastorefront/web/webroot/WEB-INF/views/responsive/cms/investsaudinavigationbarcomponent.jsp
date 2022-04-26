@@ -447,7 +447,7 @@
 							</a>
 							<a data-toggle="modal" data-target="#logoutModal"
 								title="<spring:theme code='text.logout'/>"
-								class="btn-dashboard text-white login-details sagiaNavigation-logout cursor-pointer mr-3">
+								class="btn-dashboard text-white login-details sagiaNavigation-logout cursor-pointer mr-3 mobile-nav-logout">
 								<span>
 									<spring:theme code="dashboard.logout.label" />
 								</span>

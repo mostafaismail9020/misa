@@ -14,8 +14,11 @@
     <div class="panelModule panelModule_halfRadius">
         <div class="contentModule">
             <div class="contentModule-section">
-                <div class="contentModule-headline mw0">
-                    <!--<span class="iconElement iconElement_password"><icon:password/></span>--><spring:theme code="profile.my.password"/>
+                <div class="contentModule contentModule-wrap">
+                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                        <span class="contentModule-headline"><spring:theme code="profile.my.password"/></span>
+                        <div class="contentModule-headline-border"></div>
+                    </div>
                 </div>
                   <hr class="hr">
                 <account:updatePwd/>
@@ -23,15 +26,21 @@
             </div>
 
             <div class="contentModule-section">
-                <div class="contentModule-headline mw0">
-                    <!--<span class="iconElement iconElement_password"><icon:accountSettings02/></span>--><spring:theme code="profile.my.username"/>
+                <div class="contentModule contentModule-wrap">
+                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                        <span class="contentModule-headline"><spring:theme code="profile.my.username"/></span>
+                        <div class="contentModule-headline-border"></div>
+                    </div>
                 </div>
                  <hr class="hr">
                 <account:updateUsername/>
             </div>
             <div class="contentModule-section">
-                <div class="contentModule-headline mw0">
-                    <!--<span class="iconElement iconElement_password"><icon:my-email/></span>--><spring:theme code="profile.my.email"/>
+                <div class="contentModule contentModule-wrap">
+                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                        <span class="contentModule-headline"><spring:theme code="profile.my.email"/></span>
+                        <div class="contentModule-headline-border"></div>
+                    </div>
                 </div>
                  <hr class="hr">
                 <account:updateEmail/>

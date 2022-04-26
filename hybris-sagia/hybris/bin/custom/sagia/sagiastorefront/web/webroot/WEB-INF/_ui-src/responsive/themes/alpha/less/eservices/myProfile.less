@@ -140,6 +140,10 @@ div:not(.formInputBox-split) > .formSelectBox,div:not(.formInputBox-split)  > .f
 .formRadioBox .form-item {
     width: auto;
 }
+@media (max-width: 640px) and (min-width: 100px){
+    .formRadioBox .form-item {display: block;height: 39px;width: 50%;}
+}
+
 
 .form-group .form-item .active {
     color: #fff !important;
@@ -365,9 +369,9 @@ div:not(.formInputBox-split) > .formSelectBox,div:not(.formInputBox-split)  > .f
     content: '';
 }
 
-.contentModule-actions .contentModule-headline {
-    max-width: 30%;
-}
+// .contentModule-actions .contentModule-headline {
+//     max-width: 30%;
+// }
 
 #nicVerifyBtnSection a,
 .contentModule-actions_insideSection a {
@@ -800,10 +804,12 @@ button:focus {
     line-height: 30px;
     color: #BF9B2E;
     text-align: left;
-    border-bottom: 2px dotted #cacaca;
+    border-bottom: none;//2px dotted #cacaca;
     background-color: transparent;
 }
-
+.baModule .contentModule-headline ~ div.row{
+    border-top: 2px dotted #cacaca;
+}
 [dir] .baModule .formCheckBox .form-group {
     padding-top: 30px;
 }
@@ -2144,7 +2150,7 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
 
     }
     .formInputBox .form-control:placeholder-shown+.control-label{
-           font-size: var(--content-font);
+           font-size: 14px;
     }
     .formSelectBox .select2.select2-container.select2-container--disabled+.control-label{
         font-weight: normal;
@@ -3076,11 +3082,11 @@ body:not('.page-license-amend') #showDelegateQuestion .formRadioBox .form-item #
    padding-left:30px !important;
    padding-right:30px !important;
 }
-@media (min-width: 300px) and (max-width:768px) { 
-    .contentModule-headline {
-        width: 100% !important;
-    }
-}
+// @media (min-width: 300px) and (max-width:768px) { 
+//     .contentModule-headline {
+//         width: 100% !important;
+//     }
+// }
 
 
 

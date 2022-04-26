@@ -62,9 +62,9 @@
         .panelModule_halfRadius {
             margin-bottom: 20px !important;
         }
-        .contentModule-actions .contentModule-headline {
-                max-width: 100%!important;
-            }
+        // .contentModule-actions .contentModule-headline {
+        //         max-width: 100%!important;
+        //     }
             .headline-text {font-size: 24px !important;}
             .headline-text img {max-width: 36px; width: 100%;}
         .banner-container {top: 22%!important;}
@@ -193,11 +193,17 @@
 
         padding: 0 !important;
     }
-    #sectionItems ,#divisionItems ,#groupItems ,#classItems ,#branchItems ,#activityItems  {
-        .baModule-search {
-            max-width: 100%;
-        }
+    #sectionItems ,#divisionItems ,#groupItems ,#classItems ,#branchItems ,#activityItems  {       
+        .baModule-search{ 
+            max-width: 100%; 
+        } 
+        .formCheckBox_block{
+            .form-group{
+                margin-bottom: 0;
+            }
+        }      
     }
+    .page-new-license-apply #businessActivitiesModal .baList.baList_columns {columns: 1;}
     .panelTabs_lightNavigation .panelTabs-navigation {
         display: none !important;
     }
@@ -351,8 +357,23 @@
     .tc-footer button:last-child {
         margin: 10px auto !important;
     }
-    .baModule .contentModule-headline {
-        min-height: 100px;
+    #termsAndConditionsResponseApplyModal{
+        .tc-footer button:nth-child(2){
+            order: 1;
+        }
+    }
+    // .baModule .contentModule-headline {
+    //     min-height: 100px;
+    // }
+    #businessActivitiesModal{
+        overflow-y: auto;
+    }
+    #personShareholderForm, #updatePwdForm,#changeUsername,#changeEmail{
+        .contentModule-actions{
+            button:nth-child(1){
+                order: 2;
+            }
+        }
     }
     #shareholdersQM1 .contentModule-actions .w-25 {
         width: 100% !important;
@@ -548,27 +569,27 @@
             }
         }
     
-        #contactPersonTabData{
-            .contentModule-actions{
-                span{
-                    display: block;
-                    width: 100%;
-                    a#contactPersonBackButton{
-                        display: block;
-                        width: 100% !important;
-                    }
-                }
-                span{
-                    display: block;
-                    width: 100%;
-                    button#contactPersonNextButton{
-                        display: block;
-                        margin-top: 15px;
-                        width: 100% !important;
-                    }
-                }
-            }
-        }
+        // #contactPersonTabData{
+        //     .contentModule-actions{
+        //         span{
+        //             display: block;
+        //             width: 100%;
+        //             a#contactPersonBackButton{
+        //                 display: block;
+        //                 width: 100% !important;
+        //             }
+        //         }
+        //         span{
+        //             display: block;
+        //             width: 100%;
+        //             button#contactPersonNextButton{
+        //                 display: block;
+        //                 margin-top: 15px;
+        //                 width: 100% !important;
+        //             }
+        //         }
+        //     }
+        // }
      }
     
      .page-new-apply-review{
@@ -588,12 +609,12 @@
                     width: 100%;
                 }
                 span{
-                    display: block;
-                    width: 100%;
+                    // display: block;
+                    // width: 100%;
                     a#reviewBackButton{
                         display: block;
                         font-weight: 600;
-                        width: 100% !important;
+                        // width: 100% !important;
                     }
                 }
                 button#contactPersonNextButton{
@@ -723,11 +744,11 @@
               .myAccount-profilImage{
                   margin-bottom: 0;;
               }
-              .js-myAccount-edit{
-                  .js-myAccount-edit-text{
-                      margin-top: 10px;
-                  }
-              }
+            //   .js-myAccount-edit{
+            //       .js-myAccount-edit-text{
+            //           margin-top: 10px;
+            //       }
+            //   }
               #sagiaProfilePersonalForm{
                   .select2-container{
                       .select2-selection--single{
@@ -1546,7 +1567,7 @@ ul.tooltip-list li.tooltip-listItem .tooltip-listItem-header .btn:hover {backgro
     [dir] .page-header-image {height: 434px;}
     .bannerWrapper{height: auto;padding-bottom: 0px !important}
     .mainSection_narrow {max-width: 990px;display: none;}
-    .formRadioBox .form-item {display: block;height: 39px;width: 50%;}
+    // .formRadioBox .form-item {display: block;height: 39px;width: 50%;}
     .contentModule-actions .addButton.btn-ctrl{display: flex;justify-content: center;align-items: center;}
     ul.tooltip-list li.tooltip-listItem .tooltip-listItem-header .btn:hover {background-color: transparent !important;}
     [dir=rtl] .select2.select2-container .select2-selection:after{left: 0;right: initial;}

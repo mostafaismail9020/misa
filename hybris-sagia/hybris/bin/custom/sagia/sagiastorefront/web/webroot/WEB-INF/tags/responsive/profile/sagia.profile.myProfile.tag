@@ -14,22 +14,20 @@
     <div class="panelModule panelModule_halfRadius">
         <div class="contentModule">
             <div class="contentModule-section">
-                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mb-0">
-                    <div class="contentModule-headline profile-settings">
-                     <!--  <span class="iconElement iconElement_accountSettings02"><icon:accountSettings02/></span>--><spring:theme code="profile.settings"/>
-                    </div>
-                    <div>
-                        <button class="js-myAccount-edit btn_link btn_edit border-0">
-                            <div class="js-myAccount-edit-text"><!--<spring:theme code="general.edit"/>-->
+                <div class="contentModule contentModule-wrap">
+                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                        <span class="contentModule-headline"><spring:theme code="profile.settings"/></span>
+                        <button class="js-myAccount-edit btn_link btn_edit border-0 m-0">
+                            <div class="js-myAccount-edit-text">
                                 <span class="iconElement iconElement_edit02 pr-0"><icon:edit/></span>
                             </div>
                             <div class="js-myAccount-edit-text hidden">
                                 <span class="iconElement iconElement_closeEdit" aria-hidden="true">&times;</span><spring:theme code="profile.exit.editMode"/>
                             </div>
                         </button>
+                        <div class="contentModule-headline-border"></div>
                     </div>
                 </div>
-                <hr class="hr">
                 <div class="myAccount-edit-toggle js-myAccount-edit-toggle">
                     <div class="myAccount-profilImage">
 					<h4 id="sagia_profile_picture_title" class="sagia_profile_picture_title"></span><spring:theme code="profile.my.profile.picture"/></h4>

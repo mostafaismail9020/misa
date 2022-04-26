@@ -15,8 +15,8 @@
                     <div class="modal-description modal-description_largeMargin modal-description_smallText"><spring:message code="session.extend.question"/></div>
                 </div>
                 <div class="modal-footer modal-footer_spaceBetween">
-                    <button type="button" class="btn btn-warning btn_round btn_slim noButton" data-dismiss="modal"><spring:message code="text.logout.no"/></button>
-                    <button type="button" class="btn btn_round btn_slim yesButton"><spring:message code="text.logout.yes"/></button>
+                    <button type="button" class="btn-ctrl btn-outline noButton p-0" data-dismiss="modal"><spring:message code="text.logout.no"/></button>  
+                    <button type="button" class="btn btn-ctrl btn-bg yesButton p-0"><spring:message code="text.logout.yes"/></button>
                 </div>
             </form>
         </div>

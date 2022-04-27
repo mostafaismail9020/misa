@@ -670,7 +670,7 @@ function getAccordion(element_id,screen)
 
 			concat += '<div id="' + n + '" class="panel panel-default">';
 			concat += '<div class="panel-heading dashboardWidget-headline js-dashboardWidget-headline-icon" role="tab" id="heading' + n + '">';
-			concat += '<h5 class="panel-title"><img class="imageCertifcate" src="'+$(val).find("img").attr("src")+'" /><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
+			concat += '<h5 class="panel-title"><img class="imageCertifcate" src="'+$(val).find("img").attr("src")+'" alt=""/><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
 			concat += '</div>';
 			concat += '<div id="collapse' + n + '" class="panel-collapse collapse heading' + n + '" role="tabpanel" aria-labelledby="heading' + n + '">';
 			concat += '<div class="panel-body">' + obj_cont[n].innerHTML + '</div>';

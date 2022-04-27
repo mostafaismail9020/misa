@@ -21,7 +21,7 @@
             <div class="owl-carousel owl-theme" id="dashboard-carousel">
             <c:if test="${not empty bannerImages}">
                 <c:forEach items="${bannerImages}" var="banner">
-                    <div class="item"><img src="${fn:escapeXml(banner.url)}"></div>
+                    <div class="item"><img src="${fn:escapeXml(banner.url)}" alt="banner"></div>
                 </c:forEach>
             </c:if>
             </div>

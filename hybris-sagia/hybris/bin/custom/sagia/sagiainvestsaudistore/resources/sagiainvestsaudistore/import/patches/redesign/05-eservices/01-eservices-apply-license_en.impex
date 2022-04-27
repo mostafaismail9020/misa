@@ -23,11 +23,11 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
 <div class=""js-dashboardWidget"">
         <div class=""card dashboardWidget-body mb-md-5 p-0 no-border dashboardWidget-body-shadow"">
             <ul  class=""nav nav-tabs w-100"" id=""tabs"">
-                <li class=""nav-item  col-md-6  col-xs-12 p-0""> <a class="" nav-link text-center active"" href=""#1a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png""/>MISA License</a></li>
+                <li class=""nav-item  col-md-6  col-xs-12 p-0""> <a class="" nav-link text-center active"" href=""#1a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png"" alt=""license""/>MISA License</a></li>
                 <li class=""nav-item  col-md-6 col-xs-12 p-0"">
                   <a class=""nav-link text-center"" href=""#2a"" data-toggle=""tab"">
-                    <img class=""pr-3 d-inline-block d-sm-none"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-a-bidding-certificate.png""/>
-                    <img class=""pr-3 d-none d-md-inline-block"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/>
+                    <img class=""pr-3 d-inline-block d-sm-none"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-a-bidding-certificate.png"" alt=""certificate""/>
+                    <img class=""pr-3 d-none d-md-inline-block"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png"" alt=""certificate""/>
                     Bidding Certificate
                   </a>
                 </li>
@@ -43,7 +43,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Register-icon.png""/>
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Register-icon.png"" alt=""icon""/>
                                 </div>
                             </div>
                             <div  class=""text-center"">
@@ -51,12 +51,12 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                 <div class=""process-card-step-description mt-1"">Register</div>
                             </div>
                           </div>
-                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png"" alt=""apply""/></div>
 
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Complete-our-application-form.png""/>
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Complete-our-application-form.png"" alt=""""/>
                                 </div>
                             </div>
                             <div  class=""text-center"">
@@ -64,12 +64,12 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                 <div class=""process-card-step-description mt-1"">Complete Our Application Form</div>
                             </div>
                           </div>
-                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png"" alt=""apply""/></div>
 
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Waiting-the-approval.png""/>
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Waiting-the-approval.png"" alt=""Waiting-approval""/>
                                 </div>
                             </div>
                             <div  class=""text-center"">
@@ -77,12 +77,12 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                 <div class=""process-card-step-description mt-1"">Waiting for the Approval</div>
                             </div>
                           </div>
-                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png"" alt=""""/></div>
 
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Payment.png""/>
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Payment.png"" alt=""payment""/>
                                 </div>
                             </div>
                             <div  class=""text-center"">
@@ -90,11 +90,11 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                 <div class=""process-card-step-description mt-1"">Payment</div>
                             </div>
                           </div>
-                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png"" alt=""""/></div>
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Receive your License.png""/>
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Receive your License.png"" alt=""""/>
                                 </div>
                             </div>
                             <div  class=""text-center"">
@@ -103,7 +103,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                             </div>
                           </div>
                       </div>
-					             <div class=""text-center mt-5 mb-3""><button onclick=""applyNewTnC(event,'NewApply');"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">apply<img class=""pl-3""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
+					             <div class=""text-center mt-5 mb-3""><button onclick=""applyNewTnC(event,'NewApply');"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">apply<img class=""pl-3""  src=""/_ui/responsive/common/images/arow_btn.png"" alt=""""/></button></div>
                   </div>
                   <div class=""tab-pane"" id=""2a"">
                       <div class=""text-center"">
@@ -115,7 +115,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Register-icon.png""/>
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Register-icon.png"" alt=""""/>
                                 </div>
                             </div>
                             <div  class=""text-center"">
@@ -123,12 +123,12 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                 <div class=""process-card-step-description mt-1"">Register</div>
                             </div>
                           </div>
-                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png"" alt=""""/></div>
 
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Complete-our-application-form.png""/>
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Complete-our-application-form.png"" alt=""""/>
                                 </div>
                             </div>
                             <div  class=""text-center"">
@@ -136,12 +136,12 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                 <div class=""process-card-step-description mt-1"">Complete Our Application Form</div>
                             </div>
                           </div>
-                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png""/></div>
+                          <div class=""process-arrow-icon""><img  src=""/_ui/responsive/common/images/arrow-round-forward.png"" alt=""""/></div>
 
                           <div class=""process-step col-2 col-xs-12"">
                             <div class=""process-card"">
                                 <div class=""process-card-step"">
-                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Waiting-the-approval.png""/>
+                                  <img class="""" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Waiting-the-approval.png"" alt=""""/>
                                 </div>
                             </div>
                             <div  class=""text-center"">
@@ -150,7 +150,7 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                             </div>
                           </div>
                       </div>
-                    <div class=""text-center mt-5 mb-3""><button onclick=""biddingCertificate(event);"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">apply<img class=""pl-3""  src=""/_ui/responsive/common/images/arow_btn.png""/></button></div>
+                    <div class=""text-center mt-5 mb-3""><button onclick=""biddingCertificate(event);"" class=""btn btn_round btn-primary btn-dashboard text-center text-uppercase"">apply<img class=""pl-3""  src=""/_ui/responsive/common/images/arow_btn.png"" alt=""""/></button></div>
                   </div>
 			         </div>
                <div class=""panel-group"" id=""accordion"" role=""tablist"" aria-multiselectable=""true""></div>

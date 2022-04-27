@@ -18,10 +18,12 @@
 </c:choose>
 
 <div class="contentModule-section">
-    <div class="contentModule-headline contentModule-headline_smallMargin">
-        <spring:theme code="license.apply.shareholder.delegate"/>
-            </div>
-    <hr class="hr">
+    <div class="contentModule contentModule-wrap">
+        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+            <span class="contentModule-headline"><spring:theme code="license.apply.shareholder.delegate" /></span>
+            <div class="contentModule-headline-border"></div>
+        </div>
+    </div>
     <div class="row">
     <div class="col-md-12 justify-content-center">
     <a class="btn btn_link js-tip d-block w-100 delegate-entity" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip"

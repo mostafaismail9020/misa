@@ -10,11 +10,12 @@
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons"%>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common"%>
 <div class="contentModule-section" id="licenseYearSection" style="display: none;">
-	<div class="contentModule-headline contentModule-headline_smallMargin">
-		<spring:theme
-			code="licenseApplyEntityInformation.licenseYearSection.title" />
+	<div class="contentModule contentModule-wrap">
+		<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+			<span class="contentModule-headline"><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></span>
+			<div class="contentModule-headline-border"></div>
+		</div>
 	</div>
-	<hr class="hr">
 	<div class="row mt-5">
 		<div class="col-md-6">
 			<div class="formSelectBox">

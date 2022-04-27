@@ -24,7 +24,9 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
         <div class=""card dashboardWidget-body mb-5 p-0 no-border dashboardWidget-body-shadow"">
             <ul  class=""nav nav-tabs w-100"" id=""tabs"">
                 <li class=""nav-item  col-6 p-0""> <a class="" nav-link text-center active"" href=""#1a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-license.png""/>الترخيص الاستثماري</a></li>
-                <li class=""nav-item  col-6 p-0""><a class=""nav-link text-center"" href=""#2a"" data-toggle=""tab""><img class=""pr-3"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/>شهادة عطاءات</a></li>
+                <li class=""nav-item  col-6 p-0""><a class=""nav-link text-center"" href=""#2a"" data-toggle=""tab"">
+                <img class=""pr-3 d-inline-block d-sm-none"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-a-bidding-certificate.png""/>
+                <img class=""pr-3 d-none d-md-inline-block"" src=""/_ui/responsive/common/images/dashboard-media/MY-LICENSE/Apply-for-certificate.png""/>شهادة عطاءات</a></li>
             </ul>
               <div class=""process tab-content clearfix"">
                   <div class=""tab-pane active"" id=""1a"">

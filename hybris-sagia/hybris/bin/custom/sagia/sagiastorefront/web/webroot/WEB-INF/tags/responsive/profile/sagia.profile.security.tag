@@ -20,7 +20,6 @@
                         <div class="contentModule-headline-border"></div>
                     </div>
                 </div>
-                  <hr class="hr">
                 <account:updatePwd/>
 
             </div>
@@ -32,7 +31,6 @@
                         <div class="contentModule-headline-border"></div>
                     </div>
                 </div>
-                 <hr class="hr">
                 <account:updateUsername/>
             </div>
             <div class="contentModule-section">
@@ -42,7 +40,6 @@
                         <div class="contentModule-headline-border"></div>
                     </div>
                 </div>
-                 <hr class="hr">
                 <account:updateEmail/>
             </div>
         </div>

@@ -24,10 +24,12 @@
 	<input type="hidden" name="code"
 		value="${sagiaApplyPersonShareholderForm.code}">
 	<div class="contentModule-section">
-		<div class="contentModule-headline">
-			<spring:theme code="licence.apply.shareholder.details" />
+		<div class="contentModule contentModule-wrap">
+			<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+				<span class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details" /></span>
+				<div class="contentModule-headline-border"></div>
+			</div>
 		</div>
-<hr class="hr">
 		<div class="contentModule-section row mt-5" id="shareholderIdTypeSection">
 
 
@@ -438,12 +440,12 @@
 		<!--  Attachment  -->
 		<div class="contentModule-section" id="attachmentSection"
 			style="display: none">
-			<div class="contentModule-headline contentModule-headline_smallMargin mw0"><spring:theme code="general.attachments" /></div>
-			<!--<div
-				class="contentModule-headline contentModule-headline_smallMargin mw0" id="personAttachmentTitle">
-				<spring:theme code="general.attachments" />
-			</div>-->
-			<hr class="hr">
+			<div class="contentModule contentModule-wrap">
+				<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+					<span class="contentModule-headline"><spring:theme code="general.attachments" /></span>
+					<div class="contentModule-headline-border"></div>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-md-6" id="passportFileAttachment">
 					<div

@@ -155,7 +155,15 @@
         </ul>
     </div>
     <div class="panelTabs-content container">
-		<div class="licensecontactperson_bottomboarder"><div class="contentModule-headline"><spring:theme code="license.apply.contactperson.text"/></div></div>
+		<!-- <div class="licensecontactperson_bottomboarder">
+            <div class="contentModule-headline"><spring:theme code="license.apply.contactperson.text"/></div>
+        </div> -->
+        <div class="contentModule contentModule-wrap">
+            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                <span class="contentModule-headline"><spring:theme code="license.apply.contactperson.text"/></span>
+                <div class="contentModule-headline-border"></div>
+            </div>
+        </div>
 		<license:newLicenseApplyContactPerson/>
     </div>
 <%--    <license:newLicenseApplyEntityInformation/>--%>

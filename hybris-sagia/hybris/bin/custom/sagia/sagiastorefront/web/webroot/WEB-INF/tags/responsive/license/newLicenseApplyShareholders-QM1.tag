@@ -151,8 +151,12 @@
         </span>
         </div>
 
-        <div class="contentModule-headline"><spring:theme code="license.apply.review.existing.shareholder"/></div>
-     <hr class="hr">
+        <div class="contentModule contentModule-wrap">
+            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                <span class="contentModule-headline"><spring:theme code="license.apply.review.existing.shareholder"/></span>
+                <div class="contentModule-headline-border"></div>
+            </div>
+        </div>
         <div class="existingShareholdersForm-wrapper mt-4 pt-2">
 <%--            <license:newLicenseApplyExistingShareholderForm-QM1/>--%>
         </div>
@@ -164,8 +168,12 @@
     </div>
 
     <div class="contentModule-section" id="addShareholderQM1NewSection" style="display: none">
-        <div class="contentModule-headline"><spring:theme code="license.apply.review.new.shareholder"/></div>
-    <hr class="hr">
+        <div class="contentModule contentModule-wrap">
+            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                <span class="contentModule-headline"><spring:theme code="license.apply.review.new.shareholder"/></span>
+                <div class="contentModule-headline-border"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="formRadioBox pt-3" id="shareholderType">

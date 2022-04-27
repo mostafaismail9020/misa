@@ -465,8 +465,17 @@ margin: auto;
 /* margin-top: 150px !important; */
 }
 
+
 .errorPage .errorPage-actions .btn.btn_wide{
 	width: 15vw;
+}
+@media screen and (max-width:640px) {
+	.errorPage{
+		width:auto;
+	}
+	.errorPage .errorPage-actions .btn.btn_wide{
+		width: 65vw;
+	}
 }
 /* End */
 

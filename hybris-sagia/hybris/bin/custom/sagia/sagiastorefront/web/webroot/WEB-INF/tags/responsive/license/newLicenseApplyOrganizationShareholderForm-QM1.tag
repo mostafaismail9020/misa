@@ -19,8 +19,12 @@
 <form:form action="/" id="organizationShareholderForm" modelAttribute="sagiaApplyOrganizationShareholderForm" method="POST" cssClass="${editCss}">
     <input type="hidden" name="code" value="${sagiaApplyOrganizationShareholderForm.code}">
     <div class="contentModule-section">
-        <div class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details"/></div>
-<hr class="hr">
+        <div class="contentModule contentModule-wrap">
+            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                <span class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details" /></span>
+                <div class="contentModule-headline-border"></div>
+            </div>
+        </div>
 		<div class="row mt-5" style= ${not empty sagiaApplyOrganizationShareholderForm.division ? "display:none" : ""} >
 		  <div class="col-md-6">
                 <%--TODO: create companyCountryData--%>
@@ -384,9 +388,15 @@
     </div>
     <!--  Attachment  -->
     <div class="contentModule-section" id="dataSectionAttachment" style="display: none">
-        <div class="contentModule-headline contentModule-headline_smallMargin"  id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div>
+        <!-- <div class="contentModule-headline contentModule-headline_smallMargin"  id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div> -->
         <!--<div class="contentModule-headline contentModule-headline_smallMargin" id="orgAttachmentTitle"><spring:theme code="general.attachments"/></div>-->
-        <hr class="hr">
+        <!-- <hr class="hr"> -->
+        <div class="contentModule contentModule-wrap" id="orgAttachmentTitle">
+            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                <span class="contentModule-headline"><spring:theme code="general.attachments"/></span>
+                <div class="contentModule-headline-border"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-6" id="companyRegistrationFileSection"  style="display:none">
                 <div class="formInputFile ${not empty sagiaApplyOrganizationShareholderForm.commercialRegCopy ? "active" : ""}">

@@ -23,11 +23,10 @@ SAGIA.eServiceTour = {
 	init: function(){
 		var self = this;
 		if(tutorialJson !== "undefined" && tutorialJson.length !== 0 && tutorialJson.steps.length > 0 && displayTutorial && (window.location.href).indexOf("dash") > -1) {
-			/*console.log('dasboard page..'+(window.location.href).indexOf("dash"));*/
 			$('.header-tutorial-header-btn').show();
 			var idx = 0;
-			$.each(tutorialJson.steps, function (index, item) {
-				if($(item.selector+':visible').length == 1){	
+			$.each(tutorialJson.steps, function (index, item) {		
+				if($(item.selector+':visible').length == 1 && $(item.selector).css('display') !== 'none'){	
 					var template = $(".tutorialTemplate").clone();
 					template.find('.eServiceTutorial-headline').html(item.title);
 					template.find('.eServiceTutorial-description').html(item.description);
@@ -269,6 +268,7 @@ SAGIA.eServiceTour = {
 					}
 
 					panelWidth = bodyWidth+'px';
+					if(!SAGIA.eServiceTour.isSmall)
 					panelTransform = 'translate(' + (moveByPanel > 0 ? 100 : -100 ) +'px,-100%)';
 
 					panelElement.css({
@@ -329,6 +329,7 @@ SAGIA.eServiceTour = {
 						}
 						
 						panelWidth = bodyWidth+'px';
+						if(!SAGIA.eServiceTour.isSmall)
 						panelTransform = 'translate(' + (moveByPanel > 0 ? -450 : 400 ) +'px,-100%)';
 						
 						// panelTransform = 'translate(-' + (focusDimensions.left) +'px,-100%)';
@@ -405,6 +406,7 @@ SAGIA.eServiceTour = {
 					}
 
 					panelWidth = bodyWidth+'px';
+					if(!SAGIA.eServiceTour.isSmall)
 					panelTransform = 'translate(' + (moveByPanel > 0 ? 125 : -50 ) +'px,100%)';
 
 					panelElement.css({
@@ -464,6 +466,7 @@ SAGIA.eServiceTour = {
 						}
 						
 						panelWidth = bodyWidth+'px';
+						if(!SAGIA.eServiceTour.isSmall)
 						panelTransform = 'translate(' + (moveByPanel > 0 ? -(maxPanelWidth-(containerPadding + 180)) : (maxPanelWidth-(containerPadding + 180)) )  +'px,-100%)';
 
 						panelElement.css({
@@ -502,7 +505,7 @@ SAGIA.eServiceTour = {
 		
 		function updateHighlight() {
 			var d_top = 0;
-			if((focusDimensions.top - highLightOffset) < 0){
+			if((focusDimensions.top - highLightOffset) < -1 ){
 				document.body.scrollTop = document.documentElement.scrollTop = 0;
 				d_top = 50;
 			}

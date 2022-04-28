@@ -68,7 +68,7 @@ SAGIA.dashboardWithLicense = {
             "payments": "settingsCheckbox5",
             "yourTickets": "settingsCheckbox6",
             "support": "settingsCheckbox4",
-            "savedDrafts": "settingsCheckbox7"
+            "savedDrafts": "settingsCheckbox7",
         };
 
         window.variableSectionsMap = {};
@@ -84,6 +84,7 @@ SAGIA.dashboardWithLicense = {
                 });
 
                 var li = $("li.js-component");
+                var firstElementChecked = 0;
                 for (var i = 0; i < li.length; i++) {
                     var $elem = li[i].firstElementChild;
                     var $elemId = $elem.id;
@@ -96,7 +97,11 @@ SAGIA.dashboardWithLicense = {
                         var $visible = window.variableSectionsMap[$elemId][1];
 
                         if ($visible) {
-                            li.show();
+                            $(li[i]).show();
+                            if(firstElementChecked === 0){
+                                $(li[i]).find("input").attr("checked", "checked");
+                                firstElementChecked++;
+                            }
                         }
                         if ($newPos !== i && $visible === true) {
                             if (window.variableEditable) {
@@ -104,15 +109,15 @@ SAGIA.dashboardWithLicense = {
                                     document.getElementById(window.variableMappingIndexes[$elemId]).checked = true;
                                 }
                             }
-                            li[$newPos].appendChild(li[i].firstElementChild);
+                            li[$newPos]?.appendChild(li[i]?.firstElementChild);
                         } else if ($newPos !== i && $visible === false) {
                             if (window.variableEditable) {
                                 if ($elemId in window.variableMappingIndexes) {
                                     document.getElementById(window.variableMappingIndexes[$elemId]).checked = false;
                                 }
-                                li[$newPos].appendChild(li[i].firstElementChild);
+                                li[$newPos]?.appendChild(li[i]?.firstElementChild);
                             } else {
-                                $(li[i].firstElementChild).hide();
+                                $(li[i]).hide();
                             }
                         } else if ($newPos === i && $visible === false) {
                             if (window.variableEditable) {
@@ -120,55 +125,13 @@ SAGIA.dashboardWithLicense = {
                                     document.getElementById(window.variableMappingIndexes[$elemId]).checked = false;
                                 }
                             } else {
-                                $(li[i].firstElementChild).hide();
+                                $(li[i]).hide();
                             }
                         }
                     }
                 }
 
-                SAGIA.dashboardWithLicense.loadDashboardData();
-                if(window.matchMedia("(max-width:640px)").matches){
-                    var spinner = '<div id="sp1" class="inline-custom-spinner text-center">'
-                    spinner += '<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><g transform="translate(-0.1)"><path d="M42.1,6a6,6,0,1,1-6-6A6.018,6.018,0,0,1,42.1,6Z" fill="#00a6be" opacity="0.8"></path><path d="M61.5,19A6.01,6.01,0,0,1,53,10.5a6.1,6.1,0,0,1,8.5,0A5.917,5.917,0,0,1,61.5,19Z" fill="#00a6be" opacity="0.9"></path><path d="M66.1,42a6,6,0,1,1,6-6A6.018,6.018,0,0,1,66.1,42Z" fill="#00a6be"></path><path d="M53,61.5a6.01,6.01,0,1,1,8.5,0A6.1,6.1,0,0,1,53,61.5Z" fill="#00a6be" opacity="0.3"></path><path d="M30,66a6,6,0,1,1,6,6A6.018,6.018,0,0,1,30,66Z" fill="#00a6be" opacity="0.4"></path><path d="M10.6,53a6.01,6.01,0,1,1,0,8.5A6.1,6.1,0,0,1,10.6,53Z" fill="#00a6be" opacity="0.5"></path><path d="M6.1,30a6,6,0,1,1-6,6,5.954,5.954,0,0,1,6-6Z" fill="#00a6be" opacity="0.6"></path><path d="M19.1,10.5A6.01,6.01,0,0,1,10.6,19a6.01,6.01,0,0,1,8.5-8.5Z" fill="#00a6be" opacity="0.7"></path></g></svg>'
-                    spinner +='</div>'
-                    $("#accordionDashboard").empty().append(spinner);
-                }
-
-                $( document ).ajaxStop(function() {
-                    var element_id = $("body").hasClass("page-dashboard") ? "#tabsDasboard" :"#tabs";
-
-                    var concat = '';
-                    obj_tabs = $( element_id + " li" ).toArray();
-                    obj_cont = $( ".dashboard-tabs .tab-content .tab-pane" ).toArray();
-                    jQuery.each( obj_tabs, function( n, val )
-                    {
-                        concat += '<div id="' + n + '" class="panel panel-default">';
-                        concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline-icon text-upercase" role="tab" id="heading' + n + '">';
-                        concat += '<h5 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
-                        concat += '</div>';
-                        concat += '<div id="collapse' + n + '" class="panel-collapse collapse heading' + n + '" role="tabpanel" aria-labelledby="heading' + n + '">';
-                        concat += '<div class="panel-body">' + obj_cont[n].innerHTML + '</div>';
-                        concat += '</div>';
-                        concat += '</div>';
-                    });
-                    $("#accordionDashboard").empty().append(concat);
-                    $("#accordionDashboard").find('.panel-collapse:first').addClass("in");
-                    $("#accordionDashboard").find('.panel-title a').attr("aria-expanded","true");
-                    $("#accordionDashboard").find('.panel-title a').removeClass("collapsed");
-                    $(element_id).not('.services-container-tabcontent').hide();
-                    $(".tab-content").not('.services-container-tabcontent').hide();
-
-                    if(window.matchMedia("(max-width:640px)").matches){
-                        $(element_id).hide();
-                        $("#accordionDashboard").show();
-                        $(".tab-content").not('.services-container-tabcontent').hide();
-                    }
-                    else{
-                        $(element_id).show();
-                        $("#accordionDashboard").hide();
-                        $(".tab-content").not('.services-container-tabcontent').show();
-                    }
-                })
+                SAGIA.dashboardWithLicense.loadDashboardData();                
             },
             error: function (e) {
             }
@@ -833,4 +796,27 @@ function dismissDashboardTutorial() {
 function awaitingPayment(){
 	var url = ACC.config.encodedContextPath + '/payments-overview'
     window.location.replace(url);
+}
+
+$(document).ready(function(){
+    setTimeout(manageLicenseInfoHeight, 3000);
+})
+window.addEventListener('load', function () {
+    manageLicenseInfoHeight();
+})
+$(".dashboardWidgetListComponent").on('click',function(){
+    manageLicenseInfoHeight();
+})
+
+function manageLicenseInfoHeight(){
+    var dash_component = $(".draggableComponentsList_dashboard");
+    var activeTab = $(".dashboardTabsSection .tabs .tab [type=radio]:checked").siblings('.content').children('.dashboardWidget');
+    if($(activeTab).children('.dashboardWidget-headline').length){
+    var activeTabHeadlineHeight = $(activeTab).children('.dashboardWidget-headline')[0].clientHeight;
+    var activeTabBodyHeight = $(activeTab).children('.dashboardWidget-body')[0].clientHeight;
+    var activeTabBodyHeight1 = $(activeTab).children('.dashboardWidget-body').children('.dashboardWidgetLicense').children('.dashboardTabs')[0] ;
+    activeTabBodyHeight = activeTabBodyHeight1 !== undefined ? activeTabBodyHeight1.clientHeight : activeTabBodyHeight;
+    var clientHeight = activeTabHeadlineHeight + activeTabBodyHeight + 120;
+    dash_component.css("min-height",clientHeight  + "px");
+    }
 }

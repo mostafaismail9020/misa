@@ -345,14 +345,204 @@
 		</div>
         <div class="col-12 p-0">
             <a class="float-right text-uppercase mb-3 mb-md-5"></a>
-            <!-- <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
-            	<spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png"/>
-            </a> -->
+            <a href="${encodedContextPath}/dashboard-edit" class="btn-dashboard float-right text-uppercase mb-3 mb-md-5 explore-all-btn">
+            	<spring:theme code="dashboard.customize"/><img class="pl-3" src="${commonResourcePath}/images/Customize Dashboard-icon.png" alt="customize dashboard"/>
+            </a>
         </div>
     </div>
 </section>
 
-<section class="container mainSection mainSection_noPadding bg-white p-0">
+<section class="mainSection license mainSection_grey mainSection_noPadding bg-white p-0 js-dashboard d-none d-sm-block">
+    <div class="container dashboardUser dashboardTabsSection">
+        <div class="row dashboard-tabs">
+            <ul id="draggableComponentsList" class="dashboardWidgetList tabs draggableComponentsList_dashboard">
+                <li class="dashboardWidgetListComponent js-component tab" style="display: none">
+                    <span id="myLicense"></span>
+                        <input type="radio" id="tab-1" name="tab-group-1">
+                        <label for="tab-1"><spring:theme code="myLicense.title"/></label>
+                        <div  class="content col col-12" id="myLicense">
+                            <dashboard:myLicense/>
+                        </div>
+                    
+                </li>
+                <li class="dashboardWidgetListComponent js-component tab" style="display: none">
+                    <span id="payments"></span>
+                        <input type="radio" id="tab-2" name="tab-group-1" >
+                        <label for="tab-2"><spring:theme code="payments.page.title"/> </label>
+                        <div  class="content col col-12" id="payments">
+                            <div class="dashboardWidget js-dashboardWidget">
+                                <div class="dashboardWidget-headline js-dashboardWidget-headline d-none d-sm-block">
+                                     <a href="" data-redirect="payments-overview" class="d-block d-md-none js-page-redirect"
+                                       style="text-decoration: inherit;color: inherit">
+                                        <spring:theme code="payments.page.title"/> 
+                                    </a> 
+                                    <!-- <div class="dashboardWidget-headline-icon">
+                                        <a href="" data-redirect="payments-overview" class="js-page-redirect"><icon:payments/></a>
+                                    </div> -->
+                                    <div class="dashboardWidget-filter">
+                                        <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label>
+                                        <select id="paymentSort" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
+                                            <!-- <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option> -->
+                                            <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
+                                            <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
+                                            <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
+                                            <option value="amount_desc"><spring:theme code="sagia.sort.highest"/> </option>
+                                            <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.oldest"/></option>
+                                            <option value="date_desc" data-sort="desc"><spring:theme code="sagia.sort.latest"/></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="dashboardWidget-body">
+                                    <div class="dashboardWidgetPayments">
+                                        <div class="tableModule tableModule_slim tableModule_striped">
+                                            <table class="tableModule-table">
+                                                <thead class="tableModule-head">
+                                                    <tr>
+                                                        <th><spring:theme code="dashboard.payments.date"/></th>
+                                                        <th><spring:theme code="dashboard.payments.name"/></th>
+                                                        <th><spring:theme code="dashboard.payments.status"/></th>
+                                                        <th class="dashboardWidgetPayments-lastCol"><spring:theme code="dashboard.payments.amount"/></th>
+                                                        <th><spring:theme code="payment.pay" /></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="tableModule-body" id="paymentsTable"></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="paginationModule paginationModule_loading">
+                                            <c:if test="${!pageIsDashboard}">
+                                                <div style="width: 150px; position: absolute">
+                                                    <select class="paginationPicker js-select2-oneColumn form-control"></select>
+                                                </div>
+                                            </c:if>
+                                            <div class="paginationModule-wrapper">
+                                                <button class="paginationModule-control paginationModule-control_left" disabled>
+                                                    <!-- <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows opacity_gray_color sssss" id="successstories_firstimg">
+                                                    <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive leftsideshows" id="successstories_secondimg" style="display: none;"> -->
+                                                    <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree" alt="">
+                                                </button>
+                                                <div class="paginationModule-items">
+                                                    <div class="loadingModule">
+                                                        <div class="loadingModule-icon"><icon:loading-spinner /></div>
+                                                        <div class="loadingModule-msg">Loading content ...</div>
+                                                    </div>
+                                                </div>
+                                                <button class="paginationModule-control paginationModule-control_right">
+                                                    <!-- <img src="${commonResourcePath}/images/arrow-left.png" class="img-responsive" id="ss_right_arrow"> -->
+                                                    <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" id="ss_right_arrow" alt="">
+                                                </button>
+                                            </div>
+                                            <div class="tableModule-headline">
+                                                <a href="" data-redirect="payments-overview" class="btn-dashboard btn-view-all js-page-redirect">
+                                                    <spring:theme code="dashboard.viewall" text="View all"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </li>
+               
+                <li class="dashboardWidgetListComponent js-component tab" style="display: none">
+                    <span id="servicesRequest"></span>
+                        <input type="radio" id="tab-3" name="tab-group-1" >
+                        <label for="tab-3"><spring:theme code="dashboard.servicesRequest.title"/></label>
+                        <div  class="content col col-12" id="servicesRequest">
+                            <dashboard:servicesRequest/>
+                        </div>
+                    
+                </li>
+                <li class="tab dashboardWidgetListComponent js-component tab" style="display: none">
+                   <span id="savedDrafts"></span>
+                    <input type="radio" id="tab-4" name="tab-group-1" >
+                    <label for="tab-4"><spring:theme code="dashboard.savedDrafts.title"/></label>
+                    <div  class="content col col-12" id="savedDrafts">
+                        <dashboard:savedDrafts/>
+                    </div>
+                </li>
+                <li class="tab dashboardWidgetListComponent js-component tab" style="display: none">
+                   <span  id="yourTickets"></span>
+                    <input type="radio" id="tab-5" name="tab-group-1">
+                    <label for="tab-5"><spring:theme code="dashboard.ticket.yourtickets"/></label>
+                    <div  class="content col col-12" id="yourTickets">
+                        <div class="dashboardWidget js-dashboardWidget no-border">
+                            <div class="dashboardWidget-headline js-dashboardWidget-headline d-none d-sm-block">
+                                <span>
+                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="myTicketsHeader js-page-redirect"
+                                       style="text-decoration: inherit;color: inherit">
+                                    <spring:theme code="dashboard.ticket.yourtickets"/>
+                                    </a>
+                                </span>
+                                <div class="dashboardWidget-headline-icon">
+                                    <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="js-page-redirect"><icon:your-tickets/></a>
+                                </div>
+                                <div class="dashboardWidget-filter">
+                                    <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label>
+                                    <select id="ticketSort" title="tickets" class="js-select2-oneColumn form-control" onchange="sortTickets()">
+                                        <!-- <option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option> -->
+                                        <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                                        <option value="status_desc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                                        <option value="number_asc" data-sort="asc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                                        <option value="number_desc" data-sort="desc"><spring:theme code="sagia.sort.ticketNumber"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                                        <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.date"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
+                                        <option value="date_desc" data-sort="desc"><spring:theme code="sagia.sort.date"/>&nbsp;<spring:theme code="sagia.sort.desc"/></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dashboardWidget-body">
+                                <div class="dashboardWidgetTickets">
+                                    <div class="tableModule tableModule_slim dashboardWidgetTickets-table overflow-y-hidden">
+                                        <table class="tableModule-table">
+                                            <thead class="tableModule-head">
+                                            <tr>
+                                                <th><spring:theme code="dashboard.ticket.lastupdate"/></th>
+                                                <th><spring:theme code="dashboard.ticket.ticketnumber"/></th>
+                                                <th><spring:theme code="dashboard.ticket.status"/></th>
+                                                <th><spring:theme code="dashboard.ticket.options"/></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="tableModule-body" id="ticketsTable"></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="paginationModule paginationModule_loading  mytickets-view-pagination">
+                                        <c:if test="${!pageIsDashboard}">
+                                            <div style="width: 150px; position: absolute">
+                                                <select class="paginationPicker js-select2-oneColumn form-control"></select>
+                                            </div>
+                                        </c:if>
+                                        <div class="paginationModule-wrapper">
+                                            <button class="paginationModule-control paginationModule-control_left" disabled>
+                                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree" alt="">
+                                            </button>
+                                            <div class="paginationModule-items">
+                                                <div class="loadingModule">
+                                                    <div class="loadingModule-icon"><icon:loading-spinner /></div>
+                                                    <div class="loadingModule-msg">Loading content ...</div>
+                                                </div>
+                                            </div>
+                                            <button class="paginationModule-control paginationModule-control_right">
+                                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" alt="" >
+                                            </button>
+                                        </div>
+                                        <c:if test="${pageIsDashboard}">
+                                            <div class="tableModule-headline">
+                                                <a href="" data-redirect="my-sagia/sagia-profile#enquiriesTab" class="btn-dashboard btn-view-all js-page-redirect">
+                                                    <spring:theme code="dashboard.viewall" text="View all"/>
+                                                </a>
+                                            </div>
+                                        </c:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+              </ul>
+           
+        </div>
+    </div>
+</section>
+<section class="container mainSection mainSection_noPadding bg-white p-0 d-block d-sm-none ">
     <div class="">
             <div class="container dashboardUser dashboardUser_slim dashboardUser_noBorder p-0">
                 <div class="dashboard-tabs">
@@ -595,97 +785,110 @@
     </div>
 </section>
 
-<section class="helpSection">
-    <div class="container">
-        <div class="firstBlock">
-            <div class="firstBlock-widget">
-                <h1 class="text-center text-uppercase clr_gld">
-                    <spring:theme code="dashboard.license.letus.help.you.heading.name"/>
-                </h1>
-                <span class="firstBlock-text d-contact-help-text">
-                   <spring:theme code="dashboard.license.letus.help.you.text"/>
-                </span>
-            </div>
-            <div class="firstBlock-contact d-flex row mt-5 mb-3">
-                <div class="firstBlock-contact-local line-after col-md-4">
-                    <div>
-                        <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
-                    </div>
-                    <div>
-                        <span class="firstBlock-contact-local-label">
-                            <spring:theme code="dashboard.license.letus.help.you.local"/>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="firstBlock-contact-local-number local-connect">
-                            <spring:theme code="dashboard.license.letus.help.you.local.number"/>
-                        </span>
-                    </div>
-                </div>
-                <div class="firstBlock-contact-local line-after col-md-4 mt-3 mt-sm-0">
-                    <div>
-                        <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
-                    </div>
-                    <div>
-                        <span class="firstBlock-contact-local-label international-connect">
-                            <spring:theme code="dashboard.license.letus.help.you.International"/>
-                        </span>
-                    </div>
-                    <div>
-                        <span class="firstBlock-contact-local-number international-connect-number">
-                            <spring:theme code="dashboard.license.letus.help.you.International.number"/>
-                        </span>
-                    </div>
-                </div>
-                <div class="firstBlock-contact-local col-md-4 mt-3 mt-sm-0">
-                    <div>
-                        <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>
-                    </div>
-                    <div class="d-none d-md-block">
-                        <span class="firstBlock-contact-local-label">&nbsp;
-                           <!-- <spring:theme code="dashboard.license.letus.help.you.International"/> -->
-                        </span>
-                    </div>
-                    <div>
-                        <span class="firstBlock-contact-local-number emailBlock d-email-id">
-                            InvestorCare@misa.gov.sa
-                        </span>
-                    </div>
-                </div>
-            </div>
+<section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard ">
+    <div class="px-0">
+        <ul id="draggableComponentsList" class="dashboardWidgetList">
+            <li class="dashboardWidgetListComponent js-component" style="display: none">
+                <span id="support"></span>
+                <div class="col col-12" id="support">
+                    
+                    <section class="helpSection dashboardWidget js-dashboardWidget">
+                        <div class="container">
+                            <div class="firstBlock">
+                                <div class="firstBlock-widget">
+                                    <h1 class="text-center text-uppercase clr_gld">
+                                        <spring:theme code="dashboard.license.letus.help.you.heading.name"/>
+                                    </h1>
+                                    <span class="firstBlock-text d-contact-help-text">
+                                    <spring:theme code="dashboard.license.letus.help.you.text"/>
+                                    </span>
+                                </div>
+                                <div class="firstBlock-contact d-flex row mt-5 mb-3">
+                                    <div class="firstBlock-contact-local line-after col-md-4">
+                                        <div>
+                                            <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
+                                        </div>
+                                        <div>
+                                            <span class="firstBlock-contact-local-label">
+                                                <spring:theme code="dashboard.license.letus.help.you.local"/>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="firstBlock-contact-local-number local-connect">
+                                                <spring:theme code="dashboard.license.letus.help.you.local.number"/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="firstBlock-contact-local line-after col-md-4 mt-3 mt-sm-0">
+                                        <div>
+                                            <img  alt="" src="${commonResourcePath}/images/Contact-us/International.png"/>
+                                        </div>
+                                        <div>
+                                            <span class="firstBlock-contact-local-label international-connect">
+                                                <spring:theme code="dashboard.license.letus.help.you.International"/>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="firstBlock-contact-local-number international-connect-number">
+                                                <spring:theme code="dashboard.license.letus.help.you.International.number"/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="firstBlock-contact-local col-md-4 mt-3 mt-sm-0">
+                                        <div>
+                                            <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>
+                                        </div>
+                                        <div class="d-none d-md-block">
+                                            <span class="firstBlock-contact-local-label">&nbsp;
+                                            <!-- <spring:theme code="dashboard.license.letus.help.you.International"/> -->
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="firstBlock-contact-local-number emailBlock d-email-id">
+                                                InvestorCare@misa.gov.sa
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
 
-            <div class="row mb-3 helpSectionBtn">
-                <div class="mr-md-5 pb-3 pb-md-0">
-                    <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
+                                <div class="row mb-3 helpSectionBtn">
+                                    <div class="mr-md-5 pb-3 pb-md-0">
+                                        <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
+                                    </div>
+                                    <div class="mr-md-5">
+                                        <a class="btn make-an-enquiry  d-flex align-items-center justify-content-center" href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="emailBlock">
+                                <div class="firstBlock-widget">
+                                    <h1 class="text-center text-uppercase clr_gld">
+                                        <spring:theme code="dashboard.license.letus.help.you.emailus.heading.name"/>
+                                    </h1>
+                                    <span class="firstBlock-text">
+                                        <   
+                                    </span>
+                                </div>
+                                <div class="emailBlock-contact">
+                                    <div class="emailBlock-contact-international">
+                                        <span class="firstBlock-contact-local-email">
+                                            <spring:theme code="dashboard.license.letus.help.you.emailus.email"/>
+                                        </span>
+                                        <div class="email-buttons">
+                                            <button class="btn-outline mr-5"><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"/></button>
+                                            <button class="btn-dashboard"><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"/></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </section>
                 </div>
-                <div class="mr-md-5">
-                    <a class="btn make-an-enquiry  d-flex align-items-center justify-content-center" href="${encodedContextPath}/my-sagia/sagia-profile#enquiriesTab" ><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"></spring:theme></a>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="emailBlock">
-            <div class="firstBlock-widget">
-                <h1 class="text-center text-uppercase clr_gld">
-                    <spring:theme code="dashboard.license.letus.help.you.emailus.heading.name"/>
-                </h1>
-                <span class="firstBlock-text">
-                    <   
-                </span>
-            </div>
-            <div class="emailBlock-contact">
-                <div class="emailBlock-contact-international">
-                    <span class="firstBlock-contact-local-email">
-                        <spring:theme code="dashboard.license.letus.help.you.emailus.email"/>
-                    </span>
-                    <div class="email-buttons">
-                        <button class="btn-outline mr-5"><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"/></button>
-                        <button class="btn-dashboard"><spring:theme code="dashboard.license.letus.help.you.emailus.link2.text"/></button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+            </li>
+        </ul>
     </div>
 </section>
+
 
 	<!-- <%--<div class="container">
 	<div class="row mt-5">

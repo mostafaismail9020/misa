@@ -109,13 +109,13 @@ SAGIA.dashboardWithLicense = {
                                         document.getElementById(window.variableMappingIndexes[$elemId]).checked = true;
                                     }
                                 }
-                                li[$newPos]?.appendChild(li[i]?.firstElementChild);
+                                // li[$newPos]?.appendChild(li[i]?.firstElementChild);
                             } else if ($newPos !== i && $visible === false) {
                                 if (window.variableEditable) {
                                     if ($elemId in window.variableMappingIndexes) {
                                         document.getElementById(window.variableMappingIndexes[$elemId]).checked = false;
                                     }
-                                    li[$newPos]?.appendChild(li[i]?.firstElementChild);
+                                    // li[$newPos]?.appendChild(li[i]?.firstElementChild);
                                 } else {
                                     $(li[i]).hide();
                                 }

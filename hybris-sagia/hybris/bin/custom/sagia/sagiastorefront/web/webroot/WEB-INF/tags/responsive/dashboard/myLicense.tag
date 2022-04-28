@@ -5,7 +5,7 @@
 <%@ attribute name="editable" required="false" type="java.lang.Boolean"%>
 <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags/responsive/dashboard" %>
 
-<div class="dashboardWidget js-dashboardWidget no-border mt-0 pb-0">
+<div class="dashboardWidget js-dashboardWidget no-border mt-0">
     <c:if test="${editable}"><dashboard:addAndRemoveComponent checkboxIndex="1"/></c:if>
     <div class="dashboardWidget-headline js-dashboardWidget-headline  d-none d-md-flex">
         <div class="dashboardWidget-headline-text"><spring:theme code="myLicense.title"/></div>

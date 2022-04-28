@@ -200,9 +200,9 @@
 	                </div>
 	            </div>
             </li>-->
-            <li class="dashboardWidgetListComponent js-component">
+            <!-- <li class="dashboardWidgetListComponent js-component">
 	            <div class="drag col col-12 p-0" id="salaryAndEmployment" <c:if test="${!enableSalaryAndEmployment}">style="display:none;"</c:if>><dashboard:salaryAndEmployment editable="${true}"/></div>
-            </li>
+            </li> -->
             <li class="dashboardWidgetListComponent js-component">
 	            <div class="drag col col-12 p-0" id="servicesRequest">
 	                <dashboard:servicesRequest editable="${true}" />

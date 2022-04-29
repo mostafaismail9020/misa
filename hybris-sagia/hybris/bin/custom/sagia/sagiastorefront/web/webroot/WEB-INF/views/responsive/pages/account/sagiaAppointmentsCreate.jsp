@@ -89,11 +89,12 @@
                                                                     <form:form method="post" modelAttribute="appointmentModel">
                                                                         <form:hidden path="appointmentID" />
                                                                         <div class="appointmentDetails appointmentDetails_forms">
-                                                                            <div class="contentModule-headline">
-                                                                                <!--<icon:calendarText/>-->
-                                                                                <spring:theme code="appointments.appointmentdetails" />
+                                                                            <div class="contentModule contentModule-wrap">
+                                                                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                                                                    <span class="contentModule-headline"><spring:theme code="appointments.appointmentdetails" /></span>
+                                                                                    <div class="contentModule-headline-border"></div>
+                                                                                </div>
                                                                             </div>
-                                                                            <hr class="hr" />
                                                                             <div class="row mt-5 mb-5">
                                                                                 <div class="col-xs-8 col-md-6">
                                                                                     <div class="formSelectBox">
@@ -120,10 +121,12 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="contentModule-headline mw0">
-                                                                                <spring:theme code="appointments.services" />
+                                                                            <div class="contentModule contentModule-wrap">
+                                                                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                                                                    <span class="contentModule-headline"><spring:theme code="appointments.services" /></span>
+                                                                                    <div class="contentModule-headline-border"></div>
+                                                                                </div>
                                                                             </div>
-                                                                            <hr class="hr" />
                                                                             <div class="row service-selection mt-5">
                                                                                 <div class="col-xs-6 col-sm-6 col-md-4">
                                                                                     <div class="formSelectBox">
@@ -244,10 +247,12 @@
                         <button class="btn btn_plain">+ Add Row</button>
                     </div>--%>
 
-                                                                                <div class="contentModule-headline mw0 mt-5">
-                                                                                    <spring:theme code="appointments.availableslots" />
+                                                                                <div class="contentModule contentModule-wrap">
+                                                                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                                                                        <span class="contentModule-headline"><spring:theme code="appointments.availableslots" /></span>
+                                                                                        <div class="contentModule-headline-border"></div>
+                                                                                    </div>
                                                                                 </div>
-                                                                                <hr class="hr" />
                                                                                 <div class="row mt-5">
                                                                                     <div class="col-xs-8 col-md-6 mb-4">
                                                                                         <div class="formInputBox formInputBox_group ">

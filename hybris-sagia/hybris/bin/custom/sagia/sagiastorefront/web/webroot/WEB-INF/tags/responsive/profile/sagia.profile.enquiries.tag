@@ -21,10 +21,12 @@
         <div class="panelModule panelModule_halfRadius">
             <div class="contentModule">
                 <div class="contentModule-section">
-                    <div class="contentModule-headline mw0">
-                      <!-- <span class="iconElement iconElement_enquiry3"><icon:enquiry3/></span>--><spring:theme code="profile.enquiry.new"/>
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="profile.enquiry.new" /></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
                     </div>
-                    <hr class="hr"/>
                     <div id="complaintInProgress" style="display: none">${complaintInProgress}</div>
                     <form:form id="createComplantForm" class="pt-4" action="${encodedContextPath}/complaints/create" enctype="multipart/form-data" method="post" modelAttribute="complaintFormData">
                         <div class="row">
@@ -171,10 +173,12 @@
 
                 <div class="contentModule-section" id="ticketsSection">
 
-                        <div class="contentModule-headline mw0">
-                           <!-- <span class="iconElement iconElement_your-tickets"><icon:your-tickets/></span>-->
-                            <spring:theme code="profile.yourTickets"/>
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="profile.yourTickets" /></span>
+                            <div class="contentModule-headline-border"></div>
                         </div>
+                    </div>
                         <div class="serviceTime" style="display: none">
                             <div class="serviceTime-label"><spring:theme code="average.service.time"/></div>
                             <div class="serviceTime-detail">
@@ -195,7 +199,7 @@
                             </div>
                         </div>
 
-                     <hr class="hr"/>
+                     <!-- <hr class="hr"/> -->
 					 
                     <c:if test="${!pageIsDashboard}">
                         <div class="dashboardWidget-filter">

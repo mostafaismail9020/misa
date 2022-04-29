@@ -24,6 +24,7 @@
 		<script type="text/javascript" src="${themeResourcePath}/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="${themeResourcePath}/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="${themeResourcePath}/js/flatpickr_v4.6.11.min.js"></script>
+		<script type="text/javascript" src="${commonResourcePath}/js/aos.js"></script>
 	</c:when>
 	<c:otherwise>
 		<script type="text/javascript" src="${themeResourcePath}/js/polyfill.js${version}"></script>
@@ -127,6 +128,7 @@
 		<script type="text/javascript" src="${themeResourcePath}/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="${themeResourcePath}/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="${themeResourcePath}/js/flatpickr_v4.6.11.min.js"></script>
+		<script type="text/javascript" src="${commonResourcePath}/js/aos.js"></script>
 
 	</c:otherwise>
 </c:choose>

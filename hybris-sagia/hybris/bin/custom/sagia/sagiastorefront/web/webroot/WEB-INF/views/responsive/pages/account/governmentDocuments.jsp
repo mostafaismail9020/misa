@@ -196,11 +196,12 @@
                 <div class="contentModule">
 
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
-                            <!-- <span class="iconElement iconElement_register02"><icon:register02/></span>-->
-                            <spring:theme code="general.governmentdocuments.commercialregister" />
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="general.governmentdocuments.commercialregister" /></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
-                        <hr class="hr" />
                         <div class="row">
                             <div class="col-md-6">
                                 <formElement:formInputBox idKey="govDocs.CRN" labelKey="govDocs.CRN"
@@ -227,11 +228,13 @@
 
 
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
-                            <!--<span class="iconElement iconElement_momra"><icon:momra/></span>-->
-                            <spring:theme code="govDocs.Momra" />
+                        
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="govDocs.Momra" /></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
-                        <hr class="hr" />
                         <div class="row">
                             <div class="col">
                                 <div class="formRadioButton">
@@ -278,12 +281,13 @@
                     </div>
 
 
-                    <div class="contentModule-section">
-                        <div class="contentModule-headline">
-                            <!--  <span class="iconElement iconElement_enquiry"><icon:enquiry2/></span>-->
-                            <spring:theme code="general.governmentdocuments.comments" />
+                    <div class="contentModule-section">                        
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="general.governmentdocuments.comments" /></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
-                        <hr class="hr" />
                         <div class="row">
                             <div class="col">
                                 <formElement:formTextArea areaCSS="form-control" idKey="govDocs.comments"

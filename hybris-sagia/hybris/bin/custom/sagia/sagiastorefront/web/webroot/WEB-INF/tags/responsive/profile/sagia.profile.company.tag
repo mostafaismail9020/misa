@@ -19,15 +19,14 @@
         <div class="panelModule panelModule_halfRadius">
             <div class="contentModule">
                 <div class="contentModule-section">
-
-                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                        <div class="contentModule-headline mw0 ml-0">
-                            <%--<span class="iconElement iconElement_info"><icon:info/></span>--%>
-                            <spring:theme code="general.basicinformation"/>
+                   
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="general.basicinformation" /></span>
+                            <div class="contentModule-headline-border"></div>
                         </div>
-                             <hr class="hr w-100"/>
-
                     </div>
+                    
 
 
                     <div class="js-myAccount-edit-toggle">
@@ -114,11 +113,16 @@
                 </div>
 
                 <div class="contentModule-section">
-                    <div class="contentModule-headline mw1">
-                        <!--<span class="iconElement iconElement_governmentDocuments"><icon:governmentDocuments/></span>-->
+                    <!-- <div class="contentModule-headline mw1">
                         <spring:theme code="general.governmentdocuments"/>
                     </div>
-                    <hr class="hr"/>
+                    <hr class="hr"/> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="general.governmentdocuments" /></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
                     <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
                         <a href="${encodedContextPath}/governmentDocuments" class="btn-normal btn btn-bg btn_bold btn_slim back_to_service">
                             <spring:theme code="general.governmentdocuments"/>
@@ -127,11 +131,20 @@
                 </div>
 
                 <div class="contentModule-section" id="branchesSection">
-                    <div class="contentModule-headline mw0">
+                    <!-- <div class="contentModule-headline mw0">
                         <c:set var="countBranches" value="${fn:length(branches)}"/>
-                       <!-- <span class="iconElement iconElement_branches"><icon:branches/></span>--> <spring:theme code="general.branches"/>(${countBranches})
+                        <spring:theme code="general.branches"/>(${countBranches})
                     </div>
-                    <hr class="hr"/>
+                    <hr class="hr"/> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline">
+                                <c:set var="countBranches" value="${fn:length(branches)}"/>
+                                <spring:theme code="general.branches"/>(${countBranches})
+                            </span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
 
                     <div class="tableModule tableModule_slim">
                         <table class="tableModule-table" id="branchesTable">
@@ -338,11 +351,16 @@
 
                 <!-- company representative-->
                 <div class="contentModule-section" id="companyRepresentativeSection">
-                   <div class="contentModule-headline">
-                        <!---<span class="iconElement iconElement_generalManager"><icon:person/></span>--->
+                   <!-- <div class="contentModule-headline">
                         <spring:theme code="profileCompany.companyRepresentative.title"/>
                     </div>
-                    <hr class="hr">
+                    <hr class="hr"> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="profileCompany.companyRepresentative.title" /></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
                     <div class="js-myAccount-edit-toggle">
                         <div class="tableModule tableModule_slim">
                             <table class="tableModule-table" id="representativeTable">
@@ -363,11 +381,16 @@
 
                 <!-- primary contact-->
                 <div class="contentModule-section primary-contact">
-                    <div class="contentModule-headline mw0">
-                        <!--<span class="iconElement iconElement_generalManager"><icon:login-quick/></span>-->
+                    <!-- <div class="contentModule-headline mw0">
                         <spring:theme code="general.primary.contact"/>
                     </div>
-                    <hr class="hr"/>
+                    <hr class="hr"/> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="general.primary.contact" /></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
                     <div class="js-myAccount-edit-toggle">
                         <div class="row">
                             <div class="col-md-6">
@@ -445,11 +468,16 @@
                 <div class="contentModule">
                     <div class="modal-header">
                         <div class="modal-title w-100">
-                            <div class="contentModule-headline w-50">
-                                <!--<span class="iconElement iconElement_generalManager"><icon:person/></span>-->
+                            <!-- <div class="contentModule-headline w-50">
                                 <spring:theme code="profileCompany.companyRepresentative.title"/>
                             </div>
-                            <hr class="hr">
+                            <hr class="hr"> -->
+                            <div class="contentModule contentModule-wrap">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline"><spring:theme code="profileCompany.companyRepresentative.title" /></span>
+                                    <div class="contentModule-headline-border"></div>
+                                </div>
+                            </div>
                         </div>
                         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                             <icon:close/>

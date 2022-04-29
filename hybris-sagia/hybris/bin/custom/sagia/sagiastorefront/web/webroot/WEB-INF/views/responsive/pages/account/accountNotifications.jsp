@@ -112,7 +112,7 @@
 <div class="mainSection mainSection_noPaddingTop">
     <div class="container contentModule d-flex pt-10">
         <hr class="contentModule-separator contentModule-separator_green"/>
-        <div class="expandableContent expanded col-4 p-0">
+        <div class="expandableContent expanded col-12 col-lg-4 p-0">
             <div class="expandableContent-aside d-block">
                 <div class="panelModule sagia-subPane">
                     <div class="contentModule">
@@ -181,7 +181,7 @@
                 </div>
             </div>
 
-            <div class="expandableContent-main col-8 p-0">
+            <div class="expandableContent-main col-12 col-lg-8 p-0">
                 <div class="panelModule sagia-subPane panelModule_smallMargin notification-body">
                     <div class="contentModule">
                         <div class="contentModule-section_noDivider contentModule-section_noMargin">

@@ -255,9 +255,9 @@
         text-align: left;
         width: 100% !important;
     }
-    .page-sagia-profile .contentModule-actions .contentModule-headline {
-        max-width: 50% !important;
-    }
+    // .page-sagia-profile .contentModule-actions .contentModule-headline {
+    //     max-width: 50% !important;
+    // }
     .page-sagia-profile .btn,
     .page-single-questionnaire .btn {
         width: 100% !important;
@@ -1616,4 +1616,21 @@ ul.tooltip-list li.tooltip-listItem .tooltip-listItem-header .btn:hover {backgro
 }
 @media (max-width: 1180px) and (min-width: 768px){
 	.page-shareholder-apply #shareholderType .form-item {width: 30%;}
+}
+@media screen and (max-width:800px) {
+    .page-notifications{
+        .contentModule{
+            flex-direction: column;
+         .expandableContent{
+            max-width: 100%;
+            .expandableContent-aside{
+                .sagia-subPane{
+                    .contentModule-headline_noMargin{
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+      }
+    }
 }

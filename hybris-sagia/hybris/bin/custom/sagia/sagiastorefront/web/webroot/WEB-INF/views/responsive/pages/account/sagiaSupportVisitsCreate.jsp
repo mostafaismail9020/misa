@@ -118,11 +118,12 @@
                 <div class="appointmentDetails appointmentDetails_forms">
                     <div class="contentModule">
                         <div class="contentModule-section">
-                            <div class="contentModule-headline">
-                                <!-- <icon:calendarText/> -->
-                                <spring:theme code="text.account.followup.supportVisitRequest"/>
+                            <div class="contentModule contentModule-wrap">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline"><spring:theme code="text.account.followup.supportVisitRequest" /></span>
+                                    <div class="contentModule-headline-border"></div>
+                                </div>
                             </div>
-                            <hr class="hr" />
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <div class="formInputBox formInputBox_group">

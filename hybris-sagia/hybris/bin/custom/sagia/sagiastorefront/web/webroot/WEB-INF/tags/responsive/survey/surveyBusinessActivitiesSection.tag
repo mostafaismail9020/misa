@@ -10,8 +10,12 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
 <div class="contentModule-section" id="businessActivitiesSection">
-    <div class="contentModule-headline"><spring:theme code="financial.survey.business.activities"/></div>
-<hr class="hr w-100">
+    <div class="contentModule contentModule-wrap">
+        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+            <span class="contentModule-headline"><spring:theme code="financial.survey.business.activities"/></span>
+            <div class="contentModule-headline-border"></div>
+        </div>
+    </div>
 <%--     <div id="businessTypeSection" class="row">
         <div class="col-md-6">
             <div class="formSelectBox">

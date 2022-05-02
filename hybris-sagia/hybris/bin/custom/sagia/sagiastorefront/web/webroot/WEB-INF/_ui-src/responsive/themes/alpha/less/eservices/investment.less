@@ -1566,7 +1566,10 @@ ul.tooltip-list li.tooltip-listItem .tooltip-listItem-header .btn:hover {backgro
     [dir] .formSelectBox {margin-top: 0;}
     [dir] .page-header-image {height: 434px;}
     .bannerWrapper{height: auto;padding-bottom: 0px !important}
-    .mainSection_narrow {max-width: 990px;display: none;}
+    body:not('.page-license-amend') .mainSection_narrow{
+         max-width: 990px;display: none;
+    }
+    
     // .formRadioBox .form-item {display: block;height: 39px;width: 50%;}
     .contentModule-actions .addButton.btn-ctrl{display: flex;justify-content: center;align-items: center;}
     ul.tooltip-list li.tooltip-listItem .tooltip-listItem-header .btn:hover {background-color: transparent !important;}
@@ -1604,7 +1607,7 @@ ul.tooltip-list li.tooltip-listItem .tooltip-listItem-header .btn:hover {backgro
     [dir] .page-header-image {height: 600px;}
     .bannerWrapper{height: auto;padding-bottom: 0px !important}
     .bannerWrapper .banner-container h1{font-size: 25px;}
-    .mainSection_narrow{display: none;}
+    .mainSection_narrow {display: none;}
     .page-new-license-apply .mw2{max-width: fit-content !important;}
     [dir=rtl] #preApprovalNrAttachment .formInputFile .form-control,[dir=rtl] #entrepreneurAttachment .formInputFile .form-control{margin-right: 0 !important;}
     ul.tooltip-list li.tooltip-listItem .tooltip-listItem-header .btn:hover {background-color: transparent !important;}

@@ -193,10 +193,13 @@
 .mobile_services {
 	display: none;
 }
-.btn{
-    height: 50px;
-    width: 195px;
+@media screen  and (min-width:641px){
+    .btn{
+        height: 50px;
+        width: 195px;
+    }
 }
+
 
 .btn.btn-secondary:hover,.btn-outline.btn-simulator:hover{
     color: @color-primary !important;
@@ -1238,11 +1241,13 @@ body ::-webkit-scrollbar-thumb {
     right:10%;
     background: @color-white;
 }
-.ml-custom-35{
-    margin-left: 35px !important;
-    [dir="rtl"] &{
-        text-align: right;
-        margin-right:0px;
+@media screen and (min-width:641px) {
+    .ml-custom-35{
+        margin-left: 35px !important;
+        [dir="rtl"] &{
+            text-align: right;
+            margin-right:0px;
+        }
     }
 }
 
@@ -1521,6 +1526,11 @@ body:not('.page-new-apply-review') .contentModule-actions_wrap,.contentModule .c
     .messageList-img_large .iconElement, .messageList-img_large img{
         width: 37px!important;
         height: 37px!important;
+    }
+    .d-survey-block{
+        ul.tabamount5{
+            display: none;
+        }
     }
 }
 

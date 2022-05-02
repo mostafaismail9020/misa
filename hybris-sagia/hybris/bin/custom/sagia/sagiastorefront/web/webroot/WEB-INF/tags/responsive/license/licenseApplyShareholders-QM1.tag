@@ -79,8 +79,12 @@
     </div>
 
     <div class="contentModule-section" id="addShareholderQM1ExistingSection" style="display: none">
-        <div class="contentModule-headline"><spring:theme code="license.apply.review.existing.shareholder"/></div>
-     <hr class="hr"/>
+        <div class="contentModule contentModule-wrap">
+            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                <span class="contentModule-headline"><spring:theme code="license.apply.review.existing.shareholder" /></span>
+                <div class="contentModule-headline-border"></div>
+            </div>
+        </div>
         <div class="row mt-5">
             <div class="col-md-6 mb-2">
                 <div class="formInputBox">
@@ -151,8 +155,12 @@
     </div>
 
     <div class="contentModule-section" id="addShareholderQM1NewSection">
-        <div class="contentModule-headline"><spring:theme code="license.apply.review.new.shareholder"/></div>
-    <hr class="hr"/>
+        <div class="contentModule contentModule-wrap">
+            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                <span class="contentModule-headline"><spring:theme code="license.apply.review.new.shareholder" /></span>
+                <div class="contentModule-headline-border"></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="formRadioBox pt-3" id="shareholderType">
@@ -198,8 +206,12 @@
     <!-- section for type Person -->
     <div id="addShareholderQM1NewPersonSection" style="display: none">
         <div class="contentModule-section">
-            <div class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details"/></div>
-          <hr class="mb-5 hr"/>
+            <div class="contentModule contentModule-wrap mb-5">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details" /></span>
+                    <div class="contentModule-headline-border"></div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <div id="shareholderTitle" class="formRadioBox">
@@ -444,8 +456,12 @@
 
         <!--  Attachment  -->
         <div class="contentModule-section">
-            <div class="contentModule-headline contentModule-headline_smallMargin mw2"><spring:theme code="general.attachments"/></div>
-           <hr class="hr"/>
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="general.attachments" /></span>
+                    <div class="contentModule-headline-border"></div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="formInputFile">
@@ -484,8 +500,12 @@
     <!-- section for type organization -->
     <div id="addShareholderQM1NewOrganizationSection" style="display: none">
         <div class="contentModule-section">
-            <div class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details"/></div>
-            <hr class="hr"/>
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="licence.apply.shareholder.details" /></span>
+                    <div class="contentModule-headline-border"></div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="formInputBox">
@@ -714,8 +734,12 @@
         </div>
        <!--  Attachment  -->
         <div class="contentModule-section">
-            <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="general.attachments"/></div>
-          <hr class="hr"/>
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline"><spring:theme code="general.attachments" /></span>
+                    <div class="contentModule-headline-border"></div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="formInputFile">

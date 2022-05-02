@@ -11,8 +11,12 @@
 
 <!--  Attachment  -->
 <div class="contentModule-section" id="attachmentSection" style="display: none">
-    <div class="contentModule-headline contentModule-headline_smallMargin mw2"><spring:theme code="licenseApplyEntityInformation.attachmentSection.attachment"/></div>
-<hr class="hr">
+  <div class="contentModule contentModule-wrap">
+    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+        <span class="contentModule-headline"><spring:theme code="licenseApplyEntityInformation.attachmentSection.attachment" /></span>
+        <div class="contentModule-headline-border"></div>
+    </div>
+  </div>
     <div class="row">
         <div class="col-md-6">
             <div class="formInputFile">

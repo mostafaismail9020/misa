@@ -186,7 +186,7 @@
             </div>--%>
             <div class="expandableContent-main">
                 <div
-                        class="js-panelTabs panelTabs panelTabs_iconsAndLabel panelTabs_separated panelTabs_tip_none  panelTabs_noPanelInBody panelTabs_white panelTabs_whiteNavigation panelTabs_noPaddingTop">
+                        class="js-panelTabs panelTabs panelTabs_iconsAndLabel panelTabs_separated panelTabs_tip_none  panelTabs_noPanelInBody panelTabs_white panelTabs_whiteNavigation panelTabs_noPaddingTop d-survey-block">
                     <div class="panelTabs-head" id="tab1">
                         <icon:registerinTab/>
                         <span class="panelTabs-label"><spring:theme code="survey.companyProfile"/></span>

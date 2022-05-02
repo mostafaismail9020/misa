@@ -17,8 +17,12 @@
 
 
 <div class="rhqSelectBoxes" style="display:none">
- <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.title"/></div>
-<hr class="hr">
+	<div class="contentModule contentModule-wrap">
+		<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+			<span class="contentModule-headline"><spring:theme code="licenseApplyEntityInformation.licenseInformationSection.title" /></span>
+			<div class="contentModule-headline-border"></div>
+		</div>
+	</div>
 <div class="mncBranchTableJsonInputs"></div>
 <div class="mncBrandTableJsonInputs"></div>
 <div class="mncCostTableJsonInputs"></div>
@@ -754,8 +758,12 @@
 
 <div class="rqh-tables" style="display:none">
 
-<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.table.header.label" /></div>
- <hr class="hr">
+	<div class="contentModule contentModule-wrap">
+		<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+			<span class="contentModule-headline"><spring:theme code="rhq.table.header.label" /></span>
+			<div class="contentModule-headline-border"></div>
+		</div>
+	</div>
 <div class="tableModule" >
 <div class="control-label rhqSubsidiaryPresence-label control-label_mandatory"><spring:theme code="rhq.mnc.branches.label" /></div>
 

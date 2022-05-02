@@ -10,8 +10,12 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
 <div class="contentModule-section license-business-activities" id="temporaryLicenseTextBox" style="display: none;">
-    <div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary.title"/></div>
-    <hr class="hr"></hr>
+    <div class="contentModule contentModule-wrap">
+        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+            <span class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary.title" /></span>
+            <div class="contentModule-headline-border"></div>
+        </div>
+    </div>
     <div class="formInputBox mt-5 textarea-box" >
         <div class="form-group">
             <%--      	<div class="contentModule-headline"><spring:theme code="license.apply.business.activities.temporary"/></div> --%>

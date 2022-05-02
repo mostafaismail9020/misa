@@ -5,10 +5,12 @@
 <%@ attribute name="shareholderType" required="false" type="java.lang.String"%>
 
 <div class="contentModule-section">
-	<div class="contentModule-headline contentModule-headline_smallMargin w-50">
-		<spring:theme code="license.apply.shareholder.delegate" />
+	<div class="contentModule contentModule-wrap">
+		<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+			<span class="contentModule-headline"><spring:theme code="license.apply.shareholder.delegate" /></span>
+			<div class="contentModule-headline-border"></div>
+		</div>
 	</div>
-  <hr class="hr"/>
 	<div class="formRadioBox-wrapper" id="delegateSectionQuestion">
 	<div class="row"><div class="col-md-12 justify-content-center"><a class="btn btn_link js-tip delegate-entity" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click" ><spring:theme code="text.account.profile.license.shareholders.tooltip.heading" /></a>
         <div class="tooltip_content" id="delegateToolTip" >

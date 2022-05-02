@@ -11,8 +11,12 @@
 
 <!--  License Information  -->
 <div class="contentModule-section" id="branchInformationSection" style="display: none">
-    <div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="licenseApplyEntityInformation.branchInformationSection.title"/></div>
-<hr class="hr">
+    <div class="contentModule contentModule-wrap">
+        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+            <span class="contentModule-headline"><spring:theme code="licenseApplyEntityInformation.branchInformationSection.title" /></span>
+            <div class="contentModule-headline-border"></div>
+        </div>
+    </div>
     <div class="formRadioBox-wrapper">
         <div class="row">
             <div class="col-md-6"><span><spring:theme code="licenseApplyEntityInformation.branchInformationSection.more.than.2.branch.text"/></span></div>

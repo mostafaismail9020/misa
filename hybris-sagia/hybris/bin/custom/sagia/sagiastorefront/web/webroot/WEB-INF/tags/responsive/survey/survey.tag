@@ -31,10 +31,12 @@
                 </div>
             </div>
         <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mt-3 ">
-            <div class="contentModule-headline fdi ml-0">
-                <!--<span class="iconElement iconElement_questionaires"><icon:questionaires/></span>-->${surveyData.surveytitle}
+            <div class="contentModule contentModule-wrap">
+                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                    <span class="contentModule-headline fdi ml-0">${surveyData.surveytitle}</span>
+                    <div class="contentModule-headline-border"></div>
+                </div>
             </div>
-              <hr class="hr w-100"/>
 
 
         </div>

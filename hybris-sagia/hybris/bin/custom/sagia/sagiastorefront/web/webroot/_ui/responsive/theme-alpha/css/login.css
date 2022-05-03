@@ -660,7 +660,16 @@ max-width :100% ;
         margin-right: -113px;
     }
 }
-
+@media screen and (max-width:992px) {	
+    .back_to_service{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+	.formCheckBox .help-block{
+		font-size: 14px;
+	}
+}
 [dir="rtl"] .register-user-info .fa-eye:before, [dir="rtl"] .register-user-info .fa-eye-slash:before{
 	float: left;
 	margin-left: 0px;

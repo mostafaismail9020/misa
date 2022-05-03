@@ -52,7 +52,7 @@ SAGIA.eServiceTour = {
 		}
 		$(document).on("click",".js-eServiceTour-start", function(e) {
 			e.preventDefault();
-			$('body').width() >= 768 ? SAGIA.eServiceTour.isSmall = false : SAGIA.eServiceTour.isSmall = true;
+			$('body').width() > 768 ? SAGIA.eServiceTour.isSmall = false : SAGIA.eServiceTour.isSmall = true;
 
 			$('body').append('<div class="modal-backdrop fade show"></div>')
 			setFocusElement();

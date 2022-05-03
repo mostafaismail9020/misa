@@ -257,8 +257,14 @@
 				</div> --%>
 
 				<div class="contentModule-section contentModule-section_paddingSide">
-					<span class="contentModule-headline contentModule-headline_smallMargin "><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></span>
-					<div class="documentModule contentModule-headline-border js-upload-files-list" data-files-name="img">
+					<!-- <span class="contentModule-headline contentModule-headline_smallMargin "><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></span> -->
+					<div class="contentModule contentModule-wrap">
+						<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+							<span class="contentModule-headline"><spring:theme code="licenseApplyEntityInformation.licenseYearSection.title"/></span>
+							<div class="contentModule-headline-border"></div>
+						</div>
+					</div>
+					<div class="documentModule contentModule-headline-border js-upload-files-list border-top-0" data-files-name="img">
 							<div class="formSelectBox">
 								<div class="form-group">
 									<form:select path="duration" cssClass="js-select2-oneColumn" onChange="updateExpiryDate(this, event)">

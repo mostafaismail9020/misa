@@ -204,7 +204,9 @@
                                                 <div class="form-icon form-icon_reset js-inputFile-reset">
                                                     <icon:cross/>
                                                 </div>
-												<div class="help-block"></div>
+												<c:if test="${not hasErrors && not empty document.fileText}">
+                                                    <div class="help-block"></div>
+                                                </c:if>
                                                 <c:if test="${hasErrors && empty document.fileText}">
                                                     <div class="help-block">
                                                         <span id="create.govtServices.uploadError"><spring:theme code="create.govtServices.uploadError" text="You must also upload a file in here."/></span>

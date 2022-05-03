@@ -141,9 +141,11 @@
 		margin-left: 6px;
 		margin-right: 6px;
 	}
-	#logoutModal .modal-description_largeMargin {
-		margin-bottom: 48px;
-	}
+	@media screen and (min-width:1024px){
+		#logoutModal .modal-description_largeMargin {
+			margin-bottom: 48px;
+		}
+	}	
 	#logoutModal .modal-content {
 		background: #fff;
 		-webkit-box-shadow: 0 18px 33px #00000029;

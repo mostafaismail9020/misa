@@ -303,8 +303,13 @@ position: relative;
 .page-new-apply-contactperson .contentModule-headline,
 .page-new-apply-review .contentModule-headline{ padding: 0 20px !important;}
 .page-new-license-apply .formRadioBox-wrapper{padding: 15px 10px;}
-.page-new-license-apply #businessActivitiesModal .baList_columns{columns: 3;}
+@media screen and (min-width:1204px) {	
+	.page-new-license-apply #businessActivitiesModal .baList_columns{columns: 3;}
+}
 
+@media screen and (max-width:1203px) {	
+	.page-new-license-apply #businessActivitiesModal .baList_columns{columns: 1;}
+}
 .page-new-license-apply .select2-dropdown_oneColumn_hasFilter.select2-dropdown--above .select2-search,
 .page-new-license-apply .select2-dropdown_oneColumn_hasFilter.select2-dropdown--below .select2-search,
 .page-shareholder-apply .select2-dropdown_oneColumn_hasFilter.select2-dropdown--above .select2-search,

@@ -87,7 +87,7 @@
             <c:choose>
                 <c:when test="${applicationStatus != null && not empty applicationStatus.entityId}">
                     <div class="globalMessage-msg">
-                        <div class="globalMessage-icon"><icon:info/></div>
+                        <div class="globalMessage-icon g-icon"><icon:info/></div>
                         <spring:theme code="dashboard.withoutlicense.appliedforlicense"/>&nbsp;
                         <c:if test="${applicationStatus != null && not empty applicationStatus}">
                             <c:out value="${applicationStatus.leadId}"/>&nbsp;
@@ -121,7 +121,7 @@
                     <c:choose>
                         <c:when test="${hasUserAppliedForLicense && !fn:containsIgnoreCase(applicationStatus.statusDesc, 'rejected') }">
                             <div class="globalMessage-msg">
-                                <div class="globalMessage-icon"><icon:info/></div>
+                                <div class="globalMessage-icon g-icon"><icon:info/></div>
                                 <spring:theme code="dashboard.withoutlicense.appliedforlicense"/>&nbsp;
                                 <c:if test="${applicationStatus.statusDesc != null && not empty applicationStatus.statusDesc}">
                                 	<c:out value="${applicationStatus.leadId}"/>&nbsp;
@@ -141,7 +141,7 @@
                              </div>
 
                             <div class="globalMessage-msg">
-                                <div class="globalMessage-icon"><icon:warning/></div>
+                                <div class="globalMessage-icon g-icon"><icon:warning/></div>
                                 <spring:theme code="dashboard.withoutlicense.appliedforlicense"/>&nbsp;
                                 <c:if test="${applicationStatus.statusDesc != null && not empty applicationStatus.statusDesc}">
                                 	<c:out value="${applicationStatus.leadId}"/>&nbsp;

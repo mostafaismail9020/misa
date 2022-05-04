@@ -343,12 +343,21 @@
 			<div class="mx-5 potentialOpportunityChatBox">				
 				<!--<input type="submit" value="refresh" id="submit"  onClick="window.location.reload();" class="btn btn_submit_whitess"/>-->
 				
-				<h5 class="serviceModule-description">
+				<!-- <h5 class="serviceModule-description">
 					<span class="serviceModule-headline"><spring:theme code="my.potential.opportunity.comments.label"/></span>
 					<button onclick="commentTextArea()" class="btn-dashboard text-uppercase my-3 my-md-0" style="position: relative; top: -9px; ">
 						<spring:theme code="my.potential.opportunity.add.comments"/>
 					</button>
- 				</h5> 
+ 				</h5>  -->
+				 <div class="contentModule contentModule-wrap">
+					<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+						<span class="contentModule-headline"><spring:theme code="my.potential.opportunity.comments.label"/></span>
+						<button onclick="commentTextArea()" class="btn-dashboard text-uppercase my-3 my-md-0 d-flex-end" style="position: relative; top: -9px; ">
+							<spring:theme code="my.potential.opportunity.add.comments"/>
+						</button>
+						<div class="contentModule-headline-border"></div>
+					</div>
+				</div>
 				<c:set var="ticketId" value="${contactTicketDetails.ticketID}"/>
 				<div class="comment_box_form" id="comment_box_form" style="display: none;">
 					<c:set var="today" value="<%=new java.util.Date()%>" />

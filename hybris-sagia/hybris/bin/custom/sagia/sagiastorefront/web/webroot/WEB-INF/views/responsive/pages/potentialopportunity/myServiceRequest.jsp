@@ -22,13 +22,13 @@
             <div class="profile-icons float-right">
 				<div class="dashboardUser-right col-md-6">
 					<div class="col-6 d-flex">
-						<div class=" user-icon ml-1 mr-2">
+						<div class=" user-icon">
 							<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
 							<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
 								<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg" alt="calender"/>
 							</a>
 						</div>
-						<div class=" user-icon mr-3 ml-3">
+						<div class=" user-icon">
 							<!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
 							<div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
 								<c:if test="${hasLicense or hasAwaitingPayment}">
@@ -54,7 +54,7 @@
 								</div> -->
 							</div>
 						</div>
-						<div class=" user-icon mr-1">
+						<div class=" user-icon">
 							<a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>"
 									class="sagiaNavigation-btn sagiaNavigation-user"> 
 								<img class="potential_opportunity_images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg" alt="account"/>
@@ -69,7 +69,7 @@
 
  
 <div class="container mb-3 pb-2">
-	<div class="row w-75 m-auto">
+	<div class="row m-auto">
 		<div class="Back_to_Dashboardss">
 			<c:url value="/potentialOpportunity/${ticketId}" var="potentialOpportunityURL"/>
 			<a href="${potentialOpportunityURL}" class="btn btn_leftIconLink btn_darkLink">
@@ -86,9 +86,12 @@
 
 <spring:url value="/potentialOpportunity/${ticketId}/serviceRequest" var="submitServiceRequestAction" htmlEscape="false"/>
 <div class="container">
-	<div class="w-75 m-auto">
-		<div class="licensecontactperson_bottomboarder">
-			<div class="contentModule-headline"><spring:theme code="general.basicinformation" /></div>
+	<div class="m-auto">
+		<div class="contentModule contentModule-wrap">
+			<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+				<span class="contentModule-headline"><spring:theme code="general.basicinformation" /></span>
+				<div class="contentModule-headline-border"></div>
+			</div>
 		</div>
 		<form:form class="contact-form pt-3" action="${submitServiceRequestAction}" id="js-quick-tialoppor_new" method="post" modelAttribute="sagiaServiceRequestFormData">
 			<!-- onsubmit="return validateFormsetting()" id="js-quick-tialoppor_new" -->

@@ -481,6 +481,14 @@ margin: auto;
 	.errorPage .errorPage-actions .btn.btn_wide{
 		width: 65vw;
 	}
+	.page-potential-opportunity .page-content-position a.btn-dashboard{
+        float: none;
+        margin: auto !important;
+        width: 70%;
+    }
+	.page-potential-opportunity .page-content-position .btn.btn_leftIconLink{
+		display: block;
+	}
 }
 /* End */
 
@@ -667,7 +675,7 @@ max-width :100% ;
 }
 @media screen and (max-width:992px) {	
     .back_to_service{
-        display: block;
+        display: inline-block;
         margin-left: auto;
         margin-right: auto;
     }

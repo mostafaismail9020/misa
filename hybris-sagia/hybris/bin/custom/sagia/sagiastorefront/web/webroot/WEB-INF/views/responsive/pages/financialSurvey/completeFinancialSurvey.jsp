@@ -1403,10 +1403,16 @@
                                 <div class="panelModule panelModule_halfRadius">
                                     <div class="contentModule">
                                         <div class="contentModule-section">
-                                            <div class="contentModule-headline">
+                                            <!-- <div class="contentModule-headline">
                                                 <icon:documents/><spring:theme code="general.attachments"/>
                                             </div>
-                                            <hr class="hr w-100">
+                                            <hr class="hr w-100"> -->
+                                            <div class="contentModule contentModule-wrap">
+                                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                                    <span class="contentModule-headline"><spring:theme code="general.attachments"/></span>
+                                                    <div class="contentModule-headline-border"></div>
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="formInputFile">
@@ -1431,7 +1437,7 @@
                                     <formElement:termsAndConditionsCheckbox event="FINANCIAL_STATEMENT" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                                 </div>
                                 <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                                    <button type="reset" class="btn btn-secondary" id="cancelSubmit">
+                                    <button type="reset" class="btn btn-outline" id="cancelSubmit">
                                         <spring:theme code="general.cancel"/>
                                     </button>
                                     <button type="submit" value="Submit request" class="btn js-submit-financialStatement" disabled><spring:theme code="general.submit"/></button>
@@ -1445,8 +1451,7 @@
                     </div>
 
 
-                    <div class="contentModule-commentsSection" id="ammendComments"
-                         style="display: none;">
+                    <div class="contentModule-commentsSection" id="ammendComments" style="display: none;">
                         <div class="contentModule-headline contentModule-headline_small ">
                             <spring:theme code="text.account.followup.comments"/>
                         </div>
@@ -1479,8 +1484,14 @@
          role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content panelModule panelModule_halfRadius">
-                <div class="contentModule-headline">
+                <!-- <div class="contentModule-headline">
                     <spring:theme code="financial.survey.shareholder"/>
+                </div> -->
+                <div class="contentModule contentModule-wrap">
+                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                        <span class="contentModule-headline"><spring:theme code="financial.survey.shareholder"/></span>
+                        <div class="contentModule-headline-border"></div>
+                    </div>
                 </div>
 
 
@@ -1520,10 +1531,16 @@
         <form id="shareholderFormId">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content panelModule panelModule_halfRadius">
-                    <div class="contentModule-headline">
+                    <!-- <div class="contentModule-headline">
                         <spring:theme code="financial.survey.shareholder"/>
                     </div>
-                    <hr class="hr w-100">
+                    <hr class="hr w-100"> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="financial.survey.shareholder"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
                     <div id="shareholderPersonEntityTypeId" class="row">
                         <div class="col-md-8">
                             <div class="formRadioBox">
@@ -1549,10 +1566,16 @@
 
                     <div class="contentModule-separator"></div>
                     <div id="contentNewShareholderForm">
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <spring:theme code="license.basicinformation"/>
                         </div>
-                        <hr class="hr w-100">
+                        <hr class="hr w-100"> -->
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="license.basicinformation"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
+                        </div>
                         <%--Entity shareholder--%>
                         <div id="entityShareholderId">
 
@@ -1673,10 +1696,16 @@
 
                         <div class="contentModule-separator"></div>
 
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareinformation"/>
                         </div>
-                        <hr class="hr w-100">
+                        <hr class="hr w-100"> -->
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="financial.survey.shareinformation"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
+                        </div>
 
                         <div id="shareholderAddressId" class="row">
 
@@ -1801,18 +1830,30 @@
 
                         <div class="contentModule-separator"></div>
 
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareholderTransaction"/>
                         </div>
-                        <hr class="hr w-100">
+                        <hr class="hr w-100"> -->
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="financial.survey.shareholderTransaction"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
+                        </div>
                         <tags:transaction/>
 
 
                         <div class="contentModule-separator"></div>
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <spring:theme code="general.shareholderequity"/>
                         </div>
-                        <hr class="hr w-100">
+                        <hr class="hr w-100"> -->
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="general.shareholderequity"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
+                        </div>
 
                         <div  class="row">
                         <div class="col-md-12">
@@ -1992,10 +2033,16 @@
             <div class="modal-content panelModule panelModule_halfRadius">
                 <form id="branchFormId">
 
-                    <div class="contentModule-headline">
+                    <!-- <div class="contentModule-headline">
                         <spring:theme code="license.branchdetails"/>
                     </div>
-                    <hr class="hr w-100">
+                    <hr class="hr w-100"> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="license.branchdetails"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -2040,10 +2087,16 @@
 
 
                     <div class="contentModule-separator"></div>
-                    <div class="contentModule-headline">
+                    <!-- <div class="contentModule-headline">
                         <spring:theme code="license.contactinformation"/>
                     </div>
-                    <hr class="hr w-100">
+                    <hr class="hr w-100"> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="license.contactinformation"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-6">
@@ -2184,8 +2237,14 @@
             <div class="modal-content panelModule panelModule_halfRadius">
                 <form id="subsidiaryFormId">
 
-                    <div class="contentModule-headline">
+                    <!-- <div class="contentModule-headline">
                         <spring:theme code="license.subsidiary.details"/>
+                    </div> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="license.subsidiary.details"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -2503,10 +2562,16 @@
         <form id="affiliateFormId">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content panelModule panelModule_halfRadius">
-                    <div class="contentModule-headline">
+                    <!-- <div class="contentModule-headline">
                         <spring:theme code="financial.survey.affiliate"/>
                     </div>
-                    <hr class="hr w-100">
+                    <hr class="hr w-100"> -->
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="financial.survey.affiliate"/></span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
+                    </div>
                     <div id="affiliatePersonEntityTypeId" class="row">
                         <div class="col-md-8">
                             <div class="formRadioBox">
@@ -2532,10 +2597,16 @@
 
                     <div class="contentModule-separator"></div>
                     <div id="contentNewAffiliateForm">
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <spring:theme code="license.basicinformation"/>
                         </div>
-                        <hr class="hr w-100">
+                        <hr class="hr w-100"> -->
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="license.basicinformation"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
+                        </div>
 
                         <%--Entity affiliate--%>
                         <div id="entityAffiliateId">
@@ -2671,10 +2742,16 @@
 
                         <div class="contentModule-separator"></div>
 
-                        <div class="contentModule-headline">
+                        <!-- <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareholderTransaction"/>
                         </div>
-                        <hr class="hr w-100">
+                        <hr class="hr w-100"> -->
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="financial.survey.shareholderTransaction"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
+                        </div>
                         <tags:transaction/>
 
 

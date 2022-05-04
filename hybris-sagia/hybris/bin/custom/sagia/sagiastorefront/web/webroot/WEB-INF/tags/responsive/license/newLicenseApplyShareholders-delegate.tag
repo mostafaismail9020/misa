@@ -142,13 +142,14 @@
             <div id="verifyDelegateDetails" ${not empty data.delegateInfo  && data.delegateInfo.delegateYourself eq false ? '' : 'style="display: none;"'}>
                 <div class="row">
                     <div class="col-md-6">
-                        <div style="margin-top: 20px;font-size: 18px;"
-                             class="contentModule-headline contentModule-headline_smallMargin">
-                            <spring:theme code="license.apply.shareholder.delegateDetails.title"/>
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="license.apply.shareholder.delegateDetails.title"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <hr class="hr">
                 <div class="row">
                     <div class="col-md-6">
                         <formElement:formInputBox path="delegateInfo.delegateFirstNameArabic"
@@ -349,13 +350,14 @@
                 </div>
                 <div class="row" id="delegateAttachments">
                     <div class="col-md-6">
-                        <div style="margin-top: 20px;font-size: 18px;"
-                             class="contentModule-headline contentModule-headline_smallMargin">
-                            <spring:theme code="licence.apply.attachments"/>
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="licence.apply.attachments"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <hr class="hr">
                 <div class="row">
                     <div class="col-md-6" id="loaFileDiv" style="display: none;">
                         <div class="formInputFile ${not empty data.delegateInfo.authorisationLetter ? "active" : ""}">

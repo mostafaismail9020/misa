@@ -193,8 +193,14 @@
     </div>
 
     <div id="contactSection" class="contentModule-section">
-        <div class="licensecontactperson_bottomboarder">
+        <!-- <div class="licensecontactperson_bottomboarder">
             <div class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.qm1.contactInformation"/></div>
+        </div> -->
+        <div class="contentModule contentModule-wrap">
+            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                <span class="contentModule-headline"><spring:theme code="licenseApply.contactPerson.qm1.contactInformation"/></span>
+                <div class="contentModule-headline-border"></div>
+            </div>
         </div>
 		<div class="row">
             <div class="col-md-6">

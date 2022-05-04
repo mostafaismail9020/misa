@@ -30,16 +30,12 @@
                     </a>
                 </div>
             </div>
-        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mt-3 ">
-            <div class="contentModule contentModule-wrap">
+            <div class="contentModule contentModule-wrap mt-3">
                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
-                    <span class="contentModule-headline fdi ml-0">${surveyData.surveytitle}</span>
+                    <span class="contentModule-headline fdi">${surveyData.surveytitle}</span>
                     <div class="contentModule-headline-border"></div>
                 </div>
             </div>
-
-
-        </div>
 
         <c:forEach items="${surveyData.sections}" var="section" varStatus="sectionStatus">
             <div class="contentModule-section contentModule-section_slimDivider contentModule-section_noDivider">

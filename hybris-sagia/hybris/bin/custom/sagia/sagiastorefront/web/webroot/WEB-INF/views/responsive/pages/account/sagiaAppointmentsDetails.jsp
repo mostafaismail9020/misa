@@ -149,8 +149,12 @@
 
 
                                                                 <div class="contentModule-section service-main-div">
-                                                                    <div class="contentModule-headline contentModule-subheadline mw0">Services</div>
-                                                                    <hr class="hr" />
+                                                                    <div class="contentModule contentModule-wrap">
+                                                                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                                                            <span class="contentModule-headline">Services</span>
+                                                                            <div class="contentModule-headline-border"></div>
+                                                                        </div>
+                                                                    </div>
                                                                     <c:if test="${not empty appointmentData.serviceType1Description}">
                                                                         <div class="row service-hr-line">
                                                                             <div class="col-sm-4">

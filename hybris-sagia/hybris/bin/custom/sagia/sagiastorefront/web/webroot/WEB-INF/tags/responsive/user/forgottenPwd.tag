@@ -37,7 +37,7 @@
                             </ycommerce:testId>
                         </div>
                         <div class="accountLogin-linkWrapper">
-                            <a href="https://investsaudi.sa/en/contact/" class="btn_link btn_link_text">
+                            <a href="https://investsaudi.sa/${language}/contactUs" class="btn_link btn_link_text" target="_blank">
                                 <spring:theme code="support.contactus"/></a>
                         </div>                
                     </form:form>

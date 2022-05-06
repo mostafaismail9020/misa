@@ -457,9 +457,9 @@
                                                         <div class="panelTabs-body">
                                                             <div class="contentModule">
                                                                 <div class="contentModule-actions contentModule-actions_right">
-                                                                    <button class="btn btn_outline btn_round btn_slim"><spring:theme code="biddingLicense.button.print.text"/>
-                        <span class="iconElement iconElement_print"><icon:print/></span>
-                    </button>
+                                                                    <button id="printBiddingCert" class="btn btn_outline btn_round btn_slim"><spring:theme code="biddingLicense.button.print.text"/>
+                                                                        <span class="iconElement iconElement_print"><icon:print/></span>
+                                                                    </button>
                                                                 </div>
 
                                                                 <div class="contentModule-section contentModule-section_noDivider">

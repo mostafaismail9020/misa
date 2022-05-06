@@ -110,7 +110,7 @@
                         </a>  
                         </span>  
                     </div>
-                    <div class="col-md-12 login-forgot accountLogin-content-formSubmitSection">
+                    <div class="col-md-12 login-forgot accountLogin-content-formSubmitSection mt-2">
                         <%-- <button type="button" data-toggle="modal" data-target="#forgotPassword"><span>Forgot Password ?</span></button>|<span>
                         <a href="https://misa.gov.sa/ar/contact-us/" target="_blank">Trouble Logging in Contact Us</a></span> --%>
                         <%--<span data-toggle="modal" data-target="#forgotPassword">Forgot Password ?</span> --%>
@@ -128,7 +128,7 @@
                         </span>
                         <span>|</span>
                         <span class="accountLogin-content-formSubmitSection-forgottenPassword">
-                            <spring:theme code="register.login.problem"/> &nbsp; 
+                            <spring:theme code="register.login.problem"/> &nbsp; <br/>
                             <a href="https://misa.gov.sa/ar/contact-us/" target="_blank"><spring:theme code="register.login.problem.contact"/></a>
                         </span>
                         <c:if test="${expressCheckoutAllowed}">

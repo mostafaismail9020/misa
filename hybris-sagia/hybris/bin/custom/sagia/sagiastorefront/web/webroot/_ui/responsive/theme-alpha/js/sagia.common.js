@@ -1016,3 +1016,6 @@ function calheightServiceInfo(){
         $('.statusIndicator').css({ paddingTop : cal + 'px' });
     }
 }
+$("#printBiddingCert").on("click", function() {
+    window.print();
+});

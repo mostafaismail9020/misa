@@ -352,8 +352,12 @@
                                 <div class="contentModule-commentsSection" style="display: block;">
                                     </c:otherwise>
                                     </c:choose>
-                                    <div class="contentModule-headline contentModule-headline_small "><spring:theme
-                                            code="text.account.followup.comments"/></div>
+                                    <div class="contentModule contentModule-wrap">
+                                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                            <span class="contentModule-headline"><spring:theme code="text.account.followup.comments"/></span>
+                                            <div class="contentModule-headline-border"></div>
+                                        </div>
+                                    </div>
                                     <div class="commentModule">
                                         <div class="commentModule-window">
                                             <ul id="messagesListUL" class="messageList">
@@ -410,10 +414,13 @@
                                 </div>
                             </div>
                             <div id="specialServiceAttachments" class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin" <c:if test="${empty specialServiceHeader.attachedDocuments}">hidden</c:if>>
-                                <div class="contentModule-headline contentModule-headline_small">
-                                    <spring:theme code="text.specialservices.attachments"/>
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="text.specialservices.attachments"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
                                 </div>
-                                <div class="documentModule">
+                                <div class="documentModule1">
                                     <ul class="downloadList downloadList_secondary specialServicesAttachments">
                                         <c:forEach items="${specialServiceHeader.attachedDocuments}" var="element"
                                                    varStatus="countme">

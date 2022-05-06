@@ -439,8 +439,12 @@
 
                         <c:if test="${fn:length(serviceList) gt 0}">
                             <div class="contentModule-section">
-                                <div class="contentModule-headline contentModule-headline_small "><spring:theme
-                                        code="text.account.followup.comments"/></div>
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="text.account.followup.comments"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
+                                </div>
                                 <div class="commentModule">
                                     <div class="commentModule-window">
                                         <ul id="messagesListUL" class="messageList">

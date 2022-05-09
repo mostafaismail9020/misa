@@ -170,7 +170,7 @@ function shareholderValidator() {
             shareholderPercentage: {
                 required: true,
                 number: true,
-                range: [0, 100]
+                //range: [0, 100]
             },
         },
 

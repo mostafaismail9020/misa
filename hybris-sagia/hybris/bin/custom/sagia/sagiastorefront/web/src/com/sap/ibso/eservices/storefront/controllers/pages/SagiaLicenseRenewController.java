@@ -349,7 +349,7 @@ public class SagiaLicenseRenewController extends SagiaAbstractPageController {
         		if(subsOutstandingFee > 0) {
         			licenseDuration.setName(getMessageSource().getMessage("license.entity.year.outstanding."+i, new Object[] {i*licenseFeePerYr, subsOutstandingFee}, getI18nService().getCurrentLocale()));
         		}else {
-        			licenseDuration.setName(getMessageSource().getMessage("license.entity.year."+i, new Object[] {i*licenseFeePerYr}, getI18nService().getCurrentLocale()));
+        			licenseDuration.setName(getMessageSource().getMessage("license.entity.year.renew."+i, new Object[] {i*licenseFeePerYr}, getI18nService().getCurrentLocale()));
         		}
         		
         	}else {

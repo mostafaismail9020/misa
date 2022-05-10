@@ -162,7 +162,7 @@
 
 
 <div
-        class="mainSection mainSection_white mainSection_narrow mainSection_xsmallPaddingTop">
+        class="mainSection mainSection_white mainSection_narrow1 mainSection_xsmallPaddingTop">
     <div class="container">
         <div class="expandableContent expandableContent_upLg" id="expand01">
             <%--<div class="expandableContent-aside">

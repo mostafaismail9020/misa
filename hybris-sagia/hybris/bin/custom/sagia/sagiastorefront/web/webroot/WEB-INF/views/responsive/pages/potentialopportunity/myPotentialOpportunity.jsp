@@ -352,7 +352,7 @@
 				 <div class="contentModule contentModule-wrap">
 					<div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
 						<span class="contentModule-headline"><spring:theme code="my.potential.opportunity.comments.label"/></span>
-						<button onclick="commentTextArea()" class="btn-dashboard text-uppercase my-3 my-md-0 d-flex-end" style="position: relative; top: -9px; ">
+						<button onclick="commentTextArea()" class="btn-dashboard text-uppercase  my-md-0 d-flex-end" style="position: relative; top: -9px; ">
 							<spring:theme code="my.potential.opportunity.add.comments"/>
 						</button>
 						<div class="contentModule-headline-border"></div>

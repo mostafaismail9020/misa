@@ -23,7 +23,7 @@
                                                                     <spring:theme code="appointments.appointmentdetails" />
                                                                 </h1>
                                                             </div>
-                                                            <div class="profile-icons float-right">
+                                                            <div class="profile-icons">
                                                                 <c:if test="${hasLicense or hasAwaitingPayment}">
                                                                     <div class="calendar">
                                                                         <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
@@ -68,15 +68,16 @@
                                                 <div class="mainSection mainSection_dark mainSection_noPadding">
                                                     <div class="container">
 
-                                                        <div class="mainSection-linkActions mainSection-linkAc  tions_spaceBetween">
-                                                            <div class="w-25">
+                                                        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
+                                                            <div class="w-25 d-flex">
                                                                 <a href="${encodedContextPath}/appointments" class="btn btn_leftIconLink btn_bold appointmentControl-backBtn w-75">
-                                                                    <span class="iconElement iconElement_closeBack">
-																		<!--<icon:close/>-->
+                                                                    <!-- <span class="iconElement iconElement_closeBack">
+																		
                                                                         <svg class="potential_svg_arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="17.116" viewBox="0 0 10 17.116">
 																			<path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M14.265,14.749l6.618-6.471a1.2,1.2,0,0,0,0-1.727,1.275,1.275,0,0,0-1.77,0l-7.5,7.332a1.2,1.2,0,0,0-.036,1.687l7.53,7.383a1.277,1.277,0,0,0,1.77,0,1.2,1.2,0,0,0,0-1.727Z" transform="translate(-11.251 -6.194)" fill="#00a6be"></path>
 																		</svg>
-																	</span>
+																	</span> -->
+                                                                    <span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
                                                                     <span class="appointmentControl-backBtn-label btn_bold"><spring:theme code="appointments.backtooverview" /></span></a>
                                                             </div>
                                                             <%-- <a href="${encodedContextPath}/appointments/edit/${appointmentData.appointmentID}" class="btn btn--primary btn--half-radius btn--small"><spring:theme code="appointments.edit" /></a> --%>

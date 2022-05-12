@@ -20,7 +20,7 @@
 			<div class="banner-container aos-init aos-animate container" data-aos="fade-up">
 				<h1 data-aos="fade-up"><spring:theme code="license.amendlicense" /></h1>
 			</div>
-			<div class="profile-icons float-right">
+			<div class="profile-icons">
 				<c:if test="${hasLicense or hasAwaitingPayment}">
 						<div class="calendar">
 							<a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">

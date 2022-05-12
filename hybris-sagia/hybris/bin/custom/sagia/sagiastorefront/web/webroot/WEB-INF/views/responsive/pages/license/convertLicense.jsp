@@ -28,7 +28,7 @@
                     <spring:theme code="convertlicense.converttonational" />
                 </h1>
             </div>
-            <div class="profile-icons float-right">
+            <div class="profile-icons">
                 <c:if test="${hasLicense or hasAwaitingPayment}">
                     <div class="calendar">
                         <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">

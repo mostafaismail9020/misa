@@ -24,7 +24,7 @@
                     <spring:theme code="temporaryBiddingLicense.title" />
                 </h1>
             </div>
-            <div class="profile-icons float-right">
+            <div class="profile-icons">
                 <div class="calendar">
                     <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
                         <img class="profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender.png"  alt="calender" />

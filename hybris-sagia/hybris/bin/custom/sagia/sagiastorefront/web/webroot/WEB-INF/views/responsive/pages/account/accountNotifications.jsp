@@ -21,7 +21,7 @@
                     <spring:theme code="account.notifications.title"/>
                 </h1>
             </div>
-            <div class="profile-icons float-right">
+            <div class="profile-icons">
                 <c:if test="${hasLicense}">
                     <div class="calendar">
                         <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
@@ -75,7 +75,7 @@
                     <spring:theme code="account.notifications.title"/>
                 </h1>
             </div>
-            <div class="profile-icons float-right">
+            <div class="profile-icons">
                 <div class="calendar"><img alt="" class=" profile-icon-images" src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender.png" /> </div>
                 <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
                     <c:if test="${hasLicense or hasAwaitingPayment}">

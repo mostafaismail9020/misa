@@ -26,7 +26,7 @@
                     <spring:theme code="genral.dashboard.profile"/>
                 </h1>
             </div>
-            <div class="profile-icons float-right">
+            <div class="profile-icons">
                 <c:if test="${hasLicense}">
                     <div class="calendar">
                         <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">

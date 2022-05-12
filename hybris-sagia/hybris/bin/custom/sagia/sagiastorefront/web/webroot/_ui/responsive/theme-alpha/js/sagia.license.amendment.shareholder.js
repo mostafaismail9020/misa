@@ -335,8 +335,8 @@ var preNICVerificationShareholder = function(element, current){
                 current.data('nicVerified', "true");
                 current.siblings("#isShareholderNicVerified").prop('checked', true);
                 var element = $("#individualShareholderId");
-                setAndDisableFieldIfValueNotBlank(element.find("#shareholderFirstNameId"),jsonData.firstName_EN);
-                setAndDisableFieldIfValueNotBlank(element.find("#shareholderLastNameId"),jsonData.secondName_EN);
+                setAndDisableFieldIfValueNotBlank(element.find("#shareholderFirstNameId"),jsonData.firstName_AR);
+                setAndDisableFieldIfValueNotBlank(element.find("#shareholderLastNameId"),jsonData.lastName_AR);
                 setAndDisableFieldIfValueNotBlank(element.find("#birthDateId"),shareholderDateofBirth);
                 updateGenderDropdown(element.find("#shareholderGenderId"), jsonData.gender, true);
                 updateShareholderPremiumResident(element.find("#shareholderPremiumResidentId"), jsonData.premium_Residency, true);

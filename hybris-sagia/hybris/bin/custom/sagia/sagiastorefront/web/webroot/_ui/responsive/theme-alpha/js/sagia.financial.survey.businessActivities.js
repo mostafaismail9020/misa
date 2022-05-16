@@ -1127,7 +1127,7 @@ $(function () {
     	if (splRequirementId == '0000') {
     		return;
     	}
-        $.ajax(ACC.config.encodedContextPath + controllerUrl + "/sagiaLicenseTypeRequirement/"+ splRequirementId, {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license" + "/sagiaLicenseTypeRequirement/"+ splRequirementId, {
             type: "GET",
             responseType: "application/json;charset=utf-8",
             contentType: "application/json;charset=utf-8",

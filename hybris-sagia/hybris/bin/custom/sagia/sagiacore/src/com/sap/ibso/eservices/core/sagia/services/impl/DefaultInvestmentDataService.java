@@ -2,17 +2,7 @@ package com.sap.ibso.eservices.core.sagia.services.impl;
 
 import java.util.List;
 
-import com.sap.ibso.eservices.core.model.AnnualFundAssetsModel;
-import com.sap.ibso.eservices.core.model.AnnualGrowthModel;
-import com.sap.ibso.eservices.core.model.AnnualValueModel;
-import com.sap.ibso.eservices.core.model.CapitalInformationModel;
-import com.sap.ibso.eservices.core.model.NumberOfCommercialRegisterModel;
-import com.sap.ibso.eservices.core.model.CapitalOfCommercialRegisterModel;
-import com.sap.ibso.eservices.core.model.ForeignInvestmentGrowthModel;
-import com.sap.ibso.eservices.core.model.ForeignInvestmentValueModel;
-import com.sap.ibso.eservices.core.model.QuarterlyFundAssetsModel;
-import com.sap.ibso.eservices.core.model.QuarterlyGrowthModel;
-import com.sap.ibso.eservices.core.model.QuarterlyValueModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.core.sagia.dao.InvestmentDataDAO;
 import com.sap.ibso.eservices.core.sagia.services.InvestmentDataService;
 
@@ -35,88 +25,82 @@ public class DefaultInvestmentDataService implements InvestmentDataService {
 	}
 
 	@Override
-	public List<AnnualValueModel> getAnnualValueModel(String sector, String period, String startYear, String endYear) {
-		final List<AnnualValueModel> annualValue = getInvestmentDataDAO().getAnnualValueModelBySearch(sector, period,
+	public List<AQValueGrowthModel> getAnnualValueModel(String sector, String period, String startYear, String endYear) {
+		return getInvestmentDataDAO().getAnnualValueModelBySearch(sector, period,
 				startYear, endYear);
-		return annualValue;
 	}
 
 	@Override
-	public List<AnnualGrowthModel> getAnnualGrowthModel(String sector, String period, String startYear,
-			String endYear) {
-		final List<AnnualGrowthModel> annualGrowth = getInvestmentDataDAO().getAnnualGrowthModelBySearch(sector, period,
+	public List<AQValueGrowthModel> getAnnualGrowthModel(String sector, String period, String startYear,
+														 String endYear) {
+		return getInvestmentDataDAO().getAnnualGrowthModelBySearch(sector, period,
 				startYear, endYear);
-		return annualGrowth;
 	}
 
 	@Override
-	public List<QuarterlyValueModel> getQuarterlyValueModel(String sector, String period, String startYear,
-			String endYear) {
-		final List<QuarterlyValueModel> quarterlyValue = getInvestmentDataDAO().getQuarterlyValueModelBySearch(sector,
+	public List<AQValueGrowthModel> getQuarterlyValueModel(String sector, String period, String startYear,
+														   String endYear) {
+		return getInvestmentDataDAO().getQuarterlyValueModelBySearch(sector,
 				period, startYear, endYear);
-		return quarterlyValue;
 	}
 
 	@Override
-	public List<QuarterlyGrowthModel> getQuarterlyGrowthModel(String sector, String period, String startYear,
-			String endYear) {
-		final List<QuarterlyGrowthModel> quarterlyGrowth = getInvestmentDataDAO()
+	public List<AQValueGrowthModel> getQuarterlyGrowthModel(String sector, String period, String startYear,
+															String endYear) {
+		return getInvestmentDataDAO()
 				.getQuarterlyGrowthModelBySearch(sector, period, startYear, endYear);
-		return quarterlyGrowth;
 	}
 
 	@Override
-	public List<ForeignInvestmentValueModel> getForeignInvestmentValueModel() {
-		final List<ForeignInvestmentValueModel> foreignInvestmentValue = getInvestmentDataDAO()
+	public List<ForeignInvestmentModel> getForeignInvestmentValueModel() {
+		return getInvestmentDataDAO()
 				.getForeignInvestmentValueModelBySearch();
-		return foreignInvestmentValue;
 	}
 
 	@Override
-	public List<ForeignInvestmentGrowthModel> getForeignInvestmentGrowthModel() {
-		final List<ForeignInvestmentGrowthModel> foreignInvestmentValue = getInvestmentDataDAO()
+	public List<ForeignInvestmentModel> getForeignInvestmentGrowthModel() {
+		return getInvestmentDataDAO()
 				.getForeignInvestmentGrowthModelBySearch();
-		return foreignInvestmentValue;
 	}
 
 	@Override
-	public List<AnnualFundAssetsModel> getAnnualFundAssetsModel(String indicator, String period, String startYear,
-			String endYear) {
-		final List<AnnualFundAssetsModel> annualFundAssets = getInvestmentDataDAO()
+	public List<FundAssetsModel> getAnnualFundAssetsModel(String indicator, String period, String startYear,
+														  String endYear) {
+		return getInvestmentDataDAO()
 				.getAnnualFundAssetsModelBySearch(indicator, period, startYear, endYear);
-		return annualFundAssets;
 	}
 
 	@Override
-	public List<NumberOfCommercialRegisterModel> getNumberOfCommercialRegisterModel(String indicator, String startYear,
-			String endYear) {
-		final List<NumberOfCommercialRegisterModel> numberOfCommercialRegister = getInvestmentDataDAO()
+	public List<FundAssetsModel> getQuarterlyFundAssetsModel(String sector, String period, String startYear,
+															 String endYear) {
+		return getInvestmentDataDAO()
+				.getQuarterlyFundAssetsModelBySearch(sector, period, startYear, endYear);
+	}
+
+	@Override
+	public List<CommercialRegisterModel> getNumberOfCommercialRegisterModel(String indicator, String startYear,
+																			String endYear) {
+		return getInvestmentDataDAO()
 				.getNumberOfCommercialRegisterModelBySearch(indicator, startYear, endYear);
-		return numberOfCommercialRegister;
 	}
 	
 	@Override
-	public List<CapitalOfCommercialRegisterModel> getCapitalOfCommercialRegisterModel(String indicator, String startYear,
-			String endYear) {
-		final List<CapitalOfCommercialRegisterModel> capitalOfCommercialRegister = getInvestmentDataDAO()
+	public List<CommercialRegisterModel> getCapitalOfCommercialRegisterModel(String indicator, String startYear,
+																			 String endYear) {
+		return getInvestmentDataDAO()
 				.getCapitalOfCommercialRegisterModelBySearch(indicator, startYear, endYear);
-		return capitalOfCommercialRegister;
 	}
 
 	@Override
-	public List<CapitalInformationModel> getCapitalInformationModel(String indicator, String startYear,
-			String endYear) {
-		final List<CapitalInformationModel> capitalInformation = getInvestmentDataDAO()
-				.getCapitalInformationModelBySearch(indicator, startYear, endYear);
-		return capitalInformation;
+	public List<CommercialRegisterModel> getAnnualCapitalInformationModel(String indicator, String startYear,
+																		  String endYear) {
+		return getInvestmentDataDAO()
+				.getAnnualCapitalInformationModelBySearch(indicator, startYear, endYear);
 	}
 
 	@Override
-	public List<QuarterlyFundAssetsModel> getQuarterlyFundAssetsModel(String sector, String period, String startYear,
-			String endYear) {
-		final List<QuarterlyFundAssetsModel> quarterlyFundAssets = getInvestmentDataDAO()
-				.getQuarterlyFundAssetsModelBySearch(sector, period, startYear, endYear);
-		return quarterlyFundAssets;
+	public List<CommercialRegisterModel> getQuarterlyCapitalInformationModel(String indicator, String startYear, String endYear) {
+		return getInvestmentDataDAO()
+				.getQuarterlyCapitalInformationModelBySearch(indicator, startYear, endYear);
 	}
-
 }

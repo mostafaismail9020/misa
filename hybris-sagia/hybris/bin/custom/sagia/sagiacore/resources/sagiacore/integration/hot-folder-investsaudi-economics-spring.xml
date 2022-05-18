@@ -50,7 +50,211 @@
 	</bean>
 	
 	<!-- dashboard data starting -->
-	
+
+	<bean id="batchDashboardConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="dashboard"
+		  p:converter-ref="batchDashboardConverter"/>
+	<bean id="batchDashboardConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# Dashboard data
+				insert_update Dashboard;uid[unique=true,allownull=true];index[allownull=true];value;valueLabel[lang = en];valueLabel[lang = ar];percentage;percentageLabel[lang = en];percentageLabel[lang = ar];calenderValue[lang = en];calenderValue[lang = ar];displayName[lang = en];displayName[lang = ar];notes[lang = en];notes[lang = ar]
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{S}</value>
+		</property>
+	</bean>
+
+	<!-- dashboard data end -->
+
+	<!-- infralogistics data starting -->
+
+	<bean id="batchInfrastructureLogisticsConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="infrastructureLogistics"
+		  p:converter-ref="batchInfrastructureLogisticsConverter"/>
+	<bean id="batchInfrastructureLogisticsConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# InfrastructureLogistics data
+				insert_update InfrastructureLogistics;uid[unique=true,allownull=true];index[allownull=true];value1;label1[lang=en];label1[lang=ar];value2;label2[lang=en];label2[lang=ar];value3;label3[lang=en];label3[lang=ar];value4;label4[lang=en];label4[lang=ar];value5;label5[lang=en];label5[lang=ar];displayName[lang=en];displayName[lang=ar]
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15};{16};{17};{18};{19};{S}</value>
+		</property>
+	</bean>
+
+	<!-- infralogistics data end -->
+
+	<!-- economic Sector data start -->
+	<bean id="economicSectorsConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="economicSectors"
+		  p:converter-ref="economicSectorsConverter"/>
+
+	<bean id="economicSectorsConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# EconomicSectors
+				INSERT_UPDATE EconomicsSector;uid;index;value;label[allownull = true,lang = en];label[allownull = true,lang = ar];displayName[unique = true,lang = en];displayName[unique = true,lang = ar];year[unique = true]
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{S}</value>
+		</property>
+	</bean>
+	<!-- ecomonmic sector data end -->
+
+	<!-- population distribution start -->
+	<bean id="popDistributionConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="popDistribution"
+		  p:converter-ref="popDistributionConverter"/>
+
+	<bean id="popDistributionConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# PopulationDistribution
+				INSERT_UPDATE PopulationDistribution;uid[unique = true];year[unique = true];saudi;nonSaudi;totalPopulation;saudiPercentage;nonSaudiPercentage
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{S}</value>
+		</property>
+	</bean>
+	<!-- population distribution end -->
+
+	<!-- gender distribution start -->
+
+	<bean id="genderDistrConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="genderDistribution"
+		  p:converter-ref="genderDistrConverter"/>
+
+	<bean id="genderDistrConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# GenderDistribution
+				INSERT_UPDATE GenderDistribution ;uid[unique=true];year[unique=true];males;females;total
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{S}</value>
+		</property>
+	</bean>
+
+	<!-- gender distribution end -->
+
+	<!-- region distribution start -->
+	<bean id="regionDistributionConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="regionDistribution"
+		  p:converter-ref="regionDistConverter"/>
+
+	<bean id="regionDistConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# RegionDistribution
+				INSERT_UPDATE RegionDistribution	;uid[unique=true];year[unique=true];riyadhValue;riyadhPercentage;makkahValue;makkahPercentage;almadinahValue;almadinaPercentage;alqassimValue;alqassimPercentage;easternValue;easternPercentage;asirValue;asirPercentage;tabukValue;tabukPercentage;hailValue;hailPercentage;northernValue;northernPercentage;jazanValue;jazanPercentage;najranValue;najranPercentage;albahaValue;albahaPercentage;aljawfValue;aljawfPercentage;totalPopulation
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15};{16};{17};{18};{19};{20};{21};{22};{23};{24};{25};{26};{27};{28};{S}</value>
+		</property>
+	</bean>
+	<!-- region distribution end -->
+	<!-- sa international indices start -->
+	<bean id="SAInternationalIndexConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="saInternationalIndex"
+		  p:converter-ref="SAInternationalIndexConverter"/>
+
+	<bean id="SAInternationalIndexConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				#SaudiArabiaInternationalIndices
+				INSERT_UPDATE SaudiArabiaInternationalIndices			;uid[unique=true,allownull=true];frequency;rankValue;scoreValue;year[unique=true]
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{S}</value>
+		</property>
+	</bean>
+	<!-- sa international indices end -->
+
+	<!-- investment data mappings start -->
+	<bean id="aqValGrowthConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="aqValueGrowth"
+		  p:converter-ref="aqValGrowthConverter"/>
+
+	<bean id="aqValGrowthConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				#AQValueGrowth
+				INSERT_UPDATE AQValueGrowth ;uid[unique=true];year[unique=true];saudiInvestmentsAbroad;incomingForeignInvestment;totalNumberOfInvestmentLicenses;manufacturingLicenses;constructionLicenses;wholeSaleRetailTradeMoLicenses;informationAndCommunicationLicenses;professionalScientificAndTechnicalLicenses;accommodationFoodServiceActivityLicenses;administrativeSupportServiceActivityLicenses;transportationStorageLicenses;humanHealthSocialworkActivityLicenses;financialInsuranceActivityLicenses;otherServiceActivityLicenses;miningQuarryingLicenses;waterSupplySewerageWasteManagement;educationLicenses;realEstateActivityLicenses;artsEntertainmentRecreationLicenses;electricityGasSteamAircondition;agricultureForestryFishingLicenses;notAssignedLicenses;publicAdministrationDefenceCompuLicenses;activitiesOfExtraterritorialOrganizationLicenses;nonOilGdp
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15};{16};{17};{18};{19};{20};{21};{22};{23};{24};{25};{26};{27};{S}</value>
+		</property>
+	</bean>
+
+	<bean id="foreignInvstConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="foreignInvestment"
+		  p:converter-ref="foreignInvstConverter"/>
+
+	<bean id="foreignInvstConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				#ForeignInvestment
+				INSERT_UPDATE ForeignInvestment ;uid;index[unique=true];value1;label1;value2;label2[lang=en];label2[lang=ar];value3[lang=en];value3[lang=ar];label3[lang=en];label3[lang=ar]
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{S}</value>
+		</property>
+	</bean>
+
+	<bean id="commercialRegisterConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="commercialRegister"
+		  p:converter-ref="commercialRegstrConverter"/>
+
+	<bean id="commercialRegstrConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# CommercialRegister
+				INSERT_UPDATE CommercialRegister ;uid[unique=true];year[unique=true];value;percentage
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{S}</value>
+		</property>
+	</bean>
+
+	<bean id="fundAsstConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="fundAssets"
+		  p:converter-ref="fundAsstConverter"/>
+
+	<bean id="fundAsstConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				#FundAssets
+				INSERT_UPDATE FundAssets ;uid[unique=true];year[unique=true];totalNoOfInvestmentFund;totalNoOfInvestmentFundGrowthRate;totalInvestmentFundAssets;totalInvestmentFundAssetsGrowthRate;foreignInvestmentFund;foreignInvestmentFundGrowthRate;domesticInvestmentFund;domesticInvestmentFundGrowthRate
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{S}</value>
+		</property>
+	</bean>
+
+	<!-- investment data mappings end -->
 	<bean id="batchRealGDPConverterMapping" 
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping" 
 		  p:mapping="realgdp" 
@@ -895,9 +1099,9 @@
 		</property>
 	</bean>
 	<!-- saudi economic sector data end -->
+
 	
-	
-	
+
 	<!-- investment data start -->
 	
 		<bean id="annlValConverterMapping" 

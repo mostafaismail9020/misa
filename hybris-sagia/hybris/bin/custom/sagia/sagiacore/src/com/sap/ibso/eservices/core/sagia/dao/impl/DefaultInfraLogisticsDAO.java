@@ -2,14 +2,7 @@ package com.sap.ibso.eservices.core.sagia.dao.impl;
 
 import java.util.List;
 
-import com.sap.ibso.eservices.core.model.EmploymentModel;
-import com.sap.ibso.eservices.core.model.HousingFacilitiesModel;
-import com.sap.ibso.eservices.core.model.IndustrialCitiesModel;
-import com.sap.ibso.eservices.core.model.InfraLogisticsLandingModel;
-import com.sap.ibso.eservices.core.model.InfrastructureModel;
-import com.sap.ibso.eservices.core.model.LengthOfNetworkModel;
-import com.sap.ibso.eservices.core.model.PrivateCitiesModel;
-import com.sap.ibso.eservices.core.model.TotalAreaModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.core.sagia.dao.InfraLogisticsDAO;
 
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
@@ -110,6 +103,14 @@ public class DefaultInfraLogisticsDAO implements InfraLogisticsDAO {
 		final SearchResult<PrivateCitiesModel> searchResult = getFlexibleSearchService().search(query);
 		final List<PrivateCitiesModel> privateCitiesModel = (List<PrivateCitiesModel>) searchResult.getResult();
 		return privateCitiesModel;
+	}
+
+	@Override
+	public List<InfrastructureLogisticsModel> getAllInfrastructureLogisticsModel() {
+		final String queryString = "SELECT {" + InfrastructureLogisticsModel.PK + "} FROM {" + InfrastructureLogisticsModel._TYPECODE + "}";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+		final SearchResult<InfrastructureLogisticsModel> searchResult = getFlexibleSearchService().search(query);
+		return searchResult.getResult();
 	}
 
 

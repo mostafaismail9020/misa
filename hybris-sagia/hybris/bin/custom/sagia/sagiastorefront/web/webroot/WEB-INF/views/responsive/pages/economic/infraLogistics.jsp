@@ -2049,7 +2049,148 @@
         <section class="" id="">
           <div class="container infra-item-cards">
 			<div class="row">
-				<div class="col-12 col-lg-4 ">
+			<c:forEach items="${infrastructureLogisticsData}" var="card">
+			<c:choose>
+			    <c:when test = "${empty card.value4}">
+                    <div class="col-12 col-lg-4 pb-4">
+                        <div class="INL_total_bg_box">
+                            <div class="text-center pt-2 pb-2">
+                                <c:set var = "imgString" value="${card.displayName}"/>
+                                <c:if test = "${fn:contains(imgString, 'Infrastructure') || fn:contains(imgString, 'إجمالي المساحة')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Infrastructure_icon.png" class="img-fluid">
+                                </c:if>
+                                <c:if test = "${fn:contains(imgString, 'Employment') || fn:contains(imgString, 'التوظيف')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Employment_icon.png" class="img-fluid">
+                                </c:if>
+                                <c:if test = "${fn:contains(imgString, 'Area') || fn:contains(imgString, 'البنية التحتية')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Total_Area_icon.png" class="img-fluid">
+                                </c:if>
+                                <c:if test = "${fn:contains(imgString, 'Housing') || fn:contains(imgString, 'المرافق والإسكان')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Housing_&_Facilities_icon.png" class="img-fluid">
+                                </c:if>
+                                <c:if test = "${fn:contains(imgString, 'Industrial') || fn:contains(imgString, 'المدن الصناعية')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Industrial_Cities_icon.png" class="img-fluid">
+                                </c:if>                            </div>
+                            <h5 class="INL_total_gold_header">${card.displayName}</h5>
+                            <div class="row pt-4 INL_height_150px">
+                                <div class="col-md-6">
+                                    <h5 class="INL_total_number">${card.value1}</h5>
+                                    <p class="INL_total_number_contant">
+                                        ${card.label1}
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="INL_total_number">${card.value2}</h5>
+                                    <p class="INL_total_number_contant">
+                                        ${card.label2}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row pt-4 INL_height_150px">
+                                <div class="col-md-12">
+                                    <h5 class="INL_total_number">${card.value3}</h5>
+                                    <p class="INL_total_number_contant">
+                                        ${card.label3}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+			    </c:when>
+			    <c:otherwise>
+			        <div class="col-12 col-lg-6 ">
+                        <div class="INL_total_bg_box">
+                            <div class="text-center pt-2 pb-2">
+                                <c:set var = "imgString" value="${card.displayName}"/>
+                                <c:if test = "${fn:contains(imgString, 'Infrastructure')  || fn:contains(imgString, 'إجمالي المساحة')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Infrastructure_icon.png" class="img-fluid">
+                                </c:if>
+                                <c:if test = "${fn:contains(imgString, 'Employment') || fn:contains(imgString, 'التوظيف')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Employment_icon.png" class="img-fluid">
+                                </c:if>
+                                <c:if test = "${fn:contains(imgString, 'Area') || fn:contains(imgString, 'البنية التحتية')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Total_Area_icon.png" class="img-fluid">
+                                </c:if>
+                                <c:if test = "${fn:contains(imgString, 'Housing')  || fn:contains(imgString, 'المرافق والإسكان')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Housing_&_Facilities_icon.png" class="img-fluid">
+                                </c:if>
+                                <c:if test = "${fn:contains(imgString, 'Industrial')  || fn:contains(imgString, 'المدن الصناعية')}">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Industrial_Cities_icon.png" class="img-fluid">
+                                </c:if>
+                            </div>
+                            <h5 class="INL_total_gold_header">${card.displayName}</h5>
+                            <c:if test = "${empty card.value5}">
+                                <div class="row pt-4 INL_height_190px">
+                                    <div class="col-md-6">
+                                        <h5 class="INL_total_number">${card.value1}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label1}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="INL_total_number">${card.value2}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label2}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row pt-4 INL_height_150px">
+                                    <div class="col-md-6">
+                                        <h5 class="INL_total_number">${card.value3}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label3}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="INL_total_number">${card.value4}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label4}
+                                        </p>
+                                    </div>
+                                </div>
+                            </c:if>
+                            <c:if test="${not empty card.value5}">
+                                <div class="row pt-4 INL_height_190px">
+                                    <div class="col-md-4">
+                                        <h5 class="INL_total_number">${card.value1}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label1}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="INL_total_number">${card.value2}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label2}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="INL_total_number">${card.value3}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label3}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row pt-4 INL_height_150px">
+                                    <div class="col-md-6">
+                                        <h5 class="INL_total_number">${card.value4}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label4}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="INL_total_number">${card.value5}</h5>
+                                        <p class="INL_total_number_contant">
+                                            ${card.label5}
+                                        </p>
+                                    </div>
+                                </div>
+                            </c:if>
+                        </div>
+                    </div>
+			    </c:otherwise>
+			</c:choose>
+            </c:forEach>
+				<%--<div class="col-12 col-lg-4 ">
 					<div class="INL_total_bg_box">
 						<div class="text-center pt-2 pb-2">
 							<img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Infrastructure_icon.png" class="img-fluid">
@@ -2138,10 +2279,10 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>--%>
 			</div>
 			<div class="row justify-content-md-center pt-4">
-				<div class="col-12 col-lg-6 ">
+			<%--<div class="col-12 col-lg-6 ">
 					<div class="INL_total_bg_box">
 						<div class="text-center pt-2 pb-2">
 							<img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Housing_&_Facilities_icon.png" class="img-fluid">
@@ -2182,8 +2323,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-12 col-lg-6 ">
+				</div> --%>
+			<%--<div class="col-12 col-lg-6 ">
 					<div class="INL_total_bg_box">
 						<div class="text-center pt-2 pb-2">
 							<img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Industrial_Cities_icon.png" class="img-fluid">
@@ -2218,7 +2359,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>--%>
 			</div>
           </div>
         </section>

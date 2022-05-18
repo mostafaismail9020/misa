@@ -1,3 +1,5 @@
+var SAGIA = SAGIA || {};
+
 !(function($) {
 	"use strict";
   
@@ -1378,20 +1380,20 @@ $(document).ready(function () {
 
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "year";
-		categoryAxis.title.text = "Years";
+		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		categoryAxis.renderer.labels.template.fontSize = 16;
 		categoryAxis.renderer.minGridDistance = 30;
 
 		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 		// valueAxis.title.text = "Scores";
-		valueAxis.title.text = "Scores / Ranking";
+		valueAxis.title.text = getI18nText("bar.graph.scores.rankings");
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 
 		/* Create series */
 		if($('input[name="chartType"]:checked').val() == 'score'){
 			var columnSeries = chart.series.push(new am4charts.ColumnSeries());
-			columnSeries.name = "Score";
+			columnSeries.name = getI18nText("bar.graph.scores.rankings");
 			columnSeries.dataFields.valueY = "scoreValue";
 			columnSeries.dataFields.categoryX = "year";
 
@@ -1405,7 +1407,7 @@ $(document).ready(function () {
 		}
 		else {
 			var lineSeries = chart.series.push(new am4charts.LineSeries());
-			lineSeries.name = "Ranking";
+			lineSeries.name = getI18nText("bar.graph.ranking");
 			lineSeries.dataFields.valueY = "rankValue";
 			lineSeries.dataFields.categoryX = "year";
 
@@ -1447,7 +1449,7 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Length Of Network (Km)";
+		valueAxis.title.text = getI18nText("bar.graph.logistics.length.of.network");
 		// valueAxis.renderer.grid.template.strokeWidth = 0;
 		// Create axes
 		var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -1499,6 +1501,11 @@ $(document).ready(function () {
 		series.dataFields.categoryX = "networkName";
 		series.columns.template.fill = am4core.color("#025635");
 		series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+
+		var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{networkValue}";
+        valueLabel.label.fontSize = 12;
+        valueLabel.label.dy = -5;
 	}
 	if($("#logistics-json-data").text().length > 0){
 		var data = JSON.parse($("#logistics-json-data").text());
@@ -1684,67 +1691,67 @@ $(document).ready(function () {
 		// Add data
 		chart.data = [
 			{
-				"region": "Riyadh",
+				"region": getI18nText("bar.graph.city.name.riyadh"),
 				"value": data[0].riyadhPercentage,
 				"percentage": data[0].riyadhValue
 			},
 			{
-				"region": "Makkah",
+				"region": getI18nText("bar.graph.city.name.makkah"),
 				"value": data[0].makkahPercentage,
 				"percentage": data[0].makkahValue
 			},
 			{
-				"region": "Madinah",
+				"region": getI18nText("bar.graph.city.name.madinah"),
 				"value": data[0].almadinaPercentage,
 				"percentage": data[0].almadinahValue
 			},
 			{
-				"region": "Qassim",
+				"region": getI18nText("bar.graph.city.name.qassim"),
 				"value": data[0].alqassimPercentage,
 				"percentage": data[0].alqassimValue
 			},
 			{
-				"region": "Eastern Region",
+				"region": getI18nText("bar.graph.city.name.eastern") ,
 				"value": data[0].easternPercentage,
 				"percentage": data[0].easternValue
 			},
 			{
-				"region": "Assir",
+				"region": getI18nText("bar.graph.city.name.assir"),
 				"value": data[0].asirPercentage,
 				"percentage": data[0].asirValue
 			},
 			{
-				"region": "Tabuk",
+				"region": getI18nText("bar.graph.city.name.tabuk"),
 				"value": data[0].tabukPercentage,
 				"percentage": data[0].tabukValue
 			},
 			{
-				"region": "Hail",
+				"region": getI18nText("bar.graph.city.name.hail"),
 				"value": data[0].hailPercentage,
 				"percentage": data[0].hailValue
 			},
 			{
-				"region": "Northern borders",
+				"region": getI18nText("bar.graph.city.name.northern"),
 				"value": data[0].northernPercentage,
 				"percentage": data[0].northernValue
 			},
 			{
-				"region": "Jazan",
+				"region": getI18nText("bar.graph.city.name.jazan"),
 				"value": data[0].jazanPercentage,
 				"percentage": data[0].jazanValue
 			},
 			{
-				"region": "Najran",
+				"region": getI18nText("bar.graph.city.name.najran"),
 				"value": data[0].najranPercentage,
 				"percentage": data[0].najranValue
 			},
 			{
-				"region": "Albahah",
+				"region": getI18nText("bar.graph.city.name.albahah"),
 				"value": data[0].albahaPercentage,
 				"percentage": data[0].albahaValue
 			},
 			{
-				"region": "Aljouf",
+				"region": getI18nText("bar.graph.city.name.aljouf"),
 				"value": data[0].aljawfPercentage,
 				"percentage": data[0].aljawfValue
 			}
@@ -1778,7 +1785,10 @@ $(document).ready(function () {
 		series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}%[/]";
 		series.columns.template.fill = am4core.color("#025635");
 		// series.columns.template.fillOpacity = .8;
-
+        var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{percentage}";
+        valueLabel.label.fontSize = 12;
+        valueLabel.label.dy = -10;
 		var columnTemplate = series.columns.template;
 		columnTemplate.strokeWidth = 0;
 		columnTemplate.strokeOpacity = 1;
@@ -1831,11 +1841,11 @@ $(document).ready(function () {
 		// Add data
 		chart.data = [ {
 		"country": "Saudi",
-		"population": data[0].saudiPercentagelabour,
+		"population": data[0].saudiPercentage,
 		"color": am4core.color("#025635")
 		}, {
 		"country": "Non-Saudi",
-		"population": data[0].nonSaudiPercentageLabour,
+		"population": data[0].nonSaudiPercentage,
 		"color": am4core.color("#BF9B2E")
 		}];
 
@@ -1904,125 +1914,169 @@ $(document).ready(function () {
 			if(chartData[0].length > 0 && chartData[1].length > 0){
 				chart.data = [
 					{
-						"region": "Riyadh",
+						"region": getI18nText("bar.graph.city.name.riyadh"),
 						"saudi": data[0].riyadhPercentage,
-						"nonSaudi": data2[0].riyadhPercentage
+						"saudiValue": data[0].riyadhValue,
+						"nonSaudi": data2[0].riyadhPercentage,
+                        "nonSaudiValue": data2[0].riyadhValue
+
 					},
 					{
-						"region": "Makkah",
+						"region": getI18nText("bar.graph.city.name.makkah"),
 						"saudi": data[0].makkahPercentage,
-						"nonSaudi": data2[0].makkahPercentage
+                        "saudiValue": data[0].makkahValue,
+						"nonSaudi": data2[0].makkahPercentage,
+                        "nonSaudiValue": data2[0].makkahValue
+
 					},
 					{
-						"region": "Madinah",
+						"region": getI18nText("bar.graph.city.name.madinah"),
 						"saudi": data[0].almadinaPercentage,
-						"nonSaudi": data2[0].almadinaPercentage
+                        "saudiValue": data[0].almadinahValue,
+						"nonSaudi": data2[0].almadinaPercentage,
+                        "nonSaudiValue": data2[0].almadinahValue
 					},
 					{
-						"region": "Qassim",
+						"region": getI18nText("bar.graph.city.name.qassim"),
 						"saudi": data[0].alqassimPercentage,
-						"nonSaudi": data2[0].alqassimPercentage
+						"saudiValue": data[0].alqassimValue,
+						"nonSaudi": data2[0].alqassimPercentage,
+                        "nonSaudiValue": data2[0].alqassimValue
 					},
 					{
-						"region": "Eastern Region",
+						"region": getI18nText("bar.graph.city.name.eastern"),
 						"saudi": data[0].easternPercentage,
-						"nonSaudi": data2[0].easternPercentage
+						"nonSaudi": data2[0].easternPercentage,
+						"saudiValue": data[0].easternValue,
+                        "nonSaudiValue": data2[0].easternValue
 					},
 					{
-						"region": "Assir",
+						"region": getI18nText("bar.graph.city.name.assir"),
 						"saudi": data[0].asirPercentage,
-						"nonSaudi": data2[0].asirPercentage
+						"nonSaudi": data2[0].asirPercentage,
+						"saudiValue": data[0].asirValue,
+                        "nonSaudiValue": data2[0].asirValue
 					},
 					{
-						"region": "Tabuk",
+						"region": getI18nText("bar.graph.city.name.tabuk"),
 						"saudi": data[0].tabukPercentage,
-						"nonSaudi": data2[0].tabukPercentage
+						"nonSaudi": data2[0].tabukPercentage,
+						"saudiValue": data[0].tabukValue,
+                        "nonSaudiValue": data2[0].tabukValue
 					},
 					{
-						"region": "Hail",
+						"region": getI18nText("bar.graph.city.name.hail"),
 						"saudi": data[0].hailPercentage,
-						"nonSaudi": data2[0].hailPercentage
+						"nonSaudi": data2[0].hailPercentage,
+						"saudiValue": data[0].hailValue,
+                        "nonSaudiValue": data2[0].hailValue
 					},
 					{
-						"region": "Northern borders",
+						"region": getI18nText("bar.graph.city.name.northern"),
 						"saudi": data[0].northernPercentage,
-						"nonSaudi": data2[0].northernPercentage
+						"nonSaudi": data2[0].northernPercentage,
+						"saudiValue": data[0].northernValue,
+                        "nonSaudiValue": data2[0].northernValue
 					},
 					{
-						"region": "Jazan",
+						"region": getI18nText("bar.graph.city.name.jazan") ,
 						"saudi": data[0].jazanPercentage,
-						"nonSaudi": data2[0].jazanPercentage
+						"nonSaudi": data2[0].jazanPercentage,
+						"saudiValue": data[0].jazanValue,
+                        "nonSaudiValue": data2[0].jazanValue
 					},
 					{
-						"region": "Najran",
+						"region": getI18nText("bar.graph.city.name.najran"),
 						"saudi": data[0].najranPercentage,
-						"nonSaudi": data2[0].najranPercentage
+						"nonSaudi": data2[0].najranPercentage,
+						"saudiValue": data[0].najranValue,
+                        "nonSaudiValue": data2[0].najranValue,
 					},
 					{
-						"region": "Albahah",
+						"region": getI18nText("bar.graph.city.name.albahah"),
 						"saudi": data[0].albahaPercentage,
-						"nonSaudi": data2[0].albahaPercentage
+						"nonSaudi": data2[0].albahaPercentage,
+						"saudiValue": data[0].albahaValue,
+                        "nonSaudiValue": data2[0].albahaValue
 					},
 					{
-						"region": "Aljouf",
+						"region": getI18nText("bar.graph.city.name.aljouf"),
 						"saudi": data[0].aljawfPercentage,
-						"nonSaudi": data2[0].aljawfPercentage
+						"nonSaudi": data2[0].aljawfPercentage,
+						"saudiValue": data[0].aljawfValue,
+                        "nonSaudiValue": data2[0].aljawfValue
 					}
 					];
 			}
 			else {
 				chart.data = [
 					{
-						"region": "Riyadh",
-						"saudi": data[0].riyadhPercentage
+						"region": getI18nText("bar.graph.city.name.riyadh"),
+						"saudi": data[0].riyadhPercentage,
+                        "saudiValue": data[0].riyadhValue
 					},
 					{
-						"region": "Makkah",
-						"saudi": data[0].makkahPercentage
+						"region": getI18nText("bar.graph.city.name.makkah"),
+						"saudi": data[0].makkahPercentage,
+                        "saudiValue": data[0].makkahValue
+
 					},
 					{
-						"region": "Madinah",
-						"saudi": data[0].almadinaPercentage
+						"region": getI18nText("bar.graph.city.name.madinah"),
+						"saudi": data[0].almadinaPercentage,
+						"saudiValue": data[0].almadinaValue
+
 					},
 					{
-						"region": "Qassim",
-						"saudi": data[0].alqassimPercentage
+						"region": getI18nText("bar.graph.city.name.qassim"),
+						"saudi": data[0].alqassimPercentage,
+						"saudiValue": data[0].alqassimValue
+
 					},
 					{
-						"region": "Eastern Region",
-						"saudi": data[0].easternPercentage
+						"region": getI18nText("bar.graph.city.name.eastern"),
+						"saudi": data[0].easternPercentage,
+						"saudiValue": data[0].easternValue
 					},
 					{
-						"region": "Assir",
-						"saudi": data[0].asirPercentage
+						"region": getI18nText("bar.graph.city.name.assir"),
+						"saudi": data[0].asirPercentage,
+                        "saudiValue": data[0].asirValue
 					},
 					{
-						"region": "Tabuk",
-						"saudi": data[0].tabukPercentage
+						"region": getI18nText("bar.graph.city.name.tabuk"),
+						"saudi": data[0].tabukPercentage,
+                        "saudiValue": data[0].tabukValue
 					},
 					{
-						"region": "Hail",
-						"saudi": data[0].hailPercentage
+						"region": getI18nText("bar.graph.city.name.hail"),
+						"saudi": data[0].hailPercentage,
+						"saudiValue": data[0].hailValue
 					},
 					{
-						"region": "Northern borders",
-						"saudi": data[0].northernPercentage
+						"region": getI18nText("bar.graph.city.name.northern"),
+						"saudi": data[0].northernPercentage,
+                        "saudiValue": data[0].northernValue
 					},
 					{
-						"region": "Jazan",
-						"saudi": data[0].jazanPercentage
+						"region": getI18nText("bar.graph.city.name.jazan"),
+						"saudi": data[0].jazanPercentage,
+						"saudiValue": data[0].jazanValue
 					},
 					{
-						"region": "Najran",
-						"saudi": data[0].najranPercentage
+						"region": getI18nText("bar.graph.city.name.najran"),
+						"saudi": data[0].najranPercentage,
+                        "saudiValue": data[0].najranValue
 					},
 					{
-						"region": "Albahah",
-						"saudi": data[0].albahaPercentage
+						"region": getI18nText("bar.graph.city.name.albahah"),
+						"saudi": data[0].albahaPercentage,
+						"saudiValue": data[0].albahaValue
 					},
 					{
-						"region": "Aljouf",
-						"saudi": data[0].aljawfPercentage
+						"region": getI18nText("bar.graph.city.name.aljouf"),
+						"saudi": data[0].aljawfPercentage,
+                        "saudiValue": data[0].aljawfValue
 					}
 					];
 			}
@@ -2030,56 +2084,69 @@ $(document).ready(function () {
 		else {
 			chart.data = [
 				{
-					"region": "Riyadh",
-					"saudi": data[0].riyadhPercentage
+					"region": getI18nText("bar.graph.city.name.riyadh"),
+					"saudi": data[0].riyadhPercentage,
+                    "saudiValue": data[0].riyadhValue
 				},
 				{
-					"region": "Makkah",
-					"saudi": data[0].makkahPercentage
+					"region": getI18nText("bar.graph.city.name.makkah"),
+					"saudi": data[0].makkahPercentage,
+					"saudiValue": data[0].makkahValue
 				},
 				{
-					"region": "Madinah",
-					"saudi": data[0].almadinaPercentage
+					"region": getI18nText("bar.graph.city.name.madinah"),
+					"saudi": data[0].almadinaPercentage,
+					"saudiValue": data[0].almadinaValue
 				},
 				{
-					"region": "Qassim",
-					"saudi": data[0].alqassimPercentage
+					"region": getI18nText("bar.graph.city.name.qassim"),
+					"saudi": data[0].alqassimPercentage,
+					"saudiValue": data[0].alqassimValue
 				},
 				{
-					"region": "Eastern Region",
-					"saudi": data[0].easternPercentage
+					"region": getI18nText("bar.graph.city.name.eastern"),
+					"saudi": data[0].easternPercentage,
+					"saudiValue": data[0].easternValue
 				},
 				{
-					"region": "Assir",
-					"saudi": data[0].asirPercentage
+					"region": getI18nText("bar.graph.city.name.assir"),
+					"saudi": data[0].asirPercentage,
+					"saudiValue": data[0].asirValue
 				},
 				{
-					"region": "Tabuk",
-					"saudi": data[0].tabukPercentage
+					"region": getI18nText("bar.graph.city.name.tabuk"),
+					"saudi": data[0].tabukPercentage,
+					"saudiValue": data[0].tabukValue
 				},
 				{
-					"region": "Hail",
-					"saudi": data[0].hailPercentage
+					"region": getI18nText("bar.graph.city.name.hail"),
+					"saudi": data[0].hailPercentage,
+					"saudiValue": data[0].hailValue
 				},
 				{
-					"region": "Northern borders",
-					"saudi": data[0].northernPercentage
+					"region": getI18nText("bar.graph.city.name.northern"),
+					"saudi": data[0].northernPercentage,
+					"saudiValue": data[0].northernValue
 				},
 				{
-					"region": "Jazan",
-					"saudi": data[0].jazanPercentage
+					"region": getI18nText("bar.graph.city.name.jazan"),
+					"saudi": data[0].jazanPercentage,
+					"saudiValue": data[0].jazanValue
 				},
 				{
-					"region": "Najran",
-					"saudi": data[0].najranPercentage
+					"region": getI18nText("bar.graph.city.name.najran"),
+					"saudi": data[0].najranPercentage,
+					"saudiValue": data[0].najranValue
 				},
 				{
-					"region": "Albahah",
-					"saudi": data[0].albahaPercentage
+					"region": getI18nText("bar.graph.city.name.albahah"),
+					"saudi": data[0].albahaPercentage,
+					"saudiValue": data[0].albahaValue
 				},
 				{
-					"region": "Aljouf",
-					"saudi": data[0].aljawfPercentage
+					"region": getI18nText("bar.graph.city.name.aljouf"),
+					"saudi": data[0].aljawfPercentage,
+                    "saudiValue": data[0].aljawfValue
 				}
 				];
 		}
@@ -2132,18 +2199,26 @@ $(document).ready(function () {
 		var series = chart.series.push(new am4charts.ColumnSeries());
 		series.dataFields.valueY = "saudi";
 		series.dataFields.categoryX = "region";
-		series.name = "Saudi";
+		series.name = getI18nText("bar.graph.saudi");
 		series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}%[/]";
 		series.columns.template.fill = am4core.color("#025635");
+        var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{saudiValue}";
+        valueLabel.label.fontSize = 8;
+        valueLabel.label.dy = -10;
 
 		if(chartData.length != 1) {
 			// Create series
 			var series1 = chart.series.push(new am4charts.ColumnSeries());
 			series1.dataFields.valueY = "nonSaudi";
 			series1.dataFields.categoryX = "region";
-			series1.name = "Non-Saudi";
+			series1.name = getI18nText("bar.graph.non.saudi");
 			series1.columns.template.tooltipText = "{categoryX}: [bold]{valueY}%[/]";
 			series1.columns.template.fill = am4core.color("#BF9B2E");
+			var valueLabel = series1.bullets.push(new am4charts.LabelBullet());
+            valueLabel.label.text = "{nonSaudiValue}";
+            valueLabel.label.fontSize = 8;
+            valueLabel.label.dy = -10;
 		}
 		
 		// series.columns.template.fillOpacity = .8;
@@ -2234,7 +2309,7 @@ $(document).ready(function () {
 
 		// Create value axis
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Unemployment";
+		valueAxis.title.text = getI18nText("bar.graph.unemployment");
 		valueAxis.renderer.minLabelPosition = 0.01;
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.renderer.grid.template.strokeWidth = 0;
@@ -2243,7 +2318,7 @@ $(document).ready(function () {
 		var series1 = chart.series.push(new am4charts.LineSeries());
 		series1.dataFields.valueY = "saudi";
 		series1.dataFields.categoryX = "year";
-		series1.name = "Saudi";
+		series1.name = getI18nText("bar.graph.saudi");
 		var circleBullet1 = series1.bullets.push(new am4charts.CircleBullet());
 		circleBullet1.circle.radius = 5;
 		circleBullet1.circle.fill = am4core.color("#025635");
@@ -2260,7 +2335,7 @@ $(document).ready(function () {
 		var series2 = chart.series.push(new am4charts.LineSeries());
 		series2.dataFields.valueY = "nonSaudi";
 		series2.dataFields.categoryX = "year";
-		series2.name = 'Non-Saudi';
+		series2.name = getI18nText("bar.graph.non.saudi");
 		var circleBullet2 = series2.bullets.push(new am4charts.CircleBullet());
 		circleBullet2.circle.radius = 5;
 		circleBullet2.circle.fill = am4core.color("#BF9B2E");
@@ -2839,7 +2914,7 @@ $(document).ready(function () {
 		categoryAxis.renderer.minGridDistance = 30;
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Number of Licenses";
+		valueAxis.title.text = getI18nText("bar.graph.no.of.licenses");
 		valueAxis.min = 0;
 		valueAxis.strictMinMax = true;
 
@@ -2921,74 +2996,74 @@ $(document).ready(function () {
 				series.dataFields.valueY = keyValue;
 				series.dataFields.categoryX = "year";
 				if(keyValue == 'manufacturingLicenses'){
-					series.name = "Manufacturing Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Manufacturing Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.manufacturing.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.manufacturing.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'constructionLicenses') {
-					series.name = "Construction Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Construction Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.construction.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.construction.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
-					series.name = "Wholesale and retail trade, repair of mo Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Wholesale and retail trade, repair of mo Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.wholesale.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.wholesale.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'informationAndCommunicationLicenses') {
-					series.name = "Information and communication Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Information and communication Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.information.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.information.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
-					series.name = "Professional, scientific and technical Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Professional, scientific and technical Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.professional.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.professional.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
-					series.name = "Accommodation and food service actives Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Accommodation and food service actives Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.accommodation.licens");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.accommodation.licens") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
-					series.name = "Administration and storage Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Administration and storage Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.administration.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.administration.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'transportationStorageLicenses') {
-					series.name = "Transportation and storage Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Transportation and storage Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.transportation.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.transportation.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
-					series.name = "Human health and social work activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Human health and social work activities licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.human.health.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.human.health.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'financialInsuranceActivityLicenses') {
-					series.name = "Financial and insurance activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Financial and insurance activities licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.financial.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.financial.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'otherServiceActivityLicenses') {
-					series.name = "Other service activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Other service activities licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.other.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.other.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'miningQuarryingLicenses') {
-					series.name = "Mining and quarrying licenses";
-					series.columns.template.tooltipText = "{categoryX}: Mining and quarrying licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.mining.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.mining.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'waterSupplySewerageWasteManagement') {
-					series.name = "Water supply, sewerage, waste management";
-					series.columns.template.tooltipText = "{categoryX}: Water supply, sewerage, waste management: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.water.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.water.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'educationLicenses') {
-					series.name = "Education licenses";
-					series.columns.template.tooltipText = "{categoryX}: Education licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.education.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.education.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'realEstateActivityLicenses') {
-					series.name = "Real estate activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Real estate activities licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.estate.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.estate.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'artsEntertainmentRecreationLicenses') {
-					series.name = "Arts, entertainment and recreation licenses";
-					series.columns.template.tooltipText = "{categoryX}: Arts, entertainment and recreation licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.arts.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.arts.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'electricityGasSteamAircondition') {
-					series.name = "Electricity, gas, steam and air conditioner";
-					series.columns.template.tooltipText = "{categoryX}: Electricity, gas, steam and air conditioner: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.electricity.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.electricity.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'agricultureForestryFishingLicenses') {
-					series.name = "Agriculture, forestry and fishing licenses";
-					series.columns.template.tooltipText = "{categoryX}: Agriculture, forestry and fishing licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.agriculture.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.agriculture.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'notAssignedLicenses') {
-					series.name = "Not assigned licenses";
-					series.columns.template.tooltipText = "{categoryX}: Not assigned licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.not.assigned.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.assigned.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
-					series.name = "Public administration and defence compu licenses";
-					series.columns.template.tooltipText = "{categoryX}: Public administration and defence compu licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.public.administration.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.public.administration.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') {
-					series.name = "Activities of extraterritorial organization license";
-					series.columns.template.tooltipText = "{categoryX}: Activities of extraterritorial organizat license: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.not.extraterritorial.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.extraterritorial.license") + ": [bold]{valueY}[/]";
 				}
 				series.columns.template.fillOpacity = .8;
-				// var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-				// valueLabel.label.text = "{valueY}";
-				// valueLabel.label.fontSize = 9;
-				// valueLabel.label.dy = -10;
+				 var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+				 valueLabel.label.text = "{valueY}";
+				 valueLabel.label.fontSize = 9;
+				 valueLabel.label.dy = -10;
 			}
 		});
 		
@@ -3034,7 +3109,7 @@ $(document).ready(function () {
 		categoryAxis.renderer.minGridDistance = 30;
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Growth Rate";
+		valueAxis.title.text = getI18nText("bar.graph.growth.rate");
 		// valueAxis.min = 0;
 		// valueAxis.strictMinMax = true;
 
@@ -3050,69 +3125,69 @@ $(document).ready(function () {
 				series.dataFields.valueY = keyValue;
 				series.dataFields.categoryX = "year";
 				if(keyValue == 'manufacturingLicenses'){
-					series.name = "Manufacturing Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Manufacturing Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'constructionLicenses') {
-					series.name = "Construction Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Construction Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
-					series.name = "Wholesale and retail trade, repair of mo Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Wholesale and retail trade, repair of mo Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'informationAndCommunicationLicenses') {
-					series.name = "Information and communication Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Information and communication Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
-					series.name = "Professional, scientific and technical Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Professional, scientific and technical Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
-					series.name = "Accommodation and food service actives Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Accommodation and food service actives Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
-					series.name = "Administration and storage Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Administration and storage Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'transportationStorageLicenses') {
-					series.name = "Transportation and storage Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Transportation and storage Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
-					series.name = "Human health and social work activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Human health and social work activities licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'financialInsuranceActivityLicenses') {
-					series.name = "Financial and insurance activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Financial and insurance activities licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'otherServiceActivityLicenses') {
-					series.name = "Other service activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Other service activities licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'miningQuarryingLicenses') {
-					series.name = "Mining and quarrying licenses";
-					series.columns.template.tooltipText = "{categoryX}: Mining and quarrying licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'waterSupplySewerageWasteManagement') {
-					series.name = "Water supply, sewerage, waste management";
-					series.columns.template.tooltipText = "{categoryX}: Water supply, sewerage, waste management: [bold]{valueY}[/]";
-				} else if(keyValue == 'educationLicenses') {
-					series.name = "Education licenses";
-					series.columns.template.tooltipText = "{categoryX}: Education licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'realEstateActivityLicenses') {
-					series.name = "Real estate activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Real estate activities licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'artsEntertainmentRecreationLicenses') {
-					series.name = "Arts, entertainment and recreation licenses";
-					series.columns.template.tooltipText = "{categoryX}: Arts, entertainment and recreation licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'electricityGasSteamAircondition') {
-					series.name = "Electricity, gas, steam and air conditioner";
-					series.columns.template.tooltipText = "{categoryX}: Electricity, gas, steam and air conditioner: [bold]{valueY}[/]";
-				} else if(keyValue == 'agricultureForestryFishingLicenses') {
-					series.name = "Agriculture, forestry and fishing licenses";
-					series.columns.template.tooltipText = "{categoryX}: Agriculture, forestry and fishing licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'notAssignedLicenses') {
-					series.name = "Not assigned licenses";
-					series.columns.template.tooltipText = "{categoryX}: Not assigned licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
-					series.name = "Public administration and defence compu licenses";
-					series.columns.template.tooltipText = "{categoryX}: Public administration and defence compu licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') {
-					series.name = "Activities of extraterritorial organizat license";
-					series.columns.template.tooltipText = "{categoryX}: Activities of extraterritorial organization license: [bold]{valueY}[/]";
-				}
+                    series.name = getI18nText("bar.graph.fdi.manufacturing.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.manufacturing.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'constructionLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.construction.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.construction.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.wholesale.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.wholesale.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'informationAndCommunicationLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.information.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.information.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.professional.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.professional.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.accommodation.licens");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.accommodation.licens") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.administration.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.administration.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'transportationStorageLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.transportation.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.transportation.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.human.health.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.human.health.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'financialInsuranceActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.financial.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.financial.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'otherServiceActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.other.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.other.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'miningQuarryingLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.mining.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.mining.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'waterSupplySewerageWasteManagement') {
+                    series.name = getI18nText("bar.graph.fdi.water.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.water.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'educationLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.education.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.education.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'realEstateActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.estate.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.estate.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'artsEntertainmentRecreationLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.arts.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.arts.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'electricityGasSteamAircondition') {
+                    series.name = getI18nText("bar.graph.fdi.electricity.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.electricity.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'agricultureForestryFishingLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.agriculture.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.agriculture.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'notAssignedLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.not.assigned.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.assigned.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.public.administration.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.public.administration.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.not.extraterritorial.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.extraterritorial.license") + ": [bold]{valueY}[/]";
+                }
 				series.columns.template.fillOpacity = .8;
 				// var valueLabel = series.bullets.push(new am4charts.LabelBullet());
 				// valueLabel.label.text = "{valueY}";
@@ -3135,7 +3210,7 @@ $(document).ready(function () {
 	function rendercapitalInformationChart(chartData){
 		// Create chart instance
 		// alert("test");
-		// console.log(chartData);
+		 console.log(chartData);
 		if(chartData.length == 0) {
 			$("#capitalInformationChartDiv").parent().find("#ChartDivError").attr("style", "display: flex;");
 			$("#capitalInformationChartDiv").attr("style", "display: none;");
@@ -3156,25 +3231,25 @@ $(document).ready(function () {
 
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "year";
-		categoryAxis.title.text = "Years";
+		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
-		categoryAxis.renderer.labels.template.fontSize = 16;
+		categoryAxis.renderer.labels.template.fontSize = 12;
 		categoryAxis.renderer.minGridDistance = 30;
 
 		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Million SAR";
+		valueAxis.title.text = getI18nText("bar.graph.million.sar");
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.min = 0;
 		valueAxis.strictMinMax = true;
 
 		var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis2.title.text = "Percentage";
+		valueAxis2.title.text = getI18nText("bar.graph.percentage");;
 		valueAxis2.renderer.opposite = true;
 		valueAxis2.renderer.grid.template.disabled = true;
 
 		var columnSeries = chart.series.push(new am4charts.ColumnSeries());
-		columnSeries.name = "Gross Fixed Capital Information";
-		columnSeries.dataFields.valueY = "grossFixed";
+		columnSeries.name = getI18nText("bar.graph.gross.fixed.capital.formation");
+		columnSeries.dataFields.valueY = "value";
 		columnSeries.dataFields.categoryX = "year";
 		columnSeries.yAxis = valueAxis;
 		columnSeries.columns.template.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
@@ -3185,9 +3260,14 @@ $(document).ready(function () {
 		columnSeries.columns.template.fill = am4core.color("#025635");
 		columnSeries.tooltip.label.textAlign = "middle";
 
+        var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{value}";
+        valueLabel.label.fontSize = 9;
+        valueLabel.label.dy = -5;
+
 		var lineSeries = chart.series.push(new am4charts.LineSeries());
-		lineSeries.name = "Gross Fixed Capital Formation Growth Rate";
-		lineSeries.dataFields.valueY = "growthrateOfGrossFixed";
+		lineSeries.name = getI18nText("bar.graph.growth.rate");
+		lineSeries.dataFields.valueY = "percentage";
 		lineSeries.dataFields.categoryX = "year";
 		lineSeries.yAxis = valueAxis2;
 		lineSeries.stroke = am4core.color("#BF9B2E");
@@ -3215,6 +3295,8 @@ $(document).ready(function () {
 		// alert("test");
 		console.log(chartData);
 		var valueAxisValue = '';
+		var lineAxisValue = '';
+		var columnName = '';
 		if(chartData.length == 0) {
 			$("#fundAssetChartDiv").parent().find("#ChartDivError").attr("style", "display: flex;");
 			$("#fundAssetChartDiv").attr("style", "display: none;");
@@ -3223,15 +3305,23 @@ $(document).ready(function () {
 		else {
 			if(chartData[0].hasOwnProperty('totalNoOfInvestmentFund')) {
 				valueAxisValue = 'totalNoOfInvestmentFund';
+				lineAxisValue = 'totalNoOfInvestmentFundGrowthRate';
+				columnName = getI18nText("bar.graph.fund.asset.total.no.of.investment.fund");
 			}
 			if(chartData[0].hasOwnProperty('totalInvestmentFundAssets')) {
 				valueAxisValue = 'totalInvestmentFundAssets';
+				lineAxisValue = 'totalInvestmentFundAssetGrowthRate';
+				columnName = getI18nText("bar.graph.fund.asset.total.investment.fund.assets");
 			}
 			if(chartData[0].hasOwnProperty('foreignInvestmentFund')) {
 				valueAxisValue = 'foreignInvestmentFund';
+				lineAxisValue = 'foreignInvestmentFundGrowthRate';
+				columnName = getI18nText("bar.graph.fund.asset.foreign.investment.fund");
 			}
 			if(chartData[0].hasOwnProperty('domesticInvestmentFund')) {
 				valueAxisValue = 'domesticInvestmentFund';
+				lineAxisValue = 'domesticInvestmentFundGrowthRate';
+				columnName = getI18nText("bar.graph.fund.asset.domestic.investment.fund");
 			}
 			$("#fundAssetChartDiv").parent().find("#ChartDivError").attr("style", "display: none;");
 			$("#fundAssetChartDiv").attr("style", "display: block;");
@@ -3247,29 +3337,29 @@ $(document).ready(function () {
 
 
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-		categoryAxis.dataFields.category = $(".fund-assets-period .active").attr("data-id") == 'Annually' ? "year" : 'period';
-		categoryAxis.title.text = "Years";
+		categoryAxis.dataFields.category = "year";
+		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
-		categoryAxis.renderer.labels.template.fontSize = $(".fund-assets-period .active").attr("data-id") == 'Annually' ? 16 : 0;;
+		categoryAxis.renderer.labels.template.fontSize = $(".fund-assets-period .active").attr("data-id") == 'Annually' ? 16 : 0;
 		categoryAxis.renderer.minGridDistance = 30;
 
 		
 
 		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = valueAxisValue == 'totalNoOfInvestmentFund' ? "Total No of Investment Funds": "Million SAR";
+		valueAxis.title.text = valueAxisValue == 'totalNoOfInvestmentFund' ? getI18nText("bar.graph.fund.asset.total.no.of.investment.fund"): getI18nText("bar.graph.million.sar");
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.min = 0;
 		valueAxis.strictMinMax = true;
 
-		// var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
-		// valueAxis2.title.text = "Percentage";
-		// valueAxis2.renderer.opposite = true;
-		// valueAxis2.renderer.grid.template.disabled = true;
+		 var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
+		 valueAxis2.title.text = getI18nText("bar.graph.growth.rate");
+		 valueAxis2.renderer.opposite = true;
+		 valueAxis2.renderer.grid.template.disabled = true;
 
 		var columnSeries = chart.series.push(new am4charts.ColumnSeries());
-		columnSeries.name = "Number of investment funds";
+		columnSeries.name = columnName;
 		columnSeries.dataFields.valueY = valueAxisValue;
-		columnSeries.dataFields.categoryX = $(".fund-assets-period .active").attr("data-id") == 'Annually' ? "year" : 'period';;
+		columnSeries.dataFields.categoryX = "year";
 		columnSeries.yAxis = valueAxis;
 		columnSeries.columns.template.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
 		columnSeries.columns.template.propertyFields.fillOpacity = "fillOpacity";
@@ -3279,23 +3369,28 @@ $(document).ready(function () {
 		columnSeries.columns.template.fill = am4core.color("#025635");
 		columnSeries.tooltip.label.textAlign = "middle";
 
-		// var lineSeries = chart.series.push(new am4charts.LineSeries());
-		// lineSeries.name = "Gross Fixed Capital Formation Growth Rateate";
-		// lineSeries.dataFields.valueY = "growthrateOfGrossFixed";
-		// lineSeries.dataFields.categoryX = "year";
-		// lineSeries.yAxis = valueAxis2;
-		// lineSeries.stroke = am4core.color("#BF9B2E");
-		// lineSeries.strokeWidth = 3;
-		// lineSeries.propertyFields.strokeDasharray = "lineDash";
-		// lineSeries.tooltip.label.textAlign = "middle";
+		var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{"+valueAxisValue+"}";
+        valueLabel.label.fontSize = 12;
+        valueLabel.label.dy = -5;
 
-		// var bullet = lineSeries.bullets.push(new am4charts.Bullet());
-		// bullet.fill = am4core.color("#BF9B2E"); // tooltips grab fill from parent by default
-		// bullet.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
-		// var circle = bullet.createChild(am4core.Circle);
-		// circle.radius = 4;
-		// circle.fill = am4core.color("#fff");
-		// circle.strokeWidth = 3;
+        var lineSeries = chart.series.push(new am4charts.LineSeries());
+        lineSeries.name = getI18nText("bar.graph.growth.rate");
+        lineSeries.dataFields.valueY = lineAxisValue;
+        lineSeries.dataFields.categoryX = "year";
+        lineSeries.yAxis = valueAxis2;
+        lineSeries.stroke = am4core.color("#BF9B2E");
+        lineSeries.strokeWidth = 3;
+        lineSeries.propertyFields.strokeDasharray = "lineDash";
+        lineSeries.tooltip.label.textAlign = "middle";
+
+        var bullet = lineSeries.bullets.push(new am4charts.Bullet());
+        bullet.fill = am4core.color("#BF9B2E"); // tooltips grab fill from parent by default
+        bullet.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
+        var circle = bullet.createChild(am4core.Circle);
+        circle.radius = 4;
+        circle.fill = am4core.color("#fff");
+        circle.strokeWidth = 3;
 
 		chart.legend = new am4charts.Legend();
 		var marker = chart.legend.markers.template.children.getIndex(0);
@@ -3324,27 +3419,27 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "year";
-		categoryAxis.title.text = "Years";
+		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		categoryAxis.renderer.labels.template.fontSize = 16;
 		categoryAxis.renderer.minGridDistance = 30;
 
 		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? "Number of Commercial Registers" : "Capital of Commercial Registers";
+		valueAxis.title.text = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? getI18nText("bar.graph.commercial.no.of.registers") : getI18nText("bar.graph.commercial.capital.registers");
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.min = 0;
 		valueAxis.strictMinMax = true;
 
 		var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis2.title.text = "Growth Rate";
+		valueAxis2.title.text = getI18nText("bar.graph.growth.rate");
 		valueAxis2.renderer.opposite = true;
 		valueAxis2.renderer.grid.template.disabled = true;
 		// valueAxis2.min = 0;
 		// valueAxis2.strictMinMax = true;
 		// alert($(".com-mercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? "noOfCommercialRegisters" : "capitalOfCommercialRegisters");
 		var columnSeries = chart.series.push(new am4charts.ColumnSeries());
-		columnSeries.name = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? "Number of Commercial Registers" : "Capital of Commercial Registers";
-		columnSeries.dataFields.valueY = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? "noOfCommercialRegisters" : "capitalOfCommercialRegisters";
+		columnSeries.name = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? getI18nText("bar.graph.commercial.no.of.registers") : getI18nText("bar.graph.commercial.capital.registers");
+		columnSeries.dataFields.valueY = "value";
 		columnSeries.dataFields.categoryX = "year";
 		columnSeries.yAxis = valueAxis;
 		columnSeries.columns.template.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
@@ -3355,9 +3450,14 @@ $(document).ready(function () {
 		columnSeries.columns.template.fill = am4core.color("#025635");
 		columnSeries.tooltip.label.textAlign = "middle";
 
+        var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{value}";
+        valueLabel.label.fontSize = 12;
+        valueLabel.label.dy = -5;
+
 		var lineSeries = chart.series.push(new am4charts.LineSeries());
-		lineSeries.name = "Growth Rate";
-		lineSeries.dataFields.valueY = "growthRate";
+		lineSeries.name = getI18nText("bar.graph.growth.rate");
+		lineSeries.dataFields.valueY = "percentage";
 		lineSeries.dataFields.categoryX = "year";
 		lineSeries.yAxis = valueAxis2;
 		lineSeries.stroke = am4core.color("#BF9B2E");
@@ -3413,10 +3513,11 @@ $(document).ready(function () {
 		renderFDIGrowthChart(data);
 	}
 
-	if($("#capitalInformationJson").length > 0){
-		var data = JSON.parse($("#capitalInformationJson").text());
+	if($("#annualCapitalInformationJson").length > 0){
+		var data = JSON.parse($("#annualCapitalInformationJson").text());
 		rendercapitalInformationChart(data);
 	}
+
 	if($("#numberOfCommercialRegisterJson").length > 0){
 		var data = JSON.parse($("#numberOfCommercialRegisterJson").text());
 		renderCommercialChart(data);
@@ -3491,7 +3592,8 @@ $(document).ready(function () {
 		var data = {
 			'startYear': $(".capitalStartYear").val(),
 			'endYear': $(".capitalEndYear").val(),
-			'sector': "grossFixed"
+			'sector': "grossFixed",
+			'period': $(".capital-formation-period .active").attr("data-id")
 		};
 		$.ajax({
 			type: "GET",
@@ -3503,10 +3605,15 @@ $(document).ready(function () {
 				// console.log(data);
 				var parser = new DOMParser();
                 doc = parser.parseFromString(data, "text/html");
-				if(doc.getElementById("capitalInformationJson") != null){
-					var data = JSON.parse(doc.getElementById("capitalInformationJson").innerHTML);
+				if(doc.getElementById("annualCapitalInformationJson") != null){
+					var data = JSON.parse(doc.getElementById("annualCapitalInformationJson").innerHTML);
 					rendercapitalInformationChart(data);
 				}
+				if(doc.getElementById("quarterlyCapitalInformationJson") != null){
+                    var data = JSON.parse(doc.getElementById("quarterlyCapitalInformationJson").innerHTML);
+                    rendercapitalInformationChart(data);
+                }
+
 			}
 		});
     });

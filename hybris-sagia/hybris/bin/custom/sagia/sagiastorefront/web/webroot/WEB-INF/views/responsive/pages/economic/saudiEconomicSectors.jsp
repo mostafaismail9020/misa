@@ -80,30 +80,14 @@
  
   <!-- <div class="col-md-9 realSectorDiv" style="height: 380px;position: relative;top: 25%;display: table-cell;vertical-align: middle;transform: translatey(25%);">
     <div class="row posRelDiv"> -->
-      <div class="col-12 col-lg-3 mx-auto">
-        <div class="INL_SD_Real_Sector">
-          <h4 class="INL_SD_Real_Sector_header">${realSector[0].value}</h4>
-          <p class="INL_SD_Real_Sector_paper">${realSector[0].displayName}</p> 
-        </div>    
-      </div> 
-      <div class="col-12 col-lg-3 mx-auto">
-        <div class="INL_SD_Real_Sector">
-          <h4 class="INL_SD_Real_Sector_header">${realSector[1].value}</h4>
-          <p class="INL_SD_Real_Sector_paper">${realSector[1].displayName}</p>
-        </div>    
-      </div> 
-      <div class="col-12 col-lg-3 mx-auto">
-        <div class="INL_SD_Real_Sector">
-          <h4 class="INL_SD_Real_Sector_header">${realSector[2].value}</h4>
-          <p class="INL_SD_Real_Sector_paper">${realSector[2].displayName}</p>
-        </div>    
-      </div>
-	<div class="col-12 col-lg-3 mx-auto">
-        <div class="INL_SD_Real_Sector">
-          <h4 class="INL_SD_Real_Sector_header">${realSector[3].value}</h4>
-          <p class="INL_SD_Real_Sector_paper">${realSector[3].displayName}</p>
-        </div>   
-      </div>	  
+    <c:forEach items="${economicSector['RealSector']}" var="card">
+        <div class="col-12 col-lg-3 mx-auto">
+            <div class="INL_SD_Real_Sector">
+              <h4 class="INL_SD_Real_Sector_header">${card.value}</h4>
+              <p class="INL_SD_Real_Sector_paper">${card.displayName}</p>
+            </div>
+          </div>
+    </c:forEach>
      <!-- <div class="col-md-3 mx-auto INL_Arrow_bg_log d-none d-md-block">
             
       </div>
@@ -149,41 +133,41 @@
   </div> 
 </div>
 <div class="row pt-5">
-    
-  <div class="col-12 col-lg-3 mx-auto">
-    <div class="INL_SD_Real_Sector">
-      <h4 class="INL_SD_Real_Sector_header">${monetarySector[0].value}</h4>
-      <p class="INL_SUB_Sector">${monetarySector[0].label}</p>
-      <h5 class="INL_SD_Real_Sector_header_green p-2">${monetarySector[0].displayName}</h5>
-      <p class="INL_SD_Real_Sector_paper2">${monetarySector[0].year}</p> 
-    </div>    
-  </div>  
-  <div class="col-12 col-lg-3 mx-auto">
-    <div class="INL_SD_Real_Sector">
-      <h4 class="INL_SD_Real_Sector_header">${monetarySector[1].value}</h4>
-      <p class="INL_SUB_Sector">${monetarySector[1].label}</p>
-      <h5 class="INL_SD_Real_Sector_header_green p-2">${monetarySector[1].displayName}</h5>
-      <p class="INL_SD_Real_Sector_paper2">${monetarySector[1].year}</p> 
-    </div>    
-  </div>  
-  <div class="col-12 col-lg-3 mx-auto">
-    <div class="INL_SD_Real_Sector">
-      <h4 class="INL_SD_Real_Sector_header">${monetarySector[2].value}</h4>
-      <p class="INL_SUB_Sector">${monetarySector[2].label}</p>
-      <h5 class="INL_SD_Real_Sector_header_green p-2">${monetarySector[2].displayName}</h5>
-      <p class="INL_SD_Real_Sector_paper2">${monetarySector[2].year}</p> 
-    </div>    
-  </div>  
-  <div class="col-12 col-lg-3 mx-auto">
-    <div class="INL_SD_Real_Sector">
-      <h4 class="INL_SD_Real_Sector_header">${monetarySector[3].value}</h4>
-      <p class="INL_SUB_Sector">${monetarySector[3].label}</p>
-      <h5 class="INL_SD_Real_Sector_header_green p-2">${monetarySector[3].displayName}</h5>
-      <p class="INL_SD_Real_Sector_paper2">${monetarySector[3].year}</p> 
-    </div>    
+    <c:forEach items="${economicSector['MonetarySector']}" var="card" varStatus="loop">
+    <!--<c:choose>
+    <c:when test="${(economicSector['MonetarySector'].size() - loop.index) <= 2}">
+        <div class="col-12 col-lg-6 mx-auto">
+            <div class="INL_SD_Real_Sector">
+              <h4 class="INL_SD_Real_Sector_header">${card.value}</h4>
+              <p class="INL_SUB_Sector">${card.label}</p>
+              <h5 class="INL_SD_Real_Sector_header_green p-2">${card.displayName}</h5>
+              <p class="INL_SD_Real_Sector_paper2">${card.year}</p>
+            </div>
+        </div>
+    </c:when>
+    <c:otherwise>
+        <div class="col-12 col-lg-3 mx-auto">
+            <div class="INL_SD_Real_Sector">
+              <h4 class="INL_SD_Real_Sector_header">${card.value}</h4>
+              <p class="INL_SUB_Sector">${card.label}</p>
+              <h5 class="INL_SD_Real_Sector_header_green p-2">${card.displayName}</h5>
+              <p class="INL_SD_Real_Sector_paper2">${card.year}</p>
+            </div>
+        </div>
+    </c:otherwise>
+    </c:choose>-->
+    <div class="col-12 col-lg-3 mx-auto">
+        <div class="INL_SD_Real_Sector">
+          <h4 class="INL_SD_Real_Sector_header">${card.value}</h4>
+          <p class="INL_SUB_Sector">${card.label}</p>
+          <h5 class="INL_SD_Real_Sector_header_green p-2">${card.displayName}</h5>
+          <p class="INL_SD_Real_Sector_paper2">${card.year}</p>
+        </div>
+    </div>
+    </c:forEach>
   </div>  
 </div>
-<div class="row w-60 mx-auto pb-5">
+<!--<div class="row w-60 mx-auto pb-5">
   
   <div class="col-12 col-lg-6 mx-auto">
     <div class="INL_SD_Real_Sector">
@@ -200,13 +184,11 @@
       <h5 class="INL_SD_Real_Sector_header_green p-2">${monetarySector[5].displayName}</h5>
       <p class="INL_SD_Real_Sector_paper">${monetarySector[5].year}</p> 
     </div>    
-  </div>  
-  
- 
-                                                        </div>
-                                                        <div class="chart-bottom-link pb-4 pr-2 d-flex justify-content-end">
-                                                            <a target="_blank" href="https://www.sama.gov.sa/en-US/EconomicReports/Pages/MonthlyStatistics.aspx" class="anchor-link pr-3"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.sama.text"/></span></a>
-                                                            <a target="_blank" href="https://www.stats.gov.sa/en/394" class="anchor-link"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.gastat.text"/></span></a>
+  </div>
+</div>-->
+<div class="chart-bottom-link pb-4 pr-2 d-flex justify-content-end">
+    <a target="_blank" href="https://www.sama.gov.sa/en-US/EconomicReports/Pages/MonthlyStatistics.aspx" class="anchor-link pr-3"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.sama.text"/></span></a>
+    <a target="_blank" href="https://www.stats.gov.sa/en/394" class="anchor-link"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.gastat.text"/></span></a>
 </div>
 </div>  
   </div>  
@@ -225,8 +207,17 @@
   </div> 
 </div>
 <div class="row pt-5 pb-5">
-    
-  <div class="col-12 col-lg-3 mx-auto">
+        <c:forEach items="${economicSector['FiscalSector']}" var="card" varStatus="loop">
+            <div class="col-12 col-lg-3 mx-auto">
+                <div class="INL_SD_Real_Sector">
+                  <h4 class="INL_SD_Real_Sector_header">${card.value}</h4>
+                  <p class="INL_SUB_Sector">${card.label}&nbsp;</p>
+                  <h5 class="INL_SD_Real_Sector_header_green p-2">${card.displayName}</h5>
+                  <p class="INL_SD_Real_Sector_paper2">${card.year}</p>
+                </div>
+              </div>
+        </c:forEach>
+  <!--<div class="col-12 col-lg-3 mx-auto">
     <div class="INL_SD_Real_Sector">
       <h4 class="INL_SD_Real_Sector_header">${fiscalSector[0].value}</h4> 
       <p class="INL_SUB_Sector">${fiscalSector[0].label}&nbsp;</p>
@@ -265,7 +256,7 @@
       <h5 class="INL_SD_Real_Sector_header_green p-2">${fiscalSector[4].displayName}</h5>
       <p class="INL_SD_Real_Sector_paper2">${fiscalSector[4].year}</p> 
     </div>    
-  </div>  
+  </div> -->
 </div>
                                                         <div class="row">
                                                             <div class="col-md-12">
@@ -282,15 +273,24 @@
   </div> 
 </div>
 <div class="row pt-5 pb-5">
-    
-  <div class="col-12 col-lg-3 mx-auto">
+        <c:forEach items="${economicSector['ExternalSector']}" var="card" varStatus="loop">
+            <div class="col-12 col-lg-3 mx-auto">
+                <div class="INL_SD_Real_Sector">
+                  <h4 class="INL_SD_Real_Sector_header">${card.value}</h4>
+                  <p class="INL_SUB_Sector">${card.label}</p>
+                  <h5 class="INL_SD_Real_Sector_header_green p-2">${card.displayName}</h5>
+                  <p class="INL_SD_Real_Sector_paper2">${card.year}</p>
+                </div>
+              </div>
+        </c:forEach>
+  <!--<div class="col-12 col-lg-3 mx-auto">
     <div class="INL_SD_Real_Sector">
-      <h4 class="INL_SD_Real_Sector_header">${externalSector[0].value}</h4> 
+      <h4 class="INL_SD_Real_Sector_header">${externalSector[0].value}</h4>
       <p class="INL_SUB_Sector">${externalSector[0].label}</p>
       <h5 class="INL_SD_Real_Sector_header_green p-2">${externalSector[0].displayName}</h5>
-      <p class="INL_SD_Real_Sector_paper2">${externalSector[0].year}</p> 
-    </div>    
-  </div>  
+      <p class="INL_SD_Real_Sector_paper2">${externalSector[0].year}</p>
+    </div>
+  </div>
   <div class="col-12 col-lg-3 mx-auto">
     <div class="INL_SD_Real_Sector">
       <h4 class="INL_SD_Real_Sector_header">${externalSector[1].value}</h4>
@@ -322,7 +322,7 @@
       <h5 class="INL_SD_Real_Sector_header_green p-2">${externalSector[4].displayName}</h5>
       <p class="INL_SD_Real_Sector_paper2">${externalSector[4].year}</p> 
     </div>    
-  </div>  
+  </div>  -->
 </div>
                                                         <div class="chart-bottom-link pb-4 pr-2 d-flex justify-content-end">
                                                             <a target="_blank" href="https://www.stats.gov.sa/en/325" class="anchor-link pr-3"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.gastat.text"/></span></a>

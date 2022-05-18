@@ -2,17 +2,7 @@ package com.sap.ibso.eservices.core.sagia.dao.impl;
 
 import java.util.List;
 
-import com.sap.ibso.eservices.core.model.AnnualFundAssetsModel;
-import com.sap.ibso.eservices.core.model.AnnualGrowthModel;
-import com.sap.ibso.eservices.core.model.AnnualValueModel;
-import com.sap.ibso.eservices.core.model.CapitalInformationModel;
-import com.sap.ibso.eservices.core.model.NumberOfCommercialRegisterModel;
-import com.sap.ibso.eservices.core.model.CapitalOfCommercialRegisterModel;
-import com.sap.ibso.eservices.core.model.ForeignInvestmentGrowthModel;
-import com.sap.ibso.eservices.core.model.ForeignInvestmentValueModel;
-import com.sap.ibso.eservices.core.model.QuarterlyFundAssetsModel;
-import com.sap.ibso.eservices.core.model.QuarterlyGrowthModel;
-import com.sap.ibso.eservices.core.model.QuarterlyValueModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.core.sagia.dao.InvestmentDataDAO;
 
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
@@ -42,50 +32,53 @@ public class DefaultInvestmentDataDAO implements InvestmentDataDAO {
 	}
 
 	@Override
-	public List<AnnualValueModel> getAnnualValueModelBySearch(String sector, String period, String startYear,
-			String endYear) {
-		final String queryString = "SELECT {" + AnnualValueModel.PK + "} FROM {" + AnnualValueModel._TYPECODE + "}"
-				+ " WHERE {" + AnnualValueModel.YEAR + "} BETWEEN ?startYear AND ?endYear ORDER BY{"
-				+ AnnualValueModel.YEAR + "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+	public List<AQValueGrowthModel> getAnnualValueModelBySearch(String sector, String period, String startYear,
+																String endYear) {
+		final String queryString = "SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE + "}"
+				+ " WHERE { " + AQValueGrowthModel.UID +" }= 'AnnualValue' AND {" + AQValueGrowthModel.YEAR + "} BETWEEN "
+				+ "?startYear AND ?endYear ORDER BY{"
+				+ AQValueGrowthModel.YEAR + "}";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		
 		query.addQueryParameter("startYear", startYear);
 		query.addQueryParameter("endYear", endYear);
 		
 		
-		final SearchResult<AnnualValueModel> searchResult = getFlexibleSearchService().search(query);
+		final SearchResult<AQValueGrowthModel> searchResult = getFlexibleSearchService().search(query);
 
 		return searchResult.getResult();
 	}
 
 	@Override
-	public List<AnnualGrowthModel> getAnnualGrowthModelBySearch(String sector, String period, String startYear,
-			String endYear) {
-		final String queryString = "SELECT {" + AnnualGrowthModel.PK + "} FROM {" + AnnualGrowthModel._TYPECODE + "}"
-				+ " WHERE {" + AnnualGrowthModel.YEAR + "} BETWEEN  ?startYear AND  ?endYear ORDER BY{"
-				+ AnnualGrowthModel.YEAR + "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+	public List<AQValueGrowthModel> getAnnualGrowthModelBySearch(String sector, String period, String startYear,
+																 String endYear) {
+		final String queryString = "SELECT {" + AnnualGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE + "}"
+				+ " WHERE { " + AQValueGrowthModel.UID +" }= 'AnnualGrowth' AND {" + AQValueGrowthModel.YEAR + "} BETWEEN  "
+				+ "?startYear AND  ?endYear ORDER BY{"
+				+ AQValueGrowthModel.YEAR + "}";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		
 		query.addQueryParameter("startYear", startYear);
 		query.addQueryParameter("endYear", endYear);
 		
-		final SearchResult<AnnualGrowthModel> searchResult = getFlexibleSearchService().search(query);
+		final SearchResult<AQValueGrowthModel> searchResult = getFlexibleSearchService().search(query);
 
 		return searchResult.getResult();
 	}
 
 	@Override
-	public List<QuarterlyValueModel> getQuarterlyValueModelBySearch(String sector, String period, String startYear,
+	public List<AQValueGrowthModel> getQuarterlyValueModelBySearch(String sector, String period, String startYear,
 			String endYear) {
 
-		final String queryString = "SELECT {" + QuarterlyValueModel.PK + "} FROM {" + QuarterlyValueModel._TYPECODE
-				+ "}" + " WHERE ({" + QuarterlyValueModel.YEAR + "}BETWEEN ?qrt1startYear AND "
-				+ "?qrt1endYear)OR({" + QuarterlyValueModel.YEAR + "}BETWEEN ?qrt2startYear AND "
-				+ "?qrt2endYear)OR({" + QuarterlyValueModel.YEAR + "}BETWEEN ?qrt3startYear AND "
-				+ "?qrt3endYear)OR({" + QuarterlyValueModel.YEAR + "}BETWEEN ?qrt4startYear AND "
-				+ "?qrt4endYear)" + "ORDER BY" + "{" + QuarterlyValueModel.YEAR + "}";
+		final String queryString = "SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE
+				+ "}" + " WHERE { " + AQValueGrowthModel.UID + " } = 'QuarterlyValue' AND " +
+				"({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt1startYear AND "
+				+ "?qrt1endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt2startYear AND "
+				+ "?qrt2endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt3startYear AND "
+				+ "?qrt3endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt4startYear AND "
+				+ "?qrt4endYear)" + "ORDER BY" + "{" + AQValueGrowthModel.YEAR + "}";
 		
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		
 		query.addQueryParameter("qrt1startYear","Qtr1-"+startYear);
 		query.addQueryParameter("qrt1endYear", "Qtr1-"+endYear);
@@ -100,22 +93,23 @@ public class DefaultInvestmentDataDAO implements InvestmentDataDAO {
 		query.addQueryParameter("qrt4endYear", "Qtr4-"+endYear);
 		
 		
-		final SearchResult<QuarterlyValueModel> searchResult = getFlexibleSearchService().search(query);
+		final SearchResult<AQValueGrowthModel> searchResult = getFlexibleSearchService().search(query);
 		return searchResult.getResult();
 	}
 	
 	@Override
-	public List<QuarterlyGrowthModel> getQuarterlyGrowthModelBySearch(String sector, String period, String startYear,
-			String endYear) {
-		final String queryString = "SELECT {" + QuarterlyGrowthModel.PK + "} FROM {" + QuarterlyGrowthModel._TYPECODE
-				+ "}" + " WHERE ({" + QuarterlyGrowthModel.YEAR + "}BETWEEN ?qrt1startYear AND "
-				+ "?qrt1endYear)OR({" + QuarterlyGrowthModel.YEAR + "}BETWEEN ?qrt2startYear AND "
-				+ "?qrt2endYear)OR({" + QuarterlyGrowthModel.YEAR + "}BETWEEN ?qrt3startYear AND "
-				+ "?qrt3endYear)OR({" + QuarterlyGrowthModel.YEAR + "}BETWEEN ?qrt4startYear AND "
-				+ "?qrt4endYear)" + "ORDER BY" + "{" + QuarterlyGrowthModel.YEAR + "}";
+	public List<AQValueGrowthModel> getQuarterlyGrowthModelBySearch(String sector, String period, String startYear,
+																	String endYear) {
+		final String queryString = "SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE
+				+ "}" + " WHERE { " + AQValueGrowthModel.UID + " } = 'QuarterlyGrowth' AND " +
+				"({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt1startYear AND "
+				+ "?qrt1endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt2startYear AND "
+				+ "?qrt2endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt3startYear AND "
+				+ "?qrt3endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt4startYear AND "
+				+ "?qrt4endYear)" + "ORDER BY" + "{" + AQValueGrowthModel.YEAR + "}";
 		
 		
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		
 		query.addQueryParameter("qrt1startYear","Qtr1-"+startYear);
 		query.addQueryParameter("qrt1endYear", "Qtr1-"+endYear);
@@ -129,125 +123,162 @@ public class DefaultInvestmentDataDAO implements InvestmentDataDAO {
 		query.addQueryParameter("qrt4startYear", "Qtr4-"+startYear);
 		query.addQueryParameter("qrt4endYear", "Qtr4-"+endYear);
 		
-		final SearchResult<QuarterlyGrowthModel> searchResult = getFlexibleSearchService().search(query);
+		final SearchResult<AQValueGrowthModel> searchResult = getFlexibleSearchService().search(query);
 		return searchResult.getResult();
 	}
 
 	@Override
-	public List<ForeignInvestmentValueModel> getForeignInvestmentValueModelBySearch() {
-		final String queryString = "SELECT {" + ForeignInvestmentValueModel.PK + "} FROM {"
-				+ ForeignInvestmentValueModel._TYPECODE + "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
-		final SearchResult<ForeignInvestmentValueModel> searchResult = getFlexibleSearchService().search(query);
-
-		return searchResult.getResult();
-	}
-
-	@Override
-	public List<ForeignInvestmentGrowthModel> getForeignInvestmentGrowthModelBySearch() {
-		final String queryString = "SELECT {" + ForeignInvestmentGrowthModel.PK + "} FROM {"
-				+ ForeignInvestmentGrowthModel._TYPECODE + "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
-		final SearchResult<ForeignInvestmentGrowthModel> searchResult = getFlexibleSearchService().search(query);
+	public List<ForeignInvestmentModel> getForeignInvestmentValueModelBySearch() {
+		final String queryString = "SELECT {" + ForeignInvestmentModel.PK + "} FROM {"
+				+ ForeignInvestmentModel._TYPECODE + "} WHERE {" + ForeignInvestmentModel.UID + "} = 'ForeignInvestmentValue'" +
+				"ORDER BY{" + ForeignInvestmentModel.INDEX + "}";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+		final SearchResult<ForeignInvestmentModel> searchResult = getFlexibleSearchService().search(query);
 
 		return searchResult.getResult();
 	}
 
 	@Override
-	public List<CapitalInformationModel> getCapitalInformationModelBySearch(String indicator, String startYear,
-			String endYear) {
-		final String queryString = "SELECT {" + CapitalInformationModel.PK + "} FROM {"
-				+ CapitalInformationModel._TYPECODE + "}" + " WHERE {" + CapitalInformationModel.YEAR + "} BETWEEN "
-				+ "?startYear AND ?endYear ORDER BY{" + CapitalInformationModel.YEAR + "}";
-		
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
-		
-		query.addQueryParameter("startYear", startYear);
-		query.addQueryParameter("endYear", endYear);
-		
-		final SearchResult<CapitalInformationModel> searchResult = getFlexibleSearchService().search(query);
+	public List<ForeignInvestmentModel> getForeignInvestmentGrowthModelBySearch() {
+		final String queryString = "SELECT {" + ForeignInvestmentModel.PK + "} FROM {"
+				+ ForeignInvestmentModel._TYPECODE + "} WHERE {" + ForeignInvestmentModel.UID + "} = 'ForeignInvestmentGrowth'" +
+				"ORDER BY{" + ForeignInvestmentModel.INDEX + "}";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+		final SearchResult<ForeignInvestmentModel> searchResult = getFlexibleSearchService().search(query);
 
 		return searchResult.getResult();
 	}
 
 	@Override
-	public List<AnnualFundAssetsModel> getAnnualFundAssetsModelBySearch(String indicator, String period,
-			String startYear, String endYear) {
-		final String queryString = "SELECT {" + AnnualFundAssetsModel.PK + "} FROM {" + AnnualFundAssetsModel._TYPECODE
-				+ "}" + " WHERE {" + AnnualFundAssetsModel.YEAR + "} BETWEEN ?startYear AND ?endYear "
-						+ "ORDER BY{" + AnnualFundAssetsModel.YEAR + "}";
+	public List<FundAssetsModel> getAnnualFundAssetsModelBySearch(String indicator, String period,
+																  String startYear, String endYear) {
+		final String queryString = "SELECT {" + FundAssetsModel.PK + "} FROM {" + FundAssetsModel._TYPECODE
+				+ "}" + " WHERE {"+FundAssetsModel.UID+"} = 'AnnualFundAssets' AND {" + FundAssetsModel.YEAR + "} BETWEEN ?startYear AND ?endYear "
+						+ "ORDER BY{" + FundAssetsModel.YEAR + "}";
 		
 		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
 		
 		query.addQueryParameter("startYear", startYear);
 		query.addQueryParameter("endYear", endYear);
 		
-		final SearchResult<AnnualFundAssetsModel> searchResult = getFlexibleSearchService().search(query);
+		final SearchResult<FundAssetsModel> searchResult = getFlexibleSearchService().search(query);
 
 		return searchResult.getResult();
 	}
 
 	@Override
-	public List<NumberOfCommercialRegisterModel> getNumberOfCommercialRegisterModelBySearch(String indicator,
-			String startYear, String endYear) {
-		final String queryString = "SELECT {" + NumberOfCommercialRegisterModel.PK + "} FROM {"
-				+ NumberOfCommercialRegisterModel._TYPECODE + "}" + " WHERE {" + NumberOfCommercialRegisterModel.YEAR
-				+ "} BETWEEN ?startYear AND ?endYear ORDER BY{" + NumberOfCommercialRegisterModel.YEAR
+	public List<FundAssetsModel> getQuarterlyFundAssetsModelBySearch(String sector, String period,
+																	 String startYear, String endYear) {
+		final String queryString = "SELECT {" + FundAssetsModel.PK + "} FROM {"
+				+ FundAssetsModel._TYPECODE + "}" + " WHERE { " + FundAssetsModel.UID + " } = 'QuarterlyFundAssets'"
+				+ " AND ({" + FundAssetsModel.YEAR
+				+ "}BETWEEN ?q1startYear AND ?q1endYear)OR({" + FundAssetsModel.YEAR
+				+ "}BETWEEN ?q2startYear AND ?q2endYear)OR({" + FundAssetsModel.YEAR
+				+ "}BETWEEN ?q3startYear AND ?q3endYear)OR({" + FundAssetsModel.YEAR
+				+ "}BETWEEN ?q4startYear AND ?q4endYear)" + "ORDER BY" + "{"
+				+ FundAssetsModel.YEAR + "}";
+
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+
+		query.addQueryParameter("q1startYear", "Q1-"+startYear);
+		query.addQueryParameter("q1endYear", "Q1-"+endYear);
+
+		query.addQueryParameter("q2startYear", "Q2-"+startYear);
+		query.addQueryParameter("q2endYear", "Q2-"+endYear);
+
+		query.addQueryParameter("q3startYear", "Q3-"+startYear);
+		query.addQueryParameter("q3endYear", "Q3-"+endYear);
+
+		query.addQueryParameter("q4startYear", "Q4-"+startYear);
+		query.addQueryParameter("q4endYear", "Q4-"+endYear);
+
+		final SearchResult<FundAssetsModel> searchResult = getFlexibleSearchService().search(query);
+		return searchResult.getResult();
+	}
+
+	@Override
+	public List<CommercialRegisterModel> getNumberOfCommercialRegisterModelBySearch(String indicator,
+																					String startYear, String endYear) {
+		final String queryString = "SELECT {" + CommercialRegisterModel.PK + "} FROM {"
+				+ CommercialRegisterModel._TYPECODE + "}" + " WHERE { " + CommercialRegisterModel.UID + "} = 'NumberOfCommercialRegister' "
+				+ "AND {" + CommercialRegisterModel.YEAR
+				+ "} BETWEEN ?startYear AND ?endYear ORDER BY{" + CommercialRegisterModel.YEAR
 				+ "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 				
 		query.addQueryParameter("startYear", startYear);
 		query.addQueryParameter("endYear", endYear);		
 		
-		final SearchResult<NumberOfCommercialRegisterModel> searchResult = getFlexibleSearchService().search(query);
+		final SearchResult<CommercialRegisterModel> searchResult = getFlexibleSearchService().search(query);
 
 		return searchResult.getResult();
 	}
 
 	@Override
-	public List<CapitalOfCommercialRegisterModel> getCapitalOfCommercialRegisterModelBySearch(String indicator,
-			String startYear, String endYear) {
-		final String queryString = "SELECT {" + CapitalOfCommercialRegisterModel.PK + "} FROM {"
-				+ CapitalOfCommercialRegisterModel._TYPECODE + "}" + " WHERE {" + CapitalOfCommercialRegisterModel.YEAR
-				+ "} BETWEEN ?startYear AND ?endYear ORDER BY{" + CapitalOfCommercialRegisterModel.YEAR
+	public List<CommercialRegisterModel> getCapitalOfCommercialRegisterModelBySearch(String indicator,
+																					 String startYear, String endYear) {
+		final String queryString = "SELECT {" + CommercialRegisterModel.PK + "} FROM {"
+				+ CommercialRegisterModel._TYPECODE + "}" + " WHERE { " + CommercialRegisterModel.UID + "} = 'CapitalOfCommercialRegister' "
+				+ "AND {" + CommercialRegisterModel.YEAR
+				+ "} BETWEEN ?startYear AND ?endYear ORDER BY{" + CommercialRegisterModel.YEAR
 				+ "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		
 		query.addQueryParameter("startYear", startYear);
 		query.addQueryParameter("endYear", endYear);	
 		
-		final SearchResult<CapitalOfCommercialRegisterModel> searchResult = getFlexibleSearchService().search(query);
+		final SearchResult<CommercialRegisterModel> searchResult = getFlexibleSearchService().search(query);
 
 		return searchResult.getResult();
 	}
 
 	@Override
-	public List<QuarterlyFundAssetsModel> getQuarterlyFundAssetsModelBySearch(String sector, String period,
-			String startYear, String endYear) {
-		final String queryString = "SELECT {" + QuarterlyFundAssetsModel.PK + "} FROM {"
-				+ QuarterlyFundAssetsModel._TYPECODE + "}" + " WHERE ({" + QuarterlyFundAssetsModel.PERIOD
-				+ "}BETWEEN ?q1startYear AND ?q1endYear)OR({" + QuarterlyFundAssetsModel.PERIOD
-				+ "}BETWEEN ?q2startYear AND ?q2endYear)OR({" + QuarterlyFundAssetsModel.PERIOD
-				+ "}BETWEEN ?q3startYear AND ?q3endYear)OR({" + QuarterlyFundAssetsModel.PERIOD
-				+ "}BETWEEN ?q4startYear AND ?q4endYear)" + "ORDER BY" + "{"
-				+ QuarterlyFundAssetsModel.PERIOD + "}";
+	public List<CommercialRegisterModel> getAnnualCapitalInformationModelBySearch(String indicator, String startYear,
+																				  String endYear) {
+		final String queryString = "SELECT {" + CommercialRegisterModel.PK + "} FROM {"
+				+ CommercialRegisterModel._TYPECODE + "}" + " WHERE {" + CommercialRegisterModel.UID + "} = 'AnnualCapitalInformation'" +
+				" AND {" + CommercialRegisterModel.YEAR + "} BETWEEN "
+				+ "?startYear AND ?endYear ORDER BY{" + CommercialRegisterModel.YEAR + "}";
 
 		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
-		
-		query.addQueryParameter("q1startYear", "Q1-"+startYear);
-		query.addQueryParameter("q1endYear", "Q1-"+endYear);
-		
-		query.addQueryParameter("q2startYear", "Q2-"+startYear);
-		query.addQueryParameter("q2endYear", "Q2-"+endYear);
-		
-		query.addQueryParameter("q3startYear", "Q3-"+startYear);
-		query.addQueryParameter("q3endYear", "Q3-"+endYear);
-		
-		query.addQueryParameter("q4startYear", "Q4-"+startYear);
-		query.addQueryParameter("q4endYear", "Q4-"+endYear);
-		
-		final SearchResult<QuarterlyFundAssetsModel> searchResult = getFlexibleSearchService().search(query);
+
+		query.addQueryParameter("startYear", startYear);
+		query.addQueryParameter("endYear", endYear);
+
+		final SearchResult<CommercialRegisterModel> searchResult = getFlexibleSearchService().search(query);
+
 		return searchResult.getResult();
 	}
-		
+
+	@Override
+	public List<CommercialRegisterModel> getQuarterlyCapitalInformationModelBySearch(String indicator, String startYear, String endYear) {
+
+		final String queryString = "SELECT {" + CommercialRegisterModel.PK + "} FROM {"
+				+ CommercialRegisterModel._TYPECODE + "}" + " WHERE {"+CommercialRegisterModel.UID+"} = 'QuarterlyCapitalInformation' "
+				+ " AND (({" + CommercialRegisterModel.YEAR
+				+ "}BETWEEN ?q1startYear AND ?q1endYear)OR({" + CommercialRegisterModel.YEAR
+				+ "}BETWEEN ?q2startYear AND ?q2endYear)OR({" + CommercialRegisterModel.YEAR
+				+ "}BETWEEN ?q3startYear AND ?q3endYear)OR({" + CommercialRegisterModel.YEAR
+				+ "}BETWEEN ?q4startYear AND ?q4endYear))" + "ORDER BY" + "{"
+				+ CommercialRegisterModel.YEAR + "}";
+
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+
+		query.addQueryParameter("q1startYear", startYear+"-Q1");
+		query.addQueryParameter("q1endYear", endYear+"-Q1");
+
+		query.addQueryParameter("q2startYear", startYear+"-Q2");
+		query.addQueryParameter("q2endYear", endYear+"-Q2");
+
+		query.addQueryParameter("q3startYear", startYear+"-Q3");
+		query.addQueryParameter("q3endYear", endYear+"-Q3");
+
+		query.addQueryParameter("q4startYear", startYear+"-Q4");
+		query.addQueryParameter("q4endYear", endYear+"-Q4");
+
+		final SearchResult<CommercialRegisterModel> searchResult = getFlexibleSearchService().search(query);
+
+		return searchResult.getResult();
+	}
+
 }

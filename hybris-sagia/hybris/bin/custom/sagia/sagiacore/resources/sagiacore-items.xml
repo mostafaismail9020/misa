@@ -7462,663 +7462,720 @@
 
             <itemtype code="RealGDP" autocreate="true" generate="true">
                 <description>Real GDP</description>
-             	<deployment table="RealGDPInfo" typecode="32001"/>
+                <deployment table="RealGDPInfo" typecode="32001"/>
                 <attributes>
                     <attribute qualifier="value" type="java.lang.String">
-                    <description>Real GDP value</description>
-                          <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>Real GDP value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>Real GDP valueLabel</description>
-                          <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>Real GDP valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>Real GDP percentage</description>
-                          <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>Real GDP percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>Real GDP percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>Real GDP name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Real GDP percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>Real GDP name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
                         <modifiers read="true" write="true" search="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>Real GDP calenderValue</description>
-                          <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>Real GDP calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>currencyValue</description>
-                          <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	            </attributes>
+                </attributes>
             </itemtype>
 
             <itemtype code="GDPPerCapita" autocreate="true" generate="true">
-				<description>GDP Per Capita</description>
-				<deployment table="GDPPerCapitaInfo" typecode="32002" />
-				<attributes>
-					<attribute qualifier="value" type="java.lang.String">
-					<description>GDPPerCapita value</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-					 <attribute qualifier="valueLabel" type="localized:java.lang.String">
-					<description>GDPPerCapita valueLabel</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-					 <attribute qualifier="percentage" type="java.lang.String">
-					<description>GDPPerCapita percentage</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-					 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-						<persistence type="property"/>
-						<description>GDPPerCapita percentageLabel</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-					</attribute>
-					<attribute qualifier="name" type="java.lang.String">
-						<persistence type="property"/>
-						<description>GDPPerCapita name</description>
-						<modifiers read="true" write="true" search="true" unique="true"/>
-					</attribute>
-					<attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
-                        <modifiers read="true" write="true" search="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-					 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-					<description>GDPPerCapita calenderValue</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-					<attribute qualifier="currencyValue" type="java.lang.String">
-					<description>currencyValue</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-				</attributes>
-			</itemtype>
-
-			<itemtype code="Unemployment" autocreate="true" generate="true">
-				<description>Unemployment</description>
-				<deployment table="UnemploymentInfo" typecode="32003" />
-				<attributes>
-					<attribute qualifier="value" type="java.lang.String">
-					<description>Unemployment value</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-					 <attribute qualifier="valueLabel" type="localized:java.lang.String">
-					<description>Unemployment valueLabel</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-					 <attribute qualifier="percentage" type="java.lang.String">
-					<description>Unemployment percentage</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-					 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-						<persistence type="property"/>
-						<description>Unemployment percentageLabel</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-					</attribute>
-					<attribute qualifier="name" type="java.lang.String">
-						<persistence type="property"/>
-						<description>Unemployment name</description>
-						<modifiers read="true" write="true" search="true" unique="true"/>
-					</attribute>
-					<attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
-                        <modifiers read="true" write="true" search="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-					 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-					<description>Unemployment calenderValue</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-					<attribute qualifier="currencyValue" type="java.lang.String">
-						<description>Unemployment currencyValue</description>
-						<modifiers read="true" write="true" search="true" optional="true"/>
-						<persistence type="property"/>
-					</attribute>
-				</attributes>
-			</itemtype>
-
-			<itemtype code="Population" autocreate="true" generate="true" >
-				<description>Population</description>
-				<deployment table="PopulationInfo" typecode="32004" />
-				<attributes>
-                    <attribute qualifier="value" type="java.lang.String">
-                    <description>Population value</description>
-                        <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>Population valueLabel</description>
-                        <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>Population percentage</description>
-                        <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>Population percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>Population name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
-                        <modifiers read="true" write="true" search="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>Population calenderValue</description>
-                        <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                      <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>currencyValue</description>
-                        <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	            </attributes>
-			</itemtype>
-
-			<itemtype code="MoneySupply" autocreate="true" generate="true">
-                <description>Money Supply</description>
-             	<deployment table="MoneySupplyInfo" typecode="32005"/>
+                <description>GDP Per Capita</description>
+                <deployment table="GDPPerCapitaInfo" typecode="32002" />
                 <attributes>
                     <attribute qualifier="value" type="java.lang.String">
-                    <description>MoneySupply value</description>
+                        <description>GDPPerCapita value</description>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>MoneySupply valueLabel</description>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>GDPPerCapita valueLabel</description>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>MoneySupply percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>GDPPerCapita percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>MoneySupply percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>MoneySupply name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>GDPPerCapita percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>GDPPerCapita name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
                         <modifiers read="true" write="true" search="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>MoneySupply calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>GDPPerCapita calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                      <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>currencyValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	            </attributes>
+                </attributes>
             </itemtype>
 
-			<itemtype code="InterestRate" autocreate="true" generate="true">
-                <description>Interest Rate</description>
-             	<deployment table="InterestRateInfo" typecode="32006"/>
+            <itemtype code="Unemployment" autocreate="true" generate="true">
+                <description>Unemployment</description>
+                <deployment table="UnemploymentInfo" typecode="32003" />
                 <attributes>
-                    <attribute qualifier="value" type="localized:java.lang.String">
-                    <description>InterestRate value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>InterestRate valueLabel</description>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>Unemployment value</description>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>InterestRate percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>Unemployment valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>InterestRate percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>InterestRate name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>Unemployment percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Unemployment percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>Unemployment name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
                         <modifiers read="true" write="true" search="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>InterestRate calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                      <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>currencyValue</description>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>Unemployment calenderValue</description>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	            </attributes>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>Unemployment currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="Population" autocreate="true" generate="true" >
+                <description>Population</description>
+                <deployment table="PopulationInfo" typecode="32004" />
+                <attributes>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>Population value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>Population valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>Population percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Population percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>Population name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>Population calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MoneySupply" autocreate="true" generate="true">
+                <description>Money Supply</description>
+                <deployment table="MoneySupplyInfo" typecode="32005"/>
+                <attributes>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>MoneySupply value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>MoneySupply valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>MoneySupply percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MoneySupply percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>MoneySupply name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>MoneySupply calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="InterestRate" autocreate="true" generate="true">
+                <description>Interest Rate</description>
+                <deployment table="InterestRateInfo" typecode="32006"/>
+                <attributes>
+                    <attribute qualifier="value" type="localized:java.lang.String">
+                        <description>InterestRate value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>InterestRate valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>InterestRate percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>InterestRate percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>InterestRate name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>InterestRate calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
             </itemtype>
 
             <itemtype code="Inflation" autocreate="true" generate="true" >
-				<description>Inflation</description>
-				<deployment table="InflationInfo" typecode="32007" />
-				<attributes>
+                <description>Inflation</description>
+                <deployment table="InflationInfo" typecode="32007" />
+                <attributes>
                     <attribute qualifier="value" type="java.lang.String">
-                    <description>Inflation value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>Inflation valueLabel</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>Inflation percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>Inflation percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>Inflation name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
-                        <modifiers read="true" write="true" search="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>Inflation calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                      <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>currencyValue</description>
+                        <description>Inflation value</description>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-  	            </attributes>
-			</itemtype>
-
-			<itemtype code="ExchangeRate" autocreate="true" generate="true" >
-				<description>ExchangeRate</description>
-				<deployment table="ExchangeRateInfo" typecode="32008" />
-				<attributes>
-                    <attribute qualifier="value" type="java.lang.String">
-                    <description>ExchangeRate value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>Inflation valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>ExchangeRate valueLabel</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>Inflation percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>ExchangeRate percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
                         <persistence type="property"/>
+                        <description>Inflation percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                     </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>ExchangeRate percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>ExchangeRate name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>Inflation name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
                         <modifiers read="true" write="true" search="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>ExchangeRate calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>Inflation calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                      <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>currencyValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-  	            </attributes>
-			</itemtype>
+                </attributes>
+            </itemtype>
 
-			<itemtype code="TradeBalance" autocreate="true" generate="true">
-                <description>TradeBalance</description>
-             	<deployment table="TradeBalanceInfo" typecode="32009"/>
+            <itemtype code="ExchangeRate" autocreate="true" generate="true" >
+                <description>ExchangeRate</description>
+                <deployment table="ExchangeRateInfo" typecode="32008" />
                 <attributes>
                     <attribute qualifier="value" type="java.lang.String">
-                    <description>TradeBalance value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>ExchangeRate value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>TradeBalance valueLabel</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>ExchangeRate valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>TradeBalance percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>ExchangeRate percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>TradeBalance percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>TradeBalance name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>ExchangeRate percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>ExchangeRate name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
                         <modifiers read="true" write="true" search="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>TradeBalance calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>ExchangeRate calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                      <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>currencyValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-  	            </attributes>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="TradeBalance" autocreate="true" generate="true">
+                <description>TradeBalance</description>
+                <deployment table="TradeBalanceInfo" typecode="32009"/>
+                <attributes>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>TradeBalance value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>TradeBalance valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>TradeBalance percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>TradeBalance percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>TradeBalance name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>TradeBalance calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
             </itemtype>
 
             <itemtype code="FDIinflow" autocreate="true" generate="true" >
-				<description>FDIinflow</description>
-				<deployment table="FDIinflowInfo" typecode="32010" />
-				<attributes>
+                <description>FDIinflow</description>
+                <deployment table="FDIinflowInfo" typecode="32010" />
+                <attributes>
                     <attribute qualifier="value" type="java.lang.String">
-                    <description>FDIinflow value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>FDIinflow value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>FDIinflow valueLabel</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>FDIinflow valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>FDIinflow percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>FDIinflow percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>FDIinflow percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>FDIinflow name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>FDIinflow percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>FDIinflow name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
                         <modifiers read="true" write="true" search="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>FDIinflow calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                      <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>currencyValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-  	            </attributes>
-			</itemtype>
-
-			<itemtype code="SaudiStockMarket" autocreate="true" generate="true">
-				<description>SaudiStockMarket</description>
-				<deployment table="SaudiStockMarketInfo" typecode="32011" />
-				<attributes>
-                    <attribute qualifier="value" type="java.lang.String">
-                    <description>SaudiStockMarket value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>SaudiStockMarket valueLabel</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>SaudiStockMarket percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>SaudiStockMarket percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>SaudiStockMarket name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
-                        <modifiers read="true" write="true" search="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>SaudiStockMarket calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>FDIinflow calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>SaudiStockMarket currencyValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-  	            </attributes>
-			</itemtype>
+                </attributes>
+            </itemtype>
 
-			<itemtype code="TotalReserveAssets" autocreate="true" generate="true">
-				<description>TotalReserveAssets</description>
-				<deployment table="TotalReserveAssetsInfo" typecode="32012" />
-				<attributes>
+            <itemtype code="SaudiStockMarket" autocreate="true" generate="true">
+                <description>SaudiStockMarket</description>
+                <deployment table="SaudiStockMarketInfo" typecode="32011" />
+                <attributes>
                     <attribute qualifier="value" type="java.lang.String">
-                    <description>TotalReserveAssets value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>SaudiStockMarket value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>TotalReserveAssets valueLabel</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>SaudiStockMarket valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>TotalReserveAssets percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>SaudiStockMarket percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>TotalReserveAssets percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>TotalReserveAssets name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>SaudiStockMarket percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>SaudiStockMarket name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
                         <modifiers read="true" write="true" search="true"/>
                         <persistence type="property"/>
                     </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>TotalReserveAssets calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                    <attribute qualifier="currencyValue" type="localized:java.lang.String">
-                    <description>TotalReserveAssets currencyValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-  	            </attributes>
-			</itemtype>
-
-			<itemtype code="BudgetDeficit" autocreate="true" generate="true">
-				<description>Budget deficit</description>
-				<deployment table="BudgetDeficitInfo" typecode="32013" />
-				<attributes>
-                    <attribute qualifier="value" type="java.lang.String">
-                    <description>BudgetDeficit value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>BudgetDeficit valueLabel</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>BudgetDeficit percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>BudgetDeficit percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>BudgetDeficit name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
-                        <modifiers read="true" write="true" search="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>BudgetDeficit calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                    <attribute qualifier="currencyValue" type="localized:java.lang.String">
-                    <description>BudgetDeficit currencyValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-  	            </attributes>
-			 </itemtype>
-
-			 <itemtype code="GovernmentDebt" autocreate="true" generate="true">
-				<description>GovernmentDebt</description>
-				<deployment table="GovernmentDebtInfo" typecode="32014" />
-				<attributes>
-                    <attribute qualifier="value" type="java.lang.String">
-                    <description>BudgetDeficit value</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="valueLabel" type="localized:java.lang.String">
-                    <description>BudgetDeficit valueLabel</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-                     <attribute qualifier="percentage" type="java.lang.String">
-                    <description>BudgetDeficit percentage</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="percentageLabel" type="localized:java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>BudgetDeficit percentageLabel</description>
-	                    <modifiers read="true" write="true" search="true" optional="true"/>
-	                </attribute>
-	                <attribute qualifier="name" type="java.lang.String">
-	                    <persistence type="property"/>
-	                    <description>BudgetDeficit name</description>
-	                    <modifiers read="true" write="true" search="true" unique="true"/>
-	                </attribute>
-	                <attribute qualifier="displayName" type="localized:java.lang.String">
-                    	<description>display Name</description>
-                        <modifiers read="true" write="true" search="true"/>
-                        <persistence type="property"/>
-                    </attribute>
-	                 <attribute qualifier="calenderValue" type="localized:java.lang.String">
-                    <description>BudgetDeficit calenderValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>SaudiStockMarket calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="currencyValue" type="java.lang.String">
-                    <description>BudgetDeficit currencyValue</description>
-                         <modifiers read="true" write="true" search="true" optional="true"/>
+                        <description>SaudiStockMarket currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-  	            </attributes>
-			</itemtype>
+                </attributes>
+            </itemtype>
 
-			<itemtype code="CreditRating" autocreate="true" generate="true">
+            <itemtype code="TotalReserveAssets" autocreate="true" generate="true">
+                <description>TotalReserveAssets</description>
+                <deployment table="TotalReserveAssetsInfo" typecode="32012" />
+                <attributes>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>TotalReserveAssets value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>TotalReserveAssets valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>TotalReserveAssets percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>TotalReserveAssets percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>TotalReserveAssets name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>TotalReserveAssets calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="currencyValue" type="localized:java.lang.String">
+                        <description>TotalReserveAssets currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="BudgetDeficit" autocreate="true" generate="true">
+                <description>Budget deficit</description>
+                <deployment table="BudgetDeficitInfo" typecode="32013" />
+                <attributes>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>BudgetDeficit value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>BudgetDeficit valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>BudgetDeficit percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>BudgetDeficit percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>BudgetDeficit name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>BudgetDeficit calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="currencyValue" type="localized:java.lang.String">
+                        <description>BudgetDeficit currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="GovernmentDebt" autocreate="true" generate="true">
+                <description>GovernmentDebt</description>
+                <deployment table="GovernmentDebtInfo" typecode="32014" />
+                <attributes>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>BudgetDeficit value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>BudgetDeficit valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>BudgetDeficit percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>BudgetDeficit percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>BudgetDeficit name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>BudgetDeficit calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>BudgetDeficit currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+			<!-- Dashboard Page Models Start -->
+            <itemtype code="Dashboard" autocreate="true" generate="true">
+                <description>Dashboard Page Model</description>
+                <deployment table="Dashboard" typecode="29901" />
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>DashboardCard UID</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="index" type="java.lang.Integer">
+                        <description>DashboardCard Index</description>
+                        <modifiers read="true" write="true" search="true" optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>DashboardCard value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="valueLabel" type="localized:java.lang.String">
+                        <description>DashboardCard valueLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>DashboardCard percentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentageLabel" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>DashboardCard percentageLabel</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>DashboardCard display Name</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="calenderValue" type="localized:java.lang.String">
+                        <description>DashboardCard calenderValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="notes" type="localized:java.lang.String">
+                        <description>DashboardCard notes</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <!-- <attribute qualifier="currencyValue" type="java.lang.String">
+                        <description>TotalReserveAssets currencyValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute> -->
+                </attributes>
+            </itemtype>
+
+            <itemtype code="CreditRating" autocreate="true" generate="true">
 				<description>CreditRating</description>
 				<deployment table="CreditRatingInfo" typecode="32015" />
 				<attributes>
@@ -8174,7 +8231,7 @@
                     </attribute>
 	            </attributes>
 			</itemtype>
-
+            <!-- Dashboard page Model end -->
 			<itemtype code="GovernmentReserve" autocreate="true" generate="true">
 				<description>GovernmentReserve</description>
 				<deployment table="GovernmentReserveInfo" typecode="32016" />
@@ -8222,9 +8279,44 @@
   	            </attributes>
 			</itemtype>
         </typegroup>
+        <!-- SAInternationalIndices Model start -->
+        <typegroup name="SAInternationalIndices">
+            <!-- new SAInternationalIndices Model start -->
+            <itemtype code="SaudiArabiaInternationalIndices" autocreate="true" generate="true">
+                <description>SaudiArabiaInternationalIndices</description>
+                <deployment table="SaArInternationalIndices" typecode="29902" />
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>SAInternationalIndices UID</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="frequency" type="java.lang.String">
+                        <description>SAInternationalIndices frequency</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="rankValue" type="java.lang.Integer">
+                        <description>SAInternationalIndices rankValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="scoreValue" type="java.lang.Double">
+                        <persistence type="property"/>
+                        <description>SAInternationalIndices scoreValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.Integer">
+                        <persistence type="property"/>
+                        <description>SAInternationalIndices Year</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
 
-		<typegroup name="SAInternationalIndices">
-			<itemtype code="EaseOfProtectingMinorityInvestors" autocreate="true" generate="true">
+            <!-- new SAInternationalIndices Model end -->
+
+            <itemtype code="EaseOfProtectingMinorityInvestors" autocreate="true" generate="true">
 				<description>EaseOfProtectingMinorityInvestors</description>
 				<deployment table="EofProtectMinInvestors" typecode="32027" />
 				<attributes>
@@ -8440,6 +8532,7 @@
 	            </attributes>
 			</itemtype>
         </typegroup>
+        <!-- SAInternationalIndices Model end -->
 
 		<typegroup name="InfrastructureLogistics">
         	<itemtype code="InfraLogisticsLanding" autocreate="true" generate="true">
@@ -8843,10 +8936,672 @@
                     </attribute>
                 </attributes>
             </itemtype>
+
+            <!-- new InfrastructureLogistics Model start -->
+
+            <itemtype code="InfrastructureLogistics" autocreate="true" generate="true">
+                <description>InfrastructureLogistics</description>
+                <deployment table="InfrastructureLogistics" typecode="29903" />
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>InfrastructureLogistics uid</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="index" type="java.lang.Integer">
+                        <description>InfrastructureLogistics index</description>
+                        <modifiers read="true" write="true" search="true" optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value1" type="java.lang.String">
+                        <description>value1</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label1" type="localized:java.lang.String">
+                        <description>label1</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value2" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>value2</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="label2" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>label2</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="value3" type="java.lang.String">
+                        <description>value3</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label3" type="localized:java.lang.String">
+                        <description>label3</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value4" type="java.lang.String">
+                        <description>value4</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label4" type="localized:java.lang.String">
+                        <description>label4</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value5" type="java.lang.String">
+                        <description>value5</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label5" type="localized:java.lang.String">
+                        <description>label5</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>displayName</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <!-- new InfrastructureLogistics Model end -->
+
         </typegroup>
 
  		<typegroup name="SaudiEconomicSectors">
-			<itemtype code="RealSector" autocreate="true" generate="true">
+
+            <!-- new models for saudi econimic sectors -->
+            <!--population distribution model start -->
+            <itemtype code="PopulationDistribution" autocreate="true" generate="true">
+                <description>"PopulationDistribution"</description>
+                <deployment table="PopulationDistribution" typecode="29904" />
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.Integer">
+                        <description>year</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="saudi" type="java.lang.String">
+                        <description>saudi</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="nonSaudi" type="java.lang.String">
+                        <description>nonsaudi</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="totalPopulation" type="java.lang.String">
+                        <description>totalpopulation</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="saudiPercentage" type="java.lang.String">
+                        <description>saudipercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="nonSaudiPercentage" type="java.lang.String">
+                        <description>nonsaudipercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <!--population distribution model end -->
+            <!--gender distribution model start -->
+            <itemtype code="GenderDistribution" autocreate="true" generate="true">
+                <description>GenderDistribution</description>
+                <deployment table="GenderDistribution" typecode="29905 " />
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.String">
+                        <description>year</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="males" type="java.lang.Integer">
+                        <persistence type="property"/>
+                        <description>males</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="females" type="java.lang.Integer">
+                        <description>females</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="total" type="java.lang.Integer">
+                        <persistence type="property"/>
+                        <description>total</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <!--gender distribution model end -->
+            <!--region distribution model start -->
+            <itemtype code="RegionDistribution" autocreate="true" generate="true">
+                <description>RegionDistribution</description>
+                <deployment table="RegionDistribution" typecode="29906" />
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.Integer">
+                        <description>year</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="riyadhValue" type="java.lang.String">
+                        <description>riyadhValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="riyadhPercentage" type="java.lang.String">
+                        <description>riyadhPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="makkahValue" type="java.lang.String">
+                        <description>makkahValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="makkahPercentage" type="java.lang.String">
+                        <description>makkahPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="almadinahValue" type="java.lang.String">
+                        <description>almadinahValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="almadinaPercentage" type="java.lang.String">
+                        <description>almadinaPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="alqassimValue" type="java.lang.String">
+                        <description>alqassimValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="alqassimPercentage" type="java.lang.String">
+                        <description>alqassimPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="easternValue" type="java.lang.String">
+                        <description>easternValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="easternPercentage" type="java.lang.String">
+                        <description>easternPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="asirValue" type="java.lang.String">
+                        <description>asirValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="asirPercentage" type="java.lang.String">
+                        <description>asirPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="tabukValue" type="java.lang.String">
+                        <description>tabukValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="tabukPercentage" type="java.lang.String">
+                        <description>tabukPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="hailValue" type="java.lang.String">
+                        <description>hailvalue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="hailPercentage" type="java.lang.String">
+                        <description>hailpercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="northernValue" type="java.lang.String">
+                        <description>northernvalue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="northernPercentage" type="java.lang.String">
+                        <description>saudipercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="jazanValue" type="java.lang.String">
+                        <description>totalpopulation</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="jazanPercentage" type="java.lang.String">
+                        <description>saudipercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="najranValue" type="java.lang.String">
+                        <description>totalpopulation</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="najranPercentage" type="java.lang.String">
+                        <description>saudipercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="albahaValue" type="java.lang.String">
+                        <description>albahaValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="albahaPercentage" type="java.lang.String">
+                        <description>albahaPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="aljawfValue" type="java.lang.String">
+                        <description>aljawfValue</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="aljawfPercentage" type="java.lang.String">
+                        <description>aljawfPercentage</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="totalPopulation" type="java.lang.String">
+                        <description>totalPopulation</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <!--region distribution model end -->
+
+            <!--sector model start -->
+            <itemtype code="EconomicSector" autocreate="true" generate="true">
+                <description>EconomicSector</description>
+                <deployment table="EconomicSector" typecode="29907" />
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="index" type="java.lang.Integer">
+                        <description>index</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label" type="localized:java.lang.String">
+                        <description>label</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.String">
+                        <description>year</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <!--sector model end -->
+            <!--sector model start -->
+            <itemtype code="EconomicsSector" autocreate="true" generate="true">
+                <description>EconomicsSector</description>
+                <deployment table="EconomicsSector" typecode="29908" />
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="index" type="java.lang.Integer">
+                        <description>index</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>value</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label" type="localized:java.lang.String">
+                        <description>label</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.String">
+                        <description>year</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="displayName" type="localized:java.lang.String">
+                        <description>display Name</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <!--sector model end -->
+            <!-- SAinInternationalIndices model start -->
+            <!-- inside this typegroup -> SAInternationalIndices -->
+            <!-- SAinInternationalIndices model end -->
+
+            <!-- new investment data models start -->
+            <itemtype code="AQValueGrowth" autocreate="true" generate="true">
+                <description>AQ Value Growth</description>
+                <deployment table="AQValueGrowth" typecode="29909"/>
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.String">
+                        <description>Year</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="saudiInvestmentsAbroad" type="java.lang.String">
+                        <description>Saudi investments abroad</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="incomingForeignInvestment" type="java.lang.String">
+                        <description>Incoming foreign investment</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="totalNumberOfInvestmentLicenses" type="java.lang.String">
+                        <description>Total number of investment licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="manufacturingLicenses" type="java.lang.String">
+                        <description>Manufacturing licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="constructionLicenses" type="java.lang.String">
+                        <description>Construction licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="wholeSaleRetailTradeMoLicenses" type="java.lang.String">
+                        <description>Wholesale and retail trade; repair of mo licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="informationAndCommunicationLicenses" type="java.lang.String">
+                        <description>Information and communication licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="professionalScientificAndTechnicalLicenses" type="java.lang.String">
+                        <description>Professional, scientific and technical licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="accommodationFoodServiceActivityLicenses" type="java.lang.String">
+                        <description>Accommodation and food service activitie licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="administrativeSupportServiceActivityLicenses" type="java.lang.String">
+                        <description>Administrative and support service activies licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="transportationStorageLicenses" type="java.lang.String">
+                        <description>Transportation and storage licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="humanHealthSocialworkActivityLicenses" type="java.lang.String">
+                        <description>Human health and social work activities licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="financialInsuranceActivityLicenses" type="java.lang.String">
+                        <description>Financial and insurance activities licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="otherServiceActivityLicenses" type="java.lang.String">
+                        <description>Other service activities licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="miningQuarryingLicenses" type="java.lang.String">
+                        <description>Mining and quarrying licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="waterSupplySewerageWasteManagement " type="java.lang.String">
+                        <description>Water supply; sewerage, waste management</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="educationLicenses" type="java.lang.String">
+                        <description>Education licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="realEstateActivityLicenses" type="java.lang.String">
+                        <description>Real estate activities licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="artsEntertainmentRecreationLicenses" type="java.lang.String">
+                        <description>Arts, entertainment and recreation licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="electricityGasSteamAircondition" type="java.lang.String">
+                        <description>Electricity, gas, steam and air conditio</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="agricultureForestryFishingLicenses" type="java.lang.String">
+                        <description>Agriculture, forestry and fishing licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="notAssignedLicenses" type="java.lang.String">
+                        <description>Not assigned licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="publicAdministrationDefenceCompuLicenses" type="java.lang.String">
+                        <description>Public administration and defence; compu licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="activitiesOfExtraterritorialOrganizationLicenses" type="java.lang.String">
+                        <description>Activities of extraterritorial organizat licenses</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="nonOilGdp" type="java.lang.String">
+                        <description>Non Oil GDP</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="ForeignInvestment" autocreate="true" generate="true">
+                <description>ForeignInvestment</description>
+                <deployment table="ForeignInvestment" typecode="29910"/>
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="index" type="java.lang.Integer">
+                        <description>index</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value1" type="java.lang.String">
+                        <description>value1</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value2" type="java.lang.String">
+                        <description>value2</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value3" type="localized:java.lang.String">
+                        <description>value3</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label1" type="java.lang.String">
+                        <description>label1</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label2" type="localized:java.lang.String">
+                        <description>label2</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="label3" type="localized:java.lang.String">
+                        <description>label3</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="CommercialRegister" autocreate="true" generate="true">
+                <description>CommercialRegister</description>
+                <deployment table="CommercialRegister" typecode="29911"/>
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.String">
+                        <description>Year</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="value" type="java.lang.String">
+                        <description>Value of data</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="percentage" type="java.lang.String">
+                        <description>Percentage of data</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="FundAssets" autocreate="true" generate="true">
+                <description>FundAssets</description>
+                <deployment table="FundAssets" typecode="29912"/>
+                <attributes>
+                    <attribute qualifier="uid" type="java.lang.String">
+                        <description>UID</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="year" type="java.lang.String">
+                        <description>Year</description>
+                        <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="totalNoOfInvestmentFund" type="java.lang.String">
+                        <description>Total number of investment funds</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="totalNoOfInvestmentFundGrowthRate" type="java.lang.String">
+                        <description>Total number of investment fund growth rate</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="totalInvestmentFundAssets" type="java.lang.String">
+                        <description>Total investment fund assets</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="totalInvestmentFundAssetsGrowthRate" type="java.lang.String">
+                        <description>Total investment fund asset growth rate</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="foreignInvestmentFund" type="java.lang.String">
+                        <description>Assets of foreign investment funds</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="foreignInvestmentFundGrowthRate" type="java.lang.String">
+                        <description>Assets of foreign investment funds</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="domesticInvestmentFund" type="java.lang.String">
+                        <description>Assets Domestic  investment fund growth rate</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="domesticInvestmentFundGrowthRate" type="java.lang.String">
+                        <description>Assets Domestic  investment fund growth rate</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <!-- new investment data models end -->
+
+            <itemtype code="RealSector" autocreate="true" generate="true">
 				<description>RealSector</description>
 				<deployment table="RealSector" typecode="32043" />
 				<attributes>

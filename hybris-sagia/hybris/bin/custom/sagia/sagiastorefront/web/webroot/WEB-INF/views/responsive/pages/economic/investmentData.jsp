@@ -396,32 +396,6 @@
                                 </div>
                             </div>
                         </c:forEach>
-
-                          <!--<div class="col-4 mx-auto">
-                            <div class="INID_SD_Data_IN_sho">
-                              <h4 class="INID_SD_inv_data_header value-outflow">${foreignInvestmentValueData[1].value1}</h4>
-                              <p class="INID_SUB_data">${foreignInvestmentValueData[1].label1}</p>
-                              <br>
-                              <h4 class="INID_SD_inv_data_header p-2">${foreignInvestmentValueData[1].value2}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentValueData[1].label2}</p>
-                              <br>
-                              <h5 class="INID_SD_header_green">${foreignInvestmentValueData[1].value3}</h5>
-                              <p class="INID_word_paper2">${foreignInvestmentValueData[1].label3}</p>
-                            </div>
-                          </div>
-                          <div class="col-4 mx-auto">
-                            <div class="INID_SD_Data_IN_sho">
-                              <h4 class="INID_SD_inv_data_header value-total">${foreignInvestmentValueData[2].value1}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentValueData[2].label1}</p>
-                              <br>
-                              <h4 class="INID_SD_inv_data_header p-2">${foreignInvestmentValueData[2].value2}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentValueData[2].label2}</p>
-                              <br>
-                              <h5 class="INID_SD_header_green">${foreignInvestmentValueData[2].value3}</h5>
-                              <p class="INID_word_paper2" style="height: 24px;">${foreignInvestmentValueData[2].label3}</p>
-                            </div>
-                          </div>-->
-
                         </div>
 
 

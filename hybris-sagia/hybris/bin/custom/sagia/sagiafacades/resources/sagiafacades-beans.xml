@@ -3543,163 +3543,6 @@
     <!-- InvestSaudiPortalFacades extensioninfo.xml end -->
 
 	<!-- Economic Highlights Changes Starts -->
-	<bean class="com.sap.ibso.eservices.facades.data.RealGDPData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.UnemploymentData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.TradeBalanceData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean
-		class="com.sap.ibso.eservices.facades.data.TotalReserveAssetsData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.SaudiStockMarketData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.PopulationData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.MoneySupplyData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.InterestRateData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.InflationData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.GovernmentReserveData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean
-		class="com.sap.ibso.eservices.facades.data.GovernmentDebtData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.GDPPerCapitaData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.FDIinflowData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.ExchangeRateData">
-		<property name="value" type="java.lang.String" />
-		<property name="valueLabel" type="java.lang.String" />
-		<property name="percentage" type="java.lang.String" />
-		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
-	</bean>
 
 	<bean class="com.sap.ibso.eservices.facades.data.CreditRatingData">
 		<property name="spLabel" type="java.lang.String" />
@@ -3714,29 +3557,32 @@
 		<property name="currenyValue" type="java.lang.String" />
 	</bean>
 
-	<bean
-			class="com.sap.ibso.eservices.facades.data.BudgetDeficitData">
+	<!-- dashboard data start -->
+
+	<bean class="com.sap.ibso.eservices.facades.data.DashboardData">
+		<property name="uid" type="java.lang.String" />
+		<property name="index" type="java.lang.Integer" />
 		<property name="value" type="java.lang.String" />
 		<property name="valueLabel" type="java.lang.String" />
 		<property name="percentage" type="java.lang.String" />
 		<property name="percentageLabel" type="java.lang.String" />
-		<property name="name" type="java.lang.String" />
 		<property name="displayName" type="java.lang.String" />
 		<property name="calenderValue" type="java.lang.String" />
-		<property name="currenyValue" type="java.lang.String" />
+		<property name="notes" type="java.lang.String" />
 	</bean>
 
+	<!-- dashboard data end -->
 
 	<bean
 		class="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData">
+		<property name="uid" type="java.lang.String"/>
 		<property name="frequency" type="java.lang.String" />
 		<property name="rankValue" type="java.lang.Integer" />
 		<property name="scoreValue" type="java.lang.Double" />
 		<property name="year" type="java.lang.Integer" />
 	</bean>
 
-		<bean
-		class="com.sap.ibso.eservices.facades.data.InfraLogisticsLandingData">
+	<bean class="com.sap.ibso.eservices.facades.data.InfraLogisticsLandingData">
 		<property name="internationalAirportslabel" type="java.lang.String" />
 		<property name="internationalAirportsValue"	type="java.lang.String" />
 		<property name="domesticAirportsLabel" type="java.lang.String" />
@@ -3760,43 +3606,9 @@
 		<property name="networkValue" type="java.lang.String" />
 	</bean>
 
-	<bean
-		class="com.sap.ibso.eservices.facades.data.InfrastructureData">
-		<property name="name" type="java.lang.String" />
-		<property name="value1" type="java.lang.String" />
-		<property name="value2" type="java.lang.String" />
-		<property name="value3" type="java.lang.String" />
-		<property name="label1" type="java.lang.String" />
-		<property name="label2" type="java.lang.String" />
-		<property name="label3" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.EmploymentData">
-		<property name="name" type="java.lang.String" />
-		<property name="value1" type="java.lang.String" />
-		<property name="value2" type="java.lang.String" />
-		<property name="value3" type="java.lang.String" />
-		<property name="label1" type="java.lang.String" />
-		<property name="label2" type="java.lang.String" />
-		<property name="label3" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.TotalAreaData">
-		<property name="name" type="java.lang.String" />
-		<property name="value1" type="java.lang.String" />
-		<property name="value2" type="java.lang.String" />
-		<property name="value3" type="java.lang.String" />
-		<property name="label1" type="java.lang.String" />
-		<property name="label2" type="java.lang.String" />
-		<property name="label3" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-	</bean>
-
-	<bean
-		class="com.sap.ibso.eservices.facades.data.HousingFacilitiesData">
-		<property name="name" type="java.lang.String" />
+	<bean class="com.sap.ibso.eservices.facades.data.InfrastructureLogisticsData">
+		<property name="uid" type="java.lang.String" />
+		<property name="index" type="java.lang.Integer" />
 		<property name="value1" type="java.lang.String" />
 		<property name="value2" type="java.lang.String" />
 		<property name="value3" type="java.lang.String" />
@@ -3811,59 +3623,12 @@
 	</bean>
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.IndustrialCitiesData">
-		<property name="name" type="java.lang.String" />
-		<property name="value1" type="java.lang.String" />
-		<property name="value2" type="java.lang.String" />
-		<property name="value3" type="java.lang.String" />
-		<property name="value4" type="java.lang.String" />
-		<property name="label1" type="java.lang.String" />
-		<property name="label2" type="java.lang.String" />
-		<property name="label3" type="java.lang.String" />
-		<property name="label4" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-	</bean>
-
-	<bean
 		class="com.sap.ibso.eservices.facades.data.PrivateCitiesData">
 		<property name="name" type="java.lang.String" />
 		<property name="establishmentYear" type="java.lang.String" />
 		<property name="totalArea" type="java.lang.String" />
 		<property name="developedArea" type="java.lang.String" />
 		<property name="noOfContracts" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-	</bean>
-
-
-	<bean class="com.sap.ibso.eservices.facades.data.RealSectorData">
-		<property name="name" type="java.lang.String" />
-		<property name="value" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.MonetarySectorData">
-		<property name="name" type="java.lang.String" />
-		<property name="value" type="java.lang.String" />
-		<property name="label" type="java.lang.String" />
-		<property name="year" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-	</bean>
-
-	<bean class="com.sap.ibso.eservices.facades.data.FiscalSectorData">
-		<property name="name" type="java.lang.String" />
-		<property name="value" type="java.lang.String" />
-		<property name="label" type="java.lang.String" />
-		<property name="year" type="java.lang.String" />
-		<property name="displayName" type="java.lang.String" />
-	</bean>
-
-	<bean
-		class="com.sap.ibso.eservices.facades.data.ExternalSectorData">
-		<property name="name" type="java.lang.String" />
-		<property name="value" type="java.lang.String" />
-		<property name="label" type="java.lang.String" />
-		<property name="year" type="java.lang.String" />
 		<property name="displayName" type="java.lang.String" />
 	</bean>
 
@@ -3878,8 +3643,22 @@
 		<property name="fellowship" type="java.lang.String" />
 	</bean>
 
-	<bean
-			class="com.sap.ibso.eservices.facades.data.SaudiPopulationData">
+
+
+	<!-- saudi economic secotor new data beans start-->
+	<bean class="com.sap.ibso.eservices.facades.data.EconomicSectorData">
+		<property name="uid" type="java.lang.String" />
+		<property name="index" type="java.lang.Integer" />
+		<property name="value" type="java.lang.String" />
+		<property name="displayName" type="java.lang.String" />
+		<property name="year" type="java.lang.String" />
+		<property name="label" type="java.lang.String" />
+
+	</bean>
+	<!-- saudi economic secotor new data beans start-->
+
+	<bean class="com.sap.ibso.eservices.facades.data.PopulationDistributionData">
+		<property name="uid" type="java.lang.String" />
 		<property name="year" type="java.lang.Integer" />
 		<property name="saudi" type="java.lang.String" />
 		<property name="nonSaudi" type="java.lang.String" />
@@ -3887,9 +3666,8 @@
 		<property name="saudiPercentage" type="java.lang.String" />
 		<property name="nonSaudiPercentage" type="java.lang.String" />
 	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.PopulationByRegionData">
+	<bean class="com.sap.ibso.eservices.facades.data.RegionDistributionData">
+		<property name="uid" type="java.lang.String" />
 		<property name="year" type="java.lang.Integer" />
 		<property name="riyadhValue" type="java.lang.String" />
 		<property name="riyadhPercentage" type="java.lang.String" />
@@ -3919,140 +3697,19 @@
 		<property name="aljawfPercentage" type="java.lang.String" />
 		<property name="totalPopulation" type="java.lang.String" />
 	</bean>
-
-<bean
-		class="com.sap.ibso.eservices.facades.data.SaudiEmploymentByRegionData">
-		<property name="year" type="java.lang.Integer" />
-		<property name="riyadhValue" type="java.lang.String" />
-		<property name="riyadhPercentage" type="java.lang.String" />
-		<property name="makkahValue" type="java.lang.String" />
-		<property name="makkahPercentage" type="java.lang.String" />
-		<property name="almadinahValue" type="java.lang.String" />
-		<property name="almadinaPercentage" type="java.lang.String" />
-		<property name="alqassimValue" type="java.lang.String" />
-		<property name="alqassimPercentage" type="java.lang.String" />
-		<property name="easternValue" type="java.lang.String" />
-		<property name="easternPercentage" type="java.lang.String" />
-		<property name="asirValue" type="java.lang.String" />
-		<property name="asirPercentage" type="java.lang.String" />
-		<property name="tabukValue" type="java.lang.String" />
-		<property name="tabukPercentage" type="java.lang.String" />
-		<property name="hailValue" type="java.lang.String" />
-		<property name="hailPercentage" type="java.lang.String" />
-		<property name="northernValue" type="java.lang.String" />
-		<property name="northernPercentage" type="java.lang.String" />
-		<property name="jazanValue" type="java.lang.String" />
-		<property name="jazanPercentage" type="java.lang.String" />
-		<property name="najranValue" type="java.lang.String" />
-		<property name="najranPercentage" type="java.lang.String" />
-		<property name="albahaValue" type="java.lang.String" />
-		<property name="albahaPercentage" type="java.lang.String" />
-		<property name="aljawfValue" type="java.lang.String" />
-		<property name="aljawfPercentage" type="java.lang.String" />
-		<property name="totalPopulation" type="java.lang.String" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentByRegionData">
-		<property name="year" type="java.lang.Integer" />
-		<property name="riyadhValue" type="java.lang.String" />
-		<property name="riyadhPercentage" type="java.lang.String" />
-		<property name="makkahValue" type="java.lang.String" />
-		<property name="makkahPercentage" type="java.lang.String" />
-		<property name="almadinahValue" type="java.lang.String" />
-		<property name="almadinaPercentage" type="java.lang.String" />
-		<property name="alqassimValue" type="java.lang.String" />
-		<property name="alqassimPercentage" type="java.lang.String" />
-		<property name="easternValue" type="java.lang.String" />
-		<property name="easternPercentage" type="java.lang.String" />
-		<property name="asirValue" type="java.lang.String" />
-		<property name="asirPercentage" type="java.lang.String" />
-		<property name="tabukValue" type="java.lang.String" />
-		<property name="tabukPercentage" type="java.lang.String" />
-		<property name="hailValue" type="java.lang.String" />
-		<property name="hailPercentage" type="java.lang.String" />
-		<property name="northernValue" type="java.lang.String" />
-		<property name="northernPercentage" type="java.lang.String" />
-		<property name="jazanValue" type="java.lang.String" />
-		<property name="jazanPercentage" type="java.lang.String" />
-		<property name="najranValue" type="java.lang.String" />
-		<property name="najranPercentage" type="java.lang.String" />
-		<property name="albahaValue" type="java.lang.String" />
-		<property name="albahaPercentage" type="java.lang.String" />
-		<property name="aljawfValue" type="java.lang.String" />
-		<property name="aljawfPercentage" type="java.lang.String" />
-		<property name="totalPopulation" type="java.lang.String" />
-	</bean>
-
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.SaudiEmploymentData">
-		<property name="year" type="java.lang.Integer" />
+	<bean class="com.sap.ibso.eservices.facades.data.GenderDistributionData">
+		<property name="uid" type="java.lang.String" />
+		<property name="year" type="java.lang.String" />
 		<property name="males" type="java.lang.Integer" />
 		<property name="females" type="java.lang.Integer" />
 		<property name="total" type="java.lang.Integer" />
 	</bean>
 
+	<!-- saudi economic secotor new data beans end-->
+	<!-- investment data beans start -->
 	<bean
-			class="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentData">
-		<property name="year" type="java.lang.Integer" />
-		<property name="males" type="java.lang.Integer" />
-		<property name="females" type="java.lang.Integer" />
-		<property name="total" type="java.lang.String" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.AvgMonthlyWagesData">
-		<property name="year" type="java.lang.Integer" />
-		<property name="males" type="java.lang.Integer" />
-		<property name="females" type="java.lang.Integer" />
-		<property name="total" type="java.lang.Integer" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.GrowthrateWagesData">
-		<property name="year" type="java.lang.Integer" />
-		<property name="males" type="java.lang.Double" />
-		<property name="females" type="java.lang.Double" />
-		<property name="total" type="java.lang.Double" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.LabourPrivateSectorData">
-		<property name="year" type="java.lang.Integer" />
-		<property name="saudi" type="java.lang.Double" />
-		<property name="nonSaudi" type="java.lang.Double" />
-		<property name="totalLabour" type="java.lang.Double" />
-		<property name="saudiPercentagelabour" type="java.lang.Double" />
-		<property name="nonSaudiPercentageLabour" type="java.lang.Double" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.SaudiUnemploymentData">
-		<property name="year" type="java.lang.String" />
-		<property name="males" type="java.lang.Double" />
-		<property name="females" type="java.lang.Double" />
-		<property name="total" type="java.lang.Double" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.NonSaudiUnemploymentData">
-		<property name="year" type="java.lang.String" />
-		<property name="males" type="java.lang.Double" />
-		<property name="females" type="java.lang.Double" />
-		<property name="total" type="java.lang.Double" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.OverallUnemploymentData">
-		<property name="year" type="java.lang.String" />
-		<property name="males" type="java.lang.String" />
-		<property name="females" type="java.lang.String" />
-		<property name="total" type="java.lang.String" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.AnnualValueData">
+			class="com.sap.ibso.eservices.facades.data.AQValueGrowthData">
+		<property name="uid" type="java.lang.String" />
 		<property name="year" type="java.lang.String" />
 		<property name="saudiInvestmentsAbroad" type="java.lang.String" />
 		<property name="incomingForeignInvestment" type="java.lang.String" />
@@ -4080,98 +3737,10 @@
 		<property name="activitiesOfExtraterritorialOrganizationLicenses" type="java.lang.String" />
 		<property name="nonOilGdp" type="java.lang.String" />
 	</bean>
-
 	<bean
-			class="com.sap.ibso.eservices.facades.data.AnnualGrowthData">
-		<property name="year" type="java.lang.String" />
-		<property name="saudiInvestmentsAbroad" type="java.lang.String" />
-		<property name="incomingForeignInvestment" type="java.lang.String" />
-		<property name="totalNumberOfInvestmentLicenses" type="java.lang.String" />
-		<property name="manufacturingLicenses" type="java.lang.String" />
-		<property name="constructionLicenses" type="java.lang.String" />
-		<property name="wholeSaleRetailTradeMoLicenses" type="java.lang.String" />
-		<property name="informationAndCommunicationLicenses" type="java.lang.String" />
-		<property name="professionalScientificAndTechnicalLicenses" type="java.lang.String" />
-		<property name="accommodationFoodServiceActivityLicenses" type="java.lang.String" />
-		<property name="administrativeSupportServiceActivityLicenses" type="java.lang.String" />
-		<property name="transportationStorageLicenses" type="java.lang.String" />
-		<property name="humanHealthSocialworkActivityLicenses" type="java.lang.String" />
-		<property name="financialInsuranceActivityLicenses" type="java.lang.String" />
-		<property name="otherServiceActivityLicenses" type="java.lang.String" />
-		<property name="miningQuarryingLicenses" type="java.lang.String" />
-		<property name="waterSupplySewerageWasteManagement" type="java.lang.String" />
-		<property name="educationLicenses" type="java.lang.String" />
-		<property name="realEstateActivityLicenses" type="java.lang.String" />
-		<property name="artsEntertainmentRecreationLicenses" type="java.lang.String" />
-		<property name="electricityGasSteamAircondition" type="java.lang.String" />
-		<property name="agricultureForestryFishingLicenses" type="java.lang.String" />
-		<property name="notAssignedLicenses" type="java.lang.String" />
-		<property name="publicAdministrationDefenceCompuLicenses" type="java.lang.String" />
-		<property name="activitiesOfExtraterritorialOrganizationLicenses" type="java.lang.String" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.QuarterlyValueData">
-		<property name="year" type="java.lang.String" />
-		<property name="saudiInvestmentsAbroad" type="java.lang.String" />
-		<property name="incomingForeignInvestment" type="java.lang.String" />
-		<property name="totalNumberOfInvestmentLicenses" type="java.lang.String" />
-		<property name="manufacturingLicenses" type="java.lang.String" />
-		<property name="constructionLicenses" type="java.lang.String" />
-		<property name="wholeSaleRetailTradeMoLicenses" type="java.lang.String" />
-		<property name="informationAndCommunicationLicenses" type="java.lang.String" />
-		<property name="professionalScientificAndTechnicalLicenses" type="java.lang.String" />
-		<property name="accommodationFoodServiceActivityLicenses" type="java.lang.String" />
-		<property name="administrativeSupportServiceActivityLicenses" type="java.lang.String" />
-		<property name="transportationStorageLicenses" type="java.lang.String" />
-		<property name="humanHealthSocialworkActivityLicenses" type="java.lang.String" />
-		<property name="financialInsuranceActivityLicenses" type="java.lang.String" />
-		<property name="otherServiceActivityLicenses" type="java.lang.String" />
-		<property name="miningQuarryingLicenses" type="java.lang.String" />
-		<property name="waterSupplySewerageWasteManagement" type="java.lang.String" />
-		<property name="educationLicenses" type="java.lang.String" />
-		<property name="realEstateActivityLicenses" type="java.lang.String" />
-		<property name="artsEntertainmentRecreationLicenses" type="java.lang.String" />
-		<property name="electricityGasSteamAircondition" type="java.lang.String" />
-		<property name="agricultureForestryFishingLicenses" type="java.lang.String" />
-		<property name="notAssignedLicenses" type="java.lang.String" />
-		<property name="publicAdministrationDefenceCompuLicenses" type="java.lang.String" />
-		<property name="activitiesOfExtraterritorialOrganizationLicenses" type="java.lang.String" />
-		<property name="nonOilGdp" type="java.lang.String" />
-	</bean>
-
-	<bean
-			class="com.sap.ibso.eservices.facades.data.QuarterlyGrowthData">
-		<property name="year" type="java.lang.String" />
-		<property name="saudiInvestmentsAbroad" type="java.lang.String" />
-		<property name="incomingForeignInvestment" type="java.lang.String" />
-		<property name="totalNumberOfInvestmentLicenses" type="java.lang.String" />
-		<property name="manufacturingLicenses" type="java.lang.String" />
-		<property name="constructionLicenses" type="java.lang.String" />
-		<property name="wholeSaleRetailTradeMoLicenses" type="java.lang.String" />
-		<property name="informationAndCommunicationLicenses" type="java.lang.String" />
-		<property name="professionalScientificAndTechnicalLicenses" type="java.lang.String" />
-		<property name="accommodationFoodServiceActivityLicenses" type="java.lang.String" />
-		<property name="administrativeSupportServiceActivityLicenses" type="java.lang.String" />
-		<property name="transportationStorageLicenses" type="java.lang.String" />
-		<property name="humanHealthSocialworkActivityLicenses" type="java.lang.String" />
-		<property name="financialInsuranceActivityLicenses" type="java.lang.String" />
-		<property name="otherServiceActivityLicenses" type="java.lang.String" />
-		<property name="miningQuarryingLicenses" type="java.lang.String" />
-		<property name="waterSupplySewerageWasteManagement" type="java.lang.String" />
-		<property name="educationLicenses" type="java.lang.String" />
-		<property name="realEstateActivityLicenses" type="java.lang.String" />
-		<property name="artsEntertainmentRecreationLicenses" type="java.lang.String" />
-		<property name="electricityGasSteamAircondition" type="java.lang.String" />
-		<property name="agricultureForestryFishingLicenses" type="java.lang.String" />
-		<property name="notAssignedLicenses" type="java.lang.String" />
-		<property name="publicAdministrationDefenceCompuLicenses" type="java.lang.String" />
-		<property name="activitiesOfExtraterritorialOrganizationLicenses" type="java.lang.String" />
-	</bean>
-
-
-	<bean
-		class="com.sap.ibso.eservices.facades.data.ForeignInvestmentValueData">
+			class="com.sap.ibso.eservices.facades.data.ForeignInvestmentData">
+		<property name="uid" type="java.lang.String" />
+		<property name="index" type="java.lang.Integer" />
 		<property name="value1" type="java.lang.String" />
 		<property name="value2" type="java.lang.String" />
 		<property name="value3" type="java.lang.String" />
@@ -4179,56 +3748,29 @@
 		<property name="label2" type="java.lang.String" />
 		<property name="label3" type="java.lang.String" />
 	</bean>
-
-		<bean
-		class="com.sap.ibso.eservices.facades.data.ForeignInvestmentGrowthData">
-		<property name="value1" type="java.lang.String" />
-		<property name="value2" type="java.lang.String" />
-		<property name="value3" type="java.lang.String" />
-		<property name="label1" type="java.lang.String" />
-		<property name="label2" type="java.lang.String" />
-		<property name="label3" type="java.lang.String" />
+	<bean
+			class="com.sap.ibso.eservices.facades.data.CommercialRegisterData">
+		<property name="uid" type="java.lang.String" />
+		<property name="year" type="java.lang.String" />
+		<property name="value" type="java.lang.String" />
+		<property name="percentage" type="java.lang.String" />
 	</bean>
 
 
 	<bean
-		class="com.sap.ibso.eservices.facades.data.NumberOfCommercialRegisterData">
-		<property name="year" type="java.lang.String" />
-		<property name="noOfCommercialRegisters" type="java.lang.String" />
-		<property name="growthRate" type="java.lang.String" />
-	</bean>
-
-	<bean
-		class="com.sap.ibso.eservices.facades.data.CapitalOfCommercialRegisterData">
-		<property name="year" type="java.lang.String" />
-		<property name="capitalOfCommercialRegisters" type="java.lang.String" />
-		<property name="growthRate" type="java.lang.String" />
-	</bean>
-
-			<bean
-		class="com.sap.ibso.eservices.facades.data.CapitalInformationData">
-		<property name="year" type="java.lang.String" />
-		<property name="grossFixed" type="java.lang.String" />
-		<property name="growthrateOfGrossFixed" type="java.lang.String" />
-	</bean>
-
-		<bean
-		class="com.sap.ibso.eservices.facades.data.AnnualFundAssetsData">
+	class="com.sap.ibso.eservices.facades.data.FundAssetsData">
+		<property name="uid" type="java.lang.String" />
 		<property name="year" type="java.lang.String" />
 		<property name="totalNoOfInvestmentFund" type="java.lang.String" />
+		<property name="totalNoOfInvestmentFundGrowthRate" type="java.lang.String" />
 		<property name="totalInvestmentFundAssets" type="java.lang.String" />
+		<property name="totalInvestmentFundAssetGrowthRate" type="java.lang.String" />
 		<property name="foreignInvestmentFund" type="java.lang.String" />
+		<property name="foreignInvestmentFundGrowthRate" type="java.lang.String" />
 		<property name="domesticInvestmentFund" type="java.lang.String" />
+		<property name="domesticInvestmentFundGrowthRate" type="java.lang.String" />
 	</bean>
-
-			<bean
-		class="com.sap.ibso.eservices.facades.data.QuarterlyFundAssetsData">
-		<property name="period" type="java.lang.String" />
-		<property name="totalNoOfInvestmentFund" type="java.lang.String" />
-		<property name="totalInvestmentFundAssets" type="java.lang.String" />
-		<property name="foreignInvestmentFund" type="java.lang.String" />
-		<property name="domesticInvestmentFund" type="java.lang.String" />
-	</bean>
+	<!-- invetment data beans end -->
 
 	<!-- Economic Highlights Changes Ends -->
 

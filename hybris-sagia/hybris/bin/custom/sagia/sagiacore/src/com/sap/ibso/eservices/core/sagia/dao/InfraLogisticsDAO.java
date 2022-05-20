@@ -8,17 +8,7 @@ public interface InfraLogisticsDAO {
 
 	InfraLogisticsLandingModel getInfraLogisticsLandingModelBySearch();
 	
-	InfrastructureModel getInfrastructureModelBySearch();
-	
 	List<LengthOfNetworkModel> getLengthOfNetworkModelBySearch();
-
-	EmploymentModel getEmploymentModelBySearch();
-
-	TotalAreaModel getTotalAreaModelBySearch();
-
-	HousingFacilitiesModel getHousingFacilitiesModelBySearch();
-
-	IndustrialCitiesModel getIndustrialCitiesModelBySearch();
 	
 	List<PrivateCitiesModel> getPrivateCitiesModelBySearch();
 

@@ -1439,12 +1439,42 @@ $(document).ready(function () {
 		var data = JSON.parse($("#Json-data").text());
 		renderIndicesCharts(data);
 	}
-	function renderLogisticsCharts(chartData){
+	function renderLogisticsCharts(data){
 		// console.log(chartData);
 		var chart = am4core.create("chartdiv", am4charts.XYChart);
 		am4core.addLicense("CH292550473");
 		chart.marginRight = 400;
-		chart.data = chartData;
+		chart.data = [
+            {
+                "networkName": getI18nText("bar.graph.north.train.network"),
+                "networkValue": data[0].networkValue,
+            },
+            {
+                "networkName": getI18nText("bar.graph.north.train.passenger"),
+                "networkValue": data[1].networkValue,
+            },
+            {
+                "networkName": getI18nText("bar.graph.north.train.freight"),
+                "networkValue": data[2].networkValue,
+            },
+            {
+                "networkName": getI18nText("bar.graph.east.train.network"),
+                "networkValue": data[3].networkValue,
+            },
+            {
+                "networkName": getI18nText("bar.graph.east.train.passenger"),
+                "networkValue": data[4].networkValue,
+            },
+            {
+                "networkName": getI18nText("bar.graph.east.cargo.train"),
+                "networkValue": data[5].networkValue,
+            },
+            {
+                "networkName": getI18nText("bar.graph.haramain.high.speed"),
+                "networkValue": data[6].networkValue,
+            }
+            ];
+
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
 
@@ -1531,11 +1561,11 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = [ {
-		"country": "Saudi",
+		"country": getI18nText("bar.graph.saudi"),
 		"population": data[0].saudi,
 		"color": am4core.color("#025635")
 		}, {
-		"country": "Non-Saudi",
+		"country": getI18nText("bar.graph.non.saudi"),
 		"population": data[0].nonSaudi,
 		"color": am4core.color("#BF9B2E")
 		}];    
@@ -1578,27 +1608,27 @@ $(document).ready(function () {
 		// Add data
 		chart.data = [
 			{
-			"degree": "Intermediate Diploma",
+			"degree": getI18nText("bar.graph.graduates.by.degree.intermediate.diploma"),
 			"value": data[0].intermediate
 			},
 			{
-			"degree": "Higher Diploma",
+			"degree": getI18nText("bar.graph.graduates.by.degree.higher.diploma"),
 			"value": data[0].diploma
 			},
 			{
-			"degree": "Bachelor",
+			"degree": getI18nText("bar.graph.graduates.by.degree.bachelor"),
 			"value": data[0].bachelor
 			},
 			{
-			"degree": "Master",
+			"degree": getI18nText("bar.graph.graduates.by.degree.master"),
 			"value": data[0].master
 			},
 			{
-			"degree": "Phd",
+			"degree": getI18nText("bar.graph.graduates.by.degree.phd"),
 			"value": data[0].phd
 			},
 			{
-			"degree": "Fellowship",
+			"degree": getI18nText("bar.graph.graduates.by.degree.fellowship"),
 			"value": data[0].fellowship
 			}];
 

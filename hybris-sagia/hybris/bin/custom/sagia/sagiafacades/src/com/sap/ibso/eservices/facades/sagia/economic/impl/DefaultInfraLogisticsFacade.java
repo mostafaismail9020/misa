@@ -1,25 +1,13 @@
 package com.sap.ibso.eservices.facades.sagia.economic.impl;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-import com.sap.ibso.eservices.core.model.EmploymentModel;
-import com.sap.ibso.eservices.core.model.HousingFacilitiesModel;
-import com.sap.ibso.eservices.core.model.IndustrialCitiesModel;
-import com.sap.ibso.eservices.core.model.InfraLogisticsLandingModel;
-import com.sap.ibso.eservices.core.model.InfrastructureModel;
-import com.sap.ibso.eservices.core.model.LengthOfNetworkModel;
-import com.sap.ibso.eservices.core.model.PrivateCitiesModel;
-import com.sap.ibso.eservices.core.model.TotalAreaModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.core.sagia.services.InfraLogisticsService;
-import com.sap.ibso.eservices.facades.data.EmploymentData;
-import com.sap.ibso.eservices.facades.data.HousingFacilitiesData;
-import com.sap.ibso.eservices.facades.data.IndustrialCitiesData;
-import com.sap.ibso.eservices.facades.data.InfraLogisticsLandingData;
-import com.sap.ibso.eservices.facades.data.InfrastructureData;
-import com.sap.ibso.eservices.facades.data.LengthOfNetworkData;
-import com.sap.ibso.eservices.facades.data.PrivateCitiesData;
-import com.sap.ibso.eservices.facades.data.TotalAreaData;
+import com.sap.ibso.eservices.facades.data.*;
 import com.sap.ibso.eservices.facades.sagia.economic.InfraLogisticsFacade;
 
 import de.hybris.platform.servicelayer.dto.converter.Converter;
@@ -28,13 +16,10 @@ public class DefaultInfraLogisticsFacade implements InfraLogisticsFacade {
 	private InfraLogisticsService infraLogisticsService;
 
 	private Converter<InfraLogisticsLandingModel, InfraLogisticsLandingData> infraLogisticsLandingConverter;
-	private Converter<InfrastructureModel, InfrastructureData> infrastructureConverter;
 	private Converter<LengthOfNetworkModel, LengthOfNetworkData> lengthOfNetworkConverter;
-	private Converter<EmploymentModel, EmploymentData> employmentConverter;
-	private Converter<TotalAreaModel, TotalAreaData> totalAreaConverter;
-	private Converter<HousingFacilitiesModel, HousingFacilitiesData> housingFacilitiesConverter;
-	private Converter<IndustrialCitiesModel, IndustrialCitiesData> industrialCitiesConverter;
 	private Converter<PrivateCitiesModel, PrivateCitiesData> privateCitiesConverter;
+	private Converter<InfrastructureLogisticsModel, InfrastructureLogisticsData> infrastructureLogisticsConverter;
+
 
 	/**
 	 * @return the infraLogisticsService
@@ -48,20 +33,6 @@ public class DefaultInfraLogisticsFacade implements InfraLogisticsFacade {
 	 */
 	public void setInfraLogisticsService(InfraLogisticsService infraLogisticsService) {
 		this.infraLogisticsService = infraLogisticsService;
-	}
-
-	/**
-	 * @return the infrastructureConverter
-	 */
-	public Converter<InfrastructureModel, InfrastructureData> getInfrastructureConverter() {
-		return infrastructureConverter;
-	}
-
-	/**
-	 * @param infrastructureConverter the infrastructureConverter to set
-	 */
-	public void setInfrastructureConverter(Converter<InfrastructureModel, InfrastructureData> infrastructureConverter) {
-		this.infrastructureConverter = infrastructureConverter;
 	}
 
 	/**
@@ -96,64 +67,6 @@ public class DefaultInfraLogisticsFacade implements InfraLogisticsFacade {
 	}
 
 	/**
-	 * @return the employmentConverter
-	 */
-	public Converter<EmploymentModel, EmploymentData> getEmploymentConverter() {
-		return employmentConverter;
-	}
-
-	/**
-	 * @param employmentConverter the employmentConverter to set
-	 */
-	public void setEmploymentConverter(Converter<EmploymentModel, EmploymentData> employmentConverter) {
-		this.employmentConverter = employmentConverter;
-	}
-
-	/**
-	 * @return the totalAreaConverter
-	 */
-	public Converter<TotalAreaModel, TotalAreaData> getTotalAreaConverter() {
-		return totalAreaConverter;
-	}
-
-	/**
-	 * @param totalAreaConverter the totalAreaConverter to set
-	 */
-	public void setTotalAreaConverter(Converter<TotalAreaModel, TotalAreaData> totalAreaConverter) {
-		this.totalAreaConverter = totalAreaConverter;
-	}
-
-	/**
-	 * @return the housingFacilitiesConverter
-	 */
-	public Converter<HousingFacilitiesModel, HousingFacilitiesData> getHousingFacilitiesConverter() {
-		return housingFacilitiesConverter;
-	}
-
-	/**
-	 * @param housingFacilitiesConverter the housingFacilitiesConverter to set
-	 */
-	public void setHousingFacilitiesConverter(
-			Converter<HousingFacilitiesModel, HousingFacilitiesData> housingFacilitiesConverter) {
-		this.housingFacilitiesConverter = housingFacilitiesConverter;
-	}
-
-	/**
-	 * @return the industrialCitiesConverter
-	 */
-	public Converter<IndustrialCitiesModel, IndustrialCitiesData> getIndustrialCitiesConverter() {
-		return industrialCitiesConverter;
-	}
-
-	/**
-	 * @param industrialCitiesConverter the industrialCitiesConverter to set
-	 */
-	public void setIndustrialCitiesConverter(
-			Converter<IndustrialCitiesModel, IndustrialCitiesData> industrialCitiesConverter) {
-		this.industrialCitiesConverter = industrialCitiesConverter;
-	}
-
-	/**
 	 * @return the privateCitiesConverter
 	 */
 	public Converter<PrivateCitiesModel, PrivateCitiesData> getPrivateCitiesConverter() {
@@ -167,26 +80,22 @@ public class DefaultInfraLogisticsFacade implements InfraLogisticsFacade {
 		this.privateCitiesConverter = privateCitiesConverter;
 	}
 
+	public Converter<InfrastructureLogisticsModel, InfrastructureLogisticsData> getInfrastructureLogisticsConverter() {
+		return infrastructureLogisticsConverter;
+	}
+
+	public void setInfrastructureLogisticsConverter(Converter<InfrastructureLogisticsModel, InfrastructureLogisticsData> infrastructureLogisticsConverter) {
+		this.infrastructureLogisticsConverter = infrastructureLogisticsConverter;
+	}
+
 	@Override
 	public InfraLogisticsLandingData getInfraLogisticsLandingData() {
 
 		final InfraLogisticsLandingModel infraLogisticsLandingModel = getInfraLogisticsService()
 				.getInfraLogisticsLandingModel();
 
-		final InfraLogisticsLandingData infraLogisticsLandingData = getInfraLogisticsLandingConverter()
+		return getInfraLogisticsLandingConverter()
 				.convert(infraLogisticsLandingModel);
-
-		return infraLogisticsLandingData;
-	}
-
-	@Override
-	public InfrastructureData getInfrastructureData() {
-
-		final InfrastructureModel infrastructureModel = getInfraLogisticsService().getInfrastructureModel();
-
-		final InfrastructureData infrastructureData = getInfrastructureConverter().convert(infrastructureModel);
-
-		return infrastructureData;
 	}
 
 	@Override
@@ -194,7 +103,7 @@ public class DefaultInfraLogisticsFacade implements InfraLogisticsFacade {
 		final List<LengthOfNetworkModel> lengthOfNetworkListModel = getInfraLogisticsService()
 				.getLengthOfNetworkModel();
 
-		final List<LengthOfNetworkData> lengthOfNetworkData = new ArrayList<LengthOfNetworkData>();
+		final List<LengthOfNetworkData> lengthOfNetworkData = new ArrayList<>();
 
 		for (final LengthOfNetworkModel lengthOfNetworkModel : lengthOfNetworkListModel) {
 			final LengthOfNetworkData loData = getLengthOfNetworkConverter().convert(lengthOfNetworkModel);
@@ -202,47 +111,6 @@ public class DefaultInfraLogisticsFacade implements InfraLogisticsFacade {
 		}
 		return lengthOfNetworkData;
 
-	}
-
-	@Override
-	public EmploymentData getEmploymentData() {
-
-		final EmploymentModel employmentModel = getInfraLogisticsService().getEmploymentModel();
-
-		final EmploymentData employmentData = getEmploymentConverter().convert(employmentModel);
-
-		return employmentData;
-	}
-
-	@Override
-	public TotalAreaData getTotalAreaData() {
-
-		final TotalAreaModel totalAreaModel = getInfraLogisticsService().getTotalAreaModel();
-
-		final TotalAreaData totalAreaData = getTotalAreaConverter().convert(totalAreaModel);
-
-		return totalAreaData;
-	}
-
-	@Override
-	public HousingFacilitiesData getHousingFacilitiesData() {
-
-		final HousingFacilitiesModel housingFacilitiesModel = getInfraLogisticsService().getHousingFacilitiesModel();
-
-		final HousingFacilitiesData housingFacilitiesData = getHousingFacilitiesConverter()
-				.convert(housingFacilitiesModel);
-
-		return housingFacilitiesData;
-	}
-
-	@Override
-	public IndustrialCitiesData getIndustrialCitiesData() {
-
-		final IndustrialCitiesModel industrialCitiesModel = getInfraLogisticsService().getIndustrialCitiesModel();
-
-		final IndustrialCitiesData industrialCitiesData = getIndustrialCitiesConverter().convert(industrialCitiesModel);
-
-		return industrialCitiesData;
 	}
 
 	@Override
@@ -258,6 +126,20 @@ public class DefaultInfraLogisticsFacade implements InfraLogisticsFacade {
 		}
 		return privateCitiesData;
 
+	}
+
+	@Override
+	public List<InfrastructureLogisticsData> getInfrastructureLogisticsData() {
+		final List<InfrastructureLogisticsModel> infrastructureLogisticsModel = getInfraLogisticsService().getInfrastructureLogisticsModel();
+
+		final List<InfrastructureLogisticsData> infrastructureLogisticsData = new ArrayList<>();
+
+		for (final InfrastructureLogisticsModel model : infrastructureLogisticsModel) {
+			final InfrastructureLogisticsData eoData = getInfrastructureLogisticsConverter().convert(model);
+			infrastructureLogisticsData.add(eoData);
+		}
+		Collections.sort(infrastructureLogisticsData, Comparator.comparing(InfrastructureLogisticsData::getIndex));
+		return infrastructureLogisticsData;
 	}
 
 }

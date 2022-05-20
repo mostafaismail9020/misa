@@ -2,40 +2,33 @@ package com.sap.ibso.eservices.facades.sagia.economic;
 
 import java.util.List;
 
-import com.sap.ibso.eservices.facades.data.AnnualFundAssetsData;
-import com.sap.ibso.eservices.facades.data.AnnualGrowthData;
-import com.sap.ibso.eservices.facades.data.AnnualValueData;
-import com.sap.ibso.eservices.facades.data.CapitalInformationData;
-import com.sap.ibso.eservices.facades.data.NumberOfCommercialRegisterData;
-import com.sap.ibso.eservices.facades.data.CapitalOfCommercialRegisterData;
-import com.sap.ibso.eservices.facades.data.ForeignInvestmentGrowthData;
-import com.sap.ibso.eservices.facades.data.ForeignInvestmentValueData;
-import com.sap.ibso.eservices.facades.data.QuarterlyFundAssetsData;
-import com.sap.ibso.eservices.facades.data.QuarterlyGrowthData;
-import com.sap.ibso.eservices.facades.data.QuarterlyValueData;
+import com.sap.ibso.eservices.facades.data.*;
 
 public interface InvestmentDataFacade {
 
-	List<AnnualValueData> getAnnualValueData(final String sector, final String period,final String startYear,final String endYear);
+	List<AQValueGrowthData> getAnnualValueData(final String sector, final String period, final String startYear, final String endYear);
 
-	List<AnnualGrowthData> getAnnualGrowthData(final String sector, final String period,final String startYear,final String endYear);
+	List<AQValueGrowthData> getAnnualGrowthData(final String sector, final String period,final String startYear,final String endYear);
 
-	List<QuarterlyValueData> getQuarterlyValueData(final String sector, final String period,final String startYear,final String endYear);
+	List<AQValueGrowthData> getQuarterlyValueData(final String sector, final String period,final String startYear,final String endYear);
 
-	List<QuarterlyGrowthData> getQuarterlyGrowthData(final String sector, final String period,final String startYear,final String endYear);
+	List<AQValueGrowthData> getQuarterlyGrowthData(final String sector, final String period,final String startYear,final String endYear);
 
-	List<ForeignInvestmentValueData> getForeignInvestmentValueData();
+	List<ForeignInvestmentData> getForeignInvestmentValueData();
 
-	List<ForeignInvestmentGrowthData> getForeignInvestmentGrowthData();
+	List<ForeignInvestmentData> getForeignInvestmentGrowthData();
 
-	List<AnnualFundAssetsData> getAnnualFundAssetsData(final String sector, final String period,final String startYear,final String endYear);
+	List<FundAssetsData> getAnnualFundAssetsData(final String sector, final String period, final String startYear, final String endYear);
 
-	List<NumberOfCommercialRegisterData> getNumberOfCommercialRegisterData(final String indicator, final String startYear,final String endYear);
+	List<FundAssetsData> getQuarterlyFundAssetsData(final String sector, final String period,final String startYear,final String endYear);
+
+	List<CommercialRegisterData> getNumberOfCommercialRegisterData(final String indicator, final String startYear,final String endYear);
 	
-	List<CapitalOfCommercialRegisterData> getCapitalOfCommercialRegisterData(final String indicator, final String startYear,final String endYear);
+	List<CommercialRegisterData> getCapitalOfCommercialRegisterData(final String indicator, final String startYear,final String endYear);
 
-	List<CapitalInformationData> getCapitalInformationData(final String indicator, final String startYear,final String endYear);
+	List<CommercialRegisterData> getAnnualCapitalInformationData(final String indicator, final String startYear,final String endYear);
 
-	List<QuarterlyFundAssetsData> getQuarterlyFundAssetsData(final String sector, final String period,final String startYear,final String endYear);
+	List<CommercialRegisterData> getQuarterlyCapitalInformationData(final String indicator, final String startYear, final String endYear);
+
 
 }

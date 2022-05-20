@@ -8,17 +8,7 @@ public interface InfraLogisticsService {
 
 	InfraLogisticsLandingModel getInfraLogisticsLandingModel();
 
-	InfrastructureModel getInfrastructureModel();
-
 	List<LengthOfNetworkModel> getLengthOfNetworkModel();
-
-	EmploymentModel getEmploymentModel();
-
-	TotalAreaModel getTotalAreaModel();
-
-	HousingFacilitiesModel getHousingFacilitiesModel();
-
-	IndustrialCitiesModel getIndustrialCitiesModel();
 
 	List<PrivateCitiesModel> getPrivateCitiesModel();
 

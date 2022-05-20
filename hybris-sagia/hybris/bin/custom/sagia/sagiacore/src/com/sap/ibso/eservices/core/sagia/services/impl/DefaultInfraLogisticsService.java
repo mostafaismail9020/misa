@@ -32,41 +32,10 @@ public class DefaultInfraLogisticsService implements InfraLogisticsService {
 	}
 
 	@Override
-	public InfrastructureModel getInfrastructureModel() {
-		final InfrastructureModel InfrastructureModel = getInfraLogisticsDAO().getInfrastructureModelBySearch();
-		return InfrastructureModel;
-	}
-
-	@Override
 	public List<LengthOfNetworkModel> getLengthOfNetworkModel() {
 		final List<LengthOfNetworkModel> lengthOfNetworkModel = getInfraLogisticsDAO()
 				.getLengthOfNetworkModelBySearch();
 		return lengthOfNetworkModel;
-	}
-
-	@Override
-	public EmploymentModel getEmploymentModel() {
-		final EmploymentModel employmentModel = getInfraLogisticsDAO().getEmploymentModelBySearch();
-		return employmentModel;
-	}
-
-	@Override
-	public TotalAreaModel getTotalAreaModel() {
-		final TotalAreaModel totalAreaModel = getInfraLogisticsDAO().getTotalAreaModelBySearch();
-		return totalAreaModel;
-	}
-
-	@Override
-	public HousingFacilitiesModel getHousingFacilitiesModel() {
-		final HousingFacilitiesModel housingFacilitiesModel = getInfraLogisticsDAO()
-				.getHousingFacilitiesModelBySearch();
-		return housingFacilitiesModel;
-	}
-
-	@Override
-	public IndustrialCitiesModel getIndustrialCitiesModel() {
-		final IndustrialCitiesModel industrialCitiesModel = getInfraLogisticsDAO().getIndustrialCitiesModelBySearch();
-		return industrialCitiesModel;
 	}
 
 	@Override

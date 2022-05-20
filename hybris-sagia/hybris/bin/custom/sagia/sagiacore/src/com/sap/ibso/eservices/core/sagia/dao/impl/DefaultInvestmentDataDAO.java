@@ -52,7 +52,7 @@ public class DefaultInvestmentDataDAO implements InvestmentDataDAO {
 	@Override
 	public List<AQValueGrowthModel> getAnnualGrowthModelBySearch(String sector, String period, String startYear,
 																 String endYear) {
-		final String queryString = "SELECT {" + AnnualGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE + "}"
+		final String queryString = "SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE + "}"
 				+ " WHERE { " + AQValueGrowthModel.UID +" }= 'AnnualGrowth' AND {" + AQValueGrowthModel.YEAR + "} BETWEEN  "
 				+ "?startYear AND  ?endYear ORDER BY{"
 				+ AQValueGrowthModel.YEAR + "}";

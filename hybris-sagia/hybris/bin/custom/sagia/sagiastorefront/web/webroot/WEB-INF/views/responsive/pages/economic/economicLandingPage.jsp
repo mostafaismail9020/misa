@@ -111,6 +111,7 @@
 
                                     <h2 class="name"><center>${card.displayName}</center></h2>
                                     <p class="calendar">${card.calenderValue}</p>
+                                    <p class="calendar">${card.notes}</p>
                                   </div>
                                 </div>
                               </div>

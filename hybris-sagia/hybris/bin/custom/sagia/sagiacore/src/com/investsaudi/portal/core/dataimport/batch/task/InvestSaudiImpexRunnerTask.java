@@ -79,11 +79,18 @@ public class InvestSaudiImpexRunnerTask extends AbstractImpexRunnerTask {
             ;
             config.setScript(resource);
             final ImportResult importResult = getImportService().importData(config);
-            if (importResult.isError() && importResult.hasUnresolvedLines())
+            try
             {
+                if (importResult.isError() && importResult.hasUnresolvedLines())
+                {
 
-                stepFailedEmail(importResult.getUnresolvedLines().getPreview(),file);
-                LOG.error(importResult.getUnresolvedLines().getPreview());
+                    stepFailedEmail(importResult.getUnresolvedLines().getPreview(),file);
+                    LOG.error(importResult.getUnresolvedLines().getPreview());
+                }
+            }
+            catch (final Exception e)
+            {
+                LOG.error("Error occured while sending email file: " + file, e);
             }
         }
         catch (final IOException | IllegalStateException e)

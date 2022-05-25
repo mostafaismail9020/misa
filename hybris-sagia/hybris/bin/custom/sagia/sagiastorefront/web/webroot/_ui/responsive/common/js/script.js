@@ -4503,7 +4503,7 @@ function refreshPage(){
 
 var direction = "left";
 const isAR = window.location.href.indexOf('en') > -1 ? false : true;
-const gallery = document.querySelector('#carouselExampleControls');
+const gallery = document.querySelector('.page-meet-the-kingdom #carouselExampleControls');
 
 window.addEventListener("resize", SuccessStoryPosition);
 function SuccessStoryPosition() {
@@ -4514,14 +4514,14 @@ function SuccessStoryPosition() {
 			SuccessStoriesPosRTL(1)
 	}
 }
-$('#carouselExampleControls').on('slid.bs.carousel', function (ev) {
+$('.page-meet-the-kingdom #carouselExampleControls').on('slid.bs.carousel', function (ev) {
 	direction = ev.direction;
 	if (ev.direction === 'left') 
 		SuccessStoriesLTR();
 	else 
 		SuccessStoriesRTL()
 })
-$('#carouselExampleControls').on('slide.bs.carousel', function (ev) {
+$('.page-meet-the-kingdom #carouselExampleControls').on('slide.bs.carousel', function (ev) {
 	direction = ev.direction;
 	if (Math.abs(ev.from - ev.to) <= 1) {
 		if (ev.direction === 'left') 
@@ -4530,7 +4530,6 @@ $('#carouselExampleControls').on('slide.bs.carousel', function (ev) {
 			SuccessStoriesPosRTL()
 	}
 })
-
 
 function SuccessStoriesPosLTR(Isresize = 0) {
 	const gallery_scroller = gallery.querySelector('.carousel-logos');

@@ -1,3 +1,4 @@
+
 SAGIA.licenseApplyReview = {
     _autoload: [
         "bindAll"
@@ -378,9 +379,6 @@ SAGIA.licenseApplyReview = {
 
 			$('#rhqSubsidiaryPresenceDiv').html(subsidiaryString);
 			switch (subsidiaryString) {
-				case "only_one_country":
-					$('#rhqSubsidiaryPresenceDiv').html('Only one country');
-					break;
 				case "2_to_5_countries":
 					$('#rhqSubsidiaryPresenceDiv').html('2 to 5 countries');
 					break;
@@ -449,6 +447,9 @@ SAGIA.licenseApplyReview = {
 					"</tr>");
 
 			}
+                else if(sagiaData.licenseType && (sagiaData.licenseType == '11')){
+                                        $("#tblGrid").find("tbody").append("<tr>" +"<th width='50%'>" + getI18nText("license.apply.payment.service.rhq.message") + "</th>"+"</tr>" );
+                  }
 			else{
             				$("#tblGrid").find("tbody").append("<tr>" +
             					"<th width='50%'>" + getI18nText("license.apply.payment.service") + "</th>" +

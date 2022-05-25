@@ -45,9 +45,9 @@
    </div>
    
    <div class="text-center download_btn">
-       <button class="aos-init aos-animate" data-aos="fade-up"><a target="_blank" href="https://misa.gov.sa/media/1733/misa-service-manual-8th-edition-en-v18.pdf
-           "><spring:theme code="portal.investment.guide.investor.licence.download.latest.version.url" text= "Download the latest version of the Investment Manual"/></a><a></a></button><a>
-       </a>
+   <c:url value="/mediaCenter/downloadResoruce/investor-guide-container" var="resourcedownloadURL"/>
+       <button class="aos-init aos-animate" data-aos="fade-up"><a target="_blank" href="${resourcedownloadURL}">
+       <spring:theme code="portal.investment.guide.investor.licence.download.latest.version.url" text= "Download the latest version of the Investment Manual"/></a><a></a></button><a></a>
    </div>
    
 </div>

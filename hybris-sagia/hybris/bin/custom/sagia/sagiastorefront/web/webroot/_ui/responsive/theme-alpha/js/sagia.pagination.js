@@ -179,7 +179,7 @@ $(document).on("change", ".dashboardWidgetPayments .paginationModule .pagination
                     if (paymentsList[key].status == 'E0003' && paymentsList[key].hybrisStatusDescription != 'Paid') {
                     	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
                     	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link payment-link");
-                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
+                    	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","text-align: center;");
                     	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
                     	isAwaitingPayment = true;
                     }
@@ -241,7 +241,7 @@ $(document).on('click', '.paginationModule-link.payment', function () {
                     if (paymentsList[key].status == 'E0003' && paymentsList[key].hybrisStatusDescription != 'Paid') {
                     	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
                     	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link  payment-link");
-                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
+                    	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","text-align: center;");
                     	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
                     	isAwaitingPayment = true;
                     }
@@ -298,7 +298,7 @@ function sortPayments() {
                     if (paymentsList[key].status == 'E0003' && paymentsList[key].hybrisStatusDescription != 'Paid') {
                     	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
                     	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link payment-link");
-                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
+                    	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","text-align: center;");
                     	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
                     	isAwaitingPayment = true;
                     }

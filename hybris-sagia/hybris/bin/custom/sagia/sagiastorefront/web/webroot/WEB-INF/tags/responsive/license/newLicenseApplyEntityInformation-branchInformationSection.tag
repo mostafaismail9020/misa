@@ -123,7 +123,7 @@
 		</div>
 		<div class="help-block"></div>
 	</div>
-	
+
 	<div class="formSelectBox">
 		<div class="form-group">
 			<select id="branchInformationRhqCountry" name="listOfRhqCountries"

@@ -65,7 +65,7 @@ SAGIA.payments = {
                                     '    </td>' +
                                     '    <td><div class="dashboardWidgetPayments-pay">';
                                 if (payment.status == 'E0003' && payment.hybrisStatusDescription != 'Paid') {
-                                	paymentsTableHtml +='<a onclick="SAGIA.payment.requestCreditBillPayment('+billId+',\''+billDesc+'\','+amount+',\''+payment.currency+'\')" class="print-not-link payment-link" style="float: left;">' + getI18nText("payment.pay") +'</a>';
+                                	paymentsTableHtml +='<a onclick="SAGIA.payment.requestCreditBillPayment('+billId+',\''+billDesc+'\','+amount+',\''+payment.currency+'\')" class="print-not-link payment-link">' + getI18nText("payment.pay") +'</a>';
                                 }
                                 paymentsTableHtml +='</div></td></tr>';
                             }

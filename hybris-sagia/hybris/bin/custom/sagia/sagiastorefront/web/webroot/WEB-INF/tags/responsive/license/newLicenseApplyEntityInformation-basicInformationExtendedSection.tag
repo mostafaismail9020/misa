@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
@@ -76,7 +77,7 @@
 			</div>
 		</div>
 
-        <div class="formSelectBox">
+<%--         <div class="formSelectBox">
                 <div class="form-group">
                     <select id="branchInformationRhqCountry" name="listOfRhqCountries"
                         class="form-control"
@@ -94,7 +95,7 @@
 			</select> <label class="control-label control-label_mandatory" for="branchInformationRhqRegionsSection"><spring:theme code="profile.rhq.regions" /></label>
 		</div>
 		<div class="help-block"></div>
-	</div>
+	</div> --%>
 
      <div class="formRadioButton rhqSubsidiaryPresence-formRadioButtonDiv">
          <div class="form-group optionalActivity ">
@@ -319,7 +320,7 @@
 				</div>
 			</div>
 			<div class="modal-footer modal-footer_centered">
-			
+
 				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddBranch">Add</button>
 			</div>
 		</div>
@@ -753,9 +754,10 @@
 
 <div class="rqh-tables" style="display:none">
 
-<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.branches.label" /></div>
+<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.table.header.label" /></div>
  <hr class="hr">
 <div class="tableModule" >
+<div class="control-label rhqSubsidiaryPresence-label control-label_mandatory"><spring:theme code="rhq.mnc.branches.label" /></div>
 
 <div class="formInputBox">
  <div class="form-group ">
@@ -766,13 +768,13 @@
   <table class="tableModule-table" id="mncBranchTable">
 	<thead class="tableModule-head">
 	  <tr>
-		<th>Company Name</th>
-		<th>Country</th>
-		<th>Business</th>
-		<th>Industry</th>
-		<th>Operations</th>
-        <th>HRQ Activity Provided</th>
-        <th>Action</th>
+		<th><spring:theme code="review.rhq.company.name.label"/></th>
+         <th><spring:theme code="review.rhq.country.label"/></th>
+         <th><spring:theme code="review.rhq.business.label"/></th>
+         <th><spring:theme code="review.rhq.industry.label"/></th>
+         <th><spring:theme code="review.rhq.operations.label"/></th>
+         <th><spring:theme code="review.rhq.rhq.activity.label"/></th>
+         <th><spring:theme code="rhq.table.action"/></th>
 	  </tr>
 	</thead>
 	<tbody class="tableModule-body">
@@ -780,21 +782,20 @@
   </table>
   <input type="hidden" id="rowToDelete" name="rowToDelete" value="0">
   	<div class="contentModule-actions contentModule-actions_centered contentModule-actions_noMargin w-100">
-			
+
 					<button type="button" class="btn w-25" data-toggle="modal" data-target="#addBranchTable" style="margin-top: 23px;"><spring:theme code="rhq.add.new.label" /></button>
 				</div>
 
-			
+
 </div>
 
 </div>
 
 <!--MNC Brand Start-->
 <div class="rqh-tables" style="display:none">
-<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.mnc.brand.label" /></div>
-<hr class="hr">
+ <hr class="hr">
 <div class="tableModule" >
-
+<div class="control-label rhqSubsidiaryPresence-label control-label_mandatory"><spring:theme code="rhq.mnc.brand.label" /></div>
 <div class="formInputBox">
  <div class="form-group ">
  <div id="mncBrandTable-error" class="help-block"></div>
@@ -804,12 +805,12 @@
   <table class="tableModule-table" id="mncBrandTable">
 	<thead class="tableModule-head">
 	  <tr>
-		<th>Brand Name</th>
-		<th>Country</th>
-		<th>Industry</th>
-		<th>Company owning the brand in MENA</th>
-		<th>RHQ activity Provided</th>
-        <th>Action</th>
+         <th><spring:theme code="review.rhq.brand.name.label"/></th>
+         <th><spring:theme code="review.rhq.country.label"/></th>
+         <th><spring:theme code="review.rhq.industry.label"/></th>
+         <th><spring:theme code="review.rhq.company.brand.in.mena.region.label"/></th>
+         <th><spring:theme code="review.rhq.rhq.activity.label"/></th>
+         <th><spring:theme code="rhq.table.action"/></th>
 	  </tr>
 	</thead>
 	<tbody class="tableModule-body">
@@ -830,9 +831,9 @@
 
 <!--rhqCostTable-->
 <div class="rqh-tables" style="display:none;border-bottom: 1px solid #ccd0d4;margin-bottom: 48px;padding-bottom: 24px;">
-<div class="contentModule-headline contentModule-headline_smallMargin"><spring:theme code="rhq.estimated.cost.label" /></div>
 <hr class="hr">
 <div class="tableModule" >
+<div class="control-label rhqSubsidiaryPresence-label control-label_mandatory"><spring:theme code="rhq.estimated.cost.label" /></div>
 
 <div class="formInputBox">
  <div class="form-group ">
@@ -843,14 +844,14 @@
   <table class="tableModule-table" id="rhqCostTable">
 	<thead class="tableModule-head">
 	  <tr>
-		<th>Item</th>
-		<th>Unit Cost</th>
-		<th>Number of units</th>
-		<th>Cost frequency</th>
-		<th>Year 2022</th>
-        <th>Year 2023</th>
-        <th>Year 2024</th>
-        <th>Action</th>
+        <th><spring:theme code="review.rhq.item.name.label"/></th>
+        <th><spring:theme code="review.rhq.unit.cost.label"/></th>
+        <th><spring:theme code="review.rhq.no.of.units.label"/></th>
+        <th><spring:theme code="review.rhq.cost.frequency.label"/></th>
+        <th><spring:theme code="review.rhq.year.2022.label"/></th>
+        <th><spring:theme code="review.rhq.year.2023.label"/></th>
+        <th><spring:theme code="review.rhq.year.2024.label"/></th>
+         <th><spring:theme code="rhq.table.action"/></th>
 	  </tr>
 	</thead>
 	<tbody class="tableModule-body">

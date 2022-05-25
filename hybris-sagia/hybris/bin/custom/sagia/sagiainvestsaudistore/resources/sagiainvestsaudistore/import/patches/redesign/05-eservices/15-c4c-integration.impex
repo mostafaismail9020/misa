@@ -1,31 +1,31 @@
 
-INSERT_UPDATE Governmentlead; code[unique=true]	; name		;
-							; Z08				; Identify Opportunity & Proposal;
-							; Z02				; Pre-feasibility Study;
-							; Z06				; Opportunity Finalization;
-							; Z07				; Campaign Ready;
-							; NA				; Not Available;
+INSERT_UPDATE Governmentlead; code[unique=true]	; name[lang=en]						; name[lang=ar]	;
+							; Z08				; Identify Opportunity & Proposal	; Identify Opportunity & Proposal;
+							; Z02				; Pre-feasibility Study				; Pre-feasibility Study;
+							; Z06				; Opportunity Finalization         	; Opportunity Finalization;
+							; Z07				; Campaign Ready                   	; Campaign Ready;
+							; NA				; Not Available                    	; Not Available;
 
 
-INSERT_UPDATE Investorlead  ; code[unique=true] ; name		;
-							; Z08				; Identify Opportunity & Proposal;
-							; Z02				; Pre-feasibility Study;
-							; Z06				; Opportunity Finalization;
-							; NA 				; Not Available;
+INSERT_UPDATE Investorlead  ; code[unique=true] ; name[lang=en]						; name[lang=ar]	;
+							; Z08				; Identify Opportunity & Proposal	; Identify Opportunity & Proposal;
+							; Z02				; Pre-feasibility Study          	; Pre-feasibility Study;
+							; Z06				; Opportunity Finalization       	; Opportunity Finalization;
+							; NA 				; Not Available                  	; Not Available;
 
 
-INSERT_UPDATE PartnerType   ; code[unique=true]	; name			;
-							; Enabler			; Enabler		;
-							; Accelerator		; Accelerator	;
-							; Incubator			; Incubator		;
+INSERT_UPDATE PartnerType   ; code[unique=true]	; name[lang=en]		; name[lang=ar]	;
+							; Enabler			; Enabler			; Enabler		;
+							; Accelerator		; Accelerator		; Accelerator	;
+							; Incubator			; Incubator		   	; Incubator		;
 
 
-INSERT_UPDATE CsInterventionType; code[unique=true]	; name		;
-								; NotesForCustomer	; Note For Customer	;
+INSERT_UPDATE CsInterventionType; code[unique=true]	; name[lang=en]			; name[lang=ar]	;
+								; NotesForCustomer	; Note For Customer		; Note For Customer	;
 
 
-INSERT_UPDATE ServiceCategory 	; code[unique=true] ; name		;
-								; CA_1				; Service Request Categorization;
+INSERT_UPDATE ServiceCategory 	; code[unique=true] ; name[lang=en]					; name[lang=ar]	;
+								; CA_1				; Service Request Categorization; Service Request Categorization;
 
 
 INSERT_UPDATE IncidentCategory 	; code[unique=true]	; name[lang=en]				; name[lang=ar]	;
@@ -37,9 +37,9 @@ INSERT_UPDATE IncidentCategory 	; code[unique=true]	; name[lang=en]				; name[la
 								; CA_7				; General Enquiries			; استفسارات عامة
 
 
-INSERT_UPDATE Priority 		    ; code[unique=true] ; name    		;
-								; LOW				; Low			;
-								; NORMAL			; Normal		;
-								; URGENT			; Urgent		;
-								; IMMEDIATE			; Immediate		;
+INSERT_UPDATE Priority 		    ; code[unique=true] ; name[lang=en]		; name[lang=ar]	;
+								; LOW				; Low				; Low		;
+								; NORMAL			; Normal			; Normal	;
+								; URGENT			; Urgent			; Urgent	;
+								; IMMEDIATE			; Immediate			; Immediate	;
 

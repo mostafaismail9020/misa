@@ -26,7 +26,7 @@
             <div class="dashboardUser-left col-12 col-md-6 ">
                 <div class="dashboard-login">
                     <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
-                        <button type="button" id="btnfile" class="dashboardUser-image-add cursor-pointer"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>                        
+                        <button type="button" id="btnfile" class="dashboardUser-image-add cursor-pointer"><img src="${commonResourcePath}/images/change-profile-icon.png"/><span id="fname"></span></button>
                         <div class="myAccount-profilImage">
                             <div class="myAccount-profilImage-img">
                                 <div class="profilePicture js-profilePicture" style="background-image:url(${profilePicture})"></div>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
             <div class="dashboardUser-right col-12 col-md-6  pl-0 user-icon user-icon-without-license">
             	<div class="col-12 col-md-6 d-flex p-0 user-icons-block">
                     <div class=" user-icon mr-1 mr-sm-3">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class=" user-icon mr-1 mr-sm-3 icon-profile">
-                        <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user"> 
+                        <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>" class="sagiaNavigation-btn sagiaNavigation-user">
                             <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/>
                         </a>
                     </div>
@@ -100,11 +100,11 @@
                         <c:if test="${entityStatusDescription != null && not empty entityStatusDescription}">
                             <c:out value="${entityStatusDescription}"/>&nbsp;
                             <c:if test = "${fn:containsIgnoreCase(entityStatusDescription, 'rejected')}">
-                               	<div class="globalMessage-action">
+                               	<div class="globalMessage-action d-none">
                                		<a href="${encodedContextPath}/simulator/license-apply" class="btn btn_round btn-warning btn_outline">
                                			<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                                		</a>
-                                 	<button class="btn btn_round" onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
+                                 	<button class="btn btn_round " onclick="applyNewTnC(event,'NewApply');"><spring:theme code="dashboard.withoutlicense.applyfornewlicense"/></button>
                           		</div>
                             </c:if>
                         </c:if>
@@ -126,12 +126,12 @@
                                 <c:if test="${applicationStatus.statusDesc != null && not empty applicationStatus.statusDesc}">
                                 	<c:out value="${applicationStatus.leadId}"/>&nbsp;
                                     <c:out value="${applicationStatus.statusDesc}"/>&nbsp;
-                                    <c:out value="${applicationStatus.lvDate}"/>&nbsp;                                     
+                                    <c:out value="${applicationStatus.lvDate}"/>&nbsp;
                                 </c:if>
                             </div>
-                        </c:when>                                                                                   
+                        </c:when>
                         <c:when test="${hasUserAppliedForLicense && fn:containsIgnoreCase(applicationStatus.statusDesc, 'rejected') }">
-                            <div class="globalMessage-action">
+                            <div class="globalMessage-action d-none">
                                	<a href="${encodedContextPath}/simulator/license-apply" class="btn btn_round btn-warning btn_outline">
                                		<spring:theme code="dashboard.withoutlicense.startsimulation"/>
                                	</a>
@@ -146,7 +146,7 @@
                                 <c:if test="${applicationStatus.statusDesc != null && not empty applicationStatus.statusDesc}">
                                 	<c:out value="${applicationStatus.leadId}"/>&nbsp;
                                     <c:out value="${applicationStatus.statusDesc}"/>&nbsp;
-                                    <c:out value="${applicationStatus.lvDate}"/>&nbsp;                                      
+                                    <c:out value="${applicationStatus.lvDate}"/>&nbsp;
                                 </c:if>
                             </div>
                         </c:when>
@@ -156,7 +156,7 @@
                         			<!--<spring:theme code="dashboard.withoutlicense.startsimulation"/>-->
                                     <spring:theme code="dashboard.withoutlicense.investsaudiOverview"/>
                         			<img class="pl-3" src="${commonResourcePath}/images/dashboard-media/Apply-license/Play-icon.png"/>
-                        		</button> 
+                        		</button>
                                 <button class="btn-dashboard text-uppercase js-license-apply" onclick="applyNewTnC(event,'NewApply');">
                                 	<spring:theme code="dashboard.withoutlicense.applyfornewlicense"/>
                                 </button>
@@ -180,7 +180,7 @@
                 <iframe id="simulator-video" class="embed-responsive-item" src="https://www.youtube.com/embed/u3sQ7TDFUWs" allowfullscreen></iframe>
             </div>
         </div>
-        <div class="col-md-2"> 
+        <div class="col-md-2">
             <button type="button" id="simulator-close" class="license-simulator-modal-close right-close  top-0 end-0">
                 <img class="" src="${commonResourcePath}/images/Close.png"/>
             </button>
@@ -192,7 +192,7 @@
 
 <section class="mainSection mainSection_grey mainSection_noPaddingTop js-dashboard scale-on-resize">
     <div class="container">
-    	
+
         <h1 class="section-title text-center clr_gld py-3 py-md-5"><spring:theme code="dashboard.license.my.license.title"/></h1>
         <cms:pageSlot position="MCM_CMS_OTHER" var="component">
         	<cms:component component="${component}"/>
@@ -200,7 +200,10 @@
 
         </br>
         <dashboard:opportunityTickets></dashboard:opportunityTickets>
-    
+
+        </br>
+        <dashboard:financialSurvey></dashboard:financialSurvey>
+
     	<!-- <div id="dashboardNoLicenseHelper"></div> -->
     	<dashboard:sectorAndOpportunity sector="${currentCustomerSector}"></dashboard:sectorAndOpportunity>
 
@@ -218,7 +221,7 @@
 		                    	</a>
 	                        </div>
 	                    </div>
-	                    
+
 	                    <c:if test="${not empty lastNews}">
 		                    <div class="row contentWrapper">
 			                    <c:url value="/mediaCenter/news" var="newsUrl"/>
@@ -246,11 +249,11 @@
 	            </div>
 	        </div>
 	    </section>
-    
+
 	    <section class="helpSection">
 		    <div class="container">
 		        <div class="firstBlock">
-		            <div class="firstBlock-widget"> 
+		            <div class="firstBlock-widget">
 		                <h1 class="text-center text-uppercase clr_gld">
 		                    <spring:theme code="dashboard.license.letus.help.you.heading.name"/>
 		                </h1>
@@ -306,7 +309,7 @@
                         </div>
 		            </div>
                     <div class="row mb-3">
-                        <div class="col-12 text-center">                            
+                        <div class="col-12 text-center">
                             <button class="btn btn-outline" data-target="#eServiceTour" id="btn-show-me-around" data-toggle="modal" ><spring:theme code="dashboard.license.letus.help.you.emailus.link1.text"></spring:theme></button>
                         </div>
                     </div>
@@ -334,8 +337,8 @@
 		        </div> -->
 		    </div>
 		</section>
-    
-    
+
+
          <%-- <div class="row mt-5">
             <div class="col-md-8 ">
                 <div class="js-dashboardWidget dashboardWidget_noRadiusRight">
@@ -395,7 +398,7 @@
                                                 <icon:services/><spring:theme code="dashboard.support.services"/>
                                             </a>
                                         </li>
-                                    </ul>                               
+                                    </ul>
                                 </div>
                                <div class="col-lg-5 dashboardWidgetAskOurExpert-seperator">
                                     <div class="dashboardWidgetAskOurExpert-headline">

@@ -1675,6 +1675,30 @@ input[type=radio]{
     #mofaNumberSection .control-label+.formInputBox-append .formInputBox-text,#parent-company-wrapper .control-label+.formInputBox-append .formInputBox-text{
 		padding: 10px 10px!important;
 	}
+    [dir=ltr] 
+    #branchFormId{
+        .formInputBox .control-label{
+            left: 16px!important;
+        }
+        .formSelectBox .form-group label{
+            left: 8px!important;
+        }
+        .select2-container .select2-selection--single .select2-selection__rendered{
+            margin-left: 0px !important;
+        }
+    }
+    [dir=rtl] 
+    #branchFormId{
+        .formInputBox .control-label{
+            right: 16px!important;
+        }
+        .formSelectBox .form-group label{
+            right: 8px!important;
+        }
+        .select2-container .select2-selection--single .select2-selection__rendered{
+            margin-right: 0px !important;
+        }
+    }
 }
 
 @media (min-width:1500px) and (max-width:1669px) and (max-height:800px) {/*125%*/
@@ -1704,6 +1728,9 @@ input[type=radio]{
     }
 }
 #termsAndConditionsResponseModal{
+    h1{
+        font-size: 30px;
+    }
     .modal-description, p{
         color: #707070;
         font-size: 20px;
@@ -1715,6 +1742,9 @@ input[type=radio]{
         @media screen and (min-width: 1530px) and (max-width: 1600px) {
             font-size: 15px!important;
             line-height: 27px;
+        }
+        strong{
+            font-weight: 400;
         }
     }
     table{
@@ -1755,4 +1785,33 @@ input[type=radio]{
             }
         }        
     }
+}
+
+span.flatpickr-day.flatpickr-disabled {
+    background: rgba(235,237,238,.8);
+    color: rgba(57,57,57,.1);
+}
+.page-appointment-create .formInputBox .formInputBox-append#calendar-icon-pos .formInputBox-text{
+    margin: auto;
+}
+
+.attachment-division-wrap{
+    width: 100%;
+}
+#termsAndConditions.form-control:disabled, #termsAndConditions.form-control[readonly]{
+    opacity: 0;
+}
+a#printLink{
+    svg{
+        width: 25px;
+        height: 30px;
+    }
+}
+[dir="ltr"] .payment-link .print-not-link{
+    display: flex;
+    justify-content: flex-start;
+}
+[dir="rtl"] .payment-link .print-not-link{
+    display: flex;
+    justify-content: flex-start;
 }

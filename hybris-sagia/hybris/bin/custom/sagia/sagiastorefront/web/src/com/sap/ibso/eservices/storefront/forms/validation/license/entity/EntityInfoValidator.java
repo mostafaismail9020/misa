@@ -206,9 +206,9 @@ public class EntityInfoValidator implements Validator {
         }
         if(entityInformationData.getLicenseType() != null && entityInformationData.getLicenseType().equals("11")) {
 
-            if(CollectionUtils.isEmpty(entityInformationData.getListOfRhqRegions())) {
+           /* if(CollectionUtils.isEmpty(entityInformationData.getListOfRhqRegions())) {
                 errors.rejectValue("listOfRhqRegions", "rhq.region.validation");
-            }
+            }*/
             if(CollectionUtils.isEmpty(entityInformationData.getListOfEntitiesManagedByRhq())) {
                 errors.rejectValue("listOfEntitiesManagedByRhq", "rhq.entities.managed.by.rhq.validation");
             }

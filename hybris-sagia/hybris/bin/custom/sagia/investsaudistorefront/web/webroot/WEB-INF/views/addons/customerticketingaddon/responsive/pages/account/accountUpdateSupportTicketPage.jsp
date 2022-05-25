@@ -164,13 +164,13 @@
         </c:if>
     </div>
 </div>
-<c:if test="${(woagUserGroup eq 'WOAGUserGroup') && (ticketData.status.id eq 'WOAGPENDINGAPPROVAL')}">
+<c:if test="${ticketData.status.id eq 'WOAGPENDINGAPPROVAL'}">
     <form:form method="get" modelAttribute="supportTicketForm" enctype="multipart/form-data" id="opportunitySupportTicketForm" action="#">
         <form:hidden path="id" value="${ticketData.id}"/>
         <div class="modal-actions row" style="margin-top: 10px; margin-bottom: 10px; display: flex">
             <div class="col-xs-8 col-sm-8">
-                <formElement:formTextArea idKey="opportunityMessage" labelKey="text.account.supporttickets.createTicket.message"
-                                          path="opportunityMessage" areaCSS="form-control js-add-message opportunity-status-message"
+                <formElement:formTextArea idKey="message" labelKey="text.account.supporttickets.createTicket.message"
+                                          path="message" areaCSS="form-control js-add-message opportunity-status-message"
                                           labelCSS="control-label"/>
             </div>
             <div class="col-xs-4 col-sm-4 " style="display: flex; align-items: center;">

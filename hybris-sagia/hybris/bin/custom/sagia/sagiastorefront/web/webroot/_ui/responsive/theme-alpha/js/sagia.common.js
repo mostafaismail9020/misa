@@ -925,7 +925,7 @@ function setFont() {
 
 function increaseFontSize(isSet = 0) {
   
-    var p = document.querySelectorAll('body div,body p,body span');
+    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');
 	var s;
 	if (increment < 3) {
 		increment = isSet === 0 ? (increment + 1) : parseFloat(getCookie("f_increment"));	
@@ -936,7 +936,10 @@ function increaseFontSize(isSet = 0) {
 				s = original;
 			}
 			original = isSet === 0 ? (s + 0.5) : (s + increment *0.5);
-			$(p[i]).css('font-size', original + "px");
+			// $(p[i]).css('font-size', original + "px");
+            var $elem = $(p[i]);
+            var $fontSize = original + 'px !important';
+            $elem.attr('style', $elem.attr('style') + '; ' + "font-size: "+$fontSize+"");
 		}
 		setCookie("f_increment", increment, 30);
 	}
@@ -948,7 +951,7 @@ function increaseFontSize(isSet = 0) {
 	// }
 }
 function decreaseFontSize(isSet = 0) {
-    var p = document.querySelectorAll('body div,body p,body span');	
+    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');	
 	
 	if (increment > 0) {
 		increment = isSet === 0 ? (increment - 1) : parseFloat(getCookie("f_increment"));
@@ -959,7 +962,10 @@ function decreaseFontSize(isSet = 0) {
 				var s = original;
 			}
 			original = isSet === 0 ? (s - 0.5) : (s - increment);
-			$(p[i]).css('font-size', original + "px");
+			// $(p[i]).css('font-size', original + "px");
+            var $elem = $(p[i]);
+            var $fontSize = original + 'px !important';
+            $elem.attr('style', $elem.attr('style') + '; ' + "font-size: "+$fontSize+"");
 		}
 		setCookie("f_increment", increment, 30);
 	}

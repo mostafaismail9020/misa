@@ -375,7 +375,18 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
         unit.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setUnit(unit);
+		
+		
+		ListItem itemMultinationalCompany1 =  new ListItem() ;
+        itemMultinationalCompany1.setId("yes");
+        itemMultinationalCompany1.setName(getLocalizedValue("type.yes"));
 
+        ListItem itemMultinationalCompany2 =  new ListItem() ;
+        itemMultinationalCompany2.setId("no");
+        itemMultinationalCompany2.setName(getLocalizedValue("type.no"));
+
+        multinationalCompany.add(itemMultinationalCompany2);
+        multinationalCompany.add(itemMultinationalCompany1);
 
         multinationalCompany.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setMultinationalCompany(multinationalCompany);

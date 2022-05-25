@@ -94,6 +94,37 @@ $(document).ready(function () {
 
     if ($('body').hasClass("page-financial-survey")) {
 
+        /* NEEDS TO BE IMPROVED TEMP WORKAROUND TO DISABLE HEADS NAVIGATION*/
+        document.getElementById("tab1").style["cursor"] = "default";
+        document.getElementById("tab1").style["pointer-events"] = "none";
+        document.getElementById("tab2").style["cursor"] = "default";
+        document.getElementById("tab2").style["pointer-events"] = "none";
+        document.getElementById("tab3").style["cursor"] = "default";
+        document.getElementById("tab3").style["pointer-events"] = "none";
+        document.getElementById("tab4").style["cursor"] = "default";
+        document.getElementById("tab4").style["pointer-events"] = "none";
+        document.getElementById("tab5").style["cursor"] = "default";
+        document.getElementById("tab5").style["pointer-events"] = "none";
+        
+
+
+
+        $(document).on("click", "#cancelTabSubsidiariesBtnId", function () {
+            $('a[href="#accessibletabscontent0-0"]').click();
+        });
+        $(document).on("click", "#cancelTabShareholdersEquityBtnId", function () {
+            $('a[href="#accessibletabscontent0-1"]').click();
+        });
+        $(document).on("click", "#cancelTabShareholdersBtnId", function () {
+            $('a[href="#accessibletabscontent0-2"]').click();
+        });
+        $(document).on("click", "#cancelSubmit", function () {
+            $('a[href="#accessibletabscontent0-3"]').click();
+        });
+
+
+
+
 
 
      /*   var attachmentSection = $("#attachmentSection");
@@ -366,11 +397,48 @@ $(document).ready(function () {
         });
         $("#shareholderPercentageId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+            //if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            //    //display error message
+            //    $("#errmsg").html("Digits Only").show().fadeOut("slow");
+            //    return false;
+            //}
+
+            var regex = new RegExp("^[0-9\.]$");
+            // var regexMulti = new RegExp("^[\d]+\.?[\d]*$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+
+            if (!regex.test(key)) {
+                event.preventDefault();
                 return false;
+            } else {
+                var hasDot = $(this).val().indexOf('.') >= 0;
+                if (key === '.' && hasDot || key === '.' && $(this).val().length === 3) {
+                    event.preventDefault();
+                    return false;
+                }
+
+                var $self = $(this);
+                var oldValue = $self.val();
+
+                setTimeout(function () {
+                    if (key !== '.' && hasDot) {
+                        var value = $self.val().split('.');
+
+                        if (value[0].length > 2 || value[1].length > 2) {
+                            $self.val(oldValue);
+                        }
+                    }
+
+                    if (key !== '.' && !hasDot) {
+                        var value = $self.val();
+
+                        if (value.length >= 3 && value > 100) {
+                            $self.val(oldValue);
+                        }
+                    }
+                }, 0);
             }
+
         });
         $("#shareholderTreasurySharesCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
@@ -689,13 +757,13 @@ $(document).ready(function () {
 
 
 
-        // Cancel amendment
+        /*// Cancel amendment
         $(document).on("click", ".cancelAmendmentBtn", function () {
 
                 window.location.href = ACC.config.encodedContextPath + "/dashboard";
 
         });
-
+*/
         $(document).on("click", "#dismissChangesBtnId, .showHistoryBtn", function () {
             window.location.href = ACC.config.encodedContextPath + "/dashboard";
         });

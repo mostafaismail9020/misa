@@ -2936,7 +2936,14 @@
 			</div>
 			<div class="row pt-5 pb-5">
 				<div class=" col-md-4 mx-auto">
-					<a href="https://modon.gov.sa/en/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=6802e405-13ba-4e0b-9a31-ba2018734541" target="_blank">
+                <c:choose>
+                    <c:when test="${currentLanguage.isocode eq 'en'}">
+                        <a href="https://modon.gov.sa/en/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=cce3ebfd-4cec-431d-a2ca-b029f7958a0f" target="_blank">
+                    </c:when>
+                    <c:otherwise>
+                        <a href="https://modon.gov.sa/ar/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=cce3ebfd-4cec-431d-a2ca-b029f7958a0f" target="_blank">
+                    </c:otherwise>
+                </c:choose>
 						<div class="INL_technology_Text_Block">
 						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Riyadh_Technology_Valley.jpg"  style="width:100%;">
 						  <div class="INL_technology_text text-center mx-auto w-100">
@@ -2946,7 +2953,14 @@
 					</a>
 				</div>
 				<div class=" col-md-4 mx-auto">
-					<a href="https://modon.gov.sa/en/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=6802e405-13ba-4e0b-9a31-ba2018734541" target="_blank">
+                   <c:choose>
+                        <c:when test="${currentLanguage.isocode eq 'en'}">
+					        <a href="https://modon.gov.sa/en/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=6802e405-13ba-4e0b-9a31-ba2018734541" target="_blank">
+                        </c:when>
+                        <c:otherwise>
+					            <a href="https://modon.gov.sa/ar/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=6802e405-13ba-4e0b-9a31-ba2018734541" target="_blank">
+                        </c:otherwise>
+                    </c:choose>
 						<div class="INL_technology_Text_Block">
 						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Al_Raidah_Digital_City.jpg"  style="width:100%;">
 						  <div class="INL_technology_text text-center mx-auto w-100">
@@ -2956,7 +2970,14 @@
 					</a>
 				</div>
 				<div class=" col-md-4 mx-auto">
-					<a href="https://modon.gov.sa/en/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=8a703703-ea82-493f-9702-1330832d9668" target="_blank">
+                   <c:choose>
+                        <c:when test="${currentLanguage.isocode eq 'en'}">
+                         <a href="https://modon.gov.sa/en/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=8a703703-ea82-493f-9702-1330832d9668" target="_blank">
+                        </c:when>
+                        <c:otherwise>
+                            <a href="https://modon.gov.sa/ar/Cities/TechnologyZones/Pages/TechZone.aspx?ZoneId=8a703703-ea82-493f-9702-1330832d9668" target="_blank">
+                        </c:otherwise>
+                    </c:choose>
 						<div class="INL_technology_Text_Block">
 						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Wadi_Makkah_Technological_Complex.jpg"  style="width:100%;">
 						  <div class="INL_technology_text text-center mx-auto w-100">

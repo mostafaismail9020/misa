@@ -1224,6 +1224,13 @@ SAGIA.licenseApplyShareholderCommons = {
                 bindNormalCal($('#qm1PassportExpiryDate'));
                 bindNormalCal($('#qm1PassportIssueDate'));
             }
+            else
+             {
+               bindNormalCal($('#delegateDateofBirth'));
+               bindNormalCal($('#qm1DateOfBirth'));
+               bindNormalCal($('#qm1PassportExpiryDate'));
+               bindNormalCal($('#qm1PassportIssueDate'));
+             }
         };
 
 

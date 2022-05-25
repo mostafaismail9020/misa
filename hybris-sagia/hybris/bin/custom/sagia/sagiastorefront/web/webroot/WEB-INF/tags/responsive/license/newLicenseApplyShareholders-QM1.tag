@@ -19,7 +19,6 @@
         <span class="iconElement iconElement_shareholderProfile text-center"><icon:shareholderProfile/></span>
         <p class="text-center"><spring:theme code="licence.apply.noshareholder"/></p>
         <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
-            <c:if test="${entityInformationData.licenseType ne 11}">
                 <button type="button" class="addExistingButton btn btn_bold btn-outline btn-normal my-button my-button-handler" data-url="<c:url value="/my-sagia/license/existing-shareholder-form"/>">
                 <span class="icon-bg add-icon my-icon" >
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -41,7 +40,6 @@
                 </svg>
                 </span>
                 <spring:theme code="license.apply.review.existing.shareholder"/></button>
-            </c:if>
            <button type="button" class="addNewButton btn btn_bold btn-outline btn-normal my-button my-button-handler">
                 <span class="icon-bg add-icon my-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">

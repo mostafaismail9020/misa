@@ -15,7 +15,6 @@ import com.sap.ibso.eservices.sagiaservices.services.complaints.dto.UpdatableCom
 import com.sap.ibso.eservices.sagiaservices.services.legalconsultation.dto.FinancialStatementForm;
 import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
 import com.sap.ibso.eservices.storefront.forms.validation.SagiaFinancialSurveyValidator;
-import com.sap.ibso.eservices.storefront.interceptors.beforecontroller.LicenseRequired;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
@@ -90,7 +89,6 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     private static final String FORM_SURVEY_GLOBAL_ERROR = "financial.survey.global.error";
 
     @RequestMapping(value = {"", "/display/{quarterCode}"}, method = RequestMethod.GET)
-    @LicenseRequired
     @RequireHardLogIn
     public String completeFinancialSurvey(final Model model, final HttpServletRequest request, @PathVariable(name="quarterCode", required = false) String quarterCode) throws CMSItemNotFoundException {
 
@@ -292,6 +290,8 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
                          final BindingResult result, RedirectAttributes redirectModel)  throws JSONException {
         //financialStatementValidator.validate(financialStatementForm, result);
 
+        LOG.info("saveAttachment");
+
         FinancialSurvey financialSurvey = sagiaFinancialSurveyFacade.getFinancialSurvey(financialStatementForm.getSrId());
         if (! ( financialSurvey.getIsCompanyProfileSectionFilled() && financialSurvey.getIsEquitySectionFilled()
                 && financialSurvey.getIsShareholdersSectionFilled() && financialSurvey.getIsBranchSectionFilled() ))  {
@@ -308,6 +308,8 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
             }
             return REDIRECT_PREFIX + "/my-sagia/financial-survey/complete/display/"+financialStatementForm.getSrId()+"#tab5";
         }
+
+        LOG.info("saveAttachment Start Processing");
 
         if (financialStatementForm.getFiles().size() <= 0) {
             GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER, Localization.getLocalizedString(FORM_GLOBAL_ERROR));

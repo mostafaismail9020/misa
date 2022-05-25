@@ -352,14 +352,14 @@
     </div>
 </section>
 
-<section class="mainSection license mainSection_grey mainSection_noPadding bg-white p-0 js-dashboard d-none d-sm-block">
+<section class="mainSection license mainSection_grey mainSection_noPadding bg-white p-0 js-dashboard d-block">
     <div class="container dashboardUser dashboardTabsSection">
         <div class="row dashboard-tabs">
             <ul id="draggableComponentsList" class="dashboardWidgetList tabs draggableComponentsList_dashboard">
                 <li class="dashboardWidgetListComponent js-component tab" style="display: none">
                     <span id="myLicense"></span>
                         <input type="radio" id="tab-1" name="tab-group-1">
-                        <label for="tab-1"><spring:theme code="myLicense.title"/></label>
+                        <label class="panel-body-label" for="tab-1"><spring:theme code="myLicense.title"/><i class="arrow right"></i></label>
                         <div  class="content col col-12" id="myLicense">
                             <dashboard:myLicense/>
                         </div>
@@ -368,7 +368,7 @@
                 <li class="dashboardWidgetListComponent js-component tab" style="display: none">
                     <span id="payments"></span>
                         <input type="radio" id="tab-2" name="tab-group-1" >
-                        <label for="tab-2"><spring:theme code="payments.page.title"/> </label>
+                        <label class="panel-body-label" for="tab-2"><spring:theme code="payments.page.title"/><i class="arrow right"></i> </label>
                         <div  class="content col col-12" id="payments">
                             <div class="dashboardWidget js-dashboardWidget">
                                 <div class="dashboardWidget-headline js-dashboardWidget-headline d-none d-sm-block">
@@ -446,7 +446,7 @@
                 <li class="dashboardWidgetListComponent js-component tab" style="display: none">
                     <span id="servicesRequest"></span>
                         <input type="radio" id="tab-3" name="tab-group-1" >
-                        <label for="tab-3"><spring:theme code="dashboard.servicesRequest.title"/></label>
+                        <label class="panel-body-label" for="tab-3"><spring:theme code="dashboard.servicesRequest.title"/><i class="arrow right"></i></label>
                         <div  class="content col col-12" id="servicesRequest">
                             <dashboard:servicesRequest/>
                         </div>
@@ -455,7 +455,7 @@
                 <li class="tab dashboardWidgetListComponent js-component tab" style="display: none">
                    <span id="savedDrafts"></span>
                     <input type="radio" id="tab-4" name="tab-group-1" >
-                    <label for="tab-4"><spring:theme code="dashboard.savedDrafts.title"/></label>
+                    <label class="panel-body-label" for="tab-4"><spring:theme code="dashboard.savedDrafts.title"/><i class="arrow right"></i></label>
                     <div  class="content col col-12" id="savedDrafts">
                         <dashboard:savedDrafts/>
                     </div>
@@ -463,7 +463,7 @@
                 <li class="tab dashboardWidgetListComponent js-component tab" style="display: none">
                    <span  id="yourTickets"></span>
                     <input type="radio" id="tab-5" name="tab-group-1">
-                    <label for="tab-5"><spring:theme code="dashboard.ticket.yourtickets"/></label>
+                    <label class="panel-body-label" for="tab-5"><spring:theme code="dashboard.ticket.yourtickets"/><i class="arrow right"></i></label>
                     <div  class="content col col-12" id="yourTickets">
                         <div class="dashboardWidget js-dashboardWidget no-border">
                             <div class="dashboardWidget-headline js-dashboardWidget-headline d-none d-sm-block">
@@ -538,11 +538,11 @@
                     </div>
                 </li>
               </ul>
-           
+              <!-- <div class="panel-group" id="accordionDashboard" role="tablist" aria-multiselectable="true"></div> -->
         </div>
     </div>
 </section>
-<section class="container mainSection mainSection_noPadding bg-white p-0 d-block d-sm-none ">
+<section class="container mainSection mainSection_noPadding bg-white p-0 d-none ">
     <div class="">
             <div class="container dashboardUser dashboardUser_slim dashboardUser_noBorder p-0">
                 <div class="dashboard-tabs">

@@ -977,4 +977,73 @@
 	.page-dashboard .sagiaNavigation-entry-hasSub.active .sagiaNavigation-subPane{
 		max-width: 350px !important;
 	}
+	.page-dashboard .dashboardUser .dashboard-tabs .panel-group .panel-collapse .panel-body input, .panel-body-label, .page-dashboard .custom-dahboard-headline{
+		display: none;
+	}
+	.page-dashboard .dashboardTabsSection .tabs{
+		display: block;
+	}
+	.page-dashboard .dashboard-tabs .tab{
+		color: #444;
+		cursor: pointer;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+		transition: 0.4s;
+	}
+	
+	.page-dashboard .dashboard-tabs .tab .content{
+		padding: 0 18px;
+		display: none;
+		background-color: white;
+		overflow: hidden;
+	}
+	.dashboardTabsSection .tabs .tab .content {
+		position : relative;
+		top:0;
+	}
+	.dashboardTabsSection .tabs .tab label{
+		height: 60px;
+		justify-content: left;
+		padding-left: 35px !important;
+		border-radius: 0 !important;
+	}
+	.dashboardTabsSection .tabs{
+		min-height: auto !important;
+	}
+
+	[dir] .dashboardTabsSection .tabs .tab [type=radio]:checked~label{
+		background: #eee;
+		color: #444;
+		
+	}
+
+	[dir] .dashboardTabsSection .tabs .tab [type=radio]~label{
+		content: ">";
+		color: #000;
+	}
+	.arrow {
+		border: solid black;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		position: absolute;
+        right: 26px;
+	  }
+	  
+	  .right {
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+	  }
+	  
+	  .down {
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+	  }
+}
+.dashboardTabsSection .tabs .labelChecked{
+	background: #00a6be !important;
+	color: #fff;
 }

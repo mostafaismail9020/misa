@@ -7,7 +7,7 @@
 
 <div class="dashboardWidget js-dashboardWidget no-border mt-0">
     <c:if test="${editable}"><dashboard:addAndRemoveComponent checkboxIndex="1"/></c:if>
-    <div class="dashboardWidget-headline js-dashboardWidget-headline  d-none d-md-flex">
+    <div class="dashboardWidget-headline js-dashboardWidget-headline  custom-dahboard-headline d-md-flex">
         <div class="dashboardWidget-headline-text"><spring:theme code="myLicense.title"/></div>
         <div class="dashboardWidget-headline-icon"><icon:my-license/></div>
         <div class="dashboardWidget-headline-action text-right mt-3 d-none d-sm-flex text-ar-left">
@@ -45,7 +45,7 @@
                     <div class="dashboardWidgetLicense-list">
                         <div class="dashboardWidgetLicense-list-entry">
                             <div class="dashboardWidgetLicense-list-label"><spring:theme code="profile.company.entityId"/></div>
-                            <div id="licenseEntityId" class="dashboardWidgetLicense-list-value"></div>
+                            <div id="licenseEntityId" class="licenseEntityId dashboardWidgetLicense-list-value"></div>
                         </div>
                         <div class="dashboardWidgetLicense-list-entry">
                             <div class="dashboardWidgetLicense-list-label"><spring:theme code="profile.company.capitalCurrency"/></div>

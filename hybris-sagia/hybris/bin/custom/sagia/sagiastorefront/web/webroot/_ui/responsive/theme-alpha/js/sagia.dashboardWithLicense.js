@@ -137,7 +137,51 @@ SAGIA.dashboardWithLicense = {
                     spinner +='</div>'
                     $("#accordionDashboard").empty().append(spinner);
                 }
+                $(document).ready(function(){
+                    setTimeout(manageLicenseInfoHeight, 3000);
 
+                    var acc = document.getElementsByClassName("panel-body-label");
+                    for (let i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var id =  $(this).next()[0].id; 
+                        
+                        $(".content").each(function(){
+                            if(id != this.id){
+                                $(this).hide();
+                                $(this).prev("label").removeClass("labelChecked");
+                                $(this).prev("label").children().addClass("right");
+                                $(this).prev("label").children().removeClass("down");
+
+                            }
+                        });
+                        $(this).next().show();
+                        $(this).addClass("labelChecked");
+                        $(this).children().removeClass("right");
+                        $(this).children().addClass("down");
+                    });
+                    }
+                })
+                window.addEventListener('load', function () {
+                    manageLicenseInfoHeight();
+                })
+                $(".dashboardWidgetListComponent").on('click',function(){
+                    manageLicenseInfoHeight();
+                })
+
+                function manageLicenseInfoHeight(){
+                    var dash_component = $(".draggableComponentsList_dashboard");
+                    var activeTab = $(".dashboardTabsSection .tabs .tab [type=radio]:checked").siblings('.content').children('.dashboardWidget');
+                    if($(activeTab).children('.dashboardWidget-headline').length){
+                    var activeTabHeadlineHeight = $(activeTab).children('.dashboardWidget-headline')[0].clientHeight;
+                    var activeTabBodyHeight = $(activeTab).children('.dashboardWidget-body')[0].clientHeight;
+                    var activeTabBodyHeight1 = $(activeTab).children('.dashboardWidget-body').children('.dashboardWidgetLicense').children('.dashboardTabs')[0] ;
+                    activeTabBodyHeight = activeTabBodyHeight1 !== undefined ? activeTabBodyHeight1.clientHeight : activeTabBodyHeight;
+                    var clientHeight = activeTabHeadlineHeight + activeTabBodyHeight + 120;
+                    dash_component.css("min-height",clientHeight  + "px");
+                    }
+                }
+                
                 $( document ).ajaxStop(function() {
                     var element_id = $("body").hasClass("page-dashboard") ? "#tabsDasboard" :"#tabs";
 
@@ -162,7 +206,7 @@ SAGIA.dashboardWithLicense = {
                     $(element_id).not('.services-container-tabcontent').hide();
                     $(".tab-content").not('.services-container-tabcontent').hide();
 
-                    if(window.matchMedia("(max-width:640px)").matches){
+                    if(window.matchMedia("(max-width:767px)").matches){
                         $(element_id).hide();
                         $("#accordionDashboard").show();
                         $(".tab-content").not('.services-container-tabcontent').hide();
@@ -244,28 +288,7 @@ SAGIA.dashboardWithLicense = {
             });
         });
 
-        $(document).ready(function(){
-                    setTimeout(manageLicenseInfoHeight, 3000);
-                })
-                window.addEventListener('load', function () {
-                    manageLicenseInfoHeight();
-                })
-                $(".dashboardWidgetListComponent").on('click',function(){
-                    manageLicenseInfoHeight();
-                })
-
-                function manageLicenseInfoHeight(){
-                    var dash_component = $(".draggableComponentsList_dashboard");
-                    var activeTab = $(".dashboardTabsSection .tabs .tab [type=radio]:checked").siblings('.content').children('.dashboardWidget');
-                    if($(activeTab).children('.dashboardWidget-headline').length){
-                    var activeTabHeadlineHeight = $(activeTab).children('.dashboardWidget-headline')[0].clientHeight;
-                    var activeTabBodyHeight = $(activeTab).children('.dashboardWidget-body')[0].clientHeight;
-                    var activeTabBodyHeight1 = $(activeTab).children('.dashboardWidget-body').children('.dashboardWidgetLicense').children('.dashboardTabs')[0] ;
-                    activeTabBodyHeight = activeTabBodyHeight1 !== undefined ? activeTabBodyHeight1.clientHeight : activeTabBodyHeight;
-                    var clientHeight = activeTabHeadlineHeight + activeTabBodyHeight + 120;
-                    dash_component.css("min-height",clientHeight  + "px");
-                    }
-                }
+        
     },
     displayLicenseRenewalModal: function(title, description, period){
         var confirmationModal = $('#confirmationModal');
@@ -334,7 +357,7 @@ SAGIA.dashboardWithLicense = {
                                  getI18nText("licence.renew.clearence.popup.description"),'R');
                          }
                     }
-
+                    console.log('testing', licenseAndEmployee.license, licenseAndEmployee.license.profileCompanyData)
                     if (licenseAndEmployee.license && licenseAndEmployee.license.profileCompanyData) {
                         $("#licenseEntityId").text(licenseAndEmployee.license.profileCompanyData.entityId);
                         $("#licenseCapital").text(licenseAndEmployee.license.profileCompanyData.capitalFormatted);

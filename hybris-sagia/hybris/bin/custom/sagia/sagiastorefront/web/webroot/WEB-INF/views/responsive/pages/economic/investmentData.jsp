@@ -507,11 +507,11 @@
                     <div class="col-lg-3">
                       <h5><spring:theme code="economic.investmentdata.selectperiod.heading.name"/></h5>
                       <div class="btn-group btn-group-toggle capital-formation-period" data-toggle="buttons">
-                        <label class="btn btn-secondary active" data-id="Annually">
-                          <input type="radio" name="options" id="option1" autocomplete="off" checked> <spring:theme code="economic.investmentdata.annually.tab.text"/>
+                        <label class="btn btn-secondary focus active" data-id="Annually">
+                          <input type="radio" name="options" id="optionA1" autocomplete="off"  checked> <spring:theme code="economic.investmentdata.annually.tab.text"/>
                         </label>
                         <label class="btn btn-secondary" data-id="Quarterly">
-                          <input type="radio" name="options" id="option2" autocomplete="off" > <spring:theme code="economic.investmentdata.quarterly.tab.text"/>
+                          <input type="radio" name="options" id="optionA2" autocomplete="off" checked> <spring:theme code="economic.investmentdata.quarterly.tab.text"/>
                         </label>
                       </div>
 

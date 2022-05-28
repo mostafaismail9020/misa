@@ -16,7 +16,7 @@ $(function() {
         }
         successModal.modal('show');
     };
-    
+
     SAGIA.showError = function(message) {
         var errorModal = $('#errorResponseModal');
         if(message) {
@@ -166,7 +166,7 @@ $(function() {
         }
         return html;
     };
-    
+
     var getMobileCategoriesHtml = function(categories) {
         var html = '';
         for(var index in categories) {
@@ -183,14 +183,14 @@ $(function() {
             }
         }
         return html;
-    };    
+    };
 
     var handleMenuData = function(menuData) {
         if(menuData && menuData.navcategories && menuData.navservices) {
             //please also add adjustments to mobile navigation below accordingly
-            var uiMenu = $(".sagiaNavigation-subNav").empty();            
+            var uiMenu = $(".sagiaNavigation-subNav").empty();
             if(uiMenu.length) {
-                
+
                 if (menuData.navcategories.FIRST && menuData.navcategories.FIRST.length) {
                     uiMenu.append('' +
                         '<li class="sagiaNavigation-subNav-title">' +
@@ -255,9 +255,9 @@ $(function() {
                     uiMenuMobile.append('<li class="sagiaMobileNav-subNav-subtitle">'+getI18nText("sagia.services")+'</li>');
                     uiMenuMobile.append(getMobileCategoriesHtml(menuData.navcategories["SAGIA SERVICES"]));
                 }
-            }          
+            }
 
-            var uiMobileMenuRight = $("#sagiaMobileNav-serviceMenu").empty(); 
+            var uiMobileMenuRight = $("#sagiaMobileNav-serviceMenu").empty();
             if(uiMobileMenuRight.length) {
                 for(var indexNavServices in menuData.navservices) {
                     if(menuData.navservices.hasOwnProperty(indexNavServices)) {
@@ -270,7 +270,7 @@ $(function() {
                                 navServiceItem.menuUrl = urlTokens[0] + (urlTokens.length > 1 ? "?" + encodeURIComponent(urlTokens[1]).replace(/'/g,"%27").replace(/"/g,"%22") : "");
 
                                 var encodedUrl = urlTokens.length > 0 ? urlTokens[0] : "";
-                                encodedUrl += urlTokens.length > 1 ? "?" + encodeURIComponent(urlTokens[1]).replace(/'/g,"%27").replace(/"/g,"%22") : "";                                
+                                encodedUrl += urlTokens.length > 1 ? "?" + encodeURIComponent(urlTokens[1]).replace(/'/g,"%27").replace(/"/g,"%22") : "";
                                 htmlContentForNavServices += '<a href="' + ACC.config.encodedContextPath + '/' + encodedUrl + '"><span>' + navServiceItem.name + '</span></a>';
                             }
                         }
@@ -278,7 +278,7 @@ $(function() {
                         uiMobileMenuRight.append(htmlContentForNavServices);
                     }
                 }
-            }          
+            }
 
             if(uiMenu.length || uiMenuRight.length) {
                 SAGIA.sagiaNavigation.init();
@@ -451,7 +451,7 @@ $(function() {
             SAGIA.notifications.updateNotificationsCount(notificationsCount);
         }
     };
-    
+
     function replaceWithEmptyIfNotPresent(value) {
         return (value == null) ? "" : value;
     }
@@ -613,7 +613,7 @@ $(function() {
     // }
 });
 
-  
+
 function expandServiceTab(code){
     if (!$('#service-tab').hasClass('expanded')) {
         $.ajax(ACC.config.encodedContextPath + "/service-search/serviceDetails/"+code, {
@@ -676,11 +676,11 @@ $('.btn_show_hide_service').on('click',function(){
         } else {
             $(this).removeClass('hidden').show();
             $("#expand-03").show();
-        }				
+        }
     });
 })
 
- /**my potential**/ 
+ /**my potential**/
 function commentTextArea() {
     var x = document.getElementById("comment_box_form");
     if (x.style.display === "none") {
@@ -723,28 +723,40 @@ $(document).ready(function () {
 $("#dashboardNoLicenseHelper").on('click',function(){
     $("#license-application-simulator").show();
 })
-   
+
 $("#simulator-close").on('click',function(){
     var video=$('#simulator-video').attr("src");
     $('#simulator-video').attr("src",video);
     $("#license-application-simulator").hide();
 })
-   
+
 
 function LanguageToggle(lang){
     if(lang === "en"){
-        var url = window.location.href.replace('/ar/','/en/');
-        window.location.href = url;
+        if(window.location.href.endsWith('/ar')){
+            // handle the home page url ends with /ar
+            var url = window.location.href.replace('/ar','/en');
+            window.location.href = url;
+        }else {
+            var url = window.location.href.replace('/ar/','/en/');
+            window.location.href = url;
+        }
     }
     else if(lang === "ar"){
-        var url = window.location.href.replace('/en/', '/ar/');
-        window.location.href = url;
+        if(window.location.href.endsWith('/en')){
+            // handle the home page url ends with /en
+            var url = window.location.href.replace('/en','/ar');
+            window.location.href = url;
+        } else {
+            var url = window.location.href.replace('/en/', '/ar/');
+            window.location.href = url;
+        }
     }
 }
 
 !(function($) {
 	"use strict";
-  
+
 	// Preloader
 	// $(window).on('load', function() {
 	//   if ($('#preloader').length) {
@@ -758,11 +770,11 @@ function LanguageToggle(lang){
 	if(window.location.pathname === "/" || window.location.pathname === ""){
 		window.location.href = window.location.href + lang;
 	}
-	
+
 	if(window.location.href.indexOf('recaptchaChallangeAnswered=false') >= 0){
 		 var errorModal = $('#errorResponseModal');
          errorModal.find('.modal-description').text('Invalid Captcha, Please try again');
-         errorModal.modal('show');	
+         errorModal.modal('show');
 	}
 
 	// Smooth scroll for the navigation menu and links with .scrollto classes
@@ -773,22 +785,22 @@ function LanguageToggle(lang){
 		var target = $(this.hash);
 		if (target.length) {
 		  e.preventDefault();
-  
+
 		  var scrollto = target.offset().top - scrolltoOffset;
-  
+
 		  if ($(this).attr("href") == '#header') {
 			scrollto = 0;
 		  }
-  
+
 		  $('html, body').animate({
 			scrollTop: scrollto
 		  }, 1500, 'easeInOutExpo');
-  
+
 		  if ($(this).parents('.nav-menu, .mobile-nav').length) {
 			$('.nav-menu .active, .mobile-nav .active').removeClass('active');
 			$(this).closest('li').addClass('active');
 		  }
-  
+
 		  if ($('body').hasClass('mobile-nav-active')) {
 			$('body').removeClass('mobile-nav-active');
 			$('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
@@ -798,7 +810,7 @@ function LanguageToggle(lang){
 		}
 	  }
 	});
-  
+
 	// Activate smooth scroll on page load with hash links in the url
 	// $(document).ready(function() {
 	//   if (window.location.hash) {
@@ -811,7 +823,7 @@ function LanguageToggle(lang){
 	// 	}
 	//   }
 	// });
-  
+
 	// Mobile Navigation
 	if ($('.nav-menu').length) {
 	  var $mobile_nav = $('.nav-menu').clone().prop({
@@ -820,19 +832,19 @@ function LanguageToggle(lang){
 	  $('body').append($mobile_nav);
 	  $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
 	  $('body').append('<div class="mobile-nav-overly"></div>');
-  
+
 	  $(document).on('click', '.mobile-nav-toggle', function(e) {
 		$('body').toggleClass('mobile-nav-active');
 		$('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
 		$('.mobile-nav-overly').toggle();
 	  });
-  
+
 	  $(document).on('click', '.mobile-nav .drop-down > a', function(e) {
 		e.preventDefault();
 		$(this).next().slideToggle(300);
 		$(this).parent().toggleClass('active');
 	  });
-  
+
 	  $(document).click(function(e) {
 		var container = $(".mobile-nav, .mobile-nav-toggle");
 		if (!container.is(e.target) && container.has(e.target).length === 0) {
@@ -846,24 +858,24 @@ function LanguageToggle(lang){
 	} else if ($(".mobile-nav, .mobile-nav-toggle").length) {
 	  $(".mobile-nav, .mobile-nav-toggle").hide();
 	}
-    
+
 	// Mobile nav link
-	
+
 	var twit_lk='/';
 	$('.mobile-nav').append('<div class="mobile-nav-logo"></div>');
 	$('.mobile-nav-logo').wrap('<a class="mobile-nav-Icon" href="'+twit_lk+'"/>');
-  
+
 	// Navigation active state on scroll
 	var nav_sections = $('section');
 	var main_nav = $('.nav-menu, #mobile-nav');
-  
+
 	$(window).on('scroll', function() {
 	  var cur_pos = $(this).scrollTop() + 200;
-  
+
 	  nav_sections.each(function() {
 		var top = $(this).offset().top,
 		  bottom = top + $(this).outerHeight();
-  
+
 		if (cur_pos >= top && cur_pos <= bottom) {
 		  if (cur_pos <= bottom) {
 			main_nav.find('li').removeClass('active');
@@ -875,7 +887,7 @@ function LanguageToggle(lang){
 		}
 	  });
 	});
-  
+
 	// Toggle .header-scrolled class to #header when page is scrolled
 	// // Back to top button
 	// $(window).scroll(function() {
@@ -885,7 +897,7 @@ function LanguageToggle(lang){
 	// 	$('.back-to-top').fadeOut('slow');
 	//   }
 	// });
-  
+
 	// $('.back-to-top').click(function() {
 	//   $('html, body').animate({
 	// 	scrollTop: 0
@@ -906,7 +918,7 @@ function LanguageToggle(lang){
 	});
 
   })(jQuery);
-//  ------------------------------------------------------------------------------------------------------------------------- 
+//  -------------------------------------------------------------------------------------------------------------------------
 
 
 /* --------- Font-size JS --------*/
@@ -924,11 +936,11 @@ function setFont() {
 }
 
 function increaseFontSize(isSet = 0) {
-  
+
     var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');
 	var s;
 	if (increment < 3) {
-		increment = isSet === 0 ? (increment + 1) : parseFloat(getCookie("f_increment"));	
+		increment = isSet === 0 ? (increment + 1) : parseFloat(getCookie("f_increment"));
 		for (let i = 0; i < p.length; i++) {
 			if ($(p[i]).css('font-size')) {
 				s = parseFloat($(p[i]).css('font-size'));
@@ -951,8 +963,8 @@ function increaseFontSize(isSet = 0) {
 	// }
 }
 function decreaseFontSize(isSet = 0) {
-    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');	
-	
+    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');
+
 	if (increment > 0) {
 		increment = isSet === 0 ? (increment - 1) : parseFloat(getCookie("f_increment"));
 		for (i = 0; i < p.length; i++) {

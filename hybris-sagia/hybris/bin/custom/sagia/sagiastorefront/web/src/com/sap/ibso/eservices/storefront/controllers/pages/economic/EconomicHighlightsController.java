@@ -78,7 +78,7 @@ public class EconomicHighlightsController extends SagiaAbstractPageController {
 
 		List<SAInternationalIndicesData> saInternationalIndicesData = saInternationalIndicesFacade
 				.getSAInternationalIndicesListData(indicator, startYear, endYear);
-		String gsonJson = new Gson().toJson(saInternationalIndicesData).toString();
+		String gsonJson = new Gson().toJson(saInternationalIndicesData);
 		model.addAttribute("saInternationalIndices", saInternationalIndicesData);
 		model.addAttribute("saInternationalIndicesJsonData", new Gson().toJson(saInternationalIndicesData));
 		model.addAttribute("gsonJson", gsonJson);

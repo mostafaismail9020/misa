@@ -1870,11 +1870,11 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = [ {
-		"country": "Saudi",
+		"country": getI18nText("bar.graph.saudi"),
 		"population": data[0].saudiPercentage,
 		"color": am4core.color("#025635")
 		}, {
-		"country": "Non-Saudi",
+		"country": getI18nText("bar.graph.non.saudi"),
 		"population": data[0].nonSaudiPercentage,
 		"color": am4core.color("#BF9B2E")
 		}];
@@ -1898,6 +1898,7 @@ $(document).ready(function () {
 		pieSeries.labels.template.text = "{value.percent.formatNumber('#.0')}%";
 		pieSeries.labels.template.radius = am4core.percent(-40);
 		pieSeries.labels.template.fill = am4core.color("white");
+		pieSeries.labels.template.fontSize = 12;
 		pieSeries.slices.template.tooltipText = "{category}: {value.percent.formatNumber('#.0')}%";
 		chart.legend = new am4charts.Legend();
 		//end responsive
@@ -2959,65 +2960,65 @@ $(document).ready(function () {
 					if($(this).attr("id") == keyValue){
 						$(this).attr('checked','checked');
 						if(keyValue == 'manufacturingLicenses'){
-							appendSelectedList("Manufacturing Licenses", 'manufacturingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.manufacturing.license"), 'manufacturingLicenses');
 						} else if(keyValue == 'constructionLicenses') {
-							appendSelectedList("Construction Licenses", 'constructionLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'constructionLicenses');
 						} else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
-							appendSelectedList("Wholesale and retail trade, repair of mo Licenses", 'wholeSaleRetailTradeMoLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.wholesale.license"), 'wholeSaleRetailTradeMoLicenses');
 							// series.name = "Wholesale and retail trade, repair of mo Licenses";
 						} else if(keyValue == 'informationAndCommunicationLicenses') {
-							appendSelectedList("Information and communication Licenses", 'informationAndCommunicationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.information.license"), 'informationAndCommunicationLicenses');
 							// series.name = "Information and communication Licenses";
 						} else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
-							appendSelectedList("Professional, scientific and technical Licenses", 'professionalScientificAndTechnicalLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.professional.license"), 'professionalScientificAndTechnicalLicenses');
 							// series.name = "Professional, scientific and technical Licenses";
 						} else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
-							appendSelectedList("Accommodation and food service actives Licenses", 'accommodationFoodServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.accommodation.licens"), 'accommodationFoodServiceActivityLicenses');
 							// series.name = "Accommodation and food service actives Licenses";
 						} else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
-							appendSelectedList("Administration and storage Licenses", 'administrativeSupportServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.administration.license"), 'administrativeSupportServiceActivityLicenses');
 							// series.name = "Administration and storage Licenses";
 						} else if(keyValue == 'transportationStorageLicenses') {
-							appendSelectedList("Transportation and storage Licenses", 'transportationStorageLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.transportation.license"), 'transportationStorageLicenses');
 							// series.name = "Transportation and storage Licenses";
 						} else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
-							appendSelectedList("Human health and social work activities licenses", 'humanHealthSocialworkActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.human.health.license"), 'humanHealthSocialworkActivityLicenses');
 							// series.name = "Human health and social work activities licenses";
 						} else if(keyValue == 'financialInsuranceActivityLicenses') {
-							appendSelectedList("Financial and insurance activities licenses", 'financialInsuranceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.financial.license"), 'financialInsuranceActivityLicenses');
 							// series.name = "Financial and insurance activities licenses";
 						} else if(keyValue == 'otherServiceActivityLicenses') {
-							appendSelectedList("Other service activities licenses", 'otherServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.other.license"), 'otherServiceActivityLicenses');
 							// series.name = "Other service activities licenses";
 						} else if(keyValue == 'miningQuarryingLicenses') {
-							appendSelectedList("Mining and quarrying licenses", 'miningQuarryingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.mining.license"), 'miningQuarryingLicenses');
 							// series.name = "Mining and quarrying licenses";
 						} else if(keyValue == 'waterSupplySewerageWasteManagement') {
-							appendSelectedList("Water supply, sewerage, waste management", 'waterSupplySewerageWasteManagement');
+							appendSelectedList(getI18nText("bar.graph.fdi.water.license"), 'waterSupplySewerageWasteManagement');
 							// series.name = "Water supply, sewerage, waste management";
 						} else if(keyValue == 'educationLicenses') {
-							appendSelectedList("Education licenses", 'educationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.education.license"), 'educationLicenses');
 							// series.name = "Education licenses";
 						} else if(keyValue == 'realEstateActivityLicenses') {
-							appendSelectedList("Real estate activities licenses", 'realEstateActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.estate.license"), 'realEstateActivityLicenses');
 							// series.name = "Real estate activities licenses";
 						} else if(keyValue == 'artsEntertainmentRecreationLicenses') {
-							appendSelectedList("Arts, entertainment and recreation licenses", 'artsEntertainmentRecreationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.arts.license"), 'artsEntertainmentRecreationLicenses');
 							// series.name = "Arts, entertainment and recreation licenses";
 						} else if(keyValue == 'electricityGasSteamAircondition') {
-							appendSelectedList("Electricity, gas, steam and air conditioner", 'electricityGasSteamAircondition');
+							appendSelectedList(getI18nText("bar.graph.fdi.electricity.license"), 'electricityGasSteamAircondition');
 							// series.name = "Electricity, gas, steam and air conditioner";
 						} else if(keyValue == 'agricultureForestryFishing Licenses'){
-							appendSelectedList("Agriculture, forestry and fishing licenses", 'agricultureForestryFishingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.agriculture.license"), 'agricultureForestryFishingLicenses');
 							// series.name = "Agriculture, forestry and fishing licenses";
 						} else if(keyValue == 'notAssignedLicenses') {
-							appendSelectedList("Not assigned licenses", 'notAssignedLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.not.assigned.license"), 'notAssignedLicenses');
 							// series.name = "Not assigned licenses";
 						} else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
-							appendSelectedList("Public administration and defence compu licenses", 'publicAdministrationDefenceCompuLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.public.administration.license"), 'publicAdministrationDefenceCompuLicenses');
 							// series.name = "Public administration and defence; compu licenses";
 						} else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') 
-							appendSelectedList("Activities of extraterritorial organization license", 'activitiesOfExtraterritorialOrganizationLicenses');{
+							appendSelectedList(getI18nText("bar.graph.fdi.not.extraterritorial.license"), 'activitiesOfExtraterritorialOrganizationLicenses');{
 							// series.name = "Activities of extraterritorial organizat license";
 						}
 					}
@@ -3520,7 +3521,69 @@ $(document).ready(function () {
 		// }
         if(this.checked) {
             // alert($(this).attr("data-id"));
-			appendSelectedList($(this).attr("data-id"), $(this).attr("id"));
+            if($(this).attr("id") == 'manufacturingLicenses'){
+                appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'manufacturingLicenses');
+            } else if($(this).attr("id") == 'constructionLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'constructionLicenses');
+            } else if($(this).attr("id") == 'wholeSaleRetailTradeMoLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.wholesale.license"), 'wholeSaleRetailTradeMoLicenses');
+                // series.name = "Wholesale and retail trade, repair of mo Licenses";
+            } else if($(this).attr("id") == 'informationAndCommunicationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.information.license"), 'informationAndCommunicationLicenses');
+                // series.name = "Information and communication Licenses";
+            } else if($(this).attr("id") == 'professionalScientificAndTechnicalLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.professional.license"), 'professionalScientificAndTechnicalLicenses');
+                // series.name = "Professional, scientific and technical Licenses";
+            } else if($(this).attr("id") == 'accommodationFoodServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.accommodation.licens"), 'accommodationFoodServiceActivityLicenses');
+                // series.name = "Accommodation and food service actives Licenses";
+            } else if($(this).attr("id") == 'administrativeSupportServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.administration.license"), 'administrativeSupportServiceActivityLicenses');
+                // series.name = "Administration and storage Licenses";
+            } else if($(this).attr("id") == 'transportationStorageLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.transportation.license"), 'transportationStorageLicenses');
+                // series.name = "Transportation and storage Licenses";
+            } else if($(this).attr("id") == 'humanHealthSocialworkActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.human.health.license"), 'humanHealthSocialworkActivityLicenses');
+                // series.name = "Human health and social work activities licenses";
+            } else if($(this).attr("id") == 'financialInsuranceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.financial.license"), 'financialInsuranceActivityLicenses');
+                // series.name = "Financial and insurance activities licenses";
+            } else if($(this).attr("id") == 'otherServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.other.license"), 'otherServiceActivityLicenses');
+                // series.name = "Other service activities licenses";
+            } else if($(this).attr("id") == 'miningQuarryingLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.mining.license"), 'miningQuarryingLicenses');
+                // series.name = "Mining and quarrying licenses";
+            } else if($(this).attr("id") == 'waterSupplySewerageWasteManagement') {
+                appendSelectedList(getI18nText("bar.graph.fdi.water.license"), 'waterSupplySewerageWasteManagement');
+                // series.name = "Water supply, sewerage, waste management";
+            } else if($(this).attr("id") == 'educationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.education.license"), 'educationLicenses');
+                // series.name = "Education licenses";
+            } else if($(this).attr("id") == 'realEstateActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.estate.license"), 'realEstateActivityLicenses');
+                // series.name = "Real estate activities licenses";
+            } else if($(this).attr("id") == 'artsEntertainmentRecreationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.arts.license"), 'artsEntertainmentRecreationLicenses');
+                // series.name = "Arts, entertainment and recreation licenses";
+            } else if($(this).attr("id") == 'electricityGasSteamAircondition') {
+                appendSelectedList(getI18nText("bar.graph.fdi.electricity.license"), 'electricityGasSteamAircondition');
+                // series.name = "Electricity, gas, steam and air conditioner";
+            } else if($(this).attr("id") == 'agricultureForestryFishing Licenses'){
+                appendSelectedList(getI18nText("bar.graph.fdi.agriculture.license"), 'agricultureForestryFishingLicenses');
+                // series.name = "Agriculture, forestry and fishing licenses";
+            } else if($(this).attr("id") == 'notAssignedLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.not.assigned.license"), 'notAssignedLicenses');
+                // series.name = "Not assigned licenses";
+            } else if($(this).attr("id") == 'publicAdministrationDefenceCompuLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.public.administration.license"), 'publicAdministrationDefenceCompuLicenses');
+                // series.name = "Public administration and defence; compu licenses";
+            } else if($(this).attr("id") == 'activitiesOfExtraterritorialOrganizationLicenses')
+                appendSelectedList(getI18nText("bar.graph.fdi.not.extraterritorial.license"), 'activitiesOfExtraterritorialOrganizationLicenses');{
+                // series.name = "Activities of extraterritorial organizat license";
+            }
+//			appendSelectedList($(this).attr("data-id"), $(this).attr("id"));
 			// invesSectorList.push({sector: $(this).attr("data-id"), sectoId: $(this).attr("id")})
         }
 		else {

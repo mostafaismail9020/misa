@@ -144,12 +144,6 @@
                             </label>
                           </div>
                           <div class="col-md-4">
-                            <label class="container"><spring:theme code="economic.sainternational.legatumprosperity.radiobutton.text"/>
-                              <input type="radio" name="indicator" value="LegatumProsperityIndex" id="LegatumProsperityIndex">
-                              <span class="check"></span>
-                            </label>
-                          </div>
-                          <div class="col-md-4">
                             <label class="container"><spring:theme code="economic.sainternational.logisticsperformance.radiobutton.text"/>
                               <input type="radio" name="indicator" value="LogisticsPerformanceIndex" id="LogisticsPerformanceIndex">
                               <span class="check"></span>

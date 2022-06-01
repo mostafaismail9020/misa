@@ -1476,14 +1476,14 @@ $(document).on("change", "#file0", function(e) {
         }
         var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
         //The file uploaded is an image
-        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg"|| Extension == "pdf") {
             // To Display
             if (fuData.files && fuData.files[0]) {
             }
         } 
         //The file upload is NOT an image
         else {
-            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG, BMP and PDF. ");
             $("#file0").val('');
             return;
         }
@@ -1509,14 +1509,14 @@ $(document).on("change", "#file1", function(e) {
         }
         var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
         //The file uploaded is an image
-        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg" || Extension == "pdf") {
             // To Display
             if (fuData.files && fuData.files[0]) {
             }
         } 
         //The file upload is NOT an image
         else {
-            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG, BMP and PDF. ");
             $("#file1").val('');
             return;
         }
@@ -1542,14 +1542,14 @@ $(document).on("change", "#file2", function(e) {
         }
         var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
         //The file uploaded is an image
-        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg"|| Extension == "pdf") {
             // To Display
             if (fuData.files && fuData.files[0]) {
             }
         } 
         //The file upload is NOT an image
         else {
-            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG, BMP and PDF. ");
             $("#file2").val('');
             return;
         }
@@ -1575,14 +1575,14 @@ $(document).on("change", "#file3", function(e) {
         }
         var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
         //The file uploaded is an image
-        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
+        if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg"|| Extension == "pdf") {
             // To Display
             if (fuData.files && fuData.files[0]) {
             }
         } 
         //The file upload is NOT an image
         else {
-            alert("Photo only allows file types of GIF, PNG, JPG, JPEG and BMP. ");
+            alert("Photo only allows file types of GIF, PNG, JPG, JPEG, BMP and PDF. ");
             $("#file3").val('');
             return;
         }

@@ -1376,6 +1376,8 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// chart.dateFormatter.dateFormat = "yyyy";
 		chart.numberFormatter.numberFormat = "#";
+        chart.maskBullets = false;
+
 
 
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -1404,6 +1406,11 @@ $(document).ready(function () {
 			columnSeries.columns.template.propertyFields.strokeDasharray = "columnDash";
 			columnSeries.columns.template.fill = am4core.color("#025635");
 			columnSeries.tooltip.label.textAlign = "middle";
+
+			var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+            valueLabel.label.text = "{valueY}";
+            valueLabel.label.fontSize = 15;
+            valueLabel.label.dy = -10;
 		}
 		else {
 			var lineSeries = chart.series.push(new am4charts.LineSeries());
@@ -1477,6 +1484,8 @@ $(document).ready(function () {
 
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
+
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 		valueAxis.title.text = getI18nText("bar.graph.logistics.length.of.network");
@@ -1573,6 +1582,8 @@ $(document).ready(function () {
 		// Set inner radius
 		chart.innerRadius = am4core.percent(15);
 		chart.radius = am4core.percent(50);
+        chart.maskBullets = false;
+
 		// Add and configure Series
 		var pieSeries = chart.series.push(new am4charts.PieSeries());
 		pieSeries.dataFields.value = "population";
@@ -1605,6 +1616,8 @@ $(document).ready(function () {
 		var chart = am4core.create("rendergraduatesByDegreeChartDiv", am4charts.XYChart);
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
+
 		// Add data
 		chart.data = [
 			{
@@ -1718,6 +1731,8 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		console.log(data);
+        chart.maskBullets = false;
+
 		// Add data
 		chart.data = [
 			{
@@ -1868,6 +1883,7 @@ $(document).ready(function () {
 		var chart = am4core.create("renderlabourPrivateSectorChartDiv", am4charts.PieChart);
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
 		// Add data
 		chart.data = [ {
 		"country": getI18nText("bar.graph.saudi"),
@@ -1940,6 +1956,7 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		// console.log(data);
+        chart.maskBullets = false;
 		// Add data
 		if(chartData.length > 1) {
 			if(chartData[0].length > 0 && chartData[1].length > 0){
@@ -2308,7 +2325,7 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Create chart instance
-		
+        chart.maskBullets = false;
 		// console.log("tet"+data2);
 		// Add data
 		chart.data = [
@@ -2933,6 +2950,7 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = data;
+		chart.maskBullets = false;
 		dataObjectLength = [];
 		for(var i=0;i <data.length; i++) {
 			console.log(data[i]);
@@ -3091,10 +3109,10 @@ $(document).ready(function () {
 					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.extraterritorial.license") + ": [bold]{valueY}[/]";
 				}
 				series.columns.template.fillOpacity = .8;
-				 var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-				 valueLabel.label.text = "{valueY}";
-				 valueLabel.label.fontSize = 9;
-				 valueLabel.label.dy = -10;
+                var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+                valueLabel.label.text = "{valueY}";
+                valueLabel.label.fontSize = 9;
+                valueLabel.label.dy = -10;
 			}
 		});
 		
@@ -3125,6 +3143,7 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = data;
+		chart.maskBullets = false;
 		dataObjectLength = [];
 		for(var i=0;i <data.length; i++) {
 			console.log(data[i]);
@@ -3220,10 +3239,10 @@ $(document).ready(function () {
                     series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.extraterritorial.license") + ": [bold]{valueY}[/]";
                 }
 				series.columns.template.fillOpacity = .8;
-				// var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-				// valueLabel.label.text = "{valueY}";
-				// valueLabel.label.fontSize = 12;
-				// valueLabel.label.dy = -10;
+				var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+				valueLabel.label.text = "{valueY}";
+				valueLabel.label.fontSize = 12;
+				valueLabel.label.dy = -10;
 			}
 		});
 		
@@ -3257,6 +3276,7 @@ $(document).ready(function () {
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
 		// chart.dateFormatter.dateFormat = "yyyy";
 		// chart.numberFormatter.numberFormat = "#";
 
@@ -3364,6 +3384,7 @@ $(document).ready(function () {
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
 		// chart.dateFormatter.dateFormat = "yyyy";
 		// chart.numberFormatter.numberFormat = "#";
 
@@ -3405,6 +3426,8 @@ $(document).ready(function () {
         valueLabel.label.text = "{"+valueAxisValue+"}";
         valueLabel.label.fontSize = 12;
         valueLabel.label.dy = -5;
+
+
 
         var lineSeries = chart.series.push(new am4charts.LineSeries());
         lineSeries.name = getI18nText("bar.graph.growth.rate");
@@ -3449,6 +3472,8 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.data = data;
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
+
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "year";
 		categoryAxis.title.text = getI18nText("bar.graph.axis.year");

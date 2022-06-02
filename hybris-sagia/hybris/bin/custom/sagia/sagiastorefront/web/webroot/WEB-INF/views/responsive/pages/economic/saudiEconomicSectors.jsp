@@ -72,7 +72,7 @@
       <h1 class="INL_logistics_header text-center w-100"><spring:theme code="economic.saudieconomic.realsector.heading.name"/></h1>
     </div>
     <div class="text-center">
-      <p class="INL_bg_gray_paraset "><spring:theme code="economic.saudieconomic.growrates.heading.text"/></p>
+      <p class="INL_bg_gray_paraset ">${economicSector['RealSector'][0].label}</p>
     </div>
   </div> 
 </div>

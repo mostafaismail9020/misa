@@ -53,7 +53,7 @@
 
 	<bean id="batchDashboardConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="dashboard"
+		  p:mapping="dashboard_dashboard"
 		  p:converter-ref="batchDashboardConverter"/>
 	<bean id="batchDashboardConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
 		<property name="header">
@@ -69,7 +69,7 @@
 
 	<bean id="batchCreditRatingConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="creditRating"
+		  p:mapping="dashboard_creditRating"
 		  p:converter-ref="batchCreditRatingConverter"/>
 	<bean id="batchCreditRatingConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
 		<property name="header">
@@ -87,7 +87,7 @@
 	<!-- sa international indices start -->
 	<bean id="SAInternationalIndexConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="saInternationalIndex"
+		  p:mapping="saInternationalIndices_saInternationalIndex"
 		  p:converter-ref="SAInternationalIndexConverter"/>
 
 	<bean id="SAInternationalIndexConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -107,7 +107,7 @@
 
 	<bean id="batchInfrastructureLogisticsConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="infrastructureLogistics"
+		  p:mapping="infraLogistics_infrastructureLogistics"
 		  p:converter-ref="batchInfrastructureLogisticsConverter"/>
 	<bean id="batchInfrastructureLogisticsConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
 		<property name="header">
@@ -123,7 +123,7 @@
 
 	<bean id="infraLogisticsConverterMapping" 
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping" 
-		  p:mapping="infraLogisticsLanding" 
+		  p:mapping="infraLogistics_infraLogisticsLanding"
 		  p:converter-ref="infraLogisticsConverter"/>
 		  
 	<bean id="infraLogisticsConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -140,7 +140,7 @@
 	
 	<bean id="networkConverterMapping" 
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping" 
-		  p:mapping="lengthOfNetwork" 
+		  p:mapping="infraLogistics_lengthOfNetwork"
 		  p:converter-ref="networkConverter"/>
 		  
 	<bean id="networkConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -157,7 +157,7 @@
 
 	<bean id="privateConverterMapping" 
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping" 
-		  p:mapping="privateCities" 
+		  p:mapping="infraLogistics_privateCities"
 		  p:converter-ref="privateConverter"/>
 		  
 	<bean id="privateConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -178,7 +178,7 @@
 
 	<bean id="economicSectorsConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="economicSectors"
+		  p:mapping="saudiEconomicSectors_economicSectors"
 		  p:converter-ref="economicSectorsConverter"/>
 
 	<bean id="economicSectorsConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -195,7 +195,7 @@
 
 	<bean id="popDistributionConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="popDistribution"
+		  p:mapping="saudiEconomicSectors_popDistribution"
 		  p:converter-ref="popDistributionConverter"/>
 
 	<bean id="popDistributionConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -212,7 +212,7 @@
 
 	<bean id="genderDistrConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="genderDistribution"
+		  p:mapping="saudiEconomicSectors_genderDistribution"
 		  p:converter-ref="genderDistrConverter"/>
 
 	<bean id="genderDistrConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -229,7 +229,7 @@
 
 	<bean id="regionDistributionConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="regionDistribution"
+		  p:mapping="saudiEconomicSectors_regionDistribution"
 		  p:converter-ref="regionDistConverter"/>
 
 	<bean id="regionDistConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -246,7 +246,7 @@
 
 	<bean id="graduatesConverterMapping" 
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping" 
-		  p:mapping="graduatesByDegree" 
+		  p:mapping="saudiEconomicSectors_graduatesByDegree"
 		  p:converter-ref="graduatesConverter"/>
 		  
 	<bean id="graduatesConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -267,7 +267,7 @@
 	<!-- investment data start -->
 	<bean id="aqValGrowthConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="aqValueGrowth"
+		  p:mapping="investmentData_aqValueGrowth"
 		  p:converter-ref="aqValGrowthConverter"/>
 
 	<bean id="aqValGrowthConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -284,7 +284,7 @@
 
 	<bean id="foreignInvstConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="foreignInvestment"
+		  p:mapping="investmentData_foreignInvestment"
 		  p:converter-ref="foreignInvstConverter"/>
 
 	<bean id="foreignInvstConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -301,7 +301,7 @@
 
 	<bean id="commercialRegisterConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="commercialRegister"
+		  p:mapping="investmentData_commercialRegister"
 		  p:converter-ref="commercialRegstrConverter"/>
 
 	<bean id="commercialRegstrConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
@@ -318,7 +318,7 @@
 
 	<bean id="fundAsstConverterMapping"
 		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
-		  p:mapping="fundAssets"
+		  p:mapping="investmentData_fundAssets"
 		  p:converter-ref="fundAsstConverter"/>
 
 	<bean id="fundAsstConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">

@@ -1376,6 +1376,8 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// chart.dateFormatter.dateFormat = "yyyy";
 		chart.numberFormatter.numberFormat = "#";
+        chart.maskBullets = false;
+
 
 
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -1404,6 +1406,11 @@ $(document).ready(function () {
 			columnSeries.columns.template.propertyFields.strokeDasharray = "columnDash";
 			columnSeries.columns.template.fill = am4core.color("#025635");
 			columnSeries.tooltip.label.textAlign = "middle";
+
+			var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+            valueLabel.label.text = "{valueY}";
+            valueLabel.label.fontSize = 15;
+            valueLabel.label.dy = -10;
 		}
 		else {
 			var lineSeries = chart.series.push(new am4charts.LineSeries());
@@ -1477,6 +1484,8 @@ $(document).ready(function () {
 
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
+
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 		valueAxis.title.text = getI18nText("bar.graph.logistics.length.of.network");
@@ -1573,6 +1582,8 @@ $(document).ready(function () {
 		// Set inner radius
 		chart.innerRadius = am4core.percent(15);
 		chart.radius = am4core.percent(50);
+        chart.maskBullets = false;
+
 		// Add and configure Series
 		var pieSeries = chart.series.push(new am4charts.PieSeries());
 		pieSeries.dataFields.value = "population";
@@ -1605,6 +1616,8 @@ $(document).ready(function () {
 		var chart = am4core.create("rendergraduatesByDegreeChartDiv", am4charts.XYChart);
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
+
 		// Add data
 		chart.data = [
 			{
@@ -1718,6 +1731,8 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		console.log(data);
+        chart.maskBullets = false;
+
 		// Add data
 		chart.data = [
 			{
@@ -1868,13 +1883,14 @@ $(document).ready(function () {
 		var chart = am4core.create("renderlabourPrivateSectorChartDiv", am4charts.PieChart);
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
 		// Add data
 		chart.data = [ {
-		"country": "Saudi",
+		"country": getI18nText("bar.graph.saudi"),
 		"population": data[0].saudiPercentage,
 		"color": am4core.color("#025635")
 		}, {
-		"country": "Non-Saudi",
+		"country": getI18nText("bar.graph.non.saudi"),
 		"population": data[0].nonSaudiPercentage,
 		"color": am4core.color("#BF9B2E")
 		}];
@@ -1898,6 +1914,7 @@ $(document).ready(function () {
 		pieSeries.labels.template.text = "{value.percent.formatNumber('#.0')}%";
 		pieSeries.labels.template.radius = am4core.percent(-40);
 		pieSeries.labels.template.fill = am4core.color("white");
+		pieSeries.labels.template.fontSize = 12;
 		pieSeries.slices.template.tooltipText = "{category}: {value.percent.formatNumber('#.0')}%";
 		chart.legend = new am4charts.Legend();
 		//end responsive
@@ -1939,6 +1956,7 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		// console.log(data);
+        chart.maskBullets = false;
 		// Add data
 		if(chartData.length > 1) {
 			if(chartData[0].length > 0 && chartData[1].length > 0){
@@ -2307,7 +2325,7 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Create chart instance
-		
+        chart.maskBullets = false;
 		// console.log("tet"+data2);
 		// Add data
 		chart.data = [
@@ -2932,6 +2950,7 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = data;
+		chart.maskBullets = false;
 		dataObjectLength = [];
 		for(var i=0;i <data.length; i++) {
 			console.log(data[i]);
@@ -2959,65 +2978,65 @@ $(document).ready(function () {
 					if($(this).attr("id") == keyValue){
 						$(this).attr('checked','checked');
 						if(keyValue == 'manufacturingLicenses'){
-							appendSelectedList("Manufacturing Licenses", 'manufacturingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.manufacturing.license"), 'manufacturingLicenses');
 						} else if(keyValue == 'constructionLicenses') {
-							appendSelectedList("Construction Licenses", 'constructionLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'constructionLicenses');
 						} else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
-							appendSelectedList("Wholesale and retail trade, repair of mo Licenses", 'wholeSaleRetailTradeMoLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.wholesale.license"), 'wholeSaleRetailTradeMoLicenses');
 							// series.name = "Wholesale and retail trade, repair of mo Licenses";
 						} else if(keyValue == 'informationAndCommunicationLicenses') {
-							appendSelectedList("Information and communication Licenses", 'informationAndCommunicationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.information.license"), 'informationAndCommunicationLicenses');
 							// series.name = "Information and communication Licenses";
 						} else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
-							appendSelectedList("Professional, scientific and technical Licenses", 'professionalScientificAndTechnicalLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.professional.license"), 'professionalScientificAndTechnicalLicenses');
 							// series.name = "Professional, scientific and technical Licenses";
 						} else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
-							appendSelectedList("Accommodation and food service actives Licenses", 'accommodationFoodServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.accommodation.licens"), 'accommodationFoodServiceActivityLicenses');
 							// series.name = "Accommodation and food service actives Licenses";
 						} else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
-							appendSelectedList("Administration and storage Licenses", 'administrativeSupportServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.administration.license"), 'administrativeSupportServiceActivityLicenses');
 							// series.name = "Administration and storage Licenses";
 						} else if(keyValue == 'transportationStorageLicenses') {
-							appendSelectedList("Transportation and storage Licenses", 'transportationStorageLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.transportation.license"), 'transportationStorageLicenses');
 							// series.name = "Transportation and storage Licenses";
 						} else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
-							appendSelectedList("Human health and social work activities licenses", 'humanHealthSocialworkActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.human.health.license"), 'humanHealthSocialworkActivityLicenses');
 							// series.name = "Human health and social work activities licenses";
 						} else if(keyValue == 'financialInsuranceActivityLicenses') {
-							appendSelectedList("Financial and insurance activities licenses", 'financialInsuranceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.financial.license"), 'financialInsuranceActivityLicenses');
 							// series.name = "Financial and insurance activities licenses";
 						} else if(keyValue == 'otherServiceActivityLicenses') {
-							appendSelectedList("Other service activities licenses", 'otherServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.other.license"), 'otherServiceActivityLicenses');
 							// series.name = "Other service activities licenses";
 						} else if(keyValue == 'miningQuarryingLicenses') {
-							appendSelectedList("Mining and quarrying licenses", 'miningQuarryingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.mining.license"), 'miningQuarryingLicenses');
 							// series.name = "Mining and quarrying licenses";
 						} else if(keyValue == 'waterSupplySewerageWasteManagement') {
-							appendSelectedList("Water supply, sewerage, waste management", 'waterSupplySewerageWasteManagement');
+							appendSelectedList(getI18nText("bar.graph.fdi.water.license"), 'waterSupplySewerageWasteManagement');
 							// series.name = "Water supply, sewerage, waste management";
 						} else if(keyValue == 'educationLicenses') {
-							appendSelectedList("Education licenses", 'educationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.education.license"), 'educationLicenses');
 							// series.name = "Education licenses";
 						} else if(keyValue == 'realEstateActivityLicenses') {
-							appendSelectedList("Real estate activities licenses", 'realEstateActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.estate.license"), 'realEstateActivityLicenses');
 							// series.name = "Real estate activities licenses";
 						} else if(keyValue == 'artsEntertainmentRecreationLicenses') {
-							appendSelectedList("Arts, entertainment and recreation licenses", 'artsEntertainmentRecreationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.arts.license"), 'artsEntertainmentRecreationLicenses');
 							// series.name = "Arts, entertainment and recreation licenses";
 						} else if(keyValue == 'electricityGasSteamAircondition') {
-							appendSelectedList("Electricity, gas, steam and air conditioner", 'electricityGasSteamAircondition');
+							appendSelectedList(getI18nText("bar.graph.fdi.electricity.license"), 'electricityGasSteamAircondition');
 							// series.name = "Electricity, gas, steam and air conditioner";
 						} else if(keyValue == 'agricultureForestryFishing Licenses'){
-							appendSelectedList("Agriculture, forestry and fishing licenses", 'agricultureForestryFishingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.agriculture.license"), 'agricultureForestryFishingLicenses');
 							// series.name = "Agriculture, forestry and fishing licenses";
 						} else if(keyValue == 'notAssignedLicenses') {
-							appendSelectedList("Not assigned licenses", 'notAssignedLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.not.assigned.license"), 'notAssignedLicenses');
 							// series.name = "Not assigned licenses";
 						} else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
-							appendSelectedList("Public administration and defence compu licenses", 'publicAdministrationDefenceCompuLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.public.administration.license"), 'publicAdministrationDefenceCompuLicenses');
 							// series.name = "Public administration and defence; compu licenses";
 						} else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') 
-							appendSelectedList("Activities of extraterritorial organization license", 'activitiesOfExtraterritorialOrganizationLicenses');{
+							appendSelectedList(getI18nText("bar.graph.fdi.not.extraterritorial.license"), 'activitiesOfExtraterritorialOrganizationLicenses');{
 							// series.name = "Activities of extraterritorial organizat license";
 						}
 					}
@@ -3090,10 +3109,10 @@ $(document).ready(function () {
 					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.extraterritorial.license") + ": [bold]{valueY}[/]";
 				}
 				series.columns.template.fillOpacity = .8;
-				 var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-				 valueLabel.label.text = "{valueY}";
-				 valueLabel.label.fontSize = 9;
-				 valueLabel.label.dy = -10;
+                var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+                valueLabel.label.text = "{valueY}";
+                valueLabel.label.fontSize = 9;
+                valueLabel.label.dy = -10;
 			}
 		});
 		
@@ -3124,6 +3143,7 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = data;
+		chart.maskBullets = false;
 		dataObjectLength = [];
 		for(var i=0;i <data.length; i++) {
 			console.log(data[i]);
@@ -3219,10 +3239,10 @@ $(document).ready(function () {
                     series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.extraterritorial.license") + ": [bold]{valueY}[/]";
                 }
 				series.columns.template.fillOpacity = .8;
-				// var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-				// valueLabel.label.text = "{valueY}";
-				// valueLabel.label.fontSize = 12;
-				// valueLabel.label.dy = -10;
+				var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+				valueLabel.label.text = "{valueY}";
+				valueLabel.label.fontSize = 12;
+				valueLabel.label.dy = -10;
 			}
 		});
 		
@@ -3256,6 +3276,7 @@ $(document).ready(function () {
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
 		// chart.dateFormatter.dateFormat = "yyyy";
 		// chart.numberFormatter.numberFormat = "#";
 
@@ -3363,6 +3384,7 @@ $(document).ready(function () {
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
 		// chart.dateFormatter.dateFormat = "yyyy";
 		// chart.numberFormatter.numberFormat = "#";
 
@@ -3404,6 +3426,8 @@ $(document).ready(function () {
         valueLabel.label.text = "{"+valueAxisValue+"}";
         valueLabel.label.fontSize = 12;
         valueLabel.label.dy = -5;
+
+
 
         var lineSeries = chart.series.push(new am4charts.LineSeries());
         lineSeries.name = getI18nText("bar.graph.growth.rate");
@@ -3448,6 +3472,8 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.data = data;
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
+
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "year";
 		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
@@ -3520,7 +3546,69 @@ $(document).ready(function () {
 		// }
         if(this.checked) {
             // alert($(this).attr("data-id"));
-			appendSelectedList($(this).attr("data-id"), $(this).attr("id"));
+            if($(this).attr("id") == 'manufacturingLicenses'){
+                appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'manufacturingLicenses');
+            } else if($(this).attr("id") == 'constructionLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'constructionLicenses');
+            } else if($(this).attr("id") == 'wholeSaleRetailTradeMoLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.wholesale.license"), 'wholeSaleRetailTradeMoLicenses');
+                // series.name = "Wholesale and retail trade, repair of mo Licenses";
+            } else if($(this).attr("id") == 'informationAndCommunicationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.information.license"), 'informationAndCommunicationLicenses');
+                // series.name = "Information and communication Licenses";
+            } else if($(this).attr("id") == 'professionalScientificAndTechnicalLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.professional.license"), 'professionalScientificAndTechnicalLicenses');
+                // series.name = "Professional, scientific and technical Licenses";
+            } else if($(this).attr("id") == 'accommodationFoodServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.accommodation.licens"), 'accommodationFoodServiceActivityLicenses');
+                // series.name = "Accommodation and food service actives Licenses";
+            } else if($(this).attr("id") == 'administrativeSupportServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.administration.license"), 'administrativeSupportServiceActivityLicenses');
+                // series.name = "Administration and storage Licenses";
+            } else if($(this).attr("id") == 'transportationStorageLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.transportation.license"), 'transportationStorageLicenses');
+                // series.name = "Transportation and storage Licenses";
+            } else if($(this).attr("id") == 'humanHealthSocialworkActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.human.health.license"), 'humanHealthSocialworkActivityLicenses');
+                // series.name = "Human health and social work activities licenses";
+            } else if($(this).attr("id") == 'financialInsuranceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.financial.license"), 'financialInsuranceActivityLicenses');
+                // series.name = "Financial and insurance activities licenses";
+            } else if($(this).attr("id") == 'otherServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.other.license"), 'otherServiceActivityLicenses');
+                // series.name = "Other service activities licenses";
+            } else if($(this).attr("id") == 'miningQuarryingLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.mining.license"), 'miningQuarryingLicenses');
+                // series.name = "Mining and quarrying licenses";
+            } else if($(this).attr("id") == 'waterSupplySewerageWasteManagement') {
+                appendSelectedList(getI18nText("bar.graph.fdi.water.license"), 'waterSupplySewerageWasteManagement');
+                // series.name = "Water supply, sewerage, waste management";
+            } else if($(this).attr("id") == 'educationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.education.license"), 'educationLicenses');
+                // series.name = "Education licenses";
+            } else if($(this).attr("id") == 'realEstateActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.estate.license"), 'realEstateActivityLicenses');
+                // series.name = "Real estate activities licenses";
+            } else if($(this).attr("id") == 'artsEntertainmentRecreationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.arts.license"), 'artsEntertainmentRecreationLicenses');
+                // series.name = "Arts, entertainment and recreation licenses";
+            } else if($(this).attr("id") == 'electricityGasSteamAircondition') {
+                appendSelectedList(getI18nText("bar.graph.fdi.electricity.license"), 'electricityGasSteamAircondition');
+                // series.name = "Electricity, gas, steam and air conditioner";
+            } else if($(this).attr("id") == 'agricultureForestryFishing Licenses'){
+                appendSelectedList(getI18nText("bar.graph.fdi.agriculture.license"), 'agricultureForestryFishingLicenses');
+                // series.name = "Agriculture, forestry and fishing licenses";
+            } else if($(this).attr("id") == 'notAssignedLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.not.assigned.license"), 'notAssignedLicenses');
+                // series.name = "Not assigned licenses";
+            } else if($(this).attr("id") == 'publicAdministrationDefenceCompuLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.public.administration.license"), 'publicAdministrationDefenceCompuLicenses');
+                // series.name = "Public administration and defence; compu licenses";
+            } else if($(this).attr("id") == 'activitiesOfExtraterritorialOrganizationLicenses')
+                appendSelectedList(getI18nText("bar.graph.fdi.not.extraterritorial.license"), 'activitiesOfExtraterritorialOrganizationLicenses');{
+                // series.name = "Activities of extraterritorial organizat license";
+            }
+//			appendSelectedList($(this).attr("data-id"), $(this).attr("id"));
 			// invesSectorList.push({sector: $(this).attr("data-id"), sectoId: $(this).attr("id")})
         }
 		else {

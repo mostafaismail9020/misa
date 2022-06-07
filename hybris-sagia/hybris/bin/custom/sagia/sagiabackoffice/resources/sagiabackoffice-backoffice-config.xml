@@ -2404,7 +2404,335 @@
         </list-view:list-view>
     </context>
      -->
+	<context component="explorer-tree" merge-by="module">
+		<explorer-tree:explorer-tree>
+			<explorer-tree:navigation-node id="EconomicHighlights">
+				<explorer-tree:type-node id="CreditRating" code="CreditRating" />
+				<explorer-tree:type-node id="Dashboard" code="Dashboard" />
+				<explorer-tree:type-node id="InfraLogisticsLanding" code="InfraLogisticsLanding" />
+				<explorer-tree:type-node id="InfrastructureLogistics" code="InfrastructureLogistics" />
+				<explorer-tree:type-node id="LengthOfNetwork" code="LengthOfNetwork" />
+				<explorer-tree:type-node id="PrivateCities" code="PrivateCities" />
+				<explorer-tree:type-node id="AqValueGrowth" code="AqValueGrowth" />
+				<explorer-tree:type-node id="CommercialRegister" code="CommercialRegister" />
+				<explorer-tree:type-node id="ForeignInvestment" code="ForeignInvestment" />
+				<explorer-tree:type-node id="FundAssets" code="FundAssets" />
+				<explorer-tree:type-node id="SaudiArabiaInternationalIndices" code="SaudiArabiaInternationalIndices" />
+				<explorer-tree:type-node id="EconomicsSector" code="EconomicsSector" />
+				<explorer-tree:type-node id="GenderDistribution" code="GenderDistribution" />
+				<explorer-tree:type-node id="GraduatesByDegree" code="GraduatesByDegree" />
+				<explorer-tree:type-node id="PopulationDistribution" code="PopulationDistribution" />
+				<explorer-tree:type-node id="RegionDistribution" code="RegionDistribution" />
+			</explorer-tree:navigation-node>
+		</explorer-tree:explorer-tree>
+	</context>
 
+	<context type="CreditRating" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="CreditRatingTab">
+				<editorArea:section name="CreditRatingSection">
+					<editorArea:attribute qualifier="spLabel" />
+					<editorArea:attribute qualifier="moodysLabel" />
+					<editorArea:attribute qualifier="fitchLabel" />
+					<editorArea:attribute qualifier="spValue" />
+					<editorArea:attribute qualifier="moodysValue" />
+					<editorArea:attribute qualifier="fitchValue" />
+					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute qualifier="displayName" />
+					<editorArea:attribute qualifier="calenderValue" />
+					<editorArea:attribute qualifier="currencyValue" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="Dashboard" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="DashboardTab">
+				<editorArea:section name="DashboardSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="index" />
+					<editorArea:attribute qualifier="value" />
+					<editorArea:attribute qualifier="valueLabel" />
+					<editorArea:attribute qualifier="percentage" />
+					<editorArea:attribute qualifier="percentageLabel" />
+					<editorArea:attribute qualifier="displayName" />
+					<editorArea:attribute qualifier="calenderValue" />
+					<editorArea:attribute qualifier="notes" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="InfraLogisticsLanding" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="InfraLogisticsLandingTab">
+				<editorArea:section name="InfraLogisticsLandingSection">
+					<editorArea:attribute qualifier="internationalAirportslabel" />
+					<editorArea:attribute qualifier="internationalAirportsValue" />
+					<editorArea:attribute qualifier="domesticAirportsLabel" />
+					<editorArea:attribute qualifier="domesticAirportsValue" />
+					<editorArea:attribute qualifier="containersLabel" />
+					<editorArea:attribute qualifier="containersValue" />
+					<editorArea:attribute qualifier="containersAmount" />
+					<editorArea:attribute qualifier="portsCapacityLabel" />
+					<editorArea:attribute qualifier="portsCapacityValue" />
+					<editorArea:attribute qualifier="portsCapacityAmount" />
+					<editorArea:attribute qualifier="airportsLabel" />
+					<editorArea:attribute qualifier="airportsValue" />
+					<editorArea:attribute qualifier="portsLabel" />
+					<editorArea:attribute qualifier="portsValue" />
+					<editorArea:attribute qualifier="displayAirportslabel" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="InfrastructureLogistics" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="InfrastructureLogisticsTab">
+				<editorArea:section name="InfrastructureLogisticsSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="index" />
+					<editorArea:attribute qualifier="value1" />
+					<editorArea:attribute qualifier="label1" />
+					<editorArea:attribute qualifier="value2" />
+					<editorArea:attribute qualifier="label2" />
+					<editorArea:attribute qualifier="value3" />
+					<editorArea:attribute qualifier="label3" />
+					<editorArea:attribute qualifier="value4" />
+					<editorArea:attribute qualifier="label4" />
+					<editorArea:attribute qualifier="value5" />
+					<editorArea:attribute qualifier="label5" />
+					<editorArea:attribute qualifier="displayName" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="LengthOfNetwork" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="LengthOfNetworkTab">
+				<editorArea:section name="LengthOfNetworkSection">
+					<editorArea:attribute qualifier="networkName" />
+					<editorArea:attribute qualifier="networkValue" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="PrivateCities" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="PrivateCitiesTab">
+				<editorArea:section name="PrivateCitiesSection">
+					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute qualifier="establishmentYear" />
+					<editorArea:attribute qualifier="totalArea" />
+					<editorArea:attribute qualifier="developedArea" />
+					<editorArea:attribute qualifier="noOfContracts" />
+					<editorArea:attribute qualifier="displayName" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="AqValueGrowth" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="AqValueGrowthTab">
+				<editorArea:section name="AqValueGrowthSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="year" />
+					<editorArea:attribute qualifier="saudiInvestmentsAbroad" />
+					<editorArea:attribute qualifier="incomingForeignInvestment" />
+					<editorArea:attribute qualifier="totalNumberOfInvestmentLicenses" />
+					<editorArea:attribute qualifier="manufacturingLicenses" />
+					<editorArea:attribute qualifier="constructionLicenses" />
+					<editorArea:attribute qualifier="wholeSaleRetailTradeMoLicenses" />
+					<editorArea:attribute qualifier="informationAndCommunicationLicenses" />
+					<editorArea:attribute qualifier="professionalScientificAndTechnicalLicenses" />
+					<editorArea:attribute qualifier="accommodationFoodServiceActivityLicenses" />
+					<editorArea:attribute qualifier="administrativeSupportServiceActivityLicenses" />
+					<editorArea:attribute qualifier="transportationStorageLicenses" />
+					<editorArea:attribute qualifier="humanHealthSocialworkActivityLicenses" />
+					<editorArea:attribute qualifier="financialInsuranceActivityLicenses" />
+					<editorArea:attribute qualifier="otherServiceActivityLicenses" />
+					<editorArea:attribute qualifier="miningQuarryingLicenses" />
+					<editorArea:attribute qualifier="waterSupplySewerageWasteManagement" />
+					<editorArea:attribute qualifier="educationLicenses" />
+					<editorArea:attribute qualifier="realEstateActivityLicenses" />
+					<editorArea:attribute qualifier="artsEntertainmentRecreationLicenses" />
+					<editorArea:attribute qualifier="electricityGasSteamAircondition" />
+					<editorArea:attribute qualifier="agricultureForestryFishingLicenses" />
+					<editorArea:attribute qualifier="notAssignedLicenses" />
+					<editorArea:attribute qualifier="publicAdministrationDefenceCompuLicenses" />
+					<editorArea:attribute qualifier="activitiesOfExtraterritorialOrganizationLicenses" />
+					<editorArea:attribute qualifier="nonOilGdp" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="CommercialRegister" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="CommercialRegisterTab">
+				<editorArea:section name="CommercialRegisterSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="year" />
+					<editorArea:attribute qualifier="value" />
+					<editorArea:attribute qualifier="percentage" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="ForeignInvestment" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="ForeignInvestmentTab">
+				<editorArea:section name="ForeignInvestmentSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="index" />
+					<editorArea:attribute qualifier="value1" />
+					<editorArea:attribute qualifier="value2" />
+					<editorArea:attribute qualifier="value3" />
+					<editorArea:attribute qualifier="label1" />
+					<editorArea:attribute qualifier="label2" />
+					<editorArea:attribute qualifier="label3" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="FundAssets" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="FundAssetsTab">
+				<editorArea:section name="FundAssetsSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="year" />
+					<editorArea:attribute qualifier="totalNoOfInvestmentFund" />
+					<editorArea:attribute qualifier="totalNoOfInvestmentFundGrowthRate" />
+					<editorArea:attribute qualifier="totalInvestmentFundAssets" />
+					<editorArea:attribute qualifier="totalInvestmentFundAssetsGrowthRate" />
+					<editorArea:attribute qualifier="foreignInvestmentFund" />
+					<editorArea:attribute qualifier="foreignInvestmentFundGrowthRate" />
+					<editorArea:attribute qualifier="domesticInvestmentFund" />
+					<editorArea:attribute qualifier="domesticInvestmentFundGrowthRate" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="SaudiArabiaInternationalIndices" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="SaudiArabiaInternationalIndicesTab">
+				<editorArea:section name="SaudiArabiaInternationalIndicesSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="frequency" />
+					<editorArea:attribute qualifier="rankValue" />
+					<editorArea:attribute qualifier="scoreValue" />
+					<editorArea:attribute qualifier="year" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="EconomicsSector" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="EconomicsSectorTab">
+				<editorArea:section name="EconomicsSectorSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="index" />
+					<editorArea:attribute qualifier="value" />
+					<editorArea:attribute qualifier="label" />
+					<editorArea:attribute qualifier="year" />
+					<editorArea:attribute qualifier="displayName" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="GenderDistribution" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="GenderDistributionTab">
+				<editorArea:section name="GenderDistributionSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="year" />
+					<editorArea:attribute qualifier="males" />
+					<editorArea:attribute qualifier="females" />
+					<editorArea:attribute qualifier="total" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="GraduatesByDegree" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="GraduatesByDegreeTab">
+				<editorArea:section name="GraduatesByDegreeSection">
+					<editorArea:attribute qualifier="year" />
+					<editorArea:attribute qualifier="intermediate" />
+					<editorArea:attribute qualifier="diploma" />
+					<editorArea:attribute qualifier="bachelor" />
+					<editorArea:attribute qualifier="master" />
+					<editorArea:attribute qualifier="phd" />
+					<editorArea:attribute qualifier="fellowship" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="PopulationDistribution" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="PopulationDistributionTab">
+				<editorArea:section name="PopulationDistributionSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="year" />
+					<editorArea:attribute qualifier="saudi" />
+					<editorArea:attribute qualifier="nonSaudi" />
+					<editorArea:attribute qualifier="totalPopulation" />
+					<editorArea:attribute qualifier="saudiPercentage" />
+					<editorArea:attribute qualifier="nonSaudiPercentage" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="RegionDistribution" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="RegionDistributionTab">
+				<editorArea:section name="RegionDistributionSection">
+					<editorArea:attribute qualifier="uid" />
+					<editorArea:attribute qualifier="year" />
+					<editorArea:attribute qualifier="riyadhValue" />
+					<editorArea:attribute qualifier="riyadhPercentage" />
+					<editorArea:attribute qualifier="makkahValue" />
+					<editorArea:attribute qualifier="makkahPercentage" />
+					<editorArea:attribute qualifier="almadinahValue" />
+					<editorArea:attribute qualifier="almadinaPercentage" />
+					<editorArea:attribute qualifier="alqassimValue" />
+					<editorArea:attribute qualifier="alqassimPercentage" />
+					<editorArea:attribute qualifier="easternValue" />
+					<editorArea:attribute qualifier="easternPercentage" />
+					<editorArea:attribute qualifier="asirValue" />
+					<editorArea:attribute qualifier="asirPercentage" />
+					<editorArea:attribute qualifier="tabukValue" />
+					<editorArea:attribute qualifier="tabukPercentage" />
+					<editorArea:attribute qualifier="hailValue" />
+					<editorArea:attribute qualifier="hailPercentage" />
+					<editorArea:attribute qualifier="northernValue" />
+					<editorArea:attribute qualifier="northernPercentage" />
+					<editorArea:attribute qualifier="jazanValue" />
+					<editorArea:attribute qualifier="jazanPercentage" />
+					<editorArea:attribute qualifier="najranValue" />
+					<editorArea:attribute qualifier="najranPercentage" />
+					<editorArea:attribute qualifier="albahaValue" />
+					<editorArea:attribute qualifier="albahaPercentage" />
+					<editorArea:attribute qualifier="aljawfValue" />
+					<editorArea:attribute qualifier="aljawfPercentage" />
+					<editorArea:attribute qualifier="totalPopulation" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
 
 
 </config>

@@ -76,7 +76,7 @@ public class SmsService {
 //                || httpURLConnectionResponse.getResponseCode() != 200) {
 //            throw new IOException("SMS Could not be sent");
 //        }
-        LOG.info("The SMS URL is Created for Phone number " +mobileNumber);
+        LOG.info("The SMS URL is Created for Phone number " +mobileNumber+ " is "+ urlString);
         URL url = new URL(urlString);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
@@ -133,7 +133,7 @@ public class SmsService {
                 .append("%20to%20login%20Investor%20Eservices")
                 .append("&number=").append(mobileNumber).toString();
 
-        LOG.info("The SMS URL is Created for Phone number " +mobileNumber);
+        LOG.info("The SMS URL is Created for Phone number " +mobileNumber+ " is "+ urlString);
         URL url = new URL(urlString);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
 

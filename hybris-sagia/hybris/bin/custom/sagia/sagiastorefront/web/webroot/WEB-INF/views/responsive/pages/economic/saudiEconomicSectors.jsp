@@ -98,7 +98,7 @@
   </div>  -->
 </div>
                                                         <div class="chart-bottom-link pb-4 pr-2">
-                                                            <a href="#" target="_blank" class="anchor-link"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.gastat.text"/></span></a>
+                                                            <a href="https://www.stats.gov.sa/en/823" target="_blank" class="anchor-link"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.gastat.text"/></span></a>
                                                         </div>
 </div> 
   </div>  

@@ -86,6 +86,12 @@ function calculateShareholderEquity() {
     $('#shareholderShareholderEquityOthersCurrentQuarterId').val(Math.ceil(shareholderEquityOthersCurrentQuarter));
     $('#shareholderMinorityRightsCurrentQuarterId').val(Math.ceil(minorityRightsCurrentQuarter));
     $('#shareholderTotalShareholderEquityCurrentQuarterId').val(Math.ceil(totalShareholderEquityCurrentQuarter));
+
+
+    var shareholderIsVotingPower = $('#shareholderIsVotingPowerId').is(':checked');
+    if (!shareholderIsVotingPower ) {
+        $('#shareholderVotingPowerId').val(sharePercentage);
+    }
 }
 
 $(document).ready(function () {
@@ -105,7 +111,7 @@ $(document).ready(function () {
         document.getElementById("tab4").style["pointer-events"] = "none";
         document.getElementById("tab5").style["cursor"] = "default";
         document.getElementById("tab5").style["pointer-events"] = "none";
-        
+
 
 
 
@@ -685,6 +691,14 @@ $(document).ready(function () {
             }
         });
 
+        $("input[name='sacaleLevelRadioBox']").click(function () {
+            if ($(this).val() === "true") {
+                financialSurvey.isScaleLevelActualUnit = true;
+            }  else {
+                financialSurvey.isScaleLevelActualUnit = false;
+            }
+        });
+
         var elementsuspensionDateId = $("#suspensionDateId");
         bindNormalCal(elementsuspensionDateId);
 
@@ -723,6 +737,12 @@ $(document).ready(function () {
             var validator = entityValidator();
             if (!validator.form()) {
                 $('a[href="#accessibletabscontent0-0"]').click();
+
+                $('#requestErrorDialogId').modal({
+                    backdrop: "static",
+                    keyboard: false
+                }).find('.globalMessage-msg').text(getI18nText("financial.survey.mandatory.fields.survey"));
+
                 return;
             }
             submitFinancialSurveyCompanyProfile();
@@ -740,7 +760,13 @@ $(document).ready(function () {
         $(document).on("click", "#nextTabShareholdersEquityBtnId", function () {
             var validator = equityValidator();
             if (!validator.form()) {
-                $('a[href="#accessibletabscontent0-2"]').click();
+
+                $('#requestErrorDialogId').modal({
+                    backdrop: "static",
+                    keyboard: false
+                }).find('.globalMessage-msg').text(getI18nText("financial.survey.mandatory.fields.survey"));
+
+              //  $('a[href="#accessibletabscontent0-2"]').click();
                 return;
             }else {
                 caluculateTotalCapital();
@@ -765,7 +791,8 @@ $(document).ready(function () {
         });
 */
         $(document).on("click", "#dismissChangesBtnId, .showHistoryBtn", function () {
-            window.location.href = ACC.config.encodedContextPath + "/dashboard";
+           // window.location.href = ACC.config.encodedContextPath + "/dashboard";
+            $('#requestErrorDialogId').modal('hide');
         });
 
         $(document).on("click", "#submitChangesBtnId", function () {
@@ -1547,6 +1574,13 @@ function setLicenseData(data, history) {
         $('#subsidiarySection').hide();
     }
 
+    if (financialSurvey.isScaleLevelActualUnit) {
+        $("#actualUnitId").prop('checked',true);
+        $("#thousandsId").prop('checked',false);
+    }else {
+        $("#actualUnitId").prop('checked',false);
+        $("#thousandsId").prop('checked',true);
+    }
 
 
     var DELETE_ACTION = '03';

@@ -181,13 +181,13 @@
 			<value code="Z02"/>
 			<value code="NA"/>
 		</enumtype>
-		
+
 		<enumtype generate="true" code="PartnerType" autocreate="true" dynamic="true">
             <value code="Enabler"/>
             <value code="Accelerator"/>
             <value code="Incubator"/>
         </enumtype>
-        
+
         <enumtype code="CsInterventionType" dynamic="true" autocreate="false" generate="false">
             <value code="NotesForCustomer" />
         </enumtype>
@@ -223,10 +223,27 @@
             <value code="TEMPORARILY_SUSPENDED"/>
             <value code="DISSOLVED"/>
         </enumtype>
+
+
+        <enumtype code="FinancialSurveyScaleLevel" dynamic="true">
+            <value code="ACTUAL_UNIT"  />
+            <value code="THOUSANDS"/>
+        </enumtype>
+
+        <enumtype code="FinancialSurveyAffiliateType" dynamic="true">
+            <value code="INDIVIDUAL"/>
+            <value code="ENTITY"/>
+        </enumtype>
+
+        <enumtype code="FinancialSurveyShareholderType" dynamic="true">
+            <value code="INDIVIDUAL"/>
+            <value code="ENTITY"/>
+        </enumtype>
+
     </enumtypes>
-	
-	
-	
+
+
+
     <maptypes>
 		<maptype code="Integer2LivingInSaudiAchievementMape"
                argumenttype="java.lang.Integer"
@@ -252,7 +269,7 @@
             <sourceElement cardinality="one" qualifier="parentCategory" type="ServiceTypeCategory"/>
             <targetElement cardinality="many" qualifier="subCategories" type="ServiceTypeCategory"/>
         </relation>
-		
+
 		<relation generate="true" localized="false" code="ContactTicket2ServiceRequest" autocreate="true">
            <sourceElement type="ContactTicket" cardinality="one" qualifier="contactTicket"></sourceElement>
            <targetElement type="ServiceRequest" cardinality="many" qualifier="serviceRequest">
@@ -468,7 +485,7 @@
 			<targetElement qualifier="mcComponents" type="InvestSaudiMediaCenterComponent" cardinality="many" collectiontype="list" ordered="true">
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
-		</relation>	
+		</relation>
 		<relation code="OpportunityProduct2OpportunityPartner" generate="true" autocreate="true"  localized="false" >
 			<deployment table="productPartner" typecode="30211" />
 			<sourceElement qualifier="product" type="OpportunityProduct" cardinality="many">
@@ -477,9 +494,9 @@
 			<targetElement qualifier="partner" type="OpportunityPartner" cardinality="many" collectiontype="list" ordered="true">
 				<modifiers />
 			</targetElement>
-		</relation>	
-		<!-- Invest Saudi Changes Ends  -->	
-		
+		</relation>
+		<!-- Invest Saudi Changes Ends  -->
+
 		<!-- Sagia Dashboard Changes Starts  -->
 		<relation code="SagiaDashboardBannerCarousel" generate="true" localized="false" autocreate="true">
 			<deployment table="BannersForSagiaDashboard" typecode="30215" />
@@ -890,7 +907,7 @@
                 </index>
             </indexes>
         </itemtype>
-		
+
 		<itemtype code="ServiceRequest" generate="true"  autocreate="true"
           jaloclass="com.investsaudi.portal.core.jalo.ServiceRequest">
     <description>To assign request to the ticket</description>
@@ -1847,13 +1864,13 @@
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaRealTimeOnlineSupportComponent">
                 <description>Sagia Real Time Online Support Component</description>
             </itemtype>
-            
+
 			<itemtype code="SagiaDashboardBannerCarouselComponent"
                       autocreate="true" generate="true" extends="SimpleCMSComponent"
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaDashboardBannerCarouselComponent">
                 <description>Sagia Dashboard Banner Carousel Component</description>
             </itemtype>
-            
+
             <itemtype code="SagiaCommerceIndustryService" extends="SagiaService"
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaCommerceIndustryService">
                 <attributes>
@@ -4015,7 +4032,7 @@
                     <attribute qualifier="c4CAccountID" type="java.lang.String">
                         <persistence type="property"/>
                         <modifiers/>
-                    </attribute>                
+                    </attribute>
 					<attribute qualifier="systemOrigin" type="java.lang.String">
 						<persistence type="property"/>
 						<description>To identify the source system</description>
@@ -4049,8 +4066,8 @@
 						<defaultvalue>Boolean.FALSE</defaultvalue>
                    </attribute>
 				</attributes>
-            </itemtype> 
-                        
+            </itemtype>
+
 			<itemtype code="OpportunityPartner" generate="true" autocreate="true">
                 <description>To identify list of partners available to a product</description>
                 <deployment table="OpportunityPartner" typecode="30210"/>
@@ -11136,6 +11153,26 @@
                                    optional="false"  unique="true"  initial="true" />
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="companyProfile" type="SagiaCompanyProfile">
+                        <description>Company Profile</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true"  unique="false"   />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute type="java.lang.String" qualifier="companyName">
+                        <description>company Name</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="commercialRegistrationNo" type="java.lang.String">
+                        <description>Commercial Registration No</description>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+
 
                     <attribute qualifier="businessActivityId" type="java.lang.String">
                         <description>business Activity Id</description>
@@ -11215,7 +11252,11 @@
                         <defaultvalue>em().getEnumerationValue("FinancialSurveyCompanyStatus","ACTIVE")</defaultvalue>
                         <persistence type="property" />
                     </attribute>
-
+                    <attribute qualifier="scaleLevel " type="FinancialSurveyScaleLevel">
+                        <modifiers read="true" write="true" search="true" />
+                        <defaultvalue>em().getEnumerationValue("FinancialSurveyScaleLevel","ACTUAL_UNIT")</defaultvalue>
+                        <persistence type="property" />
+                    </attribute>
                     <attribute qualifier="suspensionDate" type="java.util.Date">
                         <description>suspension Date</description>
                         <modifiers read="true" write="true" search="true"
@@ -11272,6 +11313,24 @@
                         <defaultvalue>false</defaultvalue>
                     </attribute>
 
+                    <attribute qualifier="hoursToCompleteSurvey" type="java.lang.Integer">
+                        <description>hours To Complete Survey</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="minutesToCompleteSurvey" type="java.lang.Integer">
+                        <description>minutes To Complete Survey</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="sourceOfKnowledge" type="java.lang.String">
+                        <description>source Of Knowledge</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
 
 
 
@@ -11304,12 +11363,29 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="shareholderTypeRef" type="FinancialSurveyShareholderType">
+                        <description>shareholderType</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
                     <attribute qualifier="companyCountry" type="java.lang.String">
                         <description>companyCountry</description>
                         <modifiers read="true" write="true" search="true"
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+
+
+
+                    <attribute qualifier="companyCountryRef" type="SagiaCountry">
+                        <description>companyCountry</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
                     <attribute qualifier="shareholderSector" type="java.lang.String">
                         <description>shareholderSector</description>
                         <modifiers read="true" write="true" search="true"
@@ -11334,12 +11410,31 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+
+                    <attribute qualifier="shareholderNationalityCurrentRef" type="SagiaCountry">
+                        <description>shareholderNationalityCurrent</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
                     <attribute qualifier="shareholderCountry" type="java.lang.String">
                         <description>shareholderCountry</description>
                         <modifiers read="true" write="true" search="true"
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+
+                    <attribute qualifier="shareholderCountryRef" type="SagiaCountry">
+                        <description>shareholderCountry</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+
+
+
                     <attribute qualifier="shareholderPercentage" type="java.lang.String">
                         <description>shareholderPercentage</description>
                         <modifiers read="true" write="true" search="true"
@@ -11498,12 +11593,27 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="affiliateTypeRef" type="FinancialSurveyAffiliateType">
+                        <description>affiliateType</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
                     <attribute qualifier="companyCountry" type="java.lang.String">
                         <description>companyCountry</description>
                         <modifiers read="true" write="true" search="true"
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+
+                    <attribute qualifier="companyCountryRef" type="SagiaCountry">
+                        <description>companyCountry</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
                     <attribute qualifier="affiliateSector" type="java.lang.String">
                         <description>affiliateSector</description>
                         <modifiers read="true" write="true" search="true"
@@ -11528,12 +11638,26 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="affiliateNationalityCurrentRef" type="SagiaCountry">
+                        <description>affiliateNationalityCurrent</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
                     <attribute qualifier="affiliateCountry" type="java.lang.String">
                         <description>affiliateCountry</description>
                         <modifiers read="true" write="true" search="true"
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+
+                    <attribute qualifier="affiliateCountryRef" type="SagiaCountry">
+                        <description>affiliateCountry</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
 
                     <attribute qualifier="affiliateMultinationalCompany" type="java.lang.String">
                         <description>affiliateMultinationalCompany</description>
@@ -12188,23 +12312,23 @@
                     </attribute>
                 </attributes>
             </itemtype>
-            
+
             <itemtype code="SagiaCMSParagraphMediaComponent" generate="true"
-                      extends="CMSParagraphComponent" autocreate="true">                     
+                      extends="CMSParagraphComponent" autocreate="true">
                 <description>Sagia CMSParagraph Media Component</description>
-                <attributes>                   					
+                <attributes>
                    <attribute qualifier="attachment" type="localized:Media">
                         <persistence type="property"/>
                         <description>Localized Attachement</description>
-                    </attribute>                 
+                    </attribute>
              </attributes>
-           </itemtype>		
-                        
+           </itemtype>
+
         </typegroup>
-		 
+
 		<typegroup name="Outbound">
             <itemtype code="ScpiOutCsCustomerEventProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
-			<itemtype code="ScpiOutServiceRequestProcess" autocreate="true" generate="true" extends="BusinessProcess"/> 
+			<itemtype code="ScpiOutServiceRequestProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
             <itemtype code="ScpiOutTicketAttachmentProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
 			   <itemtype code="CsCustomerEvent" autocreate="false" generate="false" extends="CsTicketEvent" abstract="false">
                 <attributes>
@@ -12216,8 +12340,8 @@
                 </attributes>
             </itemtype>
         </typegroup>
-		
+
 		<!-- SiteMap Changes Ends -->
-		
+
 	</itemtypes>
 </items>

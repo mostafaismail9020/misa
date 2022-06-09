@@ -166,11 +166,15 @@ function shareholderValidator() {
             shareholderNationalityCurrent: "required",
             shareholderCountry: "required",
             shareholderCapital: "required",
-
+            shareholderVotingPower: {
+                required: true,
+                number: true,
+                range: [0, 100]
+            },
             shareholderPercentage: {
                 required: true,
                 number: true,
-                //range: [0, 100]
+                range: [0, 100]
             },
         },
 

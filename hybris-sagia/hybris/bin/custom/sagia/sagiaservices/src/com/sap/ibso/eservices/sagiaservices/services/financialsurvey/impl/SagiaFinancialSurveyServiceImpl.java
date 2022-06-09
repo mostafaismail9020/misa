@@ -1,6 +1,9 @@
 package com.sap.ibso.eservices.sagiaservices.services.financialsurvey.impl;
 
+import com.sap.ibso.eservices.core.enums.FinancialSurveyAffiliateType;
 import com.sap.ibso.eservices.core.enums.FinancialSurveyCompanyStatus;
+import com.sap.ibso.eservices.core.enums.FinancialSurveyScaleLevel;
+import com.sap.ibso.eservices.core.enums.FinancialSurveyShareholderType;
 import com.sap.ibso.eservices.core.enums.FinancialSurveyStatus;
 import com.sap.ibso.eservices.core.model.FinancialSurveyAffiliateModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyBranchModel;
@@ -15,6 +18,7 @@ import com.sap.ibso.eservices.core.model.SagiaSurveyTransactionModel;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyQuarterDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCompanyProfileDAO;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaCountryDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaLegalStatusDAO;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
 import com.sap.ibso.eservices.facades.data.finance.survey.Affiliate;
@@ -70,6 +74,9 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     @Resource
     private SagiaLegalStatusDAO  sagiaLegalStatusDAO;
 
+    @Resource
+    private SagiaCountryDAO sagiaCountryDAO;
+
 
 
 
@@ -119,8 +126,16 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         }
         //financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getPaidUpCapitalCurrentQuarter());
         financialSurveyModel.setIsConsolidated(financialSurveyData.getIsConsolidated());
+        financialSurveyModel.setCompanyName(financialSurveyData.getCompanyProfile().getCompanyName());
+        financialSurveyModel.setCommercialRegistrationNo(financialSurveyData.getCompanyProfile().getCommercialRegistrationNo());
         financialSurveyModel.setDisclosureCurrency(financialSurveyData.getDisclosureCurrency());
         financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getPaidUpCapitalCurrentQuarter());
+        if(financialSurveyData.getIsScaleLevelActualUnit()){
+            financialSurveyModel.setScaleLevel(FinancialSurveyScaleLevel.ACTUAL_UNIT);
+        }else {
+            financialSurveyModel.setScaleLevel(FinancialSurveyScaleLevel.THOUSANDS);
+        }
+
         modelService.save(financialSurveyModel);
     }
 
@@ -412,6 +427,16 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                 financialSurveyModel.setQuarter(quarter);
                 financialSurveyModel.setUser((CustomerModel) currentUser);
                 financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.OPEN);
+
+                SagiaCompanyProfileModel companyProfile = sagiaCompanyProfileDAO.getSagiaCompanyProfile(currentUser.getPk().getLong().toString());
+                if( companyProfile != null ){
+                    if (financialSurveyModel.getCompanyName() == null || "".equals(financialSurveyModel.getCompanyName())) {
+                        financialSurveyModel.setCompanyName(companyProfile.getCompanyName());
+                    }
+                    if (financialSurveyModel.getCommercialRegistrationNo() == null || "".equals(financialSurveyModel.getCommercialRegistrationNo())) {
+                        financialSurveyModel.setCommercialRegistrationNo(companyProfile.getCommercialRegistrationNo());
+                    }
+                }
                 modelService.save(financialSurveyModel);
             }
             financialSurveyModelList.add(financialSurveyModel);
@@ -446,14 +471,20 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
     private void populateShareholderModel(Shareholder shareholder, FinancialSurveyShareholderModel financialSurveyShareholderModel) throws ConversionException {
         financialSurveyShareholderModel.setShareholderType(shareholder.getShareholderType());
+        financialSurveyShareholderModel.setShareholderTypeRef("1".equals(shareholder.getShareholderType())? FinancialSurveyShareholderType.INDIVIDUAL:FinancialSurveyShareholderType.ENTITY);
+
         financialSurveyShareholderModel.setCompanyCountry(shareholder.getCompanyCountry());
+        financialSurveyShareholderModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(shareholder.getCompanyCountry()));
         financialSurveyShareholderModel.setShareholderNameEnglish(shareholder.getShareholderNameEnglish());
         financialSurveyShareholderModel.setShareholderSector(shareholder.getShareholderSector());
         financialSurveyShareholderModel.setShareholderSubsector(shareholder.getShareholderSubsector());
         financialSurveyShareholderModel.setNationalityOfUCP(shareholder.getNationalityOfUCP());
         financialSurveyShareholderModel.setShareholderGender(shareholder.getShareholderGender());
         financialSurveyShareholderModel.setShareholderNationalityCurrent(shareholder.getShareholderNationalityCurrent());
+        financialSurveyShareholderModel.setShareholderNationalityCurrentRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderNationalityCurrent()));
+        // this field is deprecated
         financialSurveyShareholderModel.setShareholderCountry(shareholder.getShareholderCountry());
+        financialSurveyShareholderModel.setShareholderCountryRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderCountry()));
         financialSurveyShareholderModel.setShareholderPercentage(shareholder.getShareholderPercentage());
         financialSurveyShareholderModel.setShareholderCapital(shareholder.getShareholderCapital());
         financialSurveyShareholderModel.setPaidUpCapitalCurrentQuarter(shareholder.getPaidUpCapitalCurrentQuarter());
@@ -483,13 +514,17 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
     private void populateAffiliateModel(Affiliate affiliate, FinancialSurveyAffiliateModel financialSurveyAffiliateModel) throws ConversionException {
         financialSurveyAffiliateModel.setAffiliateType(affiliate.getAffiliateType());
+        financialSurveyAffiliateModel.setAffiliateTypeRef("1".equals(affiliate.getAffiliateType())?FinancialSurveyAffiliateType.INDIVIDUAL:FinancialSurveyAffiliateType.ENTITY);
         financialSurveyAffiliateModel.setCompanyCountry(affiliate.getCompanyCountry());
+        financialSurveyAffiliateModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getCompanyCountry()));
         financialSurveyAffiliateModel.setAffiliateNameEnglish(affiliate.getAffiliateNameEnglish());
         financialSurveyAffiliateModel.setAffiliateSector(affiliate.getAffiliateSector());
         financialSurveyAffiliateModel.setAffiliateSubsector(affiliate.getAffiliateSubsector());
         financialSurveyAffiliateModel.setAffiliateGender(affiliate.getAffiliateGender());
         financialSurveyAffiliateModel.setAffiliateNationalityCurrent(affiliate.getAffiliateNationalityCurrent());
+        financialSurveyAffiliateModel.setAffiliateNationalityCurrentRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateNationalityCurrent()));
         financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());
+        financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
         financialSurveyAffiliateModel.setAffiliateMultinationalCompany(affiliate.getAffiliateMultinationalCompany());
     }
 

@@ -14,12 +14,10 @@ $(document).ready(function () {
         $('#entityShareholderId').hide();
 
         //hide optionals
-        $('#shareholderVotingPowerSectionId').hide();
         $('#shareholderPreferredSharesSectionId').hide();
         $('#shareholderValueOfReverseInvestmentSectionId').hide();
-
-
-
+      // $('#shareholderVotingPowerSectionId').hide();
+     //   $('#shareholderVotingPowerId').prop("disabled", true);
 
         //$('#contentNewShareholderForm').hide();
         loadPersonShareholderForm();
@@ -98,11 +96,18 @@ $(document).ready(function () {
 
         	var shareholderIsVotingPower = $('#shareholderIsVotingPowerId').is(':checked');
             if (shareholderIsVotingPower ) {
-            	$('#shareholderVotingPowerSectionId').show();
+            //	$('#shareholderVotingPowerSectionId').show();
+                $('#shareholderVotingPowerId').prop("disabled", false);
+
 
             } else {
-            	$('#shareholderVotingPowerSectionId').hide();
-                $('#shareholderVotingPowerId').val(null);
+            //	$('#shareholderVotingPowerSectionId').hide();
+             //   $('#shareholderVotingPowerId').val(null);
+
+                // make shareholderVotingPower same as shares percentage and disable it.
+                $('#shareholderVotingPowerId').prop("disabled", true);
+                sharePercentage = $('#shareholderPercentageId').val();
+                $('#shareholderVotingPowerId').val(sharePercentage);
             	//resetVerifyInherit();
             }
         });
@@ -438,6 +443,8 @@ var newShareholder = function () {
     $('#verifyShareholderDetailsShow').removeAttr('disabled');
     $('#shareholderDateofBirth').removeAttr('disabled');
     $('#shareholderIdNumber').removeAttr('disabled');
+
+    $('#shareholderVotingPowerId').prop("disabled", true);
     $('#shareholderIdTypeSection').show();
 };
 
@@ -552,6 +559,14 @@ var editShareholder = function () {
     }else {
     	enableNICFields();
     }*/
+
+    var shareholderIsVotingPower = $('#shareholderIsVotingPowerId').is(':checked');
+    if (shareholderIsVotingPower ) {
+        $('#shareholderVotingPowerId').prop("disabled", false);
+
+    } else {
+        $('#shareholderVotingPowerId').prop("disabled", true);
+    }
 
     $('#entityBasicInformation2').show();
 

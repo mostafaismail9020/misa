@@ -338,6 +338,61 @@
                                                 <div class="contentModule-separator"></div>
                                             </div>
 
+                                            <%--<div class="col-sm-6 contentModule-headline_smallMargin">
+                                                <spring:theme code="financial.survey.scale.level"/>
+                                            </div>--%>
+
+                                            <div class="col-sm-6">
+                                                <div class="formRadioBox ml-4 pl-2">
+                                                    <div class="form-group">
+                                                        <div class="formRadioBox-label"><spring:theme code="financial.survey.scale.level"/></div>
+                                                        <div class="form-item pt-2 pb-5">
+                                                            <input id="actualUnitId"
+                                                                   name="sacaleLevelRadioBox" class="form-control"
+                                                                   value="true" type="radio" checked> <label
+                                                                for="actualUnitId" class="control-label"> <spring:theme
+                                                                code="financial.survey.actualUnit"/>
+                                                        </label>
+                                                        </div>
+                                                        <div class="form-item pt-2 pb-5">
+                                                            <input id="thousandsId"
+                                                                   name="sacaleLevelRadioBox" class="form-control"
+                                                                   value="false" type="radio"> <label
+                                                                for="thousandsId" class="control-label"> <spring:theme
+                                                                code="financial.survey.thousands"/>
+                                                        </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-sm-6">
+                                                <div class="formRadioBox ml-4 pl-2" id="myRadio" >
+
+                                                    <div class="form-group">
+                                                        <div class="formRadioBox-label"><spring:theme code="financial.survey.data.type"/></div>
+                                                        <div class="form-item pt-2 pb-5">
+                                                            <input id="standloneId"
+                                                                   name="consolidatedStandloneRadioBox" class="form-control"
+                                                                   value="true" type="radio" checked> <label
+                                                                for="standloneId" class="control-label"> <spring:theme
+                                                                code="financial.survey.standlone"/>
+                                                        </label>
+                                                        </div>
+                                                        <div class="form-item pt-2 pb-5">
+                                                            <input id="consolidatedId"
+                                                                   name="consolidatedStandloneRadioBox" class="form-control"
+                                                                   value="false" type="radio"> <label
+                                                                for="consolidatedId" class="control-label"> <spring:theme
+                                                                code="financial.survey.consolidated"/>
+                                                        </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                             <div class="col-md-6">
                                                 <div class="formSelectBox">
                                                     <div class="form-group">
@@ -356,6 +411,8 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+
                                             <div class="col-sm-6">
                                                 <div class="formInputBox">
                                                     <div class="form-group">
@@ -370,32 +427,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class=" col-md-12 contentModule-headline_smallMargin">
-                                                <spring:theme code="financial.survey.data.type"/>
-                                            </div>
 
-                                            <div class="col-md-12">
-                                                <div class="formRadioBox">
-                                                    <div class="form-group">
-                                                        <div class="form-item">
-                                                            <input id="standloneId"
-                                                                   name="consolidatedStandloneRadioBox" class="form-control"
-                                                                   value="true" type="radio" checked> <label
-                                                                for="standloneId" class="control-label"> <spring:theme
-                                                                code="financial.survey.standlone"/>
-                                                        </label>
-                                                        </div>
-                                                        <div class="form-item">
-                                                            <input id="consolidatedId"
-                                                                   name="consolidatedStandloneRadioBox" class="form-control"
-                                                                   value="false" type="radio"> <label
-                                                                for="consolidatedId" class="control-label"> <spring:theme
-                                                                code="financial.survey.consolidated"/>
-                                                        </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
 
                                             <div class="col-md-12">
@@ -1427,9 +1459,16 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <formElement:formInputBox idKey="text.company.budget.amount" labelKey="text.hours.to.complete.survey" path="hoursToCompleteSurvey" inputCSS="text" mandatory="true" placeholder="00.00"/>
+                                </div>
                                 <div class="formCheckBox formCheckBox_belowPanel">
                                     <formElement:termsAndConditionsCheckbox event="FINANCIAL_STATEMENT" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                                 </div>
+
+
                                 <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
                                     <button type="reset" class="btn btn-secondary" id="cancelSubmit">
                                         <spring:theme code="general.cancel"/>
@@ -1729,7 +1768,7 @@
                                 <div class="formInputBox">
                                     <div class="form-group">
                                         <input id="shareholderVotingPowerId" name="shareholderVotingPower"
-                                               class="form-control" placeholder="." value="" type="text">
+                                               class="form-control" placeholder="." value="" type="text" >
                                         <label class="control-label control-label_mandatory" for="shareholderVotingPowerId">
                                             <spring:theme code="financial.survey.shareholderVotingPower"/>
                                         </label>
@@ -2459,7 +2498,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div class="modal-description">
+                    <div class="modal-description globalMessage-msg">
                         <spring:theme code="financial.survey.errorsaving.survey"/>
                     </div>
                 </div>
@@ -2541,17 +2580,9 @@
                         <div id="entityAffiliateId">
 
                             <div id="affiliateEntityBasicInformation" class="row">
-                                <div class="col-md-6">
-                                    <div class="formInputBox">
-                                        <div class="form-group">
-                                            <select id="affiliateCompanyCountry" name="affiliateCompanyCountry"
-                                                    class="js-select2-oneColumn form-control"></select> <label
-                                                class="control-label control-label_mandatory"
-                                                for="companyCountry"><spring:theme
-                                                code="general.country"/></label>
-                                        </div>
-                                    </div>
-                                </div>
+
+
+
                                 <div class="col-md-6">
                                     <div class="formInputBox">
                                         <div class="form-group">
@@ -2566,6 +2597,20 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="col-md-6">
+                                    <div class="formSelectBox">
+                                        <div class="form-group">
+                                            <select id="affiliateCompanyCountry" name="affiliateCompanyCountry"
+                                                    class="js-select2-oneColumn form-control"></select> <label
+                                                class="control-label control-label_mandatory"
+                                                for="companyCountry"><spring:theme
+                                                code="general.country"/></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
 
                                 <div class="col-md-6">
                                     <div class="formSelectBox">

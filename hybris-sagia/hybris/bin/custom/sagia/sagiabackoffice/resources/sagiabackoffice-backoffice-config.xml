@@ -93,7 +93,7 @@
 		</advanced-search:advanced-search>
 	</context>
 
-	<context type="FinancialSurvey" component="advanced-search" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context type="FinancialSurvey" component="advanced-search" principal="backofficeworkflowadmingroup,customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<advanced-search:advanced-search>
 			<advanced-search:field-list>
@@ -102,6 +102,10 @@
 				<advanced-search:field name="quarter"
 									   selected="true" />
 				<advanced-search:field name="surveyStatus"
+									   selected="true" />
+				<advanced-search:field name="companyName"
+									   selected="true" />
+				<advanced-search:field name="commercialRegistrationNo"
 									   selected="true" />
 
 				<advanced-search:field name="isCompanyProfileSectionFilled" />
@@ -180,7 +184,7 @@
 		</list:list-view>
 	</context>
 
-	<context module="customersupportbackoffice" type="FinancialSurveyQuarter" component="listview" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context module="customersupportbackoffice" type="FinancialSurveyQuarter" component="listview" principal="backofficeworkflowadmingroup,customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<list:list-view>
 			<list:column qualifier="code" />
@@ -197,7 +201,7 @@
 		</list:list-view>
 	</context>
 
-	<context component="cs-listview" type="FinancialSurvey" module="customersupportbackoffice" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole" >
+	<context component="cs-listview" type="FinancialSurvey" module="customersupportbackoffice" principal="backofficeworkflowadmingroup,customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole" >
 		<list:list-view>
 			<list:column qualifier="quarter" />
 			<list:column qualifier="user" />
@@ -208,9 +212,12 @@
 	<context type="FinancialSurveyShareholder" component="listview"
 			 merge-by="type">
 		<list:list-view>
-			<list:column qualifier="firstName" />
-			<list:column qualifier="nationalityCurrentDescription" />
-			<list:column qualifier="percentage" />
+			<list:column qualifier="shareholderNameEnglish" />
+			<list:column qualifier="shareholderCapital"  />
+			<list:column qualifier="shareholderPercentage" />
+			<list:column qualifier="shareholderVotingPower" />
+			<list:column qualifier="companyCountryRef" />
+			<list:column qualifier="shareholderNationalityCurrentRef" />
 		</list:list-view>
 	</context>
 
@@ -606,6 +613,21 @@
 		</y:base>
 	</context>
 
+	<context type="SagiaCompanyProfile" component="base"
+			 merge-by="type" parent="GenericItem">
+		<y:base>
+			<y:labels>
+				<y:label>companyName+ ' - CR: ' +commercialRegistrationNo</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+	<context merge-by="type" parent="GenericItem" type="SagiaCompanyProfile" component="simple-search">
+		<simple-search:simple-search xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch">
+			<simple-search:field name="companyName"/>
+			<simple-search:field name="commercialRegistrationNo"/>
+		</simple-search:simple-search>
+	</context>
+
 	<context type="SagiaCountry" component="editor-area"
 			 merge-by="type">
 		<editorArea:editorArea>
@@ -647,7 +669,7 @@
 		</editorArea:editorArea>
 	</context>
 
-	<context module="customersupportbackoffice" type="FinancialSurvey" component="cs-editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+	<context module="customersupportbackoffice" type="FinancialSurvey" component="cs-editor-area" principal="backofficeworkflowadmingroup,customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 merge-by="type">
 		<editorArea:editorArea >
 			<editorArea:tab name="FinancialSurveyTab" >
@@ -657,11 +679,15 @@
 				<editorArea:section name="FinancialSurveySection">
 					<editorArea:attribute qualifier="user" />
 					<editorArea:attribute qualifier="quarter" />
+					<editorArea:attribute qualifier="companyProfile" />
+					<editorArea:attribute qualifier="companyName" />
+					<editorArea:attribute qualifier="commercialRegistrationNo" />
 					<editorArea:attribute qualifier="businessActivityId" />
 					<editorArea:attribute qualifier="businessActivityDescription" />
 					<editorArea:attribute qualifier="companyStatus" />
 					<editorArea:attribute qualifier="isConsolidated" />
 					<editorArea:attribute qualifier="disclosureCurrency" />
+					<editorArea:attribute qualifier="scaleLevel" />
 					<editorArea:attribute qualifier="isCompanyProfileSectionFilled" />
 					<editorArea:attribute qualifier="isBranchSectionFilled" />
 					<editorArea:attribute qualifier="isEquitySectionFilled" />
@@ -745,11 +771,15 @@
 				<editorArea:section name="FinancialSurveySection">
 					<editorArea:attribute qualifier="user" />
 					<editorArea:attribute qualifier="quarter" />
+					<editorArea:attribute qualifier="companyProfile" />
+					<editorArea:attribute qualifier="companyName" />
+					<editorArea:attribute qualifier="commercialRegistrationNo" />
 					<editorArea:attribute qualifier="businessActivityId" />
 					<editorArea:attribute qualifier="businessActivityDescription" />
 					<editorArea:attribute qualifier="companyStatus" />
 					<editorArea:attribute qualifier="isConsolidated" />
 					<editorArea:attribute qualifier="disclosureCurrency" />
+					<editorArea:attribute qualifier="scaleLevel" />
 					<editorArea:attribute qualifier="isCompanyProfileSectionFilled" />
 					<editorArea:attribute qualifier="isBranchSectionFilled" />
 					<editorArea:attribute qualifier="isEquitySectionFilled" />
@@ -1423,6 +1453,24 @@
 		</y:base>
 	</context>
 
+	<context type="FinancialSurveyAffiliateType" component="base"
+			 module="sagiabackoffice">
+		<y:base xmlns:y="http://www.hybris.com/cockpit/config/hybris">
+			<y:labels>
+				<y:label>code</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
+	<context type="FinancialSurveyShareholderType" component="base"
+			 module="sagiabackoffice">
+		<y:base xmlns:y="http://www.hybris.com/cockpit/config/hybris">
+			<y:labels>
+				<y:label>code</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
 	<context component="explorer-tree" merge-by="module">
 		<explorer-tree:explorer-tree>
 			<explorer-tree:navigation-node
@@ -1495,6 +1543,8 @@
 			<list-view:column qualifier="shareholderCapital" />
 			<list-view:column qualifier="shareholderPercentage" />
 			<list-view:column qualifier="shareholderVotingPower" />
+			<list-view:column qualifier="companyCountryRef" />
+			<list-view:column qualifier="shareholderNationalityCurrentRef" />
 
 		</list-view:list-view>
 	</context>
@@ -1503,9 +1553,9 @@
 		<list-view:list-view
 				xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
 			<list-view:column qualifier="affiliateNameEnglish" />
-			<list-view:column qualifier="affiliateType" />
+			<list-view:column qualifier="affiliateTypeRef" />
 			<list-view:column qualifier="affiliateSector" />
-			<list-view:column qualifier="affiliateCountry" />
+			<list-view:column qualifier="affiliateCountryRef" />
 
 		</list-view:list-view>
 	</context>

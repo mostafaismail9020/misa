@@ -1,6 +1,7 @@
 package com.sap.ibso.eservices.facades.populators.financial.survey;
 
 import com.sap.ibso.eservices.core.enums.FinancialSurveyCompanyStatus;
+import com.sap.ibso.eservices.core.enums.FinancialSurveyScaleLevel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyBranchDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyShareholderDAO;
@@ -103,6 +104,12 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
             financialSurvey.setCompanyStatus(financialSurveyModel.getCompanyStatus().getCode());
         }else {
             financialSurvey.setCompanyStatus(FinancialSurveyCompanyStatus.ACTIVE.getCode());
+        }
+
+        if(FinancialSurveyScaleLevel.THOUSANDS.equals(financialSurveyModel.getScaleLevel())) {
+            financialSurvey.setIsScaleLevelActualUnit(false);
+        }else {
+            financialSurvey.setIsScaleLevelActualUnit(true);
         }
 
         financialSurvey.setIsConsolidated(financialSurveyModel.isIsConsolidated());

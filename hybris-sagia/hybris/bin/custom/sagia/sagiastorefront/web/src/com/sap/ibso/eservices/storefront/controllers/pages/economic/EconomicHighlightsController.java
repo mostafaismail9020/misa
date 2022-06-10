@@ -144,7 +144,7 @@ public class EconomicHighlightsController extends SagiaAbstractPageController {
 	public String getInvestmentData(final Model model,
 			@RequestParam(defaultValue = "manufacturingLicenses") String sector,
 			@RequestParam(defaultValue = "Annually") String period,
-			@RequestParam(defaultValue = "2017") String startYear, @RequestParam(defaultValue = "2020") String endYear)
+			@RequestParam(defaultValue = "2017") String startYear, @RequestParam(defaultValue = "2022") String endYear)
 			throws CMSItemNotFoundException {
 		if (sector.contains("%2C")) {
 			sector = sector.replaceAll("%2C", ",");

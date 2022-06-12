@@ -380,11 +380,15 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
 
     @Override
-    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode) {
+    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode
+            ,Integer hoursToCompleteSurvey, Integer minutesToCompleteSurvey, String sourceOfKnowledge) {
 
         // fetch the FinancialSurvey for the given quarter
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(quarterCode);
         financialSurveyModel.setAnnualFinancialStatementFile(mediaModel);
+        financialSurveyModel.setHoursToCompleteSurvey(hoursToCompleteSurvey);
+        financialSurveyModel.setMinutesToCompleteSurvey(minutesToCompleteSurvey);
+        financialSurveyModel.setSourceOfKnowledge(sourceOfKnowledge);
         financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.SUBMITTED);
         modelService.save(financialSurveyModel);
         /*final SagiaNewFinancialSurveyProcessModel sagiaNewFinancialSurveyProcess =

@@ -688,6 +688,9 @@
 					<editorArea:attribute qualifier="isConsolidated" />
 					<editorArea:attribute qualifier="disclosureCurrency" />
 					<editorArea:attribute qualifier="scaleLevel" />
+					<editorArea:attribute qualifier="hoursToCompleteSurvey" />
+					<editorArea:attribute qualifier="minutesToCompleteSurvey" />
+					<editorArea:attribute qualifier="sourceOfKnowledge" />
 					<editorArea:attribute qualifier="isCompanyProfileSectionFilled" />
 					<editorArea:attribute qualifier="isBranchSectionFilled" />
 					<editorArea:attribute qualifier="isEquitySectionFilled" />
@@ -780,6 +783,9 @@
 					<editorArea:attribute qualifier="isConsolidated" />
 					<editorArea:attribute qualifier="disclosureCurrency" />
 					<editorArea:attribute qualifier="scaleLevel" />
+					<editorArea:attribute qualifier="hoursToCompleteSurvey" />
+					<editorArea:attribute qualifier="minutesToCompleteSurvey" />
+					<editorArea:attribute qualifier="sourceOfKnowledge" />
 					<editorArea:attribute qualifier="isCompanyProfileSectionFilled" />
 					<editorArea:attribute qualifier="isBranchSectionFilled" />
 					<editorArea:attribute qualifier="isEquitySectionFilled" />

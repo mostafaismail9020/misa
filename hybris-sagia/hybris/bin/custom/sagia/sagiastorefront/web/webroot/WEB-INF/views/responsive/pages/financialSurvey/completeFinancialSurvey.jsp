@@ -1431,7 +1431,7 @@
 
                         <div id="attachmentSection" class="contentModule-section">
 
-                            <form:form  id="${quarterCode}" action="${encodedContextPath}/my-sagia/financial-survey/complete/saveAttachment"   enctype="multipart/form-data"  method="post" modelAttribute="financialStatementForm" class="js-financialStatement-create">
+                            <form:form  id="attachementForm" action="${encodedContextPath}/my-sagia/financial-survey/complete/saveAttachment"   enctype="multipart/form-data"  method="post" modelAttribute="financialStatementForm" class="js-financialStatement-create">
                                 <div class="panelModule panelModule_halfRadius">
                                     <div class="contentModule">
                                         <div class="contentModule-section">
@@ -1460,9 +1460,39 @@
                                     </div>
                                 </div>
 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="contentModule-headline_smallMargin">
+                                            <spring:theme
+                                                    code="text.survey.voluntary.questions"/>
+                                        </div>
+                                    </div>
 
-                                <div class="col-xs-12 col-sm-6">
-                                    <formElement:formInputBox idKey="text.company.budget.amount" labelKey="text.hours.to.complete.survey" path="hoursToCompleteSurvey" inputCSS="text" mandatory="true" placeholder="00.00"/>
+
+                                <div class="col-md-12">
+                                    <div class="form-condition-spl-notes">
+                                        <spring:theme
+                                                code="text.how.long.survey.has.taken"/>
+                                    </div>
+                                </div>
+
+                                    <div class="col-md-3">
+                                    <formElement:formInputBox idKey="text.hours.to.complete.survey" labelKey="text.hours.to.complete.survey" path="hoursToCompleteSurvey" inputCSS="number" maxlength="3" />
+                                </div>
+                                     <div class="col-md-3">
+                                    <formElement:formInputBox idKey="text.minutes.to.complete.survey" labelKey="text.minutes.to.complete.survey" path="minutesToCompleteSurvey" inputCSS="number"  maxlength="3" />
+                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="form-condition-spl-notes">
+                                            <spring:theme
+                                                    code="text.survey.knowledge.source"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <formElement:formInputBox idKey="text.survey.source" labelKey="text.survey.source" path="sourceOfKnowledge" inputCSS="text"  />
+                                    </div>
+
+
                                 </div>
                                 <div class="formCheckBox formCheckBox_belowPanel">
                                     <formElement:termsAndConditionsCheckbox event="FINANCIAL_STATEMENT" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>

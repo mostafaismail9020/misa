@@ -193,8 +193,8 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     }
 
     @Override
-    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode) {
-        sagiaFinancialSurveyService.submitFinancialSurveyForReview( mediaModel, quarterCode);
+    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode, Integer hoursToCompleteSurvey, Integer minutesToCompleteSurvey, String sourceOfKnowledge) {
+        sagiaFinancialSurveyService.submitFinancialSurveyForReview( mediaModel, quarterCode, hoursToCompleteSurvey, minutesToCompleteSurvey, sourceOfKnowledge);
     }
 
 
@@ -375,8 +375,8 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
         unit.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setUnit(unit);
-		
-		
+
+
 		ListItem itemMultinationalCompany1 =  new ListItem() ;
         itemMultinationalCompany1.setId("yes");
         itemMultinationalCompany1.setName(getLocalizedValue("type.yes"));

@@ -1248,6 +1248,8 @@ var submitLicense = function () {
 };
 
 function submitLicenseWithAttachments() {
+
+
     var token = $('input[name="CSRFToken"]').attr('value');
     $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete", {
         method: "POST",

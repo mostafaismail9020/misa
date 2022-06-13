@@ -1818,7 +1818,8 @@ $(document).ready(function () {
 		// });
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-
+        valueAxis.title.text = getI18nText("bar.graph.no.of.population");
+        
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 
@@ -2254,6 +2255,8 @@ $(document).ready(function () {
         valueLabel.label.text = "{saudiValue}";
         valueLabel.label.fontSize = 8;
         valueLabel.label.dy = -10;
+        valueLabel.label.truncate = false;
+        valueLabel.label.hideOversized = false;
 
 		if(chartData.length != 1) {
 			// Create series
@@ -2267,6 +2270,8 @@ $(document).ready(function () {
             valueLabel.label.text = "{nonSaudiValue}";
             valueLabel.label.fontSize = 8;
             valueLabel.label.dy = -10;
+            valueLabel.label.truncate = false;
+            valueLabel.label.hideOversized = false;
 		}
 		
 		// series.columns.template.fillOpacity = .8;
@@ -3687,11 +3692,13 @@ $(document).ready(function () {
 				else {
 					if(doc.getElementById("quarterlyValueJson") != null){
 						var data4 = JSON.parse(doc.getElementById("quarterlyValueJson").innerHTML);
+						console.log("data4");
 						console.log(data4);
 						renderFDIValueChart(data4);
 					}
 					if(doc.getElementById("quarterlyGrowthJson") != null){
 						var data = JSON.parse(doc.getElementById("quarterlyGrowthJson").innerHTML);
+						console.log("data");
 						console.log(data);
 						renderFDIGrowthChart(data);
 					}

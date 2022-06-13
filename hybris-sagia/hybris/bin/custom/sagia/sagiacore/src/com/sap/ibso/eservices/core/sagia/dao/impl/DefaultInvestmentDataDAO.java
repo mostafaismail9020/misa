@@ -70,16 +70,14 @@ public class DefaultInvestmentDataDAO implements InvestmentDataDAO {
 	public List<AQValueGrowthModel> getQuarterlyValueModelBySearch(String sector, String period, String startYear,
 			String endYear) {
 
-		final String queryString = "SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE+" }"
-				+" WHERE {" + AQValueGrowthModel.UID + "} LIKE 'QuarterlyValue' IN ({{"
-				+"SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE
-				+ "}" + " WHERE  " +
-				"({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt1startYear AND "
+		final String queryString = "SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE
+				+ "}" + " WHERE { " + AQValueGrowthModel.UID + " } = 'QuarterlyValue' AND " +
+				"(({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt1startYear AND "
 				+ "?qrt1endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt2startYear AND "
 				+ "?qrt2endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt3startYear AND "
 				+ "?qrt3endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt4startYear AND "
-				+ "?qrt4endYear) ORDER BY " + "{" + AQValueGrowthModel.YEAR + "}}})";
-		
+				+ "?qrt4endYear))" + "ORDER BY" + "{" + AQValueGrowthModel.YEAR + "}";
+
 		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
 		
 		query.addQueryParameter("qrt1startYear","Qtr1-"+startYear);
@@ -102,15 +100,13 @@ public class DefaultInvestmentDataDAO implements InvestmentDataDAO {
 	@Override
 	public List<AQValueGrowthModel> getQuarterlyGrowthModelBySearch(String sector, String period, String startYear,
 																	String endYear) {
-		final String queryString = "SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE+" }"
-				+" WHERE {" + AQValueGrowthModel.UID + "} LIKE 'QuarterlyGrowth' IN ({{"
-				+"SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE
-				+ "}" + " WHERE  " +
-				"({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt1startYear AND "
+		final String queryString = "SELECT {" + AQValueGrowthModel.PK + "} FROM {" + AQValueGrowthModel._TYPECODE
+				+ "}" + " WHERE { " + AQValueGrowthModel.UID + " } = 'QuarterlyGrowth' AND " +
+				"(({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt1startYear AND "
 				+ "?qrt1endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt2startYear AND "
 				+ "?qrt2endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt3startYear AND "
 				+ "?qrt3endYear)OR({" + AQValueGrowthModel.YEAR + "}BETWEEN ?qrt4startYear AND "
-				+ "?qrt4endYear) ORDER BY " + "{" + AQValueGrowthModel.YEAR + "}}})";
+				+ "?qrt4endYear))" + "ORDER BY" + "{" + AQValueGrowthModel.YEAR + "}";
 		
 		
 		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);

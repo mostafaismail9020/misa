@@ -1819,6 +1819,7 @@ $(document).ready(function () {
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.title.text = getI18nText("bar.graph.no.of.population");
+        
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 

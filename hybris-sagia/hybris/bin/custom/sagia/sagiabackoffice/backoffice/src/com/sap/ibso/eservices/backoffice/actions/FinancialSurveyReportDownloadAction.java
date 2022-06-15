@@ -9,10 +9,13 @@ import com.hybris.cockpitng.engine.impl.AbstractComponentWidgetAdapterAware;
 import com.hybris.cockpitng.search.data.pageable.Pageable;
 import com.hybris.cockpitng.search.data.pageable.PageableList;
 import com.hybris.cockpitng.util.type.BackofficeTypeUtils;
+import com.sap.ibso.eservices.core.model.FinancialSurveyAffiliateModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyBranchModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
+import com.sap.ibso.eservices.core.model.FinancialSurveyShareholderModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
 import com.sap.ibso.eservices.core.model.SagiaSubsidiaryModel;
+import com.sap.ibso.eservices.core.model.SagiaSurveyTransactionModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCompanyProfileDAO;
 import de.hybris.platform.core.model.ItemModel;
 import de.hybris.platform.servicelayer.config.ConfigurationService;
@@ -61,6 +64,8 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 	private static final int BRANCH_PROFILE_SHEET_NUM = 1;
 	private static final int SUBSIDIARY_PROFILE_SHEET_NUM = 2;
 	private static final int SHAREHOLDER_EQUITY_PROFILE_SHEET_NUM = 3;
+	private static final int SHAREHOLDER_SHEET_NUM = 4;
+	private static final int AFFILIATE_SHEET_NUM = 5;
 
 	@Resource
 	private TypeService typeService;
@@ -144,11 +149,15 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 		final XSSFSheet branchSheet = workbook.getSheetAt(BRANCH_PROFILE_SHEET_NUM);
 		final XSSFSheet subsidiarySheet = workbook.getSheetAt(SUBSIDIARY_PROFILE_SHEET_NUM);
 		final XSSFSheet shareholderEquitySheet = workbook.getSheetAt(SHAREHOLDER_EQUITY_PROFILE_SHEET_NUM);
+		final XSSFSheet shareholderSheet = workbook.getSheetAt(SHAREHOLDER_SHEET_NUM);
+		final XSSFSheet affiliateSheet = workbook.getSheetAt(AFFILIATE_SHEET_NUM);
 
 		int companyProfileRowNum = companyProfileSheet.getLastRowNum() + 1;
 		int branchRowNum = branchSheet.getLastRowNum() + 1;
 		int subsidiaryRowNum = subsidiarySheet.getLastRowNum() + 1 ;
 		int shareholderEquityRowNum = shareholderEquitySheet.getLastRowNum() + 1 ;
+		int shareholderRowNum = shareholderSheet.getLastRowNum() + 1 ;
+		int affiliateRowNum = affiliateSheet.getLastRowNum() + 1 ;
 
 		for (ItemModel itemModel : excelExportData.getAllResults())
 		{
@@ -159,7 +168,8 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 				branchRowNum = fillBranchSheet(branchSheet, branchRowNum, financialSurvey);
 				subsidiaryRowNum = fillSubsidiarySheet(subsidiarySheet, subsidiaryRowNum , financialSurvey);
 				shareholderEquityRowNum = fillShareholderEquitySheet(shareholderEquitySheet, shareholderEquityRowNum, financialSurvey);
-
+				shareholderRowNum = fillShareholdersSheet(shareholderEquitySheet, shareholderRowNum, financialSurvey);
+				affiliateRowNum = fillAffeliateSheet(affiliateSheet, affiliateRowNum, financialSurvey);
 			}
 		}
 
@@ -262,7 +272,103 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 		return rowNum;
 	}
 
+	private int fillShareholdersSheet(final XSSFSheet sheet, int rowNum, final FinancialSurveyModel financialSurvey)
+	{
+		for ( FinancialSurveyShareholderModel financialSurveyShareholderModel : financialSurvey.getShareholders() ){
+			int j = 0;
+			final XSSFRow row = sheet.createRow(rowNum++);
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getFinancialSurvey().getUser().getCustomerID());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getFinancialSurvey().getCommercialRegistrationNo());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getFinancialSurvey().getQuarter() != null ? financialSurveyShareholderModel.getFinancialSurvey().getQuarter().getCode() : StringUtils.EMPTY);
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderTypeRef() != null ? financialSurveyShareholderModel.getShareholderTypeRef().getCode() : StringUtils.EMPTY );
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderNameEnglish());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderGender() != null ? financialSurveyShareholderModel.getShareholderGender() : StringUtils.EMPTY );
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderNationalityCurrentRef() != null ? financialSurveyShareholderModel.getShareholderNationalityCurrentRef().getName() : StringUtils.EMPTY );
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderCountryRef() != null ? financialSurveyShareholderModel.getShareholderCountryRef().getName() : StringUtils.EMPTY );
+			// missing nationalty of ucp and economic activity for ucp
 
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderPercentage());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderCapital());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderVotingPower());
+
+			// prefered shares is missing
+			row.createCell(j++).setCellValue(StringUtils.EMPTY);
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getValueOfReverseInvestment());
+
+			//Transaction
+			j = fillTransactionAttributes(financialSurveyShareholderModel.getTransaction(), j, row);
+
+			// Equity shareholder
+
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getAdditionalPaidUpCapitalCurrentQuarter());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getRetainedEarningsIncludeCurrentQuarter());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getProfitLossQuarterCurrentQuarter());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getTotalReservesCurrentQuarter());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getTreasurySharesCurrentQuarter());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getHeadOfficeAccountInBranchCurrentQuarter());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderEquityOthersCurrentQuarter());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getMinorityRightsCurrentQuarter());
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getTotalShareholderEquityCurrentQuarter());
+
+
+			row.createCell(j++).setCellValue("");
+		}
+		return rowNum;
+	}
+
+
+	private int fillAffeliateSheet(final XSSFSheet sheet, int rowNum, final FinancialSurveyModel financialSurvey)
+	{
+		for ( FinancialSurveyAffiliateModel financialSurveyAffiliateModel : financialSurvey.getAffiliates() ){
+			int j = 0;
+			final XSSFRow row = sheet.createRow(rowNum++);
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getFinancialSurvey().getUser().getCustomerID());
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getFinancialSurvey().getCommercialRegistrationNo());
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getFinancialSurvey().getQuarter() != null ? financialSurveyAffiliateModel.getFinancialSurvey().getQuarter().getCode() : StringUtils.EMPTY);
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getAffiliateTypeRef() != null ? financialSurveyAffiliateModel.getAffiliateTypeRef().getCode() : StringUtils.EMPTY );
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getAffiliateNameEnglish());
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getAffiliateGender() != null ? financialSurveyAffiliateModel.getAffiliateGender() : StringUtils.EMPTY );
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getAffiliateNationalityCurrentRef() != null ? financialSurveyAffiliateModel.getAffiliateNationalityCurrentRef().getName() : StringUtils.EMPTY );
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getAffiliateCountryRef() != null ? financialSurveyAffiliateModel.getAffiliateCountryRef().getName() : StringUtils.EMPTY );
+
+			// sector needs to be convetreted to a ref
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getAffiliateSector());
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getAffiliateSubsector());
+			row.createCell(j++).setCellValue(financialSurveyAffiliateModel.getAffiliateMultinationalCompany());
+
+			//Transaction
+			j = fillTransactionAttributes(financialSurveyAffiliateModel.getTransaction(), j, row);
+
+
+			row.createCell(j++).setCellValue("");
+		}
+		return rowNum;
+	}
+
+	private int fillTransactionAttributes(SagiaSurveyTransactionModel sagiaSurveyTransactionModel, int j, XSSFRow row) {
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getTradeCreditCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getLoansAssetsCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getInterestReceivedCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getDividendsReceivedCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getExpensesReceivableCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getExpensesReceivableCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getInsuranceCommissionReceivableCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getOtherDebitCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getTotalDebitCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getTotalCreditCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getLoansLiabilitiesCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getInterestPayableCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getDividendsPaidCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getExpensesPaidCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getPurchaseProductionSuppliesCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getPurchaseMachineryCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getCurrentCreditAccountCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getExpensesPaidCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getInsuranceCommissionPayableCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getOtherCreditCurrentQuarter() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(sagiaSurveyTransactionModel!=null ? sagiaSurveyTransactionModel.getTotalCreditCurrentQuarter(): StringUtils.EMPTY);
+		return j;
+	}
 
 
 	protected void showNoRowsToExport(final ActionContext<String> ctx)

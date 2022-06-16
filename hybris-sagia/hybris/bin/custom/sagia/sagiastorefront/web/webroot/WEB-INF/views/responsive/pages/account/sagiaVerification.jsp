@@ -66,7 +66,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-md-2 col-12 verification-info mx-0 px-0">
+											<div class="col-md-6 col-12 verification-info mx-0 px-0">
 												<i class="fas fa-info-circle"></i>
 												<c:choose>
 													<c:when test='${mobileStatus == "VERIFIED"}'>
@@ -97,7 +97,7 @@
 										<div class="help-block has-error"></div>
 										<div class="row d-block login-buttons verify-mobile m-auto">
 											<div class="col-md-12 col-12">
-												<button class="login-btn login-btn-next active" name="smsverify" id="mobileBtn">
+												<button class="login-btn login-btn-next <c:if test='${mobileStatus == "NOT_VERIFIED"}'>active</c:if>" name="smsverify" id="mobileBtn" <c:if test='${mobileStatus == "VERIFIED"}'>disabled="disabled"</c:if>>
 													<spring:theme code="text.verification.verify.mobile" />
 												</button>
 											</div>
@@ -108,7 +108,7 @@
 								<c:if test="${isEmailVerificationEnabled}">
 									<div class="row register-user-info">
 										<div class="col-md-12 register-form focus-on-change verify-email-box ">
-											<div class="col-12 col-md-10">
+											<div class="col-6 col-md-10">
 												<div class="formInputBox formInputBox_group ">
 													<div class="form-group">
 														<form:input path="regEmail" cssClass="register-user-details validate-email form-control" placeholder="." maxlength="60" disabled="true" id="regEmail" />
@@ -122,7 +122,7 @@
 													<div class="help-block has-error" id="emailR"></div>
 												</div>
 											</div>
-											<div class="col-6 col-md-2 verification-info mx-0 px-0" id="align">
+											<div class="col-6 col-md-6 verification-info mx-0 px-0" id="align">
 												<c:choose>
 													<c:when test='${regEmailStatus == "VERIFIED"}'>
 														<!-- <span style="color:green;font-weight:bold"><spring:theme code="text.verification.status.verified" /></span> -->

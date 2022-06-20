@@ -2733,6 +2733,113 @@
 			</editorArea:tab>
 		</editorArea:editorArea>
 	</context>
+	<context type="CreditRating" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="name" position="1"/>
+			<column qualifier="displayName" position="2"/>
+			<column qualifier="calenderValue" position="3"/>
+		</list-view:list-view>
+	</context>
 
+	<context type="Dashboard" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="index" position="2"/>
+			<column qualifier="displayName" position="3"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="InfrastructureLogistics" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="index" position="2"/>
+			<column qualifier="displayName" position="3"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="LengthOfNetwork" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="networkName" position="1"/>
+			<column qualifier="networkValue" position="2"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="PrivateCities" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="name" position="1"/>
+			<column qualifier="displayName" position="2"/>
+			<column qualifier="establishmentYear" position="3"/>
+		</list-view:list-view>
+	</context>
+
+
+	<context type="AqValueGrowth" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="year" position="2"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="CommercialRegister" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="year" position="2"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="ForeignInvestment" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="index" position="2"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="FundAssets" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="year" position="2"/>
+		</list-view:list-view>
+	</context>
+	<context type="SaudiArabiaInternationalIndices" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="year" position="2"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="EconomicsSector" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="displayName" position="2"/>
+			<column qualifier="year" position="3"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="GenderDistribution" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="year" position="2"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="GraduatesByDegree" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="year" position="1"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="PopulationDistribution" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="year" position="2"/>
+		</list-view:list-view>
+	</context>
+
+	<context type="RegionDistribution" component="listview">
+		<list-view:list-view xmlns="http://www.hybris.com/cockpitng/component/listView">
+			<column qualifier="uid" position="1"/>
+			<column qualifier="year" position="2"/>
+		</list-view:list-view>
+	</context>
 
 </config>

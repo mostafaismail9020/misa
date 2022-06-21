@@ -2906,7 +2906,7 @@ data-expand-target="expand01">
                             <spring:theme code="financial.survey.shareholderTransaction"/>
                         </div>
                         <hr class="hr w-100">
-                        <tags:transaction/>
+                        <tags:transaction-affeliate/>
 
 
                         <div

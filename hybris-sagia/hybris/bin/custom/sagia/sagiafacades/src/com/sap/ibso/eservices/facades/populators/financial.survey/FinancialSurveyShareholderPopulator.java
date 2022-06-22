@@ -81,7 +81,7 @@ public class FinancialSurveyShareholderPopulator implements Populator<FinancialS
         // Populate prev quarter fields.
         FinancialSurveyShareholderModel shareholderPrevQuarter = financialSurveyShareholderModel.getFinancialSurveyShareholderPreviousQuarter();
         if ( shareholderPrevQuarter != null ) {
-            shareholder.setPaidUpCapitalPreviousCapital(shareholderPrevQuarter.getPaidUpCapitalCurrentQuarter());
+            shareholder.setPaidUpCapitalPreviousQuarter(shareholderPrevQuarter.getPaidUpCapitalCurrentQuarter());
             shareholder.setAdditionalPaidUpCapitalPreviousQuarter(shareholderPrevQuarter.getAdditionalPaidUpCapitalCurrentQuarter());
             shareholder.setRetainedEarningsIncludePreviousQuarter(shareholderPrevQuarter.getRetainedEarningsIncludeCurrentQuarter());
             shareholder.setProfitLossQuarterPreviousQuarter(shareholderPrevQuarter.getProfitLossQuarterCurrentQuarter());

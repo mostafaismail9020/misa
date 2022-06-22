@@ -75,5 +75,25 @@ public class FinancialSurveyShareholderPopulator implements Populator<FinancialS
         Transaction transaction = new Transaction ();
         financialSurveyTransactionPopulator.populate(financialSurveyShareholderModel.getTransaction(),transaction);
         shareholder.setTransaction(transaction);
+
+
+
+        // Populate prev quarter fields.
+        FinancialSurveyShareholderModel shareholderPrevQuarter = financialSurveyShareholderModel.getFinancialSurveyShareholderPreviousQuarter();
+        if ( shareholderPrevQuarter != null ) {
+            shareholder.setPaidUpCapitalPreviousCapital(shareholderPrevQuarter.getPaidUpCapitalCurrentQuarter());
+            shareholder.setAdditionalPaidUpCapitalPreviousQuarter(shareholderPrevQuarter.getAdditionalPaidUpCapitalCurrentQuarter());
+            shareholder.setRetainedEarningsIncludePreviousQuarter(shareholderPrevQuarter.getRetainedEarningsIncludeCurrentQuarter());
+            shareholder.setProfitLossQuarterPreviousQuarter(shareholderPrevQuarter.getProfitLossQuarterCurrentQuarter());
+            shareholder.setTotalReservesPreviousQuarter(shareholderPrevQuarter.getTotalReservesCurrentQuarter());
+            shareholder.setTreasurySharesPreviousQuarter(shareholderPrevQuarter.getTreasurySharesCurrentQuarter());
+            shareholder.setHeadOfficeAccountInBranchPreviousQuarter(shareholderPrevQuarter.getHeadOfficeAccountInBranchCurrentQuarter());
+            shareholder.setShareholderEquityOthersPreviousQuarter(shareholderPrevQuarter.getShareholderEquityOthersCurrentQuarter());
+            shareholder.setMinorityRightsPreviousQuarter(shareholderPrevQuarter.getMinorityRightsCurrentQuarter());
+            shareholder.setTotalShareholderEquityPreviousQuarter(shareholderPrevQuarter.getTotalShareholderEquityCurrentQuarter());
+        }
+
+
+
     }
 }

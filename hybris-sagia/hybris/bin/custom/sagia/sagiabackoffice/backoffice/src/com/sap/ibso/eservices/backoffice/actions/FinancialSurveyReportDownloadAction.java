@@ -168,7 +168,7 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 				branchRowNum = fillBranchSheet(branchSheet, branchRowNum, financialSurvey);
 				subsidiaryRowNum = fillSubsidiarySheet(subsidiarySheet, subsidiaryRowNum , financialSurvey);
 				shareholderEquityRowNum = fillShareholderEquitySheet(shareholderEquitySheet, shareholderEquityRowNum, financialSurvey);
-				shareholderRowNum = fillShareholdersSheet(shareholderEquitySheet, shareholderRowNum, financialSurvey);
+				shareholderRowNum = fillShareholdersSheet(shareholderSheet, shareholderRowNum, financialSurvey);
 				affiliateRowNum = fillAffeliateSheet(affiliateSheet, affiliateRowNum, financialSurvey);
 			}
 		}

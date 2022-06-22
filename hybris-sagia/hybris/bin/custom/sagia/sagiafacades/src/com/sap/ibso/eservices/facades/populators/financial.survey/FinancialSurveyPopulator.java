@@ -3,6 +3,7 @@ package com.sap.ibso.eservices.facades.populators.financial.survey;
 import com.sap.ibso.eservices.core.enums.FinancialSurveyCompanyStatus;
 import com.sap.ibso.eservices.core.enums.FinancialSurveyScaleLevel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
+import com.sap.ibso.eservices.core.model.FinancialSurveyQuarterModel;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyBranchDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyShareholderDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveySubsidiaryDAO;
@@ -12,6 +13,7 @@ import com.sap.ibso.eservices.facades.data.finance.survey.Affiliate;
 import com.sap.ibso.eservices.facades.data.license.amendment.Branch;
 import com.sap.ibso.eservices.facades.data.license.amendment.BusinessActivity;
 import com.sap.ibso.eservices.facades.data.license.amendment.Subsidiary;
+import com.sap.ibso.eservices.sagiaservices.services.financialsurvey.SagiaFinancialSurveyService;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
 import de.hybris.platform.commercefacades.user.data.ShareholderEquity;
 import de.hybris.platform.converters.Populator;
@@ -53,8 +55,19 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
     @Resource
     private FinancialSurveySubsidiaryDAO financialSurveySubsidiaryDAO;
 
+    @Resource
+    private SagiaFinancialSurveyService sagiaFinancialSurveyService;
+
     @Override
     public void populate(FinancialSurveyModel financialSurveyModel, FinancialSurvey financialSurvey) throws ConversionException {
+
+
+        //Get Previous Quarter Code
+        FinancialSurveyQuarterModel previousQuarter = financialSurveyModel.getQuarter().getPreviousQuarter();
+        FinancialSurveyModel previousQuarterFinancialSurveyModel = null;
+        if(previousQuarter != null ){
+            previousQuarterFinancialSurveyModel = sagiaFinancialSurveyService.getFinancialSurvey(previousQuarter.getCode());
+        }
 
 
         List<Shareholder> shareholderList = new ArrayList<>();
@@ -100,6 +113,11 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         }
         financialSurvey.setBusinessActivities(businessActivityList);
 
+        financialSurvey.setEconomicActivityClass(financialSurveyModel.getEconomicActivityClass()!=null ? financialSurveyModel.getEconomicActivityClass().getCode() :  null);
+        financialSurvey.setEconomicActivityDivision(financialSurveyModel.getEconomicActivityDivision()!=null ? financialSurveyModel.getEconomicActivityDivision().getCode() :  null);
+        financialSurvey.setEconomicActivityGroup(financialSurveyModel.getEconomicActivityGroup()!=null ? financialSurveyModel.getEconomicActivityGroup().getCode() :  null);
+        financialSurvey.setEconomicActivitySection(financialSurveyModel.getEconomicActivitySection()!=null ? financialSurveyModel.getEconomicActivitySection().getCode() :  null);
+
         if(financialSurveyModel.getCompanyStatus() != null ){
             financialSurvey.setCompanyStatus(financialSurveyModel.getCompanyStatus().getCode());
         }else {
@@ -116,6 +134,8 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         financialSurvey.setPaidUpCapitalCurrentQuarter(financialSurveyModel.getPaidUpCapitalCurrentQuarter());
         financialSurvey.setDisclosureCurrency(financialSurveyModel.getDisclosureCurrency());
         financialSurvey.setSuspensionDate(financialSurveyModel.getSuspensionDate()!=null?sagiaFormatProvider.formatBackEndDateToUIStr(financialSurveyModel.getSuspensionDate()):null);
+
+
      //   financialSurvey.setLicenseType(financialSurveyModel.getL);
         ShareholderEquity shareholderEquity = new ShareholderEquity();
         shareholderEquity.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyModel.getAdditionalPaidUpCapitalCurrentQuarter());
@@ -127,6 +147,21 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         shareholderEquity.setShareholderEquityOthersCurrentQuarter(financialSurveyModel.getShareholderEquityOthersCurrentQuarter());
         shareholderEquity.setMinorityRightsCurrentQuarter(financialSurveyModel.getMinorityRightsCurrentQuarter());
         shareholderEquity.setTotalShareholderEquityCurrentQuarter(financialSurveyModel.getTotalShareholderEquityCurrentQuarter());
+
+
+        if(previousQuarterFinancialSurveyModel != null ){
+            shareholderEquity.setAdditionalPaidUpCapitalPreviousQuarter(previousQuarterFinancialSurveyModel.getAdditionalPaidUpCapitalCurrentQuarter());
+            shareholderEquity.setRetainedEarningsIncludePreviousQuarter(previousQuarterFinancialSurveyModel.getRetainedEarningsIncludeCurrentQuarter());
+            shareholderEquity.setProfitLossQuarterPreviousQuarter(previousQuarterFinancialSurveyModel.getProfitLossQuarterCurrentQuarter());
+            shareholderEquity.setTotalReservesPreviousQuarter(previousQuarterFinancialSurveyModel.getTotalReservesCurrentQuarter());
+            shareholderEquity.setTreasurySharesPreviousQuarter(previousQuarterFinancialSurveyModel.getTreasurySharesCurrentQuarter());
+            shareholderEquity.setHeadOfficeAccountInBranchPreviousQuarter(previousQuarterFinancialSurveyModel.getHeadOfficeAccountInBranchCurrentQuarter());
+            shareholderEquity.setShareholderEquityOthersPreviousQuarter(previousQuarterFinancialSurveyModel.getShareholderEquityOthersCurrentQuarter());
+            shareholderEquity.setMinorityRightsPreviousQuarter(previousQuarterFinancialSurveyModel.getMinorityRightsCurrentQuarter());
+            shareholderEquity.setTotalShareholderEquityPreviousQuarter(previousQuarterFinancialSurveyModel.getTotalShareholderEquityCurrentQuarter());
+        }
+
+
 
 
         financialSurvey.setIsBranchSectionFilled(financialSurveyModel.isIsBranchSectionFilled());

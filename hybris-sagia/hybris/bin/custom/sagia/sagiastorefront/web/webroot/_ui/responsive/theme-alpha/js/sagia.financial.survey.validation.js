@@ -600,32 +600,63 @@ function equityValidator() {
             paidUpCapitalCurrentQuarter: {
                 number: true
             },
+            paidUpCapitalPreviousQuarter: {
+                number: true
+            },
             additionalPaidUpCapitalCurrentQuarter: {
+                number: true,
+            },
+            additionalPaidUpCapitalPreviousQuarter: {
                 number: true,
             },
             retainedEarningsIncludeCurrentQuarter: {
                 number: true,
             },
+            retainedEarningsIncludePreviousQuarter: {
+                number: true,
+            },
             profitLossQuarterCurrentQuarter: {
                 number: true,
             },
+            profitLossQuarterPreviousQuarter: {
+                number: true,
+            },
             totalReservesCurrentQuarter: {
+                number: true,
+            },
+            totalReservesPreviousQuarter: {
                 number: true,
             },
             treasurySharesCurrentQuarter: {
                 number: true,
                 max: 0
             },
+            treasurySharesPreviousQuarter: {
+                number: true,
+                max: 0
+            },
             headOfficeAccountInBranchCurrentQuarter: {
+                number: true,
+            },
+            headOfficeAccountInBranchPreviousQuarter: {
                 number: true,
             },
             shareholderEquityOthersCurrentQuarter: {
                 number: true,
             },
+            shareholderEquityOthersPreviousQuarter: {
+                number: true,
+            },
             minorityRightsCurrentQuarter: {
                 number: true,
             },
+            minorityRightsPreviousQuarter: {
+                number: true,
+            },
             totalShareholderEquityCurrentQuarter: {
+                number: true,
+            },
+            totalShareholderEquityPreviousQuarter: {
                 number: true,
             },
         },
@@ -634,6 +665,9 @@ function equityValidator() {
             paidUpCapitalCurrentQuarter: {
                 number: getI18nText("validation.number")
             },
+            paidUpCapitalPreviousQuarter: {
+                number: getI18nText("validation.number")
+            },
             additionalPaidUpCapitalCurrentQuarter: {
                 number: getI18nText("validation.number")
             },
@@ -647,6 +681,10 @@ function equityValidator() {
                 number: getI18nText("validation.number")
             },
             treasurySharesCurrentQuarter: {
+                number: getI18nText("validation.number"),
+                max: getI18nText("finance.survey.validation.number.negative")
+            },
+            treasurySharesPreviousQuarter: {
                 number: getI18nText("validation.number"),
                 max: getI18nText("finance.survey.validation.number.negative")
             },

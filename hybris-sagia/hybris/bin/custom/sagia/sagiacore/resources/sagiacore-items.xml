@@ -215,6 +215,7 @@
             <value code="SUBMITTED"/>
             <value code="WAITING_FOR_CUSTOMER_ACTION"/>
             <value code="PROCESSED"/>
+            <value code="UPDATED"/>
         </enumtype>
 
 
@@ -11135,6 +11136,15 @@
                         <!-- mandatory to be enforced via code -->
                         <persistence type="property"/>
                     </attribute>
+
+                    <attribute qualifier="previousQuarter" type="FinancialSurveyQuarter">
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <!-- optional because it's localized -->
+                        <!-- mandatory to be enforced via code -->
+                        <persistence type="property"/>
+                    </attribute>
+
                 </attributes>
             </itemtype>
 
@@ -11186,6 +11196,39 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+
+                    <attribute qualifier="economicActivitySection" type="IsicTexts">
+                        <description>economic Activity Section</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="economicActivityDivision" type="IsicTexts">
+                        <description>economic Activity division</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="economicActivityGroup" type="IsicTexts">
+                        <description>economic Activity group</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+
+                    <attribute qualifier="economicActivityClass" type="IsicTexts">
+                        <description>economic Activity class</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+
+
+
                     <attribute qualifier="paidUpCapitalCurrentQuarter" type="java.lang.String">
                         <description>paidUp Capital Current Quarter</description>
                         <modifiers read="true" write="true" search="true"
@@ -11345,6 +11388,15 @@
 
 
                 <attributes>
+
+
+                    <attribute qualifier="financialSurveyShareholderPreviousQuarter" type="FinancialSurveyShareholder">
+                        <description>reference to the previous quarter shareholder</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
                     <attribute qualifier="transaction" type="SagiaSurveyTransaction">
                         <description>transaction</description>
                         <modifiers read="true" write="true" search="true"
@@ -11376,8 +11428,6 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
-
-
 
                     <attribute qualifier="companyCountryRef" type="SagiaCountry">
                         <description>companyCountry</description>
@@ -11431,8 +11481,6 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
-
-
 
 
                     <attribute qualifier="shareholderPercentage" type="java.lang.String">
@@ -11516,7 +11564,6 @@
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
-
 
                     <attribute qualifier="shareholderIsVotingPower" type="boolean">
                         <description>shareholderIsVotingPower</description>

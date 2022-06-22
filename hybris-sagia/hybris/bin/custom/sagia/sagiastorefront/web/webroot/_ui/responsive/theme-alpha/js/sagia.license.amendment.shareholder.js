@@ -43,7 +43,7 @@ $(document).ready(function () {
         $('.saveShareholderBtn').on('click', function() {
             if ($('#existingShareholderId')[0].checked) { // validate existing shareholder first
                 validateExistingShareholder();
-            }  
+            }
             else { // new shareholder - can be saved
                 saveShareholder(false);
             }
@@ -126,7 +126,7 @@ $(document).ready(function () {
         $("#entityShareholderId").find("#load-investor").on("click", function () {
             loadInvestorByCrEvent($("#inputCRNumber").val());
         });
-        
+
         $('#inheritsection .verify-moj').on('keyup', function() {
            	var deceasedId = $('#deceasedId').val();
            	var deedNo = $('#deedNumber').val();
@@ -137,14 +137,14 @@ $(document).ready(function () {
            	}
            	else {
            		//$("#inputCRNumber-error").removeClass("has-error").text("");
-           		$("#verifyInherit").attr("disabled", true);	
+           		$("#verifyInherit").attr("disabled", true);
            	}
            });
-        
+
         $("#inheritsection").find("#verifyInherit").on("click", function () {
         	verifyInheritWithMOJ($("#deceasedId").val(), $("#deedNumber").val());
         });
-        
+
         $("input[name='shareholderInheritedProperty']").click(function () {
         	var shType = $("#personId").is(':checked');
         	var companyCountry = $("#companyCountry").val();
@@ -163,7 +163,7 @@ $(document).ready(function () {
             	resetVerifyInherit();
             }
         });
-        
+
         $("#entityShareholderId").find("#companyCountry").change(function(){
             var entityShareholderId = $("#entityShareholderId");
             /*var newFileSection = $("#companyCheckFileAttachment");
@@ -199,7 +199,7 @@ $(document).ready(function () {
             {
                 $("#inputCRNumber").prop('disabled', true);
                 loadOrganizationFormFields();
-                
+
             }
 
             if($("#professionalLicenseCrVerified").val() == 'true'){
@@ -262,8 +262,8 @@ var loadInvestorByCrEvent = function(crNumber){
                     errorResponseModal.find('.modal-description').text(getI18nText("validation.shareholder.error.nic"));
                     errorResponseModal.modal('show');
                     $("#inputCRNumber").prop('disabled', false);
-                    
-                   
+
+
                 }
             },
             error: function() {
@@ -310,7 +310,7 @@ var loadInvestorCrResponseEvent = function(data, crNumber){
 
 var preNICVerificationShareholder = function(element, current){
     var idType = element.find("#shareholderIdType").val();
-    
+
     if(idType == "4"){
     	return ;
     }
@@ -414,8 +414,8 @@ var preNICVerificationDelegate = function(element, current){
                 setAndDisableFieldIfValueNotBlank(element.find("#delegateBirthDateId"),jsonData.dob);
                 setAndDisableFieldIfValueNotBlank(element.find("#delegateIssueDate"),jsonData.issueDate);
                 setAndDisableFieldIfValueNotBlank(element.find("#delegateExpiryDate"),jsonData.expiryDate);
-                
-                
+
+
                 updateGenderDropdown(element.find("#delegateGenderId"), jsonData.gender, true);
                 updateShareholderPremiumResident(element.find("#delegatePremiumResidentId"), jsonData.premium_Residency, true);
             }
@@ -710,13 +710,13 @@ var onchangeOfShareholderIdType = function(element, type)
     var elementIdType = element.find("#shareholderIdType");
     var elementDateofBirth = element.find("#shareholderDateofBirth");
     toggleUmmAlQuraOrNormalCalInDelegateSection(elementIdType, elementDateofBirth);
-   
-	var elementSharholderBirthDateId =   $("#contentNewShareholderForm").find("#birthDateId");  	    
+
+	var elementSharholderBirthDateId =   $("#contentNewShareholderForm").find("#birthDateId");
 	toggleUmmAlQuraOrNormalCalInDelegateSection(elementIdType, elementSharholderBirthDateId);
-	    
-	    
-	    
-	    
+
+
+
+
     element.find("#nicShareholderVerifyBtnSection").show();
 
     var initialEditEvents = false;
@@ -747,25 +747,25 @@ var onchangeOfShareholderIdType = function(element, type)
         form.removeClass('edit-initial');
 
         if (element.find("#shareholderIdType").val()!=="4") {
-    	    
+
             toggleTheNICFieldsEditable(element, type, false);
         }
-        
-      
-	    
-	    
-	    
+
+
+
+
+
     } else {
-    	
-    
+
+
         if(element.find("#shareholderIdType").val()==="4"){
             //For passport
             element.find("#nicShareholderVerifyBtnSection").hide();
             element.find("#shareholderIdNumberSection").hide();
             element.find("#shareholderDateofBirthSection").hide();
-            
-            
-            
+
+
+
             enableDisableShareholderFormSection(true);
             enableDisablePassportIdShareholderForm(true)
         } else {
@@ -774,7 +774,7 @@ var onchangeOfShareholderIdType = function(element, type)
             element.find("#shareholderDateofBirthSection").show();
             enableDisableShareholderFormSection(false);
             enableDisablePassportIdShareholderForm(false);
-            
+
         }
 
         resetShareholderDetails(element, type);
@@ -866,7 +866,7 @@ var toggleTheNICFieldsEditable = function(element, type, editable)
         element.find("#shareholderFullNameEnglish").removeAttr("disabled");
         element.find("#shareholderGender").removeAttr("disabled");
         element.find("#delegateIssueDate").removeAttr("disabled");
-        element.find("#delegateExpiryDate").removeAttr("disabled");    
+        element.find("#delegateExpiryDate").removeAttr("disabled");
         element.find("#identityNumberCopy").removeAttr("disabled");
     }
     else
@@ -895,7 +895,7 @@ var toggleTheNICFieldsEditableDelegate = function(element, type, editable)
         element.find("#delegatePremiumResidentId").removeAttr("disabled");
         element.find("#delegateExpiryDate").removeAttr("disabled");
         element.find("#delegateIssueDate").removeAttr("disabled");
-        
+
     }
     else
     {
@@ -915,35 +915,35 @@ var onchangeOfIdType = function(element, type) {
     var elementIdType = element.find("#idType");
     var elementDateofBirth = element.find("#delegateDateofBirth");
     var delegateBirthDateId = element.find("#delegateBirthDateId");
-    
+
     var elementDelegateExpiryDate = element.find("#delegateExpiryDate");
     var elementDelegateIssueDate = element.find("#delegateIssueDate");
-    
+
     bindNormalCal(elementDelegateExpiryDate);
     bindNormalCal(elementDelegateIssueDate);
-    
+
     toggleUmmAlQuraOrNormalCalInDelegateSection(elementIdType, elementDateofBirth);
     toggleUmmAlQuraOrNormalCalInDelegateSection(elementIdType, delegateBirthDateId);
-    
+
     element.find("#nicVerifyBtnSection").show();
     element.find("#delegateDateofBirthSection").show();
     resetDelegateDetails(element, type);
-    
-    
+
+
     // show and hide the special fields
     if(elementIdType.val()==="1"){
     	$("#delegateCountryDiv").hide();
     	$("#delegateNationalityDiv").hide();
-    	
+
     }
     else
     {
-    	
+
     	$("#delegateCountryDiv").show();
     	$("#delegateNationalityDiv").show();
-       
+
     }
-    
+
 
 };
 
@@ -983,7 +983,7 @@ var enableDisableShareholderFormSection = function (enable) {
         $('#contentNewShareholderForm').show();
         $('#individualShareholderId').show();
         $('#shareholderAddressId').show();
-        
+
     } else {
         $('#contentNewShareholderForm').hide();
         $('#individualShareholderId').hide();
@@ -1026,7 +1026,7 @@ var loadOrganizationForm = function () {
     // Delegate section
     $('#delegateDivSection').hide();
     $('#delegate').hide();
-    
+
     $('#companyVerificationSection').show();
 
     resetCompanyCountriesSection();
@@ -1066,7 +1066,7 @@ var loadPersonForm = function () {
         $("#shareholderValidationDetails").find("#shareholderIdType"),
         $("#shareholderValidationDetails").find("#shareholderDateofBirth")
     );
-    
+
     bindShareholderCalendarsToInput(
             $("#shareholderValidationDetails").find("#shareholderIdType"),
             $("#contentNewShareholderForm").find("#birthDateId")
@@ -1137,9 +1137,9 @@ var loadShareholderIdTypeDropDown = function (isPerson) {
     if(!isPerson){
     	personDelegateIdType.append(new Option(getI18nText("license.shareholder.delegate.passportId"), "4", false, false));
     }
-  //  
-    
-    
+  //
+
+
 };
 
 var removeShareholder = function () {
@@ -1207,7 +1207,7 @@ function addExistingShareholderError(message) {
 }
 
 var newShareholder = function () {
-	
+
 	 $('#showDelegateQuestionOrganization').hide();
 	 $('#showDelegateQuestion').show();
     clearShareholderValidation();
@@ -1250,7 +1250,7 @@ function disableNICFields() {
     $("#shareholderGenderId").attr("disabled", true);
     $("#shareholderPremiumResidentId").attr("disabled", true);
     $("#identityNumberCopy").attr("disabled", true);
-   
+
 }
 
 function enableNICFields() {
@@ -1260,22 +1260,22 @@ function enableNICFields() {
     $("#shareholderGenderId").attr("disabled", false);
     $("#shareholderPremiumResidentId").attr("disabled", false);
     $("#identityNumberCopy").attr("disabled", false);
- 
+
 }
 
 function disableMCFields() {
 	$("#shareholderNameEnglishId").attr("disabled", true);
     $("#shareholderNameId").attr("disabled", true);
     $("#shareholderCapitalId").attr("disabled", true);
-   
-   
+
+
 }
 
 function enableMCFields() {
 	$("#shareholderNameEnglishId").attr("disabled", false);
     $("#shareholderNameId").attr("disabled", false);
     $("#shareholderCapitalId").attr("disabled", false);
- 
+
 }
 
 
@@ -1352,42 +1352,42 @@ var editShareholder = function () {
         $('#shareholderPercentageId').attr("disabled", false);
         $('#shareholderNameId').attr("disabled", true);
         $('#shareholderNameEnglishId').attr("disabled", true);
-        
-        
-        
+
+
+
     } else if (selectedShareholder.newItemId && selectedShareholder.existingBp) { // Existing crm shareholder
         $('#shareholderPercentageId').attr("disabled", false);
         $('#shareholderInheritedPropertyId').attr("disabled", false);
         $('#delegateDivSection').hide();
-        
+
     } else { // New shareholder
-    		 
+
         enableShareholderForm();
-        
- 
+
+
         if(selectedShareholder.companyCountry !== 'SA' ){
         	 $('#delegateDivSection').show();
-        	
+
         }else {
         	 $('#delegateDivSection').hide();
         }
-        
+
     }
-   
-    
+
+
     fillShareholderForm(selectedShareholder);
     $('.saveShareholderBtn').attr('id', selectedShareholder.srId || selectedShareholder.newItemId);
     SAGIA.formElements.placeholderPolyfill();
     prepareVisibleItemsEdit(selectedShareholder);
     if(selectedShareholder.idType !== '4' ){
     	disableNICFields();
-    	
+
     }else {
     	enableNICFields();
     }
-    
+
     $('#entityBasicInformation2').show();
-    
+
 };
 
 function prepareVisibleItemsEdit(selectedShareholder) {
@@ -1395,7 +1395,7 @@ function prepareVisibleItemsEdit(selectedShareholder) {
 
     $('#shareholderValidationDetails').hide();
     $('#contentNewShareholderForm').show();
-    
+
     if (selectedShareholder.srId || (!selectedShareholder.srId && selectedShareholder.idType !== '4')) {
         // Delegate section
         $('#delegateDivSection').hide();
@@ -1405,74 +1405,74 @@ function prepareVisibleItemsEdit(selectedShareholder) {
         $('#delegateDivSection').show();
         $('#delegate').show();
     }
-    
-    
-    
+
+
+
     //if an Entity
     if (selectedShareholder.bpType === '2') {
     	 $('#entityBasicInformation').show();
     	 $('#showDelegateQuestionOrganization').show();
     	 $('#showDelegateQuestion').hide();
-    	 
+
     	 $('#shareholderAddressId').show();
     	 $('#companyCountry').attr("disabled", true);
     	 $('#inputCRNumber').attr("disabled", true);
     	 $('#load-investor').attr("disabled", true);
-    	 
+
     	 $('#delegateDivSection').show();
          $('#delegate').show();
-    	 
+
     	if (selectedShareholder.isCrVerified ) { // verified Entity
             // Delegate section
         //    $('#entityBasicInformation').show();
            // $('#delegate').hide();
-           
+
             disableMCFields();
         } else{     // Not Verified Entity
             // Delegate section
-           
-            
+
+
             //enableMCFields() ;
         }
-    	
+
     	if (selectedShareholder.srId){  // hide delegate section for existing enity
     		     $('#delegateDivSection').hide();
     	         $('#delegate').hide();
     	}else {
-    		
-    		
+
+
     		if(selectedShareholder.companyCountry !== 'SA' ){
     		   	 $('#delegateDivSection').show();
-    		   	
+
     		   }else {
     		   	 $('#delegateDivSection').hide();
     		   }
-    		
+
     	}
-    	
+
     }else {
-    	
-    	
+
+
     	if(!selectedShareholder.srId && selectedShareholder.idNumber  !== '' ) {
-   		 $('#shareholderValidationDetails').show();   	 
+   		 $('#shareholderValidationDetails').show();
       	     $('#shareholderIdTypeSection').hide();
-      
-            $('#shareholderIdNumber').val(selectedShareholder.idNumber);        
+
+            $('#shareholderIdNumber').val(selectedShareholder.idNumber);
             if (selectedShareholder.birthDateString) {
                 $("#shareholderDateofBirth").val(selectedShareholder.birthDateString);
             } else if (selectedShareholder.birthDate && selectedShareholder.birthDate.millis) {
                 $("#shareholderDateofBirth")._flatpickr.setDate(new Date(selectedShareholder.birthDate.millis));
-            }                    
+            }
             $('#shareholderIdType').attr('disabled','disabled');
             $('#verifyShareholderDetailsShow').attr('disabled','disabled');
             $('#shareholderDateofBirth').attr('disabled','disabled');
             $('#shareholderIdNumber').attr('disabled','disabled');
-            
+
       	  }
-    	
-    	
+
+
     }
-    
+
 }
 
 function fillShareholderForm(selectedShareholder) {
@@ -1482,7 +1482,7 @@ function fillShareholderForm(selectedShareholder) {
         $('#shareholderNameId').val(selectedShareholder.firstName);
         $('#shareholderNameEnglishId').val(selectedShareholder.englishName);
         $('#inputCRNumber').val(selectedShareholder.inputCRNumber);
-        
+
         updateDropDown('#companyCountry', selectedShareholder.companyCountry);
         updateDropDown('#shareholderSectorId', selectedShareholder.industry);
         updateDropDown('#shareholderMultinationalCompanyId', selectedShareholder.multinationalCompany);
@@ -1491,27 +1491,27 @@ function fillShareholderForm(selectedShareholder) {
         $('#shareholderCapitalId').val(selectedShareholder.capital);
         $('#shareholderLabourSizeId').val(selectedShareholder.labourSize);
     } else {
-    	
-    	 
-          
-    
+
+
+
+
         $('#entityShareholderId').hide();
         $('#individualShareholderId').show();
         $('#shareholderFirstNameId').val(selectedShareholder.firstName);
-        
-        
+
+
         $('#shareholderLastNameId').val(selectedShareholder.secondName);
         if (selectedShareholder.birthDateString) {
             $("#birthDateId").val(selectedShareholder.birthDateString);
-        }      
-        
+        }
+
         updateDropDown('#shareholderAcademicTitleId', selectedShareholder.academicTitle);
         updateDropDown('#shareholderGenderId', selectedShareholder.gender);
         updateDropDown('#shareholderMaritalStatusId', selectedShareholder.maritalStatus);
         updateDropDown('#shareholderPremiumResidentId', selectedShareholder.premiumResident);
         updateDropDown('#shareholderNationalityCurrentId', selectedShareholder.nationalityCurrent);
         updateDropDown('#shareholderNationalityPreviousId', selectedShareholder.nationalityPrevious);
-        
+
         if (selectedShareholder.inheritedProperty && selectedShareholder.bpType === '1') {
         	$('#inheritsection').show();
         	$('#deceasedId').val(selectedShareholder.deceasedId);
@@ -1538,7 +1538,7 @@ function fillShareholderForm(selectedShareholder) {
     if (selectedShareholder.delegate && selectedShareholder.delegate.delegateYourself !== "" && selectedShareholder.delegate.delegateYourself === "false") {
         $('#delegateDetails').show();
         $('#verifyDelegateDetails').show();
-        
+
         $('[name=delegateInfo\\.delegateYourself][value='+selectedShareholder.delegate.delegateYourself+']').trigger('click');
         updateDropDown('#idType', selectedShareholder.delegate.idType);
         updateDropDown('#delegateAcademicTitleId', selectedShareholder.delegate.academicTitle);
@@ -1552,7 +1552,7 @@ function fillShareholderForm(selectedShareholder) {
             $('#delegateFullNameEnglish').val(selectedShareholder.delegate.fullNameEnglish);
             $('#delegateBirthDateId').val(selectedShareholder.delegate.dateofBirth);
             $('#delegateIssueDate').val(selectedShareholder.delegate.issueDate);
-            $('#delegateExpiryDate').val(selectedShareholder.delegate.expiryDate); 
+            $('#delegateExpiryDate').val(selectedShareholder.delegate.expiryDate);
             $('#delegateNationality').val(selectedShareholder.delegate.nationality).trigger("blur").trigger('change');;
             $('#delegateCountry').val(selectedShareholder.delegate.country).trigger("blur").trigger('change');;
             $('#delegateGenderId').val(selectedShareholder.delegate.gender).trigger("blur").trigger('change');;
@@ -1560,20 +1560,20 @@ function fillShareholderForm(selectedShareholder) {
         updateDropDown('#delegateMaritalStatusId', selectedShareholder.delegate.maritalStatus);
         updateDropDown('#delegateNationalityCurrentId', selectedShareholder.delegate.nationality);
         updateDropDown('#delegateNationalityPreviousId', selectedShareholder.delegate.nationality);
-       
-        
+
+
         $('#delegatePostalCode').val(selectedShareholder.delegate.postalCode);
         $('#delegatePOBox').val(selectedShareholder.delegate.poBox);
         $('#delegateCountryCodeForTelephone').val(selectedShareholder.delegate.countryCodeForTelephone);
-        $('#delegateTelephone').val(selectedShareholder.delegate.telephone);      
+        $('#delegateTelephone').val(selectedShareholder.delegate.telephone);
         $('#delegateCountryCodeForMobile').val(selectedShareholder.delegate.countryCodeForTelephone);
         $('#delegateMobile').val(selectedShareholder.delegate.mobile);
         $('#delegateEmail').val(selectedShareholder.delegate.email);
-        
-        
+
+
     }
-    
-    
+
+
 }
 
 function updateDropDown(selectId, value) {
@@ -1611,24 +1611,24 @@ function updateGenderDropdown(select, value, disableFieldIfValueNotBlank) {
 
 var getDelegateInfo = function () {
     var element = $('#delegateSection');
-    
-    
-    var nationality  = element.find('#delegateNationality option:selected').val(); 
-    var country = element.find('#delegateCountry option:selected').val();	
+
+
+    var nationality  = element.find('#delegateNationality option:selected').val();
+    var country = element.find('#delegateCountry option:selected').val();
     var issueDate = $('#delegateIssueDate').val();
     var expiryDate = $('#delegateExpiryDate').val();
-    
-    
+
+
     var idType = element.find('#idType option:selected').val();
     var idNumber = element.find('#idNumber').val();
-   
+
     var firstNameArabic = element.find('#delegateFirstNameArabic').val();
     var lastNameArabic = element.find('#delegateLastNameArabic').val();
     var fullNameEnglish = element.find('#delegateFullNameEnglish').val();
-    
+
     var birthDate = element.find('#delegateBirthDateId').val();
     var mainBirthDate = element.find('#delegateDateofBirth').val();
-   
+
     var $academicTitle = element.find('#delegateAcademicTitleId option:selected');
     var academicTitle = $academicTitle.val();
     var academicTitleDescription = $academicTitle.text();
@@ -1644,8 +1644,8 @@ var getDelegateInfo = function () {
     var $premiumResident = element.find('#delegatePremiumResidentId option:selected');
     var premiumResident = $premiumResident.val();
     var premiumResidentDescription = $premiumResident.text();
-    
-    
+
+
     var postalCode = element.find('#delegatePostalCode').val();
     var poBox = element.find('#delegatePOBox').val();
     var countryCodeForTelephone = element.find('#delegateCountryCodeForTelephone').val();
@@ -1653,7 +1653,7 @@ var getDelegateInfo = function () {
     var delegateCountryCodeForMobile = element.find('#delegateCountryCodeForMobile').val();
     var delegateMobile = element.find('#delegateMobile').val();
     var delegateEmail = element.find('#delegateEmail').val();
-    
+
 
     var delegateYourself = $('input[name=delegateInfo\\.delegateYourself]:checked').val();
 
@@ -1664,12 +1664,12 @@ var getDelegateInfo = function () {
         delegateYourself: typeof(delegateYourself) === 'undefined' ? '' : delegateYourself,
         refID: '',
         EntityNo: '',
-        
+
         nationality: nationality,
         country: country,
         issueDate: issueDate,
         expiryDate: expiryDate,
-        
+
         idType: idType,
         idNumber: idNumber,
         dateofBirth: birthDate,
@@ -1679,7 +1679,7 @@ var getDelegateInfo = function () {
         lastNameArabic: lastNameArabic,
         fullNameEnglish: fullNameEnglish,
         gender: gender,
-    
+
         countryText: country,
         maritalStatus: maritalStatus,
         postalCode: postalCode,
@@ -1705,23 +1705,23 @@ var getDelegateInfo = function () {
         */
     };
 
-   
 
-   
+
+
 
     return delegateInfo;
 };
 
 var saveShareholder = function (existingBp, bpId) {
-	
-	
+
+
     var validator = shareholderValidator();
     if (!validator.form()) {
         return;
     }
-    
+
     var percentage = $('#shareholderPercentageId').val();
-    if (percentage === '') {  
+    if (percentage === '') {
     if(!validateShareholderNICInput(idType,idNumber,shareholderDateofBirth,$('#shareholderValidationDetails'))) {
         return false
     }
@@ -1746,19 +1746,19 @@ var saveShareholder = function (existingBp, bpId) {
     var labourSize = $('#shareholderLabourSizeId').val();
     var firstName = $('#shareholderFirstNameId').val();
     var lastName = $('#shareholderLastNameId').val();
-   
+
     var inheritedProperty = $('#shareholderInheritedPropertyId').is(':checked');
-    
+
     var deceasedId = $('#deceasedId').val();
     var deceasedName = $('#deceasedName').val();
     var deedNumber = $('#deedNumber').val();
     var isMojVerified = $('#isMojVerified').val();
     var multinationalCompany = $('#shareholderMultinationalCompanyId option:selected').val();
     var birthDate = $('#birthDateId').val();
-    
-  
-	
-	
+
+
+
+
 
     var idNumber = $("#identityNumberCopy").length > 0 ? $("#identityNumberCopy").val() : $('#shareholderIdNumber').val();
 
@@ -1850,7 +1850,7 @@ var saveShareholder = function (existingBp, bpId) {
                 selectedShareholder.nationalityCurrentDescription = nationalityCurrentDescription;
                 selectedShareholder.nationalityPrevious = nationalityPrevious;
                 selectedShareholder.nationalityPreviousDescription = nationalityPreviousDescription;
-                
+
                 selectedShareholder.deceasedId = deceasedId;
                 selectedShareholder.deceasedName = deceasedName;
                 selectedShareholder.deedNumber = deedNumber;
@@ -1869,8 +1869,8 @@ var saveShareholder = function (existingBp, bpId) {
                 selectedShareholder.subsector = subsector;
                 selectedShareholder.capital = capital;
                 selectedShareholder.labourSize = labourSize;
-                selectedShareholder.isCrVerified = isCrVerified ; 
-                
+                selectedShareholder.isCrVerified = isCrVerified ;
+
             }
             selectedShareholder.inheritedProperty = inheritedProperty;
             selectedShareholder.address.country = country;
@@ -1961,7 +1961,7 @@ var saveShareholder = function (existingBp, bpId) {
             shareholder.deceasedName = deceasedName;
             shareholder.deedNumber = deedNumber;
             shareholder.isMojVerified = isMojVerified;
-            
+
         } else { // entity shareholder
             shareholderRow.attr("id", newItemId).children().first().html(name)
                 .next().text(getI18nText("general.entity")).next().text(percentageRow).next().text('-').next().text(legalStatus);
@@ -1980,14 +1980,14 @@ var saveShareholder = function (existingBp, bpId) {
             shareholder.companyCountry = companyCountry;
             shareholder.companyCountryDescription = companyCountryDescription;
             shareholder.inputCRNumber = inputCRNumber;
-            if(!shareholder.existingBp) { 
+            if(!shareholder.existingBp) {
             	shareholder.delegate = getDelegateInfo();
             }
-            
-            resetVerifyInherit();            
+
+            resetVerifyInherit();
         }
 
-        
+
 
         setColorForNewRow(shareholderRow);
         $('#shareholdersId').append(shareholderRow);
@@ -2083,12 +2083,12 @@ function clearShareholderForm() {
     $("#shareholderGenderId").removeAttr('disabled');
     $("#shareholderPremiumResidentId").removeAttr('disabled');
     $("#identityNumberCopy").removeAttr('disabled');
-    
+
     //resetVerifyInherit();
 }
 
 function clearDelegateDetailsForm() {
-   
+
 
     var $academicTitle = $('#delegateAcademicTitleId');
     $academicTitle.val(null).trigger('change');
@@ -2117,13 +2117,13 @@ function clearDelegateDetailsForm() {
     var $country = $('#delegateCountry');
     $country.val(null).trigger('change');
     $country.next().removeClass("select2Container_selected").removeClass("select2Container_selected_onLoad");
-    
+
     var $country = $('#delegateNationality');
     $country.val(null).trigger('change');
     $country.next().removeClass("select2Container_selected").removeClass("select2Container_selected_onLoad");
 
-    
-    
+
+
     $('#delegateCountryCodeForMobile').val('');
     $('#delegateCountryCodeForTelephone').val('');
     $('#delegateFirstNameArabic').val('');
@@ -2132,8 +2132,8 @@ function clearDelegateDetailsForm() {
     $('#delegateEmail').val('');
     $('#delegateTelephone').val('');
     $('#delegateMobile').val('');
-    
-    
+
+
 
 }
 
@@ -2159,9 +2159,9 @@ var removePreviousErrors = function () {
 	 $('#showDelegateQuestionOrganization').show();
 	 $('#showDelegateQuestion').hide();
 	clearShareholderForm();
-	
+
 	 $("#contentNewShareholderForm").find("#hasDelegateYES").click();
-    
+
     $('.form-group').each(function (i, obj) {
         if ($(this).hasClass('has-error')) {
             $(this).removeClass('has-error');

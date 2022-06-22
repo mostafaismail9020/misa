@@ -93,6 +93,12 @@
 		<property name="isShareholdersSectionFilled" type="Boolean"/>
 		<property name="isScaleLevelActualUnit" type="Boolean"/>
 
+		<property name="economicActivitySection" type="java.lang.String"/>
+		<property name="economicActivityDivision" type="java.lang.String"/>
+		<property name="economicActivityGroup" type="java.lang.String"/>
+		<property name="economicActivityClass" type="java.lang.String"/>
+
+
 	</bean>
 
 	<bean class="de.hybris.platform.commercefacades.user.data.Messsage">
@@ -1190,6 +1196,18 @@
 		<property name="shareholderEquityOthersCurrentQuarter" type="java.lang.String"/>
 		<property name="minorityRightsCurrentQuarter" type="java.lang.String"/>
 		<property name="totalShareholderEquityCurrentQuarter" type="java.lang.String"/>
+
+
+		<property name="paidUpCapitalPreviousQuarter" type="java.lang.String"/>
+		<property name="additionalPaidUpCapitalPreviousQuarter" type="java.lang.String"/>
+		<property name="retainedEarningsIncludePreviousQuarter" type="java.lang.String"/>
+		<property name="profitLossQuarterPreviousQuarter" type="java.lang.String"/>
+		<property name="totalReservesPreviousQuarter" type="java.lang.String"/>
+		<property name="treasurySharesPreviousQuarter" type="java.lang.String"/>
+		<property name="headOfficeAccountInBranchPreviousQuarter" type="java.lang.String"/>
+		<property name="shareholderEquityOthersPreviousQuarter" type="java.lang.String"/>
+		<property name="minorityRightsPreviousQuarter" type="java.lang.String"/>
+		<property name="totalShareholderEquityPreviousQuarter" type="java.lang.String"/>
 		<property name="transaction" type="com.sap.ibso.eservices.facades.data.license.amendment.Transaction"/>
 	</bean>
 
@@ -1352,6 +1370,8 @@
 		<property name="multinationalCompany" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem&gt;" />
 		<property name="attachments" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.listItem.AttachmentListItem&gt;" />
 		<property name="premiumResident" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem&gt;" />
+		<property name="sections" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem&gt;" />
+		<property name="divisions" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.license.amendment.listItem.SubListItem&gt;" />
     </bean>
 
 	<bean class="com.sap.ibso.eservices.facades.data.license.amendment.listItem.ListItem">

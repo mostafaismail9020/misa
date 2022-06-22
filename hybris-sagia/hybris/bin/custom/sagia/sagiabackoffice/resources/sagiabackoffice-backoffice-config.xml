@@ -189,6 +189,7 @@
 		<list:list-view>
 			<list:column qualifier="code" />
 			<list:column qualifier="name" />
+			<list:column qualifier="previousQuarter" />
 		</list:list-view>
 	</context>
 
@@ -586,6 +587,15 @@
 		</y:base>
 	</context>
 
+	<context type="FinancialSurveyQuarter" component="base" merge-by="type"
+			 parent="GenericItem">
+		<y:base>
+			<y:labels>
+				<y:label>name</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
 	<context module="customersupportbackoffice" type="FinancialSurvey" component="base" merge-by="type" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 parent="GenericItem">
 		<y:base>
@@ -652,6 +662,7 @@
 				<editorArea:section name="FinancialSurveyQuarterSection">
 					<editorArea:attribute qualifier="code" />
 					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute qualifier="previousQuarter" />
 				</editorArea:section>
 			</editorArea:tab>
 		</editorArea:editorArea>

@@ -2,17 +2,38 @@ package com.sap.ibso.eservices.facades.sagia.impl;
 
 import com.sap.ibso.eservices.core.model.IsicMasterModel;
 import com.sap.ibso.eservices.core.model.IsicTextsModel;
-import com.sap.ibso.eservices.facades.data.zesrvEnhOData.*;
+import com.sap.ibso.eservices.core.sagia.IsicData;
+import com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicActivity;
+import com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicBranch;
+import com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicClass;
+import com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicDivision;
+import com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicGroup;
+import com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicSection;
 import com.sap.ibso.eservices.facades.data.zqeemah2.ISICDetails;
-import com.sap.ibso.eservices.facades.populators.isic.*;
+import com.sap.ibso.eservices.facades.populators.isic.ActivityPopulator;
+import com.sap.ibso.eservices.facades.populators.isic.BranchPopulator;
+import com.sap.ibso.eservices.facades.populators.isic.ClassPopulator;
+import com.sap.ibso.eservices.facades.populators.isic.DivisionPopulator;
+import com.sap.ibso.eservices.facades.populators.isic.GroupPopulator;
+import com.sap.ibso.eservices.facades.populators.isic.SectionPopulator;
 import com.sap.ibso.eservices.facades.sagia.SagiaIsicFacade;
 import com.sap.ibso.eservices.sagiaservices.exception.SagiaODataException;
-import com.sap.ibso.eservices.sagiaservices.services.isic.*;
+import com.sap.ibso.eservices.sagiaservices.services.isic.ActivityService;
+import com.sap.ibso.eservices.sagiaservices.services.isic.BranchService;
+import com.sap.ibso.eservices.sagiaservices.services.isic.ClassService;
+import com.sap.ibso.eservices.sagiaservices.services.isic.DivisionService;
+import com.sap.ibso.eservices.sagiaservices.services.isic.GroupService;
+import com.sap.ibso.eservices.sagiaservices.services.isic.IsicMasterDataService;
+import com.sap.ibso.eservices.sagiaservices.services.isic.SectionService;
 import de.hybris.platform.servicelayer.i18n.I18NService;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -91,6 +112,37 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
     	return sectionsView;
     }
 
+
+    @Override
+    public List<ISICDetails> getActiveISICGroup() {
+        List<IsicTextsModel> groups = isicMasterDataService.getActiveISICGroup();
+        List<ISICDetails> groupsView = new ArrayList<>();
+        if (groups != null && !groups.isEmpty()) {
+            groups.forEach(s -> {
+                ISICDetails isicView = new ISICDetails();
+                isicView.setSectionNumber(s.getCode());
+                isicView.setSectionDescription(s.getDescription());
+                groupsView.add(isicView);
+            });
+        }
+        return groupsView;
+    }
+
+    @Override
+    public List<ISICDetails> getActiveISICClass() {
+        List<IsicTextsModel> classes = isicMasterDataService.getActiveISICClass();
+        List<ISICDetails> classesView = new ArrayList<>();
+        if (classes != null && !classes.isEmpty()) {
+            classes.forEach(s -> {
+                ISICDetails isicView = new ISICDetails();
+                isicView.setSectionNumber(s.getCode());
+                isicView.setSectionDescription(s.getDescription());
+                classesView.add(isicView);
+            });
+        }
+        return classesView;
+    }
+
     @Override
  	public List<ISICDetails> getActiveISICDivision(String sectionID) {
      	List<IsicTextsModel> divisions = isicMasterDataService.getActiveISICDivision(sectionID);
@@ -105,6 +157,37 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
         }
      	return divisionsView;
      }
+
+
+    @Override
+    public List<IsicData> getActiveISICGroup(String divisionID) {
+        List<IsicTextsModel> divisions = isicMasterDataService.getActiveISICGroup(divisionID);
+        List<IsicData> groupsView = new ArrayList<>();
+        if (divisions != null && !divisions.isEmpty()) {
+            divisions.forEach(s -> {
+                IsicData isicData = new IsicData();
+                isicData.setCode(s.getCode());
+                isicData.setDescription(s.getDescription());
+                groupsView.add(isicData);
+            });
+        }
+        return groupsView;
+    }
+
+    @Override
+    public List<IsicData> getActiveISICClass(String groupID) {
+        List<IsicTextsModel> classes = isicMasterDataService.getActiveISICClass(groupID);
+        List<IsicData> classesView = new ArrayList<>();
+        if (classes != null && !classes.isEmpty()) {
+            classes.forEach(s -> {
+                IsicData isicView = new IsicData();
+                isicView.setCode(s.getCode());
+                isicView.setDescription(s.getDescription());
+                classesView.add(isicView);
+            });
+        }
+        return classesView;
+    }
 
     private void addSections(Map<String, List> result, Collection<IsicMasterModel> sectionsData) {
         try {

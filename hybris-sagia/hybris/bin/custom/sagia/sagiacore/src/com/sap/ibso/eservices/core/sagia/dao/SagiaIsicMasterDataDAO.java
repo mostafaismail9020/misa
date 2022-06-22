@@ -2,6 +2,7 @@ package com.sap.ibso.eservices.core.sagia.dao;
 
 import com.sap.ibso.eservices.core.model.IsicMasterModel;
 import com.sap.ibso.eservices.core.model.IsicTextsModel;
+import com.sap.ibso.eservices.core.sagia.IsicData;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,4 +21,13 @@ public interface SagiaIsicMasterDataDAO {
 
 	List<IsicTextsModel> getActiveISICDivision(String section);
 
+    IsicTextsModel getIsicTextsByCode(String isicCode, String isicType);
+
+    List<IsicTextsModel> getActiveISICGroup();
+
+    List<IsicTextsModel> getActiveISICClass();
+
+    List<IsicTextsModel> getActiveISICGroupByDivisionID(String divisionID);
+
+    List<IsicTextsModel> getActiveISICClassByGroupID(String groupID);
 }

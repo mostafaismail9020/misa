@@ -701,6 +701,16 @@ function fillShareholderForm(selectedShareholder) {
     $('#shareholderMinorityRightsCurrentQuarterId').val(selectedShareholder.minorityRightsCurrentQuarter);
     $('#shareholderTotalShareholderEquityCurrentQuarterId').val(selectedShareholder.totalShareholderEquityCurrentQuarter);
 
+    $('#shareholderRetainedEarningsIncludePreviousQuarterId').val(selectedShareholder.retainedEarningsIncludePreviousQuarter);
+    $('#shareholderAdditionalPaidUpCapitalPreviousQuarterId').val(selectedShareholder.additionalPaidUpCapitalPreviousQuarter);
+    $('#shareholderProfitLossQuarterPreviousQuarterId').val(selectedShareholder.profitLossQuarterPreviousQuarter);
+    $('#shareholderTotalReservesPreviousQuarterId').val(selectedShareholder.totalReservesPreviousQuarter);
+    $('#shareholderTreasurySharesPreviousQuarterId').val(selectedShareholder.treasurySharesPreviousQuarter);
+    $('#shareholderHeadOfficeAccountInBranchPreviousQuarterId').val(selectedShareholder.headOfficeAccountInBranchPreviousQuarter);
+    $('#shareholderShareholderEquityOthersPreviousQuarterId').val(selectedShareholder.shareholderEquityOthersPreviousQuarter);
+    $('#shareholderMinorityRightsPreviousQuarterId').val(selectedShareholder.minorityRightsPreviousQuarter);
+    $('#shareholderTotalShareholderEquityPreviousQuarterId').val(selectedShareholder.totalShareholderEquityPreviousQuarter);
+
     $('#tradeDebitCurrentQuarterId').val(selectedShareholder.transaction.tradeDebitCurrentQuarter);
     $('#tradeCreditCurrentQuarterId').val(selectedShareholder.transaction.tradeCreditCurrentQuarter);
     $('#loansAssetsCurrentQuarterId').val(selectedShareholder.transaction.loansAssetsCurrentQuarter);
@@ -725,6 +735,34 @@ function fillShareholderForm(selectedShareholder) {
     $('#otherCreditCurrentQuarterId').val(selectedShareholder.transaction.otherCreditCurrentQuarter);
     $('#totalDebitCurrentQuarterId').val(selectedShareholder.transaction.totalDebitCurrentQuarter);
     $('#totalCreditCurrentQuarterId').val(selectedShareholder.transaction.totalCreditCurrentQuarter);
+
+
+
+
+    $('#tradeDebitPreviousQuarterId').val(selectedShareholder.transaction.tradeDebitPreviousQuarter);
+    $('#tradeCreditPreviousQuarterId').val(selectedShareholder.transaction.tradeCreditPreviousQuarter);
+    $('#loansAssetsPreviousQuarterId').val(selectedShareholder.transaction.loansAssetsPreviousQuarter);
+    $('#loansLiabilitiesPreviousQuarterId').val(selectedShareholder.transaction.loansLiabilitiesPreviousQuarter);
+    $('#interestReceivedPreviousQuarterId').val(selectedShareholder.transaction.interestReceivedPreviousQuarter);
+    $('#interestPayablePreviousQuarterId').val(selectedShareholder.transaction.interestPayablePreviousQuarter);
+    $('#dividendsReceivedPreviousQuarterId').val(selectedShareholder.transaction.dividendsReceivedPreviousQuarter);
+    $('#dividendsPaidPreviousQuarterId').val(selectedShareholder.transaction.dividendsPaidPreviousQuarter);
+    $('#expensesReceivedPreviousQuarterId').val(selectedShareholder.transaction.expensesReceivedPreviousQuarter);
+    $('#expensesPaidPreviousQuarterId').val(selectedShareholder.transaction.expensesPaidPreviousQuarter);
+    $('#sellProductionSuppliesPreviousQuarterId').val(selectedShareholder.transaction.sellProductionSuppliesPreviousQuarter);
+    $('#purchaseProductionSuppliesPreviousQuarterId').val(selectedShareholder.transaction.purchaseProductionSuppliesPreviousQuarter);
+    $('#sellMachineryPreviousQuarterId').val(selectedShareholder.transaction.sellMachineryPreviousQuarter);
+    $('#purchaseMachineryPreviousQuarterId').val(selectedShareholder.transaction.purchaseMachineryPreviousQuarter);
+    $('#currentDebitAccountPreviousQuarterId').val(selectedShareholder.transaction.currentDebitAccountPreviousQuarter);
+    $('#currentCreditAccountPreviousQuarterId').val(selectedShareholder.transaction.currentCreditAccountPreviousQuarter);
+    $('#expensesReceivablePreviousQuarterId').val(selectedShareholder.transaction.expensesReceivablePreviousQuarter);
+    $('#expensesPayablePreviousQuarterId').val(selectedShareholder.transaction.expensesPayablePreviousQuarter);
+    $('#insuranceCommissionReceivablePreviousQuarterId').val(selectedShareholder.transaction.insuranceCommissionReceivablePreviousQuarter);
+    $('#insuranceCommissionPayablePreviousQuarterId').val(selectedShareholder.transaction.insuranceCommissionPayablePreviousQuarter);
+    $('#otherDebitPreviousQuarterId').val(selectedShareholder.transaction.otherDebitPreviousQuarter);
+    $('#otherCreditPreviousQuarterId').val(selectedShareholder.transaction.otherCreditPreviousQuarter);
+    $('#totalDebitPreviousQuarterId').val(selectedShareholder.transaction.totalDebitPreviousQuarter);
+    $('#totalCreditPreviousQuarterId').val(selectedShareholder.transaction.totalCreditPreviousQuarter);
 
     updateDropDown('#shareholderCountryId', selectedShareholder.shareholderCountry);
 

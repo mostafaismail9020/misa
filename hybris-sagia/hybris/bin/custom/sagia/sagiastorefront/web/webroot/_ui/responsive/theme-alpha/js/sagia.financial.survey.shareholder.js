@@ -874,6 +874,16 @@ var saveShareholder = function (existingBp, bpId) {
     var minorityRightsCurrentQuarter =  $('#shareholderMinorityRightsCurrentQuarterId').val();
     var totalShareholderEquityCurrentQuarter =  $('#shareholderTotalShareholderEquityCurrentQuarterId').val();
 
+    var retainedEarningsIncludePreviousQuarter = $('#shareholderRetainedEarningsIncludePreviousQuarterId').val();
+    var additionalPaidUpCapitalPreviousQuarter = $('#shareholderAdditionalPaidUpCapitalPreviousQuarterId').val();
+    var profitLossQuarterPreviousQuarter = $('#shareholderProfitLossQuarterPreviousQuarterId').val();
+    var totalReservesPreviousQuarter = $('#shareholderTotalReservesPreviousQuarterId').val();
+    var treasurySharesPreviousQuarter = $('#shareholderTreasurySharesPreviousQuarterId').val();
+    var headOfficeAccountInBranchPreviousQuarter = $('#shareholderHeadOfficeAccountInBranchPreviousQuarterId').val();
+    var shareholderEquityOthersPreviousQuarter = $('#shareholderShareholderEquityOthersPreviousQuarterId').val();
+    var minorityRightsPreviousQuarter =  $('#shareholderMinorityRightsPreviousQuarterId').val();
+    var totalShareholderEquityPreviousQuarter =  $('#shareholderTotalShareholderEquityPreviousQuarterId').val();
+
 
 
     var shareholderIndex = financialSurvey.shareholders.findIndex(function (shareholder) {
@@ -976,6 +986,20 @@ var saveShareholder = function (existingBp, bpId) {
         selectedShareholder.minorityRightsCurrentQuarter  = minorityRightsCurrentQuarter  ;
         selectedShareholder.totalShareholderEquityCurrentQuarter  = totalShareholderEquityCurrentQuarter  ;
 
+
+        selectedShareholder.retainedEarningsIncludePreviousQuarter =  retainedEarningsIncludePreviousQuarter ;
+        selectedShareholder.additionalPaidUpCapitalPreviousQuarter  = additionalPaidUpCapitalPreviousQuarter ;
+        selectedShareholder.profitLossQuarterPreviousQuarter  = profitLossQuarterPreviousQuarter  ;
+        selectedShareholder.totalReservesPreviousQuarter  = totalReservesPreviousQuarter  ;
+        selectedShareholder.treasurySharesPreviousQuarter  = treasurySharesPreviousQuarter  ;
+        selectedShareholder.headOfficeAccountInBranchPreviousQuarter  = headOfficeAccountInBranchPreviousQuarter  ;
+        selectedShareholder.shareholderEquityOthersPreviousQuarter  = shareholderEquityOthersPreviousQuarter  ;
+        selectedShareholder.minorityRightsPreviousQuarter  = minorityRightsPreviousQuarter  ;
+        selectedShareholder.totalShareholderEquityPreviousQuarter  = totalShareholderEquityPreviousQuarter  ;
+
+
+
+
         if (gender) { // edit individual shareholder
 
             selectedShareholder.shareholderNameEnglish = individualShareholderName;
@@ -1073,6 +1097,16 @@ var saveShareholder = function (existingBp, bpId) {
             minorityRightsCurrentQuarter  : '',
             totalShareholderEquityCurrentQuarter  : '',
 
+            retainedEarningsIncludePreviousQuarter : '',
+            additionalPaidUpCapitalPreviousQuarter  : '',
+            profitLossQuarterPreviousQuarter  : '',
+            totalReservesPreviousQuarter  : '',
+            treasurySharesPreviousQuarter : '',
+            headOfficeAccountInBranchPreviousQuarter  : '',
+            shareholderEquityOthersPreviousQuarter  : '',
+            minorityRightsPreviousQuarter  : '',
+            totalShareholderEquityPreviousQuarter  : '',
+
             transaction: {
                  tradeDebitCurrentQuarter: '',
                  tradeCreditCurrentQuarter: '',
@@ -1125,6 +1159,17 @@ var saveShareholder = function (existingBp, bpId) {
             shareholder.shareholderEquityOthersCurrentQuarter  = shareholderEquityOthersCurrentQuarter  ;
             shareholder.minorityRightsCurrentQuarter  = minorityRightsCurrentQuarter  ;
             shareholder.totalShareholderEquityCurrentQuarter  = totalShareholderEquityCurrentQuarter  ;
+
+
+            shareholder.retainedEarningsIncludePreviousQuarter =  retainedEarningsIncludePreviousQuarter ;
+            shareholder.additionalPaidUpCapitalPreviousQuarter  = additionalPaidUpCapitalPreviousQuarter ;
+            shareholder.profitLossQuarterPreviousQuarter  = profitLossQuarterPreviousQuarter  ;
+            shareholder.totalReservesPreviousQuarter  = totalReservesPreviousQuarter  ;
+            shareholder.treasurySharesPreviousQuarter  = treasurySharesPreviousQuarter  ;
+            shareholder.headOfficeAccountInBranchPreviousQuarter  = headOfficeAccountInBranchPreviousQuarter  ;
+            shareholder.shareholderEquityOthersPreviousQuarter  = shareholderEquityOthersPreviousQuarter  ;
+            shareholder.minorityRightsPreviousQuarter  = minorityRightsPreviousQuarter  ;
+            shareholder.totalShareholderEquityPreviousQuarter  = totalShareholderEquityPreviousQuarter  ;
 
 
         } else { // entity shareholder
@@ -1280,6 +1325,16 @@ function clearShareholderForm() {
     $('#shareholderShareholderEquityOthersCurrentQuarterId').val('');
     $('#shareholderMinorityRightsCurrentQuarterId').val('');
     $('#shareholderTotalShareholderEquityCurrentQuarterId').val('');
+
+    $('#shareholderRetainedEarningsIncludePreviousQuarterId').val('');
+    $('#shareholderAdditionalPaidUpCapitalPreviousQuarterId').val('');
+    $('#shareholderProfitLossQuarterPreviousQuarterId').val('');
+    $('#shareholderTotalReservesPreviousQuarterId').val('');
+    $('#shareholderTreasurySharesPreviousQuarterId').val('');
+    $('#shareholderHeadOfficeAccountInBranchPreviousQuarterId').val('');
+    $('#shareholderShareholderEquityOthersPreviousQuarterId').val('');
+    $('#shareholderMinorityRightsPreviousQuarterId').val('');
+    $('#shareholderTotalShareholderEquityPreviousQuarterId').val('');
 
 
     $('.saveShareholderBtn').removeAttr('id');

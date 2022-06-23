@@ -575,6 +575,8 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyShareholderModel.setShareholderCountryRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderCountry()));
         financialSurveyShareholderModel.setShareholderPercentage(shareholder.getShareholderPercentage());
         financialSurveyShareholderModel.setShareholderCapital(shareholder.getShareholderCapital());
+
+
         financialSurveyShareholderModel.setPaidUpCapitalCurrentQuarter(shareholder.getPaidUpCapitalCurrentQuarter());
         financialSurveyShareholderModel.setAdditionalPaidUpCapitalCurrentQuarter(shareholder.getAdditionalPaidUpCapitalCurrentQuarter());
         financialSurveyShareholderModel.setRetainedEarningsIncludeCurrentQuarter(shareholder.getRetainedEarningsIncludeCurrentQuarter());
@@ -585,6 +587,71 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyShareholderModel.setShareholderEquityOthersCurrentQuarter(shareholder.getShareholderEquityOthersCurrentQuarter());
         financialSurveyShareholderModel.setMinorityRightsCurrentQuarter(shareholder.getMinorityRightsCurrentQuarter());
         financialSurveyShareholderModel.setTotalShareholderEquityCurrentQuarter(shareholder.getTotalShareholderEquityCurrentQuarter());
+
+        // Update Previous Quarter Values
+        FinancialSurveyShareholderModel financialSurveyShareholderPrevious = financialSurveyShareholderModel.getFinancialSurveyShareholderPreviousQuarter();
+        if(financialSurveyShareholderPrevious != null) {
+
+            boolean isValuesChanged  = false;
+
+            if(!shareholder.getAdditionalPaidUpCapitalPreviousQuarter().equals(financialSurveyShareholderPrevious.getAdditionalPaidUpCapitalCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setAdditionalPaidUpCapitalCurrentQuarter(shareholder.getAdditionalPaidUpCapitalPreviousQuarter());
+            }
+
+            if(!shareholder.getRetainedEarningsIncludePreviousQuarter().equals(financialSurveyShareholderPrevious.getRetainedEarningsIncludeCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setRetainedEarningsIncludeCurrentQuarter(shareholder.getRetainedEarningsIncludePreviousQuarter());
+            }
+
+            if(!shareholder.getProfitLossQuarterPreviousQuarter().equals(financialSurveyShareholderPrevious.getProfitLossQuarterCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setProfitLossQuarterCurrentQuarter(shareholder.getProfitLossQuarterPreviousQuarter());
+            }
+
+            if(!shareholder.getTotalReservesPreviousQuarter().equals(financialSurveyShareholderPrevious.getTotalReservesCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setTotalReservesCurrentQuarter(shareholder.getTotalReservesPreviousQuarter());
+            }
+
+            if(!shareholder.getTreasurySharesPreviousQuarter().equals(financialSurveyShareholderPrevious.getTreasurySharesCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setTreasurySharesCurrentQuarter(shareholder.getTreasurySharesPreviousQuarter());
+            }
+
+            if(!shareholder.getHeadOfficeAccountInBranchPreviousQuarter().equals(financialSurveyShareholderPrevious.getHeadOfficeAccountInBranchCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setHeadOfficeAccountInBranchCurrentQuarter(shareholder.getHeadOfficeAccountInBranchPreviousQuarter());
+            }
+
+            if(!shareholder.getShareholderEquityOthersPreviousQuarter().equals(financialSurveyShareholderPrevious.getShareholderEquityOthersCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setShareholderEquityOthersCurrentQuarter(shareholder.getShareholderEquityOthersPreviousQuarter());
+            }
+
+            if(!shareholder.getMinorityRightsPreviousQuarter().equals(financialSurveyShareholderPrevious.getMinorityRightsCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setMinorityRightsCurrentQuarter(shareholder.getMinorityRightsPreviousQuarter());
+            }
+
+            if(!shareholder.getTotalShareholderEquityPreviousQuarter().equals(financialSurveyShareholderPrevious.getTotalShareholderEquityCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setTotalShareholderEquityCurrentQuarter(shareholder.getTotalShareholderEquityPreviousQuarter());
+            }
+
+            if (isValuesChanged){
+                modelService.save(financialSurveyShareholderPrevious);
+                FinancialSurveyModel prevQuarterSurvey = financialSurveyShareholderPrevious.getFinancialSurvey();
+                prevQuarterSurvey.setSurveyStatus(FinancialSurveyStatus.UPDATED);
+                modelService.save(prevQuarterSurvey);
+            }
+
+        }
+
+
+
+
+
 
         if(shareholder.getShareholderIsVotingPower() != null ){
             financialSurveyShareholderModel.setShareholderIsVotingPower(shareholder.getShareholderIsVotingPower());

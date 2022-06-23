@@ -108,6 +108,7 @@ function calculateShareholderEquity() {
     }
 }
 
+
 $(document).ready(function () {
 
 
@@ -192,47 +193,14 @@ $(document).ready(function () {
             }
         });
 
-        $("#comppanyPaidUpCapitalCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
 
-        $("#paidUpCapitalCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#paidUpCapitalPreviousQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#additionalPaidUpCapitalCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#additionalPaidUpCapitalPreviousQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
+
+        validateNumberFloatInput ($("#comppanyPaidUpCapitalCurrentQuarterId"));
+        validateNumberFloatInput ($("#paidUpCapitalCurrentQuarterId"));
+        validateNumberFloatInput ($("#paidUpCapitalPreviousQuarterId"));
+        validateNumberFloatInput ($("#additionalPaidUpCapitalCurrentQuarterId"));
+        validateNumberFloatInput ($("#additionalPaidUpCapitalPreviousQuarterId"));
+
         $("#retainedEarningsIncludeCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
             if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
@@ -317,31 +285,9 @@ $(document).ready(function () {
             }
         });
 
+        validateNumberFloatInput ($("#treasurySharesCurrentQuarterId"));
+        validateNumberFloatInput ($("#treasurySharesPreviousQuarterId"));
 
-        $("#treasurySharesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 &&  e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }if ( $("#treasurySharesCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#treasurySharesPreviousQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 &&  e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }if ( $("#treasurySharesPreviousQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
 
         $("#headOfficeAccountInBranchCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
@@ -454,22 +400,10 @@ $(document).ready(function () {
             }
         });
 
-        $("#shareholderCapitalId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderAdditionalPaidUpCapitalCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
+
+        validateNumberFloatInput ($("#shareholderCapitalId"));
+        validateNumberFloatInput ($("#shareholderAdditionalPaidUpCapitalCurrentQuarterId"));
+
         $("#shareholderRetainedEarningsIncludeCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
             if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
@@ -593,14 +527,8 @@ $(document).ready(function () {
             }
 
         });
-        $("#shareholderTreasurySharesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
+        validateNumberFloatInput ($("#shareholderTreasurySharesCurrentQuarterId"));
+
         $("#shareholderTotalShareholderEquityCurrentQuarterId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
             if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
@@ -625,206 +553,61 @@ $(document).ready(function () {
                 return false;
             }
         });
-        $("#shareholderValueOfReverseInvestmentId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#tradeDebitCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#loansAssetsCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#interestReceivedCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#dividendsReceivedCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#expensesReceivedCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#sellProductionSuppliesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#currentDebitAccountCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#insuranceCommissionReceivableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#otherDebitCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#totalDebitCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#tradeCreditCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#loansLiabilitiesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#interestPayableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#dividendsPaidCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#expensesPaidCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#purchaseProductionSuppliesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#purchaseMachineryCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#currentCreditAccountCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#expensesPayableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#insuranceCommissionPayableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#otherCreditCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#totalCreditCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#sellMachineryCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#expensesReceivableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
+        validateNumberFloatInput ($("#shareholderValueOfReverseInvestmentId"));
+        validateNumberFloatInput ($("#tradeDebitCurrentQuarterId"));
+        validateNumberFloatInput ($("#loansAssetsCurrentQuarterId"));
+        validateNumberFloatInput ($("#interestReceivedCurrentQuarterId"));
+        validateNumberFloatInput ($("#dividendsReceivedCurrentQuarterId"));
+        validateNumberFloatInput ($("#expensesReceivedCurrentQuarterId"));
+        validateNumberFloatInput ($("#sellProductionSuppliesCurrentQuarterId"));
+        validateNumberFloatInput ($("#currentDebitAccountCurrentQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionReceivableCurrentQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionReceivableCurrentQuarterId"));
+        validateNumberFloatInput ($("#otherDebitCurrentQuarterId"));
+        validateNumberFloatInput ($("#totalDebitCurrentQuarterId"));
+        validateNumberFloatInput ($("#tradeCreditCurrentQuarterId"));
+        validateNumberFloatInput ($("#loansLiabilitiesCurrentQuarterId"));
+        validateNumberFloatInput ($("#interestPayableCurrentQuarterId"));
+        validateNumberFloatInput ($("#dividendsPaidCurrentQuarterId"));
+        validateNumberFloatInput ($("#expensesPaidCurrentQuarterId"));
+        validateNumberFloatInput ($("#purchaseProductionSuppliesCurrentQuarterId"));
+        validateNumberFloatInput ($("#purchaseMachineryCurrentQuarterId"));
+        validateNumberFloatInput ($("#currentCreditAccountCurrentQuarterId"));
+        validateNumberFloatInput ($("#expensesPayableCurrentQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionPayableCurrentQuarterId"));
+        validateNumberFloatInput ($("#otherCreditCurrentQuarterId"));
+        validateNumberFloatInput ($("#totalCreditCurrentQuarterId"));
+        validateNumberFloatInput ($("#sellMachineryCurrentQuarterId"));
+        validateNumberFloatInput ($("#expensesReceivableCurrentQuarterId"));
+
+
+        validateNumberFloatInput ($("#tradeDebitPreviousQuarterId"));
+        validateNumberFloatInput ($("#loansAssetsPreviousQuarterId"));
+        validateNumberFloatInput ($("#interestReceivedPreviousQuarterId"));
+        validateNumberFloatInput ($("#dividendsReceivedPreviousQuarterId"));
+        validateNumberFloatInput ($("#expensesReceivedPreviousQuarterId"));
+        validateNumberFloatInput ($("#sellProductionSuppliesPreviousQuarterId"));
+        validateNumberFloatInput ($("#currentDebitAccountPreviousQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionReceivablePreviousQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionReceivablePreviousQuarterId"));
+        validateNumberFloatInput ($("#otherDebitPreviousQuarterId"));
+        validateNumberFloatInput ($("#totalDebitPreviousQuarterId"));
+        validateNumberFloatInput ($("#tradeCreditPreviousQuarterId"));
+        validateNumberFloatInput ($("#loansLiabilitiesPreviousQuarterId"));
+        validateNumberFloatInput ($("#interestPayablePreviousQuarterId"));
+        validateNumberFloatInput ($("#dividendsPaidPreviousQuarterId"));
+        validateNumberFloatInput ($("#expensesPaidPreviousQuarterId"));
+        validateNumberFloatInput ($("#purchaseProductionSuppliesPreviousQuarterId"));
+        validateNumberFloatInput ($("#purchaseMachineryPreviousQuarterId"));
+        validateNumberFloatInput ($("#currentCreditAccountPreviousQuarterId"));
+        validateNumberFloatInput ($("#expensesPayablePreviousQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionPayablePreviousQuarterId"));
+        validateNumberFloatInput ($("#otherCreditPreviousQuarterId"));
+        validateNumberFloatInput ($("#totalCreditPreviousQuarterId"));
+        validateNumberFloatInput ($("#sellMachineryPreviousQuarterId"));
+        validateNumberFloatInput ($("#expensesReceivablePreviousQuarterId"));
+
+
 
 
         $("input[name='consolidatedStandloneRadioBox']").click(function () {
@@ -1143,6 +926,54 @@ var validateBranchesSumPercentage = function () {
     }
 
 }
+
+
+var validateNumberFloatInput = function (element)  {
+    element.on('keypress', function (event) {
+        var regex = new RegExp("^[0-9\.]$");
+        // var regexMulti = new RegExp("^[\d]+\.?[\d]*$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+
+        if (!regex.test(key)) {
+
+            event.preventDefault();
+            //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+            return false;
+        } else {
+            var hasDot = $(this).val().indexOf('.') >= 0;
+
+            if (key === '.' && hasDot) {
+                event.preventDefault();
+                return false;
+            }
+            else  if (hasDot) {
+                var value = $(this).val().split('.');
+                if ( value[1].length > 2) {
+                    event.preventDefault();
+                    return false;
+                }
+
+            }
+        }
+    });
+
+    element.on('paste', function () {
+        var $self = $(this)
+        setTimeout(function () {
+            $self.val($self.val().replace(/[^0-9.]+/g, ""));
+            var dotCount = $self.val().replace(/[^.]/g, "").length;
+
+            if (dotCount > 1) {
+                while (dotCount > 1) {
+                    $self.val($self.val().replace(/[.]/, ""));
+                    dotCount--;
+                }
+            }
+        }, 0);
+    })
+
+}
+
 
 var validateLicense = function () {
 

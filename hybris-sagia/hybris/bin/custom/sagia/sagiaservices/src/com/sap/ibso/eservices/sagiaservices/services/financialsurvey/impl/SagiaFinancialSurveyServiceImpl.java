@@ -529,6 +529,10 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
             financialSurveyShareholderModel.setShareholderTypeRef(shareholderModelFromPrevQuarter.getShareholderTypeRef());
             financialSurveyShareholderModel.setShareholderGender(shareholderModelFromPrevQuarter.getShareholderGender());
             financialSurveyShareholderModel.setFinancialSurveyShareholderPreviousQuarter(shareholderModelFromPrevQuarter);
+
+            SagiaSurveyTransactionModel transaction = new SagiaSurveyTransactionModel();
+            //Fill with empty transaction.
+            financialSurveyShareholderModel.setTransaction(transaction);
             modelService.save(financialSurveyShareholderModel);
         }
 

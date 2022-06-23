@@ -94,6 +94,8 @@ public class EconomicHighlightsController extends SagiaAbstractPageController {
 		model.addAttribute("infraLogisticsLanding", infraLogisticsFacade.getInfraLogisticsLandingData());
 		model.addAttribute("lengthOfNetwork", infraLogisticsFacade.getLengthOfNetworkData());
 		model.addAttribute("lengthOfNetworkjson", new Gson().toJson(infraLogisticsFacade.getLengthOfNetworkData()));
+		model.addAttribute("privateIndustrialCities", new Gson().toJson(infraLogisticsFacade.getPrivateCitiesListData()));
+		model.addAttribute("privateIndustrialCitiesData", infraLogisticsFacade.getPrivateCitiesListData());
 		model.addAttribute("infrastructureLogisticsData", infraLogisticsFacade.getInfrastructureLogisticsData());
 		final ContentPageModel economicCMSPage = getContentPageForLabelOrId(INFRASTRUCTURE_AND_LOGISTICS_PAGE);
 		storeCmsPageInModel(model, economicCMSPage);

@@ -7730,6 +7730,11 @@
                         <modifiers read="true" write="true" search="true"/>
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="cityUrlLink" type="java.lang.String">
+                        <description>displayName</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
 	            </attributes>
 			</itemtype>
 

@@ -2531,6 +2531,7 @@
 					<editorArea:attribute qualifier="developedArea" />
 					<editorArea:attribute qualifier="noOfContracts" />
 					<editorArea:attribute qualifier="displayName" />
+					<editorArea:attribute qualifier="cityUrlLink" />
 				</editorArea:section>
 			</editorArea:tab>
 		</editorArea:editorArea>

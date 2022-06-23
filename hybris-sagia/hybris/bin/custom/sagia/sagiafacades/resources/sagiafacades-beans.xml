@@ -3630,6 +3630,7 @@
 		<property name="developedArea" type="java.lang.String" />
 		<property name="noOfContracts" type="java.lang.String" />
 		<property name="displayName" type="java.lang.String" />
+		<property name="cityUrlLink" type="java.lang.String" />
 	</bean>
 
 	<bean

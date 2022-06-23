@@ -1453,31 +1453,31 @@ $(document).ready(function () {
 		chart.marginRight = 400;
 		chart.data = [
             {
-                "networkName": getI18nText("bar.graph.north.train.network"),
+                "networkName": data[0].networkName,
                 "networkValue": data[0].networkValue,
             },
             {
-                "networkName": getI18nText("bar.graph.north.train.passenger"),
+                "networkName": data[1].networkName,
                 "networkValue": data[1].networkValue,
             },
             {
-                "networkName": getI18nText("bar.graph.north.train.freight"),
+                "networkName": data[2].networkName,
                 "networkValue": data[2].networkValue,
             },
             {
-                "networkName": getI18nText("bar.graph.east.train.network"),
+                "networkName": data[3].networkName,
                 "networkValue": data[3].networkValue,
             },
             {
-                "networkName": getI18nText("bar.graph.east.train.passenger"),
+                "networkName": data[4].networkName,
                 "networkValue": data[4].networkValue,
             },
             {
-                "networkName": getI18nText("bar.graph.east.cargo.train"),
+                "networkName": data[5].networkName,
                 "networkValue": data[5].networkValue,
             },
             {
-                "networkName": getI18nText("bar.graph.haramain.high.speed"),
+                "networkName": data[6].networkName,
                 "networkValue": data[6].networkValue,
             }
             ];

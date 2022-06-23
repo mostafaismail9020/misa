@@ -2375,8 +2375,43 @@
 							<h1 class="INL_logistics_header text-center w-100"><spring:theme code="economic.infralogistics.private.industrialsector.section.heading.name"/></h1>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3  mx-auto">
+
+						 <c:forEach items="${privateIndustrialCitiesData}" var="privateIndustrialCities">
+                            <div class="col-md-6 col-lg-3  mx-auto">
+                            <div class="INL_SD_Industrial_Cities">
+								<h4 class="INL_SD_Industrial_Cities_header">${privateIndustrialCities.displayName}</h4>
+							<div class="p-2">
+								<div class="INL_table">
+									<table class="table borderless">
+										<tr>
+											<td><span class="INL_table_para"><spring:theme code="economic.infralogistics.zamil.industial.establishment.year.text"/></span></td>
+											<td class="text-center"><span class="INL_table_number">${privateIndustrialCities.establishmentYear}</span></td>
+										</tr>
+										<tr>
+											<td><span class="INL_table_para"><spring:theme code="economic.infralogistics.private.industrial.totalarea.text"/></span></td>
+											<td class="text-center"><span class="INL_table_number">${privateIndustrialCities.totalArea}</span></td>
+										</tr>
+										<tr>
+											<td><span class="INL_table_para"><spring:theme code="economic.infralogistics.private.industrial.developedarea.text"/></span></td>
+											<td class="text-center"><span class="INL_table_number">${privateIndustrialCities.developedArea}</span></td>
+										</tr>
+										<tr>
+											<td><span class="INL_table_para"><spring:theme code="economic.infralogistics.private.industrial.numberofcontracts.text"/></span></td>
+											<td class="text-center"><span class="INL_table_number">${privateIndustrialCities.noOfContracts}</span></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="text-center pb-2">
+								<a target="_blank" href="${privateIndustrialCities.cityUrlLink}" class="alink"><spring:theme code="economic.infralogistics.private.industrial.viewcity.website.link.text"/></a>
+							</div>
+							</div>
+                           </div>
+						</c:forEach>
+
+					<!--<div class="col-md-6 col-lg-3  mx-auto">
 						<div class="INL_SD_Industrial_Cities">
+						${privateIndustrialCities}
 							<h4 class="INL_SD_Industrial_Cities_header"><spring:theme code="economic.infralogistics.zamil.industial.section.heading.name"/></h4>
 							<div class="p-2">
 								<div class="INL_table">
@@ -2735,7 +2770,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="col-md-6 col-lg-3  mx-auto">
 						<div class="INL_SD_Industrial_Cities">
 							<h4 class="INL_SD_Industrial_Cities_header"><spring:theme code="economic.infralogistics.alnahdi.medical.company.text"/></h4>
@@ -2855,9 +2889,9 @@
 								<a href="https://modon.gov.sa/en/Cities/PrivateCities/Pages/PrivateCity.aspx?CityId=3f99c687-dca2-40ed-8ad2-33acd1714f58" class="alink"  target="_blank"><spring:theme code="economic.infralogistics.private.industrial.viewcity.website.link.text"/></a>
 							</div>
 						</div>
-					</div>
+					</div>-->
 				</div>
-				<div class="row w-60 infraLogisticsLastDiv mx-auto pb-5">
+				<!--<div class="row w-60 infraLogisticsLastDiv mx-auto pb-5">
 					<div class="col-md-6  mx-auto">
 						<div class="INL_SD_Industrial_Cities">
 							<h4 class="INL_SD_Industrial_Cities_header"><spring:theme code="economic.infralogistics.kingsalman.energypark.text"/> </h4>
@@ -2918,7 +2952,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			  </div>
           </div>
         </section>

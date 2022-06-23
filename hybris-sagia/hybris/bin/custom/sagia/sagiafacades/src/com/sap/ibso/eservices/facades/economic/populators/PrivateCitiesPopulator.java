@@ -17,6 +17,7 @@ public class PrivateCitiesPopulator implements Populator<PrivateCitiesModel, Pri
 		target.setDevelopedArea(source.getDevelopedArea());
 		target.setNoOfContracts(source.getNoOfContracts());
 		target.setDisplayName(source.getDisplayName());
+		target.setCityUrlLink(source.getCityUrlLink());
 	}
 
 }

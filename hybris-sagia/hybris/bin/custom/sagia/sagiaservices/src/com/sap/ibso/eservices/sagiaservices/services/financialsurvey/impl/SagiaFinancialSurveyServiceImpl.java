@@ -296,6 +296,8 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyModel.setEconomicActivityDivision(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivityDivision(),"DIVISION" ));
         financialSurveyModel.setEconomicActivityGroup(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivityGroup(),"GROUP" ));
         financialSurveyModel.setEconomicActivitySection(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivitySection(),"SECTION" ));
+        financialSurveyModel.setEconomicActivityBranch(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivityBranch(),"BRANCH" ));
+        financialSurveyModel.setEconomicActivity(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivity(),"ACTIVITY" ));
     }
 
     private FinancialSurveyModel initiateFinancialSurveyModel(FinancialSurvey financialSurveyData) {
@@ -527,6 +529,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
             financialSurveyShareholderModel.setShareholderTypeRef(shareholderModelFromPrevQuarter.getShareholderTypeRef());
             financialSurveyShareholderModel.setShareholderGender(shareholderModelFromPrevQuarter.getShareholderGender());
             financialSurveyShareholderModel.setFinancialSurveyShareholderPreviousQuarter(shareholderModelFromPrevQuarter);
+            modelService.save(financialSurveyShareholderModel);
         }
 
     }

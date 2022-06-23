@@ -189,6 +189,39 @@ public class DefaultSagiaIsicFacade implements SagiaIsicFacade {
         return classesView;
     }
 
+    @Override
+    public List<IsicData> getActiveISICBranch(String classID) {
+        List<IsicTextsModel> classes = isicMasterDataService.getActiveISICBranch(classID);
+        List<IsicData> branchesView = new ArrayList<>();
+        if (classes != null && !classes.isEmpty()) {
+            classes.forEach(s -> {
+                IsicData isicView = new IsicData();
+                isicView.setCode(s.getCode());
+                isicView.setDescription(s.getDescription());
+                branchesView.add(isicView);
+            });
+        }
+        return branchesView;
+    }
+
+
+    @Override
+    public List<IsicData> getActiveISICActivity(String branchID) {
+        List<IsicTextsModel> classes = isicMasterDataService.getActiveISICActivity(branchID);
+        List<IsicData> branchesView = new ArrayList<>();
+        if (classes != null && !classes.isEmpty()) {
+            classes.forEach(s -> {
+                IsicData isicView = new IsicData();
+                isicView.setCode(s.getCode());
+                isicView.setDescription(s.getDescription());
+                branchesView.add(isicView);
+            });
+        }
+        return branchesView;
+    }
+
+
+
     private void addSections(Map<String, List> result, Collection<IsicMasterModel> sectionsData) {
         try {
 

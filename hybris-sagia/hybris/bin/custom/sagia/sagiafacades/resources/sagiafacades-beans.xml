@@ -97,7 +97,8 @@
 		<property name="economicActivityDivision" type="java.lang.String"/>
 		<property name="economicActivityGroup" type="java.lang.String"/>
 		<property name="economicActivityClass" type="java.lang.String"/>
-
+		<property name="economicActivityBranch" type="java.lang.String"/>
+		<property name="economicActivity" type="java.lang.String"/>
 
 	</bean>
 

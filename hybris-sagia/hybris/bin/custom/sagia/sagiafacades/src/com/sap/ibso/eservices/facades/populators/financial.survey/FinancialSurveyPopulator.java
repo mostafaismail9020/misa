@@ -117,6 +117,8 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         financialSurvey.setEconomicActivityDivision(financialSurveyModel.getEconomicActivityDivision()!=null ? financialSurveyModel.getEconomicActivityDivision().getCode() :  null);
         financialSurvey.setEconomicActivityGroup(financialSurveyModel.getEconomicActivityGroup()!=null ? financialSurveyModel.getEconomicActivityGroup().getCode() :  null);
         financialSurvey.setEconomicActivitySection(financialSurveyModel.getEconomicActivitySection()!=null ? financialSurveyModel.getEconomicActivitySection().getCode() :  null);
+        financialSurvey.setEconomicActivityBranch(financialSurveyModel.getEconomicActivityBranch()!=null ? financialSurveyModel.getEconomicActivityBranch().getCode() :  null);
+        financialSurvey.setEconomicActivity(financialSurveyModel.getEconomicActivity()!=null ? financialSurveyModel.getEconomicActivity().getCode() :  null);
 
         if(financialSurveyModel.getCompanyStatus() != null ){
             financialSurvey.setCompanyStatus(financialSurveyModel.getCompanyStatus().getCode());

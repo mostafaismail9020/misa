@@ -11227,6 +11227,19 @@
                     </attribute>
 
 
+                    <attribute qualifier="economicActivityBranch" type="IsicTexts">
+                        <description>economic Activity branch</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="economicActivity" type="IsicTexts">
+                        <description>economic Activity </description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
 
 
                     <attribute qualifier="paidUpCapitalCurrentQuarter" type="java.lang.String">

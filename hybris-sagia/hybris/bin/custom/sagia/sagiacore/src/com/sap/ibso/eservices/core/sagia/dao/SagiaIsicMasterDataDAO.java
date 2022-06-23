@@ -30,4 +30,8 @@ public interface SagiaIsicMasterDataDAO {
     List<IsicTextsModel> getActiveISICGroupByDivisionID(String divisionID);
 
     List<IsicTextsModel> getActiveISICClassByGroupID(String groupID);
+
+    List<IsicTextsModel> getActiveISICBranchByClassID(String classID);
+
+    List<IsicTextsModel> getActiveISICActivityByBranchID(String branchID);
 }

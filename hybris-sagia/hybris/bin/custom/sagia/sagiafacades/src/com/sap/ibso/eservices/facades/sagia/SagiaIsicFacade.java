@@ -35,4 +35,8 @@ public interface SagiaIsicFacade {
     List<IsicData> getActiveISICGroup(String divisionID);
 
     List<IsicData> getActiveISICClass(String groupID);
+
+    List<IsicData> getActiveISICBranch(String classID);
+
+    List<IsicData> getActiveISICActivity(String branchID);
 }

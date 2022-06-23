@@ -510,8 +510,13 @@ data-expand-target="expand01">
                                         <div class="contentModule-headline"><spring:theme
                                                 code="financial.survey.business.activities"/></div>
                                         <hr class="hr w-100">
+                                          <p class="INS_letter_set_para pb-3 mb-3">
+                                                <spring:theme code="financial.survey.business.activities.note"/>
+                                          </p>
+
 
                                         <div class="row">
+
 
                                             <div class="col-md-6">
                                                 <div class="formSelectBox">
@@ -559,6 +564,31 @@ data-expand-target="expand01">
                                                                 class="js-select2-search form-control"></select> <label
                                                             class="control-label control-label_mandatory"
                                                             for="classId"><spring:theme code="survey.class"/></label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                <div class="formSelectBox">
+                                                    <div class="form-group">
+                                                        <select id="branchId" name="class"
+                                                                class="js-select2-search form-control"></select> <label
+                                                            class="control-label control-label_mandatory"
+                                                            for="branchId"><spring:theme code="survey.branch"/></label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="formSelectBox">
+                                                    <div class="form-group">
+                                                        <select id="activityId" name="class"
+                                                                class="js-select2-search form-control"></select> <label
+                                                            class="control-label control-label_mandatory"
+                                                            for="activityId"><spring:theme code="survey.activity"/></label>
                                                         <div class="help-block"></div>
                                                     </div>
                                                 </div>

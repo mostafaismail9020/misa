@@ -60,6 +60,18 @@ public class IsicMasterDataService extends AbstractSagiaService<IsicMasterSetDat
         return sagiaIsicMasterDataDAO.getActiveISICClassByGroupID(groupID);
     }
 
+    public List<IsicTextsModel> getActiveISICBranch(String classID) {
+        return sagiaIsicMasterDataDAO.getActiveISICBranchByClassID(classID);
+    }
+
+    public List<IsicTextsModel> getActiveISICActivity(String branchID) {
+        return sagiaIsicMasterDataDAO.getActiveISICActivityByBranchID(branchID);
+    }
+
+
+
+
+
     //TODO dont need to use all this methods above
 /*    public Collection<IsicMasterModel>  getAllSectionsByLicenseType(String licenseType){
         return sagiaIsicMasterDataDAO.getAllSectionsByLicenseType(licenseType);

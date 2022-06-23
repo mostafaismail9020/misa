@@ -871,6 +871,8 @@ $(document).ready(function () {
         $("#sectionId").change(updateDivisions);
         $("#divisionId").change(updateGroups);
         $("#groupId").change(updateClass);
+        $("#classId").change(updateBranch);
+        $("#branchId").change(updateActivity);
 
 
 
@@ -1353,6 +1355,8 @@ function populateCompanyProfile() {
     financialSurvey.economicActivityDivision = $('#divisionId').val();
     financialSurvey.economicActivityGroup = $('#groupId').val();
     financialSurvey.economicActivityClass = $('#classId').val();
+    financialSurvey.economicActivityBranch = $('#branchId').val();
+    financialSurvey.economicActivity = $('#activityId').val();
 
 
     financialSurvey.paidUpCapitalCurrentQuarter = $('#comppanyPaidUpCapitalCurrentQuarterId').val();
@@ -1739,7 +1743,7 @@ function setLicenseData(data, history) {
     updateDropDown('#disclosureCurrencyId', financialSurvey.disclosureCurrency);
 
      updateDropDownwithoutTriggerChange('#sectionId', financialSurvey.economicActivitySection);
-     loadIsicValues(financialSurvey.economicActivityDivision,financialSurvey.economicActivityGroup, financialSurvey.economicActivityClass);
+     loadIsicValues(financialSurvey.economicActivityDivision,financialSurvey.economicActivityGroup, financialSurvey.economicActivityClass, financialSurvey.economicActivityBranch, financialSurvey.economicActivity);
 
 
     $('#suspensionDateId').val(financialSurvey.suspensionDate);
@@ -1976,7 +1980,9 @@ function setupDropDowns(data) {
 
     var $sectionSelect = $('#sectionId').append(new Option('', '', false, false));
     data.sections.forEach(function (section) {
-        $sectionSelect.append(new Option(section.name, section.id, false, false));
+        $sectionSelect.append(new Option(section.id.concat(" : ", section.name), section.id, false, false));
+
+
     });
 
 
@@ -1995,7 +2001,10 @@ var updateCities = function () {
     });
 };
 
-var loadIsicValues = function (selectedDivision,selectedGroup,selectedClass) {
+var loadIsicValues = function (selectedDivision,selectedGroup,selectedClass, selectedBranch, selectedActivity) {
+
+
+
     var selectedSectionId = $('#sectionId option:selected').val();
 
     var $divisionIdSelect = $('#divisionId').empty();
@@ -2013,30 +2022,31 @@ var loadIsicValues = function (selectedDivision,selectedGroup,selectedClass) {
                 $divisionIdSelect.append(new Option("", "", false, false));
                 if (jsonData !== null) {
                     jsonData.forEach(function (currentValue) {
-                        $divisionIdSelect.append(new Option(currentValue.divisionDescription, currentValue.divisionNumber, false, false));
+                        $divisionIdSelect.append(new Option(currentValue.divisionNumber.concat(" : ", currentValue.divisionDescription) , currentValue.divisionNumber, false, false));
                     });
                 }
 
                 if(selectedDivision !== null ){
                     //updateDrop('#divisionId', updateDropDown);
                     updateDropDownwithoutTriggerChange('#divisionId', selectedDivision);
-                    loadGroups(selectedGroup,selectedClass);
+                    loadGroups(selectedDivision,selectedGroup,selectedClass, selectedBranch, selectedActivity);
 
                 }
             }
         });
     }
 
+
 };
 
-var loadGroups = function (selectedGroup, selectedClass) {
+var loadGroups = function (selectedDivision, selectedGroup, selectedClass ,selectedBranch, selectedActivity) {
 
-    var selectedDivisionId = $('#divisionId option:selected').val();
+
     var $groupIdSelect = $('#groupId').empty();
     $groupIdSelect.append(new Option('', '', false, false));
 
-    if (selectedDivisionId !== ""  ) {
-        $.ajax(ACC.config.encodedContextPath +"/my-sagia/license/isicGroup/" + selectedDivisionId, {
+    if (selectedDivision !== ""  ) {
+        $.ajax(ACC.config.encodedContextPath +"/my-sagia/license/isicGroup/" + selectedDivision, {
             type: "GET",
             responseType: "application/json;charset=utf-8",
             contentType: "application/json;charset=utf-8",
@@ -2048,7 +2058,7 @@ var loadGroups = function (selectedGroup, selectedClass) {
 
                 if(jsonData !== null) {
                     jsonData.forEach(function (currentValue) {
-                        $groupIdSelect.append(new Option(currentValue.description, currentValue.code, false, false));
+                        $groupIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
                     });
                 }
 
@@ -2056,7 +2066,7 @@ var loadGroups = function (selectedGroup, selectedClass) {
 
                     updateDropDownwithoutTriggerChange('#groupId', selectedGroup);
 
-                    loadClass(selectedClass);
+                    loadClass(selectedGroup, selectedClass, selectedBranch, selectedActivity);
                 }
             }
         });
@@ -2064,15 +2074,15 @@ var loadGroups = function (selectedGroup, selectedClass) {
 
 };
 
-var loadClass = function (selectedClass) {
+var loadClass = function (selectedGroup, selectedClass, selectedBranch, selectedActivity) {
 
-    var selectedGroupId = $('#groupId option:selected').val();
+
 
     var $classIdSelect = $('#classId').empty();
     $classIdSelect.append(new Option('', '', false, false));
 
-    if (selectedGroupId !== "" ) {
-        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicClass/" + selectedGroupId, {
+    if (selectedGroup !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicClass/" + selectedGroup, {
             type: "GET",
             responseType: "application/json;charset=utf-8",
             contentType: "application/json;charset=utf-8",
@@ -2084,13 +2094,86 @@ var loadClass = function (selectedClass) {
                 var jsonData = JSON.parse(data);
                 if (jsonData !== null) {
                     jsonData.forEach(function (currentValue) {
-                        $classIdSelect.append(new Option(currentValue.description, currentValue.code, false, false));
+                        $classIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
                     });
                 }
 
                 if(selectedClass !== null ){
 
                     updateDropDownwithoutTriggerChange('#classId', selectedClass);
+                    loadBranch(selectedClass, selectedBranch, selectedActivity);
+                }
+            }
+        });
+    }
+
+};
+
+
+
+var loadBranch = function (selectedClass, selectedBranch, selectedActivity) {
+
+
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+    if (selectedClass !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicBranch/" + selectedClass, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $branchIdSelect.find("option").remove();
+                $branchIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $branchIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+
+                if(selectedBranch !== null ){
+
+                    updateDropDownwithoutTriggerChange('#branchId', selectedBranch);
+                    loadActivity(selectedBranch, selectedActivity);
+                }
+            }
+        });
+    }
+
+};
+
+
+
+var loadActivity = function (selectedBranch, selectedActivity) {
+
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    if (selectedBranch !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicActivity/" + selectedBranch, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $activityIdSelect.find("option").remove();
+                $activityIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $activityIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+
+                if(selectedActivity !== null ){
+
+                    updateDropDownwithoutTriggerChange('#activityId', selectedActivity);
                 }
             }
         });
@@ -2102,8 +2185,24 @@ var loadClass = function (selectedClass) {
 var updateDivisions = function () {
     var selectedSectionId = $('#sectionId option:selected').val();
 
+
     var $divisionIdSelect = $('#divisionId').empty();
     $divisionIdSelect.append(new Option('', '', false, false));
+
+    // Void next levels
+    var $groupIdSelect = $('#groupId').empty();
+    $groupIdSelect.append(new Option('', '', false, false));
+
+    var $classIdSelect = $('#classId').empty();
+    $classIdSelect.append(new Option('', '', false, false));
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    // End void Group
 
     if (selectedSectionId !== ""  ) {
         $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicDivisionsQDF/na/" + selectedSectionId, {
@@ -2117,7 +2216,7 @@ var updateDivisions = function () {
                 $divisionIdSelect.append(new Option("", "", false, false));
                 if (jsonData !== null) {
                     jsonData.forEach(function (currentValue) {
-                        $divisionIdSelect.append(new Option(currentValue.divisionDescription, currentValue.divisionNumber, false, false));
+                        $divisionIdSelect.append(new Option(currentValue.divisionNumber.concat(" : ", currentValue.divisionDescription), currentValue.divisionNumber, false, false));
                     });
                 }
 
@@ -2135,6 +2234,20 @@ var updateGroups = function () {
     var $groupIdSelect = $('#groupId').empty();
     $groupIdSelect.append(new Option('', '', false, false));
 
+
+    // Void next levels
+
+    var $classIdSelect = $('#classId').empty();
+    $classIdSelect.append(new Option('', '', false, false));
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    // End void Group
+
     if (selectedDivisionId !== ""  ) {
         $.ajax(ACC.config.encodedContextPath +"/my-sagia/license/isicGroup/" + selectedDivisionId, {
         type: "GET",
@@ -2148,7 +2261,7 @@ var updateGroups = function () {
 
             if(jsonData !== null) {
                    jsonData.forEach(function (currentValue) {
-                    $groupIdSelect.append(new Option(currentValue.description, currentValue.code, false, false));
+                    $groupIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
                 });
             }
         }
@@ -2164,6 +2277,17 @@ var updateClass = function () {
     var $classIdSelect = $('#classId').empty();
     $classIdSelect.append(new Option('', '', false, false));
 
+
+    // Void next levels
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    // End void Group
+
     if (selectedGroupId !== "" ) {
         $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicClass/" + selectedGroupId, {
             type: "GET",
@@ -2177,7 +2301,74 @@ var updateClass = function () {
                 var jsonData = JSON.parse(data);
                 if (jsonData !== null) {
                     jsonData.forEach(function (currentValue) {
-                        $classIdSelect.append(new Option(currentValue.description, currentValue.code, false, false));
+                        $classIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+            }
+        });
+    }
+
+};
+
+
+var updateBranch = function () {
+    var selectedClassId = $('#classId option:selected').val();
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+
+    // Void next levels
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    // End void Group
+
+    if (selectedClassId !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicBranch/" + selectedClassId, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $branchIdSelect.find("option").remove();
+                $branchIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $branchIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+            }
+        });
+    }
+
+};
+
+
+
+var updateActivity = function () {
+    var selectedBranchId = $('#branchId option:selected').val();
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    if (selectedBranchId !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicActivity/" + selectedBranchId, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $activityIdSelect.find("option").remove();
+                $activityIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $activityIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
                     });
                 }
             }

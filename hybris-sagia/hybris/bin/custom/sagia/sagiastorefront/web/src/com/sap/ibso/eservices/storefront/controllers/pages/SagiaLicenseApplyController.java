@@ -1,14 +1,10 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
-import atg.taglib.json.util.JSONArray;
 import atg.taglib.json.util.JSONException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.internal.LinkedTreeMap;
 import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
 import com.sap.ibso.eservices.core.event.SagiaPublishLicenseEvent;
@@ -18,13 +14,48 @@ import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
 import com.sap.ibso.eservices.core.model.ShareHolderModel;
 import com.sap.ibso.eservices.core.sagia.IsicData;
 import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
-import com.sap.ibso.eservices.facades.data.*;
+import com.sap.ibso.eservices.facades.data.BrandPresenceInMENARegion;
+import com.sap.ibso.eservices.facades.data.ContactPersonsData;
+import com.sap.ibso.eservices.facades.data.EntitiesManagedByRhq;
+import com.sap.ibso.eservices.facades.data.EntityInformationData;
+import com.sap.ibso.eservices.facades.data.EstimatedOperatingCostForRhq;
+import com.sap.ibso.eservices.facades.data.ExistingShareholderData;
+import com.sap.ibso.eservices.facades.data.OrganizationInformation;
+import com.sap.ibso.eservices.facades.data.OrganizationShareholderData;
+import com.sap.ibso.eservices.facades.data.PersonShareholderData;
+import com.sap.ibso.eservices.facades.data.ProfileCompanyData;
+import com.sap.ibso.eservices.facades.data.SagiaCountryData;
+import com.sap.ibso.eservices.facades.data.SagiaLicenseTypeRequirementData;
+import com.sap.ibso.eservices.facades.data.ShareHoldersData;
 import com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation;
+import com.sap.ibso.eservices.facades.data.zqeemah.BasicContactInformation;
+import com.sap.ibso.eservices.facades.data.zqeemah.BusinessActivity;
+import com.sap.ibso.eservices.facades.data.zqeemah.DelegateAttachment;
 import com.sap.ibso.eservices.facades.data.zqeemah.DropdownValue;
+import com.sap.ibso.eservices.facades.data.zqeemah.IsicDetails;
 import com.sap.ibso.eservices.facades.data.zqeemah.Product;
-import com.sap.ibso.eservices.facades.data.zqeemah.*;
-import com.sap.ibso.eservices.facades.data.zqeemah2.*;
-import com.sap.ibso.eservices.facades.sagia.*;
+import com.sap.ibso.eservices.facades.data.zqeemah.ShareholderAttachment;
+import com.sap.ibso.eservices.facades.data.zqeemah.ShareholderInfo;
+import com.sap.ibso.eservices.facades.data.zqeemah2.BasicOrganizationInformation;
+import com.sap.ibso.eservices.facades.data.zqeemah2.FinancialPost;
+import com.sap.ibso.eservices.facades.data.zqeemah2.FinancialQuestion;
+import com.sap.ibso.eservices.facades.data.zqeemah2.FininvisidPost;
+import com.sap.ibso.eservices.facades.data.zqeemah2.GeneralQuestionPost;
+import com.sap.ibso.eservices.facades.data.zqeemah2.ISICDetails;
+import com.sap.ibso.eservices.facades.data.zqeemah2.InvsIdPost;
+import com.sap.ibso.eservices.facades.sagia.AverageProcessingTimeFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaCountryFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaDashboardWithoutLicenseFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaDraftFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaIsicFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaLicenseAmendmentFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaLicenseTypeRequirementFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaNationalInvestorFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaODataFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaPaymentDetailsFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaTermsAndConditionsFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaZqeemah2Facade;
+import com.sap.ibso.eservices.facades.sagia.SagiaZqeemahFacade;
 import com.sap.ibso.eservices.facades.sagia.impl.DefautSagiaLicenseApplyFacade;
 import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
 import com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData;
@@ -77,7 +108,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
@@ -86,7 +123,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URLDecoder;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/my-sagia/license")
@@ -305,6 +349,26 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         validateUser(request, response);
         // removed licenseType in order to get all divisions for new shareholder (SAH-2844)
         List<IsicData> activeISICClass = sagiaIsicFacade.getActiveISICClass(groupId);
+        return new Gson().toJson(activeISICClass);
+    }
+
+
+    @RequestMapping(path = "/isicBranch/{classId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getisicBranch(@PathVariable String classId, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        // removed licenseType in order to get all divisions for new shareholder (SAH-2844)
+        List<IsicData> activeISICClass = sagiaIsicFacade.getActiveISICBranch(classId);
+        return new Gson().toJson(activeISICClass);
+    }
+
+
+    @RequestMapping(path = "/isicActivity/{branchId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getisicActivity(@PathVariable String branchId, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        // removed licenseType in order to get all divisions for new shareholder (SAH-2844)
+        List<IsicData> activeISICClass = sagiaIsicFacade.getActiveISICActivity(branchId);
         return new Gson().toJson(activeISICClass);
     }
 

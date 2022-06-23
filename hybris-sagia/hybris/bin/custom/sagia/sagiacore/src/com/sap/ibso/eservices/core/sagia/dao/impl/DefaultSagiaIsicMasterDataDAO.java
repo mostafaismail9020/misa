@@ -215,4 +215,44 @@ public class DefaultSagiaIsicMasterDataDAO extends DefaultGenericDao<IsicMasterM
         return result.getResult();
     }
 
+    @Override
+    public List<IsicTextsModel> getActiveISICBranchByClassID(String classID) {
+        final StringBuilder query = new StringBuilder();
+
+        query.append(" SELECT {m: " + IsicTextsModel.PK + " }  ");
+        query.append(" FROM {" + IsicTextsModel._TYPECODE + " as m }");
+        query.append(" WHERE {m: " + IsicTextsModel.ISICCOLUMNTYPE + " } = 'BRANCH'");
+        query.append(" AND {m: " + IsicTextsModel.CODE + "} in ({{ select {ISICBRANCH} from {IsicMaster} WHERE {ACTIVE} = 1 AND {ISICCLASS} = ?classID GROUP BY {ISICBRANCH}  }})");
+
+        final Map<String, Object> parameters = new HashMap<String, Object>();
+        parameters.put("classID", classID);
+
+        final SearchResult<IsicTextsModel> result = getFlexibleSearchService().search(query.toString(),parameters);
+
+        return result.getResult();
+    }
+
+    @Override
+    public List<IsicTextsModel> getActiveISICActivityByBranchID(String branchID) {
+        final StringBuilder query = new StringBuilder();
+
+        query.append(" SELECT {m: " + IsicTextsModel.PK + " }  ");
+        query.append(" FROM {" + IsicTextsModel._TYPECODE + " as m }");
+        query.append(" WHERE {m: " + IsicTextsModel.ISICCOLUMNTYPE + " } = 'ACTIVITY'");
+        query.append(" AND {m: " + IsicTextsModel.CODE + "} in ({{ select {ISICACTIVITY} from {IsicMaster} WHERE {ACTIVE} = 1 AND {ISICBRANCH} = ?branchID GROUP BY {ISICACTIVITY}  }})");
+
+        final Map<String, Object> parameters = new HashMap<String, Object>();
+        parameters.put("branchID", branchID);
+
+        final SearchResult<IsicTextsModel> result = getFlexibleSearchService().search(query.toString(),parameters);
+
+        return result.getResult();
+    }
+
+
+
+
+
+
+
 }

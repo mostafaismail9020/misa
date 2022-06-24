@@ -10,8 +10,8 @@ $(document).ready(function () {
 
     if ($('body').hasClass('page-financial-survey')) {
         $('#shareholderPersonEntityTypeId').show();
-        $('#bpNumberGroupId').hide();
-        $('#entityShareholderId').hide();
+        $("#entityId").prop('disabled', false);
+        $("#personId").prop('disabled', false);
 
         //hide optionals
         $('#shareholderPreferredSharesSectionId').hide();
@@ -51,6 +51,8 @@ $(document).ready(function () {
         });
 
         $('#shareholderPersonEntityTypeId').show();
+        $("#entityId").prop('disabled', false);
+        $("#personId").prop('disabled', false);
        // $('#bpNumberGroupId').hide();
         clearShareholderForm();
         enableShareholderForm();
@@ -433,9 +435,10 @@ var newShareholder = function () {
 	 $('#showDelegateQuestionOrganization').hide();
 	 $('#showDelegateQuestion').show();
     clearShareholderValidation();
-    $('#shareholderNewExistingTypeId').show();
     $('#shareholderPersonEntityTypeId').show();
-    $('#bpNumberGroupId').hide();
+    $("#entityId").prop('disabled', false);
+    $("#personId").prop('disabled', false);
+
     enableShareholderForm();
     clearShareholderForm();
     $('#personId').click();
@@ -543,10 +546,10 @@ var editShareholder = function () {
         return shareholder.srId == selectedShareholderId || shareholder.newItemId == selectedShareholderId;
     });
 
-    // Hide block new si type
-    $('#shareholderNewExistingTypeId').hide();
-    $('#shareholderPersonEntityTypeId').hide();
-    $('#bpNumberGroupId').hide();
+    // Disable shareholderPersonEntityTypeId block instead of hiding it.
+  //  $('#shareholderPersonEntityTypeId').hide();
+    $("#entityId").prop('disabled', true);
+    $("#personId").prop('disabled', true);
 
      enableShareholderForm();
     fillShareholderForm(selectedShareholder);
@@ -646,6 +649,10 @@ function prepareShareholderVisibleItemsEdit(selectedShareholder) {
 
 function fillShareholderForm(selectedShareholder) {
     if (selectedShareholder.shareholderType === '2') {
+
+
+        $("#personId").prop('checked', false);
+        $("#entityId").prop('checked', true);
         $('#individualShareholderId').hide();
         $('#entityShareholderId').show();
         $('#shareholderNameEnglishId').val(selectedShareholder.shareholderNameEnglish);
@@ -659,6 +666,9 @@ function fillShareholderForm(selectedShareholder) {
         $('#shareholderSubsectorId').val(selectedShareholder.subsector);
     } else {
 
+
+        $("#personId").prop('checked', true);
+        $("#entityId").prop('checked', false);
         $('#entityShareholderId').hide();
         $('#individualShareholderId').show();
         $('#individualShareholderNameEnglishId').val(selectedShareholder.shareholderNameEnglish);

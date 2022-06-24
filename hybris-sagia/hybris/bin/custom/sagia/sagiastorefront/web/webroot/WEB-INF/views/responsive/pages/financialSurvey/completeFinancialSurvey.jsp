@@ -1284,8 +1284,6 @@ data-expand-target="expand01">
                                             <th><spring:theme code="license.type"/></th>
                                             <th><spring:theme
                                                     code="text.account.profile.license.shareholders.nationality"/></th>
-                                            <th><spring:theme
-                                                    code="text.account.profile.license.shareholders.legalStatus"/></th>
                                             <th id="affiliateBtnColumnId"></th>
                                         </tr>
                                         </thead>
@@ -1294,8 +1292,6 @@ data-expand-target="expand01">
                                             <td></td>
                                             <td class="type"></td>
                                             <td class="percentage"></td>
-                                            <td></td>
-                                            <td></td>
                                             <td class="tableModule-bodyItem-action">
                                                 <button type="button"
                                                         class="btn btn_link editAffiliateBtn"

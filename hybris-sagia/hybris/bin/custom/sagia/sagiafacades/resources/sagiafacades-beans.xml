@@ -100,6 +100,12 @@
 		<property name="economicActivityBranch" type="java.lang.String"/>
 		<property name="economicActivity" type="java.lang.String"/>
 
+		<property name="economicActivityListDivision" type="java.util.List&lt;com.sap.ibso.eservices.core.sagia.IsicData&gt;" />
+		<property name="economicActivityListGroup" type="java.util.List&lt;com.sap.ibso.eservices.core.sagia.IsicData&gt;" />
+		<property name="economicActivityListClass" type="java.util.List&lt;com.sap.ibso.eservices.core.sagia.IsicData&gt;" />
+		<property name="economicActivityListBranch" type="java.util.List&lt;com.sap.ibso.eservices.core.sagia.IsicData&gt;" />
+		<property name="economicListActivity" type="java.util.List&lt;com.sap.ibso.eservices.core.sagia.IsicData&gt;" />
+
 	</bean>
 
 	<bean class="de.hybris.platform.commercefacades.user.data.Messsage">

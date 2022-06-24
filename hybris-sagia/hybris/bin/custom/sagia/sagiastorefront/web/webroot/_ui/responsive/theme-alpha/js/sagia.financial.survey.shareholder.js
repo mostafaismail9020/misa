@@ -693,6 +693,10 @@ function fillShareholderForm(selectedShareholder) {
 
     $('#shareholderRetainedEarningsIncludeCurrentQuarterId').val(selectedShareholder.retainedEarningsIncludeCurrentQuarter);
     $('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val(selectedShareholder.additionalPaidUpCapitalCurrentQuarter);
+
+    $('#shareholderPaidUpCapitalCurrentQuarterId').val(selectedShareholder.paidUpCapitalCurrentQuarter);
+    $('#shareholderPaidUpCapitalPreviousQuarterId').val(selectedShareholder.paidUpCapitalPreviousQuarter);
+
     $('#shareholderProfitLossQuarterCurrentQuarterId').val(selectedShareholder.profitLossQuarterCurrentQuarter);
     $('#shareholderTotalReservesCurrentQuarterId').val(selectedShareholder.totalReservesCurrentQuarter);
     $('#shareholderTreasurySharesCurrentQuarterId').val(selectedShareholder.treasurySharesCurrentQuarter);
@@ -866,6 +870,12 @@ var saveShareholder = function (existingBp, bpId) {
 
     var retainedEarningsIncludeCurrentQuarter = $('#shareholderRetainedEarningsIncludeCurrentQuarterId').val();
     var additionalPaidUpCapitalCurrentQuarter = $('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val();
+
+    var paidUpCapitalCurrentQuarter = $('#shareholderPaidUpCapitalCurrentQuarterId').val();
+    var paidUpCapitalPreviousQuarter = $('#shareholderPaidUpCapitalPreviousQuarterId').val();
+
+
+
     var profitLossQuarterCurrentQuarter = $('#shareholderProfitLossQuarterCurrentQuarterId').val();
     var totalReservesCurrentQuarter = $('#shareholderTotalReservesCurrentQuarterId').val();
     var treasurySharesCurrentQuarter = $('#shareholderTreasurySharesCurrentQuarterId').val();
@@ -978,6 +988,9 @@ var saveShareholder = function (existingBp, bpId) {
 
         selectedShareholder.retainedEarningsIncludeCurrentQuarter =  retainedEarningsIncludeCurrentQuarter ;
         selectedShareholder.additionalPaidUpCapitalCurrentQuarter  = additionalPaidUpCapitalCurrentQuarter ;
+        selectedShareholder.paidUpCapitalCurrentQuarter  = paidUpCapitalCurrentQuarter ;
+        selectedShareholder.paidUpCapitalPreviousQuarter  = paidUpCapitalPreviousQuarter ;
+
         selectedShareholder.profitLossQuarterCurrentQuarter  = profitLossQuarterCurrentQuarter  ;
         selectedShareholder.totalReservesCurrentQuarter  = totalReservesCurrentQuarter  ;
         selectedShareholder.treasurySharesCurrentQuarter  = treasurySharesCurrentQuarter  ;
@@ -1089,6 +1102,9 @@ var saveShareholder = function (existingBp, bpId) {
 
             retainedEarningsIncludeCurrentQuarter : '',
             additionalPaidUpCapitalCurrentQuarter  : '',
+            paidUpCapitalCurrentQuarter : '',
+            paidUpCapitalPreviousQuarter : '',
+
             profitLossQuarterCurrentQuarter  : '',
             totalReservesCurrentQuarter  : '',
             treasurySharesCurrentQuarter : '',
@@ -1152,6 +1168,11 @@ var saveShareholder = function (existingBp, bpId) {
 
             shareholder.retainedEarningsIncludeCurrentQuarter =  retainedEarningsIncludeCurrentQuarter ;
             shareholder.additionalPaidUpCapitalCurrentQuarter  = additionalPaidUpCapitalCurrentQuarter ;
+
+            shareholder.paidUpCapitalCurrentQuarter  = paidUpCapitalCurrentQuarter ;
+            shareholder.paidUpCapitalPreviousQuarter  = paidUpCapitalPreviousQuarter ;
+
+
             shareholder.profitLossQuarterCurrentQuarter  = profitLossQuarterCurrentQuarter  ;
             shareholder.totalReservesCurrentQuarter  = totalReservesCurrentQuarter  ;
             shareholder.treasurySharesCurrentQuarter  = treasurySharesCurrentQuarter  ;
@@ -1318,6 +1339,9 @@ function clearShareholderForm() {
 
     $('#shareholderRetainedEarningsIncludeCurrentQuarterId').val('');
     $('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val('');
+    $('#shareholderPaidUpCapitalCurrentQuarterId').val('');
+    $('#shareholderPaidUpCapitalPreviousQuarterId').val('');
+
     $('#shareholderProfitLossQuarterCurrentQuarterId').val('');
     $('#shareholderTotalReservesCurrentQuarterId').val('');
     $('#shareholderTreasurySharesCurrentQuarterId').val('');

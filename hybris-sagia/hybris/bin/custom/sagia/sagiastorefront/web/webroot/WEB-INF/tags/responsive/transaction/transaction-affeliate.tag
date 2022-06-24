@@ -9,7 +9,7 @@
 <div id="accordionTransactionAffeliate" class="services-container-tabcontent">
     <div class="accordion-item" style="width: 100%">
         <h5 class="mb-0">
-            <button class="accordion-button collapsed" data-toggle="collapse" data-target="#collapseTransactionAffeliate1"
+            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTransactionAffeliate1"
                     aria-expanded="false" aria-controls="collapseThree">
                 <h5 class="mb-0"> <spring:theme code="financial.survey.transaction.title.assets"/>
                 </h5>
@@ -474,7 +474,7 @@
 
     <div class="accordion-item" style="width: 100%">
         <h5 class="mb-0">
-            <button class="accordion-button collapsed" data-toggle="collapse" data-target="#collapseTransactionAffeliate2"
+            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTransactionAffeliate2"
                     aria-expanded="false" aria-controls="collapseThree">
                 <h5 class="mb-0"> <spring:theme code="financial.survey.transaction.title.liabilities"/>
                 </h5>

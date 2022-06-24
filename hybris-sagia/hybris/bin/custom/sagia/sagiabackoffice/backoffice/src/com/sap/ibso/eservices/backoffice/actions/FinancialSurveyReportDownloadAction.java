@@ -17,6 +17,7 @@ import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
 import com.sap.ibso.eservices.core.model.SagiaSubsidiaryModel;
 import com.sap.ibso.eservices.core.model.SagiaSurveyTransactionModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCompanyProfileDAO;
+import com.sap.ibso.eservices.sagiaservices.services.financialsurvey.SagiaFinancialSurveyService;
 import de.hybris.platform.core.model.ItemModel;
 import de.hybris.platform.servicelayer.config.ConfigurationService;
 import de.hybris.platform.servicelayer.type.TypeService;
@@ -78,6 +79,11 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 
 	@Resource
 	SagiaCompanyProfileDAO  sagiaCompanyProfileDAO;
+
+
+
+	@Resource
+	private SagiaFinancialSurveyService sagiaFinancialSurveyService;
 
 	@Override
 	public ActionResult<Pageable<? extends ItemModel>> perform(final ActionContext<String> ctx)
@@ -164,6 +170,7 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 			if (itemModel != null && itemModel instanceof FinancialSurveyModel)
 			{
 				FinancialSurveyModel financialSurvey = (FinancialSurveyModel) itemModel;
+
 				companyProfileRowNum = fillCompanyProfileSheet(companyProfileSheet, companyProfileRowNum, financialSurvey);
 				branchRowNum = fillBranchSheet(branchSheet, branchRowNum, financialSurvey);
 				subsidiaryRowNum = fillSubsidiarySheet(subsidiarySheet, subsidiaryRowNum , financialSurvey);
@@ -195,13 +202,17 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 		row.createCell(j++).setCellValue(financialSurvey.getCompanyName());
 		row.createCell(j++).setCellValue(sagiaCompanyProfileModel != null ? sagiaCompanyProfileModel.getUnifiedNo700(): StringUtils.EMPTY );
 		row.createCell(j++).setCellValue((sagiaCompanyProfileModel != null &&  sagiaCompanyProfileModel.getIncorporationDate() != null ) ? new SimpleDateFormat(DATE_FORMAT).format(sagiaCompanyProfileModel.getIncorporationDate()) : StringUtils.EMPTY);
-		row.createCell(j++).setCellValue(financialSurvey.getBusinessActivityId());
+		row.createCell(j++).setCellValue(financialSurvey.getEconomicActivity() !=null ? financialSurvey.getEconomicActivity().getCode(): StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(financialSurvey.getEconomicActivity() !=null ? financialSurvey.getEconomicActivity().getDescription(): StringUtils.EMPTY);
 		row.createCell(j++).setCellValue(financialSurvey.getCompanyStatus() != null ? financialSurvey.getCompanyStatus().getCode(): StringUtils.EMPTY);
 		row.createCell(j++).setCellValue(financialSurvey.getSuspensionDate() != null ? new SimpleDateFormat(DATE_FORMAT).format(financialSurvey.getSuspensionDate()) : StringUtils.EMPTY);
 		row.createCell(j++).setCellValue(sagiaCompanyProfileModel != null ? sagiaCompanyProfileModel.getFinancialManagerName() : StringUtils.EMPTY);
 		row.createCell(j++).setCellValue(sagiaCompanyProfileModel != null ? sagiaCompanyProfileModel.getFinancialManagerEmail() : StringUtils.EMPTY);
 		row.createCell(j++).setCellValue(sagiaCompanyProfileModel != null ? sagiaCompanyProfileModel.getFinancialManagerTelephone() : StringUtils.EMPTY);
 		row.createCell(j++).setCellValue(financialSurvey.getDisclosureCurrency());
+		row.createCell(j++).setCellValue(financialSurvey.getScaleLevel() !=null ? financialSurvey.getScaleLevel().getCode() : StringUtils.EMPTY);
+		row.createCell(j++).setCellValue(financialSurvey.getPaidUpCapitalCurrentQuarter() );
+		row.createCell(j++).setCellValue(financialSurvey.isIsConsolidated() == true ? "Consolidated" : "Standalone");
 
 		row.createCell(j++).setCellValue("");
 
@@ -255,8 +266,6 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 		    row.createCell(j++).setCellValue(financialSurvey.getUser().getCustomerID());
 		    row.createCell(j++).setCellValue(financialSurvey.getCommercialRegistrationNo());
 		    row.createCell(j++).setCellValue(financialSurvey.getQuarter() != null ? financialSurvey.getQuarter().getCode() : StringUtils.EMPTY);
-
-
 			row.createCell(j++).setCellValue(financialSurvey.getPaidUpCapitalCurrentQuarter());
 		    row.createCell(j++).setCellValue(financialSurvey.getAdditionalPaidUpCapitalCurrentQuarter());
 		    row.createCell(j++).setCellValue(financialSurvey.getRetainedEarningsIncludeCurrentQuarter());

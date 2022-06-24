@@ -143,6 +143,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     }
 
     private void saveShareholderEquity(FinancialSurvey financialSurveyData, FinancialSurveyModel financialSurveyModel){
+        financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getPaidUpCapitalCurrentQuarter());
         financialSurveyModel.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getAdditionalPaidUpCapitalCurrentQuarter());
         financialSurveyModel.setRetainedEarningsIncludeCurrentQuarter(financialSurveyData.getShareholderEquity().getRetainedEarningsIncludeCurrentQuarter());
         financialSurveyModel.setProfitLossQuarterCurrentQuarter(financialSurveyData.getShareholderEquity().getProfitLossQuarterCurrentQuarter());
@@ -427,18 +428,23 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         saveShareholderEquity(financialSurvey,financialSurveyModel);
 
         String prevQuarterCode = financialSurveyModel.getQuarter().getPreviousQuarter()!=null ? financialSurveyModel.getQuarter().getPreviousQuarter().getCode() : null;
-        FinancialSurveyModel prevFinancialSurveyModel = getFinancialSurvey(prevQuarterCode);
-        if (prevFinancialSurveyModel!= null && isPreviousFinancialShareholderEquityUpdated(prevFinancialSurveyModel,financialSurvey)){
-            prevFinancialSurveyModel.setSurveyStatus(FinancialSurveyStatus.UPDATED);
-            prevFinancialSurveyModel.setIsEquitySectionFilled(true);
-            savePrevQuarterShareholderEquity(financialSurvey,prevFinancialSurveyModel);
+
+        if (prevQuarterCode != null){
+            FinancialSurveyModel prevFinancialSurveyModel = getFinancialSurvey(prevQuarterCode);
+            if (prevFinancialSurveyModel!= null && isPreviousFinancialShareholderEquityUpdated(prevFinancialSurveyModel,financialSurvey)){
+                prevFinancialSurveyModel.setSurveyStatus(FinancialSurveyStatus.UPDATED);
+                prevFinancialSurveyModel.setIsEquitySectionFilled(true);
+                savePrevQuarterShareholderEquity(financialSurvey,prevFinancialSurveyModel);
+            }
         }
+
 
 
     }
 
     private void savePrevQuarterShareholderEquity(FinancialSurvey financialSurveyData, FinancialSurveyModel financialSurveyModel) {
 
+        financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getPaidUpCapitalPreviousQuarter());
         financialSurveyModel.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getAdditionalPaidUpCapitalPreviousQuarter());
         financialSurveyModel.setRetainedEarningsIncludeCurrentQuarter(financialSurveyData.getShareholderEquity().getRetainedEarningsIncludePreviousQuarter());
         financialSurveyModel.setProfitLossQuarterCurrentQuarter(financialSurveyData.getShareholderEquity().getProfitLossQuarterPreviousQuarter());
@@ -463,6 +469,8 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
            && financialSurvey.getShareholderEquity().getShareholderEquityOthersPreviousQuarter().equals(prevFinancialSurveyModel.getShareholderEquityOthersCurrentQuarter())
            && financialSurvey.getShareholderEquity().getMinorityRightsPreviousQuarter().equals(prevFinancialSurveyModel.getMinorityRightsCurrentQuarter())
            && financialSurvey.getShareholderEquity().getTotalShareholderEquityPreviousQuarter().equals(prevFinancialSurveyModel.getTotalShareholderEquityCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getPaidUpCapitalPreviousQuarter().equals(prevFinancialSurveyModel.getPaidUpCapitalCurrentQuarter()
+        )
         ){
 
             return  false;

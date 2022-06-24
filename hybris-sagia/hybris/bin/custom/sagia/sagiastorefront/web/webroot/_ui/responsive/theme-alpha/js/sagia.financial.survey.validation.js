@@ -10,7 +10,13 @@ function entityValidator() {
         focusInvalid: false,
         ignore: ":hidden",
         errorPlacement: function (error, element) {
-            error.appendTo(element.closest('.formInputBox').find('.help-block'));
+            if (element.closest('.form-group').find('.help-block').length > 0) {
+                error.appendTo(element.closest('.form-group').find('.help-block'));
+            } else if (element.hasClass('js-select2-oneColumn') || element.hasClass('js-select2-search')) {
+                error.appendTo(element.closest('.formSelectBox').find('.help-block'));
+            } else {
+                error.appendTo(element.closest('.formInputBox').find('.help-block'));
+            }
         },
         rules: {
             commercialRegistrationNo: {
@@ -55,6 +61,24 @@ function entityValidator() {
             },
             legalStatus: {
                 required: true,
+            },
+            section: {
+                required: true,
+            },
+            division: {
+                required: true,
+            },
+            group: {
+                required: true,
+            },
+            class: {
+                required: true,
+            },
+            branch: {
+                required: true,
+            },
+            activity: {
+                required: true,
             }
         },
 
@@ -92,7 +116,26 @@ function entityValidator() {
             },
             legalStatus: {
                 required: getI18nText("validation.empty"),
+            },
+            section: {
+                required: getI18nText("validation.empty"),
+            },
+            division: {
+                required: getI18nText("validation.empty"),
+            },
+            group: {
+                required: getI18nText("validation.empty"),
+            },
+            class: {
+                required: getI18nText("validation.empty"),
+            },
+            branch: {
+                required: getI18nText("validation.empty"),
+            },
+            activity: {
+                required: getI18nText("validation.empty"),
             }
+
 
         },
         success: function (label, element) {
@@ -176,6 +219,201 @@ function shareholderValidator() {
                 number: true,
                 range: [0, 100]
             },
+            shareholderAdditionalPaidUpCapitalCurrentQuarter: {
+                number: true,
+                min: 0
+            },
+            shareholderAdditionalPaidUpCapitalPreviousQuarter: {
+                number: true,
+                min: 0
+            },
+            shareholderRetainedEarningsIncludeCurrentQuarter: {
+                number: true,
+            },
+            shareholderRetainedEarningsIncludePreviousQuarter: {
+                number: true,
+            },
+            shareholderProfitLossQuarterCurrentQuarter: {
+                number: true,
+            },
+            shareholderProfitLossQuarterPreviousQuarter: {
+                number: true,
+            },
+            shareholderTotalReservesCurrentQuarter: {
+                number: true,
+            },
+            shareholderTotalReservesPreviousQuarter: {
+                number: true,
+            },
+            shareholderTotalReservesPreviousQuarter: {
+                number: true,
+            },
+            shareholderTreasurySharesCurrentQuarter: {
+                number: true,
+            },
+            shareholderTreasurySharesPreviousQuarter: {
+                number: true,
+            },
+            shareholderHeadOfficeAccountInBranchCurrentQuarter: {
+                number: true,
+            },
+            shareholderHeadOfficeAccountInBranchPreviousQuarter: {
+                number: true,
+            },
+            shareholderShareholderEquityOthersCurrentQuarter: {
+                number: true,
+            },
+            shareholderShareholderEquityOthersPreviousQuarter: {
+                number: true,
+            },
+            shareholderMinorityRightsCurrentQuarter: {
+                number: true,
+            },
+            shareholderMinorityRightsPreviousQuarterId: {
+                number: true,
+            },
+            tradeDebitCurrentQuarter: {
+                number: true,
+            },
+            tradeDebitPreviousQuarter: {
+                number: true,
+            },
+            loansAssetsCurrentQuarter: {
+                number: true,
+            },
+            loansAssetsPreviousQuarter: {
+                number: true,
+            },
+
+            interestReceivedCurrentQuarter: {
+                number: true,
+            },
+            interestReceivedPreviousQuarter: {
+                number: true,
+            },
+            dividendsReceivedCurrentQuarter: {
+                number: true,
+            },
+            dividendsReceivedPreviousQuarter: {
+                number: true,
+            },
+
+            expensesReceivedCurrentQuarter: {
+                number: true,
+            },
+            expensesReceivedPreviousQuarter: {
+                number: true,
+            },
+            sellProductionSuppliesCurrentQuarter: {
+                number: true,
+            },
+            sellProductionSuppliesPreviousQuarter: {
+                number: true,
+            },
+            sellMachineryCurrentQuarter: {
+                number: true,
+            },
+            sellMachineryPreviousQuarter: {
+                number: true,
+            },
+            currentDebitAccountCurrentQuarter: {
+                number: true,
+            },
+            currentDebitAccountPreviousQuarter: {
+                number: true,
+            },
+            expensesReceivableCurrentQuarter: {
+                number: true,
+            },
+            expensesReceivablePreviousQuarter: {
+                number: true,
+            },
+            insuranceCommissionReceivableCurrentQuarter: {
+                number: true,
+            },
+            insuranceCommissionReceivablePreviousQuarter: {
+                number: true,
+            },
+            otherDebitCurrentQuarter: {
+                number: true,
+            },
+            otherDebitPreviousQuarter: {
+                number: true,
+            },
+            tradeCreditCurrentQuarter: {
+                number: true,
+            },
+            tradeCreditPreviousQuarter: {
+                number: true,
+            },
+            loansLiabilitiesCurrentQuarter: {
+                number: true,
+            },
+            loansLiabilitiesPreviousQuarter: {
+                number: true,
+            },
+            interestPayableCurrentQuarter: {
+                number: true,
+            },
+            interestPayablePreviousQuarter: {
+                number: true,
+            },
+            dividendsPaidCurrentQuarter: {
+                number: true,
+            },
+            dividendsPaidPreviousQuarter: {
+                number: true,
+            },
+            expensesPaidCurrentQuarter: {
+                number: true,
+            },
+            expensesPaidPreviousQuarter: {
+                number: true,
+            },
+            purchaseProductionSuppliesCurrentQuarter: {
+                number: true,
+            },
+            purchaseProductionSuppliesPreviousQuarter: {
+                number: true,
+            },
+            purchaseMachineryCurrentQuarter: {
+                number: true,
+            },
+            purchaseMachineryPreviousQuarter: {
+                number: true,
+            },
+            currentCreditAccountCurrentQuarter: {
+                number: true,
+            },
+            currentCreditAccountPreviousQuarter: {
+                number: true,
+            },
+            expensesPayableCurrentQuarter: {
+                number: true,
+            },
+            expensesPayablePreviousQuarter: {
+                number: true,
+            },
+            insuranceCommissionPayableCurrentQuarter: {
+                number: true,
+            },
+            insuranceCommissionPayablePreviousQuarter: {
+                number: true,
+            },
+            otherCreditCurrentQuarter: {
+                number: true,
+            },
+            otherCreditPreviousQuarter: {
+                number: true,
+            },
+            shareholderPaidUpCapitalCurrentQuarter: {
+                number: true,
+            },
+            shareholderPaidUpCapitalPreviousQuarter: {
+                number: true,
+            }
+
+
         },
 
         messages: {
@@ -479,44 +717,24 @@ function subsidiaryValidator() {
         },
 
         rules: {
-            subsidiaryType: "required",
+            registrationName: "required",
             subsidiaryName: "required",
-            subsidiaryStreet: "required",
-            subsidiaryNumber: "required",
-            subsidiaryRegion: "required",
-            subsidiaryCity: "required",
-            subsidiaryTelephone: "required",
-            subsidiaryEmail: "required",
-            subsidiaryWebsite: "required"
+            unifiedNo: "required",
+            contribution: "required"
         },
 
         messages: {
-            subsidiaryType: {
-                required: getI18nText("validation.subsidiary")
+            registrationName: {
+                required: getI18nText("validation.empty")
             },
             subsidiaryName: {
-                required: getI18nText("validation.subsidiaryName")
+                required: getI18nText("validation.empty")
             },
-            subsidiaryStreet: {
-                required: getI18nText("validation.streetName")
+            unifiedNo: {
+                required: getI18nText("validation.empty")
             },
-            subsidiaryNumber: {
-                required: getI18nText("validation.streetNumber")
-            },
-            subsidiaryRegion: {
-                required: getI18nText("validation.region")
-            },
-            subsidiaryCity: {
-                required: getI18nText("validation.city")
-            },
-            subsidiaryTelephone: {
-                required: getI18nText("validation.telephoneNumber")
-            },
-            subsidiaryEmail: {
-                required: getI18nText("validation.email")
-            },
-            subsidiaryWebsite: {
-                required: getI18nText("validation.url")
+            contribution: {
+                required: getI18nText("validation.empty")
             }
         }
     });
@@ -598,16 +816,20 @@ function equityValidator() {
         },
         rules: {
             paidUpCapitalCurrentQuarter: {
-                number: true
+                number: true,
+                min: 0
             },
             paidUpCapitalPreviousQuarter: {
-                number: true
+                number: true,
+                min: 0
             },
             additionalPaidUpCapitalCurrentQuarter: {
                 number: true,
+                min: 0,
             },
             additionalPaidUpCapitalPreviousQuarter: {
                 number: true,
+                min: 0
             },
             retainedEarningsIncludeCurrentQuarter: {
                 number: true,
@@ -663,13 +885,19 @@ function equityValidator() {
 
         messages: {
             paidUpCapitalCurrentQuarter: {
-                number: getI18nText("validation.number")
+                number: getI18nText("validation.number"),
+                min: getI18nText("validation.positive.number")
             },
             paidUpCapitalPreviousQuarter: {
-                number: getI18nText("validation.number")
+                number: getI18nText("validation.number"),
+                min: getI18nText("validation.positive.number")
             },
             additionalPaidUpCapitalCurrentQuarter: {
-                number: getI18nText("validation.number")
+                number: getI18nText("validation.number"),
+                min: getI18nText("validation.positive.number")
+            },additionalPaidUpCapitalPreviousQuarter: {
+                number: getI18nText("validation.number"),
+                min: getI18nText("validation.positive.number")
             },
             retainedEarningsIncludeCurrentQuarter: {
                 number: getI18nText("validation.number")

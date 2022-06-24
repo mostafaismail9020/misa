@@ -4,15 +4,18 @@ import com.sap.ibso.eservices.core.enums.FinancialSurveyCompanyStatus;
 import com.sap.ibso.eservices.core.enums.FinancialSurveyScaleLevel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyQuarterModel;
+import com.sap.ibso.eservices.core.sagia.IsicData;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyBranchDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyShareholderDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveySubsidiaryDAO;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
-import com.sap.ibso.eservices.facades.data.finance.survey.Shareholder;
 import com.sap.ibso.eservices.facades.data.finance.survey.Affiliate;
+import com.sap.ibso.eservices.facades.data.finance.survey.Shareholder;
 import com.sap.ibso.eservices.facades.data.license.amendment.Branch;
 import com.sap.ibso.eservices.facades.data.license.amendment.BusinessActivity;
 import com.sap.ibso.eservices.facades.data.license.amendment.Subsidiary;
+import com.sap.ibso.eservices.facades.data.zqeemah2.ISICDetails;
+import com.sap.ibso.eservices.facades.sagia.SagiaIsicFacade;
 import com.sap.ibso.eservices.sagiaservices.services.financialsurvey.SagiaFinancialSurveyService;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
 import de.hybris.platform.commercefacades.user.data.ShareholderEquity;
@@ -57,6 +60,10 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
 
     @Resource
     private SagiaFinancialSurveyService sagiaFinancialSurveyService;
+
+
+    @Resource(name = "defaultSagiaIsicFacade")
+    private SagiaIsicFacade sagiaIsicFacade;
 
     @Override
     public void populate(FinancialSurveyModel financialSurveyModel, FinancialSurvey financialSurvey) throws ConversionException {
@@ -120,6 +127,38 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         financialSurvey.setEconomicActivityBranch(financialSurveyModel.getEconomicActivityBranch()!=null ? financialSurveyModel.getEconomicActivityBranch().getCode() :  null);
         financialSurvey.setEconomicActivity(financialSurveyModel.getEconomicActivity()!=null ? financialSurveyModel.getEconomicActivity().getCode() :  null);
 
+        if(financialSurveyModel.getEconomicActivitySection()!=null){
+            List<ISICDetails> activeISICDivision = sagiaIsicFacade.getActiveISICDivision(financialSurveyModel.getEconomicActivitySection().getCode());
+            List<IsicData> listDivisions = new ArrayList<>();
+            for (ISICDetails isicDetails : activeISICDivision){
+                IsicData listItem = new IsicData();
+                listItem.setCode(isicDetails.getDivisionNumber());
+                listItem.setDescription(isicDetails.getDivisionDescription());
+                listDivisions.add(listItem);
+            }
+            financialSurvey.setEconomicActivityListDivision(listDivisions);
+        }
+
+        if(financialSurveyModel.getEconomicActivityDivision() !=null) {
+            List<IsicData> activeISICGroups = sagiaIsicFacade.getActiveISICGroup(financialSurveyModel.getEconomicActivityDivision().getCode());
+            financialSurvey.setEconomicActivityListGroup(activeISICGroups);
+        }
+
+        if(financialSurveyModel.getEconomicActivityGroup() !=null) {
+            List<IsicData> activeISICClass = sagiaIsicFacade.getActiveISICClass(financialSurveyModel.getEconomicActivityGroup().getCode());
+            financialSurvey.setEconomicActivityListClass(activeISICClass);
+        }
+
+        if(financialSurveyModel.getEconomicActivityClass() !=null) {
+            List<IsicData> activeISICBranch = sagiaIsicFacade.getActiveISICBranch(financialSurveyModel.getEconomicActivityClass().getCode());
+            financialSurvey.setEconomicActivityListBranch(activeISICBranch);
+        }
+
+        if(financialSurveyModel.getEconomicActivityBranch() !=null) {
+            List<IsicData> activeISICActivity = sagiaIsicFacade.getActiveISICActivity(financialSurveyModel.getEconomicActivityBranch().getCode());
+            financialSurvey.setEconomicListActivity(activeISICActivity);
+        }
+
         if(financialSurveyModel.getCompanyStatus() != null ){
             financialSurvey.setCompanyStatus(financialSurveyModel.getCompanyStatus().getCode());
         }else {
@@ -140,6 +179,7 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
 
      //   financialSurvey.setLicenseType(financialSurveyModel.getL);
         ShareholderEquity shareholderEquity = new ShareholderEquity();
+        shareholderEquity.setPaidUpCapitalCurrentQuarter(financialSurveyModel.getPaidUpCapitalCurrentQuarter());
         shareholderEquity.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyModel.getAdditionalPaidUpCapitalCurrentQuarter());
         shareholderEquity.setRetainedEarningsIncludeCurrentQuarter(financialSurveyModel.getRetainedEarningsIncludeCurrentQuarter());
         shareholderEquity.setProfitLossQuarterCurrentQuarter(financialSurveyModel.getProfitLossQuarterCurrentQuarter());

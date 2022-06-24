@@ -199,6 +199,8 @@
 			<list:column qualifier="quarter" />
 			<list:column qualifier="user" />
 			<list:column qualifier="surveyStatus" />
+			<list:column qualifier="companyName" />
+			<list:column qualifier="commercialRegistrationNo" />
 		</list:list-view>
 	</context>
 
@@ -207,6 +209,8 @@
 			<list:column qualifier="quarter" />
 			<list:column qualifier="user" />
 			<list:column qualifier="surveyStatus" />
+			<list:column qualifier="companyName" />
+			<list:column qualifier="commercialRegistrationNo" />
 		</list:list-view>
 	</context>
 
@@ -221,6 +225,30 @@
 			<list:column qualifier="shareholderNationalityCurrentRef" />
 		</list:list-view>
 	</context>
+
+
+	<context  type="FinancialSurveyBranch" component="listview"
+			  merge-by="type">
+		<list:list-view>
+			<list:column qualifier="typeDescription" />
+			<list:column qualifier="name" />
+			<list:column qualifier="weight" />
+			<list:column qualifier="address" />
+		</list:list-view>
+	</context>
+
+	<context component="cs-listview" type="FinancialSurveyBranch" module="customersupportbackoffice" principal="backofficeworkflowadmingroup,customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole" >
+		<list:list-view>
+			<list:column qualifier="typeDescription" />
+			<list:column qualifier="name" />
+			<list:column qualifier="weight" />
+			<list:column qualifier="address" />
+		</list:list-view>
+	</context>
+
+
+
+
 
 
 
@@ -708,6 +736,55 @@
 					<editorArea:attribute qualifier="isShareholdersSectionFilled" />
 				</editorArea:section>
 			</editorArea:tab>
+			<editorArea:tab name="BranchesTab"
+							position="8">
+				<editorArea:section
+						name="FinancialSurveyBranchesSection">
+					<editorArea:panel
+							name="hmc.tab.question.questions.panel1">
+						<editorArea:attribute qualifier="branches"
+											  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+							<editorArea:editor-parameter>
+								<editorArea:name>listConfigContext</editorArea:name>
+								<editorArea:value>myConfigFinancialSurveyBranch</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>inlineEditing</editorArea:name>
+								<editorArea:value>false</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>pageSize</editorArea:name>
+								<editorArea:value>10</editorArea:value>
+							</editorArea:editor-parameter>
+						</editorArea:attribute>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+
+			<editorArea:tab name="SubsidiariesTab"
+							position="9">
+				<editorArea:section
+						name="FinancialSurveySubsidiariesSection">
+					<editorArea:panel
+							name="hmc.tab.question.questions.panel1">
+						<editorArea:attribute qualifier="subsidiaries"
+											  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+							<editorArea:editor-parameter>
+								<editorArea:name>listConfigContext</editorArea:name>
+								<editorArea:value>myConfigFinancialSurveySubsidiary</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>inlineEditing</editorArea:name>
+								<editorArea:value>false</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>pageSize</editorArea:name>
+								<editorArea:value>10</editorArea:value>
+							</editorArea:editor-parameter>
+						</editorArea:attribute>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
 			<editorArea:tab name="FinancialSurveyEquityTab" position="10">
 				<editorArea:section name="FinancialSurveyEquitySection">
 					<editorArea:attribute qualifier="paidUpCapitalCurrentQuarter" />
@@ -803,6 +880,57 @@
 					<editorArea:attribute qualifier="isShareholdersSectionFilled" />
 				</editorArea:section>
 			</editorArea:tab>
+
+			<editorArea:tab name="BranchesTab"
+							position="8">
+				<editorArea:section
+						name="FinancialSurveyBranchesSection">
+					<editorArea:panel
+							name="hmc.tab.question.questions.panel1">
+						<editorArea:attribute qualifier="branches"
+											  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+							<editorArea:editor-parameter>
+								<editorArea:name>listConfigContext</editorArea:name>
+								<editorArea:value>myConfigFinancialSurveyBranch</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>inlineEditing</editorArea:name>
+								<editorArea:value>false</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>pageSize</editorArea:name>
+								<editorArea:value>10</editorArea:value>
+							</editorArea:editor-parameter>
+						</editorArea:attribute>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+
+			<editorArea:tab name="SubsidiariesTab"
+							position="9">
+				<editorArea:section
+						name="FinancialSurveySubsidiariesSection">
+					<editorArea:panel
+							name="hmc.tab.question.questions.panel1">
+						<editorArea:attribute qualifier="subsidiaries"
+											  editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor">
+							<editorArea:editor-parameter>
+								<editorArea:name>listConfigContext</editorArea:name>
+								<editorArea:value>myConfigFinancialSurveySubsidiary</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>inlineEditing</editorArea:name>
+								<editorArea:value>false</editorArea:value>
+							</editorArea:editor-parameter>
+							<editorArea:editor-parameter>
+								<editorArea:name>pageSize</editorArea:name>
+								<editorArea:value>10</editorArea:value>
+							</editorArea:editor-parameter>
+						</editorArea:attribute>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+
 			<editorArea:tab name="FinancialSurveyEquityTab" position="10">
 				<editorArea:section name="FinancialSurveyEquitySection">
 					<editorArea:attribute qualifier="paidUpCapitalCurrentQuarter" />
@@ -1565,6 +1693,33 @@
 
 		</list-view:list-view>
 	</context>
+
+	<context type="FinancialSurveyBranch" component="myConfigFinancialSurveyBranch">
+		<list-view:list-view
+				xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
+			<list-view:column qualifier="name" />
+			<list-view:column qualifier="address" />
+			<list-view:column qualifier="weight" />
+			<list-view:column qualifier="isHeadOffice" />
+			<list-view:column qualifier="typeDescription" />
+
+		</list-view:list-view>
+	</context>
+
+	<context type="SagiaSubsidiary" component="myConfigFinancialSurveySubsidiary">
+		<list-view:list-view
+				xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
+			<list-view:column qualifier="name" />
+			<list-view:column qualifier="commercialRegistrationNo" />
+			<list-view:column qualifier="unifiedNo700" />
+			<list-view:column qualifier="contribution" />
+			<list-view:column qualifier="isDataIncludedInHeadOffice" />
+
+		</list-view:list-view>
+	</context>
+
+
+
 
 	<context type="FinancialSurveyAffiliate" component="myConfigFinancialSurveyAffiliate">
 		<list-view:list-view

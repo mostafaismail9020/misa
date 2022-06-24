@@ -233,7 +233,7 @@ data-expand-target="expand01">
                                                                class="form-control" placeholder="." value="" type="text"
                                                             <%--style="text-align: right;"--%>
                                                                dir="ltr"
-                                                               maxlength="80"> <label
+                                                               maxlength="10"> <label
                                                             class="control-label control-label_mandatory"
                                                             for="commercialRegistrationNoID"> <spring:theme
                                                             code="survey.commercialRegistrationNo"/>
@@ -248,7 +248,7 @@ data-expand-target="expand01">
                                                         <input id="unifiedNo700ID" name="unifiedNo700"
                                                                class="form-control" placeholder="." value="" type="text"
                                                                dir="ltr"
-                                                               maxlength="80"> <label class="control-label"
+                                                               maxlength="10"> <label class="control-label"
                                                                                       for="unifiedNo700ID">
                                                         <spring:theme
                                                                 code="survey.unifiedNo"/>
@@ -573,7 +573,7 @@ data-expand-target="expand01">
                                             <div class="col-md-6">
                                                 <div class="formSelectBox">
                                                     <div class="form-group">
-                                                        <select id="branchId" name="class"
+                                                        <select id="branchId" name="branch"
                                                                 class="js-select2-search form-control"></select> <label
                                                             class="control-label control-label_mandatory"
                                                             for="branchId"><spring:theme code="survey.branch"/></label>
@@ -585,7 +585,7 @@ data-expand-target="expand01">
                                             <div class="col-md-6">
                                                 <div class="formSelectBox">
                                                     <div class="form-group">
-                                                        <select id="activityId" name="class"
+                                                        <select id="activityId" name="activity"
                                                                 class="js-select2-search form-control"></select> <label
                                                             class="control-label control-label_mandatory"
                                                             for="activityId"><spring:theme code="survey.activity"/></label>
@@ -1843,7 +1843,7 @@ data-expand-target="expand01">
                         <div id="accordionTransaction" class="services-container-tabcontent">
                             <div class="accordion-item" style="width: 100%">
                                 <h5 class="mb-0">
-                                    <button class="accordion-button collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                    <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
                                             aria-expanded="false" aria-controls="collapseThree">
                                         <h5 class="mb-0"><spring:theme code="general.shareholderequity"/></h5>
                                         <div class="plus-minus-icon"></div>
@@ -1867,6 +1867,42 @@ data-expand-target="expand01">
                                                 </thead>
 
                                                 <tbody class="tableModule-body" id="shareholderEquityableTable">
+
+
+                                                <tr>
+                                                    <td class="lastUpdate">
+                                                        <spring:theme
+                                                                code="financial.survey.shareholderEquity.paidUpCapital.currentQuarter"/>
+                                                    </td>
+                                                    <td>
+                                                        <div class="formInputBox">
+                                                            <div class="form-group">
+                                                                <input id="shareholderPaidUpCapitalCurrentQuarterId"
+                                                                       name="shareholderPaidUpCapitalCurrentQuarter"
+                                                                       class="form-control" placeholder="." value="" type="text"
+                                                                       dir="ltr"
+                                                                       maxlength="80">
+                                                                <div class="help-block"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="formInputBox">
+                                                            <div class="form-group">
+                                                                <input id="shareholderPaidUpCapitalPreviousQuarterId"
+                                                                       name="shareholderPaidUpCapitalPreviousQuarter"
+                                                                       class="form-control" placeholder="." value="" type="text"
+                                                                       dir="ltr"
+                                                                       maxlength="80">
+                                                                <div class="help-block"></div>
+                                                            </div>
+                                                        </div>
+
+                                                    </td>
+
+                                                </tr>
+
+
                                                 <tr>
                                                     <td class="lastUpdate">
                                                         <spring:theme
@@ -2425,7 +2461,7 @@ data-expand-target="expand01">
                             <div class="formInputBox">
                                 <div class="form-group">
                                     <input id="registrationNameId" name="registrationName" class="form-control"
-                                           placeholder="." value="" type="text"> <label
+                                           placeholder="." value="" type="text" maxlength="10"> <label
                                         class="control-label control-label_mandatory" for="registrationNameId">
                                     <spring:theme
                                             code="license.subsidiary.registration.name"/>
@@ -2439,7 +2475,7 @@ data-expand-target="expand01">
                             <div class="formInputBox">
                                 <div class="form-group">
                                     <input id="unifiedNoId" name="unifiedNo" class="form-control"
-                                           placeholder="." value="" type="text"> <label
+                                           placeholder="." value="" type="text" maxlength="10"> <label
                                         class="control-label control-label_mandatory" for="unifiedNoId"> <spring:theme
                                         code="license.subsidiary.unifiedno"/>
                                 </label>

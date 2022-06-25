@@ -2843,4 +2843,77 @@
 		</list-view:list-view>
 	</context>
 
+	<context type="SaudiArabiaInternationalIndices" component="advanced-search"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true" />
+				<advanced-search:field name="year" selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+	<context type="FundAssets" component="advanced-search"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true" />
+				<advanced-search:field name="year" selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+	<context type="AQValueGrowth" component="advanced-search"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true" />
+				<advanced-search:field name="year" selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+	<context type="CommercialRegister" component="advanced-search"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true" />
+				<advanced-search:field name="year" selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+	<context type="EconomicsSector" component="advanced-search"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true" />
+				<advanced-search:field name="year" selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+	<context type="GenderDistribution" component="advanced-search"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true" />
+				<advanced-search:field name="year" selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+	<context type="PopulationDistribution" component="advanced-search"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true" />
+				<advanced-search:field name="year" selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+	<context type="RegionDistribution" component="advanced-search"
+			 merge-by="type">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true" />
+				<advanced-search:field name="year" selected="true" />
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
 </config>

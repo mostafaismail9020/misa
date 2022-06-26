@@ -742,28 +742,31 @@
 			<editorArea:tab name="FinancialSurveyTab" >
 				<editorArea:section name="FinancialSurveyStatusSection">
 					<editorArea:attribute qualifier="surveyStatus" />
-				</editorArea:section>
-				<editorArea:section name="FinancialSurveySection">
 					<editorArea:attribute qualifier="user" />
 					<editorArea:attribute qualifier="quarter" />
-					<editorArea:attribute qualifier="companyProfile" />
-					<editorArea:attribute qualifier="companyName" />
-					<editorArea:attribute qualifier="commercialRegistrationNo" />
-					<editorArea:attribute qualifier="businessActivityId" />
-					<editorArea:attribute qualifier="businessActivityDescription" />
-					<editorArea:attribute qualifier="companyStatus" />
-					<editorArea:attribute qualifier="isConsolidated" />
-					<editorArea:attribute qualifier="disclosureCurrency" />
-					<editorArea:attribute qualifier="scaleLevel" />
-					<editorArea:attribute qualifier="hoursToCompleteSurvey" />
-					<editorArea:attribute qualifier="minutesToCompleteSurvey" />
-					<editorArea:attribute qualifier="sourceOfKnowledge" />
 					<editorArea:attribute qualifier="isCompanyProfileSectionFilled" />
 					<editorArea:attribute qualifier="isBranchSectionFilled" />
 					<editorArea:attribute qualifier="isEquitySectionFilled" />
 					<editorArea:attribute qualifier="isShareholdersSectionFilled" />
 				</editorArea:section>
+				<editorArea:section name="FinancialSurveyCompanyProfileSection">
+					<editorArea:attribute qualifier="companyName" />
+					<editorArea:attribute qualifier="commercialRegistrationNo" />
+					<editorArea:attribute qualifier="companyStatus" />
+					<editorArea:attribute qualifier="isConsolidated" />
+					<editorArea:attribute qualifier="disclosureCurrency" />
+					<editorArea:attribute qualifier="scaleLevel" />
+					<editorArea:attribute qualifier="economicActivity" />
+					<editorArea:attribute qualifier="companyProfile" />
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveyAttachmentSection">
+					<editorArea:attribute qualifier="hoursToCompleteSurvey" />
+					<editorArea:attribute qualifier="minutesToCompleteSurvey" />
+					<editorArea:attribute qualifier="sourceOfKnowledge" />
+					<editorArea:attribute qualifier="annualFinancialStatementFile" />
+				</editorArea:section>
 			</editorArea:tab>
+
 			<editorArea:tab name="BranchesTab"
 							position="8">
 				<editorArea:section
@@ -788,6 +791,7 @@
 					</editorArea:panel>
 				</editorArea:section>
 			</editorArea:tab>
+
 			<editorArea:tab name="SubsidiariesTab"
 							position="9">
 				<editorArea:section
@@ -812,6 +816,7 @@
 					</editorArea:panel>
 				</editorArea:section>
 			</editorArea:tab>
+
 			<editorArea:tab name="FinancialSurveyEquityTab" position="10">
 				<editorArea:section name="FinancialSurveyEquitySection">
 					<editorArea:attribute qualifier="paidUpCapitalCurrentQuarter" />

@@ -11578,6 +11578,14 @@
                         <persistence type="property"/>
                     </attribute>
 
+                    <attribute qualifier="nationalityOfUCPRef" type="SagiaCountry">
+                        <description>nationality Of UCP</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+
                     <attribute qualifier="shareholderIsVotingPower" type="boolean">
                         <description>shareholderIsVotingPower</description>
                         <modifiers optional="false"/>
@@ -11750,12 +11758,74 @@
                                    optional="false" initial="true"/>
                         <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="address" type="SagiaSurveyAddress">
-                        <description>Branch Address</description>
+
+
+                    <attribute qualifier="country" type="SagiaCountry">
+                        <description>Country</description>
                         <modifiers read="true" write="true" search="true"
                                    optional="true" />
                         <persistence type="property"/>
                     </attribute>
+
+                    <attribute qualifier="region" type="SagiaRegion">
+                        <description>Region</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="city" type="SagiaCity">
+                        <description>City</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="street" type="java.lang.String">
+                        <description>street</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="number" type="java.lang.String">
+                        <description>number</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="zipCode" type="java.lang.String">
+                        <description>zipCode</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="website" type="java.lang.String">
+                        <description>website</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="telephone" type="java.lang.String">
+                        <description>telephone</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="email" type="java.lang.String">
+                        <description>email</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+                    <attribute qualifier="address" type="SagiaSurveyAddress">
+                        <description>Branch Address - Depricated</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
+
+
                     <attribute qualifier="weight" type="java.lang.String">
                         <description>Branch weight</description>
                         <modifiers read="true" write="true" search="true"

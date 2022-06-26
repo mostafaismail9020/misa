@@ -58,8 +58,14 @@ public class FinancialSurveyShareholderPopulator implements Populator<FinancialS
         shareholder.setShareholderHaveReverseInvestment(financialSurveyShareholderModel.isShareholderHaveReverseInvestment());
         shareholder.setValueOfReverseInvestment(financialSurveyShareholderModel.getValueOfReverseInvestment());
         shareholder.setShareholderMultinationalCompany(financialSurveyShareholderModel.getShareholderMultinationalCompany());
-        shareholder.setNationalityOfUCP(financialSurveyShareholderModel.getNationalityOfUCP());
 
+
+
+        String shareholderNationalityOfUCPCode = "";
+        if(null != financialSurveyShareholderModel.getNationalityOfUCPRef() ){
+            shareholderNationalityOfUCPCode = financialSurveyShareholderModel.getNationalityOfUCPRef().getCode();
+        }
+        shareholder.setNationalityOfUCP(shareholderNationalityOfUCPCode);
 
         shareholder.setPaidUpCapitalCurrentQuarter(financialSurveyShareholderModel.getPaidUpCapitalCurrentQuarter());
         shareholder.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyShareholderModel.getAdditionalPaidUpCapitalCurrentQuarter());

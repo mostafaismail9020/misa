@@ -11,11 +11,11 @@ public class FinancialSurveyAddressPopulator implements Populator<SagiaSurveyAdd
     @Override
     public void populate(SagiaSurveyAddressModel sagiaSurveyAddressModel, Address address) throws ConversionException {
         address.setCity(sagiaSurveyAddressModel.getCity());
-        address.setCityDescription(sagiaSurveyAddressModel.getCityDescription());
+        //address.setCityDescription(sagiaSurveyAddressModel.getCityDescription());
         address.setCountry(sagiaSurveyAddressModel.getCountry());
-        address.setCountryDescription(sagiaSurveyAddressModel.getCountryDescription());
+       // address.setCountryDescription(sagiaSurveyAddressModel.getCountryDescription());
         address.setRegion(sagiaSurveyAddressModel.getRegion());
-        address.setRegionDescription(sagiaSurveyAddressModel.getRegionDescription());
+     //   address.setRegionDescription(sagiaSurveyAddressModel.getRegionDescription());
         address.setStreet(sagiaSurveyAddressModel.getStreet());
         address.setWebsite(sagiaSurveyAddressModel.getWebsite());
         address.setNumber(sagiaSurveyAddressModel.getNumber());

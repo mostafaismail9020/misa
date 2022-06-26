@@ -232,9 +232,13 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 			row.createCell(j++).setCellValue(financialSurveyBranchModel.getName());
 			row.createCell(j++).setCellValue(financialSurveyBranchModel.getType());
 			row.createCell(j++).setCellValue(financialSurveyBranchModel.getWeight());
-			row.createCell(j++).setCellValue( (financialSurveyBranchModel.getAddress()!= null && financialSurveyBranchModel.getAddress().getEmail()!=null)?financialSurveyBranchModel.getAddress().getEmail():StringUtils.EMPTY);
-			row.createCell(j++).setCellValue( (financialSurveyBranchModel.getAddress()!= null && financialSurveyBranchModel.getAddress().getTelephone()!=null)?financialSurveyBranchModel.getAddress().getTelephone():StringUtils.EMPTY);
-			row.createCell(j++).setCellValue( (financialSurveyBranchModel.getAddress()!= null && financialSurveyBranchModel.getAddress().getWebsite()!=null)?financialSurveyBranchModel.getAddress().getWebsite():StringUtils.EMPTY);
+			row.createCell(j++).setCellValue( financialSurveyBranchModel.getEmail() );
+			row.createCell(j++).setCellValue( financialSurveyBranchModel.getTelephone());
+			row.createCell(j++).setCellValue( financialSurveyBranchModel.getWebsite());
+			row.createCell(j++).setCellValue( financialSurveyBranchModel.getCountry() != null ? financialSurveyBranchModel.getCountry().getName() : StringUtils.EMPTY);
+			row.createCell(j++).setCellValue( financialSurveyBranchModel.getRegion() != null ? financialSurveyBranchModel.getRegion().getName() : StringUtils.EMPTY);
+			row.createCell(j++).setCellValue( financialSurveyBranchModel.getCity() != null ? financialSurveyBranchModel.getCity().getName() : StringUtils.EMPTY );
+			row.createCell(j++).setCellValue( financialSurveyBranchModel.getNumber() );
 			row.createCell(j++).setCellValue("");
 		}
 		return rowNum;
@@ -294,8 +298,7 @@ implements CockpitAction<String, Pageable<? extends ItemModel>>
 			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderGender() != null ? financialSurveyShareholderModel.getShareholderGender() : StringUtils.EMPTY );
 			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderNationalityCurrentRef() != null ? financialSurveyShareholderModel.getShareholderNationalityCurrentRef().getName() : StringUtils.EMPTY );
 			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderCountryRef() != null ? financialSurveyShareholderModel.getShareholderCountryRef().getName() : StringUtils.EMPTY );
-			// missing nationalty of ucp and economic activity for ucp
-
+			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getNationalityOfUCPRef() != null ? financialSurveyShareholderModel.getNationalityOfUCPRef().getName() : StringUtils.EMPTY );
 			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderPercentage());
 			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderCapital());
 			row.createCell(j++).setCellValue(financialSurveyShareholderModel.getShareholderVotingPower());

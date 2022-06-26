@@ -606,6 +606,24 @@
 		</y:base>
 	</context>
 
+	<context type="SagiaRegion" component="base" merge-by="type"
+			 parent="GenericItem">
+		<y:base>
+			<y:labels>
+				<y:label>name</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
+	<context type="SagiaCity" component="base" merge-by="type"
+			 parent="GenericItem">
+		<y:base>
+			<y:labels>
+				<y:label>name</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
 	<context type="FinancialSurveyQuarter" component="base" merge-by="type" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
 			 parent="GenericItem">
 		<y:base>
@@ -659,6 +677,16 @@
 			</y:labels>
 		</y:base>
 	</context>
+
+	<context type="IsicTexts" component="base"
+			 merge-by="type" parent="GenericItem">
+		<y:base>
+			<y:labels>
+				<y:label>code+ ' : ' +description</y:label>
+			</y:labels>
+		</y:base>
+	</context>
+
 	<context merge-by="type" parent="GenericItem" type="SagiaCompanyProfile" component="simple-search">
 		<simple-search:simple-search xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch">
 			<simple-search:field name="companyName"/>
@@ -760,7 +788,6 @@
 					</editorArea:panel>
 				</editorArea:section>
 			</editorArea:tab>
-
 			<editorArea:tab name="SubsidiariesTab"
 							position="9">
 				<editorArea:section
@@ -858,26 +885,28 @@
 			<editorArea:tab name="FinancialSurveyTab" >
 				<editorArea:section name="FinancialSurveyStatusSection">
 					<editorArea:attribute qualifier="surveyStatus" />
-				</editorArea:section>
-				<editorArea:section name="FinancialSurveySection">
 					<editorArea:attribute qualifier="user" />
 					<editorArea:attribute qualifier="quarter" />
-					<editorArea:attribute qualifier="companyProfile" />
-					<editorArea:attribute qualifier="companyName" />
-					<editorArea:attribute qualifier="commercialRegistrationNo" />
-					<editorArea:attribute qualifier="businessActivityId" />
-					<editorArea:attribute qualifier="businessActivityDescription" />
-					<editorArea:attribute qualifier="companyStatus" />
-					<editorArea:attribute qualifier="isConsolidated" />
-					<editorArea:attribute qualifier="disclosureCurrency" />
-					<editorArea:attribute qualifier="scaleLevel" />
-					<editorArea:attribute qualifier="hoursToCompleteSurvey" />
-					<editorArea:attribute qualifier="minutesToCompleteSurvey" />
-					<editorArea:attribute qualifier="sourceOfKnowledge" />
 					<editorArea:attribute qualifier="isCompanyProfileSectionFilled" />
 					<editorArea:attribute qualifier="isBranchSectionFilled" />
 					<editorArea:attribute qualifier="isEquitySectionFilled" />
 					<editorArea:attribute qualifier="isShareholdersSectionFilled" />
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveyCompanyProfileSection">
+					<editorArea:attribute qualifier="companyName" />
+					<editorArea:attribute qualifier="commercialRegistrationNo" />
+					<editorArea:attribute qualifier="companyStatus" />
+					<editorArea:attribute qualifier="isConsolidated" />
+					<editorArea:attribute qualifier="disclosureCurrency" />
+					<editorArea:attribute qualifier="scaleLevel" />
+					<editorArea:attribute qualifier="economicActivity" />
+					<editorArea:attribute qualifier="companyProfile" />
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveyAttachmentSection">
+					<editorArea:attribute qualifier="hoursToCompleteSurvey" />
+					<editorArea:attribute qualifier="minutesToCompleteSurvey" />
+					<editorArea:attribute qualifier="sourceOfKnowledge" />
+					<editorArea:attribute qualifier="annualFinancialStatementFile" />
 				</editorArea:section>
 			</editorArea:tab>
 
@@ -1070,6 +1099,175 @@
 			</editorArea:tab>
 		</editorArea:editorArea>
 	</context>
+
+
+
+
+	<context type="FinancialSurveyBranch" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="FinancialSurveyBranchTab">
+				<editorArea:section name="FinancialSurveyBranchSection">
+					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute qualifier="weight" />
+					<editorArea:attribute qualifier="isHeadOffice" />
+					<editorArea:attribute qualifier="main" />
+					<editorArea:attribute qualifier="type" />
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveyBranchAddressSection">
+					<editorArea:attribute qualifier="country" />
+					<editorArea:attribute qualifier="region" />
+					<editorArea:attribute qualifier="city" />
+					<editorArea:attribute qualifier="street" />
+					<editorArea:attribute qualifier="number" />
+					<editorArea:attribute qualifier="website" />
+					<editorArea:attribute qualifier="telephone" />
+					<editorArea:attribute qualifier="email" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="SagiaSurveyAddress" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="FinancialSurveyBranchTab">
+				<editorArea:section name="FinancialSurveyBranchSection">
+					<editorArea:attribute qualifier="website" />
+					<editorArea:attribute qualifier="telephone" />
+					<editorArea:attribute qualifier="email" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="SagiaSubsidiary" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="SagiaSubsidiaryTab">
+				<editorArea:section name="SagiaSubsidiarySection">
+					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute qualifier="commercialRegistrationNo" />
+					<editorArea:attribute qualifier="unifiedNo700" />
+					<editorArea:attribute qualifier="contribution" />
+					<editorArea:attribute qualifier="isDataIncludedInHeadOffice" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="FinancialSurveyShareholder" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="FinancialSurveyShareholderTab">
+				<editorArea:section name="FinancialSurveyShareholderSection">
+					<editorArea:attribute qualifier="shareholderTypeRef" />
+					<editorArea:attribute qualifier="shareholderNameEnglish" />
+					<editorArea:attribute qualifier="shareholderTypeRef" />
+					<editorArea:attribute qualifier="companyCountryRef" />
+					<editorArea:attribute qualifier="shareholderGender" />
+					<editorArea:attribute qualifier="shareholderSubsector" />
+					<editorArea:attribute qualifier="shareholderNationalityCurrentRef" />
+					<editorArea:attribute qualifier="shareholderCountryRef" />
+					<editorArea:attribute qualifier="shareholderPercentage" />
+					<editorArea:attribute qualifier="shareholderCapital" />
+					<editorArea:attribute qualifier="nationalityOfUCPRef" />
+					<editorArea:attribute qualifier="shareholderIsVotingPower" />
+			        <editorArea:attribute qualifier="shareholderVotingPower" />
+					<editorArea:attribute qualifier="shareholderHasPreferredShares" />
+			        <editorArea:attribute qualifier="shareholderHaveReverseInvestment" />
+					<editorArea:attribute qualifier="valueOfReverseInvestment" />
+			        <editorArea:attribute qualifier="shareholderMultinationalCompany" />
+					<editorArea:attribute qualifier="industry" />
+					<editorArea:attribute qualifier="industryDescription" />
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveyShareholderEquitySection">
+					<editorArea:attribute qualifier="paidUpCapitalCurrentQuarter" />
+					<editorArea:attribute qualifier="additionalPaidUpCapitalCurrentQuarter" />
+					<editorArea:attribute qualifier="retainedEarningsIncludeCurrentQuarter" />
+			        <editorArea:attribute qualifier="profitLossQuarterCurrentQuarter" />
+					 <editorArea:attribute qualifier="totalReservesCurrentQuarter" />
+			         <editorArea:attribute qualifier="treasurySharesCurrentQuarter" />
+					 <editorArea:attribute qualifier="headOfficeAccountInBranchCurrentQuarter" />
+			        <editorArea:attribute qualifier="shareholderEquityOthersCurrentQuarter" />
+					<editorArea:attribute qualifier="minorityRightsCurrentQuarter" />
+			         <editorArea:attribute qualifier="totalShareholderEquityCurrentQuarter" />
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveyShareholderTransactionSection">
+					<editorArea:attribute qualifier="transaction" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="FinancialSurveyAffiliate" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="FinancialSurveyAffiliateTab">
+				<editorArea:section name="FinancialSurveyAffiliateSection">
+					<editorArea:attribute qualifier="affiliateNameEnglish" />
+					<editorArea:attribute qualifier="affiliateTypeRef" />
+					<editorArea:attribute qualifier="companyCountryRef" />
+					<editorArea:attribute qualifier="affiliateSector" />
+					<editorArea:attribute qualifier="affiliateGender" />
+					<editorArea:attribute qualifier="affiliateNationalityCurrentRef" />
+					<editorArea:attribute qualifier="affiliateCountryRef" />
+					<editorArea:attribute qualifier="affiliateMultinationalCompany" />
+					<editorArea:attribute qualifier="industry" />
+
+				</editorArea:section>
+				<editorArea:section name="FinancialSurveyShareholderTransactionSection">
+					<editorArea:attribute qualifier="transaction" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+
+	<context type="SagiaSurveyTransaction" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="SagiaSurveyTransactionTab">
+				<editorArea:section name="SagiaSurveyTransactionCreditSection">
+
+					<editorArea:attribute qualifier="tradeDebitCurrentQuarter" />
+					<editorArea:attribute qualifier="loansAssetsCurrentQuarter" />
+					<editorArea:attribute qualifier="interestReceivedCurrentQuarter" />
+					<editorArea:attribute qualifier="dividendsReceivedCurrentQuarter" />
+			        <editorArea:attribute qualifier="expensesReceivedCurrentQuarter" />
+					<editorArea:attribute qualifier="sellProductionSuppliesCurrentQuarter" />
+			        <editorArea:attribute qualifier="sellMachineryCurrentQuarter" />
+					<editorArea:attribute qualifier="currentDebitAccountCurrentQuarter" />
+			        <editorArea:attribute qualifier="expensesReceivableCurrentQuarter" />
+					<editorArea:attribute qualifier="insuranceCommissionReceivableCurrentQuarter" />
+			        <editorArea:attribute qualifier="otherDebitCurrentQuarter" />
+					<editorArea:attribute qualifier="totalDebitCurrentQuarter" />
+
+				</editorArea:section>
+				<editorArea:section name="SagiaSurveyTransactionDebitSection">
+					<editorArea:attribute qualifier="tradeCreditCurrentQuarter" />
+			        <editorArea:attribute qualifier="loansLiabilitiesCurrentQuarter" />
+					<editorArea:attribute qualifier="interestPayableCurrentQuarter" />
+			        <editorArea:attribute qualifier="dividendsPaidCurrentQuarter" />
+					<editorArea:attribute qualifier="expensesPaidCurrentQuarter" />
+			        <editorArea:attribute qualifier="purchaseProductionSuppliesCurrentQuarter" />
+					<editorArea:attribute qualifier="purchaseMachineryCurrentQuarter" />
+			        <editorArea:attribute qualifier="currentCreditAccountCurrentQuarter" />
+					<editorArea:attribute qualifier="expensesPayableCurrentQuarter" />
+					<editorArea:attribute qualifier="insuranceCommissionPayableCurrentQuarter" />
+					<editorArea:attribute qualifier="otherCreditCurrentQuarter" />
+			        <editorArea:attribute qualifier="totalCreditCurrentQuarter" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+
+
+
+
+
+
 	<context type="SagiaMedia" component="create-wizard"
 			 merge-by="type">
 		<wz:flow id="SagiaMediaWizard" title="Add new Wizard">
@@ -1390,6 +1588,29 @@
 	</context>
 
 
+	<context type="SagiaCompanyProfile" component="editor-area">
+		<editorArea:editorArea>
+			<editorArea:tab name="SagiaCompanyProfileTab">
+				<editorArea:section name="SagiaCompanyProfileSection">
+					<editorArea:attribute qualifier="user" />
+					<editorArea:attribute qualifier="companyName" />
+					<editorArea:attribute qualifier="commercialRegistrationNo" />
+					<editorArea:attribute qualifier="unifiedNo700" />
+					<editorArea:attribute qualifier="incorporationDate" />
+					<editorArea:attribute qualifier="crIssueDate" />
+					<editorArea:attribute qualifier="financialManagerName" />
+					<editorArea:attribute qualifier="financialManagerEmail" />
+					<editorArea:attribute qualifier="financialManagerTelephone" />
+					<editorArea:attribute qualifier="legalStatus" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+
+
+
+
 	<context type="SagiaClassification" component="listview">
 		<list-view:list-view>
 			<list-view:column qualifier="code" />
@@ -1698,7 +1919,8 @@
 		<list-view:list-view
 				xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
 			<list-view:column qualifier="name" />
-			<list-view:column qualifier="address" />
+			<list-view:column qualifier="region" />
+			<list-view:column qualifier="city" />
 			<list-view:column qualifier="weight" />
 			<list-view:column qualifier="isHeadOffice" />
 			<list-view:column qualifier="typeDescription" />

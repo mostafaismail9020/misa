@@ -12,15 +12,16 @@ import com.sap.ibso.eservices.core.model.FinancialSurveyQuarterModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyShareholderModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
 import com.sap.ibso.eservices.core.model.SagiaSubsidiaryModel;
-import com.sap.ibso.eservices.core.model.SagiaSurveyAddressModel;
 import com.sap.ibso.eservices.core.model.SagiaSurveyMessageModel;
 import com.sap.ibso.eservices.core.model.SagiaSurveyTransactionModel;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyQuarterDAO;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaCityDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCompanyProfileDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCountryDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaIsicMasterDataDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaLegalStatusDAO;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaRegionDAO;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
 import com.sap.ibso.eservices.facades.data.finance.survey.Affiliate;
 import com.sap.ibso.eservices.facades.data.finance.survey.Shareholder;
@@ -80,6 +81,15 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     @Resource
     private SagiaCountryDAO sagiaCountryDAO;
 
+    @Resource
+    private SagiaRegionDAO sagiaRegionDAO;
+
+    @Resource
+    private SagiaCityDAO sagiaCityDAO;
+
+
+
+
 
 
 
@@ -100,12 +110,11 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
 
         //save company Profile master data
-        saveCompanyProfile(financialSurveyData.getCompanyProfile()) ;
+        SagiaCompanyProfileModel companyProfile = saveCompanyProfile(financialSurveyData.getCompanyProfile());
 
         // fetch the FinancialSurvey for the given quarter
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurveyData.getQuarterCode());
-
-
+        financialSurveyModel.setCompanyProfile(companyProfile);
         saveFinancialSurveyModel(financialSurveyData, financialSurveyModel);
 
 
@@ -276,10 +285,10 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                     financialSurveyBranchModel.setTypeDescription(branch.getTypeDescription());
                     financialSurveyBranchModel.setFinancialSurvey(financialSurveyModel);
 
-                    SagiaSurveyAddressModel sagiaSurveyAddressModel = new SagiaSurveyAddressModel();
-                    populateAddressModel(sagiaSurveyAddressModel,branch.getAddress());
-                    modelService.save(sagiaSurveyAddressModel);
-                    financialSurveyBranchModel.setAddress(sagiaSurveyAddressModel);
+                    ///SagiaSurveyAddressModel sagiaSurveyAddressModel = new SagiaSurveyAddressModel();
+                    populateAddressModel(financialSurveyBranchModel,branch.getAddress());
+                  //  modelService.save(sagiaSurveyAddressModel);
+                 //   financialSurveyBranchModel.setAddress(sagiaSurveyAddressModel);
                     modelService.save(financialSurveyBranchModel);
                 }
             }
@@ -311,18 +320,16 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         return financialSurveyModel;
     }
 
-    private void populateAddressModel(SagiaSurveyAddressModel sagiaSurveyAddressModel, Address address) {
-        sagiaSurveyAddressModel.setCity(address.getCity());
-        sagiaSurveyAddressModel.setCityDescription(address.getCityDescription());
-        sagiaSurveyAddressModel.setCountry(address.getCountry());
-        sagiaSurveyAddressModel.setTelephone(address.getTelephone());
-        sagiaSurveyAddressModel.setStreet(address.getStreet());
-        sagiaSurveyAddressModel.setRegion(address.getRegion());
-        sagiaSurveyAddressModel.setRegionDescription(address.getRegionDescription());
-        sagiaSurveyAddressModel.setNumber(address.getNumber());
-        sagiaSurveyAddressModel.setWebsite(address.getWebsite());
-        sagiaSurveyAddressModel.setEmail(address.getEmail());
-        sagiaSurveyAddressModel.setZipCode(address.getWebsite());
+    private void populateAddressModel(FinancialSurveyBranchModel financialSurveyBranchModel, Address address) {
+        financialSurveyBranchModel.setCity(sagiaCityDAO.getCityForCode(address.getCity()));
+        financialSurveyBranchModel.setCountry(sagiaCountryDAO.getCountryForCode("SA"));
+        financialSurveyBranchModel.setTelephone(address.getTelephone());
+        financialSurveyBranchModel.setStreet(address.getStreet());
+        financialSurveyBranchModel.setRegion(sagiaRegionDAO.getRegionForCode(address.getRegion()));
+        financialSurveyBranchModel.setNumber(address.getNumber());
+        financialSurveyBranchModel.setWebsite(address.getWebsite());
+        financialSurveyBranchModel.setEmail(address.getEmail());
+        financialSurveyBranchModel.setZipCode(address.getWebsite());
     }
 
     @Override
@@ -343,11 +350,12 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     public void saveFinancialSurveyCompanyProfile(FinancialSurvey financialSurveyData) {
 
         //save company Profile master data
-        saveCompanyProfile(financialSurveyData.getCompanyProfile()) ;
+        SagiaCompanyProfileModel sagiaCompanyProfileModel = saveCompanyProfile(financialSurveyData.getCompanyProfile()) ;
 
         // fetch the FinancialSurvey for the given quarter
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurveyData.getQuarterCode());
         financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.IN_PROGRESS);
+        financialSurveyModel.setCompanyProfile(sagiaCompanyProfileModel);
         financialSurveyModel.setIsCompanyProfileSectionFilled(true);
         savetBusinessActivities(financialSurveyData, financialSurveyModel);
         saveFinancialSurveyModel(financialSurveyData, financialSurveyModel);
@@ -527,7 +535,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
             FinancialSurveyShareholderModel financialSurveyShareholderModel = new FinancialSurveyShareholderModel();
             financialSurveyShareholderModel.setFinancialSurvey(financialSurveyModel);
             financialSurveyShareholderModel.setShareholderNameEnglish(shareholderModelFromPrevQuarter.getShareholderNameEnglish());
-            financialSurveyShareholderModel.setNationalityOfUCP(shareholderModelFromPrevQuarter.getNationalityOfUCP());
+            financialSurveyShareholderModel.setNationalityOfUCPRef(shareholderModelFromPrevQuarter.getNationalityOfUCPRef());
             financialSurveyShareholderModel.setShareholderNationalityCurrentRef(shareholderModelFromPrevQuarter.getShareholderNationalityCurrentRef());
             financialSurveyShareholderModel.setCompanyCountry(shareholderModelFromPrevQuarter.getCompanyCountry());
             financialSurveyShareholderModel.setCompanyCountryRef(shareholderModelFromPrevQuarter.getCompanyCountryRef());
@@ -547,7 +555,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     }
 
 
-    private void saveCompanyProfile(CompanyProfileData companyProfileData){
+    private SagiaCompanyProfileModel saveCompanyProfile(CompanyProfileData companyProfileData){
 
         final PrincipalModel currentUser = userService.getCurrentUser();
         SagiaCompanyProfileModel companyProfile = sagiaCompanyProfileDAO.getSagiaCompanyProfile(currentUser.getPk().getLong().toString());
@@ -567,6 +575,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         companyProfile.setCrIssueDate(sagiaFormatProvider.formatUIStrToBackDate(companyProfileData.getCrIssueDate()));
         companyProfile.setIncorporationDate(sagiaFormatProvider.formatUIStrToBackDate(companyProfileData.getIncorporationDate()));
         modelService.save(companyProfile);
+        return companyProfile;
     }
 
     private void populateShareholderModel(Shareholder shareholder, FinancialSurveyShareholderModel financialSurveyShareholderModel) throws ConversionException {
@@ -578,7 +587,8 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyShareholderModel.setShareholderNameEnglish(shareholder.getShareholderNameEnglish());
         financialSurveyShareholderModel.setShareholderSector(shareholder.getShareholderSector());
         financialSurveyShareholderModel.setShareholderSubsector(shareholder.getShareholderSubsector());
-        financialSurveyShareholderModel.setNationalityOfUCP(shareholder.getNationalityOfUCP());
+        //financialSurveyShareholderModel.setNationalityOfUCP(shareholder.getNationalityOfUCP());
+        financialSurveyShareholderModel.setNationalityOfUCPRef(shareholder.getNationalityOfUCP()!=null?sagiaCountryDAO.getCountryForCode(shareholder.getNationalityOfUCP()):null);
         financialSurveyShareholderModel.setShareholderGender(shareholder.getShareholderGender());
         financialSurveyShareholderModel.setShareholderNationalityCurrent(shareholder.getShareholderNationalityCurrent());
         financialSurveyShareholderModel.setShareholderNationalityCurrentRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderNationalityCurrent()));

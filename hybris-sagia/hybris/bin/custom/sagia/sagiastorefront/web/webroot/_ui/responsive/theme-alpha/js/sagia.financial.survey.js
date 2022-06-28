@@ -145,6 +145,10 @@ $(document).ready(function () {
             $('a[href="#accessibletabscontent0-3"]').click();
         });
 
+        $(document).on("click", "#cancelTabEntityBtnId", function () {
+            window.location.href = ACC.config.encodedContextPath + '/dashboard';
+        });
+
 
 
 
@@ -1135,6 +1139,7 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
 
     var sum = 0;
     var numberOfBranches = 0;
+    var numberOfHeadOffice = 0;
 
     financialSurvey.branches.forEach(function(branch) {
         if(branch.volumeWeight != null  && branch.action !== '03') {
@@ -1142,13 +1147,28 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
             numberOfBranches ++;
         }
     });
-    if (sum !== 100 && numberOfBranches !== 0 ) {
+    //business team requested to remove this validation
+    /*if (sum !== 100 && numberOfBranches !== 0 ) {
+        $('#licenseAmendmentValidationDialogId').modal({
+            backdrop: "static",
+            keyboard: false
+        }).find('.modal-description').empty().text(getI18nText('finance.survey.validation.branchPerc.sum'));
+        return;
+    }*/
+
+    financialSurvey.branches.forEach(function(branch) {
+        if(branch.branchType != null  && branch.branchType === 'head_office' && branch.action !== '03') {
+            numberOfHeadOffice++ ;
+        }
+    });
+    if (numberOfHeadOffice > 1 ) {
         $('#licenseAmendmentValidationDialogId').modal({
             backdrop: "static",
             keyboard: false
         }).find('.modal-description').empty().text(getI18nText('finance.survey.validation.branchPerc.sum'));
         return;
     }
+
 
     var numberOfSubsidiaries = 0;
     financialSurvey.subsidiaries.forEach(function(subsidiary) {
@@ -1441,7 +1461,7 @@ function setLicenseData(data, history) {
         //            $branchRow.find('.deleteDropdown').show();
         //    }
 
-
+            SAGIA.financialSurvey.branch.dataTable.row.add($branchRow).draw();
             $branchesTable.append($branchRow);
         }
     });
@@ -1475,6 +1495,8 @@ function setLicenseData(data, history) {
             $subsidiaryRow.find('.deleteDropdown').show();
 
         $subsidiariesTable.append($subsidiaryRow);
+        SAGIA.financialSurvey.subsidiary.dataTable.row.add($subsidiaryRow).draw();
+
         }
     });
 

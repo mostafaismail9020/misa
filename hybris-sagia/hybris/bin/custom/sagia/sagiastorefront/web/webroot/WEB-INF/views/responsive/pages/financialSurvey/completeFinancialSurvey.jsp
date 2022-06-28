@@ -2437,6 +2437,8 @@ data-expand-target="expand01">
                         <spring:theme code="license.subsidiary.details"/>
                     </div>
 
+                    <hr class="hr w-100">
+
                     <div class="row">
 
                         <div class="col-md-6">

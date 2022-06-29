@@ -22,6 +22,7 @@
 		<script src="${commonResourcePathHtml}/js/owlcarousel/owl.carousel.js"></script>
         <script src="${commonResourcePathHtml}/js/script.js"></script>
 		<script src="${commonResourcePathHtml}/js/contact.js"></script>
+		<script type="text/javascript" src="${themeResourcePath}/js/sagia.I18n.js${version}"></script>
 		<%-- jquery --%>
 		
 		

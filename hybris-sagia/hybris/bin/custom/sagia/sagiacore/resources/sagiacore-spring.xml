@@ -1615,4 +1615,11 @@
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
 
+    <!-- invest saudi hot folder -->
+    <bean id="batchRunnerTask" class="com.investsaudi.portal.core.dataimport.batch.task.InvestSaudiImpexRunnerTask">
+        <property name="sessionService" ref="sessionService" />
+        <property name="importService" ref="importService" />
+        <property name="emailService" ref="emailService" />
+        <lookup-method name="getImportConfig" bean="importConfig" />
+    </bean>
 </beans>

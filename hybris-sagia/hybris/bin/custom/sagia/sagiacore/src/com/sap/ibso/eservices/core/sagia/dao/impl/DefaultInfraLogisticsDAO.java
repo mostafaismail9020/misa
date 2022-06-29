@@ -2,14 +2,7 @@ package com.sap.ibso.eservices.core.sagia.dao.impl;
 
 import java.util.List;
 
-import com.sap.ibso.eservices.core.model.EmploymentModel;
-import com.sap.ibso.eservices.core.model.HousingFacilitiesModel;
-import com.sap.ibso.eservices.core.model.IndustrialCitiesModel;
-import com.sap.ibso.eservices.core.model.InfraLogisticsLandingModel;
-import com.sap.ibso.eservices.core.model.InfrastructureModel;
-import com.sap.ibso.eservices.core.model.LengthOfNetworkModel;
-import com.sap.ibso.eservices.core.model.PrivateCitiesModel;
-import com.sap.ibso.eservices.core.model.TotalAreaModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.core.sagia.dao.InfraLogisticsDAO;
 
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
@@ -43,17 +36,6 @@ public class DefaultInfraLogisticsDAO implements InfraLogisticsDAO {
 		final InfraLogisticsLandingModel infraLogisticsLandingModel = searchResult.getResult().get(0);
 		return infraLogisticsLandingModel;
 	}
-	
-
-	@Override
-	public InfrastructureModel getInfrastructureModelBySearch() {
-		final String queryString = "SELECT {" + InfrastructureModel.PK + "} FROM {"
-				+ InfrastructureModel._TYPECODE + "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
-		final SearchResult<InfrastructureModel> searchResult = getFlexibleSearchService().search(query);
-		final InfrastructureModel infrastructureModel = searchResult.getResult().get(0);
-		return infrastructureModel;
-	}
 
 	@Override
 	public List<LengthOfNetworkModel> getLengthOfNetworkModelBySearch() {
@@ -64,43 +46,6 @@ public class DefaultInfraLogisticsDAO implements InfraLogisticsDAO {
 		return searchResult.getResult();
 	}
 
-	@Override
-	public EmploymentModel getEmploymentModelBySearch() {
-		final String queryString = "SELECT {" + EmploymentModel.PK + "} FROM {" + EmploymentModel._TYPECODE + "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
-		final SearchResult<EmploymentModel> searchResult = getFlexibleSearchService().search(query);
-		final EmploymentModel employmentModel = searchResult.getResult().get(0);
-		return employmentModel;
-	}
-
-	@Override
-	public TotalAreaModel getTotalAreaModelBySearch() {
-		final String queryString = "SELECT {" + TotalAreaModel.PK + "} FROM {" + TotalAreaModel._TYPECODE + "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
-		final SearchResult<TotalAreaModel> searchResult = getFlexibleSearchService().search(query);
-		final TotalAreaModel totalAreaModel = searchResult.getResult().get(0);
-		return totalAreaModel;
-	}
-
-	@Override
-	public HousingFacilitiesModel getHousingFacilitiesModelBySearch() {
-		final String queryString = "SELECT {" + HousingFacilitiesModel.PK + "} FROM {"
-				+ HousingFacilitiesModel._TYPECODE + "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
-		final SearchResult<HousingFacilitiesModel> searchResult = getFlexibleSearchService().search(query);
-		final HousingFacilitiesModel housingFacilitiesModel = searchResult.getResult().get(0);
-		return housingFacilitiesModel;
-	}
-
-	@Override
-	public IndustrialCitiesModel getIndustrialCitiesModelBySearch() {
-		final String queryString = "SELECT {" + IndustrialCitiesModel.PK + "} FROM {" + IndustrialCitiesModel._TYPECODE
-				+ "}";
-		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString.toString());
-		final SearchResult<IndustrialCitiesModel> searchResult = getFlexibleSearchService().search(query);
-		final IndustrialCitiesModel industrialCitiesModel = searchResult.getResult().get(0);
-		return industrialCitiesModel;
-	}
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -110,6 +55,14 @@ public class DefaultInfraLogisticsDAO implements InfraLogisticsDAO {
 		final SearchResult<PrivateCitiesModel> searchResult = getFlexibleSearchService().search(query);
 		final List<PrivateCitiesModel> privateCitiesModel = (List<PrivateCitiesModel>) searchResult.getResult();
 		return privateCitiesModel;
+	}
+
+	@Override
+	public List<InfrastructureLogisticsModel> getAllInfrastructureLogisticsModel() {
+		final String queryString = "SELECT {" + InfrastructureLogisticsModel.PK + "} FROM {" + InfrastructureLogisticsModel._TYPECODE + "}";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+		final SearchResult<InfrastructureLogisticsModel> searchResult = getFlexibleSearchService().search(query);
+		return searchResult.getResult();
 	}
 
 

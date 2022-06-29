@@ -1904,176 +1904,8 @@
 	<!-- Economic Highlights Changes Starts -->
 <bean id="economicFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultEconomicFacade">
 		<property name="economicService" ref="economicService" />
-		<property name="realGDPConverter" ref="realGDPConverter" />
-		<property name="unemploymentConverter" ref="unemploymentConverter" />
-		<property name="tradeBalanceConverter" ref="tradeBalanceConverter" />
-		<property name="totalReserveAssetsConverter" ref="totalReserveAssetsConverter" />
-		<property name="saudiStockMarketConverter" ref="saudiStockMarketConverter" />
-		<property name="populationConverter" ref="populationConverter" />
-		<property name="moneySupplyConverter" ref="moneySupplyConverter" />
-		<property name="interestRateConverter" ref="interestRateConverter" />
-		<property name="inflationConverter" ref="inflationConverter" />
-		<property name="governmentReserveConverter" ref="governmentReserveConverter" />
-		<property name="governmentDebtConverter" ref="governmentDebtConverter" />
-		<property name="gDPPerCapitaConverter" ref="gDPPerCapitaConverter" />
-		<property name="fDIinflowConverter" ref="fDIinflowConverter" />
-		<property name="exchangeRateConverter" ref="exchangeRateConverter" />
 		<property name="creditRatingConverter" ref="creditRatingConverter" />
-		<property name="budgetDeficitConverter" ref="budgetDeficitConverter" />
-	</bean>
-
-	<bean id="realGDPConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.RealGDPData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicRealGDPPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="unemploymentConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.UnemploymentData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicUnemploymentPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="tradeBalanceConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.TradeBalanceData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicTradeBalancePopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="totalReserveAssetsConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.TotalReserveAssetsData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicTotalReserveAssetsPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="saudiStockMarketConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiStockMarketData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicSaudiStockMarketPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="populationConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.PopulationData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicPopulationPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="moneySupplyConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.MoneySupplyData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicMoneySupplyPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="interestRateConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InterestRateData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicInterestRatePopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="inflationConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InflationData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicInflationPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="governmentReserveConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GovernmentReserveData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicGovernmentReservePopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="governmentDebtConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GovernmentDebtData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicGovernmentDebtPPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="gDPPerCapitaConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GDPPerCapitaData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicGDPPerCapitaPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="fDIinflowConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.FDIinflowData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicFDIinflowPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="exchangeRateConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ExchangeRateData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicExchangeRatePopulator"/>
-
-			</list>
-		</property>
+		<property name="dashboardConverter" ref="dashboardConverter" />
 	</bean>
 
 	<bean id="creditRatingConverter" parent="abstractPopulatingConverter">
@@ -2087,154 +1919,42 @@
 		</property>
 	</bean>
 
-	<bean id="budgetDeficitConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.BudgetDeficitData"/>
+	<bean id="dashboardConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.DashboardData"/>
 
 		<property name="populators">
 			<list>
-				<ref bean="economicBudgetDeficitPopulator"/>
+				<ref bean="economicDashboardPopulator"/>
 
 			</list>
 		</property>
 	</bean>
 
-
-
-
-
-	<bean id="economicRealGDPPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.RealGDPPopulator" >	</bean>
-	<bean id="economicUnemploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.UnemploymentPopulator" >	</bean>
-	<bean id="economicTradeBalancePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.TradeBalancePopulator" >	</bean>
-	<bean id="economicTotalReserveAssetsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.TotalReserveAssetsPopulator" >	</bean>
-	<bean id="economicSaudiStockMarketPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiStockMarketPopulator" >	</bean>
-	<bean id="economicPopulationPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.PopulationPopulator" >	</bean>
-	<bean id="economicMoneySupplyPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.MoneySupplyPopulator" >	</bean>
-	<bean id="economicInterestRatePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InterestRatePopulator" >	</bean>
-	<bean id="economicInflationPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InflationPopulator" >	</bean>
-	<bean id="economicGovernmentReservePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GovernmentReservePopulator" >	</bean>
-	<bean id="economicGovernmentDebtPPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GovernmentDebtPopulator" >	</bean>
-	<bean id="economicGDPPerCapitaPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GDPPerCapitaPopulator" >	</bean>
-	<bean id="economicFDIinflowPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.FDIinflowPopulator" >	</bean>
-	<bean id="economicExchangeRatePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ExchangeRatePopulator" >	</bean>
+	<bean id="economicDashboardPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.DashboardPopulator" >	</bean>
 	<bean id="economicCreditRatingPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.CreditRatingPopulator" >	</bean>
-	<bean id="economicBudgetDeficitPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.BudgetDeficitPopulator" >	</bean>
 
 	<bean id="saInternationalIndicesFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultSAInternationalIndicesFacade">
 		<property name="saInternationalIndicesService" ref="saInternationalIndicesService" />
-		<property name="easeOfProtectingMinorityInvestorsConverter" ref="easeOfProtectingMinorityInvestorsConverter"/>
-		<property name="easeOfStartingBusinessConverter" ref="easeOfStartingBusinessConverter" />
-		<property name="economicFreedomIndexConverter" ref="economicFreedomIndexConverter" />
-		<property name="eGovernmentDevelopmentIndexConverter" ref="eGovernmentDevelopmentIndexConverter" />
-		<property name="globalCompetitivenessReportConverter" ref="globalCompetitivenessReportConverter" />
-		<property name="globalInnovationIndexConverter" ref="globalInnovationIndexConverter" />
-		<property name="legatumProsperityIndexConverter" ref="legatumProsperityIndexConverter" />
-		<property name="logisticsPerformanceIndexConverter" ref="logisticsPerformanceIndexConverter" />
+		<property name="saInternationalIndicesConverter" ref="saInternationalIndicesConverter"/>
 	</bean>
 
-	<bean id="easeOfProtectingMinorityInvestorsConverter" parent="abstractPopulatingConverter">
+	<bean id="saInternationalIndicesConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
 
 		<property name="populators">
 			<list>
-				<ref bean="economicEaseOfProtectingMinorityInvestorsPopulator"/>
+				<ref bean="saInternationalIndicesPopulator"/>
 			</list>
 		</property>
 	</bean>
 
-		<bean id="easeOfStartingBusinessConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicEaseOfStartingBusinessPopulator"/>
-			</list>
-		</property>
-	</bean>
-
-
-		<bean id="economicFreedomIndexConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicEconomicFreedomIndexPopulator"/>
-			</list>
-		</property>
-	</bean>
-
-
-		<bean id="eGovernmentDevelopmentIndexConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicEGovernmentDevelopmentIndexPopulator"/>
-			</list>
-		</property>
-	</bean>
-
-
-		<bean id="globalCompetitivenessReportConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicGlobalCompetitivenessReportPopulator"/>
-			</list>
-		</property>
-	</bean>
-
-		<bean id="globalInnovationIndexConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicGlobalInnovationIndexPopulator"/>
-			</list>
-		</property>
-	</bean>
-
-
-		<bean id="legatumProsperityIndexConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicLegatumProsperityIndexPopulator"/>
-			</list>
-		</property>
-	</bean>
-
-
-		<bean id="logisticsPerformanceIndexConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SAInternationalIndicesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="economicLogisticsPerformanceIndexPopulator"/>
-			</list>
-		</property>
-	</bean>
-
-	<bean id="economicEaseOfProtectingMinorityInvestorsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EaseOfProtectingMinorityInvestorsPopulator" >	</bean>
-	<bean id="economicEaseOfStartingBusinessPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EaseOfStartingBusinessPopulator" >	</bean>
-	<bean id="economicEconomicFreedomIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EconomicFreedomIndexPopulator" >	</bean>
-	<bean id="economicEGovernmentDevelopmentIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EGovernmentDevelopmentIndexPopulator" >	</bean>
-	<bean id="economicGlobalCompetitivenessReportPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GlobalCompetitivenessReportPopulator" >	</bean>
-	<bean id="economicGlobalInnovationIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GlobalInnovationIndexPopulator" >	</bean>
-	<bean id="economicLegatumProsperityIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.LegatumProsperityIndexPopulator" >	</bean>
-	<bean id="economicLogisticsPerformanceIndexPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.LogisticsPerformanceIndexPopulator" >	</bean>
-
+	<bean id="saInternationalIndicesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SAInternationalIndicesPopulator" >	</bean>
 	<bean id="infraLogisticsFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultInfraLogisticsFacade">
 		<property name="infraLogisticsService" ref="infraLogisticsService" />
 		<property name="infraLogisticsLandingConverter" ref="infraLogisticsLandingConverter" />
-		<property name="infrastructureConverter" ref="infrastructureConverter" />
 		<property name="lengthOfNetworkConverter" ref="lengthOfNetworkConverter" />
-		<property name="employmentConverter" ref="employmentConverter" />
-		<property name="totalAreaConverter" ref="totalAreaConverter" />
-		<property name="housingFacilitiesConverter" ref="housingFacilitiesConverter" />
-		<property name="industrialCitiesConverter" ref="industrialCitiesConverter" />
 		<property name="privateCitiesConverter" ref="privateCitiesConverter" />
+		<property name="infrastructureLogisticsConverter" ref="infrastructureLogisticsConverter" />
 	</bean>
 
 	<bean id="infraLogisticsLandingConverter" parent="abstractPopulatingConverter">
@@ -2248,16 +1968,6 @@
 		</property>
 	</bean>
 
-	<bean id="infrastructureConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InfrastructureData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="infrastructurePopulator"/>
-
-			</list>
-		</property>
-	</bean>
 
 	<bean id="lengthOfNetworkConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.LengthOfNetworkData"/>
@@ -2265,50 +1975,6 @@
 		<property name="populators">
 			<list>
 				<ref bean="lengthOfNetworkPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="employmentConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.EmploymentData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="employmentPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="totalAreaConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.TotalAreaData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="totalAreaPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="housingFacilitiesConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.HousingFacilitiesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="housingFacilitiesPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="industrialCitiesConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.IndustrialCitiesData"/>
-
-		<property name="populators">
-			<list>
-				<ref bean="industrialCitiesPopulator"/>
 
 			</list>
 		</property>
@@ -2325,83 +1991,81 @@
 		</property>
 	</bean>
 
+	<bean id="infrastructureLogisticsConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.InfrastructureLogisticsData"/>
+
+		<property name="populators">
+			<list>
+				<ref bean="infrastructureLogisticsPopulator"/>
+
+			</list>
+		</property>
+	</bean>
+
 	<bean id="infraLogisticsLandingPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InfraLogisticsLandingPopulator" >	</bean>
-	<bean id="infrastructurePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InfrastructurePopulator" >	</bean>
 	<bean id="lengthOfNetworkPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.LengthOfNetworkPopulator" >	</bean>
-	<bean id="employmentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EmploymentPopulator" >	</bean>
-	<bean id="totalAreaPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.TotalAreaPopulator" >	</bean>
-	<bean id="housingFacilitiesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.HousingFacilitiesPopulator" >	</bean>
-	<bean id="industrialCitiesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.IndustrialCitiesPopulator" >	</bean>
 	<bean id="privateCitiesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.PrivateCitiesPopulator" >	</bean>
+	<bean id="infrastructureLogisticsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.InfrastructureLogisticsPopulator" >	</bean>
+
 
 	<bean id="saudiEconomicSectorsFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultSaudiEconomicSectorsFacade">
 		<property name="saudiEconomicSectorsService" ref="saudiEconomicSectorsService" />
-		<property name="realSectorConverter" ref="realSectorConverter"/>
-		<property name="monetarySectorConverter" ref="monetarySectorConverter" />
-		<property name="fiscalSectorConverter" ref="fiscalSectorConverter" />
-		<property name="externalSectorConverter" ref="externalSectorConverter" />
+		<property name="economicSectorConverter" ref="economicSectorConverter"/>
+		<property name="populationDistributionConverter" ref="populationDistributionConverter"/>
+		<property name="genderDistributionConverter" ref="genderDistributionConverter"/>
+		<property name="regionDistributionConverter" ref="regionDistributionConverter"/>
+
 		<property name="graduatesByDegreeConverter" ref="graduatesByDegreeConverter" />
-		<property name="saudiPopulationConverter" ref="saudiPopulationConverter" />
-		<property name="populationByRegionConverter" ref="populationByRegionConverter" />
-		<property name="saudiEmploymentByRegionConverter" ref="saudiEmploymentByRegionConverter" />
-		<property name="nonSaudiEmploymentByRegionConverter" ref="nonSaudiEmploymentByRegionConverter" />
-		<property name="saudiEmploymentConverter" ref="saudiEmploymentConverter" />
-		<property name="nonSaudiEmploymentConverter" ref="nonSaudiEmploymentConverter" />
-		<property name="avgMonthlyWagesConverter" ref="avgMonthlyWagesConverter" />
-		<property name="growthrateWagesConverter" ref="growthrateWagesConverter" />
-		<property name="labourPrivateSectorConverter" ref="labourPrivateSectorConverter" />
-		<property name="saudiUnemploymentConverter" ref="saudiUnemploymentConverter" />
-		<property name="nonSaudiUnemploymentConverter" ref="nonSaudiUnemploymentConverter" />
-		<property name="overallUnemploymentConverter" ref="overallUnemploymentConverter" />
 	</bean>
-
-	<bean id="realSectorConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.RealSectorData"/>
+	<!-- new converters and populators start-->
+	<bean id="economicSectorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.EconomicSectorData"/>
 		<property name="populators">
 			<list>
-				<ref bean="realSectorPopulator"/>
+				<ref bean="economicSectorPopulator"/>
+
+			</list>
+		</property>
+	</bean>
+	<bean id="economicSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.EconomicSectorPopulator" >	</bean>
+
+	<bean id="populationDistributionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.PopulationDistributionData"/>
+		<property name="populators">
+			<list>
+				<ref bean="populationDistributionPopulator"/>
 
 			</list>
 		</property>
 	</bean>
 
-	<bean id="realSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.RealSectorPopulator" >	</bean>
+	<bean id="populationDistributionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.PopulationDistributionPopulator" >	</bean>
 
-	<bean id="monetarySectorConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.MonetarySectorData"/>
+	<bean id="genderDistributionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GenderDistributionData"/>
 		<property name="populators">
 			<list>
-				<ref bean="monetarySectorPopulator"/>
+				<ref bean="genderDistributionPopulator"/>
+
+			</list>
+		</property>
+	</bean>
+	<bean id="genderDistributionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GenderDistributionPopulator" >	</bean>
+
+	<bean id="regionDistributionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.RegionDistributionData"/>
+		<property name="populators">
+			<list>
+				<ref bean="regionDistributionPopulator"/>
 
 			</list>
 		</property>
 	</bean>
 
-	<bean id="monetarySectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.MonetarySectorPopulator" >	</bean>
+	<bean id="regionDistributionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.RegionDistributionPopulator" >	</bean>
 
-	<bean id="fiscalSectorConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.FiscalSectorData"/>
-		<property name="populators">
-			<list>
-				<ref bean="fiscalSectorPopulator"/>
 
-			</list>
-		</property>
-	</bean>
-
-	<bean id="fiscalSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.FiscalSectorPopulator" >	</bean>
-
-	<bean id="externalSectorConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ExternalSectorData"/>
-		<property name="populators">
-			<list>
-				<ref bean="externalSectorPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="externalSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ExternalSectorPopulator" >	</bean>
+	<!-- new converters and populators end-->
 
 	<bean id="graduatesByDegreeConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GraduatesByDegreeData"/>
@@ -2415,267 +2079,56 @@
 
 	<bean id="graduatesByDegreePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GraduatesByDegreePopulator" >	</bean>
 
-	<bean id="saudiPopulationConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiPopulationData"/>
-		<property name="populators">
-			<list>
-				<ref bean="saudiPopulationPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="saudiPopulationPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiPopulationPopulator" >	</bean>
-
-	<bean id="populationByRegionConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.PopulationByRegionData"/>
-		<property name="populators">
-			<list>
-				<ref bean="populationByRegionPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-
-	<bean id="populationByRegionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.PopulationByRegionPopulator" >	</bean>
-
-	<bean id="saudiEmploymentByRegionConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiEmploymentByRegionData"/>
-		<property name="populators">
-			<list>
-				<ref bean="saudiEmploymentByRegionPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="saudiEmploymentByRegionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiEmploymentByRegionPopulator" >	</bean>
-
-	<bean id="nonSaudiEmploymentByRegionConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentByRegionData"/>
-		<property name="populators">
-			<list>
-				<ref bean="nonSaudiEmploymentByRegionPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="nonSaudiEmploymentByRegionPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.NonSaudiEmploymentByRegionPopulator" >	</bean>
-
-	<bean id="saudiEmploymentConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiEmploymentData"/>
-		<property name="populators">
-			<list>
-				<ref bean="saudiEmploymentPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="saudiEmploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiEmploymentPopulator" >	</bean>
-
-	<bean id="nonSaudiEmploymentConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NonSaudiEmploymentData"/>
-		<property name="populators">
-			<list>
-				<ref bean="nonSaudiEmploymentPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="nonSaudiEmploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.NonSaudiEmploymentPopulator" >	</bean>
-
-	<bean id="avgMonthlyWagesConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AvgMonthlyWagesData"/>
-		<property name="populators">
-			<list>
-				<ref bean="avgMonthlyWagesPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="avgMonthlyWagesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AvgMonthlyWagesPopulator" >	</bean>
-
-	<bean id="growthrateWagesConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.GrowthrateWagesData"/>
-		<property name="populators">
-			<list>
-				<ref bean="growthrateWagesPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="growthrateWagesPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.GrowthrateWagesPopulator" >	</bean>
-
-	<bean id="labourPrivateSectorConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.LabourPrivateSectorData"/>
-		<property name="populators">
-			<list>
-				<ref bean="labourPrivateSectorPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="labourPrivateSectorPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.LabourPrivateSectorPopulator" >	</bean>
-
-	<bean id="saudiUnemploymentConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SaudiUnemploymentData"/>
-		<property name="populators">
-			<list>
-				<ref bean="saudiUnemploymentPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="saudiUnemploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.SaudiUnemploymentPopulator" >	</bean>
-
-	<bean id="nonSaudiUnemploymentConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NonSaudiUnemploymentData"/>
-		<property name="populators">
-			<list>
-				<ref bean="nonSaudiUnemploymentPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="nonSaudiUnemploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.NonSaudiUnemploymentPopulator" >	</bean>
-
-	<bean id="overallUnemploymentConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.OverallUnemploymentData"/>
-		<property name="populators">
-			<list>
-				<ref bean="overallUnemploymentPopulator"/>
-
-			</list>
-		</property>
-	</bean>
-	<bean id="overallUnemploymentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.OverallUnemploymentPopulator" >	</bean>
-
-
 	<bean id="investmentDataFacade" class="com.sap.ibso.eservices.facades.sagia.economic.impl.DefaultInvestmentDataFacade">
 		<property name="investmentDataService" ref="investmentDataService" />
-		<property name="annualValueConverter" ref="annualValueConverter"/>
-		<property name="annualGrowthConverter" ref="annualGrowthConverter" />
-		<property name="quarterlyValueConverter" ref="quarterlyValueConverter" />
-		<property name="quarterlyGrowthConverter" ref="quarterlyGrowthConverter" />
-		<property name="foreignInvestmentValueConverter" ref="foreignInvestmentValueConverter" />
-		<property name="foreignInvestmentGrowthConverter" ref="foreignInvestmentGrowthConverter" />
-		<property name="annualFundAssetsConverter" ref="annualFundAssetsConverter" />
-		<property name="quarterlyFundAssetsConverter" ref="quarterlyFundAssetsConverter" />
-		<property name="numberOfCommercialRegisterConverter" ref="numberOfCommercialRegisterConverter" />
-		<property name="capitalOfCommercialRegisterConverter" ref="capitalOfCommercialRegisterConverter" />
-		<property name="capitalInformationConverter" ref="capitalInformationConverter" />
+		<property name="aqValueGrowthConverter" ref="aqValueGrowthConverter"/>
+		<property name="foreignInvestmentConverter" ref="foreignInvestmentConverter" />
+		<property name="fundAssetsConverter" ref="fundAssetsConverter" />
+		<property name="commercialRegisterConverter" ref="commercialRegisterConverter" />
+
 	</bean>
 
-	<bean id="annualValueConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AnnualValueData"/>
+	<bean id="aqValueGrowthConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AQValueGrowthData"/>
 		<property name="populators">
 			<list>
-				<ref bean="annualValuePopulator"/>
+				<ref bean="aqValueGrowthPopulator"/>
 			</list>
 		</property>
 	</bean>
-	<bean id="annualValuePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AnnualValuePopulator" >	</bean>
+	<bean id="aqValueGrowthPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AQValueGrowthPopulator" >	</bean>
 
-
-	<bean id="annualGrowthConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AnnualGrowthData"/>
+	<bean id="foreignInvestmentConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ForeignInvestmentData"/>
 		<property name="populators">
 			<list>
-				<ref bean="annualGrowthPopulator"/>
+				<ref bean="foreignInvestmentPopulator"/>
 			</list>
 		</property>
 	</bean>
-	<bean id="annualGrowthPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AnnualGrowthPopulator" >	</bean>
+	<bean id="foreignInvestmentPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ForeignInvestmentPopulator" >	</bean>
 
-	<bean id="quarterlyValueConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.QuarterlyValueData"/>
+	<bean id="fundAssetsConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.FundAssetsData"/>
 		<property name="populators">
 			<list>
-				<ref bean="quarterlyValuePopulator"/>
+				<ref bean="fundAssetsPopulator"/>
 			</list>
 		</property>
 	</bean>
-	<bean id="quarterlyValuePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.QuarterlyValuePopulator" >	</bean>
+	<bean id="fundAssetsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.FundAssetsPopulator" >	</bean>
 
-	<bean id="quarterlyGrowthConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.QuarterlyGrowthData"/>
+	<bean id="commercialRegisterConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.CommercialRegisterData"/>
 		<property name="populators">
 			<list>
-				<ref bean="quarterlyGrowthPopulator"/>
+				<ref bean="commercialRegisterPopulator"/>
 			</list>
 		</property>
 	</bean>
-	<bean id="quarterlyGrowthPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.QuarterlyGrowthPopulator" >	</bean>
-
-	<bean id="foreignInvestmentValueConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ForeignInvestmentValueData"/>
-		<property name="populators">
-			<list>
-				<ref bean="foreignInvestmentValuePopulator"/>
-			</list>
-		</property>
-	</bean>
-	<bean id="foreignInvestmentValuePopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ForeignInvestmentValuePopulator" >	</bean>
-
-	<bean id="foreignInvestmentGrowthConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.ForeignInvestmentGrowthData"/>
-		<property name="populators">
-			<list>
-				<ref bean="foreignInvestmentGrowthPopulator"/>
-			</list>
-		</property>
-	</bean>
-	<bean id="foreignInvestmentGrowthPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.ForeignInvestmentGrowthPopulator" >	</bean>
+	<bean id="commercialRegisterPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.CommercialRegisterPopulator" >	</bean>
 
 
-	<bean id="annualFundAssetsConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.AnnualFundAssetsData"/>
-		<property name="populators">
-			<list>
-				<ref bean="annualFundAssetsPopulator"/>
-			</list>
-		</property>
-	</bean>
-	<bean id="annualFundAssetsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.AnnualFundAssetsPopulator" >	</bean>
-
-	<bean id="quarterlyFundAssetsConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.QuarterlyFundAssetsData"/>
-		<property name="populators">
-			<list>
-				<ref bean="quarterlyFundAssetsPopulator"/>
-			</list>
-		</property>
-	</bean>
-	<bean id="quarterlyFundAssetsPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.QuarterlyFundAssetsPopulator" >	</bean>
-
-	<bean id="numberOfCommercialRegisterConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NumberOfCommercialRegisterData"/>
-		<property name="populators">
-			<list>
-				<ref bean="numberOfCommercialRegisterPopulator"/>
-			</list>
-		</property>
-	</bean>
-	<bean id="numberOfCommercialRegisterPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.NumberOfCommercialRegisterPopulator" >	</bean>
-
-	<bean id="capitalOfCommercialRegisterConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.CapitalOfCommercialRegisterData"/>
-		<property name="populators">
-			<list>
-				<ref bean="capitalOfCommercialRegisterPopulator"/>
-			</list>
-		</property>
-	</bean>
-	<bean id="capitalOfCommercialRegisterPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.CapitalOfCommercialRegisterPopulator" >	</bean>
-
-	<bean id="capitalInformationConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.CapitalInformationData"/>
-		<property name="populators">
-			<list>
-				<ref bean="capitalInformationPopulator"/>
-			</list>
-		</property>
-	</bean>
-	<bean id="capitalInformationPopulator"  class="com.sap.ibso.eservices.facades.economic.populators.CapitalInformationPopulator" >	</bean>
 
 	<!-- Economic Highlights Changes Ends -->
 

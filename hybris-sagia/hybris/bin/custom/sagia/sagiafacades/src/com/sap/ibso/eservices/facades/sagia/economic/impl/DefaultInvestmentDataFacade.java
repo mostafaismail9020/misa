@@ -1,50 +1,29 @@
 package com.sap.ibso.eservices.facades.sagia.economic.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.sap.ibso.eservices.core.model.AnnualFundAssetsModel;
-import com.sap.ibso.eservices.core.model.AnnualGrowthModel;
-import com.sap.ibso.eservices.core.model.AnnualValueModel;
-import com.sap.ibso.eservices.core.model.CapitalInformationModel;
-import com.sap.ibso.eservices.core.model.NumberOfCommercialRegisterModel;
-import com.sap.ibso.eservices.core.model.CapitalOfCommercialRegisterModel;
-import com.sap.ibso.eservices.core.model.ForeignInvestmentGrowthModel;
-import com.sap.ibso.eservices.core.model.ForeignInvestmentValueModel;
-import com.sap.ibso.eservices.core.model.QuarterlyFundAssetsModel;
-import com.sap.ibso.eservices.core.model.QuarterlyGrowthModel;
-import com.sap.ibso.eservices.core.model.QuarterlyValueModel;
+import com.sap.ibso.eservices.core.model.AQValueGrowthModel;
+import com.sap.ibso.eservices.core.model.CommercialRegisterModel;
+import com.sap.ibso.eservices.core.model.ForeignInvestmentModel;
+import com.sap.ibso.eservices.core.model.FundAssetsModel;
 import com.sap.ibso.eservices.core.sagia.services.InvestmentDataService;
-import com.sap.ibso.eservices.facades.data.AnnualFundAssetsData;
-import com.sap.ibso.eservices.facades.data.AnnualGrowthData;
-import com.sap.ibso.eservices.facades.data.AnnualValueData;
-import com.sap.ibso.eservices.facades.data.CapitalInformationData;
-import com.sap.ibso.eservices.facades.data.NumberOfCommercialRegisterData;
-import com.sap.ibso.eservices.facades.data.CapitalOfCommercialRegisterData;
-import com.sap.ibso.eservices.facades.data.ForeignInvestmentGrowthData;
-import com.sap.ibso.eservices.facades.data.ForeignInvestmentValueData;
-import com.sap.ibso.eservices.facades.data.QuarterlyFundAssetsData;
-import com.sap.ibso.eservices.facades.data.QuarterlyGrowthData;
-import com.sap.ibso.eservices.facades.data.QuarterlyValueData;
+import com.sap.ibso.eservices.facades.data.AQValueGrowthData;
+import com.sap.ibso.eservices.facades.data.CommercialRegisterData;
+import com.sap.ibso.eservices.facades.data.ForeignInvestmentData;
+import com.sap.ibso.eservices.facades.data.FundAssetsData;
 import com.sap.ibso.eservices.facades.sagia.economic.InvestmentDataFacade;
-
 import de.hybris.platform.servicelayer.dto.converter.Converter;
-import de.hybris.platform.servicelayer.model.ModelService;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 
 	private InvestmentDataService investmentDataService;
-	private Converter<AnnualValueModel, AnnualValueData> annualValueConverter;
-	private Converter<AnnualGrowthModel, AnnualGrowthData> annualGrowthConverter;
-	private Converter<QuarterlyValueModel, QuarterlyValueData> quarterlyValueConverter;
-	private Converter<QuarterlyGrowthModel, QuarterlyGrowthData> quarterlyGrowthConverter;
-	private Converter<ForeignInvestmentValueModel, ForeignInvestmentValueData> foreignInvestmentValueConverter;
-	private Converter<ForeignInvestmentGrowthModel, ForeignInvestmentGrowthData> foreignInvestmentGrowthConverter;
-	private Converter<AnnualFundAssetsModel, AnnualFundAssetsData> annualFundAssetsConverter;
-	private Converter<NumberOfCommercialRegisterModel, NumberOfCommercialRegisterData> numberOfCommercialRegisterConverter;
-	private Converter<CapitalOfCommercialRegisterModel, CapitalOfCommercialRegisterData> capitalOfCommercialRegisterConverter;
-	private Converter<CapitalInformationModel, CapitalInformationData> capitalInformationConverter;
-	private Converter<QuarterlyFundAssetsModel, QuarterlyFundAssetsData> quarterlyFundAssetsConverter;
+	private Converter<AQValueGrowthModel, AQValueGrowthData> aqValueGrowthConverter;
+	private Converter<ForeignInvestmentModel, ForeignInvestmentData> foreignInvestmentConverter;
+	private Converter<FundAssetsModel, FundAssetsData> fundAssetsConverter;
+	private Converter<CommercialRegisterModel, CommercialRegisterData> commercialRegisterConverter;
 
 	
 	/**
@@ -61,181 +40,52 @@ public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 		this.investmentDataService = investmentDataService;
 	}
 
-	/**
-	 * @return the annualValueConverter
-	 */
-	public Converter<AnnualValueModel, AnnualValueData> getAnnualValueConverter() {
-		return annualValueConverter;
+	public Converter<AQValueGrowthModel, AQValueGrowthData> getAqValueGrowthConverter() {
+		return aqValueGrowthConverter;
 	}
 
-	/**
-	 * @param annualValueConverter the annualValueConverter to set
-	 */
-	public void setAnnualValueConverter(Converter<AnnualValueModel, AnnualValueData> annualValueConverter) {
-		this.annualValueConverter = annualValueConverter;
+	public void setAqValueGrowthConverter(Converter<AQValueGrowthModel, AQValueGrowthData> aqValueGrowthConverter) {
+		this.aqValueGrowthConverter = aqValueGrowthConverter;
 	}
 
-	/**
-	 * @return the annualGrowthConverter
-	 */
-	public Converter<AnnualGrowthModel, AnnualGrowthData> getAnnualGrowthConverter() {
-		return annualGrowthConverter;
+	public Converter<ForeignInvestmentModel, ForeignInvestmentData> getForeignInvestmentConverter() {
+		return foreignInvestmentConverter;
 	}
 
-	/**
-	 * @param annualGrowthConverter the annualGrowthConverter to set
-	 */
-	public void setAnnualGrowthConverter(Converter<AnnualGrowthModel, AnnualGrowthData> annualGrowthConverter) {
-		this.annualGrowthConverter = annualGrowthConverter;
+	public void setForeignInvestmentConverter(Converter<ForeignInvestmentModel, ForeignInvestmentData> foreignInvestmentConverter) {
+		this.foreignInvestmentConverter = foreignInvestmentConverter;
 	}
 
-	/**
-	 * @return the quarterlyValueConverter
-	 */
-	public Converter<QuarterlyValueModel, QuarterlyValueData> getQuarterlyValueConverter() {
-		return quarterlyValueConverter;
+	public Converter<FundAssetsModel, FundAssetsData> getFundAssetsConverter() {
+		return fundAssetsConverter;
 	}
 
-	/**
-	 * @param quarterlyValueConverter the quarterlyValueConverter to set
-	 */
-	public void setQuarterlyValueConverter(Converter<QuarterlyValueModel, QuarterlyValueData> quarterlyValueConverter) {
-		this.quarterlyValueConverter = quarterlyValueConverter;
+	public void setFundAssetsConverter(Converter<FundAssetsModel, FundAssetsData> fundAssetsConverter) {
+		this.fundAssetsConverter = fundAssetsConverter;
 	}
 
-	/**
-	 * @return the quarterlyGrowthConverter
-	 */
-	public Converter<QuarterlyGrowthModel, QuarterlyGrowthData> getQuarterlyGrowthConverter() {
-		return quarterlyGrowthConverter;
+	public Converter<CommercialRegisterModel, CommercialRegisterData> getCommercialRegisterConverter() {
+		return commercialRegisterConverter;
 	}
 
-	/**
-	 * @param quarterlyGrowthConverter the quarterlyGrowthConverter to set
-	 */
-	public void setQuarterlyGrowthConverter(Converter<QuarterlyGrowthModel, QuarterlyGrowthData> quarterlyGrowthConverter) {
-		this.quarterlyGrowthConverter = quarterlyGrowthConverter;
-	}
-
-	/**
-	 * @return the foreignInvestmentValueConverter
-	 */
-	public Converter<ForeignInvestmentValueModel, ForeignInvestmentValueData> getForeignInvestmentValueConverter() {
-		return foreignInvestmentValueConverter;
-	}
-
-	/**
-	 * @param foreignInvestmentValueConverter the foreignInvestmentValueConverter to set
-	 */
-	public void setForeignInvestmentValueConverter(
-			Converter<ForeignInvestmentValueModel, ForeignInvestmentValueData> foreignInvestmentValueConverter) {
-		this.foreignInvestmentValueConverter = foreignInvestmentValueConverter;
-	}
-
-	/**
-	 * @return the foreignInvestmentGrowthConverter
-	 */
-	public Converter<ForeignInvestmentGrowthModel, ForeignInvestmentGrowthData> getForeignInvestmentGrowthConverter() {
-		return foreignInvestmentGrowthConverter;
-	}
-
-	/**
-	 * @param foreignInvestmentGrowthConverter the foreignInvestmentGrowthConverter to set
-	 */
-	public void setForeignInvestmentGrowthConverter(
-			Converter<ForeignInvestmentGrowthModel, ForeignInvestmentGrowthData> foreignInvestmentGrowthConverter) {
-		this.foreignInvestmentGrowthConverter = foreignInvestmentGrowthConverter;
-	}
-
-	/**
-	 * @return the annualFundAssetsConverter
-	 */
-	public Converter<AnnualFundAssetsModel, AnnualFundAssetsData> getAnnualFundAssetsConverter() {
-		return annualFundAssetsConverter;
-	}
-
-	/**
-	 * @param annualFundAssetsConverter the annualFundAssetsConverter to set
-	 */
-	public void setAnnualFundAssetsConverter(
-			Converter<AnnualFundAssetsModel, AnnualFundAssetsData> annualFundAssetsConverter) {
-		this.annualFundAssetsConverter = annualFundAssetsConverter;
-	}
-
-	/**
-	 * @return the numberOfCommercialRegisterConverter
-	 */
-	public Converter<NumberOfCommercialRegisterModel, NumberOfCommercialRegisterData> getNumberOfCommercialRegisterConverter() {
-		return numberOfCommercialRegisterConverter;
-	}
-
-	/**
-	 * @param numberOfCommercialRegisterConverter the numberOfCommercialRegisterConverter to set
-	 */
-	public void setNumberOfCommercialRegisterConverter(
-			Converter<NumberOfCommercialRegisterModel, NumberOfCommercialRegisterData> numberOfCommercialRegisterConverter) {
-		this.numberOfCommercialRegisterConverter = numberOfCommercialRegisterConverter;
-	}
-
-	/**
-	 * @return the capitalOfCommercialRegisterConverter
-	 */
-	public Converter<CapitalOfCommercialRegisterModel, CapitalOfCommercialRegisterData> getCapitalOfCommercialRegisterConverter() {
-		return capitalOfCommercialRegisterConverter;
-	}
-
-	/**
-	 * @param capitalOfCommercialRegisterConverter the capitalOfCommercialRegisterConverter to set
-	 */
-	public void setCapitalOfCommercialRegisterConverter(
-			Converter<CapitalOfCommercialRegisterModel, CapitalOfCommercialRegisterData> capitalOfCommercialRegisterConverter) {
-		this.capitalOfCommercialRegisterConverter = capitalOfCommercialRegisterConverter;
-	}
-
-	/**
-	 * @return the capitalInformationConverter
-	 */
-	public Converter<CapitalInformationModel, CapitalInformationData> getCapitalInformationConverter() {
-		return capitalInformationConverter;
-	}
-
-	/**
-	 * @param capitalInformationConverter the capitalInformationConverter to set
-	 */
-	public void setCapitalInformationConverter(
-			Converter<CapitalInformationModel, CapitalInformationData> capitalInformationConverter) {
-		this.capitalInformationConverter = capitalInformationConverter;
-	}
-
-	/**
-	 * @return the quarterlyFundAssetsConverter
-	 */
-	public Converter<QuarterlyFundAssetsModel, QuarterlyFundAssetsData> getQuarterlyFundAssetsConverter() {
-		return quarterlyFundAssetsConverter;
-	}
-
-	/**
-	 * @param quarterlyFundAssetsConverter the quarterlyFundAssetsConverter to set
-	 */
-	public void setQuarterlyFundAssetsConverter(
-			Converter<QuarterlyFundAssetsModel, QuarterlyFundAssetsData> quarterlyFundAssetsConverter) {
-		this.quarterlyFundAssetsConverter = quarterlyFundAssetsConverter;
+	public void setCommercialRegisterConverter(Converter<CommercialRegisterModel, CommercialRegisterData> commercialRegisterConverter) {
+		this.commercialRegisterConverter = commercialRegisterConverter;
 	}
 
 	@Override
-	public List<AnnualValueData> getAnnualValueData(String sector, String period, String startYear, String endYear) {
+	public List<AQValueGrowthData> getAnnualValueData(String sector, String period, String startYear, String endYear) {
 		{
-			final List<AnnualValueModel> annualValuemodelList = getInvestmentDataService().getAnnualValueModel(sector,
+			final List<AQValueGrowthModel> annualValuemodelList = getInvestmentDataService().getAnnualValueModel(sector,
 					period, startYear, endYear);
 
-			final List<AnnualValueData> annualValueListData = new ArrayList<AnnualValueData>();
+			final List<AQValueGrowthData> aqValueGrowthDataList = new ArrayList<>();
 
-			final AnnualValueModel filteredModel = new AnnualValueModel();
+			final AQValueGrowthModel filteredModel = new AQValueGrowthModel();
 
 			if (null != annualValuemodelList) {
 				if (sector != null) {
 					String[] sectorArray = sector.split(",");
-					for (AnnualValueModel valueModel : annualValuemodelList) {
+					for (AQValueGrowthModel valueModel : annualValuemodelList) {
 						for (String selectedSector : sectorArray) {
 							if (null != selectedSector) {
 								switch (selectedSector) {
@@ -416,32 +266,32 @@ public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 
 							}
 						}
-						final AnnualValueData annualValueData = getAnnualValueConverter().convert(filteredModel);
-						annualValueListData.add(annualValueData);
+						final AQValueGrowthData aqValueGrowthData = getAqValueGrowthConverter().convert(filteredModel);
+						aqValueGrowthDataList.add(aqValueGrowthData);
 					}
 
 				}
 			}
-			return annualValueListData;
+			return aqValueGrowthDataList;
 		}
 
 	}
 
 	@Override
-	public List<AnnualGrowthData> getAnnualGrowthData(String sector, String period, String startYear, String endYear) {
+	public List<AQValueGrowthData> getAnnualGrowthData(String sector, String period, String startYear, String endYear) {
 
 		{
-			final List<AnnualGrowthModel> annualGrowthmodelList = getInvestmentDataService()
+			final List<AQValueGrowthModel> aqGrowthmodelList = getInvestmentDataService()
 					.getAnnualGrowthModel(sector, period, startYear, endYear);
 
-			final List<AnnualGrowthData> annualGrowthListData = new ArrayList<AnnualGrowthData>();
+			final List<AQValueGrowthData> aqValueGrowthDataList = new ArrayList<>();
 
-			final AnnualGrowthModel filteredModel = new AnnualGrowthModel();
+			final AQValueGrowthModel filteredModel = new AQValueGrowthModel();
 
-			if (null != annualGrowthmodelList) {
+			if (null != aqGrowthmodelList) {
 				if (sector != null) {
 					String[] sectorArray = sector.split(",");
-					for (AnnualGrowthModel valueModel : annualGrowthmodelList) {
+					for (AQValueGrowthModel valueModel : aqGrowthmodelList) {
 						for (String selectedSector : sectorArray) {
 							if (null != selectedSector) {
 								switch (selectedSector) {
@@ -614,33 +464,33 @@ public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 
 							}
 						}
-						final AnnualGrowthData annualGrowthData = getAnnualGrowthConverter().convert(filteredModel);
-						annualGrowthListData.add(annualGrowthData);
+						final AQValueGrowthData aqValueGrowth = getAqValueGrowthConverter().convert(filteredModel);
+						aqValueGrowthDataList.add(aqValueGrowth);
 					}
 
 				}
 			}
-			return annualGrowthListData;
+			return aqValueGrowthDataList;
 		}
 
 	}
 
 	@Override
-	public List<QuarterlyValueData> getQuarterlyValueData(String sector, String period, String startYear,
-			String endYear) {
+	public List<AQValueGrowthData> getQuarterlyValueData(String sector, String period, String startYear,
+														 String endYear) {
 
 		{
-			final List<QuarterlyValueModel> quarterlyValuemodelList = getInvestmentDataService()
+			final List<AQValueGrowthModel> quarterlyValuemodelList = getInvestmentDataService()
 					.getQuarterlyValueModel(sector, period, startYear, endYear);
 
-			final List<QuarterlyValueData> quarterlyValueListData = new ArrayList<QuarterlyValueData>();
+			final List<AQValueGrowthData> aqValueGrowthDataList = new ArrayList<>();
 
-			final QuarterlyValueModel filteredModel = new QuarterlyValueModel();
+			final AQValueGrowthModel filteredModel = new AQValueGrowthModel();
 
 			if (null != quarterlyValuemodelList) {
 				if (sector != null) {
 					String[] sectorArray = sector.split(",");
-					for (QuarterlyValueModel valueModel : quarterlyValuemodelList) {
+					for (AQValueGrowthModel valueModel : quarterlyValuemodelList) {
 						for (String selectedSector : sectorArray) {
 							if (null != selectedSector) {
 								switch (selectedSector) {
@@ -821,33 +671,33 @@ public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 
 							}
 						}
-						final QuarterlyValueData quarterlyValueData = getQuarterlyValueConverter()
+						final AQValueGrowthData aqValueGrowthData = getAqValueGrowthConverter()
 								.convert(filteredModel);
-						quarterlyValueListData.add(quarterlyValueData);
+						aqValueGrowthDataList.add(aqValueGrowthData);
 					}
 
 				}
 			}
-			return quarterlyValueListData;
+			return aqValueGrowthDataList;
 		}
 
 	}
 
 	@Override
-	public List<QuarterlyGrowthData> getQuarterlyGrowthData(String sector, String period, String startYear,
-			String endYear) {
+	public List<AQValueGrowthData> getQuarterlyGrowthData(String sector, String period, String startYear,
+														  String endYear) {
 		{
-			final List<QuarterlyGrowthModel> quarterlyGrowthmodelList = getInvestmentDataService()
+			final List<AQValueGrowthModel> quarterlyGrowthmodelList = getInvestmentDataService()
 					.getQuarterlyGrowthModel(sector, period, startYear, endYear);
 
-			final List<QuarterlyGrowthData> quarterlyGrowthListData = new ArrayList<QuarterlyGrowthData>();
+			final List<AQValueGrowthData> aqValueGrowthDataList = new ArrayList<>();
 
-			final QuarterlyGrowthModel filteredModel = new QuarterlyGrowthModel();
+			final AQValueGrowthModel filteredModel = new AQValueGrowthModel();
 
 			if (null != quarterlyGrowthmodelList) {
 				if (sector != null) {
 					String[] sectorArray = sector.split(",");
-					for (QuarterlyGrowthModel valueModel : quarterlyGrowthmodelList) {
+					for (AQValueGrowthModel valueModel : quarterlyGrowthmodelList) {
 						for (String selectedSector : sectorArray) {
 							if (null != selectedSector) {
 								switch (selectedSector) {
@@ -1026,94 +876,100 @@ public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 
 							}
 						}
-						final QuarterlyGrowthData quarterlyGrowthData = getQuarterlyGrowthConverter().convert(filteredModel);
-						quarterlyGrowthListData.add(quarterlyGrowthData);
+						final AQValueGrowthData aqValueGrowthData = getAqValueGrowthConverter().convert(filteredModel);
+						aqValueGrowthDataList.add(aqValueGrowthData);
 					}
 
 				}
 			}
-			return quarterlyGrowthListData;
+			return aqValueGrowthDataList;
 		}
 
 	}
 
 	@Override
-	public List<ForeignInvestmentValueData> getForeignInvestmentValueData() {
+	public List<ForeignInvestmentData> getForeignInvestmentValueData() {
 		{
-			final List<ForeignInvestmentValueModel> model = getInvestmentDataService().getForeignInvestmentValueModel();
+			final List<ForeignInvestmentModel> model = getInvestmentDataService().getForeignInvestmentValueModel();
 
-			final List<ForeignInvestmentValueData> foreignInvestmentValueListData = new ArrayList<ForeignInvestmentValueData>();
+			final List<ForeignInvestmentData> foreignInvestmentValueListData = new ArrayList<>();
 
-			for (final ForeignInvestmentValueModel foreignInvestmentValueModel : model) {
-				final ForeignInvestmentValueData eoData = getForeignInvestmentValueConverter()
+			for (final ForeignInvestmentModel foreignInvestmentValueModel : model) {
+				final ForeignInvestmentData eoData = getForeignInvestmentConverter()
 						.convert(foreignInvestmentValueModel);
 				foreignInvestmentValueListData.add(eoData);
 			}
+			Collections.sort(foreignInvestmentValueListData, Comparator.comparing(ForeignInvestmentData::getIndex));
 			return foreignInvestmentValueListData;
 		}
 	}
 
 	@Override
-	public List<ForeignInvestmentGrowthData> getForeignInvestmentGrowthData() {
+	public List<ForeignInvestmentData> getForeignInvestmentGrowthData() {
 		{
-			final List<ForeignInvestmentGrowthModel> model = getInvestmentDataService()
+			final List<ForeignInvestmentModel> model = getInvestmentDataService()
 					.getForeignInvestmentGrowthModel();
 
-			final List<ForeignInvestmentGrowthData> foreignInvestmentGrowthListData = new ArrayList<ForeignInvestmentGrowthData>();
+			final List<ForeignInvestmentData> foreignInvestmentGrowthListData = new ArrayList<>();
 
-			for (final ForeignInvestmentGrowthModel foreignInvestmentGrowthModel : model) {
-				final ForeignInvestmentGrowthData eoData = getForeignInvestmentGrowthConverter()
+			for (final ForeignInvestmentModel foreignInvestmentGrowthModel : model) {
+				final ForeignInvestmentData eoData = getForeignInvestmentConverter()
 						.convert(foreignInvestmentGrowthModel);
 				foreignInvestmentGrowthListData.add(eoData);
 			}
+			Collections.sort(foreignInvestmentGrowthListData, Comparator.comparing(ForeignInvestmentData::getIndex));
 			return foreignInvestmentGrowthListData;
 		}
 	}
 
 	@Override
-	public List<AnnualFundAssetsData> getAnnualFundAssetsData(String sector, String period, String startYear,
-			String endYear) {
+	public List<FundAssetsData> getAnnualFundAssetsData(String sector, String period, String startYear,
+														String endYear) {
 		{
-			final List<AnnualFundAssetsModel> model = getInvestmentDataService().getAnnualFundAssetsModel(sector,
+			final List<FundAssetsModel> model = getInvestmentDataService().getAnnualFundAssetsModel(sector,
 					period, startYear, endYear);
 
-			final List<AnnualFundAssetsData> quarterlyFundAssetsListData = new ArrayList<AnnualFundAssetsData>();
+			final List<FundAssetsData> quarterlyFundAssetsListData = new ArrayList<>();
 
-			final AnnualFundAssetsModel filteredModel = new AnnualFundAssetsModel();
+			final FundAssetsModel filteredModel = new FundAssetsModel();
 
 			if (null != model) {
 				if (sector != null) {
-					for (AnnualFundAssetsModel valueModel : model) {
+					for (FundAssetsModel valueModel : model) {
 						if (null != sector) {
 							switch (sector) {
 							case "totalNoOfInvestmentFund":
 								if (null != valueModel.getTotalNoOfInvestmentFund()) {
 									filteredModel.setTotalNoOfInvestmentFund(valueModel.getTotalNoOfInvestmentFund());
+									filteredModel.setTotalNoOfInvestmentFundGrowthRate(valueModel.getTotalNoOfInvestmentFundGrowthRate());
 									filteredModel.setYear(valueModel.getYear());
 								}
 								break;
 							case "totalInvestmentFundAssets":
 								if (null != valueModel.getTotalInvestmentFundAssets()) {
 									filteredModel.setTotalInvestmentFundAssets(valueModel.getTotalInvestmentFundAssets());
+									filteredModel.setTotalInvestmentFundAssetsGrowthRate(valueModel.getTotalInvestmentFundAssetsGrowthRate());
 									filteredModel.setYear(valueModel.getYear());
 								}
 								break;
 							case "foreignInvestmentFund":
 								if (null != valueModel.getForeignInvestmentFund()) {
 									filteredModel.setForeignInvestmentFund(valueModel.getForeignInvestmentFund());
+									filteredModel.setForeignInvestmentFundGrowthRate(valueModel.getForeignInvestmentFundGrowthRate());
 									filteredModel.setYear(valueModel.getYear());
 								}
 								break;
 							case "domesticInvestmentFund":
 								if (null != valueModel.getDomesticInvestmentFund()) {
 									filteredModel.setDomesticInvestmentFund(valueModel.getDomesticInvestmentFund());
+									filteredModel.setDomesticInvestmentFundGrowthRate(valueModel.getDomesticInvestmentFundGrowthRate());
 									filteredModel.setYear(valueModel.getYear());
 								}
 
 							}
 
 						}
-						final AnnualFundAssetsData quarterlyFundAssetsData = getAnnualFundAssetsConverter().convert(filteredModel);
+						final FundAssetsData quarterlyFundAssetsData = getFundAssetsConverter().convert(filteredModel);
 						quarterlyFundAssetsListData.add(quarterlyFundAssetsData);
 					}
 
@@ -1124,15 +980,15 @@ public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 	}
 
 	@Override
-	public List<NumberOfCommercialRegisterData> getNumberOfCommercialRegisterData(String indicator, String startYear, String endYear) {
+	public List<CommercialRegisterData> getNumberOfCommercialRegisterData(String indicator, String startYear, String endYear) {
 		{
-			final List<NumberOfCommercialRegisterModel> model = getInvestmentDataService().getNumberOfCommercialRegisterModel(indicator,
+			final List<CommercialRegisterModel> model = getInvestmentDataService().getNumberOfCommercialRegisterModel(indicator,
 					startYear, endYear);
 
-			final List<NumberOfCommercialRegisterData> numberOfCommercialRegisterListData = new ArrayList<NumberOfCommercialRegisterData>();
+			final List<CommercialRegisterData> numberOfCommercialRegisterListData = new ArrayList<>();
 
-			for (final NumberOfCommercialRegisterModel numberOfCommercialRegisterModel : model) {
-				final NumberOfCommercialRegisterData eoData = getNumberOfCommercialRegisterConverter().convert(numberOfCommercialRegisterModel);
+			for (final CommercialRegisterModel numberOfCommercialRegisterModel : model) {
+				final CommercialRegisterData eoData = getCommercialRegisterConverter().convert(numberOfCommercialRegisterModel);
 				numberOfCommercialRegisterListData.add(eoData);
 			}
 			return numberOfCommercialRegisterListData;
@@ -1140,32 +996,48 @@ public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 	}
 	
 	@Override
-	public List<CapitalOfCommercialRegisterData> getCapitalOfCommercialRegisterData(String indicator, String startYear, String endYear) {
+	public List<CommercialRegisterData> getCapitalOfCommercialRegisterData(String indicator, String startYear, String endYear) {
 		{
-			final List<CapitalOfCommercialRegisterModel> model = getInvestmentDataService().getCapitalOfCommercialRegisterModel(indicator,
+			final List<CommercialRegisterModel> model = getInvestmentDataService().getCapitalOfCommercialRegisterModel(indicator,
 					startYear, endYear);
 
-			final List<CapitalOfCommercialRegisterData> capitalOfCommercialRegisterListData = new ArrayList<CapitalOfCommercialRegisterData>();
+			final List<CommercialRegisterData> capitalOfCommercialRegisterListData = new ArrayList<>();
 
-			for (final CapitalOfCommercialRegisterModel capitalOfCommercialRegisterModel : model) {
-				final CapitalOfCommercialRegisterData eoData = getCapitalOfCommercialRegisterConverter().convert(capitalOfCommercialRegisterModel);
+			for (final CommercialRegisterModel capitalOfCommercialRegisterModel : model) {
+				final CommercialRegisterData eoData = getCommercialRegisterConverter().convert(capitalOfCommercialRegisterModel);
 				capitalOfCommercialRegisterListData.add(eoData);
 			}
 			return capitalOfCommercialRegisterListData;
 		}
 	}
 
-
 	@Override
-	public List<CapitalInformationData> getCapitalInformationData(String indicator, String startYear, String endYear) {
+	public List<CommercialRegisterData> getAnnualCapitalInformationData(String indicator, String startYear, String endYear) {
 		{
-			final List<CapitalInformationModel> model = getInvestmentDataService().getCapitalInformationModel(indicator,
+			final List<CommercialRegisterModel> model = getInvestmentDataService().getAnnualCapitalInformationModel(indicator,
 					startYear, endYear);
 
-			final List<CapitalInformationData> capitalInformationListData = new ArrayList<CapitalInformationData>();
+			final List<CommercialRegisterData> capitalInformationListData = new ArrayList<>();
 
-			for (final CapitalInformationModel capitalInformationModel : model) {
-				final CapitalInformationData eoData = getCapitalInformationConverter().convert(capitalInformationModel);
+			for (final CommercialRegisterModel capitalInformationModel : model) {
+				final CommercialRegisterData eoData = getCommercialRegisterConverter().convert(capitalInformationModel);
+				capitalInformationListData.add(eoData);
+			}
+			return capitalInformationListData;
+		}
+	}
+
+
+	@Override
+	public List<CommercialRegisterData> getQuarterlyCapitalInformationData(String indicator, String startYear, String endYear) {
+		{
+			final List<CommercialRegisterModel> model = getInvestmentDataService().getQuarterlyCapitalInformationModel(indicator,
+					startYear, endYear);
+
+			final List<CommercialRegisterData> capitalInformationListData = new ArrayList<>();
+
+			for (final CommercialRegisterModel capitalInformationModel : model) {
+				final CommercialRegisterData eoData = getCommercialRegisterConverter().convert(capitalInformationModel);
 				capitalInformationListData.add(eoData);
 			}
 			return capitalInformationListData;
@@ -1173,49 +1045,52 @@ public class DefaultInvestmentDataFacade implements InvestmentDataFacade {
 	}
 
 	@Override
-	public List<QuarterlyFundAssetsData> getQuarterlyFundAssetsData(String sector, String period, String startYear,
-			String endYear) {
+	public List<FundAssetsData> getQuarterlyFundAssetsData(String sector, String period, String startYear,
+														   String endYear) {
 		{
-			final List<QuarterlyFundAssetsModel> model = getInvestmentDataService().getQuarterlyFundAssetsModel(sector,
+			final List<FundAssetsModel> model = getInvestmentDataService().getQuarterlyFundAssetsModel(sector,
 					period, startYear, endYear);
 
-			final List<QuarterlyFundAssetsData> quarterlyFundAssetsListData = new ArrayList<QuarterlyFundAssetsData>();
+			final List<FundAssetsData> quarterlyFundAssetsListData = new ArrayList<>();
 
-			final QuarterlyFundAssetsModel filteredModel = new QuarterlyFundAssetsModel();
+			final FundAssetsModel filteredModel = new FundAssetsModel();
 
 			if (null != model) {
 				if (sector != null) {
-					for (QuarterlyFundAssetsModel valueModel : model) {
+					for (FundAssetsModel valueModel : model) {
 						if (null != sector) {
 							switch (sector) {
 							case "totalNoOfInvestmentFund":
 								if (null != valueModel.getTotalNoOfInvestmentFund()) {
 									filteredModel.setTotalNoOfInvestmentFund(valueModel.getTotalNoOfInvestmentFund());
-									filteredModel.setPeriod(valueModel.getPeriod());
+									filteredModel.setTotalNoOfInvestmentFundGrowthRate(valueModel.getTotalNoOfInvestmentFundGrowthRate());
+									filteredModel.setYear(valueModel.getYear());
 								}
 								break;
 							case "totalInvestmentFundAssets":
 								if (null != valueModel.getTotalInvestmentFundAssets()) {
 									filteredModel.setTotalInvestmentFundAssets(valueModel.getTotalInvestmentFundAssets());
-									filteredModel.setPeriod(valueModel.getPeriod());
+									filteredModel.setTotalInvestmentFundAssetsGrowthRate(valueModel.getTotalInvestmentFundAssetsGrowthRate());
+									filteredModel.setYear(valueModel.getYear());
 								}
 								break;
 							case "foreignInvestmentFund":
 								if (null != valueModel.getForeignInvestmentFund()) {
 									filteredModel.setForeignInvestmentFund(valueModel.getForeignInvestmentFund());
-									filteredModel.setPeriod(valueModel.getPeriod());
+									filteredModel.setForeignInvestmentFundGrowthRate(valueModel.getForeignInvestmentFundGrowthRate());
+									filteredModel.setYear(valueModel.getYear());
 								}
 								break;
 							case "domesticInvestmentFund":
 								if (null != valueModel.getDomesticInvestmentFund()) {
 									filteredModel.setDomesticInvestmentFund(valueModel.getDomesticInvestmentFund());
-									filteredModel.setPeriod(valueModel.getPeriod());
+									filteredModel.setDomesticInvestmentFundGrowthRate(valueModel.getDomesticInvestmentFundGrowthRate());
+									filteredModel.setYear(valueModel.getYear());
 								}
 
 							}
-
 						}
-						final QuarterlyFundAssetsData quarterlyFundAssetsData = getQuarterlyFundAssetsConverter()
+						final FundAssetsData quarterlyFundAssetsData = getFundAssetsConverter()
 								.convert(filteredModel);
 						quarterlyFundAssetsListData.add(quarterlyFundAssetsData);
 					}

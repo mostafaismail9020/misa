@@ -88,9 +88,14 @@
         ${quarterlyGrowthJson}
       </div>
     </c:if>
-    <c:if test="${not empty capitalInformationJson}">
-      <div id="capitalInformationJson">
-        ${capitalInformationJson}
+    <c:if test="${not empty annualCapitalInformationJson}">
+      <div id="annualCapitalInformationJson">
+        ${annualCapitalInformationJson}
+      </div>
+    </c:if>
+    <c:if test="${not empty quarterlyCapitalInformationJson}">
+      <div id="quarterlyCapitalInformationJson">
+        ${quarterlyCapitalInformationJson}
       </div>
     </c:if>
     <c:if test="${not empty annualFundAssetsJson}">
@@ -377,44 +382,20 @@
                           </div>
                         </div>
                         <div class="row pt-5 pl-3 pr-3 pb-4">
-
-                          <div class="col-4 mx-auto">
-                            <div class="INID_SD_Data_IN_sho">
-                              <h4 class="INID_SD_inv_data_header value-inflow">${foreignInvestmentValueData[0].value1}</h4>
-                              <p class="INID_SUB_data">${foreignInvestmentValueData[0].label1}</p>
-                              <br>
-                              <h4 class="INID_SD_inv_data_header p-2">${foreignInvestmentValueData[0].value2}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentValueData[0].label2}</p>
-                              <br>
-                              <h5 class="INID_SD_header_green">${foreignInvestmentValueData[0].value3}</h5>
-                              <p class="INID_word_paper2">${foreignInvestmentValueData[0].label3}</p>
+                        <c:forEach items="${foreignInvestmentValueData}" var="card">
+                            <div class="col-4 mx-auto">
+                                <div class="INID_SD_Data_IN_sho">
+                                  <h4 class="INID_SD_inv_data_header value-inflow">${card.value1}</h4>
+                                  <p class="INID_SUB_data">${card.label1}</p>
+                                  <br>
+                                  <h4 class="INID_SD_inv_data_header p-2">${card.value2}</h4>
+                                  <p class="INID_SUB_data ">${card.label2}</p>
+                                  <br>
+                                  <h5 class="INID_SD_header_green">${card.value3}</h5>
+                                  <p class="INID_word_paper2">${card.label3}</p>
+                                </div>
                             </div>
-                          </div>
-                          <div class="col-4 mx-auto">
-                            <div class="INID_SD_Data_IN_sho">
-                              <h4 class="INID_SD_inv_data_header value-outflow">${foreignInvestmentValueData[1].value1}</h4>
-                              <p class="INID_SUB_data">${foreignInvestmentValueData[1].label1}</p>
-                              <br>
-                              <h4 class="INID_SD_inv_data_header p-2">${foreignInvestmentValueData[1].value2}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentValueData[1].label2}</p>
-                              <br>
-                              <h5 class="INID_SD_header_green">${foreignInvestmentValueData[1].value3}</h5>
-                              <p class="INID_word_paper2">${foreignInvestmentValueData[1].label3}</p>
-                            </div>
-                          </div>
-                          <div class="col-4 mx-auto">
-                            <div class="INID_SD_Data_IN_sho">
-                              <h4 class="INID_SD_inv_data_header value-total">${foreignInvestmentValueData[2].value1}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentValueData[2].label1}</p>
-                              <br>
-                              <h4 class="INID_SD_inv_data_header p-2">${foreignInvestmentValueData[2].value2}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentValueData[2].label2}</p>
-                              <br>
-                              <h5 class="INID_SD_header_green">${foreignInvestmentValueData[2].value3}</h5>
-                              <p class="INID_word_paper2" style="height: 24px;">${foreignInvestmentValueData[2].label3}</p>
-                            </div>
-                          </div>
-
+                        </c:forEach>
                         </div>
 
 
@@ -459,43 +440,20 @@
                           </div>
                         </div>
                         <div class="row pt-5 pl-3 pr-3 pb-4">
-                          <div class="col-4 mx-auto">
-                            <div class="INID_SD_Data_IN_sho">
-                              <h4 class="INID_SD_inv_data_header value-inflow">${foreignInvestmentGrowthData[0].value1}</h4>
-                              <p class="INID_SUB_data">${foreignInvestmentGrowthData[0].label1}</p>
-                              <br>
-                              <h4 class="INID_SD_inv_data_header p-2">${foreignInvestmentGrowthData[0].value2}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentGrowthData[0].label2}</p>
-                              <br>
-                              <h5 class="INID_SD_header_green">${foreignInvestmentGrowthData[0].value3}</h5>
-                              <!-- <p class="INID_word_paper2">${foreignInvestmentGrowthData[0].label3}</p> -->
+                        <c:forEach items="${foreignInvestmentGrowthData}" var="card">
+                            <div class="col-4 mx-auto">
+                                <div class="INID_SD_Data_IN_sho">
+                                  <h4 class="INID_SD_inv_data_header value-inflow">${card.value1}</h4>
+                                  <p class="INID_SUB_data">${card.label1}</p>
+                                  <br>
+                                  <h4 class="INID_SD_inv_data_header p-2">${card.value2}</h4>
+                                  <p class="INID_SUB_data ">${card.label2}</p>
+                                  <br>
+                                  <h5 class="INID_SD_header_green">${card.value3}</h5>
+                                  <!-- <p class="INID_word_paper2">${card.label3}</p> -->
+                                </div>
                             </div>
-                          </div>
-                          <div class="col-4 mx-auto">
-                            <div class="INID_SD_Data_IN_sho">
-                              <h4 class="INID_SD_inv_data_header value-outflow">${foreignInvestmentGrowthData[1].value1}</h4>
-                              <p class="INID_SUB_data">${foreignInvestmentGrowthData[1].label1}</p>
-                              <br>
-                              <h4 class="INID_SD_inv_data_header p-2">${foreignInvestmentGrowthData[1].value2}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentGrowthData[1].label2}</p>
-                              <br>
-                              <h5 class="INID_SD_header_green">${foreignInvestmentGrowthData[1].value3}</h5>
-                              <!-- <p class="INID_word_paper2">${foreignInvestmentGrowthData[1].label3}</p> -->
-                            </div>
-                          </div>
-                          <div class="col-4 mx-auto">
-                            <div class="INID_SD_Data_IN_sho">
-                              <h4 class="INID_SD_inv_data_header value-total">${foreignInvestmentGrowthData[2].value1}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentGrowthData[2].label1}</p>
-                              <br>
-                              <h4 class="INID_SD_inv_data_header p-2">${foreignInvestmentGrowthData[2].value2}</h4>
-                              <p class="INID_SUB_data ">${foreignInvestmentGrowthData[2].label2}</p>
-                              <br>
-                              <h5 class="INID_SD_header_green">${foreignInvestmentGrowthData[2].value3}</h5>
-                              <!-- <p class="INID_word_paper2" style="height: 24px;">${foreignInvestmentGrowthData[2].label3}</p> -->
-                            </div>
-                          </div>
-
+                        </c:forEach>
                         </div>
 
 
@@ -545,6 +503,18 @@
                     <div class="col-lg-3">
                       <h5><spring:theme code="economic.investmentdata.selectindicator.text"/></h5>
                       <a href="#" class="btn btn-primary"><spring:theme code="economic.investmentdata.selectindicator.text"/></a>
+                    </div>
+                    <div class="col-lg-3">
+                      <h5><spring:theme code="economic.investmentdata.selectperiod.heading.name"/></h5>
+                      <div class="btn-group btn-group-toggle capital-formation-period" data-toggle="buttons">
+                        <label class="btn btn-secondary focus active" data-id="Annually">
+                          <input type="radio" name="options" id="optionA1" autocomplete="off"  checked> <spring:theme code="economic.investmentdata.annually.tab.text"/>
+                        </label>
+                        <label class="btn btn-secondary" data-id="Quarterly">
+                          <input type="radio" name="options" id="optionA2" autocomplete="off" checked> <spring:theme code="economic.investmentdata.quarterly.tab.text"/>
+                        </label>
+                      </div>
+
                     </div>
                     <div class="col-lg-6 ">
                       <h5><spring:theme code="economic.investmentdata.selectdaterange.text"/></h5>

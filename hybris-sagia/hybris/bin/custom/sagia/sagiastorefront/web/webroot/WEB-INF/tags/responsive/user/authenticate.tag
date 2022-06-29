@@ -78,7 +78,7 @@
 				</c:otherwise>
 			</c:choose>
 			
-			<a id="resendBtn" class="login-btn login-entry-cancel padding-top-10" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a>
+<%-- 			<a id="resendBtn" class="login-btn login-entry-cancel padding-top-10" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a> --%>
 		</div>
 		<div class="trouble-contact-us"><spring:theme code="text.otp.expiry.message.description"/></div>
 		<br/>

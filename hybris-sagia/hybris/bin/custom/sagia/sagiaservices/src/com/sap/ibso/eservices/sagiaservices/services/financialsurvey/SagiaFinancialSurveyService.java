@@ -34,5 +34,7 @@ public interface SagiaFinancialSurveyService {
 
     void submitFinancialSurveyForReview(MediaModel mediaModel, String quarterCode, Integer hoursToCompleteSurvey, Integer minutesToCompleteSurvey, String sourceOfKnowledge);
 
+    void copyShareholdersFromPreviousQurterSurvey(FinancialSurveyModel financialSurveyModel, FinancialSurveyQuarterModel quarter);
+
     FinancialSurveyQuarterModel getFinancialSurveyQuarterByCode(String quarterCode);
 }

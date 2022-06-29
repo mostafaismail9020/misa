@@ -948,17 +948,14 @@ function populateCompanyProfile() {
     financialSurvey.companyStatus = $('#companyStatusId').val();
     financialSurvey.suspensionDate = $('#suspensionDateId').val();
     financialSurvey.disclosureCurrency = $('#disclosureCurrencyId').val();
-
-
     financialSurvey.economicActivitySection = $('#sectionId').val();
     financialSurvey.economicActivityDivision = $('#divisionId').val();
     financialSurvey.economicActivityGroup = $('#groupId').val();
     financialSurvey.economicActivityClass = $('#classId').val();
     financialSurvey.economicActivityBranch = $('#branchId').val();
     financialSurvey.economicActivity = $('#activityId').val();
-
-
     financialSurvey.paidUpCapitalCurrentQuarter = $('#comppanyPaidUpCapitalCurrentQuarterId').val();
+    $('#paidUpCapitalCurrentQuarterId').val(financialSurvey.paidUpCapitalCurrentQuarter);
 }
 
 var submitLicense = function () {

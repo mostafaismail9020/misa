@@ -516,7 +516,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
                 // Copy shareholders,affiliates and branches from the previous quarter.
                 //Copy existing shareholders
-                copyShareholdersFromPreviousQurterSurvey(financialSurveyModel,quarter);
+               // copyShareholdersFromPreviousQurterSurvey(financialSurveyModel,quarter);
                 //
 
             }
@@ -526,10 +526,18 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         return financialSurveyModelList;
     }
 
-    private void copyShareholdersFromPreviousQurterSurvey(FinancialSurveyModel financialSurveyModel, FinancialSurveyQuarterModel quarter) {
+    @Override
+    public void copyShareholdersFromPreviousQurterSurvey(FinancialSurveyModel financialSurveyModel, FinancialSurveyQuarterModel quarter) {
 
+        if (quarter.getPreviousQuarter()==null) {
+            return;
+        }
         String prevQuarterCode = quarter.getPreviousQuarter()!=null ? quarter.getPreviousQuarter().getCode() : null;
         FinancialSurveyModel prevFinancialSurveyModel = getFinancialSurvey(prevQuarterCode);
+
+        if (prevFinancialSurveyModel == null ){
+            return;
+        }
 
         for(FinancialSurveyShareholderModel shareholderModelFromPrevQuarter: prevFinancialSurveyModel.getShareholders()){
             FinancialSurveyShareholderModel financialSurveyShareholderModel = new FinancialSurveyShareholderModel();
@@ -545,7 +553,15 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
             financialSurveyShareholderModel.setShareholderTypeRef(shareholderModelFromPrevQuarter.getShareholderTypeRef());
             financialSurveyShareholderModel.setShareholderGender(shareholderModelFromPrevQuarter.getShareholderGender());
             financialSurveyShareholderModel.setFinancialSurveyShareholderPreviousQuarter(shareholderModelFromPrevQuarter);
-
+            financialSurveyShareholderModel.setShareholderPercentage(shareholderModelFromPrevQuarter.getShareholderPercentage());
+            financialSurveyShareholderModel.setShareholderCapital(shareholderModelFromPrevQuarter.getShareholderCapital());
+            financialSurveyShareholderModel.setTreasurySharesCurrentQuarter(shareholderModelFromPrevQuarter.getTreasurySharesCurrentQuarter());
+            financialSurveyShareholderModel.setAdditionalPaidUpCapitalCurrentQuarter(shareholderModelFromPrevQuarter.getAdditionalPaidUpCapitalCurrentQuarter());
+            financialSurveyShareholderModel.setShareholderIsVotingPower(shareholderModelFromPrevQuarter.isShareholderIsVotingPower());
+            financialSurveyShareholderModel.setMinorityRightsCurrentQuarter(shareholderModelFromPrevQuarter.getMinorityRightsCurrentQuarter());
+            financialSurveyShareholderModel.setShareholderHasPreferredShares(shareholderModelFromPrevQuarter.isShareholderHasPreferredShares());
+            financialSurveyShareholderModel.setHeadOfficeAccountInBranchCurrentQuarter(shareholderModelFromPrevQuarter.getHeadOfficeAccountInBranchCurrentQuarter());
+            financialSurveyShareholderModel.setValueOfReverseInvestment(shareholderModelFromPrevQuarter.getValueOfReverseInvestment());
             SagiaSurveyTransactionModel transaction = new SagiaSurveyTransactionModel();
             //Fill with empty transaction.
             financialSurveyShareholderModel.setTransaction(transaction);

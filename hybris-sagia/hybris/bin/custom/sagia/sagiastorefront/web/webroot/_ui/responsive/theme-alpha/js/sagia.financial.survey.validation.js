@@ -1,5 +1,6 @@
 function entityValidator() {
 
+
     return $("#entityFormId").validate({
         highlight: function (element) {
             $(element).closest('.form-group').addClass('has-error');
@@ -27,9 +28,9 @@ function entityValidator() {
 
             },
             unifiedNo700: {
-                number: true,
+                digits: true,
                 minlength: 10,
-                maxlength: 10
+                maxlength: 10,
             },
             companyName: {
                 required: true,
@@ -58,6 +59,8 @@ function entityValidator() {
             },
             financeManagerTelephone: {
                 required: true,
+                digits: true,
+                minlength: 10,
             },
             legalStatus: {
                 required: true,
@@ -90,7 +93,7 @@ function entityValidator() {
             },
             unifiedNo700: {
                 number: getI18nText("validation.shareholder.delegate.idNumber.10digit"),
-                exactlength: getI18nText("validation.shareholder.delegate.idNumber.10digit")
+                minlength: getI18nText("validation.shareholder.delegate.idNumber.10digit"),
             },
             companyName: {
                 required: getI18nText("validation.empty"),
@@ -100,9 +103,18 @@ function entityValidator() {
             },
             crIssueDate: {
                 required: getI18nText("validation.empty"),
+                min: getI18nText("register.mobileNumber.invalid"),
             },
-            companyName: {
+            financeManagerName: {
                 required: getI18nText("validation.empty"),
+            },
+            financeManagerEmail: {
+                required: getI18nText("validation.empty"),
+            },
+            financeManagerTelephone: {
+                required: getI18nText("validation.empty"),
+                digits: getI18nText("register.mobileNumber.invalid"),
+                minlength: getI18nText("validation.shareholder.delegate.idNumber.10digit"),
             },
             suspensionDate: {
                 required: getI18nText("validation.empty"),

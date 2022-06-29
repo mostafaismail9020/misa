@@ -105,6 +105,11 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         FinancialSurveyModel financialSurveyModel = sagiaFinancialSurveyService.getFinancialSurvey(quarterCode);
 
 
+        // copy previous shareholders:
+        if (!financialSurveyModel.isIsShareholdersSectionFilled())
+          sagiaFinancialSurveyService.copyShareholdersFromPreviousQurterSurvey(financialSurveyModel,financialSurveyModel.getQuarter() );
+
+
         FinancialSurvey financialSurvey = new FinancialSurvey();
         financialSurveyPopulator.populate(financialSurveyModel,financialSurvey);
         financialSurvey.setQuarterCode(quarterCode);

@@ -2916,4 +2916,29 @@
 		</advanced-search:advanced-search>
 	</context>
 
+	<context component="explorer-tree" principal="econmicmanagerrole">
+		<explorer-tree:explorer-tree>
+			<explorer-tree:navigation-node id="EconomicHighlights">
+				<explorer-tree:type-node id="CreditRating" code="CreditRating" />
+				<explorer-tree:type-node id="Dashboard" code="Dashboard" />
+				<explorer-tree:type-node id="InfraLogisticsLanding" code="InfraLogisticsLanding" />
+				<explorer-tree:type-node id="InfrastructureLogistics" code="InfrastructureLogistics" />
+				<explorer-tree:type-node id="LengthOfNetwork" code="LengthOfNetwork" />
+				<explorer-tree:type-node id="PrivateCities" code="PrivateCities" />
+				<explorer-tree:type-node id="AqValueGrowth" code="AqValueGrowth" />
+				<explorer-tree:type-node id="CommercialRegister" code="CommercialRegister" />
+				<explorer-tree:type-node id="ForeignInvestment" code="ForeignInvestment" />
+				<explorer-tree:type-node id="FundAssets" code="FundAssets" />
+				<explorer-tree:type-node id="SaudiArabiaInternationalIndices" code="SaudiArabiaInternationalIndices" />
+				<explorer-tree:type-node id="EconomicsSector" code="EconomicsSector" />
+				<explorer-tree:type-node id="GenderDistribution" code="GenderDistribution" />
+				<explorer-tree:type-node id="GraduatesByDegree" code="GraduatesByDegree" />
+				<explorer-tree:type-node id="PopulationDistribution" code="PopulationDistribution" />
+				<explorer-tree:type-node id="RegionDistribution" code="RegionDistribution" />
+			</explorer-tree:navigation-node>
+		</explorer-tree:explorer-tree>
+	</context>
+
+
+
 </config>

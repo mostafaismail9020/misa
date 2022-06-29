@@ -27,7 +27,7 @@
 			<aop:around method="prepare"
 			            pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.doLogin(..))"/>
 		</aop:aspect>
-		<aop:aspect id="registratonReCaptchaAspect" ref="reCaptchaAspect">
+		<aop:aspect id="authenticateReCaptchaAspect" ref="reCaptchaAspect">
 			<aop:around method="advise"
 			            pointcut="execution(* com.sap.ibso.eservices.storefront.security.SagiaAuthenticationProvider.authenticate(..))"/>
 		</aop:aspect>
@@ -40,13 +40,16 @@
 		
 		
 		<aop:aspect id="prepTwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
-			<aop:around method="prepare" pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.twoFactorAuth(..))"/>
+			<aop:around method="prepare"
+						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.twoFactorAuth(..))"/>
 		</aop:aspect>
-		<aop:aspect id="prepTwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
-			<aop:around method="prepare" pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.getVerification(..))"/>
+		<aop:aspect id="prepVerificationReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare"
+						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.getVerification(..))"/>
 		</aop:aspect>
 		<aop:aspect id="TwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
-			<aop:around method="advise" pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.authenticate(..))"/>
+			<aop:around method="advise"
+						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.authenticate(..))"/>
 		</aop:aspect>
 		
 		

@@ -27,7 +27,7 @@
 		<div class="text-center download_btn">
 		<c:url value="/mediaCenter/downloadResoruce/investor-guide-container" var="resourcedownloadURL"/>
 			<button class=""><a href="${resourcedownloadURL}" target="_blank"><spring:theme code="portal.investment.guide.investor.licence.download.latest.version.url" text= "Download the latest version of the Investment Manual"/></a></button>
-			<button class=""><a href="https://investsaudi.sa/en/login#register-apply" target="_blank"><spring:theme code="portal.investment.guide.investor.licence.visit.the.licence.portal.url" text= "Visit the licensing portal to register as an investor today"/></a> </button>
+			<button class=""><a href="https://investsaudi.sa/${language}/login#register-apply" target="_blank"><spring:theme code="portal.investment.guide.investor.licence.visit.the.licence.portal.url" text= "Visit the licensing portal to register as an investor today"/></a> </button>
 		</div>
 		
 	</div>

@@ -66,7 +66,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-md-2 col-12 verification-info mx-0 px-0">
+											<div class="col-md-6 col-12 verification-info mx-0 px-0">
 												<i class="fas fa-info-circle"></i>
 												<c:choose>
 													<c:when test='${mobileStatus == "VERIFIED"}'>
@@ -97,7 +97,7 @@
 										<div class="help-block has-error"></div>
 										<div class="row d-block login-buttons verify-mobile m-auto">
 											<div class="col-md-12 col-12">
-												<button class="login-btn login-btn-next active" name="smsverify" id="mobileBtn">
+												<button class="login-btn login-btn-next <c:if test='${mobileStatus == "NOT_VERIFIED"}'>active</c:if>" name="smsverify" id="mobileBtn" <c:if test='${mobileStatus == "VERIFIED"}'>disabled="disabled"</c:if>>
 													<spring:theme code="text.verification.verify.mobile" />
 												</button>
 											</div>
@@ -106,121 +106,130 @@
 									<hr class="dotted-lines" />
 								</c:if>
 								<c:if test="${isEmailVerificationEnabled}">
-									<div class="row register-user-info">
-										<div class="col-md-12 register-form focus-on-change verify-email-box ">
-											<div class="col-12 col-md-10">
-												<div class="formInputBox formInputBox_group ">
-													<div class="form-group">
-														<form:input path="regEmail" cssClass="register-user-details validate-email form-control" placeholder="." maxlength="60" disabled="true" id="regEmail" />
-														<label class="control-label register-user-info-label focused" for="regEmail">
-															<spring:theme code="text.verification.email.register" />
-														</label>
-														<div class="formInputBox-append" id="editEmail">
-															<%-- <span class="formInputBox-text"> <icon:edit /></span> --%>
-														</div>
-													</div>
-													<div class="help-block has-error" id="emailR"></div>
-												</div>
-											</div>
-											<div class="col-6 col-md-2 verification-info mx-0 px-0" id="align">
-												<c:choose>
-													<c:when test='${regEmailStatus == "VERIFIED"}'>
-														<!-- <span style="color:green;font-weight:bold"><spring:theme code="text.verification.status.verified" /></span> -->
-														<div class="verified" id="email-verified"></div>
-													</c:when>
-													<c:when test='${regEmailStatus == "NOT_VERIFIED"}'>
-														<span  class="email-not-verified"><spring:theme code="text.verification.status.notverified" /></span>
-													</c:when>
-													<c:when test='${regEmailStatus == "PENDING"}'>
-														<span  class="email-not-verified"><spring:theme code="text.verification.status.pending" /></span>
-													</c:when>
-													<c:otherwise>
-														<span class="email-not-verified">Not Verified</span>
-													</c:otherwise>
-												</c:choose>
-											</div>										
-										</div>
-										<div class="row d-block login-buttons verify-mobile m-auto">
-											<div class="col-md-12 col-12">
-												<button class="login-btn login-btn-next active" name="regemailverify" id="regEmailBtn">
-													<c:choose>
-														<c:when test='${regEmailStatus == "PENDING"}'>
-															<spring:theme code="text.verification.verify.pending" />
-														</c:when>
-														<c:otherwise>
-															<spring:theme code="text.verification.verify.email" />
-														</c:otherwise>
-													</c:choose>
-												</button>
-											</div>
-										</div>
-									</div>
-
-									<c:if test="${not empty qeemahEmail}">
-										<div class="row user-email-verify-sec register-user-info"> 
-											<div class="col-xs-8 col-md-10">
-												<div
-													class="formInputBox formInputBox_group ">
-													<div class="form-group">
-														<form:input path="qeemahEmail"
-															cssClass="form-control"
-															placeholder="." maxlength="60"
-															disabled="true"
-															id="qeemahEmail" />
-														<label class="control-label" for="qeemahEmail">
-															<spring:theme code="text.verification.email.qeemah" />
-														</label>
-														<div class="formInputBox-append" id="editQEmail">
-															<%-- <span class="formInputBox-text"><icon:edit /></span> --%>
-														</div>
-													</div>
-													<div class="help-block has-error" id="emailQ">
-													</div>
-												</div>
-											</div>
-											<!--    <div class="col-6 col-md-2"> -->
-											<div class="col-6 col-md-2 verification-info" id="align">
-												<i class="fas fa-info-circle"></i>
-												<c:choose>
-													<c:when test='${qeemahEmailStatus == "VERIFIED"}'>
-														<!-- <span style="color:green;font-weight:bold"><spring:theme code="text.verification.status.verified" /></span> -->
-														<div class="verified" id="email-verified"></div>
-													</c:when>
-													<c:when test='${qeemahEmailStatus == "NOT_VERIFIED"}'>
-														<span class="email-not-verified"><spring:theme code="text.verification.status.notverified" /></span>
-													</c:when>
-													<c:when test='${qeemahEmailStatus == "PENDING"}'>
-														<span class="email-not-verified"><spring:theme code="text.verification.status.pending" /></span>
-													</c:when>
-													<c:otherwise>
-														<span class="email-not-verified">Not Verified</span>
-													</c:otherwise>
-												</c:choose>
-											</div>
-											<!--	</div> -->
-											<div class="row d-block login-buttons verify-mobile m-auto">
-												<div class="col-md-12 col-12">
-													<button class="login-btn login-btn-next active"
-														name="qeemahemailverify"
-														id="qeemahEmailBtn" <c:if
-														test='${qeemahEmailStatus == "VERIFIED"}'>
-														disabled="true"
-														</c:if>
-													>
-														<c:choose>
-															<c:when test='${qeemahEmailStatus == "PENDING"}'>
-																<spring:theme code="text.verification.verify.pending" />
-															</c:when>
-															<c:otherwise>
-																<spring:theme code="text.verification.verify.email" />
-															</c:otherwise>
-														</c:choose>
-													</button>
-												</div>
-											</div>
-										</div>
-									</c:if>
-								</c:if>
+                                   <div class="row register-user-info">
+                                      <div class="col-md-12 register-form focus-on-change verify-email-box ">
+                                         <div class="col-6 col-md-10">
+                                            <div class="formInputBox formInputBox_group ">
+                                               <div class="form-group">
+                                                  <form:input path="regEmail" cssClass="register-user-details validate-email form-control" placeholder="." maxlength="60" disabled="true" id="regEmail" />
+                                                  <label class="control-label register-user-info-label focused" for="regEmail">
+                                                     <spring:theme code="text.verification.email.register" />
+                                                  </label>
+                                                  <div class="formInputBox-append" id="editEmail">
+                                                     <%-- <span class="formInputBox-text"> <icon:edit /></span> --%>
+                                                  </div>
+                                               </div>
+                                               <div class="help-block has-error" id="emailR"></div>
+                                            </div>
+                                         </div>
+                                         <div class="col-6 col-md-6 verification-info mx-0 px-0" id="align">
+                                            <c:choose>
+                                               <c:when test='${regEmailStatus == "VERIFIED"}'>
+                                                  <!-- <span style="color:green;font-weight:bold"><spring:theme code="text.verification.status.verified" /></span> -->
+                                                  <div class="verified" id="email-verified"></div>
+                                               </c:when>
+                                               <c:when test='${regEmailStatus == "NOT_VERIFIED"}'>
+                                                  <span  class="email-not-verified">
+                                                     <spring:theme code="text.verification.status.notverified" />
+                                                  </span>
+                                               </c:when>
+                                               <c:when test='${regEmailStatus == "PENDING"}'>
+                                                  <span  class="email-not-verified">
+                                                     <spring:theme code="text.verification.status.pending" />
+                                                  </span>
+                                               </c:when>
+                                               <c:otherwise>
+                                                  <span class="email-not-verified">Not Verified</span>
+                                               </c:otherwise>
+                                            </c:choose>
+                                         </div>
+                                      </div>
+                                      <div class="row d-block login-buttons verify-mobile m-auto">
+                                         <div class="col-md-12 col-12">
+                                            <button class="login-btn login-btn-next <c:if test='${regEmailStatus == "NOT_VERIFIED" || regEmailStatus == "PENDING" }'>active</c:if>" name="regemailverify" id="regEmailBtn" <c:if test='${regEmailStatus == "VERIFIED"}'>disabled="disabled"</c:if>>
+                                               <c:choose>
+                                                  <c:when test='${regEmailStatus == "PENDING"}'>
+                                                     <spring:theme code="text.verification.verify.pending" />
+                                                  </c:when>
+                                                  <c:otherwise>
+                                                     <spring:theme code="text.verification.verify.email" />
+                                                  </c:otherwise>
+                                               </c:choose>
+                                            </button>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <c:if test="${not empty qeemahEmail}">
+                                   <div class="row register-user-info">
+                                      <div class="col-md-12 register-form focus-on-change verify-email-box">
+                                         <div class="col-6 col-md-10">
+                                            <div
+                                               class="formInputBox formInputBox_group ">
+                                               <div class="form-group">
+                                                  <form:input path="qeemahEmail"
+                                                     cssClass="form-control"
+                                                     placeholder="." maxlength="60"
+                                                     disabled="true"
+                                                     id="qeemahEmail" />
+                                                  <label class="control-label" for="qeemahEmail">
+                                                     <spring:theme code="text.verification.email.qeemah" />
+                                                  </label>
+                                                  <div class="formInputBox-append" id="editQEmail">
+                                                     <%-- <span class="formInputBox-text"><icon:edit /></span> --%>
+                                                  </div>
+                                               </div>
+                                               <div class="help-block has-error" id="emailQ">
+                                               </div>
+                                            </div>
+                                         </div>
+                                         <!--    <div class="col-6 col-md-2"> -->
+                                         <div class="col-6 col-md-6 verification-info mx-0 px-0" id="align">
+                                            <i class="fas fa-info-circle"></i>
+                                            <c:choose>
+                                               <c:when test='${qeemahEmailStatus == "VERIFIED"}'>
+                                                  <!-- <span style="color:green;font-weight:bold"><spring:theme code="text.verification.status.verified" /></span> -->
+                                                  <div class="verified" id="email-verified"></div>
+                                               </c:when>
+                                               <c:when test='${qeemahEmailStatus == "NOT_VERIFIED"}'>
+                                                  <span class="email-not-verified">
+                                                     <spring:theme code="text.verification.status.notverified" />
+                                                  </span>
+                                               </c:when>
+                                               <c:when test='${qeemahEmailStatus == "PENDING"}'>
+                                                  <span class="email-not-verified">
+                                                     <spring:theme code="text.verification.status.pending" />
+                                                  </span>
+                                               </c:when>
+                                               <c:otherwise>
+                                                  <span class="email-not-verified">Not Verified</span>
+                                               </c:otherwise>
+                                            </c:choose>
+                                         </div>
+                                		 </div>
+                                         <!--	</div> -->
+                                         <div class="row d-block login-buttons verify-mobile m-auto">
+                                            <div class="col-md-12 col-12">
+                                               <button class="login-btn login-btn-next <c:if test='${qeemahEmailStatus == "NOT_VERIFIED" || qeemahEmailStatus == "PENDING" }'>active</c:if>"
+                                               name="qeemahemailverify"
+                                               id="qeemahEmailBtn"
+                                               <c:if test='${qeemahEmailStatus == "VERIFIED"}'>
+                                                  disabled="true"
+                                               </c:if>
+                                               >
+                                               <c:choose>
+                                                  <c:when test='${qeemahEmailStatus == "PENDING"}'>
+                                                     <spring:theme code="text.verification.verify.pending" />
+                                                  </c:when>
+                                                  <c:otherwise>
+                                                     <spring:theme code="text.verification.verify.email" />
+                                                  </c:otherwise>
+                                               </c:choose>
+                                               </button>
+                                            </div>
+                                         </div>
+                                   </c:if>
+                                    </div>
+                                </c:if>
 								<div class="col-md-12 login-forgot trouble-contact-us">
 									<a href="${contactUs}" class=""><spring:theme code="support.contactus" /></a>
 								</div>

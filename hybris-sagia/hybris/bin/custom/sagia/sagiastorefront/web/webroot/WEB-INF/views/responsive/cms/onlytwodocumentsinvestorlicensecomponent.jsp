@@ -34,7 +34,7 @@
     </div>
 </div>
 <div class="text-center download_btn"><a>
-</a><button class=""><a></a><a href="https://investsaudi.sa/en/login#register-apply" target="_blank"><spring:theme code="portal.investment.guide.investor.licence.visit.the.licence.portal.url" text= "Visit the licensing portal to register as an investor today"/></a></button>
+</a><button class=""><a></a><a href="https://investsaudi.sa/${language}/login#register-apply" target="_blank"><spring:theme code="portal.investment.guide.investor.licence.visit.the.licence.portal.url" text= "Visit the licensing portal to register as an investor today"/></a></button>
 </div>
 </div>
 

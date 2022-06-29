@@ -693,7 +693,7 @@ public class VerificationController extends AbstractLoginPageController {
 	}
 
 	@RequestMapping(value = "/twoFactorAuth", method = RequestMethod.GET)
-	public String twoFactorAuth(HttpSession session, final Model model, @ModelAttribute final SagiaVerificationForm sagiaVerificationForm, final BindingResult bindingResult, final RedirectAttributes redirectModel) throws CMSItemNotFoundException {
+	public String twoFactorAuth(HttpSession session, final Model model, @ModelAttribute final SagiaVerificationForm sagiaVerificationForm, final BindingResult bindingResult, final RedirectAttributes redirectModel,final HttpServletRequest request) throws CMSItemNotFoundException {
 		model.addAttribute(SAGIA_AUTHENTICATE_CODE_FORM, new SagiaAuthenticateCodeForm());
 		model.addAttribute(SAGIA_VERIFICATION_FORM, sagiaVerificationForm);
 		model.addAttribute(TWO_FACTOR_AUTHENTICATION_ENABLED, sagiaConfigurationFacade.isEnableTwoFactorAuthService());

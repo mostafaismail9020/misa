@@ -77,8 +77,13 @@
 			<a id="resendBtn" class="login-btn login-entry-cancel padding-top-10" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a>
 		</div>
 		<div class="trouble-contact-us"><spring:theme code="text.otp.expiry.message.description"/></div>
-		<br/> 
-		<p class="trouble-contact-us margin-top-30"><spring:theme code="register.login.problem"/> &nbsp;
+		<br/>
+		<div class="col-md-12 captcha-pos">
+        	<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
+        	<div class="form_field-elements control-group js-recaptcha-captchaaddon" style=""></div>
+        	<span id="lblErrorCaptchareg" class="mandatory"></span>
+        </div>
+		<p class="trouble-contact-us"><spring:theme code="register.login.problem"/> &nbsp;
 			<a href="https://misa.gov.sa/ar/contact-us/" class="login-forgot d-inline-block"><spring:theme code="register.login.problem.contact"/></a>
 		</p>
 		<div><a id="backtoLogin" class="login-btn login-entry-cancel padding-top-10" href="/en/login"><spring:theme code="register.back.login"/></a></div>

@@ -1,5 +1,6 @@
 package com.sap.ibso.eservices.sagiaservices.services.financialsurvey;
 
+import com.sap.ibso.eservices.core.model.FinancialSurveyQuarterModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyModel;
 import de.hybris.platform.commercefacades.user.data.FinancialSurvey;
@@ -31,5 +32,9 @@ public interface SagiaFinancialSurveyService {
 
     void saveFinancialSurveyShareholders(FinancialSurvey financialSurvey);
 
-    void submitFinancialSurveyForReview(MediaModel mediaModel, String quarterCode);
+    void submitFinancialSurveyForReview(MediaModel mediaModel, String quarterCode, Integer hoursToCompleteSurvey, Integer minutesToCompleteSurvey, String sourceOfKnowledge);
+
+    void copyShareholdersFromPreviousQurterSurvey(FinancialSurveyModel financialSurveyModel, FinancialSurveyQuarterModel quarter);
+
+    FinancialSurveyQuarterModel getFinancialSurveyQuarterByCode(String quarterCode);
 }

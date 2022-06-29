@@ -70,7 +70,7 @@ var removeSubsidiary = function () {
     SAGIA.financialSurvey.dirtyAmendment = true;
     var $subsidiaryRow = $(this).closest('tr');
     $subsidiaryRow.remove();
-    //SAGIA.financialSurvey.subsidiary.dataTable.row($subsidiaryRow).remove().draw(false);
+    SAGIA.financialSurvey.subsidiary.dataTable.row($subsidiaryRow).remove().draw(false);
 
     var subsidiaryId = parseInt($subsidiaryRow.attr('id'));
     var subsidiaries = financialSurvey.subsidiaries;
@@ -167,11 +167,11 @@ var saveSubsidiary = function () {
         subsidiaryRow.children().first().html(subsidiaryName)
             .next().text(registrationName).next().text(dataIncludedInHeadOfficeDisplay);
 
-       // var rowData = SAGIA.financialSurvey.subsidiary.dataTable.row(subsidiaryRow).data();
-       // rowData[0] = subsidiaryName;
-       // rowData[1] = registrationName;
-       // rowData[2] = dataIncludedInHeadOffice;
-      //  SAGIA.financialSurvey.subsidiary.dataTable.row(subsidiaryRow).data(rowData).invalidate();
+         var rowData = SAGIA.financialSurvey.subsidiary.dataTable.row(subsidiaryRow).data();
+         rowData[0] = subsidiaryName;
+         rowData[1] = registrationName;
+          rowData[2] = dataIncludedInHeadOffice;
+        SAGIA.financialSurvey.subsidiary.dataTable.row(subsidiaryRow).data(rowData).invalidate();
 
         var subsidiaryIndex = financialSurvey.subsidiaries.findIndex(function (subsidiary) {
             return subsidiary.srId === subsidiarySrId || subsidiary.newItemId === parseInt(subsidiarySrId);
@@ -197,7 +197,7 @@ var saveSubsidiary = function () {
         subsidiaryRow.find('.viewSubsidiaryBtn').hide();
 
         $('#subsidiariesId').append(subsidiaryRow);
-        //SAGIA.financialSurvey.subsidiary.dataTable.row.add(subsidiaryRow).draw();
+        SAGIA.financialSurvey.subsidiary.dataTable.row.add(subsidiaryRow).draw();
         financialSurvey.subsidiaries.push({
             action: '01',
             subsidiaryName: subsidiaryName,

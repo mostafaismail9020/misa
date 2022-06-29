@@ -233,7 +233,7 @@ data-expand-target="expand01">
                                                                class="form-control" placeholder="." value="" type="text"
                                                             <%--style="text-align: right;"--%>
                                                                dir="ltr"
-                                                               maxlength="10"> <label
+                                                               maxlength="80"> <label
                                                             class="control-label control-label_mandatory"
                                                             for="commercialRegistrationNoID"> <spring:theme
                                                             code="survey.commercialRegistrationNo"/>
@@ -248,7 +248,7 @@ data-expand-target="expand01">
                                                         <input id="unifiedNo700ID" name="unifiedNo700"
                                                                class="form-control" placeholder="." value="" type="text"
                                                                dir="ltr"
-                                                               maxlength="10"> <label class="control-label"
+                                                               maxlength="80"> <label class="control-label"
                                                                                       for="unifiedNo700ID">
                                                         <spring:theme
                                                                 code="survey.unifiedNo"/>
@@ -510,13 +510,8 @@ data-expand-target="expand01">
                                         <div class="contentModule-headline"><spring:theme
                                                 code="financial.survey.business.activities"/></div>
                                         <hr class="hr w-100">
-                                          <p class="INS_letter_set_para pb-3 mb-3">
-                                                <spring:theme code="financial.survey.business.activities.note"/>
-                                          </p>
-
 
                                         <div class="row">
-
 
                                             <div class="col-md-6">
                                                 <div class="formSelectBox">
@@ -564,31 +559,6 @@ data-expand-target="expand01">
                                                                 class="js-select2-search form-control"></select> <label
                                                             class="control-label control-label_mandatory"
                                                             for="classId"><spring:theme code="survey.class"/></label>
-                                                        <div class="help-block"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-6">
-                                                <div class="formSelectBox">
-                                                    <div class="form-group">
-                                                        <select id="branchId" name="branch"
-                                                                class="js-select2-search form-control"></select> <label
-                                                            class="control-label control-label_mandatory"
-                                                            for="branchId"><spring:theme code="survey.branch"/></label>
-                                                        <div class="help-block"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="formSelectBox">
-                                                    <div class="form-group">
-                                                        <select id="activityId" name="activity"
-                                                                class="js-select2-search form-control"></select> <label
-                                                            class="control-label control-label_mandatory"
-                                                            for="activityId"><spring:theme code="survey.activity"/></label>
                                                         <div class="help-block"></div>
                                                     </div>
                                                 </div>
@@ -1284,6 +1254,8 @@ data-expand-target="expand01">
                                             <th><spring:theme code="license.type"/></th>
                                             <th><spring:theme
                                                     code="text.account.profile.license.shareholders.nationality"/></th>
+                                            <th><spring:theme
+                                                    code="text.account.profile.license.shareholders.legalStatus"/></th>
                                             <th id="affiliateBtnColumnId"></th>
                                         </tr>
                                         </thead>
@@ -1292,6 +1264,8 @@ data-expand-target="expand01">
                                             <td></td>
                                             <td class="type"></td>
                                             <td class="percentage"></td>
+                                            <td></td>
+                                            <td></td>
                                             <td class="tableModule-bodyItem-action">
                                                 <button type="button"
                                                         class="btn btn_link editAffiliateBtn"
@@ -1839,7 +1813,7 @@ data-expand-target="expand01">
                         <div id="accordionTransaction" class="services-container-tabcontent">
                             <div class="accordion-item" style="width: 100%">
                                 <h5 class="mb-0">
-                                    <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                                    <button class="accordion-button collapsed" data-toggle="collapse" data-target="#collapseThree"
                                             aria-expanded="false" aria-controls="collapseThree">
                                         <h5 class="mb-0"><spring:theme code="general.shareholderequity"/></h5>
                                         <div class="plus-minus-icon"></div>
@@ -1852,351 +1826,161 @@ data-expand-target="expand01">
                                      data-parent="#accordionTransaction">
                                     <div class="accordion-body serviceModule-detail border-top-0">
 
-                                        <div class="tableModule tableModule_slim  overflow-y-hidden">
-                                            <table class="tableModule-table">
-                                                <thead class="tableModule-head">
-                                                <tr>
-                                                    <th></th>
-                                                    <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.currentQuarter"/></th>
-                                                    <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.previousQuarter"/></th>
-                                                </tr>
-                                                </thead>
-
-                                                <tbody class="tableModule-body" id="shareholderEquityableTable">
-
-
-                                                <tr>
-                                                    <td class="lastUpdate">
-                                                        <spring:theme
-                                                                code="financial.survey.shareholderEquity.paidUpCapital.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderPaidUpCapitalCurrentQuarterId"
-                                                                       name="shareholderPaidUpCapitalCurrentQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderPaidUpCapitalPreviousQuarterId"
-                                                                       name="shareholderPaidUpCapitalPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-
-                                                    </td>
-
-                                                </tr>
-
-
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                        <div class="row" style="margin-top: 15px;">
+                                            <div class="col-md-12">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderAdditionalPaidUpCapitalCurrentQuarterId"
+                                                               name="shareholderAdditionalPaidUpCapitalCurrentQuarter"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderAdditionalPaidUpCapitalCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.shareholderEquity.additionalPaidUpCapital.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderAdditionalPaidUpCapitalCurrentQuarterId"
-                                                                       name="shareholderAdditionalPaidUpCapitalCurrentQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderAdditionalPaidUpCapitalPreviousQuarterId"
-                                                                       name="shareholderAdditionalPaidUpCapitalPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-
-                                                    </td>
-
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderRetainedEarningsIncludeCurrentQuarterId"
+                                                               name="shareholderRetainedEarningsIncludeCurrentQuarter"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderRetainedEarningsIncludeCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.shareholderEquity.retainedEarningsInclude.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderRetainedEarningsIncludeCurrentQuarterId"
-                                                                       name="shareholderRetainedEarningsIncludeCurrentQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderRetainedEarningsIncludePreviousQuarterId"
-                                                                       name="shareholderRetainedEarningsIncludePreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-
-
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderProfitLossQuarterCurrentQuarterId"
+                                                               name="shareholderProfitLossQuarterCurrentQuarter"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderProfitLossQuarterCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.shareholderEquity.profitLossQuarter.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderProfitLossQuarterCurrentQuarterId"
-                                                                       name="shareholderProfitLossQuarterCurrentQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderProfitLossQuarterPreviousQuarterId"
-                                                                       name="shareholderProfitLossQuarterPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                            <div class="col-md-12">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderTotalReservesCurrentQuarterId"
+                                                               name="shareholderTotalReservesCurrentQuarter"
+                                                               onchange="caluculateTotalCapital()"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderTotalReservesCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.shareholderEquity.totalReserves.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderTotalReservesCurrentQuarterId"
-                                                                       name="shareholderTotalReservesCurrentQuarter"
-                                                                       onchange="caluculateTotalCapital()"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderTotalReservesPreviousQuarterId"
-                                                                       name="shareholderTotalReservesPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderTreasurySharesCurrentQuarterId"
+                                                               name="shareholderTreasurySharesCurrentQuarter"
+                                                               onchange="caluculateTotalCapital()"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderTreasurySharesCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.shareholderEquity.treasuryShares.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderTreasurySharesCurrentQuarterId"
-                                                                       name="shareholderTreasurySharesCurrentQuarter"
-                                                                       onchange="caluculateTotalCapital()"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderTreasurySharesPreviousQuarterId"
-                                                                       name="shareholderTreasurySharesPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-
-
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                            <div class="col-md-12">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderHeadOfficeAccountInBranchCurrentQuarterId"
+                                                               name="shareholderHeadOfficeAccountInBranchCurrentQuarter"
+                                                               onchange="caluculateTotalCapital()"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderHeadOfficeAccountInBranchCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.shareholderEquity.headOfficeAccountInBranch.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderHeadOfficeAccountInBranchCurrentQuarterId"
-                                                                       name="shareholderHeadOfficeAccountInBranchCurrentQuarter"
-                                                                       onchange="caluculateTotalCapital()"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderHeadOfficeAccountInBranchPreviousQuarterId"
-                                                                       name="shareholderHeadOfficeAccountInBranchPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                            <div class="col-md-12">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderShareholderEquityOthersCurrentQuarterId"
+                                                               name="shareholderShareholderEquityOthersCurrentQuarter"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderShareholderEquityOthersCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.shareholderEquity.others.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderShareholderEquityOthersCurrentQuarterId"
-                                                                       name="shareholderShareholderEquityOthersCurrentQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderShareholderEquityOthersPreviousQuarterId"
-                                                                       name="shareholderShareholderEquityOthersPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderMinorityRightsCurrentQuarterId"
+                                                               name="shareholderMinorityRightsCurrentQuarter"
+                                                               onchange="caluculateTotalCapital()"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderMinorityRightsCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.minorityRights.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderMinorityRightsCurrentQuarterId"
-                                                                       name="shareholderMinorityRightsCurrentQuarter"
-                                                                       onchange="caluculateTotalCapital()"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderMinorityRightsPreviousQuarterId"
-                                                                       name="shareholderMinorityRightsPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-
-
-                                                <tr>
-                                                    <td class="lastUpdate">
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="formInputBox">
+                                                    <div class="form-group">
+                                                        <input id="shareholderTotalShareholderEquityCurrentQuarterId"
+                                                               name="shareholderTotalShareholderEquityCurrentQuarter"
+                                                               class="form-control" placeholder="." value="" type="text"
+                                                               dir="ltr" disabled="true"
+                                                               maxlength="80"> <label class="control-label"
+                                                                                      for="shareholderTotalShareholderEquityCurrentQuarterId">
                                                         <spring:theme
                                                                 code="financial.survey.totalShareholderEquity.currentQuarter"/>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderTotalShareholderEquityCurrentQuarterId"
-                                                                       name="shareholderTotalShareholderEquityCurrentQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr" disabled="true"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="formInputBox">
-                                                            <div class="form-group">
-                                                                <input id="shareholderTotalShareholderEquityPreviousQuarterId"
-                                                                       name="shareholderTotalShareholderEquityPreviousQuarter"
-                                                                       class="form-control" placeholder="." value="" type="text"
-                                                                       dir="ltr" disabled="true"
-                                                                       maxlength="80">
-                                                                <div class="help-block"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-
-
-                                                </tbody>
-                                            </table>
+                                                    </label>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -2437,8 +2221,6 @@ data-expand-target="expand01">
                         <spring:theme code="license.subsidiary.details"/>
                     </div>
 
-                    <hr class="hr w-100">
-
                     <div class="row">
 
                         <div class="col-md-6">
@@ -2459,7 +2241,7 @@ data-expand-target="expand01">
                             <div class="formInputBox">
                                 <div class="form-group">
                                     <input id="registrationNameId" name="registrationName" class="form-control"
-                                           placeholder="." value="" type="text" maxlength="10"> <label
+                                           placeholder="." value="" type="text"> <label
                                         class="control-label control-label_mandatory" for="registrationNameId">
                                     <spring:theme
                                             code="license.subsidiary.registration.name"/>
@@ -2473,7 +2255,7 @@ data-expand-target="expand01">
                             <div class="formInputBox">
                                 <div class="form-group">
                                     <input id="unifiedNoId" name="unifiedNo" class="form-control"
-                                           placeholder="." value="" type="text" maxlength="10"> <label
+                                           placeholder="." value="" type="text"> <label
                                         class="control-label control-label_mandatory" for="unifiedNoId"> <spring:theme
                                         code="license.subsidiary.unifiedno"/>
                                 </label>

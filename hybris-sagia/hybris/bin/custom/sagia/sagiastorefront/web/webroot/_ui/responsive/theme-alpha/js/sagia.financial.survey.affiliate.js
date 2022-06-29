@@ -467,30 +467,30 @@ function fillAffiliateForm(selectedAffiliate) {
     }
 
 
-    $('#tradeDebitCurrentQuarterId').val(selectedAffiliate.transaction.tradeDebitCurrentQuarter);
-    $('#tradeCreditCurrentQuarterId').val(selectedAffiliate.transaction.tradeCreditCurrentQuarter);
-    $('#loansAssetsCurrentQuarterId').val(selectedAffiliate.transaction.loansAssetsCurrentQuarter);
-    $('#loansLiabilitiesCurrentQuarterId').val(selectedAffiliate.transaction.loansLiabilitiesCurrentQuarter);
-    $('#interestReceivedCurrentQuarterId').val(selectedAffiliate.transaction.interestReceivedCurrentQuarter);
-    $('#interestPayableCurrentQuarterId').val(selectedAffiliate.transaction.interestPayableCurrentQuarter);
-    $('#dividendsReceivedCurrentQuarterId').val(selectedAffiliate.transaction.dividendsReceivedCurrentQuarter);
-    $('#dividendsPaidCurrentQuarterId').val(selectedAffiliate.transaction.dividendsPaidCurrentQuarter);
-    $('#expensesReceivedCurrentQuarterId').val(selectedAffiliate.transaction.expensesReceivedCurrentQuarter);
-    $('#expensesPaidCurrentQuarterId').val(selectedAffiliate.transaction.expensesPaidCurrentQuarter);
-    $('#sellProductionSuppliesCurrentQuarterId').val(selectedAffiliate.transaction.sellProductionSuppliesCurrentQuarter);
-    $('#purchaseProductionSuppliesCurrentQuarterId').val(selectedAffiliate.transaction.purchaseProductionSuppliesCurrentQuarter);
-    $('#sellMachineryCurrentQuarterId').val(selectedAffiliate.transaction.sellMachineryCurrentQuarter);
-    $('#purchaseMachineryCurrentQuarterId').val(selectedAffiliate.transaction.purchaseMachineryCurrentQuarter);
-    $('#currentDebitAccountCurrentQuarterId').val(selectedAffiliate.transaction.currentDebitAccountCurrentQuarter);
-    $('#currentCreditAccountCurrentQuarterId').val(selectedAffiliate.transaction.currentCreditAccountCurrentQuarter);
-    $('#expensesReceivableCurrentQuarterId').val(selectedAffiliate.transaction.expensesReceivableCurrentQuarter);
-    $('#expensesPayableCurrentQuarterId').val(selectedAffiliate.transaction.expensesPayableCurrentQuarter);
-    $('#insuranceCommissionReceivableCurrentQuarterId').val(selectedAffiliate.transaction.insuranceCommissionReceivableCurrentQuarter);
-    $('#insuranceCommissionPayableCurrentQuarterId').val(selectedAffiliate.transaction.insuranceCommissionPayableCurrentQuarter);
-    $('#otherDebitCurrentQuarterId').val(selectedAffiliate.transaction.otherDebitCurrentQuarter);
-    $('#otherCreditCurrentQuarterId').val(selectedAffiliate.transaction.otherCreditCurrentQuarter);
-    $('#totalDebitCurrentQuarterId').val(selectedAffiliate.transaction.totalDebitCurrentQuarter);
-    $('#totalCreditCurrentQuarterId').val(selectedAffiliate.transaction.totalCreditCurrentQuarter);
+    $('#accordionTransactionAffeliate #tradeDebitCurrentQuarterId').val(selectedAffiliate.transaction.tradeDebitCurrentQuarter);
+    $('#accordionTransactionAffeliate #tradeCreditCurrentQuarterId').val(selectedAffiliate.transaction.tradeCreditCurrentQuarter);
+    $('#accordionTransactionAffeliate #loansAssetsCurrentQuarterId').val(selectedAffiliate.transaction.loansAssetsCurrentQuarter);
+    $('#accordionTransactionAffeliate #loansLiabilitiesCurrentQuarterId').val(selectedAffiliate.transaction.loansLiabilitiesCurrentQuarter);
+    $('#accordionTransactionAffeliate #interestReceivedCurrentQuarterId').val(selectedAffiliate.transaction.interestReceivedCurrentQuarter);
+    $('#accordionTransactionAffeliate #interestPayableCurrentQuarterId').val(selectedAffiliate.transaction.interestPayableCurrentQuarter);
+    $('#accordionTransactionAffeliate #dividendsReceivedCurrentQuarterId').val(selectedAffiliate.transaction.dividendsReceivedCurrentQuarter);
+    $('#accordionTransactionAffeliate #dividendsPaidCurrentQuarterId').val(selectedAffiliate.transaction.dividendsPaidCurrentQuarter);
+    $('#accordionTransactionAffeliate #expensesReceivedCurrentQuarterId').val(selectedAffiliate.transaction.expensesReceivedCurrentQuarter);
+    $('#accordionTransactionAffeliate #expensesPaidCurrentQuarterId').val(selectedAffiliate.transaction.expensesPaidCurrentQuarter);
+    $('#accordionTransactionAffeliate #sellProductionSuppliesCurrentQuarterId').val(selectedAffiliate.transaction.sellProductionSuppliesCurrentQuarter);
+    $('#accordionTransactionAffeliate #purchaseProductionSuppliesCurrentQuarterId').val(selectedAffiliate.transaction.purchaseProductionSuppliesCurrentQuarter);
+    $('#accordionTransactionAffeliate #sellMachineryCurrentQuarterId').val(selectedAffiliate.transaction.sellMachineryCurrentQuarter);
+    $('#accordionTransactionAffeliate #purchaseMachineryCurrentQuarterId').val(selectedAffiliate.transaction.purchaseMachineryCurrentQuarter);
+    $('#accordionTransactionAffeliate #currentDebitAccountCurrentQuarterId').val(selectedAffiliate.transaction.currentDebitAccountCurrentQuarter);
+    $('#accordionTransactionAffeliate #currentCreditAccountCurrentQuarterId').val(selectedAffiliate.transaction.currentCreditAccountCurrentQuarter);
+    $('#accordionTransactionAffeliate #expensesReceivableCurrentQuarterId').val(selectedAffiliate.transaction.expensesReceivableCurrentQuarter);
+    $('#accordionTransactionAffeliate #expensesPayableCurrentQuarterId').val(selectedAffiliate.transaction.expensesPayableCurrentQuarter);
+    $('#accordionTransactionAffeliate #insuranceCommissionReceivableCurrentQuarterId').val(selectedAffiliate.transaction.insuranceCommissionReceivableCurrentQuarter);
+    $('#accordionTransactionAffeliate #insuranceCommissionPayableCurrentQuarterId').val(selectedAffiliate.transaction.insuranceCommissionPayableCurrentQuarter);
+    $('#accordionTransactionAffeliate #otherDebitCurrentQuarterId').val(selectedAffiliate.transaction.otherDebitCurrentQuarter);
+    $('#accordionTransactionAffeliate #otherCreditCurrentQuarterId').val(selectedAffiliate.transaction.otherCreditCurrentQuarter);
+    $('#accordionTransactionAffeliate #totalDebitCurrentQuarterId').val(selectedAffiliate.transaction.totalDebitCurrentQuarter);
+    $('#accordionTransactionAffeliate #totalCreditCurrentQuarterId').val(selectedAffiliate.transaction.totalCreditCurrentQuarter);
 
     updateDropDown('#affiliateCountryId', selectedAffiliate.affiliateCountry);
 
@@ -575,30 +575,30 @@ var saveAffiliate = function (existingBp, bpId) {
 
     // transaction
     var transaction = {};
-     transaction.tradeDebitCurrentQuarter = $('#tradeDebitCurrentQuarterId').val() ;
-     transaction.tradeCreditCurrentQuarter = $('#tradeCreditCurrentQuarterId').val() ;
-     transaction.loansAssetsCurrentQuarter =  $('#loansAssetsCurrentQuarterId').val() ;
-     transaction.loansLiabilitiesCurrentQuarter =  $('#loansLiabilitiesCurrentQuarterId').val() ;
-     transaction.interestReceivedCurrentQuarter = $('#interestReceivedCurrentQuarterId').val() ;
-     transaction.interestPayableCurrentQuarter = $('#interestPayableCurrentQuarterId').val() ;
-     transaction.dividendsReceivedCurrentQuarter = $('#dividendsReceivedCurrentQuarterId').val() ;
-     transaction.dividendsPaidCurrentQuarter = $('#dividendsPaidCurrentQuarterId').val() ;
-     transaction.expensesReceivedCurrentQuarter = $('#expensesReceivedCurrentQuarterId').val() ;
-     transaction.expensesPaidCurrentQuarter = $('#expensesPaidCurrentQuarterId').val() ;
-     transaction.sellProductionSuppliesCurrentQuarter = $('#sellProductionSuppliesCurrentQuarterId').val() ;
-     transaction.purchaseProductionSuppliesCurrentQuarter = $('#purchaseProductionSuppliesCurrentQuarterId').val() ;
-     transaction.sellMachineryCurrentQuarter = $('#sellMachineryCurrentQuarterId').val() ;
-     transaction.purchaseMachineryCurrentQuarter = $('#purchaseMachineryCurrentQuarterId').val() ;
-     transaction.currentDebitAccountCurrentQuarter = $('#currentDebitAccountCurrentQuarterId').val() ;
-     transaction.currentCreditAccountCurrentQuarter = $('#currentCreditAccountCurrentQuarterId').val() ;
-     transaction.expensesReceivableCurrentQuarter = $('#expensesReceivableCurrentQuarterId').val() ;
-     transaction.expensesPayableCurrentQuarter = $('#expensesPayableCurrentQuarterId').val() ;
-     transaction.insuranceCommissionReceivableCurrentQuarter = $('#insuranceCommissionReceivableCurrentQuarterId').val() ;
-     transaction.insuranceCommissionPayableCurrentQuarter = $('#insuranceCommissionPayableCurrentQuarterId').val() ;
-     transaction.otherDebitCurrentQuarter = $('#otherDebitCurrentQuarterId').val() ;
-     transaction.otherCreditCurrentQuarter = $('#otherCreditCurrentQuarterId').val() ;
-     transaction.totalDebitCurrentQuarter = $('#totalDebitCurrentQuarterId').val() ;
-     transaction.totalCreditCurrentQuarter = $('#totalCreditCurrentQuarterId').val() ;
+     transaction.tradeDebitCurrentQuarter = $('#accordionTransactionAffeliate #tradeDebitCurrentQuarterId').val() ;
+     transaction.tradeCreditCurrentQuarter = $('#accordionTransactionAffeliate #tradeCreditCurrentQuarterId').val() ;
+     transaction.loansAssetsCurrentQuarter =  $('#accordionTransactionAffeliate #loansAssetsCurrentQuarterId').val() ;
+     transaction.loansLiabilitiesCurrentQuarter =  $('#accordionTransactionAffeliate #loansLiabilitiesCurrentQuarterId').val() ;
+     transaction.interestReceivedCurrentQuarter = $('#accordionTransactionAffeliate #interestReceivedCurrentQuarterId').val() ;
+     transaction.interestPayableCurrentQuarter = $('#accordionTransactionAffeliate #interestPayableCurrentQuarterId').val() ;
+     transaction.dividendsReceivedCurrentQuarter = $('#accordionTransactionAffeliate #dividendsReceivedCurrentQuarterId').val() ;
+     transaction.dividendsPaidCurrentQuarter = $('#accordionTransactionAffeliate #dividendsPaidCurrentQuarterId').val() ;
+     transaction.expensesReceivedCurrentQuarter = $('#accordionTransactionAffeliate #expensesReceivedCurrentQuarterId').val() ;
+     transaction.expensesPaidCurrentQuarter = $('#accordionTransactionAffeliate #expensesPaidCurrentQuarterId').val() ;
+     transaction.sellProductionSuppliesCurrentQuarter = $('#accordionTransactionAffeliate #sellProductionSuppliesCurrentQuarterId').val() ;
+     transaction.purchaseProductionSuppliesCurrentQuarter = $('#accordionTransactionAffeliate #purchaseProductionSuppliesCurrentQuarterId').val() ;
+     transaction.sellMachineryCurrentQuarter = $('#accordionTransactionAffeliate #sellMachineryCurrentQuarterId').val() ;
+     transaction.purchaseMachineryCurrentQuarter = $('#accordionTransactionAffeliate #purchaseMachineryCurrentQuarterId').val() ;
+     transaction.currentDebitAccountCurrentQuarter = $('#accordionTransactionAffeliate #currentDebitAccountCurrentQuarterId').val() ;
+     transaction.currentCreditAccountCurrentQuarter = $('#accordionTransactionAffeliate #currentCreditAccountCurrentQuarterId').val() ;
+     transaction.expensesReceivableCurrentQuarter = $('#accordionTransactionAffeliate #expensesReceivableCurrentQuarterId').val() ;
+     transaction.expensesPayableCurrentQuarter = $('#accordionTransactionAffeliate #expensesPayableCurrentQuarterId').val() ;
+     transaction.insuranceCommissionReceivableCurrentQuarter = $('#accordionTransactionAffeliate #insuranceCommissionReceivableCurrentQuarterId').val() ;
+     transaction.insuranceCommissionPayableCurrentQuarter = $('#accordionTransactionAffeliate #insuranceCommissionPayableCurrentQuarterId').val() ;
+     transaction.otherDebitCurrentQuarter = $('#accordionTransactionAffeliate #otherDebitCurrentQuarterId').val() ;
+     transaction.otherCreditCurrentQuarter = $('#accordionTransactionAffeliate #otherCreditCurrentQuarterId').val() ;
+     transaction.totalDebitCurrentQuarter = $('#accordionTransactionAffeliate #totalDebitCurrentQuarterId').val() ;
+     transaction.totalCreditCurrentQuarter = $('#accordionTransactionAffeliate #totalCreditCurrentQuarterId').val() ;
 
 
 

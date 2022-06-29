@@ -20,6 +20,7 @@ public class IsicMasterDataService extends AbstractSagiaService<IsicMasterSetDat
 
     private SagiaIsicMasterDataDAO sagiaIsicMasterDataDAO;
 
+
     public Collection<IsicMasterModel> getAllIsicMasterByLicenseType(String licenseType){
         return sagiaIsicMasterDataDAO.getAllIsicMasterByLicenseType(licenseType);
     }
@@ -40,9 +41,36 @@ public class IsicMasterDataService extends AbstractSagiaService<IsicMasterSetDat
         return sagiaIsicMasterDataDAO.getActiveISICSection();
     }
 
+    public List<IsicTextsModel> getActiveISICGroup() {
+        return sagiaIsicMasterDataDAO.getActiveISICGroup();
+    }
+
+    public List<IsicTextsModel> getActiveISICClass() {
+        return sagiaIsicMasterDataDAO.getActiveISICClass();
+    }
     public List<IsicTextsModel> getActiveISICDivision(String sectionID) {
         return sagiaIsicMasterDataDAO.getActiveISICDivision(sectionID);
     }
+
+    public List<IsicTextsModel> getActiveISICGroup(String divisionID) {
+        return sagiaIsicMasterDataDAO.getActiveISICGroupByDivisionID(divisionID);
+    }
+
+    public List<IsicTextsModel> getActiveISICClass(String groupID) {
+        return sagiaIsicMasterDataDAO.getActiveISICClassByGroupID(groupID);
+    }
+
+    public List<IsicTextsModel> getActiveISICBranch(String classID) {
+        return sagiaIsicMasterDataDAO.getActiveISICBranchByClassID(classID);
+    }
+
+    public List<IsicTextsModel> getActiveISICActivity(String branchID) {
+        return sagiaIsicMasterDataDAO.getActiveISICActivityByBranchID(branchID);
+    }
+
+
+
+
 
     //TODO dont need to use all this methods above
 /*    public Collection<IsicMasterModel>  getAllSectionsByLicenseType(String licenseType){

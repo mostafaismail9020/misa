@@ -1,6 +1,9 @@
 package com.sap.ibso.eservices.sagiaservices.services.financialsurvey.impl;
 
+import com.sap.ibso.eservices.core.enums.FinancialSurveyAffiliateType;
 import com.sap.ibso.eservices.core.enums.FinancialSurveyCompanyStatus;
+import com.sap.ibso.eservices.core.enums.FinancialSurveyScaleLevel;
+import com.sap.ibso.eservices.core.enums.FinancialSurveyShareholderType;
 import com.sap.ibso.eservices.core.enums.FinancialSurveyStatus;
 import com.sap.ibso.eservices.core.model.FinancialSurveyAffiliateModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyBranchModel;
@@ -9,13 +12,16 @@ import com.sap.ibso.eservices.core.model.FinancialSurveyQuarterModel;
 import com.sap.ibso.eservices.core.model.FinancialSurveyShareholderModel;
 import com.sap.ibso.eservices.core.model.SagiaCompanyProfileModel;
 import com.sap.ibso.eservices.core.model.SagiaSubsidiaryModel;
-import com.sap.ibso.eservices.core.model.SagiaSurveyAddressModel;
 import com.sap.ibso.eservices.core.model.SagiaSurveyMessageModel;
 import com.sap.ibso.eservices.core.model.SagiaSurveyTransactionModel;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyDAO;
 import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyQuarterDAO;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaCityDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaCompanyProfileDAO;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaCountryDAO;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaIsicMasterDataDAO;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaLegalStatusDAO;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaRegionDAO;
 import com.sap.ibso.eservices.core.sagia.services.SagiaFormatProvider;
 import com.sap.ibso.eservices.facades.data.finance.survey.Affiliate;
 import com.sap.ibso.eservices.facades.data.finance.survey.Shareholder;
@@ -69,6 +75,20 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     private CommonI18NService commonI18NService;
     @Resource
     private SagiaLegalStatusDAO  sagiaLegalStatusDAO;
+    @Resource
+    SagiaIsicMasterDataDAO sagiaIsicMasterDataDAO;
+
+    @Resource
+    private SagiaCountryDAO sagiaCountryDAO;
+
+    @Resource
+    private SagiaRegionDAO sagiaRegionDAO;
+
+    @Resource
+    private SagiaCityDAO sagiaCityDAO;
+
+
+
 
 
 
@@ -90,12 +110,11 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
 
         //save company Profile master data
-        saveCompanyProfile(financialSurveyData.getCompanyProfile()) ;
+        SagiaCompanyProfileModel companyProfile = saveCompanyProfile(financialSurveyData.getCompanyProfile());
 
         // fetch the FinancialSurvey for the given quarter
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurveyData.getQuarterCode());
-
-
+        financialSurveyModel.setCompanyProfile(companyProfile);
         saveFinancialSurveyModel(financialSurveyData, financialSurveyModel);
 
 
@@ -119,12 +138,21 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         }
         //financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getPaidUpCapitalCurrentQuarter());
         financialSurveyModel.setIsConsolidated(financialSurveyData.getIsConsolidated());
+        financialSurveyModel.setCompanyName(financialSurveyData.getCompanyProfile().getCompanyName());
+        financialSurveyModel.setCommercialRegistrationNo(financialSurveyData.getCompanyProfile().getCommercialRegistrationNo());
         financialSurveyModel.setDisclosureCurrency(financialSurveyData.getDisclosureCurrency());
         financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getPaidUpCapitalCurrentQuarter());
+        if(financialSurveyData.getIsScaleLevelActualUnit()){
+            financialSurveyModel.setScaleLevel(FinancialSurveyScaleLevel.ACTUAL_UNIT);
+        }else {
+            financialSurveyModel.setScaleLevel(FinancialSurveyScaleLevel.THOUSANDS);
+        }
+
         modelService.save(financialSurveyModel);
     }
 
     private void saveShareholderEquity(FinancialSurvey financialSurveyData, FinancialSurveyModel financialSurveyModel){
+        financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getPaidUpCapitalCurrentQuarter());
         financialSurveyModel.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getAdditionalPaidUpCapitalCurrentQuarter());
         financialSurveyModel.setRetainedEarningsIncludeCurrentQuarter(financialSurveyData.getShareholderEquity().getRetainedEarningsIncludeCurrentQuarter());
         financialSurveyModel.setProfitLossQuarterCurrentQuarter(financialSurveyData.getShareholderEquity().getProfitLossQuarterCurrentQuarter());
@@ -257,10 +285,10 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                     financialSurveyBranchModel.setTypeDescription(branch.getTypeDescription());
                     financialSurveyBranchModel.setFinancialSurvey(financialSurveyModel);
 
-                    SagiaSurveyAddressModel sagiaSurveyAddressModel = new SagiaSurveyAddressModel();
-                    populateAddressModel(sagiaSurveyAddressModel,branch.getAddress());
-                    modelService.save(sagiaSurveyAddressModel);
-                    financialSurveyBranchModel.setAddress(sagiaSurveyAddressModel);
+                    ///SagiaSurveyAddressModel sagiaSurveyAddressModel = new SagiaSurveyAddressModel();
+                    populateAddressModel(financialSurveyBranchModel,branch.getAddress());
+                  //  modelService.save(sagiaSurveyAddressModel);
+                 //   financialSurveyBranchModel.setAddress(sagiaSurveyAddressModel);
                     modelService.save(financialSurveyBranchModel);
                 }
             }
@@ -273,6 +301,13 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
             financialSurveyModel.setBusinessActivityId(businessActivity.getId());
             financialSurveyModel.setBusinessActivityDescription(businessActivity.getDescription());
         }
+
+        financialSurveyModel.setEconomicActivityClass(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivityClass(),"CLASS" ));
+        financialSurveyModel.setEconomicActivityDivision(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivityDivision(),"DIVISION" ));
+        financialSurveyModel.setEconomicActivityGroup(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivityGroup(),"GROUP" ));
+        financialSurveyModel.setEconomicActivitySection(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivitySection(),"SECTION" ));
+        financialSurveyModel.setEconomicActivityBranch(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivityBranch(),"BRANCH" ));
+        financialSurveyModel.setEconomicActivity(sagiaIsicMasterDataDAO.getIsicTextsByCode(financialSurveyData.getEconomicActivity(),"ACTIVITY" ));
     }
 
     private FinancialSurveyModel initiateFinancialSurveyModel(FinancialSurvey financialSurveyData) {
@@ -285,18 +320,16 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         return financialSurveyModel;
     }
 
-    private void populateAddressModel(SagiaSurveyAddressModel sagiaSurveyAddressModel, Address address) {
-        sagiaSurveyAddressModel.setCity(address.getCity());
-        sagiaSurveyAddressModel.setCityDescription(address.getCityDescription());
-        sagiaSurveyAddressModel.setCountry(address.getCountry());
-        sagiaSurveyAddressModel.setTelephone(address.getTelephone());
-        sagiaSurveyAddressModel.setStreet(address.getStreet());
-        sagiaSurveyAddressModel.setRegion(address.getRegion());
-        sagiaSurveyAddressModel.setRegionDescription(address.getRegionDescription());
-        sagiaSurveyAddressModel.setNumber(address.getNumber());
-        sagiaSurveyAddressModel.setWebsite(address.getWebsite());
-        sagiaSurveyAddressModel.setEmail(address.getEmail());
-        sagiaSurveyAddressModel.setZipCode(address.getWebsite());
+    private void populateAddressModel(FinancialSurveyBranchModel financialSurveyBranchModel, Address address) {
+        financialSurveyBranchModel.setCity(sagiaCityDAO.getCityForCode(address.getCity()));
+        financialSurveyBranchModel.setCountry(sagiaCountryDAO.getCountryForCode("SA"));
+        financialSurveyBranchModel.setTelephone(address.getTelephone());
+        financialSurveyBranchModel.setStreet(address.getStreet());
+        financialSurveyBranchModel.setRegion(sagiaRegionDAO.getRegionForCode(address.getRegion()));
+        financialSurveyBranchModel.setNumber(address.getNumber());
+        financialSurveyBranchModel.setWebsite(address.getWebsite());
+        financialSurveyBranchModel.setEmail(address.getEmail());
+        financialSurveyBranchModel.setZipCode(address.getWebsite());
     }
 
     @Override
@@ -317,11 +350,12 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     public void saveFinancialSurveyCompanyProfile(FinancialSurvey financialSurveyData) {
 
         //save company Profile master data
-        saveCompanyProfile(financialSurveyData.getCompanyProfile()) ;
+        SagiaCompanyProfileModel sagiaCompanyProfileModel = saveCompanyProfile(financialSurveyData.getCompanyProfile()) ;
 
         // fetch the FinancialSurvey for the given quarter
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurveyData.getQuarterCode());
         financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.IN_PROGRESS);
+        financialSurveyModel.setCompanyProfile(sagiaCompanyProfileModel);
         financialSurveyModel.setIsCompanyProfileSectionFilled(true);
         savetBusinessActivities(financialSurveyData, financialSurveyModel);
         saveFinancialSurveyModel(financialSurveyData, financialSurveyModel);
@@ -365,11 +399,15 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
 
     @Override
-    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode) {
+    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode
+            ,Integer hoursToCompleteSurvey, Integer minutesToCompleteSurvey, String sourceOfKnowledge) {
 
         // fetch the FinancialSurvey for the given quarter
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(quarterCode);
         financialSurveyModel.setAnnualFinancialStatementFile(mediaModel);
+        financialSurveyModel.setHoursToCompleteSurvey(hoursToCompleteSurvey);
+        financialSurveyModel.setMinutesToCompleteSurvey(minutesToCompleteSurvey);
+        financialSurveyModel.setSourceOfKnowledge(sourceOfKnowledge);
         financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.SUBMITTED);
         modelService.save(financialSurveyModel);
         /*final SagiaNewFinancialSurveyProcessModel sagiaNewFinancialSurveyProcess =
@@ -392,9 +430,61 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     @Override
     public void saveFinancialSurveyShareholderEquity(FinancialSurvey financialSurvey) {
         FinancialSurveyModel financialSurveyModel = getFinancialSurvey(financialSurvey.getQuarterCode());
+
         financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.IN_PROGRESS);
         financialSurveyModel.setIsEquitySectionFilled(true);
         saveShareholderEquity(financialSurvey,financialSurveyModel);
+
+        String prevQuarterCode = financialSurveyModel.getQuarter().getPreviousQuarter()!=null ? financialSurveyModel.getQuarter().getPreviousQuarter().getCode() : null;
+
+        if (prevQuarterCode != null){
+            FinancialSurveyModel prevFinancialSurveyModel = getFinancialSurvey(prevQuarterCode);
+            if (prevFinancialSurveyModel!= null && isPreviousFinancialShareholderEquityUpdated(prevFinancialSurveyModel,financialSurvey)){
+                prevFinancialSurveyModel.setSurveyStatus(FinancialSurveyStatus.UPDATED);
+                prevFinancialSurveyModel.setIsEquitySectionFilled(true);
+                savePrevQuarterShareholderEquity(financialSurvey,prevFinancialSurveyModel);
+            }
+        }
+
+
+
+    }
+
+    private void savePrevQuarterShareholderEquity(FinancialSurvey financialSurveyData, FinancialSurveyModel financialSurveyModel) {
+
+        financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getPaidUpCapitalPreviousQuarter());
+        financialSurveyModel.setAdditionalPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getAdditionalPaidUpCapitalPreviousQuarter());
+        financialSurveyModel.setRetainedEarningsIncludeCurrentQuarter(financialSurveyData.getShareholderEquity().getRetainedEarningsIncludePreviousQuarter());
+        financialSurveyModel.setProfitLossQuarterCurrentQuarter(financialSurveyData.getShareholderEquity().getProfitLossQuarterPreviousQuarter());
+        financialSurveyModel.setTotalReservesCurrentQuarter(financialSurveyData.getShareholderEquity().getTotalReservesPreviousQuarter());
+        financialSurveyModel.setTreasurySharesCurrentQuarter(financialSurveyData.getShareholderEquity().getTreasurySharesPreviousQuarter());
+        financialSurveyModel.setHeadOfficeAccountInBranchCurrentQuarter(financialSurveyData.getShareholderEquity().getHeadOfficeAccountInBranchPreviousQuarter());
+        financialSurveyModel.setShareholderEquityOthersCurrentQuarter(financialSurveyData.getShareholderEquity().getShareholderEquityOthersPreviousQuarter());
+        financialSurveyModel.setMinorityRightsCurrentQuarter(financialSurveyData.getShareholderEquity().getMinorityRightsPreviousQuarter());
+        financialSurveyModel.setTotalShareholderEquityCurrentQuarter(financialSurveyData.getShareholderEquity().getTotalShareholderEquityPreviousQuarter());
+        modelService.save(financialSurveyModel);
+
+    }
+
+    private boolean isPreviousFinancialShareholderEquityUpdated(FinancialSurveyModel prevFinancialSurveyModel, FinancialSurvey financialSurvey) {
+
+        if ( financialSurvey.getShareholderEquity().getAdditionalPaidUpCapitalPreviousQuarter().equals(prevFinancialSurveyModel.getAdditionalPaidUpCapitalCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getRetainedEarningsIncludePreviousQuarter().equals(prevFinancialSurveyModel.getRetainedEarningsIncludeCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getProfitLossQuarterPreviousQuarter().equals(prevFinancialSurveyModel.getProfitLossQuarterCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getTotalReservesPreviousQuarter().equals(prevFinancialSurveyModel.getTotalReservesCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getTreasurySharesPreviousQuarter().equals(prevFinancialSurveyModel.getTreasurySharesCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getHeadOfficeAccountInBranchPreviousQuarter().equals(prevFinancialSurveyModel.getHeadOfficeAccountInBranchCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getShareholderEquityOthersPreviousQuarter().equals(prevFinancialSurveyModel.getShareholderEquityOthersCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getMinorityRightsPreviousQuarter().equals(prevFinancialSurveyModel.getMinorityRightsCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getTotalShareholderEquityPreviousQuarter().equals(prevFinancialSurveyModel.getTotalShareholderEquityCurrentQuarter())
+           && financialSurvey.getShareholderEquity().getPaidUpCapitalPreviousQuarter().equals(prevFinancialSurveyModel.getPaidUpCapitalCurrentQuarter()
+        )
+        ){
+
+            return  false;
+        }else {
+            return true;
+        }
     }
 
 
@@ -412,7 +502,23 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                 financialSurveyModel.setQuarter(quarter);
                 financialSurveyModel.setUser((CustomerModel) currentUser);
                 financialSurveyModel.setSurveyStatus(FinancialSurveyStatus.OPEN);
+
+                SagiaCompanyProfileModel companyProfile = sagiaCompanyProfileDAO.getSagiaCompanyProfile(currentUser.getPk().getLong().toString());
+                if( companyProfile != null ){
+                    if (financialSurveyModel.getCompanyName() == null || "".equals(financialSurveyModel.getCompanyName())) {
+                        financialSurveyModel.setCompanyName(companyProfile.getCompanyName());
+                    }
+                    if (financialSurveyModel.getCommercialRegistrationNo() == null || "".equals(financialSurveyModel.getCommercialRegistrationNo())) {
+                        financialSurveyModel.setCommercialRegistrationNo(companyProfile.getCommercialRegistrationNo());
+                    }
+                }
                 modelService.save(financialSurveyModel);
+
+                // Copy shareholders,affiliates and branches from the previous quarter.
+                //Copy existing shareholders
+               // copyShareholdersFromPreviousQurterSurvey(financialSurveyModel,quarter);
+                //
+
             }
             financialSurveyModelList.add(financialSurveyModel);
         }
@@ -420,9 +526,52 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         return financialSurveyModelList;
     }
 
+    @Override
+    public void copyShareholdersFromPreviousQurterSurvey(FinancialSurveyModel financialSurveyModel, FinancialSurveyQuarterModel quarter) {
+
+        if (quarter.getPreviousQuarter()==null) {
+            return;
+        }
+        String prevQuarterCode = quarter.getPreviousQuarter()!=null ? quarter.getPreviousQuarter().getCode() : null;
+        FinancialSurveyModel prevFinancialSurveyModel = getFinancialSurvey(prevQuarterCode);
+
+        if (prevFinancialSurveyModel == null ){
+            return;
+        }
+
+        for(FinancialSurveyShareholderModel shareholderModelFromPrevQuarter: prevFinancialSurveyModel.getShareholders()){
+            FinancialSurveyShareholderModel financialSurveyShareholderModel = new FinancialSurveyShareholderModel();
+            financialSurveyShareholderModel.setFinancialSurvey(financialSurveyModel);
+            financialSurveyShareholderModel.setShareholderNameEnglish(shareholderModelFromPrevQuarter.getShareholderNameEnglish());
+            financialSurveyShareholderModel.setNationalityOfUCPRef(shareholderModelFromPrevQuarter.getNationalityOfUCPRef());
+            financialSurveyShareholderModel.setShareholderNationalityCurrentRef(shareholderModelFromPrevQuarter.getShareholderNationalityCurrentRef());
+            financialSurveyShareholderModel.setCompanyCountry(shareholderModelFromPrevQuarter.getCompanyCountry());
+            financialSurveyShareholderModel.setCompanyCountryRef(shareholderModelFromPrevQuarter.getCompanyCountryRef());
+            financialSurveyShareholderModel.setShareholderNationalityCurrentRef(shareholderModelFromPrevQuarter.getShareholderNationalityCurrentRef());
+            financialSurveyShareholderModel.setIndustry(shareholderModelFromPrevQuarter.getIndustry());
+            financialSurveyShareholderModel.setShareholderType(shareholderModelFromPrevQuarter.getShareholderType());
+            financialSurveyShareholderModel.setShareholderTypeRef(shareholderModelFromPrevQuarter.getShareholderTypeRef());
+            financialSurveyShareholderModel.setShareholderGender(shareholderModelFromPrevQuarter.getShareholderGender());
+            financialSurveyShareholderModel.setFinancialSurveyShareholderPreviousQuarter(shareholderModelFromPrevQuarter);
+            financialSurveyShareholderModel.setShareholderPercentage(shareholderModelFromPrevQuarter.getShareholderPercentage());
+            financialSurveyShareholderModel.setShareholderCapital(shareholderModelFromPrevQuarter.getShareholderCapital());
+            financialSurveyShareholderModel.setTreasurySharesCurrentQuarter(shareholderModelFromPrevQuarter.getTreasurySharesCurrentQuarter());
+            financialSurveyShareholderModel.setAdditionalPaidUpCapitalCurrentQuarter(shareholderModelFromPrevQuarter.getAdditionalPaidUpCapitalCurrentQuarter());
+            financialSurveyShareholderModel.setShareholderIsVotingPower(shareholderModelFromPrevQuarter.isShareholderIsVotingPower());
+            financialSurveyShareholderModel.setMinorityRightsCurrentQuarter(shareholderModelFromPrevQuarter.getMinorityRightsCurrentQuarter());
+            financialSurveyShareholderModel.setShareholderHasPreferredShares(shareholderModelFromPrevQuarter.isShareholderHasPreferredShares());
+            financialSurveyShareholderModel.setHeadOfficeAccountInBranchCurrentQuarter(shareholderModelFromPrevQuarter.getHeadOfficeAccountInBranchCurrentQuarter());
+            financialSurveyShareholderModel.setValueOfReverseInvestment(shareholderModelFromPrevQuarter.getValueOfReverseInvestment());
+            SagiaSurveyTransactionModel transaction = new SagiaSurveyTransactionModel();
+            //Fill with empty transaction.
+            financialSurveyShareholderModel.setTransaction(transaction);
+            modelService.save(financialSurveyShareholderModel);
+        }
+
+    }
 
 
-    private void saveCompanyProfile(CompanyProfileData companyProfileData){
+    private SagiaCompanyProfileModel saveCompanyProfile(CompanyProfileData companyProfileData){
 
         final PrincipalModel currentUser = userService.getCurrentUser();
         SagiaCompanyProfileModel companyProfile = sagiaCompanyProfileDAO.getSagiaCompanyProfile(currentUser.getPk().getLong().toString());
@@ -442,20 +591,30 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         companyProfile.setCrIssueDate(sagiaFormatProvider.formatUIStrToBackDate(companyProfileData.getCrIssueDate()));
         companyProfile.setIncorporationDate(sagiaFormatProvider.formatUIStrToBackDate(companyProfileData.getIncorporationDate()));
         modelService.save(companyProfile);
+        return companyProfile;
     }
 
     private void populateShareholderModel(Shareholder shareholder, FinancialSurveyShareholderModel financialSurveyShareholderModel) throws ConversionException {
         financialSurveyShareholderModel.setShareholderType(shareholder.getShareholderType());
+        financialSurveyShareholderModel.setShareholderTypeRef("1".equals(shareholder.getShareholderType())? FinancialSurveyShareholderType.INDIVIDUAL:FinancialSurveyShareholderType.ENTITY);
+
         financialSurveyShareholderModel.setCompanyCountry(shareholder.getCompanyCountry());
+        financialSurveyShareholderModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(shareholder.getCompanyCountry()));
         financialSurveyShareholderModel.setShareholderNameEnglish(shareholder.getShareholderNameEnglish());
         financialSurveyShareholderModel.setShareholderSector(shareholder.getShareholderSector());
         financialSurveyShareholderModel.setShareholderSubsector(shareholder.getShareholderSubsector());
-        financialSurveyShareholderModel.setNationalityOfUCP(shareholder.getNationalityOfUCP());
+        //financialSurveyShareholderModel.setNationalityOfUCP(shareholder.getNationalityOfUCP());
+        financialSurveyShareholderModel.setNationalityOfUCPRef(shareholder.getNationalityOfUCP()!=null?sagiaCountryDAO.getCountryForCode(shareholder.getNationalityOfUCP()):null);
         financialSurveyShareholderModel.setShareholderGender(shareholder.getShareholderGender());
         financialSurveyShareholderModel.setShareholderNationalityCurrent(shareholder.getShareholderNationalityCurrent());
+        financialSurveyShareholderModel.setShareholderNationalityCurrentRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderNationalityCurrent()));
+        // this field is deprecated
         financialSurveyShareholderModel.setShareholderCountry(shareholder.getShareholderCountry());
+        financialSurveyShareholderModel.setShareholderCountryRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderCountry()));
         financialSurveyShareholderModel.setShareholderPercentage(shareholder.getShareholderPercentage());
         financialSurveyShareholderModel.setShareholderCapital(shareholder.getShareholderCapital());
+
+
         financialSurveyShareholderModel.setPaidUpCapitalCurrentQuarter(shareholder.getPaidUpCapitalCurrentQuarter());
         financialSurveyShareholderModel.setAdditionalPaidUpCapitalCurrentQuarter(shareholder.getAdditionalPaidUpCapitalCurrentQuarter());
         financialSurveyShareholderModel.setRetainedEarningsIncludeCurrentQuarter(shareholder.getRetainedEarningsIncludeCurrentQuarter());
@@ -466,6 +625,71 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyShareholderModel.setShareholderEquityOthersCurrentQuarter(shareholder.getShareholderEquityOthersCurrentQuarter());
         financialSurveyShareholderModel.setMinorityRightsCurrentQuarter(shareholder.getMinorityRightsCurrentQuarter());
         financialSurveyShareholderModel.setTotalShareholderEquityCurrentQuarter(shareholder.getTotalShareholderEquityCurrentQuarter());
+
+        // Update Previous Quarter Values
+        FinancialSurveyShareholderModel financialSurveyShareholderPrevious = financialSurveyShareholderModel.getFinancialSurveyShareholderPreviousQuarter();
+        if(financialSurveyShareholderPrevious != null) {
+
+            boolean isValuesChanged  = false;
+
+            if(!shareholder.getAdditionalPaidUpCapitalPreviousQuarter().equals(financialSurveyShareholderPrevious.getAdditionalPaidUpCapitalCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setAdditionalPaidUpCapitalCurrentQuarter(shareholder.getAdditionalPaidUpCapitalPreviousQuarter());
+            }
+
+            if(!shareholder.getRetainedEarningsIncludePreviousQuarter().equals(financialSurveyShareholderPrevious.getRetainedEarningsIncludeCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setRetainedEarningsIncludeCurrentQuarter(shareholder.getRetainedEarningsIncludePreviousQuarter());
+            }
+
+            if(!shareholder.getProfitLossQuarterPreviousQuarter().equals(financialSurveyShareholderPrevious.getProfitLossQuarterCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setProfitLossQuarterCurrentQuarter(shareholder.getProfitLossQuarterPreviousQuarter());
+            }
+
+            if(!shareholder.getTotalReservesPreviousQuarter().equals(financialSurveyShareholderPrevious.getTotalReservesCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setTotalReservesCurrentQuarter(shareholder.getTotalReservesPreviousQuarter());
+            }
+
+            if(!shareholder.getTreasurySharesPreviousQuarter().equals(financialSurveyShareholderPrevious.getTreasurySharesCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setTreasurySharesCurrentQuarter(shareholder.getTreasurySharesPreviousQuarter());
+            }
+
+            if(!shareholder.getHeadOfficeAccountInBranchPreviousQuarter().equals(financialSurveyShareholderPrevious.getHeadOfficeAccountInBranchCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setHeadOfficeAccountInBranchCurrentQuarter(shareholder.getHeadOfficeAccountInBranchPreviousQuarter());
+            }
+
+            if(!shareholder.getShareholderEquityOthersPreviousQuarter().equals(financialSurveyShareholderPrevious.getShareholderEquityOthersCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setShareholderEquityOthersCurrentQuarter(shareholder.getShareholderEquityOthersPreviousQuarter());
+            }
+
+            if(!shareholder.getMinorityRightsPreviousQuarter().equals(financialSurveyShareholderPrevious.getMinorityRightsCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setMinorityRightsCurrentQuarter(shareholder.getMinorityRightsPreviousQuarter());
+            }
+
+            if(!shareholder.getTotalShareholderEquityPreviousQuarter().equals(financialSurveyShareholderPrevious.getTotalShareholderEquityCurrentQuarter())){
+                isValuesChanged = true;
+                financialSurveyShareholderPrevious.setTotalShareholderEquityCurrentQuarter(shareholder.getTotalShareholderEquityPreviousQuarter());
+            }
+
+            if (isValuesChanged){
+                modelService.save(financialSurveyShareholderPrevious);
+                FinancialSurveyModel prevQuarterSurvey = financialSurveyShareholderPrevious.getFinancialSurvey();
+                prevQuarterSurvey.setSurveyStatus(FinancialSurveyStatus.UPDATED);
+                modelService.save(prevQuarterSurvey);
+            }
+
+        }
+
+
+
+
+
 
         if(shareholder.getShareholderIsVotingPower() != null ){
             financialSurveyShareholderModel.setShareholderIsVotingPower(shareholder.getShareholderIsVotingPower());
@@ -483,13 +707,17 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
     private void populateAffiliateModel(Affiliate affiliate, FinancialSurveyAffiliateModel financialSurveyAffiliateModel) throws ConversionException {
         financialSurveyAffiliateModel.setAffiliateType(affiliate.getAffiliateType());
+        financialSurveyAffiliateModel.setAffiliateTypeRef("1".equals(affiliate.getAffiliateType())?FinancialSurveyAffiliateType.INDIVIDUAL:FinancialSurveyAffiliateType.ENTITY);
         financialSurveyAffiliateModel.setCompanyCountry(affiliate.getCompanyCountry());
+        financialSurveyAffiliateModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getCompanyCountry()));
         financialSurveyAffiliateModel.setAffiliateNameEnglish(affiliate.getAffiliateNameEnglish());
         financialSurveyAffiliateModel.setAffiliateSector(affiliate.getAffiliateSector());
         financialSurveyAffiliateModel.setAffiliateSubsector(affiliate.getAffiliateSubsector());
         financialSurveyAffiliateModel.setAffiliateGender(affiliate.getAffiliateGender());
         financialSurveyAffiliateModel.setAffiliateNationalityCurrent(affiliate.getAffiliateNationalityCurrent());
+        financialSurveyAffiliateModel.setAffiliateNationalityCurrentRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateNationalityCurrent()));
         financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());
+        financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
         financialSurveyAffiliateModel.setAffiliateMultinationalCompany(affiliate.getAffiliateMultinationalCompany());
     }
 
@@ -561,4 +789,9 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
     }
 
+
+    @Override
+    public FinancialSurveyQuarterModel getFinancialSurveyQuarterByCode(String quarterCode) {
+        return financialSurveyQuarterDAO.findFinancialSurveyQuarterByCode(quarterCode);
+    }
 }

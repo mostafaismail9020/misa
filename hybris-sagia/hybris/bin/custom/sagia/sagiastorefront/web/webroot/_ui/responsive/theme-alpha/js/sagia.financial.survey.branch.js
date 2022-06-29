@@ -69,7 +69,7 @@ var removeBranch = function () {
     SAGIA.financialSurvey.dirtyAmendment = true;
     var $branchRow = $(this).closest('tr');
     $branchRow.remove();
-  //  SAGIA.financialSurvey.branch.dataTable.row($branchRow).remove().draw(false);
+    SAGIA.financialSurvey.branch.dataTable.row($branchRow).remove().draw(false);
 
     var branchId = parseInt($branchRow.attr('id'));
     var branches = financialSurvey.branches;
@@ -186,12 +186,12 @@ var saveBranch = function () {
         branchRow.children().first().html(typeDescription)
             .next().text(name).next().text(cityDescription).next().text(volumeWeight);
 
-      //  var rowData = SAGIA.financialSurvey.branch.dataTable.row(branchRow).data();
-     //   rowData[0] = typeDescription;
-     //   rowData[1] = name;
-     //   rowData[2] = cityDescription;
-     //   rowData[3] = volumeWeight;
-       // SAGIA.financialSurvey.branch.dataTable.row(branchRow).data(rowData).invalidate();
+        var rowData = SAGIA.financialSurvey.branch.dataTable.row(branchRow).data();
+        rowData[0] = typeDescription;
+        rowData[1] = name;
+        rowData[2] = cityDescription;
+        rowData[3] = volumeWeight;
+        SAGIA.financialSurvey.branch.dataTable.row(branchRow).data(rowData).invalidate();
 
         var branchIndex = financialSurvey.branches.findIndex(function (branch) {
             return branch.srId === branchSrId || branch.newItemId === parseInt(branchSrId);
@@ -225,7 +225,7 @@ var saveBranch = function () {
         // branchRow.find('.removeBranchBtn').on('click', removeBranch);
         // branchRow.find('.editBranchBtn').on('click', editBranch);
         $('#branchesId').append(branchRow);
-        //SAGIA.financialSurvey.branch.dataTable.row.add(branchRow).draw();
+        SAGIA.financialSurvey.branch.dataTable.row.add(branchRow).draw();
 
         financialSurvey.branches.push({
             action: '01',
@@ -331,6 +331,9 @@ $("#branchEmailId").focusin(function() {
 });
 
 function validateBranchEmail(emailValue) {
+     if (emailValue === ''){
+         return true; //email is not mandotoy.
+     }
 	 var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 	 return filter.test(emailValue);
 }

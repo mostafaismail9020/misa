@@ -349,7 +349,9 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
                     }
                 }
             }
-            sagiaFinancialSurveyFacade.submitFinancialSurveyForReview(mediaModel,financialStatementForm.getSrId());
+            //hoursToCompleteSurvey, minutesToCompleteSurvey, sourceOfKnowledge
+            sagiaFinancialSurveyFacade.submitFinancialSurveyForReview(mediaModel,financialStatementForm.getSrId(), financialStatementForm.getHoursToCompleteSurvey() ,
+                    financialStatementForm.getMinutesToCompleteSurvey(), financialStatementForm.getSourceOfKnowledge()  );
             sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(), TermsAndConditionsAcceptanceEventEnum.FINANCIAL_STATEMENT);
             redirectModel.addFlashAttribute("requestFeedback", "true");
         } catch (Exception e) {

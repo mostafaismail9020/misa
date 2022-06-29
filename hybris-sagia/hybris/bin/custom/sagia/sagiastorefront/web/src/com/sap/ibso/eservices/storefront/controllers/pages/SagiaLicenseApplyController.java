@@ -1,14 +1,10 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
-import atg.taglib.json.util.JSONArray;
 import atg.taglib.json.util.JSONException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.internal.LinkedTreeMap;
 import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
 import com.sap.ibso.eservices.core.event.SagiaPublishLicenseEvent;
@@ -16,14 +12,50 @@ import com.sap.ibso.eservices.core.model.IsicMasterModel;
 import com.sap.ibso.eservices.core.model.PersonShareholderModel;
 import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
 import com.sap.ibso.eservices.core.model.ShareHolderModel;
+import com.sap.ibso.eservices.core.sagia.IsicData;
 import com.sap.ibso.eservices.core.sagia.services.LicenseApplyService;
-import com.sap.ibso.eservices.facades.data.*;
+import com.sap.ibso.eservices.facades.data.BrandPresenceInMENARegion;
+import com.sap.ibso.eservices.facades.data.ContactPersonsData;
+import com.sap.ibso.eservices.facades.data.EntitiesManagedByRhq;
+import com.sap.ibso.eservices.facades.data.EntityInformationData;
+import com.sap.ibso.eservices.facades.data.EstimatedOperatingCostForRhq;
+import com.sap.ibso.eservices.facades.data.ExistingShareholderData;
+import com.sap.ibso.eservices.facades.data.OrganizationInformation;
+import com.sap.ibso.eservices.facades.data.OrganizationShareholderData;
+import com.sap.ibso.eservices.facades.data.PersonShareholderData;
+import com.sap.ibso.eservices.facades.data.ProfileCompanyData;
+import com.sap.ibso.eservices.facades.data.SagiaCountryData;
+import com.sap.ibso.eservices.facades.data.SagiaLicenseTypeRequirementData;
+import com.sap.ibso.eservices.facades.data.ShareHoldersData;
 import com.sap.ibso.eservices.facades.data.odata.ServiceRequestCreation;
+import com.sap.ibso.eservices.facades.data.zqeemah.BasicContactInformation;
+import com.sap.ibso.eservices.facades.data.zqeemah.BusinessActivity;
+import com.sap.ibso.eservices.facades.data.zqeemah.DelegateAttachment;
 import com.sap.ibso.eservices.facades.data.zqeemah.DropdownValue;
+import com.sap.ibso.eservices.facades.data.zqeemah.IsicDetails;
 import com.sap.ibso.eservices.facades.data.zqeemah.Product;
-import com.sap.ibso.eservices.facades.data.zqeemah.*;
-import com.sap.ibso.eservices.facades.data.zqeemah2.*;
-import com.sap.ibso.eservices.facades.sagia.*;
+import com.sap.ibso.eservices.facades.data.zqeemah.ShareholderAttachment;
+import com.sap.ibso.eservices.facades.data.zqeemah.ShareholderInfo;
+import com.sap.ibso.eservices.facades.data.zqeemah2.BasicOrganizationInformation;
+import com.sap.ibso.eservices.facades.data.zqeemah2.FinancialPost;
+import com.sap.ibso.eservices.facades.data.zqeemah2.FinancialQuestion;
+import com.sap.ibso.eservices.facades.data.zqeemah2.FininvisidPost;
+import com.sap.ibso.eservices.facades.data.zqeemah2.GeneralQuestionPost;
+import com.sap.ibso.eservices.facades.data.zqeemah2.ISICDetails;
+import com.sap.ibso.eservices.facades.data.zqeemah2.InvsIdPost;
+import com.sap.ibso.eservices.facades.sagia.AverageProcessingTimeFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaCountryFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaDashboardWithoutLicenseFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaDraftFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaIsicFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaLicenseAmendmentFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaLicenseTypeRequirementFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaNationalInvestorFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaODataFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaPaymentDetailsFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaTermsAndConditionsFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaZqeemah2Facade;
+import com.sap.ibso.eservices.facades.sagia.SagiaZqeemahFacade;
 import com.sap.ibso.eservices.facades.sagia.impl.DefautSagiaLicenseApplyFacade;
 import com.sap.ibso.eservices.facades.user.impl.SagiaCustomerFacade;
 import com.sap.ibso.eservices.sagiaservices.data.zqeemah.ApplicationStatusData;
@@ -76,7 +108,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
@@ -85,7 +123,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URLDecoder;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/my-sagia/license")
@@ -101,9 +146,9 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
     private static final String SHAREHOLDER_TYPE_EXISTING = "Existing";
     private static final String SHAREHOLDER_TYPE_PERSON = "Person";
     private static final String SHAREHOLDER_TYPE_ORGANIZATION = "Organization";
-    
-    private static final String PREFIX_DELEGATE = "DEL-" ; 
-    private static final String PREFIX_SHAREHOLDER = "SHR-" ; 
+
+    private static final String PREFIX_DELEGATE = "DEL-" ;
+    private static final String PREFIX_SHAREHOLDER = "SHR-" ;
     private static final String ORIGIN_CONTACT_OTHER = "OTHER" ;
 
     private static final String BATCHNO = "batchNo";
@@ -132,7 +177,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
-    
+
     @Resource(name = "sagiaNationalInvestorFacade")
     private SagiaNationalInvestorFacade sagiaNationalInvestorFacade;
 
@@ -144,8 +189,8 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
     @Resource(name = "sagiaZqeemah2Facade")
     private SagiaZqeemah2Facade sagiaZqeemah2Facade;
-    
-    
+
+
     @Resource(name = "sagiaODataFacade")
     private SagiaODataFacade sagiaODataFacade;
 
@@ -169,10 +214,10 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
     @Resource(name = "sagiaDashboardWithoutLicenseFacade")
     private SagiaDashboardWithoutLicenseFacade sagiaDashboardWithoutLicenseFacade;
-    
+
     @Resource(name = "sagiaLicenseTypeRequirementFacade")
     private SagiaLicenseTypeRequirementFacade sagiaLicenseTypeRequirementFacade;
-    
+
     @Resource(name = "i18NService")
     private I18NService i18NService;
 
@@ -214,21 +259,21 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
     @Resource (name = "contactPersonValidator")
     private ContactPersonValidator contactPersonValidator;
-    
+
 
 	@Resource(name = "baseSiteService")
 	private BaseSiteService baseSiteService;
-    
+
     @Resource
 	private LicenseApplyService licenseApplyService;
-    
+
     @Autowired
     private EventService eventService;
 
     private static String temporaryLicenseConstant = Config.getString("temporary.licese.constant.value", "6");
     private static String regularQeemahChannel = Config.getString("regular.qeemah.channel.constant.value", "R");
     private static String immediateQeemahChannel = Config.getString("immediate.qeemah.channel.constant.value", "I");
-    
+
     private boolean isCustomerAuthority(final Authentication authentication) {
         return org.apache.commons.collections.CollectionUtils.isNotEmpty(authentication.getAuthorities())
                 && authentication.getAuthorities().contains(customerAuthority);
@@ -288,6 +333,48 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         return new Gson().toJson(activeISICDivision);
     }
 
+
+    @RequestMapping(path = "/isicGroup/{divisionId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getisicGroups(@PathVariable String divisionId, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        // removed licenseType in order to get all divisions for new shareholder (SAH-2844)
+        List<IsicData> activeISICGroups = sagiaIsicFacade.getActiveISICGroup(divisionId);
+        return new Gson().toJson(activeISICGroups);
+    }
+
+    @RequestMapping(path = "/isicClass/{groupId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getisicClass(@PathVariable String groupId, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        // removed licenseType in order to get all divisions for new shareholder (SAH-2844)
+        List<IsicData> activeISICClass = sagiaIsicFacade.getActiveISICClass(groupId);
+        return new Gson().toJson(activeISICClass);
+    }
+
+
+    @RequestMapping(path = "/isicBranch/{classId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getisicBranch(@PathVariable String classId, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        // removed licenseType in order to get all divisions for new shareholder (SAH-2844)
+        List<IsicData> activeISICClass = sagiaIsicFacade.getActiveISICBranch(classId);
+        return new Gson().toJson(activeISICClass);
+    }
+
+
+    @RequestMapping(path = "/isicActivity/{branchId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getisicActivity(@PathVariable String branchId, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        validateUser(request, response);
+        // removed licenseType in order to get all divisions for new shareholder (SAH-2844)
+        List<IsicData> activeISICClass = sagiaIsicFacade.getActiveISICActivity(branchId);
+        return new Gson().toJson(activeISICClass);
+    }
+
+
+
+
     @RequestMapping(path = "/dropdownsQeemah1", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getDropdownsQeemah1(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
@@ -305,7 +392,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         result.put("isPreApprovalNumber",getIsPreApprovalNumber());
         return new Gson().toJson(result);
     }
-    
+
     @RequestMapping(path = "/dropdownsQeemah1/rhqRegions", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getDropdownsForRhqRegions(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
@@ -400,10 +487,10 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         if(!isApplyAllowed()) { //sanity check
             throw new IOException("not allowed");
         }
-        
+
         final CustomerModel customerModel = (CustomerModel) userService.getCurrentUser();
-        
-        
+
+
         final Map<String, Object> map = new Gson().fromJson(IOUtils.toString(request.getInputStream(), UTF_8), Map.class);
         Map<String, Object> errorMap = sagiaLicenseApplyValidator.validate(map);
         if(!Boolean.valueOf(map.get("isTermsAndConditionsChecked").toString())) {
@@ -417,10 +504,10 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         }
         sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(), TermsAndConditionsAcceptanceEventEnum.LICENSE_SERVICES);
         sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(), TermsAndConditionsAcceptanceEventEnum.APPLY_NEW_LICENSE);
-        
+
         String qeemahChannel = (String)map.get("qeemahChannel");
 		qeemahChannel = StringUtils.isNotBlank(qeemahChannel) ? qeemahChannel : regularQeemahChannel;
-		
+
 		/*
 
 		•	Below are the calls which we will use for data submission for both license type
@@ -428,25 +515,25 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 		sagiaZqeemahFacade.uploadActivityAttachments --> /ZQEEMAH_SRV/ZBASIC_CONT_INFO_ENT
 		sagiaZqeemahFacade.createShareholders --> /ZQEEMAH_SHRHLDR_SRV/ZSHAREHOLDER_INFO_ENT
 		Shareholders attachment --> /ZQEEMAH_SHRHLDR_SRV/InfoToFile
-							
+
 		sagiaZqeemahFacade.createDelegates --> /ZQEEMAH_SHRHLDR_SRV/DelegateInfoSet
 		Delegates attachment --> /ZQEEMAH_SHRHLDR_SRV/DelegateDocumentSet
-							
+
 		sagiaZqeemahFacade.saveOrganizationInformation --> /ZQEEMAH_SRV/ZBASIC_ORG_INFO_ENT
 		sagiaZqeemahFacade.saveContactPerson --> /ZQEEMAH_SRV/ZBASIC_CONT_INFO_ENT
 		sagiaZqeemahFacade.saveBusinessActivities --> /ZQEEMAH_SRV/IsicDetPsSet
 		if isEntrepreneur upload file --> /InfoToPoa
-		
+
 		•	If Qeemah1(Regular) license creation calls
 		qeemahSubmitServiceQ1.saveQeemah  --> /ZQEEMAH_SRV/ZQEEMAH_SUBMIT_ENT
 		submitServiceQ1.saveQeemah --> /ZQEEMAH_SRV/SUBMIT_ENT (Input: RefID, Guid)
-		
-		•	Qeemah2 license creation calls 
+
+		•	Qeemah2 license creation calls
 		sagiaZqeemah2Facade.saveServiceRequestCreation --> /ZQEEMAH2_EXT_SRV/ServiceReqCreationSet
 		sagiaZqeemah2Facade.saveServiceRequestMD --> /ZQEEMAH2_EXT_SRV/ServReqMDSetSet
-		
+
 		*/
-		
+
         if (isRegularLicense(qeemahChannel)) {
             sagiaZqeemah2Facade.saveDiffQeemah("QEEMAH 1");
         } else {
@@ -474,13 +561,13 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
         //create new shareholders
         List<ShareholderInfo> shareholderInfo = getNewShareholders(map);
-  
+
         sagiaZqeemahFacade.createShareholders(shareholderInfo);
         sagiaZqeemahFacade.createDelegates(shareholderInfo);
-    
+
         //save organization info // throw new Exception("");
         OrganizationInformation organizationInformation = new Gson().fromJson(new Gson().toJson(map.get("basicInformationExtended")), OrganizationInformation.class);
-	    organizationInformation.setLicenseDuration((String) map.get("licenseYear")); 
+	    organizationInformation.setLicenseDuration((String) map.get("licenseYear"));
         sagiaZqeemahFacade.saveOrganizationInformation(organizationInformation);
 
         //save contact person
@@ -490,7 +577,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         sagiaZqeemahFacade.saveBusinessActivities(businessActivities, licenseType, businessType,temporaryTextValue,licenseTypeCode,null);
 
         String advanceLicenseNr = null;
-        if(map.get(ADVANCE_LICENSE_NR) != null) 
+        if(map.get(ADVANCE_LICENSE_NR) != null)
         {
             advanceLicenseNr = map.get(ADVANCE_LICENSE_NR).toString();
         }
@@ -514,7 +601,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
 	        }
         }
-        
+
         if(map.get("isEntityListedInStockMarket") != null)
         {
             Boolean isEntityListedInStockMarket = (Boolean)map.get("isEntityListedInStockMarket");
@@ -524,7 +611,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
 	        }
         }
-        
+
         if(map.get("isEntityRevenueMoreThanThreshold") != null)
         {
             Boolean isEntityRevenueMoreThanThreshold = (Boolean)map.get("isEntityRevenueMoreThanThreshold");
@@ -534,7 +621,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
 	        }
         }
-        
+
         if(map.get("isEntityAssetMoreThanThreshold") != null)
         {
             Boolean isEntityAssetMoreThanThreshold = (Boolean)map.get("isEntityAssetMoreThanThreshold");
@@ -544,7 +631,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            sagiaZqeemahFacade.uploadEntrepreneurFiles(entrepreneurFiles);
 	        }
         }
-        
+
         if(map.get("isMoreThan6Branch") != null)
         {
             Boolean isMoreThan6Branch = (Boolean)map.get("isMoreThan6Branch");
@@ -576,11 +663,11 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         }
 
         String serviceId = null;
-       
+
 /*        if (isRegularLicense(qeemahChannel)) {
-        	
+
             serviceId = sagiaZqeemahFacade.submitLicense(advanceLicenseNr);
-        } 
+        }
         else
         {
             ServiceRequestCreation serviceRequestCreation = sagiaZqeemah2Facade.saveServiceRequestCreation(createServiceRequestObj(advanceLicenseNr));
@@ -592,39 +679,39 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             }
         }
         sagiaCustomerFacade.setApplicationServiceRequestID(serviceId);
-*/        
+*/
         return ResponseEntity.status(HttpStatus.OK).body("{\"SAGIA_LICENSE_SERVICE_REQUEST_ID\"" + ":" + "\"" + serviceId + "\" }");
     }
 
-    
+
 	private boolean isRegularLicense(String qeemahChannel) {
 		return qeemahChannel.equalsIgnoreCase(regularQeemahChannel);
 	}
-    
-    
+
+
     @RequestMapping(path = "/sagiaLicenseTypeRequirement/{splRequirementId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getSagiaLicenseTypeRequirement(@PathVariable String splRequirementId, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
         validateUser(request, response);
-        
+
         SagiaLicenseTypeRequirementData sagiaLicenseTypeRequirementData = sagiaLicenseTypeRequirementFacade.getSagiaLicenseTypeRequirementForID(splRequirementId);
-        
+
         return new Gson().toJson(sagiaLicenseTypeRequirementData);
-        
+
     }
-    
-    
+
+
     @RequestMapping(path = "/sagiaLicenseTypeRequirementList/{ids}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getSagiaLicenseTypeRequirementList(@PathVariable List<String> ids,  final HttpServletRequest request, final HttpServletResponse response) throws IOException {
-        
+
     	validateUser(request, response);
     	List<SagiaLicenseTypeRequirementData>  sagiaLicenseTypeRequirementDataList = sagiaLicenseTypeRequirementFacade.getSagiaLicenseTypeRequirementForListId(ids);
         return new Gson().toJson(sagiaLicenseTypeRequirementDataList);
-        
+
     }
-    
-    
+
+
 
     private Collection<ShareholderAttachment> loadEntrepreneurFiles(Map<String, Object> map) {
         Collection<ShareholderAttachment> entrepreneurFiles = new ArrayList<>();
@@ -655,7 +742,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
         return entrepreneurFiles;
     }
-    
+
     private Collection<ShareholderAttachment> loadRHQCRFiles(Map<String, Object> map) {
         Collection<ShareholderAttachment> rhqAttachmentFiles = new ArrayList<>();
         Map attachmentsData = (Map) map.get("attachments");
@@ -731,7 +818,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             otherBranchCR1.setFileType("ENOBCR1");
             branchCRFiles.add(otherBranchCR1);
         }
-        
+
         ShareholderAttachment otherBranchCR2 = new ShareholderAttachment();
         if(attachmentsData.get("otherBranchCR2FileName") != null && attachmentsData.get("otherBranchCR2File") != null){
             String fileName = attachmentsData.get("otherBranchCR2FileName").toString();
@@ -755,7 +842,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             entityListedInStockMarket.setFileType("ENLSM");
             branchCRFiles.add(entityListedInStockMarket);
         }
-        
+
         ShareholderAttachment entityAsset = new ShareholderAttachment();
         if(attachmentsData.get("entityAssetFileName") != null && attachmentsData.get("entityAssetFile") != null){
             String fileName = attachmentsData.get("entityAssetFileName").toString();
@@ -767,7 +854,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             entityAsset.setFileType("ENAS");
             branchCRFiles.add(entityAsset);
         }
-        
+
         ShareholderAttachment entityRevenue = new ShareholderAttachment();
         if(attachmentsData.get("entityRevenueFileName") != null && attachmentsData.get("entityRevenueFile") != null){
             String fileName = attachmentsData.get("entityRevenueFileName").toString();
@@ -779,7 +866,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             entityRevenue.setFileType("ENRV");
             branchCRFiles.add(entityRevenue);
         }
-        
+
         ShareholderAttachment branchCR1 = new ShareholderAttachment();
         if(attachmentsData.get("branchCR1FileName") != null && attachmentsData.get("branchCR1File") != null){
             String fileName = attachmentsData.get("branchCR1FileName").toString();
@@ -791,7 +878,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             branchCR1.setFileType("ENBCR1");
             branchCRFiles.add(branchCR1);
         }
-        
+
         ShareholderAttachment branchCR2 = new ShareholderAttachment();
         if(attachmentsData.get("branchCR2FileName") != null && attachmentsData.get("branchCR2File") != null){
             String fileName = attachmentsData.get("branchCR2FileName").toString();
@@ -828,11 +915,11 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
         return rhqAttachmentFiles;
     }
-    
+
     private Collection<ShareholderAttachment> loadPreApprovalNumberFiles(Map<String, Object> map) {
         Collection<ShareholderAttachment> preApprovalNumberFiles = new ArrayList<>();
         Map attachmentsData = (Map) map.get("attachments");
-        
+
         ShareholderAttachment financialStatement = new ShareholderAttachment();
         if(attachmentsData.get("financialStatementFileName") != null && attachmentsData.get("financialStatementFile") != null){
             String fileName = attachmentsData.get("financialStatementFileName").toString();
@@ -844,7 +931,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             financialStatement.setFileType("ENFS");
             preApprovalNumberFiles.add(financialStatement);
         }
-        
+
         ShareholderAttachment iqama = new ShareholderAttachment();
         if(attachmentsData.get("iqamaFileName") != null && attachmentsData.get("iqamaFile") != null){
             String fileName = attachmentsData.get("iqamaFileName").toString();
@@ -856,7 +943,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             iqama.setFileType("ENIQ");
             preApprovalNumberFiles.add(iqama);
         }
-        
+
         ShareholderAttachment crCertificate = new ShareholderAttachment();
         if(attachmentsData.get("crCertificateFileName") != null && attachmentsData.get("crCertificateFile") != null){
             String fileName = attachmentsData.get("crCertificateFileName").toString();
@@ -868,7 +955,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             crCertificate.setFileType("ENCR");
             preApprovalNumberFiles.add(crCertificate);
         }
-        
+
         ShareholderAttachment gosiCertificate = new ShareholderAttachment();
         if(attachmentsData.get("gosiCertificateFileName") != null && attachmentsData.get("gosiCertificateFile") != null){
             String fileName = attachmentsData.get("gosiCertificateFileName").toString();
@@ -880,7 +967,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             gosiCertificate.setFileType("ENGC");
             preApprovalNumberFiles.add(gosiCertificate);
         }
-        
+
         ShareholderAttachment noObjectionCertificate = new ShareholderAttachment();
         if(attachmentsData.get("noObjectionCertificateFileName") != null && attachmentsData.get("noObjectionCertificateFile") != null){
             String fileName = attachmentsData.get("noObjectionCertificateFileName").toString();
@@ -910,7 +997,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
                 && !applicationStatus.get().getStatusDesc().isEmpty()
                 && applicationStatus.get().getStatusDesc().toUpperCase().contains("REJECTED");
     }
-    
+
     @RequestMapping(value = "/apply", method = RequestMethod.GET)
     @RequireHardLogIn
     public String get(final Model model, final RedirectAttributes redirectModel) throws CMSItemNotFoundException {
@@ -977,7 +1064,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         List<EstimatedOperatingCostForRhq> estimatedList = null;
         List<HashMap<String, String>> businessActivitiesList = new ArrayList<>();
         Gson gson = new Gson();
-        
+
         LOG.info("^^^^^ "+sagiaApplyEntityInfoForm.isIsPreApprovalNumber()+" **** "+sagiaApplyEntityInfoForm.getPreApprovalNumber());
 
         boolean hasIsic = businessActivitiesCounter != null || !StringUtils.isEmpty(singleBusinessActivity) || (businessActivities != null && businessActivities.length > 1);
@@ -1102,12 +1189,12 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             } else {
             	if(isLicenseRejected())
             	{
-            		 
+
             		//TO populate same license in case if it got rejected from CRM
             		SagiaLicenseModel draft = sagiaLicenseApplyFacade.changeLicneseStatusTODraft();
 
                     sagiaApplyEntityInfoForm = sagiaLicenseApplyFacade.getEntityInformationData(draft);
-                   
+
             	}
                 zQeemahService.createApplicantReferenceId();
             }
@@ -1279,11 +1366,11 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
                                         BindingResult bindingResult, HttpServletRequest request) throws CMSItemNotFoundException {
         String shareholderType = "person";
         model.addAttribute("shareholderType", shareholderType);
-        
-        
+
+
         sagiaLicenseApplyFacade.validateMediasFromPersonShareHolder(personShareholderForm, request);
-        
-        
+
+
         personShareHoldersValidator.validate(personShareholderForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
@@ -1401,7 +1488,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         if (contactPersonsData == null) {
         	contactPersonsData = new ContactPersonsData();
         	contactPersonsData.setContacts(ORIGIN_CONTACT_OTHER);
-        	
+
         }
         return setupContactPersonPage(model, contactPersonsData);
     }
@@ -1413,7 +1500,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
 
     	  contactPersonValidator.validate(contactPersonsData, bindingResult);
-          
+
           if (result.hasErrors()) {
               model.addAttribute("contactPersonsData", contactPersonsData);
               model.addAttribute("saveStatus", false);
@@ -1429,7 +1516,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         model.addAttribute("roles", getRoles());
         model.addAttribute("contacts", getContacts());
         if ( contactPersonsData.getContacts() == null || !getListAvailbleContacts().contains(contactPersonsData.getContacts()) ) {
-        	contactPersonsData.setContacts(ORIGIN_CONTACT_OTHER); 
+        	contactPersonsData.setContacts(ORIGIN_CONTACT_OTHER);
         }
         model.addAttribute("contactPersonsData", contactPersonsData);
         model.addAttribute("controllerUrl", "/my-sagia/license");
@@ -1439,35 +1526,35 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);
         return getViewForPage(model);
 	}
-    
+
 	private List<String> getListAvailbleContacts(){
 		List<String> contacts = new ArrayList<String>();
 		// Get list of contacts from License Delegates
-        List<ShareHoldersData> shareHoldersDataList = sagiaLicenseApplyFacade.getShareHoldersDataByLicense(); 
+        List<ShareHoldersData> shareHoldersDataList = sagiaLicenseApplyFacade.getShareHoldersDataByLicense();
         for (ShareHoldersData shareHoldersData : shareHoldersDataList ) {
         	if(shareHoldersData.getDelegateInfo() != null) {
         	    contacts.add(PREFIX_DELEGATE+shareHoldersData.getCode());
         	}
         	if (SHAREHOLDER_TYPE_PERSON.equalsIgnoreCase(shareHoldersData.getShareHolderType())) {
-        
+
             	contacts.add(PREFIX_SHAREHOLDER+shareHoldersData.getCode());
         	}
-			
+
 		}
-        
-        
+
+
        return contacts ;
-            
+
 	}
-	
-	
+
+
 	private List<DropdownValue> getContacts() {
-		
+
 		List<DropdownValue> contacts = new ArrayList<>();
-		
-		
+
+
 		// Get list of contacts from License Delegates
-        List<ShareHoldersData> shareHoldersDataList = sagiaLicenseApplyFacade.getShareHoldersDataByLicense(); 
+        List<ShareHoldersData> shareHoldersDataList = sagiaLicenseApplyFacade.getShareHoldersDataByLicense();
         for (ShareHoldersData shareHoldersData : shareHoldersDataList ) {
         	if(shareHoldersData.getDelegateInfo() != null && shareHoldersData.getDelegateInfo().getDelegateFullName()!=null && !"".equals(shareHoldersData.getDelegateInfo().getDelegateFullName())) {
         	    String delegateName = shareHoldersData.getDelegateInfo().getDelegateFullName();
@@ -1479,15 +1566,15 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         		String shareholderName = ((PersonShareholderData)shareHoldersData).getFullName();
             	contacts.add(createContact(PREFIX_SHAREHOLDER+shareHoldersData.getCode(), shareholderName));
         	}
-			
+
 		}
-            
+
         Locale locale = i18NService.getCurrentLocale();
         contacts.add(createContact(ORIGIN_CONTACT_OTHER, messageSource.getMessage("license.apply.contact.other", null, locale)));
-     
+
         return contacts ;
     }
-	
+
     private List<DropdownValue> getRoles() {
         List<DropdownValue> roles = new ArrayList<>();
         Locale locale = i18NService.getCurrentLocale();
@@ -1504,7 +1591,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         result.setRoleText(roleText);
         return result;
     }
-    
+
     private DropdownValue createContact(String contact, String contactName) {
         DropdownValue result = new DropdownValue();
         result.setContact(contact);
@@ -1555,7 +1642,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         education.add(createEducation("0006", messageSource.getMessage("licenseApply.education.0006", null, locale)));
         return education;
     }
-    
+
     private List<DropdownValue> getPremium() {
         List<DropdownValue> premiumStatus = new ArrayList<>();
         Locale locale = i18NService.getCurrentLocale();
@@ -1563,7 +1650,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         premiumStatus.add(createPremiumStatus("no", messageSource.getMessage("licenseApply.shareholder.premiumStatus.no", null, locale)));
         return premiumStatus;
     }
-    
+
     private List<DropdownValue> getprofessionalLicense() {
         List<DropdownValue> professionalLicenseStatus = new ArrayList<>();
         Locale locale = i18NService.getCurrentLocale();
@@ -1571,14 +1658,14 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         professionalLicenseStatus.add(createProfessionalLicenseStatus("no", messageSource.getMessage("licenseApply.shareholder.professionalLicense.no", null, locale)));
         return professionalLicenseStatus;
     }
-    
+
     private DropdownValue createProfessionalLicenseStatus(String status, String description) {
         DropdownValue result = new DropdownValue();
         result.setProfessionalLicenseStatus(status);
         result.setProfessionalLicenseText(description);
         return result;
     }
-    
+
     private List<DropdownValue> getIsPreApprovalNumber() {
         List<DropdownValue> isPreApprovalNumber = new ArrayList<>();
         Locale locale = i18NService.getCurrentLocale();
@@ -1586,7 +1673,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         isPreApprovalNumber.add(createPreApprovalNumberStatus("no", messageSource.getMessage("licenseApply.shareholder.professionalLicense.no", null, locale)));
         return isPreApprovalNumber;
     }
- 
+
     private DropdownValue createPreApprovalNumberStatus(String status, String description) {
         DropdownValue result = new DropdownValue();
         result.setPreApprovalNumberStatus(status);
@@ -1629,8 +1716,8 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         return new ObjectMapper().writer().withDefaultPrettyPrinter().writeValueAsString(
                 sagiaZqeemahFacade.validateExistingShareholder(shareholderEntityNumber));
     }
-    
-    
+
+
     @RequestMapping(value = "/verifyMofa/{mofaNumber}", method = RequestMethod.GET)
     @ResponseBody
     public String checkMofaVerification(@PathVariable("mofaNumber") String mofaNumber) throws JsonProcessingException {
@@ -1679,11 +1766,11 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
                 index++;
                 updateOrganizationShareholder(index, (LinkedTreeMap) newShareholder, shareholderAttachments);
             }
-            
+
             if(!existingShareholders && shareholderInfo.getHasDelegateInfo().equalsIgnoreCase("true") && shareholderInfo.getSelfDelegate().equalsIgnoreCase("false") && shareholderInfo.getDelegate()!= null)
             {
 	            	shareholderInfo.getDelegate().setEntityNo(String.format("%03d", index));
-		            updateDelegate( index, (LinkedTreeMap) newShareholder,delegateAttachments) ;            
+		            updateDelegate( index, (LinkedTreeMap) newShareholder,delegateAttachments) ;
 		            shareholderInfo.getDelegate().setDelegateAttachments(delegateAttachments);
             }
             shareholderInfo.setAttachments(shareholderAttachments);
@@ -1721,7 +1808,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         financialStatementFile.setEntityNumber(entityNumber);
         financialStatementFile.setFileType("BAL");
         shareholderAttachments.add(financialStatementFile);
-        
+
         ShareholderAttachment companyMemoAssociationFile = new ShareholderAttachment();
 
         if(newShareholder.get("companyMemoAssociationFileName") != null  && checkOrgShareholderAttach(newShareholder.get("companyCountry").toString())) {
@@ -1730,7 +1817,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
                 fileName = StringUtils.substringAfterLast(newShareholder.get("companyMemoAssociationFileName").toString(), "\\");
             }
             companyMemoAssociationFile.setFileName(fileName);
-        
+
             companyMemoAssociationFile.setFileMimeType(newShareholder.get("companyMemoAssociationFileMimeType").toString());
             companyMemoAssociationFile.setFileContent(newShareholder.get("companyMemoAssociationFile").toString());
             companyMemoAssociationFile.setEntityNumber(entityNumber);
@@ -1738,9 +1825,9 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         shareholderAttachments.add(companyMemoAssociationFile);
         }
     }
-	
+
 	private boolean checkOrgShareholderAttach(String companyCountry) {
-    	 List<SagiaCountryData> shareHolderCheck = sagiaCountryFacade.getShareHolderCheckCountries();	      
+    	 List<SagiaCountryData> shareHolderCheck = sagiaCountryFacade.getShareHolderCheckCountries();
 	       if(StringUtils.isNotEmpty(companyCountry) && shareHolderCheck.size() > 0){
 	       	for(SagiaCountryData shareHolderCheckCountry : shareHolderCheck) {
 	       		if(companyCountry.equalsIgnoreCase(shareHolderCheckCountry.getCode())) {
@@ -1782,9 +1869,9 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
             otherFile.setFileType("OTHR");
             shareholderAttachments.add(otherFile);
         }
-                
+
     }
-    
+
     private void updateDelegate(int index, LinkedTreeMap newShareholder, Collection<DelegateAttachment> delegateAttachments) {
         String entityNumber = String.format("%03d", index);
         LinkedTreeMap delegate = (LinkedTreeMap) newShareholder.get("delegate");
@@ -1798,14 +1885,14 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            	authorizationLetterFileName = StringUtils.substringAfterLast(authorizationLetterFileName, "\\");
 	            }
 	            authorizationLetterFile.setFileName(authorizationLetterFileName);
-	
+
 	            authorizationLetterFile.setFileMimeType(ObjectUtils.getValueOrNullFrom(delegate, "authorizationLetterFileMimeType"));
 	            authorizationLetterFile.setFileContent(ObjectUtils.getValueOrNullFrom(delegate, "authorizationLetterFile"));
 	            authorizationLetterFile.setEntityNumber(entityNumber);
 	            authorizationLetterFile.setFileType("AUTH");
 	            delegateAttachments.add(authorizationLetterFile);
 	        }
-	
+
 	        if (StringUtils.isNotBlank(idCopyFileName)) {
 	        	DelegateAttachment idCopyFile = new DelegateAttachment();
 	            if(idCopyFileName.contains("\\")){
@@ -1818,7 +1905,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	            idCopyFile.setFileType("ID");
 	            delegateAttachments.add(idCopyFile);
 	        }
-        }    
+        }
     }
 
     private void updateExistingShareholder(LinkedTreeMap newShareholder, Collection<ShareholderAttachment> shareholderAttachments) {
@@ -2054,7 +2141,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         invsIdPost.setGeneralQuestionPosts(generalQuestionPosts);
         return invsIdPost;
     }
-    
+
     /**
      * Ajax call to load an investor information based on the CR Number.
      * The response is used to pre-fill the form. In case of an invalid number an error will be displayed.
@@ -2067,7 +2154,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
     public String getNationalInvestorHeaderSet(@PathVariable("crNumber") String crNumber) {
         return new Gson().toJson(sagiaNationalInvestorFacade.getNationalInvestorHeaderSet(crNumber));
     }
-    
+
 
     /**
      * retrieves the countries list and provide it in JSON format for frontend
@@ -2083,15 +2170,15 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 	private ResponseEntity getResponseEntity(Map<String, Object> errorMap) {
         return new ResponseEntity(SagiaContextFormErrorsConverter.fromValidation(errorMap), HttpStatus.BAD_REQUEST);
     }
-    
+
     @RequestMapping(path = "/nic", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getNicUserData(@RequestParam(value = "idType", defaultValue = "false") final int idType, @RequestParam(value = "idNumber", defaultValue = "false") final String idNumber, @RequestParam(value = "dob", defaultValue = "false") final String dob, final HttpServletRequest request, final HttpServletResponse response) throws IOException {
-        
+
     	try
     	{
 	        NICUserData nicUserData = sagiaZqeemahFacade.getNICUserdata(idType, idNumber, dob);
-	        
+
 	        if(nicUserData != null)
 	        {
 	        	return new Gson().toJson(nicUserData);
@@ -2103,7 +2190,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
     	}
         return "";
     }
-    
+
     /**
      * retrieves the countries list and provide it in JSON format for frontend
      *
@@ -2111,10 +2198,10 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
      */
     @RequestMapping(value = "/shareHolderCountryCheck", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String getShareHolderCheckCountry() {    	
+    public String getShareHolderCheckCountry() {
         return new Gson().toJson(sagiaCountryFacade.getShareHolderCheckCountries());
     }
-    
+
     @RequestMapping(value = "/review", method = RequestMethod.GET)
     @RequireHardLogIn
     public String getReview(final Model model, final RedirectAttributes redirectModel) throws CMSItemNotFoundException {
@@ -2122,8 +2209,8 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 
     	if(!isApplyAllowed()) {
             return "redirect:/dashboard-without-license";
-        } 
-    	
+        }
+
     	String validateEntityInfoTab = sagiaLicenseApplyFacade.validateEntityTab();
 
         if (StringUtils.isNotEmpty(validateEntityInfoTab)) {
@@ -2196,7 +2283,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_NOFOLLOW);
         return getViewForPage(model);
     }
-    
+
     @SuppressWarnings({ "squid:MethodCyclomaticComplexity","squid:S3776"})
     @RequestMapping(value = "/review", method = RequestMethod.POST)
     @RequireHardLogIn
@@ -2217,11 +2304,11 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
         }
         sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(), TermsAndConditionsAcceptanceEventEnum.LICENSE_SERVICES);
         sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(), TermsAndConditionsAcceptanceEventEnum.APPLY_NEW_LICENSE);
-        
-		
+
+
         ServiceRequestCreation serviceRequestCreation = sagiaODataFacade.saveODataServiceRequestCreation(null);
         //sagiaZqeemah2Facade.saveServiceRequestMD(serviceRequestCreation.getGuid(),null);
-        if (serviceRequestCreation.getObjectid() != null) 
+        if (serviceRequestCreation.getObjectid() != null)
         {
         	SagiaLicenseModel sagiaLicenseModel = sagiaCustomerFacade.setApplicationServiceRequestID(serviceRequestCreation);
             try
@@ -2248,12 +2335,12 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 		sagiaPublishLicenseEvent.setSite(baseSiteService.getCurrentBaseSite());
 		sagiaPublishLicenseEvent.setSagiaLicenseModel(sagiaLicenseModel);
 		eventService.publishEvent(sagiaPublishLicenseEvent);
-	}    
-    
+	}
+
     private boolean isRegularLicense(SagiaLicenseModel sagiaLicenseModel) {
-		 
+
 		 boolean isAllSame = true;
-		 
+
 		 List<IsicMasterModel> listIsicMaster = sagiaLicenseModel.getEntityInformation().getIsicActivities();
 		 String firstVal = listIsicMaster.get(0).getQeemahChannel();
 		 for (IsicMasterModel isicMasterModel : listIsicMaster) {
@@ -2264,13 +2351,13 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
 		if (isAllSame) {
 			if(regularQeemahChannel.equals(firstVal))  return true;
 			else return false;
-		}else 
+		}else
 		return true ;
 	 }
-    
+
     /**
      * Ajax call to load an contact information based on the shareholder id or delegate.
-     * The response is used to pre-fill the form. 
+     * The response is used to pre-fill the form.
      *
      * @param crNumber crNumber
      * @return
@@ -2278,7 +2365,7 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
     @RequestMapping(path = {"/contact-details/{contact}"}, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getContactDetails(@PathVariable("contact") String contact) {
-    	  	
+
     	if (contact.startsWith(PREFIX_SHAREHOLDER)) {
     		String sharholderCode = contact.split("-")[1];
     		return new Gson().toJson(sagiaLicenseApplyFacade.getPersonShareholderByCode(sharholderCode));
@@ -2291,6 +2378,6 @@ public class SagiaLicenseApplyController extends SagiaAbstractPageController {
     		  return new Gson().toJson(sagiaLicenseApplyFacade.getOrganizationShareholderByCode(sharholderCode).getDelegateInfo());
     		}
     	}
-        
+
     }
 }

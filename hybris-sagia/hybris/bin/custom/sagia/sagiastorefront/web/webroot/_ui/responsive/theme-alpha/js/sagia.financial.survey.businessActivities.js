@@ -1,6 +1,17 @@
 var SAGIA = SAGIA || {};
 SAGIA.financialSurvey = SAGIA.financialSurvey || {};
 SAGIA.financialSurvey.apply = SAGIA.financialSurvey.apply || {};
+
+function doalert(checkboxElem) {
+    if (checkboxElem.checked) {
+        alert ("hi");
+        alert ( checkboxElem.getAttribute("data-group-id"));
+    } else {
+        alert ("bye");
+        alert (checkboxElem.getAttribute("data-group-id"));
+    }
+}
+
 $(function () {
     var isicSections = {};
 
@@ -494,7 +505,7 @@ $(function () {
                     if (index < count / 2) {
                         divs1 += '' +
                             '<div class="form-item">' +
-                            '   <input ' + (foundGroup ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + group.sectionId + '" data-division-id="' + group.divisionId + '" data-group-id="' + group.groupId + '" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                            '   <input ' + (foundGroup ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + group.sectionId + '" data-division-id="' + group.divisionId + '" data-group-id="' + group.groupId + '" class="form-control" placeholder="." type="checkbox"  onchange="doalert(this)" value=""/>' +
                             '   <label class="control-label" for="' + nodeId + '">' +
                             '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                             group.groupId + ' - ' + group.description +
@@ -503,7 +514,7 @@ $(function () {
                     } else {
                         divs2 += '' +
                             '<div class="form-item">' +
-                            '   <input ' + (foundGroup ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + group.sectionId + '" data-division-id="' + group.divisionId + '" data-group-id="' + group.groupId + '" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                            '   <input ' + (foundGroup ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + group.sectionId + '" data-division-id="' + group.divisionId + '" data-group-id="' + group.groupId + '" class="form-control" placeholder="." type="checkbox" onchange="doalert(this)" value="" />' +
                             '   <label class="control-label" for="' + nodeId + '">' +
                             '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                             group.groupId + ' - ' + group.description +
@@ -604,7 +615,7 @@ $(function () {
                     if (index < count / 2) {
                         divs1 += '' +
                             '<div class="form-item">' +
-                            '   <input ' + (foundClass ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + classElement.sectionId + '" data-division-id="' + classElement.divisionId + '" data-group-id="' + classElement.groupId + '" data-class-id="' + classElement.classId + '" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                            '   <input ' + (foundClass ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + classElement.sectionId + '" data-division-id="' + classElement.divisionId + '" data-group-id="' + classElement.groupId + '" data-class-id="' + classElement.classId + '" class="form-control" placeholder="." type="checkbox" onchange="doalert(this)" value=""/>' +
                             '   <label class="control-label" for="' + nodeId + '">' +
                             '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                             classElement.classId + ' - ' + classElement.description +
@@ -613,7 +624,7 @@ $(function () {
                     } else {
                         divs2 += '' +
                             '<div class="form-item">' +
-                            '   <input ' + (foundClass ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + classElement.sectionId + '" data-division-id="' + classElement.divisionId + '" data-group-id="' + classElement.groupId + '" data-class-id="' + classElement.classId + '" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                            '   <input ' + (foundClass ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + classElement.sectionId + '" data-division-id="' + classElement.divisionId + '" data-group-id="' + classElement.groupId + '" data-class-id="' + classElement.classId + '" class="form-control" placeholder="." type="checkbox" onchange="doalert(this)" value=""/>' +
                             '   <label class="control-label" for="' + nodeId + '">' +
                             '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                             classElement.classId + ' - ' + classElement.description +
@@ -717,7 +728,7 @@ $(function () {
                         if (index < count / 2) {
                             divs1 += '' +
                                 '<div class="form-item">' +
-                                '   <input ' + (foundBranch ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + branch.sectionId + '" data-division-id="' + branch.divisionId + '" data-group-id="' + branch.groupId + '" data-class-id="' + branch.classId + '" data-branch-id="' + branch.branchId + '" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                                '   <input ' + (foundBranch ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + branch.sectionId + '" data-division-id="' + branch.divisionId + '" data-group-id="' + branch.groupId + '" data-class-id="' + branch.classId + '" data-branch-id="' + branch.branchId + '" class="form-control" placeholder="." type="checkbox" onchange="doalert(this)" value=""/>' +
                                 '   <label class="control-label" for="' + nodeId + '">' +
                                 '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                                 branch.branchId + ' - ' + branch.description +
@@ -726,7 +737,7 @@ $(function () {
                         } else {
                             divs2 += '' +
                                 '<div class="form-item">' +
-                                '   <input ' + (foundBranch ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + branch.sectionId + '" data-division-id="' + branch.divisionId + '" data-group-id="' + branch.groupId + '" data-class-id="' + branch.classId + '" data-branch-id="' + branch.branchId + '" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                                '   <input ' + (foundBranch ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + branch.sectionId + '" data-division-id="' + branch.divisionId + '" data-group-id="' + branch.groupId + '" data-class-id="' + branch.classId + '" data-branch-id="' + branch.branchId + '" class="form-control" placeholder="." type="checkbox" onchange="doalert(this)" value=""/>' +
                                 '   <label class="control-label" for="' + nodeId + '">' +
                                 '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                                 branch.branchId + ' - ' + branch.description +
@@ -767,6 +778,7 @@ $(function () {
         }
         updatedBranches(false);
     };
+
 
     var updatedBranches = function (displayBranches) {
         $("#businessActivitiesSection #businessActivitiesModal #branchList .baBreadcrumb-subMenu").remove();
@@ -826,7 +838,7 @@ $(function () {
                         if (index < count / 2) {
                             divs1 += '' +
                                 '<div class="form-item">' +
-                                '   <input ' + (foundActivity ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + activity.sectionId + '" data-division-id="' + activity.divisionId + '" data-group-id="' + activity.groupId + '" data-class-id="' + activity.classId + '" data-branch-id="' + activity.branchId + '" data-activity-id="' + activity.activityId + '" data-splrequirement-id="' + activity.splRequirementId + '" data-qeemah-channel="' + activity.qeemahChannel + '" data-description="' + activity.description +'" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                                '   <input ' + (foundActivity ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + activity.sectionId + '" data-division-id="' + activity.divisionId + '" data-group-id="' + activity.groupId + '" data-class-id="' + activity.classId + '" data-branch-id="' + activity.branchId + '" data-activity-id="' + activity.activityId + '" data-splrequirement-id="' + activity.splRequirementId + '" data-qeemah-channel="' + activity.qeemahChannel + '" data-description="' + activity.description +'" class="form-control" placeholder="." type="checkbox" onchange="doalert(this)" value=""/>' +
                                 '   <label class="control-label" for="' + nodeId + '">' +
                                 '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                                 activity.activityId + ' - ' + activity.description +
@@ -835,7 +847,7 @@ $(function () {
                         } else {
                             divs2 += '' +
                                 '<div class="form-item">' +
-                                '   <input ' + (foundActivity ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + activity.sectionId + '" data-division-id="' + activity.divisionId + '" data-group-id="' + activity.groupId + '" data-class-id="' + activity.classId + '" data-branch-id="' + activity.branchId + '" data-activity-id="' + activity.activityId + '" data-splrequirement-id="' + activity.splRequirementId + '" data-qeemah-channel="' + activity.qeemahChannel + '" data-description="' + activity.description +'" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                                '   <input ' + (foundActivity ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + activity.sectionId + '" data-division-id="' + activity.divisionId + '" data-group-id="' + activity.groupId + '" data-class-id="' + activity.classId + '" data-branch-id="' + activity.branchId + '" data-activity-id="' + activity.activityId + '" data-splrequirement-id="' + activity.splRequirementId + '" data-qeemah-channel="' + activity.qeemahChannel + '" data-description="' + activity.description +'" class="form-control" placeholder="." type="checkbox" onchange="doalert(this)" value=""/>' +
                                 '   <label class="control-label" for="' + nodeId + '">' +
                                 '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                                 activity.activityId + ' - ' + activity.description +
@@ -1085,6 +1097,7 @@ $(function () {
             }
         }
     });
+
 
     $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #sectionItems .baList .baList-item", function () {
         updateSections($(this), true);

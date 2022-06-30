@@ -17,6 +17,7 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <%--<%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>--%>
@@ -806,8 +807,8 @@ data-expand-target="expand01">
                                             <thead class="tableModule-head">
                                             <tr>
                                                 <th></th>
-                                                <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.currentQuarter"/></th>
-                                                <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.previousQuarter"/></th>
+                                                <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.currentQuarter" arguments="${fn:escapeXml(currenQuarter)}"  /></th>
+                                                <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.previousQuarter"  arguments="${fn:escapeXml(previousQuarter)}"  /></th>
                                             </tr>
                                             </thead>
                                             <tbody class="tableModule-body" id="shareEquityable">
@@ -1857,8 +1858,8 @@ data-expand-target="expand01">
                                                 <thead class="tableModule-head">
                                                 <tr>
                                                     <th></th>
-                                                    <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.currentQuarter"/></th>
-                                                    <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.previousQuarter"/></th>
+                                                    <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.currentQuarter" arguments="${fn:escapeXml(currenQuarter)}"  /></th>
+                                                    <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.previousQuarter"  arguments="${fn:escapeXml(previousQuarter)}"  /></th>
                                                 </tr>
                                                 </thead>
 
@@ -2985,6 +2986,8 @@ data-expand-target="expand01">
     <script>
         var controllerUrl = '${controllerUrl}';
         var quarterCode = '${quarterCode}';
+        var currenQuarter = '${currenQuarter}';
+        var previousQuarter = '${previousQuarter}';
         var srId = '${quarterCode}';
         var configuredFileSize = ${maxUploadSize};
     </script>

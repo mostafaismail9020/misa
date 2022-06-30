@@ -80,7 +80,6 @@
 		<property name="suspensionDate" type="java.lang.String"/>
 		<property name="messages" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.Messsage&gt;" />
 		<property name="disclosureCurrency" type="java.lang.String"/>
-		<property name="paidUpCapitalCurrentQuarter" type="java.lang.String"/>
 		<property name="annualFinancialStatementFile" type="java.lang.String"/>
 		<property name="annualFinancialStatementFileName" type="java.lang.String"/>
 		<property name="annualFinancialStatementFileType" type="java.lang.String"/>

@@ -80,7 +80,7 @@ function calculateShareholderEquity() {
         return;
     }
     var retainedEarningsIncludeCurrentQuarter = (financialSurvey.shareholderEquity.retainedEarningsIncludeCurrentQuarter /100)  * sharePercentage ;
-    var paidUpCapitalCurrentQuarter = (financialSurvey.paidUpCapitalCurrentQuarter /100)  * sharePercentage ;
+    var paidUpCapitalCurrentQuarter = (financialSurvey.shareholderEquity.paidUpCapitalCurrentQuarter /100)  * sharePercentage ;
     var additionalPaidUpCapitalCurrentQuarter = (financialSurvey.shareholderEquity.additionalPaidUpCapitalCurrentQuarter /100)  * sharePercentage ;
     var profitLossQuarterCurrentQuarter = (financialSurvey.shareholderEquity.profitLossQuarterCurrentQuarter /100)  * sharePercentage ;
     var totalReservesCurrentQuarter = (financialSurvey.shareholderEquity.totalReservesCurrentQuarter /100)  * sharePercentage ;
@@ -954,8 +954,8 @@ function populateCompanyProfile() {
     financialSurvey.economicActivityClass = $('#classId').val();
     financialSurvey.economicActivityBranch = $('#branchId').val();
     financialSurvey.economicActivity = $('#activityId').val();
-    financialSurvey.paidUpCapitalCurrentQuarter = $('#comppanyPaidUpCapitalCurrentQuarterId').val();
-    $('#paidUpCapitalCurrentQuarterId').val(financialSurvey.paidUpCapitalCurrentQuarter);
+    financialSurvey.shareholderEquity.paidUpCapitalCurrentQuarter = $('#comppanyPaidUpCapitalCurrentQuarterId').val();
+    $('#paidUpCapitalCurrentQuarterId').val(financialSurvey.shareholderEquity.paidUpCapitalCurrentQuarter);
 }
 
 var submitLicense = function () {
@@ -1346,7 +1346,7 @@ function setLicenseData(data, history) {
     $('#financeManagerTelephoneId').val(companyProfile.financeManagerTelephone);
     $('#crIssueDate').val(companyProfile.crIssueDate);
     $('#incorporationDate').val(companyProfile.incorporationDate);
-    $('#comppanyPaidUpCapitalCurrentQuarterId').val(financialSurvey.paidUpCapitalCurrentQuarter);
+    $('#comppanyPaidUpCapitalCurrentQuarterId').val(financialSurvey.shareholderEquity.paidUpCapitalCurrentQuarter);
 
     fillShareholderEquityData(financialSurvey.shareholderEquity);
     fillShareholderEquityPrevQuarterData(financialSurvey.shareholderEquity);

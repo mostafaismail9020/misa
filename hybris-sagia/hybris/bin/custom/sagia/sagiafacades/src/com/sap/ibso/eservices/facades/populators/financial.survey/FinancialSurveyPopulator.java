@@ -172,7 +172,6 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
         }
 
         financialSurvey.setIsConsolidated(financialSurveyModel.isIsConsolidated());
-        financialSurvey.setPaidUpCapitalCurrentQuarter(financialSurveyModel.getPaidUpCapitalCurrentQuarter());
         financialSurvey.setDisclosureCurrency(financialSurveyModel.getDisclosureCurrency());
         financialSurvey.setSuspensionDate(financialSurveyModel.getSuspensionDate()!=null?sagiaFormatProvider.formatBackEndDateToUIStr(financialSurveyModel.getSuspensionDate()):null);
 
@@ -192,6 +191,7 @@ public class FinancialSurveyPopulator implements Populator<FinancialSurveyModel,
 
 
         if(previousQuarterFinancialSurveyModel != null ){
+            shareholderEquity.setPaidUpCapitalPreviousQuarter(previousQuarterFinancialSurveyModel.getPaidUpCapitalCurrentQuarter());
             shareholderEquity.setAdditionalPaidUpCapitalPreviousQuarter(previousQuarterFinancialSurveyModel.getAdditionalPaidUpCapitalCurrentQuarter());
             shareholderEquity.setRetainedEarningsIncludePreviousQuarter(previousQuarterFinancialSurveyModel.getRetainedEarningsIncludeCurrentQuarter());
             shareholderEquity.setProfitLossQuarterPreviousQuarter(previousQuarterFinancialSurveyModel.getProfitLossQuarterCurrentQuarter());

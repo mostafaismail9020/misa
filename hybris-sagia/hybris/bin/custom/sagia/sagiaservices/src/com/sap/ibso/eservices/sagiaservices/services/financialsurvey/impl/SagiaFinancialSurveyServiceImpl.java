@@ -141,7 +141,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyModel.setCompanyName(financialSurveyData.getCompanyProfile().getCompanyName());
         financialSurveyModel.setCommercialRegistrationNo(financialSurveyData.getCompanyProfile().getCommercialRegistrationNo());
         financialSurveyModel.setDisclosureCurrency(financialSurveyData.getDisclosureCurrency());
-        financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getPaidUpCapitalCurrentQuarter());
+        financialSurveyModel.setPaidUpCapitalCurrentQuarter(financialSurveyData.getShareholderEquity().getPaidUpCapitalCurrentQuarter());
         if(financialSurveyData.getIsScaleLevelActualUnit()){
             financialSurveyModel.setScaleLevel(FinancialSurveyScaleLevel.ACTUAL_UNIT);
         }else {

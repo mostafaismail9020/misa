@@ -4,6 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="license" tagdir="/WEB-INF/tags/responsive/license" %>
 <%@ taglib prefix="modals" tagdir="/WEB-INF/tags/responsive/common" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <div id="accordionTransaction2" class="services-container-tabcontent">

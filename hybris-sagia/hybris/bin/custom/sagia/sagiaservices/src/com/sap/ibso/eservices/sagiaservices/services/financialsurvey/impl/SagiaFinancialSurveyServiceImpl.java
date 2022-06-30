@@ -566,6 +566,9 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
             //Fill with empty transaction.
             financialSurveyShareholderModel.setTransaction(transaction);
             modelService.save(financialSurveyShareholderModel);
+
+            financialSurveyModel.setIsShareholdersSectionFilled(true);
+            modelService.save(financialSurveyModel);
         }
 
     }

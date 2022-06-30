@@ -386,8 +386,8 @@
                             <thead class="tableModule-head">
                             <tr>
                                 <th></th>
-                                <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.currentQuarter"/></th>
-                                <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.previousQuarter"/></th>
+                                <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.currentQuarter" arguments="${fn:escapeXml(currenQuarter)}"  /></th>
+                                <th style="text-align: center"><spring:theme code="financial.survey.transaction.assets.previousQuarter"  arguments="${fn:escapeXml(previousQuarter)}"  /></th>
                             </tr>
                             </thead>
 

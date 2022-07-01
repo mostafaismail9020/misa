@@ -581,7 +581,17 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
             financialSurveyShareholderModel.setShareholderCountryRef(shareholderModelFromPrevQuarter.getShareholderCountryRef());
             financialSurveyShareholderModel.setIndustry(shareholderModelFromPrevQuarter.getIndustry());
             financialSurveyShareholderModel.setShareholderSector(shareholderModelFromPrevQuarter.getShareholderSector());
-
+            financialSurveyShareholderModel.setRetainedEarningsIncludeCurrentQuarter(shareholderModelFromPrevQuarter.getRetainedEarningsIncludeCurrentQuarter());
+            financialSurveyShareholderModel.setAdditionalPaidUpCapitalCurrentQuarter(shareholderModelFromPrevQuarter.getAdditionalPaidUpCapitalCurrentQuarter());
+            financialSurveyShareholderModel.setProfitLossQuarterCurrentQuarter(shareholderModelFromPrevQuarter.getProfitLossQuarterCurrentQuarter());
+            financialSurveyShareholderModel.setTotalReservesCurrentQuarter(shareholderModelFromPrevQuarter.getTotalReservesCurrentQuarter());
+            financialSurveyShareholderModel.setTreasurySharesCurrentQuarter(shareholderModelFromPrevQuarter.getTreasurySharesCurrentQuarter());
+            financialSurveyShareholderModel.setHeadOfficeAccountInBranchCurrentQuarter(shareholderModelFromPrevQuarter.getHeadOfficeAccountInBranchCurrentQuarter());
+            financialSurveyShareholderModel.setShareholderEquityOthersCurrentQuarter(shareholderModelFromPrevQuarter.getShareholderEquityOthersCurrentQuarter());
+            financialSurveyShareholderModel.setMinorityRightsCurrentQuarter(shareholderModelFromPrevQuarter.getMinorityRightsCurrentQuarter());
+            financialSurveyShareholderModel.setTotalShareholderEquityCurrentQuarter(shareholderModelFromPrevQuarter.getTotalShareholderEquityCurrentQuarter());
+            financialSurveyShareholderModel.setShareholderCapital(shareholderModelFromPrevQuarter.getShareholderCapital());
+            financialSurveyShareholderModel.setPaidUpCapitalCurrentQuarter(shareholderModelFromPrevQuarter.getPaidUpCapitalCurrentQuarter());
 
             SagiaSurveyTransactionModel transaction = new SagiaSurveyTransactionModel();
             //Fill with empty transaction.

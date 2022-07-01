@@ -492,6 +492,34 @@ function fillAffiliateForm(selectedAffiliate) {
     $('#accordionTransactionAffeliate #totalDebitCurrentQuarterId').val(selectedAffiliate.transaction.totalDebitCurrentQuarter);
     $('#accordionTransactionAffeliate #totalCreditCurrentQuarterId').val(selectedAffiliate.transaction.totalCreditCurrentQuarter);
 
+
+
+
+    $('#accordionTransactionAffeliate #tradeDebitPreviousQuarterId').val(selectedAffiliate.transaction.tradeDebitPreviousQuarter);
+    $('#accordionTransactionAffeliate #tradeCreditPreviousQuarterId').val(selectedAffiliate.transaction.tradeCreditPreviousQuarter);
+    $('#accordionTransactionAffeliate #loansAssetsPreviousQuarterId').val(selectedAffiliate.transaction.loansAssetsPreviousQuarter);
+    $('#accordionTransactionAffeliate #loansLiabilitiesPreviousQuarterId').val(selectedAffiliate.transaction.loansLiabilitiesPreviousQuarter);
+    $('#accordionTransactionAffeliate #interestReceivedPreviousQuarterId').val(selectedAffiliate.transaction.interestReceivedPreviousQuarter);
+    $('#accordionTransactionAffeliate #interestPayablePreviousQuarterId').val(selectedAffiliate.transaction.interestPayablePreviousQuarter);
+    $('#accordionTransactionAffeliate #dividendsReceivedPreviousQuarterId').val(selectedAffiliate.transaction.dividendsReceivedPreviousQuarter);
+    $('#accordionTransactionAffeliate #dividendsPaidPreviousQuarterId').val(selectedAffiliate.transaction.dividendsPaidPreviousQuarter);
+    $('#accordionTransactionAffeliate #expensesReceivedPreviousQuarterId').val(selectedAffiliate.transaction.expensesReceivedPreviousQuarter);
+    $('#accordionTransactionAffeliate #expensesPaidPreviousQuarterId').val(selectedAffiliate.transaction.expensesPaidPreviousQuarter);
+    $('#accordionTransactionAffeliate #sellProductionSuppliesPreviousQuarterId').val(selectedAffiliate.transaction.sellProductionSuppliesPreviousQuarter);
+    $('#accordionTransactionAffeliate #purchaseProductionSuppliesPreviousQuarterId').val(selectedAffiliate.transaction.purchaseProductionSuppliesPreviousQuarter);
+    $('#accordionTransactionAffeliate #sellMachineryPreviousQuarterId').val(selectedAffiliate.transaction.sellMachineryPreviousQuarter);
+    $('#accordionTransactionAffeliate #purchaseMachineryPreviousQuarterId').val(selectedAffiliate.transaction.purchaseMachineryPreviousQuarter);
+    $('#accordionTransactionAffeliate #currentDebitAccountPreviousQuarterId').val(selectedAffiliate.transaction.currentDebitAccountPreviousQuarter);
+    $('#accordionTransactionAffeliate #currentCreditAccountPreviousQuarterId').val(selectedAffiliate.transaction.currentCreditAccountPreviousQuarter);
+    $('#accordionTransactionAffeliate #expensesReceivablePreviousQuarterId').val(selectedAffiliate.transaction.expensesReceivablePreviousQuarter);
+    $('#accordionTransactionAffeliate #expensesPayablePreviousQuarterId').val(selectedAffiliate.transaction.expensesPayablePreviousQuarter);
+    $('#accordionTransactionAffeliate #insuranceCommissionReceivablePreviousQuarterId').val(selectedAffiliate.transaction.insuranceCommissionReceivablePreviousQuarter);
+    $('#accordionTransactionAffeliate #insuranceCommissionPayablePreviousQuarterId').val(selectedAffiliate.transaction.insuranceCommissionPayablePreviousQuarter);
+    $('#accordionTransactionAffeliate #otherDebitPreviousQuarterId').val(selectedAffiliate.transaction.otherDebitPreviousQuarter);
+    $('#accordionTransactionAffeliate #otherCreditPreviousQuarterId').val(selectedAffiliate.transaction.otherCreditPreviousQuarter);
+    $('#accordionTransactionAffeliate #totalDebitPreviousQuarterId').val(selectedAffiliate.transaction.totalDebitPreviousQuarter);
+    $('#accordionTransactionAffeliate #totalCreditPreviousQuarterId').val(selectedAffiliate.transaction.totalCreditPreviousQuarter);
+
     updateDropDown('#affiliateCountryId', selectedAffiliate.affiliateCountry);
 
 
@@ -603,6 +631,34 @@ var saveAffiliate = function (existingBp, bpId) {
 
 
 
+    transaction.tradeDebitPreviousQuarter = $('#accordionTransactionAffeliate #tradeDebitPreviousQuarterId').val() ;
+    transaction.tradeCreditPreviousQuarter = $('#accordionTransactionAffeliate #tradeCreditPreviousQuarterId').val() ;
+    transaction.loansAssetsPreviousQuarter =  $('#accordionTransactionAffeliate #loansAssetsPreviousQuarterId').val() ;
+    transaction.loansLiabilitiesPreviousQuarter =  $('#accordionTransactionAffeliate #loansLiabilitiesPreviousQuarterId').val() ;
+    transaction.interestReceivedPreviousQuarter = $('#accordionTransactionAffeliate #interestReceivedPreviousQuarterId').val() ;
+    transaction.interestPayablePreviousQuarter = $('#accordionTransactionAffeliate #interestPayablePreviousQuarterId').val() ;
+    transaction.dividendsReceivedPreviousQuarter = $('#accordionTransactionAffeliate #dividendsReceivedPreviousQuarterId').val() ;
+    transaction.dividendsPaidPreviousQuarter = $('#accordionTransactionAffeliate #dividendsPaidPreviousQuarterId').val() ;
+    transaction.expensesReceivedPreviousQuarter = $('#accordionTransactionAffeliate #expensesReceivedPreviousQuarterId').val() ;
+    transaction.expensesPaidPreviousQuarter = $('#accordionTransactionAffeliate #expensesPaidPreviousQuarterId').val() ;
+    transaction.sellProductionSuppliesPreviousQuarter = $('#accordionTransactionAffeliate #sellProductionSuppliesPreviousQuarterId').val() ;
+    transaction.purchaseProductionSuppliesPreviousQuarter = $('#accordionTransactionAffeliate #purchaseProductionSuppliesPreviousQuarterId').val() ;
+    transaction.sellMachineryPreviousQuarter = $('#accordionTransactionAffeliate #sellMachineryPreviousQuarterId').val() ;
+    transaction.purchaseMachineryPreviousQuarter = $('#accordionTransactionAffeliate #purchaseMachineryPreviousQuarterId').val() ;
+    transaction.currentDebitAccountPreviousQuarter = $('#accordionTransactionAffeliate #currentDebitAccountPreviousQuarterId').val() ;
+    transaction.currentCreditAccountPreviousQuarter = $('#accordionTransactionAffeliate #currentCreditAccountPreviousQuarterId').val() ;
+    transaction.expensesReceivablePreviousQuarter = $('#accordionTransactionAffeliate #expensesReceivablePreviousQuarterId').val() ;
+    transaction.expensesPayablePreviousQuarter = $('#accordionTransactionAffeliate #expensesPayablePreviousQuarterId').val() ;
+    transaction.insuranceCommissionReceivablePreviousQuarter = $('#accordionTransactionAffeliate #insuranceCommissionReceivablePreviousQuarterId').val() ;
+    transaction.insuranceCommissionPayablePreviousQuarter = $('#accordionTransactionAffeliate #insuranceCommissionPayablePreviousQuarterId').val() ;
+    transaction.otherDebitPreviousQuarter = $('#accordionTransactionAffeliate #otherDebitPreviousQuarterId').val() ;
+    transaction.otherCreditPreviousQuarter = $('#accordionTransactionAffeliate #otherCreditPreviousQuarterId').val() ;
+    transaction.totalDebitPreviousQuarter = $('#accordionTransactionAffeliate #totalDebitPreviousQuarterId').val() ;
+    transaction.totalCreditPreviousQuarter = $('#accordionTransactionAffeliate #totalCreditPreviousQuarterId').val() ;
+
+
+
+
     if (selectedAffiliate) { // edit affiliate
         affiliateRow = $('#' + affiliateSrId);
         if (individualAffiliateName) { // edit individual affiliate
@@ -640,6 +696,33 @@ var saveAffiliate = function (existingBp, bpId) {
         selectedAffiliate.transaction.otherCreditCurrentQuarter =transaction.otherCreditCurrentQuarter ;
         selectedAffiliate.transaction.totalDebitCurrentQuarter =transaction.totalDebitCurrentQuarter ;
         selectedAffiliate.transaction.totalCreditCurrentQuarter =transaction.totalCreditCurrentQuarter ;
+
+
+
+        selectedAffiliate.transaction.tradeDebitPreviousQuarter = transaction.tradeDebitPreviousQuarter ;
+        selectedAffiliate.transaction.tradeCreditPreviousQuarter =transaction.tradeCreditPreviousQuarter ;
+        selectedAffiliate.transaction.loansAssetsPreviousQuarter =transaction.loansAssetsPreviousQuarter ;
+        selectedAffiliate.transaction.loansLiabilitiesPreviousQuarter =transaction.loansLiabilitiesPreviousQuarter  ;
+        selectedAffiliate.transaction.interestReceivedPreviousQuarter =transaction.interestReceivedPreviousQuarter ;
+        selectedAffiliate.transaction.interestPayablePreviousQuarter = transaction.interestPayablePreviousQuarter ;
+        selectedAffiliate.transaction.dividendsReceivedPreviousQuarter = transaction.dividendsReceivedPreviousQuarter ;
+        selectedAffiliate.transaction.dividendsPaidPreviousQuarter = transaction.dividendsPaidPreviousQuarter ;
+        selectedAffiliate.transaction.expensesReceivedPreviousQuarter =transaction.expensesReceivedPreviousQuarter ;
+        selectedAffiliate.transaction.expensesPaidPreviousQuarter =transaction.expensesPaidPreviousQuarter ;
+        selectedAffiliate.transaction.sellProductionSuppliesPreviousQuarter =transaction.sellProductionSuppliesPreviousQuarter ;
+        selectedAffiliate.transaction.purchaseProductionSuppliesPreviousQuarter = transaction.purchaseProductionSuppliesPreviousQuarter ;
+        selectedAffiliate.transaction.sellMachineryPreviousQuarter =transaction.sellMachineryPreviousQuarter ;
+        selectedAffiliate.transaction.purchaseMachineryPreviousQuarter =transaction.purchaseMachineryPreviousQuarter ;
+        selectedAffiliate.transaction.currentDebitAccountPreviousQuarter =transaction.currentDebitAccountPreviousQuarter ;
+        selectedAffiliate.transaction.currentCreditAccountPreviousQuarter =transaction.currentCreditAccountPreviousQuarter ;
+        selectedAffiliate.transaction.expensesReceivablePreviousQuarter =transaction.expensesReceivablePreviousQuarter ;
+        selectedAffiliate.transaction.expensesPayablePreviousQuarter =transaction.expensesPayablePreviousQuarter ;
+        selectedAffiliate.transaction.insuranceCommissionReceivablePreviousQuarter =transaction.insuranceCommissionReceivablePreviousQuarter ;
+        selectedAffiliate.transaction.insuranceCommissionPayablePreviousQuarter =transaction.insuranceCommissionPayablePreviousQuarter ;
+        selectedAffiliate.transaction.otherDebitPreviousQuarter =transaction.otherDebitPreviousQuarter ;
+        selectedAffiliate.transaction.otherCreditPreviousQuarter =transaction.otherCreditPreviousQuarter ;
+        selectedAffiliate.transaction.totalDebitPreviousQuarter =transaction.totalDebitPreviousQuarter ;
+        selectedAffiliate.transaction.totalCreditPreviousQuarter =transaction.totalCreditPreviousQuarter ;
 
 
         if (gender) { // edit individual affiliate
@@ -743,7 +826,32 @@ var saveAffiliate = function (existingBp, bpId) {
                  otherDebitCurrentQuarter : '',
                  otherCreditCurrentQuarter : '',
                  totalDebitCurrentQuarter  : '',
-                 totalCreditCurrentQuarter : ''
+                 totalCreditCurrentQuarter : '',
+
+                tradeDebitPreviousQuarter: '',
+                tradeCreditPreviousQuarter: '',
+                loansAssetsPreviousQuarter: '',
+                loansLiabilitiesPreviousQuarter: '',
+                interestReceivedPreviousQuarter: '',
+                interestPayablePreviousQuarter : '',
+                dividendsReceivedPreviousQuarter : '',
+                dividendsPaidPreviousQuarter : '',
+                expensesReceivedPreviousQuarter  : '',
+                expensesPaidPreviousQuarter : '',
+                sellProductionSuppliesPreviousQuarter : '',
+                purchaseProductionSuppliesPreviousQuarter : '',
+                sellMachineryPreviousQuarter : '',
+                purchaseMachineryPreviousQuarter : '',
+                currentDebitAccountPreviousQuarter : '',
+                currentCreditAccountPreviousQuarter : '',
+                expensesReceivablePreviousQuarter : '',
+                expensesPayablePreviousQuarter : '',
+                insuranceCommissionReceivablePreviousQuarter : '',
+                insuranceCommissionPayablePreviousQuarter : '',
+                otherDebitPreviousQuarter : '',
+                otherCreditPreviousQuarter : '',
+                totalDebitPreviousQuarter  : '',
+                totalCreditPreviousQuarter : ''
             }
         };
 
@@ -804,6 +912,34 @@ var saveAffiliate = function (existingBp, bpId) {
             affiliate.transaction.otherCreditCurrentQuarter  = transaction.otherCreditCurrentQuarter ;
             affiliate.transaction.totalDebitCurrentQuarter   = transaction.totalDebitCurrentQuarter;
             affiliate.transaction.totalCreditCurrentQuarter =   transaction.totalCreditCurrentQuarter;
+
+
+
+        affiliate.transaction.currentDebitAccountPreviousQuarter = transaction.currentDebitAccountPreviousQuarter;
+        affiliate.transaction.tradeDebitPreviousQuarter= transaction.tradeDebitPreviousQuarter;
+        affiliate.transaction.tradeCreditPreviousQuarter = transaction.tradeCreditPreviousQuarter;
+        affiliate.transaction.loansAssetsPreviousQuarter = transaction.loansAssetsPreviousQuarter;
+        affiliate.transaction.loansLiabilitiesPreviousQuarter = transaction.loansLiabilitiesPreviousQuarter;
+        affiliate.transaction.interestReceivedPreviousQuarter = transaction.interestReceivedPreviousQuarter;
+        affiliate.transaction.interestPayablePreviousQuarter  = transaction.interestPayablePreviousQuarter;
+        affiliate.transaction.dividendsReceivedPreviousQuarter  = transaction.dividendsReceivedPreviousQuarter;
+        affiliate.transaction.dividendsPaidPreviousQuarter  = transaction.dividendsPaidPreviousQuarter;
+        affiliate.transaction.expensesReceivedPreviousQuarter   = transaction.expensesReceivedPreviousQuarter;
+        affiliate.transaction.expensesPaidPreviousQuarter  = transaction.expensesPaidPreviousQuarter;
+        affiliate.transaction.sellProductionSuppliesPreviousQuarter  = transaction.sellProductionSuppliesPreviousQuarter;
+        affiliate.transaction.purchaseProductionSuppliesPreviousQuarter  = transaction.purchaseProductionSuppliesPreviousQuarter;
+        affiliate.transaction.sellMachineryPreviousQuarter  = transaction.sellMachineryPreviousQuarter;
+        affiliate.transaction.purchaseMachineryPreviousQuarter  = transaction.purchaseMachineryPreviousQuarter;
+        affiliate.transaction.currentDebitAccountPreviousQuarter  = transaction.currentDebitAccountPreviousQuarter;
+        affiliate.transaction.currentCreditAccountPreviousQuarter  = transaction.currentCreditAccountPreviousQuarter;
+        affiliate.transaction.expensesReceivablePreviousQuarter  = transaction.expensesReceivablePreviousQuarter;
+        affiliate.transaction.expensesPayablePreviousQuarter  = transaction.expensesPayablePreviousQuarter;
+        affiliate.transaction.insuranceCommissionReceivablePreviousQuarter  = transaction.insuranceCommissionReceivablePreviousQuarter;
+        affiliate.transaction.insuranceCommissionPayablePreviousQuarter  = transaction.insuranceCommissionPayablePreviousQuarter;
+        affiliate.transaction.otherDebitPreviousQuarter  = transaction.otherDebitPreviousQuarter;
+        affiliate.transaction.otherCreditPreviousQuarter  = transaction.otherCreditPreviousQuarter ;
+        affiliate.transaction.totalDebitPreviousQuarter   = transaction.totalDebitPreviousQuarter;
+        affiliate.transaction.totalCreditPreviousQuarter =   transaction.totalCreditPreviousQuarter;
 
 
 

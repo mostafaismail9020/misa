@@ -36,5 +36,8 @@ public interface SagiaFinancialSurveyService {
 
     void copyShareholdersFromPreviousQurterSurvey(FinancialSurveyModel financialSurveyModel, FinancialSurveyQuarterModel quarter);
 
+    void copyAffiliatesFromPreviousQurterSurvey(FinancialSurveyModel financialSurveyModel, FinancialSurveyQuarterModel quarter);
+
+
     FinancialSurveyQuarterModel getFinancialSurveyQuarterByCode(String quarterCode);
 }

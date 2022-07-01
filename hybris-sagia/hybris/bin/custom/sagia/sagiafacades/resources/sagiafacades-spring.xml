@@ -398,6 +398,9 @@
 	<bean id="financialSurveyTransactionPopulator" class="com.sap.ibso.eservices.facades.populators.financial.survey.FinancialSurveyTransactionPopulator">
 	</bean>
 
+	<bean id="financialSurveyPreviousQuarterTransactionPopulator" class="com.sap.ibso.eservices.facades.populators.financial.survey.FinancialSurveyPreviousQuarterTransactionPopulator">
+	</bean>
+
 	<bean id="companyProfilePopulator" class="com.sap.ibso.eservices.facades.populators.financial.survey.CompanyProfilePopulator">
 	</bean>
 
@@ -938,7 +941,7 @@
 	<bean name="licensePopulator" class="com.sap.ibso.eservices.facades.populators.license.LicensePopulator">
 		<property name="sagiaFormatProvider" ref="sagiaFormatProvider" />
 	</bean>
-	
+
 	<bean name="sagiaServiceRequestReversePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaServiceRequestReversePopulator">
 	    <property name="i18nService" ref="i18NService" />
 	</bean>
@@ -1720,7 +1723,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<alias name="defaultContactPersonODataPopulator" alias="contactPersonODataPopulator"/>
 	<bean id="defaultContactPersonODataPopulator" class="com.sap.ibso.eservices.facades.populators.odata.ContactPersonODataPopulator"/>
 

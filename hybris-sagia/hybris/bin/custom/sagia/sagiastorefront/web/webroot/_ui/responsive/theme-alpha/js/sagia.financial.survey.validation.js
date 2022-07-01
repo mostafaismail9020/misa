@@ -1,6 +1,21 @@
 function entityValidator() {
 
 
+    //custom validation rule
+    $.validator.addMethod("unifiedNo700",
+        function(value, element) {
+            return /^7\\d{9}$/.test(value);
+        }, getI18nText("validation.basicinformation.unifiedNo700")
+    );
+
+    $.validator.addMethod("emailAddress",
+        function(value, element) {
+            return /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(value);
+        }, getI18nText("validation.basicinformation.email")
+    );
+
+
+
     return $("#entityFormId").validate({
         highlight: function (element) {
             $(element).closest('.form-group').addClass('has-error');
@@ -31,6 +46,7 @@ function entityValidator() {
                 digits: true,
                 minlength: 10,
                 maxlength: 10,
+                unifiedNo700: true
             },
             companyName: {
                 required: true,
@@ -56,6 +72,7 @@ function entityValidator() {
             },
             financeManagerEmail: {
                 required: true,
+                emailAddress: true
             },
             financeManagerTelephone: {
                 required: true,

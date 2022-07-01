@@ -9604,6 +9604,12 @@
 
 
                 <attributes>
+                    <attribute qualifier="financialSurveyAffiliatePreviousQuarter" type="FinancialSurveyAffiliate">
+                        <description>reference to the previous quarter affiliate</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true" />
+                        <persistence type="property"/>
+                    </attribute>
                     <attribute qualifier="transaction" type="SagiaSurveyTransaction">
                         <description>transaction</description>
                         <modifiers read="true" write="true" search="true"

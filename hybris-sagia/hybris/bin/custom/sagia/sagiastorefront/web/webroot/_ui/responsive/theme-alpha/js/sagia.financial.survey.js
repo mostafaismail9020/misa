@@ -290,6 +290,9 @@ $(document).ready(function () {
             }
 
         });
+
+
+
         validateNumberFloatInput ($("#shareholderTreasurySharesCurrentQuarterId"));
 
         validateNumberFloatInput ($("#shareholderTotalShareholderEquityCurrentQuarterId"));
@@ -424,6 +427,7 @@ $(document).ready(function () {
         // Tabs navigation
         $(document).on("click", "#nextTabEntityBtnId", function () {
             var validator = entityValidator();
+
             if (!validator.form()) {
                 $('a[href="#accessibletabscontent0-0"]').click();
 

@@ -217,7 +217,14 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                     }
                     populateShareholderModel(shareholder,financialSurveyShareholderModel);
 
-                    populateTransactionModel(shareholder.getTransaction(),sagiaSurveyTransactionModel);
+                    FinancialSurveyShareholderModel financialSurveyShareholderPrevious = financialSurveyShareholderModel.getFinancialSurveyShareholderPreviousQuarter();
+                    boolean valuesPrevQuarterChanged = populateTransactionModel(shareholder.getTransaction(),sagiaSurveyTransactionModel,financialSurveyShareholderPrevious!=null?financialSurveyShareholderPrevious.getTransaction():null);
+                    if (valuesPrevQuarterChanged){
+                        FinancialSurveyModel finanSurveyPrev = financialSurveyShareholderPrevious.getFinancialSurvey();
+                        finanSurveyPrev.setSurveyStatus(FinancialSurveyStatus.UPDATED);
+                        modelService.save(finanSurveyPrev);
+                    }
+
                     financialSurveyShareholderModel.setTransaction(sagiaSurveyTransactionModel);
                     financialSurveyShareholderModel.setFinancialSurvey(financialSurveyModel);
                     modelService.save(sagiaSurveyTransactionModel);
@@ -249,7 +256,15 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                         sagiaSurveyTransactionModel = financialSurveyAffiliateModel.getTransaction();
                     }
                     populateAffiliateModel(affiliate,financialSurveyAffiliateModel);
-                    populateTransactionModel(affiliate.getTransaction(),sagiaSurveyTransactionModel);
+
+
+                    FinancialSurveyAffiliateModel financialSurveyAffiliateModelPrevious = financialSurveyAffiliateModel.getFinancialSurveyAffiliatePreviousQuarter();
+                    boolean valuesPrevQuarterChanged = populateTransactionModel(affiliate.getTransaction(),sagiaSurveyTransactionModel,financialSurveyAffiliateModelPrevious!=null?financialSurveyAffiliateModelPrevious.getTransaction():null);
+                    if (valuesPrevQuarterChanged){
+                        FinancialSurveyModel finanSurveyPrev = financialSurveyAffiliateModelPrevious.getFinancialSurvey();
+                        finanSurveyPrev.setSurveyStatus(FinancialSurveyStatus.UPDATED);
+                        modelService.save(finanSurveyPrev);
+                    }
                     financialSurveyAffiliateModel.setTransaction(sagiaSurveyTransactionModel);
                     financialSurveyAffiliateModel.setFinancialSurvey(financialSurveyModel);
                     modelService.save(sagiaSurveyTransactionModel);
@@ -562,6 +577,12 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
             financialSurveyShareholderModel.setShareholderHasPreferredShares(shareholderModelFromPrevQuarter.isShareholderHasPreferredShares());
             financialSurveyShareholderModel.setHeadOfficeAccountInBranchCurrentQuarter(shareholderModelFromPrevQuarter.getHeadOfficeAccountInBranchCurrentQuarter());
             financialSurveyShareholderModel.setValueOfReverseInvestment(shareholderModelFromPrevQuarter.getValueOfReverseInvestment());
+            financialSurveyShareholderModel.setShareholderVotingPower(shareholderModelFromPrevQuarter.getShareholderVotingPower());
+            financialSurveyShareholderModel.setShareholderCountryRef(shareholderModelFromPrevQuarter.getShareholderCountryRef());
+            financialSurveyShareholderModel.setIndustry(shareholderModelFromPrevQuarter.getIndustry());
+            financialSurveyShareholderModel.setShareholderSector(shareholderModelFromPrevQuarter.getShareholderSector());
+
+
             SagiaSurveyTransactionModel transaction = new SagiaSurveyTransactionModel();
             //Fill with empty transaction.
             financialSurveyShareholderModel.setTransaction(transaction);
@@ -572,6 +593,54 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         }
 
     }
+
+    @Override
+    public void copyAffiliatesFromPreviousQurterSurvey(FinancialSurveyModel financialSurveyModel, FinancialSurveyQuarterModel quarter) {
+
+        if (quarter.getPreviousQuarter()==null) {
+            return;
+        }
+        String prevQuarterCode = quarter.getPreviousQuarter()!=null ? quarter.getPreviousQuarter().getCode() : null;
+        FinancialSurveyModel prevFinancialSurveyModel = getFinancialSurvey(prevQuarterCode);
+
+        if (prevFinancialSurveyModel == null ){
+            return;
+        }
+
+        for(FinancialSurveyAffiliateModel affiliateModelFromPrevQuarter: prevFinancialSurveyModel.getAffiliates()){
+            FinancialSurveyAffiliateModel financialSurveyAffiliateModel = new FinancialSurveyAffiliateModel();
+            financialSurveyAffiliateModel.setFinancialSurvey(financialSurveyModel);
+            financialSurveyAffiliateModel.setFinancialSurveyAffiliatePreviousQuarter(affiliateModelFromPrevQuarter);
+            financialSurveyAffiliateModel.setCompanyCountryRef(affiliateModelFromPrevQuarter.getCompanyCountryRef());
+            financialSurveyAffiliateModel.setCompanyCountry(affiliateModelFromPrevQuarter.getCompanyCountry());
+            financialSurveyAffiliateModel.setCompanyCountryRef(affiliateModelFromPrevQuarter.getCompanyCountryRef());
+            financialSurveyAffiliateModel.setIndustry(affiliateModelFromPrevQuarter.getIndustry());
+            financialSurveyAffiliateModel.setIndustry(affiliateModelFromPrevQuarter.getIndustry());
+            financialSurveyAffiliateModel.setAffiliateCountryRef(affiliateModelFromPrevQuarter.getAffiliateCountryRef());
+            financialSurveyAffiliateModel.setAffiliateCountry(affiliateModelFromPrevQuarter.getAffiliateCountry());
+            financialSurveyAffiliateModel.setAffiliateNationalityCurrent(affiliateModelFromPrevQuarter.getAffiliateNationalityCurrent());
+            financialSurveyAffiliateModel.setCompanyCountryRef(affiliateModelFromPrevQuarter.getCompanyCountryRef());
+            financialSurveyAffiliateModel.setAffiliateNameEnglish(affiliateModelFromPrevQuarter.getAffiliateNameEnglish());
+            financialSurveyAffiliateModel.setAffiliateTypeRef(affiliateModelFromPrevQuarter.getAffiliateTypeRef());
+            financialSurveyAffiliateModel.setAffiliateType(affiliateModelFromPrevQuarter.getAffiliateType());
+            financialSurveyAffiliateModel.setAffiliateSector(affiliateModelFromPrevQuarter.getAffiliateSector());
+            financialSurveyAffiliateModel.setAffiliateSubsector(affiliateModelFromPrevQuarter.getAffiliateSubsector());
+            financialSurveyAffiliateModel.setAffiliateNationalityCurrentRef(affiliateModelFromPrevQuarter.getAffiliateNationalityCurrentRef());
+            financialSurveyAffiliateModel.setAffiliateGender(affiliateModelFromPrevQuarter.getAffiliateGender());
+            financialSurveyAffiliateModel.setAffiliateMultinationalCompany(affiliateModelFromPrevQuarter.getAffiliateMultinationalCompany());
+
+
+            SagiaSurveyTransactionModel transaction = new SagiaSurveyTransactionModel();
+            //Fill with empty transaction.
+            financialSurveyAffiliateModel.setTransaction(transaction);
+            modelService.save(financialSurveyAffiliateModel);
+
+            financialSurveyModel.setIsShareholdersSectionFilled(true);
+            modelService.save(financialSurveyModel);
+        }
+
+    }
+
 
 
     private SagiaCompanyProfileModel saveCompanyProfile(CompanyProfileData companyProfileData){
@@ -687,6 +756,9 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
                 modelService.save(prevQuarterSurvey);
             }
 
+
+            //check transaction
+
         }
 
 
@@ -722,73 +794,233 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());
         financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
         financialSurveyAffiliateModel.setAffiliateMultinationalCompany(affiliate.getAffiliateMultinationalCompany());
+
+
+        // Update Previous Quarter Values
+        FinancialSurveyAffiliateModel financialSurveyAffiliatePrevious = financialSurveyAffiliateModel.getFinancialSurveyAffiliatePreviousQuarter();
+        if(financialSurveyAffiliatePrevious != null) {
+
+            boolean isValuesChanged  = false;
+
+            //check transaction
+
+            if (isValuesChanged){
+                modelService.save(financialSurveyAffiliatePrevious);
+                FinancialSurveyModel prevQuarterSurvey = financialSurveyAffiliatePrevious.getFinancialSurvey();
+                prevQuarterSurvey.setSurveyStatus(FinancialSurveyStatus.UPDATED);
+                modelService.save(prevQuarterSurvey);
+            }
+
+        }
+
     }
 
 
-    private void populateTransactionModel(Transaction transaction, SagiaSurveyTransactionModel sagiaSurveyTransactionModel) throws ConversionException {
+    private boolean populateTransactionModel(Transaction transaction, SagiaSurveyTransactionModel sagiaSurveyTransactionModel, SagiaSurveyTransactionModel sagiaSurveyTransactionPrevQuarterModel) throws ConversionException {
+
 
         sagiaSurveyTransactionModel.setTradeDebitCurrentQuarter(transaction.getTradeDebitCurrentQuarter());
-        sagiaSurveyTransactionModel.setTradeDebitPreviousQuarter(transaction.getTradeDebitPreviousQuarter());
         sagiaSurveyTransactionModel.setTradeCreditCurrentQuarter(transaction.getTradeCreditCurrentQuarter());
-        sagiaSurveyTransactionModel.setTradeCreditPreviousQuarter(transaction.getTradeCreditPreviousQuarter());
-
         sagiaSurveyTransactionModel.setLoansAssetsCurrentQuarter(transaction.getLoansAssetsCurrentQuarter());
-        sagiaSurveyTransactionModel.setLoansAssetsPreviousQuarter(transaction.getLoansAssetsPreviousQuarter());
         sagiaSurveyTransactionModel.setLoansLiabilitiesCurrentQuarter(transaction.getLoansLiabilitiesCurrentQuarter());
-        sagiaSurveyTransactionModel.setLoansLiabilitiesPreviousQuarter(transaction.getLoansLiabilitiesPreviousQuarter());
-
         sagiaSurveyTransactionModel.setInterestReceivedCurrentQuarter(transaction.getInterestReceivedCurrentQuarter());
-        sagiaSurveyTransactionModel.setInterestReceivedPreviousQuarter(transaction.getInterestReceivedPreviousQuarter());
         sagiaSurveyTransactionModel.setInterestPayableCurrentQuarter(transaction.getInterestPayableCurrentQuarter());
-        sagiaSurveyTransactionModel.setInterestPayablePreviousQuarter(transaction.getInterestPayablePreviousQuarter());
-
         sagiaSurveyTransactionModel.setDividendsReceivedCurrentQuarter(transaction.getDividendsReceivedCurrentQuarter());
-        sagiaSurveyTransactionModel.setDividendsReceivedPreviousQuarter(transaction.getDividendsReceivedPreviousQuarter());
         sagiaSurveyTransactionModel.setDividendsPaidCurrentQuarter(transaction.getDividendsPaidCurrentQuarter());
-        sagiaSurveyTransactionModel.setDividendsPaidPreviousQuarter(transaction.getDividendsPaidPreviousQuarter());
-
         sagiaSurveyTransactionModel.setExpensesReceivedCurrentQuarter(transaction.getExpensesReceivedCurrentQuarter());
-        sagiaSurveyTransactionModel.setExpensesReceivedPreviousQuarter(transaction.getExpensesReceivedPreviousQuarter());
         sagiaSurveyTransactionModel.setExpensesPaidCurrentQuarter(transaction.getExpensesPaidCurrentQuarter());
-        sagiaSurveyTransactionModel.setExpensesPaidPreviousQuarter(transaction.getExpensesPaidPreviousQuarter());
-
         sagiaSurveyTransactionModel.setSellProductionSuppliesCurrentQuarter(transaction.getSellProductionSuppliesCurrentQuarter());
-        sagiaSurveyTransactionModel.setSellProductionSuppliesPreviousQuarter(transaction.getSellProductionSuppliesPreviousQuarter());
         sagiaSurveyTransactionModel.setPurchaseProductionSuppliesCurrentQuarter(transaction.getPurchaseProductionSuppliesCurrentQuarter());
-        sagiaSurveyTransactionModel.setPurchaseProductionSuppliesPreviousQuarter(transaction.getPurchaseProductionSuppliesPreviousQuarter());
-
         sagiaSurveyTransactionModel.setSellMachineryCurrentQuarter(transaction.getSellMachineryCurrentQuarter());
-        sagiaSurveyTransactionModel.setSellMachineryPreviousQuarter(transaction.getSellMachineryPreviousQuarter());
         sagiaSurveyTransactionModel.setPurchaseMachineryCurrentQuarter(transaction.getPurchaseMachineryCurrentQuarter());
-        sagiaSurveyTransactionModel.setPurchaseMachineryPreviousQuarter(transaction.getPurchaseMachineryPreviousQuarter());
-
         sagiaSurveyTransactionModel.setCurrentDebitAccountCurrentQuarter(transaction.getCurrentDebitAccountCurrentQuarter());
-        sagiaSurveyTransactionModel.setCurrentDebitAccountPreviousQuarter(transaction.getCurrentDebitAccountPreviousQuarter());
         sagiaSurveyTransactionModel.setCurrentCreditAccountCurrentQuarter(transaction.getCurrentCreditAccountCurrentQuarter());
-        sagiaSurveyTransactionModel.setCurrentCreditAccountPreviousQuarter(transaction.getCurrentCreditAccountPreviousQuarter());
-
         sagiaSurveyTransactionModel.setExpensesReceivableCurrentQuarter(transaction.getExpensesReceivableCurrentQuarter());
-        sagiaSurveyTransactionModel.setExpensesReceivablePreviousQuarter(transaction.getExpensesReceivablePreviousQuarter());
         sagiaSurveyTransactionModel.setExpensesPayableCurrentQuarter(transaction.getExpensesPayableCurrentQuarter());
-        sagiaSurveyTransactionModel.setExpensesPayablePreviousQuarter(transaction.getExpensesPayablePreviousQuarter());
-
         sagiaSurveyTransactionModel.setInsuranceCommissionReceivableCurrentQuarter(transaction.getInsuranceCommissionReceivableCurrentQuarter());
-        sagiaSurveyTransactionModel.setInsuranceCommissionReceivablePreviousQuarter(transaction.getInsuranceCommissionReceivablePreviousQuarter());
         sagiaSurveyTransactionModel.setInsuranceCommissionPayableCurrentQuarter(transaction.getInsuranceCommissionPayableCurrentQuarter());
-        sagiaSurveyTransactionModel.setInsuranceCommissionPayablePreviousQuarter(transaction.getInsuranceCommissionPayablePreviousQuarter());
-
-
         sagiaSurveyTransactionModel.setOtherDebitCurrentQuarter(transaction.getOtherDebitCurrentQuarter());
-        sagiaSurveyTransactionModel.setOtherDebitPreviousQuarter(transaction.getOtherDebitPreviousQuarter());
         sagiaSurveyTransactionModel.setOtherCreditCurrentQuarter(transaction.getOtherCreditCurrentQuarter());
-        sagiaSurveyTransactionModel.setOtherCreditPreviousQuarter(transaction.getOtherCreditPreviousQuarter());
-
-
         sagiaSurveyTransactionModel.setTotalDebitCurrentQuarter(transaction.getTotalDebitCurrentQuarter());
-        sagiaSurveyTransactionModel.setTotalDebitPreviousQuarter(transaction.getTotalDebitPreviousQuarter());
         sagiaSurveyTransactionModel.setTotalCreditCurrentQuarter(transaction.getTotalCreditCurrentQuarter());
-        sagiaSurveyTransactionModel.setTotalCreditPreviousQuarter(transaction.getTotalCreditPreviousQuarter());
 
+
+        boolean valueChanged = false;
+        if (sagiaSurveyTransactionPrevQuarterModel != null ) {
+            if(!transaction.getTradeCreditPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getTradeCreditCurrentQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setTradeCreditCurrentQuarter(transaction.getTradeCreditPreviousQuarter());
+                valueChanged = true;
+            }
+            if(!transaction.getLoansAssetsPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getLoansAssetsPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setLoansAssetsCurrentQuarter(transaction.getLoansAssetsPreviousQuarter());
+                valueChanged = true;
+            }
+
+            if(!transaction.getInterestReceivedPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getInterestReceivedPreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setInterestReceivedCurrentQuarter(transaction.getInterestReceivedPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+            if(!transaction.getLoansLiabilitiesPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getLoansLiabilitiesPreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setLoansLiabilitiesCurrentQuarter(transaction.getLoansLiabilitiesPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getInterestPayablePreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getInterestPayablePreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setInterestPayableCurrentQuarter(transaction.getInterestPayablePreviousQuarter());
+
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getDividendsReceivedPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getDividendsReceivedPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setDividendsReceivedCurrentQuarter(transaction.getDividendsReceivedPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+            if(!transaction.getExpensesReceivedPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getExpensesReceivedPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setExpensesReceivedCurrentQuarter(transaction.getExpensesReceivedPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getSellProductionSuppliesPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getSellProductionSuppliesPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setSellProductionSuppliesCurrentQuarter(transaction.getSellProductionSuppliesPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getDividendsPaidPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getDividendsPaidPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setDividendsPaidCurrentQuarter(transaction.getDividendsPaidPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getExpensesPaidPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getExpensesPaidPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setExpensesPaidCurrentQuarter(transaction.getExpensesPaidPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getSellMachineryPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getSellMachineryPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setSellMachineryCurrentQuarter(transaction.getSellMachineryPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+            if(!transaction.getPurchaseProductionSuppliesPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getPurchaseProductionSuppliesPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setPurchaseProductionSuppliesCurrentQuarter(transaction.getPurchaseProductionSuppliesPreviousQuarter());
+
+                valueChanged = true;
+
+            }
+
+
+            if(!transaction.getPurchaseMachineryPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getPurchaseMachineryPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setPurchaseMachineryCurrentQuarter(transaction.getPurchaseMachineryPreviousQuarter());
+
+                valueChanged = true;
+
+            }
+
+
+            if(!transaction.getCurrentDebitAccountPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getCurrentDebitAccountPreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setCurrentDebitAccountCurrentQuarter(transaction.getCurrentDebitAccountPreviousQuarter());
+
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getExpensesReceivablePreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getExpensesReceivablePreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setExpensesReceivableCurrentQuarter(transaction.getExpensesReceivablePreviousQuarter());
+
+                valueChanged = true;
+
+            }
+
+
+
+            if(!transaction.getCurrentCreditAccountPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getCurrentCreditAccountPreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setCurrentCreditAccountCurrentQuarter(transaction.getCurrentCreditAccountPreviousQuarter());
+
+                valueChanged = true;
+
+            }
+
+
+            if(!transaction.getExpensesPayablePreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getExpensesPayablePreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setExpensesPayableCurrentQuarter(transaction.getExpensesPayablePreviousQuarter());
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getInsuranceCommissionReceivablePreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getInsuranceCommissionReceivablePreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setInsuranceCommissionReceivableCurrentQuarter(transaction.getInsuranceCommissionReceivablePreviousQuarter());
+                valueChanged = true;
+
+            }
+
+
+            if(!transaction.getInsuranceCommissionPayablePreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getInsuranceCommissionPayablePreviousQuarter())){
+                sagiaSurveyTransactionPrevQuarterModel.setInsuranceCommissionPayableCurrentQuarter(transaction.getInsuranceCommissionPayablePreviousQuarter());
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getOtherDebitPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getOtherDebitPreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setOtherDebitCurrentQuarter(transaction.getOtherDebitPreviousQuarter());
+                valueChanged = true;
+            }
+
+
+
+            if(!transaction.getOtherCreditPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getOtherCreditPreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setOtherCreditCurrentQuarter(transaction.getOtherCreditPreviousQuarter());
+                valueChanged = true;
+            }
+
+            if(!transaction.getTotalCreditPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getTotalCreditPreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setTotalCreditCurrentQuarter(transaction.getTotalCreditPreviousQuarter());
+                valueChanged = true;
+            }
+
+
+
+            if(!transaction.getTradeDebitPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getTradeDebitPreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setTradeDebitCurrentQuarter(transaction.getTradeDebitPreviousQuarter());
+                valueChanged = true;
+            }
+
+
+            if(!transaction.getTotalDebitPreviousQuarter().equals(sagiaSurveyTransactionPrevQuarterModel.getTotalDebitPreviousQuarter())){
+
+                sagiaSurveyTransactionPrevQuarterModel.setTotalDebitCurrentQuarter(transaction.getTotalDebitPreviousQuarter());
+                valueChanged = true;
+            }
+
+            if(valueChanged) {
+                modelService.save(sagiaSurveyTransactionPrevQuarterModel);
+            }
+
+        }
+        return valueChanged;
 
     }
 

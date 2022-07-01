@@ -948,6 +948,32 @@ var saveShareholder = function (existingBp, bpId) {
      transaction.totalCreditCurrentQuarter = $('#totalCreditCurrentQuarterId').val() ;
 
 
+    transaction.tradeDebitPreviousQuarter = $('#tradeDebitPreviousQuarterId').val() ;
+    transaction.tradeCreditPreviousQuarter = $('#tradeCreditPreviousQuarterId').val() ;
+    transaction.loansAssetsPreviousQuarter =  $('#loansAssetsPreviousQuarterId').val() ;
+    transaction.loansLiabilitiesPreviousQuarter =  $('#loansLiabilitiesPreviousQuarterId').val() ;
+    transaction.interestReceivedPreviousQuarter = $('#interestReceivedPreviousQuarterId').val() ;
+    transaction.interestPayablePreviousQuarter = $('#interestPayablePreviousQuarterId').val() ;
+    transaction.dividendsReceivedPreviousQuarter = $('#dividendsReceivedPreviousQuarterId').val() ;
+    transaction.dividendsPaidPreviousQuarter = $('#dividendsPaidPreviousQuarterId').val() ;
+    transaction.expensesReceivedPreviousQuarter = $('#expensesReceivedPreviousQuarterId').val() ;
+    transaction.expensesPaidPreviousQuarter = $('#expensesPaidPreviousQuarterId').val() ;
+    transaction.sellProductionSuppliesPreviousQuarter = $('#sellProductionSuppliesPreviousQuarterId').val() ;
+    transaction.purchaseProductionSuppliesPreviousQuarter = $('#purchaseProductionSuppliesPreviousQuarterId').val() ;
+    transaction.sellMachineryPreviousQuarter = $('#sellMachineryPreviousQuarterId').val() ;
+    transaction.purchaseMachineryPreviousQuarter = $('#purchaseMachineryPreviousQuarterId').val() ;
+    transaction.currentDebitAccountPreviousQuarter = $('#currentDebitAccountPreviousQuarterId').val() ;
+    transaction.currentCreditAccountPreviousQuarter = $('#currentCreditAccountPreviousQuarterId').val() ;
+    transaction.expensesReceivablePreviousQuarter = $('#expensesReceivablePreviousQuarterId').val() ;
+    transaction.expensesPayablePreviousQuarter = $('#expensesPayablePreviousQuarterId').val() ;
+    transaction.insuranceCommissionReceivablePreviousQuarter = $('#insuranceCommissionReceivablePreviousQuarterId').val() ;
+    transaction.insuranceCommissionPayablePreviousQuarter = $('#insuranceCommissionPayablePreviousQuarterId').val() ;
+    transaction.otherDebitPreviousQuarter = $('#otherDebitPreviousQuarterId').val() ;
+    transaction.otherCreditPreviousQuarter = $('#otherCreditPreviousQuarterId').val() ;
+    transaction.totalDebitPreviousQuarter = $('#totalDebitPreviousQuarterId').val() ;
+    transaction.totalCreditPreviousQuarter = $('#totalCreditPreviousQuarterId').val() ;
+
+
 
 
     if (selectedShareholder) { // edit shareholder
@@ -994,6 +1020,33 @@ var saveShareholder = function (existingBp, bpId) {
         selectedShareholder.transaction.otherCreditCurrentQuarter =transaction.otherCreditCurrentQuarter ;
         selectedShareholder.transaction.totalDebitCurrentQuarter =transaction.totalDebitCurrentQuarter ;
         selectedShareholder.transaction.totalCreditCurrentQuarter =transaction.totalCreditCurrentQuarter ;
+
+
+        selectedShareholder.transaction.tradeDebitPreviousQuarter = transaction.tradeDebitPreviousQuarter ;
+        selectedShareholder.transaction.tradeCreditPreviousQuarter =transaction.tradeCreditPreviousQuarter ;
+        selectedShareholder.transaction.loansAssetsPreviousQuarter =transaction.loansAssetsPreviousQuarter ;
+        selectedShareholder.transaction.loansLiabilitiesPreviousQuarter =transaction.loansLiabilitiesPreviousQuarter  ;
+        selectedShareholder.transaction.interestReceivedPreviousQuarter =transaction.interestReceivedPreviousQuarter ;
+        selectedShareholder.transaction.interestPayablePreviousQuarter = transaction.interestPayablePreviousQuarter ;
+        selectedShareholder.transaction.dividendsReceivedPreviousQuarter = transaction.dividendsReceivedPreviousQuarter ;
+        selectedShareholder.transaction.dividendsPaidPreviousQuarter = transaction.dividendsPaidPreviousQuarter ;
+        selectedShareholder.transaction.expensesReceivedPreviousQuarter =transaction.expensesReceivedPreviousQuarter ;
+        selectedShareholder.transaction.expensesPaidPreviousQuarter =transaction.expensesPaidPreviousQuarter ;
+        selectedShareholder.transaction.sellProductionSuppliesPreviousQuarter =transaction.sellProductionSuppliesPreviousQuarter ;
+        selectedShareholder.transaction.purchaseProductionSuppliesPreviousQuarter = transaction.purchaseProductionSuppliesPreviousQuarter ;
+        selectedShareholder.transaction.sellMachineryPreviousQuarter =transaction.sellMachineryPreviousQuarter ;
+        selectedShareholder.transaction.purchaseMachineryPreviousQuarter =transaction.purchaseMachineryPreviousQuarter ;
+        selectedShareholder.transaction.currentDebitAccountPreviousQuarter =transaction.currentDebitAccountPreviousQuarter ;
+        selectedShareholder.transaction.currentCreditAccountPreviousQuarter =transaction.currentCreditAccountPreviousQuarter ;
+        selectedShareholder.transaction.expensesReceivablePreviousQuarter =transaction.expensesReceivablePreviousQuarter ;
+        selectedShareholder.transaction.expensesPayablePreviousQuarter =transaction.expensesPayablePreviousQuarter ;
+        selectedShareholder.transaction.insuranceCommissionReceivablePreviousQuarter =transaction.insuranceCommissionReceivablePreviousQuarter ;
+        selectedShareholder.transaction.insuranceCommissionPayablePreviousQuarter =transaction.insuranceCommissionPayablePreviousQuarter ;
+        selectedShareholder.transaction.otherDebitPreviousQuarter =transaction.otherDebitPreviousQuarter ;
+        selectedShareholder.transaction.otherCreditPreviousQuarter =transaction.otherCreditPreviousQuarter ;
+        selectedShareholder.transaction.totalDebitPreviousQuarter =transaction.totalDebitPreviousQuarter ;
+        selectedShareholder.transaction.totalCreditPreviousQuarter =transaction.totalCreditPreviousQuarter ;
+
 
 
         selectedShareholder.retainedEarningsIncludeCurrentQuarter =  retainedEarningsIncludeCurrentQuarter ;
@@ -1157,7 +1210,33 @@ var saveShareholder = function (existingBp, bpId) {
                  otherDebitCurrentQuarter : '',
                  otherCreditCurrentQuarter : '',
                  totalDebitCurrentQuarter  : '',
-                 totalCreditCurrentQuarter : ''
+                 totalCreditCurrentQuarter : '',
+
+
+                tradeDebitPreviousQuarter: '',
+                tradeCreditPreviousQuarter: '',
+                loansAssetsPreviousQuarter: '',
+                loansLiabilitiesPreviousQuarter: '',
+                interestReceivedPreviousQuarter: '',
+                interestPayablePreviousQuarter : '',
+                dividendsReceivedPreviousQuarter : '',
+                dividendsPaidPreviousQuarter : '',
+                expensesReceivedPreviousQuarter  : '',
+                expensesPaidPreviousQuarter : '',
+                sellProductionSuppliesPreviousQuarter : '',
+                purchaseProductionSuppliesPreviousQuarter : '',
+                sellMachineryPreviousQuarter : '',
+                purchaseMachineryPreviousQuarter : '',
+                currentDebitAccountPreviousQuarter : '',
+                currentCreditAccountPreviousQuarter : '',
+                expensesReceivablePreviousQuarter : '',
+                expensesPayablePreviousQuarter : '',
+                insuranceCommissionReceivablePreviousQuarter : '',
+                insuranceCommissionPayablePreviousQuarter : '',
+                otherDebitPreviousQuarter : '',
+                otherCreditPreviousQuarter : '',
+                totalDebitPreviousQuarter  : '',
+                totalCreditPreviousQuarter : ''
             }
         };
 
@@ -1255,6 +1334,34 @@ var saveShareholder = function (existingBp, bpId) {
             shareholder.transaction.otherCreditCurrentQuarter  = transaction.otherCreditCurrentQuarter ;
             shareholder.transaction.totalDebitCurrentQuarter   = transaction.totalDebitCurrentQuarter;
             shareholder.transaction.totalCreditCurrentQuarter =   transaction.totalCreditCurrentQuarter;
+
+
+
+        shareholder.transaction.currentDebitAccountPreviousQuarter = transaction.currentDebitAccountPreviousQuarter;
+        shareholder.transaction.tradeDebitPreviousQuarter= transaction.tradeDebitPreviousQuarter;
+        shareholder.transaction.tradeCreditPreviousQuarter = transaction.tradeCreditPreviousQuarter;
+        shareholder.transaction.loansAssetsPreviousQuarter = transaction.loansAssetsPreviousQuarter;
+        shareholder.transaction.loansLiabilitiesPreviousQuarter = transaction.loansLiabilitiesPreviousQuarter;
+        shareholder.transaction.interestReceivedPreviousQuarter = transaction.interestReceivedPreviousQuarter;
+        shareholder.transaction.interestPayablePreviousQuarter  = transaction.interestPayablePreviousQuarter;
+        shareholder.transaction.dividendsReceivedPreviousQuarter  = transaction.dividendsReceivedPreviousQuarter;
+        shareholder.transaction.dividendsPaidPreviousQuarter  = transaction.dividendsPaidPreviousQuarter;
+        shareholder.transaction.expensesReceivedPreviousQuarter   = transaction.expensesReceivedPreviousQuarter;
+        shareholder.transaction.expensesPaidPreviousQuarter  = transaction.expensesPaidPreviousQuarter;
+        shareholder.transaction.sellProductionSuppliesPreviousQuarter  = transaction.sellProductionSuppliesPreviousQuarter;
+        shareholder.transaction.purchaseProductionSuppliesPreviousQuarter  = transaction.purchaseProductionSuppliesPreviousQuarter;
+        shareholder.transaction.sellMachineryPreviousQuarter  = transaction.sellMachineryPreviousQuarter;
+        shareholder.transaction.purchaseMachineryPreviousQuarter  = transaction.purchaseMachineryPreviousQuarter;
+        shareholder.transaction.currentDebitAccountPreviousQuarter  = transaction.currentDebitAccountPreviousQuarter;
+        shareholder.transaction.currentCreditAccountPreviousQuarter  = transaction.currentCreditAccountPreviousQuarter;
+        shareholder.transaction.expensesReceivablePreviousQuarter  = transaction.expensesReceivablePreviousQuarter;
+        shareholder.transaction.expensesPayablePreviousQuarter  = transaction.expensesPayablePreviousQuarter;
+        shareholder.transaction.insuranceCommissionReceivablePreviousQuarter  = transaction.insuranceCommissionReceivablePreviousQuarter;
+        shareholder.transaction.insuranceCommissionPayablePreviousQuarter  = transaction.insuranceCommissionPayablePreviousQuarter;
+        shareholder.transaction.otherDebitPreviousQuarter  = transaction.otherDebitPreviousQuarter;
+        shareholder.transaction.otherCreditPreviousQuarter  = transaction.otherCreditPreviousQuarter ;
+        shareholder.transaction.totalDebitPreviousQuarter   = transaction.totalDebitPreviousQuarter;
+        shareholder.transaction.totalCreditPreviousQuarter =   transaction.totalCreditPreviousQuarter;
 
 
 

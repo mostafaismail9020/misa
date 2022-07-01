@@ -2,6 +2,7 @@ package com.sap.ibso.eservices.facades.populators.financial.survey;
 
 import com.sap.ibso.eservices.core.enums.FinancialSurveyAffiliateType;
 import com.sap.ibso.eservices.core.model.FinancialSurveyAffiliateModel;
+import com.sap.ibso.eservices.core.model.FinancialSurveyShareholderModel;
 import com.sap.ibso.eservices.facades.data.finance.survey.Affiliate;
 import com.sap.ibso.eservices.facades.data.license.amendment.Transaction;
 import de.hybris.platform.converters.Populator;
@@ -14,6 +15,11 @@ public class FinancialSurveyAffiliatePopulator implements Populator<FinancialSur
 
     @Resource
     private FinancialSurveyTransactionPopulator financialSurveyTransactionPopulator;
+
+    @Resource
+    private FinancialSurveyPreviousQuarterTransactionPopulator financialSurveyPreviousQuarterTransactionPopulator;
+
+
 
 
     @Override
@@ -51,6 +57,13 @@ public class FinancialSurveyAffiliatePopulator implements Populator<FinancialSur
 
         Transaction transaction = new Transaction ();
         financialSurveyTransactionPopulator.populate(financialSurveyAffiliateModel.getTransaction(),transaction);
+
+        // Populate prev quarter fields.
+        FinancialSurveyAffiliateModel financialSurveyAffiliateModelPrevQuarter = financialSurveyAffiliateModel.getFinancialSurveyAffiliatePreviousQuarter();
+        if ( financialSurveyAffiliateModelPrevQuarter != null && financialSurveyAffiliateModelPrevQuarter.getTransaction() != null) {
+
+            financialSurveyPreviousQuarterTransactionPopulator.populate(financialSurveyAffiliateModelPrevQuarter.getTransaction(),transaction);
+        }
         affiliate.setTransaction(transaction);
     }
 }

@@ -50,6 +50,8 @@ public class FinancialSurveyAffiliatePopulator implements Populator<FinancialSur
         String affiliateCountryCode = "";
         if(null!= financialSurveyAffiliateModel.getAffiliateCountryRef() ){
             affiliateCountryCode = financialSurveyAffiliateModel.getAffiliateCountryRef().getCode();
+            affiliate.setAffiliateCountryDescription(financialSurveyAffiliateModel.getAffiliateCountryRef().getName());
+            affiliate.setCompanyCountryDescription(financialSurveyAffiliateModel.getAffiliateCountryRef().getName());
         }
         affiliate.setAffiliateCountry(affiliateCountryCode);
 

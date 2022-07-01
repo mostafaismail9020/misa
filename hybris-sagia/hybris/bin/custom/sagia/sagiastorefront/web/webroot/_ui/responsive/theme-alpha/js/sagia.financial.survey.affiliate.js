@@ -875,6 +875,7 @@ var saveAffiliate = function (existingBp, bpId) {
         } else { // entity affiliate
             affiliateRow.attr("id", newItemId).children().first().html(name)
                 .next().text(getI18nText("general.entity")).next().text(companyCountryDescription);
+
             affiliate.affiliateType = '2';
             affiliate.affiliateNameEnglish = name;
             affiliate.affiliateSector = industry;

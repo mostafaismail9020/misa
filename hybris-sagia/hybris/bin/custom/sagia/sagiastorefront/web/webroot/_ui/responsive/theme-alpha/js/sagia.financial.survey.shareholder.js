@@ -911,8 +911,8 @@ var saveShareholder = function (existingBp, bpId) {
     });
     var selectedShareholder = financialSurvey.shareholders[shareholderIndex];
     var shareholderRow;
-    var percentageRow = (percentage.length > 5 ? percentage.substring(0, 5) : percentage) + '%';
-    var shareholderVotingPowerRow = (shareholderVotingPower.length > 5 ? shareholderVotingPower.substring(0, 5) : shareholderVotingPower) + '%';
+    var percentageRow = (percentage.length > 6 ? percentage.substring(0, 6) : percentage) + '%';
+    var shareholderVotingPowerRow = (shareholderVotingPower.length > 6 ? shareholderVotingPower.substring(0, 6) : shareholderVotingPower) + '%';
     var capitalRow = capital;
 
 

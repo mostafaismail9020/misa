@@ -1228,7 +1228,9 @@
 		<property name="affiliateSubsector" type="java.lang.String"/>
 		<property name="affiliateGender" type="java.lang.String"/>
 		<property name="affiliateNationalityCurrent" type="java.lang.String"/>
+		<property name="companyCountryDescription" type="java.lang.String"/>
 		<property name="affiliateCountry" type="java.lang.String"/>
+		<property name="affiliateCountryDescription" type="java.lang.String"/>
 		<property name="affiliateMultinationalCompany" type="java.lang.String"/>
 		<property name="transaction" type="com.sap.ibso.eservices.facades.data.license.amendment.Transaction"/>
 	</bean>

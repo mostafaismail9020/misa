@@ -1523,12 +1523,13 @@ function setLicenseData(data, history) {
 
     financialSurvey.affiliates.forEach(function (affiliate) {
         if (affiliate.action !== DELETE_ACTION) {
-            var name = affiliate.name;
+            var name = affiliate.affiliateNameEnglish;
+            var country = affiliate.affiliateType === '1' ? affiliate.affiliateCountryDescription : affiliate.companyCountryDescription ;
             var type = affiliate.affiliateType === '1' ? getI18nText("general.individual") : getI18nText("general.entity");
 
 
             var $affiliateRow = $affiliateRowTemplate.clone(true).show();
-            $affiliateRow.attr("id", affiliate.srId ? affiliate.srId : affiliate.newItemId).children().first().text(name).next().text(type);
+            $affiliateRow.attr("id", affiliate.srId ? affiliate.srId : affiliate.newItemId).children().first().text(name).next().text(type).next().text(country);
             setColorForDraftRow($affiliateRow, affiliate.action);
             $affiliatesTable.append($affiliateRow);
         }

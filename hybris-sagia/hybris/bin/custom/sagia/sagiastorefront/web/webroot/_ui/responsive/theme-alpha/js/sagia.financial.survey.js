@@ -308,6 +308,7 @@ $(document).ready(function () {
             }
         });
 
+        validateNumberFloatInput ($("#shareholderPaidUpCapitalPreviousQuarterId"));
         validateNumberFloatInput ($("#shareholderValueOfReverseInvestmentId"));
         validateNumberFloatInput ($("#tradeDebitCurrentQuarterId"));
         validateNumberFloatInput ($("#loansAssetsCurrentQuarterId"));

@@ -56,6 +56,23 @@ function caluculateTotalTansactionDebit() {
     $('#totalDebitCurrentQuarterId').val(sum);
 }
 
+
+function caluculateTotalAffeliateTansactionDebit() {
+    var sum = 0 ;
+    sum = sum +  1*($('#accordionTransactionAffeliate #tradeDebitCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #loansAssetsCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #interestReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #dividendsReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #sellProductionSuppliesCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #sellMachineryCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #currentDebitAccountCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesReceivableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionReceivableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #otherDebitCurrentQuarterId').val());
+    $('#accordionTransactionAffeliate #totalDebitCurrentQuarterId').val(sum);
+}
+
 function calculateTotalTansactionCredit() {
     var sum = 0 ;
 
@@ -71,6 +88,40 @@ function calculateTotalTansactionCredit() {
     sum = sum +  1*($('#otherCreditCurrentQuarterId').val());
     sum = sum +  1*($('#purchaseMachineryCurrentQuarterId').val());
     $('#totalCreditCurrentQuarterId').val(sum);
+}
+
+function calculateTotalTansactionCreditForAffeliate() {
+    var sum = 0 ;
+
+    sum = sum +  1*($('#accordionTransactionAffeliate #tradeCreditCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #loansLiabilitiesCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #interestPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #dividendsPaidCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPaidCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseProductionSuppliesCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #currentCreditAccountCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #otherCreditCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseMachineryCurrentQuarterId').val());
+    $('#accordionTransactionAffeliate #totalCreditCurrentQuarterId').val(sum);
+}
+
+function calculateTotalPrevQuarterTansactionCreditForAffeliate() {
+    var sum = 0 ;
+
+    sum = sum +  1*($('#accordionTransactionAffeliate #tradeCreditPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #loansLiabilitiesPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #interestPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #dividendsPaidPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPaidPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseProductionSuppliesPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #currentCreditAccountPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #otherCreditPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseMachineryPreviousQuarterId').val());
+    $('#accordionTransactionAffeliate #totalCreditPreviousQuarterId').val(sum);
 }
 
 function calculateShareholderEquity() {
@@ -245,16 +296,17 @@ $(document).ready(function () {
 
         validateNumberFloatInput ($("#shareholderMinorityRightsCurrentQuarterId"));
 
-        $("#shareholderPercentageId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            //if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-            //    //display error message
-            //    $("#errmsg").html("Digits Only").show().fadeOut("slow");
-            //    return false;
-            //}
+
+        validatePercentage($("#shareholderPercentageId"));
+        validatePercentage($("#shareholderVotingPowerId"));
+
+
+
+
+        /*$("#shareholderPercentageId").keypress(function (e) {
 
             var regex = new RegExp("^[0-9\.]$");
-            // var regexMulti = new RegExp("^[\d]+\.?[\d]*$");
+
             var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
 
             if (!regex.test(key)) {
@@ -274,7 +326,7 @@ $(document).ready(function () {
                     if (key !== '.' && hasDot) {
                         var value = $self.val().split('.');
 
-                        if (value[0].length > 2 || value[1].length > 2) {
+                        if (value[0].length > 2 || value[1].length > 3) {
                             $self.val(oldValue);
                         }
                     }
@@ -289,7 +341,16 @@ $(document).ready(function () {
                 }, 0);
             }
 
-        });
+        });*/
+
+       /* $("#shareholderVotingPowerId").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                return false;
+            }
+        });*/
 
 
 
@@ -299,14 +360,7 @@ $(document).ready(function () {
         validateNumberFloatInput ($("#shareholderPreferredSharesId"));
 
 
-        $("#shareholderVotingPowerId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
+
 
         validateNumberFloatInput ($("#shareholderPaidUpCapitalPreviousQuarterId"));
         validateNumberFloatInput ($("#shareholderValueOfReverseInvestmentId"));
@@ -693,6 +747,54 @@ var validateDigitOnly = function (element)  {
         }
     });
 }
+
+
+
+
+
+var validatePercentage = function  (element) {
+
+
+    element.on('keypress', function (event) {
+
+        var regex = new RegExp("^[0-9\.]$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        } else {
+            var hasDot = $(this).val().indexOf('.') >= 0;
+            if (key === '.' && hasDot || key === '.' && $(this).val().length === 3) {
+                event.preventDefault();
+                return false;
+            }
+
+            var $self = $(this);
+            var oldValue = $self.val();
+
+            setTimeout(function () {
+                if (key !== '.' && hasDot) {
+                    var value = $self.val().split('.');
+
+                    if (value[0].length > 2 || value[1].length > 3) {
+                        $self.val(oldValue);
+                    }
+                }
+
+                if (key !== '.' && !hasDot) {
+                    var value = $self.val();
+
+                    if (value.length >= 3 && value > 100) {
+                        $self.val(oldValue);
+                    }
+                }
+            }, 0);
+        }
+
+    });
+}
+
 
 var validateNumberFloatInput = function (element)  {
     element.on('keypress', function (event) {

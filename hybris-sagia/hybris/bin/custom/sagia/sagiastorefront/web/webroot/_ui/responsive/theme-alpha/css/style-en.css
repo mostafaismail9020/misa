@@ -13496,17 +13496,17 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	transition: all ease 0.5s;
 	-webkit-transition: all ease 0.5s;
 	-moz-transition: all ease 0.5s;
-	padding: 40px !important;
-	min-height: 360px;
+	padding: 25px !important;
+	height: 100%;
 }
 
 .opportunity-card .opp-headtitle {
-	font-size: 30px;
+	font-size: 20px;
 	color: #646464;
-	margin-bottom: 23px;
-	height: 80px;
+	margin-bottom: 15px;
+	//height: 80px;
 	overflow: hidden;
-	min-height: 3rem;
+	//min-height: 3rem;
 	-webkit-box-orient: vertical;
 	display: block;
 	display: -webkit-box;
@@ -13515,11 +13515,23 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	-webkit-line-clamp: 2;
 }
 
+.opportunity-card .opp-container {
+    display: flex;
+}
+
+.opp-container-child {
+    flex: 1;
+}
+
+.opp-container-child .btn {
+    font-size: 14px;
+}
+
 .opportunity-card .opp-type {
-	font-size: 25px;
+	font-size: 18px;
 	color: #bf9b2e;
-	margin-bottom: 13px;
-	height: 80px;
+	margin-bottom: 15px;
+	//height: 80px;
 }
 
 .opportunity-card .know-more-btn {
@@ -13528,7 +13540,9 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	padding: 10px 20px;
 	height: 45px;
 	color: #fff;
-	margin-bottom: 25px;
+	font-size: 12px;
+	margin-right: 10px;
+	//margin-bottom: 25px;
 }
 
 .opportunity-card .interest-btn {
@@ -13538,6 +13552,17 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	height: 45px;
 	color: #00a6be;
 	border: 1px solid #00a6be;
+	font-size: 12px;
+}
+
+.opportunities-cart-button {
+    justify-content: center !important;
+    gap: .7rem;
+}
+
+.opportunity-card.total-results {
+    margin-top: 7px;
+    text-align: right;
 }
 
 .all-opportunity .pagination .page-item .page-link {
@@ -13599,7 +13624,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	border-radius: 30px;
 	height: 60px;
 	color: #646464;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 24px;
 	outline: none;
 	padding-left: 50px;
@@ -13659,7 +13684,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .opp-search-container .reset-search {
 	position: absolute;
 	right: 40px;
-	bottom: -25px;
 	font-size: 16px;
 	color: #646464;
 }
@@ -13707,10 +13731,45 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	padding: 10px 40px;
 }
 
+.all-opportunity-filter {
+    font-size: 20px !important;
+    margin-bottom: 1rem !important;
+    margin-top: 2rem !important;
+}
+
+.all-opportunity-description {
+    font-size: 25px !important;
+    margin: 25px 0 !important;
+}
+
 .all-opportunity-description-text {
 	font-size: 20px !important;
 	color: #646464 !important;
 	text-align: center;
+}
+
+.page-opportunity-search-page .page-main-content {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+}
+
+.my-4.opportunity-card {
+    margin-bottom: 0 !important;
+}
+
+.opp-filter-container .facet ul li {
+    padding-left: 0;
+}
+
+.opp-filter-container .facet ul li:before {
+    content: none !important;
+}
+
+.opp-filter-container .facet ul li label {
+    color: #32465A;
+}
+.opp-mobile-show {
+    display:  none;
 }
 
 .sector-list-text {
@@ -13878,12 +13937,12 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	}
 	.opportunity-card .opp-headtitle {
 		font-size: 25px;
-		height: 50px;
+		/*height: 50px;*/
 		word-break: break-all;
 	}
 	.opportunity-card .opp-type {
 		font-size: 20px;
-		height: 85px;
+		/*height: 85px;*/
 		word-break: break-all;
 	}
 	.opportunity-card .content-box {
@@ -13914,6 +13973,81 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 		width: 100%;
 		margin-bottom: 20px;
 	}
+	.sectors-opportunity .search-placeholder {
+	    font-size: 13px !important;
+	}
+	.opportunity-card.total-results {
+	    text-align: left;
+	}
+	.opp-mobile-show {
+        display:  block;
+    }
+    .opp-mobile-hidde {
+        display: none;
+    }
+    .opp-sort-filter-total .opportunity-card.opp-filter>div,
+    .opp-sort-filter-total .opportunity-card.opp-sort form {
+        margin: 10px 0;
+    }
+    .opp-sort-filter-total .opportunity-card label.full {
+        width: 100%;
+        justify-content: left;
+    }
+    .opp-sort-filter-total .opportunity-card.opp-sort select  {
+        padding: 0 !important;
+        margin: 0;
+        border: 0;
+        -webkit-appearance: none;
+        //background: none;
+        font-size: 14px;
+        color: #5f6470;
+        width: 100%;
+        height: 25px;
+    }
+    .opp-sort-filter-total .opportunity-card.opp-sort {
+        border-top: 1px solid rgba(0,0,0,.1);
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        border-right: 1px solid rgba(0,0,0,.1);
+    }
+    .opp-sort-filter-total .opportunity-card.opp-filter {
+        border-top: 1px solid rgba(0,0,0,.1);
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+    .opp-sort-filter-total .opportunity-card.opp-filter span#opp-open-modal-filter{
+        font-size: 14px;
+        color: #5f6470;
+        width: 100%;
+        height: 25px;
+        display: block;
+        cursor: pointer;
+    }
+    .opp-sort-filter-total .modal {
+         padding: 0 !important;
+         z-index: 9999;
+         margin: 5px !important;
+    }
+    .opp-sort-filter-total .modal .modal-dialog {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        margin: 0;
+    }
+    .opp-sort-filter-total .modal .modal-content {
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+    }
+    .opp-sort-filter-total .modal .modal-body {
+        overflow-y: auto;
+    }
+    .opp-sort-filter-total .opp-filter-container .facet__name {
+        text-align: left !important;
+    }
+    .opp-sort-filter-total .opp-filter-container .facet__name i {
+        float: right;
+        cursor: pointer;
+        color: #5f6470;
+    }
 }
 .economic-dashboard-container {
 	padding: 50px;

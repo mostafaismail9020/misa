@@ -1,0 +1,33 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalProductSearchTemplate
+$page = opportunity-search-page
+$pageName = Opportunities Search
+$pageTitleAr = $pageName
+$pageLabel = /sectors-opportunities/opportunities
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE SagiaSearchBoxComponent; uid[unique = true]                ; name                       ; &componentRef              ; $contentCV[unique = true]
+                                     ; sagia-search-box-component ; Sagia Search Box Component ; sagia-search-box-component ;
+
+
+
+INSERT_UPDATE SagiaOpportunitySearchResultComponent; uid[unique = true]                                      ; name                                             ; &componentRef                                           ; $contentCV[unique = true]
+                                                   ; sagia-search-result-component ; Sagia Search Result Component ; sagia-search-result-component ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]       ; name           ; active; cmsComponents($contentCV,uid); $contentCV[unique = true]
+                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; generic-paragraph-opportunities, sagia-search-box-component, sagia-search-result-component
+
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                         ; PortalPageMainSlot-$page ; PortalPageMain ; PortalPageMainSlot-$page ;
+

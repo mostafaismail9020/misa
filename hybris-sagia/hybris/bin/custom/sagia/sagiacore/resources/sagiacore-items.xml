@@ -12219,5 +12219,19 @@
 		
 		<!-- SiteMap Changes Ends -->
 		
+		<!-- Solr Changes  Starts-->
+		<typegroup name="SagiaSolr">
+            <itemtype code="SagiaOpportunitySearchResultComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaOpportunitySearchResultComponent">
+                <description>Sagia Opportunity Search Result Component</description>
+            </itemtype>
+            <itemtype code="SagiaSearchBoxComponent" generate="true"
+                      extends="SearchBoxComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SearchBoxComponent">
+                <description>Sagia SearchBox Component</description>
+            </itemtype>
+        </typegroup>
+		
 	</itemtypes>
 </items>

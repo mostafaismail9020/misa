@@ -6,99 +6,58 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<spring:htmlEscape defaultHtmlEscape="true" />
+<spring:htmlEscape defaultHtmlEscape="true"/>
 
 <c:if test="${not empty facetData.values}">
-<ycommerce:testId code="facetNav_title_${facetData.name}">
-	<div class="facet js-facet">
-		<div class="facet__name js-facet-name">
-			<span class="glyphicon facet__arrow"></span>
-			<spring:theme code="search.nav.facetTitle" arguments="${facetData.name}"/>
-		</div>
+    <ycommerce:testId code="facetNav_title_${facetData.name}">
+        <div class="facet js-facet">
+            <div class="facet__name js-facet-name text-center clr_gld text-uppercase" style="margin-top: 10px;">
+                <span class="glyphicon facet__arrow"></span>
+                    ${facetData.name}
+                    <i class="fa fa-plus plus-minus-facet open-facet" data-facet="${facetData.code}" style="display: none"></i>
+                    <i class="fa fa-minus plus-minus-facet close-facet" data-facet="${facetData.code}" style="display: none"></i>
+                <hr>
+            </div>
 
 
-		<div class="facet__values js-facet-values js-facet-form">
+            <div class="facet__values js-facet-values js-facet-form" data-facet="${facetData.code}">
+                <ul class="facet__list js-facet-list <c:if test="${not empty facetData.topValues}">facet__list--hidden js-facet-list-hidden</c:if>">
+                    <c:forEach items="${facetData.values}" var="facetValue">
+                        <li>
+                            <c:if test="${facetData.multiSelect}">
+                                <ycommerce:testId code="facetNav_selectForm">
+                                    <form action="#" method="get">
+                                        <input type="hidden" name="q" value="${facetValue.query.query.value}"/>
+                                        <input type="hidden" name="text" value="${solrSearchPageData.freeTextSearch}"/>
+                                        <label class="text-capitalize ${facetValue.selected ? 'selected' : ''}">
+                                            <input style="width: inherit" data-href="${fn:replace(facetValue.query.url,'/search','')}" data-sectorName="${facetValue.code}" data-sectorid="${facetValue.query.url}"
+                                                   type="checkbox" ${facetValue.selected ? 'checked="checked"' : ''}
+                                                   class=" js-facet-checkbox sectorfilterselector"/>
+                                                ${fn:escapeXml(facetValue.name)}&nbsp;
+                                            <ycommerce:testId code="facetNav_count">
+                                                <span class="facet__value__count"><spring:theme
+                                                        code="search.nav.facetValueCount"
+                                                        arguments="${facetValue.count}"/></span>
+                                            </ycommerce:testId>
+                                        </label>
 
-			<c:if test="${not empty facetData.topValues}">
-				<ul class="facet__list js-facet-list js-facet-top-values">
-					<c:forEach items="${facetData.topValues}" var="facetValue">
-						<li>
-							<c:if test="${facetData.multiSelect}">
-								<form action="#" method="get">
-									<input type="hidden" name="q" value="${facetValue.query.query.value}"/>
-									<input type="hidden" name="text" value="${searchPageData.freeTextSearch}"/>
-									<label>
-										<input class="facet__list__checkbox" type="checkbox" ${facetValue.selected ? 'checked="checked"' : ''} class="facet-checkbox" />
-										<span class="facet__list__label">
-											<span class="facet__list__mark"></span>
-											<span class="facet__list__text">
-												${fn:escapeXml(facetValue.name)}
-												<ycommerce:testId code="facetNav_count">
-													<span class="facet__value__count"><spring:theme code="search.nav.facetValueCount" arguments="${facetValue.count}"/></span>
-												</ycommerce:testId>
-											</span>
-										</span>
-									</label>
-								</form>
-							</c:if>
-							<c:if test="${not facetData.multiSelect}">
-								<c:url value="${facetValue.query.url}" var="facetValueQueryUrl"/>
-								<span class="facet__text">
-									<a href="${facetValueQueryUrl}&amp;text=${fn:escapeXml(searchPageData.freeTextSearch)}">${fn:escapeXml(facetValue.name)}</a>&nbsp;
-									<ycommerce:testId code="facetNav_count">
-										<span class="facet__value__count"><spring:theme code="search.nav.facetValueCount" arguments="${facetValue.count}"/></span>
-									</ycommerce:testId>
-								</span>
-							</c:if>
-						</li>
-					</c:forEach>
-				</ul>
-			</c:if>
-			<ul class="facet__list js-facet-list <c:if test="${not empty facetData.topValues}">facet__list--hidden js-facet-list-hidden</c:if>">
-				<c:forEach items="${facetData.values}" var="facetValue">
-					<li>
-						<c:if test="${facetData.multiSelect}">
-							<ycommerce:testId code="facetNav_selectForm">
-							<form action="#" method="get">
-								<input type="hidden" name="q" value="${facetValue.query.query.value}"/>
-								<input type="hidden" name="text" value="${searchPageData.freeTextSearch}"/>
-								<label>
-									<input type="checkbox" ${facetValue.selected ? 'checked="checked"' : ''}  class="facet__list__checkbox js-facet-checkbox sr-only" />
-									<span class="facet__list__label">
-										<span class="facet__list__mark"></span>
-										<span class="facet__list__text">
-											${fn:escapeXml(facetValue.name)}&nbsp;
-											<ycommerce:testId code="facetNav_count">
-												<span class="facet__value__count"><spring:theme code="search.nav.facetValueCount" arguments="${facetValue.count}"/></span>
-											</ycommerce:testId>
-										</span>
-									</span>
-								</label>
-							</form>
-							</ycommerce:testId>
-						</c:if>
-						<c:if test="${not facetData.multiSelect}">
-							<c:url value="${facetValue.query.url}" var="facetValueQueryUrl"/>
-							<span class="facet__text">
+                                    </form>
+                                </ycommerce:testId>
+                            </c:if>
+                            <c:if test="${not facetData.multiSelect}">
+                                <c:url value="${facetValue.query.url}" var="facetValueQueryUrl"/>
+                                <span class="facet__text strong font-weight-bold">
 								<a href="${facetValueQueryUrl}">${fn:escapeXml(facetValue.name)}</a>
 								<ycommerce:testId code="facetNav_count">
-									<span class="facet__value__count"><spring:theme code="search.nav.facetValueCount" arguments="${facetValue.count}"/></span>
-								</ycommerce:testId>
+                                    <span class="facet__value__count"><spring:theme code="search.nav.facetValueCount"
+                                                                                    arguments="${facetValue.count}"/></span>
+                                </ycommerce:testId>
 							</span>
-						</c:if>
-					</li>
-				</c:forEach>
-			</ul>
-
-			<c:if test="${not empty facetData.topValues}">
-				<span class="facet__values__more js-more-facet-values">
-					<a href="#" class="js-more-facet-values-link" ><spring:theme code="search.nav.facetShowMore_${facetData.code}" /></a>
-				</span>
-				<span class="facet__values__less js-less-facet-values">
-					<a href="#" class="js-less-facet-values-link"><spring:theme code="search.nav.facetShowLess_${facetData.code}" /></a>
-				</span>
-			</c:if>
-		</div>
-	</div>
-</ycommerce:testId>
+                            </c:if>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+    </ycommerce:testId>
 </c:if>

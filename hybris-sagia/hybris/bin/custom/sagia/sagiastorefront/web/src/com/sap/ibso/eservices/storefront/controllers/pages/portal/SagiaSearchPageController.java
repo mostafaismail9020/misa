@@ -3,6 +3,7 @@
  */
 package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 
+import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
 import de.hybris.platform.acceleratorcms.model.components.SearchBoxComponentModel;
 import de.hybris.platform.acceleratorservices.controllers.page.PageType;
 import de.hybris.platform.acceleratorservices.customer.CustomerLocationService;
@@ -14,6 +15,7 @@ import de.hybris.platform.acceleratorstorefrontcommons.util.MetaSanitizerUtil;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSComponentService;
+import de.hybris.platform.commercefacades.product.data.OpportunityData;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.search.ProductSearchFacade;
 import de.hybris.platform.commercefacades.search.data.AutocompleteResultData;
@@ -24,41 +26,39 @@ import de.hybris.platform.commerceservices.search.facetdata.FacetData;
 import de.hybris.platform.commerceservices.search.facetdata.FacetRefinement;
 import de.hybris.platform.commerceservices.search.facetdata.ProductSearchPageData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
+import de.hybris.platform.core.servicelayer.data.PaginationData;
+import de.hybris.platform.core.servicelayer.data.SearchPageData;
 import de.hybris.platform.servicelayer.dto.converter.ConversionException;
-
-import java.util.Collections;
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 @Controller
-@RequestMapping("/search")
-public class SearchPageController extends AbstractSearchPageController
+@RequestMapping("/sectors-opportunities/opportunities")
+public class SagiaSearchPageController extends AbstractSearchPageController
 {
 	private static final String SEARCH_META_DESCRIPTION_ON = "search.meta.description.on";
 	private static final String SEARCH_META_DESCRIPTION_RESULTS = "search.meta.description.results";
 
 	@SuppressWarnings("unused")
-	private static final Logger LOG = Logger.getLogger(SearchPageController.class);
+	private static final Logger LOG = Logger.getLogger(SagiaSearchPageController.class);
 
 	private static final String COMPONENT_UID_PATH_VARIABLE_PATTERN = "{componentUid:.*}";
 	private static final String FACET_SEPARATOR = ":";
 
 	private static final String SEARCH_CMS_PAGE_ID = "search";
 	private static final String NO_RESULTS_CMS_PAGE_ID = "searchEmpty";
+	private static final int NUM_OF_RECORD_PER_PAGE = 9;
 
 	@Resource(name = "productSearchFacade")
 	private ProductSearchFacade<ProductData> productSearchFacade;
@@ -72,14 +72,21 @@ public class SearchPageController extends AbstractSearchPageController
 	@Resource(name = "cmsComponentService")
 	private CMSComponentService cmsComponentService;
 
+	@Resource (name="investSaudiCategoryFacade")
+	private InvestSaudiCategoryFacade investSaudiCategoryFacade;
+
 	@RequestMapping(method = RequestMethod.GET, params = "!q")
-	public String textSearch(@RequestParam(value = "text", defaultValue = "") final String searchText,
-							 final HttpServletRequest request, final Model model) throws CMSItemNotFoundException
+	public String textSearch(@RequestParam(value = "text", defaultValue = "") String searchText,
+			final HttpServletRequest request, final Model model) throws CMSItemNotFoundException
 	{
 		final ContentPageModel noResultPage = getContentPageForLabelOrId(NO_RESULTS_CMS_PAGE_ID);
+		if (StringUtils.isEmpty(searchText))
+		{
+			searchText= "all";
+		}
 		if (StringUtils.isNotBlank(searchText))
 		{
-			final PageableData pageableData = createPageableData(0, getSearchPageSize(), null, ShowMode.Page);
+			final PageableData pageableData = createPageableData(0,NUM_OF_RECORD_PER_PAGE, null, ShowMode.Page);
 
 			final SearchStateData searchState = new SearchStateData();
 			final SearchQueryData searchQueryData = new SearchQueryData();
@@ -87,6 +94,7 @@ public class SearchPageController extends AbstractSearchPageController
 			searchState.setQuery(searchQueryData);
 
 			ProductSearchPageData<SearchStateData, ProductData> searchPageData = null;
+			ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
 
 			try
 			{
@@ -116,15 +124,28 @@ public class SearchPageController extends AbstractSearchPageController
 			{
 				storeContinueUrl(request);
 				populateModel(model, searchPageData, ShowMode.Page);
-				storeCmsPageInModel(model, getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID));
-				updatePageTitle(searchText, model);
+				solrSearchPageData=searchPageData;
+				List<OpportunityData> opportunityDataList = new ArrayList<>();
+				for (ProductData productData : searchPageData.getResults()) {
+					opportunityDataList.add(createOpportunityData(productData));
+				}
+				SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
+				productDataSearchPageData.setResults(opportunityDataList);
+				PaginationData sagiaPaginationData = new PaginationData ();
+				sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
+				sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
+				sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
+				sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
+				productDataSearchPageData.setPagination(sagiaPaginationData);
+				model.addAttribute("solrSearchPageData", solrSearchPageData);
+				model.addAttribute("searchPageData", productDataSearchPageData);
 			}
 			model.addAttribute("userLocation", customerLocationService.getUserLocation());
-			getRequestContextData(request).setSearch(searchPageData);
-			if (searchPageData != null)
+			getRequestContextData(request).setSearch(solrSearchPageData);
+			if (solrSearchPageData != null)
 			{
 				model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchText,
-						CollectionUtils.isEmpty(searchPageData.getBreadcrumbs())));
+						CollectionUtils.isEmpty(solrSearchPageData.getBreadcrumbs())));
 			}
 		}
 		else
@@ -133,12 +154,15 @@ public class SearchPageController extends AbstractSearchPageController
 		}
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
 		model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_FOLLOW);
+		ContentPageModel contentPageModel = getContentPageForLabelOrId("opportunity-search-page");
+		storeCmsPageInModel(model, contentPageModel);
+		storeContentPageTitleInModel(model, contentPageModel.getTitle());
 
 		final String metaDescription = MetaSanitizerUtil
 				.sanitizeDescription(getMessageSource().getMessage(SEARCH_META_DESCRIPTION_RESULTS, null,
 						SEARCH_META_DESCRIPTION_RESULTS, getI18nService().getCurrentLocale()) + " " + searchText + " "
 						+ getMessageSource().getMessage(SEARCH_META_DESCRIPTION_ON, null, SEARCH_META_DESCRIPTION_ON,
-						getI18nService().getCurrentLocale())
+								getI18nService().getCurrentLocale())
 						+ " " + getSiteName());
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(searchText);
 		setUpMetaData(model, metaKeywords, metaDescription);
@@ -146,16 +170,27 @@ public class SearchPageController extends AbstractSearchPageController
 		return getViewForPage(model);
 	}
 
+	private OpportunityData createOpportunityData(ProductData productData) {
+		OpportunityData opportunityData = new OpportunityData();
+		opportunityData.setOpportunity(productData);
+		if(productData.getParentCategory() != null)
+		{
+			opportunityData.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(productData.getParentCategory()));
+		}
+		return opportunityData;
+	}
+
 	@RequestMapping(method = RequestMethod.GET, params = "q")
 	public String refineSearch(@RequestParam("q") final String searchQuery,
-							   @RequestParam(value = "page", defaultValue = "0") final int page,
-							   @RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
-							   @RequestParam(value = "sort", required = false) final String sortCode,
-							   @RequestParam(value = "text", required = false) final String searchText, final HttpServletRequest request,
-							   final Model model) throws CMSItemNotFoundException
+			@RequestParam(value = "page", defaultValue = "0") final int page,
+			@RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
+			@RequestParam(value = "sort", required = false) final String sortCode,
+			@RequestParam(value = "text", required = false) final String searchText, final HttpServletRequest request,
+			final Model model) throws CMSItemNotFoundException
 	{
 		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
-				sortCode, getSearchPageSize());
+				sortCode, NUM_OF_RECORD_PER_PAGE);
+		ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
 
 		populateModel(model, searchPageData, showMode);
 		model.addAttribute("userLocation", customerLocationService.getUserLocation());
@@ -169,7 +204,22 @@ public class SearchPageController extends AbstractSearchPageController
 		{
 			storeContinueUrl(request);
 			updatePageTitle(searchPageData.getFreeTextSearch(), model);
-			storeCmsPageInModel(model, getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID));
+			solrSearchPageData=searchPageData;
+			List<OpportunityData> opportunityDataList = new ArrayList<>();
+			for (ProductData productData : searchPageData.getResults()) {
+				opportunityDataList.add(createOpportunityData(productData));
+			}
+			SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
+			productDataSearchPageData.setResults(opportunityDataList);
+			PaginationData sagiaPaginationData = new PaginationData ();
+			sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
+			sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
+			sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
+			sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
+			productDataSearchPageData.setPagination(sagiaPaginationData);
+			model.addAttribute("solrSearchPageData", solrSearchPageData);
+			model.addAttribute("searchPageData", productDataSearchPageData);
+			storeCmsPageInModel(model, getContentPageForLabelOrId("opportunity-search-page"));
 		}
 		model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchPageData));
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
@@ -178,7 +228,7 @@ public class SearchPageController extends AbstractSearchPageController
 				.sanitizeDescription(getMessageSource().getMessage(SEARCH_META_DESCRIPTION_RESULTS, null,
 						SEARCH_META_DESCRIPTION_RESULTS, getI18nService().getCurrentLocale()) + " " + searchText + " "
 						+ getMessageSource().getMessage(SEARCH_META_DESCRIPTION_ON, null, SEARCH_META_DESCRIPTION_ON,
-						getI18nService().getCurrentLocale())
+								getI18nService().getCurrentLocale())
 						+ " " + getSiteName());
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(searchText);
@@ -188,7 +238,7 @@ public class SearchPageController extends AbstractSearchPageController
 	}
 
 	protected ProductSearchPageData<SearchStateData, ProductData> performSearch(final String searchQuery, final int page,
-																				final ShowMode showMode, final String sortCode, final int pageSize)
+			final ShowMode showMode, final String sortCode, final int pageSize)
 	{
 		final PageableData pageableData = createPageableData(page, pageSize, sortCode, showMode);
 
@@ -203,9 +253,9 @@ public class SearchPageController extends AbstractSearchPageController
 	@ResponseBody
 	@RequestMapping(value = "/results", method = RequestMethod.GET)
 	public SearchResultsData<ProductData> jsonSearchResults(@RequestParam("q") final String searchQuery,
-															@RequestParam(value = "page", defaultValue = "0") final int page,
-															@RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
-															@RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
+			@RequestParam(value = "page", defaultValue = "0") final int page,
+			@RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
+			@RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
 	{
 		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
 				sortCode, getSearchPageSize());
@@ -218,9 +268,9 @@ public class SearchPageController extends AbstractSearchPageController
 	@ResponseBody
 	@RequestMapping(value = "/facets", method = RequestMethod.GET)
 	public FacetRefinement<SearchStateData> getFacets(@RequestParam("q") final String searchQuery,
-													  @RequestParam(value = "page", defaultValue = "0") final int page,
-													  @RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
-													  @RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
+			@RequestParam(value = "page", defaultValue = "0") final int page,
+			@RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
+			@RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
 	{
 		final SearchStateData searchState = new SearchStateData();
 		final SearchQueryData searchQueryData = new SearchQueryData();
@@ -241,7 +291,7 @@ public class SearchPageController extends AbstractSearchPageController
 	@ResponseBody
 	@RequestMapping(value = "/autocomplete/" + COMPONENT_UID_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public AutocompleteResultData getAutocompleteSuggestions(@PathVariable final String componentUid,
-															 @RequestParam("term") final String term) throws CMSItemNotFoundException
+			@RequestParam("term") final String term) throws CMSItemNotFoundException
 	{
 		final AutocompleteResultData resultData = new AutocompleteResultData();
 

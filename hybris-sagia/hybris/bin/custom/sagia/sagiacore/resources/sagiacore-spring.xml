@@ -126,7 +126,6 @@
     <bean id="image30ValueProvider" parent="abstractImageValueProvider">
         <property name="mediaFormat" value="30Wx30H"/>
     </bean>
-
     <bean id="productUrlValueProvider" class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.ProductUrlValueProvider" parent="abstractPropertyFieldValueProvider">
         <property name="urlResolver" ref="productModelUrlResolver"/>
         <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
@@ -1415,12 +1414,12 @@
 
     <bean id="investSaudiMediaCenterService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiMediaCenterServiceImpl" />
-		  
+
     <bean id="opportunityProductMediaRestApiService" class="com.investsaudi.portal.core.service.impl.OpportunityProductMediaRestApiServiceImpl">
           <property name="modelService" ref="modelService"/>
           <property name="mediaService" ref="mediaService"/>
     </bean>
-          
+
     <bean id="investSaudiProvinceRegionService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiProvinceRegionServiceImpl" />
 
@@ -1574,7 +1573,7 @@
     <bean id="contactTicket2ScpiJob" class="com.sap.ibso.eservices.core.job.ContactTicket2ScpiJob"/>
    <bean id="customerEvent2ScpiJob" class="com.sap.ibso.eservices.core.job.CustomerEvent2ScpiJob"/>
 
-	
+
     <!-- Economic Highlights Changes Ends -->
 
     <alias name="defaultSagiaCompanyProfileDAO" alias="sagiaCompanyProfileDAO"/>
@@ -1614,5 +1613,35 @@
         <constructor-arg value="SagiaSubsidiary"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
+
+    <bean id="sagiaCategorySource" parent="abstractCategorySource">
+        <property name="rootCategory" value="1"/> <!-- '1' is the root icecat category -->
+    </bean>
+
+    <bean id="sagiaCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
+        <property name="categorySource" ref="sagiaCategorySource"/>
+    </bean>
+
+    <bean id="sagiaBrandCategorySource" parent="defaultCategorySource">
+        <property name="rootCategory" value="brands"/> <!-- 'brands' is the root of the brands hierarchy -->
+    </bean>
+
+    <bean id="sagiaBrandCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
+        <property name="categorySource" ref="sagiaBrandCategorySource"/>
+    </bean>
+
+    <bean id="sagiaCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+        <property name="categorySource" ref="sagiaCategorySource"/>
+    </bean>
+
+    <bean id="sagiaBrandCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+        <property name="categorySource" ref="sagiaBrandCategorySource"/>
+    </bean>
+
+    <bean id="sagiaVariantCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+        <property name="categorySource" ref="sagiaVariantCategorySource"/>
+    </bean>
+
+    <bean id="sagiaVariantCategorySource" parent="variantCategorySource"/>
 
 </beans>

@@ -13278,7 +13278,7 @@ ul.INS_li_ul_under li {
 		width: 100%;
 		margin-bottom: 0;
 	}
-	
+
 }
 @media (min-width: 768px) and (max-width: 769px) {
 	.ft-logo {
@@ -14456,19 +14456,19 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	display: flex;
 	justify-content: center;
 }
-.page-infrastructure-logistics .eh-page-grid, 
-.page-sa-international-indices .eh-page-grid, 
-.page-saudi-economic-sectors .eh-page-grid, 
+.page-infrastructure-logistics .eh-page-grid,
+.page-sa-international-indices .eh-page-grid,
+.page-saudi-economic-sectors .eh-page-grid,
 .page-investment-data .eh-page-grid {
     display: flex;
     justify-content: space-evenly;
 }
-.page-infrastructure-logistics .thumbnail .eh-page-grid-link, 
-.page-sa-international-indices .thumbnail .eh-page-grid-link, 
+.page-infrastructure-logistics .thumbnail .eh-page-grid-link,
+.page-sa-international-indices .thumbnail .eh-page-grid-link,
 .page-saudi-economic-sectors .thumbnail .eh-page-grid-link,
  .page-investment-data .thumbnail .eh-page-grid-link {
     bottom: 0;
-	
+
 }
 .eh-page-breadcrums .thumbnail {
 	width: 275px;
@@ -15374,6 +15374,16 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 }
 
 .fund-assets-period label.active {
+	color: #fff;
+	border: none;
+	background-color: #00a6be !important;
+}
+
+.capital-formation-period label {
+	background-color: #c6c6c6 !important;
+}
+
+.capital-formation-period label.active {
 	color: #fff;
 	border: none;
 	background-color: #00a6be !important;

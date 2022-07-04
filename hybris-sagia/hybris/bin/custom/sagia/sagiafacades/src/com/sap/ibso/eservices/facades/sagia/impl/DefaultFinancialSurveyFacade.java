@@ -21,6 +21,7 @@ import com.sap.ibso.eservices.facades.populators.license.amendment.ListItemPopul
 import com.sap.ibso.eservices.facades.populators.license.amendment.ShareholderPopulator;
 import com.sap.ibso.eservices.facades.populators.license.amendment.SubListItemPopulator;
 import com.sap.ibso.eservices.facades.sagia.SagiaFinancialSurveyFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaIsicFacade;
 import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.CustomizingGetData;
 import com.sap.ibso.eservices.sagiaservices.services.financialsurvey.SagiaFinancialSurveyService;
 import com.sap.ibso.eservices.sagiaservices.services.impl.CustomizationListService;
@@ -86,6 +87,9 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     @Resource
     private CompanyProfilePopulator companyProfilePopulator;
 
+    @Resource(name = "defaultSagiaIsicFacade")
+    private SagiaIsicFacade sagiaIsicFacade;
+
     private FinancialSurveyReversePopulator financialSurveyReversePopulator;
     private ShareholderPopulator shareholderPopulator;
     private ListItemPopulator listItemPopulator;
@@ -99,6 +103,15 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     public FinancialSurvey getFinancialSurvey(String quarterCode) {
 
         FinancialSurveyModel financialSurveyModel = sagiaFinancialSurveyService.getFinancialSurvey(quarterCode);
+
+
+        // copy previous shareholders:
+        if (!financialSurveyModel.isIsShareholdersSectionFilled()) {
+            sagiaFinancialSurveyService.copyShareholdersFromPreviousQurterSurvey(financialSurveyModel, financialSurveyModel.getQuarter());
+            sagiaFinancialSurveyService.copyAffiliatesFromPreviousQurterSurvey(financialSurveyModel, financialSurveyModel.getQuarter());
+        }
+
+
         FinancialSurvey financialSurvey = new FinancialSurvey();
         financialSurveyPopulator.populate(financialSurveyModel,financialSurvey);
         financialSurvey.setQuarterCode(quarterCode);
@@ -193,8 +206,8 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
     }
 
     @Override
-    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode) {
-        sagiaFinancialSurveyService.submitFinancialSurveyForReview( mediaModel, quarterCode);
+    public void submitFinancialSurveyForReview(MediaModel mediaModel,String quarterCode, Integer hoursToCompleteSurvey, Integer minutesToCompleteSurvey, String sourceOfKnowledge) {
+        sagiaFinancialSurveyService.submitFinancialSurveyForReview( mediaModel, quarterCode, hoursToCompleteSurvey, minutesToCompleteSurvey, sourceOfKnowledge);
     }
 
 
@@ -240,74 +253,16 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         List<ListItem> multinationalCompany = new ArrayList<>();
         List<ListItem> countries = new ArrayList<>();
         List<AttachmentListItem> attachments = new ArrayList<>();
+        List<ListItem> sections = new ArrayList<>();
+        List<SubListItem> divisions = new ArrayList<>();
 
-
-        /*for (CustomizingGetData data : customizationListService.getLicenseAmendmentListItems()) {
-
-            switch (data.getFieldname() == null ? "" : data.getFieldname()) {
-
-                case BRANCHTYPE:
-                    branchTypes.add(getListItem(data));
-                    break;
-
-                case REGION:
-                    //regions.add(getListItem(data));
-                    break;
-
-                case CITY:
-                  //  cities.add(getSubListItem(data));
-                    break;
-
-                case INDUSTRY:
-                    //sectors.add(getListItem(data));
-                    break;
-
-                case LEGALSTATUS:
-                    //legalStatus.add(getListItem(data));
-                    break;
-
-                case GENDER:
-                    gender.add(getListItem(data));
-                    break;
-
-                case MARITALSTATUS:
-                    status.add(getListItem(data));
-                    break;
-
-                case ACADEMICTITLE:
-                    academicTitle.add(getListItem(data));
-                    break;
-
-                case PREMIUMRESIDENT:
-                    premiumResident.add(getListItem(data));
-                    break;
-
-                case UNIT:
-                    unit.add(getListItem(data));
-                    break;
-
-                case MULTINATCOMP:
-                    multinationalCompany.add(getListItem(data));
-                    break;
-
-                case COUNTRY:
-                    //countries.add(getListItem(data));
-                    break;
-
-                case ATTACHMENT:
-                    //attachments.add(getAttachmentListItem(data));
-                    break;
-
-                default:
-                    break;
-
-            }
-        }*/
 
 
         ListItems listItemsResult = new ListItems();
 
 
+        sagiaIsicFacade.getActiveISICSection().stream().forEach(isicDetails -> { ListItem item = new ListItem() ;  item.setId(isicDetails.getSectionNumber());item.setName(isicDetails.getSectionDescription()); sections.add(item) ; });
+        listItemsResult.setSections(sections);
 
 
         sagiaRegionService.getAllRegions().stream().forEach(regionModel -> {ListItem item = new ListItem() ;item.setId(regionModel.getCode());item.setName(regionModel.getName()); regions.add(item) ;}  );
@@ -332,6 +287,9 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
         sagiaCountryService.getCountries().stream().forEach(countryModel -> {ListItem item = new ListItem() ;item.setId(countryModel.getCode());item.setName(countryModel.getName()); countries.add(item) ;}  );
         countries.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setCountries(countries);
+
+
+
 
 
         ListItem itemGender1 =  new ListItem() ;
@@ -375,8 +333,8 @@ public class DefaultFinancialSurveyFacade implements SagiaFinancialSurveyFacade 
 
         unit.sort(Comparator.comparing(ListItem::getName));
         listItemsResult.setUnit(unit);
-		
-		
+
+
 		ListItem itemMultinationalCompany1 =  new ListItem() ;
         itemMultinationalCompany1.setId("yes");
         itemMultinationalCompany1.setName(getLocalizedValue("type.yes"));

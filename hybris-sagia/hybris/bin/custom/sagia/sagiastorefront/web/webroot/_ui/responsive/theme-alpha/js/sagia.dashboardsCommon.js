@@ -572,6 +572,7 @@ $(document).ready(function(){
                                     case 'PROCESSED':
                                         return 'dashboardWidgetTickets-status_code01';
                                     case 'OPEN':
+                                    case 'UPDATED':
                                     case 'IN_PROGRESS':
                                     case 'SUBMITTED':
                                         return 'dashboardWidgetTickets-status_code02';
@@ -581,7 +582,7 @@ $(document).ready(function(){
                                 }
                             });
 
-                            if (survey.status == 'OPEN' || survey.status == 'WAITING_FOR_CUSTOMER_ACTION' || survey.status == 'IN_PROGRESS') {
+                            if (survey.status == 'OPEN' || survey.status == 'WAITING_FOR_CUSTOMER_ACTION' || survey.status == 'IN_PROGRESS' || survey.status == 'UPDATED') {
                                 //template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
                                 template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
                                 template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("class","btn btn_slim draftContinueBtn");

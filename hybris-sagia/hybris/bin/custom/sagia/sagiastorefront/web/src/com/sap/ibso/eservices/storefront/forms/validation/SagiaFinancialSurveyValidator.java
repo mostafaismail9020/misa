@@ -35,7 +35,6 @@ public class SagiaFinancialSurveyValidator {
     public Set<String> validateEntity(FinancialSurvey financialSurvey) {
         Set<String> errors = new HashSet<>();
         validateRequiredField(financialSurvey.getDisclosureCurrency(), errors, REQUIRED_FIELD_ENTITY);
-        validateRequiredField(financialSurvey.getPaidUpCapitalCurrentQuarter(), errors, REQUIRED_FIELD_ENTITY);
         validateRequiredField(financialSurvey.getCompanyStatus(), errors, REQUIRED_FIELD_ENTITY);
         if(!"ACTIVE".equalsIgnoreCase(financialSurvey.getCompanyStatus())){
             validateRequiredField(financialSurvey.getSuspensionDate(), errors, REQUIRED_FIELD_ENTITY);

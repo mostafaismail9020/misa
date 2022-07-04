@@ -2,14 +2,7 @@ package com.sap.ibso.eservices.core.sagia.services.impl;
 
 import java.util.List;
 
-import com.sap.ibso.eservices.core.model.EmploymentModel;
-import com.sap.ibso.eservices.core.model.HousingFacilitiesModel;
-import com.sap.ibso.eservices.core.model.IndustrialCitiesModel;
-import com.sap.ibso.eservices.core.model.InfraLogisticsLandingModel;
-import com.sap.ibso.eservices.core.model.InfrastructureModel;
-import com.sap.ibso.eservices.core.model.LengthOfNetworkModel;
-import com.sap.ibso.eservices.core.model.PrivateCitiesModel;
-import com.sap.ibso.eservices.core.model.TotalAreaModel;
+import com.sap.ibso.eservices.core.model.*;
 import com.sap.ibso.eservices.core.sagia.dao.InfraLogisticsDAO;
 import com.sap.ibso.eservices.core.sagia.services.InfraLogisticsService;
 
@@ -39,12 +32,6 @@ public class DefaultInfraLogisticsService implements InfraLogisticsService {
 	}
 
 	@Override
-	public InfrastructureModel getInfrastructureModel() {
-		final InfrastructureModel InfrastructureModel = getInfraLogisticsDAO().getInfrastructureModelBySearch();
-		return InfrastructureModel;
-	}
-
-	@Override
 	public List<LengthOfNetworkModel> getLengthOfNetworkModel() {
 		final List<LengthOfNetworkModel> lengthOfNetworkModel = getInfraLogisticsDAO()
 				.getLengthOfNetworkModelBySearch();
@@ -52,34 +39,15 @@ public class DefaultInfraLogisticsService implements InfraLogisticsService {
 	}
 
 	@Override
-	public EmploymentModel getEmploymentModel() {
-		final EmploymentModel employmentModel = getInfraLogisticsDAO().getEmploymentModelBySearch();
-		return employmentModel;
-	}
-
-	@Override
-	public TotalAreaModel getTotalAreaModel() {
-		final TotalAreaModel totalAreaModel = getInfraLogisticsDAO().getTotalAreaModelBySearch();
-		return totalAreaModel;
-	}
-
-	@Override
-	public HousingFacilitiesModel getHousingFacilitiesModel() {
-		final HousingFacilitiesModel housingFacilitiesModel = getInfraLogisticsDAO()
-				.getHousingFacilitiesModelBySearch();
-		return housingFacilitiesModel;
-	}
-
-	@Override
-	public IndustrialCitiesModel getIndustrialCitiesModel() {
-		final IndustrialCitiesModel industrialCitiesModel = getInfraLogisticsDAO().getIndustrialCitiesModelBySearch();
-		return industrialCitiesModel;
-	}
-
-	@Override
 	public List<PrivateCitiesModel> getPrivateCitiesModel() {
 		final List<PrivateCitiesModel> privateCitiesModel = getInfraLogisticsDAO().getPrivateCitiesModelBySearch();
 		return privateCitiesModel;
+	}
+
+	@Override
+	public List<InfrastructureLogisticsModel> getInfrastructureLogisticsModel() {
+		final List<InfrastructureLogisticsModel> infrastructureLogisticsModels = getInfraLogisticsDAO().getAllInfrastructureLogisticsModel();
+		return infrastructureLogisticsModels;
 	}
 
 }

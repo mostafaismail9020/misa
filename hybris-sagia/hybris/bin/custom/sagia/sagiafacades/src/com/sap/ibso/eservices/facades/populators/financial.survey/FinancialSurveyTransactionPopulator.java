@@ -13,66 +13,40 @@ public class FinancialSurveyTransactionPopulator implements Populator<SagiaSurve
 
 
         transaction.setTradeDebitCurrentQuarter(sagiaSurveyTransactionModel.getTradeDebitCurrentQuarter());
-		transaction.setTradeDebitPreviousQuarter(sagiaSurveyTransactionModel.getTradeDebitPreviousQuarter());
 		transaction.setTradeCreditCurrentQuarter(sagiaSurveyTransactionModel.getTradeCreditCurrentQuarter());
-		transaction.setTradeCreditPreviousQuarter(sagiaSurveyTransactionModel.getTradeCreditPreviousQuarter());
 
 		transaction.setLoansAssetsCurrentQuarter(sagiaSurveyTransactionModel.getLoansAssetsCurrentQuarter());
-		transaction.setLoansAssetsPreviousQuarter(sagiaSurveyTransactionModel.getLoansAssetsPreviousQuarter());
 		transaction.setLoansLiabilitiesCurrentQuarter(sagiaSurveyTransactionModel.getLoansLiabilitiesCurrentQuarter());
-		transaction.setLoansLiabilitiesPreviousQuarter(sagiaSurveyTransactionModel.getLoansLiabilitiesPreviousQuarter());
-
 		transaction.setInterestReceivedCurrentQuarter(sagiaSurveyTransactionModel.getInterestReceivedCurrentQuarter());
-		transaction.setInterestReceivedPreviousQuarter(sagiaSurveyTransactionModel.getInterestReceivedPreviousQuarter());
 		transaction.setInterestPayableCurrentQuarter(sagiaSurveyTransactionModel.getInterestPayableCurrentQuarter());
-		transaction.setInterestPayablePreviousQuarter(sagiaSurveyTransactionModel.getInterestPayablePreviousQuarter());
 
 		transaction.setDividendsReceivedCurrentQuarter(sagiaSurveyTransactionModel.getDividendsReceivedCurrentQuarter());
-		transaction.setDividendsReceivedPreviousQuarter(sagiaSurveyTransactionModel.getDividendsReceivedPreviousQuarter());
 		transaction.setDividendsPaidCurrentQuarter(sagiaSurveyTransactionModel.getDividendsPaidCurrentQuarter());
-		transaction.setDividendsPaidPreviousQuarter(sagiaSurveyTransactionModel.getDividendsPaidPreviousQuarter());
 
 		transaction.setExpensesReceivedCurrentQuarter(sagiaSurveyTransactionModel.getExpensesReceivedCurrentQuarter());
-		transaction.setExpensesReceivedPreviousQuarter(sagiaSurveyTransactionModel.getExpensesReceivedPreviousQuarter());
 		transaction.setExpensesPaidCurrentQuarter(sagiaSurveyTransactionModel.getExpensesPaidCurrentQuarter());
-		transaction.setExpensesPaidPreviousQuarter(sagiaSurveyTransactionModel.getExpensesPaidPreviousQuarter());
 
 		transaction.setSellProductionSuppliesCurrentQuarter(sagiaSurveyTransactionModel.getSellProductionSuppliesCurrentQuarter());
-		transaction.setSellProductionSuppliesPreviousQuarter(sagiaSurveyTransactionModel.getSellProductionSuppliesPreviousQuarter());
 		transaction.setPurchaseProductionSuppliesCurrentQuarter(sagiaSurveyTransactionModel.getPurchaseProductionSuppliesCurrentQuarter());
-		transaction.setPurchaseProductionSuppliesPreviousQuarter(sagiaSurveyTransactionModel.getPurchaseProductionSuppliesPreviousQuarter());
 
 		transaction.setSellMachineryCurrentQuarter(sagiaSurveyTransactionModel.getSellMachineryCurrentQuarter());
-		transaction.setSellMachineryPreviousQuarter(sagiaSurveyTransactionModel.getSellMachineryPreviousQuarter());
 		transaction.setPurchaseMachineryCurrentQuarter(sagiaSurveyTransactionModel.getPurchaseMachineryCurrentQuarter());
-		transaction.setPurchaseMachineryPreviousQuarter(sagiaSurveyTransactionModel.getPurchaseMachineryPreviousQuarter());
 
 		transaction.setCurrentDebitAccountCurrentQuarter(sagiaSurveyTransactionModel.getCurrentDebitAccountCurrentQuarter());
-		transaction.setCurrentDebitAccountPreviousQuarter(sagiaSurveyTransactionModel.getCurrentDebitAccountPreviousQuarter());
 		transaction.setCurrentCreditAccountCurrentQuarter(sagiaSurveyTransactionModel.getCurrentCreditAccountCurrentQuarter());
-		transaction.setCurrentCreditAccountPreviousQuarter(sagiaSurveyTransactionModel.getCurrentCreditAccountPreviousQuarter());
 
 		transaction.setExpensesReceivableCurrentQuarter(sagiaSurveyTransactionModel.getExpensesReceivableCurrentQuarter());
-		transaction.setExpensesReceivablePreviousQuarter(sagiaSurveyTransactionModel.getExpensesReceivablePreviousQuarter());
 		transaction.setExpensesPayableCurrentQuarter(sagiaSurveyTransactionModel.getExpensesPayableCurrentQuarter());
-		transaction.setExpensesPayablePreviousQuarter(sagiaSurveyTransactionModel.getExpensesPayablePreviousQuarter());
-
 		transaction.setInsuranceCommissionReceivableCurrentQuarter(sagiaSurveyTransactionModel.getInsuranceCommissionReceivableCurrentQuarter());
-		transaction.setInsuranceCommissionReceivablePreviousQuarter(sagiaSurveyTransactionModel.getInsuranceCommissionReceivablePreviousQuarter());
 		transaction.setInsuranceCommissionPayableCurrentQuarter(sagiaSurveyTransactionModel.getInsuranceCommissionPayableCurrentQuarter());
-		transaction.setInsuranceCommissionPayablePreviousQuarter(sagiaSurveyTransactionModel.getInsuranceCommissionPayablePreviousQuarter());
 
 
 		transaction.setOtherDebitCurrentQuarter(sagiaSurveyTransactionModel.getOtherDebitCurrentQuarter());
-		transaction.setOtherDebitPreviousQuarter(sagiaSurveyTransactionModel.getOtherDebitPreviousQuarter());
 		transaction.setOtherCreditCurrentQuarter(sagiaSurveyTransactionModel.getOtherCreditCurrentQuarter());
-		transaction.setOtherCreditPreviousQuarter(sagiaSurveyTransactionModel.getOtherCreditPreviousQuarter());
 
 
 		transaction.setTotalDebitCurrentQuarter(sagiaSurveyTransactionModel.getTotalDebitCurrentQuarter());
-		transaction.setTotalDebitPreviousQuarter(sagiaSurveyTransactionModel.getTotalDebitPreviousQuarter());
 		transaction.setTotalCreditCurrentQuarter(sagiaSurveyTransactionModel.getTotalCreditCurrentQuarter());
-		transaction.setTotalCreditPreviousQuarter(sagiaSurveyTransactionModel.getTotalCreditPreviousQuarter());
 
     }
 }

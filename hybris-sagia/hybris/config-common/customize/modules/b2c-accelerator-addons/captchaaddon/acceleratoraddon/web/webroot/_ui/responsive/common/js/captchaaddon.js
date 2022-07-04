@@ -29,6 +29,7 @@ ACC.captcha = {
 $(document).ready(function ()
 {
 	if ($('#contact-us-page-contact-us-form').html() != null || $('#sagiaRegisterFormQuickRegistration').html() != null || $('#updateEmailForm').html() != null || $('#corForm').html() != null || $('#sagiaAuthenticationForm').html() != null || $('#sagiaAuthenticateCodeForm').html() != null || $('#SagiaVerificationForm').html() != null)
+
 	{
 		ACC.captcha.bindAll();
 	}

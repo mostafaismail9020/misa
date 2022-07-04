@@ -26,6 +26,20 @@ function caluculateTotalCapital() {
     $('#totalShareholderEquityCurrentQuarterId').val(sum);
 }
 
+function caluculateTotalCapitalPreviousQuarter() {
+    var sum = 0 ;
+    sum = sum +  1*($('#paidUpCapitalPreviousQuarterId').val());
+    sum = sum +  1*($('#retainedEarningsIncludePreviousQuarterId').val());
+    sum = sum +  1*($('#additionalPaidUpCapitalPreviousQuarterId').val());
+    // sum = sum +  1*($('#profitLossQuarterCurrentQuarterId').val());
+    sum = sum +  1*($('#totalReservesPreviousQuarterId').val());
+    sum = sum +  1*($('#treasurySharesPreviousQuarterId').val());
+    sum = sum +  1*($('#headOfficeAccountInBranchPreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderEquityOthersPreviousQuarterId').val());
+    sum = sum +  1*($('#minorityRightsPreviousQuarterId').val());
+    $('#totalShareholderEquityPreviousQuarterId').val(sum);
+}
+
 function caluculateTotalTansactionDebit() {
     var sum = 0 ;
     sum = sum +  1*($('#tradeDebitCurrentQuarterId').val());
@@ -40,6 +54,23 @@ function caluculateTotalTansactionDebit() {
     sum = sum +  1*($('#insuranceCommissionReceivableCurrentQuarterId').val());
     sum = sum +  1*($('#otherDebitCurrentQuarterId').val());
     $('#totalDebitCurrentQuarterId').val(sum);
+}
+
+
+function caluculateTotalAffeliateTansactionDebit() {
+    var sum = 0 ;
+    sum = sum +  1*($('#accordionTransactionAffeliate #tradeDebitCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #loansAssetsCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #interestReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #dividendsReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesReceivedCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #sellProductionSuppliesCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #sellMachineryCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #currentDebitAccountCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesReceivableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionReceivableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #otherDebitCurrentQuarterId').val());
+    $('#accordionTransactionAffeliate #totalDebitCurrentQuarterId').val(sum);
 }
 
 function calculateTotalTansactionCredit() {
@@ -59,6 +90,40 @@ function calculateTotalTansactionCredit() {
     $('#totalCreditCurrentQuarterId').val(sum);
 }
 
+function calculateTotalTansactionCreditForAffeliate() {
+    var sum = 0 ;
+
+    sum = sum +  1*($('#accordionTransactionAffeliate #tradeCreditCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #loansLiabilitiesCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #interestPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #dividendsPaidCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPaidCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseProductionSuppliesCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #currentCreditAccountCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionPayableCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #otherCreditCurrentQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseMachineryCurrentQuarterId').val());
+    $('#accordionTransactionAffeliate #totalCreditCurrentQuarterId').val(sum);
+}
+
+function calculateTotalPrevQuarterTansactionCreditForAffeliate() {
+    var sum = 0 ;
+
+    sum = sum +  1*($('#accordionTransactionAffeliate #tradeCreditPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #loansLiabilitiesPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #interestPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #dividendsPaidPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPaidPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseProductionSuppliesPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #currentCreditAccountPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #otherCreditPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseMachineryPreviousQuarterId').val());
+    $('#accordionTransactionAffeliate #totalCreditPreviousQuarterId').val(sum);
+}
+
 function calculateShareholderEquity() {
 
     var sharePercentage = $('#shareholderPercentageId').val();
@@ -66,7 +131,7 @@ function calculateShareholderEquity() {
         return;
     }
     var retainedEarningsIncludeCurrentQuarter = (financialSurvey.shareholderEquity.retainedEarningsIncludeCurrentQuarter /100)  * sharePercentage ;
-    var paidUpCapitalCurrentQuarter = (financialSurvey.paidUpCapitalCurrentQuarter /100)  * sharePercentage ;
+    var paidUpCapitalCurrentQuarter = (financialSurvey.shareholderEquity.paidUpCapitalCurrentQuarter /100)  * sharePercentage ;
     var additionalPaidUpCapitalCurrentQuarter = (financialSurvey.shareholderEquity.additionalPaidUpCapitalCurrentQuarter /100)  * sharePercentage ;
     var profitLossQuarterCurrentQuarter = (financialSurvey.shareholderEquity.profitLossQuarterCurrentQuarter /100)  * sharePercentage ;
     var totalReservesCurrentQuarter = (financialSurvey.shareholderEquity.totalReservesCurrentQuarter /100)  * sharePercentage ;
@@ -79,6 +144,8 @@ function calculateShareholderEquity() {
     $('#shareholderRetainedEarningsIncludeCurrentQuarterId').val(Math.ceil(retainedEarningsIncludeCurrentQuarter));
     $('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val(Math.ceil(additionalPaidUpCapitalCurrentQuarter));
     $('#shareholderCapitalId').val(Math.ceil((paidUpCapitalCurrentQuarter)));
+    // TBC
+    $('#shareholderPaidUpCapitalCurrentQuarterId').val(Math.ceil((paidUpCapitalCurrentQuarter)));
     $('#shareholderProfitLossQuarterCurrentQuarterId').val(Math.ceil(profitLossQuarterCurrentQuarter));
     $('#shareholderTotalReservesCurrentQuarterId').val(Math.ceil(totalReservesCurrentQuarter));
     $('#shareholderTreasurySharesCurrentQuarterId').val(Math.ceil(treasurySharesCurrentQuarter));
@@ -86,7 +153,14 @@ function calculateShareholderEquity() {
     $('#shareholderShareholderEquityOthersCurrentQuarterId').val(Math.ceil(shareholderEquityOthersCurrentQuarter));
     $('#shareholderMinorityRightsCurrentQuarterId').val(Math.ceil(minorityRightsCurrentQuarter));
     $('#shareholderTotalShareholderEquityCurrentQuarterId').val(Math.ceil(totalShareholderEquityCurrentQuarter));
+
+
+    var shareholderIsVotingPower = $('#shareholderIsVotingPowerId').is(':checked');
+    if (!shareholderIsVotingPower ) {
+        $('#shareholderVotingPowerId').val(sharePercentage);
+    }
 }
+
 
 $(document).ready(function () {
 
@@ -105,7 +179,7 @@ $(document).ready(function () {
         document.getElementById("tab4").style["pointer-events"] = "none";
         document.getElementById("tab5").style["cursor"] = "default";
         document.getElementById("tab5").style["pointer-events"] = "none";
-        
+
 
 
 
@@ -120,6 +194,10 @@ $(document).ready(function () {
         });
         $(document).on("click", "#cancelSubmit", function () {
             $('a[href="#accessibletabscontent0-3"]').click();
+        });
+
+        $(document).on("click", "#cancelTabEntityBtnId", function () {
+            window.location.href = ACC.config.encodedContextPath + '/dashboard';
         });
 
 
@@ -155,256 +233,80 @@ $(document).ready(function () {
         }
 
 
-        $("#commercialRegistrationNoID").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#unifiedNo700ID").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
 
-        $("#comppanyPaidUpCapitalCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
 
-        $("#paidUpCapitalCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#additionalPaidUpCapitalCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#retainedEarningsIncludeCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#retainedEarningsIncludeCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#profitLossQuarterCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#profitLossQuarterCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#totalReservesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#totalReservesCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#treasurySharesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 &&  e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }if ( $("#treasurySharesCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#headOfficeAccountInBranchCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#headOfficeAccountInBranchCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderEquityOthersCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#shareholderEquityOthersCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#minorityRightsCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#minorityRightsCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#totalShareholderEquityCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#totalShareholderEquityCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
 
-        $("#shareholderCapitalId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderAdditionalPaidUpCapitalCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderRetainedEarningsIncludeCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#shareholderRetainedEarningsIncludeCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderProfitLossQuarterCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#shareholderProfitLossQuarterCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderTotalReservesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#shareholderTotalReservesCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderHeadOfficeAccountInBranchCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#shareholderHeadOfficeAccountInBranchCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderShareholderEquityOthersCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#shareholderShareholderEquityOthersCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderMinorityRightsCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 45 && e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-            if ( $("#shareholderMinorityRightsCurrentQuarterId").val() != '' && e.which == 45 ) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderPercentageId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            //if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-            //    //display error message
-            //    $("#errmsg").html("Digits Only").show().fadeOut("slow");
-            //    return false;
-            //}
+
+        validateDigitOnly ($("#commercialRegistrationNoID"));
+        validateDigitOnly ($("#unifiedNo700ID"));
+        validateDigitOnly ($("#registrationNameId"));
+        validateDigitOnly ($("#unifiedNoId"));
+
+
+
+
+
+        validateNumberFloatInput ($("#comppanyPaidUpCapitalCurrentQuarterId"));
+        validateNumberFloatInput ($("#paidUpCapitalCurrentQuarterId"));
+        validateNumberFloatInput ($("#paidUpCapitalPreviousQuarterId"));
+        validateNumberFloatInput ($("#additionalPaidUpCapitalCurrentQuarterId"));
+        validateNumberFloatInput ($("#additionalPaidUpCapitalPreviousQuarterId"));
+        validateNumberFloatInput ($("#retainedEarningsIncludeCurrentQuarterId"));
+        validateNumberFloatInput ($("#retainedEarningsIncludePreviousQuarterId"));
+        validateNumberFloatInput ($("#profitLossQuarterCurrentQuarterId"));
+        validateNumberFloatInput ($("#profitLossQuarterPreviousQuarterId"));
+        validateNumberFloatInput ($("#totalReservesCurrentQuarterId"));
+        validateNumberFloatInput ($("#totalReservesPreviousQuarterId"));
+        validateNumberFloatInput ($("#treasurySharesCurrentQuarterId"));
+        validateNumberFloatInput ($("#treasurySharesPreviousQuarterId"));
+        validateNumberFloatInput ($("#headOfficeAccountInBranchCurrentQuarterId"));
+        validateNumberFloatInput ($("#headOfficeAccountInBranchPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderEquityOthersCurrentQuarterId"));
+        validateNumberFloatInput ($("#shareholderEquityOthersPreviousQuarterId"));
+        validateNumberFloatInput ($("#minorityRightsCurrentQuarterId"));
+        validateNumberFloatInput ($("#minorityRightsPreviousQuarterId"));
+        validateNumberFloatInput ($("#totalShareholderEquityCurrentQuarterId"));
+        validateNumberFloatInput ($("#totalShareholderEquityPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderCapitalId"));
+        validateNumberFloatInput ($("#shareholderAdditionalPaidUpCapitalCurrentQuarterId"));
+        validateNumberFloatInput ($("#shareholderAdditionalPaidUpCapitalPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderRetainedEarningsIncludePreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderProfitLossQuarterPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderProfitLossQuarterPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderTotalReservesPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderTreasurySharesPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderTreasurySharesPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderHeadOfficeAccountInBranchPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderShareholderEquityOthersPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderMinorityRightsPreviousQuarterId"));
+
+        validateNumberFloatInput ($("#shareholderPaidUpCapitalCurrentQuarterId"));
+        validateNumberFloatInput ($("#shareholderPaidUpCapitalPreviousQuarter"));
+
+
+
+
+
+
+        validateNumberFloatInput ($("#shareholderRetainedEarningsIncludeCurrentQuarterId"));
+        validateNumberFloatInput ($("#shareholderProfitLossQuarterCurrentQuarterId"));
+        validateNumberFloatInput ($("#shareholderTotalReservesCurrentQuarterId"));
+        validateNumberFloatInput ($("#shareholderHeadOfficeAccountInBranchCurrentQuarterId"));
+        validateNumberFloatInput ($("#shareholderShareholderEquityOthersCurrentQuarterId"));
+
+        validateNumberFloatInput ($("#shareholderMinorityRightsCurrentQuarterId"));
+
+
+        validatePercentage($("#shareholderPercentageId"));
+        validatePercentage($("#shareholderVotingPowerId"));
+
+
+
+
+        /*$("#shareholderPercentageId").keypress(function (e) {
 
             var regex = new RegExp("^[0-9\.]$");
-            // var regexMulti = new RegExp("^[\d]+\.?[\d]*$");
+
             var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
 
             if (!regex.test(key)) {
@@ -424,7 +326,7 @@ $(document).ready(function () {
                     if (key !== '.' && hasDot) {
                         var value = $self.val().split('.');
 
-                        if (value[0].length > 2 || value[1].length > 2) {
+                        if (value[0].length > 2 || value[1].length > 3) {
                             $self.val(oldValue);
                         }
                     }
@@ -439,239 +341,83 @@ $(document).ready(function () {
                 }, 0);
             }
 
-        });
-        $("#shareholderTreasurySharesCurrentQuarterId").keypress(function (e) {
+        });*/
+
+       /* $("#shareholderVotingPowerId").keypress(function (e) {
             //if the letter is not digit then display error and don't type anything
             if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
                 //display error message
                 $("#errmsg").html("Digits Only").show().fadeOut("slow");
                 return false;
             }
-        });
-        $("#shareholderTotalShareholderEquityCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderVotingPowerId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderPreferredSharesId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#shareholderValueOfReverseInvestmentId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#tradeDebitCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#loansAssetsCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#interestReceivedCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#dividendsReceivedCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#expensesReceivedCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#sellProductionSuppliesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#currentDebitAccountCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#insuranceCommissionReceivableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#otherDebitCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#totalDebitCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#tradeCreditCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#loansLiabilitiesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#interestPayableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#dividendsPaidCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#expensesPaidCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#purchaseProductionSuppliesCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#purchaseMachineryCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#currentCreditAccountCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#expensesPayableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#insuranceCommissionPayableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#otherCreditCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#totalCreditCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#sellMachineryCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
-        $("#expensesReceivableCurrentQuarterId").keypress(function (e) {
-            //if the letter is not digit then display error and don't type anything
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                //display error message
-                $("#errmsg").html("Digits Only").show().fadeOut("slow");
-                return false;
-            }
-        });
+        });*/
+
+
+
+        validateNumberFloatInput ($("#shareholderTreasurySharesCurrentQuarterId"));
+
+        validateNumberFloatInput ($("#shareholderTotalShareholderEquityCurrentQuarterId"));
+        validateNumberFloatInput ($("#shareholderPreferredSharesId"));
+
+
+
+
+        validateNumberFloatInput ($("#shareholderPaidUpCapitalPreviousQuarterId"));
+        validateNumberFloatInput ($("#shareholderValueOfReverseInvestmentId"));
+        validateNumberFloatInput ($("#tradeDebitCurrentQuarterId"));
+        validateNumberFloatInput ($("#loansAssetsCurrentQuarterId"));
+        validateNumberFloatInput ($("#interestReceivedCurrentQuarterId"));
+        validateNumberFloatInput ($("#dividendsReceivedCurrentQuarterId"));
+        validateNumberFloatInput ($("#expensesReceivedCurrentQuarterId"));
+        validateNumberFloatInput ($("#sellProductionSuppliesCurrentQuarterId"));
+        validateNumberFloatInput ($("#currentDebitAccountCurrentQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionReceivableCurrentQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionReceivableCurrentQuarterId"));
+        validateNumberFloatInput ($("#otherDebitCurrentQuarterId"));
+        validateNumberFloatInput ($("#totalDebitCurrentQuarterId"));
+        validateNumberFloatInput ($("#tradeCreditCurrentQuarterId"));
+        validateNumberFloatInput ($("#loansLiabilitiesCurrentQuarterId"));
+        validateNumberFloatInput ($("#interestPayableCurrentQuarterId"));
+        validateNumberFloatInput ($("#dividendsPaidCurrentQuarterId"));
+        validateNumberFloatInput ($("#expensesPaidCurrentQuarterId"));
+        validateNumberFloatInput ($("#purchaseProductionSuppliesCurrentQuarterId"));
+        validateNumberFloatInput ($("#purchaseMachineryCurrentQuarterId"));
+        validateNumberFloatInput ($("#currentCreditAccountCurrentQuarterId"));
+        validateNumberFloatInput ($("#expensesPayableCurrentQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionPayableCurrentQuarterId"));
+        validateNumberFloatInput ($("#otherCreditCurrentQuarterId"));
+        validateNumberFloatInput ($("#totalCreditCurrentQuarterId"));
+        validateNumberFloatInput ($("#sellMachineryCurrentQuarterId"));
+        validateNumberFloatInput ($("#expensesReceivableCurrentQuarterId"));
+
+
+        validateNumberFloatInput ($("#tradeDebitPreviousQuarterId"));
+        validateNumberFloatInput ($("#loansAssetsPreviousQuarterId"));
+        validateNumberFloatInput ($("#interestReceivedPreviousQuarterId"));
+        validateNumberFloatInput ($("#dividendsReceivedPreviousQuarterId"));
+        validateNumberFloatInput ($("#expensesReceivedPreviousQuarterId"));
+        validateNumberFloatInput ($("#sellProductionSuppliesPreviousQuarterId"));
+        validateNumberFloatInput ($("#currentDebitAccountPreviousQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionReceivablePreviousQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionReceivablePreviousQuarterId"));
+        validateNumberFloatInput ($("#otherDebitPreviousQuarterId"));
+        validateNumberFloatInput ($("#totalDebitPreviousQuarterId"));
+        validateNumberFloatInput ($("#tradeCreditPreviousQuarterId"));
+        validateNumberFloatInput ($("#loansLiabilitiesPreviousQuarterId"));
+        validateNumberFloatInput ($("#interestPayablePreviousQuarterId"));
+        validateNumberFloatInput ($("#dividendsPaidPreviousQuarterId"));
+        validateNumberFloatInput ($("#expensesPaidPreviousQuarterId"));
+        validateNumberFloatInput ($("#purchaseProductionSuppliesPreviousQuarterId"));
+        validateNumberFloatInput ($("#purchaseMachineryPreviousQuarterId"));
+        validateNumberFloatInput ($("#currentCreditAccountPreviousQuarterId"));
+        validateNumberFloatInput ($("#expensesPayablePreviousQuarterId"));
+        validateNumberFloatInput ($("#insuranceCommissionPayablePreviousQuarterId"));
+        validateNumberFloatInput ($("#otherCreditPreviousQuarterId"));
+        validateNumberFloatInput ($("#totalCreditPreviousQuarterId"));
+        validateNumberFloatInput ($("#sellMachineryPreviousQuarterId"));
+        validateNumberFloatInput ($("#expensesReceivablePreviousQuarterId"));
+
+
 
 
         $("input[name='consolidatedStandloneRadioBox']").click(function () {
@@ -682,6 +428,14 @@ $(document).ready(function () {
             } else {
                 $('#subsidiarySection').show();
                 financialSurvey.isConsolidated = true;
+            }
+        });
+
+        $("input[name='sacaleLevelRadioBox']").click(function () {
+            if ($(this).val() === "true") {
+                financialSurvey.isScaleLevelActualUnit = true;
+            }  else {
+                financialSurvey.isScaleLevelActualUnit = false;
             }
         });
 
@@ -705,8 +459,15 @@ $(document).ready(function () {
         setupSubsidiariesTable();
         SAGIA.formElements.placeholderPolyfill();
 
-        $("#branchRegionId").change(updateCities);
+        /*$("#branchRegionId").change(updateCities);
         $("#subsidiaryRegionId").change(updateCities);
+        $("#sectionId").change(updateDivisions);
+        $("#divisionId").change(updateGroups);
+        $("#groupId").change(updateClass);
+        $("#classId").change(updateBranch);
+        $("#branchId").change(updateActivity);*/
+
+
 
         $(".validateLicenseBtn").on('click', submitLicense);
 
@@ -721,8 +482,15 @@ $(document).ready(function () {
         // Tabs navigation
         $(document).on("click", "#nextTabEntityBtnId", function () {
             var validator = entityValidator();
+
             if (!validator.form()) {
                 $('a[href="#accessibletabscontent0-0"]').click();
+
+                $('#requestErrorDialogId').modal({
+                    backdrop: "static",
+                    keyboard: false
+                }).find('.globalMessage-msg').text(getI18nText("financial.survey.mandatory.fields.survey"));
+
                 return;
             }
             submitFinancialSurveyCompanyProfile();
@@ -740,10 +508,17 @@ $(document).ready(function () {
         $(document).on("click", "#nextTabShareholdersEquityBtnId", function () {
             var validator = equityValidator();
             if (!validator.form()) {
-                $('a[href="#accessibletabscontent0-2"]').click();
+
+                $('#requestErrorDialogId').modal({
+                    backdrop: "static",
+                    keyboard: false
+                }).find('.globalMessage-msg').text(getI18nText("financial.survey.mandatory.fields.survey"));
+
+              //  $('a[href="#accessibletabscontent0-2"]').click();
                 return;
             }else {
                 caluculateTotalCapital();
+                caluculateTotalCapitalPreviousQuarter();
                 submitFinancialSurveyEquity();
             }
 
@@ -765,7 +540,8 @@ $(document).ready(function () {
         });
 */
         $(document).on("click", "#dismissChangesBtnId, .showHistoryBtn", function () {
-            window.location.href = ACC.config.encodedContextPath + "/dashboard";
+           // window.location.href = ACC.config.encodedContextPath + "/dashboard";
+            $('#requestErrorDialogId').modal('hide');
         });
 
         $(document).on("click", "#submitChangesBtnId", function () {
@@ -858,7 +634,7 @@ function getFinancialSurveyData() {
         success: function (data) {
             if (data) {
                 setLicenseData(data);
-                updateIsic(data);
+               // updateIsic(data);
             }
         },
         async: false
@@ -961,6 +737,118 @@ var validateBranchesSumPercentage = function () {
     }
 
 }
+
+var validateDigitOnly = function (element)  {
+    element.on('keypress', function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            //display error message
+            $("#errmsg").html("Digits Only").show().fadeOut("slow");
+            return false;
+        }
+    });
+}
+
+
+
+
+
+var validatePercentage = function  (element) {
+
+
+    element.on('keypress', function (event) {
+
+        var regex = new RegExp("^[0-9\.]$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        } else {
+            var hasDot = $(this).val().indexOf('.') >= 0;
+            if (key === '.' && hasDot || key === '.' && $(this).val().length === 3) {
+                event.preventDefault();
+                return false;
+            }
+
+            var $self = $(this);
+            var oldValue = $self.val();
+
+            setTimeout(function () {
+                if (key !== '.' && hasDot) {
+                    var value = $self.val().split('.');
+
+                    if (value[0].length > 2 || value[1].length > 3) {
+                        $self.val(oldValue);
+                    }
+                }
+
+                if (key !== '.' && !hasDot) {
+                    var value = $self.val();
+
+                    if (value.length >= 3 && value > 100) {
+                        $self.val(oldValue);
+                    }
+                }
+            }, 0);
+        }
+
+    });
+}
+
+
+var validateNumberFloatInput = function (element)  {
+    element.on('keypress', function (event) {
+
+        var regex = new RegExp("^[0-9\.\-]$");
+        // var regexMulti = new RegExp("^[\d]+\.?[\d]*$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+
+        if (!regex.test(key)) {
+
+            event.preventDefault();
+            //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+            return false;
+        } else if ( element.val() != '' && key == 45 ) {
+            //display error message
+            $("#errmsg").html("Digits Only").show().fadeOut("slow");
+            return false;
+        }
+
+        else {
+            var hasDot = $(this).val().indexOf('.') >= 0;
+
+            if (key === '.' && hasDot) {
+                event.preventDefault();
+                return false;
+            }
+            else  if (hasDot) {
+                var value = $(this).val().split('.');
+                if ( value[1].length > 2) {
+                    event.preventDefault();
+                    return false;
+                }
+
+            }
+        }
+    });
+
+    element.on('paste', function () {
+        var $self = $(this)
+        setTimeout(function () {
+            $self.val($self.val().replace(/[^0-9.]+/g, ""));
+            var dotCount = $self.val().replace(/[^.]/g, "").length;
+
+            if (dotCount > 1) {
+                while (dotCount > 1) {
+                    $self.val($self.val().replace(/[.]/, ""));
+                    dotCount--;
+                }
+            }
+        }, 0);
+    })
+
+}
+
 
 var validateLicense = function () {
 
@@ -1105,6 +993,19 @@ function fillShareholderEquityData( shareholderEquity ) {
     $('#totalShareholderEquityCurrentQuarterId').val(shareholderEquity.totalShareholderEquityCurrentQuarter);
 }
 
+function fillShareholderEquityPrevQuarterData( shareholderEquity ) {
+    $('#paidUpCapitalPreviousQuarterId').val(shareholderEquity.paidUpCapitalPreviousQuarter);
+    $('#additionalPaidUpCapitalPreviousQuarterId').val(shareholderEquity.additionalPaidUpCapitalPreviousQuarter);
+    $('#retainedEarningsIncludePreviousQuarterId').val(shareholderEquity.retainedEarningsIncludePreviousQuarter);
+    $('#profitLossQuarterPreviousQuarterId').val(shareholderEquity.profitLossQuarterPreviousQuarter);
+    $('#totalReservesPreviousQuarterId').val(shareholderEquity.totalReservesPreviousQuarter);
+    $('#treasurySharesPreviousQuarterId').val(shareholderEquity.treasurySharesPreviousQuarter);
+    $('#headOfficeAccountInBranchPreviousQuarterId').val(shareholderEquity.headOfficeAccountInBranchPreviousQuarter);
+    $('#shareholderEquityOthersPreviousQuarterId').val(shareholderEquity.shareholderEquityOthersPreviousQuarter);
+    $('#minorityRightsPreviousQuarterId').val(shareholderEquity.minorityRightsPreviousQuarter);
+    $('#totalShareholderEquityPreviousQuarterId').val(shareholderEquity.totalShareholderEquityPreviousQuarter);
+}
+
 
 function populateShareholderEquity() {
     financialSurvey.shareholderEquity = {};
@@ -1127,7 +1028,7 @@ function populateShareholderEquity() {
     financialSurvey.shareholderEquity.minorityRightsCurrentQuarter = $('#minorityRightsCurrentQuarterId').val();
     financialSurvey.shareholderEquity.minorityRightsPreviousQuarter = $('#minorityRightsPreviousQuarterId').val();
      financialSurvey.shareholderEquity.totalShareholderEquityCurrentQuarter = $('#totalShareholderEquityCurrentQuarterId').val();
-    //  financialSurvey.shareholderEquity.totalShareholderEquityPreviousQuarter = $('#totalShareholderEquityPreviousQuarterId').val();
+    financialSurvey.shareholderEquity.totalShareholderEquityPreviousQuarter = $('#totalShareholderEquityPreviousQuarterId').val();
     /*financialSurvey.shareholderEquity.cashTransactionIncrease = $('#cashTransactionIncreaseId').is(':checked');
     financialSurvey.shareholderEquity.profitsIncrease = $('#profitsIncreaseId').is(':checked');
     financialSurvey.shareholderEquity.reservesIncrease = $('#reservesIncreaseId').is(':checked');
@@ -1154,7 +1055,14 @@ function populateCompanyProfile() {
     financialSurvey.companyStatus = $('#companyStatusId').val();
     financialSurvey.suspensionDate = $('#suspensionDateId').val();
     financialSurvey.disclosureCurrency = $('#disclosureCurrencyId').val();
-    financialSurvey.paidUpCapitalCurrentQuarter = $('#comppanyPaidUpCapitalCurrentQuarterId').val();
+    financialSurvey.economicActivitySection = $('#sectionId').val();
+    financialSurvey.economicActivityDivision = $('#divisionId').val();
+    financialSurvey.economicActivityGroup = $('#groupId').val();
+    financialSurvey.economicActivityClass = $('#classId').val();
+    financialSurvey.economicActivityBranch = $('#branchId').val();
+    financialSurvey.economicActivity = $('#activityId').val();
+    financialSurvey.shareholderEquity.paidUpCapitalCurrentQuarter = $('#comppanyPaidUpCapitalCurrentQuarterId').val();
+    $('#paidUpCapitalCurrentQuarterId').val(financialSurvey.shareholderEquity.paidUpCapitalCurrentQuarter);
 }
 
 var submitLicense = function () {
@@ -1221,6 +1129,8 @@ var submitLicense = function () {
 };
 
 function submitLicenseWithAttachments() {
+
+
     var token = $('input[name="CSRFToken"]').attr('value');
     $.ajax(ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete", {
         method: "POST",
@@ -1333,6 +1243,7 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
 
     var sum = 0;
     var numberOfBranches = 0;
+    var numberOfHeadOffice = 0;
 
     financialSurvey.branches.forEach(function(branch) {
         if(branch.volumeWeight != null  && branch.action !== '03') {
@@ -1340,13 +1251,28 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
             numberOfBranches ++;
         }
     });
-    if (sum !== 100 && numberOfBranches !== 0 ) {
+    //business team requested to remove this validation
+    /*if (sum !== 100 && numberOfBranches !== 0 ) {
+        $('#licenseAmendmentValidationDialogId').modal({
+            backdrop: "static",
+            keyboard: false
+        }).find('.modal-description').empty().text(getI18nText('finance.survey.validation.branchPerc.sum'));
+        return;
+    }*/
+
+    financialSurvey.branches.forEach(function(branch) {
+        if(branch.branchType != null  && branch.branchType === 'head_office' && branch.action !== '03') {
+            numberOfHeadOffice++ ;
+        }
+    });
+    if (numberOfHeadOffice > 1 ) {
         $('#licenseAmendmentValidationDialogId').modal({
             backdrop: "static",
             keyboard: false
         }).find('.modal-description').empty().text(getI18nText('finance.survey.validation.branchPerc.sum'));
         return;
     }
+
 
     var numberOfSubsidiaries = 0;
     financialSurvey.subsidiaries.forEach(function(subsidiary) {
@@ -1401,16 +1327,16 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
 
 var submitFinancialSurveyCompanyProfile = function () {
 
-    if (SAGIA.financialSurvey.businessActivities.selectedActivities.length == 0) {
+   /* if (SAGIA.financialSurvey.businessActivities.selectedActivities.length == 0) {
         $('#licenseAmendmentValidationDialogId').modal({
             backdrop: "static",
             keyboard: false
         }).find('.modal-description').empty().text(getI18nText('financial.survey.validation.businessActivities'));
         return;
-    }
+    }*/
 
     populateCompanyProfile();
-    var selectedActivities = SAGIA.financialSurvey.businessActivities.selectedActivities;
+    /*var selectedActivities = SAGIA.financialSurvey.businessActivities.selectedActivities;
     var selectedActivitiesIds = [];
     selectedActivities.forEach(function(activity) {
         selectedActivitiesIds.push(activity.activityId);
@@ -1422,7 +1348,7 @@ var submitFinancialSurveyCompanyProfile = function () {
             id: activity.activityId,
             description: activity.description
         });
-    });
+    });*/
 
    // var timerId = setInterval(function () {
         var token = $('input[name="CSRFToken"]').attr('value');
@@ -1527,12 +1453,18 @@ function setLicenseData(data, history) {
     $('#financeManagerTelephoneId').val(companyProfile.financeManagerTelephone);
     $('#crIssueDate').val(companyProfile.crIssueDate);
     $('#incorporationDate').val(companyProfile.incorporationDate);
-    $('#comppanyPaidUpCapitalCurrentQuarterId').val(financialSurvey.paidUpCapitalCurrentQuarter);
+    $('#comppanyPaidUpCapitalCurrentQuarterId').val(financialSurvey.shareholderEquity.paidUpCapitalCurrentQuarter);
 
-    fillShareholderEquityData(financialSurvey.shareholderEquity)
+    fillShareholderEquityData(financialSurvey.shareholderEquity);
+    fillShareholderEquityPrevQuarterData(financialSurvey.shareholderEquity);
 
     updateDropDown('#companyStatusId', financialSurvey.companyStatus);
     updateDropDown('#disclosureCurrencyId', financialSurvey.disclosureCurrency);
+
+     updateDropDownwithoutTriggerChange('#sectionId', financialSurvey.economicActivitySection);
+     //loadIsicValues(financialSurvey.economicActivityDivision,financialSurvey.economicActivityGroup, financialSurvey.economicActivityClass, financialSurvey.economicActivityBranch, financialSurvey.economicActivity);
+      loadIsicValues(financialSurvey);
+
 
     $('#suspensionDateId').val(financialSurvey.suspensionDate);
 
@@ -1547,6 +1479,13 @@ function setLicenseData(data, history) {
         $('#subsidiarySection').hide();
     }
 
+    if (financialSurvey.isScaleLevelActualUnit) {
+        $("#actualUnitId").prop('checked',true);
+        $("#thousandsId").prop('checked',false);
+    }else {
+        $("#actualUnitId").prop('checked',false);
+        $("#thousandsId").prop('checked',true);
+    }
 
 
     var DELETE_ACTION = '03';
@@ -1584,12 +1523,13 @@ function setLicenseData(data, history) {
 
     financialSurvey.affiliates.forEach(function (affiliate) {
         if (affiliate.action !== DELETE_ACTION) {
-            var name = affiliate.name;
+            var name = affiliate.affiliateNameEnglish;
+            var country = affiliate.affiliateType === '1' ? affiliate.affiliateCountryDescription : affiliate.companyCountryDescription ;
             var type = affiliate.affiliateType === '1' ? getI18nText("general.individual") : getI18nText("general.entity");
 
 
             var $affiliateRow = $affiliateRowTemplate.clone(true).show();
-            $affiliateRow.attr("id", affiliate.srId ? affiliate.srId : affiliate.newItemId).children().first().text(name).next().text(type);
+            $affiliateRow.attr("id", affiliate.srId ? affiliate.srId : affiliate.newItemId).children().first().text(name).next().text(type).next().text(country);
             setColorForDraftRow($affiliateRow, affiliate.action);
             $affiliatesTable.append($affiliateRow);
         }
@@ -1626,7 +1566,7 @@ function setLicenseData(data, history) {
         //            $branchRow.find('.deleteDropdown').show();
         //    }
 
-
+            SAGIA.financialSurvey.branch.dataTable.row.add($branchRow).draw();
             $branchesTable.append($branchRow);
         }
     });
@@ -1660,6 +1600,8 @@ function setLicenseData(data, history) {
             $subsidiaryRow.find('.deleteDropdown').show();
 
         $subsidiariesTable.append($subsidiaryRow);
+        SAGIA.financialSurvey.subsidiary.dataTable.row.add($subsidiaryRow).draw();
+
         }
     });
 
@@ -1757,6 +1699,17 @@ function setupDropDowns(data) {
             $branchCitySelect.append(new Option(city.name, city.id, false, false));
         }
     });
+
+
+    var $sectionSelect = $('#sectionId').append(new Option('', '', false, false));
+    data.sections.forEach(function (section) {
+        $sectionSelect.append(new Option(section.id.concat(" : ", section.name), section.id, false, false));
+
+
+    });
+
+
+
 }
 
 var updateCities = function () {
@@ -1770,6 +1723,430 @@ var updateCities = function () {
         }
     });
 };
+
+
+var loadIsicValues = function (financialSurvey) {
+
+
+
+
+    var selectedSectionId = $('#sectionId option:selected').val();
+
+    if (selectedSectionId !== ""  ) {
+
+        var $divisionIdSelect = $('#divisionId').empty();
+        $divisionIdSelect.append(new Option('', '', false, false));
+        if(financialSurvey.economicActivityListDivision != null) {
+            financialSurvey.economicActivityListDivision.forEach(function (currentValue) {
+                $divisionIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description) , currentValue.code, false, false));
+            });
+            updateDropDownwithoutTriggerChange('#divisionId', financialSurvey.economicActivityDivision);
+
+        }
+
+
+        var $groupIdSelect = $('#groupId').empty();
+        $groupIdSelect.append(new Option('', '', false, false));
+
+        if(financialSurvey.economicActivityListGroup != null) {
+            financialSurvey.economicActivityListGroup.forEach(function (currentValue) {
+                $groupIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+            });
+            updateDropDownwithoutTriggerChange('#groupId', financialSurvey.economicActivityGroup);
+        }
+
+        var $classIdSelect = $('#classId').empty();
+        $classIdSelect.append(new Option('', '', false, false));
+
+        if(financialSurvey.economicActivityListClass != null) {
+            financialSurvey.economicActivityListClass.forEach(function (currentValue) {
+                $classIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+            });
+            updateDropDownwithoutTriggerChange('#classId', financialSurvey.economicActivityClass);
+        }
+
+        var $branchIdSelect = $('#branchId').empty();
+        $branchIdSelect.append(new Option('', '', false, false));
+
+        if(financialSurvey.economicActivityListBranch != null) {
+            financialSurvey.economicActivityListBranch.forEach(function (currentValue) {
+                $branchIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+            });
+            updateDropDownwithoutTriggerChange('#branchId', financialSurvey.economicActivityBranch);
+        }
+
+
+        var $activityIdSelect = $('#activityId').empty();
+        $activityIdSelect.append(new Option('', '', false, false));
+
+        if(financialSurvey.economicListActivity != null) {
+            financialSurvey.economicListActivity.forEach(function (currentValue) {
+                $activityIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+            });
+            updateDropDownwithoutTriggerChange('#activityId', financialSurvey.economicActivity);
+        }
+
+
+    }
+
+    $("#branchRegionId").change(updateCities);
+    $("#subsidiaryRegionId").change(updateCities);
+    $("#sectionId").change(updateDivisions);
+    $("#divisionId").change(updateGroups);
+    $("#groupId").change(updateClass);
+    $("#classId").change(updateBranch);
+    $("#branchId").change(updateActivity);
+
+
+
+
+
+
+
+
+
+};
+
+var loadGroups = function (selectedDivision, selectedGroup, selectedClass ,selectedBranch, selectedActivity) {
+
+
+    var $groupIdSelect = $('#groupId').empty();
+    $groupIdSelect.append(new Option('', '', false, false));
+
+    if (selectedDivision !== ""  ) {
+        $.ajax(ACC.config.encodedContextPath +"/my-sagia/license/isicGroup/" + selectedDivision, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+                var jsonData = JSON.parse(data);
+                $groupIdSelect.find("option").remove();
+                $groupIdSelect.append(new Option("", "", false, false));
+
+                if(jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $groupIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+
+                if(selectedGroup !== null ){
+
+                    updateDropDownwithoutTriggerChange('#groupId', selectedGroup);
+
+                    loadClass(selectedGroup, selectedClass, selectedBranch, selectedActivity);
+                }
+            }
+        });
+    }
+
+};
+
+var loadClass = function (selectedGroup, selectedClass, selectedBranch, selectedActivity) {
+
+
+
+    var $classIdSelect = $('#classId').empty();
+    $classIdSelect.append(new Option('', '', false, false));
+
+    if (selectedGroup !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicClass/" + selectedGroup, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $classIdSelect.find("option").remove();
+                $classIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $classIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+
+                if(selectedClass !== null ){
+
+                    updateDropDownwithoutTriggerChange('#classId', selectedClass);
+                    loadBranch(selectedClass, selectedBranch, selectedActivity);
+                }
+            }
+        });
+    }
+
+};
+
+
+
+var loadBranch = function (selectedClass, selectedBranch, selectedActivity) {
+
+
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+    if (selectedClass !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicBranch/" + selectedClass, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $branchIdSelect.find("option").remove();
+                $branchIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $branchIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+
+                if(selectedBranch !== null ){
+
+                    updateDropDownwithoutTriggerChange('#branchId', selectedBranch);
+                    loadActivity(selectedBranch, selectedActivity);
+                }
+            }
+        });
+    }
+
+};
+
+
+
+var loadActivity = function (selectedBranch, selectedActivity) {
+
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    if (selectedBranch !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicActivity/" + selectedBranch, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $activityIdSelect.find("option").remove();
+                $activityIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $activityIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+
+                if(selectedActivity !== null ){
+
+                    updateDropDownwithoutTriggerChange('#activityId', selectedActivity);
+                }
+            }
+        });
+    }
+
+};
+
+
+var updateDivisions = function () {
+    var selectedSectionId = $('#sectionId option:selected').val();
+
+
+    var $divisionIdSelect = $('#divisionId').empty();
+    $divisionIdSelect.append(new Option('', '', false, false));
+
+    // Void next levels
+    var $groupIdSelect = $('#groupId').empty();
+    $groupIdSelect.append(new Option('', '', false, false));
+
+    var $classIdSelect = $('#classId').empty();
+    $classIdSelect.append(new Option('', '', false, false));
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    // End void Group
+
+    if (selectedSectionId !== ""  ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicDivisionsQDF/na/" + selectedSectionId, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+                var jsonData = JSON.parse(data);
+                $divisionIdSelect.find("option").remove();
+                $divisionIdSelect.append(new Option("", "", false, false));
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $divisionIdSelect.append(new Option(currentValue.divisionNumber.concat(" : ", currentValue.divisionDescription), currentValue.divisionNumber, false, false));
+                    });
+                }
+
+
+            }
+        });
+    }
+
+};
+
+
+var updateGroups = function () {
+    var selectedDivisionId = $('#divisionId option:selected').val();
+
+    var $groupIdSelect = $('#groupId').empty();
+    $groupIdSelect.append(new Option('', '', false, false));
+
+
+    // Void next levels
+
+    var $classIdSelect = $('#classId').empty();
+    $classIdSelect.append(new Option('', '', false, false));
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    // End void Group
+
+    if (selectedDivisionId !== ""  ) {
+        $.ajax(ACC.config.encodedContextPath +"/my-sagia/license/isicGroup/" + selectedDivisionId, {
+        type: "GET",
+        responseType: "application/json;charset=utf-8",
+        contentType: "application/json;charset=utf-8",
+        cache: false,
+        success: function (data) {
+            var jsonData = JSON.parse(data);
+            $groupIdSelect.find("option").remove();
+            $groupIdSelect.append(new Option("", "", false, false));
+
+            if(jsonData !== null) {
+                   jsonData.forEach(function (currentValue) {
+                    $groupIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                });
+            }
+        }
+    });
+    }
+
+};
+
+
+var updateClass = function () {
+    var selectedGroupId = $('#groupId option:selected').val();
+
+    var $classIdSelect = $('#classId').empty();
+    $classIdSelect.append(new Option('', '', false, false));
+
+
+    // Void next levels
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    // End void Group
+
+    if (selectedGroupId !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicClass/" + selectedGroupId, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $classIdSelect.find("option").remove();
+                $classIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $classIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+            }
+        });
+    }
+
+};
+
+
+var updateBranch = function () {
+    var selectedClassId = $('#classId option:selected').val();
+
+    var $branchIdSelect = $('#branchId').empty();
+    $branchIdSelect.append(new Option('', '', false, false));
+
+
+    // Void next levels
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    // End void Group
+
+    if (selectedClassId !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicBranch/" + selectedClassId, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $branchIdSelect.find("option").remove();
+                $branchIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $branchIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+            }
+        });
+    }
+
+};
+
+
+
+var updateActivity = function () {
+    var selectedBranchId = $('#branchId option:selected').val();
+
+    var $activityIdSelect = $('#activityId').empty();
+    $activityIdSelect.append(new Option('', '', false, false));
+
+    if (selectedBranchId !== "" ) {
+        $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/isicActivity/" + selectedBranchId, {
+            type: "GET",
+            responseType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            cache: false,
+            success: function (data) {
+
+                $activityIdSelect.find("option").remove();
+                $activityIdSelect.append(new Option("", "", false, false));
+                var jsonData = JSON.parse(data);
+                if (jsonData !== null) {
+                    jsonData.forEach(function (currentValue) {
+                        $activityIdSelect.append(new Option(currentValue.code.concat(" : ", currentValue.description), currentValue.code, false, false));
+                    });
+                }
+            }
+        });
+    }
+
+};
+
+
+
 
 
 var adjustNewItemIdVariable = function () {

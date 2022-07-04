@@ -1,6 +1,8 @@
+var SAGIA = SAGIA || {};
+
 !(function($) {
 	"use strict";
-
+  
 	// Preloader
 	// $(window).on('load', function() {
 	//   if ($('#preloader').length) {
@@ -14,11 +16,11 @@
 	if(window.location.pathname === "/" || window.location.pathname === ""){
 		window.location.href = window.location.href + lang;
 	}
-
+	
 	if(window.location.href.indexOf('recaptchaChallangeAnswered=false') >= 0){
 		 var errorModal = $('#errorResponseModal');
          errorModal.find('.modal-description').text('Invalid Captcha, Please try again');
-         errorModal.modal('show');
+         errorModal.modal('show');	
 	}
 
 	// Smooth scroll for the navigation menu and links with .scrollto classes
@@ -28,22 +30,22 @@
 		var target = $(this.hash);
 		if (target.length) {
 		  e.preventDefault();
-
+  
 		  var scrollto = target.offset().top - scrolltoOffset;
-
+  
 		  if ($(this).attr("href") == '#header') {
 			scrollto = 0;
 		  }
-
+  
 		  $('html, body').animate({
 			scrollTop: scrollto
 		  }, 1500, 'easeInOutExpo');
-
+  
 		  if ($(this).parents('.nav-menu, .mobile-nav').length) {
 			$('.nav-menu .active, .mobile-nav .active').removeClass('active');
 			$(this).closest('li').addClass('active');
 		  }
-
+  
 		  if ($('body').hasClass('mobile-nav-active')) {
 			$('body').removeClass('mobile-nav-active');
 			$('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
@@ -53,7 +55,7 @@
 		}
 	  }
 	});
-
+  
 	// Activate smooth scroll on page load with hash links in the url
 	// $(document).ready(function() {
 	//   if (window.location.hash) {
@@ -66,7 +68,7 @@
 	// 	}
 	//   }
 	// });
-
+  
 	// Mobile Navigation
 	if ($('.nav-menu').length) {
 	  var $mobile_nav = $('.nav-menu').clone().prop({
@@ -75,19 +77,19 @@
 	  $('body').append($mobile_nav);
 	  $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
 	  $('body').append('<div class="mobile-nav-overly"></div>');
-
+  
 	  $(document).on('click', '.mobile-nav-toggle', function(e) {
 		$('body').toggleClass('mobile-nav-active');
 		$('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
 		$('.mobile-nav-overly').toggle();
 	  });
-
+  
 	  $(document).on('click', '.mobile-nav .drop-down > a', function(e) {
 		e.preventDefault();
 		$(this).next().slideToggle(300);
 		$(this).parent().toggleClass('active');
 	  });
-
+  
 	  $(document).click(function(e) {
 		var container = $(".mobile-nav, .mobile-nav-toggle");
 		if (!container.is(e.target) && container.has(e.target).length === 0) {
@@ -101,24 +103,24 @@
 	} else if ($(".mobile-nav, .mobile-nav-toggle").length) {
 	  $(".mobile-nav, .mobile-nav-toggle").hide();
 	}
-
+    
 	// Mobile nav link
-
+	
 	var twit_lk='/';
 	$('.mobile-nav').append('<div class="mobile-nav-logo"></div>');
 	$('.mobile-nav-logo').wrap('<a class="mobile-nav-Icon" href="'+twit_lk+'"/>');
-
+  
 	// Navigation active state on scroll
 	var nav_sections = $('section');
 	var main_nav = $('.nav-menu, #mobile-nav');
-
+  
 	$(window).on('scroll', function() {
 	  var cur_pos = $(this).scrollTop() + 200;
-
+  
 	  nav_sections.each(function() {
 		var top = $(this).offset().top,
 		  bottom = top + $(this).outerHeight();
-
+  
 		if (cur_pos >= top && cur_pos <= bottom) {
 		  if (cur_pos <= bottom) {
 			main_nav.find('li').removeClass('active');
@@ -130,7 +132,7 @@
 		}
 	  });
 	});
-
+  
 	// Toggle .header-scrolled class to #header when page is scrolled
 	// // Back to top button
 	// $(window).scroll(function() {
@@ -140,7 +142,7 @@
 	// 	$('.back-to-top').fadeOut('slow');
 	//   }
 	// });
-
+  
 	// $('.back-to-top').click(function() {
 	//   $('html, body').animate({
 	// 	scrollTop: 0
@@ -161,12 +163,12 @@
 	});
 
   })(jQuery);
-//  -------------------------------------------------------------------------------------------------------------------------
+//  ------------------------------------------------------------------------------------------------------------------------- 
 
 // ------------------------------------------------------------------------------------------------------------------------
 
   $(document).ready(function(){
-    // Floating Button
+    // Floating Button 
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 100) {
 		  $('#header').addClass('header-scrolled');
@@ -178,7 +180,7 @@
 		  $('#login-Navigation').removeClass('login-scrolled');
 		}
 	  });
-
+	
 	  if ($(window).scrollTop() > 100) {
 		$('#header').addClass('header-scrolled');
 		$('#topbar').addClass('topbar-scrolled');
@@ -196,43 +198,43 @@
 });
 
 $(document).ready(function () {
-
+  
   $('#spc_inc-pills-home-tab').click(function(){
 	$('.mg-slider').removeClass("slider-1");
 	$('.mg-slider').removeClass("slider-2 ");
 	$('.mg-slider').removeClass("slider-3 ");
 	$('.mg-slider').addClass("slider-0 ");
   });
-
+  
   $('#spc_inc-pills-profile-tab').click(function(){
 	$('.mg-slider').removeClass("slider-0 ");
 	$('.mg-slider').removeClass("slider-2 ");
 	$('.mg-slider').removeClass("slider-3 ");
 	$('.mg-slider').addClass("slider-1 ");
   });
-
+  
   $('#spc_inc-pills-contact-tab').click(function(){
 	$('.mg-slider').removeClass("slider-0");
 	$('.mg-slider').removeClass("slider-1 ");
 	$('.mg-slider').removeClass("slider-3 ");
 	$('.mg-slider').addClass("slider-2 ");
   });
-
+  
   $('#spc_inc-pills-test-tab').click(function(){
 	$('.mg-slider').removeClass("slider-0");
 	$('.mg-slider').removeClass("slider-1 ");
 	$('.mg-slider').removeClass("slider-2 ");
 	$('.mg-slider').addClass("slider-3 ");
-  });
+  }); 	 
 	//   // when the modal is opened...
 	//   $('#videoModal').on('show.bs.modal', function () {
-	// 	// call play() on the <video> DOM element
+	// 	// call play() on the <video> DOM element 
 	// 	$('#video-gpro')[0].play()
 	//   })
-
+  
 	//   // when the modal is opened...
 	//   $('#videoModal').on('hide.bs.modal', function () {
-	// 	// call pause() on the <video> DOM element
+	// 	// call pause() on the <video> DOM element 
 	// 	$('#video-gpro')[0].pause()
 	//   })
 
@@ -293,30 +295,30 @@ $(document).ready(function(){
 	  function Neom() {
 		document.getElementById("slider-0").style.display = "block";
 		document.getElementById("slider-1").style.display = "none";
-		document.getElementById("slider-2").style.display = "none";
-		document.getElementById("slider-3").style.display = "none";
+		document.getElementById("slider-2").style.display = "none"; 
+		document.getElementById("slider-3").style.display = "none"; 
 	  }
 	  function TheRedSea() {
 		document.getElementById("slider-0").style.display = "none";
 		document.getElementById("slider-1").style.display = "block";
-		document.getElementById("slider-2").style.display = "none";
-		document.getElementById("slider-3").style.display = "none";
+		document.getElementById("slider-2").style.display = "none"; 
+		document.getElementById("slider-3").style.display = "none"; 
 	  }
 	  function Quiddiya() {
 		document.getElementById("slider-0").style.display = "none";
 		document.getElementById("slider-1").style.display = "none";
-		document.getElementById("slider-2").style.display = "block";
-		document.getElementById("slider-3").style.display = "none";
+		document.getElementById("slider-2").style.display = "block"; 
+		document.getElementById("slider-3").style.display = "none"; 
 	  }
 	  function Amala() {
 		document.getElementById("slider-0").style.display = "none";
 		document.getElementById("slider-1").style.display = "none";
-		document.getElementById("slider-2").style.display = "none";
-		document.getElementById("slider-3").style.display = "block";
+		document.getElementById("slider-2").style.display = "none"; 
+		document.getElementById("slider-3").style.display = "block"; 
 	  }
 
-	  (function(){
-
+	  (function(){ 
+  
 		$('.reasons .flex-container').mouseenter(function() {
 			$(this).addClass("active");
 			$('.flex-slide').addClass("blur");
@@ -325,30 +327,30 @@ $(document).ready(function(){
 			$('.flex-slide').removeClass("blur");
 		});
 	$(".reasons .flex-slide").each(function(){
-			$(this).hover(function(){
+			$(this).hover(function(){   
 			  $(this).addClass("active");
-
+	  
 				$(this).find('.flex-title').css({
 					top: '56%'
 				});
 				$(this).find('.flex-about').css({
 					opacity: '1'
 				});
-
+				
 			}, function(){
 			  $(this).removeClass("active");
 				$(this).find('.flex-title').css({
-					top: '56%'
+					top: '56%' 
 				});
 				 $(this).find('.flex-about').css({
-				   opacity: '0'
-				});
+				   opacity: '0' 
+				}); 
 			})
 		});
 	  })();
-
-	//    (function(){
-
+	  
+	//    (function(){ 
+		
 	// 	$('.feature .flex-container').mouseenter(function() {
 	// 		$(this).addClass("active");
 	// 		$('.flex-slide').addClass("blur");
@@ -357,47 +359,47 @@ $(document).ready(function(){
 	// 		$('.flex-slide').removeClass("blur");
 	// 	});
 	// 	$(".feature .flex-slide").each(function(){
-	// 		$(this).hover(function(){
+	// 		$(this).hover(function(){   
 	// 		  $(this).addClass("active");
-
+	  
 	// 			$(this).find('.flex-title').css({
 	// 				top: '85%'
 	// 			});
 	// 			$(this).find('.flex-about').css({
 	// 				opacity: '1'
 	// 			});
-
+				
 	// 		}, function(){
 	// 		  $(this).removeClass("active");
 	// 			$(this).find('.flex-title').css({
-	// 				top: '85%'
+	// 				top: '85%' 
 	// 			});
 	// 			 $(this).find('.flex-about').css({
-	// 			   opacity: '0'
-	// 			});
+	// 			   opacity: '0' 
+	// 			}); 
 	// 		})
 	// 	});
 	//   })();
-
+	  
 	  function myFunctionrightside(){
 		var x = document.getElementById("numberss");
-		var y = document.getElementById("right").classList.add('rightsideshow');
-		var y = document.getElementById("firstimg").classList.add('showss');
-		var y = document.getElementById("secondimg").classList.remove('showss');
+		var y = document.getElementById("right").classList.add('rightsideshow'); 
+		var y = document.getElementById("firstimg").classList.add('showss');  
+		var y = document.getElementById("secondimg").classList.remove('showss'); 
 		if (x.innerHTML === "01-04") {
 			x.innerHTML = "05-07";
-		}
+		} 
 	  }
 	  function myFunctionleftside(){
-		var x = document.getElementById("numberss");
-		var y = document.getElementById("right").classList.remove('rightsideshow');
-		var y = document.getElementById("secondimg").classList.add('showss');
-		var y = document.getElementById("firstimg").classList.remove('showss');
+		var x = document.getElementById("numberss"); 
+		var y = document.getElementById("right").classList.remove('rightsideshow'); 
+		var y = document.getElementById("secondimg").classList.add('showss'); 
+		var y = document.getElementById("firstimg").classList.remove('showss');  
 		if (x.innerHTML === "05-07") {
 			x.innerHTML = "01-04";
-		}
-	  }
-
+		} 
+	  } 
+	
 	  $('.pol-item .poly-item').click(function() {
 		$('.pol-item .poly-item.active').removeClass('active');
 		$(this).addClass('active');
@@ -419,7 +421,7 @@ $(document).ready(function(){
 		$('.where-to-invest-main-wrapper').removeClass("img-11 ");
 		$('.where-to-invest-main-wrapper').removeClass("img-12 ");
 	  });
-
+	  
 	  $('#poly8').click(function(){
 		$('.where-to-invest-main-wrapper').removeClass("img-0");
 		$('.where-to-invest-main-wrapper').addClass("img-1");
@@ -434,9 +436,9 @@ $(document).ready(function(){
 		$('.where-to-invest-main-wrapper').removeClass("img-10 ");
 		$('.where-to-invest-main-wrapper').removeClass("img-11 ");
 		$('.where-to-invest-main-wrapper').removeClass("img-12 ");
-
+		
 	  });
-
+	  
 	  $('#poly12').click(function(){
 		$('.where-to-invest-main-wrapper').removeClass("img-0");
 		$('.where-to-invest-main-wrapper').addClass("img-1");
@@ -452,11 +454,11 @@ $(document).ready(function(){
 		$('.where-to-invest-main-wrapper').removeClass("img-11 ");
 		$('.where-to-invest-main-wrapper').removeClass("img-12 ");
 	  });
-
+      
 
 	  $('.Inc-sectordetails-tab> ul>li:nth-child(1)').addClass("active");
 	  $('.sector-tab-content> .tab-items:nth-child(1)').addClass("active");
-
+      
 	  $('.Inc-sectordetails-tab> ul>li').click(function() {
 		$('.Inc-sectordetails-tab> ul>li').removeClass("active");
 		$(this).addClass('active');
@@ -474,7 +476,7 @@ $(document).ready(function(){
 		$('.sector-tab-content> .tab-items:nth-child(2)').addClass("active");
 		$('.sector-tab-content> .tab-items:nth-child(3)').removeClass("active");
 		event.preventDefault()
-
+		
 	  });
 
 	  $('.Inc-sectordetails-tab> ul>li:nth-child(3)').click(function(){
@@ -488,7 +490,7 @@ $(document).ready(function(){
 
 	$('.Inc-tab-panel> ul>li:nth-child(1)> a').addClass("active");
 	  $('.key-reason-invest .tab-content> .tab-pane:nth-child(1)').addClass("active");
-
+      
 	  $('.Inc-tab-panel> ul>li> a').click(function() {
 		$('.Inc-tab-panel> ul>li> a').removeClass("active");
 		$(this).addClass('active');
@@ -644,7 +646,7 @@ $(document).ready(function() {
 		// 	setTimeout(function(){
 		// 		$(this).removeClass("show").removeClass("active");
 		// 	},300);
-
+			
 		// }
 	});
 	$(".dropdown-menu li a").click(function(){
@@ -662,76 +664,76 @@ $(document).ready(function() {
 			$(this).siblings().toggleClass('is-disabled');
 		}
 	  );
-
+		
 	});
-
-	$(document).ready(function() {
-
+	
+	$(document).ready(function() {	
+		
 		$('article.showinset').click(function() {
 			$(this).addClass('active');
 			$(this).removeClass('is-disabled');
 			$(this).siblings().addClass('is-disabled');
 		});
-
+	
 	});
-
-
-	$(document).ready(function(){
-
+	
+	
+	$(document).ready(function(){ 
+	
 		var i = 0;
 		var j = 0;
-
-		$("article.showinset").each( function() {
-			   $(this).attr("data-slide-to", +i);
-			   $(this).attr("id", '#article-'+i);
-			   $(this).attr("class", 'showinset article_fun-'+i);
-			i++;
-		});
-		$(".sector-box").each( function() {
-			$(this).attr("data-slide-to", +j);
-			$(this).attr( "id", '#hover-' +j);
-			$(this).attr( "class", 'sector-box hover-' +j);
-			j++;
-		});
+	
+		$("article.showinset").each( function() { 
+			   $(this).attr("data-slide-to", +i); 
+			   $(this).attr("id", '#article-'+i);  
+			   $(this).attr("class", 'showinset article_fun-'+i); 
+			i++;  
+		}); 
+		$(".sector-box").each( function() { 
+			$(this).attr("data-slide-to", +j); 
+			$(this).attr( "id", '#hover-' +j); 
+			$(this).attr( "class", 'sector-box hover-' +j); 
+			j++;  
+		});   
 		$('article.showinset').first().addClass('active');
 		$('article.showinset').first().siblings().addClass('is-disabled');
-		$('.sector-box').first().addClass('active');
+		$('.sector-box').first().addClass('active');  
 		// $('.Inc-sector-panel').addClass('sectors__backgroundImage_1');
-
-	});
-
+	
+	});  
+	
 	$(document).ready(function() {
 		var elmsall = document.getElementsByClassName("showinset");
-		var nall = elmsall.length
-
-		for(var i = 0; i < nall; ++i) {
-			var art = ['#article-'+i];
-
+		var nall = elmsall.length 
+	
+		for(var i = 0; i < nall; ++i) { 
+			var art = ['#article-'+i]; 
+	 
 			i = i-1;
-			i++;
-		}
-
+			i++; 
+		} 
+	
 		$('.showinset').click(function() {
 			//console.log(this.id);
 			//alert(this.id);
-			var nums = this.id.split('-')[1];
+			var nums = this.id.split('-')[1]; 
 			var actives = '.sector-box.hover-'+nums;
-
-			var addone = nums++;
-
+	
+			var addone = nums++; 
+	 
 			$('.sector-box').first().removeClass('active');
-			$( ".sector-box" ).siblings().removeClass('active');
-			//$( ".showinset" ).siblings().removeClass('active');
-			//$('.Inc-sector-panel').siblings().removeClass('sectors__backgroundImage_1')
+			$( ".sector-box" ).siblings().removeClass('active'); 
+			//$( ".showinset" ).siblings().removeClass('active'); 
+			//$('.Inc-sector-panel').siblings().removeClass('sectors__backgroundImage_1') 
 			if(nums === nums){
 				$('.sector-box.hover-'+addone).toggleClass("active");
 				//$('.Inc-sector-panel').addClass('sectors__backgroundImage_'+addone);
 			}
 		});
-
+	
 	});
 
-$(document).ready(function(){
+$(document).ready(function(){  
 	var i = 0;
 	$("#carouselExampleControls .carousel-indicators li").each( function() {
 	$(this).attr("data-slide-to", +i);
@@ -743,12 +745,12 @@ $(document).ready(function(){
 
 // Contact Map SVG
 
-function fun() {
+function fun() {  
 	$('.show').popover({
 		html:true
 	});
-	$('.show').not(this).popover('hide');
-}
+	$('.show').not(this).popover('hide'); 
+}  
 
 
 var $links = $( '.links' ).find( 'a' );
@@ -765,11 +767,11 @@ $links.on( 'click', function ( e ) {
 
 // Megamneu expand
 $(document).ready(function () {
-	$('.get_submenus').mouseover(function(){
-		$('.dropdown-large').addClass("show_height");
-	}).mouseout(function(){
-		$('.dropdown-large').removeClass("show_height");
-	});
+	$('.get_submenus').mouseover(function(){ 
+		$('.dropdown-large').addClass("show_height"); 
+	}).mouseout(function(){ 
+		$('.dropdown-large').removeClass("show_height"); 
+	}); 
 });
 
 //regions map--------------------------------
@@ -777,7 +779,7 @@ $('.province_region_container> .province_region_innercontainer> .item:nth-child(
 $('.province_region_container> .province_region_innercontainer> .item:nth-child(1)').siblings().css("display","none");
 
 $(document).ready(function() {
-
+	
 	$('.region-map .map-inner').on('click', 'a', function() {
 		$('.region-map .map-inner> a.active').removeClass('active');
 		$(this).addClass('active');
@@ -787,8 +789,8 @@ $(document).ready(function() {
 		$(this).addClass('active');
 		$(this).siblings().removeClass('active');
 	});
-
-
+	
+	
 
 });
 
@@ -816,7 +818,7 @@ $('body').on('click', function (e) {
 		$('.logis_show').popover({
 			html:true
 		});
-
+						
 	});
 });
 
@@ -824,9 +826,9 @@ $('body').on('click', function (e) {
 /****sector page - sub sectors are left aligned start***/
 $(document).ready(function() {
 	$('.Inc-sectordetails-tab').addClass(function() {
-		return 'Inc_two_width_' + $('.Inc-sectordetails-tab li.nav-item').length;
-	});
-
+		return 'Inc_two_width_' + $('.Inc-sectordetails-tab li.nav-item').length; 
+	}); 
+	
 	// Featured oppetunities
     $('.feature-tab .nav-tabs a').click(function(){
 		$('.feature-tab-content .tab-pane').toggleClass("active");
@@ -837,24 +839,24 @@ $(document).ready(function() {
 
 function myFunctionrightside(){
 	var x = document.getElementById("numberss");
-	var y = document.getElementById("right").classList.add('rightsideshow');
-	var y = document.getElementById("firstimg").classList.add('showss');
-	var y = document.getElementById("secondimg").classList.remove('showss');
+	var y = document.getElementById("right").classList.add('rightsideshow'); 
+	var y = document.getElementById("firstimg").classList.add('showss');  
+	var y = document.getElementById("secondimg").classList.remove('showss'); 
 	if (x.innerHTML === "01-04") {
 		x.innerHTML = "05-07";
-	}
+	} 
 }
 function myFunctionleftside(){
-	var x = document.getElementById("numberss");
-	var y = document.getElementById("right").classList.remove('rightsideshow');
-	var y = document.getElementById("secondimg").classList.add('showss');
-	var y = document.getElementById("firstimg").classList.remove('showss');
+	var x = document.getElementById("numberss"); 
+	var y = document.getElementById("right").classList.remove('rightsideshow'); 
+	var y = document.getElementById("secondimg").classList.add('showss'); 
+	var y = document.getElementById("firstimg").classList.remove('showss');  
 	if (x.innerHTML === "05-07") {
 		x.innerHTML = "01-04";
-	}
-}
+	} 
+} 
 
-// RHQ
+// RHQ 
 
 var $RHQ_links = $( '.RHQ_links' ).find( 'a' );
 
@@ -939,7 +941,7 @@ $(document).ready(function () {
 		$(".selected").each(function() {
 			selectedSectorsList.push({sectorName:$(this).attr("data-sectorName")});
 		});
-
+		
 		console.log("sectorList", selectedSectorsList);
 	});
 	$(".next-page").hover(function(){
@@ -1184,7 +1186,7 @@ $(document).ready(function () {
 			else {
 				value = $.trim($(this).val());
 			}
-
+			
 			if ( value== null || value == 0 || value=="Purpose of Contacting") {
 				valid = false;
 				$(this).addClass('error');
@@ -1299,7 +1301,7 @@ $(document).ready(function () {
 		}
 
 		if(ctrl[0].id === "popup-contact-form"){
-			var recaptcha = $(".sector-page-download-captcha .g-recaptcha-response").val();
+			var recaptcha = $(".sector-page-download-captcha .g-recaptcha-response").val();		
 			var lblSectorErrorCaptcha = document.getElementById("lblSectorErrorCaptcha");
 			lblSectorErrorCaptcha.innerHTML = "";
 			if (recaptcha == "") {
@@ -1308,7 +1310,7 @@ $(document).ready(function () {
 			}
 		}
 		else if(ctrl[0].id === "corForm"){
-			var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();
+			var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();		
 			var lblSectorErrorCaptcha = document.getElementById("lblSectorPageErrorCaptcha");
 			lblSectorErrorCaptcha.innerHTML = "";
 			if (recaptcha == "") {
@@ -1316,7 +1318,7 @@ $(document).ready(function () {
 				valid = false;
 			}
 		}
-
+		
 		return valid;
 	}
 	var element = document.getElementsByClassName('btn-contact');
@@ -1342,7 +1344,7 @@ $(document).ready(function () {
         });
     }
 	// $(".map-area g").on("click", function () {
-	// 	if($(this).attr("id")){
+	// 	if($(this).attr("id")){	
 	// 		$(".map-area g").each(function() {
 	// 			if($(this).find("path").attr("fill") == "#BF9B2E"){
 	// 				$(this).find("path").attr("fill", "#025635");
@@ -1362,7 +1364,7 @@ $(document).ready(function () {
 	// 				$(this).find("path").attr("fill", "#BF9B2E");
 	// 			}
 	// 		});
-
+			
 	// 	}
     // });
 	function setActiveClientContainer() {
@@ -1401,24 +1403,26 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// chart.dateFormatter.dateFormat = "yyyy";
 		chart.numberFormatter.numberFormat = "#";
+        chart.maskBullets = false;
+
 
 
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "year";
-		categoryAxis.title.text = "Years";
+		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		categoryAxis.renderer.labels.template.fontSize = 16;
 		categoryAxis.renderer.minGridDistance = 30;
 
 		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 		// valueAxis.title.text = "Scores";
-		valueAxis.title.text = "Scores / Ranking";
+		valueAxis.title.text = getI18nText("bar.graph.scores.rankings");
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 
 		/* Create series */
 		if($('input[name="chartType"]:checked').val() == 'score'){
 			var columnSeries = chart.series.push(new am4charts.ColumnSeries());
-			columnSeries.name = "Score";
+			columnSeries.name = getI18nText("bar.graph.scores.rankings");
 			columnSeries.dataFields.valueY = "scoreValue";
 			columnSeries.dataFields.categoryX = "year";
 
@@ -1429,10 +1433,15 @@ $(document).ready(function () {
 			columnSeries.columns.template.propertyFields.strokeDasharray = "columnDash";
 			columnSeries.columns.template.fill = am4core.color("#025635");
 			columnSeries.tooltip.label.textAlign = "middle";
+
+			var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+            valueLabel.label.text = "{valueY}";
+            valueLabel.label.fontSize = 15;
+            valueLabel.label.dy = -10;
 		}
 		else {
 			var lineSeries = chart.series.push(new am4charts.LineSeries());
-			lineSeries.name = "Ranking";
+			lineSeries.name = getI18nText("bar.graph.ranking");
 			lineSeries.dataFields.valueY = "rankValue";
 			lineSeries.dataFields.categoryX = "year";
 
@@ -1449,9 +1458,9 @@ $(document).ready(function () {
 			circle.fill = am4core.color("#fff");
 			circle.strokeWidth = 3;
 		}
+		
 
-
-
+		
 
 		chart.legend = new am4charts.Legend();
 		var marker = chart.legend.markers.template.children.getIndex(0);
@@ -1464,17 +1473,49 @@ $(document).ready(function () {
 		var data = JSON.parse($("#Json-data").text());
 		renderIndicesCharts(data);
 	}
-	function renderLogisticsCharts(chartData){
+	function renderLogisticsCharts(data){
 		// console.log(chartData);
 		var chart = am4core.create("chartdiv", am4charts.XYChart);
 		am4core.addLicense("CH292550473");
 		chart.marginRight = 400;
-		chart.data = chartData;
+		chart.data = [
+            {
+                "networkName": data[0].networkName,
+                "networkValue": data[0].networkValue,
+            },
+            {
+                "networkName": data[1].networkName,
+                "networkValue": data[1].networkValue,
+            },
+            {
+                "networkName": data[2].networkName,
+                "networkValue": data[2].networkValue,
+            },
+            {
+                "networkName": data[3].networkName,
+                "networkValue": data[3].networkValue,
+            },
+            {
+                "networkName": data[4].networkName,
+                "networkValue": data[4].networkValue,
+            },
+            {
+                "networkName": data[5].networkName,
+                "networkValue": data[5].networkValue,
+            },
+            {
+                "networkName": data[6].networkName,
+                "networkValue": data[6].networkValue,
+            }
+            ];
+
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
+
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Length Of Network (Km)";
+		valueAxis.title.text = getI18nText("bar.graph.logistics.length.of.network");
 		// valueAxis.renderer.grid.template.strokeWidth = 0;
 		// Create axes
 		var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -1526,6 +1567,11 @@ $(document).ready(function () {
 		series.dataFields.categoryX = "networkName";
 		series.columns.template.fill = am4core.color("#025635");
 		series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+
+		var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{networkValue}";
+        valueLabel.label.fontSize = 12;
+        valueLabel.label.dy = -5;
 	}
 	if($("#logistics-json-data").text().length > 0){
 		var data = JSON.parse($("#logistics-json-data").text());
@@ -1551,18 +1597,20 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = [ {
-		"country": "Saudi",
+		"country": getI18nText("bar.graph.saudi"),
 		"population": data[0].saudi,
 		"color": am4core.color("#025635")
 		}, {
-		"country": "Non-Saudi",
+		"country": getI18nText("bar.graph.non.saudi"),
 		"population": data[0].nonSaudi,
 		"color": am4core.color("#BF9B2E")
-		}];
+		}];    
 
 		// Set inner radius
 		chart.innerRadius = am4core.percent(15);
 		chart.radius = am4core.percent(50);
+        chart.maskBullets = false;
+
 		// Add and configure Series
 		var pieSeries = chart.series.push(new am4charts.PieSeries());
 		pieSeries.dataFields.value = "population";
@@ -1595,30 +1643,32 @@ $(document).ready(function () {
 		var chart = am4core.create("rendergraduatesByDegreeChartDiv", am4charts.XYChart);
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
+
 		// Add data
 		chart.data = [
 			{
-			"degree": "Intermediate Diploma",
+			"degree": getI18nText("bar.graph.graduates.by.degree.intermediate.diploma"),
 			"value": data[0].intermediate
 			},
 			{
-			"degree": "Higher Diploma",
+			"degree": getI18nText("bar.graph.graduates.by.degree.higher.diploma"),
 			"value": data[0].diploma
 			},
 			{
-			"degree": "Bachelor",
+			"degree": getI18nText("bar.graph.graduates.by.degree.bachelor"),
 			"value": data[0].bachelor
 			},
 			{
-			"degree": "Master",
+			"degree": getI18nText("bar.graph.graduates.by.degree.master"),
 			"value": data[0].master
 			},
 			{
-			"degree": "Phd",
+			"degree": getI18nText("bar.graph.graduates.by.degree.phd"),
 			"value": data[0].phd
 			},
 			{
-			"degree": "Fellowship",
+			"degree": getI18nText("bar.graph.graduates.by.degree.fellowship"),
 			"value": data[0].fellowship
 			}];
 
@@ -1708,70 +1758,72 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		console.log(data);
+        chart.maskBullets = false;
+
 		// Add data
 		chart.data = [
 			{
-				"region": "Riyadh",
+				"region": getI18nText("bar.graph.city.name.riyadh"),
 				"value": data[0].riyadhPercentage,
 				"percentage": data[0].riyadhValue
 			},
 			{
-				"region": "Makkah",
+				"region": getI18nText("bar.graph.city.name.makkah"),
 				"value": data[0].makkahPercentage,
 				"percentage": data[0].makkahValue
 			},
 			{
-				"region": "Madinah",
+				"region": getI18nText("bar.graph.city.name.madinah"),
 				"value": data[0].almadinaPercentage,
 				"percentage": data[0].almadinahValue
 			},
 			{
-				"region": "Qassim",
+				"region": getI18nText("bar.graph.city.name.qassim"),
 				"value": data[0].alqassimPercentage,
 				"percentage": data[0].alqassimValue
 			},
 			{
-				"region": "Eastern Region",
+				"region": getI18nText("bar.graph.city.name.eastern") ,
 				"value": data[0].easternPercentage,
 				"percentage": data[0].easternValue
 			},
 			{
-				"region": "Assir",
+				"region": getI18nText("bar.graph.city.name.assir"),
 				"value": data[0].asirPercentage,
 				"percentage": data[0].asirValue
 			},
 			{
-				"region": "Tabuk",
+				"region": getI18nText("bar.graph.city.name.tabuk"),
 				"value": data[0].tabukPercentage,
 				"percentage": data[0].tabukValue
 			},
 			{
-				"region": "Hail",
+				"region": getI18nText("bar.graph.city.name.hail"),
 				"value": data[0].hailPercentage,
 				"percentage": data[0].hailValue
 			},
 			{
-				"region": "Northern borders",
+				"region": getI18nText("bar.graph.city.name.northern"),
 				"value": data[0].northernPercentage,
 				"percentage": data[0].northernValue
 			},
 			{
-				"region": "Jazan",
+				"region": getI18nText("bar.graph.city.name.jazan"),
 				"value": data[0].jazanPercentage,
 				"percentage": data[0].jazanValue
 			},
 			{
-				"region": "Najran",
+				"region": getI18nText("bar.graph.city.name.najran"),
 				"value": data[0].najranPercentage,
 				"percentage": data[0].najranValue
 			},
 			{
-				"region": "Albahah",
+				"region": getI18nText("bar.graph.city.name.albahah"),
 				"value": data[0].albahaPercentage,
 				"percentage": data[0].albahaValue
 			},
 			{
-				"region": "Aljouf",
+				"region": getI18nText("bar.graph.city.name.aljouf"),
 				"value": data[0].aljawfPercentage,
 				"percentage": data[0].aljawfValue
 			}
@@ -1793,7 +1845,8 @@ $(document).ready(function () {
 		// });
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-
+        valueAxis.title.text = getI18nText("bar.graph.no.of.population");
+        
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 
@@ -1805,7 +1858,10 @@ $(document).ready(function () {
 		series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}%[/]";
 		series.columns.template.fill = am4core.color("#025635");
 		// series.columns.template.fillOpacity = .8;
-
+        var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{percentage}";
+        valueLabel.label.fontSize = 12;
+        valueLabel.label.dy = -10;
 		var columnTemplate = series.columns.template;
 		columnTemplate.strokeWidth = 0;
 		columnTemplate.strokeOpacity = 1;
@@ -1855,14 +1911,15 @@ $(document).ready(function () {
 		var chart = am4core.create("renderlabourPrivateSectorChartDiv", am4charts.PieChart);
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
+        chart.maskBullets = false;
 		// Add data
 		chart.data = [ {
-		"country": "Saudi",
-		"population": data[0].saudiPercentagelabour,
+		"country": getI18nText("bar.graph.saudi"),
+		"population": data[0].saudiPercentage,
 		"color": am4core.color("#025635")
 		}, {
-		"country": "Non-Saudi",
-		"population": data[0].nonSaudiPercentageLabour,
+		"country": getI18nText("bar.graph.non.saudi"),
+		"population": data[0].nonSaudiPercentage,
 		"color": am4core.color("#BF9B2E")
 		}];
 
@@ -1877,7 +1934,7 @@ $(document).ready(function () {
 		pieSeries.slices.template.strokeWidth = 2;
 		pieSeries.slices.template.strokeOpacity = 1;
 		pieSeries.slices.template.propertyFields.fill = "color";
-
+		
 
 		//responsive
 		pieSeries.ticks.template.disabled = true;
@@ -1885,6 +1942,7 @@ $(document).ready(function () {
 		pieSeries.labels.template.text = "{value.percent.formatNumber('#.0')}%";
 		pieSeries.labels.template.radius = am4core.percent(-40);
 		pieSeries.labels.template.fill = am4core.color("white");
+		pieSeries.labels.template.fontSize = 12;
 		pieSeries.slices.template.tooltipText = "{category}: {value.percent.formatNumber('#.0')}%";
 		chart.legend = new am4charts.Legend();
 		//end responsive
@@ -1926,130 +1984,175 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		// console.log(data);
+        chart.maskBullets = false;
 		// Add data
 		if(chartData.length > 1) {
 			if(chartData[0].length > 0 && chartData[1].length > 0){
 				chart.data = [
 					{
-						"region": "Riyadh",
+						"region": getI18nText("bar.graph.city.name.riyadh"),
 						"saudi": data[0].riyadhPercentage,
-						"nonSaudi": data2[0].riyadhPercentage
+						"saudiValue": data[0].riyadhValue,
+						"nonSaudi": data2[0].riyadhPercentage,
+                        "nonSaudiValue": data2[0].riyadhValue
+
 					},
 					{
-						"region": "Makkah",
+						"region": getI18nText("bar.graph.city.name.makkah"),
 						"saudi": data[0].makkahPercentage,
-						"nonSaudi": data2[0].makkahPercentage
+                        "saudiValue": data[0].makkahValue,
+						"nonSaudi": data2[0].makkahPercentage,
+                        "nonSaudiValue": data2[0].makkahValue
+
 					},
 					{
-						"region": "Madinah",
+						"region": getI18nText("bar.graph.city.name.madinah"),
 						"saudi": data[0].almadinaPercentage,
-						"nonSaudi": data2[0].almadinaPercentage
+                        "saudiValue": data[0].almadinahValue,
+						"nonSaudi": data2[0].almadinaPercentage,
+                        "nonSaudiValue": data2[0].almadinahValue
 					},
 					{
-						"region": "Qassim",
+						"region": getI18nText("bar.graph.city.name.qassim"),
 						"saudi": data[0].alqassimPercentage,
-						"nonSaudi": data2[0].alqassimPercentage
+						"saudiValue": data[0].alqassimValue,
+						"nonSaudi": data2[0].alqassimPercentage,
+                        "nonSaudiValue": data2[0].alqassimValue
 					},
 					{
-						"region": "Eastern Region",
+						"region": getI18nText("bar.graph.city.name.eastern"),
 						"saudi": data[0].easternPercentage,
-						"nonSaudi": data2[0].easternPercentage
+						"nonSaudi": data2[0].easternPercentage,
+						"saudiValue": data[0].easternValue,
+                        "nonSaudiValue": data2[0].easternValue
 					},
 					{
-						"region": "Assir",
+						"region": getI18nText("bar.graph.city.name.assir"),
 						"saudi": data[0].asirPercentage,
-						"nonSaudi": data2[0].asirPercentage
+						"nonSaudi": data2[0].asirPercentage,
+						"saudiValue": data[0].asirValue,
+                        "nonSaudiValue": data2[0].asirValue
 					},
 					{
-						"region": "Tabuk",
+						"region": getI18nText("bar.graph.city.name.tabuk"),
 						"saudi": data[0].tabukPercentage,
-						"nonSaudi": data2[0].tabukPercentage
+						"nonSaudi": data2[0].tabukPercentage,
+						"saudiValue": data[0].tabukValue,
+                        "nonSaudiValue": data2[0].tabukValue
 					},
 					{
-						"region": "Hail",
+						"region": getI18nText("bar.graph.city.name.hail"),
 						"saudi": data[0].hailPercentage,
-						"nonSaudi": data2[0].hailPercentage
+						"nonSaudi": data2[0].hailPercentage,
+						"saudiValue": data[0].hailValue,
+                        "nonSaudiValue": data2[0].hailValue
 					},
 					{
-						"region": "Northern borders",
+						"region": getI18nText("bar.graph.city.name.northern"),
 						"saudi": data[0].northernPercentage,
-						"nonSaudi": data2[0].northernPercentage
+						"nonSaudi": data2[0].northernPercentage,
+						"saudiValue": data[0].northernValue,
+                        "nonSaudiValue": data2[0].northernValue
 					},
 					{
-						"region": "Jazan",
+						"region": getI18nText("bar.graph.city.name.jazan") ,
 						"saudi": data[0].jazanPercentage,
-						"nonSaudi": data2[0].jazanPercentage
+						"nonSaudi": data2[0].jazanPercentage,
+						"saudiValue": data[0].jazanValue,
+                        "nonSaudiValue": data2[0].jazanValue
 					},
 					{
-						"region": "Najran",
+						"region": getI18nText("bar.graph.city.name.najran"),
 						"saudi": data[0].najranPercentage,
-						"nonSaudi": data2[0].najranPercentage
+						"nonSaudi": data2[0].najranPercentage,
+						"saudiValue": data[0].najranValue,
+                        "nonSaudiValue": data2[0].najranValue,
 					},
 					{
-						"region": "Albahah",
+						"region": getI18nText("bar.graph.city.name.albahah"),
 						"saudi": data[0].albahaPercentage,
-						"nonSaudi": data2[0].albahaPercentage
+						"nonSaudi": data2[0].albahaPercentage,
+						"saudiValue": data[0].albahaValue,
+                        "nonSaudiValue": data2[0].albahaValue
 					},
 					{
-						"region": "Aljouf",
+						"region": getI18nText("bar.graph.city.name.aljouf"),
 						"saudi": data[0].aljawfPercentage,
-						"nonSaudi": data2[0].aljawfPercentage
+						"nonSaudi": data2[0].aljawfPercentage,
+						"saudiValue": data[0].aljawfValue,
+                        "nonSaudiValue": data2[0].aljawfValue
 					}
 					];
 			}
 			else {
 				chart.data = [
 					{
-						"region": "Riyadh",
-						"saudi": data[0].riyadhPercentage
+						"region": getI18nText("bar.graph.city.name.riyadh"),
+						"saudi": data[0].riyadhPercentage,
+                        "saudiValue": data[0].riyadhValue
 					},
 					{
-						"region": "Makkah",
-						"saudi": data[0].makkahPercentage
+						"region": getI18nText("bar.graph.city.name.makkah"),
+						"saudi": data[0].makkahPercentage,
+                        "saudiValue": data[0].makkahValue
+
 					},
 					{
-						"region": "Madinah",
-						"saudi": data[0].almadinaPercentage
+						"region": getI18nText("bar.graph.city.name.madinah"),
+						"saudi": data[0].almadinaPercentage,
+						"saudiValue": data[0].almadinaValue
+
 					},
 					{
-						"region": "Qassim",
-						"saudi": data[0].alqassimPercentage
+						"region": getI18nText("bar.graph.city.name.qassim"),
+						"saudi": data[0].alqassimPercentage,
+						"saudiValue": data[0].alqassimValue
+
 					},
 					{
-						"region": "Eastern Region",
-						"saudi": data[0].easternPercentage
+						"region": getI18nText("bar.graph.city.name.eastern"),
+						"saudi": data[0].easternPercentage,
+						"saudiValue": data[0].easternValue
 					},
 					{
-						"region": "Assir",
-						"saudi": data[0].asirPercentage
+						"region": getI18nText("bar.graph.city.name.assir"),
+						"saudi": data[0].asirPercentage,
+                        "saudiValue": data[0].asirValue
 					},
 					{
-						"region": "Tabuk",
-						"saudi": data[0].tabukPercentage
+						"region": getI18nText("bar.graph.city.name.tabuk"),
+						"saudi": data[0].tabukPercentage,
+                        "saudiValue": data[0].tabukValue
 					},
 					{
-						"region": "Hail",
-						"saudi": data[0].hailPercentage
+						"region": getI18nText("bar.graph.city.name.hail"),
+						"saudi": data[0].hailPercentage,
+						"saudiValue": data[0].hailValue
 					},
 					{
-						"region": "Northern borders",
-						"saudi": data[0].northernPercentage
+						"region": getI18nText("bar.graph.city.name.northern"),
+						"saudi": data[0].northernPercentage,
+                        "saudiValue": data[0].northernValue
 					},
 					{
-						"region": "Jazan",
-						"saudi": data[0].jazanPercentage
+						"region": getI18nText("bar.graph.city.name.jazan"),
+						"saudi": data[0].jazanPercentage,
+						"saudiValue": data[0].jazanValue
 					},
 					{
-						"region": "Najran",
-						"saudi": data[0].najranPercentage
+						"region": getI18nText("bar.graph.city.name.najran"),
+						"saudi": data[0].najranPercentage,
+                        "saudiValue": data[0].najranValue
 					},
 					{
-						"region": "Albahah",
-						"saudi": data[0].albahaPercentage
+						"region": getI18nText("bar.graph.city.name.albahah"),
+						"saudi": data[0].albahaPercentage,
+						"saudiValue": data[0].albahaValue
 					},
 					{
-						"region": "Aljouf",
-						"saudi": data[0].aljawfPercentage
+						"region": getI18nText("bar.graph.city.name.aljouf"),
+						"saudi": data[0].aljawfPercentage,
+                        "saudiValue": data[0].aljawfValue
 					}
 					];
 			}
@@ -2057,60 +2160,73 @@ $(document).ready(function () {
 		else {
 			chart.data = [
 				{
-					"region": "Riyadh",
-					"saudi": data[0].riyadhPercentage
+					"region": getI18nText("bar.graph.city.name.riyadh"),
+					"saudi": data[0].riyadhPercentage,
+                    "saudiValue": data[0].riyadhValue
 				},
 				{
-					"region": "Makkah",
-					"saudi": data[0].makkahPercentage
+					"region": getI18nText("bar.graph.city.name.makkah"),
+					"saudi": data[0].makkahPercentage,
+					"saudiValue": data[0].makkahValue
 				},
 				{
-					"region": "Madinah",
-					"saudi": data[0].almadinaPercentage
+					"region": getI18nText("bar.graph.city.name.madinah"),
+					"saudi": data[0].almadinaPercentage,
+					"saudiValue": data[0].almadinaValue
 				},
 				{
-					"region": "Qassim",
-					"saudi": data[0].alqassimPercentage
+					"region": getI18nText("bar.graph.city.name.qassim"),
+					"saudi": data[0].alqassimPercentage,
+					"saudiValue": data[0].alqassimValue
 				},
 				{
-					"region": "Eastern Region",
-					"saudi": data[0].easternPercentage
+					"region": getI18nText("bar.graph.city.name.eastern"),
+					"saudi": data[0].easternPercentage,
+					"saudiValue": data[0].easternValue
 				},
 				{
-					"region": "Assir",
-					"saudi": data[0].asirPercentage
+					"region": getI18nText("bar.graph.city.name.assir"),
+					"saudi": data[0].asirPercentage,
+					"saudiValue": data[0].asirValue
 				},
 				{
-					"region": "Tabuk",
-					"saudi": data[0].tabukPercentage
+					"region": getI18nText("bar.graph.city.name.tabuk"),
+					"saudi": data[0].tabukPercentage,
+					"saudiValue": data[0].tabukValue
 				},
 				{
-					"region": "Hail",
-					"saudi": data[0].hailPercentage
+					"region": getI18nText("bar.graph.city.name.hail"),
+					"saudi": data[0].hailPercentage,
+					"saudiValue": data[0].hailValue
 				},
 				{
-					"region": "Northern borders",
-					"saudi": data[0].northernPercentage
+					"region": getI18nText("bar.graph.city.name.northern"),
+					"saudi": data[0].northernPercentage,
+					"saudiValue": data[0].northernValue
 				},
 				{
-					"region": "Jazan",
-					"saudi": data[0].jazanPercentage
+					"region": getI18nText("bar.graph.city.name.jazan"),
+					"saudi": data[0].jazanPercentage,
+					"saudiValue": data[0].jazanValue
 				},
 				{
-					"region": "Najran",
-					"saudi": data[0].najranPercentage
+					"region": getI18nText("bar.graph.city.name.najran"),
+					"saudi": data[0].najranPercentage,
+					"saudiValue": data[0].najranValue
 				},
 				{
-					"region": "Albahah",
-					"saudi": data[0].albahaPercentage
+					"region": getI18nText("bar.graph.city.name.albahah"),
+					"saudi": data[0].albahaPercentage,
+					"saudiValue": data[0].albahaValue
 				},
 				{
-					"region": "Aljouf",
-					"saudi": data[0].aljawfPercentage
+					"region": getI18nText("bar.graph.city.name.aljouf"),
+					"saudi": data[0].aljawfPercentage,
+                    "saudiValue": data[0].aljawfValue
 				}
 				];
 		}
-
+		
 
 		var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "region";
@@ -2118,7 +2234,7 @@ $(document).ready(function () {
 		categoryAxis.renderer.labels.template.fontSize = 11;
 		categoryAxis.renderer.minGridDistance = 0;
 
-
+		
 		categoryAxis.events.on("sizechanged", function(ev) {
 			var axis = ev.target;
 			var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex);
@@ -2159,20 +2275,32 @@ $(document).ready(function () {
 		var series = chart.series.push(new am4charts.ColumnSeries());
 		series.dataFields.valueY = "saudi";
 		series.dataFields.categoryX = "region";
-		series.name = "Saudi";
+		series.name = getI18nText("bar.graph.saudi");
 		series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}%[/]";
 		series.columns.template.fill = am4core.color("#025635");
+        var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{saudiValue}";
+        valueLabel.label.fontSize = 8;
+        valueLabel.label.dy = -10;
+        valueLabel.label.truncate = false;
+        valueLabel.label.hideOversized = false;
 
 		if(chartData.length != 1) {
 			// Create series
 			var series1 = chart.series.push(new am4charts.ColumnSeries());
 			series1.dataFields.valueY = "nonSaudi";
 			series1.dataFields.categoryX = "region";
-			series1.name = "Non-Saudi";
+			series1.name = getI18nText("bar.graph.non.saudi");
 			series1.columns.template.tooltipText = "{categoryX}: [bold]{valueY}%[/]";
 			series1.columns.template.fill = am4core.color("#BF9B2E");
+			var valueLabel = series1.bullets.push(new am4charts.LabelBullet());
+            valueLabel.label.text = "{nonSaudiValue}";
+            valueLabel.label.fontSize = 8;
+            valueLabel.label.dy = -10;
+            valueLabel.label.truncate = false;
+            valueLabel.label.hideOversized = false;
 		}
-
+		
 		// series.columns.template.fillOpacity = .8;
 
 		var columnTemplate = series.columns.template;
@@ -2229,7 +2357,7 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Create chart instance
-
+        chart.maskBullets = false;
 		// console.log("tet"+data2);
 		// Add data
 		chart.data = [
@@ -2261,7 +2389,7 @@ $(document).ready(function () {
 
 		// Create value axis
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Unemployment";
+		valueAxis.title.text = getI18nText("bar.graph.unemployment");
 		valueAxis.renderer.minLabelPosition = 0.01;
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.renderer.grid.template.strokeWidth = 0;
@@ -2270,7 +2398,7 @@ $(document).ready(function () {
 		var series1 = chart.series.push(new am4charts.LineSeries());
 		series1.dataFields.valueY = "saudi";
 		series1.dataFields.categoryX = "year";
-		series1.name = "Saudi";
+		series1.name = getI18nText("bar.graph.saudi");
 		var circleBullet1 = series1.bullets.push(new am4charts.CircleBullet());
 		circleBullet1.circle.radius = 5;
 		circleBullet1.circle.fill = am4core.color("#025635");
@@ -2287,7 +2415,7 @@ $(document).ready(function () {
 		var series2 = chart.series.push(new am4charts.LineSeries());
 		series2.dataFields.valueY = "nonSaudi";
 		series2.dataFields.categoryX = "year";
-		series2.name = 'Non-Saudi';
+		series2.name = getI18nText("bar.graph.non.saudi");
 		var circleBullet2 = series2.bullets.push(new am4charts.CircleBullet());
 		circleBullet2.circle.radius = 5;
 		circleBullet2.circle.fill = am4core.color("#BF9B2E");
@@ -2812,10 +2940,10 @@ $(document).ready(function () {
 		$('#selectedSectorsList [data-id]').each(function(){
 			var $this = $(this);
 			if(found[$this.data('id')]){
-				$this.remove();
+				$this.remove();   
 			}
 			else{
-				found[$this.data('id')] = true;
+				found[$this.data('id')] = true;   
 			}
 		});
 	}
@@ -2823,17 +2951,17 @@ $(document).ready(function () {
 		if (arr.length === 0) {
 			return -1;
 		}
-
+	
 		var max = arr[0];
 		var maxIndex = 0;
-
+	
 		for (var i = 1; i < arr.length; i++) {
 			if (arr[i] > max) {
 				maxIndex = i;
 				max = arr[i];
 			}
 		}
-
+	
 		return maxIndex;
 	}
 	function renderFDIValueChart(data){
@@ -2854,6 +2982,7 @@ $(document).ready(function () {
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = data;
+		chart.maskBullets = false;
 		dataObjectLength = [];
 		for(var i=0;i <data.length; i++) {
 			console.log(data[i]);
@@ -2866,14 +2995,14 @@ $(document).ready(function () {
 		categoryAxis.renderer.minGridDistance = 30;
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Number of Licenses";
+		valueAxis.title.text = getI18nText("bar.graph.no.of.licenses");
 		valueAxis.min = 0;
 		valueAxis.strictMinMax = true;
 
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 
-		Object.keys(data[indexOfMax(dataObjectLength)]).forEach(function(keyValue, index, map) {
+		Object.keys(data[indexOfMax(dataObjectLength)]).forEach(function(keyValue, index, map) { 
 			if(keyValue != "year"){
 				// console.log(keyValue);
 				// Create series
@@ -2881,65 +3010,65 @@ $(document).ready(function () {
 					if($(this).attr("id") == keyValue){
 						$(this).attr('checked','checked');
 						if(keyValue == 'manufacturingLicenses'){
-							appendSelectedList("Manufacturing Licenses", 'manufacturingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.manufacturing.license"), 'manufacturingLicenses');
 						} else if(keyValue == 'constructionLicenses') {
-							appendSelectedList("Construction Licenses", 'constructionLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'constructionLicenses');
 						} else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
-							appendSelectedList("Wholesale and retail trade, repair of mo Licenses", 'wholeSaleRetailTradeMoLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.wholesale.license"), 'wholeSaleRetailTradeMoLicenses');
 							// series.name = "Wholesale and retail trade, repair of mo Licenses";
 						} else if(keyValue == 'informationAndCommunicationLicenses') {
-							appendSelectedList("Information and communication Licenses", 'informationAndCommunicationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.information.license"), 'informationAndCommunicationLicenses');
 							// series.name = "Information and communication Licenses";
 						} else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
-							appendSelectedList("Professional, scientific and technical Licenses", 'professionalScientificAndTechnicalLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.professional.license"), 'professionalScientificAndTechnicalLicenses');
 							// series.name = "Professional, scientific and technical Licenses";
 						} else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
-							appendSelectedList("Accommodation and food service actives Licenses", 'accommodationFoodServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.accommodation.licens"), 'accommodationFoodServiceActivityLicenses');
 							// series.name = "Accommodation and food service actives Licenses";
 						} else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
-							appendSelectedList("Administration and storage Licenses", 'administrativeSupportServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.administration.license"), 'administrativeSupportServiceActivityLicenses');
 							// series.name = "Administration and storage Licenses";
 						} else if(keyValue == 'transportationStorageLicenses') {
-							appendSelectedList("Transportation and storage Licenses", 'transportationStorageLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.transportation.license"), 'transportationStorageLicenses');
 							// series.name = "Transportation and storage Licenses";
 						} else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
-							appendSelectedList("Human health and social work activities licenses", 'humanHealthSocialworkActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.human.health.license"), 'humanHealthSocialworkActivityLicenses');
 							// series.name = "Human health and social work activities licenses";
 						} else if(keyValue == 'financialInsuranceActivityLicenses') {
-							appendSelectedList("Financial and insurance activities licenses", 'financialInsuranceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.financial.license"), 'financialInsuranceActivityLicenses');
 							// series.name = "Financial and insurance activities licenses";
 						} else if(keyValue == 'otherServiceActivityLicenses') {
-							appendSelectedList("Other service activities licenses", 'otherServiceActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.other.license"), 'otherServiceActivityLicenses');
 							// series.name = "Other service activities licenses";
 						} else if(keyValue == 'miningQuarryingLicenses') {
-							appendSelectedList("Mining and quarrying licenses", 'miningQuarryingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.mining.license"), 'miningQuarryingLicenses');
 							// series.name = "Mining and quarrying licenses";
 						} else if(keyValue == 'waterSupplySewerageWasteManagement') {
-							appendSelectedList("Water supply, sewerage, waste management", 'waterSupplySewerageWasteManagement');
+							appendSelectedList(getI18nText("bar.graph.fdi.water.license"), 'waterSupplySewerageWasteManagement');
 							// series.name = "Water supply, sewerage, waste management";
 						} else if(keyValue == 'educationLicenses') {
-							appendSelectedList("Education licenses", 'educationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.education.license"), 'educationLicenses');
 							// series.name = "Education licenses";
 						} else if(keyValue == 'realEstateActivityLicenses') {
-							appendSelectedList("Real estate activities licenses", 'realEstateActivityLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.estate.license"), 'realEstateActivityLicenses');
 							// series.name = "Real estate activities licenses";
 						} else if(keyValue == 'artsEntertainmentRecreationLicenses') {
-							appendSelectedList("Arts, entertainment and recreation licenses", 'artsEntertainmentRecreationLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.arts.license"), 'artsEntertainmentRecreationLicenses');
 							// series.name = "Arts, entertainment and recreation licenses";
 						} else if(keyValue == 'electricityGasSteamAircondition') {
-							appendSelectedList("Electricity, gas, steam and air conditioner", 'electricityGasSteamAircondition');
+							appendSelectedList(getI18nText("bar.graph.fdi.electricity.license"), 'electricityGasSteamAircondition');
 							// series.name = "Electricity, gas, steam and air conditioner";
 						} else if(keyValue == 'agricultureForestryFishing Licenses'){
-							appendSelectedList("Agriculture, forestry and fishing licenses", 'agricultureForestryFishingLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.agriculture.license"), 'agricultureForestryFishingLicenses');
 							// series.name = "Agriculture, forestry and fishing licenses";
 						} else if(keyValue == 'notAssignedLicenses') {
-							appendSelectedList("Not assigned licenses", 'notAssignedLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.not.assigned.license"), 'notAssignedLicenses');
 							// series.name = "Not assigned licenses";
 						} else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
-							appendSelectedList("Public administration and defence compu licenses", 'publicAdministrationDefenceCompuLicenses');
+							appendSelectedList(getI18nText("bar.graph.fdi.public.administration.license"), 'publicAdministrationDefenceCompuLicenses');
 							// series.name = "Public administration and defence; compu licenses";
-						} else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses')
-							appendSelectedList("Activities of extraterritorial organization license", 'activitiesOfExtraterritorialOrganizationLicenses');{
+						} else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') 
+							appendSelectedList(getI18nText("bar.graph.fdi.not.extraterritorial.license"), 'activitiesOfExtraterritorialOrganizationLicenses');{
 							// series.name = "Activities of extraterritorial organizat license";
 						}
 					}
@@ -2948,77 +3077,77 @@ $(document).ready(function () {
 				series.dataFields.valueY = keyValue;
 				series.dataFields.categoryX = "year";
 				if(keyValue == 'manufacturingLicenses'){
-					series.name = "Manufacturing Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Manufacturing Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.manufacturing.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.manufacturing.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'constructionLicenses') {
-					series.name = "Construction Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Construction Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.construction.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.construction.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
-					series.name = "Wholesale and retail trade, repair of mo Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Wholesale and retail trade, repair of mo Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.wholesale.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.wholesale.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'informationAndCommunicationLicenses') {
-					series.name = "Information and communication Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Information and communication Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.information.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.information.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
-					series.name = "Professional, scientific and technical Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Professional, scientific and technical Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.professional.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.professional.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
-					series.name = "Accommodation and food service actives Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Accommodation and food service actives Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.accommodation.licens");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.accommodation.licens") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
-					series.name = "Administration and storage Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Administration and storage Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.administration.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.administration.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'transportationStorageLicenses') {
-					series.name = "Transportation and storage Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Transportation and storage Licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.transportation.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.transportation.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
-					series.name = "Human health and social work activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Human health and social work activities licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.human.health.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.human.health.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'financialInsuranceActivityLicenses') {
-					series.name = "Financial and insurance activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Financial and insurance activities licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.financial.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.financial.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'otherServiceActivityLicenses') {
-					series.name = "Other service activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Other service activities licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.other.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.other.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'miningQuarryingLicenses') {
-					series.name = "Mining and quarrying licenses";
-					series.columns.template.tooltipText = "{categoryX}: Mining and quarrying licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.mining.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.mining.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'waterSupplySewerageWasteManagement') {
-					series.name = "Water supply, sewerage, waste management";
-					series.columns.template.tooltipText = "{categoryX}: Water supply, sewerage, waste management: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.water.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.water.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'educationLicenses') {
-					series.name = "Education licenses";
-					series.columns.template.tooltipText = "{categoryX}: Education licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.education.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.education.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'realEstateActivityLicenses') {
-					series.name = "Real estate activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Real estate activities licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.estate.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.estate.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'artsEntertainmentRecreationLicenses') {
-					series.name = "Arts, entertainment and recreation licenses";
-					series.columns.template.tooltipText = "{categoryX}: Arts, entertainment and recreation licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.arts.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.arts.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'electricityGasSteamAircondition') {
-					series.name = "Electricity, gas, steam and air conditioner";
-					series.columns.template.tooltipText = "{categoryX}: Electricity, gas, steam and air conditioner: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.electricity.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.electricity.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'agricultureForestryFishingLicenses') {
-					series.name = "Agriculture, forestry and fishing licenses";
-					series.columns.template.tooltipText = "{categoryX}: Agriculture, forestry and fishing licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.agriculture.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.agriculture.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'notAssignedLicenses') {
-					series.name = "Not assigned licenses";
-					series.columns.template.tooltipText = "{categoryX}: Not assigned licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.not.assigned.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.assigned.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
-					series.name = "Public administration and defence compu licenses";
-					series.columns.template.tooltipText = "{categoryX}: Public administration and defence compu licenses: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.public.administration.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.public.administration.license") + ": [bold]{valueY}[/]";
 				} else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') {
-					series.name = "Activities of extraterritorial organization license";
-					series.columns.template.tooltipText = "{categoryX}: Activities of extraterritorial organizat license: [bold]{valueY}[/]";
+					series.name = getI18nText("bar.graph.fdi.not.extraterritorial.license");
+					series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.extraterritorial.license") + ": [bold]{valueY}[/]";
 				}
 				series.columns.template.fillOpacity = .8;
-				// var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-				// valueLabel.label.text = "{valueY}";
-				// valueLabel.label.fontSize = 9;
-				// valueLabel.label.dy = -10;
+                var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+                valueLabel.label.text = "{valueY}";
+                valueLabel.label.fontSize = 9;
+                valueLabel.label.dy = -10;
 			}
 		});
-
+		
 		chart.legend = new am4charts.Legend();
 		var marker = chart.legend.markers.template.children.getIndex(0);
 		marker.cornerRadius(12, 12, 12, 12);
@@ -3042,10 +3171,11 @@ $(document).ready(function () {
 			$("#renderFDIGrowthChartDiv").attr("style", "display: block;");
 		}
 		var chart = am4core.create("renderFDIGrowthChartDiv", am4charts.XYChart);
-
+		
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = data;
+		chart.maskBullets = false;
 		dataObjectLength = [];
 		for(var i=0;i <data.length; i++) {
 			console.log(data[i]);
@@ -3061,7 +3191,7 @@ $(document).ready(function () {
 		categoryAxis.renderer.minGridDistance = 30;
 
 		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Growth Rate";
+		valueAxis.title.text = getI18nText("bar.graph.growth.rate");
 		// valueAxis.min = 0;
 		// valueAxis.strictMinMax = true;
 
@@ -3069,7 +3199,7 @@ $(document).ready(function () {
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 		// alert(Object.keys(data[0]).length);
 		// var iterateData = Object.keys(data[0]).length == 0 ? data[data.length-1]: data[0];
-		Object.keys(data[indexOfMax(dataObjectLength)]).forEach(function(keyValue, index, map) {
+		Object.keys(data[indexOfMax(dataObjectLength)]).forEach(function(keyValue, index, map) { 
 			if(keyValue != "year"){
 				// console.log(keyValue);
 				// Create series
@@ -3077,77 +3207,77 @@ $(document).ready(function () {
 				series.dataFields.valueY = keyValue;
 				series.dataFields.categoryX = "year";
 				if(keyValue == 'manufacturingLicenses'){
-					series.name = "Manufacturing Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Manufacturing Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'constructionLicenses') {
-					series.name = "Construction Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Construction Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
-					series.name = "Wholesale and retail trade, repair of mo Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Wholesale and retail trade, repair of mo Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'informationAndCommunicationLicenses') {
-					series.name = "Information and communication Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Information and communication Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
-					series.name = "Professional, scientific and technical Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Professional, scientific and technical Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
-					series.name = "Accommodation and food service actives Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Accommodation and food service actives Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
-					series.name = "Administration and storage Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Administration and storage Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'transportationStorageLicenses') {
-					series.name = "Transportation and storage Licenses";
-					series.columns.template.tooltipText = "{categoryX}: Transportation and storage Licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
-					series.name = "Human health and social work activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Human health and social work activities licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'financialInsuranceActivityLicenses') {
-					series.name = "Financial and insurance activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Financial and insurance activities licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'otherServiceActivityLicenses') {
-					series.name = "Other service activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Other service activities licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'miningQuarryingLicenses') {
-					series.name = "Mining and quarrying licenses";
-					series.columns.template.tooltipText = "{categoryX}: Mining and quarrying licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'waterSupplySewerageWasteManagement') {
-					series.name = "Water supply, sewerage, waste management";
-					series.columns.template.tooltipText = "{categoryX}: Water supply, sewerage, waste management: [bold]{valueY}[/]";
-				} else if(keyValue == 'educationLicenses') {
-					series.name = "Education licenses";
-					series.columns.template.tooltipText = "{categoryX}: Education licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'realEstateActivityLicenses') {
-					series.name = "Real estate activities licenses";
-					series.columns.template.tooltipText = "{categoryX}: Real estate activities licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'artsEntertainmentRecreationLicenses') {
-					series.name = "Arts, entertainment and recreation licenses";
-					series.columns.template.tooltipText = "{categoryX}: Arts, entertainment and recreation licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'electricityGasSteamAircondition') {
-					series.name = "Electricity, gas, steam and air conditioner";
-					series.columns.template.tooltipText = "{categoryX}: Electricity, gas, steam and air conditioner: [bold]{valueY}[/]";
-				} else if(keyValue == 'agricultureForestryFishingLicenses') {
-					series.name = "Agriculture, forestry and fishing licenses";
-					series.columns.template.tooltipText = "{categoryX}: Agriculture, forestry and fishing licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'notAssignedLicenses') {
-					series.name = "Not assigned licenses";
-					series.columns.template.tooltipText = "{categoryX}: Not assigned licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
-					series.name = "Public administration and defence compu licenses";
-					series.columns.template.tooltipText = "{categoryX}: Public administration and defence compu licenses: [bold]{valueY}[/]";
-				} else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') {
-					series.name = "Activities of extraterritorial organizat license";
-					series.columns.template.tooltipText = "{categoryX}: Activities of extraterritorial organization license: [bold]{valueY}[/]";
-				}
+                    series.name = getI18nText("bar.graph.fdi.manufacturing.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.manufacturing.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'constructionLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.construction.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.construction.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'wholeSaleRetailTradeMoLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.wholesale.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.wholesale.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'informationAndCommunicationLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.information.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.information.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'professionalScientificAndTechnicalLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.professional.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.professional.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'accommodationFoodServiceActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.accommodation.licens");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.accommodation.licens") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'administrativeSupportServiceActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.administration.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.administration.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'transportationStorageLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.transportation.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.transportation.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'humanHealthSocialworkActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.human.health.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.human.health.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'financialInsuranceActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.financial.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.financial.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'otherServiceActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.other.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.other.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'miningQuarryingLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.mining.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.mining.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'waterSupplySewerageWasteManagement') {
+                    series.name = getI18nText("bar.graph.fdi.water.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.water.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'educationLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.education.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.education.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'realEstateActivityLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.estate.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.estate.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'artsEntertainmentRecreationLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.arts.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.arts.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'electricityGasSteamAircondition') {
+                    series.name = getI18nText("bar.graph.fdi.electricity.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.electricity.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'agricultureForestryFishingLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.agriculture.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.agriculture.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'notAssignedLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.not.assigned.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.assigned.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'publicAdministrationDefenceCompuLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.public.administration.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.public.administration.license") + ": [bold]{valueY}[/]";
+                } else if(keyValue == 'activitiesOfExtraterritorialOrganizationLicenses') {
+                    series.name = getI18nText("bar.graph.fdi.not.extraterritorial.license");
+                    series.columns.template.tooltipText = "{categoryX}: " + getI18nText("bar.graph.fdi.not.extraterritorial.license") + ": [bold]{valueY}[/]";
+                }
 				series.columns.template.fillOpacity = .8;
-				// var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-				// valueLabel.label.text = "{valueY}";
-				// valueLabel.label.fontSize = 12;
-				// valueLabel.label.dy = -10;
+				var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+				valueLabel.label.text = "{valueY}";
+				valueLabel.label.fontSize = 12;
+				valueLabel.label.dy = -10;
 			}
 		});
-
+		
 		chart.legend = new am4charts.Legend();
 		var marker = chart.legend.markers.template.children.getIndex(0);
 		marker.cornerRadius(12, 12, 12, 12);
@@ -3162,7 +3292,7 @@ $(document).ready(function () {
 	function rendercapitalInformationChart(chartData){
 		// Create chart instance
 		// alert("test");
-		// console.log(chartData);
+		 console.log(chartData);
 		if(chartData.length == 0) {
 			$("#capitalInformationChartDiv").parent().find("#ChartDivError").attr("style", "display: flex;");
 			$("#capitalInformationChartDiv").attr("style", "display: none;");
@@ -3178,30 +3308,32 @@ $(document).ready(function () {
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
 		// chart.dateFormatter.dateFormat = "yyyy";
 		// chart.numberFormatter.numberFormat = "#";
 
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "year";
-		categoryAxis.title.text = "Years";
+		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
-		categoryAxis.renderer.labels.template.fontSize = 16;
+		categoryAxis.renderer.labels.template.fontSize = $(".capital-formation-period .active").attr("data-id") == 'Annually' ? 16 : 0;
+
 		categoryAxis.renderer.minGridDistance = 30;
 
 		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = "Million SAR";
+		valueAxis.title.text = getI18nText("bar.graph.million.sar");
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.min = 0;
 		valueAxis.strictMinMax = true;
 
 		var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis2.title.text = "Percentage";
+		valueAxis2.title.text = getI18nText("bar.graph.percentage");;
 		valueAxis2.renderer.opposite = true;
 		valueAxis2.renderer.grid.template.disabled = true;
 
 		var columnSeries = chart.series.push(new am4charts.ColumnSeries());
-		columnSeries.name = "Gross Fixed Capital Information";
-		columnSeries.dataFields.valueY = "grossFixed";
+		columnSeries.name = getI18nText("bar.graph.gross.fixed.capital.formation");
+		columnSeries.dataFields.valueY = "value";
 		columnSeries.dataFields.categoryX = "year";
 		columnSeries.yAxis = valueAxis;
 		columnSeries.columns.template.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
@@ -3212,9 +3344,14 @@ $(document).ready(function () {
 		columnSeries.columns.template.fill = am4core.color("#025635");
 		columnSeries.tooltip.label.textAlign = "middle";
 
+        var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{value}";
+        valueLabel.label.fontSize = 9;
+        valueLabel.label.dy = -5;
+
 		var lineSeries = chart.series.push(new am4charts.LineSeries());
-		lineSeries.name = "Gross Fixed Capital Formation Growth Rate";
-		lineSeries.dataFields.valueY = "growthrateOfGrossFixed";
+		lineSeries.name = getI18nText("bar.graph.growth.rate");
+		lineSeries.dataFields.valueY = "percentage";
 		lineSeries.dataFields.categoryX = "year";
 		lineSeries.yAxis = valueAxis2;
 		lineSeries.stroke = am4core.color("#BF9B2E");
@@ -3242,6 +3379,8 @@ $(document).ready(function () {
 		// alert("test");
 		console.log(chartData);
 		var valueAxisValue = '';
+		var lineAxisValue = '';
+		var columnName = '';
 		if(chartData.length == 0) {
 			$("#fundAssetChartDiv").parent().find("#ChartDivError").attr("style", "display: flex;");
 			$("#fundAssetChartDiv").attr("style", "display: none;");
@@ -3250,15 +3389,23 @@ $(document).ready(function () {
 		else {
 			if(chartData[0].hasOwnProperty('totalNoOfInvestmentFund')) {
 				valueAxisValue = 'totalNoOfInvestmentFund';
+				lineAxisValue = 'totalNoOfInvestmentFundGrowthRate';
+				columnName = getI18nText("bar.graph.fund.asset.total.no.of.investment.fund");
 			}
 			if(chartData[0].hasOwnProperty('totalInvestmentFundAssets')) {
 				valueAxisValue = 'totalInvestmentFundAssets';
+				lineAxisValue = 'totalInvestmentFundAssetGrowthRate';
+				columnName = getI18nText("bar.graph.fund.asset.total.investment.fund.assets");
 			}
 			if(chartData[0].hasOwnProperty('foreignInvestmentFund')) {
 				valueAxisValue = 'foreignInvestmentFund';
+				lineAxisValue = 'foreignInvestmentFundGrowthRate';
+				columnName = getI18nText("bar.graph.fund.asset.foreign.investment.fund");
 			}
 			if(chartData[0].hasOwnProperty('domesticInvestmentFund')) {
 				valueAxisValue = 'domesticInvestmentFund';
+				lineAxisValue = 'domesticInvestmentFundGrowthRate';
+				columnName = getI18nText("bar.graph.fund.asset.domestic.investment.fund");
 			}
 			$("#fundAssetChartDiv").parent().find("#ChartDivError").attr("style", "display: none;");
 			$("#fundAssetChartDiv").attr("style", "display: block;");
@@ -3269,34 +3416,35 @@ $(document).ready(function () {
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
 		// chart.dateFormatter.dateFormat = "yyyy";
 		// chart.numberFormatter.numberFormat = "#";
 
 
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-		categoryAxis.dataFields.category = $(".fund-assets-period .active").attr("data-id") == 'Annually' ? "year" : 'period';
-		categoryAxis.title.text = "Years";
+		categoryAxis.dataFields.category = "year";
+		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
-		categoryAxis.renderer.labels.template.fontSize = $(".fund-assets-period .active").attr("data-id") == 'Annually' ? 16 : 0;;
+		categoryAxis.renderer.labels.template.fontSize = $(".fund-assets-period .active").attr("data-id") == 'Annually' ? 16 : 0;
 		categoryAxis.renderer.minGridDistance = 30;
 
 
 
 		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = valueAxisValue == 'totalNoOfInvestmentFund' ? "Total No of Investment Funds": "Million SAR";
+		valueAxis.title.text = valueAxisValue == 'totalNoOfInvestmentFund' ? getI18nText("bar.graph.fund.asset.total.no.of.investment.fund"): getI18nText("bar.graph.million.sar");
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.min = 0;
 		valueAxis.strictMinMax = true;
 
-		// var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
-		// valueAxis2.title.text = "Percentage";
-		// valueAxis2.renderer.opposite = true;
-		// valueAxis2.renderer.grid.template.disabled = true;
+		 var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
+		 valueAxis2.title.text = getI18nText("bar.graph.growth.rate");
+		 valueAxis2.renderer.opposite = true;
+		 valueAxis2.renderer.grid.template.disabled = true;
 
 		var columnSeries = chart.series.push(new am4charts.ColumnSeries());
-		columnSeries.name = "Number of investment funds";
+		columnSeries.name = columnName;
 		columnSeries.dataFields.valueY = valueAxisValue;
-		columnSeries.dataFields.categoryX = $(".fund-assets-period .active").attr("data-id") == 'Annually' ? "year" : 'period';;
+		columnSeries.dataFields.categoryX = "year";
 		columnSeries.yAxis = valueAxis;
 		columnSeries.columns.template.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
 		columnSeries.columns.template.propertyFields.fillOpacity = "fillOpacity";
@@ -3306,23 +3454,30 @@ $(document).ready(function () {
 		columnSeries.columns.template.fill = am4core.color("#025635");
 		columnSeries.tooltip.label.textAlign = "middle";
 
-		// var lineSeries = chart.series.push(new am4charts.LineSeries());
-		// lineSeries.name = "Gross Fixed Capital Formation Growth Rateate";
-		// lineSeries.dataFields.valueY = "growthrateOfGrossFixed";
-		// lineSeries.dataFields.categoryX = "year";
-		// lineSeries.yAxis = valueAxis2;
-		// lineSeries.stroke = am4core.color("#BF9B2E");
-		// lineSeries.strokeWidth = 3;
-		// lineSeries.propertyFields.strokeDasharray = "lineDash";
-		// lineSeries.tooltip.label.textAlign = "middle";
+		var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{"+valueAxisValue+"}";
+        valueLabel.label.fontSize = 12;
+        valueLabel.label.dy = -5;
 
-		// var bullet = lineSeries.bullets.push(new am4charts.Bullet());
-		// bullet.fill = am4core.color("#BF9B2E"); // tooltips grab fill from parent by default
-		// bullet.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
-		// var circle = bullet.createChild(am4core.Circle);
-		// circle.radius = 4;
-		// circle.fill = am4core.color("#fff");
-		// circle.strokeWidth = 3;
+
+
+        var lineSeries = chart.series.push(new am4charts.LineSeries());
+        lineSeries.name = getI18nText("bar.graph.growth.rate");
+        lineSeries.dataFields.valueY = lineAxisValue;
+        lineSeries.dataFields.categoryX = "year";
+        lineSeries.yAxis = valueAxis2;
+        lineSeries.stroke = am4core.color("#BF9B2E");
+        lineSeries.strokeWidth = 3;
+        lineSeries.propertyFields.strokeDasharray = "lineDash";
+        lineSeries.tooltip.label.textAlign = "middle";
+
+        var bullet = lineSeries.bullets.push(new am4charts.Bullet());
+        bullet.fill = am4core.color("#BF9B2E"); // tooltips grab fill from parent by default
+        bullet.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
+        var circle = bullet.createChild(am4core.Circle);
+        circle.radius = 4;
+        circle.fill = am4core.color("#fff");
+        circle.strokeWidth = 3;
 
 		chart.legend = new am4charts.Legend();
 		var marker = chart.legend.markers.template.children.getIndex(0);
@@ -3349,29 +3504,31 @@ $(document).ready(function () {
 		am4core.addLicense("CH292550473");
 		chart.data = data;
 		chart.exporting.menu = new am4core.ExportMenu();
+		chart.maskBullets = false;
+
 		let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 		categoryAxis.dataFields.category = "year";
-		categoryAxis.title.text = "Years";
+		categoryAxis.title.text = getI18nText("bar.graph.axis.year");
 		categoryAxis.renderer.grid.template.strokeWidth = 0;
 		categoryAxis.renderer.labels.template.fontSize = 16;
 		categoryAxis.renderer.minGridDistance = 30;
 
 		let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.title.text = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? "Number of Commercial Registers" : "Capital of Commercial Registers";
+		valueAxis.title.text = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? getI18nText("bar.graph.commercial.no.of.registers") : getI18nText("bar.graph.commercial.capital.registers");
 		valueAxis.renderer.grid.template.strokeWidth = 0;
 		valueAxis.min = 0;
 		valueAxis.strictMinMax = true;
 
 		var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis2.title.text = "Growth Rate";
+		valueAxis2.title.text = getI18nText("bar.graph.growth.rate");
 		valueAxis2.renderer.opposite = true;
 		valueAxis2.renderer.grid.template.disabled = true;
 		// valueAxis2.min = 0;
 		// valueAxis2.strictMinMax = true;
 		// alert($(".com-mercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? "noOfCommercialRegisters" : "capitalOfCommercialRegisters");
 		var columnSeries = chart.series.push(new am4charts.ColumnSeries());
-		columnSeries.name = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? "Number of Commercial Registers" : "Capital of Commercial Registers";
-		columnSeries.dataFields.valueY = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? "noOfCommercialRegisters" : "capitalOfCommercialRegisters";
+		columnSeries.name = $(".commercial-indicator.active").attr("data-id") == "noOfCommercialRegisters" ? getI18nText("bar.graph.commercial.no.of.registers") : getI18nText("bar.graph.commercial.capital.registers");
+		columnSeries.dataFields.valueY = "value";
 		columnSeries.dataFields.categoryX = "year";
 		columnSeries.yAxis = valueAxis;
 		columnSeries.columns.template.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
@@ -3382,9 +3539,14 @@ $(document).ready(function () {
 		columnSeries.columns.template.fill = am4core.color("#025635");
 		columnSeries.tooltip.label.textAlign = "middle";
 
+        var valueLabel = columnSeries.bullets.push(new am4charts.LabelBullet());
+        valueLabel.label.text = "{value}";
+        valueLabel.label.fontSize = 12;
+        valueLabel.label.dy = -5;
+
 		var lineSeries = chart.series.push(new am4charts.LineSeries());
-		lineSeries.name = "Growth Rate";
-		lineSeries.dataFields.valueY = "growthRate";
+		lineSeries.name = getI18nText("bar.graph.growth.rate");
+		lineSeries.dataFields.valueY = "percentage";
 		lineSeries.dataFields.categoryX = "year";
 		lineSeries.yAxis = valueAxis2;
 		lineSeries.stroke = am4core.color("#BF9B2E");
@@ -3416,7 +3578,69 @@ $(document).ready(function () {
 		// }
         if(this.checked) {
             // alert($(this).attr("data-id"));
-			appendSelectedList($(this).attr("data-id"), $(this).attr("id"));
+            if($(this).attr("id") == 'manufacturingLicenses'){
+                appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'manufacturingLicenses');
+            } else if($(this).attr("id") == 'constructionLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.construction.license"), 'constructionLicenses');
+            } else if($(this).attr("id") == 'wholeSaleRetailTradeMoLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.wholesale.license"), 'wholeSaleRetailTradeMoLicenses');
+                // series.name = "Wholesale and retail trade, repair of mo Licenses";
+            } else if($(this).attr("id") == 'informationAndCommunicationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.information.license"), 'informationAndCommunicationLicenses');
+                // series.name = "Information and communication Licenses";
+            } else if($(this).attr("id") == 'professionalScientificAndTechnicalLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.professional.license"), 'professionalScientificAndTechnicalLicenses');
+                // series.name = "Professional, scientific and technical Licenses";
+            } else if($(this).attr("id") == 'accommodationFoodServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.accommodation.licens"), 'accommodationFoodServiceActivityLicenses');
+                // series.name = "Accommodation and food service actives Licenses";
+            } else if($(this).attr("id") == 'administrativeSupportServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.administration.license"), 'administrativeSupportServiceActivityLicenses');
+                // series.name = "Administration and storage Licenses";
+            } else if($(this).attr("id") == 'transportationStorageLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.transportation.license"), 'transportationStorageLicenses');
+                // series.name = "Transportation and storage Licenses";
+            } else if($(this).attr("id") == 'humanHealthSocialworkActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.human.health.license"), 'humanHealthSocialworkActivityLicenses');
+                // series.name = "Human health and social work activities licenses";
+            } else if($(this).attr("id") == 'financialInsuranceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.financial.license"), 'financialInsuranceActivityLicenses');
+                // series.name = "Financial and insurance activities licenses";
+            } else if($(this).attr("id") == 'otherServiceActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.other.license"), 'otherServiceActivityLicenses');
+                // series.name = "Other service activities licenses";
+            } else if($(this).attr("id") == 'miningQuarryingLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.mining.license"), 'miningQuarryingLicenses');
+                // series.name = "Mining and quarrying licenses";
+            } else if($(this).attr("id") == 'waterSupplySewerageWasteManagement') {
+                appendSelectedList(getI18nText("bar.graph.fdi.water.license"), 'waterSupplySewerageWasteManagement');
+                // series.name = "Water supply, sewerage, waste management";
+            } else if($(this).attr("id") == 'educationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.education.license"), 'educationLicenses');
+                // series.name = "Education licenses";
+            } else if($(this).attr("id") == 'realEstateActivityLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.estate.license"), 'realEstateActivityLicenses');
+                // series.name = "Real estate activities licenses";
+            } else if($(this).attr("id") == 'artsEntertainmentRecreationLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.arts.license"), 'artsEntertainmentRecreationLicenses');
+                // series.name = "Arts, entertainment and recreation licenses";
+            } else if($(this).attr("id") == 'electricityGasSteamAircondition') {
+                appendSelectedList(getI18nText("bar.graph.fdi.electricity.license"), 'electricityGasSteamAircondition');
+                // series.name = "Electricity, gas, steam and air conditioner";
+            } else if($(this).attr("id") == 'agricultureForestryFishing Licenses'){
+                appendSelectedList(getI18nText("bar.graph.fdi.agriculture.license"), 'agricultureForestryFishingLicenses');
+                // series.name = "Agriculture, forestry and fishing licenses";
+            } else if($(this).attr("id") == 'notAssignedLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.not.assigned.license"), 'notAssignedLicenses');
+                // series.name = "Not assigned licenses";
+            } else if($(this).attr("id") == 'publicAdministrationDefenceCompuLicenses') {
+                appendSelectedList(getI18nText("bar.graph.fdi.public.administration.license"), 'publicAdministrationDefenceCompuLicenses');
+                // series.name = "Public administration and defence; compu licenses";
+            } else if($(this).attr("id") == 'activitiesOfExtraterritorialOrganizationLicenses')
+                appendSelectedList(getI18nText("bar.graph.fdi.not.extraterritorial.license"), 'activitiesOfExtraterritorialOrganizationLicenses');{
+                // series.name = "Activities of extraterritorial organizat license";
+            }
+//			appendSelectedList($(this).attr("data-id"), $(this).attr("id"));
 			// invesSectorList.push({sector: $(this).attr("data-id"), sectoId: $(this).attr("id")})
         }
 		else {
@@ -3440,10 +3664,11 @@ $(document).ready(function () {
 		renderFDIGrowthChart(data);
 	}
 
-	if($("#capitalInformationJson").length > 0){
-		var data = JSON.parse($("#capitalInformationJson").text());
+	if($("#annualCapitalInformationJson").length > 0){
+		var data = JSON.parse($("#annualCapitalInformationJson").text());
 		rendercapitalInformationChart(data);
 	}
+
 	if($("#numberOfCommercialRegisterJson").length > 0){
 		var data = JSON.parse($("#numberOfCommercialRegisterJson").text());
 		renderCommercialChart(data);
@@ -3494,11 +3719,13 @@ $(document).ready(function () {
 				else {
 					if(doc.getElementById("quarterlyValueJson") != null){
 						var data4 = JSON.parse(doc.getElementById("quarterlyValueJson").innerHTML);
+						console.log("data4");
 						console.log(data4);
 						renderFDIValueChart(data4);
 					}
 					if(doc.getElementById("quarterlyGrowthJson") != null){
 						var data = JSON.parse(doc.getElementById("quarterlyGrowthJson").innerHTML);
+						console.log("data");
 						console.log(data);
 						renderFDIGrowthChart(data);
 					}
@@ -3518,7 +3745,8 @@ $(document).ready(function () {
 		var data = {
 			'startYear': $(".capitalStartYear").val(),
 			'endYear': $(".capitalEndYear").val(),
-			'sector': "grossFixed"
+			'sector': "grossFixed",
+			'period': $(".capital-formation-period .active").attr("data-id")
 		};
 		$.ajax({
 			type: "GET",
@@ -3530,10 +3758,15 @@ $(document).ready(function () {
 				// console.log(data);
 				var parser = new DOMParser();
                 doc = parser.parseFromString(data, "text/html");
-				if(doc.getElementById("capitalInformationJson") != null){
-					var data = JSON.parse(doc.getElementById("capitalInformationJson").innerHTML);
+				if(doc.getElementById("annualCapitalInformationJson") != null){
+					var data = JSON.parse(doc.getElementById("annualCapitalInformationJson").innerHTML);
 					rendercapitalInformationChart(data);
 				}
+				if(doc.getElementById("quarterlyCapitalInformationJson") != null){
+                    var data = JSON.parse(doc.getElementById("quarterlyCapitalInformationJson").innerHTML);
+                    rendercapitalInformationChart(data);
+                }
+
 			}
 		});
     });
@@ -4497,11 +4730,11 @@ function getCookie(name) {
     return null;
 }
 
-function eraseCookie(name) {
+function eraseCookie(name) {  
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
-function cookieConsent() {
+function cookieConsent() { 
     if (!getCookie('allowCookies')) {
        $('.cookie-desclaimer').removeClass('d-none');
     }
@@ -4544,7 +4777,7 @@ function increaseFontSize(isSet = 0) {
     var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');
 	var s;
 	if (increment < 3) {
-		increment = isSet === 0 ? (increment + 1) : parseFloat(getCookie("f_increment"));
+		increment = isSet === 0 ? (increment + 1) : parseFloat(getCookie("f_increment"));	
 		for (let i = 0; i < p.length; i++) {
 			if ($(p[i]).css('font-size')) {
 				s = parseFloat($(p[i]).css('font-size'));
@@ -4564,7 +4797,7 @@ function increaseFontSize(isSet = 0) {
 	// }
 }
 function decreaseFontSize(isSet = 0) {
-    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');
+    var p = document.querySelectorAll('body div,body p,body span, body h1, body h2, body h3, body h4, body h5, body h6');	
 	console.log(increment)
 	if (increment > 0) {
 		increment = isSet === 0 ? (increment - 1) : parseFloat(getCookie("f_increment"));
@@ -4619,7 +4852,7 @@ $(document).ready(function(){
 
 function OnChangeEnquiryType() {
 	var enquirySelected = $('.contact-us-enquirytype option:selected').val();
-
+	
 	var filtedOptions = list;
 	var opts = filtedOptions.filter('[value^=' + '"' + enquirySelected + '"' + ']');
 	if(enquirySelected === ''){
@@ -4646,7 +4879,7 @@ $("#contact-us-form-cancel").on('click',function(e){
   .not(':button, :submit, :reset, :hidden')
   .prop('checked', false)
   .prop('selectedIndex', 0)
-  .val('').change()
+  .val('').change()  	
 })
 
 
@@ -4661,8 +4894,8 @@ $('#downloadModal').on('hidden.bs.modal', function (e) {
 
 function recaptchaCallback(){
 	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorPageErrorCaptcha').text('')
-	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorErrorCaptcha').text('');
-	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');
+	$(".js-recaptcha-captchaaddon").siblings('span#lblSectorErrorCaptcha').text('');	
+	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');			
 }
 
 
@@ -4686,7 +4919,7 @@ $(document).ready(function(){
 
 $("#btnContactModalClose").on('hidden.bs.modal',function(){
 	$("#CRMObjectId").val('');
-	$(this).remove();
+	$(this).remove();	
 })
 
 function validateFormContactUs(){
@@ -4701,14 +4934,14 @@ function validateFormContactUs(){
 	lblError.innerHTML = "";
 	var isValid = true;
 
-	$("#lblErrorfirstName").text("");
-	$("#lblErrorlastName").text("");
-	$("#lblErrorPhoneNumber").text("");
-	$("#lblErrorselectedEnquiryType").text("");
-	$("#lblErrorselectedCategoryOne").text("");
-	$("#lblErrorinvalidCheck").text("");
+	$("#lblErrorfirstName").text("");	
+	$("#lblErrorlastName").text("");	
+	$("#lblErrorPhoneNumber").text("");	
+	$("#lblErrorselectedEnquiryType").text("");	
+	$("#lblErrorselectedCategoryOne").text("");	
+	$("#lblErrorinvalidCheck").text("");	
 	if(firstName === ""){
-		$("#lblErrorfirstName").text("Only Letters Are Allowed");
+		$("#lblErrorfirstName").text("Only Letters Are Allowed");	
 		isValid = false;
 	}
 	if(lastName === ""){
@@ -4717,18 +4950,18 @@ function validateFormContactUs(){
 	}
 	if(phoneNumber === ""){
 		$("#lblErrorPhoneNumber").text("Invalid Mobile Number");
-		isValid = false;
+		isValid = false;	
 	}
 	if(email === ""){
-		$("#lblError").text("Invalid Email Id");
+		$("#lblError").text("Invalid Email Id");	
 		isValid = false;
 	}
 	if(selectedEnquiryType === ""){
-		$("#lblErrorselectedEnquiryType").text("Required");
+		$("#lblErrorselectedEnquiryType").text("Required");	
 		isValid = false;
 	}
 	if(selectedCategoryOne === ""){
-		$("#lblErrorselectedCategoryOne").text("Required");
+		$("#lblErrorselectedCategoryOne").text("Required");	
 		isValid = false;
 	}
 	if(!invalidCheck.is(":checked")){
@@ -4743,7 +4976,7 @@ function validateFormContactUs(){
 	}
 
 	var recaptcha = document.forms["contact-us-form"]["g-recaptcha-response"].value;
-	$("#lblErrorCaptcha").text("");
+	$("#lblErrorCaptcha").text("");	
     if (recaptcha == "") {
         $("#lblErrorCaptcha").text("Please fill reCAPTCHA");
 		isValid = false;
@@ -4755,7 +4988,7 @@ function validateFormContactUs(){
 //-----------------------
 var role = 0;
 $(".login-role-selection .login-role-selection-box").on('click',function(){
-	$(".login-role-selection-box.active").removeClass("active");
+	$(".login-role-selection-box.active").removeClass("active"); 
 	$(this).addClass("active");
 	$('.img-ivestor-active').addClass('d-none');
 	$('.img-ivestor-inactive').removeClass('d-none');
@@ -4787,8 +5020,8 @@ $(".login-role-selection .login-role-selection-box").on('click',function(){
 
 
 $(".login-cancel").on('click',function(){
-	$(".login-role-selection-box").removeClass("active");
-
+	$(".login-role-selection-box").removeClass("active"); 
+	
 	$('.img-ivestor-active').addClass('d-none');
 	$('.img-ivestor-inactive').removeClass('d-none');
 
@@ -4817,7 +5050,7 @@ $(".login-account-screen .login-btn-next").on('click',function(){
 //----------------------------
 
 //SAGIA MENU HANDLING END
-
+	
 $("#logoutModal .yesButton").on("click", function() {
 	$.cookie('chatOpen', null, { path: ACC.config.encodedContextPath });
 	$("#sap-ecf-client").toggle(false);

@@ -6081,7 +6081,7 @@ p.contowl {
 		box-shadow: 0px 18px 25px #0000008c;
 		text-align: left;
 		font-size: 16px;
-		
+
 		color: #FFFFFF;
 		flex: 1 1 auto;
 	}
@@ -6666,7 +6666,7 @@ ul#arabic-list li {
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
-	
+
 	width: 130px;
 	height: 43px;
 	padding: 10px 25px;
@@ -6747,7 +6747,7 @@ ul#arabic-list li {
 .regions-title-container h1 p {
 	font-size: 42px !important;
 	line-height: 47px !important;
-	
+
 	text-transform: uppercase;
 	font-size: 45px;
 	font-weight: 600;
@@ -6774,7 +6774,7 @@ ul#arabic-list li {
 	font-size: 30px;
 	line-height: 40px;
 	font-weight: 600;
-	
+
 	color: #585858;
 	width: 50%;
 	margin: 0 auto;
@@ -6791,7 +6791,7 @@ ul#arabic-list li {
 	text-align: center;
 	width: 175px;
 	height: 45px;
-	
+
 	margin-top: 32px;
 	border-radius: 27px;
 	padding: 10px;
@@ -6851,7 +6851,7 @@ ul#arabic-list li {
 	text-align: right;
 	font-size: 16px;
 	line-height: 35px;
-	
+
 	color: #707070;
 	pointer-events: none;
 	width: auto !important;
@@ -6864,7 +6864,7 @@ ul#arabic-list li {
 	font-weight: 600;
 	text-align: center;
 	line-height: 22px;
-	
+
 	color: #BF9B2E;
 	position: relative;
 	left: -20px;
@@ -6877,7 +6877,7 @@ ul#arabic-list li {
 .RHQ_riyadh_province_detaisl h1 {
 	text-align: center !important;
 	font-size: 36px !important;
-	
+
 	color: #025635 !important;
 	text-transform: uppercase !important;
 }
@@ -6909,7 +6909,7 @@ ul#arabic-list li {
 	font-size: 42px !important;
 	line-height: 47px !important;
 	font-weight: 600 !important;
-	
+
 	color: #BF9B2E !important;
 	text-align: center !important;
 	padding-bottom: 30px !important;
@@ -7133,7 +7133,7 @@ body.page-province-region-homepage .regions-title-container .region-title-data {
 		background: transparent linear-gradient(90deg, #00A6BE 0%, #00A6BE00 100%) 0% 0% no-repeat padding-box;
 		box-shadow: 0px 18px 25px #0000008c;
 		text-align: left;
-		
+
 		color: #000000C4;
 		flex: 1 1 auto;
 		border-bottom: 2px dashed #1E5066;
@@ -7555,7 +7555,7 @@ figure h2 {
 	font-weight: normal;
 	text-align: center;
 	line-height: 60px;
-	
+
 	width: 1019px;
 	margin: 0 auto;
 	padding-top: 26px;
@@ -7615,7 +7615,7 @@ figure h2 {
 	font-weight: normal;
 	color: #707070;
 	margin: 0;
-	
+
 	padding-bottom: 26px;
 }
 
@@ -7648,7 +7648,7 @@ figure h2 {
 	font-weight: 600;
 	color: #025635;
 	margin: 0;
-	
+
 	padding-top: 40px;
 	padding-bottom: 28px;
 }
@@ -7664,7 +7664,7 @@ figure h2 {
 	color: #707070;
 	width: 431px;
 	margin: 0 auto;
-	
+
 }
 
 .aboutusContainer .our-values {
@@ -7837,7 +7837,7 @@ figure h2 {
 		font-weight: normal;
 		text-align: center;
 		line-height: 24px;
-		
+
 		width: 100%;
 		margin: 0 auto;
 		padding-top: 26px;
@@ -8614,7 +8614,7 @@ select {
 .popover_word {
 	text-align: left;
 	font-size: 13px;
-	
+
 	color: #707070;
 }
 
@@ -8622,14 +8622,14 @@ select {
 	text-align: left;
 	font-size: 14px;
 	font-weight: 600;
-	
+
 	color: #00A6BE;
 }
 
 .box_telephone_word {
 	font-size: 5px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 #News_press {
@@ -8658,7 +8658,7 @@ select {
 	font-size: 60px;
 	color: #ffffff;
 	font-weight: 600;
-	
+
 	text-align: right;
 }
 
@@ -8683,7 +8683,7 @@ select {
 	color: #BF9B2E;
 	font-size: 37px;
 	font-weight: 600;
-	
+
 	padding: 0px 10px;
 	margin: 0px;
 }
@@ -8692,7 +8692,7 @@ select {
 	color: #025635;
 	font-size: 12px;
 	font-weight: 600;
-	
+
 	text-transform: uppercase;
 	padding: 0px 5px;
 	margin: 0px;
@@ -8712,7 +8712,7 @@ select {
 #News_press .highlight_title {
 	color: #025635;
 	font-size: 45px;
-	
+
 	overflow: hidden;
 	max-height: 14rem;
 	-webkit-box-orient: vertical;
@@ -8730,7 +8730,7 @@ select {
 #News_press .para_title {
 	color: #484848;
 	font-size: 20px;
-	
+
 	overflow: hidden;
 	max-height: 14rem;
 	-webkit-box-orient: vertical;
@@ -8743,7 +8743,7 @@ select {
 
 #News_press .know_more {
 	font-size: 16px;
-	
+
 	padding: 14px 15px;
 	border-radius: 50px;
 	color: #00A6BE;
@@ -8849,7 +8849,7 @@ select {
 }
 #News_press .carousel-item a {
 	font-size: 16px;
-	
+
 	/*padding: 14px 15px;*/
 	border-radius: 50px;
 	color: #00A6BE;
@@ -9064,18 +9064,18 @@ select {
 		font-size: 40px;
 		color: #ffffff;
 		font-weight: 600;
-		
+
 		text-align: center;
 	}
 	#News_press .highlight_title {
 		color: #025635;
 		font-size: 35px;
-		
+
 	}
 	#News_press .para_title {
 		color: #484848;
 		font-size: 14px;
-		
+
 	}
 	#News_press .carousel-control-prev {
 		left: 30%;
@@ -9461,7 +9461,7 @@ body.page-living-in-saudi .content {
 .page-details-banner-item .btn-get-started {
 	font-weight: 400;
 	font-size: 18px;
-	
+
 	padding: 8px 18px;
 	border-radius: 50px;
 	transition: 0.5s;
@@ -9478,7 +9478,7 @@ body.page-living-in-saudi .content {
 .news-detail-content p {
 	font-size: 20px;
 	font-weight: normal;
-	
+
 	line-height: 30px;
 	color: #707070;
 	padding-bottom: 35px;
@@ -9488,7 +9488,7 @@ body.page-living-in-saudi .content {
 .news-detail-content ul {
 	font-size: 20px;
 	font-weight: normal;
-	
+
 	line-height: 30px;
 	color: #707070;
 }
@@ -10243,7 +10243,7 @@ body.page-living-in-saudi .content {
 	height: 84px;
 	text-align: center;
 	line-height: 30px;
-	
+
 	padding-top: 15px;
 	padding-bottom: 8px;
 	box-shadow: 0px 10px 19px #00000029;
@@ -10260,7 +10260,7 @@ body.page-living-in-saudi .content {
 	font-weight: 600;
 	color: #025635;
 	line-height: 30px;
-	
+
 	padding-bottom: 10px;
 }
 
@@ -10268,7 +10268,7 @@ body.page-living-in-saudi .content {
 	font-size: 20px;
 	color: #707070;
 	line-height: 30px;
-	
+
 }
 
 .eventsDetail-agenda .agenda-event:after {
@@ -10514,7 +10514,7 @@ body.page-living-in-saudi .content {
 	font-size: 27px;
 	line-height: 30px;
 	font-weight: 600;
-	
+
 	color: #BF9B2E;
 	text-align: center;
 	padding-top: 0;
@@ -10524,7 +10524,7 @@ body.page-living-in-saudi .content {
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: 600;
-	
+
 	color: #025635;
 	text-align: center;
 }
@@ -10623,7 +10623,7 @@ body.page-living-in-saudi .content {
 	font-size: 20px;
 	line-height: 30px;
 	font-weight: normal;
-	
+
 	color: #FFFFFF;
 	opacity: 1;
 }
@@ -10646,7 +10646,7 @@ body.page-living-in-saudi .content {
 	font-size: 20px;
 	line-height: 30px;
 	font-weight: normal;
-	
+
 	color: #646464;
 }
 
@@ -10666,7 +10666,7 @@ body.page-living-in-saudi .content {
 	font-size: 20px;
 	line-height: 30px;
 	font-weight: 600;
-	
+
 	color: #646464;
 	position: absolute;
 	top: 50%;
@@ -10708,7 +10708,7 @@ body.page-living-in-saudi .content {
 	font-size: 22px;
 	line-height: 31px;
 	font-weight: 600;
-	
+
 	color: #646464;
 	padding: 2em 1em 0;
 	line-height: normal;
@@ -10727,7 +10727,7 @@ body.page-living-in-saudi .content {
 	font-size: 22px;
 	line-height: 24px;
 	font-weight: normal;
-	
+
 	color: #FFFFFF;
 	background: #00A6BE 0% 0% no-repeat padding-box;
 	border-radius: 27px;
@@ -10752,7 +10752,7 @@ body.page-living-in-saudi .content {
 	font-size: 30px;
 	line-height: 46px;
 	font-weight: normal;
-	
+
 	color: #646464;
 	padding: 1em 0 0;
 	margin: 0;
@@ -10787,7 +10787,7 @@ body.page-living-in-saudi .content {
 	font-size: 30px;
 	line-height: 36px;
 	font-weight: 600;
-	
+
 	color: #025635;
 }
 
@@ -10806,7 +10806,7 @@ body.page-living-in-saudi .content {
 	font-size: 35px;
 	line-height: 47px;
 	font-weight: normal;
-	
+
 	color: #BF9B2E;
 	text-align: right;
 }
@@ -10820,7 +10820,7 @@ body.page-living-in-saudi .content {
 	font-size: 25px;
 	line-height: 30px;
 	font-weight: normal;
-	
+
 	color: #373737;
 	text-align: right;
 }
@@ -10877,7 +10877,7 @@ body.page-living-in-saudi .content {
 	font-size: 30px;
 	line-height: 40px;
 	font-weight: 600;
-	
+
 	color: #BF9B2E;
 	padding: 1em 0;
 	width: 80%;
@@ -10889,7 +10889,7 @@ body.page-living-in-saudi .content {
 	font-size: 25px;
 	line-height: 46px;
 	font-weight: 600;
-	
+
 	color: #373737;
 }
 .top_offset {
@@ -10914,7 +10914,7 @@ body.page-living-in-saudi .content {
 	font-size: 35px;
 	line-height: 47px;
 	font-weight: normal;
-	
+
 	color: #BF9B2E;
 	text-align: right;
 }
@@ -10923,7 +10923,7 @@ body.page-living-in-saudi .content {
 	font-size: 35px;
 	line-height: 47px;
 	font-weight: 600;
-	
+
 	color: #025635;
 }
 
@@ -10931,7 +10931,7 @@ body.page-living-in-saudi .content {
 	font-size: 25px;
 	line-height: 30px;
 	font-weight: normal;
-	
+
 	color: #373737;
 	margin: 15px 0px;
 	text-align: right;
@@ -10945,7 +10945,7 @@ body.page-living-in-saudi .content {
 	font-size: 30px;
 	line-height: 36px;
 	font-weight: 600;
-	
+
 	color: #BF9B2E;
 	text-transform: capitalize;
 	display: block;
@@ -11021,7 +11021,7 @@ body.page-living-in-saudi .content {
 	text-align: center;
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -11029,7 +11029,7 @@ body.page-living-in-saudi .content {
 	text-align: center;
 	font-size: 34px;
 	font-weight: 600;
-	
+
 	color: #BF9B2E;
 	text-transform: uppercase;
 }
@@ -11037,7 +11037,7 @@ body.page-living-in-saudi .content {
 .INS_header_para {
 	text-align: center;
 	font-size: 25px;
-	
+
 	color: #707070;
 }
 
@@ -11050,7 +11050,7 @@ body.page-living-in-saudi .content {
 	text-align: center;
 	font-size: 25px;
 	font-weight: 600;
-	
+
 	color: #BF9B2E;
 }
 
@@ -11058,7 +11058,7 @@ body.page-living-in-saudi .content {
 	text-align: left;
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -11074,7 +11074,7 @@ body.page-living-in-saudi .content {
 	text-decoration: underline;
 	font-size: 16px;
 	font-weight: bold;
-	
+
 	color: #00A6BE;
 	text-transform: uppercase;
 }
@@ -11135,7 +11135,7 @@ ul.INS_list_font li {
 	text-align: left;
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -11186,7 +11186,7 @@ ul.INS_list_font {
 .INS_financial_header {
 	text-align: center;
 	font-size: 25px;
-	
+
 	color: #025635;
 	text-transform: capitalize;
 	padding-bottom: 50px;
@@ -11200,7 +11200,7 @@ ul.INS_list_font {
 	text-align: center;
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -11220,13 +11220,13 @@ ul.INS_list_font {
 
 .INS_tax_headeron {
 	font-size: 25px;
-	
+
 	color: #707070;
 }
 
 .INS_tax_headeron_para {
 	font-size: 20px;
-	
+
 	color: #707070;
 }
 
@@ -11234,14 +11234,14 @@ ul.INS_list_font {
 	font-size: 25px;
 	font-weight: 600;
 	text-align: left;
-	
+
 	color: #025635;
 }
 
 .INS_smes_headeron_para {
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -11277,7 +11277,7 @@ ul.INS_list_font {
 	text-align: left;
 	font-size: 25px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -11285,7 +11285,7 @@ ul.INS_list_font {
 	text-align: left;
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -11300,7 +11300,7 @@ ul.INS_list_font {
 	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
-	
+
 	color: #707070;
 }
 .INS_EPM_nav .INS_EPM_border_set {
@@ -11350,7 +11350,7 @@ ul.INS_list_font {
 	text-decoration: underline;
 	font-size: 16px;
 	font-weight: bold;
-	
+
 	color: #FFFFFF;
 	text-transform: uppercase;
 }
@@ -11359,7 +11359,7 @@ ul.INS_list_font {
 	text-align: left;
 	font-size: 16px;
 	font-weight: normal;
-	
+
 	color: #FFFFFF;
 }
 
@@ -11367,7 +11367,7 @@ ul.INS_list_font {
 	text-align: left;
 	font-size: 20px;
 	font-weight: normal;
-	
+
 	color: #FFFFFF;
 }
 
@@ -11375,7 +11375,7 @@ ul.INS_list_font {
 	text-align: left;
 	font-size: 25px;
 	font-weight: bold;
-	
+
 	color: #FFFFFF;
 }
 
@@ -11421,7 +11421,7 @@ ul.INS_list_font {
 	text-align: center;
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #025635;
 }
 
@@ -11430,7 +11430,7 @@ ul.INS_list_font {
 	text-decoration: underline;
 	font-size: 16px;
 	font-weight: 600;
-	
+
 	color: #00A6BE;
 }
 
@@ -11514,7 +11514,7 @@ ul.INS_li_ul_under li {
 		font-weight: 600;
 		text-align: center;
 		line-height: 20px;
-		
+
 		color: #025635;
 		padding-bottom: 15px;
 	}
@@ -11609,7 +11609,7 @@ ul.INS_li_ul_under li {
 		min-height: unset;
 		font-size: 30px;
 		line-height: 40px;
-		
+
 		padding: 0 15px;
 	}
 	.page-sector-details .Inc-sectordetail-overview h1,
@@ -11619,7 +11619,7 @@ ul.INS_li_ul_under li {
 		min-height: unset;
 		font-size: 30px !important;
 		line-height: 40px;
-		
+
 		padding: 0 15px;
 	}
 	.page-sector-details .Inc-sector-sucessStories-header {
@@ -11628,7 +11628,7 @@ ul.INS_li_ul_under li {
 		min-height: unset;
 		font-size: 30px;
 		line-height: 40px;
-		
+
 		padding: 0 15px;
 	}
 	.page-sector-details .successstory-container .sucess_section .sucess_content p {
@@ -11661,7 +11661,7 @@ ul.INS_li_ul_under li {
 	}
 	.page-sector-details .Inc-sector-keyDetails ul li {
 		font-size: 16px;
-		
+
 		line-height: 24px;
 	}
 	.page-sector-details .Inc-sectordetails-tab ul li a {
@@ -11673,7 +11673,7 @@ ul.INS_li_ul_under li {
 		min-height: unset;
 		font-size: 30px;
 		line-height: 40px;
-		
+
 		padding: 0 15px;
 	}
 	.page-sector-details .Inc-sectoritem-overview p {
@@ -11698,7 +11698,7 @@ ul.INS_li_ul_under li {
 		min-height: unset;
 		font-size: 30px;
 		line-height: 40px;
-		
+
 		padding: 0 15px;
 	}
 	.page-sector-details .Inc-sector-keyDetails p:before {
@@ -11720,17 +11720,17 @@ ul.INS_li_ul_under li {
 	.page-portal-homepage #hero .video-popup-btn .btn-video {
 		font-size: 12px;
 		min-height: 32px;
-		
+
 	}
 	.page-portal-homepage .when-number-talk-container h2 {
 		font-size: 30px;
 		line-height: 34px;
-		
+
 	}
 	.page-portal-homepage .reasons .where_totitle {
 		font-size: 30px;
 		line-height: 40px;
-		
+
 	}
 	.page-portal-homepage .when-number-talk-container .talk_item-number {
 		font-size: 30px;
@@ -11739,7 +11739,7 @@ ul.INS_li_ul_under li {
 	.page-portal-homepage .explore-key-section .reasons .get-explore-btn {
 		font-size: 16px;
 		font-weight: unset;
-		
+
 		line-height: 19px;
 	}
 	.page-portal-homepage .contactus-content a.txt-link {
@@ -11747,7 +11747,7 @@ ul.INS_li_ul_under li {
 		font-weight: unset;
 		justify-content: space-evenly;
 		align-items: center;
-		
+
 		line-height: 19px;
 		height: 60px;
 		padding: 15px 50px;
@@ -11757,25 +11757,25 @@ ul.INS_li_ul_under li {
 	.page-portal-homepage .fo-container .explore-all .get-explore-btn {
 		font-size: 16px;
 		font-weight: unset;
-		
+
 		line-height: 19px;
 	}
 	.page-portal-homepage #incentiveforinvestors .explore-btn {
 		font-size: 16px;
 		font-weight: unset;
-		
+
 		line-height: 19px;
 	}
 	.page-portal-homepage #mg .explore-btn {
 		font-size: 16px;
 		font-weight: unset;
-		
+
 		line-height: 19px;
 	}
 	.page-portal-homepage .newsAndUpdateContainer .titleContainer .explore-btn {
 		font-size: 16px;
 		font-weight: unset;
-		
+
 		line-height: 19px;
 	}
 	.page-portal-homepage .swiper-about p {
@@ -11786,17 +11786,17 @@ ul.INS_li_ul_under li {
 	.page-portal-homepage .where-to-invest .title-heading {
 		font-size: 30px;
 		line-height: 34px;
-		
+
 	}
 	.page-portal-homepage .feature_totitle {
 		font-size: 30px;
 		line-height: 34px;
-		
+
 	}
 	.page-portal-homepage #newsandupdates .titleContainer .title-heading .section-title {
 		font-size: 30px;
 		line-height: 34px;
-		
+
 	}
 	.page-portal-homepage #when-number-talk .talk_item .talk_item-text {
 		font-size: 15px;
@@ -11807,19 +11807,19 @@ ul.INS_li_ul_under li {
 	}
 	.page-portal-homepage .sector-box .section-title h4 {
 		font-size: 30px;
-		
+
 		line-height: 40px;
 	}
 	.page-portal-homepage .title-heading,
 	.page-portal-homepage .mg-container .section-title h2 {
 		font-size: 30px;
-		
+
 		line-height: 40px;
 	}
 	.page-portal-homepage .sector-box .section-title p {
 		font-size: 16px;
 		line-height: 24px;
-		
+
 		padding-bottom: 25px;
 	}
 	.page-portal-homepage .section-title .know-more {
@@ -11841,17 +11841,17 @@ ul.INS_li_ul_under li {
 	.page-portal-homepage #mg .project-info p {
 		font-size: 15px;
 		line-height: 25px;
-		
+
 	}
 	.page-portal-homepage .successstory-container .sucess_section .sucess_content p {
 		font-size: 16px;
 		line-height: 25px;
-		
+
 	}
 	.page-portal-homepage #incentiveforinvestors .features-1 .inc-card p {
 		font-size: 16px;
 		line-height: 25px;
-		
+
 	}
 	.page-contact-us .contact-map h1 {
 		font-size: 25px;
@@ -11879,7 +11879,7 @@ ul.INS_li_ul_under li {
 	.contactpage-form .tab-content h2 {
 		font-size: 30px;
 		padding: 0 15px;
-		
+
 	}
 	.contactpage-form .contact-accordion .card-header h5 button.btn.btn-link {
 		white-space: unset;
@@ -12004,7 +12004,7 @@ ul.INS_li_ul_under li {
 	}
 	.page-opportunity-search .opportunity-card .know-more-btn,
 	.page-opportunity-search .opportunity-card .interest-btn {
-		
+
 		line-height: 19px;
 	}
 	.page-opportunity-search .opportunity-card .content-box {
@@ -12129,7 +12129,7 @@ ul.INS_li_ul_under li {
 	.page-meet-the-kingdom .title-area .title-heading {
 		font-size: 30px;
 		line-height: 40px;
-		
+
 		font-weight: unset;
 		padding: 15px 15px;
 	}
@@ -12247,7 +12247,7 @@ ul.INS_li_ul_under li {
 	}
 	.region-wrapper-right h1 {
 		font-size: 30px;
-		
+
 		line-height: 40px;
 		text-transform: uppercase;
 	}
@@ -12468,7 +12468,7 @@ ul.INS_li_ul_under li {
 	font-size: 16px;
 	font-weight: bold;
 	text-align: right;
-	
+
 	color: #00A6BE;
 	text-decoration: underline;
 }
@@ -12861,7 +12861,7 @@ ul.INS_li_ul_under li {
 	font-size: 16px;
 	font-weight: bold;
 	text-align: left;
-	
+
 	color: #00A6BE;
 	text-decoration: underline;
 }
@@ -13133,7 +13133,7 @@ ul.INS_li_ul_under li {
 
 .numbers_golden_set {
 	font-weight: 600;
-	
+
 	color: #BF9B2E;
 	text-transform: uppercase;
 	font-size: 20px;
@@ -13215,7 +13215,7 @@ ul.INS_li_ul_under li {
 		min-height: unset;
 		font-size: 30px;
 		line-height: 40px;
-		
+
 		padding: 0 15px;
 	}
 	.page-sector-details .Inc-sectoritem-overview p {
@@ -13249,7 +13249,7 @@ ul.INS_li_ul_under li {
 		min-height: unset;
 		font-size: 30px;
 		line-height: 40px;
-		
+
 		padding: 0 15px;
 	}
 	.page-sector-details .val-header {
@@ -14459,19 +14459,19 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	display: flex;
 	justify-content: center;
 }
-.page-infrastructure-logistics .eh-page-grid, 
-.page-sa-international-indices .eh-page-grid, 
-.page-saudi-economic-sectors .eh-page-grid, 
+.page-infrastructure-logistics .eh-page-grid,
+.page-sa-international-indices .eh-page-grid,
+.page-saudi-economic-sectors .eh-page-grid,
 .page-investment-data .eh-page-grid {
     display: flex;
     justify-content: space-evenly;
 }
-.page-infrastructure-logistics .thumbnail .eh-page-grid-link, 
-.page-sa-international-indices .thumbnail .eh-page-grid-link, 
+.page-infrastructure-logistics .thumbnail .eh-page-grid-link,
+.page-sa-international-indices .thumbnail .eh-page-grid-link,
 .page-saudi-economic-sectors .thumbnail .eh-page-grid-link,
  .page-investment-data .thumbnail .eh-page-grid-link {
     bottom: 0;
-	
+
 }
 
 .eh-page-breadcrums .thumbnail {
@@ -14632,7 +14632,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	text-align: center;
 	font-weight: 600;
 	font-size: 30px;
-	
+
 	color: #FFFFFF;
 }
 
@@ -14656,14 +14656,14 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	text-align: center;
 	font-weight: 600;
 	font-size: 35px;
-	
+
 	color: #025635;
 }
 
 .INL_logistics_icons_para {
 	text-align: center;
 	font-size: 16px;
-	
+
 	color: #707070;
 }
 
@@ -14714,7 +14714,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	/*  */
 	font-weight: bold;
 	font-size: 20px;
-	
+
 	color: #707070;
 	width: 100%;
 }
@@ -14737,14 +14737,14 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	text-align: center;
 	font-weight: 600;
 	font-size: 35px;
-	
+
 	color: #025635;
 }
 
 .INL_total_number_contant {
 	text-align: center;
 	font-size: 16px;
-	
+
 	color: #707070;
 }
 
@@ -14764,7 +14764,7 @@ max-width: 25%; */
 	text-align: center;
 	font-weight: 600;
 	font-size: 20px;
-	
+
 	color: #025635;
 	height: 52px;
 }
@@ -14773,7 +14773,7 @@ max-width: 25%; */
 	text-align: left;
 	/*   */
 	font-size: 16px;
-	
+
 	color: #707070;
 }
 
@@ -14781,7 +14781,7 @@ max-width: 25%; */
 	text-align: right;
 	font-weight: 600;
 	font-size: 16px;
-	
+
 	color: #BF9B2E;
 }
 
@@ -14797,7 +14797,7 @@ max-width: 25%; */
 	text-decoration: underline;
 	font-size: 16px;
 	font-weight: 600;
-	
+
 	color: #00A6BE;
 	text-transform: uppercase;
 }
@@ -14817,7 +14817,7 @@ max-width: 25%; */
 	text-align: center;
 	font-size: 25px;
 	font-weight: 600;
-	
+
 	color: #FFFFFF;
 }
 
@@ -14896,7 +14896,7 @@ max-width: 25%; */
 	margin-bottom: 25px;
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -14921,7 +14921,7 @@ body.page-saudi-economic-sectors .INL_SD_Real_Sector {
 	text-align: center;
 	font-size: 35px;
 	font-weight: 600;
-	
+
 	color: #BF9B2E;
 }
 
@@ -14929,7 +14929,7 @@ body.page-saudi-economic-sectors .INL_SD_Real_Sector {
 	text-align: center;
 	font-size: 18px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -14937,7 +14937,7 @@ body.page-saudi-economic-sectors .INL_SD_Real_Sector {
 	text-align: center;
 	font-size: 12px;
 	font-weight: 600;
-	
+
 	color: #707070;
 	margin-top: -10px;
 }
@@ -14946,7 +14946,7 @@ body.page-saudi-economic-sectors .INL_SD_Real_Sector {
 	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
-	
+
 	color: #025635;
 	height: 45px;
 }
@@ -14966,7 +14966,7 @@ margin-top: 20px;
 	text-align: center;
 	font-size: 16px;
 	font-weight: 600;
-	
+
 	color: #707070;
 	margin-top: 20px change to 40px;
 }
@@ -14979,14 +14979,14 @@ margin-top: 20px;
 	text-align: center;
 	font-size: 25px;
 	font-weight: 600;
-	
+
 	color: #025635;
 }
 
 .INL_Select_year {
 	text-align: center;
 	font-size: 20px;
-	
+
 	color: #707070;
 	margin-left: 20px;
 }
@@ -14995,7 +14995,7 @@ margin-top: 20px;
 	text-align: center;
 	font-size: 19px;
 	font-weight: 600;
-	
+
 	color: #707070;
 	width: 155px !important;
 	height: 65px !important;
@@ -15007,7 +15007,7 @@ margin-top: 20px;
 .INL_Select_overall {
 	text-align: right;
 	font-size: 20px;
-	
+
 	color: #BF9B2E;
 	font-weight: 600;
 }
@@ -15016,7 +15016,7 @@ margin-top: 20px;
 	text-align: right;
 	font-size: 20px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -15038,7 +15038,7 @@ margin-top: 20px;
 .INL_UEMP_header {
 	text-align: center;
 	font-size: 20px;
-	
+
 	color: #707070;
 }
 
@@ -15064,14 +15064,14 @@ margin-top: 20px;
 .INL_UEMP_header_number_green {
 	text-align: center;
 	font-size: 20px;
-	
+
 	color: #025635;
 }
 
 .INL_UEMP_header_number_gold {
 	text-align: center;
 	font-size: 20px;
-	
+
 	color: #BF9B2E;
 }
 
@@ -15090,7 +15090,7 @@ margin-top: 20px;
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
-	
+
 	color: #707070;
 	width: 100%;
 }
@@ -15105,7 +15105,7 @@ margin-top: 20px;
 	text-align: center;
 	font-weight: 600;
 	font-size: 20px;
-	
+
 	color: #FFFFFF;
 }
 
@@ -15113,7 +15113,7 @@ margin-top: 20px;
 	text-align: center;
 	font-weight: 600;
 	font-size: 20px;
-	
+
 	color: #BF9B2E;
 }
 
@@ -15138,7 +15138,7 @@ margin-top: 20px;
 	text-align: left;
 	font-weight: 600;
 	font-size: 16px;
-	
+
 	color: #707070;
 	padding-left: 35px;
 	position: absolute;
@@ -15203,7 +15203,7 @@ padding: 0px 0px 0px 35px;*/
 	text-align: center;
 	font-weight: bold;
 	font-size: 16px;
-	
+
 	color: #ffffff;
 	width: 100%;
 	border-radius: 25px 0px 0px 25px;
@@ -15250,7 +15250,7 @@ padding: 0px 0px 0px 35px;*/
 	text-align: center;
 	font-weight: 600;
 	font-size: 30px;
-	
+
 	color: #FFFFFF;
 }
 
@@ -15258,7 +15258,7 @@ padding: 0px 0px 0px 35px;*/
 	text-align: center;
 	font-size: 16px;
 	font-weight: 600;
-	
+
 	color: #707070;
 }
 
@@ -15266,7 +15266,7 @@ padding: 0px 0px 0px 35px;*/
 	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
-	
+
 	color: #025635;
 }
 
@@ -15274,7 +15274,7 @@ padding: 0px 0px 0px 35px;*/
 	text-align: center;
 	font-size: 12px;
 	font-weight: 600;
-	
+
 	color: #707070;
 	margin-top: -5px;
 }
@@ -15283,7 +15283,7 @@ padding: 0px 0px 0px 35px;*/
 	text-align: center;
 	font-size: 35px;
 	font-weight: 600;
-	
+
 	color: #BF9B2E;
 }
 
@@ -15298,7 +15298,7 @@ padding: 0px 0px 0px 35px;*/
 .INID_Select_over_header {
 	text-align: center;
 	font-size: 20px;
-	
+
 	color: #BF9B2E;
 	font-weight: 600;
 }
@@ -15320,7 +15320,7 @@ padding: 0px 0px 0px 35px;*/
 	padding: 10px 45px 10px 30px;
 	text-align: center;
 	font-size: 16px;
-	
+
 	color: #707070;
 	text-transform: capitalize;
 	position: relative;
@@ -15406,7 +15406,7 @@ padding: 0px 0px 0px 35px;*/
 	line-height: 19px;
 	color: #fff;
 	padding: 15px 20px;
-	
+
 	border-radius: 27px;
 	text-transform: uppercase;
 	border: 1px solid #00A6BE;
@@ -15418,6 +15418,16 @@ padding: 0px 0px 0px 35px;*/
 }
 
 .fund-assets-period label.active {
+	color: #fff;
+	border: none;
+	background-color: #00A6BE !important;
+}
+
+.capital-formation-period label {
+	background-color: #C6C6C6 !important;
+}
+
+.capital-formation-period label.active {
 	color: #fff;
 	border: none;
 	background-color: #00A6BE !important;
@@ -15480,7 +15490,7 @@ padding-left: 40px;
 	color: #fff;
 	width: 119px;
 	height: 45px;
-	
+
 	padding-top: 12px;
 	padding-bottom: 12px;
 	border-radius: 23px;
@@ -15789,7 +15799,7 @@ padding-left: 40px;
 		margin: auto;
 		padding: 5%;
 		text-align: center;
-		
+
 		transform: rotate(0deg);
 		-webkit-transition: all 500ms ease;
 		-moz-transition: all 500ms ease;
@@ -16968,6 +16978,18 @@ ul.INS_list_font li,
 }
 
 .btn-group.fund-assets-period>.btn:not(:last-child):not(.dropdown-toggle) {
+	border-radius: 27px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.btn-group.capital-formation-period>.btn:not(:first-child) {
+	border-radius: 27px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.btn-group.capital-formation-period>.btn:not(:last-child):not(.dropdown-toggle) {
 	border-radius: 27px;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;

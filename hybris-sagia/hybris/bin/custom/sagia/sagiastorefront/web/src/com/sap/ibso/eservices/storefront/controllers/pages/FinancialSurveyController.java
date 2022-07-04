@@ -2,6 +2,8 @@ package com.sap.ibso.eservices.storefront.controllers.pages;
 
 import atg.taglib.json.util.JSONException;
 import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
+import com.sap.ibso.eservices.core.model.FinancialSurveyQuarterModel;
+import com.sap.ibso.eservices.core.sagia.dao.FinancialSurveyQuarterDAO;
 import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaDraftService;
 import com.sap.ibso.eservices.facades.data.license.amendment.Shareholder;
@@ -83,6 +85,9 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     @Resource(name = "defaultTicketAttachmentsService")
     private TicketAttachmentsService ticketAttachmentsService;
 
+    @Resource
+    private FinancialSurveyQuarterDAO financialSurveyQuarterDAO;
+
 
     private static final String SERVICE_ID = "ZS11";
     private static final String FORM_GLOBAL_ERROR = "form.global.error";
@@ -98,6 +103,12 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
 
         if (request.getRequestURI().contains("display")) {
             model.addAttribute("quarterCode", quarterCode != null ? quarterCode : "");
+
+            FinancialSurveyQuarterModel financialSurveyQuarterModel = financialSurveyQuarterDAO.findFinancialSurveyQuarterByCode(quarterCode);
+
+            model.addAttribute("currenQuarter", financialSurveyQuarterModel != null ? financialSurveyQuarterModel.getName() : "N/A");
+            model.addAttribute("previousQuarter", (financialSurveyQuarterModel != null && financialSurveyQuarterModel.getPreviousQuarter() != null) ? financialSurveyQuarterModel.getPreviousQuarter().getName() : "N/A");
+
         }
 
 
@@ -349,7 +360,9 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
                     }
                 }
             }
-            sagiaFinancialSurveyFacade.submitFinancialSurveyForReview(mediaModel,financialStatementForm.getSrId());
+            //hoursToCompleteSurvey, minutesToCompleteSurvey, sourceOfKnowledge
+            sagiaFinancialSurveyFacade.submitFinancialSurveyForReview(mediaModel,financialStatementForm.getSrId(), financialStatementForm.getHoursToCompleteSurvey() ,
+                    financialStatementForm.getMinutesToCompleteSurvey(), financialStatementForm.getSourceOfKnowledge()  );
             sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(), TermsAndConditionsAcceptanceEventEnum.FINANCIAL_STATEMENT);
             redirectModel.addFlashAttribute("requestFeedback", "true");
         } catch (Exception e) {

@@ -45,7 +45,11 @@
 	<div class="mobile-code-wrapper">
 		<formElement:formInputBox idKey="authenticate.code" path="code" labelKey="text.authenticate.code.input" labelCSS="mobile-code-label" inputCSS="form-control mobile-code-text validate-mobile mobile-number" mandatory="true" autocomplete="off"/>
 	</div>	
-	
+	<div class="col-md-12 captcha-pos">
+            	<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
+            	<div class="form_field-elements control-group js-recaptcha-captchaaddon" style=""></div>
+            	<span id="lblErrorCaptchareg" class="mandatory"></span>
+            </div>
 	<div class="accountLogin-content-formSubmitSection">
 		<div class="contentModule-actions contentModule-actions_centered">
 			<ycommerce:testId code="authenticate_Code_button">
@@ -74,15 +78,10 @@
 				</c:otherwise>
 			</c:choose>
 			
-			<a id="resendBtn" class="login-btn login-entry-cancel padding-top-10" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a>
+<%-- 			<a id="resendBtn" class="login-btn login-entry-cancel padding-top-10" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a> --%>
 		</div>
 		<div class="trouble-contact-us"><spring:theme code="text.otp.expiry.message.description"/></div>
 		<br/>
-		<div class="col-md-12 captcha-pos">
-        	<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
-        	<div class="form_field-elements control-group js-recaptcha-captchaaddon" style=""></div>
-        	<span id="lblErrorCaptchareg" class="mandatory"></span>
-        </div>
 		<p class="trouble-contact-us"><spring:theme code="register.login.problem"/> &nbsp;
 			<a href="https://misa.gov.sa/ar/contact-us/" class="login-forgot d-inline-block"><spring:theme code="register.login.problem.contact"/></a>
 		</p>

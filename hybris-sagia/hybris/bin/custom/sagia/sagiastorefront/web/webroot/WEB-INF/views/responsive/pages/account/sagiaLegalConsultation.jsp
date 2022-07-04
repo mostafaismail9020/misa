@@ -19,10 +19,54 @@
     <input type="hidden" id="serviceId" value="${latestLegalConsultation.srId}"/>
 </c:if>
 
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="legalConsultationCreate.title" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="legalConsultationCreate.title" /></h1>
+        <div class="mainSection-header row service-time">
+            <!-- <h1 class="mainSection-headline"><spring:theme code="legalConsultationCreate.title" /></h1> -->
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
@@ -48,9 +92,8 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<!-- <div class="mainSection mainSection_dark mainSection_pdt16">
 <div class="container">
-<!-- <div style="padding: 15px 67px 15px;"> -->
 <div class="contentModule">
 <div class="contentModule-section" >
 	<div class="statusBox-description">
@@ -61,10 +104,10 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 <!-- </div> -->
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <div>
@@ -75,31 +118,126 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(legalConsultations) gt 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                    <div class="hidden"><spring:theme code="legalConsultation.showServiceHistory"/><span>&#x27f6;</span></div>
-                    <div><spring:theme code="legalConsultation.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class=" row renewal-services w-100">
+                <div class="col-xl-3 col-md-6 col-12 px-0">
+                    <a href="${encodedContextPath}/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                    </div>
+                </c:if>
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">
+                        <button class="btn btn_slim back_to_service"
+                                onclick="window.location.href='${encodedContextPath}/legalconsultations/new'">
+                            <spring:theme code="legalConsultation.create"/>
+                        </button>                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
-        <div class="expandableContent expanded" id="expand01">
-            <c:if test="${fn:length(legalConsultations) gt 1}">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
+<c:if test="${not empty sagiaService.description || not empty sagiaService.serviceDocuments || not empty sagiaService.rulesRestrictions || not empty sagiaService.serviceFinancialFees || not empty sagiaService.serviceDuration}">  
+    <div class="container">
+        <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
+            <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="service.overview.show"/></div>
+            <div class=""><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+        </button>
+    </div>
+    <div class="container service-wrapper service-wrapper-info mb-5 expanded" id="expand-03" >
+        <div class="serviceModule serviceModule_list mx-5 pt-4">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.description}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.service.overview"/> </span>										
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
+                        </c:if>					
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="serviceModule serviceModule_list mx-5">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.serviceDocuments}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.service.document"/> </span>
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="serviceModule serviceModule_list mx-5">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.rulesRestrictions}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.rules.restrictions"/></span>
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="serviceModule serviceModule_list mx-5">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.serviceFinancialFees}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.financial.fees"/> </span>
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="serviceModule serviceModule_list mx-5 pb-4">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.serviceDuration}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</c:if>
+
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
+    <div class="container">
+        <c:if test="${fn:length(legalConsultations) gt 0}">
+            <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+                <div class=""><span><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div class="hidden"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+            </button>
+        </c:if>
+        <div class="expandableContent" id="expand01">
+            <c:if test="${fn:length(legalConsultations) gt 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline contentModule-headline-history">
+                                <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="legalConsultation.history"/></div>
                                 <div class="searchInputBox searchInputBox_slim">
                                     <input onkeyup="filterHistory(this)" class="searchInputBox-input" type="text"
@@ -137,8 +275,7 @@
                             <div class="contentModule-section" id = "detailedLegalConsultationContent">
 
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div  class="contentModule-headline">
-                                    <span class="iconElement iconElement_info"><icon:info/></span>
+                                    <div  class="contentModule-headline contentModule-headline-service-info headline-text">
                                     <span id= "currentID">${latestLegalConsultation.srId}</span>
                                     <span style="display: none;" id= "currentGUID">${latestLegalConsultation.srGuid}</span>
                                 </div>
@@ -173,8 +310,14 @@
                             </div>
                             <c:if test="${fn:length(legalConsultations) gt 0}">
                                 <div class="contentModule-section">
-                                    <div class="contentModule-headline contentModule-headline_small "><spring:theme code="legalConsultation.comments"/></div>
-                                    <div class="commentModule">
+                                    <!-- <div class="contentModule-headline contentModule-headline-service-info contentModule-headline_small "><spring:theme code="legalConsultation.comments"/></div> -->
+                                    <div class="contentModule contentModule-wrap">
+                                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                            <span class="contentModule-headline"><spring:theme code="legalConsultation.comments"/></span>
+                                            <div class="contentModule-headline-border"></div>
+                                        </div>
+                                    </div>
+                                    <div class="commentModule-1">
                                         <div class="commentModule-window">
                                             <ul id="messagesListUL" class="messageList">
                                                 <c:forEach items="${latestLegalConsultation.getTextSet}" var="comment">
@@ -204,13 +347,15 @@
                     <div  class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section" id = "attachedFilesDivContent">
-
-                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered">
-                                    <div  class="contentModule-headline">
-                                        <span class="iconElement iconElement_documents"><icon:documents/></span>
-                                        <spring:theme code="legalConsultation.supportDocuments"/>
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="legalConsultation.supportDocuments"/></span>
+                                        <div class="contentModule-headline-border"></div>
                                     </div>
                                 </div>
+                                <!-- <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_bordered">
+                                    <div  class="contentModule-headline headline-text"><spring:theme code="legalConsultation.supportDocuments"/></div>
+                                </div> -->
                                 <ul id="attachmentList" class="downloadList">
                                     <c:forEach items="${latestLegalConsultation.contentHDRSet}" var="attachment">
                                         <li class="downloadList-item">
@@ -227,7 +372,7 @@
                                                 data-document-id="${attachment.documentId}"
                                                 data-file-name="${attachment.filename}">
                                                 <a  id = "downloadAnchorTag" class="link link_nowrap"
-                                                     href="${encodedContextPath}/attachment/pdf/${attachment.objectId}/${attachment.documentId}" 
+                                                     href="${encodedContextPath}/attachment/pdf/${attachment.objectId}/${attachment.documentId}"
                                                      download="${attachment.fullFileName}">
                                                      <span class="iconElement iconElement_cloud">
                                                            <icon:download />
@@ -249,12 +394,12 @@
  <script id="expandedLegalConsultationTemplate" type="text/template">
     <div class="contentModule-section" id = "detailedLegalConsultationContent">
     <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-     <div  class="contentModule-headline">
+     <div  class="contentModule-headline contentModule-headline-service-info">
      <span class="iconElement iconElement_info"><icon:info/></span>
      <span id= "currentID">{{srId}}</span>
     </div>
    <div>
-	<button class="btn btn_slim"
+	<button class="btn btn_slim d-none"
     onclick="window.location.href='${encodedContextPath}/legalconsultations/new'">
     <spring:theme code="legalConsultation.create"/>
     </button>
@@ -291,7 +436,7 @@
                data-document-id="{{documentId}}"
                data-file-name="{{filename}}">
                <a  id = "downloadAnchorTag" class="link link_nowrap"
-               		href="{{downloadUrl}}" 
+               		href="{{downloadUrl}}"
 					 download="{{fullFileName}}">
                 <span class="iconElement iconElement_cloud">
                       <icon:download />

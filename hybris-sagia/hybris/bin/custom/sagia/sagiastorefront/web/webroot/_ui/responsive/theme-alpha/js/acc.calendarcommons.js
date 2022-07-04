@@ -1,9 +1,12 @@
 ACC.calendarcommons = {
     bindFlatpickr: function (element) {
+        var enable_no_data = [{from : new Date(0, 1), to : new Date(new Date().getFullYear() + 400, 12)}];
+        var enable_date = element.data('dates-disabled') !== undefined ? enable_no_data : ACC.calendarcommons.getFormDatesObject(element.data('dates-enabled'));
+
         element.flatpickr({
             dateFormat: ACC.formatUIDate ? ACC.formatUIDate : "M d, Y",
             disable: ACC.calendarcommons.getFormDatesObject(element.data('dates-disabled')),
-            enable: element.data('dates-disabled') ? [] : ACC.calendarcommons.getFormDatesObject(element.data('dates-enabled')),
+             enable: enable_date.length > 0 ? enable_date : enable_no_data,
             disableMobile: "true",
             locale: SAGIA.locale,
             onChangeBegin: function(selectedDates, dateStr, instance) {

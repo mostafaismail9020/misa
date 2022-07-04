@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 
@@ -52,9 +53,9 @@ public class OpportunityOperationsController {
      */
     @RequestMapping(value = "/approve", method = RequestMethod.GET)
     @RequireHardLogIn
-    public String approveOpportunity(final Model model, final BDSupportTicketForm supportTicketForm) {
-        return processOpportunityOperation(model, supportTicketForm.getId(), CsTicketState.WOAGAPPROVED,
-                String.format("Ticket with ticket id - %s is: %s", supportTicketForm.getId(), CsTicketState.WOAGAPPROVED.getCode()));
+    public String approveOpportunity(final Model model,@RequestParam( required=true) String id,@RequestParam( required=false) String message ) {
+        return processOpportunityOperation(model, id, CsTicketState.WOAGAPPROVED,
+                String.format("Ticket with ticket id - %s is: %s", id, CsTicketState.WOAGAPPROVED.getCode()));
     }
 
     /**
@@ -66,13 +67,13 @@ public class OpportunityOperationsController {
      */
     @RequestMapping(value = "/reject", method = RequestMethod.GET)
     @RequireHardLogIn
-    public String rejectOpportunity(final Model model, final BDSupportTicketForm supportTicketForm) {
-        if(StringUtils.isEmpty(supportTicketForm.getRejectionReason())) {
+    public String rejectOpportunity(final Model model,@RequestParam( required=true) String id,@RequestParam( required=true) String message) {
+        if(StringUtils.isEmpty(message)) {
             GlobalMessages.addErrorMessage(model, INVALID_REJECTION_MESSAGE);
-            return String.format(FORWARD_PREFIX+"/support-ticket/{ticketId:%s}", supportTicketForm.getId());
+            return String.format(FORWARD_PREFIX+"/support-ticket/{ticketId:%s}", id);
         }
-        return processOpportunityOperation(model, supportTicketForm.getId(), CsTicketState.WOAGREJECTED,
-                supportTicketForm.getRejectionReason());
+        return processOpportunityOperation(model, id, CsTicketState.WOAGREJECTED,
+                message);
     }
 
     private String processOpportunityOperation(Model model, String ticketId, CsTicketState csTicketState, String message) {

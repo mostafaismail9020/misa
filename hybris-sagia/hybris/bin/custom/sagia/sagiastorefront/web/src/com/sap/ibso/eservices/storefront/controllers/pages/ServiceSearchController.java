@@ -8,6 +8,8 @@ import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPage
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.servicelayer.user.UserService;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
@@ -27,12 +29,36 @@ public class ServiceSearchController extends SagiaAbstractPageController {
     @Resource(name = "sagiaSearchFacade")
     SagiaSearchFacade sagiaSearchFacade;
 
+    @Resource(name = "userService")
+    private UserService userService;
+
     private static final String SERVICE_SEARCH_CMS_PAGE = "service-search";
+
+    private static final String PATH_VARIABLE_PATTERN = "/{categoryLabel}";
 
     @RequestMapping(method = RequestMethod.GET)
     @RequireHardLogIn
     public String getServiceSearchCmsPage(final Model model) throws CMSItemNotFoundException {
         Map<String, List<SagiaServiceData>> serviceResultList = sagiaSearchFacade.getAllServices();
+        model.addAttribute("SagiaServices",serviceResultList);
+        storeCmsPageInModel(model, getContentPageForLabelOrId(SERVICE_SEARCH_CMS_PAGE));
+        setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SERVICE_SEARCH_CMS_PAGE));
+        return getViewForPage(model);
+    }
+
+    /**
+     * Retrieve Services Based on Category Label
+     *
+     * @param categoryLabel
+     * @param model
+     * @return
+     * @throws CMSItemNotFoundException
+     */
+    @RequestMapping(value = PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
+    public String getSagiaServiceSearchCmsPage(@PathVariable("categoryLabel") final String categoryLabel, final Model model)
+            throws  CMSItemNotFoundException {
+
+        Map<String, List<SagiaServiceData>> serviceResultList = sagiaSearchFacade.getSagiaServicesByCategoryLabel(categoryLabel);
         model.addAttribute("SagiaServices",serviceResultList);
         storeCmsPageInModel(model, getContentPageForLabelOrId(SERVICE_SEARCH_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SERVICE_SEARCH_CMS_PAGE));

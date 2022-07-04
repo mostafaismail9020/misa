@@ -16,19 +16,21 @@
                         <icon:close/>
                     </button>
                 </div>
-                <div class="eServiceTutorial-body">
+                <div class="eServiceTutorial-body flex-column">
                     <div class="eServiceTutorial-description">
-                        {{description}}
+                     <c:if test="${not empty description}">
+                             {{description}}
+                        </c:if>
                     </div>
-                    <div class="eServiceTutorial-actions">
-                        <a class="btn btn_slim js-eServiceTour-next"><spring:theme code="dashboard.tutorial.next"/></a>
+                    <div class="eServiceTutorial-actions mt-5">
+                        <a class="btn-dashboard popup-btn-width js-eServiceTour-next"><spring:theme code="dashboard.tutorial.next"/></a>
                     </div>
                 </div>
             </div>
         </div>
     </li>
 </ul>
-<div class="modal fade" id="eServiceTour"  tabindex="-1" role="dialog" aria-labelledby="eServiceTour" aria-hidden="true">
+<div class="modal fade" id="eServiceTour"  tabindex="-1" role="dialog" aria-labelledby="eServiceTour" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-dialog-sm modal-dialog-centeredContent" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -38,14 +40,14 @@
             </div>
             <div class="modal-body">
                 <div class="modal-heroImage">
-                    <icon:tutorial/>
+                    <img src="${commonResourcePath}/images/dashboard-media/show-me-around.png"/>
                 </div>
-                <div class="modal-title modal-title_uppercase"></div>
+                <div class="modal-title clr_gld"></div>
                 <div class="modal-description modal-description_eService"></div>
             </div>
-            <div class="modal-footer modal-footer_wrap">
-                <button type="button" class="btn btn_slim js-eServiceTour-start" data-dismiss="modal"><spring:theme code="dashboard.tutorial.modal.button.text"/></button>
-                <a class="btn btn_slim btn_link btn_inFooterModal js-skipTutorial" data-dismiss="modal" onclick="dismissTutorial();"><spring:theme code="general.dont.show.this.message.again"/></a>
+            <div class="modal-footer modal-footer_wrap flex-column">
+                <button type="button" class="btn-outline js-eServiceTour-start" data-dismiss="modal"><spring:theme code="dashboard.tutorial.modal.button.text"/></button>
+                <a class=" btn_inFooterModal mt-3 cursor-pointer js-skipTutorial" data-dismiss="modal" onclick="dismissTutorial();"><spring:theme code="general.dont.show.this.message.again"/></a>
             </div>
         </div>
     </div>
@@ -59,4 +61,8 @@
     <c:if test="${displayTutorial}">
         displayTutorial = ${displayTutorial};
     </c:if>
+    $("#btn-show-me-around").on('click',function(){
+        displayTutorial = true;
+        SAGIA.eServiceTour.init();
+    })
 </script>

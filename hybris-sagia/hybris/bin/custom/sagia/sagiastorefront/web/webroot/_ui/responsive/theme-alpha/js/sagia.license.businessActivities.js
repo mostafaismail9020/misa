@@ -1,7 +1,7 @@
 var SAGIA = SAGIA || {};
 SAGIA.license = SAGIA.license || {};
 SAGIA.license.apply = SAGIA.license.apply || {};
-$(function () {
+$(function() {
     var isicSections = {};
 
     var isShowAttachments = false;
@@ -17,9 +17,9 @@ $(function () {
         selectedActivities: [],
         existingActivities: [],
         newActivities: [],
-        temporaryLicenseTextBox :undefined,
+        temporaryLicenseTextBox: undefined,
         clearAll: function() {
-        	
+
             $("#businessActivitiesSection #businessActivitiesTable").hide();
             SAGIA.license.businessActivities.selectedSection = null;
             SAGIA.license.businessActivities.selectedDivisions = [];
@@ -29,12 +29,12 @@ $(function () {
             SAGIA.license.businessActivities.selectedActivities = [];
             clearData();
         },
-        show: function (amendmentWithActivities) {
+        show: function(amendmentWithActivities) {
             var businessActivitiesSection = $("#businessActivitiesSection");
-                businessActivitiesSection.find("#businessTypeSection").hide();
-                if (!amendmentWithActivities) {
-                    businessActivitiesSection.find("#noBusinessActivitiesSelected").show();
-                }
+            businessActivitiesSection.find("#businessTypeSection").hide();
+            if (!amendmentWithActivities) {
+                businessActivitiesSection.find("#noBusinessActivitiesSelected").show();
+            }
             if (isShowAttachments) {
                 businessActivitiesSection.find("#businessActivitiesTable #supportDocumentsThId").show();
             } else {
@@ -42,12 +42,11 @@ $(function () {
             }
             //businessActivitiesSection.show();
         },
-        setBusinessTypeSectionVisible: function (visible) {
-        },
+        setBusinessTypeSectionVisible: function(visible) {},
         setShowAttachments: function(showAttachments) {
             isShowAttachments = showAttachments;
         },
-        setLicenseType: function (licenseTypeValue, licenseTypeText, licenseAmendmentCurrentActivities) {
+        setLicenseType: function(licenseTypeValue, licenseTypeText, licenseAmendmentCurrentActivities) {
             if (!licenseTypeValue || !licenseTypeValue.length) {
                 return;
             }
@@ -58,96 +57,94 @@ $(function () {
                 responseType: "application/json;charset=utf-8",
                 contentType: "application/json;charset=utf-8",
                 cache: false,
-                success: function (data) {
+                success: function(data) {
                     isicSections = data;
 
-                    if(SAGIA.license.apply.data && (SAGIA.license.apply.data.licenseType == SAGIA.config.temporaryLicenseConstant))
-                    {
-                    	licenseAmendmentCurrentActivities = null;
-                    	SAGIA.license.apply.data.qeemahChannel = isicSections.activities[0].qeemahChannel;
+                    if (SAGIA.license.apply.data && (SAGIA.license.apply.data.licenseType == SAGIA.config.temporaryLicenseConstant)) {
+                        licenseAmendmentCurrentActivities = null;
+                        SAGIA.license.apply.data.qeemahChannel = isicSections.activities[0].qeemahChannel;
                     }
-                    
-                    if(isicSections.activities)
-                    {
-                    	isicSections.groups.forEach(function (isicGroup) {
-                    		var foundSection = null;
-                    		isicSections.divisions.some(function (division) {
-                    			if (division.divisionId === isicGroup.divisionId) {
-                    				foundSection = division.sectionId;
-                    				return true;
-                    			}
-                    		});
-                    		isicGroup.sectionId = foundSection;
-                    	});
-                    	isicSections.classes.forEach(function (isicSection) {
-                    		var foundDivisionId = null;
-                    		isicSections.groups.some(function (group) {
-                    			if (group.groupId === isicSection.groupId) {
-                    				foundDivisionId = group.divisionId;
-                    				return true;
-                    			}
-                    		});
-                    		var foundDivision = _findDivision(foundDivisionId);
-                    		isicSection.sectionId = foundDivision.sectionId;
-                    		isicSection.divisionId = foundDivision.divisionId;
-                    	});
-                    	isicSections.branches.forEach(function (isicBranch) {
-                    		var foundGroupId = null;
-                    		isicSections.classes.some(function (classElement) {
-                    			if (classElement.classId === isicBranch.classId) {
-                    				foundGroupId = classElement.groupId;
-                    				return true;
-                    			}
-                    		});
-                    		var foundGroup = _findGroup(foundGroupId);
-                    		isicBranch.sectionId = foundGroup.sectionId;
-                    		isicBranch.divisionId = foundGroup.divisionId;
-                    		isicBranch.groupId = foundGroup.groupId;
-                    	});
-                    	isicSections.activities.forEach(function (isicActivity) {
-                    		var foundClassId = null;
-                    		isicSections.branches.some(function (branch) {
-                    			if (branch.branchId === isicActivity.branchId) {
-                    				foundClassId = branch.classId;
-                    				return true;
-                    			}
-                    		});
-                    		var foundClass = _findClass(foundClassId);
-                    		isicActivity.sectionId = foundClass.sectionId;
-                    		isicActivity.divisionId = foundClass.divisionId;
-                    		isicActivity.groupId = foundClass.groupId;
-                    		isicActivity.classId = foundClass.classId;
-                    	});
-                    	
-                    	var sectionItemsList = $("#businessActivitiesSection #businessActivitiesModal #sectionItems .baList").empty();
-                    	for (var i = 0; i < isicSections.sections.length; i++) {
-                    		var section = isicSections.sections[i];
-                    		if (_hasActivity({"sectionId": section.sectionId})) {
-                    			sectionItemsList.append('' +
-                    					'<li class="baList-item" data-section-id="' + section.sectionId + '"><a href="#">' + section.sectionId + ' - ' + section.description + '</a></li>'
-                    			);
-                    		}
-                    	}
-                    	
-                    	setLicenseAmendmentCurrentActivities(licenseAmendmentCurrentActivities);
+
+                    if (isicSections.activities) {
+                        isicSections.groups.forEach(function(isicGroup) {
+                            var foundSection = null;
+                            isicSections.divisions.some(function(division) {
+                                if (division.divisionId === isicGroup.divisionId) {
+                                    foundSection = division.sectionId;
+                                    return true;
+                                }
+                            });
+                            isicGroup.sectionId = foundSection;
+                        });
+                        isicSections.classes.forEach(function(isicSection) {
+                            var foundDivisionId = null;
+                            isicSections.groups.some(function(group) {
+                                if (group.groupId === isicSection.groupId) {
+                                    foundDivisionId = group.divisionId;
+                                    return true;
+                                }
+                            });
+                            var foundDivision = _findDivision(foundDivisionId);
+                            isicSection.sectionId = foundDivision.sectionId;
+                            isicSection.divisionId = foundDivision.divisionId;
+                        });
+                        isicSections.branches.forEach(function(isicBranch) {
+                            var foundGroupId = null;
+                            isicSections.classes.some(function(classElement) {
+                                if (classElement.classId === isicBranch.classId) {
+                                    foundGroupId = classElement.groupId;
+                                    return true;
+                                }
+                            });
+                            var foundGroup = _findGroup(foundGroupId);
+                            isicBranch.sectionId = foundGroup.sectionId;
+                            isicBranch.divisionId = foundGroup.divisionId;
+                            isicBranch.groupId = foundGroup.groupId;
+                        });
+                        isicSections.activities.forEach(function(isicActivity) {
+                            var foundClassId = null;
+                            isicSections.branches.some(function(branch) {
+                                if (branch.branchId === isicActivity.branchId) {
+                                    foundClassId = branch.classId;
+                                    return true;
+                                }
+                            });
+                            var foundClass = _findClass(foundClassId);
+                            isicActivity.sectionId = foundClass.sectionId;
+                            isicActivity.divisionId = foundClass.divisionId;
+                            isicActivity.groupId = foundClass.groupId;
+                            isicActivity.classId = foundClass.classId;
+                        });
+
+                        var sectionItemsList = $("#businessActivitiesSection #businessActivitiesModal #sectionItems .baList").empty();
+                        for (var i = 0; i < isicSections.sections.length; i++) {
+                            var section = isicSections.sections[i];
+                            if (_hasActivity({ "sectionId": section.sectionId })) {
+                                sectionItemsList.append('' +
+                                    '<li class="baList-item" data-section-id="' + section.sectionId + '"><a href="#">' + section.sectionId + ' - ' + section.description + '</a></li>'
+                                );
+                            }
+                        }
+
+                        setLicenseAmendmentCurrentActivities(licenseAmendmentCurrentActivities);
                     }
                 }
             });
         }
     };
 
-    var setLicenseAmendmentCurrentActivities = function (currentActivities) {
+    var setLicenseAmendmentCurrentActivities = function(currentActivities) {
         if (currentActivities && currentActivities.length) {
             // First update the selected activities parent ids
             var currentActivitiesWithParentIds = [];
-            isicSections.activities.forEach(function (businessActivity) {
-                currentActivities.forEach(function (currentActivity) {
+            isicSections.activities.forEach(function(businessActivity) {
+                currentActivities.forEach(function(currentActivity) {
                     if (currentActivity.id == businessActivity.activityId) { //it's string or number
                         //currentActivitiesWithParentIds.push(businessActivity);
                     }
                 });
             });
-            
+
             if (currentActivities.length === currentActivitiesWithParentIds.length) { // Only valid activities: can show table and modal
                 var sectionId = currentActivitiesWithParentIds[0].sectionId; // section must be unique
                 var divisionsIds = [];
@@ -155,7 +152,7 @@ $(function () {
                 var classesIds = [];
                 var branchesIds = [];
                 var activitiesIds = [];
-                currentActivitiesWithParentIds.forEach(function (selectedActivity) {
+                currentActivitiesWithParentIds.forEach(function(selectedActivity) {
                     if (divisionsIds.indexOf(selectedActivity.divisionId) === -1) {
                         divisionsIds.push(selectedActivity.divisionId);
                     }
@@ -176,38 +173,38 @@ $(function () {
                 updateSections($("li[data-section-id=" + sectionId + "]"), false);
 
                 var $divisionItems = $("#divisionItems");
-                divisionsIds.forEach(function (divisionId) {
+                divisionsIds.forEach(function(divisionId) {
                     $divisionItems.find("input.form-control[data-division-id=" + divisionId + "]").prop("checked", true);
                 });
                 updateDivisions(false);
 
                 var $groupItems = $("#groupItems");
-                groupsIds.forEach(function (groupId) {
+                groupsIds.forEach(function(groupId) {
                     $groupItems.find("input.form-control[data-group-id=" + groupId + "]").prop("checked", true);
                 });
                 updateGroups(false);
 
                 var $classItems = $("#classItems");
-                classesIds.forEach(function (classId) {
+                classesIds.forEach(function(classId) {
                     $classItems.find("input.form-control[data-class-id=" + classId + "]").prop("checked", true);
                 });
                 updateClasses(false);
 
                 var $branchItems = $("#branchItems");
-                branchesIds.forEach(function (branchId) {
+                branchesIds.forEach(function(branchId) {
                     $branchItems.find("input.form-control[data-branch-id=" + branchId + "]").prop("checked", true);
                 });
                 updatedBranches(false);
 
                 var $activityItems = $("#activityItems");
-                activitiesIds.forEach(function (activityId) {
+                activitiesIds.forEach(function(activityId) {
                     $activityItems.find("input.form-control[data-activity-id=" + activityId + "]").prop("checked", true);
                 });
                 updateActivities(true);
                 $('#sectionItems').hide();
                 SAGIA.license.apply.updateIsicTable();
             } else {
-                currentActivities.forEach(function (activity) {
+                currentActivities.forEach(function(activity) {
                     SAGIA.license.businessActivities.selectedActivities.push({
                         activityId: activity.id,
                         description: activity.description,
@@ -220,27 +217,26 @@ $(function () {
                         splRequirementId: activity.splRequirementId,
                         qeemahChannel: activity.qeemahChannel
                     })
-                    
+
                 });
                 $("#businessActivitiesSection #businessActivitiesModal #sectionItems").show();
-                $("#businessActivitiesSection #businessActivitiesModal #sectionList.baBreadcrumb-item").css({"text-decoration": "underline"});
+                $("#businessActivitiesSection #businessActivitiesModal #sectionList.baBreadcrumb-item").css({ "text-decoration": "underline" });
                 $("#businessActivitiesSection #businessActivitiesModal #nextButton").prop("disabled", true);
                 SAGIA.license.apply.updateIsicTable();
-                if (currentActivitiesWithParentIds.size > 0){
+                if (currentActivitiesWithParentIds.size > 0) {
                     $("#businessActivitiesSection #businessActivitiesModal #activityList a.baBreadcrumb-link").removeClass("active");
-                    $("#businessActivitiesSection #businessActivitiesModal #activityList").css({"text-decoration": "underline"});
+                    $("#businessActivitiesSection #businessActivitiesModal #activityList").css({ "text-decoration": "underline" });
                     $("#businessActivitiesSection #businessActivitiesModal #activityItems").show();
                 } else {
                     $("#businessActivitiesSection #businessActivitiesModal #activityItems").hide();
                     $("#businessActivitiesSection #businessActivitiesModal #activityList a.baBreadcrumb-link").addClass("active");
-                    $("#businessActivitiesSection #businessActivitiesModal #activityList").css({"text-decoration": "none"});
+                    $("#businessActivitiesSection #businessActivitiesModal #activityList").css({ "text-decoration": "none" });
                 }
                 $("#businessActivitiesSection #businessActivitiesModal").modal('hide');
             }
-            if(SAGIA.license.apply.data)
-             {
-            	SAGIA.license.apply.data.businessActivities = SAGIA.license.businessActivities;
-             }
+            if (SAGIA.license.apply.data) {
+                SAGIA.license.apply.data.businessActivities = SAGIA.license.businessActivities;
+            }
         } else {
             if (!SAGIA.license.businessActivities.selectedActivities.length > 1 && !$('body').hasClass('page-new-license-apply')) {
                 $("#businessActivitiesSection #noBusinessActivitiesSelected").show();
@@ -249,12 +245,12 @@ $(function () {
     };
 
     $("#businessActivitiesSection #businessActivitiesModal #sectionItems").show();
-    $("#businessActivitiesSection #businessActivitiesModal #sectionList.baBreadcrumb-item").css({"text-decoration": "underline"});
+    $("#businessActivitiesSection #businessActivitiesModal #sectionList.baBreadcrumb-item").css({ "text-decoration": "underline" });
     $("#businessActivitiesSection #businessActivitiesModal #nextButton").prop("disabled", true);
 
-    var _findDivision = function (id) {
+    var _findDivision = function(id) {
         var foundDivision = null;
-        isicSections.divisions.some(function (division) {
+        isicSections.divisions.some(function(division) {
             if (division.divisionId === id) {
                 foundDivision = division;
                 return true;
@@ -262,9 +258,9 @@ $(function () {
         });
         return foundDivision;
     };
-    var _findGroup = function (id) {
+    var _findGroup = function(id) {
         var foundGroup = null;
-        isicSections.groups.some(function (group) {
+        isicSections.groups.some(function(group) {
             if (group.groupId === id) {
                 foundGroup = group;
                 return true;
@@ -272,9 +268,9 @@ $(function () {
         });
         return foundGroup;
     };
-    var _findClass = function (id) {
+    var _findClass = function(id) {
         var foundClass = null;
-        isicSections.classes.some(function (classElement) {
+        isicSections.classes.some(function(classElement) {
             if (classElement.classId === id) {
                 foundClass = classElement;
                 return true;
@@ -282,9 +278,9 @@ $(function () {
         });
         return foundClass;
     };
-    var _findBranch = function (id) {
+    var _findBranch = function(id) {
         var foundBranch = null;
-        isicSections.branches.some(function (branch) {
+        isicSections.branches.some(function(branch) {
             if (branch.branchId === id) {
                 foundBranch = branch;
                 return true;
@@ -292,9 +288,9 @@ $(function () {
         });
         return foundBranch;
     };
-    var _hasActivity = function (dataIdWithValues) { //{"sectionId" : "5", "divisionId" : "4"}
+    var _hasActivity = function(dataIdWithValues) { //{"sectionId" : "5", "divisionId" : "4"}
         var found;
-        isicSections.activities.some(function (activity) {
+        isicSections.activities.some(function(activity) {
             found = true;
             for (var property in dataIdWithValues) {
                 if (dataIdWithValues.hasOwnProperty(property)) {
@@ -311,16 +307,16 @@ $(function () {
         return found;
     };
 
-    var _updateIsicArray = function (uiArray, dataIds) {
-    	
+    var _updateIsicArray = function(uiArray, dataIds) {
+
         var isicArray = [];
-        uiArray.each(function (index) {
-        
+        uiArray.each(function(index) {
+
             var isicObject = {};
             var uiElement = $(this);
-            dataIds.forEach(function (dataId) {
-            
-                isicObject[dataId] = ""+uiElement.data(dataId); //convert this in string
+            dataIds.forEach(function(dataId) {
+
+                isicObject[dataId] = "" + uiElement.data(dataId); //convert this in string
                 isicObject[dataId + "Name"] = uiElement.parent().find("label").text().trim();
             });
             isicArray.push(isicObject);
@@ -328,10 +324,10 @@ $(function () {
         return isicArray;
     };
 
-    var _findIsicElement = function (type, dataIdWithValues) { //'selectedDivision', {"sectionId" : "5", "divisionId" : "4"}
+    var _findIsicElement = function(type, dataIdWithValues) { //'selectedDivision', {"sectionId" : "5", "divisionId" : "4"}
         var isicElements = SAGIA.license.businessActivities[type];
         var identifiedElement = null;
-        isicElements.some(function (isicElement) {
+        isicElements.some(function(isicElement) {
             var found = false;
             for (var property in dataIdWithValues) {
                 if (dataIdWithValues.hasOwnProperty(property)) {
@@ -364,18 +360,22 @@ $(function () {
         updateSections(null, true);
         //updateDivisions(false);
     };
-    var updateSections = function (uiSelectedSection, displaySections) {
+    var updateSections = function(uiSelectedSection, displaySections) {
         if (uiSelectedSection) {
-            SAGIA.license.businessActivities.selectedSection = ""+uiSelectedSection.data("sectionId");
+            SAGIA.license.businessActivities.selectedSection = "" + uiSelectedSection.data("sectionId");
             SAGIA.license.businessActivities.selectedSectionName = uiSelectedSection.find("a").html();
+            var uiSelectedSection_a = uiSelectedSection.find("a");
+            $(".baList-item a").removeClass('amnend-select-b-activities');
+            $(".baList-item").css({"background": "#FFF"})
             $("#businessActivitiesSection #businessActivitiesModal #sectionItems .baList .baList-item").css({
                 "text-decoration": "none",
                 "color": "default"
             });
             uiSelectedSection.css({
-                "text-decoration": "underline",
-                "color": "#7bd35d"
+                "background": "#00A6BE"
             });
+            uiSelectedSection_a.addClass('amnend-select-b-activities');
+
             $("#businessActivitiesSection #businessActivitiesModal #sectionList a.baBreadcrumb-link").removeClass("active");
             $("#businessActivitiesSection #businessActivitiesModal #sectionList .baBreadcrumb-subMenu").remove();
             $("#businessActivitiesSection #businessActivitiesModal #sectionList").append("" +
@@ -384,9 +384,9 @@ $(function () {
                 "<li class='undottedList-item'>" + uiSelectedSection.find("a").html() + "</li>" +
                 "</ul>" +
                 "<a href='#' class='subMenuEditButton btn btn_outline btn_round btn_slim'>" +
-                "Edit " +
+                getI18nText("profileCompany.button.edit.text") +
                 "<span class='iconElement iconElement_editButton'>" +
-                "<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#5CC83B' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
+                "<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#FFF' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
                 "</span>" +
                 "</a>" +
                 "</div");
@@ -396,14 +396,14 @@ $(function () {
             var divs2 = "";
             var count = 0;
             var subdivisions = [];
-            isicSections.divisions.forEach(function (division) {
+            isicSections.divisions.forEach(function(division) {
                 if (division.sectionId === SAGIA.license.businessActivities.selectedSection &&
-                        _hasActivity({"sectionId": division.sectionId})) {
+                    _hasActivity({ "sectionId": division.sectionId })) {
                     count++;
                     subdivisions.push(division);
                 }
             });
-            subdivisions.forEach(function (division, index) {
+            subdivisions.forEach(function(division, index) {
                 var nodeId = "division" + division.sectionId + division.divisionId;
                 if (index < count / 2) {
                     divs1 += '' +
@@ -431,13 +431,13 @@ $(function () {
             updateDivisions(false);
         }
         if (displaySections) {
-        	
+
             $("#businessActivitiesSection #businessActivitiesModal #sectionItems.baModule").show();
             $("#businessActivitiesSection #businessActivitiesModal #nextButton").prop("disabled", SAGIA.license.businessActivities.selectedSection == null);
         }
     };
 
-    var updateDivisions = function (displayDivisions) {
+    var updateDivisions = function(displayDivisions) {
         $("#businessActivitiesSection #businessActivitiesModal #divisionList .baBreadcrumb-subMenu").remove();
         $("#businessActivitiesSection #businessActivitiesModal #divisionList a.baBreadcrumb-link").addClass("active");
         var uiSelectedDivisions = $("#businessActivitiesSection #businessActivitiesModal #divisionItems input.form-control:checked");
@@ -445,7 +445,7 @@ $(function () {
             $("#businessActivitiesSection #businessActivitiesModal #divisionList a.baBreadcrumb-link").removeClass("active");
             SAGIA.license.businessActivities.selectedDivisions = _updateIsicArray(uiSelectedDivisions, ["sectionId", "divisionId"]);
             var lis = "";
-            uiSelectedDivisions.each(function (index) {
+            uiSelectedDivisions.each(function(index) {
                 lis += "<li class='undottedList-item'>" + $(this).parent().find("label").text().trim() + "</li>";
             });
             $("#businessActivitiesSection #businessActivitiesModal #divisionList").append("" +
@@ -454,9 +454,9 @@ $(function () {
                 lis +
                 "   </ul>" +
                 "   <a href='#' class='subMenuEditButton btn btn_outline btn_round btn_slim'>" +
-                "       Edit " +
+                getI18nText("profileCompany.button.edit.text") +
                 "       <span class='iconElement iconElement_editButton'>" +
-                "           <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#5CC83B' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
+                "           <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#FFF' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
                 "       </span>" +
                 "   </a>" +
                 "</div");
@@ -464,7 +464,7 @@ $(function () {
             $("#businessActivitiesSection #businessActivitiesModal #groupItems .contentModule-headline").remove();
             $("#businessActivitiesSection #businessActivitiesModal #groupItems .row").remove();
             var contentToAdd = "";
-            uiSelectedDivisions.each(function () {
+            uiSelectedDivisions.each(function() {
                 var uiSelectedDivision = $(this);
                 contentToAdd += "" +
                     '<div class="contentModule-headline contentModule-headline_small contentModule-headline_bordered">' +
@@ -474,7 +474,7 @@ $(function () {
                 var divs2 = "";
                 var count = 0;
                 var subgroups = [];
-                isicSections.groups.forEach(function (group) {
+                isicSections.groups.forEach(function(group) {
                     if (group.divisionId == uiSelectedDivision.data("divisionId") && //it's string or number
                         _hasActivity({
                             "sectionId": group.sectionId,
@@ -485,7 +485,7 @@ $(function () {
                         subgroups.push(group);
                     }
                 });
-                subgroups.forEach(function (group, index) {
+                subgroups.forEach(function(group, index) {
                     var nodeId = "group" + group.sectionId + group.divisionId + group.groupId;
                     var foundGroup = _findIsicElement("selectedGroups", {
                         sectionId: group.sectionId,
@@ -545,7 +545,7 @@ $(function () {
         updateGroups(false);
     };
 
-    var updateGroups = function (displayGroups) {
+    var updateGroups = function(displayGroups) {
         $("#businessActivitiesSection #businessActivitiesModal #groupList .baBreadcrumb-subMenu").remove();
         $("#businessActivitiesSection #businessActivitiesModal #groupList a.baBreadcrumb-link").addClass("active");
         var uiSelectedGroups = $("#businessActivitiesSection #businessActivitiesModal #groupItems input.form-control:checked");
@@ -553,7 +553,7 @@ $(function () {
             $("#businessActivitiesSection #businessActivitiesModal #groupList a.baBreadcrumb-link").removeClass("active");
             SAGIA.license.businessActivities.selectedGroups = _updateIsicArray(uiSelectedGroups, ["sectionId", "divisionId", "groupId"]);
             var lis = "";
-            uiSelectedGroups.each(function (index) {
+            uiSelectedGroups.each(function(index) {
                 lis += "<li class='undottedList-item'>" + $(this).parent().find("label").text().trim() + "</li>";
             });
             $("#businessActivitiesSection #businessActivitiesModal #groupList").append("" +
@@ -562,9 +562,9 @@ $(function () {
                 lis +
                 "   </ul>" +
                 "   <a href='#' class='subMenuEditButton btn btn_outline btn_round btn_slim'>" +
-                "       Edit " +
+                getI18nText("profileCompany.button.edit.text") +
                 "       <span class='iconElement iconElement_editButton'>" +
-                "           <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#5CC83B' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
+                "           <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#FFF' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
                 "       </span>" +
                 "   </a>" +
                 "</div");
@@ -572,7 +572,7 @@ $(function () {
             $("#businessActivitiesSection #businessActivitiesModal #classItems .contentModule-headline").remove();
             $("#businessActivitiesSection #businessActivitiesModal #classItems .row").remove();
             var contentToAdd = "";
-            uiSelectedGroups.each(function () {
+            uiSelectedGroups.each(function() {
                 var uiSelectedGroup = $(this);
                 contentToAdd += "" +
                     '<div class="contentModule-headline contentModule-headline_small contentModule-headline_bordered">' +
@@ -582,7 +582,7 @@ $(function () {
                 var divs2 = "";
                 var count = 0;
                 var subclasses = [];
-                isicSections.classes.forEach(function (classElement) {
+                isicSections.classes.forEach(function(classElement) {
                     if (classElement.groupId == uiSelectedGroup.data("groupId") && //it's string or number
                         _hasActivity({
                             "sectionId": classElement.sectionId,
@@ -594,7 +594,7 @@ $(function () {
                         subclasses.push(classElement);
                     }
                 });
-                subclasses.forEach(function (classElement, index) {
+                subclasses.forEach(function(classElement, index) {
                     var nodeId = "class" + classElement.sectionId + classElement.divisionId + classElement.groupId + classElement.classId;
                     var foundClass = _findIsicElement("selectedClasses", {
                         sectionId: classElement.sectionId,
@@ -655,7 +655,7 @@ $(function () {
         updateClasses(false);
     };
 
-    var updateClasses = function (displayClasses) {
+    var updateClasses = function(displayClasses) {
         $("#businessActivitiesSection #businessActivitiesModal #classList .baBreadcrumb-subMenu").remove();
         $("#businessActivitiesSection #businessActivitiesModal #classList a.baBreadcrumb-link").addClass("active");
         var uiSelectedClasses = $("#businessActivitiesSection #businessActivitiesModal #classItems input.form-control:checked");
@@ -663,7 +663,7 @@ $(function () {
             $("#businessActivitiesSection #businessActivitiesModal #classList a.baBreadcrumb-link").removeClass("active");
             SAGIA.license.businessActivities.selectedClasses = _updateIsicArray(uiSelectedClasses, ["sectionId", "divisionId", "groupId", "classId"]);
             var lis = "";
-            uiSelectedClasses.each(function (index) {
+            uiSelectedClasses.each(function(index) {
                 lis += "<li class='undottedList-item'>" + $(this).parent().find("label").text().trim() + "</li>";
             });
             $("#businessActivitiesSection #businessActivitiesModal #classList").append("" +
@@ -672,9 +672,9 @@ $(function () {
                 lis +
                 "   </ul>" +
                 "   <a href='#' class='subMenuEditButton btn btn_outline btn_round btn_slim'>" +
-                "       Edit " +
+                getI18nText("profileCompany.button.edit.text") +
                 "       <span class='iconElement iconElement_editButton'>" +
-                "           <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#5CC83B' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
+                "           <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#FFF' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
                 "       </span>" +
                 "   </a>" +
                 "</div");
@@ -682,7 +682,7 @@ $(function () {
             $("#businessActivitiesSection #businessActivitiesModal #branchItems .contentModule-headline").remove();
             $("#businessActivitiesSection #businessActivitiesModal #branchItems .row").remove();
             var contentToAdd = "";
-            uiSelectedClasses.each(function () {
+            uiSelectedClasses.each(function() {
                 var uiSelectedClass = $(this);
                 contentToAdd += "" +
                     '<div class="contentModule-headline contentModule-headline_small contentModule-headline_bordered">' +
@@ -692,7 +692,7 @@ $(function () {
                 var divs2 = "";
                 var count = 0;
                 var subbranches = [];
-                isicSections.branches.forEach(function (branch) {
+                isicSections.branches.forEach(function(branch) {
                     if (branch.classId == uiSelectedClass.data("classId") && // .data returns number or string
                         _hasActivity({
                             "sectionId": branch.sectionId,
@@ -705,7 +705,7 @@ $(function () {
                         subbranches.push(branch);
                     }
                 });
-                subbranches.forEach(function (branch, index) {
+                subbranches.forEach(function(branch, index) {
                     if (branch.classId == uiSelectedClass.data("classId")) { // .data returns number or string
                         var nodeId = "branch" + branch.sectionId + branch.divisionId + branch.groupId + branch.classId + branch.branchId;
                         var foundBranch = _findIsicElement("selectedBranches", {
@@ -769,7 +769,7 @@ $(function () {
         updatedBranches(false);
     };
 
-    var updatedBranches = function (displayBranches) {
+    var updatedBranches = function(displayBranches) {
         $("#businessActivitiesSection #businessActivitiesModal #branchList .baBreadcrumb-subMenu").remove();
         $("#businessActivitiesSection #businessActivitiesModal #branchList a.baBreadcrumb-link").addClass("active");
         var uiSelectedBranches = $("#businessActivitiesSection #businessActivitiesModal #branchItems input.form-control:checked");
@@ -777,7 +777,7 @@ $(function () {
             $("#businessActivitiesSection #businessActivitiesModal #branchList a.baBreadcrumb-link").removeClass("active");
             SAGIA.license.businessActivities.selectedBranches = _updateIsicArray(uiSelectedBranches, ["sectionId", "divisionId", "groupId", "classId", "branchId"]);
             var lis = "";
-            uiSelectedBranches.each(function (index) {
+            uiSelectedBranches.each(function(index) {
                 lis += "<li class='undottedList-item'>" + $(this).parent().find("label").text().trim() + "</li>";
             });
             $("#businessActivitiesSection #businessActivitiesModal #branchList").append("" +
@@ -786,9 +786,9 @@ $(function () {
                 lis +
                 "   </ul>" +
                 "   <a href='#' class='subMenuEditButton btn btn_outline btn_round btn_slim'>" +
-                "       Edit " +
+                getI18nText("profileCompany.button.edit.text") +
                 "       <span class='iconElement iconElement_editButton'>" +
-                "           <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#5CC83B' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
+                "           <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#FFF' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
                 "       </span>" +
                 "   </a>" +
                 "</div");
@@ -796,7 +796,7 @@ $(function () {
             $("#businessActivitiesSection #businessActivitiesModal #activityItems .contentModule-headline").remove();
             $("#businessActivitiesSection #businessActivitiesModal #activityItems .row").remove();
             var contentToAdd = "";
-            uiSelectedBranches.each(function () {
+            uiSelectedBranches.each(function() {
                 var uiSelectedBranch = $(this);
                 contentToAdd += "" +
                     '<div class="contentModule-headline contentModule-headline_small contentModule-headline_bordered">' +
@@ -806,13 +806,13 @@ $(function () {
                 var divs2 = "";
                 var count = 0;
                 var subactivities = [];
-                isicSections.activities.forEach(function (activity) {
+                isicSections.activities.forEach(function(activity) {
                     if (activity.branchId == uiSelectedBranch.data("branchId")) { // .data returns number or string
                         count++;
                         subactivities.push(activity);
                     }
                 });
-                subactivities.forEach(function (activity, index) {
+                subactivities.forEach(function(activity, index) {
                     if (activity.branchId == uiSelectedBranch.data("branchId")) { // .data returns number or string
                         var nodeId = "activity" + activity.sectionId + activity.divisionId + activity.groupId + activity.classId + activity.branchId + activity.activityId;
                         var foundActivity = _findIsicElement("selectedActivities", {
@@ -823,11 +823,11 @@ $(function () {
                             branchId: activity.branchId,
                             activityId: activity.activityId
                         });
-                        
+
                         if (index < count / 2) {
                             divs1 += '' +
                                 '<div class="form-item">' +
-                                '   <input ' + (foundActivity ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + activity.sectionId + '" data-division-id="' + activity.divisionId + '" data-group-id="' + activity.groupId + '" data-class-id="' + activity.classId + '" data-branch-id="' + activity.branchId + '" data-activity-id="' + activity.activityId + '" data-splrequirement-id="' + activity.splRequirementId + '" data-qeemah-channel="' + activity.qeemahChannel + '" data-description="' + activity.description +'" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                                '   <input ' + (foundActivity ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + activity.sectionId + '" data-division-id="' + activity.divisionId + '" data-group-id="' + activity.groupId + '" data-class-id="' + activity.classId + '" data-branch-id="' + activity.branchId + '" data-activity-id="' + activity.activityId + '" data-splrequirement-id="' + activity.splRequirementId + '" data-qeemah-channel="' + activity.qeemahChannel + '" data-description="' + activity.description + '" class="form-control" placeholder="." type="checkbox" value=""/>' +
                                 '   <label class="control-label" for="' + nodeId + '">' +
                                 '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                                 activity.activityId + ' - ' + activity.description +
@@ -836,14 +836,14 @@ $(function () {
                         } else {
                             divs2 += '' +
                                 '<div class="form-item">' +
-                                '   <input ' + (foundActivity ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + activity.sectionId + '" data-division-id="' + activity.divisionId + '" data-group-id="' + activity.groupId + '" data-class-id="' + activity.classId + '" data-branch-id="' + activity.branchId + '" data-activity-id="' + activity.activityId + '" data-splrequirement-id="' + activity.splRequirementId + '" data-qeemah-channel="' + activity.qeemahChannel + '" data-description="' + activity.description +'" class="form-control" placeholder="." type="checkbox" value=""/>' +
+                                '   <input ' + (foundActivity ? 'checked="checked"' : '') + ' id="' + nodeId + '" data-section-id="' + activity.sectionId + '" data-division-id="' + activity.divisionId + '" data-group-id="' + activity.groupId + '" data-class-id="' + activity.classId + '" data-branch-id="' + activity.branchId + '" data-activity-id="' + activity.activityId + '" data-splrequirement-id="' + activity.splRequirementId + '" data-qeemah-channel="' + activity.qeemahChannel + '" data-description="' + activity.description + '" class="form-control" placeholder="." type="checkbox" value=""/>' +
                                 '   <label class="control-label" for="' + nodeId + '">' +
                                 '       <span><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#fff" d="M4.477 14.003l-4.178-4.102 1.402-1.427 2.823 2.773 9.8-8.984 1.352 1.474z"/></svg></span>' +
                                 activity.activityId + ' - ' + activity.description +
                                 '   </label>' +
                                 '</div>';
                         }
-                        
+
                     }
                 });
                 contentToAdd += '' +
@@ -879,15 +879,15 @@ $(function () {
         updateActivities(false);
     };
 
-    var updateActivities = function (displayActivities) {
+    var updateActivities = function(displayActivities) {
         $("#businessActivitiesSection #businessActivitiesModal #activityList .baBreadcrumb-subMenu").remove();
         $("#businessActivitiesSection #businessActivitiesModal #activityList a.baBreadcrumb-link").addClass("active");
         var uiSelectedActivities = $("#businessActivitiesSection #businessActivitiesModal #activityItems input.form-control:checked");
         if (uiSelectedActivities.length) {
             $("#businessActivitiesSection #businessActivitiesModal #activityList a.baBreadcrumb-link").removeClass("active");
-            SAGIA.license.businessActivities.selectedActivities = _updateIsicArray(uiSelectedActivities, ["sectionId", "divisionId", "groupId", "classId", "branchId", "activityId", "description","splrequirementId","qeemahChannel"]);
+            SAGIA.license.businessActivities.selectedActivities = _updateIsicArray(uiSelectedActivities, ["sectionId", "divisionId", "groupId", "classId", "branchId", "activityId", "description", "splrequirementId", "qeemahChannel"]);
             var lis = "";
-            uiSelectedActivities.each(function (index) {
+            uiSelectedActivities.each(function(index) {
                 lis += "<li class='undottedList-item'>" + $(this).parent().find("label").text().trim() + "</li>";
             });
             $("#businessActivitiesSection #businessActivitiesModal #activityList").append("" +
@@ -896,9 +896,9 @@ $(function () {
                 lis +
                 "</ul>" +
                 "<a href='#' class='subMenuEditButton btn btn_outline btn_round btn_slim'>" +
-                "Edit " +
+                getI18nText("profileCompany.button.edit.text") +
                 "<span class='iconElement iconElement_editButton'>" +
-                "<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#5CC83B' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
+                "<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><path fill='#FFF' d='M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z'></path></svg>" +
                 "</span>" +
                 "</a>" +
                 "</div");
@@ -913,11 +913,11 @@ $(function () {
         }
     };
 
-    SAGIA.license.apply.updateIsicTable = function () {
-    	
-    	$("#businessActivitiesSection #businessActivitiesModal #sectionItems").show();
-    	$("#businessActivitiesSection #businessActivitiesModal #sectionList a.baBreadcrumb-link").removeClass("active");
-        $("#businessActivitiesSection #businessActivitiesModal #sectionList .baBreadcrumb-item").css({"text-decoration": "underline"});
+    SAGIA.license.apply.updateIsicTable = function() {
+
+        $("#businessActivitiesSection #businessActivitiesModal #sectionItems").show();
+        $("#businessActivitiesSection #businessActivitiesModal #sectionList a.baBreadcrumb-link").removeClass("active");
+        $("#businessActivitiesSection #businessActivitiesModal #sectionList .baBreadcrumb-item").css({ "text-decoration": "underline" });
         $("#businessActivitiesSection #businessActivitiesModal #divisionList a.baBreadcrumb-link").addClass("active");
         $("#businessActivitiesSection #businessActivitiesModal #divisionList .baBreadcrumb-subMenu").remove();
         $("#businessActivitiesSection #businessActivitiesModal #groupList a.baBreadcrumb-link").addClass("active");
@@ -930,51 +930,51 @@ $(function () {
         $("#businessActivitiesSection #businessActivitiesModal #activityList .baBreadcrumb-subMenu").remove();
         $("#businessActivitiesSection #businessActivitiesModal #nextButton").prop("disabled", true);
         $("#businessActivitiesSection #businessActivitiesModal").modal('hide');
-        
+
         /*$("#businessActivitiesSection #businessActivitiesModal #activityList a.baBreadcrumb-link").removeClass("active");
         $("#businessActivitiesSection #businessActivitiesModal #activityList").css({"text-decoration": "underline"});
         $("#businessActivitiesSection #businessActivitiesModal #activityItems").show();
         $("#businessActivitiesSection #businessActivitiesModal").modal('hide');*/
         var content = '';
-        var isicArray = [];         
-        
-        $.each(SAGIA.license.businessActivities.selectedActivities, function(i, e){
-        	var matchingItems = $.grep(SAGIA.license.businessActivities.newActivities, function (item) {
+        var isicArray = [];
+
+        $.each(SAGIA.license.businessActivities.selectedActivities, function(i, e) {
+            var matchingItems = $.grep(SAGIA.license.businessActivities.newActivities, function(item) {
                 return item.activityId === e.activityId;
-             });
-             if (matchingItems.length === 0){
-             	SAGIA.license.businessActivities.newActivities.push(e);
-             }
+            });
+            if (matchingItems.length === 0) {
+                SAGIA.license.businessActivities.newActivities.push(e);
+            }
         });
-        
+
         SAGIA.license.businessActivities.selectedActivities = SAGIA.license.businessActivities.newActivities;
-        
-                
-        SAGIA.license.businessActivities.selectedActivities.forEach(function (activity) {
-            if(isShowAttachments) {
+
+
+        SAGIA.license.businessActivities.selectedActivities.forEach(function(activity) {
+            if (isShowAttachments) {
                 var combination = activity.sectionId + "/" + activity.divisionId + "/" + activity.groupId + "/" + activity.classId;
                 if (isicArray.indexOf(combination) === -1) {
                     isicArray.push(combination);
                 }
             }
-           
+
             content += '' +
                 '<tr data-activity-id="' + activity.activityId + '"' +
-                    'data-section-id="' + activity.sectionId + '"' +
-                    'data-division-id="' + activity.divisionId + '"' +
-                    'data-group-id="' + activity.groupId + '"' +
-                    'data-splrequirement-id="' + activity.splrequirementId + '"' +
-                    'data-qeemah-channel="' + activity.qeemahChannel + '"' +
-                    'data-class-id="' + activity.classId + '"' +
-                    'data-branch-id="' + activity.branchId + '"'+'style="background:#f5fdf4">' +
+                'data-section-id="' + activity.sectionId + '"' +
+                'data-division-id="' + activity.divisionId + '"' +
+                'data-group-id="' + activity.groupId + '"' +
+                'data-splrequirement-id="' + activity.splrequirementId + '"' +
+                'data-qeemah-channel="' + activity.qeemahChannel + '"' +
+                'data-class-id="' + activity.classId + '"' +
+                'data-branch-id="' + activity.branchId + '"' + 'style="background:#fff">' +
                 '   <td class="activityId"><span class="activityId text-bold">' + activity.activityId + '</span></td>' +
                 '   <td class="activityDescription">' + activity.description + '</td>' +
                 (!isShowAttachments ? '' :
-                '   <td class="activityAttachments"></td>') +
+                    '   <td class="activityAttachments"></td>') +
                 '   <td class="activityActions tableModule-bodyItem-action">' +
-                '       <button class="btn btn_link deleteFromBusinessActivities">' +
-                '           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 18 18" enable-background="new 0 0 18 18" xml:space="preserve">' +
-                '               <path fill="#5CC83B" d="M12.983,17.5H4.916c-0.261,0-0.479-0.201-0.499-0.462l-0.916-12C3.491,4.899,3.539,4.762,3.633,4.66S3.861,4.5,4,4.5h10c0.14,0,0.273,0.059,0.368,0.162s0.142,0.241,0.13,0.38l-1.017,12C13.46,17.301,13.243,17.5,12.983,17.5zM5.379,16.5h7.146l0.932-11H4.54L5.379,16.5z M7.5,15V7c0-0.276-0.224-0.5-0.5-0.5S6.5,6.724,6.5,7v8c0,0.276,0.224,0.5,0.5,0.5S7.5,15.276,7.5,15z M9.5,15V7c0-0.276-0.224-0.5-0.5-0.5S8.5,6.724,8.5,7v8c0,0.276,0.224,0.5,0.5,0.5S9.5,15.276,9.5,15z M11.5,15V7c0-0.276-0.224-0.5-0.5-0.5S10.5,6.724,10.5,7v8c0,0.276,0.224,0.5,0.5,0.5S11.5,15.276,11.5,15z M14.5,3c0-0.276-0.224-0.5-0.5-0.5H4C3.724,2.5,3.5,2.724,3.5,3S3.724,3.5,4,3.5h10C14.276,3.5,14.5,3.276,14.5,3z M11.5,3c0-1.378-1.121-2.5-2.5-2.5C7.622,0.5,6.5,1.622,6.5,3c0,0.276,0.224,0.5,0.5,0.5S7.5,3.276,7.5,3c0-0.827,0.673-1.5,1.5-1.5s1.5,0.673,1.5,1.5c0,0.276,0.224,0.5,0.5,0.5S11.5,3.276,11.5,3z"/>' +
+                '       <button class="border-0 bg-transparent deleteFromBusinessActivities">' +
+                '           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 18 18" enable-background="new 0 0 18 18" xml:space="preserve">' +
+                '               <path fill="#00A6BE" d="M12.983,17.5H4.916c-0.261,0-0.479-0.201-0.499-0.462l-0.916-12C3.491,4.899,3.539,4.762,3.633,4.66S3.861,4.5,4,4.5h10c0.14,0,0.273,0.059,0.368,0.162s0.142,0.241,0.13,0.38l-1.017,12C13.46,17.301,13.243,17.5,12.983,17.5zM5.379,16.5h7.146l0.932-11H4.54L5.379,16.5z M7.5,15V7c0-0.276-0.224-0.5-0.5-0.5S6.5,6.724,6.5,7v8c0,0.276,0.224,0.5,0.5,0.5S7.5,15.276,7.5,15z M9.5,15V7c0-0.276-0.224-0.5-0.5-0.5S8.5,6.724,8.5,7v8c0,0.276,0.224,0.5,0.5,0.5S9.5,15.276,9.5,15z M11.5,15V7c0-0.276-0.224-0.5-0.5-0.5S10.5,6.724,10.5,7v8c0,0.276,0.224,0.5,0.5,0.5S11.5,15.276,11.5,15z M14.5,3c0-0.276-0.224-0.5-0.5-0.5H4C3.724,2.5,3.5,2.724,3.5,3S3.724,3.5,4,3.5h10C14.276,3.5,14.5,3.276,14.5,3z M11.5,3c0-1.378-1.121-2.5-2.5-2.5C7.622,0.5,6.5,1.622,6.5,3c0,0.276,0.224,0.5,0.5,0.5S7.5,3.276,7.5,3c0-0.827,0.673-1.5,1.5-1.5s1.5,0.673,1.5,1.5c0,0.276,0.224,0.5,0.5,0.5S11.5,3.276,11.5,3z"/>' +
                 '           </svg>' +
                 '       </button>' +
                 '   </td>' +
@@ -982,22 +982,22 @@ $(function () {
         });
         var activitiesTableBody = $("#businessActivitiesSection #businessActivitiesTable tbody");
         activitiesTableBody.empty().append(content);
-        
-    	SAGIA.license.businessActivities.existingActivities.forEach(function (existingActivity) {
-    		$("#businessActivitiesSection #businessActivitiesTable tbody tr").each(function(){
-        		if($(this).attr('data-activity-id') === existingActivity.activityId){
-        			$(this).removeAttr("style");
-    			}
-        	});
-		 });
-    	
-    	if(SAGIA.license.apply.data){
-    		$("#businessActivitiesSection #businessActivitiesTable tbody tr").removeAttr("style");
-    	}
 
-        if(isShowAttachments) {
-            for(var index in isicArray) {
-                if(isicArray.hasOwnProperty(index)) {
+        SAGIA.license.businessActivities.existingActivities.forEach(function(existingActivity) {
+            $("#businessActivitiesSection #businessActivitiesTable tbody tr").each(function() {
+                if ($(this).attr('data-activity-id') === existingActivity.activityId) {
+                    $(this).removeAttr("style");
+                }
+            });
+        });
+
+        if (SAGIA.license.apply.data) {
+            $("#businessActivitiesSection #businessActivitiesTable tbody tr").removeAttr("style");
+        }
+
+        if (isShowAttachments) {
+            for (var index in isicArray) {
+                if (isicArray.hasOwnProperty(index)) {
                     var splitIsic = isicArray[index].split("/");
                     $.ajax(ACC.config.encodedContextPath + controllerUrl + "/get-isic-details/" + isicArray[index], {
                         type: "GET",
@@ -1008,9 +1008,9 @@ $(function () {
                         groupId: splitIsic[2],
                         classId: splitIsic[3],
                         cache: false,
-                        success: function (isicDetails) {
-                            for(var index in isicDetails) {
-                                if(isicDetails.hasOwnProperty(index) && isicDetails[index].attachments) {
+                        success: function(isicDetails) {
+                            for (var index in isicDetails) {
+                                if (isicDetails.hasOwnProperty(index) && isicDetails[index].attachments) {
                                     activitiesTableBody.find("tr[data-section-id='" + this.sectionId + "'][data-division-id='" + this.divisionId + "'][data-group-id='" + this.groupId + "'][data-class-id='" + this.classId + "']:first td.activityAttachments").append(
                                         '      <div class="formInputFile">' +
                                         '           <div class="form-group">' +
@@ -1047,11 +1047,11 @@ $(function () {
         $("#businessActivitiesSection #businessActivitiesTable").show();
     };
 
-    $(document).on("change", "#businessActivitiesSection #businessType", function () {
+    $(document).on("change", "#businessActivitiesSection #businessType", function() {
         SAGIA.license.businessActivities.businessType = $(this).val();
         SAGIA.license.businessActivities.businessTypeName = $(this).find(":selected").text();
         $("#businessActivitiesSection #businessActivitiesModal #businessTypeSpan").parent().show();
-        
+
         $("#businessActivitiesSection #businessActivitiesModal #businessTypeSpan").html(SAGIA.license.businessActivities.businessTypeName);
         if (SAGIA.license.businessActivities.selectedActivities.length) {
             $("#noBusinessActivitiesSelected").hide();
@@ -1062,7 +1062,7 @@ $(function () {
         }
     });
 
-    $(document).on("keyup input", "#businessActivitiesSection #businessActivitiesModal .searchInputBox-input", function () {
+    $(document).on("keyup input", "#businessActivitiesSection #businessActivitiesModal .searchInputBox-input", function() {
         var searchQuery = $(this).val().toUpperCase();
         var headline = $(this).parents(".baModule").find(".contentModule-headline");
         var lis = $(this).parents(".baModule").find("ul li");
@@ -1087,111 +1087,115 @@ $(function () {
         }
     });
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #sectionItems .baList .baList-item", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #sectionItems .baList .baList-item", function() {
         updateSections($(this), true);
     });
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #sectionList .baBreadcrumb-subMenu .subMenuEditButton", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #sectionList .baBreadcrumb-subMenu .subMenuEditButton", function() {
         $(this).parents("li.baBreadcrumb-link").trigger("click");
     });
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #divisionItems input.form-control", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #divisionItems input.form-control", function() {
         updateDivisions(true);
     });
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #divisionList .baBreadcrumb-subMenu .subMenuEditButton", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #divisionList .baBreadcrumb-subMenu .subMenuEditButton", function() {
         $(this).parents("li.baBreadcrumb-link").trigger("click");
     });
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #groupItems input.form-control", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #groupItems input.form-control", function() {
         updateGroups(true);
     });
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #classItems input.form-control", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #classItems input.form-control", function() {
         updateClasses(true);
     });
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #branchItems input.form-control", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #branchItems input.form-control", function() {
         updatedBranches(true);
     });
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #activityItems input.form-control", function () {
-    	
-    	if($(this).is(':checked')) {
-    	var splRequirementId =  $(this).attr("data-splrequirement-id");
-    	displaySagiaLicenseTypeRequirement(splRequirementId);
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #activityItems input.form-control", function() {
+
+        if ($(this).is(':checked')) {
+            var splRequirementId = $(this).attr("data-splrequirement-id");
+            displaySagiaLicenseTypeRequirement(splRequirementId);
         }
-    	
+
         updateActivities(true);
     });
-    
-    var displaySagiaLicenseTypeRequirement = function (splRequirementId) {
-    	
-    	if (splRequirementId == '0000') {
-    		return;
-    	}
-        $.ajax(ACC.config.encodedContextPath + controllerUrl + "/sagiaLicenseTypeRequirement/"+ splRequirementId, {
+
+    var displaySagiaLicenseTypeRequirement = function(splRequirementId) {
+
+        if (splRequirementId == '0000') {
+            return;
+        }
+        $.ajax(ACC.config.encodedContextPath + controllerUrl + "/sagiaLicenseTypeRequirement/" + splRequirementId, {
             type: "GET",
             responseType: "application/json;charset=utf-8",
             contentType: "application/json;charset=utf-8",
             cache: false,
-            success: function (data) {
+            success: function(data) {
                 var jsonData = JSON.parse(data);
-                
-                if (jsonData != null ) {           
-                   $('#typeRequirementModal .modal-body').html( jsonData.content );
-                   $('#typeRequirementModal').modal('show');
-                   
+
+                if (jsonData != null) {
+                    $('#typeRequirementModal .modal-body').html(jsonData.content);
+                    $('#typeRequirementModal').modal('show');
+
                 }
-                
+
             }
         });
     };
-    
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #nextButton", function () {
+
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal #nextButton", function() {
         $(this).prop("disabled", true);
-        $("#businessActivitiesSection #businessActivitiesModal .baBreadcrumb-item").css({"text-decoration": "none"});
+        $("#businessActivitiesSection #businessActivitiesModal .baBreadcrumb-item").css({ "text-decoration": "none" });
         var visibleSection = $("#businessActivitiesSection #businessActivitiesModal .baModule:visible");
         var visibleSectionId = visibleSection.attr("id");
         visibleSection.hide();
         if (visibleSectionId === "sectionItems") {
             $("#businessActivitiesSection #businessActivitiesModal #sectionList a.baBreadcrumb-link").removeClass("active");
-            $("#businessActivitiesSection #businessActivitiesModal #divisionList").css({"text-decoration": "underline"});
+            $("#businessActivitiesSection #businessActivitiesModal #divisionList").css({ "text-decoration": "underline" });
             $("#businessActivitiesSection #businessActivitiesModal #divisionList a.baBreadcrumb-link").addClass("active");
             $("#businessActivitiesSection #businessActivitiesModal #divisionItems").show();
             updateDivisions(true);
         } else if (visibleSectionId === "divisionItems") {
             $("#businessActivitiesSection #businessActivitiesModal #divisionList a.baBreadcrumb-link").removeClass("active");
-            $("#businessActivitiesSection #businessActivitiesModal #groupList").css({"text-decoration": "underline"});
+            $("#businessActivitiesSection #businessActivitiesModal #groupList").css({ "text-decoration": "underline" });
             $("#businessActivitiesSection #businessActivitiesModal #groupList a.baBreadcrumb-link").addClass("active");
             $("#businessActivitiesSection #businessActivitiesModal #groupItems").show();
             updateGroups(true);
         } else if (visibleSectionId === "groupItems") {
             $("#businessActivitiesSection #businessActivitiesModal #groupList a.baBreadcrumb-link").removeClass("active");
-            $("#businessActivitiesSection #businessActivitiesModal #classList").css({"text-decoration": "underline"});
+            $("#businessActivitiesSection #businessActivitiesModal #classList").css({ "text-decoration": "underline" });
             $("#businessActivitiesSection #businessActivitiesModal #classList a.baBreadcrumb-link").addClass("active");
             $("#businessActivitiesSection #businessActivitiesModal #classItems").show();
             updateClasses(true);
         } else if (visibleSectionId === "classItems") {
             $("#businessActivitiesSection #businessActivitiesModal #classList a.baBreadcrumb-link").removeClass("active");
-            $("#businessActivitiesSection #businessActivitiesModal #branchList").css({"text-decoration": "underline"});
+            $("#businessActivitiesSection #businessActivitiesModal #branchList").css({ "text-decoration": "underline" });
             $("#businessActivitiesSection #businessActivitiesModal #branchList a.baBreadcrumb-link").addClass("active");
             $("#businessActivitiesSection #businessActivitiesModal #branchItems").show();
             updatedBranches(true);
         } else if (visibleSectionId === "branchItems") {
             $("#businessActivitiesSection #businessActivitiesModal #branchList a.baBreadcrumb-link").removeClass("active");
-            $("#businessActivitiesSection #businessActivitiesModal #activityList").css({"text-decoration": "underline"});
+            $("#businessActivitiesSection #businessActivitiesModal #activityList").css({ "text-decoration": "underline" });
             $("#businessActivitiesSection #businessActivitiesModal #activityList a.baBreadcrumb-link").addClass("active");
             $("#businessActivitiesSection #businessActivitiesModal #activityItems").show();
             updateActivities(true);
         } else if (visibleSectionId === "activityItems") {
             SAGIA.license.apply.updateIsicTable();
+            $(".modal-backdrop").remove();
+            $('#businessActivitiesSection #businessActivitiesModal').modal('toggle');
+            var elmnt = document.getElementById("service-business-activities");
+            elmnt.scrollIntoView();
         }
     });
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesTable .deleteFromBusinessActivities", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesTable .deleteFromBusinessActivities", function() {
         var trParent = $(this).parents("tr");
         trParent.remove();
-        SAGIA.license.businessActivities.selectedActivities.forEach(function (activity, index, arrayObject) {
+        SAGIA.license.businessActivities.selectedActivities.forEach(function(activity, index, arrayObject) {
             if (activity.activityId == trParent.find("td span.activityId").text()) { //it's string or number
                 arrayObject.splice(index, 1);
                 $("#businessActivitiesSection #businessActivitiesModal #activityItems input.form-control[id='activity" +
@@ -1199,24 +1203,23 @@ $(function () {
                     "']:checked").prop("checked", false);
             }
         });
-       
-        if(SAGIA.license.apply.data)
-        {
-        	SAGIA.license.apply.data.businessActivities = SAGIA.license.businessActivities;
+
+        if (SAGIA.license.apply.data) {
+            SAGIA.license.apply.data.businessActivities = SAGIA.license.businessActivities;
         }
-        
+
         if ($("#businessActivitiesSection #businessActivitiesTable tbody tr").length === 0) {
             $("#businessActivitiesSection #businessActivitiesTable").hide();
             $("#businessActivitiesSection #noBusinessActivitiesSelected").show();
         }
     });
 
-    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal .baBreadcrumb-item", function () {
+    $(document).on("click", "#businessActivitiesSection #businessActivitiesModal .baBreadcrumb-item", function() {
         if ($(this).find(">a").hasClass("active")) {
             return;
         }
-        $("#businessActivitiesSection #businessActivitiesModal .baBreadcrumb-item").css({"text-decoration": "none"});
-        $(this).css({"text-decoration": "underline"});
+        $("#businessActivitiesSection #businessActivitiesModal .baBreadcrumb-item").css({ "text-decoration": "none" });
+        $(this).css({ "text-decoration": "underline" });
         $("#businessActivitiesSection #businessActivitiesModal .baModule").hide();
         var visibleItem = $(this).attr("id");
         if (visibleItem === "sectionList") {

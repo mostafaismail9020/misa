@@ -103,16 +103,16 @@
           <h4 class="INL_SD_Real_Sector_header">${realSector[3].value}</h4>
           <p class="INL_SD_Real_Sector_paper">${realSector[3].displayName}</p>
         </div>   
-      </div> 
-      <!-- <div class="col-md-3 mx-auto INL_Arrow_bg_log d-none d-md-block">
+      </div>	  
+     <!-- <div class="col-md-3 mx-auto INL_Arrow_bg_log d-none d-md-block">
             
       </div>
       <div class="col-md-3 mx-auto d-block d-md-none mobArrowDiv">
             <img src="${commonResourcePath}/images/sector_arrow.png">
-      </div> -->  
-    <!--  </div>  
-  </div> -->
-  <!--  <div class="col-12 col-md-3 realSectorDivHeight" style="height: 380px;">
+      </div> --> 
+  <!--  </div> 
+  </div>  -->
+  <!-- <div class="col-12 col-md-3 realSectorDivHeight" style="height: 380px;">
      <div class="row responsMt">
       <div class="col-6 col-md-12 mx-auto">
         <div class="INL_SD_Real_Sector">
@@ -130,7 +130,7 @@
   </div> -->
 </div>
                                                         <div class="chart-bottom-link pb-4 pr-2">
-                                                            <a href="#" target="_blank" class="anchor-link"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.gastat.text"/></span></a>
+                                                            <a href="https://www.stats.gov.sa/en/823" target="_blank" class="anchor-link"><spring:theme code="economic.saudieconomic.source.text"/><span><spring:theme code="economic.saudieconomic.gastat.text"/></span></a>
                                                         </div>
 </div> 
   </div>  

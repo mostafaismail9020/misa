@@ -891,6 +891,16 @@ $(function () {
             return false;
         }
     });
+
+    $("#quickregistrationUsername, #applyForLicenseUsername").keypress(function(event) {
+                var regex = new RegExp("^[ A-Za-z0-9@#$&*\-\_+]*$");
+                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                if (!regex.test(key)) {
+                    event.preventDefault();
+                    return false;
+                }
+    });
+
     $("#quickregistrationUsername, #applyForLicenseUsername").on("change", function(e) {
         $(this).val($(this).val().replace(/\s/g, "")); //for copy paste, remove space
     });
@@ -1192,10 +1202,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-register-quick-email");
+
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.email.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.email.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 } else {
                     $element.closest('.formInputBox').find(".js-help-block-success").empty();
@@ -1211,16 +1231,27 @@ $(function () {
                     return $(".js-quick-mobile-number").val();
                 },
                 mobileCountryCode: function () {
-                    return $(".js-quick-mobile-number").closest('.formInputBox-split').find('.js-mobile-coutry-code').val();
+                    return $(".js-mobile-coutry-code").val();
+                    //return $(".js-quick-mobile-number").closest('.formInputBox-split').find('.js-mobile-coutry-code').val();
                 }
             },
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-quick-mobile-number");
+
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.mobileNumber.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.mobileNumber.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 }
                 else {
@@ -1238,10 +1269,21 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-register-quick-user-name");
+
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.userName.ok'));
-                    messageElements.show();
+
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.userName.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+                    
                     return true;
                 }
                 else {
@@ -1275,10 +1317,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-apply-email");
+                
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.email.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.email.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 }
                 else {
@@ -1301,10 +1353,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-apply-mobile-number");
+
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.mobileNumber.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.mobileNumber.ok'));
+                    // messageElements.show();
+
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 }
                 else {
@@ -1322,10 +1384,20 @@ $(function () {
             cache: false,
             dataFilter: function(data) {
                 var $element = $(".js-apply-user-name");
+                
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (data === 'true') {
-                    var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
-                    messageElements.text(getI18nText('register.validation.userName.ok'));
-                    messageElements.show();
+                    // var messageElements = $element.closest('.formInputBox').find(".js-help-block-success");
+                    // messageElements.text(getI18nText('register.validation.userName.ok'));
+                    // messageElements.show();
+                    
+                    $element.closest('.formInputBox').find('input').css('width','90%');
+                    $element.closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
                     return true;
                 }
                 else {
@@ -1380,25 +1452,51 @@ $(function () {
             success: function (data, status, xhr, form) {
                 var validator = form.validate();
                 validator.resetForm();
+                $(".register-account-investor-screen5").removeClass('next-hide');
+                $(".register-account-investor-screen4").addClass('next-hide');
 
-                var body = $("body");
-                body.toggleClass('page-login-register');
-                $('.accountLogin').show();
+                // var body = $("body");
+                // body.toggleClass('page-login-register');
+                // $('.accountLogin').show();
 
-                var $submitModal = $("#requestSubmittedApply");
-                $submitModal.appendTo('body');
-                $submitModal.modal('show');
+                // var $submitModal = $("#requestSubmittedApply");
+                // $submitModal.appendTo('body');
+                // $submitModal.modal('show');
             }
         });
 
-        $(".quickregistrationPwd").on('focus blur keyup', function () {
+        $(".quickregistrationPwd").on('focus blur keyup change', function (e) {
             var passwordSuccessDiv = $(this).closest('.formInputBox').find(".success-message-block");
             setTimeout(function() {
                 var formValidation = $("#sagiaRegisterFormQuickRegistration, #sagiaRegisterFormApplyLicense").validate();
                 var hasNoError = (formValidation.errorMap === undefined) || (formValidation.errorMap.pwd === undefined && !formValidation.invalid.pwd);
                 hasNoError = hasNoError && $("#sagiaRegisterFormQuickRegistration").validate().element(".quickregistrationPwd");
+
+                var $element = $(".quickregistrationPwd");
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').siblings('.toggle-password1').removeClass('reg-password-success');
+                $($element).closest('.formInputBox').find('.verified').remove();
+                $(".quickregistrationCheckPwd").attr('disabled',true);
+
+                if(e.type === "change"){
+                    var $elementCPwd = $(".quickregistrationCheckPwd");
+                    $elementCPwd.closest('.formInputBox').find('input').css('width','100%');
+                    $elementCPwd.closest('.formInputBox').find('.form-group').css('display','block');
+                    $($elementCPwd).closest('.formInputBox').siblings('.toggle-password2').removeClass('reg-password-success');
+                    $($elementCPwd).closest('.formInputBox').find('.verified').remove();
+                }
+
                 if (hasNoError) {
-                    passwordSuccessDiv.text(getI18nText('register.validation.psw.ok'));
+                    // passwordSuccessDiv.text(getI18nText('register.validation.psw.ok'));
+                    
+                    $($element).closest('.formInputBox').find("input").css('width','90%');
+                    $($element).closest('.formInputBox').siblings('.toggle-password1').addClass('reg-password-success');
+                    $($element).closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($($element).closest('.formInputBox').find('input'));
+                    
+                    $(".quickregistrationCheckPwd").removeAttr('disabled');
+
                 } else {
                     passwordSuccessDiv.empty();
                 }
@@ -1417,8 +1515,19 @@ $(function () {
                 var formValidation = $("#sagiaRegisterFormQuickRegistration, #sagiaRegisterFormApplyLicense").validate();
                 var hasNoError = (formValidation.errorMap === undefined) || (formValidation.errorMap.pwd === undefined && !formValidation.invalid.checkPwd);
                 hasNoError = hasNoError && $("#sagiaRegisterFormQuickRegistration").validate().element(".quickregistrationCheckPwd");
+
+                var $element = $(".quickregistrationCheckPwd");
+                $element.closest('.formInputBox').find('input').css('width','100%');
+                $element.closest('.formInputBox').find('.form-group').css('display','block');
+                $($element).closest('.formInputBox').siblings('.toggle-password2').removeClass('reg-password-success');
+                $($element).closest('.formInputBox').find('.verified').remove();
+
                 if (hasNoError) {
-                    passwordSuccessDiv.text(getI18nText('register.validation.psw.ok2'));
+                    // passwordSuccessDiv.text(getI18nText('register.validation.psw.ok2'));
+                    $($element).closest('.formInputBox').find("input").css('width','90%');
+                    $($element).closest('.formInputBox').siblings('.toggle-password2').addClass('reg-password-success');
+                    $($element).closest('.formInputBox').find('.form-group').css('display','flex');
+                    $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($($element).closest('.formInputBox').find('input'));
                 } else {
                     passwordSuccessDiv.empty();
                 }
@@ -1512,3 +1621,19 @@ var _updateSlot = function (picker, data) {
 function recaptchaCallback(){
 	$(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');	
 }
+
+$("#quickregistrationEmail").on('blur',function(){
+    if($(this).parent().hasClass('has-error')){
+        var $element = $(".js-register-quick-email");
+
+        $element.closest('.formInputBox').find('input').css('width','100%');
+        $element.closest('.formInputBox').find('.form-group').css('display','block');
+        $($element).closest('.formInputBox').find('.verified').remove();
+    }
+    else{
+        $element.closest('.formInputBox').find('input').css('width','90%');
+        $element.closest('.formInputBox').find('.form-group').css('display','flex');
+        $('<div class="verified" id="mobile-verified" style="margin-top: 18px;"></div>').insertAfter($element.closest('.formInputBox').find('input'));
+
+    }
+})

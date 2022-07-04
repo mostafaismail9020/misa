@@ -56,10 +56,15 @@ INSERT_UPDATE ServicelayerJob; code[unique = true]     ; springId
                              ; isicMasterDataSyncJob ; isicMasterDataSyncJob
                              ; sagiaPublishLicencesJob ; sagiaPublishLicencesJob
                              ; workflowBDUserDisableServiceLayerJob ; workflowBDUserDisableJob
-
+                             ; contactTicket2ScpiJob ; contactTicket2ScpiJob
+                             ; serviceRequest2ScpiJob ; serviceRequest2ScpiJob
+							 ;customerEvent2ScpiJob  ;customerEvent2ScpiJob
+                            
 INSERT_UPDATE CronJob; code[unique = true]                    ; job(code)                          ; sessionLanguage(isoCode)[default = en]
                      ; workflowBDUserDisableCronJob           ; workflowBDUserDisableServiceLayerJob           ;
-
+                     ; contactTicket2ScpiCronJob    ; contactTicket2ScpiJob    ; 
+					 ; serviceRequest2ScpiCronJob    ; serviceRequest2ScpiJob    ;
+                     ;customerEvent2ScpiCronJob   ;customerEvent2ScpiJob
 
 INSERT_UPDATE Trigger; cronJob(code)[unique = true]           ; cronExpression
                      ; workflowBDUserDisableCronJob           ; 0 23 * * * ?
@@ -72,6 +77,11 @@ INSERT_UPDATE SAGIASiteCronJob; code[unique = true]         ; job(code)         
 INSERT_UPDATE IsicMasterDataCronJob ; code[unique=true]          ; job(code)            ; singleExecutable    ; sessionLanguage(isocode)[default = en]
                                     ; isicMasterDataSyncJob       ; isicMasterDataSyncJob ; false    ;
 
+
 INSERT_UPDATE Trigger; cronjob(code)[unique = true]; cronExpression
                      ; sagiaUpdateSaleOrderCronJob ; 0 0 0 * * ?
+                     ; contactTicket2ScpiCronJob   ; 0 0 0 * * ?
+                     ; serviceRequest2ScpiCronJob  ; 0 0 0 * * ?
+                     ; customerEvent2ScpiJob       ; 0 0 0 * * ?
 
+ 

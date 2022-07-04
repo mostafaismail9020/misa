@@ -7,6 +7,7 @@ SAGIA.dashboardWithLicense = {
     ],
 
     bar: function (dataArray) {
+        document.getElementById("js-dashboardWidgetCharts-chart") !== null &&
         new Chart(document.getElementById("js-dashboardWidgetCharts-chart"), {
             type: 'bar',
             options: {
@@ -126,6 +127,48 @@ SAGIA.dashboardWithLicense = {
                 }
 
                 SAGIA.dashboardWithLicense.loadDashboardData();
+                if(window.matchMedia("(max-width:640px)").matches){
+                    var spinner = '<div id="sp1" class="inline-custom-spinner text-center">'
+                    spinner += '<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><g transform="translate(-0.1)"><path d="M42.1,6a6,6,0,1,1-6-6A6.018,6.018,0,0,1,42.1,6Z" fill="#00a6be" opacity="0.8"></path><path d="M61.5,19A6.01,6.01,0,0,1,53,10.5a6.1,6.1,0,0,1,8.5,0A5.917,5.917,0,0,1,61.5,19Z" fill="#00a6be" opacity="0.9"></path><path d="M66.1,42a6,6,0,1,1,6-6A6.018,6.018,0,0,1,66.1,42Z" fill="#00a6be"></path><path d="M53,61.5a6.01,6.01,0,1,1,8.5,0A6.1,6.1,0,0,1,53,61.5Z" fill="#00a6be" opacity="0.3"></path><path d="M30,66a6,6,0,1,1,6,6A6.018,6.018,0,0,1,30,66Z" fill="#00a6be" opacity="0.4"></path><path d="M10.6,53a6.01,6.01,0,1,1,0,8.5A6.1,6.1,0,0,1,10.6,53Z" fill="#00a6be" opacity="0.5"></path><path d="M6.1,30a6,6,0,1,1-6,6,5.954,5.954,0,0,1,6-6Z" fill="#00a6be" opacity="0.6"></path><path d="M19.1,10.5A6.01,6.01,0,0,1,10.6,19a6.01,6.01,0,0,1,8.5-8.5Z" fill="#00a6be" opacity="0.7"></path></g></svg>'
+                    spinner +='</div>'
+                    $("#accordionDashboard").empty().append(spinner);
+                }
+
+                $( document ).ajaxStop(function() {
+                    var element_id = $("body").hasClass("page-dashboard") ? "#tabsDasboard" :"#tabs";
+
+                    var concat = '';
+                    obj_tabs = $( element_id + " li" ).toArray();
+                    obj_cont = $( ".dashboard-tabs .tab-content .tab-pane" ).toArray();
+                    jQuery.each( obj_tabs, function( n, val )
+                    {
+                        concat += '<div id="' + n + '" class="panel panel-default">';
+                        concat += '<div class="panel-heading  dashboardWidget-headline js-dashboardWidget-headline-icon text-upercase" role="tab" id="heading' + n + '">';
+                        concat += '<h5 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + n + '" aria-expanded="false" aria-controls="collapse' + n + '">' + val.innerText + '</a><h5>';
+                        concat += '</div>';
+                        concat += '<div id="collapse' + n + '" class="panel-collapse collapse heading' + n + '" role="tabpanel" aria-labelledby="heading' + n + '">';
+                        concat += '<div class="panel-body">' + obj_cont[n].innerHTML + '</div>';
+                        concat += '</div>';
+                        concat += '</div>';
+                    });
+                    $("#accordionDashboard").empty().append(concat);
+                    $("#accordionDashboard").find('.panel-collapse:first').addClass("in");
+                    $("#accordionDashboard").find('.panel-title a').attr("aria-expanded","true");
+                    $("#accordionDashboard").find('.panel-title a').removeClass("collapsed");
+                    $(element_id).not('.services-container-tabcontent').hide();
+                    $(".tab-content").not('.services-container-tabcontent').hide();
+
+                    if(window.matchMedia("(max-width:640px)").matches){
+                        $(element_id).hide();
+                        $("#accordionDashboard").show();
+                        $(".tab-content").not('.services-container-tabcontent').hide();
+                    }
+                    else{
+                        $(element_id).show();
+                        $("#accordionDashboard").hide();
+                        $(".tab-content").not('.services-container-tabcontent').show();
+                    }
+                })
             },
             error: function (e) {
             }
@@ -279,6 +322,10 @@ SAGIA.dashboardWithLicense = {
 
                     if (licenseAndEmployee.license && licenseAndEmployee.license.branches) {
                         var branchesTable = $("#branchesTable").empty();
+                        if(licenseAndEmployee.license.branches.length > 5)
+                        $(".d-license-branch").show();
+                        else
+                        $(".d-license-branch").hide();
                         for (var indexBranches in licenseAndEmployee.license.branches) {
                             if (licenseAndEmployee.license.branches.hasOwnProperty(indexBranches)) {
                                 var branch = licenseAndEmployee.license.branches[indexBranches];
@@ -409,8 +456,8 @@ SAGIA.dashboardWithLicense = {
                                 template.find(".dashboardWidgetPayments-currency").html(payment.currency);
                                 if (payment.status == 'E0003' && payment.hybrisStatusDescription != 'Paid') {
                                 	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
-                                	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link btn btn_outline btn_round btn_slim");
-                                	template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
+                                	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link");
+                                	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
                                 	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+payment.serviceId+",'"+payment.name+"',"+payment.amount+",'"+payment.currency+"')");
                                 	isAwaitingPayment = true;
                                 }
@@ -493,7 +540,6 @@ SAGIA.dashboardWithLicense = {
                     $('.dashboardWidgetTickets .paginationModule').removeClass('paginationModule_loading');
                 },
                 error: function () {
-                    //ticketsTable.empty();
                     //$(".dashboardWidgetTickets .paginationModule-items").empty();
                     var errorModal = $('#errorResponseModal');
                     errorModal.find('.modal-description').html(getI18nText("general.couldnot.load.tickets"));
@@ -505,7 +551,7 @@ SAGIA.dashboardWithLicense = {
         }
 
 
-        var financialSurveysTable = $("#financialSurveysTable");
+        /*var financialSurveysTable = $("#financialSurveysTable");
         var financialSurveysSection = $("#yourFinancialSurveys");
         if(financialSurveysSection.closest('.js-component').css('display') !== 'none') {
             $.ajax({
@@ -540,7 +586,7 @@ SAGIA.dashboardWithLicense = {
                                     //template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").text(getI18nText("financial.survey.button.fill.survey"));
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("class","btn btn_slim draftContinueBtn");
-                                    template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("style","float: left;");
+                                    // template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr("style","float: left;");
                                     template.find(".dashboardWidgetFinancialSurvey-btn").find("a").attr('href', ACC.config.encodedContextPath + "/my-sagia/financial-survey/complete/display/" + survey.quarterCode);
                                 }
                                 template.find(".dashboardWidgetFinancialSurveys-btn").attr("data-complaint-Id", survey.quarterCode);
@@ -557,7 +603,7 @@ SAGIA.dashboardWithLicense = {
                     $('.dashboardWidgetTickets .loadingModule .loadingModule-msg').html("<svg width=\"68\" height=\"60\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 68 60\"><g transform=\"translate(2 2)\" fill=\"none\" fill-rule=\"evenodd\"><path stroke=\"#5CC83B\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M63.173 55.36H.8l10.077-17.845h.003L31.987.134l21.109 37.381h.002z\"></path><path d=\"M32 17c-1.104 0-2 .902-2 2.018v18.146c0 1.116.896 2.018 2 2.018s2-.902 2-2.018V19.018A2.009 2.009 0 0 0 32 17z\" fill=\"#32465A\" fill-rule=\"nonzero\"></path><circle fill=\"#32465A\" cx=\"32\" cy=\"46\" r=\"2\"></circle></g></svg>&nbsp;<span>"+getI18nText('general.couldnot.load.tickets')+"</span>");
                 }
             });
-        }
+        }*/
 
         var serviceRequestsTable = $("#serviceRequestsTable");
         var secriceRequestSection = $("#servicesRequest");
@@ -749,6 +795,7 @@ SAGIA.dashboardWithLicense = {
                 errorModal.modal('show');
             }
         });
+
     }
 };
 
@@ -787,4 +834,3 @@ function awaitingPayment(){
 	var url = ACC.config.encodedContextPath + '/payments-overview'
     window.location.replace(url);
 }
-

@@ -15,13 +15,13 @@
         <div class="ticketModule">
             <div class="ticketModule-top">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-12">
                         <div class="ticketModule-details">
                             <p id="financialSurveyErrorUpdateLabel" style="color:red; display:none"><b><spring:theme code="general.message.could.not.be.sent"/></b></p>
                         </div>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-12">
                         <ul id="financialSurveyMessagesList" class="messageList">
                             <c:forEach items="${messages}" var="message">
                                 <li class="messageList-item">
@@ -44,7 +44,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="ticketModule-actions">
+                        <div class="ticketModule-actions text-center">
                             <button class="btn" id="financialSurveyNewMessageBtn" data-current-srid="${expandedComplaintFormData.srID}" <c:if test="${expandedComplaintFormData.srStCode == 'E0010'}"> disabled </c:if>><spring:theme code="general.send.message"/>
                             </button>
                         </div>

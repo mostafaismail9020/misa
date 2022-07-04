@@ -1224,6 +1224,13 @@ SAGIA.licenseApplyShareholderCommons = {
                 bindNormalCal($('#qm1PassportExpiryDate'));
                 bindNormalCal($('#qm1PassportIssueDate'));
             }
+            else
+             {
+               bindNormalCal($('#delegateDateofBirth'));
+               bindNormalCal($('#qm1DateOfBirth'));
+               bindNormalCal($('#qm1PassportExpiryDate'));
+               bindNormalCal($('#qm1PassportIssueDate'));
+             }
         };
 
 
@@ -2460,3 +2467,8 @@ SAGIA.licenseApplyShareholderCommons = {
         });
     }
 };
+$(document).on('click', '#delegateSectionQuestion .formRadioBox .form-item label', function(event) {
+    $("#delegateSectionQuestion .formRadioBox .form-item label").removeClass('btn-bg');
+          $(this).toggleClass('btn-bg');  
+         
+});

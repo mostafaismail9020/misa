@@ -41,7 +41,7 @@
                 <div class="helper clearfix hidden-md hidden-lg"></div>
                 <div class="sort-refine-bar">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="col-xs-12 col-sm-12 col-md-7">
                             <div class="d-flex form-group">
                                 <label class="control-label " for="sortForm${top ? '1' : '2'}">
                                     <spring:theme code="${themeMsgKey}.sortTitle"/>
@@ -96,7 +96,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-sm-6 col-md-6 pagination-custom pagination-wrap">
+                        <div class="col-xs-12 col-sm-12 col-md-5 pagination-custom pagination-wrap">
                           <pagination:pageSelectionPagination searchUrl="${searchUrl}" searchPageData="${searchPageData}"
                                                                 numberPagesShown="${numberPagesShown}"
                                                                 themeMsgKey="${themeMsgKey}"/>
@@ -104,7 +104,7 @@
                         </div>
 
                         <c:if test="${not hideRefBtn}">
-                            <div class="col-xs-12 col-sm-2 col-md-4 hidden-md hidden-lg">
+                            <div class="col-xs-12 col-sm-12 col-md-4 hidden-md hidden-lg">
                                 <ycommerce:testId code="searchResults_refine_button">
                                     <product:productRefineButton styleClass="btn btn-default js-show-facets"/>
                                 </ycommerce:testId>

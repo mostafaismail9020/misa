@@ -1,13 +1,13 @@
 .link {
 	cursor: pointer;	
-	color: #7bd35d;
+	color: @color-primary;
 	font-size: 14px;
 	
 	&:focus,
 	&:active,
 	&:hover {
 		outline: none;
-		color: darken(#7bd35d, 10%);
+		color: darken(@color-primary, 10%);
 		text-decoration: none;
 	}
 	
@@ -17,12 +17,12 @@
 }
 
 a {
-	color: #7bd35d;
+	color: @color-primary;
 	&:focus,
 	&:active,
 	&:hover {
 		outline: none;
-		color: darken(#7bd35d, 10%);
+		color: darken(@color-primary, 10%);
 		text-decoration: none;
 	}	
 }

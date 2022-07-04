@@ -35,7 +35,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="modal-heroImage">
-					<icon:feedback/>
+					<icon:notification-mail/>
 				</div>
 				<div id="modalDescription" class="modal-description">
 				</div>

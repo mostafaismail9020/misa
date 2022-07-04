@@ -32,6 +32,8 @@ import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPage
 import com.sap.ibso.eservices.storefront.response.SagiaAjaxResponse;
 import com.sap.ibso.eservices.storefront.response.SagiaResponse;
 import com.sap.ibso.eservices.storefront.response.SagiaResponseStatus;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
+import com.sap.ibso.eservices.core.model.SagiaServiceModel;
 
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
@@ -70,6 +72,7 @@ public class SagiaViolationRepliesController extends SagiaAbstractPageController
     private static final String ENTITY_NAME = "FollowupServices";
     private static final String VIOLATION_REPLIES_CREATE_FORM = "violationRepliesCreate";
     private static final String VIOLATION_REPLIES_SERVICE_ID  = "ZFLUP_02";
+    
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
 
@@ -87,11 +90,16 @@ public class SagiaViolationRepliesController extends SagiaAbstractPageController
 
     @Autowired
     private UserService userService;
+    
+    @Resource(name = "sagiaSearchService")
+    private SagiaSearchService searchService;
+    
 
     @RequestMapping(value = {"", "/display/{srId}"}, method = RequestMethod.GET)
     @RequireHardLogIn
     @LicenseRequired
-    public String violationsRepliesPage(@PathVariable(name = "srId", required = false) final String srId, final Model model) throws CMSItemNotFoundException {
+    public String violationsRepliesPage(@PathVariable(name = "srId", required = false) final String srId, final Model model) 
+    		throws CMSItemNotFoundException {
 
         final List<FollowUpData> violationReplies = sagiaFollowUpFacade.getViolationReplyEntries();
         model.addAttribute("replies", violationReplies);
@@ -126,6 +134,9 @@ public class SagiaViolationRepliesController extends SagiaAbstractPageController
             final FollowUpData selectedItem = sagiaFollowUpFacade.getFollowUpEntry(selectedElementId);
             model.addAttribute("selectedItem", selectedItem);
         }
+        
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(VIOLATION_REPLIES_SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
 
         storeCmsPageInModel(model, getContentPageForLabelOrId(VIOLATION_REPLIES_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(VIOLATION_REPLIES_PAGE));
@@ -183,7 +194,9 @@ public class SagiaViolationRepliesController extends SagiaAbstractPageController
             if (warningLettersData != null && !warningLettersData.isEmpty()) {
                 model.addAttribute("warningLetter", warningLettersData.get(0));
             }
-
+            
+            SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(VIOLATION_REPLIES_SERVICE_ID);
+            model.addAttribute("sagiaService", sagiaService);
         }
         /* This exception throws when you have a one request with the status "in process" */
         catch (SagiaCRMException e) {

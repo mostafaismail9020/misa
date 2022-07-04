@@ -1,0 +1,25 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$media = media(code, $contentCV)
+$medias = medias(code, $contentCV)
+$siteResource = jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+INSERT_UPDATE Media; code[unique = true]              ; realFileName                     ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+                   ; investor-guide-media-arabic.pdf  ; investor-guide-media-arabic.pdf  ; $siteResource/investor-guide-media-arabic.pdf                               ; application/pdf             ;                                          ; ""     ;
+                   ; investor-guide-media-english.pdf ; investor-guide-media-english.pdf ; $siteResource/investor-guide-media-english.pdf
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]       ; $medias                                                          ; $contentCV;
+                            ; investor-guide-media-container ; investor-guide-media-arabic.pdf,investor-guide-media-english.pdf ;           ;
+
+INSERT_UPDATE InvestSaudiResourceComponent; $contentCV[unique = true]; uid[unique = true]       ; resourceFullReport(qualifier, $contentCV);
+                                          ;                          ; investor-guide-container ; investor-guide-media-container           ;

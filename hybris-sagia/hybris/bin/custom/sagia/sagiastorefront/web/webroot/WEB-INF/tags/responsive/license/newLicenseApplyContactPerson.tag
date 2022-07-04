@@ -35,7 +35,7 @@
         <div class="contentModule-actions contentModule-actions_spaceBetween">
             <c:url value="/my-sagia/license/shareholders" var="backUrl"/>
             <span>
-                <a id="contactPersonBackButton" type="button" class="btn btn-secondary" href="${backUrl}"><spring:theme code="licenseApply.contactPerson.button.back.text"/></a>
+                <a id="contactPersonBackButton" type="button" class="btn btn-normal btn-ctrl btn_bold btn-outline" href="${backUrl}"><spring:theme code="licenseApply.contactPerson.button.back.text"/></a>
 <%--	                <button id="contactPersonCancelButton" type="button" class="btn btn-secondary btn_link btn_bold"><spring:theme code="licenseApply.contactPerson.button.cancel.text"/></button>--%>
             </span>
             <span>

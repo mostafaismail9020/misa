@@ -31,6 +31,8 @@ public final class SagiaCoreConstants extends GeneratedSagiaCoreConstants
 	public static final String WORKFLOW_APPROVER_ID = "WOAGUserGroup";
 	public static final String WORKFLOW_ADMIN_ID = "WOAdminGroup";
 	public static final String WORKFLOW_BD_ID = "WOBDUserGroup";
+	public static final String BD_USER_GROUP = "BDUserGroup";
+
 	public static final String SITE = "sagia";
 	public static final String STORE = "sagia";       
 	public static final String ORIGINSYSTEM = "C4C";

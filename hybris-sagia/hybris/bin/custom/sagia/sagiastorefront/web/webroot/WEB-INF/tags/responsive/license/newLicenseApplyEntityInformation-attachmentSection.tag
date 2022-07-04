@@ -11,7 +11,8 @@
 
 <!--  Attachment  -->
 <div class="contentModule-section" id="attachmentSection" style="display: none" ${not empty sagiaApplyEntityInfoForm.licenseType ? "data-existingentity" : ""}>
-    <div class="contentModule-headline contentModule-headline_smallMargin" id="attachmentSectionTitle"><spring:theme code="licenseApplyEntityInformation.attachmentSection.attachment"/></div>
+    <div class="contentModule-headline contentModule-headline_smallMargin mw2" id="attachmentSectionTitle"><spring:theme code="licenseApplyEntityInformation.attachmentSection.attachment"/></div>
+    <hr class="hr">
 	<div id="entrepreneurAttachment" style="display: none">
     <div class="row">
         <div class="col-md-6">
@@ -193,4 +194,5 @@
         </div>
     </div>
     </div>
+    <span class="spl-notes"><spring:theme code="profile.enquiry.size"/></span>
 </div>

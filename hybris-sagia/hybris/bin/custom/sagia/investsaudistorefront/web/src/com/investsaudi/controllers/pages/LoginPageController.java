@@ -10,12 +10,19 @@
  */
 package com.investsaudi.controllers.pages;
 
+import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.Breadcrumb;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractLoginPageController;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
+import de.hybris.platform.acceleratorstorefrontcommons.forms.GuestForm;
+import de.hybris.platform.acceleratorstorefrontcommons.forms.LoginForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import com.investsaudi.controllers.ControllerConstants;
+
+import java.util.Collections;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +30,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +39,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
@@ -42,6 +52,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class LoginPageController extends AbstractLoginPageController
 {
 	private HttpSessionRequestCache httpSessionRequestCache;
+	private static final String J_SPRING_SECURITY_CHECK = "j_spring_security_check";
+
+	private static final String RECAPTCHA_CHALLANGE_ANSWERED = "recaptchaChallangeAnswered";
 
 	@Override
 	protected String getView()
@@ -110,5 +123,48 @@ public class LoginPageController extends AbstractLoginPageController
 		storeCmsPageInModel(model, pageForRequest);
 		setUpMetaDataForContentPage(model, pageForRequest);
 		return ControllerConstants.Views.Fragments.Checkout.TermsAndConditionsPopup;
+	}
+	
+	
+	protected String getDefaultLoginPage(final boolean loginError, final HttpSession session, final Model model)
+			throws CMSItemNotFoundException
+	{
+		final LoginForm loginForm = new LoginForm();
+		model.addAttribute(loginForm);
+		model.addAttribute(new RegisterForm());
+		model.addAttribute(new GuestForm());
+
+		final String username = (String) session.getAttribute(SPRING_SECURITY_LAST_USERNAME);
+		if (username != null)
+		{
+			session.removeAttribute(SPRING_SECURITY_LAST_USERNAME);
+		}
+
+		loginForm.setJ_username(username);
+		storeCmsPageInModel(model, getCmsPage());
+		setUpMetaDataForContentPage(model, (ContentPageModel) getCmsPage());
+		model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.INDEX_NOFOLLOW);
+
+		addRegistrationConsentDataToModel(model);
+
+		final Breadcrumb loginBreadcrumbEntry = new Breadcrumb("#",
+				getMessageSource().getMessage("header.link.login", null, "header.link.login", getI18nService().getCurrentLocale()),
+				null);
+		model.addAttribute("breadcrumbs", Collections.singletonList(loginBreadcrumbEntry));
+
+		if (loginError && session.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED) != null
+				&& BooleanUtils.isFalse((Boolean) session.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED)))
+		{
+			session.removeAttribute(RECAPTCHA_CHALLANGE_ANSWERED);
+			model.addAttribute("loginError", Boolean.valueOf(loginError));
+			GlobalMessages.addErrorMessage(model, "captcha.error.message.direct.page");
+		}
+		else if (loginError)
+		{
+			model.addAttribute("loginError", Boolean.valueOf(loginError));
+			GlobalMessages.addErrorMessage(model, "login.error.account.not.found.title");
+		}
+
+		return getView();
 	}
 }

@@ -209,7 +209,7 @@
 		
 		&_small {
 			max-width: 560px;
-			margin-top: 12vh;		
+			// margin-top: 12vh;		
 		}
 		&_transparent {
 			background-color: rgba(255,255,255,0.1);
@@ -303,7 +303,7 @@
 
 						&:before {
 							content: "•"; 
-							color: #5cc83b;
+							color: @color-primary;
 							left: 2px;
 							position: absolute;
 						}
@@ -340,14 +340,14 @@
 		}
 		&-formSubmitSection {
 			text-align: center;
-			margin-top: 30px;
+			// margin-top: 30px;
 			margin-bottom: 10px;
 			font-size: 12px;
 			
 			&-forgottenPassword,
 			&-formSwitchText {
-				margin-top: 28px;
-				font-size: 14px;
+				// margin-top: 28px;
+				font-size: var(--content-small-font);
 //				margin-left: -10px;
 //				margin-right: -10px;
 			}
@@ -365,7 +365,7 @@
 					color: @apple;
 					
 					&:hover {
-						color: #3CDC0F;
+						color: @color-primary;
 					}
 				}
 			}
@@ -415,7 +415,7 @@ body.page-login, body.page-login-second-step {
 	background-size: cover;
 	overflow: auto;
 	background-attachment: fixed;
-	background-image: url("../img/login-background.jpg");
+	background-image: url(../../common/images/B2C/background1.jpg);
 
 	> main {
 		position: relative;  

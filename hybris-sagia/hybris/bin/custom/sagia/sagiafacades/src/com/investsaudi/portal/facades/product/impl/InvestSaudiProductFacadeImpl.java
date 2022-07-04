@@ -11,18 +11,31 @@ import de.hybris.platform.commercefacades.product.data.OpportunityData;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.product.data.SuccessStoryData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
+import de.hybris.platform.core.model.media.MediaModel;
+import de.hybris.platform.servicelayer.model.ModelService;
+import org.apache.log4j.Logger;
+import de.hybris.platform.catalog.CatalogVersionService;
+import de.hybris.platform.catalog.model.CatalogVersionModel;
+
+import com.investsaudi.portal.core.service.OpportunityProductMediaRestApiService;
 
 import de.hybris.platform.core.servicelayer.data.PaginationData;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collection;
+
+import org.apache.commons.collections.CollectionUtils;
 
 import static org.apache.commons.collections4.CollectionUtils.emptyIfNull;
 
 public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
 {
-
+    private static final Logger LOG = Logger.getLogger(InvestSaudiProductFacadeImpl.class);
+	private static final String STAGED_CATALOG_VERSION = "Staged";
+	private static final String SAGIA_PRODUCT_CATALOG = "sagiaProductCatalog";
+	
     @Resource
     private InvestSaudiProductService investSaudiProductService;
 
@@ -32,9 +45,14 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
     @Resource
     private InvestSaudiSuccessStoryPopulator investSaudiSuccessStoryPopulator;
 
-
     @Resource
     private InvestSaudiCategoryFacade investSaudiCategoryFacade;
+	
+	private CatalogVersionService catalogVersionService;
+    
+    private OpportunityProductMediaRestApiService opportunityProductMediaRestApiService;
+    
+    private ModelService modelService;
 
     @Override
     public ProductData getProductForCode(String code) {
@@ -75,6 +93,31 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
 
         List<OpportunityProductModel> opportunityProductModelList = investSaudiProductService.getOpportunitiesByCategory(limit, categoryCode);
         return populateOpportunities(opportunityProductModelList);
+    }
+	
+	@Override
+    public void uploadPdfForOpportunity(String productCode) {
+    	
+    	final String productType = investSaudiProductService.getProductTypeForCode(productCode);
+ 		if(productType != null) {
+            if (productType.equals(OpportunityProductModel._TYPECODE)) {
+                OpportunityProductModel opportunityProductModel = investSaudiProductService.getOpportunityForCode(productCode);
+                
+                if (null != opportunityProductModel) {
+                	Collection<MediaModel> productDetails = new ArrayList<>();
+                	if(CollectionUtils.isEmpty(opportunityProductModel.getDetail())) {
+                		if(null != opportunityProductModel.getDownloadUrl()) {
+            			MediaModel media = getOpportunityProductMediaRestApiService().uploadMediaAttachmentAsProduct(opportunityProductModel.getDownloadUrl(), productCode,opportunityProductModel.getCatalogVersion());
+            			productDetails.add(media);
+            			opportunityProductModel.setDetail(productDetails);
+            			getModelService().save(opportunityProductModel);
+            		  }
+                	}
+                	
+                }
+            }
+ 		}
+    	
     }
 
 
@@ -228,6 +271,49 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
 
         return productDataSearchPageData;
     }
+	
+	/**
+	 * @return the modelService
+	 */
+	public ModelService getModelService() {
+		return modelService;
+	}
+
+	/**
+	 * @param modelService the modelService to set
+	 */
+	public void setModelService(ModelService modelService) {
+		this.modelService = modelService;
+	}
+	
+	/**
+	 * @return the opportunityProductMediaRestApiService
+	 */
+	public OpportunityProductMediaRestApiService getOpportunityProductMediaRestApiService() {
+		return opportunityProductMediaRestApiService;
+	}
+
+	/**
+	 * @param opportunityProductMediaRestApiService the opportunityProductMediaRestApiService to set
+	 */
+	public void setOpportunityProductMediaRestApiService(
+			OpportunityProductMediaRestApiService opportunityProductMediaRestApiService) {
+		this.opportunityProductMediaRestApiService = opportunityProductMediaRestApiService;
+	}
+	
+	/**
+	 * @return the catalogVersionService
+	 */
+	public CatalogVersionService getCatalogVersionService() {
+		return catalogVersionService;
+	}
+
+	/**
+	 * @param catalogVersionService the catalogVersionService to set
+	 */
+	public void setCatalogVersionService(CatalogVersionService catalogVersionService) {
+		this.catalogVersionService = catalogVersionService;
+	}
 
 
 }

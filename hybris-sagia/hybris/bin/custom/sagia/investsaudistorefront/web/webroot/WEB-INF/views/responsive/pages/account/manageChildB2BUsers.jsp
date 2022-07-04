@@ -10,16 +10,31 @@
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
-<div id="global-alerts" class="global-alerts">
-    <c:if test="${not empty errorMessageKey}">
-        <div class="alert alert-danger alert-dismissable getAccAlert">
-            <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">x</button><spring:theme code="${errorMessageKey}"/></div>
-    </c:if>
-    <c:if test="${createSuccess}">
-        <div class="alert alert-info alert-dismissable getAccAlert">
-            <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">x</button>User created successfully</div>
-    </c:if>
-</div>
+<div class="managerchildUser_page"> 
+    <div id="global-alerts" class="global-alerts">
+        <c:if test="${not empty errorMessageKey}">
+            <div class="alert alert-danger alert-dismissable getAccAlert">
+                <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+                </button>
+                <div class="alert-wrapper">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/danger.png">
+                    <span><spring:theme code="${errorMessageKey}"/></span>
+                </div>
+            </div>
+        </c:if>
+        <c:if test="${createSuccess}">
+            <div class="alert alert-info alert-dismissable getAccAlert">
+                <button class="close closeAccAlert" aria-hidden="true" data-dismiss="alert" type="button">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/close-icon.png">
+                </button>
+                <div class="alert-wrapper">
+                    <img src="/investsaudistorefront/_ui/responsive/common/images/success.png">
+                    <span>User created successfully</span>
+                </div>
+            </div>
+        </c:if>
+    </div>
 
 <c:url value = "#" var="manageUserForm" />
 <div id="global-alerts" class="global-alerts"></div>
@@ -33,24 +48,24 @@
     <div class="row">
     <div class="col-md-12">
         <%-- this start of manager user page --%>
-        <div class="headline" style="font-weight: 700;"> <spring:theme code="text.account.childUnits.manage.user.title" text="Manage Users" /></div>
+        <div class="headline header-account"> <spring:theme code="text.account.childUnits.manage.user.title" text="Manage Users" /></div>
         <div class="row">
             <div class="form-group" style = "float:right;">
-                <button style = "width:200px; background-color:gray;" style = "width:200px;" class="btn btn-sagia btn-sagia-green" type="button" id="lockUser">
+                <button  class="btn btn-sagia btn-sagia-green lock_button" type="button" id="lockUser">
                     <spring:theme code="text.account.childUnits.lock.button.label" text="Lock User" />
                 </button>
-                <button style = "width:200px;" class="btn btn-sagia btn-sagia-green" type="button" id="unLockUser">
+                <button class="btn btn-sagia btn-sagia-green unlock_button" type="button" id="unLockUser">
                     <spring:theme code="text.account.childUnits.unlock.button.label" text="Unlock User" />
                 </button>
             </div>
         </div>
     </div>
-    <table class="manage-user-table responsive-table" id="table"
+    <table class="manage-user-table responsive-table table-striped" id="table"
            data-toggle="table"
            data-toolbar=".toolbar"
            data-sortable="true">
         <thead>
-            <tr class="responsive-table-head hidden-xs">
+            <tr class="">
                 <th class="th-sm" ><spring:theme code="text.account.childUnits.id" text="" /></th>
                 <th class="th-sm" data-field="title" data-sortable="true"><spring:theme code="text.account.childUnits.Title" text="Title" /></th>
                 <th class="th-sm" data-field="firstname" data-sortable="true"><spring:theme code="text.account.childUnits.firstName" text="First Name" /></th>
@@ -64,25 +79,25 @@
         </thead>
         <tbody>
             <c:forEach items="${childB2BCustomers}" var="childUnit">
-                <tr class="responsive-table-item">
-                    <td ><input id ="${childUnit.uid}" name="b2bUsers" type = "checkbox" style="width:20px; height:20px"/></td>
+                <tr class="">
+                    <td><input id ="${childUnit.uid}" name="b2bUsers" type = "checkbox" style="width:20px; height:20px"/></td>
                     <td>${childUnit.title}</td>
                     <td>${childUnit.firstName}</td>
                     <td>${childUnit.lastName}</td>
                     <td>${childUnit.email}</td>
                     <td>${childUnit.mobileCountryCode} - ${childUnit.mobileNumber}</td>
                     <td>${childUnit.role}</td>
-                    <td>${childUnit.unit.name}</td>
+                    <td>${childUnit.unit.name}</td><!--<span class="hidden-sm hidden-md hidden-lg hidden-xl mobile_title_showingnb2b"><spring:theme code="text.account.childUnits.unit" text="Parent Unit" /> -</span>-->
                     <c:choose>
                         <c:when test="${childUnit.active}">
-                            <td id="status">
+                            <td id="status"> 
                                 <span id="status-${childUnit.uid}">
                                     <spring:theme code="text.account.childUnits.active.status" text="Unlocked" />
                                 </span>
                             </td>
                         </c:when>
                         <c:otherwise>
-                            <td id="status">
+                            <td id="status"> 
                                 <span id="status-${childUnit.uid}">
                                     <spring:theme code="text.account.childUnits.inactive.status" text="Locked" />
                                 </span>
@@ -97,3 +112,4 @@
     <%-- End of manager user page --%>
 </form:form>
 <common:globalMessagesTemplates/>
+</div>

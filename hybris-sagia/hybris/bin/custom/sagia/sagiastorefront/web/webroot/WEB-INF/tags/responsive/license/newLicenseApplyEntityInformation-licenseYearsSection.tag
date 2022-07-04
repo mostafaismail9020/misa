@@ -14,7 +14,8 @@
 		<spring:theme
 			code="licenseApplyEntityInformation.licenseYearSection.title" />
 	</div>
-	<div class="row">
+	<hr class="hr">
+	<div class="row mt-5">
 		<div class="col-md-6">
 			<div class="formSelectBox">
 				<div class="form-group">

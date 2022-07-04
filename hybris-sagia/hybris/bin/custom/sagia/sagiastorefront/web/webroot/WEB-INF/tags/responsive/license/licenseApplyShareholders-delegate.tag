@@ -5,17 +5,18 @@
 <%@ attribute name="shareholderType" required="false" type="java.lang.String"%>
 
 <div class="contentModule-section">
-	<div class="contentModule-headline contentModule-headline_smallMargin">
+	<div class="contentModule-headline contentModule-headline_smallMargin w-50">
 		<spring:theme code="license.apply.shareholder.delegate" />
-		<a class="btn btn_link js-tip" style="padding-top: 10px;" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click" ><spring:theme code="text.account.profile.license.shareholders.tooltip.heading" /></a>
+	</div>
+  <hr class="hr"/>
+	<div class="formRadioBox-wrapper" id="delegateSectionQuestion">
+	<div class="row"><div class="col-md-12 justify-content-center"><a class="btn btn_link js-tip delegate-entity" data-container="body" data-tip-id="delegateToolTip" data-tip-class="delegateToolTip" data-trigger="click" ><spring:theme code="text.account.profile.license.shareholders.tooltip.heading" /></a>
         <div class="tooltip_content" id="delegateToolTip" >
             <h2><span><spring:theme code="text.account.profile.license.shareholders.tooltip.heading" /></span></h2>
             <p style="margin: 10px">
 					<spring:theme code="text.account.profile.license.shareholders.tooltip.body" />
              </p>
-         </div>
-	</div>
-	<div class="formRadioBox-wrapper" id="delegateSectionQuestion">
+         </div></div></div>
 		<div class="row">
 			<div class="col-md-6">
 				<span><spring:theme code="text.account.profile.license.shareholders.que.wantdelegate" /></span>
@@ -24,18 +25,18 @@
 				<div class="formRadioBox">
 					<div class="form-group">
 						<div class="form-item">
-							<input type="radio" name="hasDelegateInfo" id="${shareholderType.concat('DelegateYES')}" class="form-control delegateYES" value="true"/> 
-							<label for="${shareholderType.concat('DelegateYES')}" class="control-label" id="${shareholderType.concat('DelegateYESLable')}">
+							<input type="radio" name="hasDelegateInfo" id="${shareholderType.concat('DelegateYES')}" class="form-control delegateYES" value="true"/>
+							<label for="${shareholderType.concat('DelegateYES')}" class="btn-ctrl btn-outline btn_bold control-label " id="${shareholderType.concat('DelegateYESLable')}">
 								<spring:theme code="text.account.profile.license.shareholders.delegate.yes" />
 							</label>
 						</div>
 						<div class="form-item">
 							<input type="radio" name="hasDelegateInfo" id="${shareholderType.concat('DelegateNO')}"
 								value="false" class="form-control delegateNO" /> <label for="${shareholderType.concat('DelegateNO')}"
-								id="${shareholderType.concat('DelegateNOLable')}" class="control-label" ><spring:theme
+								id="${shareholderType.concat('DelegateNOLable')}" class="btn-ctrl btn-bg btn_bold control-label" ><spring:theme
 									code="text.account.profile.license.shareholders.delegate.no" /></label>
 						</div>
-					</div> 
+					</div>
 				</div>
 			</div>
 		</div>
@@ -73,7 +74,7 @@
 						<div class="formSelectBox">
 							<div class="form-group">
 								<select id="idType" name="delegate.idType" class="js-select2-oneColumn form-control">
-								</select> 
+								</select>
 								<label class="control-label control-label_mandatory" for="idType"><spring:theme
 										code="license.apply.shareholder.idType" /></label>
 							</div>
@@ -100,7 +101,7 @@
 									class="control-label control-label_mandatory"
 									for="delegateDateofBirth"><spring:theme
 										code="license.apply.shareholder.dateOfBirth" /></label>
-								<div class="formInputBox-append">
+								<div class="formInputBox-append" id="calendar-icon-pos">
 									<span class="formInputBox-text"><icon:calendar-gray /></span>
 								</div>
 							</div>
@@ -112,7 +113,7 @@
 								code="license.apply.shareholder.verify" /></a>
 					</div>
 				</div>
-				<div id="verifyDelegateDetails" style="display: none;"> 
+				<div id="verifyDelegateDetails" style="display: none;">
 				<div class="row">
 					<div class="col-md-6">
 						<div style="margin-top: 20px;font-size: 18px;" class="contentModule-headline contentModule-headline_smallMargin">
@@ -133,7 +134,7 @@
 							<div class="help-block"></div>
 						</div>
 					</div>
-			
+
 					<div class="col-md-6">
 						<div class="formInputBox">
 							<div class="form-group">
@@ -146,7 +147,7 @@
 							<div class="help-block"></div>
 						</div>
 					</div>
-			
+
 					<div class="col-md-6">
 						<div class="formInputBox">
 							<div class="form-group">
@@ -179,7 +180,7 @@
 									class="control-label control-label_mandatory"
 									for="delegateIssueDate"><spring:theme
 										code="license.apply.shareholder.issueDate" /></label>
-								<div class="formInputBox-append">
+								<div class="formInputBox-append" id="calendar-icon-pos">
 									<span class="formInputBox-text"><icon:calendar-gray /></span>
 								</div>
 							</div>
@@ -195,7 +196,7 @@
 									class="control-label control-label_mandatory"
 									for="delegateExpiryDate"><spring:theme
 										code="license.apply.shareholder.expiryDate" /></label>
-								<div class="formInputBox-append">
+								<div class="formInputBox-append" id="calendar-icon-pos">
 									<span class="formInputBox-text"><icon:calendar-gray /></span>
 								</div>
 							</div>
@@ -242,14 +243,14 @@
 						<div class="formInputBox-split">
 							<div class="formInputBox">
 								<div class="form-group">
-									<input id="delegateCountryCodeForTelephone" name="delegate.countryCodeForTelephone" class="form-control form-control_preNumber" placeholder="." type="text" value="" /> 
+									<input id="delegateCountryCodeForTelephone" name="delegate.countryCodeForTelephone" class="form-control form-control_preNumber" placeholder="." type="text" value="" />
 									<label class="control-label control-label_mandatory" for="delegateCountryCodeForTelephone"><spring:theme code="general.country.code" /></label>
 						</div>
 						<div class="help-block"></div>
 					</div>
 					<div class="formInputBox formInputBox_big">
 						<div class="form-group">
-							<input id="delegateTelephone" name="delegate.telephone" class="form-control form-control_labeled" placeholder="." type="text" value="" /> 
+							<input id="delegateTelephone" name="delegate.telephone" class="form-control form-control_labeled" placeholder="." type="text" value="" />
 							<label class="control-label control-label_mandatory" for="delegateTelephone"><spring:theme code="general.telephone" /></label>
 								</div>
 								<div class="help-block"></div>
@@ -260,7 +261,7 @@
 			            <div class="formInputBox-split">
 			                 <div class="formInputBox">
 			                     <div class="form-group">
-			                     	 <input id="delegateCountryCodeForMobile" name="delegate.countryCodeForMobile" class="form-control form-control_preNumber" placeholder="." type="text" value="" /> 
+			                     	 <input id="delegateCountryCodeForMobile" name="delegate.countryCodeForMobile" class="form-control form-control_preNumber" placeholder="." type="text" value="" />
 			                         <label class="control-label control-label_mandatory" for="delegateCountryCodeForMobile"><spring:theme code="general.country.code"/></label>
 			                 	</div>
 			             	<div class="help-block"></div>
@@ -282,7 +283,7 @@
 			               </div>
 			               <div class="help-block"></div>
 			           </div>
-			        </div>	    
+			        </div>
 				</div>
 				<div class="row">
 					<div class="col-md-6">

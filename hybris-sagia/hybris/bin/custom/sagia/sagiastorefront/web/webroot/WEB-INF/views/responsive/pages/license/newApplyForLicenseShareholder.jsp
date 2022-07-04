@@ -22,10 +22,53 @@
     var controllerUrl = '${controllerUrl}';
 </script>
 
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="license.apply.sagialicenseapplication"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mainSection mainSection_narrow mainSection_white">
-    <div class="container">      
+    <div class="container">
         <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="license.apply.sagialicenseapplication"/></h1>
+            <!-- <h1 class="mainSection-headline"><spring:theme code="license.apply.sagialicenseapplication"/></h1> -->
             <div>
                 <c:if test="${'/simulator' ne controllerUrl}">
                     <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">
@@ -60,7 +103,7 @@
                     </c:choose>
                 </div>
             </div>
-        </c:if>         
+        </c:if>
     </div>
     <c:if test="${'/simulator' eq controllerUrl}">
         <div class="container">
@@ -87,7 +130,7 @@
             display: none;
         }
     </style>
-    <div class="panelTabs-navigation">
+    <div class="panelTabs-navigation container">
         <ul class="clearfix tabs-list tabamount4">
             <li id="accessibletabsnavigation0-0" class="first last">
                 <c:url value="/my-sagia/license/entity" var="entityInfoLink"/>

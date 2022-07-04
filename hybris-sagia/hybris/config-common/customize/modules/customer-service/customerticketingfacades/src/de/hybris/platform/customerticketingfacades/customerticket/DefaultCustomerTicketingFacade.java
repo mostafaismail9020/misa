@@ -70,9 +70,10 @@ import org.springframework.web.multipart.MultipartFile;
 public class DefaultCustomerTicketingFacade implements TicketFacade
 {
 	private static final Logger LOG = Logger.getLogger(DefaultCustomerTicketingFacade.class);
-	
+
 	private static final String NIPC_USER_GROUP = "NIPCUserGroup";
-	
+	private static final String WOAG_USER_GROUP = "WOAGUserGroup";
+
 	private TicketService ticketService;
 	private UserService userService;
 	private BaseSiteService baseSiteService;
@@ -243,27 +244,48 @@ public class DefaultCustomerTicketingFacade implements TicketFacade
 		{
 			throw new RuntimeException("Ticket not found for the given ID " + ticketId); //NOSONAR
 		}
-		
-		if(isNipcMember()) {
-			
+
+		if (isNipcMember() || isApprover())
+		{
+
 			return ticketModel.getTicketID().equals(ticketId) ? getTicketConverter().convert(ticketModel, new TicketData()) : null;
-			
+
 		}else {
-			
+
 			return ticketModel.getCustomer().getUid().equals(getUserService().getCurrentUser().getUid())
 					? getTicketConverter().convert(ticketModel, new TicketData()) : null;
 		}
 
 	}
-	
+
+	private boolean isApprover()
+	{
+		boolean approver = false;
+		final UserModel currentUser = getUserService().getCurrentUser();
+
+		if (currentUser != null)
+		{
+			final Set<PrincipalGroupModel> curGroups = currentUser.getGroups();
+
+			for (final PrincipalGroupModel curGroup : curGroups)
+			{
+				if (WOAG_USER_GROUP.equalsIgnoreCase(curGroup.getUid()))
+				{
+					approver = true;
+				}
+			}
+		}
+		return approver;
+	}
+
 	private boolean isNipcMember() {
 		boolean nipcMember = false;
-		UserModel currentUser = getUserService().getCurrentUser();
-		
+		final UserModel currentUser = getUserService().getCurrentUser();
+
 		if(currentUser != null) {
-			Set<PrincipalGroupModel> curGroups = currentUser.getGroups();
-			
-			for(PrincipalGroupModel curGroup : curGroups) {
+			final Set<PrincipalGroupModel> curGroups = currentUser.getGroups();
+
+			for(final PrincipalGroupModel curGroup : curGroups) {
 				if(NIPC_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
 					nipcMember = true;
 				}
@@ -319,7 +341,7 @@ public class DefaultCustomerTicketingFacade implements TicketFacade
 	}
 
 	@Override
-	public SearchPageData<TicketData> getTicketsByB2BUnit(final PageableData pageableData, String b2bUnit)
+	public SearchPageData<TicketData> getTicketsByB2BUnit(final PageableData pageableData, final String b2bUnit)
 	{
 		final SearchPageData<CsTicketModel> searchPageData = getTicketService().getTicketsForCustomerOrderByModifiedTime(
 				getUserService().getCurrentUser(), getBaseSiteService().getCurrentBaseSite(), pageableData);
@@ -327,7 +349,7 @@ public class DefaultCustomerTicketingFacade implements TicketFacade
 	}
 
 	@Override
-	public SearchPageData<TicketData> getTicketsByTicketCategory(final PageableData pageableData, String ticketCategory, String sector)
+	public SearchPageData<TicketData> getTicketsByTicketCategory(final PageableData pageableData, final String ticketCategory, final String sector)
 	{
 		final SearchPageData<CsTicketModel> searchPageData = getTicketService().getTicketsForCustomerOrderByModifiedTime(
 				getUserService().getCurrentUser(), getBaseSiteService().getCurrentBaseSite(), pageableData);

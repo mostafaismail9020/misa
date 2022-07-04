@@ -5,28 +5,28 @@
 <%@ attribute name="editable" required="false" type="java.lang.Boolean"%>
 <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags/responsive/dashboard" %>
 
-<div class="dashboardWidget js-dashboardWidget">
+<div class="dashboardWidget js-dashboardWidget no-border mt-0 pb-0">
     <c:if test="${editable}"><dashboard:addAndRemoveComponent checkboxIndex="1"/></c:if>
-    <div class="dashboardWidget-headline js-dashboardWidget-headline">
+    <div class="dashboardWidget-headline js-dashboardWidget-headline  d-none d-md-flex">
         <div class="dashboardWidget-headline-text"><spring:theme code="myLicense.title"/></div>
         <div class="dashboardWidget-headline-icon"><icon:my-license/></div>
-        <div class="dashboardWidget-headline-action">
-            <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link">
+        <div class="dashboardWidget-headline-action text-right mt-3 d-none d-sm-flex text-ar-left">
+            <a href="${encodedContextPath}/my-sagia/license/convert" class="btn-outline dashboardWidget-headline-action-link pt-2 d-none">
                 <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
             </a>
-            <a href="${encodedContextPath}/my-sagia/license/print" class="dashboardWidget-headline-action-link" download>
-                <spring:theme code="text.account.followup.download"/><icon:download/>
+            <a href="${encodedContextPath}/my-sagia/license/print" class="btn-outline dashboardWidget-headline-action-link download-payment" download>
+                <spring:theme code="text.account.followup.download"/><img class="pl-3  pl-ar-3" src="${commonResourcePath}/images/dashboard-media/Download.png" alt=""/>
             </a>
-           <%-- <a href="${encodedContextPath}/my-sagia/license/cancel" class="dashboardWidget-headline-action-link">
+           <!-- <a href="${encodedContextPath}/my-sagia/license/cancel" class="dashboardWidget-headline-action-link">
                 <spring:theme code="licenseCancellation.text"/><icon:cancel/>
-            </a>--%>
+            </a> -->
         </div>
     </div>
-
-    <div class="dashboardWidget-body">
+   
+    <div class="dashboardWidget-body myLicenseBody">
     <%-- start dashboardWidgetLicense --%>
-        <div class="dashboardWidget-headline-action">
-            <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link">
+        <div class="dashboardWidget-headline-action dm-my-license-view">
+            <a href="${encodedContextPath}/my-sagia/license/convert" class="dashboardWidget-headline-action-link d-none">
                 <spring:theme code="convertlicense.converttonational"/><icon:convert-to-national/>
             </a>
             <a href="${encodedContextPath}/my-sagia/license/download" class="dashboardWidget-headline-action-link">
@@ -37,7 +37,7 @@
             </a>--%>
         </div>  
        
-        <div class="dashboardWidgetLicense">
+        <div class="dashboardWidgetLicense d-license-widget">
             <div class="dashboardTabs js-dashboardTabs">
             <%-- start dashboardTabs 1 --%>
                 <div class="dashboardTabs-head"><spring:theme code="dashboard.myLicense.details"/></div>
@@ -103,15 +103,21 @@
                             </table>
                         </div>
                     </div>
-                    <div class="paginationModule">
+                    <div class="paginationModule d-license-branch">
                         <div class="paginationModule-wrapper">
-                            <button class="paginationModule-control paginationModule-control_left" disabled><icon:arrow_green_right/></button>
+                            <!-- <button class="paginationModule-control paginationModule-control_left" disabled><icon:arrow_green_right/></button> -->
+                            <button class="paginationModule-control paginationModule-control_left" disabled>
+                                <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive" id="firstimg">
+                            </button>
                             <div class="paginationModule-items" id="branchesPagesSection">
                                 <div class="paginationModule-item"><a href="javascript:void(0);" class="paginationModule-link branch active">1</a></div>
                             </div>
                             <button class="paginationModule-control paginationModule-control_right">
-                                <icon:arrow_green_right/>
+                                <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive">
                             </button>
+                            <!-- <button class="paginationModule-control paginationModule-control_right">
+                                <icon:arrow_green_right/>
+                            </button> -->
                         </div>
                     </div>
                 </div>
@@ -142,10 +148,10 @@
                         <table class="tableModule-table">
                             <thead class="tableModule-head">
                             <tr>
-                                <th>Name</th>
-                                <th>Mobile number</th>
-                                <th>Email</th>
-                                <th>National ID</th>
+                                <th><spring:theme code="text.account.profile.license.contactPerson.name"/></th>
+                                <th><spring:theme code="text.account.profile.license.contactPerson.mobileNumber"/></th>
+                                <th><spring:theme code="text.account.profile.license.contactPerson.email"/></th>
+                                <th><spring:theme code="text.account.profile.license.contactPerson.nationalId"/></th>
                             </tr>
                             </thead>
                             <tbody class="tableModule-body"  id="contactPersonTable"></tbody>
@@ -155,8 +161,34 @@
 
                 <div class="dashboardTabs-head"><spring:theme code="text.account.profile.license.generalmanager"/></div>
                 <div class="dashboardTabs-body">
-                    <div class="dashboardWidgetLicense-list dashboardWidgetLicense-list_4col">
-                        <div class="dashboardWidgetLicense-list-entry">
+                    <div class="tableModule tableModule_slim">
+                        <table class="tableModule-table">
+                            <thead class="tableModule-head">
+                            <tr>
+                                <th><spring:theme code="text.account.profile.license.generalManager.name"/></th>
+                                <th><spring:theme code="text.account.profile.license.generalManager.mobileNumber"/></th>
+                                <th><spring:theme code="text.account.profile.license.generalManager.email"/></th>
+                            </tr>
+                            </thead>
+                            <tbody class="tableModule-body">
+                                <tr>
+                                    <td>
+                                        <div id="generalManagerName" class="dashboardWidgetLicense-list-value">
+                                            <c:out value="${license.generalManager.firstName}"/> <c:out value="${license.generalManager.lastName}"/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="generalManagerMobileNumber" class="dashboardWidgetLicense-list-value">
+                                            <c:out value="${license.generalManager.firstName}"/> <c:out value="${license.generalManager.lastName}"/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="generalManagerEmail" class="dashboardWidgetLicense-list-value"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <div class="dashboardWidgetLicense-list-entry">
                             <div class="dashboardWidgetLicense-list-label"><spring:theme code="text.account.profile.license.generalManager.name"/></div>
                             <div id="generalManagerName" class="dashboardWidgetLicense-list-value">
                                 <c:out value="${license.generalManager.firstName}"/> <c:out value="${license.generalManager.lastName}"/>
@@ -169,16 +201,16 @@
                         <div class="dashboardWidgetLicense-list-entry">
                             <div class="dashboardWidgetLicense-list-label"><spring:theme code="text.account.profile.license.generalManager.email"/></div>
                             <div id="generalManagerEmail" class="dashboardWidgetLicense-list-value"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
 
-            <div class="dashboardWidgetLicense-action">
+            <div class="dashboardWidgetLicense-action d-none">
                 <button type="button" class="btn" onclick="window.location.href='${encodedContextPath}/my-sagia/license/amend'">
                     <spring:theme code='dashboard.myLicense.amend'/><icon:edit/>
                 </button>
-                <button type="button" class="btn" onclick="window.location.href='${encodedContextPath}/my-sagia/license/renew'">
+                <button type="button" class="btn mt-3 mt-sm-0" onclick="window.location.href='${encodedContextPath}/my-sagia/license/renew'">
                     <spring:theme code='dashboard.myLicense.renew'/><icon:renew/>
                 </button>
             </div>

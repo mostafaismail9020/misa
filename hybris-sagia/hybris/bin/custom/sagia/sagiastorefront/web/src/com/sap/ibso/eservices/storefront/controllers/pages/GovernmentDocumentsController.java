@@ -2,6 +2,8 @@ package com.sap.ibso.eservices.storefront.controllers.pages;
 
 import com.google.gson.Gson;
 import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
+import com.sap.ibso.eservices.core.model.SagiaServiceModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import com.sap.ibso.eservices.facades.data.AmanahData;
 import com.sap.ibso.eservices.facades.data.BranchData;
 import com.sap.ibso.eservices.facades.data.WasselCheckData;
@@ -60,6 +62,9 @@ public class GovernmentDocumentsController extends AbstractPageController {
     @Autowired
     private UserService userService;
 
+    @Resource(name = "sagiaSearchService")
+    private SagiaSearchService searchService;
+
     private static final String SAGIA_GOVERNMENT_DOCUMENTS_CMS_PAGE = "government-documents";
     private static final String SAGIA_DOCUMENTS_BRANCHES_CMS_PAGE = "documents-branches";
 
@@ -68,6 +73,8 @@ public class GovernmentDocumentsController extends AbstractPageController {
 
     private static final Logger LOG = Logger.getLogger(GovernmentDocumentsController.class);
     private static final String ENTITY_NAME = "LicenseReplaceMents";
+    private static final String SERVICE_ID = "ZS14";
+
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
 
@@ -92,6 +99,8 @@ public class GovernmentDocumentsController extends AbstractPageController {
         model.addAttribute("branchData", branchData);
         model.addAttribute("amanahs", governmentDocumentsFacade.getAmanahList());
         model.addAttribute("processingTime", averageProcessingTimeFacade.getAverageProcessingTimeData(ENTITY_NAME));
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_GOVERNMENT_DOCUMENTS_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_GOVERNMENT_DOCUMENTS_CMS_PAGE));
         return getViewForPage(model);

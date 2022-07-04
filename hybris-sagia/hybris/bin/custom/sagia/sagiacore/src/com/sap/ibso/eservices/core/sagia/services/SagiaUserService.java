@@ -17,11 +17,14 @@ import java.util.List;
 import java.util.Set;
 
 import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.sap.ibso.eservices.core.sagia.enums.ValidationError;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.user.UserService;
+import de.hybris.platform.core.model.media.MediaModel;
+import java.lang.String;
 
 /**
  * Provides access to the User Service
@@ -82,9 +85,38 @@ public interface SagiaUserService extends UserService
 	Set<B2BCustomerModel> getAllChildB2BCustomers();
 
 	/**
-	 * Gets Opportunities Created by the customer
+	 * Gets ContactTicket Created by the customer
 	 * @param contactEmail contactEmail
 	 * @return all the tickets raised by the customer
 	 */
 	List<ContactTicketModel> getUserRaisedOpportunities(String contactEmail);
+
+	/**
+	 * Gets ContactTicket Created by the customer
+	 * @param ticketId ticketId
+	 * @return the ticket raised by the customer
+	 */
+	ContactTicketModel getContactTicketForTicketId(String ticketId);
+	
+	/**
+	 * Add comments to ContactTicket
+	 * @param ticketId ticketId
+	 * @param comments comments
+	 * @return the ticket raised by the customer
+	 */
+	ContactTicketModel addContactTicketComments(String ticketId, String comments);
+
+        boolean attachServiceRequestToContactTicket(ServiceRequestModel serviceRequest, String ticketId);
+        
+        
+        
+  	  /**
+    	 * Add comments to ContactTicket
+    	 * @param ticketId ticketId
+    	 * @param comments comments
+    	 * @return the ticket raised by the customer
+    	 */
+        public void saveTicketAttachments(final byte[] bytes, final String ticketId,
+    			final MediaModel mediaModel);
+        
 }

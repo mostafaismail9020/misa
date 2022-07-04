@@ -14,41 +14,91 @@
     </c:otherwise>
 </c:choose>
 
-<div class="mainSection mainSection_dark">
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image" src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="general.governmentdocuments" />
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline">Government documents</h1>
         </div>
     </div>
-</div>
+</div> -->
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
-        <a href="${encodedContextPath}/my-sagia/sagia-profile"
-           class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span>Back to Account Overview</a>
+		<a href="${encodedContextPath}/my-sagia/sagia-profile" class="btn btn_leftIconLink btn_darkLink back_to_service">
+           	<span class="iconElement iconElement_closeBack" id="image-pos-arrow">
+           		<img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/>
+           	</span><spring:message code="myprofile.account.overview"/>
+		</a>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 mt-5">
     <div class="container">
         <div class="panelModule panelModule_halfRadius">
             <div class="contentModule">
                 <div class="contentModule-section">
-                    <div class="contentModule-headline">
-                        <span class="iconElement iconElement_branches"><icon:branches/></span>
-                        <spring:theme code="dashboard.myLicense.branches"/>
-                        ${pageType}
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                            <span class="contentModule-headline"><spring:theme code="dashboard.myLicense.branches"/>
+                                ${pageType}</span>
+                            <div class="contentModule-headline-border"></div>
+                        </div>
                     </div>
                     <div class="formError hidden" id="error-group">
                         <icon:messageError/><spring:theme code="govDocs.error.branchesNotCompleted"/>
                     </div>
 
-                    <div class="tableModule">
+                    <div class="tableModule mt-3">
                         <table class="tableModule-table">
                             <thead class="tableModule-head">
                             <tr>
                                 <th><spring:theme code="text.account.profile.license.branches.name"/></th>
                                 <th><spring:theme code="text.account.profile.license.branches.type"/></th>
                                 <th><spring:theme code="text.account.profile.license.branches.city"/></th>
-                                <th class="tableModule-headItem tableModule-headItem_actionsCount_2"><%--<spring:theme code="dashboard.myLicense.branches.actions"/>--%></th>
+                                <th class="tableModule-headItem tableModule-headItem_actionsCount_2">
+                                	<%--<spring:theme code="dashboard.myLicense.branches.actions"/>--%>
+                                </th>
                             </tr>
                             </thead>
                             <tbody class="tableModule-body">
@@ -58,7 +108,7 @@
                                     <td><c:out value="${branch.type}"/></td>
                                     <td><c:out value="${branch.city}"/></td>
                                     <td class="tableModule-bodyItem-action">
-                                        <button class="btn btn_link hidden" data-completed-index="${loop.index}">
+                                        <button class="btn btn_link no_background hidden" data-completed-index="${loop.index}">
                                             <icon:status-complete/>
                                         </button>
                                         <button class="btn btn_link btn-edit-branch" data-toggle="modal"
@@ -83,11 +133,10 @@
             </div>
         </div>
 
-
-        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
+        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween justify-content-end ">
             <c:url value="/governmentDocuments" var="governmentDocs"/>
-            <button type="submit" class="btn" onclick="sendBranches()" ${disabled}>Submit</button>
- 	<input type="hidden" id="serviceId"/>
+            <button type="submit" class="btn" onclick="sendBranches()" ${disabled}><spring:theme code="myprofile.submit"/></button>
+ 			<input type="hidden" id="serviceId"/>
         </div>
     </div>
 </div>
@@ -95,10 +144,10 @@
 
 <div class="modal fade" id="branchEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered govt-doc-edit" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="modal-title">Edit <span id="branchName"></span></div>
+                <div class="modal-title"><spring:theme code="myprofile.edit"/><span id="branchName" class="modal-title"></span></div>
                 <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
                     <icon:close/>
                 </button>
@@ -107,9 +156,11 @@
             <div class="modal-body modal-body_bordered">
                 <div class="contentModule">
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
-                            <span class="iconElement iconElement_register02"><icon:register02/></span>
-                            Commercial register
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="general.governmentdocuments.commercialregister"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col">
@@ -154,9 +205,11 @@
                     </div>
 
                     <div class="contentModule-section">
-                        <div class="contentModule-headline">
-                            <span class="iconElement iconElement_momra"><icon:momra/></span>
-                            Momra
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="govDocs.Momra"/></span>
+                                <div class="contentModule-headline-border"></div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col">
@@ -167,7 +220,7 @@
                                                    name="aahasMomra" type="radio" value="true"
                                                    onchange="handleMomraRadioChange()" ${disabled}>
                                             <label for="aahasMomra1" class="control-label">
-                                                <span></span> <spring:theme code="govDocs.momraY"/></label>
+                                            	<span></span><spring:theme code="govDocs.momraY"/></label>
                                         </div>
 
                                         <div class="form-item">
@@ -175,7 +228,7 @@
                                                    name="aahasMomra" type="radio" value="false"
                                                    onchange="handleMomraRadioChange()" ${disabled}>
                                             <label for="aahasMomra2" class="control-label">
-                                                <span></span><spring:theme code="govDocs.momraN"/></label>
+                                            	<span></span><spring:theme code="govDocs.momraN"/></label>
                                         </div>
                                     </div>
                                 </div>
@@ -222,14 +275,14 @@
 
 
                     <div class="contentModule-section contentModule-section_slimDivider">
-
                         <div class="row">
-
                             <div class="col-md-5">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_momra"><icon:momra/></span>
-                                    Wassel
-                                </div>
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:message code="myprofile.wassel"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
+                                </div>                             
                                 <div class="formRadioButton formRadioButton_block formRadioButton_slim">
                                     <div class="form-group">
 
@@ -257,19 +310,24 @@
                             </div>
 
                             <div class="col-md-7" id="mapContainer">
-                                <div class="contentModule-headline">
+                                <!-- <div class="contentModule-headline">
                                     <span class="iconElement iconElement_locationPin_filled"><icon:locationPin_filled/></span>
                                     Physical address
+                                </div> -->
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:message code="myprofile.physical.address"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
                                 </div>
                                 <div class="mapsModule">
                                     <div id="map" style="height: 350px"></div>
                                 </div>
                                 <div class="formInputBox">
                                     <div class="form-group" id="gMap-group">
-                                        <input id="gMapAddress" class="form-control" placeholder="." value=""
-                                               type="text" readonly="true" >
+                                        <input id="gMapAddress" class="form-control" placeholder="." value="" type="text" readonly="true" >
                                         <label class="control-label control-label_mandatory" for="gMapAddress">
-                                            your address
+                                            <spring:message code="myprofile.your.address"/>
                                         </label>
                                         <div class="help-block">
                                             <span id="govDocs-gMap-error"></span>
@@ -284,10 +342,10 @@
             </div>
 
             <div class="modal-footer modal-footer_centered">
-                <button type="reset" class="btn btn_outline" data-dismiss="modal">
-                    Cancel
+                <button type="reset" class="btn btn_outline btn_slim full-width-responsive" data-dismiss="modal">
+                    <spring:message code="myprofile.cancel"/>
                 </button>
-                <button type="button" class="btn" onclick="saveBranch()" ${disabled}>
+                <button type="button" class="btn full-width-responsive" onclick="saveBranch()" ${disabled}>
                     <spring:theme code="govDocs.saveButton"/>
                 </button>
             </div>
@@ -338,12 +396,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn_slim" data-dismiss="modal"><spring:message code="myprofile.close"/></button>
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="modal fade" id="wassel-check" tabindex="-1" role="dialog" aria-labelledby="requestSubmittedApply" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
@@ -363,12 +420,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="infoModalClose" type="button" class="btn btn_slim" data-dismiss="modal">Close</button>
+                <button id="infoModalClose" type="button" class="btn btn_slim" data-dismiss="modal"><spring:message code="myprofile.close"/></button>
             </div>
         </div>
     </div>
 </div>
-
 
 <script>
     var notNullError = '<spring:theme code="govDocs.error.notEmpty"/>';
@@ -378,6 +434,5 @@
     var branchesJson = ${branchesJSON};
     var mainBranchJson = ${mainBranchJSON};
     var selectedBranch;
-
 </script>
 

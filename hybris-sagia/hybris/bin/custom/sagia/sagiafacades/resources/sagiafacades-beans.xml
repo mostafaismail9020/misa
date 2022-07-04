@@ -21,6 +21,8 @@
 		<property name="mobileNumber" type="String"/>
 		<property name="sector" type="com.sap.ibso.eservices.facades.data.SagiaSectorData"/>
 		<property name="company" type="String"/>
+		<property name="companyWebsite" type="String"/>
+		<property name="companyLogo" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
 		<property name="country" type="com.sap.ibso.eservices.facades.data.SagiaCountryData"/>
 		<property name="dashboardMedia" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 		<property name="shouldDisplaySetCompanyPhotoOption" type="boolean"/>
@@ -212,6 +214,9 @@
         <property name="mobileCountryCode" type="String"/>
 		<property name="mobileNumber" type="String"/>
 		<property name="country" type="com.sap.ibso.eservices.facades.data.SagiaCountryData"/>
+		<property name="companyWebsite" type="String"/>
+		<property name="companyLogo" type="String"/>
+		
 	</bean>
 
 	<bean class="com.sap.ibso.eservices.facades.data.ProfileGeneralManagerData">
@@ -3426,8 +3431,25 @@
 		<property name="isicActivities" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.zesrvEnhOData.IsicActivity&gt;"/>
 
 	</bean>
-
+	
+	<!-- New Service Request -->
+	
+	<bean class="com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData">
+		<property name="code" type="java.lang.String"/>
+		<property name="subject" type="java.lang.String"/>
+		<property name="description" type="java.lang.String"/>
+		<property name="priority" type="com.sap.ibso.eservices.core.enums.Priority"/>
+		<property name="incidentCategory" type="com.sap.ibso.eservices.core.enums.IncidentCategory" />
+		<property name="serviceCategory" type="com.sap.ibso.eservices.core.enums.ServiceCategory"/>
+	</bean>
+	
 	<!-- Start InvestSaudiPortalFacades extensioninfo.xml -->
+	
+	<bean class="com.sap.ibso.eservices.facades.data.OpportunityPartnerData">
+		<property name="companyLogo" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+		<property name="companyWebsite" type="java.lang.String"/>
+	</bean>
+	
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
         <property name="investmentModel" type="java.lang.String"/>
         <property name="featured" type="java.lang.Boolean"/>
@@ -3445,6 +3467,7 @@
         <property name="quote" type="java.lang.String"/>
         <property name="featureInfoMap" type="java.util.Map&lt;String, String>"/>
         <property name="featureAdditionalInfoMap" type="java.util.Map&lt;String, String>"/>
+        <property name="partnerMap" type="java.util.Map&lt;String, java.util.List&lt;com.sap.ibso.eservices.facades.data.OpportunityPartnerData&gt;>"/>
     </bean>
 
 	<bean class="de.hybris.platform.commercefacades.product.data.SectorFactsFiguresData">
@@ -4236,8 +4259,8 @@
 		<property name="mapName" type="java.lang.String"/>
 		<property name="siteMapLevel1" type="com.sap.ibso.eservices.facades.data.InvestSaudiSiteMapLevel2Data"/>
 		<property name="siteMapLevel2" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.InvestSaudiSiteMapLevel2Data&gt;"/>
-	</bean>
-
+	</bean>	
+	
 	<!-- Site Map Changes Ends -->
 
 	<bean class="com.sap.ibso.eservices.facades.data.EntitiesManagedByRhq">

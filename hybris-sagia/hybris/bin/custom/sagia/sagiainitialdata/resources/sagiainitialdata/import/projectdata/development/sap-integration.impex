@@ -28,7 +28,7 @@ $oDataPassword = sagia@123
 $httpSmsDestinationName = SMS
 $smsProviderTargetURL = https://xservices.rich.sa/RiCHClientServiceREST.svc/SendSmsConfirmationGet?
 $smsProviderUser = admin@misa.gov.sa
-$smsProviderPassword = u4XnpkJj@G
+$smsProviderPassword = s1!OjAvEa8
 
 # Create CRM RFC destination
 INSERT_UPDATE SAPRFCDestination; rfcDestinationName[unique = true]; client     ; backendType(code, itemtype(code)); connectionType; sid     ; targetHost     ; instance     ; userid   ; password     ; pooledConnectionMode

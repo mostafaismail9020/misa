@@ -181,6 +181,33 @@
 			<value code="Z02"/>
 			<value code="NA"/>
 		</enumtype>
+		
+		<enumtype generate="true" code="PartnerType" autocreate="true" dynamic="true">
+            <value code="Enabler"/>
+            <value code="Accelerator"/>
+            <value code="Incubator"/>
+        </enumtype>
+        
+        <enumtype code="CsInterventionType" dynamic="true" autocreate="false" generate="false">
+            <value code="NotesForCustomer" />
+        </enumtype>
+		<enumtype generate="true" code="IncidentCategory" autocreate="true" dynamic="true">
+          <value code="CA_2"/>
+          <value code="CA_3"/>
+          <value code="CA_4"/>
+          <value code="CA_5"/>
+          <value code="CA_6"/>
+          <value code="CA_7"/>
+      </enumtype>
+      <enumtype generate="true" code="ServiceCategory" autocreate="true" dynamic="true">
+         <value code="CA_1"/>
+      </enumtype>
+      <enumtype code="Priority" dynamic="true" autocreate="true" generate="true">
+          <value code="LOW" />
+          <value code="NORMAL" />
+          <value code="URGENT" />
+          <value code="IMMEDIATE" />
+      </enumtype>
 
         <enumtype code="FinancialSurveyStatus" dynamic="true">
             <value code="OPEN"/>
@@ -197,9 +224,9 @@
             <value code="DISSOLVED"/>
         </enumtype>
     </enumtypes>
-
-
-
+	
+	
+	
     <maptypes>
 		<maptype code="Integer2LivingInSaudiAchievementMape"
                argumenttype="java.lang.Integer"
@@ -224,6 +251,12 @@
         <relation code="ServiceTypeCategoryToServiceTypeCategory" localized="false">
             <sourceElement cardinality="one" qualifier="parentCategory" type="ServiceTypeCategory"/>
             <targetElement cardinality="many" qualifier="subCategories" type="ServiceTypeCategory"/>
+        </relation>
+		
+		<relation generate="true" localized="false" code="ContactTicket2ServiceRequest" autocreate="true">
+           <sourceElement type="ContactTicket" cardinality="one" qualifier="contactTicket"></sourceElement>
+           <targetElement type="ServiceRequest" cardinality="many" qualifier="serviceRequest">
+           </targetElement>
         </relation>
 
         <relation code="SagiaCategoryToSagiaCategoryRelation" localized="false">
@@ -435,7 +468,47 @@
 			<targetElement qualifier="mcComponents" type="InvestSaudiMediaCenterComponent" cardinality="many" collectiontype="list" ordered="true">
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
+		</relation>	
+		<relation code="OpportunityProduct2OpportunityPartner" generate="true" autocreate="true"  localized="false" >
+			<deployment table="productPartner" typecode="30211" />
+			<sourceElement qualifier="product" type="OpportunityProduct" cardinality="many">
+				<modifiers />
+			</sourceElement>
+			<targetElement qualifier="partner" type="OpportunityPartner" cardinality="many" collectiontype="list" ordered="true">
+				<modifiers />
+			</targetElement>
+		</relation>	
+		<!-- Invest Saudi Changes Ends  -->	
+		
+		<!-- Sagia Dashboard Changes Starts  -->
+		<relation code="SagiaDashboardBannerCarousel" generate="true" localized="false" autocreate="true">
+			<deployment table="BannersForSagiaDashboard" typecode="30215" />
+			<sourceElement qualifier="carouselBanners" type="SagiaDashboardBannerCarouselComponent" cardinality="many">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</sourceElement>
+			<targetElement qualifier="bannerImage" type="Media" cardinality="many" collectiontype="list" ordered="true">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</targetElement>
 		</relation>
+		<!-- Sagia Dashboard Changes Ends  -->
+		 <relation generate="true" localized="false" code="CustomerEvent2ScpiOutNotesFromCustomerProcess"
+                  autocreate="true">
+            <sourceElement type="CsCustomerEvent" cardinality="one" qualifier="csCustomerEvent"></sourceElement>
+            <targetElement type="ScpiOutCsCustomerEventProcess" cardinality="many" qualifier="scpiOutCsCustomerEventProcess">
+            </targetElement>
+        </relation>
+		<relation generate="true" localized="false" code="ServiceRequest2ScpiOutServicerequestProcess"
+                  autocreate="true">
+            <sourceElement type="ServiceRequest" cardinality="one" qualifier="serviceRequest"></sourceElement>
+            <targetElement type="ScpiOutServiceRequestProcess" cardinality="many" qualifier="scpiOutServiceRequestProcess">
+            </targetElement>
+        </relation>
+		<relation generate="true" localized="false" code="ContactTicket2ScpiOutTicketAttachmentProcess"
+                  autocreate="true">
+            <sourceElement type="ContactTicket" cardinality="one" qualifier="contactTicket"></sourceElement>
+            <targetElement type="ScpiOutTicketAttachmentProcess" cardinality="many" qualifier="scpiOutTicketAttachmentProcess">
+            </targetElement>
+        </relation>
 
 		<relation code="ProvinceNewsRel" generate="true" localized="false" autocreate="true">
 			<deployment table="ProvinceNewsRel" typecode="30301" />
@@ -796,6 +869,16 @@
 					<description>To identify the source system</description>
 					<modifiers read="true" write="true" search="true" optional="true"/>
 				</attribute>
+				 <attribute qualifier="companyWebsite" type="java.lang.String">
+                    <persistence type="property"/>
+                    <description>Company website URL</description>
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                </attribute>
+                <attribute qualifier="companyLogo" type="Media">
+                    <persistence type="property" />
+                    <description>To assign company logo</description>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+                </attribute>
             </attributes>
             <indexes>
                 <index name="mobileNumberIndex" unique="true">
@@ -807,6 +890,81 @@
                 </index>
             </indexes>
         </itemtype>
+		
+		<itemtype code="ServiceRequest" generate="true"  autocreate="true"
+          jaloclass="com.investsaudi.portal.core.jalo.ServiceRequest">
+    <description>To assign request to the ticket</description>
+    <deployment table="ServiceRequest" typecode="30212"/>
+    <attributes>
+        <attribute qualifier="partnerType " type="PartnerType">
+            <persistence type="property"/>
+            <modifiers read="true" write="true" search="true" optional="true"/>
+        </attribute>
+        <attribute qualifier="subject" type="localized:java.lang.String">
+            <modifiers read="true" write="true" search="true"
+                       optional="true"/>
+            <persistence type="property">
+                <columntype database="oracle">
+                    <value>CLOB</value>
+                </columntype>
+                <columntype database="mysql">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sqlserver">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sap">
+                    <value>NCLOB</value>
+                </columntype>
+                <columntype>
+                    <value>HYBRIS.LONG_STRING</value>
+                </columntype>
+            </persistence>
+        </attribute>
+        <attribute qualifier="description" type="localized:java.lang.String">
+            <modifiers read="true" write="true" search="true"
+                       optional="true"/>
+            <persistence type="property">
+                <columntype database="oracle">
+                    <value>CLOB</value>
+                </columntype>
+                <columntype database="mysql">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sqlserver">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sap">
+                    <value>NCLOB</value>
+                </columntype>
+                <columntype>
+                    <value>HYBRIS.LONG_STRING</value>
+                </columntype>
+            </persistence>
+        </attribute>
+        <attribute qualifier="priority" type="Priority">
+            <modifiers read="true" write="true" search="true" optional="true" />
+            <persistence type="property" />
+        </attribute>
+        <attribute qualifier="incidentCategory" type="IncidentCategory">
+            <modifiers read="true" write="true" search="true" optional="true"/>
+            <persistence type="property" />
+        </attribute>
+        <attribute qualifier="serviceCategory" type="ServiceCategory">
+            <modifiers read="true" write="true" search="true" optional="true"/>
+            <persistence type="property" />
+        </attribute>
+        <attribute qualifier="id" type="java.lang.String">
+            <persistence type="property"/>
+            <modifiers optional="false" unique="true" read="true" write="true" search="true"/>
+        </attribute>
+		<attribute qualifier="sent2Scpi" type="java.lang.Boolean">
+			<persistence type="property"/>
+			<modifiers read="true" write="true" search="true" optional="true"/>
+			<defaultvalue>Boolean.FALSE</defaultvalue>
+	    </attribute>
+    </attributes>
+</itemtype>
 
         <itemtype code="SagiaBEServiceType"
                 jaloclass="com.sap.ibso.eservices.core.jalo.SagiaBEServiceType"
@@ -1552,6 +1710,86 @@
                         <persistence type="property"/>
                         <defaultvalue>"2"</defaultvalue>
                     </attribute>
+                    <attribute qualifier="serviceDocuments" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="rulesRestrictions" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="serviceFinancialFees" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
+                    <attribute qualifier="serviceDuration" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <modifiers dontOptimize="true"/>
+                    </attribute>
                 </attributes>
                 <indexes>
                     <index name="codeIndex" unique="true">
@@ -1609,6 +1847,13 @@
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaRealTimeOnlineSupportComponent">
                 <description>Sagia Real Time Online Support Component</description>
             </itemtype>
+            
+			<itemtype code="SagiaDashboardBannerCarouselComponent"
+                      autocreate="true" generate="true" extends="SimpleCMSComponent"
+                      jaloclass="com.sap.ibso.eservices.core.jalo.SagiaDashboardBannerCarouselComponent">
+                <description>Sagia Dashboard Banner Carousel Component</description>
+            </itemtype>
+            
             <itemtype code="SagiaCommerceIndustryService" extends="SagiaService"
                       jaloclass="com.sap.ibso.eservices.core.jalo.SagiaCommerceIndustryService">
                 <attributes>
@@ -3510,10 +3755,27 @@
 						<description>To identify the source system</description>
 						<modifiers read="true" write="true" search="true" optional="true"/>
 					</attribute>
-					<attribute qualifier="regionSpecific" type="java.lang.Boolean">
-                        <defaultvalue>Boolean.TRUE</defaultvalue>
+                    <attribute autocreate="true" qualifier="downloadUrl" type="java.lang.String">
                         <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property"/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <custom-properties>
+                            <property name="hmcIndexField">
+                                <value>"thefield"</value>
+                            </property>
+                        </custom-properties>
                     </attribute>
                 </attributes>
             </itemtype>
@@ -3753,6 +4015,61 @@
                     <attribute qualifier="c4CAccountID" type="java.lang.String">
                         <persistence type="property"/>
                         <modifiers/>
+                    </attribute>                
+					<attribute qualifier="systemOrigin" type="java.lang.String">
+						<persistence type="property"/>
+						<description>To identify the source system</description>
+						<modifiers read="true" write="true" search="true" optional="true"/>
+					</attribute>
+					<attribute qualifier="attachmentStream" type="java.lang.String">
+                        <description>To store Attachment top binary conversion.</description>
+                        <modifiers read="true" write="true" search="true"
+                                   optional="true"/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+					<attribute qualifier="sent2Scpi" type="java.lang.Boolean">
+						<persistence type="property"/>
+						<modifiers read="true" write="true" search="true" optional="true"/>
+						<defaultvalue>Boolean.FALSE</defaultvalue>
+                   </attribute>
+				</attributes>
+            </itemtype> 
+                        
+			<itemtype code="OpportunityPartner" generate="true" autocreate="true">
+                <description>To identify list of partners available to a product</description>
+                <deployment table="OpportunityPartner" typecode="30210"/>
+                <attributes>
+                    <attribute qualifier="partnerType" type="PartnerType">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="productId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers optional="false" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="partnerRowId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers optional="false" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="customer" type="Customer">
+                        <persistence type="property" />
+                        <modifiers optional="false" />
                     </attribute>
                 </attributes>
             </itemtype>
@@ -3761,17 +4078,17 @@
                 <description>Invest Saudi C4C to Commerce Opportunity</description>
                 <deployment table="C4C2CommerceOpportunity" typecode="30501"/>
                 <attributes>
-                    <attribute qualifier="opportunityId" type="java.lang.String">
+                    <attribute qualifier="partnerType" type="PartnerType">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute qualifier="opportunityName" type="java.lang.String">
+                    <attribute qualifier="productId" type="java.lang.String">
                         <persistence type="property"/>
-                        <modifiers/>
+                        <modifiers optional="false" unique="true"/>
                     </attribute>
-                    <attribute qualifier="processingTypeCode" type="java.lang.String">
+                    <attribute qualifier="partnerRowId" type="java.lang.String">
                         <persistence type="property"/>
-                        <modifiers/>
+                        <modifiers optional="false" unique="true"/>
                     </attribute>
                     <attribute qualifier="processingTypeCodeText" type="java.lang.String">
                         <persistence type="property"/>
@@ -3867,6 +4184,7 @@
                     </attribute>
                 </attributes>
             </itemtype>
+
         </typegroup>
 
 		<typegroup name="investsaudiportalcms">
@@ -11870,9 +12188,36 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            
+            <itemtype code="SagiaCMSParagraphMediaComponent" generate="true"
+                      extends="CMSParagraphComponent" autocreate="true">                     
+                <description>Sagia CMSParagraph Media Component</description>
+                <attributes>                   					
+                   <attribute qualifier="attachment" type="localized:Media">
+                        <persistence type="property"/>
+                        <description>Localized Attachement</description>
+                    </attribute>                 
+             </attributes>
+           </itemtype>		
+                        
         </typegroup>
-
-        <!-- SiteMap Changes Ends -->
-
+		 
+		<typegroup name="Outbound">
+            <itemtype code="ScpiOutCsCustomerEventProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
+			<itemtype code="ScpiOutServiceRequestProcess" autocreate="true" generate="true" extends="BusinessProcess"/> 
+            <itemtype code="ScpiOutTicketAttachmentProcess" autocreate="true" generate="true" extends="BusinessProcess"/>
+			   <itemtype code="CsCustomerEvent" autocreate="false" generate="false" extends="CsTicketEvent" abstract="false">
+                <attributes>
+                    <attribute qualifier="sent2Scpi" type="java.lang.Boolean">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <defaultvalue>Boolean.FALSE</defaultvalue>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+		
+		<!-- SiteMap Changes Ends -->
+		
 	</itemtypes>
 </items>

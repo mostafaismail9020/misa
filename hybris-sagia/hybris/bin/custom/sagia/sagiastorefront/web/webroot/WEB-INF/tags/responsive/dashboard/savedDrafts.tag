@@ -4,12 +4,12 @@
 <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags/responsive/dashboard" %>
 <%@ attribute name="editable" required="false" type="java.lang.Boolean"%>
 
-<div class="dashboardWidget js-dashboardWidget">
+<div class="dashboardWidget js-dashboardWidget no-border">
     <c:if test="${editable}">
         <dashboard:addAndRemoveComponent checkboxIndex="7"/>
     </c:if>
-    <div class="dashboardWidget-headline js-dashboardWidget-headline">
-        <a href="" data-redirect="service-requests-overview" class="js-page-redirect" style="text-decoration: inherit;color: inherit">
+    <div class="dashboardWidget-headline js-dashboardWidget-headline  d-none d-sm-block">
+        <a href="" data-redirect="service-requests-overview" class="incomplete-request-header js-page-redirect" style="text-decoration: inherit;color: inherit">
             <spring:theme code="dashboard.savedDrafts.title"/>
         </a>
         <div class="dashboardWidget-headline-icon">
@@ -48,7 +48,7 @@
         <td class="draftDate"></td>
         <td class="action">
             <div>
-                <a role="button" class="btn btn_slim draftContinueBtn">
+                <a role="button" class="btn btn_slim draftContinueBtn text-white">
                     <spring:theme code="drafts.continue"/>
                 </a>
             </div>

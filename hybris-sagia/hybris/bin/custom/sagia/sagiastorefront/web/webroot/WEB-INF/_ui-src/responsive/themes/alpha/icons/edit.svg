@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#5CC83B" d="M15.434 14.934c0 .276-.224.5-.5.5h-14.934c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h14.934c.276 0 .5.223.5.5zm-13.152-1.266c-.134-.133-.182-.33-.124-.51l1.485-4.567.007-.013.056-.098.048-.072.011-.016 7.577-7.58.003-.002c1.005-1.001 2.75-1 3.751.001.502.501.778 1.168.778 1.877 0 .71-.276 1.377-.778 1.878l-.004.003-7.574 7.575-.013.009-.075.05-.093.054-.014.008-4.53 1.521-.159.026c-.129 0-.257-.05-.352-.144zm10.175-12.448l1.115 1.116 1.116 1.116c.121-.233.186-.493.186-.763 0-.442-.173-.858-.485-1.17-.503-.503-1.316-.619-1.932-.299zm-7.632 7.525l2.339 2.339 6.87-6.872-1.17-1.17-1.169-1.17-6.87 6.873zm-1.408 3.777l2.824-.948-1.899-1.897-.925 2.845z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="23.085" height="26.089" viewBox="0 0 23.085 26.089">
+  <g id="edite-icon" transform="translate(-709.429 -1490.767)">
+    <g id="Group_1112" data-name="Group 1112" transform="translate(710.436 1491.776)">
+      <g id="Group_1111" data-name="Group 1111">
+        <path id="Path_1961" data-name="Path 1961" d="M730.078,1492.859a3.615,3.615,0,0,1,.6,4.8l-12.7,15.059a5.089,5.089,0,0,1-1.052.9,25.644,25.644,0,0,1-5.127,2.107s-.667.264-.972-.037l-.166-.14s-.321-.221-.187-.988c0,0,.823-5.062,1.821-6.245l13.236-15.631S727.524,1490.529,730.078,1492.859Z" transform="translate(-710.436 -1491.776)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <line id="Line_114" data-name="Line 114" x2="4.635" y2="3.912" transform="translate(14.288 2.344)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <line id="Line_115" data-name="Line 115" x2="4.216" y2="3.556" transform="translate(2.943 16.527)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <line id="Line_116" data-name="Line 116" x2="20.158" transform="translate(0.718 24.055)" fill="none" stroke="#00a6be" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

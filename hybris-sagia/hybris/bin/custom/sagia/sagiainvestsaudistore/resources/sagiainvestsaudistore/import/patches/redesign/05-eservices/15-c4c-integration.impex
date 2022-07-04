@@ -1,0 +1,45 @@
+
+INSERT_UPDATE Governmentlead; code[unique=true]	; name[lang=en]						; name[lang=ar]	;
+							; Z08				; Identify Opportunity & Proposal	; Identify Opportunity & Proposal;
+							; Z02				; Pre-feasibility Study				; Pre-feasibility Study;
+							; Z06				; Opportunity Finalization         	; Opportunity Finalization;
+							; Z07				; Campaign Ready                   	; Campaign Ready;
+							; NA				; Not Available                    	; Not Available;
+
+
+INSERT_UPDATE Investorlead  ; code[unique=true] ; name[lang=en]						; name[lang=ar]	;
+							; Z08				; Identify Opportunity & Proposal	; Identify Opportunity & Proposal;
+							; Z02				; Pre-feasibility Study          	; Pre-feasibility Study;
+							; Z06				; Opportunity Finalization       	; Opportunity Finalization;
+							; NA 				; Not Available                  	; Not Available;
+
+
+INSERT_UPDATE PartnerType   ; code[unique=true]	; name[lang=en]		; name[lang=ar]	;
+							; Enabler			; Enabler			; Enabler		;
+							; Accelerator		; Accelerator		; Accelerator	;
+							; Incubator			; Incubator		   	; Incubator		;
+
+
+INSERT_UPDATE CsInterventionType; code[unique=true]	; name[lang=en]			; name[lang=ar]	;
+								; NotesForCustomer	; Note For Customer		; Note For Customer	;
+
+
+INSERT_UPDATE ServiceCategory 	; code[unique=true] ; name[lang=en]					; name[lang=ar]	;
+								; CA_1				; Service Request Categorization; Service Request Categorization;
+
+
+INSERT_UPDATE IncidentCategory 	; code[unique=true]	; name[lang=en]				; name[lang=ar]	;
+								; CA_2				; Request Site Visits		; طلب زيارة الموقع
+								; CA_3				; Request a meeting  		; طلب اجتماع
+								; CA_4				; Request Matchmaking		; طلب ربط شركة بمجال مماثل 
+                                ; CA_5				; Request Information (Cost); طلب معلومه (تكلفه)
+								; CA_6				; Sign Deal					; توقيع صفقه
+								; CA_7				; General Enquiries			; استفسارات عامة
+
+
+INSERT_UPDATE Priority 		    ; code[unique=true] ; name[lang=en]		; name[lang=ar]	;
+								; LOW				; Low				; Low		;
+								; NORMAL			; Normal			; Normal	;
+								; URGENT			; Urgent			; Urgent	;
+								; IMMEDIATE			; Immediate			; Immediate	;
+

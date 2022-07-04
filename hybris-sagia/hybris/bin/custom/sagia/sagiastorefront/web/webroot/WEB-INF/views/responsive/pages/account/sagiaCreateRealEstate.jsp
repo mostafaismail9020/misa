@@ -17,31 +17,79 @@
     var configuredFileSize = ${maxUploadSize};
 </script>
 
-<div class="mainSection mainSection_dark">
-    <div class="container">
-        <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="realEstate.management"/></h1>
-            <div>
-                <button class="btn btn_round btn_slim js-save-draft" data-target-form="createRealEstateForm"
-                        data-service-id="${serviceId}">
-                    <spring:theme code="general.savedraft"/><span class="iconElement iconElement_save"><icon:save/></span>
-                </button>
-                <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if>
-                        data-target-form="createRealEstateForm"
-                        data-service-id="${serviceId}">
-                    <spring:theme code="general.loaddraft"/><span class="iconElement iconElement_save"><icon:upload/></span>
-                </button>
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="realEstate.management"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- <div class="mainSection mainSection_dark">
+    <div class="container">
+        <div class="mainSection-header">
+            <h1 class="mainSection-headline"><spring:theme code="realEstate.management"/></h1>
+
+        </div>
+    </div>
+</div> -->
+
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${request.contextPath}/real-estate" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span>
-                <spring:theme code="text.specialservices.backToServiceDetails"/>
-            </a>
+            <div class="d-flex row renewal-services w-100">
+                <div class="col-xl-3">
+                    <a href="${request.contextPath}/real-estate" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack" id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span></span>
+                        <spring:theme code="text.specialservices.backToServiceDetails"/>
+                    </a>
+                </div>
+                <div class="col-xl-9 d-none btn-drafts_list amend-service-link amend-btns-list mt-3 mt-xl-0">
+                    <button class="btn btn_round btn_slim js-save-draft" data-target-form="createRealEstateForm"
+                            data-service-id="${serviceId}">
+                        <spring:theme code="general.savedraft"/><span class="iconElement iconElement_save"><icon:save/></span>
+                    </button>
+                    <button class="btn btn_round btn_slim js-load-draft" <c:if test="${!draftExists}">style="display: none"</c:if>
+                            data-target-form="createRealEstateForm"
+                            data-service-id="${serviceId}">
+                        <spring:theme code="general.loaddraft"/><span class="iconElement iconElement_save"><icon:upload/></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -50,13 +98,18 @@
     <div class="container">
         <c:url value="/real-estate/save" var="createRealEstateUrl"/>
         <form:form id="createRealEstateForm" method="post" modelAttribute="realEstate" action="${createRealEstateUrl}" enctype="multipart/form-data">
-            <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
+            <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-3">
                 <div class="contentModule">
-                    <div class="contentModule-section">
-                        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                            <div class="contentModule-headline">
-                                <icon:info/>
-                                <spring:theme code="text.headertext.info"/>
+                    <div class="contentModule-section mb-0">
+
+                        <div class="contentModule contentModule-wrap">
+                            <div class="contentModule-section mb-0">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline">
+                                        <spring:theme code="text.headertext.info"/>
+                                    </span>
+                                    <div class="contentModule-headline-border"></div>
+                                </div>
                             </div>
                         </div>
 
@@ -90,7 +143,7 @@
                             </div>
                         </div>
                         <div class="row" id="realEstateAddInputs">
-                        	<div class="col-md-3">
+                        	<div class="col-md-6 col-lg-3">
 								<div class="formSelectBox">
 									<div class="form-group">
                                         <form:select path="identityType" cssClass="js-select2-oneColumn identity-type" id="identityType">
@@ -102,7 +155,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-6 col-lg-3">
 								<div class="formInputBox">
 									<div class="form-group">
 										<form:input path="identityNumber" id="identityNumber" name="identityNumber" class="form-control"
@@ -113,7 +166,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div class="col-md-3" id="deedNumberDiv">
+							<div class="col-md-6 col-lg-3" id="deedNumberDiv">
 								<div class="formInputBox">
 									<div class="form-group">
 										<form:input path="deedNumber" id="deedNumber" name="deedNumber" class="form-control"
@@ -124,7 +177,7 @@
 									<div class="help-block"></div>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-6 col-lg-3">
 								<%-- <div class="col-6 col-md-2" id = "align" style="padding:15px">
 									<button type="submit" class="btn btn_round" name="smsverify" id="mobileBtn"><spring:theme code="text.verification.verify.mobile"/></button>
 								</div> --%>
@@ -140,16 +193,19 @@
                     </div>
                 </div>
             </div>
-            
+
             <div id="realEstateAddInputDetails" hidden="true">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
-                        <div class="contentModule-section">
-                        	<div class="contentModule-headline">
-                                <icon:info/>
-                                <spring:theme code="realEstate.headertext.propinfo"/> 
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-section contentModule-actions_wrap">
+                        	<!-- <span class="contentModule-headline">
+                                <spring:theme code="realEstate.headertext.propinfo"/>
+                            </span> -->
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="realEstate.headertext.propinfo"/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
-                            <div class="tableModule tableModule_striped" >
+                            <div class="tableModule tableModule_striped real-estate-table" >
 					            <table class="tableModule-table" id="deedTable">
 					                <thead class="tableModule-head">
 					                    <tr>
@@ -173,16 +229,19 @@
 
             <div id="realEstateDetails" hidden="true">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
+                    <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section">
-                            <div class="contentModule-headline">
-                                <icon:documents/>
-                                <div id="realEstateTypeTitle" style="display:inline-block;"></div>
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline" id="realEstateTypeTitle" style="display:inline-block;"></span>
                                 <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
+                            <!-- <div class="contentModule-headline headline-text">
+                                <div id="realEstateTypeTitle" style="display:inline-block;"></div>
+                            </div> -->
 							<!-- <input type="hidden" name="isMojVerified" id="isMojVerified" /> -->
 							<form:hidden id="isMojVerified" path="mojVerified"/>
-                            <div class="row">
+                            <div class="row w-100 plot-add-on">
                                 <div class="col-md-6">
                                     <div id="plotNo1">
                                         <div class="form-group" style="position: relative;">
@@ -203,14 +262,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label id="addPlotNo" class="btn btn_link btn_inForm js-addPlot">
-                                        <span>&#43;</span><spring:theme code="realestate.addplotno"/>
+                                <div class="col-md-6 d-flex align-items-center ">
+                                    <label id="addPlotNo" class="btn btn_inForm js-addPlot py-2">
+                                        <span class="text-white">&#43;</span><spring:theme code="realestate.addplotno"/>
                                     </label>
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo2" hidden>
                                         <div class="form-group">
@@ -220,7 +279,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo3" hidden>
                                         <div class="form-group">
@@ -230,7 +289,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo4" hidden>
                                         <div class="form-group">
@@ -240,7 +299,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6">
                                     <div id="plotNo5" hidden>
                                         <div class="form-group">
@@ -250,7 +309,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row w-100">
                                 <div class="col-md-6" id="plotArea">
                                     <formElement:formInputBox idKey="realEstate.plotArea" labelKey="realEstate.plotArea" labelCSS="control-label_mandatory" path="plotArea"/>
                                 </div>
@@ -264,7 +323,7 @@
                                                                       labelCSS="control-label_mandatory"
                                                                       path="purchaseDate"/>
                                         </div>
-                                        <div class="formInputBox-append iconClass">
+                                        <div class="formInputBox-append iconClass right-50" id="calendar-icon-pos">
                                             <span class="formInputBox-text"><icon:calendar-gray/></span>
                                         </div>
                                     </div>
@@ -272,9 +331,8 @@
                                 <div class="col-md-6" id="mojDeedDate" hidden="true">
 	                                <div class="formInputBox">
 										<div class="form-group">
-											<form:input path="mojDeedDate" name="mojDeedDate" class="form-control"
-												placeholder="." value="" type="text" /> 
-												<label class="control-label" for="purchaseDate" idKey="realEstate.deedDate" labelKey="realEstate.deedDate"><spring:theme code="realEstate.deedDate"/></label>
+											<form:input path="mojDeedDate" name="mojDeedDate" class="form-control" placeholder="." value="" type="text" />
+											<label class="control-label" for="purchaseDate" idKey="realEstate.deedDate" labelKey="realEstate.deedDate"><spring:theme code="realEstate.deedDate"/></label>
 										</div>
 										<div class="help-block"></div>
 									</div>
@@ -317,7 +375,7 @@
 	                                <div class="formInputBox">
 										<div class="form-group">
 											<form:input path="mojRegion" name="mojRegion" class="form-control"
-												placeholder="." value="" type="text" /> 
+												placeholder="." value="" type="text" />
 												<label class="control-label" for="region" idKey="realEstate.region" labelKey="realEstate.region"><spring:theme code="text.account.profile.basic.region"/></label>
 										</div>
 										<div class="help-block"></div>
@@ -353,7 +411,7 @@
 	                                <div class="formInputBox">
 										<div class="form-group">
 											<form:input path="mojCity" name="mojCity" class="form-control"
-												placeholder="." value="" type="text" /> 
+												placeholder="." value="" type="text" />
 												<label class="control-label" for="" idKey="" labelKey=""><spring:theme code="text.account.profile.basic.city"/></label>
 										</div>
 										<div class="help-block"></div>
@@ -409,12 +467,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6" id="mojIssuerCourtName">
 	                                <div class="formInputBox">
 										<div class="form-group">
 											<form:input path="mojIssuerCourtName" name="mojIssuerCourtName" class="form-control"
-												placeholder="." value="" type="text" /> 
+												placeholder="." value="" type="text" />
 												<label class="control-label" for="" idKey="" labelKey=""><spring:theme code="text.account.profile.basic.mojIssuerCourtName"/></label>
 										</div>
 										<div class="help-block"></div>
@@ -425,7 +483,7 @@
                                     <formElement:formInputBox idKey="realEstate.additionalDetails" labelKey="realEstate.additionalDetails" labelCSS="control-label_mandatory" path="remarks"/>
                                 </div>
                             </div>
-                            <div><spring:theme code="realEstate.type.note" /></div>
+                            <div class="form-condition-spl-notes"><spring:theme code="realEstate.type.note" /></div>
                         </div>
                     </div>
                 </div>
@@ -433,18 +491,21 @@
 
             <div id="realEstateDocuments" hidden="true">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
-                        <div class="contentModule-section">
-                            <div class="contentModule-headline">
-                                <icon:documents/>
+                    <div class="contentModule contentModule-wrap">
+                        <div class="contentModule-section contentModule-actions_wrap">
+                            <!-- <span class="contentModule-headline">
                                 <spring:theme code="text.account.followup.supportDocuments"/>
+                            </span> -->
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
                                 <span class="iconElement iconElement_headlineTooltip js-tip" data-tip-title="Lorem Ipsum" data-original-title="" title=""><icon:tipInfo/></span>
+                                <div class="contentModule-headline-border"></div>
                             </div>
 
-                            <div id="realEstateupload_placeholder" class="js-inputFile">
+                            <div id="realEstateupload_placeholder" class="js-inputFile w-100 row">
                                 <c:if test="${not empty realEstate.documentsToUpload}">
                                     <c:forEach items="${realEstate.documentsToUpload}" var="document" varStatus="count">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6 col-md-12">
                                             <div class="formInputFile <c:if test="${not empty document.resubmittedFileName}">active</c:if>">
                                                 <div class="form-group <c:if test="${hasErrors && empty document.fileText}">has-error</c:if>">
                                                     <input id="fileId_${count.index}" name="files[${count.index}]" class="form-control js-inputFile" value="" type="file" accept="image/jpeg,application/pdf">
@@ -476,23 +537,24 @@
                                     </c:forEach>
                                 </c:if>
                             </div>
-							<div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
+							<div class="form-condition-spl-notes"><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                <button type="button" class="btn btn-secondary js-cancel-create-realEstate">
-                    <spring:theme code="general.cancel"/>
-                </button>
-                <div class="formCheckBox formCheckBox_belowPanel">
+            <div class="mainSection-linkActions mainSection-linkActions_flexend mainSection-linkActions_hasPadding px-4 contentModule-actions action_res_view">
+                <div class="formCheckBox formCheckBox_belowPanel w-100">
                     <div class="form-group">
                         <div class="form-group">
                             <formElement:termsAndConditionsCheckbox event="REAL_ESTATE" id="termsAndConditions" path="termsAndConditionsChecked"/>
                         </div>
                     </div>
                 </div>
+                <button type="button" class="btn btn_outline js-cancel-create-realEstate">
+                    <spring:theme code="general.cancel"/>
+                </button>
+
                 <button type="submit" class="btn js-submit-create-realEstate" >
                     <spring:theme code="general.submit"/>
                 </button>
@@ -505,4 +567,5 @@
 
 <script>
     var serviceCategoryTypeCode = "${serviceCategoryTypeCode}";
+    $("#realEstateTypeTitle").html($(".realEstate-type option:selected").text());
 </script>

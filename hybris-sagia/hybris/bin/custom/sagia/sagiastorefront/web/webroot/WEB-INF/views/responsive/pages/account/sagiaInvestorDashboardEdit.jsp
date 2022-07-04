@@ -8,50 +8,93 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="dashboard" tagdir="/WEB-INF/tags/responsive/dashboard" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%--@elvariable id="dashboardBanner" type="java.lang.String"--%>
 <%--@elvariable id="encodedContextPath" type="java.lang.String"--%>
 <%--@elvariable id="profilePicture" type="java.lang.String"--%>
 <%--@elvariable id="user" type="de.hybris.platform.commercefacades.user.data.CustomerData"--%>
 
-<form:form id="bannerUploadForm" action="dashboard/update-dashboardPic" method="post" enctype="multipart/form-data">
-    <input id="file" name="file" class="form-control js-inputFile dashboardBannerUpload" type="file" value="" accept="image/jpeg,application/pdf" style="display: none;">
-    <div class="dashboardHead">
-        <label for="file">
-            <c:choose>
-                <c:when test="${empty dashboardBanner}">
-                    <div class="dashboardHeadImage dashboardHeadImage_defaultBackground"></div>
-                    <div class="dashboardHeadAdd">
-                        <div class="dashboardHeadAdd-text">
-                            <icon:camera/>
-							<spring:theme code="dashboard.addcoverphoto"/>
+<img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/Header-banner-image1.jpg" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                </h1>
+            </div>
+        </div>
+        
+<section class="mainSection mainSection_noPadding userDetail-block">
+    <div class="container">
+        <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
+            <div class="dashboardUser-wrapper col-md-12 mr-0 pt-3 px-0">
+                <div class="dashboardUser-left col-md-6 pr-0">
+                    <div class="col">
+                        <div class="dashboardUser-image">
+                            <div class="dashboardUser-image position-absolute dashboardHeadAdd dashboard-user-add-icon">
+                                <button type="button"  id="btnfile" class="dashboardUser-image-add"><icon:plus/><span id="fname"></span></button>
+                                
+                                <div class="myAccount-profilImage">
+                                    <div class="myAccount-profilImage-img">
+                                        <div class="profilePicture js-profilePicture" style="background-image:url(${profilePicture})"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboardUser-col">
+                                <div class="dashboardUser-entry ml-3">
+                                    <h2 class="clr_gld"><c:out value='${user.company}'/></h2>
+                                    <span class="last-login"><spring:theme code="dashboard.license.user.lastlogin.title"/> &nbsp;<span class="clr_gld"><fmt:formatDate value="${customerLastLogon}" pattern="dd/MM/yyyy hh:mm a"/></span></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </c:when>
-                <c:otherwise>
-                    <div class="dashboardHeadImage" style="background-image: url(${dashboardBanner});"></div>
-                </c:otherwise>
-            </c:choose>
-        </label>
-    </div>
-</form:form>
-
-
-<div class="globalMessage-holder">
-    <div class="container">
-        <div class="globalMessage">
-            <div class="globalMessage-action">
-                <button class="btn btn_round" onclick="location.href='${encodedContextPath}/my-sagia/notifications'">Action</button>
-            </div>
-            <div class="globalMessage-msg">
-                <div class="globalMessage-icon"><icon:warning/></div>
-                <spring:theme code="dashboard.message.text"/>
+                </div>
+                <div class="dashboardUser-right col-md-6 px-0">
+                    <div class="col-6">
+                        <div class="dashboardUser-col flex-column dashboardUser-col-alignment">
+                                <!-- <div class="dashboardUser-label dashboardUser-label-sm"><spring:theme code="general.welcomeback"/></div> -->
+                                <div class="dashboardUser-label profile-detail dashboardUser-label-xs"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Profile-name-icon.png"/><span class="dashboardUser-value h5"><c:out value='${user.name}'/></span></div>
+                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-email-icon.png"/><span class="dashboardUser-value"><c:out value='${user.email}'/></span></div>
+                                <div class="dashboardUser-label profile-detail"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/profile-mobile-number-icon.png"/><span class="dashboardUser-value"><c:out value='${user.mobileCountryCode}'/>&nbsp;<c:out value='${user.mobileNumber}'/></span></div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-around">
+                        <div class=" user-icon mr-3">
+                            <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.png"/> -->
+                            <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>" class="sagiaNavigation-btn sagiaNavigation-cal">
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Calender-in-active.svg"/>
+                            </a>
+                        </div>
+                        <div class=" user-icon mr-3">
+                            <!-- <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/> -->
+                            <div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                                <c:if test="${hasLicense or hasAwaitingPayment}">
+                                    <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
+                                        <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                        <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg"/>
+                                    </button>
+                                </c:if>
+                                <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                                <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup">
+                                    <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                                    <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                                    <div class="sagiaNavigation-subPane-actions">
+                                        <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" user-icon mr-1">
+                            <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>"
+                            class="sagiaNavigation-btn sagiaNavigation-user"> <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/Account-User-icon.svg"/></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<section class="mainSection mainSection_white mainSection_noPadding">
+</section>
+<!-- <section class="mainSection mainSection_white mainSection_noPadding">
     <div class="container">
         <div class="dashboardUser dashboardUser_slim dashboardUser_noBorder">
             <div class="dashboardUser-wrapper">
@@ -111,14 +154,29 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+
+<div class="globalMessage-holder">
+    <div class="container">
+        <div class="globalMessage">
+            <div class="globalMessage-action">
+                <button class="btn btn_round" onclick="location.href='${encodedContextPath}/my-sagia/notifications'"><spring:theme code="dashboard.edit.action.name"/></button>
+            </div>
+            <div class="globalMessage-msg">
+                <div class="globalMessage-icon"><img class="Applylicense-icon" src="${commonResourcePath}/images/dashboard-media/Apply-license/Allert-icon.png"/></div>
+                <spring:theme code="dashboard.message.text"/>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <spring:url var="editUrl" value="/dashboard"/>
 <section class="mainSection mainSection_grey mainSection_xsmallPaddingTop mainSection_noPaddingBottom">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
-            <a href="${editUrl}" class="btn btn_link btn_link_slim">
-    			<span class="iconElement iconElement_check_green"><icon:check/></span> Done
+            <a href="${editUrl}" class="btn-outline d-block">
+    			<span class="iconElement iconElement_check_green"><icon:check/></span> <spring:theme code="dashboard.edit.button.name"/>
 			</a>
         </div>
     </div>
@@ -129,37 +187,37 @@
         <div class="row">
             <ul id="draggableComponentsList" class="dashboardWidgetList dashboardWidgetList_edit">
             <li class="dashboardWidgetListComponent js-component">
-	            <div class="drag col col-12" id="myLicense">
+	            <div class="drag col col-12 p-0" id="myLicense">
 	                <dashboard:myLicense editable="${true}"/>
 	            </div>
             </li>
-            <li class="dashboardWidgetListComponent js-component">
-	            <div class="drag col col-12" id="dashboardImage">
+           <!-- <li class="dashboardWidgetListComponent js-component">
+	            <div class="drag col col-12 p-0" id="dashboardImage">
 	                <div class="dashboardWidget dashboardWidget_banner">
 	                    <div class="simple-banner banner__component--responsive">
 							<a href="#"><picture class="dashboardWidget-pictureSet"></picture></a>
 	                    </div>
 	                </div>
 	            </div>
+            </li>-->
+            <li class="dashboardWidgetListComponent js-component">
+	            <div class="drag col col-12 p-0" id="salaryAndEmployment" <c:if test="${!enableSalaryAndEmployment}">style="display:none;"</c:if>><dashboard:salaryAndEmployment editable="${true}"/></div>
             </li>
             <li class="dashboardWidgetListComponent js-component">
-	            <div class="drag col col-12" id="salaryAndEmployment" <c:if test="${!enableSalaryAndEmployment}">style="display:none;"</c:if>><dashboard:salaryAndEmployment editable="${true}"/></div>
-            </li>
-            <li class="dashboardWidgetListComponent js-component">
-	            <div class="drag col col-12" id="servicesRequest">
+	            <div class="drag col col-12 p-0" id="servicesRequest">
 	                <dashboard:servicesRequest editable="${true}" />
 	            </div>
             </li>
 
 			<li class="dashboardWidgetListComponent js-component">
-				<div class="drag col col-12" id="savedDrafts">
+				<div class="drag col col-12 p-0" id="savedDrafts">
 					<dashboard:savedDrafts editable="${true}" />
 				</div>
 			</li>
 
             <li class="dashboardWidgetListComponent js-component">
-	            <div class="drag col col-12" id="payments">
-	                <div class="dashboardWidget js-dashboardWidget">
+	            <div class="drag col col-12 p-0" id="payments">
+	                <div class="dashboardWidget js-dashboardWidget no-border">
 	                    <dashboard:addAndRemoveComponent checkboxIndex="5"/>
 	                    <div class="dashboardWidget-headline js-dashboardWidget-headline">
 							<spring:theme code="dashboard.payments"/>
@@ -187,11 +245,11 @@
                                     </div>
 									<div class="paginationModule-wrapper">
 										<button class="paginationModule-control paginationModule-control_left" disabled>
-											<icon:arrow_green_right/>
+											<img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive">
 										</button>
 										<div class="paginationModule-items"><spring:theme code="text.loadingMessage"/></div>
 										<button class="paginationModule-control paginationModule-control_right">
-											<icon:arrow_green_right/>
+											<img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive" >
 										</button>
 									</div>
 								</div>
@@ -207,8 +265,8 @@
             </li>
 
             <li class="dashboardWidgetListComponent js-component">
-	            <div class="drag col col-12" id="yourTickets">
-	                <div class="dashboardWidget js-dashboardWidget" >
+	            <div class="drag col col-12 p-0" id="yourTickets">
+	                <div class="dashboardWidget js-dashboardWidget no-border" >
 	                    <dashboard:addAndRemoveComponent checkboxIndex="6"/>
 	                    <div class="dashboardWidget-headline js-dashboardWidget-headline">
 							<spring:theme code="dashboard.ticket.yourtickets"/>
@@ -252,7 +310,7 @@
             </li>
 
             <li class="dashboardWidgetListComponent js-component">
-                <div class="drag col col-12" id="support">
+                <div class="drag col col-12 p-0" id="support">
             		<dashboard:support editable="${true}"/>
                 </div>
             </li>

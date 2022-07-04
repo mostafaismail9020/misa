@@ -10,6 +10,7 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ taglib prefix="survey" tagdir="/WEB-INF/tags/responsive/survey" %>
 <%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>
+<%@ include file="/WEB-INF/tags/responsive/common/successModal.tag" %>
 
 <div class="contentModule">
     <form:form id="surveyForm" class="js-survey" action=""
@@ -18,21 +19,31 @@
                data-application="${surveyData.applicationId}"
                data-transaction-id="${surveyData.transactionId}"
                data-isFetchedFromNotificationService="${surveyData.isFetchedFromNotificationService}">
-        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-            <div class="contentModule-headline">
-                <span class="iconElement iconElement_questionaires"><icon:questionaires/></span>${surveyData.surveytitle}
+                <div class="row">
+                    
+				<div class="">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab" class="btn btn_leftIconLink btn_darkLink back_to_service">
+                    <span class="iconElement iconElement_closeBack" id="image-pos" style="margin-right:10px">
+                        <img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/>
+                    </span>
+                    <spring:theme code="general.participate.backtoallquestionaires"/>
+                    </a>
+                </div>
             </div>
-            <div>
-                <a href="${encodedContextPath}/my-sagia/sagia-profile#questionnairesTab" 
-                	class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.participate.backtoallquestionaires"/></a>
+        <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap mt-3 ">
+            <div class="contentModule-headline fdi ml-0">
+                <!--<span class="iconElement iconElement_questionaires"><icon:questionaires/></span>-->${surveyData.surveytitle}
             </div>
+              <hr class="hr w-100"/>
+
+
         </div>
 
         <c:forEach items="${surveyData.sections}" var="section" varStatus="sectionStatus">
             <div class="contentModule-section contentModule-section_slimDivider contentModule-section_noDivider">
-                <div class="contentModule-headline contentModule-headline_survey">${section.header}</div>
+                <div class="contentModule-headline_survey contentModule-headline_survey_operation">${section.header}</div>
                 <c:forEach items="${section.sections}" var="subsection" varStatus="subsectionStatus">
-                    <div class="contentModule-subheadline">${subsection.header}</div>
+                    <div class="contentModule-headline_survey_operation contentModule-subheadline border-0">${subsection.header}</div>
                     <div class="row">
                         <c:forEach items="${subsection.questions}" varStatus="questionStatus" var="question">
                             <c:choose>
@@ -74,7 +85,7 @@
                                                     <label class="control-label" for="${answer.controlID}">
                                                         ${question.questTXT}<c:if test="${question.mandquest}">*</c:if>
                                                     </label>
-                                                    <div class="formInputBox-append">
+                                                    <div class="formInputBox-append" id="calendar-icon-pos">
                                                         <span class="formInputBox-text"><icon:calendar-gray/></span>
                                                     </div>
                                                 </div>
@@ -86,7 +97,7 @@
                                     <div class="col-md-12">
                                         <div class="formRadioButton formRadioButton_block formRadioButton_slim">
                                             <div class="form-group">
-                                                <div class="formRadioButton-label">${question.questTXT}<c:if test="${question.mandquest}">*</c:if></div>
+                                                <div class="formRadioButton-label label_yellow_surveyss">${question.questTXT}<c:if test="${question.mandquest}">*</c:if></div>
                                                 <c:forEach items="${question.answers}" var="answer" varStatus="answerStatus">
                                                     <div class="form-item">
                                                         <input id="${answer.controlID}"
@@ -97,7 +108,7 @@
                                                                data-control="${answer.controlID}"
                                                                data-question="${answer.questID}"
                                                                value="${answer.controlID}" >
-                                                        <label for="${answer.controlID}" class="control-label">
+                                                        <label for="${answer.controlID}" class="control-label radio_label_surveyss">
                                                             <span></span> ${answer.ansText}
                                                         </label>
                                                     </div>
@@ -192,7 +203,7 @@
                                         </div>
                                     </div>
                                 </c:when>
-                                
+
                                <c:when test="${question.answType == '2'}">
                                     <c:forEach items="${question.answers}" var="answer" varStatus="answerStatus">
                                         <div class="col-md-12">
@@ -200,7 +211,7 @@
                                                 <div class="form-group">
                                                     <textarea id="${answer.controlID}"
                                                            class="form-control form-control_slim <c:if test="${question.mandquest}">js-required</c:if>"
-                                                           placeholder="." 
+                                                           placeholder="."
                                                            data-answer="${answer.ansID}"
                                                            data-question-type="${question.answType}"
                                                            data-control="${answer.controlID}"
@@ -213,8 +224,8 @@
                                         </div>
                                     </c:forEach>
                                 </c:when>
-                               
-                               
+
+
                             </c:choose>
                         </c:forEach>
                     </div>
@@ -223,7 +234,7 @@
         </c:forEach>
 
         <div class="contentModule-actions contentModule-actions_centered">
-            <button class="btn"><spring:theme code="text.account.questionnaries.send.feedback"/></button>
+            <button class="btn btn_bold btn-bg btn-normal w-25 pl-2 pr-2 send-feedback-btn"><spring:theme code="text.account.questionnaries.send.feedback"/></button>
         </div>
     </form:form>
 </div>

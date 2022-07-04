@@ -199,8 +199,7 @@
                         <p class="desc">${governmentDebt.percentageLabel}</p>
 
                         <h2 class="name"><center>${governmentDebt.displayName}</center></h2>
-                        <p class="calendar">${governmentDebt.calenderValue}&nbsp;${governmentDebt.currenyValue}</p>
-                        <p class="info-text">* Based on The Mid-Year Economic and Fiscal Performance FY 2021</p>
+                        <p class="calendar">${governmentDebt.calenderValue}&nbsp;${governmentDebt.currenyValue}</p>                        
                       </div>
                     </div>
                   </div>

@@ -22,6 +22,11 @@
 // Abstracts
 @import "abstracts/**/*.less";
 
+// eservices
+@import "eservices/**/*.less";
+
+// eservices-desk-resolution adding at bottom
+@import "eservices/**/deskresolution.less";
 
 .skiptocontent,
 .skiptonavigation{
@@ -31,7 +36,7 @@
 
 body{
 	margin: 0;
-	font-family: 'TheSansB6SemiBold';
+	font-family: 'TheSans Plain',sans-serif !important;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -56,7 +61,7 @@ a:hover{
     font-weight: 700;
 }
 @font-face {
-    font-family: 'TheSans';
+    font-family: 'TheSans Plain';
     src: url('../fonts/TheSans-Plain.ttf');
     src: url('../fonts/TheSans-Plain.otf'),
          url('../fonts/TheSans-Plain.woff') format('woff'),
@@ -134,10 +139,6 @@ main {
   float: none;
   padding-right:0;
   clear:both;
-}
-
-.js-recaptcha-captchaaddon {
-  margin: 20px 0;
 }
 
 #g-recaptcha_incorrect {

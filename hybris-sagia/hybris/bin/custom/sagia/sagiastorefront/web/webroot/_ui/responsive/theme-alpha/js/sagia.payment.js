@@ -46,12 +46,14 @@ SAGIA.payment = {
         $("#licenseApplicationPayment").find('.apply').hide();
         $("#licenseApplicationPayment").find('.pay-buttons').show();
         $("#paymentModal").find("tbody").html("");
+        $("#paymentModal").find(".js-wrapper").html("");
         
         var amount = Math.round(payableAmount * 100) / 100;
         SAGIA.payment.salesOrders.push(amount);
-        $("#paymentModal").find("tbody").append('<tr> <td>'+ billDescription +'</td>'+'<td>'+ amount +' '+currency +'</td></tr>');
         
-        $('#total').text(Math.round(payableAmount * 100) / 100 +' '+currency);
+        $("#paymentModal").find(".js-wrapper").append('<div class="d-flex flex-direction-column my-1 justify-content-between"> <span>'+ billDescription +'</span>'+'<span>'+ currency +' '+ amount +'</span></div>');
+        
+        $('#total').text(currency+ ' '+ Math.round(payableAmount * 100) / 100 );
         $('#total').attr("total",Math.round(payableAmount * 100) / 100);
         $('#total').attr("currency",currency);
         $('#licenseApplicationPayment').modal('toggle');
@@ -80,7 +82,7 @@ SAGIA.payment = {
                     "<td width='40%'>" + getI18nText("license.apply.payment.subscription.fee.entrepreneur.price."+SAGIA.license.apply.data.licenseYear) + "</td>" +
                     "</tr>" + 
                     "<tr>" +
-                    "<td width='60%'><span style='color:green;font-size:12px'>" + getI18nText("license.apply.payment.entrepreneur.description") + "</span></td>" +
+                    "<td width='60%'><span style='color:#0097a9;font-size:18px'>" + getI18nText("license.apply.payment.entrepreneur.description") + "</span></td>" +
                     "<td width='20%'>" + "</td>" +
                     "<td width='20%'>" + "</td>" +
                     "</tr>" + 
@@ -146,7 +148,8 @@ SAGIA.payment = {
     },
     displayPaymentError: function(error){
         $("#payment-formError").hide();
-        $("#payment-formError span").html(getI18nText(error));
+        // $("#payment-formError span").html(getI18nText(error));
+        $("#payment-formError span").append(getI18nText(error)+' ').css({"color": "#d0021b", "font-size": "16px","margin-bottom": "35px"});
         $("#payment-formError").show();
     },
     pay: function () {
@@ -158,7 +161,7 @@ SAGIA.payment = {
     },
     displayPayWithSadadMessage: function() {
         $("#licenseApplicationPayment").modal("hide");
-        SAGIA.showError(getI18nText("payments.sadad.clicked"));
+        SAGIA.showSuccess(getI18nText("payments.sadad.clicked"));
     }
 };
 
@@ -202,6 +205,7 @@ $(function(){
                                     data : JSON.stringify(map),
                                     success : function(data) {
                                         var jsonData = JSON.parse(data);
+                                        $("#payment-formError span").html('');
                                         if (jsonData.success == "true") {
                                             window.location.assign(ACC.config.encodedContextPath + "/payment/success");
                                         } else if(jsonData.success == "secure3DForm"){
@@ -231,11 +235,12 @@ $(function(){
                             } else if ("fields_in_error" == response.status)  {
 
                                 //console.log("Session update failed with field errors.");
+                                $("#payment-formError span").html('');
                                 if (response.errors.cardNumber) {
                                     SAGIA.payment.displayPaymentError("payments.cardNumberInvalid");
                                 }
                                 if (response.errors.expiryYear) {
-                                    SAGIA.payment.displayPaymentError("payments.yearError");
+                                    SAGIA.payment.displayPaymentError("payments.yearMissing");
                                 }
                                 if (response.errors.expiryMonth) {
                                     SAGIA.payment.displayPaymentError("payments.monthError");
@@ -251,11 +256,13 @@ $(function(){
 
                             } else if ("system_error" == response.status)  {
                                 //console.log("Session update failed with system error: " + response.errors.message);
+                                $("#payment-formError span").html('');
                                 SAGIA.payment.displayPaymentError("payments.sessionUpdateError");
 
                             }
                         } else {
                             //console.log("Session update failed: " + response);
+                            $("#payment-formError span").html('');
                             SAGIA.payment.displayPaymentError("payments.sessionUpdateFailed");
                         }
                     }
@@ -266,7 +273,7 @@ $(function(){
         PaymentSession.setFocus('card.number');
 
         PaymentSession.setFocusStyle(["card.number","card.securityCode"], {
-            borderColor: '#a0ed98',
+            borderColor: '#0097a9',
             borderWidth: '1px',
             boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.05), inset 0 1px 3px 0 rgba(241, 242, 242, 0.6)',
             height: '39px'

@@ -1,6 +1,7 @@
 package com.sap.ibso.eservices.core.sagia.dao;
 
 import java.util.List;
+import com.sap.ibso.eservices.core.model.SagiaCMSParagraphMediaComponentModel;
 
 import com.sap.ibso.eservices.core.model.*;
 import de.hybris.platform.core.model.user.CustomerModel;
@@ -25,5 +26,8 @@ public interface LicenseApplyDAO {
 
 	RhqActivitiesModel getActivityDetailsForCode(String code);
 	RhqActivitiesModel getActivityDetailsCodeForName(String name);
+	
+	
+   SagiaCMSParagraphMediaComponentModel getParagraphLicenseMedia(String uid);
 	
 }

@@ -191,6 +191,10 @@ $(document).ready(function () {
     }
 });
 
+$(document).on("change", "#regularAmendmentDocsId .js-inputFile", function(e) {
+    var $submitAmendmentBtn = $('#submitAmendmentBtnId');
+    $submitAmendmentBtn.attr("disabled", false);    
+})
 function getCurrentLicenseData() {
     $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/amend/00", {
         beforeSend: function (xhr) {
@@ -461,7 +465,7 @@ var validateLicense = function () {
                     var $documents = $docsModal.find('#documentsId');
                     SAGIA.licenseAmendment.generatedDocuments = [];
                     data.amendmentTypesView.forEach(function (amendmentType) {
-                        $amendmentTypes.append('<div class="col-sm-6"><ul class="dottedList dottedList_green dottedList_big">' +
+                        $amendmentTypes.append('<div class="col-sm-12"><ul class="dottedList dottedList_green dottedList_big">' +
                             '<li class="dottedList-item">' + amendmentType.name + '</li>' +
                             '</ul></div>');
                         if (!data.instantAmendment) {
@@ -800,6 +804,16 @@ var adjustNewItemIdVariable = function () {
     newItemId = parseInt($('.shareholderTemplate:last-child').attr('id')) + 1;
 }
 
+$(document).on('click', '#showDelegateQuestionOrganization .formRadioBox .form-item label', function(event) {
+    $("#showDelegateQuestionOrganization .formRadioBox .form-item label").removeClass('btn-bg');
+          $(this).toggleClass('btn-bg');  
+         
+});
+$(document).on('click', '#showDelegateQuestion .formRadioBox .form-item label', function(event) {
+    $("#showDelegateQuestion .formRadioBox .form-item label").removeClass('btn-bg');
+          $(this).toggleClass('btn-bg');  
+         
+});
 
 
 

@@ -1415,7 +1415,12 @@
 
     <bean id="investSaudiMediaCenterService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiMediaCenterServiceImpl" />
-
+		  
+    <bean id="opportunityProductMediaRestApiService" class="com.investsaudi.portal.core.service.impl.OpportunityProductMediaRestApiServiceImpl">
+          <property name="modelService" ref="modelService"/>
+          <property name="mediaService" ref="mediaService"/>
+    </bean>
+          
     <bean id="investSaudiProvinceRegionService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiProvinceRegionServiceImpl" />
 
@@ -1565,7 +1570,11 @@
 		  class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultInvestmentDataDAO">
 		  <property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
+	<bean id="serviceRequest2ScpiJob" class="com.sap.ibso.eservices.core.job.ServiceRequest2ScpiJob"/>
+    <bean id="contactTicket2ScpiJob" class="com.sap.ibso.eservices.core.job.ContactTicket2ScpiJob"/>
+   <bean id="customerEvent2ScpiJob" class="com.sap.ibso.eservices.core.job.CustomerEvent2ScpiJob"/>
 
+	
     <!-- Economic Highlights Changes Ends -->
 
     <alias name="defaultSagiaCompanyProfileDAO" alias="sagiaCompanyProfileDAO"/>

@@ -1,0 +1,289 @@
+$contentCatalog=investsaudiContentCatalog
+$contentCatalogName=Investsaudi Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCatalog=investsaudiProductCatalog
+$productCatalogName=Investsaudi Product Catalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$page=page(uid, $contentCV);
+$contentPage=contentPage(uid, $contentCV);
+$product=product(code, $productCV)
+$category=category(code, $productCV)
+$siteResource=jar:de.hybris.platform.investsaudistore.constants.InvestsaudistoreConstants&/investsaudistore/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:de.hybris.platform.investsaudistore.constants.InvestsaudistoreConstants&/investsaudistore/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms=jar:de.hybris.platform.investsaudistore.constants.InvestsaudistoreConstants&/investsaudistore/import/sampledata/cockpits/cmscockpit
+$addonExtensionName=b2bacceleratoraddon
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV)[lang=$lang];
+
+# Language
+$lang=en
+
+INSERT_UPDATE Media ; $contentCV[unique=true] ; code[unique=true]           ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator] ; mime[default='image/png'] ; &imageRef                   ; folder(qualifier)[default='images'] ; altText                    ;                                
+                    ;                         ; Content_Hub_B2B.png         ; media/Content_Hub_B2B.png                             ;                           ; Content_Hub_B2B.png         ;                                     ; "Content_Hub_B2B"          ;
+                    ;                         ; Company_Reports_B2B.png     ; media/Company_Reports_B2B.png                         ;                           ; Company_Reports_B2B.png     ;                                     ; "Company_Reports_B2B"      ;
+                    ;                         ; Events_B2B.png              ; media/Events_B2B.png                                  ;                           ; Events_B2B.png              ;                                     ; "Events_B2B"               ;
+                    ;                         ; Support_Tickets_B2B.png     ; media/Support_Tickets_B2B.png                         ;                           ; Support_Tickets_B2B.png     ;                                     ; "Support_Tickets_B2B"      ;
+                    ;                         ; Contact_us_B2B.png          ; media/Contact_us_B2B.png                              ;                           ; Contact_us_B2B.png          ;                                     ; "Contact_us_B2B"           ;
+                    ;                         ; NIPC_Opportunities__B2B.png ; media/NIPC_Opportunities__B2B.png                     ;                           ; NIPC_Opportunities__B2B.png ;                                     ; "NIPC_Opportunities__B2B"  ;
+                    ;                         ; administration.png          ; media/administration.png                              ;                           ; administration.png          ;                                     ; "administration"  ;
+					
+
+##---- level 4. children of Category Nav ----##
+
+REMOVE CMSNavigationNode		; uid[unique = true]              ; $contentCV[unique = true] ;
+                                ; ContentHubNavNode               ;                           ;
+                                ; CompanyReportsNavNode           ;							  ;
+                                ; EventsCalenderNavNode           ;                           ;
+                                ; ServicesNavNode                 ;                           ;
+                                ; ContactUsDirectoryNavNode       ; 						  ;	
+                                ; MeetingsNavNode                 ;                           ;
+                                ; CalenderNavNode                 ;                           ;
+#                               ; ContactUsNavNode                ; 						  ;	
+                                ; DirectoryNavNode                ;                           ;
+                                ; OpportunitiesNavNode            ;							  ;
+
+########################### --------   1st Level Links ------------   ###########################################
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]          ; $contentCV[unique=true] ; name                         ; cmsLink(uid, $contentCV)        ; parent(uid, $contentCV)    ; nodeImage(code, $contentCV) ; nodeDescription[lang = en]                                        ; links(&linkRef) ; &nodeRef                  ;         
+                                ; ContentHubNavNode         ;                         ; Content Hub Category         ; ContentHubCategoryLink          ; investsaudiCategoryNavNode ; Content_Hub_B2B.png         ; Explore why Saudi Arabia is your perfect investment destination.  ;                 ; ContentHubNavNode         ;
+                                ; CompanyReportsNavNode     ;                         ; Company Reports Category     ; CompanyReportsCategoryLink      ; investsaudiCategoryNavNode ; Company_Reports_B2B.png     ; Explore why Saudi Arabia is your perfect investment destination.  ;                 ; CompanyReportsNavNode     ;
+                                ; EventsCalenderNavNode     ;                         ; Events and Calender Category ; EventsCalenderCategoryLink      ; investsaudiCategoryNavNode ; Events_B2B.png              ; Explore why Saudi Arabia is your perfect investment destination.  ;                 ; EventsCalenderNavNode     ;
+                                ; ServicesNavNode           ;                         ; Services Category            ; ServicesCategoryLink            ; investsaudiCategoryNavNode ; Support_Tickets_B2B.png     ; Explore why Saudi Arabia is your perfect investment destination.  ;                 ; ServicesNavNode           ;
+                                ; ContactUsDirectoryNavNode ;                         ; ContactUsDirectory Category  ; ContactUsDirectoryCategoryLink  ; investsaudiCategoryNavNode ; Contact_us_B2B.png          ; Explore why Saudi Arabia is your perfect investment destination.  ;                 ; ContactUsDirectoryNavNode ;
+                                ; OpportunitiesNavNode      ;                         ; Opportunities Category       ; OpportunitiesCategoryLink       ; investsaudiCategoryNavNode ; Support_Tickets_B2B.png     ; Explore why Saudi Arabia is your perfect investment destination.  ;                 ; OpportunitiesNavNode      ;
+
+## entries of the above navigation nodes ##
+INSERT_UPDATE CMSNavigationEntry ; uid[unique=true]               ; $contentCV[unique=true] ; name                                      ; navigationNode(&nodeRef)    ; item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV) ;  
+                                 ; ContentHubNavNodeEntry         ;                         ; Content Hub Navigation Node Entry         ; ContentHubNavNode           ; ContentHubCategoryLink                                 ;  
+                                 ; CompanyReportsNavNodeEntry     ;                         ; Company Reports NavigationNode Entry      ; CompanyReportsNavNode       ; CompanyReportsCategoryLink                             ;  
+                                 ; EventsCalenderNavNodeEntry     ;                         ; Events and Calender Navigation Node Entry ; EventsCalenderNavNode       ; EventsCalenderCategoryLink                             ;  
+                                 ; ServicesNavNodeEntry           ;                         ; Services Navigation Node Entry            ; ServicesNavNode             ; ServicesCategoryLink                                   ;  
+                                 ; ContactUsDirectoryNavNodeEntry ;                         ; ContactUsDirectory Navigation Node Entry  ; ContactUsDirectoryNavNode   ; ContactUsDirectoryCategoryLink                         ;  
+                                 ; OpportunitiesNavNodeEntry      ;                         ; Opportunities Navigation Node Entry       ; OpportunitiesNavNode        ; OpportunitiesCategoryLink                              ;
+
+
+## links of the above navigation nodes ##
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]                     ; name                             ; url                                         ; &linkRef                       ; &componentRef                  ; target(code)[default='sameWindow'] ;
+                               ;                         ; ContentHubCategoryLink               ; Content Hub Category Link        ; #                                           ; ContentHubCategoryLink         ; ContentHubCategoryLink         ;                                    ;
+                               ;                         ; CompanyReportsCategoryLink           ; Company Reports Category Link    ; #                                           ; CompanyReportsCategoryLink     ; CompanyReportsCategoryLink     ;                                    ;
+                               ;                         ; EventsCalenderCategoryLink           ; Events Calender Category Link    ; #                                           ; EventsCalenderCategoryLink     ; EventsCalenderCategoryLink     ;                                    ;
+                               ;                         ; ServicesCategoryLink                 ; Services Category Link           ; #                                           ; ServicesCategoryLink           ; ServicesCategoryLink           ;                                    ;
+                               ;                         ; ContactUsDirectoryCategoryLink       ; ContactUsDirectory Category Link ; #                                           ; ContactUsDirectoryCategoryLink ; ContactUsDirectoryCategoryLink ;                                    ;
+							   ;                         ; OpportunitiesCategoryLink            ; Opportunities Category Link      ; #                                           ; OpportunitiesCategoryLink      ; OpportunitiesCategoryLink      ;                                    ;
+
+
+########################### --------   2nd Level Links ------------   ###########################################
+						 
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]             ; $contentCV[unique=true] ; name                         ; cmsLink(uid, $contentCV)     ; parent(uid, $contentCV)   ; links(&linkRef) ; &nodeRef                      ;                   
+                                ; ContentHubSubNavNode         ;                         ; Content Hub Sub Category     ; ContentHubSubCategoryLink    ; ContentHubNavNode         ;                 ; ContentHubSubNavNode          ;
+                                ; SaudiBrandingCategoryNavNode ;                         ; Saudi Branding Category      ; SaudiBrandingCategoryLink    ; ContentHubNavNode         ;                 ; SaudiBrandingCategoryNavNode  ;
+                                ; TradingCategoryNavNode       ;                         ; Trading Category             ; TradingCategoryLink          ; ContentHubNavNode         ;                 ; TradingCategoryNavNode        ;
+                                ; BestPracticesCategoryNavNode ;                         ; Best Practices Category      ; BestPracticesCategoryLink    ; ContentHubNavNode         ;                 ; BestPracticesCategoryNavNode  ;
+                                ; MeetingsNavNode              ;                         ; Virtual Meetings Category    ; MeetingsCategoryLink         ; EventsCalenderNavNode     ;                 ; MeetingsNavNode               ;
+                                ; CalenderNavNode              ;                         ; Calender Category            ; CalenderCategoryLink         ; EventsCalenderNavNode     ;                 ; CalenderNavNode               ;
+#                               ; ContactUsNavNode             ;                         ; ContactUs Category           ; ContactUsCategoryLink        ; ContactUsDirectoryNavNode ;                 ; ContactUsNavNode              ;
+                                ; DirectoryNavNode             ;                         ; Directory Category           ; DirectoryCategoryLink        ; ContactUsDirectoryNavNode ;                 ; DirectoryNavNode              ;
+                                ; CompanyReportsSubNavNode     ;                         ; Company Reports Sub Category ; CompanyReportsSubLink        ; CompanyReportsNavNode     ;                 ; CompanyReportsSubNavNode      ;
+                                ; ServicesSubNavNode           ;                         ; Services Sub Category        ; ServicesSubLink              ; ServicesNavNode           ;                 ; ServicesSubNavNode            ;
+                                ; OpportunitiesSubNavNode      ;                         ; Opportunities Sub Category   ; OpportunitiesSubCategoryLink ; OpportunitiesNavNode      ;                 ; OpportunitiesSubNavNode       ;
+
+## entries of the above navigation nodes ##
+INSERT_UPDATE CMSNavigationEntry ; uid[unique=true]                  ; $contentCV[unique=true] ; name                                          ; navigationNode(&nodeRef)     ; item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV) ;  
+                                 ; ContentHubSubNavNodeEntry         ;                         ; Content Hub Sub Navigation Node Entry         ; ContentHubSubNavNode         ; ContentHubSubCategoryLink                                 ;  
+                                 ; SaudiBrandingCategoryNavNodeEntry ;                         ; Saudi Branding Category Navigation Node Entry ; SaudiBrandingCategoryNavNode ; SaudiBrandingCategoryLink                              ;  
+                                 ; TradingCategoryNavNodeEntry       ;                         ; Trading Category Navigation Node Entry        ; TradingCategoryNavNode       ; TradingCategoryLink                                    ;  
+                                 ; BestPracticesCategoryNavNodeEntry ;                         ; Best Practices Category Navigation Node Entry ; BestPracticesCategoryNavNode ; BestPracticesCategoryLink                              ;  
+                                 ; MeetingsNavNodeEntry              ;                         ; Meetings Navigation Node Entry                ; MeetingsNavNode              ; MeetingsCategoryLink                                   ;  
+                                 ; CalenderNavNodeEntry              ;                         ; Calender Navigation Node Entry                ; CalenderNavNode              ; CalenderCategoryLink                                   ;  
+#                                ; ContactUsavNodeEntry              ;                         ; ContactUs Navigation Node Entry               ; ContactUsNavNode             ; ContactUsCategoryLink                                  ;  
+                                 ; DirectoryNavNodeEntry             ;                         ; Directory Navigation Node Entry               ; DirectoryNavNode             ; DirectoryCategoryLink                                  ;  
+                                 ; CompanyReportsSubNavNodeEntry     ;                         ; Company Reports Sub NavigationNode Entry      ; CompanyReportsSubNavNode     ; CompanyReportsSubLink                                  ;  
+                                 ; ServicesSubNavNodeEntry           ;                         ; Services Sub Navigation Node Entry            ; ServicesSubNavNode           ; ServicesSubLink                                        ;  
+                                 ; OpportunitiesSubNavNodeEntry      ;                         ; Opportunities Sub Navigation Node Entry       ; OpportunitiesSubNavNode      ; OpportunitiesSubCategoryLink                           ;
+ 
+## links of the above navigation nodes ##
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]             ; name                            ; url                                                                                                        ; &linkRef                     ; &componentRef                ; target(code)[default='sameWindow'] ;
+                               ;                         ; ContentHubSubCategoryLink    ; Content Hub Sub Category Link   ; /Investsaudi-Catalogue/Content-Hub/c/100000                                                                ; ContentHubSubCategoryLink    ; ContentHubSubCategoryLink    ;                                    ;
+                               ;                         ; SaudiBrandingCategoryLink    ; Saudi Branding Category Link    ; /Investsaudi-Catalogue/Content-Hub/Saudi-Branding/c/101000                                                 ; SaudiBrandingCategoryLink    ; SaudiBrandingCategoryLink    ;                                    ;
+                               ;                         ; TradingCategoryLink          ; Trading Category Link           ; /Investsaudi-Catalogue/Content-Hub/Trading/c/101200                                                        ; TradingCategoryLink          ; TradingCategoryLink          ;                                    ;
+                               ;                         ; BestPracticesCategoryLink    ; Nut Drivers Category Link       ; /Investsaudi-Catalogue/Content-Hub/Best-Practices/c/101100                                                 ; BestPracticesCategoryLink    ; BestPracticesCategoryLink    ;                                    ;
+                               ;                         ; CalenderCategoryLink         ; Calender Category Link          ; "/events"                                                                                                  ; CalenderCategoryLink         ; CalenderCategoryLink         ;                                    ;
+                               ;                         ; MeetingsCategoryLink         ; Meetings Category Link          ; "https://meeting.sagia.gov.sa/orion/joinmeeting.do?MTID=eead1941e2ce5215fbde0fdbccda58e3&RT=MiMzMg%3D%3D"  ; MeetingsCategoryLink         ; MeetingsCategoryLink         ;                                    ;
+                               ;                         ; ContactUsCategoryLink        ; ContactUs Category Link         ; "/contact"                                                                                                 ; ContactUsCategoryLink        ; ContactUsCategoryLink        ;                                    ;
+                               ;                         ; DirectoryCategoryLink        ; Directory Category Link         ; "/contact/"                                                                                                ; DirectoryCategoryLink        ; DirectoryCategoryLink        ;                                    ;
+                               ;                         ; CompanyReportsSubLink        ; Company Reports Sub Link        ; /COMPANY-REPORTS/c/200000                                                                                  ; CompanyReportsSubLink        ; CompanyReportsSubLink        ;                                    ;
+                               ;                         ; ServicesSubLink              ; Services Sub Link               ; /my-account/support-tickets                                                                                ; ServicesSubLink              ; ServicesSubLink              ;                                    ;
+							   ;                         ; OpportunitiesSubCategoryLink ; Opportunities Sub Category Link ; /my-account/support-tickets                                                                                ; OpportunitiesSubCategoryLink ; OpportunitiesSubCategoryLink ;                                    ;
+
+### LOCALIZATION
+
+UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]                ; linkName[lang=en]                     ; 
+                        ;                         ; ContentHubCategoryLink          ; "CONTENT HUB"                         ;
+                        ;                         ; CompanyReportsCategoryLink      ; "COMPANY REPORTS"                     ;   
+                        ;                         ; EventsCalenderCategoryLink      ; "CALENDER"                            ;   
+                        ;                         ; ServicesCategoryLink            ; "SUPPORT TICKETS"                     ;      
+                        ;                         ; ContactUsDirectoryCategoryLink  ; "CONTACT US"                          ;                                   
+                        ;                         ; ContentHubSubCategoryLink       ; "CONTENT HUB"                         ;
+						;                         ; SaudiBrandingCategoryLink       ; "INVEST SAUDI BRANDING CONTENT"       ;
+                        ;                         ; TradingCategoryLink             ; "INVESTMENT AND TRADE CONTENT"        ;
+                        ;                         ; BestPracticesCategoryLink       ; "BRAND GUIDELINES AND BEST PRACTICES" ;
+                        ;                         ; MeetingsCategoryLink            ; "VIRTUAL MEETINGS"                    ;
+                        ;                         ; CalenderCategoryLink            ; "CALENDER"                            ;
+                        ;                         ; ContactUsCategoryLink           ; "CONTACT US"                          ;
+                        ;                         ; DirectoryCategoryLink           ; "DIRECTORY"                           ;
+                        ;                         ; OpportunitiesCategoryLink       ; "MY OPPORTUNITIES"                    ;
+                        ;                         ; CompanyReportsSubLink           ; "COMPANY REPORTS"                     ;
+                        ;                         ; ServicesSubLink                 ; "SUPPORT TICKETS"                     ;
+                        ;                         ; OpportunitiesSubCategoryLink    ; "MY OPPORTUNITIES"                    ;
+						
+# Import modulegen config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue
+#################### Start Post Go-Live ###########################
+INSERT_UPDATE Usergroup;uid[unique=true];groups(uid);locname[lang=en];
+;NIPCUserGroup;b2bgroup;NIPC UserGroup Customer Group;
+
+REMOVE CMSNavigationNode	; uid[unique = true]          ; $contentCV[unique = true];
+                            ; NipcMyOpportunitiesNavNode  ;
+                            ; NipcAllOpportunitiesNavNode ;								
+                            ; ChemicalsSectorNavNode 	  ;                        
+                            ; EmergingSectorNavNode 	  ;                        
+                            ; InformationSectorNavNode 	  ;                        
+                            ; EnergySectorNavNode 		  ;                        
+                            ; MiningSectorNavNode 		  ;                        
+                            ; HealthcareSectorNavNode 	  ;                        
+                            ; TourismSectorNavNode 		  ;                        
+                            ; TransportSectorNavNode 	  ;                        
+                            ; IndustrySectorNavNode 	  ;                        
+ 
+################################  ------  1st Level NavigationNode Mapping -----  #########################
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]           ; $contentCV[unique=true] ; name                          ; cmsLink(uid, $contentCV)      ; parent(uid, $contentCV)    ; nodeImage(code, $contentCV) ; nodeDescription[lang = en]                                       ; links(&linkRef) ; &nodeRef                      
+                                ; NipcOpportunitiesNavNode   ;                         ; NIPC Opportunities Category   ; NipcOpportunitiesCategoryLink ; investsaudiCategoryNavNode ; NIPC_Opportunities__B2B.png ; Explore why Saudi Arabia is your perfect investment destination. ;                 ; NipcOpportunitiesNavNode      
+
+INSERT_UPDATE CMSNavigationEntry ; uid[unique=true]                ; $contentCV[unique=true] ; name                                        ; navigationNode(&nodeRef)   ; item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV) ;
+ 								 ; NipcOpportunitiesNavNodeEntry   ;                         ; NIPC Opportunities Navigation Node Entry    ; NipcOpportunitiesNavNode   ; NipcOpportunitiesCategoryLink                          ;
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]                ; name                               ; url   ; &linkRef                        ; &componentRef                    ; target(code)[default='sameWindow']
+							   ;                         ; NipcOpportunitiesCategoryLink   ; NIPC Opportunities Category Link   ; #     ; NipcOpportunitiesCategoryLink   ; NipcOpportunitiesCategoryLink    ;
+
+UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]                    ; linkName[lang=en] 
+                        ;                         ; NipcOpportunitiesCategoryLink       ; "NIPC OPPORTUNITIES"
+
+################################   ------ 2nd Level NavigationNode Mapping ------  #########################
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]             ; $contentCV[unique=true] ; name                              ; cmsLink(uid, $contentCV)         ; parent(uid, $contentCV)  ; links(&linkRef)[mode = replace]                                                                                                                                              ; &nodeRef                    ;
+                                ; NipcMyOpportunitiesNavNode   ;                         ; NIPC My Opportunities Category    ; NipcMyOpportunitiesCategoryLink  ; NipcOpportunitiesNavNode ;                                                                                                                                                                              ; NipcMyOpportunitiesNavNode  ;
+                                ; NipcAllOpportunitiesNavNode  ;                         ; NIPC All Opportunities Category   ; NipcAllOpportunitiesCategoryLink ; NipcOpportunitiesNavNode ; ChemicalsSectorLink,EmergingSectorLink,InformationSectorLink,EnergySectorLink,MiningSectorLink,HealthcareSectorLink,TourismSectorLink,TransportSectorLink,IndustrySectorLink ; NipcAllOpportunitiesNavNode ;
+
+INSERT_UPDATE CMSNavigationEntry ; uid[unique=true]                  ; $contentCV[unique=true] ; name                                         ; navigationNode(&nodeRef)     ; item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV) ;
+ 								 ; NipcMyOpportunitiesNavNodeEntry   ;                         ; NIPC My Opportunities Navigation Node Entry  ; NipcMyOpportunitiesNavNode   ; NipcMyOpportunitiesCategoryLink                        ;
+ 								 ; NipcAllOpportunitiesNavNodeEntry  ;                         ; NIPC All Opportunities Navigation Node Entry ; NipcAllOpportunitiesNavNode  ; NipcAllOpportunitiesCategoryLink                       ;
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]                  ; name                                   ; url                                                  ; &linkRef                          ; &componentRef                     ; target(code)[default='sameWindow'] ;
+							   ;                         ; NipcMyOpportunitiesCategoryLink   ; NIPC My Opportunities Category Link    ; /my-account/support-tickets?oppType=MyOpportunity    ; NipcMyOpportunitiesCategoryLink   ; NipcMyOpportunitiesCategoryLink   ;                                    ;
+							   ;                         ; NipcAllOpportunitiesCategoryLink  ; NIPC All Opportunities Category Link   ; /my-account/support-tickets?oppType=AllOpportunity   ; NipcAllOpportunitiesCategoryLink  ; NipcAllOpportunitiesCategoryLink  ;                                    ;
+
+UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]          ; linkName[lang=en]  
+                        ;                         ; NipcMyOpportunitiesCategoryLink      ; "MY OPPORTUNITIES"
+                        ;                         ; NipcAllOpportunitiesCategoryLink     ; "All OPPORTUNITIES"
+						
+
+################################  ------  3rd Level NavigationNode Mapping ------  #########################	
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]         ; name                      ; url                                                        ; &linkRef               ; &componentRef            ; target(code)[default='sameWindow'] ;
+                               ;                         ; ChemicalsSectorLink      ; Chemicals Sector Link     ; /my-account/support-tickets?oppType=AllOpportunity&sec=10  ; ChemicalsSectorLink    ; ChemicalsSectorLink      ;                                    ;
+                               ;                         ; EmergingSectorLink       ; Emerging Sector Link      ; /my-account/support-tickets?oppType=AllOpportunity&sec=20  ; EmergingSectorLink     ; EmergingSectorLink       ;                                    ;
+                               ;                         ; InformationSectorLink    ; Information Sector Link   ; /my-account/support-tickets?oppType=AllOpportunity&sec=60  ; InformationSectorLink  ; InformationSectorLink    ;                                    ;
+                               ;                         ; EnergySectorLink         ; Energy Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=30  ; EnergySectorLink       ; EnergySectorLink         ;                                    ;
+                               ;                         ; MiningSectorLink         ; Mining Sector Link        ; /my-account/support-tickets?oppType=AllOpportunity&sec=70  ; MiningSectorLink       ; MiningSectorLink         ;                                    ;
+                               ;                         ; HealthcareSectorLink     ; Healthcare Sector Link    ; /my-account/support-tickets?oppType=AllOpportunity&sec=40  ; HealthcareSectorLink   ; HealthcareSectorLink     ;                                    ;
+                               ;                         ; TourismSectorLink        ; Tourism Sector Link       ; /my-account/support-tickets?oppType=AllOpportunity&sec=80  ; TourismSectorLink      ; TourismSectorLink        ;                                    ;
+                               ;                         ; TransportSectorLink      ; Transport Sector Link     ; /my-account/support-tickets?oppType=AllOpportunity&sec=90  ; TransportSectorLink    ; TransportSectorLink      ;                                    ;
+                               ;                         ; IndustrySectorLink       ; Industry Sector Link      ; /my-account/support-tickets?oppType=AllOpportunity&sec=50  ; IndustrySectorLink     ; IndustrySectorLink       ;                                    ;
+
+
+UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]      ; linkName[lang=en]            ;
+                        ;                         ; ChemicalsSectorLink   ; "CHEMICALS"                  ;
+                        ;                         ; EmergingSectorLink    ; "EMERGING"                   ;
+                        ;                         ; InformationSectorLink ; "INFORMATION & COMM TECH"    ;
+                        ;                         ; EnergySectorLink      ; "ENERGY & WATER"             ;
+                        ;                         ; MiningSectorLink      ; "MINING & METALS"            ;
+                        ;                         ; HealthcareSectorLink  ; "HEALTHCARE & LIFE SCIENCES" ;
+                        ;                         ; TourismSectorLink     ; "TOURISM & QUALITY OF LIFE"  ;
+                        ;                         ; TransportSectorLink   ; "TRANSPORT & LOGISTICS"      ;
+                        ;                         ; IndustrySectorLink    ; "INDUSTRY & MANUFACTURING"   ;
+
+
+#####################################   PIF USER  ##########################################################
+
+# Import modulegen config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique=true] ; uid[unique=true]               ; name                         ; url[default="#"]            ; &linkRef                             ; styleAttributes             ; linkName[lang=$lang]   ; target(code)[default='sameWindow'] ;
+                               ;                         ; AdminstrationLink              ; Adminstration                ; /                           ; AdminstrationLink                    ;                             ; "Administration"       ;                                    ;
+                               ;                         ; InvestsaudiAddUserLink         ; Add User Link                ; /my-account/new-user        ; InvestsaudiAddUserLink               ;                             ; "Add User"             ;                                    ;
+                               ;                         ; InvestsaudiAddChildUnitLink    ; Add Child B2B Unit Link      ; /my-account/child-unit      ; InvestsaudiAddChildUnitLink          ;                             ; "Add Child Unit"       ;                                    ;
+                               ;                         ; InvestsaudiListChildUnitLink   ; List All Child B2B Unit Link ; /my-account/view-child-units; InvestsaudiListChildUnitLink         ;                             ; "List All Child Units" ;                                    ;
+                               ;                         ; InvestsaudiManageUserLink      ; Manage Users Link            ; /my-account/manage-users    ; InvestsaudiManageUserLink            ;                             ; "Manage Users"         ;                                    ;
+
+
+INSERT_UPDATE CMSNavigationNode ; uid[unique=true]                ; title[lang=$lang] ; $contentCV[unique=true] ; name                             ; parent(uid, $contentCV)    ; cmsLink(uid, $contentCV)     ; nodeImage(code, $contentCV) ; nodeDescription[lang = en]                                       ; &nodeRef                        ;
+                                ; AdminstrationNavNode            ; Administration    ;                         ; Administration                   ; investsaudiCategoryNavNode ; AdminstrationLink            ; administration.png          ; Explore why Saudi Arabia is your perfect investment destination. ; AdminstrationNavNode            ;
+                                ; InvestsaudiAddUserNavNode       ; Add User          ;                         ; Add User Navigation Node         ; AdminstrationNavNode       ; InvestsaudiAddUserLink       ;                             ;                                                                  ; InvestsaudiAddUserNavNode       ;
+                                ; InvestsaudiAddChildUnitNavNode  ; Add Child Unit    ;                         ; Add Child Unit Navigation Node   ; AdminstrationNavNode       ; InvestsaudiAddChildUnitLink  ;                             ;                                                                  ; InvestsaudiAddChildUnitNavNode  ;
+                                ; InvestsaudiListChildUnitNavNode ; List Child Units  ;                         ; List Child Units Navigation Node ; AdminstrationNavNode       ; InvestsaudiListChildUnitLink ;                             ;                                                                  ; InvestsaudiListChildUnitNavNode ;
+                                ; InvestsaudiManageUserNavNode    ; Manage Users      ;                         ; Manage User Navigation Node      ; AdminstrationNavNode       ; InvestsaudiManageUserLink    ;                             ;                                                                  ; InvestsaudiManageUserNavNode    ;
+
+
+# entries of the above navigation nodes
+INSERT_UPDATE CMSNavigationEntry ; uid[unique=true]                 ; $contentCV[unique=true] ; name                              ; navigationNode(&nodeRef)        ; item(&linkRef)               ;
+                                 ; AdminstrationNavEntry            ;                         ; Administration Entry              ; AdminstrationNavNode            ; AdminstrationLink            ;
+                                 ; InvestsaudiAddUserNavEntry       ;                         ; Add User Navigation Entry         ; InvestsaudiAddUserNavNode       ; InvestsaudiAddUserLink       ;
+                                 ; InvestsaudiAddChildUnitNavEntry  ;                         ; Add Child Unit Navigation Entry   ; InvestsaudiAddChildUnitNavNode  ; InvestsaudiAddChildUnitLink  ;
+                                 ; InvestsaudiListChildUnitNavEntry ;                         ; List Child Units Navigation Entry ; InvestsaudiListChildUnitNavNode ; InvestsaudiListChildUnitLink ;
+                                 ; InvestsaudiManageUserNavEntry    ;                         ; Manage User Navigation Entry      ; InvestsaudiManageUserNavNode    ; InvestsaudiManageUserLink    ;
+
+###################    Updating User restriction for different type of users   ########################
+
+INSERT_UPDATE CMSUserGroupRestriction ; $contentCV[unique=true] ; uid[unique=true]              ; name                                                        ; userGroups(uid)  ; includeSubgroups ; components(&linkRef)[mode = replace]                                                                                                                            ;
+                                      ;                         ; BDUserGroupRestriction        ; Support Services Restriction                                ; BDUserGroup      ; true             ; OpportunitiesCategoryLink,ServicesCategoryLink                                                                                                                  ;
+                                      ;                         ; MarComUserGroupRestriction    ; MarCom User Group Restriction                               ; MarCommUserGroup ; true             ; ContentHubCategoryLink,EventsCalenderCategoryLink,ContactUsDirectoryCategoryLink                                                                                ;
+                                      ;                         ; NIPCUserGroupRestriction      ; NIPC User Group Restriction                                 ; NIPCUserGroup    ; true             ; NipcOpportunitiesCategoryLink,ContentHubCategoryLink,CompanyReportsCategoryLink,EventsCalenderCategoryLink,ServicesCategoryLink,ContactUsDirectoryCategoryLink  ;
+                                      ;                         ; WOUserGroupNavNodeRestriction ; Workflow Opportunity User Group Navigation Node Restriction ; WOAdminGroup  	 ; true             ; OpportunitiesCategoryLink,AdminstrationLink                                                                                                                     ;
+                                      ;                         ; WOUserGroupPageRestriction    ; Workflow Opportunity User Group Page Restriction			  ; WOAdminGroup 	 ; true             ; OpportunitiesCategoryLink,AdminstrationLink                                                                                                                     ;
+
+#######################   Updating Banner Image  ################################
+
+INSERT_UPDATE Media ; mediaFormat(qualifier) ; code[unique=true]       ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true] ; realfilename            ; altText          ; mime[default='image/jpeg'] ; $contentCV[unique=true] ; folder(qualifier)[default=images] ;  
+                    ; widescreen             ; home-main-banner-03.jpg ; media/home-main-banner-03.jpg                                          ; home-main-banner-03.jpg ; "Main Banner 03" ;                            ;                         ;                                   ;
+
+INSERT_UPDATE BannerComponent ; $contentCV[unique=true] ; uid[unique=true]    ; media(code, $contentCV) ; name                  ;              
+                              ;                         ; home-main-banner-03 ; home-main-banner-03.jpg ; "Home Main Banner 03" ;
+
+INSERT_UPDATE RotatingImagesComponent ; $contentCV[unique=true] ; uid[unique=true]          ; name                        ; banners(uid, $contentCV) ;               
+                                      ;                         ; home-main-rotating-banner ; "Home Main Rotating Banner" ; home-main-banner-03      ;
+
+INSERT_UPDATE BannerComponent ; $contentCV[unique=true] ; uid[unique=true]    ; urlLink ; content[lang=$lang]                                                                                                             ;                                                                                                                                                   ;                                                                                                                                                           
+                              ;                         ; home-main-banner-03 ; "#"     ; "<h1 class=""animated pulse""> Welcome to Invest Saudi Partner Portal <br>Kingdom of Saudi Arabia's Investment Platform </h1>"  ;
+
+UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true]      ; cmsComponents(uid, $contentCV) ;
+                   ;                         ; Section1Slot-Homepage ; home-main-rotating-banner      ;
+
+
+###  REMOVING THE NODE DESCRIPTION FOR B2B FLOW TO ALL THE NAVIGATION NODES ##################
+UPDATE CMSNavigationNode ; uid[unique=true]          ; $contentCV[unique=true] ; nodeDescription[lang = en] ;         
+                         ; ContentHubNavNode         ;                         ;                            ;
+                         ; CompanyReportsNavNode     ;                         ;                            ;
+                         ; EventsCalenderNavNode     ;                         ;                            ;
+                         ; ServicesNavNode           ;                         ;                            ;
+                         ; ContactUsDirectoryNavNode ;                         ;                            ;
+                         ; OpportunitiesNavNode      ;                         ;                            ;
+
+UPDATE CMSNavigationNode ; uid[unique=true]           ; $contentCV[unique=true] ; nodeDescription[lang = en] ;      
+                         ; NipcOpportunitiesNavNode   ;                         ;                            ;      
+
+UPDATE CMSNavigationNode ; uid[unique=true]                ; $contentCV[unique=true] ; nodeDescription[lang = en]                                       ; &nodeRef                        ;
+                         ; AdminstrationNavNode            ;                         ;                                                                  ; AdminstrationNavNode            ;
+

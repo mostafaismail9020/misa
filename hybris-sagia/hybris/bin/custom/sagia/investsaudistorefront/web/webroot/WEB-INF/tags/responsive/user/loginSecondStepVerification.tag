@@ -10,7 +10,7 @@
 <spring:htmlEscape defaultHtmlEscape="true"/>
 <c:url value="/login-second-step/authenticate" var="authenticateActionUrl" />
 
-
+<%--
 <h1 class="accountLogin-title text-center"><spring:theme code="text.account.profile.sagiaeservices"/></h1>
-
+--%>
 <user:authenticate actionNameKey="authenticate.submit" action="${authenticateActionUrl}" />

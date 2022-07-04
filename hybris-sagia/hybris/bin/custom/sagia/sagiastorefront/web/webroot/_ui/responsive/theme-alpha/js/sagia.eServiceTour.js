@@ -22,11 +22,12 @@ SAGIA.eServiceTour = {
 
 	init: function(){
 		var self = this;
-		if(tutorialJson !== "undefined" && tutorialJson.length !== 0 && tutorialJson.steps.length > 0 && displayTutorial) {
+		if(tutorialJson !== "undefined" && tutorialJson.length !== 0 && tutorialJson.steps.length > 0 && displayTutorial && (window.location.href).indexOf("dash") > -1) {
+			console.log('dasboard page..'+(window.location.href).indexOf("dash"));
 			$('.header-tutorial-header-btn').show();
 			var idx = 0;
 			$.each(tutorialJson.steps, function (index, item) {
-				if($(item.selector).length == 1){
+				if($(item.selector+':visible').length == 1){	
 					var template = $(".tutorialTemplate").clone();
 					template.find('.eServiceTutorial-headline').html(item.title);
 					template.find('.eServiceTutorial-description').html(item.description);
@@ -53,7 +54,8 @@ SAGIA.eServiceTour = {
 		$(document).on("click",".js-eServiceTour-start", function(e) {
 			e.preventDefault();
 			$('body').width() >= 768 ? SAGIA.eServiceTour.isSmall = false : SAGIA.eServiceTour.isSmall = true;
-			
+
+			$('body').append('<div class="modal-backdrop fade show"></div>')
 			setFocusElement();
 			setPanelDimensions();
 		});
@@ -75,7 +77,7 @@ SAGIA.eServiceTour = {
 			$('.eServiceTutorial-highlight').addClass('eServiceTutorial-highlight_close').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
 				$(this).remove();
 			});
-			
+			$('.modal-backdrop').remove();
 			tourStep = 0;
 		
 		});
@@ -175,7 +177,8 @@ SAGIA.eServiceTour = {
 					width: focusDimensions.width + highLightOffset*2,
 					height: focusDimensions.height + highLightOffset*2,
 					top: focusDimensions.top - highLightOffset,
-					left: focusDimensions.left - highLightOffset
+					left: focusDimensions.left - highLightOffset,
+					'z-index':'99999'
 				});
 				
 				var panelArrow = $('<div/>').addClass('eServiceTutorial-arrow');
@@ -196,7 +199,6 @@ SAGIA.eServiceTour = {
 		};
 		
 		function setPanelDimensions() {
-			
 			var bodyWidth = $('body').width();
 			var panelTransform;
 			var containerPadding = 15;
@@ -207,8 +209,7 @@ SAGIA.eServiceTour = {
 			var arrow = $('.eServiceTutorial-arrow');
 			
 			arrow.css('left', '');
-			
-			
+
 			//reset position classes
 			$('.eServiceTutorial-panel').removeClass (function (index, className) {
 				return (className.match (/(^|\s)eServiceTutorial-panel_\S+/g) || []).join(' ');
@@ -226,7 +227,7 @@ SAGIA.eServiceTour = {
 					var leftValue;
 					var rightValue = 'auto';
 					var arrowPosition = '';
-					
+					var moveByPanel = 0;
 					
 					$('.eServiceTutorial-panel').addClass('eServiceTutorial-panel_top');
 					$('.eServiceTutorial-panel').parent().addClass('eServiceTutorial-highlight_top');
@@ -241,6 +242,7 @@ SAGIA.eServiceTour = {
 
 							var moveBy = maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) > 0 ? maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) : containerPadding;
 							panelTransform = 'translate(-' + moveBy +'px,-100%)';
+							moveByPanel = -moveBy;
 							
 							//adjust arrow position if focusElement is bigger then panel and arrow is out of panel bounderies
 							arrowPosition = focusDimensions.width/2 > panelInnerWidth-arrowOffset ? panelInnerWidth/2+'px' : '';
@@ -254,6 +256,7 @@ SAGIA.eServiceTour = {
 
 							var moveBy = maxPanelWidth - focusDimensions.right > 0 ? maxPanelWidth - focusDimensions.right : containerPadding;
 							panelTransform = 'translate(+' + moveBy +'px,-100%)';
+							moveByPanel = moveBy;
 						}
 
 					} else {
@@ -262,10 +265,11 @@ SAGIA.eServiceTour = {
 						panelTransform = 'translate(-' + (focusDimensions.left - highLightOffset) +'px,-100%)';
 						leftValue = '';
 						rightValue = '';
+						moveByPanel = -(focusDimensions.left - highLightOffset);
 					}
 
 					panelWidth = bodyWidth+'px';
-
+					panelTransform = 'translate(' + (moveByPanel > 0 ? 100 : -100 ) +'px,-100%)';
 
 					panelElement.css({
 						transform: panelTransform,
@@ -295,6 +299,7 @@ SAGIA.eServiceTour = {
 						
 						var leftValue = '50%'
 						var rightValue = 'auto';
+						var moveByPanel = 0;
 						
 						//not enough space on the right side but enough space in viewport for full panel width. Move if overflowing viewport
 						if (bodyWidth > maxPanelWidth) {
@@ -305,6 +310,7 @@ SAGIA.eServiceTour = {
 								
 								var moveBy = maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) > 0 ? maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) : containerPadding;
 								panelTransform = 'translate(-' + moveBy +'px,-100%)';
+								moveByPanel = -moveBy;
 								
 							} else {
 								
@@ -313,6 +319,7 @@ SAGIA.eServiceTour = {
 								
 								var moveBy = maxPanelWidth - focusDimensions.right > 0 ? maxPanelWidth - focusDimensions.right : containerPadding;
 								panelTransform = 'translate(+' + moveBy +'px,-100%)';
+								moveByPanel = moveBy;
 							}
 
 						} else {
@@ -322,7 +329,9 @@ SAGIA.eServiceTour = {
 						}
 						
 						panelWidth = bodyWidth+'px';
+						panelTransform = 'translate(' + (moveByPanel > 0 ? -450 : 400 ) +'px,-100%)';
 						
+						// panelTransform = 'translate(-' + (focusDimensions.left) +'px,-100%)';
 						panelElement.css({
 							transform: panelTransform,
 							width: panelWidth,
@@ -359,6 +368,7 @@ SAGIA.eServiceTour = {
 					var leftValue;
 					var rightValue = 'auto';
 					var arrowPosition = '';
+					var moveByPanel = 0;
 					
 					$('.eServiceTutorial-panel').addClass('eServiceTutorial-panel_bottom');
 					$('.eServiceTutorial-panel').parent().addClass('eServiceTutorial-highlight_bottom');
@@ -366,12 +376,13 @@ SAGIA.eServiceTour = {
 					//enough space in viewport for full size panel
 					if (bodyWidth > maxPanelWidth) {
 
-						if(focusDimensions.left >= (bodyWidth - focusDimensions.right)) {
+						if(focusDimensions.left >= (bodyWidth - focusDimensions.right) && bodyWidth <= focusDimensions.right) {
 							//left space > right space
 							leftValue = '0';
 							
 							var moveBy = maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) > 0 ? maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) : containerPadding;
 							panelTransform = 'translate(-' + moveBy +'px,100%)';
+							moveByPanel = -moveBy;
 							
 							//adjust arrow position if focusElement is bigger then panel and arrow is out of panel bounderies
 							arrowPosition = focusDimensions.width/2 > panelInnerWidth-arrowOffset ? panelInnerWidth/2+'px' : '';							
@@ -383,6 +394,7 @@ SAGIA.eServiceTour = {
 
 							var moveBy = maxPanelWidth - focusDimensions.right > 0 ? maxPanelWidth - focusDimensions.right : containerPadding;
 							panelTransform = 'translate(+' + moveBy +'px,100%)';
+							moveByPanel = moveBy;
 						}
 
 					} else {
@@ -393,6 +405,7 @@ SAGIA.eServiceTour = {
 					}
 
 					panelWidth = bodyWidth+'px';
+					panelTransform = 'translate(' + (moveByPanel > 0 ? 125 : -50 ) +'px,100%)';
 
 					panelElement.css({
 						transform: panelTransform,
@@ -421,6 +434,7 @@ SAGIA.eServiceTour = {
 						
 						var leftValue;
 						var rightValue = 'auto';
+						var moveByPanel = 0;
 						
 						//not enough space on the left side, but enough space in viewport for full size panel
 						if (bodyWidth > maxPanelWidth) {
@@ -431,6 +445,7 @@ SAGIA.eServiceTour = {
 								
 								var moveBy = maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) > 0 ? maxPanelWidth - (focusDimensions.width + (bodyWidth - focusDimensions.right)) : containerPadding;
 								panelTransform = 'translate(-' + moveBy +'px,-100%)';
+								moveByPanel = -moveBy;
 								
 							} else {
 								//right space > left space
@@ -439,6 +454,7 @@ SAGIA.eServiceTour = {
 								
 								var moveBy = maxPanelWidth - focusDimensions.right > 0 ? maxPanelWidth - focusDimensions.right : containerPadding;
 								panelTransform = 'translate(+' + moveBy +'px,-100%)';
+								moveByPanel = moveBy;
 							}
 
 						} else {
@@ -448,7 +464,8 @@ SAGIA.eServiceTour = {
 						}
 						
 						panelWidth = bodyWidth+'px';
-						
+						panelTransform = 'translate(' + (moveByPanel > 0 ? -(maxPanelWidth-(containerPadding + 180)) : (maxPanelWidth-(containerPadding + 180)) )  +'px,-100%)';
+
 						panelElement.css({
 							transform: panelTransform,
 							width: panelWidth,
@@ -484,12 +501,17 @@ SAGIA.eServiceTour = {
 		};
 		
 		function updateHighlight() {
-
+			var d_top = 0;
+			if((focusDimensions.top - highLightOffset) < 0){
+				document.body.scrollTop = document.documentElement.scrollTop = 0;
+				d_top = 50;
+			}
 			$('.eServiceTutorial-highlight').css({
 				width: focusDimensions.width + highLightOffset*2,
 				height: focusDimensions.height + highLightOffset*2,
-				top: focusDimensions.top - highLightOffset,
+				top: (focusDimensions.top - highLightOffset) + d_top ,
 				left: focusDimensions.left - highLightOffset,
+				'z-index':'99999',
 				'border-radius': function() {
 					if(SAGIA.eServiceTour.isSmall) {
 						

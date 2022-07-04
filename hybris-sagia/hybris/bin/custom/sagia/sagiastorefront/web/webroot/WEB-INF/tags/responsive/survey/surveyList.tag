@@ -20,9 +20,10 @@
     </div>
 
     <div id="surveysSection" class="contentModule-section">
-        <div class="contentModule-headline">
-            <span class="iconElement iconElement_questionaires"><icon:questionaires/></span><spring:theme code="general.all.questionnaires"/>
+        <div class="contentModule-headline mw2">
+            <!--<span class="iconElement iconElement_questionaires"><icon:questionaires/></span>--><spring:theme code="general.all.questionnaires"/>
         </div>
+         <hr class="hr"/>
     </div>
 
     <div class="myAccount-questionnaire newQuestionnaireTemplate" style="display: none">

@@ -7,12 +7,12 @@
 
 <c:set var="pageIsDashboard" value="${fn:containsIgnoreCase(requestScope['javax.servlet.forward.request_uri'], 'dashboard')}"/>
 
-<div class="dashboardWidget js-dashboardWidget">
+<div class="dashboardWidget js-dashboardWidget no-border">
     <c:if test="${editable}">
         <dashboard:addAndRemoveComponent checkboxIndex="3"/>
     </c:if>
-    <div class="dashboardWidget-headline js-dashboardWidget-headline">
-        <a href="" data-redirect="service-requests-overview" class="js-page-redirect" style="text-decoration: inherit;color: inherit">
+    <div class="dashboardWidget-headline js-dashboardWidget-headline  d-none d-sm-block">
+        <a href="" data-redirect="service-requests-overview" class="service-request-header js-page-redirect" style="text-decoration: inherit;color: inherit">
             <spring:theme code="dashboard.servicesRequest.title"/>
         </a>
         <div class="dashboardWidget-headline-icon">
@@ -24,9 +24,10 @@
         </div>
 
         <div class="dashboardWidget-filter">
+        <label class="label-dashboardWidget-filter" for="dashboardWidget-filter"><spring:theme code="sagia.sort.sort.by"/></label>
         <c:if test="${!editable}">
             <select id="serviceSort" title="Services" class="js-select2-oneColumn form-control" onchange="sortServices()">
-                <option value="null"><spring:theme code="sagia.sort.sort.by"/></option>
+                <!--<option value="null" disabled><spring:theme code="sagia.sort.sort.by"/></option>-->
                 <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.asc"/> </option>
                 <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.desc"/> </option>
                 <option value="status_asc"><spring:theme code="sagia.sort.status"/>&nbsp;<spring:theme code="sagia.sort.asc"/></option>
@@ -63,7 +64,7 @@
                 </c:if>
                 <div class="paginationModule-wrapper">
                     <button class="paginationModule-control paginationModule-control_left" disabled>
-                        <icon:arrow_green_right/>
+                        <img src="/_ui/responsive/common/images/arrow-right.png" class="img-responsive transform-180-degree">
                     </button>
                     <div class="paginationModule-items">
                         <div class="loadingModule">
@@ -72,12 +73,12 @@
                         </div>
                     </div>
                     <button class="paginationModule-control paginationModule-control_right">
-                        <icon:arrow_green_right/>
+                        <img src="/_ui/responsive/common/images/Icon-feather-arrow-left.png" class="img-responsive transform-180-degree" >
                     </button>
                 </div>
                 <c:if test="${pageIsDashboard}">
                     <div class="tableModule-headline">
-                        <a href="" data-redirect="service-requests-overview" class="js-page-redirect">
+                        <a href="" data-redirect="service-requests-overview" class=" btn-dashboard btn-view-all js-page-redirect ">
                             <spring:theme code="dashboard.viewall" text="View all"/>
                         </a>
                     </div>

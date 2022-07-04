@@ -18,12 +18,12 @@
                     <div class="form-group">
                         <div class="form-item">
                             <input type="radio" name="hasAdvanceLicenseNr" id="hasAdvanceLicenseNrYES" value="yes" class="form-control"/>
-                            <label for="hasAdvanceLicenseNrYES" id="hasAdvanceLicenseNrYESLabel" class="control-label"><spring:theme code="licenseApplyEntityInformation.advanceLicenseNumberSection.yes"/></label>
+                            <label for="hasAdvanceLicenseNrYES" id="hasAdvanceLicenseNrYESLabel" class="btn btn-ctrl btn-outline btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.advanceLicenseNumberSection.yes"/></label>
                         </div>
 
                         <div class="form-item">
                             <input type="radio" name="hasAdvanceLicenseNr" id="hasAdvanceLicenseNrNO" value="no" class="form-control"/>
-                            <label for="hasAdvanceLicenseNrNO" id="hasAdvanceLicenseNrNOLabel" class="control-label"><spring:theme code="licenseApplyEntityInformation.advanceLicenseNumberSection.no"/></label>
+                            <label for="hasAdvanceLicenseNrNO" id="hasAdvanceLicenseNrNOLabel" class="btn btn-ctrl btn-bg btn_bold control-label"><spring:theme code="licenseApplyEntityInformation.advanceLicenseNumberSection.no"/></label>
                         </div>
                     </div>
                 </div>

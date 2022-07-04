@@ -3,10 +3,53 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="warningletter.extension"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="warningletter.extension"/></h1>
+        <div class="mainSection-header row service-time">
+            <!-- <h1 class="mainSection-headline"><spring:theme code="warningletter.extension"/></h1> -->
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label"><spring:theme code="average.service.time" /></div>
@@ -32,38 +75,123 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
-    <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_right">
-            <a href="warning-letters/create" type="submit" class="btn btn_slim js-create-warning-letter">
-                <spring:theme code="text.account.followup.create"/>
-            </a>
-        </div>
-    </div>
-</div>
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(warningLetters) > 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
-                    <div class="hidden"><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
-                    <div><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-md-6 col-12 px-0">
+                    <a href="${encodedContextPath}/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                    </div>
+                </c:if>
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">
+                        <a href="warning-letters/create" type="submit" class="btn btn_slim js-create-warning-letter back_to_service">
+                            <spring:theme code="text.account.followup.create"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
+    <div class="container">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
+<c:if test="${not empty sagiaService.description || not empty sagiaService.serviceDocuments || not empty sagiaService.rulesRestrictions || not empty sagiaService.serviceFinancialFees || not empty sagiaService.serviceDuration}">  
+    <div class="container">
+        <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
+            <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+            <div class=""><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+        </button>
+    </div>
+    <div class="container service-wrapper service-wrapper-info mb-5 expanded"  id="expand-03">
+        <div class="serviceModule serviceModule_list mx-5 pt-4">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.description}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.service.overview"/> </span>	
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="serviceModule serviceModule_list mx-5">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.serviceDocuments}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.service.document"/> </span>
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="serviceModule serviceModule_list mx-5">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.rulesRestrictions}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.rules.restrictions"/></span>
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="serviceModule serviceModule_list mx-5">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.serviceFinancialFees}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.financial.fees"/> </span>
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="serviceModule serviceModule_list mx-5 pb-4">
+            <div class="serviceModule-section">
+                <div class="serviceModule-content">
+                    <div class="serviceModule-description">
+                        <c:if test="${not empty sagiaService.serviceDuration}">
+                            <span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
+                            <div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
+                        </c:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</c:if>
+
 <div class="mainSection mainSection_dark mainSection_pdt16">
     <div class="container">
-        <div class="expandableContent expanded" id="expand01">
+    <c:if test="${fn:length(warningLetters) > 1}">
+        <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+            <div class=""><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+            <div class="hidden"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+        </button>
+    </c:if>
+        <div class="expandableContent" id="expand01">
             <c:if test="${fn:length(warningLetters) > 1}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
+                                <div class="contentModule-headline headline-text">
                                     <span class="iconElement iconElement_history"><icon:history/></span>
                                     <spring:theme code="text.account.followup.history"/>
                                 </div>
@@ -96,39 +224,35 @@
                 </div>
             </c:if>
             <div class="expandableContent-main js-warning-letters">
-                <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                    <div class="contentModule">
+                <div class="panelModule panelModule_halfRadius panelModule_smallMargin mt-1">
+                    <div class="contentModule contentModule-wrap">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline">
-                                    <icon:info/>
+
+                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                <span class="contentModule-headline">
                                     <spring:theme code="text.account.followup.info"/>: ${selectedItem.srId}
-                                </div>
-<!--
-                                <a href="warning-letters/create" type="submit" class="btn btn_slim js-create-warning-letter">
-                                    <spring:theme code="text.account.followup.create"/>
-                                </a>
--->
+                                </span>
                                 <c:if test="${fn:length(warningLetters) > 0}">
                                     <div class="statusIndicator
-                                    <c:if test="${selectedItem.srStCode == 'E0001'}">statusIndicator_process</c:if>
-                                    <c:if test="${selectedItem.srStCode == 'E0002'}">statusIndicator_accepted</c:if>
-                                    <c:if test="${selectedItem.srStCode == 'E0003'}">statusIndicator_rejected</c:if>
-                                ">
+                                            <c:if test="${selectedItem.srStCode == 'E0001'}">statusIndicator_process</c:if>
+                                            <c:if test="${selectedItem.srStCode == 'E0002'}">statusIndicator_accepted</c:if>
+                                            <c:if test="${selectedItem.srStCode == 'E0003'}">statusIndicator_rejected</c:if>
+                                        ">
                                         <spring:theme code="text.account.followup.status"/>: <span>${selectedItem.srStDesc}</span>
                                     </div>
                                 </c:if>
+                                <div class="contentModule-headline-border"></div>
                             </div>
 
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
-                                        <dt>
+                                        <dt class="headline-golden">
                                             <spring:theme code="text.account.followup.requestedDaysNumber"/>
                                         </dt>
                                         <dd>${selectedItem.noOfDaysExtension}</dd>
-                                        <dt>
+                                        <dt class="headline-golden">
                                             <spring:theme code="text.account.followup.extendedDate"/>
                                         </dt>
                                         <dd>${selectedItem.extWlDate.dateFormatted}</dd>
@@ -136,11 +260,11 @@
                                 </div>
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated">
-                                        <dt>
+                                        <dt class="headline-golden">
                                             <spring:theme code="text.account.followup.approvedDaysNumber"/>
                                         </dt>
                                         <dd>${selectedItem.noOfApprDaysExtn}</dd>
-                                        <dt>
+                                        <dt class="headline-golden">
                                             <spring:theme code="text.account.followup.extendedEndDate"/>
                                         </dt>
                                         <dd>${selectedItem.extWlEndDate.dateFormatted}</dd>
@@ -151,8 +275,14 @@
 
                         <c:if test="${fn:length(warningLetters) > 0}">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline contentModule-headline_small">
+                                <!-- <div class="contentModule-headline contentModule-headline_small">
                                     <spring:theme code="text.account.followup.comments"/>
+                                </div> -->
+                                <div class="contentModule contentModule-wrap">
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="text.account.followup.comments"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
                                 </div>
                                 <div class="commentModule">
                                     <div class="commentModule-window">
@@ -187,10 +317,15 @@
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
 
-                            <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                <div class="contentModule-headline contentModule-headline_bordered">
-                                    <icon:documents/>
+                            <!-- <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
+                                <div class="contentModule-headline contentModule-headline_bordered headline-text">
                                     <spring:theme code="text.account.followup.supportDocuments"/>
+                                </div>
+                            </div> -->
+                            <div class="contentModule contentModule-wrap">
+                                <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                    <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                    <div class="contentModule-headline-border"></div>
                                 </div>
                             </div>
 
@@ -203,7 +338,7 @@
                                         </div>
                                         <div class="downloadList-actions">
                                                 <%--<a href="#" class="link link_nowrap" data-attachments-object="a" data-attachments-file="b">--%>
-                                            <a href="${encodedContextPath}/attachment/pdf/${element.objectId}/${element.documentID}" class="link link_nowrap" 
+                                            <a href="${encodedContextPath}/attachment/pdf/${element.objectId}/${element.documentID}" class="link link_nowrap"
                                             			download="${element.fullFileName}">
                                                 <span class="iconElement iconElement_cloud"><icon:download/></span>
                                                 <spring:theme code="text.account.followup.download"/>
@@ -225,10 +360,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title js-message"><spring:theme code="text.account.followup.error"/></div>
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <icon:close/>
+                </button>
             </div>
             <div class="modal-body modal-body-center">
                 <div class="modal-heroImage image-medium">
-                    <icon:status-cancelled/>
+                    <!-- <icon:status-cancelled/> -->
                 </div>
             </div>
             <div class="modal-footer">

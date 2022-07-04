@@ -199,12 +199,20 @@ public class SectorPageController extends AbstractCategoryPageController {
         final String parentSector = Config.getString("parent.sector", "sector-opportunities");
         final int opportunityResultSize = Config.getInt("opportunity.search.result.size", 6);
         
+        ArrayList<String> sectoridlist = new ArrayList<String>();
+        
         if (sectorIds == null) {
             sectorIds = new ArrayList<>();
         }
+      else {
+        	  for(String sectorId:sectorIds)	{
+        	sectoridlist.add(XSSFilterUtil.filter(sectorId));      		  
+        	    }
+        	    LOG.info("encoding sectorids" +sectoridlist);			
+        }
 
         SearchPageData<OpportunityData> searchPageData = investSaudiProductFacade.
-        		searchOpportunityByNameAndSectors(XSSFilterUtil.filter(q), sectorIds, page, opportunityResultSize);
+        		searchOpportunityByNameAndSectors(XSSFilterUtil.filter(q), sectoridlist, page, opportunityResultSize);
         ContentPageModel contentPageModel = getContentPageForLabelOrId(SEARCH_OPPORTUNITY_PAGE);
 
         int[] paginationLimits = getPaginationLimits(page, searchPageData.getPagination().getNumberOfPages());

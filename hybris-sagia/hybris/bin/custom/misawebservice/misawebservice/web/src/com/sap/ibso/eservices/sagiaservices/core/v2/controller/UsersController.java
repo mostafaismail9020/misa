@@ -23,6 +23,7 @@ import de.hybris.platform.commercewebservicescommons.dto.user.UserSignUpWsDTO;
 import de.hybris.platform.commercewebservicescommons.dto.user.UserWsDTO;
 import de.hybris.platform.commercewebservicescommons.errors.exceptions.RequestParameterException;
 import de.hybris.platform.converters.Populator;
+import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.webservicescommons.cache.CacheControl;
 import de.hybris.platform.webservicescommons.cache.CacheControlDirective;
@@ -448,6 +449,22 @@ public class UsersController extends BaseCommerceController
 	{
 		final CustomerData customerData = sagiaCustomerFacade.getCustomerByMobileNumber(mobileNumber, mobileCountryCode);
 		return getDataMapper().map(customerData, UserWsDTO.class, fields);
+	}
+	
+	@Secured(
+			{ "ROLE_CUSTOMERGROUP", "ROLE_TRUSTED_CLIENT", "ROLE_CUSTOMERMANAGERGROUP" })
+	@RequestMapping(value = "/{mobileNumber}/{mobileCountryCode}", method = RequestMethod.GET)
+	@SiteChannelRestriction(allowedSiteChannelsProperty = API_COMPATIBILITY_B2C_CHANNELS)
+	@ApiOperation(nickname = "getCustomerByMobileNo", value = "Get customer by moible no", notes = "Returns customer profile.")
+	@ResponseBody
+	@ApiBaseSiteIdAndUserIdParam
+	public UserWsDTO getUserByPhoneNo(@ApiParam(value = "Mobile number.", required = true) @PathVariable final String mobileNumber,
+									 @ApiParam(value = "Mobile country code.", required = true) @PathVariable final String mobileCountryCode,
+									 @ApiFieldsParam @RequestParam(defaultValue = DEFAULT_FIELD_SET) final String fields)
+	{
+
+			final CustomerData customerData = sagiaCustomerFacade.getCustomerByMobileNumber(mobileNumber, mobileCountryCode);
+			return getDataMapper().map(customerData, UserWsDTO.class, fields);
 	}
 
 }

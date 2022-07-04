@@ -3,6 +3,7 @@ package com.sap.ibso.eservices.core.sagia.services;
 import com.sap.ibso.eservices.core.enums.LicenseStatus;
 import com.sap.ibso.eservices.core.model.*;
 import de.hybris.platform.core.model.media.MediaModel;
+import com.sap.ibso.eservices.core.model.SagiaCMSParagraphMediaComponentModel;
 
 import java.io.InputStream;
 import java.util.List;
@@ -41,6 +42,13 @@ public interface LicenseApplyService {
 	SagiaLicenseModel getLicense(LicenseStatus licenseStatus);
 	
 	public SagiaLicenseModel cloneLicense(SagiaLicenseModel originalLicense) ;
+	
+	
+	SagiaCMSParagraphMediaComponentModel getParagraphLicenseMedia(String uid);
+
+
+
+	
 	List<RhqActivitiesModel> getCorporateActivities();
 	List<RhqActivitiesModel> getStrategicActivities();
 	List<RhqActivitiesModel> getManagementActivities();

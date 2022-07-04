@@ -75,7 +75,7 @@ public class LicenseAmendmentController extends SagiaAbstractPageController {
         model.addAttribute("draftExists", sagiaDraftFacade.isJsonDraftExists(SAGIA_LICENSE_AMEND));
 		SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_LICENSE_AMEND);
         model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
-
+        model.addAttribute("sagiaService", sagiaService);
 
         model.addAttribute("srId", "");
         if (request.getRequestURI().contains("display")) {

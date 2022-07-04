@@ -152,6 +152,10 @@ public class SagiaSpecialServicesController extends SagiaAbstractPageController 
 
         model.addAttribute(ENTITY_STATUS, getEntityStatus());
         model.addAttribute(CANCELSUPPORTLETTER,isCancellationLetter);
+        
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(serviceDiscriminator);
+        model.addAttribute("sagiaService", sagiaService);
+        
         storeCmsPageInModel(model, getContentPageForLabelOrId(SAGIA_SPECIAL_SERVICES_CMS_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SAGIA_SPECIAL_SERVICES_CMS_PAGE));
         return getViewForPage(model);
@@ -239,7 +243,8 @@ public class SagiaSpecialServicesController extends SagiaAbstractPageController 
         model.addAttribute(SPECIAL_SERVICE_HEADER, specialServiceHeader);
         model.addAttribute("serviceApplicant", serviceApplicant);
 		
-		SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(serviceDiscriminator);     
+		SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(serviceDiscriminator);
+		model.addAttribute("sagiaService", sagiaService);
         model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
         
         String currentLanguage = i18NService.getCurrentLocale().getLanguage().toUpperCase();

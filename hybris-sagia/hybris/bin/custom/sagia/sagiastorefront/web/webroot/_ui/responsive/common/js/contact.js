@@ -18,6 +18,7 @@ function onContactSubmit() {
         type: "POST",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
+        headers : {"g-recaptcha-response": grecaptcha.getResponse()},
         data: JSON.stringify({
             name: $.trim($("#crName").val()),
             email: $.trim($("#crEmail").val()),

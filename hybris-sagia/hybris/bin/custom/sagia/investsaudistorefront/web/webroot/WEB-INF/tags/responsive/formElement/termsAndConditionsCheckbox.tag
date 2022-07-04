@@ -28,7 +28,7 @@
                 <c:url var="TandCUrl" value="/termsAndConditions"/>
             </c:when>
         </c:choose>
-        <spring:theme code="register.termsConditions" arguments="${TandCUrl}"/>
+        <spring:theme code="register.termsConditions" arguments="/en/cms/sagia-cms-TandC-registration"/>
     </label>
     <div class="help-block"><form:errors path="${path}"/></div>
 </div>

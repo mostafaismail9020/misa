@@ -33,11 +33,12 @@
 		<header:header hideHeaderLinks="${hideHeaderLinks}" />
 		<a id="skip-to-content"></a>
 
-		<main>
+		<main class="global-message-position">
 			<common:globalMessages />
+			<div class ="page-content-position">
 			<jsp:doBody />
+			</div>
 		</main>
-
 		<footer:footer />
 	</jsp:body>
 </template:master>

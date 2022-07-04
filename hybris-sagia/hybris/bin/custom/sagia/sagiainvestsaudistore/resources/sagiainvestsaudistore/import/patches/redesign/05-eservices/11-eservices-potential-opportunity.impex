@@ -1,0 +1,33 @@
+#################### My Potential Opportunity ###################
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+
+
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]            ; name                             	; masterTemplate(uid, $contentCV); label				; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; previewImage(code, $contentCV)[default = 'ContentPageModel__function_preview'];
+                         ;                          ; potential-opportunity         ; Investor Potential Opportunity	; SagiaTemplate                  ; potential-opportunity;
+                         ;                          ; service-request				; Investor Service Request			; SagiaTemplate                  ; service-request		;
+
+
+INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                ; name               			; page                                                                        		; actions(uid, $contentCV); &componentRef				;
+								 ;                          ; PotentialOpportunityComponent		; Sagia Potential Opportunity	; /WEB-INF/views/responsive/pages/potentialopportunity/myPotentialOpportunity.jsp	;                         ; PotentialOpportunityComponent;
+								 ;                          ; ServiceRequestComponent			; Sagia Service Request    		; /WEB-INF/views/responsive/pages/potentialopportunity/myServiceRequest.jsp			;                         ; ServiceRequestComponent		;
+
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                            ; name                                	; active; cmsComponents(&componentRef)      ;
+                         ;                          ; InnerPageContentSlot-PotentialOpportunity		; SAGIA INVESTOR POTENTIAL OPPORTUNITY	; true  ; PotentialOpportunityComponent		;
+                         ;                          ; InnerPageContentSlot-ServiceRequest			; SAGIA INVESTOR SERVICE REQUEST		; true  ; ServiceRequestComponent			;
+
+
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]                      		; position[unique = true]	; page(uid, $contentCV)[unique = true]; contentSlot(uid, $contentCV)[unique = true]	;
+                                ;                          ; InnerPageContentSlot-PotentialOpportunity		; InnerPageContentSlot   	; potential-opportunity               ; InnerPageContentSlot-PotentialOpportunity   ;
+                                ;                          ; InnerPageContentSlot-ServiceRequest			; InnerPageContentSlot   	; service-request		              ; InnerPageContentSlot-ServiceRequest   		;
+
+
+
+
+

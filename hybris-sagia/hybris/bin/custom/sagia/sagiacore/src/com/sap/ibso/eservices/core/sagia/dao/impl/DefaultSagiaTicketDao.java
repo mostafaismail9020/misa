@@ -1,9 +1,14 @@
 package com.sap.ibso.eservices.core.sagia.dao.impl;
 
-
+import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaTicketDao;
+import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
+import de.hybris.platform.servicelayer.search.FlexibleSearchService;
+import de.hybris.platform.servicelayer.search.SearchResult;
 import de.hybris.platform.ticket.dao.impl.DefaultTicketDao;
 import de.hybris.platform.ticket.enums.CsTicketState;
+import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
@@ -20,6 +25,11 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Required;
 import org.apache.commons.lang.StringUtils;
 
+import javax.annotation.Resource;
+import de.hybris.platform.b2b.services.B2BUnitService;
+import java.util.stream.Collectors;
+
+
 public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTicketDao {
 	
 	private SearchRestrictionService searchRestrictionService;
@@ -30,7 +40,7 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 			+ CsTicketModel._TYPECODE + ":" + CsTicketModel.CUSTOMER + "} = {" + B2BCustomerModel._TYPECODE + ":"
 			+ B2BCustomerModel.PK + "} JOIN " + B2BUnitModel._TYPECODE + " as " + B2BUnitModel._TYPECODE + " ON {"
 			+ B2BUnitModel._TYPECODE + ":" + B2BUnitModel.PK + "} = {" + B2BCustomerModel._TYPECODE + ":"
-			+ B2BCustomerModel.DEFAULTB2BUNIT + "}} WHERE {" + B2BUnitModel._TYPECODE + ":" + B2BUnitModel.UID + "} = ?b2bUnit";
+			+ B2BCustomerModel.DEFAULTB2BUNIT + "}} WHERE {" + B2BUnitModel._TYPECODE + ":" + B2BUnitModel.UID + "} IN (?b2bUnits)";
 
 	private static String FIND_TICKETS_FOR_GIVEN_UNIT_QUERY = "SELECT {" + CsTicketModel._TYPECODE
 			+ ":" + CsTicketModel.PK + "} FROM { " + CsTicketModel._TYPECODE + " as "
@@ -43,6 +53,7 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 			+ " WHERE {" + B2BUnitModel._TYPECODE + ":" + B2BUnitModel.UID + "} IN (?b2bUnit) AND "
 			+ "{"+EnumerationValueModel._TYPECODE +":"+EnumerationValueModel.CODE+"} in ('"+ CsTicketState.WOAGPENDINGAPPROVAL.getCode()+"', '"
 			+ CsTicketState.WOAGAPPROVED.getCode()+"', '"+CsTicketState.WOAGREJECTED.getCode()+"', '"+CsTicketState.UPLOADED.getCode()+"')";
+	
 
 
 //	private static final String FIND_TICKETS_BY_TICKET_CATEGORY = "SELECT {" + CsTicketModel._TYPECODE
@@ -88,6 +99,8 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 	private static final String SORT_TICKETS_BY_UNIT_ASC = " ORDER BY {" + B2BUnitModel._TYPECODE + ":"
 			+ B2BUnitModel.NAME + "} ASC";
 	
+	@Resource
+	private B2BUnitService b2bUnitService;
 	
 	@Override
 	public SearchPageData<CsTicketModel> findTicketsByTicketCategory(PageableData pageableData, String ticketCategory, String sector) {
@@ -132,7 +145,17 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 	@Override
 	public SearchPageData<CsTicketModel> findTicketsByB2BUnit(PageableData pageableData, String b2bUnit) {
 		final Map<String, Object> queryParams = new HashMap<String, Object>(1);
-		queryParams.put("b2bUnit", b2bUnit);
+		var b2bUnitModel = b2bUnitService.getUnitForUid(b2bUnit);
+		List<String> allMembers = new ArrayList<>();
+		if(CollectionUtils.isNotEmpty(b2bUnitModel.getMembers())) {
+			allMembers = b2bUnitModel.getMembers().stream().filter(member -> member instanceof B2BUnitModel).map(member ->member.getUid())
+					.collect(Collectors.toList());
+			allMembers.add(b2bUnit);
+			
+			queryParams.put("b2bUnits", allMembers);
+		}else {
+			queryParams.put("b2bUnits", Arrays.asList(b2bUnit));
+		}
 
 		final List<SortQueryData> sortQueries = Arrays
 				.asList(
@@ -200,6 +223,40 @@ public class DefaultSagiaTicketDao extends DefaultTicketDao implements SagiaTick
 	{
 		this.searchRestrictionService = searchRestrictionService;
 	}
+  
+  @Override
+	public List<ContactTicketModel> getScpiTickets(String convertedDate) {
+		final StringBuilder query = new StringBuilder();
+		query.append(" SELECT {PK} FROM { ContactTicket ");
+		query.append(" } WHERE {creationtime} >= ?convertedDate AND {sent2Scpi} is null OR {sent2Scpi} = 0 ");
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("convertedDate", convertedDate);
+		final SearchResult<ContactTicketModel> result = getFlexibleSearchService().search(query.toString(), parameters);
+		return result.getResult();
+	}
 
+	@Override
+	public List<ServiceRequestModel> getScpiServiceRequest(String convertedDate) {
+		
+		final StringBuilder query = new StringBuilder();
+		query.append(" SELECT {PK} FROM { ServiceRequest ");
+		query.append(" } WHERE {creationtime} >= ?convertedDate AND {sent2Scpi} is null OR {sent2Scpi} = 0 ");
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("convertedDate", convertedDate);
+		final SearchResult<ServiceRequestModel> result = getFlexibleSearchService().search(query.toString(), parameters);
+		return result.getResult();
+	}
+
+	@Override
+	public List<CsCustomerEventModel> getScpiCustomerEvents(String convertedDate){
+		
+		final StringBuilder query = new StringBuilder();
+		query.append(" SELECT {event.PK} FROM { CsCustomerEvent as event join CSInterventionType as type on {event.interventionType}={type.pk}");
+		query.append("} WHERE {type.code}= 'TicketMessage' AND {event.creationtime} >= ?convertedDate AND {event.sent2Scpi} is null OR {sent2Scpi} = 0 ");
+		final Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("convertedDate", convertedDate);
+		final SearchResult<CsCustomerEventModel> result = getFlexibleSearchService().search(query.toString(), parameters);
+		return result.getResult(); 
+	}
 
 }

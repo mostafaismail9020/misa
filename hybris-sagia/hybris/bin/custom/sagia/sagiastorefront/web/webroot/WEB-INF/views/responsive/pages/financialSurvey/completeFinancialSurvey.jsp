@@ -20,8 +20,59 @@
 
 <%--<%@ include file="/WEB-INF/tags/responsive/common/errorModal.tag" %>--%>
 <%--<%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>--%>
+<div class="mainSection mainSection">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    MY QUARTERLY FDI SURVEYS
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                </c:if>
+                <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                    <c:if test="${hasLicense or hasAwaitingPayment}">
+                        <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                            <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                            <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                        </button>
+                    </c:if>
+                    <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                    <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                        <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                        <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                        <div class="sagiaNavigation-subPane-actions">
+                            <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                        </div>
+                    </div>
+                </div>
+                    <!--<div class="sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.png"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                    </div>-->
 
-<div class="mainSection mainSection_white mainSection_narrow">
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="mainSection mainSection_white mainSection_narrow">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <button id="expandAmendmentHistoryBtnId"
@@ -38,7 +89,7 @@
             </button>
         </div>
     </div>
-</div>
+</div> -->
 
 <div
         class="mainSection mainSection_white mainSection_narrow mainSection_noPadding">
@@ -407,7 +458,7 @@
                             </div>
                             <div
                                     class="contentModule-actions contentModule-actions_spaceBetween">
-                                <button type="button"
+                                <button type="button" id="cancelTabEntityBtnId"
                                         class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
                                     <spring:theme code="general.cancel"/>
                                 </button>
@@ -578,8 +629,8 @@
 
                             <div
                                     class="contentModule-actions contentModule-actions_spaceBetween">
-                                <button type="button"
-                                        class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+                                <button type="button" id="cancelTabSubsidiariesBtnId"
+                                        class="btn btn-secondary  newAmendmentBtn">
                                     <spring:theme code="general.cancel"/>
                                 </button>
                                 <button id="nextTabSubsidiariesBtnId" type="button"
@@ -1161,8 +1212,8 @@
 
                             <div
                                     class="contentModule-actions contentModule-actions_spaceBetween">
-                                <button type="button"
-                                        class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+                                <button type="button" id="cancelTabShareholdersEquityBtnId"
+                                        class="btn btn-secondary  newAmendmentBtn">
                                     <spring:theme code="general.cancel"/>
                                 </button>
 
@@ -1185,7 +1236,7 @@
                         <div class="contentModule">
 
                             <div class="contentModule-section">
-                                <div class="tableModule tableModule_noOverflow">
+                                <div class="tableModule">
                                     <table class="tableModule-table">
                                         <thead class="tableModule-head">
                                         <tr>
@@ -1255,7 +1306,7 @@
 
 
                             <div class="contentModule-section">
-                                <div class="tableModule tableModule_noOverflow">
+                                <div class="tableModule">
                                     <table class="tableModule-table">
                                         <thead class="tableModule-head">
                                         <tr>
@@ -1324,8 +1375,8 @@
 
                             <div
                                     class="contentModule-actions contentModule-actions_spaceBetween">
-                                <button type="button"
-                                        class="btn btn-secondary cancelAmendmentBtn newAmendmentBtn">
+                                <button type="button" id="cancelTabShareholdersBtnId"
+                                        class="btn btn-secondary  newAmendmentBtn">
                                     <spring:theme code="general.cancel"/>
                                 </button>
                                 <button id="nextTabShareholdersBtnId" type="button"
@@ -1337,7 +1388,7 @@
                     </div>
 
 
-                    <div class="panelTabs-head" id="tab5">
+                    <div class="panelTabs-head" style="pointer-events: none;cursor: default;" id="tab5">
                         <icon:documentsUpload/>
                         <span class="panelTabs-label"><spring:theme code="license.attachments"/></span>
                     </div>
@@ -1355,7 +1406,7 @@
                                             <div class="contentModule-headline">
                                                 <icon:documents/><spring:theme code="general.attachments"/>
                                             </div>
-
+                                            <hr class="hr w-100">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="formInputFile">
@@ -1372,7 +1423,7 @@
                                                 </div>
 
                                             </div>
-                                            <div><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
+                                            <div class="form-condition-spl-notes"><spring:theme code="sagia.upload.file.size.note" arguments="${maxUploadSize}"/></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1380,7 +1431,7 @@
                                     <formElement:termsAndConditionsCheckbox event="FINANCIAL_STATEMENT" id="termsAndConditions" path="termsAndConditionsChecked" containerCssClass="terms-and-condition"/>
                                 </div>
                                 <div class="mainSection-linkActions mainSection-linkActions_spaceBetween mainSection-linkActions_hasPadding">
-                                    <button type="reset" class="btn btn-secondary" onclick="window.location.href='${encodedContextPath}">
+                                    <button type="reset" class="btn btn-secondary" id="cancelSubmit">
                                         <spring:theme code="general.cancel"/>
                                     </button>
                                     <button type="submit" value="Submit request" class="btn js-submit-financialStatement" disabled><spring:theme code="general.submit"/></button>
@@ -1472,6 +1523,7 @@
                     <div class="contentModule-headline">
                         <spring:theme code="financial.survey.shareholder"/>
                     </div>
+                    <hr class="hr w-100">
                     <div id="shareholderPersonEntityTypeId" class="row">
                         <div class="col-md-8">
                             <div class="formRadioBox">
@@ -1500,7 +1552,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="license.basicinformation"/>
                         </div>
-
+                        <hr class="hr w-100">
                         <%--Entity shareholder--%>
                         <div id="entityShareholderId">
 
@@ -1520,7 +1572,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="formInputBox">
+                                    <div class="formSelectBox">
                                         <div class="form-group">
                                             <select id="companyCountry" name="companyCountry"
                                                     class="js-select2-oneColumn form-control"></select> <label
@@ -1544,7 +1596,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="formInputBox">
+                                    <div class="formSelectBox">
                                         <div class="form-group">
                                             <select id="nationalityOfUCPId" name="nationalityOfUCP"
                                                     class="js-select2-oneColumn form-control"></select> <label
@@ -1624,6 +1676,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareinformation"/>
                         </div>
+                        <hr class="hr w-100">
 
                         <div id="shareholderAddressId" class="row">
 
@@ -1751,7 +1804,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareholderTransaction"/>
                         </div>
-
+                        <hr class="hr w-100">
                         <tags:transaction/>
 
 
@@ -1759,6 +1812,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="general.shareholderequity"/>
                         </div>
+                        <hr class="hr w-100">
 
                         <div  class="row">
                         <div class="col-md-12">
@@ -1941,6 +1995,7 @@
                     <div class="contentModule-headline">
                         <spring:theme code="license.branchdetails"/>
                     </div>
+                    <hr class="hr w-100">
 
                     <div class="row">
                         <div class="col-md-6">
@@ -1988,6 +2043,7 @@
                     <div class="contentModule-headline">
                         <spring:theme code="license.contactinformation"/>
                     </div>
+                    <hr class="hr w-100">
 
                     <div class="row">
                         <div class="col-md-6">
@@ -2450,6 +2506,7 @@
                     <div class="contentModule-headline">
                         <spring:theme code="financial.survey.affiliate"/>
                     </div>
+                    <hr class="hr w-100">
                     <div id="affiliatePersonEntityTypeId" class="row">
                         <div class="col-md-8">
                             <div class="formRadioBox">
@@ -2478,6 +2535,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="license.basicinformation"/>
                         </div>
+                        <hr class="hr w-100">
 
                         <%--Entity affiliate--%>
                         <div id="entityAffiliateId">
@@ -2616,7 +2674,7 @@
                         <div class="contentModule-headline">
                             <spring:theme code="financial.survey.shareholderTransaction"/>
                         </div>
-
+                        <hr class="hr w-100">
                         <tags:transaction/>
 
 

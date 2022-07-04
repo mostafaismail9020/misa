@@ -53,8 +53,14 @@
 			<map merge="true">
 				<entry key="CMSLinkComponent" value-ref="cmsLinkComponentRenderer"/>
 				<entry key="ImageMapComponent" value-ref="imageMapComponentRenderer"/>
+				<entry key="SagiaCMSParagraphMediaComponent" value-ref="cmsCMSParagraphMediaComponentRenderer" />
 			</map>
 		</property>
 	</bean>
+
+	<alias alias="cmsCMSParagraphMediaComponentRenderer" name="defaultCMSParagraphMediaComponentRenderer" />
+	<bean id="defaultCMSParagraphMediaComponentRenderer"
+		class="com.investsaudi.portal.facades.renderer.impl.CMSParagraphMediaComponentRenderer" />
+	
 
 </beans>

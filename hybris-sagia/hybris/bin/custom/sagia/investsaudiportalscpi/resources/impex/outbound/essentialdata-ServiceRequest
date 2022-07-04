@@ -1,0 +1,30 @@
+#To send service request to cpi from hybris
+ 
+INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
+; ServiceRequest; INBOUND 
+ 
+INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
+; ServiceRequest	; ServiceCategory 	; ServiceCategory 	; 	; ALL_SUBTYPES           	;  
+; ServiceRequest	; IncidentCategory	; IncidentCategory	; 	; ALL_SUBTYPES           	;  
+; ServiceRequest	; User            	; User            	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; ServiceRequest	; Priority        	; Priority        	; 	; ALL_SUBTYPES           	;  
+; ServiceRequest	; PartnerType     	; PartnerType     	; 	; ALL_SUBTYPES           	;  
+; ServiceRequest	; ContactTicket   	; ContactTicket   	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; ServiceRequest	; ServiceRequest  	; ServiceRequest  	; true	; ALL_SUB_AND_SUPER_TYPES	;  
+ 
+INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
+; ServiceRequest:ServiceCategory 	; code            	; ServiceCategory:code           	;                                	; true	;  
+; ServiceRequest:IncidentCategory	; code            	; IncidentCategory:code          	;                                	; true	;  
+; ServiceRequest:User            	; uid             	; User:uid                       	;                                	; true	;  
+; ServiceRequest:Priority        	; code            	; Priority:code                  	;                                	; true	;  
+; ServiceRequest:PartnerType     	; code            	; PartnerType:code               	;                                	; true	;  
+; ServiceRequest:ContactTicket   	; ticketID        	; ContactTicket:ticketID         	;                                	; true	;  
+; ServiceRequest:ContactTicket   	; customer        	; ContactTicket:customer         	; ServiceRequest:User            	; 	;  
+; ServiceRequest:ServiceRequest  	; contactTicket   	; ServiceRequest:contactTicket   	; ServiceRequest:ContactTicket   	; 	;  
+; ServiceRequest:ServiceRequest  	; incidentCategory	; ServiceRequest:incidentCategory	; ServiceRequest:IncidentCategory	; 	;  
+; ServiceRequest:ServiceRequest  	; partnerType     	; ServiceRequest:partnerType     	; ServiceRequest:PartnerType     	; 	;  
+; ServiceRequest:ServiceRequest  	; serviceCategory 	; ServiceRequest:serviceCategory 	; ServiceRequest:ServiceCategory 	; 	;  
+; ServiceRequest:ServiceRequest  	; subject         	; ServiceRequest:subject         	;                                	; 	;  
+; ServiceRequest:ServiceRequest  	; priority        	; ServiceRequest:priority        	; ServiceRequest:Priority        	; 	;  
+; ServiceRequest:ServiceRequest  	; id              	; ServiceRequest:id              	;                                	; true	;  
+

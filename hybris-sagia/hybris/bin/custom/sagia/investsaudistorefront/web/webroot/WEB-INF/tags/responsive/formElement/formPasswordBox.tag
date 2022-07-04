@@ -23,6 +23,6 @@
 				<span>&nbsp;<spring:theme code="login.optional" /></span>
 			</c:if>
 		</label>
-		<form:password cssClass="${inputCSS}" id="${idKey}" path="${path}" autocomplete="off"/>
+		<form:password cssClass="${inputCSS}" id="${idKey}" path="${path}" autocomplete="off" disabled="${disabled}"/>
 	</ycommerce:testId>
 </template:errorSpanField>

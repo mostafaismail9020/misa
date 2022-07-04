@@ -231,6 +231,8 @@ public class SagiaLicenseRenewController extends SagiaAbstractPageController {
         if (request.getRequestURI().contains("renew-redirect")) {
             model.addAttribute("fromRenewSubmitPage", true);
         }
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SAGIA_LICENSE_RENEW_SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
         model.addAttribute("serviceDescription", getServiceDescription(request.getServletPath()));
         return getViewForPage(model);
     }
@@ -347,7 +349,7 @@ public class SagiaLicenseRenewController extends SagiaAbstractPageController {
         		if(subsOutstandingFee > 0) {
         			licenseDuration.setName(getMessageSource().getMessage("license.entity.year.outstanding."+i, new Object[] {i*licenseFeePerYr, subsOutstandingFee}, getI18nService().getCurrentLocale()));
         		}else {
-        			licenseDuration.setName(getMessageSource().getMessage("license.entity.year."+i, new Object[] {i*licenseFeePerYr}, getI18nService().getCurrentLocale()));
+        			licenseDuration.setName(getMessageSource().getMessage("license.entity.year.renew."+i, new Object[] {i*licenseFeePerYr}, getI18nService().getCurrentLocale()));
         		}
         		
         	}else {

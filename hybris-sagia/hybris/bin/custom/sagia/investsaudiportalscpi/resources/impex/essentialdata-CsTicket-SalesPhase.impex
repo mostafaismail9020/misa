@@ -1,3 +1,5 @@
+#To update salesPhase from cpi to commerce
+
 INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code) 
 ; InboundSalesPhase; INBOUND 
  

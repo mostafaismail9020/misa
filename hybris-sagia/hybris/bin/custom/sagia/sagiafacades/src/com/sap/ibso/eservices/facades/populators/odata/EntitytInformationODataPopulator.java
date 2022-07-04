@@ -81,7 +81,7 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 			}
 			target.setRhqCenterAdmin(listOfAdminCenter.deleteCharAt(listOfAdminCenter.length() - 1).toString());
 		}
-		if(!source.getListOfRhqRegions().isEmpty()) {
+/*		if(!source.getListOfRhqRegions().isEmpty()) {
 			final StringBuilder listOfRhqRegions = new StringBuilder();
 			for (final String region : source.getListOfRhqRegions()) {
 				listOfRhqRegions.append(sagiaRegionDAO.getRhqRegionCodeForName(region).getCode());
@@ -96,9 +96,9 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 				listOfRhqCountries.append(",");
 			}
 			target.setListOfRhqCountries(listOfRhqCountries.deleteCharAt(listOfRhqCountries.length() - 1).toString());
-			target.setRhqSubsidiaryPresence(source.getRhqSubsidiaryPresence());
-		}
 
+		}*/
+			target.setRhqSubsidiaryPresence(source.getRhqSubsidiaryPresence());
 		    target.setLicenseDuration(source.getLicenseDuration());
 		    target.setEntityName(source.getEntityName());
 		    target.setEntityNameArabic(source.getEntityNameArabic());

@@ -3,6 +3,7 @@ package com.investsaudi.portal.core.dao.impl;
 import com.google.common.collect.ImmutableMap;
 import com.investsaudi.portal.core.dao.InvestSaudiOpportunityDao;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
+import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.core.servicelayer.data.PaginationData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
@@ -15,16 +16,21 @@ import de.hybris.platform.servicelayer.search.paginated.PaginatedFlexibleSearchS
 
 import javax.annotation.Resource;
 import java.util.*;
+import org.apache.log4j.Logger;
 
 import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNull;
 
 public class InvestSaudiOpportunityDaoImpl extends DefaultGenericDao<OpportunityProductModel> implements InvestSaudiOpportunityDao {
+	
+	private static final Logger LOG = Logger.getLogger(InvestSaudiOpportunityDaoImpl.class);
 
     @Resource
     private FlexibleSearchService flexibleSearchService;
 
     @Resource
     private PaginatedFlexibleSearchService paginatedFlexibleSearchService;
+	
+	private static final String QUERY_OPPORTUNITY_COMPONENT = "SELECT {p:pk} FROM {OpportunityProduct AS p JOIN CatalogVersion AS cv ON {p.catalogVersion}={cv.pk}} WHERE {p.code}=?code AND {cv.pk} = ?catalogVersionPk"; 
 
     private static final String QUERY_FEATURED_OPPORTUNITIES = "SELECT {p:pk} FROM {OpportunityProduct AS p} WHERE {p:featured} = ?featuredValue" + " ORDER BY {p.creationtime} DESC";
 
@@ -47,6 +53,22 @@ public class InvestSaudiOpportunityDaoImpl extends DefaultGenericDao<Opportunity
         validateParameterNotNull(code, "Opportunity Product code must not be null!");
 
         return find(Collections.singletonMap(ProductModel.CODE, (Object) code));
+    }
+	
+	@Override
+    public OpportunityProductModel findProductByCodeAndCatalogVersion(CatalogVersionModel catalogVersion, String code) {
+    	validateParameterNotNull(catalogVersion, "CatalogVersion must not be null!");
+        validateParameterNotNull(code, "Opportunity Product code must not be null!");
+        
+        final Map<String, Object> params = new HashMap<String, Object>();      
+ 	    params.put("code", code);
+ 	    params.put("catalogVersionPk", catalogVersion.getPk());
+ 	    LOG.debug("OpportunityProductModel code: "+code);
+ 	    LOG.debug("catalogVersionPk: "+catalogVersion.getPk());
+ 	    
+        final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(QUERY_OPPORTUNITY_COMPONENT, params); 
+        final SearchResult<OpportunityProductModel> resultList = flexibleSearchService.search(searchQuery);
+        return (null != resultList && resultList.getResult().size() > 0) ? resultList.getResult().get(0) : null; 
     }
 
     @Override

@@ -9,9 +9,9 @@
 
 <div style="${editable ? 'margin-left:-15px; margin-right: -15px;' : 'width:auto; '}height:auto;" class="row">
     <%--<div class="col-12 col-md-8">--%>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-12">
         <%-- start Ask our expert --%>
-        <div class="dashboardWidget js-dashboardWidget dashboardWidget_noRadiusRight"
+        <div class="dashboardWidget js-dashboardWidget dashboardWidget_noRadiusRight no-border"
                       data-eServiceTutorial-index="3"
                       data-eServiceTutorial-position='<spring:theme code="dashboard.tutorial.step3.position" />'
                       data-eServiceTutorial-offset='<spring:theme code="dashboard.tutorial.step3.offset" />'
@@ -21,9 +21,9 @@
                 <dashboard:addAndRemoveComponent checkboxIndex="4"/>
             </c:if>
             <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                <span>
+              
                     <spring:theme code="dashboard.support.title"/>
-                </span>
+          
                 <div class="dashboardWidget-headline-icon"><icon:ask-our-expert/></div>
             </div>
             <div class="dashboardWidget-body ">
@@ -187,7 +187,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <%--<div class="row">
             <div class="col-12 col-md-12">
                 <div class="dashboardWidget dashboardWidget_bg dashboardWidget_noRadiusLeft">
                     <div class="dashboardWidget-headline js-dashboardWidget-headline">
@@ -215,7 +215,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
     </div>
 </div>
 

@@ -117,11 +117,13 @@ public class AccountSupportTicketsPageController extends AbstractSearchPageContr
 {
 	private static final Logger LOG = Logger.getLogger(AccountSupportTicketsPageController.class);
 
-	// CMS Pages
+	// CMS Pages"WOAGUserGroup"
+	
 	private static final String SUPPORT_TICKET_CODE_PATH_VARIABLE_PATTERN = "{ticketId:.*}";
 	private static final String REDIRECT_TO_SUPPORT_TICKETS_PAGE = REDIRECT_PREFIX + "/my-account/support-tickets";
 	private static final String BUSINESS_DEVELOPMENT_USER_GROUP = "BDUserGroup";
 	private static final String NIPC_USER_GROUP = "NIPCUserGroup";
+	private static final String WOAG_USER_GROUP = "WOAGUserGroup";
 	private static final String MARCOM_USER_GROUP = "marcomUserGroup";
 	private static final String DEFAULT_COUNTRY_CODE = "SA";
 	private static final String TICKET_CATEGORY_OPPORTUNITYSUBMISSION = "OPPORTUNITYSUBMISSION";
@@ -252,6 +254,9 @@ public class AccountSupportTicketsPageController extends AbstractSearchPageContr
 			//searchPageData = ticketFacade.getTicketsByB2BUnit(pageableData, b2bUnit);
 			model.addAttribute("oppType",oppType);
 			model.addAttribute("sec",sec);
+			
+		}else if(StringUtils.isNotBlank(b2bUnit)){
+			searchPageData = ticketFacade.getTicketsByB2BUnit(pageableData, b2bUnit);
 			
 		}else {
 			searchPageData = ticketFacade.getTickets(pageableData);
@@ -523,6 +528,11 @@ public class AccountSupportTicketsPageController extends AbstractSearchPageContr
 		if(currentUser != null) {
 			Set<PrincipalGroupModel> curGroups = currentUser.getGroups();
 			for(PrincipalGroupModel curGroup : curGroups) {
+				if(WOAG_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
+					model.addAttribute("woagUserGroup",curGroup.getUid());
+					model.addAttribute(CustomerticketingaddonConstants.SUPPORT_TICKET_FORM, new BDSupportTicketForm());
+					
+				}
 				if(BUSINESS_DEVELOPMENT_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
 					model.addAttribute("bdUserGroup",curGroup.getUid());
 					model.addAttribute(CustomerticketingaddonConstants.SUPPORT_TICKET_FORM, new BDSupportTicketForm());

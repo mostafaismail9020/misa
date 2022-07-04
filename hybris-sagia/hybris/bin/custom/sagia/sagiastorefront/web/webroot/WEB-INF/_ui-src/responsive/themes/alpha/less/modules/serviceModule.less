@@ -20,6 +20,8 @@
         width: 100%;
         font-size: 14px;
         color: @dark;
+        border-top: solid 1px @color-golden;
+        margin-top: initial;
 
         p {
             font-size: inherit;
@@ -34,20 +36,20 @@
         appearance: none;
         background: none;
         border: none;
-        color: #7bd35d;
+        color: @color-primary;
         font-weight: bold;
         padding: 0;
         font-size: 14px;
         cursor: pointer;
         svg path {
-            fill: #7bd35d;
+            fill: @color-primary;
         }
         
         &:hover,
         &:focus {
-            color: #5cc83b;
+            color: @color-primary;
             svg path {
-                fill: #5cc83b;
+                fill: @color-primary;
             }
         }
         
@@ -140,8 +142,8 @@
         &-detail {
             padding-top: 13px;
             padding-bottom: 20px;
-            border-top: solid 1px #ccd0d4;
-            margin-top: 11px;
+            // border-top: solid 1px @color-golden;
+            // margin-top: 11px;
         }
         
         &-actions {

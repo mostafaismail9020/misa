@@ -48,14 +48,17 @@ public class SagiaSupportVisitController  extends AbstractPageController {
 
     private static final Logger LOG = Logger.getLogger(SagiaSupportVisitController.class);
     private static final String SUPPORT_VISIT_PAGE = "support-visits";
-    private static final String SUPPORT_VISIT_CREATE_PAGE = "support-visits-create";private static final String TEXT_ERROR_SUPPORT_VISITS = "text.error.supportVisits";
+    private static final String SUPPORT_VISIT_CREATE_PAGE = "support-visits-create";
+    private static final String TEXT_ERROR_SUPPORT_VISITS = "text.error.supportVisits";
     private static final String SUPPORT_VISITS_CREATE = "/support-visits/create";
     private static final String ORG_SPRINGFRAMEWORK_VALIDATION_BINDING_RESULT = "org.springframework.validation.BindingResult.";
     private static final String SUPPORT_VISIT = "supportVisit";
     private static final String ENTITY_NAME = "FollowupServices";
     private static final String SUPPORTS_VISITS_SERVICE_ID = "ZSVR";
+    
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
+    
     @Autowired
     private SagiaSupportVisitFacade supportVisitFacade;
 
@@ -67,6 +70,7 @@ public class SagiaSupportVisitController  extends AbstractPageController {
 	
 	@Resource(name = "sagiaSearchService")
     private SagiaSearchService searchService;
+	
 
     @RequestMapping(path= {"","display/{srId}"},method = RequestMethod.GET)
     @RequireHardLogIn
@@ -94,6 +98,10 @@ public class SagiaSupportVisitController  extends AbstractPageController {
 
         model.addAttribute("processingTime", averageProcessingTimeFacade.getAverageProcessingTimeData(ENTITY_NAME));
         model.addAttribute("supportVisits", supportVisits);
+        
+        SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(SUPPORTS_VISITS_SERVICE_ID);
+        model.addAttribute("sagiaService", sagiaService);
+        
         storeCmsPageInModel(model, getContentPageForLabelOrId(SUPPORT_VISIT_PAGE));
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(SUPPORT_VISIT_PAGE));
         return getViewForPage(model);
@@ -118,7 +126,9 @@ public class SagiaSupportVisitController  extends AbstractPageController {
         boolean draftExists = sagiaDraftFacade.isDraftExists(SUPPORTS_VISITS_SERVICE_ID);
         model.addAttribute("draftExists", draftExists);
         model.addAttribute("serviceId", SUPPORTS_VISITS_SERVICE_ID);
-		SagiaServiceModel sagService = searchService.getSagiaServiceByCode(SUPPORTS_VISITS_SERVICE_ID);       
+        
+		SagiaServiceModel sagService = searchService.getSagiaServiceByCode(SUPPORTS_VISITS_SERVICE_ID);  
+		model.addAttribute("sagiaService", sagService);
         model.addAttribute("maxUploadSize", sagService.getMaxFileUploadSize());
 
         model.addAttribute(SUPPORT_VISIT, new SupportVisitForm());

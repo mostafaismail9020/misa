@@ -1,5 +1,14 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-	<path fill="#5CC83B" d="M24,17.715C24,18.977,23.065,20,21.913,20H2.87C0.935,20,0,18.977,0,17.715V6.286C0,5.023,0.935,4,2.087,4h19.826C23.065,4,24,5.023,24,6.286V17.715z"></path>
-	<path fill="#FFFFFF" d="M5,14.5H2c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h3c0.276,0,0.5,0.224,0.5,0.5S5.276,14.5,5,14.5zM15.5,14c0-0.276-0.224-0.5-0.5-0.5H7c-0.276,0-0.5,0.224-0.5,0.5s0.224,0.5,0.5,0.5h8C15.276,14.5,15.5,14.276,15.5,14zM12.346,16.666c0-0.276-0.224-0.5-0.5-0.5H2c-0.276,0-0.5,0.224-0.5,0.5s0.224,0.5,0.5,0.5h9.846C12.123,17.166,12.346,16.942,12.346,16.666z"></path>
-	<path fill="#1C242C" d="M0,6h24v4H0V6z"></path>
+<svg xmlns="http://www.w3.org/2000/svg" width="36.022" height="36.004" viewBox="0 0 36.022 36.004">
+  <g id="My_Payments" data-name="My Payments" transform="translate(0.188 0.191)">
+    <g id="Group_1691" data-name="Group 1691" transform="translate(0.312 0.313)">
+      <rect id="Rectangle_1208" data-name="Rectangle 1208" width="29.558" height="20.789" rx="2" transform="translate(0 14.211)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
+      <rect id="Rectangle_1209" data-name="Rectangle 1209" width="6.487" height="4.639" transform="translate(3.878 22.726)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Line_537" data-name="Line 537" x2="4.536" transform="translate(2.683 30.909)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Line_538" data-name="Line 538" x2="4.52" transform="translate(9.154 30.909)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Line_539" data-name="Line 539" x2="4.487" transform="translate(15.608 30.909)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Line_540" data-name="Line 540" x2="4.569" transform="translate(22.031 30.909)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Path_2307" data-name="Path 2307" d="M43.766,15.139,45.718,2.259a1.31,1.31,0,0,1,1.494-1.231L73.647,7.147a1.546,1.546,0,0,1,1.008,1.814l-2.968,17.43a1.3,1.3,0,0,1-1.489,1.2l-.959-.222" transform="translate(-39.681 -1.001)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Line_541" data-name="Line 541" x2="28.823" y2="6.533" transform="translate(5.524 5.109)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
 </svg>

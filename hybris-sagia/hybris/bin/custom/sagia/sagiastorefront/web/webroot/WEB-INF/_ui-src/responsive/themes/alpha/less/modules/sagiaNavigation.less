@@ -151,7 +151,7 @@ body.sagiaMobileNav_isActive {
 		display: inline-block;
 	}
 	&-entry-hasSub.active &-btn {
-		background-color: @white;
+		// background-color: @white;//02.02
 
 		&_indicated:before,
 		.sagiaNavigation &_indicated:before {
@@ -215,7 +215,10 @@ body.sagiaMobileNav_isActive {
 			margin: 0px 20px;
 			padding: 10px 0;
 			text-align: center;
-			border-top: 1px solid #d9d9d9;
+			border-top: 1px solid #d9d9d9;			
+			display: flex;
+			justify-content: center;
+
 			&:last-child {
 				margin-bottom: 10px;
 			}
@@ -665,7 +668,7 @@ body.sagiaMobileNav_isActive {
 		> a {
 			&:hover,
 			&:focus {
-				color: #5cc83b;
+				color: @color-primary;
 			}
 		}
 		
@@ -785,7 +788,7 @@ body.sagiaMobileNav_isActive {
 							}
 							&:hover,
 							&:focus {
-								color: #5cc83b;
+								color: @color-primary;
 							}
 							
 						}
@@ -945,7 +948,7 @@ body.sagiaMobileNav_isActive {
 		li > a {
 			&:hover,
 			&:focus {
-				color: #5cc83b;
+				color: @color-primary;
 			}
 		}		
 	}

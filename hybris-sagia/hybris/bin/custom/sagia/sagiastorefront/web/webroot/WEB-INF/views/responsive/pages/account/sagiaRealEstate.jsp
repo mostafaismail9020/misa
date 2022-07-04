@@ -11,15 +11,64 @@
     <input type="hidden" id="serviceId" value="${realEstateHistory[0].objectId}"/>
 </c:if>
 
-<div class="mainSection mainSection_dark">
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="realEstate.management"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="calendar notification">
+                        <div class="count-notification" id="unreadNotificationSpan"></div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div>-->
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="mainSection mainSection_dark">
     <div class="container">
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="realEstate.management"/></h1>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <div>
@@ -27,34 +76,149 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="mainSection mainSection_dark mainSection_noPadding">
+<div class="mainSection mainSection_dark mainSection_noPadding mt-padd-30">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(realEstateHistory) gt 1}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
-                        data-expand-target="expand01">
-                    <div><spring:theme code="text.account.followup.showServiceHistory"/><span>&#x27f6;</span></div>
-                    <div class="hidden"><spring:theme code="text.account.followup.hideServiceHistory"/><span class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+            <div class="row renewal-services w-100">
+                <div class="col-md-6 col-xl-3 col-12">
+                    <a href="${encodedContextPath}/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-md-6 col-xl-3 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                    </div>
+                </c:if>
+                <div class="col-md-6 col-xl-3 col-12 btn_align-center">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">
+                        <div>
+                            <a id="realEstateCreateBtn" data-entity-status="${entityStatus}" href="${encodedContextPath}/real-estate/create" class="btn btn_slim back_to_service"><spring:theme code="text.realEstate.create"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
+    <div class="container">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
+<div class="container">
+    <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
+        <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+        <div class=""><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+    </button>
+</div>
+<div class="container service-wrapper service-wrapper-info mb-5 expanded" id="expand-03">
+	<div class="serviceModule serviceModule_list mx-5 pt-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.overview"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.description}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.service.document"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDocuments}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.rules.restrictions"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.rulesRestrictions}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.financial.fees"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceFinancialFees}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5 pb-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"> <spring:theme code="sagia.services.duration"/> </span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDuration}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <c:if test="${not empty realEstateHistory}">
-    <div class="mainSection mainSection_dark mainSection_pdt16">
+    <div class="mainSection mainSection_dark mainSection_pdt16 service-main">
         <div class="container">
-            <div class="expandableContent expanded" id="expand01">
+            <c:if test="${fn:length(realEstateHistory) gt 1}">
+                <button class="btn_history btn_rightIconLink btn_bold btn_greenLink js-expandContent" data-expand-target="expand01">
+                    <div class=""><span><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                    <div class="hidden"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+                </button>
+            </c:if>
+            <div class="expandableContent" id="expand01">
                 <c:if test="${fn:length(realEstateHistory) gt 1}">
                     <div class="expandableContent-aside">
                         <div class="panelModule panelModule_halfRadius">
                             <div class="contentModule">
                                 <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                    <div class="contentModule-headline">
-                                        <span class="iconElement iconElement_history"><icon:history/></span>
+                                    <div class="contentModule-headline contentModule-headline-history">
+                                        <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                         <spring:theme code="text.account.followup.history"/>
                                     </div>
                                     <div class="searchInputBox searchInputBox_slim">
@@ -100,8 +264,8 @@
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div class="contentModule-headline">
-                                        <icon:info/>
+                                    <div class="contentModule-headline headline-text mob-heading-responsive">
+                                        <!-- <icon:info/> -->
                                         <spring:theme code="realEstateDetails.serviceInfo" text="Service Info: "/>
                                         <span id="reiObjectId"> ${firstElement.objectId}</span>
                                     </div>
@@ -128,50 +292,50 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <dl class="dlList dlList_separated">
-                                            <dt><spring:theme code="realEstateDetails.requestType" text="Request Type:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.requestType" text="Request Type:"/></dt>
                                             <dd id="reiRequestType">${firstElement.requestType}</dd>
-                                            <dt><spring:theme code="realEstateDetails.plotNo" text="Plot No:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.plotNo" text="Plot No:"/></dt>
                                             <dd id="reiPlotNo">${firstElement.plotNo}
                                                 <c:if test="${not empty firstElement.plotNo2}">|${firstElement.plotNo2}</c:if>
                                                 <c:if test="${not empty firstElement.plotNo3}">|${firstElement.plotNo3}</c:if>
                                                 <c:if test="${not empty firstElement.plotNo4}">|${firstElement.plotNo4}</c:if>
                                                 <c:if test="${not empty firstElement.plotNo5}">|${firstElement.plotNo5}</c:if>
                                             </dd>
-                                            <dt><spring:theme code="realEstateDetails.deedNo" text="Deed No:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.deedNo" text="Deed No:"/></dt>
                                             <dd id="reiDeedNo">${firstElement.deedNo}</dd>
-                                            <dt><spring:theme code="realEstateDetails.outsideMakkah" text="Outside Makkah:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.outsideMakkah" text="Outside Makkah:"/></dt>
                                             <dd id="reiOutsideMakkah">${firstElement.outsideMakkah}</dd>
-                                            <dt><spring:theme code="realEstateDetails.projectValue" text="Project Value:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.projectValue" text="Project Value:"/></dt>
                                             <dd id="reiProjectValue">${firstElement.projectValue}</dd>
-                                            <dt><spring:theme code="realEstateDetails.region" text="Region:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.region" text="Region:"/></dt>
                                             <dd id="reiRegion">${firstElement.region}</dd>
-                                            <dt><spring:theme code="realEstateDetails.housingType" text="Housing Type:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.housingType" text="Housing Type:"/></dt>
                                             <dd id="reiHousingType">${firstElement.housingType}</dd>
-                                            <dt><spring:theme code="realEstateDetails.unitNo" text="Unit No:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.unitNo" text="Unit No:"/></dt>
                                             <dd id="reiUnitNo">${firstElement.unitNo}</dd>
-                                            <dt><spring:theme code="realEstateDetails.additionalDetails" text="Additional Details:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.additionalDetails" text="Additional Details:"/></dt>
                                             <dd id="reiRemarks">${firstElement.remarks}</dd>
                                         </dl>
                                     </div>
                                     <div class="col-md-6">
                                         <dl class="dlList dlList_separated">
-                                            <dt><spring:theme code="realEstateDetails.realEstatetype" text="Real Estate Type:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.realEstatetype" text="Real Estate Type:"/></dt>
                                             <dd id="reiPurchaseType">${firstElement.purchaseType}</dd>
-                                            <dt><spring:theme code="realEstateDetails.plotArea" text="Plot Area:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.plotArea" text="Plot Area:"/></dt>
                                             <dd id="reiPlotArea">${firstElement.plotArea}</dd>
-                                            <dt><spring:theme code="realEstateDetails.deedDate" text="Deed date:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.deedDate" text="Deed date:"/></dt>
                                             <dd id="reiPurchaseDate">${firstElement.sagiaPurchaseDate.dateFormatted}</dd>
-                                            <dt><spring:theme code="realEstateDetails.approvedIndustrial" text="Approved Industrial:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.approvedIndustrial" text="Approved Industrial:"/></dt>
                                             <dd id="reiApprovedIndustrial">${firstElement.approvedIndustrial}</dd>
-                                            <dt><spring:theme code="realEstateDetails.price" text="Price:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.price" text="Price:"/></dt>
                                             <dd id="reiPrice">${firstElement.price}</dd>
-                                            <dt><spring:theme code="realEstateDetails.city" text="City:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.city" text="City:"/></dt>
                                             <dd id="reiCity">${firstElement.city}</dd>
-                                            <dt><spring:theme code="realEstateDetails.district" text="District:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.district" text="District:"/></dt>
                                             <dd id="reiDistrict">${firstElement.district}</dd>
-                                            <dt><spring:theme code="realEstateDetails.blockNo" text="Block No:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.blockNo" text="Block No:"/></dt>
                                             <dd id="reiBlockNo">${firstElement.blockNo}</dd>
-                                            <dt><spring:theme code="realEstateDetails.moreThan30" text="More than 30:"/></dt>
+                                            <dt class="headline-golden"><spring:theme code="realEstateDetails.moreThan30" text="More than 30:"/></dt>
                                             <dd id="reiThirtyMore">${firstElement.thirtyMore}</dd>
                                         </dl>
                                     </div>
@@ -189,20 +353,23 @@
 
                     <div id="realEstateDocuments" <c:if test="${empty firstElement.attachmentsSet}">hidden</c:if>>
                         <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
-                            <div class="contentModule">
+                            <div class="contentModule contentModule-wrap">
                                 <div class="contentModule-section contentModule-section_noDivider contentModule-section_noPadding contentModule-section_noMargin">
-                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap">
-                                        <div class="contentModule-headline contentModule-headline_bordered">
-                                            <icon:documents/>
+                                    <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap w-100">
+                                        <span class="contentModule-headline"><spring:theme code="text.account.followup.supportDocuments"/></span>
+                                        <div class="contentModule-headline-border"></div>
+                                    </div>
+                                    <!-- <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-headline_bordered w-100">
+                                        <div class="contentModule-headline headline-text">
                                             <spring:theme code="text.account.followup.supportDocuments"/>
                                         </div>
-                                    </div>
+                                    </div> -->
 
-                                    <ul id="realEstateAttachmentList" class="downloadList downloadList_maxHeight">
+                                    <ul id="realEstateAttachmentList" class="downloadList downloadList_maxHeight w-100">
                                         <c:forEach items="${firstElement.attachmentsSet}" var="attachment">
                                             <li class="downloadList-item">
                                                 <div id="realEstateAttachment_${attachment.filename}" class="downloadList-description">
-                                                    <span class="iconElement iconElement_pdf"><icon:pdf/></span>${attachment.filename}
+                                                    <span class="iconElement iconElement_pdf 111"><icon:pdf/></span>${attachment.filename}
                                                 </div>
                                                 <div class="downloadList-actions">
                                                     <a href="${encodedContextPath}/real-estate/pdf/${attachment.objectId}/${attachment.docGuid}" class="link link_nowrap" download="${attachment.fullFileName}">

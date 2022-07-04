@@ -164,3 +164,48 @@ $(document).on('click', '.serviceMenu-body-item, .serviceList-headline', functio
         }
     });
 });
+
+$(document).on('click',".services-category-list .nav .nav-link",function(){
+    $(".service_tab_pane_show").removeClass("show").removeClass("active");
+      $("#"+$(this).attr('href').replace("#","")).addClass("show").addClass("active");
+      $("#"+$(this).attr('href').replace("#","")+"1").addClass("show").addClass("active");
+
+      $(".services-category-list .nav .nav-link").removeClass("active");
+      $(this).addClass("active");
+  });
+
+  $(function(){
+      var current = location.hash ? location.hash : location.pathname;
+      let str = 'service-search';
+      current = current.substring(current.indexOf(str)+ str.length + 1)
+      current = current === "" ? $($('.services-category-list .nav .nav-link')[0]).attr('href') : current;
+      $('.services-category-list .nav .nav-link').each(function(){
+          if($(this).attr('href').indexOf(decodeURI(current)) !== -1){
+              $(".service_tab_pane_show").removeClass("show").removeClass("active");
+              $("#"+$(this).attr('href').replace("#","")).addClass("show").addClass("active");
+              $("#"+$(this).attr('href').replace("#","")+"1").addClass("show").addClass("active");
+
+              $(".services-category-list .nav .nav-link").removeClass("active");
+              $(this).addClass('active');
+
+              let active_attr = $('[aria-labelledby="'+ $(this)[0].id +'"]');
+
+              $(active_attr).addClass('show');
+              $(active_attr).addClass('d-block');
+          }
+      })
+  })
+
+
+  function RequestService(requestURL){
+      if(!$.isNumeric(requestURL)){
+          window.location = ACC.config.encodedContextPath + "/" + requestURL;
+      }
+  }
+
+  
+$(function () {
+    if (window.location.pathname === ACC.config.encodedContextPath + "/service-search") {
+        window.location =  window.location.pathname + "/FIRST";
+    }
+})

@@ -1,5 +1,8 @@
 package com.sap.ibso.eservices.core.sagia.services.impl;
 
+
+import com.investsaudi.portal.core.model.ContactTicketModel;
+import com.investsaudi.portal.core.model.ServiceRequestModel;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.b2b.services.B2BUnitService;
@@ -10,6 +13,7 @@ import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.ticket.dao.TicketDao;
 import de.hybris.platform.ticket.enums.CsTicketState;
+import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
 import de.hybris.platform.ticket.service.TicketService;
 import de.hybris.platform.ticket.service.impl.DefaultTicketService;
 import de.hybris.platform.ticket.model.CsTicketModel;
@@ -24,6 +28,9 @@ import com.sap.ibso.eservices.core.sagia.services.SagiaTicketService;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaTicketDao;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.List;
 import java.util.Set;
 
 public class DefaultSagiaTicketService extends DefaultTicketService implements SagiaTicketService {
@@ -124,6 +131,7 @@ public class DefaultSagiaTicketService extends DefaultTicketService implements S
 		return isValidApprover;
 	}
 
+	
 	private B2BUnitModel getParentB2BUnit(B2BUnitModel b2BUnitModel) {
 		B2BUnitModel parentB2BUnit = null;
 		Set<PrincipalGroupModel> parentB2BUnitModels = b2BUnitModel.getAllGroups();
@@ -139,4 +147,28 @@ public class DefaultSagiaTicketService extends DefaultTicketService implements S
 		}
 		return parentB2BUnit;
 	}
+	
+	@Override
+	public List<ContactTicketModel> getScpiTickets() {
+		return sagiaTicketDao.getScpiTickets(getConvertedDate());
+	}
+	@Override
+	public List<ServiceRequestModel> getScpiServiceRequest() {
+		return sagiaTicketDao.getScpiServiceRequest(getConvertedDate());
+	}
+	
+	@Override
+	public List<CsCustomerEventModel> getScpiCustomerEvents(){
+		return sagiaTicketDao.getScpiCustomerEvents(getConvertedDate());
+	}
+	
+	
+	public String getConvertedDate() {
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat destFormat=new SimpleDateFormat("YYYY-MM-dd HH:mm:ss.S");
+		// Substract 30 days from the calendar
+		cal.add(Calendar.DATE, -30);
+		return destFormat.format(cal.getTime());
+	}
+	
 }

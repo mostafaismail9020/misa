@@ -243,6 +243,8 @@
 	<bean id="defaultSagiaUserFacade" class="com.sap.ibso.eservices.facades.user.impl.DefaultSagiaUserFacade">
 		<property name="sagiaUserService" ref="sagiaUserService"/>
 		<property name="b2BCustomerConverter" ref="b2BCustomerConverter"/>
+		<property name="enumerationService" ref="enumerationService"/>
+		<property name="sagiaServiceRequestReversePopulator" ref="sagiaServiceRequestReversePopulator"/>
 	</bean>
 
 
@@ -935,6 +937,10 @@
 
 	<bean name="licensePopulator" class="com.sap.ibso.eservices.facades.populators.license.LicensePopulator">
 		<property name="sagiaFormatProvider" ref="sagiaFormatProvider" />
+	</bean>
+	
+	<bean name="sagiaServiceRequestReversePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaServiceRequestReversePopulator">
+	    <property name="i18nService" ref="i18NService" />
 	</bean>
 
 	<bean name="shareholdersPopulator" class="com.sap.ibso.eservices.facades.populators.license.ShareholdersPopulator"/>
@@ -1784,10 +1790,15 @@
 
 	<bean id="investSaudiCategoryFacade" class="com.investsaudi.portal.facades.category.impl.InvestSaudiCategoryFacadeImpl"/>
 
-	<bean id="investSaudiProductFacade" class="com.investsaudi.portal.facades.product.impl.InvestSaudiProductFacadeImpl"/>
+	<bean id="investSaudiProductFacade" class="com.investsaudi.portal.facades.product.impl.InvestSaudiProductFacadeImpl">
+	    <property name="modelService" ref="modelService"/>
+		<property name="opportunityProductMediaRestApiService" ref="opportunityProductMediaRestApiService"/>
+		<property name="catalogVersionService" ref="catalogVersionService" />
+	</bean>
 
 	<bean id="investSaudiOpportunityPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiOpportunityPopulator">
 		<property name="imageConverter" ref="imageConverter"/>
+		<property name="productReferenceConverter" ref="productReferenceConverter"/>
 	</bean>
 
 	<bean id="investSaudiSuccessStoryPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiSuccessStoryPopulator">

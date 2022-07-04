@@ -1,0 +1,25 @@
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged] 
+
+###################################################### -----   B2C FOOTER ----- ###############################################################
+
+UPDATE InvestSaudiFooterComponent ; uid[unique = true] ; &componentRef ; $contentCV[unique = true] ;
+                                  ; portal-footer      ; portal-footer ;                           ;
+                    
+					
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true] ; uid[unique=true] ; active	; cmsComponents(&componentRef) ;
+                          ;                         ; SagiaFooterSlot  ; true	; portal-footer                ;
+
+
+INSERT_UPDATE PageTemplate ; $contentCV[unique = true] ; uid[unique = true]           ; name                                  ; restrictedPageTypes(code); active[default = true] ;
+                           ;                           ; SagiaProfileCompanyTemplate  ; Edit Company Profile Page Template    ; ContentPage                                       ;
+                           ;                           ; SagiaTemplate                ; Sagia Page Template                   ; ContentPage                                       ;
+                           ;                           ; SagiaCMSTemplate             ; Sagia CMS Page Template               ; ContentPage                                       ;
+                           ;                           ; SagiaCMSHeaderFooterTemplate ; Sagia CMS Header Footer Page Template ; ContentPage                                       ;
+
+
+INSERT_UPDATE ContentSlotForTemplate ; uid[unique = true]                           ; position[unique = true] ; contentSlot(uid, $contentCV)[unique = true] ; allowOverwrite ; $contentCV[unique = true] ; pageTemplate(uid, $contentCV)[unique = true] ;
+                                     ; SagiaFooterSlot-SagiaProfileCompanyTemplate  ; SagiaFooter             ; SagiaFooterSlot                             ; true           ;                           ; SagiaProfileCompanyTemplate                  ;
+                                     ; SagiaFooterSlot-SagiaTemplate                ; SagiaFooter             ; SagiaFooterSlot                             ; true           ;                           ; SagiaTemplate                                ;
+                                     ; SagiaFooterSlot-SagiaCMSTemplate             ; SagiaFooter             ; SagiaFooterSlot                             ; true           ;                           ; SagiaCMSTemplate                             ;
+                                     ; SagiaFooterSlot-SagiaCMSHeaderFooterTemplate ; SagiaFooter             ; SagiaFooterSlot                             ; true           ;                           ; SagiaCMSHeaderFooterTemplate                 ;

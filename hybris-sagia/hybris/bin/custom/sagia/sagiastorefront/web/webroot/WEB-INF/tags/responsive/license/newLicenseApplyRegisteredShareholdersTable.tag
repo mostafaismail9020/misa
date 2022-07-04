@@ -32,6 +32,8 @@
             <button type="button" class="removeButton btn btn_link">
                 <icon:trashbin/>
             </button>
+        </td>
+        <td class="tableModule-bodyItem-action">
             <button type="button" class="editButton btn btn_link">
                 <icon:edit/>
             </button>

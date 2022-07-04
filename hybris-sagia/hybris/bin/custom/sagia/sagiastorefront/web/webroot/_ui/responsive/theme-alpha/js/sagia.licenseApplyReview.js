@@ -1,3 +1,4 @@
+
 SAGIA.licenseApplyReview = {
     _autoload: [
         "bindAll"
@@ -378,9 +379,6 @@ SAGIA.licenseApplyReview = {
 
 			$('#rhqSubsidiaryPresenceDiv').html(subsidiaryString);
 			switch (subsidiaryString) {
-				case "only_one_country":
-					$('#rhqSubsidiaryPresenceDiv').html('Only one country');
-					break;
 				case "2_to_5_countries":
 					$('#rhqSubsidiaryPresenceDiv').html('2 to 5 countries');
 					break;
@@ -438,7 +436,7 @@ SAGIA.licenseApplyReview = {
 					"<td width='40%'>" + getI18nText("license.apply.payment.subscription.fee.entrepreneur.price."+sagiaData.licenseYear) + "</td>" +
 					"</tr>" +
 					"<tr>" +
-					"<td width='60%'><span style='color:green;font-size:12px'>" + getI18nText("license.apply.payment.entrepreneur.description") + "</span></td>" +
+					"<td width='60%'><span style='color:#00A6BE;font-size:14px'>" + getI18nText("license.apply.payment.entrepreneur.description") + "</span></td>" +
 					"<td width='20%'>" + "</td>" +
 					"<td width='20%'>" + "</td>" +
 					"</tr>" +
@@ -449,6 +447,9 @@ SAGIA.licenseApplyReview = {
 					"</tr>");
 
 			}
+                else if(sagiaData.licenseType && (sagiaData.licenseType == '11')){
+                                        $("#tblGrid").find("tbody").append("<tr>" +"<th width='50%'>" + getI18nText("license.apply.payment.service.rhq.message") + "</th>"+"</tr>" );
+                  }
 			else{
             				$("#tblGrid").find("tbody").append("<tr>" +
             					"<th width='50%'>" + getI18nText("license.apply.payment.service") + "</th>" +

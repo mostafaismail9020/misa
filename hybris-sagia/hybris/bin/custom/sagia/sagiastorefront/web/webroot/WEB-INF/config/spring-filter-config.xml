@@ -191,6 +191,7 @@
 		<entry key="/convertToNationals/*/*/resubmit" value-ref="importMultipartFilter"/>
 		<entry key="/real-estate/save" value-ref="importMultipartFilter"/>
 		<entry key="/register/national-investor-cr" value-ref="importMultipartFilter"/>
+		<entry key="/my-sagia/update-companyLogo" value-ref="importMultipartFilter"/>
 		<entry key="/special-services/**" value-ref="importMultipartFilter"/>
 		<entry key="/file/send-data" value-ref="importMultipartFilter"/>
 		<entry key="/services/government/create" value-ref="importMultipartFilter"/>
@@ -198,6 +199,7 @@
 		<entry key="/financial-statement/create" value-ref="importMultipartFilter"/>
 		<entry key="/support-visits/create" value-ref="importMultipartFilter"/>
 		<entry key="/draft/save" value-ref="importMultipartFilter"/>
+		<entry key="/potentialOpportunity/{ticketId}/uploadAttachment" value-ref="importMultipartFilter"/>
 		<entry key="/my-sagia/financial-survey/complete/saveAttachment" value-ref="importMultipartFilter"/>
 	</util:map>
 

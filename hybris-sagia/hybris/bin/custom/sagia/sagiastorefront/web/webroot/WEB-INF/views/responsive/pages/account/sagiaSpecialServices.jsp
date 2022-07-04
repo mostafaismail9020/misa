@@ -12,10 +12,60 @@
     var serviceType = '${serviceType}';
     var commentsTitle = '<spring:theme code="text.account.followup.comments"/>';
 </script>
+
+<div class="mainSection mainSection bg-white">
+    <div class="achievement_header">
+        <img class="achievement_header_icon  page-header-image"  src="${commonResourcePath}/images/dashboard-media/Banner-icons/header-banner-image.png" alt='${imageIcon.altText}' title='${imageIcon.altText}'>
+        <div class="container">
+            <div class="banner-container aos-init aos-animate container" data-aos="fade-up">
+                <h1 data-aos="fade-up">
+                    <spring:theme code="text.specialservices.${serviceType}"/>
+                </h1>
+            </div>
+            <div class="profile-icons float-right">
+                <c:if test="${hasLicense or hasAwaitingPayment}">
+                    <div class="calendar">
+                        <a href="${encodedContextPath}/appointments" title="<spring:message code='appointments.appointmentoverview'/>">
+                            <span></span>
+                        </a>
+                    </div>
+                    <!-- <div class="calendar notification">
+                        <div class="count-notification" id="unreadNotificationSpan"></div>
+                        <a href="${encodedContextPath}/my-sagia/notifications">
+                            <span></span>
+                        </a>
+                    </div> -->
+                    <div class="calendar notification p-0 sagiaNavigation-entry sagiaNavigation-entry-hasSub">
+                        <c:if test="${hasLicense or hasAwaitingPayment}">
+                            <button class="sagiaNavigation-btn sagiaNavigation-msg js-sagiaNavigationToggle btnNotifications m-0 p-0" title="<spring:message code='account.notifications.yourMessages'/>">
+                                <span id="unreadNotificationSpan" class="notifyCount notifyCount_small"></span>
+                                <img src="${commonResourcePath}/images/dashboard-media/Profile-bar/message-in-active.svg" class="notification_b2b_img"/>
+                            </button>
+                        </c:if>
+                        <div class="sagiaNavigation-subPane-shadow js-sagiaNavigationToggle"></div>
+                        <div class="sagiaNavigation-subPane sagiaNavigation-subPane_right sagiaNavigation-subPane_visible d-my-message-popup my-msg-popup notification_b2b_content">
+                            <div class="sagiaNavigation-subPane-title sagiaNavigation-subPane-title_borderGreen"><spring:message code="header.mostRecent.text"/></div>
+                            <ul id="popupNotificationHistoryList" class="notificationList notificationList_small notificationList_borderBottom notificationList_noMargin"></ul>
+                            <div class="sagiaNavigation-subPane-actions">
+                                <a class="btn btn_slim btn_round btn_outline"  href="${encodedContextPath}/my-sagia/notifications"><spring:message code="header.viewAll.text"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <div class="profile">
+                    <a href="${encodedContextPath}/my-sagia/sagia-profile" title="<spring:theme code='company.myprofile'/>">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="mainSection mainSection_dark">
     <div class="container">
-        <div class="mainSection-header">
-            <h1 class="mainSection-headline"><spring:theme code="text.specialservices.${serviceType}"/></h1>
+        <div class="mainSection-header row service-time">
+            <!-- <h1 class="mainSection-headline"><spring:theme code="text.specialservices.${serviceType}"/></h1> -->
             <c:if test="${not empty processingTime}">
                 <div class="serviceTime">
                     <div class="serviceTime-label"><spring:theme code="average.service.time"/></div>
@@ -41,7 +91,7 @@
     </div>
 </div>
 
-<div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
+<!-- <div class="mainSection mainSection_dark mainSection_noPaddingTop mainSection_pdb12">
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <div>
@@ -56,37 +106,157 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <div class="mainSection mainSection_dark mainSection_noPadding">
     <div class="container">
-        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
-            <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink"><span
-                    class="iconElement iconElement_closeBack"><icon:close/></span><spring:theme
-                    code="general.backtodashboard"/></a>
-            <c:if test="${fn:length(specialServices) > 0}">
-                <button class="btn btn_rightIconLink btn_bold btn_greenLink js-expandContent"
-                        data-expand-target="expand01">
-                    <div class="hidden"><spring:theme
-                            code="text.specialservices.showServiceHistory"/><span>&#x27f6;</span></div>
-                    <div><spring:theme code="text.specialservices.hideServiceHistory"/><span
-                            class="iconElement iconElement_closeBack"><icon:close/></span></div>
-                </button>
-            </c:if>
+        <div class="mainSection-linkActions mainSection-linkActions_spaceBetween d-flex">
+            <div class="row renewal-services w-100">
+                <div class="col-xl-3 col-md-6 col-12">
+                    <!-- <a href="${encodedContextPath}/dashboard" class="btn btn_leftIconLink btn_darkLink back_to_service">
+                        <span class="iconElement iconElement_closeBack image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="general.backtodashboard"/></a> -->
+                        <a href="${encodedContextPath}/service-search/SAGIA SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                    </div>
+                <c:if test="${fn:length(sagiaService.tabs) > 0}">
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <button class="btn btn_leftIconLink btn_darkLink back_to_service serviceTab" data-expand-target="service-tab" onclick="expandServiceTab('${sagiaService.code}')"><spring:theme code="service.tabs.show"/></button>
+                    </div>
+                </c:if>
+                <div class="col-xl-3 col-md-6 col-12">
+                    <div class="mainSection-linkActions mainSection-linkActions_right">                              
+                        <a id="specialServiceCreateBtn" data-entity-status="${entityStatus}"
+                            data-cancel-letter="${cancelLetter}"
+                            type="submit"
+                            href="${currentUrl}/create" class="btn btn_slim back_to_service " style="display:none;">
+                            <spring:theme code="text.specialservices.create"/>
+                        </a>
+                        <input type="hidden" id="specialServiceErrorMsg" value="${specialServiceErrorMsg}"/>
+                    </div>                    
+                </div>
+                </div>
+            </div>                        
         </div>
     </div>
 </div>
-<div class="mainSection mainSection_dark mainSection_pdt16">
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
     <div class="container">
-        <div class="expandableContent expanded" id="expand01">
+        <div class="expandableContent" id="service-tab">
+            
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <button class="btn_history btn_rightIconLink btn_bold btn_greenLink btn_show_hide_service" data-expand-target="expand-03">
+        <div class="hidden"><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span> <spring:theme code="service.overview.show"/></div>
+        <div class=""><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="service.overview.hide"/></div>
+    </button>
+</div>
+<div class="container service-wrapper service-wrapper-info mb-5 expanded"  id="expand-03">
+	<div class="serviceModule serviceModule_list mx-5 pt-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.service.overview"/></span>
+					<c:choose>
+						<c:when test="${empty sagiaService.description}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.description}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.service.document"/></span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDocuments}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDocuments}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.rules.restrictions"/></span>
+					<c:choose>
+						<c:when test="${empty sagiaService.rulesRestrictions}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.rulesRestrictions}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.financial.fees"/></span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceFinancialFees}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceFinancialFees}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="serviceModule serviceModule_list mx-5 pb-4">
+		<div class="serviceModule-section">
+			<div class="serviceModule-content">
+				<div class="serviceModule-description">
+					<span class="serviceModule-headline"><spring:theme code="sagia.services.duration"/></span>
+					<c:choose>
+						<c:when test="${empty sagiaService.serviceDuration}">
+							<div class="serviceModule-detail serviceList-description"><div class="w-75"><p>N/A</p></div></div><br>
+						</c:when>
+						<c:otherwise>
+							<div class="serviceModule-detail serviceList-description"><div class="w-100"><p>${sagiaService.serviceDuration}</p></div></div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mainSection mainSection_dark mainSection_pdt16 service-main">
+    <div class="container">
+        <c:if test="${fn:length(specialServices) > 0}">
+            <button class="btn_rightIconLink btn_bold btn_greenLink js-expandContent btn_history" data-expand-target="expand01">
+                <div class=""><span class=""><img src="${commonResourcePath}/images/dashboard-media/services/Show.png" alt="show"/></span><spring:theme code="legalConsultation.showServiceHistory"/></div>
+                <div class="hidden"><span class="iconElement iconElement_closeBack " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/services/Hide.png" alt="hide"/></span><spring:theme code="legalConsultation.hideServiceHistory"/></div>
+            </button>
+        </c:if>
+        <div class="expandableContent" id="expand01">
             <c:if test="${fn:length(specialServices) > 0}">
                 <div class="expandableContent-aside">
                     <div class="panelModule panelModule_halfRadius">
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_noMargin">
-                                <div class="contentModule-headline">
-                                    <span class="iconElement iconElement_history"><icon:history/></span>
+                                <div class="contentModule-headline headline-text text-golden">
+                                    <!-- <span class="iconElement iconElement_history"><icon:history/></span> -->
                                     <spring:theme code="text.specialservices.history"/></div>
                                 <div class="searchInputBox searchInputBox_slim">
                                     <input onkeyup="filterHistory(this)" class="searchInputBox-input" type="text"
@@ -123,50 +293,56 @@
                     <div class="contentModule">
                         <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                             <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                <div class="contentModule-headline applicantList">
-                                    <icon:info/>
+                                <div class="contentModule-headline applicantList headline-text text-golden special-services-info">
+                                    <!-- <icon:info/> -->
+                                    <img src="${commonResourcePath}/images/dashboard-media/Setting.png" alt="setting" class="mr-2"/>
                                     <spring:theme
                                             code="text.specialservices.applicants.list"/>:&nbsp;${specialServiceHeader.id}
                                 </div>
 
                                 <c:if test="${fn:length(specialServices) > 0}">
-                                    <div class="statusIndicator statusIndicator_${fn:toLowerCase(specialServiceHeader.status)}">
+                                    <div class="statusIndicator pb-0 statusIndicator_${fn:toLowerCase(specialServiceHeader.status)}" id="currentStatus">
                                         <spring:theme code="text.account.followup.status"/> :
-                                        <span>${specialServiceHeader.status}</span>
+                                        <span id="statusText" class="text-golden">${specialServiceHeader.status}</span>
                                     </div>
                                 </c:if>
                             </div>
 
                             <div class="tableModule">
-                                <table class="tableModule-table">
-                                    <thead class="tableModule-head">
-                                    <tr>
-                                        <th><spring:theme code="text.specialservices.applicantName"/></th>
-                                        <th><spring:theme code="text.specialservices.iqmaNumber"/></th>
-                                        <th><spring:theme code="text.specialservices.iqmaExpiryDate"/></th>
-                                        <th><spring:theme code="text.specialservices.nationality"/></th>
-                                        <th><spring:theme code="text.specialservices.nationalityNote"/></th>
-                                        <th><spring:theme code="text.specialservices.applicantProfession"/></th>
-                                        <th><spring:theme code="text.specialservices.investorNumber"/></th>
-                                        <th><spring:theme code="text.specialservices.applicationCategory"/></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody class="tableModule-body">
-                                    <c:forEach items="${specialServiceHeader.applicants}" var="item"
-                                               varStatus="countme">
+                                <c:if test="${fn:length(specialServiceHeader.applicants) gt 0}">
+                                    <table class="tableModule-table">
+                                        <thead class="tableModule-head">
                                         <tr>
-                                            <td class="tableModule-bodyItem-right">${item.applicantName}</td>
-                                            <td>${item.iqmaNumber}</td>
-                                            <td>${item.iqmaExpiryDate}</td>
-                                            <td>${item.nationality}</td>
-                                            <td>${item.nationalityNote}</td>
-                                            <td>${item.applicantProfession}</td>
-                                            <td>${item.investorNumber}</td>
-                                            <td>${item.applicationCategory}</td>
+                                            <th><spring:theme code="text.specialservices.applicantName"/></th>
+                                            <th><spring:theme code="text.specialservices.iqmaNumber"/></th>
+                                            <th><spring:theme code="text.specialservices.iqmaExpiryDate"/></th>
+                                            <th><spring:theme code="text.specialservices.nationality"/></th>
+                                            <th><spring:theme code="text.specialservices.nationalityNote"/></th>
+                                            <th><spring:theme code="text.specialservices.applicantProfession"/></th>
+                                            <th><spring:theme code="text.specialservices.investorNumber"/></th>
+                                            <th><spring:theme code="text.specialservices.applicationCategory"/></th>
                                         </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody class="tableModule-body">
+                                        <c:forEach items="${specialServiceHeader.applicants}" var="item"
+                                                varStatus="countme">
+                                            <tr>
+                                                <td class="tableModule-bodyItem-right">${item.applicantName}</td>
+                                                <td>${item.iqmaNumber}</td>
+                                                <td>${item.iqmaExpiryDate}</td>
+                                                <td>${item.nationality}</td>
+                                                <td>${item.nationalityNote}</td>
+                                                <td>${item.applicantProfession}</td>
+                                                <td>${item.investorNumber}</td>
+                                                <td>${item.applicationCategory}</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </c:if>
+                                <c:if test="${fn:length(specialServiceHeader.applicants) lt 0}">
+                                    <div class="text-center"><span class="h5 text-center">No Data Available</span></div>
+                                </c:if>
                             </div>
                             <c:choose>
                             <c:when test="${empty specialServiceHeader.comments}">
@@ -205,8 +381,9 @@
                         <div class="contentModule">
                             <div class="contentModule-section contentModule-section_noDivider contentModule-section_slimDivider">
                                 <div class="contentModule-actions contentModule-actions_spaceBetween contentModule-actions_wrap contentModule-actions_hasStatusIndicator">
-                                    <div class="contentModule-headline">
-                                        <icon:contactPerson/>
+                                    <div class="contentModule-headline headline-text text-golden special-services-info">
+                                        <!-- <icon:contactPerson/> -->
+                                        <img src="${commonResourcePath}/images/dashboard-media/services/Contact Details.png" alt="Contact Details" class="mr-2"/>
                                         <spring:theme code="text.specialservices.contact.details"/>
                                     </div>
                                     <%--<a href="${currentUrl}/edit/${specialServiceHeader.id}"
@@ -219,15 +396,15 @@
                             <div class="row specialServicesDetails">
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated dlList_marginBottom">
-                                        <dt><spring:theme code="text.specialservices.region"/></dt>
+                                        <dt class="headline-golden"><spring:theme code="text.specialservices.region"/></dt>
                                         <dd id="specialServiceRegion">${specialServiceHeader.serviceRegion}</dd>
-                                        <dt><spring:theme code="text.specialservices.contactphonenumber"/></dt>
+                                        <dt class="headline-golden"><spring:theme code="text.specialservices.contactphonenumber"/></dt>
                                         <dd id="specialServicesEmail">${specialServiceHeader.email}</dd>
                                     </dl>
                                 </div>
                                 <div class="col-md-6">
                                     <dl class="dlList dlList_separated dlList_lineThrough">
-                                        <dt><spring:theme code="text.specialservices.contactemailaddress"/></dt>
+                                        <dt class="headline-golden"><spring:theme code="text.specialservices.contactemailaddress"/></dt>
                                         <dd id="specialServicesPhone">${specialServiceHeader.phoneNumber}</dd>
                                     </dl>
                                 </div>
@@ -254,9 +431,10 @@
                                                 </div>
                                                 <div class="downloadList-actions">
                                                     <a href="${encodedContextPath}/special-services/pdf/ATTACHMENTDETAILSSET/${element.objectId}/${element.documentGuid}"
-                                                       class="link link_nowrap" download="${element.fullFileName}"><span class="iconElement iconElement_cloud02">
-                                                        <icon:download/>
-                                                    </span>
+                                                       class="link link_nowrap text-primary-color" download="${element.fullFileName}">
+                                                       <span class="iconElement iconElement_cloud02">
+                                                            <icon:download/>
+                                                       </span>
                                                         <spring:theme code="text.specialservices.download"/>
                                                     </a>
                                                 </div>
@@ -281,6 +459,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="specialServicesWarningTitle"><spring:theme code="special.services.validation.entityStatus.error"/></div>
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+						<icon:close/>
+					</button>
                 </div>
                 <div class="modal-body">
                     <div class="modal-description">

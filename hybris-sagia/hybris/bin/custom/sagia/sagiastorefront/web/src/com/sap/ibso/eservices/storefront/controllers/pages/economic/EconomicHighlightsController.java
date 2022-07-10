@@ -2,11 +2,15 @@ package com.sap.ibso.eservices.storefront.controllers.pages.economic;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.sap.ibso.eservices.core.util.DateUtils;
 import com.sap.ibso.eservices.facades.data.*;
+import org.apache.commons.httpclient.util.DateUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -74,7 +78,7 @@ public class EconomicHighlightsController extends SagiaAbstractPageController {
 	public String getSAInternationalIndices(final Model model,
 			@RequestParam(defaultValue = "EaseOfProtectingMinorityInvestors") String indicator,
 			@RequestParam(defaultValue = "2010") Integer startYear,
-			@RequestParam(defaultValue = "2020") Integer endYear) throws CMSItemNotFoundException {
+			@RequestParam(defaultValue = "2030") Integer endYear) throws CMSItemNotFoundException {
 
 		List<SAInternationalIndicesData> saInternationalIndicesData = saInternationalIndicesFacade
 				.getSAInternationalIndicesListData(indicator, startYear, endYear);
@@ -144,7 +148,7 @@ public class EconomicHighlightsController extends SagiaAbstractPageController {
 	public String getInvestmentData(final Model model,
 			@RequestParam(defaultValue = "manufacturingLicenses") String sector,
 			@RequestParam(defaultValue = "Annually") String period,
-			@RequestParam(defaultValue = "2017") String startYear, @RequestParam(defaultValue = "2022") String endYear)
+			@RequestParam(defaultValue = "2017") String startYear, @RequestParam(defaultValue = "2030") String endYear)
 			throws CMSItemNotFoundException {
 		if (sector.contains("%2C")) {
 			sector = sector.replaceAll("%2C", ",");

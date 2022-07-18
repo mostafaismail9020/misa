@@ -297,10 +297,18 @@ public class MediaCenterPageController extends AbstractPageController {
     	String fileName = null;
     	 
     	try {
-    		InvestSaudiResourceComponentModel resourceModel = null;    		
-    		resourceModel  = investSaudiMediaCenterService.getResourceDetails(resourceCode);
-    		MediaContainerModel containerModel = resourceModel.getResourceFullReport(); 	
-    		
+			MediaContainerModel containerModel=null;
+    		if(resourceCode.contains("news"))
+			{
+				InvestSaudiNewsComponentModel newsResourceModel  = investSaudiMediaCenterService.getNewsDetailsPage(resourceCode);
+				containerModel = newsResourceModel.getResourceFullReport();
+			}
+    		else
+			{
+				InvestSaudiResourceComponentModel resourceModel  = investSaudiMediaCenterService.getResourceDetails(resourceCode);
+				containerModel = resourceModel.getResourceFullReport();
+			}
+
     		final Collection<MediaModel> mediaModels = containerModel.getMedias();           
     		if (CollectionUtils.isNotEmpty(mediaModels))
     		{

@@ -37,7 +37,7 @@
                             </ycommerce:testId>
                         </div>
                         <div class="accountLogin-linkWrapper">
-                            <a href="https://investsaudi.sa/en/contact/" class="btn_link btn_link_text">
+                            <a href="https://misa.gov.sa/${language}/contact-us/" class="btn_link btn_link_text">
                                 <spring:theme code="support.contactus"/></a>
                         </div>                
                     </form:form>

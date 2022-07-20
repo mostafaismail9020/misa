@@ -157,7 +157,7 @@ public class LoginPageController extends AbstractLoginPageController
 		model.addAttribute("breadcrumbs", Collections.singletonList(loginBreadcrumbEntry));
 
 
-		LOGGER.error("getDefaultLoginPage -> username. [{}], RECAPTCHA_CHALLANGE_ANSWERED   [{}] ",username, session.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED));
+		LOGGER.error("getDefaultLoginPage -> username. [{}], RECAPTCHA_CHALLANGE_ANSWERED   [{}] loginError [{}]",username, session.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED),loginError);
 
 
 		if (loginError && session.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED) != null

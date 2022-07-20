@@ -52,7 +52,7 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
     {
     	handleInvalidCaptcha();
 
-        LOGGER.info("Before login for user: " + authentication.getName());
+        LOGGER.error("Before login for user: " + authentication.getName());
         if (!(authentication instanceof UsernamePasswordAuthenticationToken) ||
                 StringUtils.isEmpty(authentication.getName()) ||
                 !(authentication.getCredentials() instanceof String))
@@ -120,7 +120,7 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
 
         // Proceed with login
         Authentication auth = super.authenticate(authentication);
-        LOGGER.info("Successful login for user: " + authentication.getName());
+        LOGGER.error("Successful login for user: " + authentication.getName());
 
         return auth;
     }
@@ -131,10 +131,10 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
 			final ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder
 					.getRequestAttributes();
 			HttpServletRequest request = requestAttributes.getRequest();
-			
+
 			//This check for J_SPRING_SECURITY_CHECK is added, so that the captcha is checked only for login and not for 2-factor authentication
 			if(request.getServletPath().contains(J_SPRING_SECURITY_CHECK) && request.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED) != null && BooleanUtils.isFalse((Boolean)request.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED))) {
-				LOGGER.info("Invalid captcha, Please Try Again");
+				LOGGER.error("handleInvalidCaptcha -> Invalid captcha. [{}] , [{}] ",request.getServletPath().contains(J_SPRING_SECURITY_CHECK),request.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED));
 	            throw new SagiaAuthenticationException("Invalid captcha, Please Try Again"); // technical issue occurred
 
 			}

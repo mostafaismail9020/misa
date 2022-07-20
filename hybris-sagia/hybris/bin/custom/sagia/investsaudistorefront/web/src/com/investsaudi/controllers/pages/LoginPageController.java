@@ -10,6 +10,7 @@
  */
 package com.investsaudi.controllers.pages;
 
+import com.investsaudi.controllers.ControllerConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.Breadcrumb;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractLoginPageController;
@@ -20,17 +21,10 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
-import com.investsaudi.controllers.ControllerConstants;
-
-import java.util.Collections;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.BooleanUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,9 +33,13 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.Collections;
 
 
 /**
@@ -55,6 +53,7 @@ public class LoginPageController extends AbstractLoginPageController
 	private static final String J_SPRING_SECURITY_CHECK = "j_spring_security_check";
 
 	private static final String RECAPTCHA_CHALLANGE_ANSWERED = "recaptchaChallangeAnswered";
+	private static final Logger LOGGER = LogManager.getLogger();
 
 	@Override
 	protected String getView()
@@ -124,8 +123,8 @@ public class LoginPageController extends AbstractLoginPageController
 		setUpMetaDataForContentPage(model, pageForRequest);
 		return ControllerConstants.Views.Fragments.Checkout.TermsAndConditionsPopup;
 	}
-	
-	
+
+
 	protected String getDefaultLoginPage(final boolean loginError, final HttpSession session, final Model model)
 			throws CMSItemNotFoundException
 	{
@@ -135,6 +134,11 @@ public class LoginPageController extends AbstractLoginPageController
 		model.addAttribute(new GuestForm());
 
 		final String username = (String) session.getAttribute(SPRING_SECURITY_LAST_USERNAME);
+
+		LOGGER.error("getDefaultLoginPage -> username. [{}]  ",username);
+
+
+
 		if (username != null)
 		{
 			session.removeAttribute(SPRING_SECURITY_LAST_USERNAME);
@@ -152,17 +156,26 @@ public class LoginPageController extends AbstractLoginPageController
 				null);
 		model.addAttribute("breadcrumbs", Collections.singletonList(loginBreadcrumbEntry));
 
+
+		LOGGER.error("getDefaultLoginPage -> username. [{}], RECAPTCHA_CHALLANGE_ANSWERED   [{}] ",username, session.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED));
+
+
 		if (loginError && session.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED) != null
 				&& BooleanUtils.isFalse((Boolean) session.getAttribute(RECAPTCHA_CHALLANGE_ANSWERED)))
 		{
 			session.removeAttribute(RECAPTCHA_CHALLANGE_ANSWERED);
 			model.addAttribute("loginError", Boolean.valueOf(loginError));
 			GlobalMessages.addErrorMessage(model, "captcha.error.message.direct.page");
+
+			LOGGER.error("getDefaultLoginPage -> addErrorMessage captcha.error.message.direct.page.");
+
 		}
 		else if (loginError)
 		{
 			model.addAttribute("loginError", Boolean.valueOf(loginError));
 			GlobalMessages.addErrorMessage(model, "login.error.account.not.found.title");
+
+			LOGGER.error("getDefaultLoginPage -> addErrorMessage login.error.account.not.found.title.");
 		}
 
 		return getView();

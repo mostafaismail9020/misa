@@ -50,7 +50,7 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException
     {
-    	handleInvalidCaptcha();
+    	//handleInvalidCaptcha();
 
         LOGGER.error("Before login for user: " + authentication.getName());
         if (!(authentication instanceof UsernamePasswordAuthenticationToken) ||

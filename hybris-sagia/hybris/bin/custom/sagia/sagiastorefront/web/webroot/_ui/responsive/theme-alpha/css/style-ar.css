@@ -13524,11 +13524,14 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	background: #00A6BE;
 	border-radius: 27px;
 	padding: 10px 20px;
-	height: 45px;
 	color: #fff;
 	font-size: 12px;
     margin-right: 10px;
-	//margin-bottom: 25px;
+}
+
+.opportunities-cart-button {
+    justify-content: center !important;
+    gap: .7rem !important;
 }
 
 .opportunity-card .interest-btn {
@@ -13754,6 +13757,22 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 .opp-mobile-show {
     display:  none;
+}
+
+@media (max-width:1350px) {
+  .opportunities-cart-button {
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center !important;
+  }
+}
+@media (max-width: 1665px) {
+  .opportunity-card .know-more-btn,
+  .opportunity-card .interest-btn {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .sector-list-text {
@@ -13988,7 +14007,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
         font-size: 14px;
         color: #5f6470;
         width: 100%;
-        height: 25px;
+        height: 20px;
         text-align: left;
     }
     .opp-sort-filter-total .opportunity-card.opp-sort {
@@ -15418,16 +15437,6 @@ padding: 0px 0px 0px 35px;*/
 }
 
 .fund-assets-period label.active {
-	color: #fff;
-	border: none;
-	background-color: #00A6BE !important;
-}
-
-.capital-formation-period label {
-	background-color: #C6C6C6 !important;
-}
-
-.capital-formation-period label.active {
 	color: #fff;
 	border: none;
 	background-color: #00A6BE !important;
@@ -16978,18 +16987,6 @@ ul.INS_list_font li,
 }
 
 .btn-group.fund-assets-period>.btn:not(:last-child):not(.dropdown-toggle) {
-	border-radius: 27px;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-.btn-group.capital-formation-period>.btn:not(:first-child) {
-	border-radius: 27px;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-.btn-group.capital-formation-period>.btn:not(:last-child):not(.dropdown-toggle) {
 	border-radius: 27px;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;

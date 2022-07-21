@@ -56,8 +56,7 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 	private static final String COMPONENT_UID_PATH_VARIABLE_PATTERN = "{componentUid:.*}";
 	private static final String FACET_SEPARATOR = ":";
 
-	private static final String SEARCH_CMS_PAGE_ID = "search";
-	private static final String NO_RESULTS_CMS_PAGE_ID = "searchEmpty";
+	private static final String SEARCH_CMS_PAGE_ID = "opportunity-search-page";
 	private static final int NUM_OF_RECORD_PER_PAGE = 9;
 
 	@Resource(name = "productSearchFacade")
@@ -79,7 +78,7 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 	public String textSearch(@RequestParam(value = "text", defaultValue = "") String searchText,
 			final HttpServletRequest request, final Model model) throws CMSItemNotFoundException
 	{
-		final ContentPageModel noResultPage = getContentPageForLabelOrId(NO_RESULTS_CMS_PAGE_ID);
+		final ContentPageModel noResultPage = getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID);
 		if (StringUtils.isEmpty(searchText))
 		{
 			searchText= "all";
@@ -154,7 +153,7 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 		}
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
 		model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_FOLLOW);
-		ContentPageModel contentPageModel = getContentPageForLabelOrId("opportunity-search-page");
+		ContentPageModel contentPageModel = getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID);
 		storeCmsPageInModel(model, contentPageModel);
 		storeContentPageTitleInModel(model, contentPageModel.getTitle());
 
@@ -198,7 +197,7 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 		if (searchPageData.getPagination().getTotalNumberOfResults() == 0)
 		{
 			updatePageTitle(searchPageData.getFreeTextSearch(), model);
-			storeCmsPageInModel(model, getContentPageForLabelOrId(NO_RESULTS_CMS_PAGE_ID));
+			storeCmsPageInModel(model, getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID));
 		}
 		else
 		{
@@ -219,7 +218,7 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 			productDataSearchPageData.setPagination(sagiaPaginationData);
 			model.addAttribute("solrSearchPageData", solrSearchPageData);
 			model.addAttribute("searchPageData", productDataSearchPageData);
-			storeCmsPageInModel(model, getContentPageForLabelOrId("opportunity-search-page"));
+			storeCmsPageInModel(model, getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID));
 		}
 		model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchPageData));
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());

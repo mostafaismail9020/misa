@@ -12,17 +12,19 @@
        value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
 <div class="container-fluid">
     <div class="row p-2">
-        <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card text-left">
-            <div>
-                <h1 class='section-headline my-5 all-opportunity-filter'>
-                    <spring:theme code="portal.opportunity.search.filter"/>
-                </h1>
+        <c:if test="${not empty searchPageData.results}">
+            <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card text-left">
+                <div>
+                    <h1 class='section-headline my-5 all-opportunity-filter'>
+                        <spring:theme code="portal.opportunity.search.filter"/>
+                    </h1>
+                </div>
+                <div id="product-facet" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
+                    <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> --!>
+                    <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
+                </div>
             </div>
-            <div id="product-facet" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
-                <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> --!>
-                <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-            </div>
-        </div>
+        </c:if>
         <div class="col-md-9 col-sm-12 page-main-content">
             <div>
                 <h1 class='section-headline my-5 all-opportunity-description'>
@@ -30,86 +32,89 @@
                     <pan class="clr_gld"><spring:theme code="portal.opportunity.search.opportunities.label"/></pan>
                 </h1>
             </div>
-            <hr class="opp-mobile-hidde"/>
-            <div class="row opp-sort-filter-total">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-sort">
-                    <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                        <form id="sortForm1" name="sortForm1" method="get" action="#" class="form-group form-inline">
-                            <label for="opportunity-search" class="full"><spring:theme code="sagia.sort.sort.by"/>:&nbsp;</label>
-                            <select id="sortOptions1" name="sort" class="form-control--plp-sorting browser-default custom-select form-control" style=";padding: 6px 20px;">
-                                <c:forEach items="${solrSearchPageData.sorts}" var="sort">
-                                    <option value="${fn:escapeXml(sort.code)}" ${sort.selected? 'selected="selected"' : ''}>
-                                        <c:choose>
-                                            <c:when test="${not empty sort.name}">
-                                                ${fn:escapeXml(sort.name)}
-                                            </c:when>
-                                            <c:otherwise>
-                                                <spring:theme code="${themeMsgKey}.sort.${sort.code}"/>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </option>
-                                </c:forEach>
-                            </select>
-                            <c:catch var="errorException">
-                                <spring:eval expression="solrSearchPageData.currentQuery.query"
-                                             var="dummyVar"/><%-- This will throw an exception is it is not supported --%>
-                                <input type="hidden" name="q" value="${solrSearchPageData.currentQuery.query.value}"/>
-                            </c:catch>
+            <c:if test="${not empty searchPageData.results}">
+                <hr class="opp-mobile-hidde"/>
+                <div class="row opp-sort-filter-total">
 
-                            <c:if test="${supportShowAll}">
-                                <ycommerce:testId code="searchResults_showAll_link">
-                                    <input type="hidden" name="show" value="Page"/>
-                                </ycommerce:testId>
-                            </c:if>
-                            <c:if test="${supportShowPaged}">
-                                <ycommerce:testId code="searchResults_showPage_link">
-                                    <input type="hidden" name="show" value="All"/>
-                                </ycommerce:testId>
-                            </c:if>
-                            <c:if test="${not empty additionalParams}">
-                                <c:forEach items="${additionalParams}" var="entry">
-                                    <input type="hidden" name="${fn:escapeXml(entry.key)}" value="${fn:escapeXml(entry.value)}"/>
-                                </c:forEach>
-                            </c:if>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
-                    <div>
-                        <label for="opportunity-search" class="full"><spring:theme code="portal.opportunity.search.filter"/></label>
-                        <span id="opp-open-modal-filter"><spring:theme code="portal.opportunity.search.filter.span"/></span>
-                    </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="facetFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog opportunity-modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class='section-headline my-5 all-opportunity-filter'>
-                                        <spring:theme code="portal.opportunity.search.filter"/>
-                                    </h1>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <i class="fa fa-close"></i>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="pt-3" >
-                                        <div class="opp-filter-container" style="padding: 20px;">
-                                            <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-                                        </div>
-                                   </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
+                        <div>
+                            <label for="opportunity-search" class="full"><spring:theme code="portal.opportunity.search.filter.title"/></label>
+                            <span id="opp-open-modal-filter"><spring:theme code="portal.opportunity.search.filter.span"/></span>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="facetFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog opportunity-modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class='section-headline my-5 all-opportunity-filter'>
+                                            <spring:theme code="portal.opportunity.search.filter"/>
+                                        </h1>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <i class="fa fa-close"></i>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="pt-3" >
+                                            <div class="opp-filter-container" style="padding: 20px;">
+                                                <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
+                                            </div>
+                                       </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Modal End -->
                     </div>
-                    <!-- Modal End -->
-                </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
-                    <spring:message code="portal.opportunity.search.opportunities.totalResults"
-                        arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-sort">
+                        <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                            <form id="sortForm1" name="sortForm1" method="get" action="#" class="form-group form-inline">
+                                <label for="opportunity-search" class="full"><spring:theme code="sagia.sort.sort.by"/>:&nbsp;</label>
+                                <select id="sortOptions1" name="sort" class="form-control--plp-sorting browser-default custom-select form-control" style=";padding: 6px 20px;">
+                                    <c:forEach items="${solrSearchPageData.sorts}" var="sort">
+                                        <option value="${fn:escapeXml(sort.code)}" ${sort.selected? 'selected="selected"' : ''}>
+                                            <c:choose>
+                                                <c:when test="${not empty sort.name}">
+                                                    ${fn:escapeXml(sort.name)}
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <spring:theme code="${themeMsgKey}.sort.${sort.code}"/>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </option>
+                                    </c:forEach>
+                                </select>
+                                <c:catch var="errorException">
+                                    <spring:eval expression="solrSearchPageData.currentQuery.query"
+                                                 var="dummyVar"/><%-- This will throw an exception is it is not supported --%>
+                                    <input type="hidden" name="q" value="${solrSearchPageData.currentQuery.query.value}"/>
+                                </c:catch>
+
+                                <c:if test="${supportShowAll}">
+                                    <ycommerce:testId code="searchResults_showAll_link">
+                                        <input type="hidden" name="show" value="Page"/>
+                                    </ycommerce:testId>
+                                </c:if>
+                                <c:if test="${supportShowPaged}">
+                                    <ycommerce:testId code="searchResults_showPage_link">
+                                        <input type="hidden" name="show" value="All"/>
+                                    </ycommerce:testId>
+                                </c:if>
+                                <c:if test="${not empty additionalParams}">
+                                    <c:forEach items="${additionalParams}" var="entry">
+                                        <input type="hidden" name="${fn:escapeXml(entry.key)}" value="${fn:escapeXml(entry.value)}"/>
+                                    </c:forEach>
+                                </c:if>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
+                        <spring:message code="portal.opportunity.search.opportunities.totalResults"
+                            arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+                    </div>
                 </div>
-            </div>
+            </c:if>
             <c:choose>
                 <c:when test="${ not empty searchPageData.results}">
                     <div class="row">

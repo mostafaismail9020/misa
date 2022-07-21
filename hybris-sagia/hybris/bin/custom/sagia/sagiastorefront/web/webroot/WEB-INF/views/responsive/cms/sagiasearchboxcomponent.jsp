@@ -14,7 +14,8 @@
 <section id="search-results" class="sectors-opp sectors-investment pb-3 sectors-opportunity opp-search-container">
 	<div class="container">
 		<div class="row justify-content-center pos-rel mt-4">
-			<div class="col-lg-12 col-md-6">
+		    <div class="col-lg-3 col-md-3"></div>
+			<div class="col-lg-6 col-md-6">
 				<form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
 					<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
 
@@ -40,6 +41,7 @@
 						</span>
 				</form>
 			</div>
+			<div class="col-lg-3 col-md-3"></div>
 		</div>
 		<div class="row mt-4">
 			<c:forEach var="facet" items="${solrSearchPageData.facets}">

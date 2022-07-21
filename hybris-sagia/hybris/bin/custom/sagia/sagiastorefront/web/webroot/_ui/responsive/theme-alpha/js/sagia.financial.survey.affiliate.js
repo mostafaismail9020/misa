@@ -382,7 +382,7 @@ function prepareVisibleItemsEdit(selectedAffiliate) {
     	 $('#showDelegateQuestion').hide();
 
     	 $('#affiliateAddressId').show();
-    	 $('#affiliateCompanyCountry').attr("disabled", true);
+    	 //$('#affiliateCompanyCountry').attr("disabled", true);
     	 $('#inputCRNumber').attr("disabled", true);
     	 $('#load-investor').attr("disabled", true);
 

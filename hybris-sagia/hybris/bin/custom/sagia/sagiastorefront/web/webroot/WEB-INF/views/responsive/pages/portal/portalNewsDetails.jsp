@@ -28,7 +28,13 @@
 		                  		<div class="event-num"><fmt:formatDate value="${newsDetails.newsDate}" pattern="d" /></div>
 		                  		<div class="event-mon"><fmt:formatDate value="${newsDetails.newsDate}" pattern="MMMM yyyy" /></div>
 		                  	</div>
-	                  		<h2>${newsDetails.newsTitle}</h2>                  	
+	                  		<h2>${newsDetails.newsTitle}</h2>
+	                  		<c:if test="${not empty newsDetails.resourceFullReport}">
+                                 <c:url value="/mediaCenter/downloadResoruce/${newsDetails.uid}" var="resourcedownloadURL"/>
+                                    <a href="${resourcedownloadURL}" class="btn-get-started ">
+                                        <img class="mx-2" src="${commonResourcePath}/images/news_page/download.png" alt=""><spring:theme code="portal.media.resourcedetails.download" text = "Download"/>
+                                    </a>
+                             </c:if>
 	              		</div>
 	              	</div>
 	          	</div>

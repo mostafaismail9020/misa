@@ -120,8 +120,8 @@
                                     <c:url value='/login/pw/request/external' var="forgot"/>
                                     <a href="${forgot}" class="js-password-forgotten" data-cbox-title="<spring:theme code="forgottenPwd.title"/>">
                                         <spring:theme code="login.link.forgottenPwd"/>
-                                    </a><br> 
-                                    <!--<p><spring:theme code="register.login.problem"/> &nbsp<a href="https://misa.gov.sa/ar/contact-us/" class="contact_link">
+                                    </a><br>
+                                    <!--<p><spring:theme code="register.login.problem"/> &nbsp<a href="https://misa.gov.sa/${language}/contact-us/" class="contact_link">
                                     <spring:theme code="register.login.problem.contact"/></a></p>-->
                                 </div>
                             </ycommerce:testId>
@@ -129,7 +129,7 @@
                         <span>|</span>
                         <span class="accountLogin-content-formSubmitSection-forgottenPassword">
                             <spring:theme code="register.login.problem"/> &nbsp; 
-                            <a href="https://misa.gov.sa/ar/contact-us/" target="_blank"><spring:theme code="register.login.problem.contact"/></a>
+                            <a href="https://misa.gov.sa/${language}/contact-us/" target="_blank"><spring:theme code="register.login.problem.contact"/></a>
                         </span>
                         <c:if test="${expressCheckoutAllowed}">
                             <button type="submit" class="btn btn-default btn-block expressCheckoutButton">

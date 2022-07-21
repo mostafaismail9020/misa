@@ -2627,7 +2627,8 @@
                         <editorArea:attribute qualifier="newsFullReport"/>
                         <editorArea:attribute qualifier="newsDate"/>
                         <editorArea:attribute qualifier="galleryImages"/>
-                        <editorArea:attribute qualifier="newsShortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<editorArea:attribute qualifier="resourceFullReport"/>
+						<editorArea:attribute qualifier="newsShortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
                         <editorArea:attribute qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
                     </editorArea:panel>
                 </editorArea:section>
@@ -2656,6 +2657,7 @@
                         <wz:property qualifier="newsFullReport" />
                         <wz:property qualifier="newsDate" />
                         <wz:property qualifier="galleryImages" />
+						<wz:property qualifier="resourceFullReport"/>
                         <wz:property qualifier="newsShortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
                         <wz:property qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
                     </wz:property-list>

@@ -5054,7 +5054,7 @@ $(".login-account-screen .login-btn-next").on('click',function(){
 $("#logoutModal .yesButton").on("click", function() {
 	$.cookie('chatOpen', null, { path: ACC.config.encodedContextPath });
 	$("#sap-ecf-client").toggle(false);
-	window.location.href = ACC.config.encodedContextPath + "/login";
+	window.location.href = ACC.config.encodedContextPath + "/logout";
 });
 $("#logoutModal .noButton").on("click", function() {
 	$('#logoutModal').modal('hide');

@@ -13369,6 +13369,9 @@ div.bussiness_lic_img_inner:nth-child(even) {
 	font-size: 18px;
 	line-height: 1.5;
 	}
+	.opportunity-card .know-more-btn, .opportunity-card .interest-btn {
+	    font-size: 12px;
+	}
 }
 
 @media (min-width: 992px) {
@@ -13525,7 +13528,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	border-radius: 27px;
 	padding: 10px 20px;
 	color: #fff;
-	font-size: 12px;
     margin-right: 10px;
 }
 
@@ -13538,10 +13540,8 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	background: #fff;
 	border-radius: 27px;
 	padding: 10px 20px;
-	height: 45px;
 	color: #00A6BE;
 	border: 1px solid #00A6BE;
-	font-size: 12px;
 }
 
 .opportunity-card.total-results {
@@ -13607,11 +13607,15 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	border: 1px solid #F2F2F2;
 	border-radius: 30px;
 	height: 60px;
-	color: #646464;
+	color: #7B838C;
 	font-size: 16px;
 	line-height: 24px;
 	outline: none;
-	padding-left: 50px;
+	padding-right: 50px;
+}
+.opp-search-container input[type=search]::placeholder,
+.opp-search-container input[type=text]::placeholder {
+	color: #7B838C;
 }
 
 .opp-search-btn,
@@ -13670,7 +13674,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .opp-search-container .reset-search {
 	position: absolute;
 	right: 40px;
-	bottom: -25px;
+	bottom: -5px;
 	font-size: 16px;
 	color: #646464;
 }
@@ -13738,6 +13742,27 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .page-opportunity-search-page .page-main-content {
     margin-top: 25px !important;
     margin-bottom: 25px !important;
+}
+
+.page-opportunity-search-page .ui-autocomplete .name {
+    color: #646464;
+}
+
+.page-opportunity-search-page .ui-autocomplete .price {
+    display: none;
+}
+
+.page-opportunity-search-page .ui-autocomplete {
+    width: 100px;
+    background: #FFF;
+    box-shadow: 0px 19px 41px #00000017;
+    border: 1px solid #f2f2f2;
+    border-radius: 30px;
+    padding: 10px 50px 30px 50px;
+}
+
+.page-opportunity-search-page .ui-autocomplete li {
+    margin: 10px;
 }
 
 .my-4.opportunity-card {
@@ -13942,7 +13967,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	}
 	.opportunity-card .opp-headtitle {
 		font-size: 25px;
-		height: 50px;
 		word-break: break-all;
 	}
 	.opportunity-card .opp-type {
@@ -16028,7 +16052,6 @@ ul.INS_list_font li,
 .opp-search-container .reset-search {
 	left: 30px;
 	right: inherit;
-	z-index: 9;
 }
 
 .opp-search-btn {
@@ -16043,10 +16066,6 @@ ul.INS_list_font li,
 
 .search-icon {
 	margin-top: -4px !important;
-}
-
-.opportunity-card .interest-btn {
-	width: 140px;
 }
 
 .sector-list-text {
@@ -16069,16 +16088,6 @@ ul.INS_list_font li,
 		height: 80px;
 	}
 }
-
-@media (max-width: 768px) {
-	.opportunity-card .opp-headtitle {
-		height: 60px;
-	}
-}
-
-
-
-
 
 @media (min-width: 1025px) {
 	.opp-search-container input[type=search] {
@@ -17678,7 +17687,7 @@ ul.INS_list_font li,
 		font-size: 14px !important;
 		line-height: 24px;
 	}
-	.page-opportunity-search .opportunity-card .opp-headtitle {
+	.page-opportunity-search-page .opportunity-card .opp-headtitle {
 		font-size: 22px;
 		line-height: 27px;
 		font-weight: unset !important;
@@ -17686,15 +17695,15 @@ ul.INS_list_font li,
 		min-height: unset;
 		word-break: unset;
 	}
-	.page-opportunity-search .opportunity-card .opp-type {
+	.page-opportunity-search-page .opportunity-card .opp-type {
 		font-size: 18px;
 		line-height: 40px;
 		font-weight: unset !important;
 		height: unset;
 		min-height: unset;
 	}
-	.page-opportunity-search .opportunity-card .know-more-btn,
-	.page-opportunity-search .opportunity-card .interest-btn {
+	.page-opportunity-search-page .opportunity-card .know-more-btn,
+	.page-opportunity-search-page .opportunity-card .interest-btn {
 		
 		line-height: 19px;
 	}
@@ -20569,21 +20578,21 @@ ul.INS_list_font li,
 		font-size: 14px !important;
 		line-height: 24px;
 	}
-	.page-opportunity-search .opportunity-card .opp-headtitle {
+	.page-opportunity-search-page .opportunity-card .opp-headtitle {
 		font-size: 22px;
 		line-height: 27px;
 		font-weight: unset !important;
 		word-break: unset;
 	}
-	.page-opportunity-search .opportunity-card .opp-type {
+	.page-opportunity-search-page .opportunity-card .opp-type {
 		font-size: 18px;
 		line-height: 40px;
 		font-weight: unset !important;
 		height: unset;
 		min-height: unset;
 	}
-	.page-opportunity-search .opportunity-card .know-more-btn,
-	.page-opportunity-search .opportunity-card .interest-btn {
+	.page-opportunity-search-page .opportunity-card .know-more-btn,
+	.page-opportunity-search-page .opportunity-card .interest-btn {
 		
 		line-height: 19px;
 	}

@@ -21,6 +21,7 @@
 
 					<ycommerce:testId code="header_search_input">
 						<input type="text" id="js-site-search-input"
+						        data-test="asdfg"
 							   class="form-control js-site-search-input" name="q" value=""
 							   maxlength="100" placeholder="${searchPlaceholder}"
 							   data-options='{"autocompleteUrl" : "${autocompleteUrl}","minCharactersBeforeRequest" : "${component.minCharactersBeforeRequest}","waitTimeBeforeRequest" : "${component.waitTimeBeforeRequest}","displayProductImages" : ${component.displayProductImages}}'>

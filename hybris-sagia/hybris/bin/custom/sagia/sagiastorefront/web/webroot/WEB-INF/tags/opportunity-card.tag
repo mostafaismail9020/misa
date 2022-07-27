@@ -8,7 +8,7 @@
 
 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-4 opportunity-card text-center">
     <div class="content-box">
-        <h2 class="h1 font-bold opp-headtitle text-capitalize" style="height: auto;">${fn:toLowerCase(result.opportunity.name)}</h2>
+        <h2 class="h1 font-bold opp-headtitle text-capitalize">${fn:toLowerCase(result.opportunity.name)}</h2>
         <h3 class="opp-type font-bold text-capitalize">${fn:toLowerCase(result.parentCategory.name)}</h3>
         <div class="d-flex justify-content-between opportunities-cart-button flex-wrap ">
             <a href="${encodedContextPath}${result.opportunity.url}" class="button btn know-more-btn">

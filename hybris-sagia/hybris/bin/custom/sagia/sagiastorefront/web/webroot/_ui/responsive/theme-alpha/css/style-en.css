@@ -1629,6 +1629,9 @@ svg #wheel {
 		font-size: 25px;
 		line-height: 32px;
 	}
+	.opportunity-card .know-more-btn, .opportunity-card .interest-btn {
+	    font-size: 12px;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -13538,7 +13541,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	border-radius: 27px;
 	padding: 10px 20px;
 	color: #fff;
-	font-size: 12px;
 	margin-right: 10px;
 }
 
@@ -13548,7 +13550,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	padding: 10px 20px;
 	color: #00a6be;
 	border: 1px solid #00a6be;
-	font-size: 12px;
 }
 
 .opportunities-cart-button {
@@ -13612,18 +13613,23 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	color: #ffffff;
 }
 
-.opp-search-container input[type="search"],
-.opp-search-container input[type="text"] {
+.opp-search-container input[type=search],
+.opp-search-container input[type=text] {
 	width: 100%;
 	box-shadow: 0px 19px 41px #00000017;
 	border: 1px solid #f2f2f2;
 	border-radius: 30px;
 	height: 60px;
-	color: #646464;
-	font-size: 15px;
+	color: #7B838C;
+	font-size: 16px;
 	line-height: 24px;
 	outline: none;
 	padding-left: 50px;
+}
+
+.opp-search-container input[type=search]::placeholder,
+.opp-search-container input[type=text]::placeholder {
+	color: #7B838C;
 }
 
 .opp-search-btn,
@@ -13747,6 +13753,27 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .page-opportunity-search-page .page-main-content {
     margin-top: 25px !important;
     margin-bottom: 25px !important;
+}
+
+.page-opportunity-search-page .ui-autocomplete .name {
+    color: #646464;
+}
+
+.page-opportunity-search-page .ui-autocomplete .price {
+    display: none;
+}
+
+.page-opportunity-search-page .ui-autocomplete {
+    width: 100px;
+    background: #FFF;
+    box-shadow: 0px 19px 41px #00000017;
+    border: 1px solid #f2f2f2;
+    border-radius: 30px;
+    padding: 10px 50px 30px 50px;
+}
+
+.page-opportunity-search-page .ui-autocomplete li {
+    margin: 10px;
 }
 
 .my-4.opportunity-card {
@@ -16450,7 +16477,7 @@ padding-left: 40px;
 		font-size: 14px !important;
 		line-height: 24px;
 	}
-	.page-opportunity-search .opportunity-card .opp-headtitle {
+	.page-opportunity-search-page .opportunity-card .opp-headtitle {
 		font-size: 22px;
 		line-height: 27px;
 		font-weight: unset !important;
@@ -16458,15 +16485,15 @@ padding-left: 40px;
 		min-height: unset;
 		word-break: unset;
 	}
-	.page-opportunity-search .opportunity-card .opp-type {
+	.page-opportunity-search-page .opportunity-card .opp-type {
 		font-size: 18px;
 		line-height: 40px;
 		font-weight: unset !important;
 		height: unset;
 		min-height: unset;
 	}
-	.page-opportunity-search .opportunity-card .know-more-btn,
-	.page-opportunity-search .opportunity-card .interest-btn {
+	.page-opportunity-search-page .opportunity-card .know-more-btn,
+	.page-opportunity-search-page .opportunity-card .interest-btn {
 		letter-spacing: 0.58px;
 		line-height: 19px;
 	}

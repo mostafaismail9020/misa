@@ -2482,6 +2482,58 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="SagiaIndicatorTerm"
+                      jaloclass="com.sap.ibso.eservices.core.jalo.SagiaIndicatorTerm"
+                      extends="GenericItem" generate="true" autocreate="true">
+                      <description>the economic  and investment indicator terms</description>
+                      <deployment table="SagiaIndicatorTerms" typecode="32399"/>
+
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="false" unique="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="dataPoint"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="description"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="calculation"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="measurement"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="source"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute type="boolean" qualifier="isActive">
+                    <persistence type="property" />
+                    <modifiers optional="false" />
+                    <defaultvalue>true</defaultvalue>
+                    <description>Indicates if the term is active or not.</description>
+                </attribute>
+            </attributes>
+            </itemtype>
+
+
             <itemtype code="TicketQuestion"
 			jaloclass="com.sap.ibso.eservices.core.jalo.TicketQuestion"
 			extends="GenericItem" generate="true" autocreate="true">
@@ -5806,11 +5858,6 @@
                         <defaultvalue>Boolean.TRUE</defaultvalue>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
-                    </attribute>
-                    <attribute qualifier="resourceFullReport" type="MediaContainer">
-                        <persistence type="property"/>
-                        <modifiers/>
-                        <description>Resource full report to download</description>
                     </attribute>
                 </attributes>
             </itemtype>

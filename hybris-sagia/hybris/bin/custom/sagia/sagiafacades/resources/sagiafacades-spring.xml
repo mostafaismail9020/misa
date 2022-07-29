@@ -2187,6 +2187,18 @@
         </property>
     </bean>
 
+
+
+	<bean id="sagiaIndicatorTermPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaIndicatorTermPopulator" />
+
+	<bean id="sagiaIndicatorTermConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SagiaIndicatorTermData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaIndicatorTermPopulator"/>
+			</list>
+		</property>
+	</bean>
 	<!-- SiteMap Changes Ends -->
 
 

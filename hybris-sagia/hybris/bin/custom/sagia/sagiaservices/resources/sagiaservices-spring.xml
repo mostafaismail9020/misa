@@ -983,6 +983,10 @@
 	<bean id="sagiaFinancialSurveyService" class="com.sap.ibso.eservices.sagiaservices.services.financialsurvey.impl.SagiaFinancialSurveyServiceImpl" >
 	</bean>
 
+
+	<bean id="sagiaIndicatorTermService" class="com.sap.ibso.eservices.sagiaservices.services.indicatorterm.impl.DefaultSagiaIndicatorTermServiceImpl" >
+	</bean>
+
 	<!-- SAGIA SERVICES END -->
 
     <alias alias="zQeemahService" name="defaultZQeemahService"/>

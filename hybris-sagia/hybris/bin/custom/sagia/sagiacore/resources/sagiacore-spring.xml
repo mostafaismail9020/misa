@@ -1415,12 +1415,12 @@
 
     <bean id="investSaudiMediaCenterService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiMediaCenterServiceImpl" />
-		  
+
     <bean id="opportunityProductMediaRestApiService" class="com.investsaudi.portal.core.service.impl.OpportunityProductMediaRestApiServiceImpl">
           <property name="modelService" ref="modelService"/>
           <property name="mediaService" ref="mediaService"/>
     </bean>
-          
+
     <bean id="investSaudiProvinceRegionService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiProvinceRegionServiceImpl" />
 
@@ -1574,7 +1574,7 @@
     <bean id="contactTicket2ScpiJob" class="com.sap.ibso.eservices.core.job.ContactTicket2ScpiJob"/>
    <bean id="customerEvent2ScpiJob" class="com.sap.ibso.eservices.core.job.CustomerEvent2ScpiJob"/>
 
-	
+
     <!-- Economic Highlights Changes Ends -->
 
     <alias name="defaultSagiaCompanyProfileDAO" alias="sagiaCompanyProfileDAO"/>
@@ -1614,6 +1614,14 @@
         <constructor-arg value="SagiaSubsidiary"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
+
+
+    <alias alias="sagiaIndicatorTermDAO" name="defaultSagiaIndicatorTermDAO"/>
+    <bean id="defaultSagiaIndicatorTermDAO"
+          class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultSagiaIndicatorTermDAO">
+        <constructor-arg value="SagiaIndicatorTerm"/>
+    </bean>
+
 
     <!-- invest saudi hot folder -->
     <bean id="batchRunnerTask" class="com.investsaudi.portal.core.dataimport.batch.task.InvestSaudiImpexRunnerTask">

@@ -13744,6 +13744,10 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     margin-bottom: 25px !important;
 }
 
+.page-opportunity-search-page form a.a-search {
+    cursor: default;
+}
+
 .page-opportunity-search-page .ui-autocomplete .name {
     color: #646464;
 }

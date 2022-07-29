@@ -13755,6 +13755,10 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     margin-bottom: 25px !important;
 }
 
+.page-opportunity-search-page form a.a-search {
+    cursor: default;
+}
+
 .page-opportunity-search-page .ui-autocomplete .name {
     color: #646464;
 }
@@ -19339,21 +19343,21 @@ padding-left: 40px;
 		font-size: 14px !important;
 		line-height: 24px;
 	}
-	.page-opportunity-search .opportunity-card .opp-headtitle {
+	.page-opportunity-search-page .opportunity-card .opp-headtitle {
 		font-size: 22px;
 		line-height: 27px;
 		font-weight: unset !important;
 		word-break: unset;
 	}
-	.page-opportunity-search .opportunity-card .opp-type {
+	.page-opportunity-search-page .opportunity-card .opp-type {
 		font-size: 18px;
 		line-height: 40px;
 		font-weight: unset !important;
 		height: unset;
 		min-height: unset;
 	}
-	.page-opportunity-search .opportunity-card .know-more-btn,
-	.page-opportunity-search .opportunity-card .interest-btn {
+	.page-opportunity-search-page .opportunity-card .know-more-btn,
+	.page-opportunity-search-page .opportunity-card .interest-btn {
 		letter-spacing: 0.58px;
 		line-height: 19px;
 	}

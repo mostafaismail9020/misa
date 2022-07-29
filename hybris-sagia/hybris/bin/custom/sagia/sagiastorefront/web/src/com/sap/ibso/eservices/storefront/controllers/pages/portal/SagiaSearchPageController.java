@@ -172,6 +172,7 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 	private OpportunityData createOpportunityData(ProductData productData) {
 		OpportunityData opportunityData = new OpportunityData();
 		opportunityData.setOpportunity(productData);
+
 		if(productData.getParentCategory() != null)
 		{
 			opportunityData.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(productData.getParentCategory()));

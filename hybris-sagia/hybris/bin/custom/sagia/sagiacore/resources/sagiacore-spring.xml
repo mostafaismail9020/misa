@@ -1616,7 +1616,7 @@
 
 
     <bean id="sagiaCategorySource" parent="abstractCategorySource">
-        <property name="rootCategory" value="1"/> <!-- '1' is the root icecat category -->
+        <property name="rootCategory" value="sector-opportunities"/>
     </bean>
 
     <bean id="sagiaCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">

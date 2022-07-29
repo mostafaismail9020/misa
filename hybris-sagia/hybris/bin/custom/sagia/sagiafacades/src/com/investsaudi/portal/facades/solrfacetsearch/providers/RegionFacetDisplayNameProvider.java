@@ -14,8 +14,8 @@ public class RegionFacetDisplayNameProvider extends AbstractFacetValueDisplayNam
     @Override
     public String getDisplayName(final SearchQuery query, final IndexedProperty property, final String facetValue) {
         ProvinceComponentModel model = investSaudiProvinceRegionDao.getProvinceRegionDetails(facetValue);
-        if (model != null && StringUtils.isNotBlank(model.getName())) {
-            return model.getName();
+        if (model != null && StringUtils.isNotBlank(model.getBannerHeader())) {
+            return model.getBannerHeader();
         }
         return facetValue;
     }

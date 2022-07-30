@@ -691,8 +691,19 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyShareholderModel.setShareholderNationalityCurrent(shareholder.getShareholderNationalityCurrent());
         financialSurveyShareholderModel.setShareholderNationalityCurrentRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderNationalityCurrent()));
         // this field is deprecated
-        financialSurveyShareholderModel.setShareholderCountry(shareholder.getShareholderCountry());
-        financialSurveyShareholderModel.setShareholderCountryRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderCountry()));
+
+
+        if ( "2".equals(shareholder.getShareholderType())) { // Entity
+
+            financialSurveyShareholderModel.setShareholderCountry(shareholder.getCompanyCountry());
+            financialSurveyShareholderModel.setShareholderCountryRef(sagiaCountryDAO.getCountryForCode(shareholder.getCompanyCountry()));
+
+        }else {  //Individual
+
+            financialSurveyShareholderModel.setShareholderCountry(shareholder.getShareholderCountry());
+            financialSurveyShareholderModel.setShareholderCountryRef(sagiaCountryDAO.getCountryForCode(shareholder.getShareholderCountry()));
+        }
+
         financialSurveyShareholderModel.setShareholderPercentage(shareholder.getShareholderPercentage());
         financialSurveyShareholderModel.setShareholderCapital(shareholder.getShareholderCapital());
 
@@ -801,8 +812,17 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
         financialSurveyAffiliateModel.setAffiliateGender(affiliate.getAffiliateGender());
         financialSurveyAffiliateModel.setAffiliateNationalityCurrent(affiliate.getAffiliateNationalityCurrent());
         financialSurveyAffiliateModel.setAffiliateNationalityCurrentRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateNationalityCurrent()));
-        financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());
-        financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
+
+        if ( "2".equals(affiliate.getAffiliateType())) { // Entity
+
+            financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getCompanyCountry());
+            financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getCompanyCountry()));
+
+        }else {  //Individual
+            financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());
+            financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
+        }
+
         financialSurveyAffiliateModel.setAffiliateMultinationalCompany(affiliate.getAffiliateMultinationalCompany());
 
 

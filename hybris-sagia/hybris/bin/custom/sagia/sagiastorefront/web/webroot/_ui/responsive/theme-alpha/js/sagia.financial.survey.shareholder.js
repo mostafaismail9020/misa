@@ -589,7 +589,7 @@ function prepareShareholderVisibleItemsEdit(selectedShareholder) {
     	 $('#entityBasicInformation').show();
     	 $('#showDelegateQuestionOrganization').show();
     	 $('#showDelegateQuestion').hide();
-    	 $('#companyCountry').attr("disabled", true);
+    	// $('#companyCountry').attr("disabled", true);
     	 $('#inputCRNumber').attr("disabled", true);
     	 $('#load-investor').attr("disabled", true);
 

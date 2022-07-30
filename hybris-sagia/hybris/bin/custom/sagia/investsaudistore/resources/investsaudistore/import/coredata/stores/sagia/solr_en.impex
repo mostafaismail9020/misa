@@ -3,12 +3,12 @@ $indexedType=sagiaProductType
 
 # Define the available sorts 
 UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang]
- ;;relevance;Relevance(default);
+ ;;relevance;Relevance;
  ;;name-asc;Name (ascending);
  ;;name-desc;Name (descending);
 
 
 
 UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true,default=$indexedType];name[unique=true];displayName[lang=$lang]
-                          ;;allCategories;Sector;
-                          ;;sagiaRegion;Region;
+                          ;;allCategories;Sectors;
+                          ;;sagiaRegion;Regions;

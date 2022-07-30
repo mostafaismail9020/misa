@@ -1,0 +1,14 @@
+$lang=ar
+$indexedType=sagiaProductType
+
+# Define the available sorts
+UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang]
+               ;;relevance;ملاءمة;
+               ;;name-asc;الاسم (تصاعدي);
+               ;;name-desc;الاسم (تنازلي);
+
+
+
+UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true,default=$indexedType];name[unique=true];displayName[lang=$lang]
+                          ;;allCategories;القطاعات;
+                          ;;sagiaRegion;المناطق;

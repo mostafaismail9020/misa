@@ -1212,7 +1212,7 @@ var submitFinancialSurveyShareholders = function () {
             xhr.setRequestHeader('CSRFToken', token);
         },
         data: JSON.stringify(financialSurvey),
-        success: function () {
+        success: function (data) {
             if (financialSurvey.errors && financialSurvey.errors.length) {
                 var $modalDescription = $('#licenseAmendmentValidationDialogId').modal({
                     backdrop: "static",
@@ -1223,8 +1223,10 @@ var submitFinancialSurveyShareholders = function () {
                     $modalDescription.append('<p>' + error + '</p>');
                 });
             } else {
+                if (data) {
+                    setShareholdersAndAffeliateData(data);
+                }
                 $('a[href="#accessibletabscontent0-4"]').click();
-
                 SAGIA.financialSurvey.isShareholdersSectionFilled = true;
                 return
             }
@@ -1299,7 +1301,7 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
             xhr.setRequestHeader('CSRFToken', token);
         },
         data: JSON.stringify(financialSurvey),
-        success: function () {
+        success: function (data) {
             if (financialSurvey.errors && financialSurvey.errors.length) {
                 var $modalDescription = $('#licenseAmendmentValidationDialogId').modal({
                     backdrop: "static",
@@ -1310,6 +1312,7 @@ var submitFinancialSurveyBrnachesAndSubsidiaries = function () {
                     $modalDescription.append('<p>' + error + '</p>');
                 });
             } else {
+
                 $('a[href="#accessibletabscontent0-2"]').click();
                 SAGIA.financialSurvey.isBranchSectionFilled = true ;
                 return
@@ -1433,6 +1436,153 @@ var submitFinancialSurveyEquity = function () {
 
 
 
+
+
+function setShareholdersAndAffeliateData(data, history) {
+    financialSurvey = data;
+    SAGIA.financialSurvey.isCompanyProfileSectionFilled = financialSurvey.isCompanyProfileSectionFilled;
+    SAGIA.financialSurvey.isBranchSectionFilled = financialSurvey.isBranchSectionFilled ;
+    SAGIA.financialSurvey.isEquitySectionFilled = financialSurvey.isEquitySectionFilled ;
+    SAGIA.financialSurvey.isShareholdersSectionFilled = financialSurvey.isShareholdersSectionFilled;
+    var DELETE_ACTION = '03';
+    var $shareholderRowTemplate = $('.shareholderTemplate').first().clone(true);
+    var $shareholdersTable = $('#shareholdersId').empty().append($shareholderRowTemplate.clone(true).hide());
+    financialSurvey.shareholders.forEach(function (shareholder) {
+        if (shareholder.action !== DELETE_ACTION) {
+            var name = shareholder.shareholderNameEnglish;
+            var type = shareholder.shareholderType === '1' ? getI18nText("general.individual") : getI18nText("general.entity");
+            var percentage = 0;
+            if(shareholder.shareholderPercentage != null) {
+                percentage = (shareholder.shareholderPercentage.length > 5 ? shareholder.shareholderPercentage.substring(0, 5) : shareholder.shareholderPercentage) + '%';
+            }
+            var shareValue = shareholder.shareholderCapital ;
+
+            var shareholderVotingPower = 0;
+            if(shareholder.shareholderVotingPower != null) {
+                shareholderVotingPower = (shareholder.shareholderVotingPower.length > 5 ? shareholder.shareholderVotingPower.substring(0, 5) : shareholder.shareholderVotingPower) + '%';
+            }
+
+            var $shareholderRow = $shareholderRowTemplate.clone(true).show();
+            $shareholderRow.attr("id", shareholder.srId ? shareholder.srId : shareholder.newItemId).children().first().text(name).next().text(type)
+                .next().text(percentage).next().text(shareValue).next().text(shareholderVotingPower);
+            setColorForDraftRow($shareholderRow, shareholder.action);
+            $shareholdersTable.append($shareholderRow);
+        }
+    });
+
+    // Start Affiliate
+
+    var $affiliateRowTemplate = $('.affiliateTemplate').first().clone(true);
+    var $affiliatesTable = $('#affiliatesId').empty().append($affiliateRowTemplate.clone(true).hide());
+
+    financialSurvey.affiliates.forEach(function (affiliate) {
+        if (affiliate.action !== DELETE_ACTION) {
+            var name = affiliate.affiliateNameEnglish;
+            var country = affiliate.affiliateType === '1' ? affiliate.affiliateCountryDescription : affiliate.companyCountryDescription ;
+            var type = affiliate.affiliateType === '1' ? getI18nText("general.individual") : getI18nText("general.entity");
+            var $affiliateRow = $affiliateRowTemplate.clone(true).show();
+            $affiliateRow.attr("id", affiliate.srId ? affiliate.srId : affiliate.newItemId).children().first().text(name).next().text(type).next().text(country);
+            setColorForDraftRow($affiliateRow, affiliate.action);
+            $affiliatesTable.append($affiliateRow);
+        }
+    });
+    // End Affiliate
+    adjustNewItemIdVariable();
+}
+
+
+
+
+function setBranchesAndSubsidiariesData(data, history) {
+    financialSurvey = data;
+    var DELETE_ACTION = '03';
+
+
+    var $branchRowTemplate = $('.branchTemplate').first().clone(true);
+    var $branchesTable = $('#branchesId').empty();//.append($branchRowTemplate.clone(true).hide());
+    if (history) {
+        $('#branchBtnColumnId').hide();
+        $branchRowTemplate.find('.tableModule-bodyItem-action').hide();
+        $('.newBranchBtn').hide();
+    }
+
+    SAGIA.financialSurvey.branch.row = {};
+
+    financialSurvey.branches.forEach(function (branch) {
+        if (branch.action !== DELETE_ACTION) {
+            var typeDescription = branch.typeDescription;
+            var name = branch.name;
+            var volumeWeight = branch.volumeWeight;
+            var city = branch.address.cityDescription;
+            var addrNumber = branch.addrNumber;
+            var $branchRow = $branchRowTemplate.clone(true).show();
+            $branchRow.attr("id", branch.srId).children().first().html(typeDescription).next().text(name).next().text(city).next().text(volumeWeight);
+            setColorForDraftRow($branchRow, branch.action);
+
+            //  if (branch.main) { // Main branch, can edit, can't be removed
+            $branchRow.find('.viewBranchBtn').show();
+            $branchRow.find('.editBranchBtn').show();
+            $branchRow.find('.deleteDropdown').show();
+            //      } else { // Can be removed
+            //           $branchRow.find('.viewBranchBtn').show();
+            //           $branchRow.find('.editBranchBtn').hide();
+            //            $branchRow.find('.deleteDropdown').show();
+            //    }
+
+            SAGIA.financialSurvey.branch.dataTable.row.add($branchRow).draw();
+            $branchesTable.append($branchRow);
+        }
+    });
+
+
+
+    var $subsidiaryRowTemplate = $('.subsidiaryTemplate').first().clone(true);
+    var $subsidiariesTable = $('#subsidiariesId').empty();//.append($branchRowTemplate.clone(true).hide());
+    if (history) {
+        $('#subsidiaryBtnColumnId').hide();
+        $subsidiaryRowTemplate.find('.tableModule-bodyItem-action').hide();
+        $('.newSubsidiaryBtn').hide();
+    }
+
+    financialSurvey.subsidiaries.forEach(function (subsidiary) {
+        if (subsidiary.action !== DELETE_ACTION) {
+            var name = subsidiary.subsidiaryName;
+            var registrationNumber = subsidiary.registrationName;
+            var contribution = subsidiary.contribution;
+            var unifiedNo = subsidiary.unifiedNo;
+            var dataIncludedInHeadOffice = subsidiary.dataIncludedInHeadOffice;
+            var dataIncludedInHeadOfficeDisplay = getI18nText("finance.survey.subsidiary.dataIncludedInHeadOffice.no");
+            if(dataIncludedInHeadOffice == 'true'){
+                dataIncludedInHeadOfficeDisplay = getI18nText("finance.survey.subsidiary.dataIncludedInHeadOffice.yes");
+            }
+
+            var $subsidiaryRow = $subsidiaryRowTemplate.clone(true).show();
+            $subsidiaryRow.attr("id", subsidiary.srId).children().first().html(name).next().text(registrationNumber).next().text(dataIncludedInHeadOfficeDisplay);
+            setColorForDraftRow($subsidiaryRow, subsidiary.action);
+            $subsidiaryRow.find('.editSubsidiaryBtn').show();
+            $subsidiaryRow.find('.deleteDropdown').show();
+
+            $subsidiariesTable.append($subsidiaryRow);
+
+            SAGIA.financialSurvey.subsidiary = {};
+            setupSubsidiariesTable();
+            SAGIA.financialSurvey.subsidiary.dataTable.row.add($subsidiaryRow).draw();
+
+        }
+    });
+
+
+
+    adjustNewItemIdVariable();
+}
+
+
+
+
+
+
+
+
 function setLicenseData(data, history) {
     financialSurvey = data;
 
@@ -1487,127 +1637,9 @@ function setLicenseData(data, history) {
         $("#thousandsId").prop('checked',true);
     }
 
-
-    var DELETE_ACTION = '03';
-
-
-    var $shareholderRowTemplate = $('.shareholderTemplate').first().clone(true);
-    var $shareholdersTable = $('#shareholdersId').empty().append($shareholderRowTemplate.clone(true).hide());
-    financialSurvey.shareholders.forEach(function (shareholder) {
-        if (shareholder.action !== DELETE_ACTION) {
-            var name = shareholder.shareholderNameEnglish;
-            var type = shareholder.shareholderType === '1' ? getI18nText("general.individual") : getI18nText("general.entity");
-            var percentage = 0;
-            if(shareholder.shareholderPercentage != null) {
-                percentage = (shareholder.shareholderPercentage.length > 5 ? shareholder.shareholderPercentage.substring(0, 5) : shareholder.shareholderPercentage) + '%';
-            }
-            var shareValue = shareholder.shareholderCapital ;
-
-            var shareholderVotingPower = 0;
-            if(shareholder.shareholderVotingPower != null) {
-                shareholderVotingPower = (shareholder.shareholderVotingPower.length > 5 ? shareholder.shareholderVotingPower.substring(0, 5) : shareholder.shareholderVotingPower) + '%';
-            }
-
-            var $shareholderRow = $shareholderRowTemplate.clone(true).show();
-            $shareholderRow.attr("id", shareholder.srId ? shareholder.srId : shareholder.newItemId).children().first().text(name).next().text(type)
-                .next().text(percentage).next().text(shareValue).next().text(shareholderVotingPower);
-            setColorForDraftRow($shareholderRow, shareholder.action);
-            $shareholdersTable.append($shareholderRow);
-        }
-    });
-
-    // Start Affiliate
-
-    var $affiliateRowTemplate = $('.affiliateTemplate').first().clone(true);
-    var $affiliatesTable = $('#affiliatesId').empty().append($affiliateRowTemplate.clone(true).hide());
-
-    financialSurvey.affiliates.forEach(function (affiliate) {
-        if (affiliate.action !== DELETE_ACTION) {
-            var name = affiliate.affiliateNameEnglish;
-            var country = affiliate.affiliateType === '1' ? affiliate.affiliateCountryDescription : affiliate.companyCountryDescription ;
-            var type = affiliate.affiliateType === '1' ? getI18nText("general.individual") : getI18nText("general.entity");
-
-
-            var $affiliateRow = $affiliateRowTemplate.clone(true).show();
-            $affiliateRow.attr("id", affiliate.srId ? affiliate.srId : affiliate.newItemId).children().first().text(name).next().text(type).next().text(country);
-            setColorForDraftRow($affiliateRow, affiliate.action);
-            $affiliatesTable.append($affiliateRow);
-        }
-    });
-
-
+    setShareholdersAndAffeliateData(data, history);
     // End Affiliate
-
-    var $branchRowTemplate = $('.branchTemplate').first().clone(true);
-    var $branchesTable = $('#branchesId').empty();//.append($branchRowTemplate.clone(true).hide());
-    if (history) {
-        $('#branchBtnColumnId').hide();
-        $branchRowTemplate.find('.tableModule-bodyItem-action').hide();
-        $('.newBranchBtn').hide();
-    }
-    financialSurvey.branches.forEach(function (branch) {
-        if (branch.action !== DELETE_ACTION) {
-            var typeDescription = branch.typeDescription;
-            var name = branch.name;
-            var volumeWeight = branch.volumeWeight;
-            var city = branch.address.cityDescription;
-            var addrNumber = branch.addrNumber;
-            var $branchRow = $branchRowTemplate.clone(true).show();
-            $branchRow.attr("id", branch.srId).children().first().html(typeDescription).next().text(name).next().text(city).next().text(volumeWeight);
-            setColorForDraftRow($branchRow, branch.action);
-
-          //  if (branch.main) { // Main branch, can edit, can't be removed
-                    $branchRow.find('.viewBranchBtn').show();
-                    $branchRow.find('.editBranchBtn').show();
-                    $branchRow.find('.deleteDropdown').show();
-          //      } else { // Can be removed
-         //           $branchRow.find('.viewBranchBtn').show();
-         //           $branchRow.find('.editBranchBtn').hide();
-        //            $branchRow.find('.deleteDropdown').show();
-        //    }
-
-            SAGIA.financialSurvey.branch.dataTable.row.add($branchRow).draw();
-            $branchesTable.append($branchRow);
-        }
-    });
-
-
-
-    var $subsidiaryRowTemplate = $('.subsidiaryTemplate').first().clone(true);
-    var $subsidiariesTable = $('#subsidiariesId').empty();//.append($branchRowTemplate.clone(true).hide());
-    if (history) {
-        $('#subsidiaryBtnColumnId').hide();
-        $subsidiaryRowTemplate.find('.tableModule-bodyItem-action').hide();
-        $('.newSubsidiaryBtn').hide();
-    }
-
-    financialSurvey.subsidiaries.forEach(function (subsidiary) {
-        if (subsidiary.action !== DELETE_ACTION) {
-            var name = subsidiary.subsidiaryName;
-            var registrationNumber = subsidiary.registrationName;
-            var contribution = subsidiary.contribution;
-            var unifiedNo = subsidiary.unifiedNo;
-            var dataIncludedInHeadOffice = subsidiary.dataIncludedInHeadOffice;
-            var dataIncludedInHeadOfficeDisplay = getI18nText("finance.survey.subsidiary.dataIncludedInHeadOffice.no");
-            if(dataIncludedInHeadOffice == 'true'){
-                dataIncludedInHeadOfficeDisplay = getI18nText("finance.survey.subsidiary.dataIncludedInHeadOffice.yes");
-            }
-
-            var $subsidiaryRow = $subsidiaryRowTemplate.clone(true).show();
-            $subsidiaryRow.attr("id", subsidiary.srId).children().first().html(name).next().text(registrationNumber).next().text(dataIncludedInHeadOfficeDisplay);
-            setColorForDraftRow($subsidiaryRow, subsidiary.action);
-            $subsidiaryRow.find('.editSubsidiaryBtn').show();
-            $subsidiaryRow.find('.deleteDropdown').show();
-
-        $subsidiariesTable.append($subsidiaryRow);
-        SAGIA.financialSurvey.subsidiary.dataTable.row.add($subsidiaryRow).draw();
-
-        }
-    });
-
-
-
-    adjustNewItemIdVariable();
+    setBranchesAndSubsidiariesData(data, history);
 }
 
 function setupDropDowns(data) {

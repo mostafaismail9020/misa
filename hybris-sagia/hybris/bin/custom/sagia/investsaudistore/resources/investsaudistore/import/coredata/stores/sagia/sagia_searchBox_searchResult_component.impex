@@ -27,10 +27,10 @@ INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true];visible; 
 ;generic-paragraph-opportunities;false;
 
 INSERT_UPDATE ContentSlot; uid[unique = true]       ; name           ; active; cmsComponents($contentCV,uid); $contentCV[unique = true]
-                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; all-opportunity-banner-container; generic-paragraph-opportunities, sagia-search-box-component, sagia-search-result-component
+                         ; PortalPageMainSlot-opportunity-search-page ; PortalPageMain ; true  ; all-opportunity-banner-container, generic-paragraph-opportunities, sagia-search-box-component, sagia-search-result-component
 
 
 
 INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
-                         ; PortalPageMainSlot-$page ; PortalPageMain ; PortalPageMainSlot-$page ;
+                        ; PortalPageMainSlot-opportunity-search-page ; PortalPageMain ; PortalPageMainSlot-$page ;opportunity-search-page;
 

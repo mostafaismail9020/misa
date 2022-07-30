@@ -804,8 +804,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
     private void populateAffiliateModel(Affiliate affiliate, FinancialSurveyAffiliateModel financialSurveyAffiliateModel) throws ConversionException {
         financialSurveyAffiliateModel.setAffiliateType(affiliate.getAffiliateType());
         financialSurveyAffiliateModel.setAffiliateTypeRef("1".equals(affiliate.getAffiliateType())?FinancialSurveyAffiliateType.INDIVIDUAL:FinancialSurveyAffiliateType.ENTITY);
-        financialSurveyAffiliateModel.setCompanyCountry(affiliate.getCompanyCountry());
-        financialSurveyAffiliateModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getCompanyCountry()));
+
         financialSurveyAffiliateModel.setAffiliateNameEnglish(affiliate.getAffiliateNameEnglish());
         financialSurveyAffiliateModel.setAffiliateSector(affiliate.getAffiliateSector());
         financialSurveyAffiliateModel.setAffiliateSubsector(affiliate.getAffiliateSubsector());
@@ -815,8 +814,11 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
         if ( "2".equals(affiliate.getAffiliateType())) { // Entity
 
-            financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getCompanyCountry());
-            financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getCompanyCountry()));
+            financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());
+            financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
+
+            financialSurveyAffiliateModel.setCompanyCountry(affiliate.getAffiliateCountry());
+            financialSurveyAffiliateModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
 
         }else {  //Individual
             financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());

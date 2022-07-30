@@ -814,11 +814,17 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
         if ( "2".equals(affiliate.getAffiliateType())) { // Entity
 
-            financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());
-            financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
-
-            financialSurveyAffiliateModel.setCompanyCountry(affiliate.getAffiliateCountry());
-            financialSurveyAffiliateModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
+            if (affiliate.getCompanyCountry() != null && !"".equals(affiliate.getCompanyCountry())) {
+                financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getCompanyCountry());
+                financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getCompanyCountry()));
+                financialSurveyAffiliateModel.setCompanyCountry(affiliate.getCompanyCountry());
+                financialSurveyAffiliateModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getCompanyCountry()));
+            }else {
+                financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());
+                financialSurveyAffiliateModel.setAffiliateCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
+                financialSurveyAffiliateModel.setCompanyCountry(affiliate.getAffiliateCountry());
+                financialSurveyAffiliateModel.setCompanyCountryRef(sagiaCountryDAO.getCountryForCode(affiliate.getAffiliateCountry()));
+            }
 
         }else {  //Individual
             financialSurveyAffiliateModel.setAffiliateCountry(affiliate.getAffiliateCountry());

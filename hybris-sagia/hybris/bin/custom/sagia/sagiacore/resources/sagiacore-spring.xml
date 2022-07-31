@@ -1615,8 +1615,7 @@
     </bean>
 
 
-    <bean id="sagiaCategorySource" parent="abstractCategorySource"
-          class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.SagiaCategorySource">
+    <bean id="sagiaCategorySource" parent="abstractCategorySource" >
         <property name="rootCategory" value="sector-opportunities"/>
     </bean>
 

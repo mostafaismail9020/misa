@@ -25,7 +25,7 @@
                     <c:forEach items="${facetData.values}" var="facetValue">
                         <li>
                             <c:if test="${facetData.multiSelect}">
-                            <c:if test="${facetValue.code != 'sector-opportunities'} ">
+<%--                            <c:if test="${facetValue.code != 'sector-opportunities'} ">--%>
                                 <ycommerce:testId code="facetNav_selectForm">
                                     <form action="#" method="get">
                                         <input type="hidden" name="q" value="${facetValue.query.query.value}"/>
@@ -44,7 +44,7 @@
 
                                     </form>
                                 </ycommerce:testId>
-                            </c:if>
+                            <%--</c:if>--%>
                             </c:if>
                             <c:if test="${not facetData.multiSelect}">
                                 <c:url value="${facetValue.query.url}" var="facetValueQueryUrl"/>

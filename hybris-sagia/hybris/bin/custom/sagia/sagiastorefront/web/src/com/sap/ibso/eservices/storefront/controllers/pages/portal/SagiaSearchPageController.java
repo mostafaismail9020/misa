@@ -79,78 +79,69 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 			final HttpServletRequest request, final Model model) throws CMSItemNotFoundException
 	{
 		final ContentPageModel noResultPage = getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID);
-		if (StringUtils.isEmpty(searchText))
+
+		final PageableData pageableData = createPageableData(0,NUM_OF_RECORD_PER_PAGE, null, ShowMode.Page);
+
+		final SearchStateData searchState = new SearchStateData();
+		final SearchQueryData searchQueryData = new SearchQueryData();
+		searchQueryData.setValue(searchText);
+		searchState.setQuery(searchQueryData);
+
+		ProductSearchPageData<SearchStateData, ProductData> searchPageData = null;
+		ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
+
+		try
 		{
-			searchText= "all";
+			searchPageData = encodeSearchPageData(productSearchFacade.textSearch(searchState, pageableData));
 		}
-		if (StringUtils.isNotBlank(searchText))
+		catch (final ConversionException e) // NOSONAR
 		{
-			final PageableData pageableData = createPageableData(0,NUM_OF_RECORD_PER_PAGE, null, ShowMode.Page);
-
-			final SearchStateData searchState = new SearchStateData();
-			final SearchQueryData searchQueryData = new SearchQueryData();
-			searchQueryData.setValue(searchText);
-			searchState.setQuery(searchQueryData);
-
-			ProductSearchPageData<SearchStateData, ProductData> searchPageData = null;
-			ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
-
-			try
-			{
-				searchPageData = encodeSearchPageData(productSearchFacade.textSearch(searchState, pageableData));
-			}
-			catch (final ConversionException e) // NOSONAR
-			{
-				// nothing to do - the exception is logged in SearchSolrQueryPopulator
-			}
-
-			if (searchPageData == null)
-			{
-				storeCmsPageInModel(model, noResultPage);
-			}
-			else if (searchPageData.getKeywordRedirectUrl() != null)
-			{
-				// if the search engine returns a redirect, just
-				return "redirect:" + searchPageData.getKeywordRedirectUrl();
-			}
-			else if (searchPageData.getPagination().getTotalNumberOfResults() == 0)
-			{
-				model.addAttribute("searchPageData", searchPageData);
-				storeCmsPageInModel(model, noResultPage);
-				updatePageTitle(searchText, model);
-			}
-			else
-			{
-				storeContinueUrl(request);
-				populateModel(model, searchPageData, ShowMode.Page);
-				solrSearchPageData=searchPageData;
-				List<OpportunityData> opportunityDataList = new ArrayList<>();
-				for (ProductData productData : searchPageData.getResults()) {
-					opportunityDataList.add(createOpportunityData(productData));
-				}
-				SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
-				productDataSearchPageData.setResults(opportunityDataList);
-				PaginationData sagiaPaginationData = new PaginationData ();
-				sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
-				sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
-				sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
-				sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
-				productDataSearchPageData.setPagination(sagiaPaginationData);
-				model.addAttribute("solrSearchPageData", solrSearchPageData);
-				model.addAttribute("searchPageData", productDataSearchPageData);
-			}
-			model.addAttribute("userLocation", customerLocationService.getUserLocation());
-			getRequestContextData(request).setSearch(solrSearchPageData);
-			if (solrSearchPageData != null)
-			{
-				model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchText,
-						CollectionUtils.isEmpty(solrSearchPageData.getBreadcrumbs())));
-			}
+			// nothing to do - the exception is logged in SearchSolrQueryPopulator
 		}
-		else
+
+		if (searchPageData == null)
 		{
 			storeCmsPageInModel(model, noResultPage);
 		}
+		else if (searchPageData.getKeywordRedirectUrl() != null)
+		{
+			// if the search engine returns a redirect, just
+			return "redirect:" + searchPageData.getKeywordRedirectUrl();
+		}
+		else if (searchPageData.getPagination().getTotalNumberOfResults() == 0)
+		{
+			model.addAttribute("searchPageData", searchPageData);
+			storeCmsPageInModel(model, noResultPage);
+			updatePageTitle(searchText, model);
+		}
+		else
+		{
+			storeContinueUrl(request);
+			populateModel(model, searchPageData, ShowMode.Page);
+			solrSearchPageData=searchPageData;
+			List<OpportunityData> opportunityDataList = new ArrayList<>();
+			for (ProductData productData : searchPageData.getResults()) {
+				opportunityDataList.add(createOpportunityData(productData));
+			}
+			SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
+			productDataSearchPageData.setResults(opportunityDataList);
+			PaginationData sagiaPaginationData = new PaginationData ();
+			sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
+			sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
+			sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
+			sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
+			productDataSearchPageData.setPagination(sagiaPaginationData);
+			model.addAttribute("solrSearchPageData", solrSearchPageData);
+			model.addAttribute("searchPageData", productDataSearchPageData);
+		}
+		model.addAttribute("userLocation", customerLocationService.getUserLocation());
+		getRequestContextData(request).setSearch(solrSearchPageData);
+		if (solrSearchPageData != null)
+		{
+			model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchText,
+					CollectionUtils.isEmpty(solrSearchPageData.getBreadcrumbs())));
+		}
+
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
 		model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_FOLLOW);
 		ContentPageModel contentPageModel = getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID);

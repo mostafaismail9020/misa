@@ -4583,12 +4583,24 @@ $(document).ready(function () {
 /*Menu Toggle between English & Arabic - START */
 function LanguageToggle(lang){
     if(lang === "en"){
-        var url = window.location.href.replace('/ar/','/en/');
-        window.location.href = url;
+    	if(window.location.href.endsWith('/ar')){
+    		// handle the home page url ends with /ar
+    		var url = window.location.href.replace('/ar','/en');
+    		window.location.href = url;
+    	}else {
+    		var url = window.location.href.replace('/ar/','/en/');
+    		window.location.href = url;
+    	}
     }
     else if(lang === "ar"){
-        var url = window.location.href.replace('/en/', '/ar/');
-        window.location.href = url;
+    	if(window.location.href.endsWith('/en')){
+    		// handle the home page url ends with /en
+    		var url = window.location.href.replace('/en','/ar');
+    		window.location.href = url;
+    	} else {
+    		var url = window.location.href.replace('/en/', '/ar/');
+    		window.location.href = url;
+    	}
     }
 }
 /*Menu Toggle between English & Arabic - END */

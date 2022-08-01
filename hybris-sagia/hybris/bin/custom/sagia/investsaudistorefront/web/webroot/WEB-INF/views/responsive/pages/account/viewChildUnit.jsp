@@ -15,7 +15,7 @@
 
     <div id="global-alerts" class="global-alerts">
 
-    <div class="headline header-account"> Child Unit List</div>
+    <div class="headline header-account"> Entity List</div>
 
     <c:choose>
         <c:when test="${existingChildUnits.size() eq 0}">

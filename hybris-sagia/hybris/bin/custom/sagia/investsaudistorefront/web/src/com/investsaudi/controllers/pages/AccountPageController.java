@@ -162,7 +162,7 @@ public class AccountPageController extends AbstractSearchPageController
 	private static final Logger LOG = Logger.getLogger(AccountPageController.class);
 	public static final String ADD_NEW_USER_PAGE = "add-new-user";
 	public static final String ADD_NEW_CHILD_PAGE = "add-child-unit";
-	public static final String VIEW_CHILD_UNIT_PAGE = "view-child-units";
+	public static final String VIEW_CHILD_UNIT_PAGE = "entity-lists";
 	public static final String MANAGE_CHILD_B2B_CUSTOMERS = "manage-childb2b-users";
 	public static final String SUCCESS_RESPONSE_STATUS = "success";
 	public static final String FAILED_RESPONSE_STATUS = "failed";

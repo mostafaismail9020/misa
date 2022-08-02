@@ -14,7 +14,7 @@
     .footer,.copyright {
         display: none;
     }
-</style>	
+</style>
 
 <div class="contentModule-headline_1 contentModule-headline_small mobile-verify-text auth-mobile">
 <!-- <c:if test="${empty isEnableTwoFactorAuthService}">
@@ -28,28 +28,28 @@
 </div>
 <form:form modelAttribute="sagiaAuthenticateCodeForm" action="${action}" method="POST">
 	<c:if test="${not empty sagiaAuthenticateCodeFormError}">
-		<div class="row"> 
+		<div class="row">
 			<div class="formError reg-form-error">
 				<icon:messageError/><spring:theme code="${sagiaAuthenticateCodeFormError}" arguments=""/>
 			</div>
 		</div>
 	</c:if>
 	<c:if test="${not empty sagiaAuthenticateCodeIncorrectError}">
-		<div class="row"> 
+		<div class="row">
 			<div class="formError reg-form-error">
 				<icon:messageError/><spring:theme code="${sagiaAuthenticateCodeIncorrectError}" arguments=""/>
 			</div>
 		</div>
 	</c:if>
-	
+
 	<div class="mobile-code-wrapper">
 		<formElement:formInputBox idKey="authenticate.code" path="code" labelKey="text.authenticate.code.input" labelCSS="mobile-code-label" inputCSS="form-control mobile-code-text validate-mobile mobile-number" mandatory="true" autocomplete="off"/>
-	</div>	
-	<div class="col-md-12 captcha-pos">
+	</div>
+	<%--<div class="col-md-12 captcha-pos">
             	<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
             	<div class="form_field-elements control-group js-recaptcha-captchaaddon" style=""></div>
             	<span id="lblErrorCaptchareg" class="mandatory"></span>
-            </div>
+    </div>--%>
 	<div class="accountLogin-content-formSubmitSection">
 		<div class="contentModule-actions contentModule-actions_centered">
 			<ycommerce:testId code="authenticate_Code_button">
@@ -57,7 +57,7 @@
 					<c:choose>
 						<c:when test="${isVerificationPage}">
 							<spring:theme code="authenticate.confirm.label"/>
-						</c:when>    
+						</c:when>
 						<c:otherwise>
 							<%--Login--%>
 							<spring:theme code="${actionNameKey}"/>
@@ -77,7 +77,7 @@
 					<c:url value="/login-second-step/resend" var="resendCodeUrl"/>
 				</c:otherwise>
 			</c:choose>
-			
+
 <%-- 			<a id="resendBtn" class="login-btn login-entry-cancel padding-top-10" href="${resendCodeUrl}"><spring:theme code="text.resend.code.button"/></a> --%>
 		</div>
 		<div class="trouble-contact-us"><spring:theme code="text.otp.expiry.message.description"/></div>

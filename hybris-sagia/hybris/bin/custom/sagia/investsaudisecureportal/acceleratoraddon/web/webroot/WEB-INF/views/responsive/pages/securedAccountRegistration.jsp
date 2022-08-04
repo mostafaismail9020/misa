@@ -4,11 +4,11 @@
 <%@ taglib prefix="spuser" tagdir="/WEB-INF/tags/addons/investsaudisecureportal/responsive/spuser"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
+<%@ page pageEncoding="utf-8" %>
 <spring:htmlEscape defaultHtmlEscape="true" />
 <sptemplate:page pageTitle="${pageTitle}">
     <jsp:body>
-        
+
         <div class="row container-fluid">
             <div class="col-md-6">
                 <div class="item_container group1">
@@ -59,12 +59,12 @@
                                 <p class="role-text">Partner</p>
                             </div>
                         </div>
-                       
+
                         <div class="login-buttons">
                             <div class="col-md-6 col-sm-6 col-12">
                                 <a class="login-btn login-btn-cancel">CANCEL</a>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-12">													
+                            <div class="col-md-6 col-sm-6 col-12">
                                 <a class="login-btn login-btn-next active" >NEXT &nbsp;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
                                         <path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
@@ -86,11 +86,11 @@
                             <img src="" class="img-fluid function-selected" alt=""/>
                         </div>
                         <div class="register-progress">
-                            <span class="circle progress-completion"><div></div></span>								
-                            <hr />					
-                            <span class="circle register-progress-selection">2</span>								
+                            <span class="circle progress-completion"><div></div></span>
                             <hr />
-                            <span class="circle">3</span>							
+                            <span class="circle register-progress-selection">2</span>
+                            <hr />
+                            <span class="circle">3</span>
                         </div>
                         <div class="login-register-role">CHOOSE YOUR FUNCTION</div>
                         <div class="login-role-selection function-userGroup">
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <input type="hidden" id="register-function-group" value="1"/>
                 <div class="row col-lg-12 col-xl-12 col-12 register-account-partner-screen3 r-sn next-hide">
                     <div class="login-right-wrapper">
@@ -137,9 +137,9 @@
 							<div class="register-progress">
 								<span class="circle progress-completion register-progress-selection"><div></div></span>
 								<hr />
-								<span class="circle progress-completion register-progress-selection"><div></div></span>								
+								<span class="circle progress-completion register-progress-selection"><div></div></span>
 								<hr />
-								<span class="circle register-progress-selection">3</span>	
+								<span class="circle register-progress-selection">3</span>
 							</div>
 							<div class="login-register-role">ENTER YOUR DETAILS</div>
                             <div class="register__section register-BDUserGroup next-hide">
@@ -166,11 +166,11 @@
 								<span class=""><img src="${commonResourcePath}/images/completeed.png" alt="REGISTRATION SUCCESSFUL" /></span>
 								<div class="col-md-12 register-form register-success-msg" dir="ltr">
 									<span>Thank you for registering with us. Your registration is Under review. One of our export will be in touchwith you as soon as possible.</span>
-								</div>													
+								</div>
 							</div>
                     </div>
                 </div>
-               
+
             </div>
         </div>
         <%--

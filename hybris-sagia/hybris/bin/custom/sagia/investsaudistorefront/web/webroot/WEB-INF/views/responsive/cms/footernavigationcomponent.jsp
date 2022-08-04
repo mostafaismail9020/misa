@@ -239,7 +239,7 @@
 		</div>
 	</div>
 	
-  	<button class="float-button">NEW OPPORTUNITY REQUEST</button>
+  	<button class="float-button">EXPLORE MORE</button>
 	<div class="popup">
 		<footer id="footer" class="footer-popup">
 			<section class="footer-menu-faq">
@@ -333,7 +333,7 @@
 			$(".popup").toggleClass("popup-up");
 			$(".float-button").toggleClass("float-button-up");
 			$(".full-bg").fadeToggle();
-			$(this).html($(this).text() == 'NEW OPPORTUNITY REQUEST' ? "<img class='img-floatclose' src='${commonResourcePath}/images/float-close.png'>": 'NEW OPPORTUNITY REQUEST');
+			$(this).html($(this).text() == 'EXPLORE MORE' ? "<img class='img-floatclose' src='${commonResourcePath}/images/float-close.png'>": 'EXPLORE MORE');
 			/*
 			$("body").css("overflow", overflow);
 			$(this).html($(this).text() == 'Invest Now' ? "<img width='40' src='./images/close.png'>" : 'Invest Now');

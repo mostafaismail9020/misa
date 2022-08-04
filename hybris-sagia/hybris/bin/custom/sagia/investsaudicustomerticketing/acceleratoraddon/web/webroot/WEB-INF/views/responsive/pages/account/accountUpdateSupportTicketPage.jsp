@@ -35,7 +35,7 @@
     <div class="col-md-3 item-wrapper">
       <div class="item-group">
         <span class="item-label">
-          <spring:theme code="text.account.supporttickets.dateUpdated" text="Date Updated" />
+          <spring:theme code="text.account.supporttickets.dateUpdated" text="Last Changed" />
         </span>
         <span class="item-value">
           <fmt:formatDate value="${ticketData.lastModificationDate}" pattern="dd-MM-yy hh:mm a" />

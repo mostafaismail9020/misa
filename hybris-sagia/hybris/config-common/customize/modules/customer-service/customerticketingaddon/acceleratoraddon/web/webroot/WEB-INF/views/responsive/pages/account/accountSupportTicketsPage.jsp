@@ -48,7 +48,7 @@
           <th><spring:theme code="text.account.${requestType}.ticketId" text="Ticket ID" /></th>
           <th><spring:theme code="text.account.supporttickets.subject" text="Opportunity Name" /></th>
           <th><spring:theme code="text.account.supporttickets.dateCreated" text="Date Created" /></th>
-          <th><spring:theme code="text.account.supporttickets.dateUpdated" text="Date Updated" /></th>
+          <th><spring:theme code="text.account.supporttickets.dateUpdated" text="Last Changed" /></th>
           <th class="supportTicketsTableState"><spring:theme code="text.account.supporttickets.status" text="Status" /></th>
           <c:if test="${isNipcMember or isWOAUGMember}">
             <th><spring:theme code="text.account.supporttickets.sector" text="Sector" /></th>
@@ -76,7 +76,7 @@
             <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.dateCreated" text="Date Created" /></td>
             <td><fmt:formatDate value="${supportTicket.creationDate}" pattern="dd-MM-yy hh:mm a" /></td>
 
-            <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.dateUpdated" text="Date Updated" /></td>
+            <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.dateUpdated" text="Last Changed" /></td>
             <td><fmt:formatDate value="${supportTicket.lastModificationDate}" pattern="dd-MM-yy hh:mm a" /></td>
 
             <td class="hidden-sm hidden-md hidden-lg"><spring:theme code="text.account.supporttickets.status" text="Status" /></td>

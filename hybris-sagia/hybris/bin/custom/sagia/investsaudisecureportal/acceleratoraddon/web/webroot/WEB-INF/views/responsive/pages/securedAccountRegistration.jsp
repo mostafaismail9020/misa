@@ -1,10 +1,9 @@
-<%@ page trimDirectiveWhitespaces="true"%>
+<%@ page trimDirectiveWhitespaces="true" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sptemplate" tagdir="/WEB-INF/tags/addons/investsaudisecureportal/responsive/sptemplate"%>
 <%@ taglib prefix="spuser" tagdir="/WEB-INF/tags/addons/investsaudisecureportal/responsive/spuser"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ page pageEncoding="utf-8" %>
 <spring:htmlEscape defaultHtmlEscape="true" />
 <sptemplate:page pageTitle="${pageTitle}">
     <jsp:body>

@@ -18,7 +18,7 @@
 <c:if test="${not empty supportTicketForm}">
   <div id="global-alerts" class="global-alerts"></div>
   <div class="border-header header-account">
-    <spring:theme code="text.account.${requestType}" />
+    <spring:theme code="text.account.${requestType}.addSupportTicket" />
   </div>
 <c:if test="${bdUserGroup eq 'BDUserGroup' or bdUserGroup eq 'WOBDUserGroup'}">
 

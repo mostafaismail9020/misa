@@ -2617,6 +2617,18 @@
     </context>
 
 
+	<context type="InvestSaudiNewsComponent" merge-by="type" parent="GenericItem" component="advanced-search">
+		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">
+			<advanced-search:field-list>8
+				<advanced-search:field name="uid" selected="true"/>
+				<advanced-search:field name="name" selected="true"/>
+				<advanced-search:field name="newsTitle" selected="true"/>
+				<advanced-search:field name="newsDate" selected="true"/>
+				<advanced-search:field name="catalogVersion" selected="true"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
 	<context type="InvestSaudiNewsComponent" component="editorareaactions">
 		<y:actions>
 			<y:group qualifier="common" position="10">
@@ -2632,6 +2644,7 @@
 			<editorArea:tab name="hmc.tab.newscomponent.properties" position="1">
 				<editorArea:section name="hmc.tab.newscomponent.properties">
 					<editorArea:panel name="" colspan="2" rowspan="2">
+						<editorArea:attribute qualifier="uid" />
 						<editorArea:attribute qualifier="name" />
 						<editorArea:attribute qualifier="newsTitle" />
 						<editorArea:attribute qualifier="newsShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
@@ -2683,6 +2696,19 @@
 		</wz:flow>
 	</context>
 
+	<context type="InvestSaudiEventsComponent" merge-by="type" parent="GenericItem" component="advanced-search">
+		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true"/>
+				<advanced-search:field name="eventName" selected="true"/>
+				<advanced-search:field name="eventLocation" selected="true"/>
+				<advanced-search:field name="eventStartDate" selected="true"/>
+				<advanced-search:field name="eventEndDate" selected="true"/>
+				<advanced-search:field name="catalogVersion" selected="true"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
 	<context type="InvestSaudiEventsComponent" component="editorareaactions">
 		<y:actions>
 			<y:group qualifier="common" position="10">
@@ -2698,6 +2724,7 @@
 			<editorArea:tab name="hmc.tab.eventscomponent.properties" position="1">
 				<editorArea:section name="hmc.tab.eventscomponent.properties">
 					<editorArea:panel name="" colspan="2" rowspan="2">
+						<editorArea:attribute qualifier="uid" />
 						<editorArea:attribute qualifier="eventName" />
 						<editorArea:attribute qualifier="eventShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<editorArea:attribute qualifier="eventFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
@@ -2746,6 +2773,17 @@
 		</wz:flow>
 	</context>
 
+	<context type="InvestSaudiResourceComponent" merge-by="type" parent="GenericItem" component="advanced-search">
+		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true"/>
+				<advanced-search:field name="resourceTitle" selected="true"/>
+				<advanced-search:field name="resourceDate" selected="true"/>
+				<advanced-search:field name="catalogVersion" selected="true"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
 	<context type="InvestSaudiResourceComponent" component="editorareaactions">
 		<y:actions>
 			<y:group qualifier="common" position="10">
@@ -2761,6 +2799,7 @@
 			<editorArea:tab name="hmc.tab.resourcecomponent.properties" position="1">
 				<editorArea:section name="hmc.tab.resourcecomponent.properties">
 					<editorArea:panel name="" colspan="2" rowspan="2">
+						<editorArea:attribute qualifier="uid" />
 						<editorArea:attribute qualifier="resourceTitle" />
 						<editorArea:attribute qualifier="resourceShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<editorArea:attribute qualifier="resourceFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
@@ -2811,6 +2850,17 @@
 		</wz:flow>
 	</context>
 
+	<context type="InvestSaudiWebinarVideoComponent" merge-by="type" parent="GenericItem" component="advanced-search">
+		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true"/>
+				<advanced-search:field name="title" selected="true"/>
+				<advanced-search:field name="videoType" selected="true"/>
+				<advanced-search:field name="catalogVersion" selected="true"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
 	<context type="InvestSaudiWebinarVideoComponent" component="editorareaactions">
 		<y:actions>
 			<y:group qualifier="common" position="10">
@@ -2826,6 +2876,7 @@
 			<editorArea:tab name="hmc.tab.webinarvideocomponent.properties" position="1">
 				<editorArea:section name="hmc.tab.webinarvideocomponent.properties">
 					<editorArea:panel name="" colspan="2" rowspan="2">
+						<editorArea:attribute qualifier="uid" />
 						<editorArea:attribute qualifier="title" />
 						<editorArea:attribute qualifier="embedURL" />
 						<editorArea:attribute qualifier="twitterURL" />

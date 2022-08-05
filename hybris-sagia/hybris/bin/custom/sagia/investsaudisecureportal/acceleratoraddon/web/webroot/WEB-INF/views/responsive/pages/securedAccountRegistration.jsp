@@ -97,7 +97,7 @@
                             <div class="login-role-selection-box function-BDUserGroup active">
                                     <img src="${commonResourcePath}/images/Business Development-blue.png" alt="Investor" class="img-fluid img-function-inactive d-none" />
                                     <img src="${commonResourcePath}/images/Business Development-white.png" alt="Investor" class="img-fluid img-function-active" />
-                                    <p class="role-text">NDFC Partners <br> شركاء لجنة حصر وتطوير الفرص الاستثمارية</p>
+                                    <p class="role-text"><spring:theme code="investsaudi.registration.lob.BDUserGroup.english"/><br><spring:theme code="investsaudi.registration.lob.BDUserGroup.arabic"/></p>
                             </div>
                             <div class="login-role-selection-box function-MarCommUserGroup ">
                                 <img src="${commonResourcePath}/images/Marketing & Communication-blue.png" alt="Partner" class="img-fluid img-function-inactive" />

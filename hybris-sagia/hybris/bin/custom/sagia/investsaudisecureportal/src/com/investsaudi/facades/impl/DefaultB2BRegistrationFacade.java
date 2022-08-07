@@ -224,6 +224,10 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 
 		try
 		{
+			LOG.debug(String.format("Data has user with uid '%s'", data.getEmail()));
+			data.setEmail(data.getEmail().toLowerCase());
+			LOG.debug(String.format("Process data with user with uid '%s'", data.getEmail()));
+
 			boolean userExists = userService.validateUniqueness("", data.getEmail(), "", "");
 			// Check if a user using the same email exist, if so we need to abort the current operation!
 			//final boolean userExists = userService.isUserExisting(data.getEmail());

@@ -2649,15 +2649,10 @@
 						<editorArea:attribute qualifier="newsTitle" />
 						<editorArea:attribute qualifier="newsShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<editorArea:attribute qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<editorArea:attribute qualifier="newsUrl"/>
 						<editorArea:attribute qualifier="newsDetailsImage"/>
 						<editorArea:attribute qualifier="newsThumbnailImage"/>
-						<editorArea:attribute qualifier="newsFullReport"/>
 						<editorArea:attribute qualifier="resourceFullReport"/>
 						<editorArea:attribute qualifier="newsDate"/>
-						<editorArea:attribute qualifier="galleryImages"/>
-						<editorArea:attribute qualifier="quotation"/>
-						<editorArea:attribute qualifier="regionSpecific"/>
 					</editorArea:panel>
 				</editorArea:section>
 			</editorArea:tab>
@@ -2681,15 +2676,10 @@
 						<wz:property qualifier="newsTitle" />
 						<wz:property qualifier="newsShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<wz:property qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<wz:property qualifier="newsUrl" />
 						<wz:property qualifier="newsDetailsImage" />
 						<wz:property qualifier="newsThumbnailImage" />
-						<wz:property qualifier="newsFullReport" />
 						<wz:property qualifier="resourceFullReport"/>
 						<wz:property qualifier="newsDate" />
-						<wz:property qualifier="galleryImages" />
-						<wz:property qualifier="quotation" />
-						<wz:property qualifier="regionSpecific" />
 					</wz:property-list>
 				</wz:content>
 			</wz:step>
@@ -2734,8 +2724,6 @@
 						<editorArea:attribute qualifier="eventEndDate" />
 						<editorArea:attribute qualifier="eventBannerImage" />
 						<editorArea:attribute qualifier="eventThumbnailImage" />
-						<editorArea:attribute qualifier="eventGalleryImages" />
-						<editorArea:attribute qualifier="regionSpecific" />
 					</editorArea:panel>
 				</editorArea:section>
 			</editorArea:tab>
@@ -2765,8 +2753,6 @@
 						<wz:property qualifier="eventEndDate" />
 						<wz:property qualifier="eventBannerImage" />
 						<wz:property qualifier="eventThumbnailImage" />
-						<wz:property qualifier="eventGalleryImages" />
-						<wz:property qualifier="regionSpecific" />
 					</wz:property-list>
 				</wz:content>
 			</wz:step>
@@ -2803,15 +2789,10 @@
 						<editorArea:attribute qualifier="resourceTitle" />
 						<editorArea:attribute qualifier="resourceShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<editorArea:attribute qualifier="resourceFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<editorArea:attribute qualifier="resourceBulletPoints" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<editorArea:attribute qualifier="resourceUrl" />
 						<editorArea:attribute qualifier="resourceDate" />
 						<editorArea:attribute qualifier="resourceDetailsImage" />
 						<editorArea:attribute qualifier="resourceThumbnailImage" />
 						<editorArea:attribute qualifier="resourceFullReport" />
-						<editorArea:attribute qualifier="resourceGalleryImages" />
-						<editorArea:attribute qualifier="quotation" />
-						<editorArea:attribute qualifier="regionSpecific" />
 					</editorArea:panel>
 				</editorArea:section>
 			</editorArea:tab>
@@ -2835,15 +2816,10 @@
 						<wz:property qualifier="resourceTitle" />
 						<wz:property qualifier="resourceShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<wz:property qualifier="resourceFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<wz:property qualifier="resourceBulletPoints" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<wz:property qualifier="resourceUrl" />
 						<wz:property qualifier="resourceDate" />
 						<wz:property qualifier="resourceDetailsImage" />
 						<wz:property qualifier="resourceThumbnailImage" />
 						<wz:property qualifier="resourceFullReport" />
-						<wz:property qualifier="resourceGalleryImages" />
-						<wz:property qualifier="quotation" />
-						<wz:property qualifier="regionSpecific" />
 					</wz:property-list>
 				</wz:content>
 			</wz:step>
@@ -2884,7 +2860,6 @@
 						<editorArea:attribute qualifier="videosDetailsImage" />
 						<editorArea:attribute qualifier="companyLogo" />
 						<editorArea:attribute qualifier="shortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<editorArea:attribute qualifier="videoDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<editorArea:attribute qualifier="videoType" />
 					</editorArea:panel>
 				</editorArea:section>
@@ -2913,7 +2888,6 @@
 						<wz:property qualifier="videosDetailsImage" />
 						<wz:property qualifier="companyLogo" />
 						<wz:property qualifier="shortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<wz:property qualifier="videoDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<wz:property qualifier="videoType" />
 					</wz:property-list>
 				</wz:content>

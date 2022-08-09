@@ -2855,8 +2855,6 @@
 						<editorArea:attribute qualifier="uid" />
 						<editorArea:attribute qualifier="title" />
 						<editorArea:attribute qualifier="embedURL" />
-						<editorArea:attribute qualifier="twitterURL" />
-						<editorArea:attribute qualifier="linkedinURL" />
 						<editorArea:attribute qualifier="videosDetailsImage" />
 						<editorArea:attribute qualifier="companyLogo" />
 						<editorArea:attribute qualifier="shortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
@@ -2883,8 +2881,6 @@
 						<wz:property qualifier="catalogVersion" />
 						<wz:property qualifier="title" />
 						<wz:property qualifier="embedURL" />
-						<wz:property qualifier="twitterURL" />
-						<wz:property qualifier="linkedinURL" />
 						<wz:property qualifier="videosDetailsImage" />
 						<wz:property qualifier="companyLogo" />
 						<wz:property qualifier="shortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />

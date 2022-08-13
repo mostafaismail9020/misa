@@ -880,7 +880,7 @@ $('body.page-economic-highlights .eh-page-breadcrums .toggle-div.container-fluid
 // ------------------------------------------------------------------------------------------------------------------------
 
 $(document).ready(function () {
-	am4core.addLicense("CH292550473");
+	try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 	window.onbeforeunload = function () {
 		window.scrollTo(0, 0);
 	}
@@ -1396,7 +1396,7 @@ $(document).ready(function () {
 		// alert("test");
 		// console.log(chartData);
 		var chart = am4core.create("chartdiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.marginRight = 400;
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
@@ -1476,7 +1476,7 @@ $(document).ready(function () {
 	function renderLogisticsCharts(data){
 		// console.log(chartData);
 		var chart = am4core.create("chartdiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.marginRight = 400;
 		chart.data = [
             {
@@ -1593,7 +1593,7 @@ $(document).ready(function () {
 		console.log(Number(data[0].nonSaudi.replaceAll(",","")));
 		$("#population").text((Number(data[0].saudi.replaceAll(",",""))+Number(data[0].nonSaudi.replaceAll(",",""))).toLocaleString());
 		var chart = am4core.create("renderoverallSaudiPopulationChartDiv", am4charts.PieChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = [ {
@@ -1641,7 +1641,7 @@ $(document).ready(function () {
 			$("#rendergraduatesByDegreeChartDiv").attr("style", "display: block;");
 		}
 		var chart = am4core.create("rendergraduatesByDegreeChartDiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.exporting.menu = new am4core.ExportMenu();
         chart.maskBullets = false;
 
@@ -1755,7 +1755,7 @@ $(document).ready(function () {
 			$("#renderpopulationByRegionDiv").attr("style", "display: block;");
 		}
 		var chart = am4core.create("renderpopulationByRegionDiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.exporting.menu = new am4core.ExportMenu();
 		console.log(data);
         chart.maskBullets = false;
@@ -1909,7 +1909,7 @@ $(document).ready(function () {
 			$("#renderlabourPrivateSectorChartDiv").attr("style", "display: block;");
 		}
 		var chart = am4core.create("renderlabourPrivateSectorChartDiv", am4charts.PieChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.exporting.menu = new am4core.ExportMenu();
         chart.maskBullets = false;
 		// Add data
@@ -1981,7 +1981,7 @@ $(document).ready(function () {
 			$("#renderemploymentByRegionChartDiv").attr("style", "display: block;");
 		}
 		var chart = am4core.create("renderemploymentByRegionChartDiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.exporting.menu = new am4core.ExportMenu();
 		// console.log(data);
         chart.maskBullets = false;
@@ -2354,7 +2354,7 @@ $(document).ready(function () {
 			$(".INL_UEMP_header_number_green").html((!isFloat(saudiUnEmp) ? saudiUnEmp : saudiUnEmp.toFixed(2))+"%");
 		}
 		var chart = am4core.create("rendersaudiUnemploymentChartDiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Create chart instance
         chart.maskBullets = false;
@@ -2976,9 +2976,9 @@ $(document).ready(function () {
 			$("#renderFDIValueChartDiv").parent().find("#ChartDivError").attr("style", "display: none;");
 			$("#renderFDIValueChartDiv").attr("style", "display: block;");
 		}
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		var chart = am4core.create("renderFDIValueChartDiv", am4charts.XYChart);
-		// am4core.addLicense("CH292550473");
+		// try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.exporting.menu = new am4core.ExportMenu();
 		// Add data
 		chart.data = data;
@@ -3303,7 +3303,7 @@ $(document).ready(function () {
 			$("#capitalInformationChartDiv").attr("style", "display: block;");
 		}
 		var chart = am4core.create("capitalInformationChartDiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.marginRight = 400;
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
@@ -3411,7 +3411,7 @@ $(document).ready(function () {
 			$("#fundAssetChartDiv").attr("style", "display: block;");
 		}
 		var chart = am4core.create("fundAssetChartDiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.marginRight = 400;
 		chart.data = chartData;
 		chart.cursor = new am4charts.XYCursor();
@@ -3501,7 +3501,7 @@ $(document).ready(function () {
 			$("#CommercialChartDiv").attr("style", "display: block;");
 		}
 		var chart = am4core.create("CommercialChartDiv", am4charts.XYChart);
-		am4core.addLicense("CH292550473");
+		try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 		chart.data = data;
 		chart.exporting.menu = new am4core.ExportMenu();
 		chart.maskBullets = false;

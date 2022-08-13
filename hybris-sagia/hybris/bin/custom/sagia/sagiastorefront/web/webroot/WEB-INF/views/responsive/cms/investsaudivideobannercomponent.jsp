@@ -8,7 +8,7 @@
 
 <section id="hero" class="d-flex align-items-center">
     
-    <img class="home-banner" src="${component.backgroundBannerImage.url}" alt="homepage-banner">
+    <img class="home-banner" src="${component.backgroundBannerImage.url}" alt="homepage-banner" loading="lazy">
     <div class="container position-relative" >
       <h2  data-aos="zoom-in" data-aos-easing="ease" data-aos-delay="150">${component.title}</h2>
       <h1  data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">${component.description}</h1>

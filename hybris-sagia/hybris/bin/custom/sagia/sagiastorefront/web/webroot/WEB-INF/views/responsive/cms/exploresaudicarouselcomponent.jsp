@@ -28,7 +28,7 @@
                                                     <c:set var="loopCount" value="${status}" />
                                                     <c:if test="${currentComponent1.getIndex() <= component.getCapacity()}">
                                                         <div class="flex-slide" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${currentComponent1.reasonbackgroundImage.url});background-size: cover;background-position: center center;">
-                                                            <img class="img-fluid" src="${commonResourcePath}/images/Explore/exp_1.png" alt="" />
+                                                            <!-- <img class="img-fluid" src="${commonResourcePath}/images/Explore/exp_1.png" alt="" /> -->
 
                                                             <div class="flex-title">
                                                                 <img src="${fn:escapeXml(currentComponent1.reasonImage.url)}" class="img-fluid"><br>

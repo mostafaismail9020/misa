@@ -17,32 +17,29 @@
 <%--		<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/style.css"/>--%>
 		<%--  AddOn Common CSS files --%>
 		<c:forEach items="${addOnCommonCssPaths}" var="addOnCommonCss">
-			<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(addOnCommonCss)}"/>
+			<link media="print" onload="this.onload=null;this.removeAttribute('media');" href="${fn:escapeXml(addOnCommonCss)}"/>
 		</c:forEach>
 	</c:otherwise>
 </c:choose>
 
 <%--  AddOn Theme CSS files --%>
 <c:forEach items="${addOnThemeCssPaths}" var="addOnThemeCss">
-	<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(addOnThemeCss)}"/>
+	<link media="print" onload="this.onload=null;this.removeAttribute('media');" href="${fn:escapeXml(addOnThemeCss)}"/>
 </c:forEach>
 
 <cms:previewCSS cmsPageRequestContextData="${cmsPageRequestContextData}" />
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/aos.css"/>
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/style-${currentLanguage.isocode eq 'ar' ? 'ar' : 'en'}.css" />
-<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.carousel.min.css" />
-<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.theme.default.min.css" />
-<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/popup-multiselect.css"/>
 
 
-<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/swiper.min.css"/>
+
+
 <!--<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/bootstrap.${currentLanguage.isocode eq 'ar' ? 'ar' : 'en'}.min.css"/>-->
 <!--<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/style.css"/>-->
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/main-${currentLanguage.isocode eq 'ar' ? 'ar' : 'en'}.css" />
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/font-awesome.min.css"/>
-<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(commonResourcePath)}/intlTelInput/css/intlTelInput.css"/>
-<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(commonResourcePath)}/yearPicker/dist/yearpicker.css"/>
+
 
 <%-- Theme CSS files --%>
 		<!--<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/style.css${version}"/>-->
@@ -58,3 +55,36 @@
      <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/webinarjune.css"/>
 </c:if>
 
+<%-- performance improvement --%>
+
+<!-- async non-critical CSS -->
+
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.carousel.min.css" >
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.theme.default.min.css" >
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"href="${fn:escapeXml(themeResourcePath)}/css/popup-multiselect.css">
+
+
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="${fn:escapeXml(themeResourcePath)}/css/swiper.min.css">
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="${fn:escapeXml(commonResourcePath)}/intlTelInput/css/intlTelInput.css">
+<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="${fn:escapeXml(commonResourcePath)}/yearPicker/dist/yearpicker.css">
+
+<!-- no-JS fallback for non-critical CSS -->
+<noscript>
+<c:forEach items="${addOnCommonCssPaths}" var="addOnCommonCss">
+			<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(addOnCommonCss)}"/>
+		</c:forEach>
+		
+<c:forEach items="${addOnThemeCssPaths}" var="addOnThemeCss">
+	<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(addOnThemeCss)}"/>
+</c:forEach>
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.carousel.min.css" />
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.theme.default.min.css" />
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/popup-multiselect.css"/>
+
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/swiper.min.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(commonResourcePath)}/intlTelInput/css/intlTelInput.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(commonResourcePath)}/yearPicker/dist/yearpicker.css"/>
+</noscript>
+
+
+<%-- performance improvement End --%>

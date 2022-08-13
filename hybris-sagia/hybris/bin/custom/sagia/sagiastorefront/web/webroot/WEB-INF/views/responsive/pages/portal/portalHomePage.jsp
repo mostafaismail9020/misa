@@ -33,7 +33,7 @@
                                                             <div class="day"><fmt:formatDate value="${latestNews.newsDate}" pattern="d" /></div>
                                                             <div class="month"><fmt:formatDate value="${latestNews.newsDate}" pattern="MMMM" /></div>
                                                         </div>
-                                                        <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestNews.newsThumbnailImage.url)}" alt="${latestNews.newsTitle}">
+                                                        <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestNews.newsThumbnailImage.url)}" alt="${latestNews.newsTitle}" loading="lazy">
                                                         <div class="news-card-inner">
                                                             <h3>${latestNews.newsTitle}</h3>
                                                             <p>${latestNews.newsShortDescription}</p>
@@ -57,7 +57,7 @@
                                                     <div class="day"><fmt:formatDate value="${latestEvent.eventStartDate}" pattern="d" /></div>
                                                 <div class="month"><fmt:formatDate value="${latestEvent.eventEndDate}" pattern="MMMM" /></div>
                                                 </div>
-                                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestEvent.eventThumbnailImage.url)}" alt="${latestEvent.eventName}">
+                                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestEvent.eventThumbnailImage.url)}" alt="${latestEvent.eventName}" loading="lazy">
                                                 <div class="events-card-inner">
                                                     <h3>${latestEvent.eventName}</h3>
                                                     <p>${latestEvent.eventShortDescription}</p>
@@ -153,7 +153,7 @@
                                                         <div class="day"><fmt:formatDate value="${newsComponent.newsDate}" pattern="d" /></div>
                                                         <div class="month"><fmt:formatDate value="${newsComponent.newsDate}" pattern="MMMM" /></div>
                                                     </div>
-                                                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" alt="${newsComponent.newsTitle}">
+                                                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" alt="${newsComponent.newsTitle}" loading="lazy">
                                                     <div class="news-card-inner">
                                                         <h3>${newsComponent.newsTitle}</h3>
                                                         <p>${newsComponent.newsShortDescription}</p>
@@ -182,7 +182,7 @@
                                                     <div class="day"><fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" /></div>
                                                 <div class="month"><fmt:formatDate value="${eventComponent.eventEndDate}" pattern="MMMM" /></div>
                                                 </div>
-                                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" alt="${eventComponent.eventName}">
+                                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" alt="${eventComponent.eventName}" loading="lazy">
                                                 <div class="news-card-inner">
                                                     <h3>${eventComponent.eventName}</h3>
                                                     <p>${eventComponent.eventShortDescription}</p>

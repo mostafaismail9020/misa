@@ -16,7 +16,7 @@
             	<c:url value="/mediaCenter/events" var="eventUrl"/>                            
 				<c:forEach items="${events}" var="event">
                 	<div class="carousel-item">
-                    	<img class="d-block w-100" src="${fn:escapeXml(event.eventBannerImage.url)}" alt="${event.eventName}">
+                    	<img class="d-block w-100" src="${fn:escapeXml(event.eventBannerImage.url)}" alt="${event.eventName}" loading="lazy">
                         <div class="toplist">
                         	<div class="container-fluid">
                             	<div class="mask flex-center">

@@ -18,7 +18,7 @@
         </cms:pageSlot>
 
 		<section class="page-details-banner">
-            <img  class="banner-image" src="${eventDetails.eventBannerImage.url}" alt="${eventDetails.eventName}">
+            <img  class="banner-image" src="${eventDetails.eventBannerImage.url}" alt="${eventDetails.eventName}" loading="lazy">
             <div class="page-details-banner-container" data-aos="fade-up">
             	<div class="container page-details-banner-item">
 	                <div class="row">
@@ -135,7 +135,7 @@
 										<div class="day"><fmt:formatDate value="${eventDetails.eventStartDate}" pattern="d" /></div>
 										<div class="month"><fmt:formatDate value="${eventDetails.eventEndDate}" pattern="MMMM" /></div>
 									</div>
-									<img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventDetails.eventThumbnailImage.url)}" alt="${eventDetails.eventName}"/>
+									<img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventDetails.eventThumbnailImage.url)}" alt="${eventDetails.eventName}" loading="lazy"/>
 									<div class="news-card-inner">
 										<h3>${eventDetails.eventName}</h3>
 										<p>${eventDetails.eventShortInformation}</p>

@@ -82,7 +82,7 @@
 		                                    <div class="month"><fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMMM" /></div>
 		                             	</div>
 		                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" 
-		                                		alt="${eventComponent.eventName}">
+		                                		alt="${eventComponent.eventName}" loading="lazy">
 	                                    <div class="news-card-inner">
 	                                        <h3 title="${eventComponent.eventName}">${eventComponent.eventName}</h3>
 	                                        <p>${eventComponent.eventShortInformation}</p>
@@ -183,7 +183,7 @@
                                        <div class="month"><fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMMM" /></div>
                                        </div>
                                        <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" 
-                                       			alt="${eventComponent.eventName}">
+                                       			alt="${eventComponent.eventName}" loading="lazy">
                                        <div class="news-card-inner">
                                            <h3 title="${eventComponent.eventName}">${eventComponent.eventName}</h3>
                                            <p>${eventComponent.eventShortInformation}</p>

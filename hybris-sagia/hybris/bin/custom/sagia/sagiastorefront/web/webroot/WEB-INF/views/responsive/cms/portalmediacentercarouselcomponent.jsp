@@ -15,7 +15,7 @@
             	<c:forEach items="${mediaCenterComponents}" var="mediaCenter">
 	            	<c:if test="${null != mediaCenter.mediaCenterTitle}">
 	                	<div class="carousel-item">
-	                    	<img class="d-block w-100" src="${fn:escapeXml(mediaCenter.mediaCenterDetailsImage.url)}" alt="${mediaCenter.mediaCenterTitle}">
+	                    	<img class="d-block w-100" src="${fn:escapeXml(mediaCenter.mediaCenterDetailsImage.url)}" alt="${mediaCenter.mediaCenterTitle}" loading="lazy">
 	                    	<div class="toplist">
 	                      		<div class="container-fluid">
 	                        		<div class="mask flex-center">

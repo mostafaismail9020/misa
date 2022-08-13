@@ -370,7 +370,7 @@
 				                                        </div>
 				                                    </div>
 				                                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" 
-				                                    		alt="${newsComponent.newsTitle}">
+				                                    		alt="${newsComponent.newsTitle}" loading="lazy">
 				                                    <div class="news-card-inner">
 				                                        <h3>${newsComponent.newsTitle}</h3>
 				                                        <p>${newsComponent.newsShortInformation}</p>
@@ -416,7 +416,7 @@
                                         </div>
                                     </div>
                                     <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" 
-                                    		alt="${eventComponent.eventName}">
+                                    		alt="${eventComponent.eventName}" loading="lazy">
                                     <div class="news-card-inner">
                                         <h3>${eventComponent.eventName}</h3>
                                         <p>${eventComponent.eventShortInformation}</p>

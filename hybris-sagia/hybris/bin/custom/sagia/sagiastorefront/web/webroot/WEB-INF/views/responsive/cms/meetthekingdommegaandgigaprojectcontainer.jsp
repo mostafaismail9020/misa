@@ -233,8 +233,8 @@
             <c:forEach var="currentComponent" items="${components}" varStatus="status">
                     <div data-id="${currentComponent.componentId}" class="targetDiv some-class" id="${currentComponent.componentId}">
                         <div class="map-data ">
-                        <img class="mg-background mega-image-popup" src="${fn:escapeXml(currentComponent.backgroundImage.url)}" alt=""/>  
-                            <img class="img-fluid mega-icons download-icon" src="${fn:escapeXml(currentComponent.logo.url)}" alt="" />
+                        <img class="mg-background mega-image-popup" src="${fn:escapeXml(currentComponent.backgroundImage.url)}" alt="" loading="lazy"/>  
+                            <img class="img-fluid mega-icons download-icon" src="${fn:escapeXml(currentComponent.logo.url)}" alt="" loading="lazy"/>
                             <h3 class="mt-4">${currentComponent.shortDescription}</h3>
                             <h4>${currentComponent.longDescription}</h4>
 						<c:if test="${not empty currentComponent.localizedStats}">

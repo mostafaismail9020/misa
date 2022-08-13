@@ -213,7 +213,7 @@
 								<a class="nav-link sector-link-header" data-toggle="collapse" href="#collapse-${loop.index}" aria-expanded="true" aria-controls="collapse-${loop.index}"> ${subCategories.name}</a>
 							</div>
 							<div id="collapse-${loop.index}" class="collapse" role="tabpanel" data-parent="#pills-sector-tabContent" aria-labelledby="heading-sector-${loop.index}">
-								<div class="banner-item responsive-banner-fact"><img class="img-fluid w-100" src="${subCategories.thumbnail.url}" alt=""/></div>
+								<div class="banner-item responsive-banner-fact"><img class="img-fluid w-100" src="${subCategories.thumbnail.url}" alt="" loading="lazy"/></div>
 								<div id="fact-tab-content">
 									<div class="container">
 										<div class="col-md-10 m-auto">

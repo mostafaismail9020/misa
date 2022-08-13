@@ -18,7 +18,7 @@
 		</cms:pageSlot>
 
         <section class="page-details-banner">
-          	<img class="banner-image" src="${resourceDetails.resourceDetailsImage.url}" alt="${resourceDetails.resourceTitle}">  
+          	<img class="banner-image" src="${resourceDetails.resourceDetailsImage.url}" alt="${resourceDetails.resourceTitle}" loading="lazy">  
           	<div class="page-details-banner-container" data-aos="fade-up">
               	<div class="container page-details-banner-item">
               		<div class="row">
@@ -99,7 +99,7 @@
 										<div class="month"><fmt:formatDate value="${resourceDetails.resourceDate}" pattern="MMMM" /></div>
 									</div>
 									<img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(resourceDetails.resourceThumbnailImage.url)}" 
-											alt="${resourceDetails.resourceTitle}">
+											alt="${resourceDetails.resourceTitle}" loading="lazy">
 									<div class="news-card-inner">
 										<h3>${resourceDetails.resourceTitle}</h3>
 										<p>${resourceDetails.resourceShortInformation}</p>

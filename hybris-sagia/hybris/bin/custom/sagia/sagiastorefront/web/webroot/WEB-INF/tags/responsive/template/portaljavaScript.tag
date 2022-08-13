@@ -124,7 +124,26 @@
 <script src="${fn:escapeXml(commonResourcePath)}/yearPicker/dist/yearpicker.js" defer></script>
 
 <%-- performance improvement - Home page --%>
-<c:if test = "${pageTitle != 'Homepage' && pageTitle != 'About Invest Saudi'}">
+
+<c:if test = "${pageTitle != 'Homepage' && 
+pageTitle != 'About Invest Saudi' && 
+pageTitle!='Living in Saudi' && 
+pageTitle != 'About The Kingdom' &&
+pageTitle != 'Regions Overview' &&
+pageTitle != 'Province' &&
+pageTitle !=  'Regional Head Quarters' &&
+pageTitle != 'Sectors & Opportunities' &&
+pageTitle != 'Sector Details' &&
+pageTitle != 'Investment Guide' &&
+pageTitle != 'Incentives for Investor' &&
+pageTitle != 'Media Center' &&
+pageTitle != 'News' &&
+pageTitle != 'Events' &&
+pageTitle != 'Resources' &&
+pageTitle != 'Videos' &&
+pageTitle != 'About Invest Saudi' &&
+pageTitle != 'Contact Us'
+}">
 <script src="${fn:escapeXml(commonResourcePath)}/amCharts/core.js" defer></script>
 <script src="${fn:escapeXml(commonResourcePath)}/amCharts/charts.js" defer></script>
 

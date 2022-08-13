@@ -159,7 +159,8 @@ var SAGIA = SAGIA || {};
 	  });
 	}
 	$(window).on('load', function() {
-	  aos_init();
+		try{ aos_init();}catch(err){console.log(err);}
+	 
 	});
 
   })(jQuery);

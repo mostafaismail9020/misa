@@ -914,7 +914,8 @@ function LanguageToggle(lang){
 	  });
 	}
 	$(window).on('load', function() {
-	  aos_init();
+	 // aos_init();
+      try{ aos_init();}catch(err){console.log(err);}
 	});
 
   })(jQuery);

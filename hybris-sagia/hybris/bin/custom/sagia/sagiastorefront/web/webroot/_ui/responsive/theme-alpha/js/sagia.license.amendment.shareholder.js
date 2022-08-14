@@ -1105,7 +1105,7 @@ var bindCalendarsPickerToInput = function (element) {
             selectOtherMonths: true,
             showSpeed: "800",
             useMouseWheel: false,
-            yearRange: '-100:+5'
+            yearRange: 'any'
         }, $.calendarsPicker.regionalOptions[SAGIA.locale === 'en' ? '' : SAGIA.locale])
     ).calendarsPicker('option', {
         calendar: calendar,

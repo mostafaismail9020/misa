@@ -37,7 +37,7 @@
         <div class="modal-content">
             <div class="modal-body">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe id="cartoonVideo" width="560" height="315" src="${videoLink.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="cartoonVideo" width="560" height="315" src="${videoLink.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                 
               </div>
             </div>

@@ -51,7 +51,7 @@
 																<iframe width="560" height="315" src="${provinceDetails.videoLink.url}" 
 																		title="YouTube video player" frameborder="0" 
 																		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-																		allowfullscreen></iframe>
+																		allowfullscreen loading="lazy"></iframe>
 															</div>
 														</div>
 													</c:if>
@@ -237,7 +237,7 @@
 																<iframe width="560" height="315" src="${provinceDetails.videoLink.url}" 
 																		title="YouTube video player" frameborder="0" 
 																		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-																		allowfullscreen></iframe>
+																		allowfullscreen loading="lazy"></iframe>
 															</div>
 														</div>
 													</c:if>

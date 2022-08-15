@@ -31,7 +31,7 @@
 								<div>
 									<img class="sector-item-icon" src="${fn:escapeXml(category.logo.url)}" 
 											data-norm="${fn:escapeXml(category.logo.url)}" 
-											data-alt="${fn:escapeXml(category.logo.url)}" alt=""/>
+											data-alt="${fn:escapeXml(category.logo.url)}" alt="" loading="lazy"/>
 									<h2><c:out value="${category.name}"/></h2>
 								</div> 
 							</figure>

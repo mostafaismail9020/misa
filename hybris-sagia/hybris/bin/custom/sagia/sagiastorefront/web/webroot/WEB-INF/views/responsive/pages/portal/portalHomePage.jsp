@@ -79,7 +79,7 @@
                                                 <div class="day"><fmt:formatDate value="${latestResource.resourceDate}" pattern="d" /></div>
                                             <div class="month"><fmt:formatDate value="${latestResource.resourceDate}" pattern="MMMM" /></div>
                                             </div>
-                                            <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestResource.resourceThumbnailImage.url)}" alt="${latestResource.resourceTitle}">
+                                            <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestResource.resourceThumbnailImage.url)}" alt="${latestResource.resourceTitle}" loading="lazy">
                                             <div class="resource-card-inner">
                                                 <h3>${latestResource.resourceTitle}</h3>
                                                 <p>${latestResource.resourceShortDescription}</p>
@@ -141,7 +141,7 @@
 
                         <div class="container">
                             <div class="row mb-5">
-                                <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="news-icon">
+                                <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="news-icon" loading="lazy">
                                 <h1 class="title"><spring:theme code="portal.media.news" text="NEWS FROM INVEST SAUDI"/></h1>
                             </div>
                             <div class="row pt-3">
@@ -170,7 +170,7 @@
                  <section class="Inc-mediaCenter-sectionwrapper">
                      <div class="container">
                             <div class="row mb-5">
-                                <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="events-icon">
+                                <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="events-icon" loading="lazy">
                                 <h1 class="title"> <spring:theme code="portal.media.events" text="EVENTS"/></h1>
                             </div>
                             <div class="row">
@@ -199,7 +199,7 @@
                 <section class="Inc-mediaCenter-sectionwrapper">
                     <div class="container">
                         <div class="row mb-5">
-                            <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="events-icon">
+                            <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="events-icon" loading="lazy">
                             <h1 class="title"> <spring:theme code="portal.media.resources" text="RESOURCES"/></h1>
                         </div>
                             <c:url value="/mediaCenter/resources" var="resourcesUrl"/>
@@ -232,7 +232,7 @@
                     <div class="container">
 
                         <div class="row mb-5">
-                            <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="">
+                            <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="" loading="lazy">
                             <h1 class="title"><spring:theme code="portal.media.webinar.videos" text="WEBINAR VIDEOS"/></h1>
                         </div>
                         <div class="row">

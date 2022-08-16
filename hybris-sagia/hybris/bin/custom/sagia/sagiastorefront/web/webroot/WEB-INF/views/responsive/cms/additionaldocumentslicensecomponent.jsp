@@ -8,7 +8,7 @@
   <div class="additional_documents_license_component inner_box" data-aos="fade-up">
     
     <c:if test="${not empty icon}">
-      <img class="img-fluid" src="${icon.url}" alt='${icon.altText}' title='${icon.altText}' style="">
+      <img class="img-fluid" src="${icon.url}" alt='${icon.altText}' title='${icon.altText}' style="" loading="lazy">
     </c:if>
     
     <c:if test="${not empty headerText}">

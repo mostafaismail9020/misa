@@ -7,7 +7,7 @@
 <div class="types_investor_license_component">
 		
   <c:if test="${not empty icon}">
-    <img class="img-fluid w-20" src="${icon.url}" alt='${icon.altText}' title='${icon.altText}' style="">
+    <img class="img-fluid w-20" src="${icon.url}" alt='${icon.altText}' title='${icon.altText}' style="" loading="lazy">
     <p>${text}</p>
   </c:if>
 

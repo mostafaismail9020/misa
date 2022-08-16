@@ -20,7 +20,7 @@
                         <c:forEach var="currentComponent" items="${components}" varStatus="status">
                             <div class="col-md-4 col-xs-12 my-auto">  
                                     <div class="INC-main-item-box text-center p-4">
-                                        <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid">
+                                        <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid" loading="lazy">
                                     </div>  
                                     <div class="text-center pt-2 pb-4"> 
                                         <a href="${currentComponent.knowMore.url}" class="alink" target="_blank">${currentComponent.knowMore.linkName}</a> 

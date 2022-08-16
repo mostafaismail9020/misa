@@ -6,7 +6,7 @@
 
 <div class="support_regional_hq_component panel-box aos-init " data-aos="fade-up " data-aos-delay="0 ">    
     <c:if test="${not empty image}">
-        <div class="box-img "><img class="img-fluid w-40" src="${image.url}" alt='${image.altText}' title='${image.altText}' style=""></div>
+        <div class="box-img "><img class="img-fluid w-40" src="${image.url}" alt='${image.altText}' title='${image.altText}' style="" loading="lazy"></div>
     </c:if>
    
     <ul class="list ">

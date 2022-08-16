@@ -7,7 +7,7 @@
 
 	
 	<c:if test="${not empty icon}">
-		<img class="img-fluid w-40" src="${icon.url}" alt='${icon.altText}' title='${icon.altText}' style="">
+		<img class="img-fluid w-40" src="${icon.url}" alt='${icon.altText}' title='${icon.altText}' style="" loading="lazy">
 	</c:if>
 	
 	<c:if test="${not empty text}">

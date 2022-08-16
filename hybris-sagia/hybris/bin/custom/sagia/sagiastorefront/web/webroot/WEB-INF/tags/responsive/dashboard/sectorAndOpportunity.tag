@@ -33,7 +33,7 @@
 										<div class="dashboardWidgetBanner-tabs-body d-invest-with-us <c:if test="${not empty customerSectorCategory && not empty customerSectorCategory.sectorFactsFigures}"> col-xl-7 </c:if> col-md-12" >
 	                              			<div class="dashboardWidget-headline js-dashboardWidget-headline invest-us-header clr_gld"></div>
 											  <c:if test="${not empty customerSectorCategory}">
-												<img class="sector-item-icon" id="customer-sector-icon"  src="${fn:escapeXml(customerSectorCategory.logo.url)}" data-norm="${fn:escapeXml(customerSectorCategory.logo.url)}" data-alt="${fn:escapeXml(customerSectorCategory.logo.url)}" alt=""/>
+												<img class="sector-item-icon" id="customer-sector-icon"  src="${fn:escapeXml(customerSectorCategory.logo.url)}" data-norm="${fn:escapeXml(customerSectorCategory.logo.url)}" data-alt="${fn:escapeXml(customerSectorCategory.logo.url)}" alt="" loading="lazy"/>
 		                                            <p class="invest-with-us-description">${customerSectorCategory.overview} </p>
 		                                       	</c:if>
 		                                    <!-- <p class="invest-with-us-description">${sector.sectorDetails}</p> -->

@@ -8,7 +8,7 @@
                     <div class="panel-box aos-init" data-aos="fade-up" data-aos-delay="0">
                         <div class="macro_economic_icon box-img">
                             <c:if test="${not empty imageIcon}">
-                                <img class="js-responsive-image achievement_header_icon" src="${imageIcon.url}" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
+                                <img class="js-responsive-image achievement_header_icon" src="${imageIcon.url}" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="" loading="lazy">
                             </c:if>
                         </div>
 

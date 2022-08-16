@@ -33,7 +33,7 @@
             	<c:url value="/mediaCenter/news" var="newsUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.media.news" text="NEWS FROM INVEST SAUDI" />
                             <a href="${newsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -77,7 +77,7 @@
             	<c:url value="/mediaCenter/events" var="eventsUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.media.events" text="EVENTS" />
                             <a href="${eventsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -121,7 +121,7 @@
             	<c:url value="/mediaCenter/resources" var="resourcesUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.media.resources" text="RESOURCES" />
                             <a href="${resourcesUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -165,7 +165,7 @@
             	<c:url value="/mediaCenter/videos" var="videosUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.media.webinar.videos" text="VIDEOS" />
                             <a href="${videosUrl}" class="btn-primary explore-btn webinar-service-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;

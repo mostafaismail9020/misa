@@ -19,7 +19,7 @@
                           <div class="INS_financial_paddding INS_border_right"> 
                               <h4 class="INS_financial_header">${currentComponent.title}</h4>  
                               <div class="text-center pt-2 pb-4">
-                                  <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid INS_financial_imageheight">
+                                  <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid INS_financial_imageheight" loading="lazy">
                               </div> 
                               <p class="INS_financial_para pt-2">${currentComponent.longDescription}</p>
                               <div class="text-center pt-2 pb-4">

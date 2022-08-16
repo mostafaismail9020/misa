@@ -13,7 +13,7 @@
 				<c:when test="${not empty videoLink}">
 				<div class="video-player-container">
 						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="30%" height="215" src="${fn:escapeXml(videoLink.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="30%" height="215" src="${fn:escapeXml(videoLink.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 						</div>
 					</div>
 				</c:when>

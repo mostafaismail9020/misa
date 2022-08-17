@@ -12,7 +12,7 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <c:choose>
                         <c:when test="${not empty currentComponent.videoLink}">
-                            <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="315" src="${fn:escapeXml(currentComponent.videoLink.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="315" src="${fn:escapeXml(currentComponent.videoLink.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                         </c:when>
                         <c:otherwise>
                             <video class="video-fluid z-depth-1 vplayer embed-responsive-item" controls poster="${fn:escapeXml(currentComponent.poster.url)}" preload="none">

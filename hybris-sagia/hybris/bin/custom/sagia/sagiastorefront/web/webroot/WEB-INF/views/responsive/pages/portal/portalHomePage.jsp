@@ -97,7 +97,7 @@
                                                     <div class="col-sm-6 news vedio_outer mb-5">
                                                         <div class="video-player-container">
                                                             <div class="embed-responsive embed-responsive-16by9">
-                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(latestWebinar.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(latestWebinar.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                             </div>
                                                             <!-- <span class="video_text">
                                                                 Healthcare & Life Sciences Sector
@@ -113,7 +113,7 @@
                                        <div class="col-sm-6 news vedio_outer mb-5">
                                                         <div class="video-player-container">
                                                             <div class="embed-responsive embed-responsive-16by9">
-                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(latestSuccessStory.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(latestSuccessStory.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                             </div>
                                                             <!-- <span class="video_text">
                                                                 Healthcare & Life Sciences Sector
@@ -240,7 +240,7 @@
                                                 <div class="col-sm-4 news vedio_outer mb-5">
                                                     <div class="video-player-container">
                                                         <div class="embed-responsive embed-responsive-16by9">
-                                                            <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(videoComponent.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                            <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(videoComponent.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                         </div>
                                                         <!-- <span class="video_text">
                                                             Healthcare & Life Sciences Sector
@@ -264,7 +264,7 @@
                                                     <div class="col-sm-6 news vedio_outer mb-5">
                                                         <div class="video-player-container">
                                                             <div class="embed-responsive embed-responsive-16by9">
-                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(successStoryComponent.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(successStoryComponent.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                             </div>
                                                             <!-- <span class="video_text">
                                                                 Healthcare & Life Sciences Sector

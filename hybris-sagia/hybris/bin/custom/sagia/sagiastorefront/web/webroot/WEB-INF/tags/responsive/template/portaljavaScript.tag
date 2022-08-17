@@ -142,7 +142,11 @@ pageTitle != 'Events' &&
 pageTitle != 'Resources' &&
 pageTitle != 'Videos' &&
 pageTitle != 'About Invest Saudi' &&
-pageTitle != 'Contact Us'
+pageTitle != 'Contact Us' &&
+pageTitle != 'Economic Highlights' &&
+pageTitle != 'News Details' &&
+pageTitle != 'Event Details' &&
+pageTitle != 'Resource Details'
 }">
 <script src="${fn:escapeXml(commonResourcePath)}/amCharts/core.js" defer></script>
 <script src="${fn:escapeXml(commonResourcePath)}/amCharts/charts.js" defer></script>

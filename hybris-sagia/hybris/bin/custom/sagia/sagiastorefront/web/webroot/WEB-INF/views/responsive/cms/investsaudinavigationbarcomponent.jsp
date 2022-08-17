@@ -342,7 +342,7 @@
 					<ul class="dropdown-menu dropdown-large ">
 					     <div class="row g-3">
 										<div class="col-5 menu-img-item">
-											<img class="img-fluid w-100" src="${commonResourcePath}/images/B2C/background1.jpg" alt="">
+											<img class="img-fluid w-100" src="${commonResourcePath}/images/B2C/background1.jpg" alt="" loading="lazy">
 											<p><spring:theme code="portal.header.mydashboardpage"/></p>
 										</div>
 							            <div class="col-4 sub-items">
@@ -380,7 +380,7 @@
 								<ul class="dropdown-menu dropdown-large ">
 									<div class="row g-3">
 										<div class="col-5 menu-img-item">
-											<img class="img-fluid w-100" src="${fn:escapeXml(childLevel1.nodeImage.url)}" alt="">
+											<img class="img-fluid w-100" src="${fn:escapeXml(childLevel1.nodeImage.url)}" alt="" loading="lazy">
 											<p>${childLevel1.nodeDescription}</p>
 										</div>
 										<c:if test="${not empty childLevel1.children}">

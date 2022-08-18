@@ -2683,9 +2683,24 @@
 						<wz:property qualifier="newsTitle" />
 						<wz:property qualifier="newsShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<wz:property qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<wz:property qualifier="newsDetailsImage" />
-						<wz:property qualifier="newsThumbnailImage" />
-						<wz:property qualifier="resourceFullReport"/>
+						<wz:property qualifier="newsDetailsImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="newsThumbnailImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="resourceFullReport">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
 						<wz:property qualifier="newsDate" />
 					</wz:property-list>
 				</wz:content>
@@ -2754,12 +2769,27 @@
 						<wz:property qualifier="eventName" />
 						<wz:property qualifier="eventShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<wz:property qualifier="eventFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
-						<wz:property qualifier="eventUrl" />
+						<wz:property qualifier="eventUrl">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
 						<wz:property qualifier="eventLocation" />
 						<wz:property qualifier="eventStartDate" />
 						<wz:property qualifier="eventEndDate" />
-						<wz:property qualifier="eventBannerImage" />
-						<wz:property qualifier="eventThumbnailImage" />
+						<wz:property qualifier="eventBannerImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="eventThumbnailImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
 					</wz:property-list>
 				</wz:content>
 			</wz:step>
@@ -2824,9 +2854,24 @@
 						<wz:property qualifier="resourceShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<wz:property qualifier="resourceFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<wz:property qualifier="resourceDate" />
-						<wz:property qualifier="resourceDetailsImage" />
-						<wz:property qualifier="resourceThumbnailImage" />
-						<wz:property qualifier="resourceFullReport" />
+						<wz:property qualifier="resourceDetailsImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="resourceThumbnailImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="resourceFullReport">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
 					</wz:property-list>
 				</wz:content>
 			</wz:step>
@@ -2887,9 +2932,24 @@
 						<wz:property qualifier="uid" />
 						<wz:property qualifier="catalogVersion" />
 						<wz:property qualifier="title" />
-						<wz:property qualifier="embedURL" />
-						<wz:property qualifier="videosDetailsImage" />
-						<wz:property qualifier="companyLogo" />
+						<wz:property qualifier="embedURL">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="videosDetailsImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="companyLogo">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
 						<wz:property qualifier="shortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
 						<wz:property qualifier="videoType" />
 					</wz:property-list>

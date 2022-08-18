@@ -2352,13 +2352,20 @@
                  -->
                 <explorer-tree:type-node code="ContactTicketPurpose" id="hmc.contact.us.subject" />
                 <explorer-tree:type-node code="ContactTicket" id="hmc.contact.ticket" />
+            </explorer-tree:navigation-node>
+        </explorer-tree:explorer-tree>
+    </context>
+
+	<context merge-by="principal" parent="auto" component="explorer-tree" principal="CMS_PORTAL_USER,CMS_PORTAL_MANAGER">
+		<explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
+			<explorer-tree:navigation-node id="hmc.portal">
 				<explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
 				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
-            </explorer-tree:navigation-node>
-        </explorer-tree:explorer-tree>
-    </context>
+			</explorer-tree:navigation-node>
+		</explorer-tree:explorer-tree>
+	</context>
 
     <context merge-by="type" parent="BaseSite" type="CMSSite" component="editor-area" principal="portal-cmsmanagerrole">
         <editorArea:editorArea>
@@ -2629,7 +2636,7 @@
 		</advanced-search:advanced-search>
 	</context>
 
-	<context type="InvestSaudiNewsComponent" component="editorareaactions">
+	<context type="InvestSaudiNewsComponent" component="editorareaactions" principal="CMS_PORTAL_MANAGER">
 		<y:actions>
 			<y:group qualifier="common" position="10">
 				<y:label>actiongroup.common</y:label>
@@ -2699,7 +2706,7 @@
 		</advanced-search:advanced-search>
 	</context>
 
-	<context type="InvestSaudiEventsComponent" component="editorareaactions">
+	<context type="InvestSaudiEventsComponent" component="editorareaactions" principal="CMS_PORTAL_MANAGER">
 		<y:actions>
 			<y:group qualifier="common" position="10">
 				<y:label>actiongroup.common</y:label>
@@ -2770,7 +2777,7 @@
 		</advanced-search:advanced-search>
 	</context>
 
-	<context type="InvestSaudiResourceComponent" component="editorareaactions">
+	<context type="InvestSaudiResourceComponent" component="editorareaactions" principal="CMS_PORTAL_MANAGER">
 		<y:actions>
 			<y:group qualifier="common" position="10">
 				<y:label>actiongroup.common</y:label>
@@ -2837,7 +2844,7 @@
 		</advanced-search:advanced-search>
 	</context>
 
-	<context type="InvestSaudiWebinarVideoComponent" component="editorareaactions">
+	<context type="InvestSaudiWebinarVideoComponent" component="editorareaactions" principal="CMS_PORTAL_MANAGER">
 		<y:actions>
 			<y:group qualifier="common" position="10">
 				<y:label>actiongroup.common</y:label>

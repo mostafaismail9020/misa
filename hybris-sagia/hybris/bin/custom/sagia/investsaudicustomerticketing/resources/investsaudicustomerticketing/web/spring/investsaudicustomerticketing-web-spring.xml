@@ -80,6 +80,6 @@
     </bean>
 
 	<bean id="csAttachmentUploadMaxSize" class="java.lang.Long">
-		<constructor-arg type="long" value="10485760"/>
+		<constructor-arg type="long" value="26214400"/>
 	</bean>
 </beans>

@@ -48,7 +48,7 @@
                 	<th><spring:theme code="text.account.${requestType}.ticketId" text="Ticket ID" /></th>
                     <th><spring:theme code="text.account.supporttickets.subject" text="Subject" /></th>
                     <th><spring:theme code="text.account.supporttickets.dateCreated" text="Date Created" /></th>
-                    <th><spring:theme code="text.account.supporttickets.dateUpdated" text="Date Updated" /></th>
+                    <th><spring:theme code="text.account.supporttickets.dateUpdated" text="Last Changed" /></th>
                     <th class="supportTicketsTableState"><spring:theme code="text.account.supporttickets.status" text="Status" /></th>
 
                     <c:if test="${isNipcMember or isWOAUGMember}">

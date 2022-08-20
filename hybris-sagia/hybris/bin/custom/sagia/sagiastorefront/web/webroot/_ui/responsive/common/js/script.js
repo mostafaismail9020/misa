@@ -906,21 +906,21 @@ $(document).ready(function () {
 		}
 	});
 
-	/* Script for Opportunity page */
-	$(".opp-filter-btn").click(function(){
-		if($(".sectors-list").attr("style") == "display: none;"){
-			$(".sectors-list").attr("style","display: block;");
-			$(".opp-search-container").addClass("opp-search-container-full");
-			$("#close-filter").attr("style","display: inline-block;");
-			$("#open-filter").attr("style","display: none;");
-		}
-		else {
-			$(".sectors-list").attr("style","display: none;");
-			$(".opp-search-container").removeClass("opp-search-container-full");
-			$("#close-filter").attr("style","display: none;");
-			$("#open-filter").attr("style","display: inline-block;;");
-		}
-	});
+	// /* Script for Opportunity page */
+	// $(".opp-filter-btn").click(function(){
+	// 	if($(".sectors-list").attr("style") == "display: none;"){
+	// 		$(".sectors-list").attr("style","display: block;");
+	// 		$(".opp-search-container").addClass("opp-search-container-full");
+	// 		$("#close-filter").attr("style","display: inline-block;");
+	// 		$("#open-filter").attr("style","display: none;");
+	// 	}
+	// 	else {
+	// 		$(".sectors-list").attr("style","display: none;");
+	// 		$(".opp-search-container").removeClass("opp-search-container-full");
+	// 		$("#close-filter").attr("style","display: none;");
+	// 		$("#open-filter").attr("style","display: inline-block;;");
+	// 	}
+	// });
 	var selectedSectorsList = [];
 	$(".sector-btn").click(function(){
 		if($(this).attr("data-selected") == "no"){
@@ -975,9 +975,9 @@ $(document).ready(function () {
 		window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
     }
 
-    if (getParameterByName("q") != null) {
-        $(".opp-search-container input").val(getParameterByName("q"));
-    }
+    // if (getParameterByName("q") != null) {
+    //     $(".opp-search-container input").val(getParameterByName("q"));
+    // }
     var sectorIds = [];
 	var contractIds = [];
 
@@ -1010,8 +1010,35 @@ $(document).ready(function () {
                     'label': $.trim($(this).text())
                 });
             }
+
         }
     });
+	$(".sectorfilterselector").change( function () {
+        console.log('oba')
+		var _sectorId = $(this).attr("data-sectorId");
+        console.log(_sectorId)
+		if (_sectorId == 0) {
+			sectorIds = [];
+			sectorIds.push(0);
+		}
+		else {
+			if ($.inArray(_sectorId, sectorIds) >= 0) {
+				console.log('entering here')
+				sectorIds.splice(sectorIds.indexOf(_sectorId), 1);
+			}
+			else {
+				console.log('entering here now')
+				sectorIds.push(_sectorId);
+				window.dataLayer = window.dataLayer || [];
+				dataLayer.push({
+					'event': 'fire_event',
+					'category': window.location.href.indexOf("success-stories") > 0 ? 'Success Stories' : 'Opportunities',
+					'action': 'Filters Click',
+				});
+			}
+			window.location.href = window.location.pathname +$(this).data('href')
+		}
+	});
     $(".opp-search-container input").on("keyup", function (e) {
         if (e.currentTarget.value.length > 0) {
             $(e.currentTarget).next("a").addClass("clearSearch").find(".fa").removeClass("fa-search").addClass("fa-times-circle");
@@ -4555,26 +4582,26 @@ $(document).ready(function () {
 
 /*Menu Toggle between English & Arabic - START */
 function LanguageToggle(lang){
-	if(lang === "en"){
-		if(window.location.href.endsWith('/ar')){
-			// handle the home page url ends with /ar
-			var url = window.location.href.replace('/ar','/en');
-			window.location.href = url;
-		}else {
-			var url = window.location.href.replace('/ar/','/en/');
-			window.location.href = url;
-		}
-	}
-	else if(lang === "ar"){
-		if(window.location.href.endsWith('/en')){
-			// handle the home page url ends with /en
-			var url = window.location.href.replace('/en','/ar');
-			window.location.href = url;
-		} else {
-			var url = window.location.href.replace('/en/', '/ar/');
-			window.location.href = url;
-		}
-	}
+    if(lang === "en"){
+    	if(window.location.href.endsWith('/ar')){
+    		// handle the home page url ends with /ar
+    		var url = window.location.href.replace('/ar','/en');
+    		window.location.href = url;
+    	}else {
+    		var url = window.location.href.replace('/ar/','/en/');
+    		window.location.href = url;
+    	}
+    }
+    else if(lang === "ar"){
+    	if(window.location.href.endsWith('/en')){
+    		// handle the home page url ends with /en
+    		var url = window.location.href.replace('/en','/ar');
+    		window.location.href = url;
+    	} else {
+    		var url = window.location.href.replace('/en/', '/ar/');
+    		window.location.href = url;
+    	}
+    }
 }
 /*Menu Toggle between English & Arabic - END */
 
@@ -5043,4 +5070,58 @@ $("#logoutModal .yesButton").on("click", function() {
 });
 $("#logoutModal .noButton").on("click", function() {
 	$('#logoutModal').modal('hide');
+});
+
+/* Script for solr facet filter */
+$(".opp-filter-btn").click(function(){
+	const factToOpen = $(this).attr("data-facet-filter-name");
+	if($(".sectors-list-"+factToOpen).attr("style") == "display: none;"){
+		$(".sectors-list-"+factToOpen).attr("style","display: block;");
+		$(".opp-search-container").addClass("opp-search-container-full");
+		$("#close-filter-"+factToOpen).attr("style","display: inline-block;");
+		$("#open-filter-"+factToOpen).attr("style","display: none;");
+	}
+	else {
+		$(".sectors-list-"+factToOpen).attr("style","display: none;");
+		$(".opp-search-container").removeClass("opp-search-container-full");
+		$("#close-filter-"+factToOpen).attr("style","display: none;");
+		$("#open-filter-"+factToOpen).attr("style","display: inline-block;;");
+	}
+});
+
+$("#opp-open-modal-filter").click(function(){
+    //shop modal
+    $('#facetFilterModal').modal('show');
+
+    //show all plus icon
+    $("#facetFilterModal .open-facet").each(function() {
+        $(this).attr("style","display: none;")
+    });
+    //show all facet values and minus icon
+    $("#facetFilterModal .close-facet").each(function() {
+        $(this).attr("style","display: inline-block;")
+        $("#facetFilterModal .facet__values[data-facet='"+$(this).attr("data-facet")+"']").attr("style","display: inline-block;");
+    });
+});
+
+$("#facetFilterModal .open-facet").click(function(){
+    const codeFacet = $(this).attr("data-facet");
+
+    //change visible icon
+    $("#facetFilterModal .open-facet[data-facet='"+codeFacet+"']").attr("style","display: none;");
+    $("#facetFilterModal .close-facet[data-facet='"+codeFacet+"']").attr("style","display: inline-block;");
+
+    //show facet values
+    $("#facetFilterModal .facet__values[data-facet='"+codeFacet+"']").attr("style","display: inline-block;");
+});
+
+$("#facetFilterModal .close-facet").click(function(){
+    const codeFacet = $(this).attr("data-facet");
+
+    //change visible icon
+    $("#facetFilterModal .open-facet[data-facet='"+codeFacet+"']").attr("style","display: inline-block;");
+    $("#facetFilterModal .close-facet[data-facet='"+codeFacet+"']").attr("style","display: none;");
+
+    //hide facet values
+    $("#facetFilterModal .facet__values[data-facet='"+codeFacet+"']").attr("style","display: none;");
 });

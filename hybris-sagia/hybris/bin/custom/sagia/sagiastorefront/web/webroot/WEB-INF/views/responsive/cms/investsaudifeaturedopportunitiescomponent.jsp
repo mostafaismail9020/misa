@@ -22,7 +22,7 @@
             		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
             	</c:if>
             	<c:if test="${not empty featuredOpportunities}">
-            		<a href="${portal.cmsLinkUrl(component.exploreAllURL)}${category.code}">${component.exploreAllURL.linkName}&nbsp;
+            		<a href="/${language}${fn:replace(searchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}">${component.exploreAllURL.linkName}&nbsp;
             		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
             	</c:if>
             	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
@@ -40,7 +40,7 @@
 	                     <div class="col-lg-4 col-md-6 col-sm-12 my-4">
 	                         <a href="${encodedContextPath}${featuredOpportunity.opportunity.url}">
 	                             <div class=" Inc-fearured-opp">
-	                                 <h2 class="Inc-fearured-opp-headtitle" title="${featuredOpportunity.opportunity.name}">${featuredOpportunity.opportunity.name}</h2>
+	                                 <h2 class="Inc-fearured-opp-headtitle"">${featuredOpportunity.opportunity.name}</h2>
 	                                 <h3 class="Inc-fearured-opp-type">${featuredOpportunity.parentCategory.name}</h3>
 	                                 <button class="btn btn-sector-primary mx-auto">
 	                                 	<spring:theme code="portal.opportunity.know.more.button"/>

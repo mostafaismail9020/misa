@@ -10,11 +10,22 @@
  */
 package com.investsaudi.facades.impl;
 
+import com.investsaudi.constants.InvestsaudisecureportalConstants;
+import com.investsaudi.data.B2BRegistrationData;
 import com.investsaudi.data.SagiaB2BUnitData;
 import com.investsaudi.data.SagiaUserData;
+import com.investsaudi.exceptions.CustomerAlreadyExistsException;
+import com.investsaudi.exceptions.PhoneNumberUsedException;
+import com.investsaudi.facades.B2BRegistrationFacade;
+import com.investsaudi.facades.B2BRegistrationWorkflowFacade;
+import com.investsaudi.model.B2BRegistrationModel;
 import com.investsaudi.services.B2BRegistrationService;
-import com.sap.ibso.eservices.core.event.UserCreatedEvent;
+import com.sap.ibso.eservices.core.model.SagiaCountryModel;
+import com.sap.ibso.eservices.core.model.SagiaSectorModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaCountryService;
 import com.sap.ibso.eservices.core.sagia.services.SagiaNotificationService;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSectorService;
+import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.b2b.services.B2BUnitService;
@@ -37,14 +48,6 @@ import de.hybris.platform.tx.Transaction;
 import de.hybris.platform.util.Config;
 import de.hybris.platform.workflow.WorkflowTemplateService;
 import de.hybris.platform.workflow.model.WorkflowTemplateModel;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import javax.annotation.Resource;
-
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.WordUtils;
@@ -52,18 +55,11 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Required;
 
-import com.investsaudi.constants.InvestsaudisecureportalConstants;
-import com.investsaudi.data.B2BRegistrationData;
-import com.investsaudi.exceptions.CustomerAlreadyExistsException;
-import com.investsaudi.exceptions.PhoneNumberUsedException;
-import com.investsaudi.facades.B2BRegistrationFacade;
-import com.investsaudi.facades.B2BRegistrationWorkflowFacade;
-import com.investsaudi.model.B2BRegistrationModel;
-import com.sap.ibso.eservices.core.model.SagiaCountryModel;
-import com.sap.ibso.eservices.core.model.SagiaSectorModel;
-import com.sap.ibso.eservices.core.sagia.services.SagiaCountryService;
-import com.sap.ibso.eservices.core.sagia.services.SagiaSectorService;
-import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
+import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -79,8 +75,8 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 	private static final String DEFAULT_COUNTRY_CODE = "SA";
 	private static final String DEFAULT_TITLE_CODE = "mr";
 	private static final String USER_GROUPS_KEY = "user.group.for.new.user";
-	
-	
+
+
 	private CMSSiteService cmsSiteService;
 
 	private CommonI18NService commonI18NService;
@@ -96,7 +92,7 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 	private WorkflowTemplateService workflowTemplateService;
 
 	private SagiaCountryService sagiaCountryService;
-	
+
 	private SagiaSectorService sagiaSectorService;
 
 	@Resource
@@ -111,7 +107,7 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 	private SagiaNotificationService sagiaNotificationService;
 
 
-	
+
 
 	/**
 	 * @param sagiaSectorService the sagiaSectorService to set
@@ -171,7 +167,7 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 		this.modelService = modelService;
 	}
 
-	
+
 
 	/**
 	 * @param b2bRegistrationWorkflowFacade
@@ -192,13 +188,13 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 	{
 		this.workflowTemplateService = workflowTemplateService;
 	}
-	
-	
+
+
 
 	public void setUserService(SagiaUserService userService) {
 		this.userService = userService;
 	}
-	
+
 	/**
      * validates UniqueValue
      * @param userName          userName
@@ -228,6 +224,10 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 
 		try
 		{
+			LOG.debug(String.format("Data has user with uid '%s'", data.getEmail()));
+			data.setEmail(data.getEmail().toLowerCase());
+			LOG.debug(String.format("Process data with user with uid '%s'", data.getEmail()));
+
 			boolean userExists = userService.validateUniqueness("", data.getEmail(), "", "");
 			// Check if a user using the same email exist, if so we need to abort the current operation!
 			//final boolean userExists = userService.isUserExisting(data.getEmail());
@@ -239,7 +239,7 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 				}
 				throw new CustomerAlreadyExistsException(String.format("User with uid '%s' already exists!", data.getEmail()));
 			}
-			
+
 			boolean userMobileExists = userService.validateUniqueness("", "", data.getTelephone(), data.getTelephoneExtension());
 			  // Check if a user using the same email exist, if so we need to abort the
 			//if (userService.getCustomerByMobileNumber(data.getTelephone(), data.getTelephoneExtension()) != null ) {
@@ -250,7 +250,7 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 				}
 				throw new PhoneNumberUsedException(String.format("User with phone number '%s' already exists!", data.getTelephone()));
 			}
-			 
+
 			// Save the registration model so that it is accessible to the workflow actions. The registration model will be deleted as part of the cleanup
 			// of the workflow.
 			final B2BRegistrationModel registration = toRegistrationModel(data);
@@ -350,29 +350,29 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 	 */
 	protected CustomerModel toCustomerModel(final B2BRegistrationData data)
 	{
-	
+
 		final CustomerModel model = modelService.create(CustomerModel.class);
 
 		model.setName(WordUtils.capitalizeFully(data.getName()));
-		model.setUid(data.getEmail());
+		model.setUid(data.getEmail().toLowerCase());
 		model.setLoginDisabled(true);
 
 		final TitleModel title = userService.getTitleForCode(DEFAULT_TITLE_CODE);
 		model.setTitle(title);
-		
+
 		final UserGroupModel investSaudiLobGroup = userService.getUserGroupForUID(data.getLob());
 		// B2BUnit is mandatory
 		final CompanyModel b2bUnit =  b2bUnitService.getUnitForUid(data.getUserEntity());
 		Set<PrincipalGroupModel> groups = new HashSet<PrincipalGroupModel>();
 		groups.add(b2bUnit);
-		groups.add(investSaudiLobGroup);		
+		groups.add(investSaudiLobGroup);
 		model.setGroups(groups);
 		model.setOtherUserEntity(data.getOtherUserEntity());
 		model.setDepartment(data.getDepartment());
 		model.setMobileNumber(data.getTelephone());
 		model.setMobileCountryCode(data.getTelephoneExtension());
 		model.setCompany(DEFAULT_COMAPANY_NAME);
-		model.setUserNameEmail(data.getEmail());
+		model.setUserNameEmail(data.getEmail().toLowerCase());
 		final SagiaCountryModel sagiaCountry = sagiaCountryService.getCountryForCode(DEFAULT_COUNTRY_CODE);
 		model.setCountry(sagiaCountry);
 		final SagiaSectorModel sagiaSector = sagiaSectorService.getSectorForCode("C");
@@ -393,18 +393,18 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 	{
 
 		final B2BRegistrationModel model = modelService.create(B2BRegistrationModel.class);
-		
+
 		// Use reflection to copy most properties and ignore these since we want to manage them manually
 		BeanUtils.copyProperties(data, model, new String[]
 		{ "titleCode", "companyAddressCountryIso", "companyAddressRegion", "baseStore", "cmsSite", "currency", "language","userEntity" });
-		
+
 		// Title is mandatory
 		final TitleModel title = userService.getTitleForCode(DEFAULT_TITLE_CODE);
 		model.setTitle(title);
-	
+
 		// Country is mandatory
-		//[companyAddressCity, companyAddressPostalCode, companyAddressStreet, companyName] 
-		
+		//[companyAddressCity, companyAddressPostalCode, companyAddressStreet, companyName]
+
 		  final CountryModel country =
 		  commonI18NService.getCountry(DEFAULT_COUNTRY_CODE);
 		  model.setCompanyAddressCountry(country);
@@ -412,22 +412,22 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 		  model.setCompanyAddressPostalCode(DEFAULT_COMAPANY_ADDRESS);
 		  model.setCompanyAddressStreet(DEFAULT_COMAPANY_ADDRESS);
 		  model.setCompanyName(DEFAULT_COMAPANY_NAME);
-		
+
 		// B2BUnit is mandatory
 		final B2BUnitModel b2bUnit =  (B2BUnitModel) b2bUnitService.getUnitForUid(data.getUserEntity());
 	    model.setDefaultB2BUnit(b2bUnit);
 		// Region is optional
-		
+
 		  if (StringUtils.isNotBlank(data.getCompanyAddressRegion())) {
-			  
+
 			  final RegionModel region = commonI18NService.getRegion(country,
-		      data.getCompanyAddressRegion()); model.setCompanyAddressRegion(region); 
-		      
+		      data.getCompanyAddressRegion()); model.setCompanyAddressRegion(region);
+
 		  }
-		 
-		
+
+
 		// Get these from current context
-	  
+
 		model.setBaseStore(baseStoreService.getCurrentBaseStore());
 		model.setCmsSite(cmsSiteService.getCurrentSite());
 		model.setCurrency(commonI18NService.getCurrentCurrency());

@@ -89,7 +89,7 @@ ACC.autocomplete = {
 								desc: ACC.sanitizer.sanitize(obj.description),
 								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
 								url:  ACC.config.encodedContextPath + obj.url,
-								price: obj.price.formattedValue,
+								// price: obj.price.formattedValue,
 								type: "productResult",
 								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
 							});

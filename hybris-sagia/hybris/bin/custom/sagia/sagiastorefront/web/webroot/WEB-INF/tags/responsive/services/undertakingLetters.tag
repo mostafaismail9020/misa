@@ -3,7 +3,7 @@
 
 <div>
     <spring:theme code="services.undertakingLetters.message" text="To know more about the required document to be uploaded here, please check the"/>&nbsp
-    <a target="_blank" href="<spring:theme code="services.undertakingLetters.url" text="https://misa.gov.sa/media/1279/misa-service-manual-v2-8th-edition-en-v6.pdf"/>">
+    <a target="_blank" href="<spring:theme code="services.undertakingLetters.url" text="https://misa.gov.sa/media/1279/misa-service-manual-en.pdf"/>">
         <spring:theme code="services.undertakingLetters.manual" text="investor manual"/>
     </a>
 </div>

@@ -18,7 +18,7 @@
 <c:if test="${not empty supportTicketForm}">
   <div id="global-alerts" class="global-alerts"></div>
   <div class="border-header header-account">
-    <spring:theme code="text.account.${requestType}" />
+    <spring:theme code="text.account.${requestType}.addSupportTicket" />
   </div>
 <c:if test="${bdUserGroup eq 'BDUserGroup' or bdUserGroup eq 'WOBDUserGroup'}">
 
@@ -271,7 +271,7 @@
                 <span>
                   <spring:theme code="text.account.supporttickets.createTicket.chooseFile" text="Choose file" />
                 </span>
-                <input type="file" name="files" id="attachmentFiles" multiple size="60"
+                <input type="file" name="files" id="attachmentFiles"  size="60"
                   class="file-upload__input js-file-upload__input" data-max-upload-size="${maxUploadSize}" />
               </div>
               <span class="file-upload__file-name js-file-upload__file-name">

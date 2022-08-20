@@ -108,9 +108,9 @@
                     <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 ft-social-logo">
                         <div class="follow-us">${component.navigationFollowUs.title}</div>
                         <ul class="social-links clearfix">
-                            <li>
+                            <%-- <li>
                                 <a href=""><img src="${commonResourcePath}/images/facebook-square.png" alt="facebook" class="" /></a>
-                            </li>
+                            </li> --%>
                             <li>
                                 <a href="https://twitter.com/InvestSaudi"><img src="${commonResourcePath}/images/twitter-square.png" alt="twitter" class="" /></a>
                             </li>                                                

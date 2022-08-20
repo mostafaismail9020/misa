@@ -44,6 +44,9 @@
 		<script src="${commonResourcePathHtml}/js/jquery.currencies.min.js"></script>
 		<script src="${commonResourcePathHtml}/js/jquery.waitforimages.min.js"></script>
 		<script src="${commonResourcePathHtml}/js/jquery.slideviewer.custom.1.2.js"></script>
+		<script src="${commonResourcePathHtml}/js/acc.autocomplete.js"></script>
+		<script src="${commonResourcePathHtml}/js/acc.sanitizer.js"></script>
+		<script src="${commonResourcePathHtml}/js/acc.paginationsort.js"></script>
 		
 		<%-- Custom ACC JS --%>
 		

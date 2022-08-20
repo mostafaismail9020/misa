@@ -8,31 +8,56 @@
        value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
 
 <div class="mx-5 page-main-content">
+
+    <hr/>
+
     <c:choose>
         <c:when test="${ not empty searchPageData.results}">
             <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card">
+                    <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                        <div class="form-group form-inline">
+                            <label for="opportunity-search"><spring:theme code="sagia.sort.sort.by"/>:</label>&nbsp;
+                            <select id="opportunity-search" title="Payments" class="js-select2-oneColumn form-control" onchange="sortPayments()">
+                                <option value="null" disabled></option>
+                                <option value="name_asc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.ascending"/> </option>
+                                <option value="name_desc"><spring:theme code="sagia.sort.name"/>&nbsp;<spring:theme code="sagia.sort.descending"/> </option>
+                                <option value="amount_asc"><spring:theme code="sagia.sort.lowest"/> </option>
+                                <option value="amount_desc"><spring:theme code="sagia.sort.highest"/> </option>
+                                <option value="date_asc" data-sort="asc"><spring:theme code="sagia.sort.oldest"/></option>
+                                <option value="date_desc" data-sort="desc"><spring:theme code="sagia.sort.latest"/></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card text-right">
+                    <spring:message code="portal.opportunity.search.opportunities.totalResults"
+                           arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+                </div>
+            </div>
+
+            <div class="row">
                 <c:forEach var="result" items="${searchPageData.results}" varStatus="status">
                     <div class="col-lg-4 col-md-6 col-sm-12 my-4 opportunity-card text-center">
-                        
-                            <div class="content-box">
-                                <h2 class="h1 font-bold opp-headtitle" title="${result.opportunity.name}">${result.opportunity.name}</h2>
-                                <h3 class="opp-type font-bold">${result.parentCategory.name}</h3>
-                                <a href="${encodedContextPath}${result.opportunity.url}">
-                                    <div class="button btn know-more-btn"> 
+                        <div class="content-box">
+                            <h2 class="h1 font-bold opp-headtitle" title='<c:out value="${result.opportunity.name}"/>'>${result.opportunity.name}</h2>
+                            <h3 class="opp-type font-bold">${result.parentCategory.name}</h3>
+                            <div class="opp-container">
+                                <a href="${encodedContextPath}${result.opportunity.url}" class="opp-container-child">
+                                    <div class="button btn know-more-btn">
                                         <spring:theme code="portal.opportunity.know.more.button"/>&nbsp;
                                         <img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
                                     </div>
                                 </a>
-                                <br/>
-                                <a href="${encodedContextPath}${result.opportunity.url}/?scrollTo=contact">
-                                    <div class="button btn interest-btn"> 
+                                <a href="${encodedContextPath}${result.opportunity.url}/?scrollTo=contact" class="opp-container-child">
+                                    <div class="button btn interest-btn">
                                         <spring:theme code="portal.opportunity.iam.interested.button"/>&nbsp;
                                         <img class="img-fluid arrow-icon" src="${commonResourcePath}/images/arrow_blue.png" alt=""/>
                                     </div>
                                 </a>
-                                
                             </div>
-                        <img class="img-fluid opportunity-thumbimg" src="${result.opportunity.normal.url}" alt=""/>
+
+                        </div>
                     </div>
                 </c:forEach>
             </div>
@@ -58,7 +83,7 @@
                 <li class="page-item previous-page">
                     <a class="page-link waves-effect waves-light" href="${url}${searchPageData.pagination.currentPage-1}">
                         <img class="img-fluid previous-left-blue-icon" width="20" src="${commonResourcePath}/images/previous-arrow-left.png" alt=""/>
-                        <img class="img-fluid previous-left-white-icon" style="display: none;" width="20" 
+                        <img class="img-fluid previous-left-white-icon" style="display: none;" width="20"
                         		src="${commonResourcePath}/images/previous-white-arrow-left.png" alt=""/>
                     </a>
                 </li>
@@ -82,7 +107,7 @@
                 <li class="page-item next-page">
                     <a class="page-link waves-effect waves-light" href="${url}${searchPageData.pagination.currentPage + 1}"  style="padding-top: 5px;">
                         <img class="img-fluid arrow-left-blue-icon" width="20" src="${commonResourcePath}/images/Icon-feather-arrow-left.png" alt=""/>
-                        <img class="img-fluid arrow-left-white-icon" style="display: none;" width="20" 
+                        <img class="img-fluid arrow-left-white-icon" style="display: none;" width="20"
                         		src="${commonResourcePath}/images/Icon-white-arrow-left.png" alt=""/>
                     </a>
                 </li>

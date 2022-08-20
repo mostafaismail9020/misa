@@ -2155,7 +2155,7 @@
 						description="hmc.tab.section.ticket.answer"
 						name="hmc.tab.section.ticket.answer">
 
-					<editorArea:panel colspan="1">
+					<editorArea:panel colspan="1" >
 						<editorArea:attribute
 								editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor"
 								qualifier="answers">
@@ -2352,10 +2352,20 @@
                  -->
                 <explorer-tree:type-node code="ContactTicketPurpose" id="hmc.contact.us.subject" />
                 <explorer-tree:type-node code="ContactTicket" id="hmc.contact.ticket" />
-                <explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
             </explorer-tree:navigation-node>
         </explorer-tree:explorer-tree>
     </context>
+
+	<context merge-by="principal" parent="auto" component="explorer-tree" principal="CMS_PORTAL_USER,CMS_PORTAL_MANAGER">
+		<explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
+			<explorer-tree:navigation-node id="hmc.portal">
+				<explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
+				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
+				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
+				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
+			</explorer-tree:navigation-node>
+		</explorer-tree:explorer-tree>
+	</context>
 
     <context merge-by="type" parent="BaseSite" type="CMSSite" component="editor-area" principal="portal-cmsmanagerrole">
         <editorArea:editorArea>
@@ -2665,6 +2675,340 @@
             </wz:step>
         </wz:flow>
     </context>
+
+	<context type="InvestSaudiNewsComponent" merge-by="type" parent="GenericItem" component="advanced-search">
+		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">
+			<advanced-search:field-list>8
+				<advanced-search:field name="uid" selected="true"/>
+				<advanced-search:field name="name" selected="true"/>
+				<advanced-search:field name="newsTitle" selected="true"/>
+				<advanced-search:field name="newsDate" selected="true"/>
+				<advanced-search:field name="catalogVersion" selected="true"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
+	<context type="InvestSaudiNewsComponent" component="editorareaactions" principal="CMS_PORTAL_MANAGER">
+		<y:actions>
+			<y:group qualifier="common" position="10">
+				<y:label>actiongroup.common</y:label>
+				<y:action action-id="com.hybris.cockpitng.action.delete" property="currentObject" position="10"/>
+				<y:action action-id="com.hybris.backoffice.widgets.actions.sync" property="currentObject" position="20"/>
+			</y:group>
+		</y:actions>
+	</context>
+
+	<context parent="GenericItem" type="InvestSaudiNewsComponent" component="editor-area">
+		<editorArea:editorArea name="">
+			<editorArea:tab name="hmc.tab.newscomponent.properties" position="1">
+				<editorArea:section name="hmc.tab.newscomponent.properties">
+					<editorArea:panel name="" colspan="2" rowspan="2">
+						<editorArea:attribute qualifier="uid" />
+						<editorArea:attribute qualifier="name" />
+						<editorArea:attribute qualifier="newsTitle" />
+						<editorArea:attribute qualifier="newsShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<editorArea:attribute qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<editorArea:attribute qualifier="newsDetailsImage"/>
+						<editorArea:attribute qualifier="newsThumbnailImage"/>
+						<editorArea:attribute qualifier="resourceFullReport"/>
+						<editorArea:attribute qualifier="newsDate"/>
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+	<context component="create-wizard" merge-by="type" parent="SimpleCMSComponent" type="InvestSaudiNewsComponent">
+		<wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="InvestSaudiNewsComponentWizard" title="create.title(ctx.TYPE_CODE)">
+			<wz:prepare id="InvestSaudiNewsComponentPrepare">
+				<wz:initialize property="newObject" type="ctx.TYPE_CODE" />
+			</wz:prepare>
+			<wz:step id="step1" label="">
+				<wz:content id="step1.content">
+					<wz:property-list root="newObject"
+									  include-non-declared-mandatory="false"
+									  include-non-declared-writable-on-creation="false"
+									  include-non-declared-unique="false"
+									  enable-non-declared-includes="true">
+						<wz:property qualifier="uid" />
+						<wz:property qualifier="catalogVersion" />
+						<wz:property qualifier="name" />
+						<wz:property qualifier="newsTitle" />
+						<wz:property qualifier="newsShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<wz:property qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<wz:property qualifier="newsDetailsImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="newsThumbnailImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="resourceFullReport">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="newsDate" />
+					</wz:property-list>
+				</wz:content>
+			</wz:step>
+		</wz:flow>
+	</context>
+
+	<context type="InvestSaudiEventsComponent" merge-by="type" parent="GenericItem" component="advanced-search">
+		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true"/>
+				<advanced-search:field name="eventName" selected="true"/>
+				<advanced-search:field name="eventLocation" selected="true"/>
+				<advanced-search:field name="eventStartDate" selected="true"/>
+				<advanced-search:field name="eventEndDate" selected="true"/>
+				<advanced-search:field name="catalogVersion" selected="true"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
+	<context type="InvestSaudiEventsComponent" component="editorareaactions" principal="CMS_PORTAL_MANAGER">
+		<y:actions>
+			<y:group qualifier="common" position="10">
+				<y:label>actiongroup.common</y:label>
+				<y:action action-id="com.hybris.cockpitng.action.delete" property="currentObject" position="10"/>
+				<y:action action-id="com.hybris.backoffice.widgets.actions.sync" property="currentObject" position="20"/>
+			</y:group>
+		</y:actions>
+	</context>
+
+	<context parent="GenericItem" type="InvestSaudiEventsComponent" component="editor-area">
+		<editorArea:editorArea name="">
+			<editorArea:tab name="hmc.tab.eventscomponent.properties" position="1">
+				<editorArea:section name="hmc.tab.eventscomponent.properties">
+					<editorArea:panel name="" colspan="2" rowspan="2">
+						<editorArea:attribute qualifier="uid" />
+						<editorArea:attribute qualifier="eventName" />
+						<editorArea:attribute qualifier="eventShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<editorArea:attribute qualifier="eventFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<editorArea:attribute qualifier="eventUrl" />
+						<editorArea:attribute qualifier="eventLocation" />
+						<editorArea:attribute qualifier="eventStartDate" />
+						<editorArea:attribute qualifier="eventEndDate" />
+						<editorArea:attribute qualifier="eventBannerImage" />
+						<editorArea:attribute qualifier="eventThumbnailImage" />
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context component="create-wizard" merge-by="type" parent="SimpleCMSComponent" type="InvestSaudiEventsComponent">
+		<wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="InvestSaudiEventsComponentWizard" title="create.title(ctx.TYPE_CODE)">
+			<wz:prepare id="InvestSaudiEventsComponentPrepare">
+				<wz:initialize property="newObject" type="ctx.TYPE_CODE" />
+			</wz:prepare>
+			<wz:step id="step1" label="">
+				<wz:content id="step1.content">
+					<wz:property-list root="newObject"
+									  include-non-declared-mandatory="false"
+									  include-non-declared-writable-on-creation="false"
+									  include-non-declared-unique="false"
+									  enable-non-declared-includes="true">
+						<wz:property qualifier="uid" />
+						<wz:property qualifier="catalogVersion" />
+						<wz:property qualifier="eventName" />
+						<wz:property qualifier="eventShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<wz:property qualifier="eventFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<wz:property qualifier="eventUrl">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="eventLocation" />
+						<wz:property qualifier="eventStartDate" />
+						<wz:property qualifier="eventEndDate" />
+						<wz:property qualifier="eventBannerImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="eventThumbnailImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+					</wz:property-list>
+				</wz:content>
+			</wz:step>
+		</wz:flow>
+	</context>
+
+	<context type="InvestSaudiResourceComponent" merge-by="type" parent="GenericItem" component="advanced-search">
+		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true"/>
+				<advanced-search:field name="resourceTitle" selected="true"/>
+				<advanced-search:field name="resourceDate" selected="true"/>
+				<advanced-search:field name="catalogVersion" selected="true"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
+	<context type="InvestSaudiResourceComponent" component="editorareaactions" principal="CMS_PORTAL_MANAGER">
+		<y:actions>
+			<y:group qualifier="common" position="10">
+				<y:label>actiongroup.common</y:label>
+				<y:action action-id="com.hybris.cockpitng.action.delete" property="currentObject" position="10"/>
+				<y:action action-id="com.hybris.backoffice.widgets.actions.sync" property="currentObject" position="20"/>
+			</y:group>
+		</y:actions>
+	</context>
+
+	<context parent="GenericItem" type="InvestSaudiResourceComponent" component="editor-area">
+		<editorArea:editorArea name="">
+			<editorArea:tab name="hmc.tab.resourcecomponent.properties" position="1">
+				<editorArea:section name="hmc.tab.resourcecomponent.properties">
+					<editorArea:panel name="" colspan="2" rowspan="2">
+						<editorArea:attribute qualifier="uid" />
+						<editorArea:attribute qualifier="resourceTitle" />
+						<editorArea:attribute qualifier="resourceShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<editorArea:attribute qualifier="resourceFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<editorArea:attribute qualifier="resourceDate" />
+						<editorArea:attribute qualifier="resourceDetailsImage" />
+						<editorArea:attribute qualifier="resourceThumbnailImage" />
+						<editorArea:attribute qualifier="resourceFullReport" />
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context component="create-wizard" merge-by="type" parent="SimpleCMSComponent" type="InvestSaudiResourceComponent">
+		<wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="InvestSaudiResourceComponentWizard" title="create.title(ctx.TYPE_CODE)">
+			<wz:prepare id="InvestSaudiResourceComponentPrepare">
+				<wz:initialize property="newObject" type="ctx.TYPE_CODE" />
+			</wz:prepare>
+			<wz:step id="step1" label="">
+				<wz:content id="step1.content">
+					<wz:property-list root="newObject"
+									  include-non-declared-mandatory="false"
+									  include-non-declared-writable-on-creation="false"
+									  include-non-declared-unique="false"
+									  enable-non-declared-includes="true">
+						<wz:property qualifier="uid" />
+						<wz:property qualifier="catalogVersion" />
+						<wz:property qualifier="resourceTitle" />
+						<wz:property qualifier="resourceShortInformation" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<wz:property qualifier="resourceFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<wz:property qualifier="resourceDate" />
+						<wz:property qualifier="resourceDetailsImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="resourceThumbnailImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="resourceFullReport">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+					</wz:property-list>
+				</wz:content>
+			</wz:step>
+		</wz:flow>
+	</context>
+
+	<context type="InvestSaudiWebinarVideoComponent" merge-by="type" parent="GenericItem" component="advanced-search">
+		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">
+			<advanced-search:field-list>
+				<advanced-search:field name="uid" selected="true"/>
+				<advanced-search:field name="title" selected="true"/>
+				<advanced-search:field name="videoType" selected="true"/>
+				<advanced-search:field name="catalogVersion" selected="true"/>
+			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
+	<context type="InvestSaudiWebinarVideoComponent" component="editorareaactions" principal="CMS_PORTAL_MANAGER">
+		<y:actions>
+			<y:group qualifier="common" position="10">
+				<y:label>actiongroup.common</y:label>
+				<y:action action-id="com.hybris.cockpitng.action.delete" property="currentObject" position="10"/>
+				<y:action action-id="com.hybris.backoffice.widgets.actions.sync" property="currentObject" position="20"/>
+			</y:group>
+		</y:actions>
+	</context>
+
+	<context parent="GenericItem" type="InvestSaudiWebinarVideoComponent" component="editor-area">
+		<editorArea:editorArea name="">
+			<editorArea:tab name="hmc.tab.webinarvideocomponent.properties" position="1">
+				<editorArea:section name="hmc.tab.webinarvideocomponent.properties">
+					<editorArea:panel name="" colspan="2" rowspan="2">
+						<editorArea:attribute qualifier="uid" />
+						<editorArea:attribute qualifier="title" />
+						<editorArea:attribute qualifier="embedURL" />
+						<editorArea:attribute qualifier="videosDetailsImage" />
+						<editorArea:attribute qualifier="companyLogo" />
+						<editorArea:attribute qualifier="shortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<editorArea:attribute qualifier="videoType" />
+					</editorArea:panel>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context component="create-wizard" merge-by="type" parent="SimpleCMSComponent" type="InvestSaudiWebinarVideoComponent">
+		<wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="InvestSaudiWebinarVideoComponentWizard" title="create.title(ctx.TYPE_CODE)">
+			<wz:prepare id="InvestSaudiWebinarVideoComponentPrepare">
+				<wz:initialize property="newObject" type="ctx.TYPE_CODE" />
+			</wz:prepare>
+			<wz:step id="step1" label="">
+				<wz:content id="step1.content">
+					<wz:property-list root="newObject"
+									  include-non-declared-mandatory="false"
+									  include-non-declared-writable-on-creation="false"
+									  include-non-declared-unique="false"
+									  enable-non-declared-includes="true">
+						<wz:property qualifier="uid" />
+						<wz:property qualifier="catalogVersion" />
+						<wz:property qualifier="title" />
+						<wz:property qualifier="embedURL">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="videosDetailsImage">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="companyLogo">
+							<wz:editor-parameter>
+								<wz:name>isNestedObjectCreationDisabled</wz:name>
+								<wz:value>false</wz:value>
+							</wz:editor-parameter>
+						</wz:property>
+						<wz:property qualifier="shortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+						<wz:property qualifier="videoType" />
+					</wz:property-list>
+				</wz:content>
+			</wz:step>
+		</wz:flow>
+	</context>
 
     <context component="create-wizard" merge-by="type" parent="GenericItem" type="ContactTicketPurpose">
         <wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="ContactTicketSubjectComponentWizard" title="create.title(ctx.TYPE_CODE)">

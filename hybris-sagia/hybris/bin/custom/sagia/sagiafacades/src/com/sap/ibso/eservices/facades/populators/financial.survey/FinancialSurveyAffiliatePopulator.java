@@ -2,7 +2,7 @@ package com.sap.ibso.eservices.facades.populators.financial.survey;
 
 import com.sap.ibso.eservices.core.enums.FinancialSurveyAffiliateType;
 import com.sap.ibso.eservices.core.model.FinancialSurveyAffiliateModel;
-import com.sap.ibso.eservices.core.model.FinancialSurveyShareholderModel;
+import com.sap.ibso.eservices.core.sagia.dao.SagiaCountryDAO;
 import com.sap.ibso.eservices.facades.data.finance.survey.Affiliate;
 import com.sap.ibso.eservices.facades.data.license.amendment.Transaction;
 import de.hybris.platform.converters.Populator;
@@ -19,6 +19,9 @@ public class FinancialSurveyAffiliatePopulator implements Populator<FinancialSur
     @Resource
     private FinancialSurveyPreviousQuarterTransactionPopulator financialSurveyPreviousQuarterTransactionPopulator;
 
+    @Resource
+    private SagiaCountryDAO sagiaCountryDAO;
+
 
 
 
@@ -29,11 +32,6 @@ public class FinancialSurveyAffiliatePopulator implements Populator<FinancialSur
         affiliate.setAction("2");
         affiliate.setAffiliateType(FinancialSurveyAffiliateType.INDIVIDUAL.equals(financialSurveyAffiliateModel.getAffiliateTypeRef())?"1":"2");
 
-        String companyCountryCode = "";
-        if(null!= financialSurveyAffiliateModel.getCompanyCountryRef() ){
-            companyCountryCode = financialSurveyAffiliateModel.getCompanyCountryRef().getCode();
-        }
-        affiliate.setCompanyCountry(companyCountryCode);
 
         affiliate.setAffiliateNameEnglish(financialSurveyAffiliateModel.getAffiliateNameEnglish());
         affiliate.setAffiliateSubsector(financialSurveyAffiliateModel.getAffiliateSubsector());
@@ -41,19 +39,37 @@ public class FinancialSurveyAffiliatePopulator implements Populator<FinancialSur
         affiliate.setAffiliateGender(financialSurveyAffiliateModel.getAffiliateGender());
 
         // shareholder.setShareholderCountry(financialSurveyShareholderModel.getShareholderCountry());
-        String affiliateNationalityCurrentCode = "";
+        String affiliateNationalityCurrentCode = financialSurveyAffiliateModel.getAffiliateNationalityCurrent();
         if(null!= financialSurveyAffiliateModel.getAffiliateNationalityCurrentRef() ){
             affiliateNationalityCurrentCode = financialSurveyAffiliateModel.getAffiliateNationalityCurrentRef().getCode();
         }
         affiliate.setAffiliateNationalityCurrent(affiliateNationalityCurrentCode);
 
-        String affiliateCountryCode = "";
+        String affiliateCountryCode = financialSurveyAffiliateModel.getAffiliateCountry();
         if(null!= financialSurveyAffiliateModel.getAffiliateCountryRef() ){
             affiliateCountryCode = financialSurveyAffiliateModel.getAffiliateCountryRef().getCode();
             affiliate.setAffiliateCountryDescription(financialSurveyAffiliateModel.getAffiliateCountryRef().getName());
             affiliate.setCompanyCountryDescription(financialSurveyAffiliateModel.getAffiliateCountryRef().getName());
         }
         affiliate.setAffiliateCountry(affiliateCountryCode);
+
+        if ("2".equals(affiliate.getAffiliateType())) { //entity
+
+            String companyCountryCode = financialSurveyAffiliateModel.getCompanyCountry();
+            String companyCountryDesc = "";
+             if (companyCountryCode != null && !"".equals(companyCountryCode)){
+                       companyCountryDesc = sagiaCountryDAO.getCountryForCode(companyCountryCode).getName();
+             }
+
+            if(null!= financialSurveyAffiliateModel.getCompanyCountryRef() ){
+                companyCountryCode = financialSurveyAffiliateModel.getCompanyCountryRef().getCode();
+                companyCountryDesc = financialSurveyAffiliateModel.getCompanyCountryRef().getName();
+            }
+            affiliate.setCompanyCountry(companyCountryCode);
+            affiliate.setCompanyCountryDescription(companyCountryDesc);
+            affiliate.setAffiliateCountry(companyCountryCode);
+            affiliate.setAffiliateCountryDescription(companyCountryDesc);
+        }
 
         affiliate.setAffiliateMultinationalCompany(financialSurveyAffiliateModel.getAffiliateMultinationalCompany());
 

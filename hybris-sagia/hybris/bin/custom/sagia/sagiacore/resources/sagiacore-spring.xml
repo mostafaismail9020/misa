@@ -126,7 +126,6 @@
     <bean id="image30ValueProvider" parent="abstractImageValueProvider">
         <property name="mediaFormat" value="30Wx30H"/>
     </bean>
-
     <bean id="productUrlValueProvider" class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.ProductUrlValueProvider" parent="abstractPropertyFieldValueProvider">
         <property name="urlResolver" ref="productModelUrlResolver"/>
         <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
@@ -1622,6 +1621,36 @@
         <constructor-arg value="SagiaIndicatorTerm"/>
     </bean>
 
+    <bean id="sagiaCategorySource" parent="abstractCategorySource"  class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.SagiaCategorySource">
+        <property name="rootCategory" value="sector-opportunities"/>
+    </bean>
+
+    <bean id="sagiaCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
+        <property name="categorySource" ref="sagiaCategorySource"/>
+    </bean>
+
+    <bean id="sagiaBrandCategorySource" parent="defaultCategorySource">
+        <property name="rootCategory" value="brands"/> <!-- 'brands' is the root of the brands hierarchy -->
+    </bean>
+
+    <bean id="sagiaBrandCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
+        <property name="categorySource" ref="sagiaBrandCategorySource"/>
+    </bean>
+
+    <bean id="sagiaCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+        <property name="categorySource" ref="sagiaCategorySource"/>
+    </bean>
+
+    <bean id="sagiaBrandCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+        <property name="categorySource" ref="sagiaBrandCategorySource"/>
+    </bean>
+
+    <bean id="sagiaVariantCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+        <property name="categorySource" ref="sagiaVariantCategorySource"/>
+    </bean>
+
+    <bean id="sagiaVariantCategorySource" parent="variantCategorySource"/>
+
 
     <!-- invest saudi hot folder -->
     <bean id="batchRunnerTask" class="com.investsaudi.portal.core.dataimport.batch.task.InvestSaudiImpexRunnerTask">
@@ -1630,4 +1659,5 @@
         <property name="emailService" ref="emailService" />
         <lookup-method name="getImportConfig" bean="importConfig" />
     </bean>
+
 </beans>

@@ -103,17 +103,17 @@ public class SectorPageController extends AbstractCategoryPageController {
      * @throws CMSItemNotFoundException
      */
 	@RequestMapping(method = RequestMethod.GET)
-    public String opportunitiesSearch(final Model model, final HttpServletRequest request, final HttpServletResponse response) 
+    public String opportunitiesSearch(final Model model, final HttpServletRequest request, final HttpServletResponse response)
     		throws CMSItemNotFoundException {
-		
+
 		final String parentSector = Config.getString("parent.sector", "sector-opportunities");
-		
+
 		Collection<CategoryData> mainCategories = investSaudiCategoryFacade.getAllMainCategories(parentSector);
 		model.addAttribute("mainCategories", mainCategories);
-						
+
         ContentPageModel contentPageModel = getContentPageForLabelOrId(SECTORS_OPPORTUNITY_PAGE);
         model.addAttribute(WebConstants.BREADCRUMBS_KEY, contentPageBreadcrumbBuilder.getBreadcrumbs(contentPageModel));
-       
+
         storeCmsPageInModel(model, contentPageModel);
         storeContentPageTitleInModel(model, contentPageModel.getTitle());
         return getViewForPage(model);
@@ -190,7 +190,7 @@ public class SectorPageController extends AbstractCategoryPageController {
      * @return
      * @throws CMSItemNotFoundException
      */
-    @RequestMapping(value = "/opportunities", method = {RequestMethod.GET})
+    @RequestMapping(value = "/opportunities-ex", method = {RequestMethod.GET})
     public String opportunitiesSearch(final Model model, final HttpServletRequest request, final HttpServletResponse response, 
     		@RequestParam(required = false, defaultValue = "") String q, @RequestParam(required = false) List<String> sectorIds, 
     		@RequestParam(required = false, defaultValue = "0") Integer page) 

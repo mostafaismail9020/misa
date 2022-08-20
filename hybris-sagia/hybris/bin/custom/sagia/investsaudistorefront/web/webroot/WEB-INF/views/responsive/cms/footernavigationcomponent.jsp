@@ -61,7 +61,7 @@
 							</c:choose>
 							</p>
 						</div>
-						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
+<%-- 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">RESOURCES</h2>
 							<p class="text">Explore all the resources you need to work with us.</p>
 							<p>
@@ -76,7 +76,7 @@
 								</c:when>
 							</c:choose>
 							</p>
-						</div> 
+						</div>  --%>
 						<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 							<h2 class="text-uppercase display-7">BUSINESS SUPPORT</h2>
 							<p class="text">Link to the enquires raised by yourself.</p>
@@ -193,13 +193,13 @@
 											<a href="https://investsaudi.sa/en/sectors-opportunities/regionalHQ" title="" target = "_blank"><span class="fw-normal">Invest Saudi</span></a>
 										</li>
 										<li class="footer__link">
-											<a href="https://investsaudi.sa/en/investor/incentives" title="" target = "_blank"><span class="fw-normal">Vision 2030</span></a>
+											<a href="http://vision2030.gov.sa/ar/" title="" target = "_blank"><span class="fw-normal">Vision 2030</span></a>
 										</li>
 										<li class="footer__link">
 											<a href="https://misa.gov.sa/en/" title="" target = "_blank"><span class="fw-normal">Ministry of Investments</span></a>
 										</li>
 										<li class="footer__link">
-											<a href="http://vision2030.gov.sa/ar/" title="" target = "_blank"><span class="fw-normal">Incentive & Support</span></a>
+											<a href="https://investsaudi.sa/en/investor/incentives" title="" target = "_blank"><span class="fw-normal">Incentive & Support</span></a>
 										</li>
 									</ul>
 								</div>
@@ -210,9 +210,9 @@
 					<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 ft-social-logo">
 						<div class="follow-us">Follow Us</div>
 						<ul class="social-links clearfix">
-							<li>
+							<!-- <li>
 								<a href=""><img src="/_ui/responsive/common/images/facebook-square.png" alt="facebook" class=""></a>
-							</li>
+							</li> -->
 							<li>
 								<a href="https://twitter.com/InvestSaudi"><img src="/_ui/responsive/common/images/twitter-square.png" alt="twitter" class=""></a>
 							</li>
@@ -227,7 +227,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 copyrightText">
-          			<h6 class="footer_bottom_copy">&copy; 2021 Invest Saudi. All rights reserved.</h6>
+          			<h6 class="footer_bottom_copy">&copy; 2022 Invest Saudi. All rights reserved.</h6>
         		</div>
 				<!-- <div class="col-md-6 col-sm-6">
 					<ul class="nav-bottom-footer clearfix">
@@ -239,7 +239,7 @@
 		</div>
 	</div>
 	
-  	<button class="float-button">NEW OPPORTUNITY REQUEST</button>
+  	<button class="float-button">EXPLORE MORE</button>
 	<div class="popup">
 		<footer id="footer" class="footer-popup">
 			<section class="footer-menu-faq">
@@ -288,7 +288,7 @@
 								</c:choose>
 								</p>
 							</div> 
-							<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
+				<%-- 			<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 								<h2 class="text-uppercase display-7">BUSINESS SUPPORT</h2>
 								<p class="text">Link to the enquires raised by yourself.</p>
 								<p>
@@ -297,7 +297,7 @@
 										<img src="/_ui/responsive/common/images/arrow-round-forward.png" width="16" height="11" alt=""></a>
 								</c:if>
 								</p>
-							</div> 
+							</div>  --%>
 							<div class="col-12 col-md-2 col-lg-2 col-xl-3 mx-auto pt-3 pb-3 f-coll col-half-offset">
 								<h2 class="text-uppercase display-7">CONTACT US</h2>
 								<p class="text">We love to connect with you.</p>
@@ -333,7 +333,7 @@
 			$(".popup").toggleClass("popup-up");
 			$(".float-button").toggleClass("float-button-up");
 			$(".full-bg").fadeToggle();
-			$(this).html($(this).text() == 'NEW OPPORTUNITY REQUEST' ? "<img class='img-floatclose' src='${commonResourcePath}/images/float-close.png'>": 'NEW OPPORTUNITY REQUEST');
+			$(this).html($(this).text() == 'EXPLORE MORE' ? "<img class='img-floatclose' src='${commonResourcePath}/images/float-close.png'>": 'EXPLORE MORE');
 			/*
 			$("body").css("overflow", overflow);
 			$(this).html($(this).text() == 'Invest Now' ? "<img width='40' src='./images/close.png'>" : 'Invest Now');

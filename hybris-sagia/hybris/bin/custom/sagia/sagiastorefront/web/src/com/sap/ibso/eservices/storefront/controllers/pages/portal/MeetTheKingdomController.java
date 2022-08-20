@@ -10,11 +10,20 @@ import com.investsaudi.portal.core.model.ProvinceKeyStrengthComponentModel;
 import com.investsaudi.portal.core.model.ProvinceInvestmentOpportunitiesComponentModel;
 
 
+import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.impl.ContentPageBreadcrumbBuilder;
 import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractSearchPageController;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
+import de.hybris.platform.commercefacades.product.data.ProductData;
+import de.hybris.platform.commercefacades.search.ProductSearchFacade;
+import de.hybris.platform.commercefacades.search.data.SearchQueryData;
+import de.hybris.platform.commercefacades.search.data.SearchStateData;
+import de.hybris.platform.commerceservices.search.facetdata.ProductSearchPageData;
+import de.hybris.platform.commerceservices.search.pagedata.PageableData;
+import de.hybris.platform.core.servicelayer.data.PaginationData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
 import de.hybris.platform.util.Config;
 
@@ -31,6 +40,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.apache.commons.collections4.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -75,7 +85,15 @@ public class MeetTheKingdomController extends DefaultPageController {
     private InvestSaudiMediaCenterService investSaudiMediaCenterService;
     
     @Resource
-    private InvestSaudiProductFacade investSaudiProductFacade;    
+    private InvestSaudiProductFacade investSaudiProductFacade;
+
+    @Resource(name = "productSearchFacade")
+    private ProductSearchFacade<ProductData> productSearchFacade;
+
+    @Resource
+    private InvestSaudiCategoryFacade investSaudiCategoryFacade;
+
+    private static final String SOLR_PRFIX_QUERY = "all:Aname-asc:sagiaRegion:";
     
     
     @RequestMapping(value = "/aboutKingdom", method = {RequestMethod.GET})
@@ -114,7 +132,10 @@ public class MeetTheKingdomController extends DefaultPageController {
             throws CMSItemNotFoundException 
     {
     	LOG.info("provinceId =" + provinceId);
-    	
+        List<OpportunityData> opportunityDataList = null;
+        ProductSearchPageData<SearchStateData, ProductData> searchPageData = null;
+        ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
+
     	ProvinceComponentModel provinceDetails = null;
     	
         if (null != provinceId) {
@@ -156,14 +177,56 @@ public class MeetTheKingdomController extends DefaultPageController {
         
         SearchPageData<InvestSaudiEventsComponentModel> regionEventsData = investSaudiMediaCenterService.getRegionEvents(PaginationUtils.createPaginationData(0, 3), provinceId);
         model.addAttribute("regionEventsData", regionEventsData);
-        
-        SearchPageData<OpportunityData> regionProductsData = investSaudiProductFacade.searchOpportunityByRegion(PaginationUtils.createPaginationData(0, 3), provinceId);
-        model.addAttribute("regionProductsData", regionProductsData);
-        
+
+/*Removed Old DB Query Logic */
+//        SearchPageData<OpportunityData> regionProductsData = investSaudiProductFacade.searchOpportunityByRegion(PaginationUtils.createPaginationData(0, 3), provinceId);
+//        model.addAttribute("regionProductsData", regionProductsData);
+
+        searchPageData = performSearch(PaginationUtils.createPaginationData(0, 3), provinceId);
+        solrSearchPageData=searchPageData;
+        opportunityDataList = new ArrayList<>();
+        for (ProductData productData : searchPageData.getResults()) {
+            opportunityDataList.add(createOpportunityData(productData));
+        }
+        SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
+        productDataSearchPageData.setResults(opportunityDataList);
+        PaginationData sagiaPaginationData = new PaginationData ();
+        sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
+        sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
+        sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
+        sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
+        productDataSearchPageData.setPagination(sagiaPaginationData);
+
+        model.addAttribute("regionProductsData", productDataSearchPageData);
+        model.addAttribute("solrSearchPageData", solrSearchPageData);
         ContentPageModel contentPageModel = getContentPageForLabelOrId(PROVINCE_DETAILS_PAGE);
         storeCmsPageInModel(model, contentPageModel);
         storeContentPageTitleInModel(model, contentPageModel.getTitle());
         return getViewForPage(model);        
     }
-    
+
+    protected ProductSearchPageData<SearchStateData, ProductData> performSearch(PaginationData paginationData, String provinceId) {
+
+            final PageableData pageableData = new PageableData();
+            pageableData.setCurrentPage(paginationData.getCurrentPage());
+            pageableData.setSort(null);
+            pageableData.setPageSize(paginationData.getPageSize());
+
+            final SearchStateData searchState = new SearchStateData();
+            final SearchQueryData searchQueryData = new SearchQueryData();
+            searchQueryData.setValue(SOLR_PRFIX_QUERY + provinceId);
+            searchState.setQuery(searchQueryData);
+
+            return productSearchFacade.textSearch(searchState, pageableData);
+    }
+
+    private OpportunityData createOpportunityData(ProductData productData) {
+        OpportunityData opportunityData = new OpportunityData();
+        opportunityData.setOpportunity(productData);
+        if(productData.getParentCategory() != null)
+        {
+            opportunityData.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(productData.getParentCategory()));
+        }
+        return opportunityData;
+    }
 }

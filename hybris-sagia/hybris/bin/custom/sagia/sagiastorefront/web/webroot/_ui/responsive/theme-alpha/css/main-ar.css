@@ -2996,7 +2996,7 @@ li a.about-us-nav {
 .succ-search-container .a-search .fa, .opp-search-container .a-search .fa {
     color: #96A4B4; }
 
-.succ-search-container input[type=search], .succ-search-container input[type=text], .opp-search-container input[type=search], .opp-search-container input[type=text] {
+.succ-search-container input[type=search], .succ-search-container input[type=text] {
     width: 100%;
     border: 1px solid #CACDD1;
     border-radius: 23px;

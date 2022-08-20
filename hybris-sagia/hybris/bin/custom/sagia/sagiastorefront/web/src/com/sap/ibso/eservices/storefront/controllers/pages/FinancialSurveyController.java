@@ -184,7 +184,7 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
         }
         sagiaFinancialSurveyFacade.saveFinancialSurveyBranchesAndSubsidiaries(financialSurvey);
 
-        return financialSurvey;
+        return sagiaFinancialSurveyFacade.getFinancialSurvey(financialSurvey.getQuarterCode());
     }
 
     @RequestMapping(value = "/saveShareholders" , method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -192,14 +192,9 @@ public class FinancialSurveyController extends SagiaAbstractPageController {
     @ResponseBody
     public FinancialSurvey saveShareholders(@RequestBody FinancialSurvey financialSurvey) {
 
-        /*Set<String> errors = new SagiaFinancialSurveyValidator().validateBranchesAndSubsidiaries(financialSurvey);
-        if (!errors.isEmpty()) {
-            financialSurvey.setErrors(errors);
-            return financialSurvey;
-        }*/
         sagiaFinancialSurveyFacade.saveFinancialSurveyShareholders(financialSurvey);
-
-        return financialSurvey;
+        //  get fresh data
+        return sagiaFinancialSurveyFacade.getFinancialSurvey(financialSurvey.getQuarterCode());
     }
 
 

@@ -188,6 +188,9 @@ ACC.investsaudicustomerticketing = {
 
             var error = ACC.investsaudicustomerticketing.bindErrorMessagesToOtherFields();
 
+            if (error) {
+                return false;
+            }
             if ($('.ticket-questions-area').find('textarea').length > 0) {
                 error = ACC.investsaudicustomerticketing.bindErrorMessagesToQuestions();
 
@@ -197,11 +200,6 @@ ACC.investsaudicustomerticketing = {
 
                 ACC.investsaudicustomerticketing.bindQuestionsToJsonInput();
             }
-
-            if (error) {
-                return false;
-            }
-
         }
 
         var form = document.getElementById("supportTicketForm");
@@ -293,7 +291,7 @@ ACC.investsaudicustomerticketing = {
             error = true;
         }
 
-        if (form.find('input[name=subject]').val() == "" || form.find('select[name=subject]').val() == null) {
+        if (form.find('input[name=subject]').val() == "" || form.find('input[name=subject]').val() == null) {
             form.find('#NotEmpty-BDSupportTicketForm-subject')
                 .html('Please fill all mandatory fields').show();
             error = true;

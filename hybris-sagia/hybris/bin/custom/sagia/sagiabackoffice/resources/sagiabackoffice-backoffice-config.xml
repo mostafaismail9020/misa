@@ -2350,8 +2350,16 @@
                 <explorer-tree:type-node code="InvestSaudiWebinarRegistration" id="InvestSaudiWebinarRegistration"/>
                 <explorer-tree:type-node code="InvestSaudiWebinarRegistrationProcess" id="InvestSaudiWebinarRegistrationProcess"/>
                  -->
+				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
+				<explorer-tree:navigation-node id="hmc.portal.economic.investment.reports">
+					<explorer-tree:type-node code="EconomicAndInvestmentMonitor" id="EconomicAndInvestmentMonitor"/>
+					<explorer-tree:type-node code="InvestmentHighlightsReport" id="InvestmentHighlightsReport"/>
+					<explorer-tree:type-node code="MonthlyBulletinReport" id="MonthlyBulletinReport"/>
+					<explorer-tree:type-node code="EconomicAndInvestmentReportsAndStudies" id="EconomicAndInvestmentReportsAndStudies"/>
+				</explorer-tree:navigation-node>
                 <explorer-tree:type-node code="ContactTicketPurpose" id="hmc.contact.us.subject" />
                 <explorer-tree:type-node code="ContactTicket" id="hmc.contact.ticket" />
+
             </explorer-tree:navigation-node>
         </explorer-tree:explorer-tree>
     </context>
@@ -2362,6 +2370,12 @@
 				<explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
+				<explorer-tree:navigation-node id="hmc.portal.economic.investment.reports">
+					<explorer-tree:type-node code="EconomicAndInvestmentMonitor" id="EconomicAndInvestmentMonitor"/>
+					<explorer-tree:type-node code="InvestmentHighlightsReport" id="InvestmentHighlightsReport"/>
+					<explorer-tree:type-node code="MonthlyBulletinReport" id="MonthlyBulletinReport"/>
+					<explorer-tree:type-node code="EconomicAndInvestmentReportsAndStudies" id="EconomicAndInvestmentReportsAndStudies"/>
+				</explorer-tree:navigation-node>
 				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
 			</explorer-tree:navigation-node>
 		</explorer-tree:explorer-tree>

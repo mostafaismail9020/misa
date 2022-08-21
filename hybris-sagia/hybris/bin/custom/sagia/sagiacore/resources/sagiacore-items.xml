@@ -3849,6 +3849,7 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            
 
             <itemtype code="SuccessStoryProduct" extends="Product"
                       autocreate="true" generate="true"
@@ -6600,15 +6601,57 @@
                     <attribute qualifier="quotation" type="NewsResourceQuotation">
                         <persistence type="property"/>
                         <modifiers/>
-						<description>Resource quotation</description>
+						     <description>Resource quotation</description>
                     </attribute>
                     <attribute qualifier="regionSpecific" type="java.lang.Boolean">
                         <defaultvalue>Boolean.TRUE</defaultvalue>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
+
                 </attributes>
-            </itemtype>
+
+      </itemtype>
+
+      <itemtype code="EconomicAndInvestmentMonitor" generate="true"
+                      extends="InvestSaudiResourceComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.EconomicAndInvestmentMonitor">
+                <description>Economic And Investment Monitor Component</description>
+
+      </itemtype>
+
+      <itemtype code="InvestmentHighlightsReport" generate="true"
+                      extends="InvestSaudiResourceComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestmentHighlightsReport">
+                <description>InvestmentHighlightsReport Component</description>
+
+      </itemtype>
+
+      <itemtype code="MonthlyBulletinReport" generate="true"
+                      extends="InvestSaudiResourceComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MonthlyBulletinReport">
+                <description>MonthlyBulletinReport Component</description>
+
+      </itemtype>
+
+      <itemtype code="EconomicAndInvestmentReportsAndStudies" generate="true"
+                      extends="InvestSaudiResourceComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.EconomicAndInvestmentReportsAndStudies">
+                <description>MonthlyBulletinReport Component</description>
+
+      </itemtype>
+
+
+
+
+
+
+
+
+
+
+
+
 
 			<itemtype code="InvestSaudiMediaCenterComponent" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"

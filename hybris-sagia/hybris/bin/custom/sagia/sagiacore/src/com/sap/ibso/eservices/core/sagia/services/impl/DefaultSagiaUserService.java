@@ -65,23 +65,21 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 
     @Resource
     UserService userService;
-    
+
     @Resource(name = "contactTicketEventStrategy")
 	private TicketEventStrategy ticketEventStrategy;
-	
+
 	@Resource(name="contactTicketBusinessService")
 	private ContactTicketBusinessService contactTicketBusinessService;
 
     @Override
-    public List<ValidationError> validateUniqueUserAttributes(final String uid, final String mobileNumber, 
+    public List<ValidationError> validateUniqueUserAttributes(final String uid, final String mobileNumber,
     		final String mobileCountryCode, final String email) {
         final List<ValidationError> result = new ArrayList<>();
         final List<CustomerModel> customers = sagiaUserDao.getCustomers(uid, mobileNumber, mobileCountryCode, email);
         if (!CollectionUtils.isEmpty(customers)) {
             customers.forEach(customer -> {
-                if (mobileNumber.equals(customer.getMobileNumber())) {
-                    result.add(ValidationError.DUPLICATE_MOBILE_NUMBER);
-                } else if (email.equals(customer.getUserNameEmail())) {
+                if (email.equals(customer.getUserNameEmail())) {
                     result.add(ValidationError.DUPLICATE_EMAIL);
                 } else if (uid.equals(customer.getUid())) {
                     result.add(ValidationError.DUPLICATE_UID);
@@ -188,12 +186,12 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     public ContactTicketModel getContactTicketForTicketId(String ticketId) {
         return sagiaUserDao.getContactTicketForTicketId(ticketId);
     }
-    
-    
-    public ContactTicketModel addContactTicketComments(String ticketId, String comments) {    	
+
+
+    public ContactTicketModel addContactTicketComments(String ticketId, String comments) {
     	ContactTicketModel contactTicket = sagiaUserDao.getContactTicketForTicketId(ticketId);
-    	
-    	if (null != contactTicket && null != comments) {    		    		
+
+    	if (null != contactTicket && null != comments) {
 	    	CsTicketModel ticket = (CsTicketModel) contactTicket;
 			CsCustomerEventModel ticketComment = ticketEventStrategy.createCreationEventForTicket(ticket,
 					CsEventReason.FIRSTCONTACT, CsInterventionType.TICKETMESSAGE, comments);
@@ -206,7 +204,7 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
             List<CommentModel> commentsList = new ArrayList<>(contactTicket.getComments());
             contactTicket.setComments(commentsList);
     	}
-    	
+
         return contactTicket;
     }
 
@@ -236,7 +234,7 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     	}
     	return attachRequest;
      }
-    
+
     public void saveTicketAttachments(final byte[] bytes, final String ticketId,
 			final MediaModel mediaModel) {
 		ContactTicketModel contactTicketModel = getContactTicketForTicketId(ticketId);

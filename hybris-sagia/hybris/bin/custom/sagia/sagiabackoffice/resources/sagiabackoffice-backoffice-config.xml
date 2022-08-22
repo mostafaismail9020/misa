@@ -2352,6 +2352,10 @@
                  -->
                 <explorer-tree:type-node code="ContactTicketPurpose" id="hmc.contact.us.subject" />
                 <explorer-tree:type-node code="ContactTicket" id="hmc.contact.ticket" />
+				<explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
+				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
+				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
+				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
             </explorer-tree:navigation-node>
         </explorer-tree:explorer-tree>
     </context>

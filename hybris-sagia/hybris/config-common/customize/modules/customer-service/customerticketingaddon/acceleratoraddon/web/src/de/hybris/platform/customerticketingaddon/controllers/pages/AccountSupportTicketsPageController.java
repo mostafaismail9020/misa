@@ -234,7 +234,10 @@ public class AccountSupportTicketsPageController extends AbstractSearchPageContr
 			}
 			if(currentUser instanceof B2BCustomerModel) {
 				B2BUnitModel b2bUnitModel = ((B2BCustomerModel)currentUser).getDefaultB2BUnit();
-				b2bUnit = b2bUnitModel.getUid();
+				if(null!=b2bUnitModel)
+				{
+					b2bUnit = b2bUnitModel.getUid();
+				}
 			}
 			model.addAttribute("isNipcMember",nipcMember);
 			

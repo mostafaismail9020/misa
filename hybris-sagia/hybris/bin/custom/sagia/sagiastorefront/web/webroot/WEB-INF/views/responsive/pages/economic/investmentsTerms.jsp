@@ -32,11 +32,11 @@
                     <thead class="tableModule-head">
                         <tr>
                             <th>#</th>
-                            <th>Data point</th>
-                            <th>Description</th>
-                            <th>Calculation</th>
-                            <th>Measurement Unit</th>
-                            <th>Source</th>
+                            <th><spring:theme code="economic.investmentsterms.page.table.datapoint"/></th>
+                            <th><spring:theme code="economic.investmentsterms.page.table.description"/></th>
+                            <th><spring:theme code="economic.investmentsterms.page.table.calculation"/></th>
+                            <th><spring:theme code="economic.investmentsterms.page.table.measurement"/></th>
+                            <th><spring:theme code="economic.investmentsterms.page.table.source"/></th>
                         </tr>
                     </thead>
                     <tbody class="tableModule-body">

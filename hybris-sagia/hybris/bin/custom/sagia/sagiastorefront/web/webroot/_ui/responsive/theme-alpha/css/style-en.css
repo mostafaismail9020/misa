@@ -1102,7 +1102,7 @@ ul.dropdown-list li a {
 .float-button {
 	width: 100px;
 	height: 100px;
-	border-radius: 100px;
+	border-radius: 100px !important;
 	box-shadow: 0px 4px 8px #0000003b;
 	background-color: #0097a9;
 	color: white;
@@ -21359,4 +21359,43 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
 
 .form-group.focused .mob-control-label{
 	left: 28px;
+}
+
+.page-economic-investments-terms .eh-page-grid-link {
+    width: 240px;
+    font-size: 22px;
+}
+
+.page-economic-investments-terms .tableModule-head th{
+	background-color: #f7f7f7 !important;
+	font-weight: 600;
+    letter-spacing: 0;
+    color: #707070;
+    font-size: 16px;
+}
+
+.page-economic-investments-terms .tableModule-head tr:last-child {
+    border-bottom: 0;
+}
+
+.page-economic-investments-terms .tableModule {
+    margin-top: 24px;
+}
+.page-economic-investments-terms .tableModule-headline {
+    color: #00a6be;
+    font-weight: 500;
+}
+
+.page-economic-investments-terms .tableModule .tableModule-body tr:hover {
+    background-color: #f7f7f7 !important;
+}
+
+.page-economic-investments-terms .tableModule .tableModule-body td {
+    letter-spacing: 0;
+    color: #707070;
+    font-size: 14px;
+}
+
+.page-economic-investments-terms .tableModule .tableModule-body td ul li {
+    list-style-type: disc;
 }

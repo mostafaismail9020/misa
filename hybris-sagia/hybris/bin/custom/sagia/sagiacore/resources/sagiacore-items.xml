@@ -223,6 +223,14 @@
             <value code="TEMPORARILY_SUSPENDED"/>
             <value code="DISSOLVED"/>
         </enumtype>
+
+        <enumtype generate="true" code="NafathStatus" autocreate="true" dynamic="true">
+            <value code="STARTED"/>
+            <value code="COMPLETED"/>
+            <value code="REJECTED"/>
+            <value code="WAITING"/>
+            <value code="EXPIRED"/>
+        </enumtype>
     </enumtypes>
 	
 	
@@ -12218,6 +12226,41 @@
         </typegroup>
 		
 		<!-- SiteMap Changes Ends -->
-		
+		<typegroup name="Nafath">
+            <itemtype code="NafathLogin" generate="true" autocreate="true">
+                <description>Nafath SSO Login</description>
+                <deployment table="NafathLogin" typecode="32100"/>
+                <attributes>
+                    <attribute qualifier="transactionId" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" unique="true" optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="nationalId" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="random" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="false"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="status" type="NafathStatus">
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="NafathLoginCleanupCronJob" extends="CronJob" jaloclass="de.hybris.platform.cronjob.jalo.NafathLoginCleanupCronJob"
+                      autocreate="true" generate="true">
+                <attributes>
+                    <attribute qualifier="xDaysOld" type="java.lang.Integer">
+                        <modifiers read="true" write="true" optional="false"/>
+                        <defaultvalue>Integer.valueOf(10)</defaultvalue>
+                        <description>Nafath Login instances older than this value will be deleted.
+                        </description>
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
 	</itemtypes>
 </items>

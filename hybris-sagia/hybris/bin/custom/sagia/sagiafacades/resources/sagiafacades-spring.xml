@@ -2733,6 +2733,26 @@
 
 	<!-- SiteMap Changes Ends -->
 
+	<!-- nafath login changes -->
+
+	<alias name="defaultNafathFacade" alias="nafathFacade"/>
+	<bean id="defaultNafathFacade" class=" com.sap.ibso.eservices.facades.sagia.impl.DefaultNafathFacade">
+		<property name="nafathService" ref="nafathService"/>
+		<property name="nafathLoginConverter" ref="nafathLoginConverter"/>
+		<property name="cmsUserModelToDataConverter" ref="cmsUserModelToDataConverter"/>
+	</bean>
+
+	<bean id="nafathLoginPopulator"  class="com.sap.ibso.eservices.facades.populators.NafathLoginPopulator" > </bean>
+
+	<bean id="nafathLoginConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.NafathLoginData"/>
+		<property name="populators">
+			<list>
+				<ref bean="nafathLoginPopulator"/>
+			</list>
+		</property>
+	</bean>
+
 
 
 </beans>

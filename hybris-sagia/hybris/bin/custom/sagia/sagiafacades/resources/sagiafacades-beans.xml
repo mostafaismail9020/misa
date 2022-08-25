@@ -4295,4 +4295,15 @@
 		<property name="details" type="java.lang.String"/>
 	</bean>
 
+
+	<!-- nafath changes -->
+
+	<bean class="com.sap.ibso.eservices.facades.data.NafathLoginData">
+		<property name="transactionId" type="java.lang.String"/>
+		<property name="nationalId" type="java.lang.String"/>
+		<property name="random" type="java.lang.String"/>
+		<property name="status" type="com.sap.ibso.eservices.core.enums.NafathStatus"/>
+	</bean>
+
+	<!-- nafath end -->
 </beans>

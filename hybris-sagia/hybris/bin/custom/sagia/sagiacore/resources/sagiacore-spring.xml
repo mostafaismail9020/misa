@@ -1561,4 +1561,19 @@
 	
     <!-- Economic Highlights Changes Ends -->
 
+    <alias alias="nafathDAO" name="defaultNafathDAO"/>
+    <bean id="defaultNafathDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultNafathDAO">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+    <alias alias="nafathService" name="defaultNafathService"/>
+    <bean id="defaultNafathService" class="com.sap.ibso.eservices.core.sagia.services.impl.DefaultNafathService">
+        <property name="modelService" ref="modelService"/>
+        <property name="nafathDAO" ref="nafathDAO"/>
+    </bean>
+
+    <bean id="nafathLoginCleanupJob" class="com.sap.ibso.eservices.core.sagia.job.NafathLoginCleanupJob" parent="abstractJobPerformable">
+        <property name="nafathService" ref="nafathService"/>
+    </bean>
+
 </beans>

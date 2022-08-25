@@ -60,7 +60,7 @@ public class DefaultNafathService implements NafathService {
 
     @Override
     public UserModel getUserModelForLicense(String license) {
-       SagiaLicenseModel sagiaLicenseModel = nafathDAO.getUserAssociatedWithLicense(license);
+       SagiaLicenseModel sagiaLicenseModel = nafathDAO.getLicense(license);
        if(sagiaLicenseModel!=null){
            return sagiaLicenseModel.getCustomer();
        }else{

@@ -46,7 +46,7 @@ public class DefaultNafathDAO implements NafathDAO {
     }
 
     @Override
-    public SagiaLicenseModel getUserAssociatedWithLicense(String license) {
+    public SagiaLicenseModel getLicense(String license) {
         try{
             final StringBuilder query = new StringBuilder();
 

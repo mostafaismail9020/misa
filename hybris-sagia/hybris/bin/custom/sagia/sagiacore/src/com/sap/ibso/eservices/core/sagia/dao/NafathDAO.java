@@ -12,5 +12,5 @@ public interface NafathDAO {
 
     NafathLoginModel getLoginFromTransactionId(String transactionID);
 
-    SagiaLicenseModel getUserAssociatedWithLicense(String license);
+    SagiaLicenseModel getLicense(String license);
 }

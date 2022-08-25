@@ -10,5 +10,5 @@ public interface NafathFacade {
 
     NafathLoginData checkStatus(String transactionID);
 
-    UserData getuserForLicense(String license);
+    UserData getUserForLicense(String license);
 }

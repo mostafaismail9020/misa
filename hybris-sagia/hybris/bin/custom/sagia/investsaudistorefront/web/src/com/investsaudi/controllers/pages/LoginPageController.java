@@ -38,7 +38,6 @@ import de.hybris.platform.cmsfacades.data.UserData;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.BooleanUtils;
-import org.apache.regexp.RE;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,8 +46,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -243,12 +240,11 @@ public class LoginPageController extends AbstractLoginPageController
 		if(CollectionUtils.isNotEmpty(licenseIds) && licenseIds.contains(selectedLicense))
 		{
 			try {
-				UserData user = nafathFacade.getuserForLicense(selectedLicense);
+				UserData user = nafathFacade.getUserForLicense(selectedLicense);
+				autoLoginStrategy.login(user.getUid(), null, request, response);
 			} catch (RuntimeException e) {
 				return REDIRECT_PREFIX + "/login";
 			}
-			autoLoginStrategy.login((String) session.getAttribute(HYBRIS_USERNAME),
-					(String) session.getAttribute(HYBRIS_PASS), request, response);
 			return "redirect:/";
 		}
 		//TODO: Redirects the browser to the login page displaying a configurable localized text

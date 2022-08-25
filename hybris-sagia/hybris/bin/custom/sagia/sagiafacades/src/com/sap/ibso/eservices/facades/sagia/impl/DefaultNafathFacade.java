@@ -29,7 +29,7 @@ public class DefaultNafathFacade implements NafathFacade {
     }
 
     @Override
-    public UserData getuserForLicense(String license) {
+    public UserData getUserForLicense(String license) {
         return getCmsUserModelToDataConverter().convert(nafathService.getUserModelForLicense(license));
     }
 

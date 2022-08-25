@@ -11,6 +11,7 @@
 package com.sap.ibso.eservices.sagiaservices.core.v2.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sap.ibso.eservices.core.sagia.services.NafathService;
 import com.sap.ibso.eservices.sagiaservices.core.nafath.data.NafathPostServiceRequestStatus;
 import com.sap.ibso.eservices.sagiaservices.core.v2.helper.NafathHelper;
 import de.hybris.platform.servicelayer.config.ConfigurationService;
@@ -47,6 +48,9 @@ public class NafathPostServiceRequestStatusController extends BaseController {
     @Resource
     private NafathHelper nafathHelper;
 
+    @Resource
+    private NafathService nafathService;
+
     @Resource(name = "configurationService")
     private ConfigurationService configurationService;
 
@@ -57,7 +61,7 @@ public class NafathPostServiceRequestStatusController extends BaseController {
                                                    @ApiParam(value = "Request body parameter that contains the Nafath Post Service Request Status details\n\nThe DTO is in .json format.", required = true) @RequestBody final NafathPostServiceRequestStatus nafathPostServiceRequestStatus) {
 
         log.debug("Received new request: [{}]", nafathPostServiceRequestStatus != null ? nafathPostServiceRequestStatus.getResponse() : "null");
-        String nafathApiKey = configurationService.getConfiguration().getString("nafath.postservice.nafathapikey");
+        String nafathApiKey = configurationService.getConfiguration().getString("nic.nafath.postservice.nafathapikey");
         if (!StringUtils.endsWith(apiKey, nafathApiKey)) {
             log.warn("Wrong ApiKey received: [{}]", apiKey);
             return new ResponseEntity(HttpStatus.UNAUTHORIZED);
@@ -71,9 +75,9 @@ public class NafathPostServiceRequestStatusController extends BaseController {
             String status = payload.get("status");
 
             log.info("Received transId: [{}], status: [{}]", transId, status);
-            // todo: update NafathLogin model with the provided info
+            nafathService.updateNafathLoginStatus(transId, status);
         } catch (Exception ex) {
-            log.error("Error reading JWT token", ex);
+            log.error("Error processing JWT token", ex);
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 

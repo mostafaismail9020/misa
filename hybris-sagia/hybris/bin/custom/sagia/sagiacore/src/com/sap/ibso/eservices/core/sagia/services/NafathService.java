@@ -12,4 +12,6 @@ public interface NafathService {
     NafathLoginModel getTransactionStatus(String transactionID);
 
     UserModel getUserModelForLicense(String license);
+
+    void updateNafathLoginStatus(String transactionID, String status);
 }

@@ -40,7 +40,7 @@ public class NafathHelper {
     public void init() {
         try {
             CertificateFactory factory = CertificateFactory.getInstance("X.509");
-            X509Certificate certificate = (X509Certificate) factory.generateCertificate(this.getClass().getResourceAsStream(configurationService.getConfiguration().getString("nafath.postservice.certificate")));
+            X509Certificate certificate = (X509Certificate) factory.generateCertificate(this.getClass().getResourceAsStream(configurationService.getConfiguration().getString("nic.nafath.postservice.certificate")));
             RSAPublicKey publicKey = (RSAPublicKey) certificate.getPublicKey();
 
             verifier = new RsaVerifier(publicKey);
@@ -51,12 +51,12 @@ public class NafathHelper {
     }
 
     public Jwt decodeToken(String token) {
-        boolean validateToken = configurationService.getConfiguration().getBoolean("nafath.postservice.validatetoken", false);
+        boolean validateToken = configurationService.getConfiguration().getBoolean("nic.nafath.postservice.validatetoken", false);
         if (validateToken) {
             if (verifier != null) {
                 return JwtHelper.decodeAndVerify(token, verifier);
             } else {
-                throw new RuntimeException("No Rsa Verifier available and nafath.postservice.validatetoken is true");
+                throw new RuntimeException("No Rsa Verifier available and nic.nafath.postservice.validatetoken is true");
             }
         } else {
             return JwtHelper.decode(token);

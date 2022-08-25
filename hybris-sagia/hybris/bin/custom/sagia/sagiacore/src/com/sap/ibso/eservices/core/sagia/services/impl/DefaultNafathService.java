@@ -1,5 +1,6 @@
 package com.sap.ibso.eservices.core.sagia.services.impl;
 
+import com.sap.ibso.eservices.core.enums.NafathStatus;
 import com.sap.ibso.eservices.core.model.NafathLoginModel;
 import com.sap.ibso.eservices.core.model.SagiaLicenseModel;
 import com.sap.ibso.eservices.core.sagia.dao.NafathDAO;
@@ -8,6 +9,8 @@ import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.util.Config;
 import org.hsqldb.rights.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,6 +20,7 @@ import java.util.List;
 
 public class DefaultNafathService implements NafathService {
 
+    private static final Logger log = LoggerFactory.getLogger(DefaultNafathService.class);
 
     private ModelService modelService;
 
@@ -69,6 +73,17 @@ public class DefaultNafathService implements NafathService {
        }
     }
 
+    @Override
+    public void updateNafathLoginStatus(String transactionID, String status) {
+        NafathLoginModel nafathLoginModel =  nafathDAO.getLoginFromTransactionId(transactionID);
+        if(nafathLoginModel != null) {
+            NafathStatus nafathStatus = NafathStatus.valueOf(status);
+            nafathLoginModel.setStatus(nafathStatus);
+            modelService.save(nafathLoginModel);
+        } else {
+            log.warn("No Nafath Login found for transaction ID: [{}]", transactionID);
+        }
+    }
 
     public ModelService getModelService() {
         return modelService;

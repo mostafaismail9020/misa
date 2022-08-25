@@ -56,8 +56,10 @@ public class NafathPostServiceRequestStatusController extends BaseController {
     public ResponseEntity nafathPostServiceRequest(@RequestHeader(HttpHeaders.AUTHORIZATION) String apiKey,
                                                    @ApiParam(value = "Request body parameter that contains the Nafath Post Service Request Status details\n\nThe DTO is in .json format.", required = true) @RequestBody final NafathPostServiceRequestStatus nafathPostServiceRequestStatus) {
 
+        log.debug("Received new request: [{}]", nafathPostServiceRequestStatus != null ? nafathPostServiceRequestStatus.getResponse() : "null");
         String nafathApiKey = configurationService.getConfiguration().getString("nafath.postservice.nafathapikey");
         if (!StringUtils.endsWith(apiKey, nafathApiKey)) {
+            log.warn("Wrong ApiKey received: [{}]", apiKey);
             return new ResponseEntity(HttpStatus.UNAUTHORIZED);
         }
 

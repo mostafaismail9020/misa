@@ -7,7 +7,6 @@ import com.sap.ibso.eservices.core.sagia.services.NafathService;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.util.Config;
-import org.hsqldb.rights.User;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,7 +16,7 @@ import java.util.List;
 
 public class DefaultNafathService implements NafathService {
 
-
+    private static String NAFTAH_LOGIN_URL = Config.getString("nic.naftah.login.url","https://www.iam.sa/nafath/");
     private ModelService modelService;
 
     private NafathDAO nafathDAO;
@@ -25,13 +24,13 @@ public class DefaultNafathService implements NafathService {
     @Override
     public NafathLoginModel login(String id) {
         RestTemplate restTemplate = new RestTemplate();
-        String naftahLoginUrl = Config.getString("nic.naftah.login.url","https://www.iam.sa/nafath/");
+
         StringBuilder sb = new StringBuilder();
         sb.append("{'Action': 'SpRequest','Parameters':{'service': 'Login','id': '").append(id).append("'}}");
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> entity = new HttpEntity<>(sb.toString(),headers);
-        NafathLoginModel nafathLoginModel = restTemplate.postForObject(naftahLoginUrl, entity , NafathLoginModel.class);
+        NafathLoginModel nafathLoginModel = restTemplate.postForObject(NAFTAH_LOGIN_URL, entity , NafathLoginModel.class);
         modelService.save(nafathLoginModel);
         return nafathLoginModel;
     }

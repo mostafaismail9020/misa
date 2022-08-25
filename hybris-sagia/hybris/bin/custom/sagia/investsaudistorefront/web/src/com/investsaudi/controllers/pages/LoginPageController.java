@@ -35,6 +35,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import de.hybris.platform.cmsfacades.data.UserData;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.regexp.RE;
@@ -188,57 +189,69 @@ public class LoginPageController extends AbstractLoginPageController
 	@RequestMapping(value = "/nafathLogin", method = RequestMethod.GET)
 	public String loginWithNafath(@RequestParam(value = "nationalID") final String nationalID, final Model model,
 								  final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) throws CMSItemNotFoundException {
-		getSessionService().setAttribute("nationalID", nationalID);
 		NafathLoginData loginData = nafathFacade.login(nationalID);
+
+		//TODO: check the success response and set below value in the session
+		getSessionService().setAttribute("nationalID", loginData.getNationalId());
 		getSessionService().setAttribute("transactionID", loginData.getTransactionId());
 		getSessionService().setAttribute("randomNafathText", loginData.getRandom());
-		if(loginData.getStatus().equals(NafathStatus.REJECTED) || loginData.getStatus().equals(NafathStatus.EXPIRED)){
+
+		//TODO: on error response, return to the login page with custom message
+		if (loginData.getStatus().equals(NafathStatus.REJECTED) || loginData.getStatus().equals(NafathStatus.EXPIRED)) {
 			return getDefaultLoginPage(true, session, model);
 		}
+
+		//TODO: return to login page on success
 		return "LoginPageUI";
 	}
 
-	@RequestMapping(value = "/checkNafathLoginStatus", method = RequestMethod.GET)
-	public String loginStatusCheck(final Model model,
-								   final HttpServletRequest request, final HttpServletResponse response, final HttpSession session){
+	//TODO: add produce attribute to get JSON response
+	@RequestMapping(value = "/checkNafathStatus", method = RequestMethod.GET)
+	public String checkNafathStatus(final Model model,
+								   final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) {
 		String transactionID = getSessionService().getAttribute("transactionID");
 		NafathLoginData loginStatus = nafathFacade.checkStatus(transactionID);
 		return loginStatus.getStatus().toString();
 	}
 
 	@RequestMapping(value = "/nafathLicenses", method = RequestMethod.GET)
-	public String displayLicenses(final Model model){
+	public String displayLicenses(final Model model) {
 		String nationalId = getSessionService().getAttribute("nationalID");
 		String transactionId = getSessionService().getAttribute("transactionID");
 		String randomNafathText = getSessionService().getAttribute("randomNafathText");
 		NafathLoginData loginStatus = nafathFacade.checkStatus(transactionId);
-		if(loginStatus.getStatus().equals(NafathStatus.COMPLETED)){
+		if (loginStatus.getStatus().equals(NafathStatus.COMPLETED)) {
 			//TODO: call CRM API here
 			List<SagiaLicense> response = null;
-			if(response.size() == 1){
-				getSessionService().setAttribute("licenseList",response);
-				return REDIRECT_PREFIX+"/loginNafathUser";
-			}else{
-				getSessionService().setAttribute("licenseList",response);
+			if (response.size() == 1) {
+				getSessionService().setAttribute("licenseList", response);
+				return REDIRECT_PREFIX + "/loginNafathUser";
+			} else {
+				getSessionService().setAttribute("licenseList", response);
 				//TODO : call login selection page here
 				return "/loginSelectionUI";
 			}
 		}
-		//TODO: this case outcome is yet to be decided
+		//TODO: Redirects the browser to the login page displaying a configurable localized text
 		return "/defaultLoginpage";
 	}
 
 	@RequestMapping(value = "/loginNafathUser", method = RequestMethod.GET)
-	public String loginNafathUser(String uiSelectionForm, final Model mode,final HttpSession session, final HttpServletRequest request, final HttpServletResponse response){
+	public String loginNafathUser(String selectedLicense, final Model mode, final HttpSession session, final HttpServletRequest request, final HttpServletResponse response) {
 		//TODO create a UI selectin form to get the license from that form if it's not more than one in the session list
 		List<String> licenseIds = getSessionService().getAttribute("licenseList");
-		try {
-			UserData user = nafathFacade.getuserForLicense(licenseIds.get(0));
-		}catch (RuntimeException e){
-			return REDIRECT_PREFIX+"/login";
+		if(CollectionUtils.isNotEmpty(licenseIds) && licenseIds.contains(selectedLicense))
+		{
+			try {
+				UserData user = nafathFacade.getuserForLicense(selectedLicense);
+			} catch (RuntimeException e) {
+				return REDIRECT_PREFIX + "/login";
+			}
+			autoLoginStrategy.login((String) session.getAttribute(HYBRIS_USERNAME),
+					(String) session.getAttribute(HYBRIS_PASS), request, response);
+			return "redirect:/";
 		}
-		autoLoginStrategy.login((String) session.getAttribute(HYBRIS_USERNAME),
-						(String) session.getAttribute(HYBRIS_PASS), request, response);
-		return "redirect:/";
+		//TODO: Redirects the browser to the login page displaying a configurable localized text
+		return REDIRECT_PREFIX + "/login";
 	}
 }

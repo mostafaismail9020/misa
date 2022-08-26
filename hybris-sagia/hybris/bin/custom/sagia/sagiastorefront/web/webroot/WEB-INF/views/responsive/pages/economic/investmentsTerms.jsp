@@ -34,6 +34,14 @@
             </div>
 
             <div class="tableModule tableModule_slim tableModule_striped">
+                <table>
+                    <tr class="investmentsTermsTemplate">
+                        <td><strong></strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
                 <table id="investmentsTermsTableId" class="tableModule-table">
                         <thead class="tableModule-head">
                         <tr>

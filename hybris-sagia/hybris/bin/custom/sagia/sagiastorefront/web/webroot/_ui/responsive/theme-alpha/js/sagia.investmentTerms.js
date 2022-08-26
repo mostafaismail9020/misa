@@ -8,8 +8,8 @@ function loadInvestmentTermsData() {
                 success: function (investmentTerms) {
                     setupTable();
                     var $investmentsTermsTable = $('#investmentsTermsId').empty();
-                    if (investmentTerms && investmentTerms.investmentTermData && investmentTerms.InvestmentTermsPagesNumber) {
-                        investmentTerms.forEach(function (investmentTerm) {
+                    if (investmentTerms && investmentTerms.sgiaIndicatorTerms) {
+                        investmentTerms.sgiaIndicatorTerms.forEach(function (investmentTerm) {
                                 var code = investmentTerm.code;
                                 var name = investmentTerm.code;
                                 var $investmentTermRow = $branchRowTemplate.clone(true).show();

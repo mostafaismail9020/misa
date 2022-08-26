@@ -3868,9 +3868,7 @@
 		<property name="details" type="java.lang.String"/>
 	</bean>
 
-
 	<bean class="com.sap.ibso.eservices.facades.data.SagiaIndicatorTermData">
-
 		<property name="code" type="java.lang.String"/>
 		<property name="dataPoint" type="java.lang.String"/>
 		<property name="description" type="java.lang.String"/>
@@ -3878,6 +3876,10 @@
 		<property name="measurement" type="java.lang.String"/>
 		<property name="source" type="java.lang.String"/>
 		<property name="isActive" type="boolean"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.facades.data.ListSagiaIndicatorTermData">
+		<property name="sgiaIndicatorTerms" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.SagiaIndicatorTermData&gt;" />
 	</bean>
 
 </beans>

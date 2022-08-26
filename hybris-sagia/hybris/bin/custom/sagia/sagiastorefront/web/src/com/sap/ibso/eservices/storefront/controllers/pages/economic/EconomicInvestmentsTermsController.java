@@ -1,5 +1,6 @@
 package com.sap.ibso.eservices.storefront.controllers.pages.economic;
 
+import com.sap.ibso.eservices.facades.data.ListSagiaIndicatorTermData;
 import com.sap.ibso.eservices.facades.data.SagiaIndicatorTermData;
 import com.sap.ibso.eservices.facades.sagia.SagiaIndicatorTermFacade;
 import com.sap.ibso.eservices.facades.sagia.SagiaPaginationFacade;
@@ -9,7 +10,6 @@ import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -52,8 +52,11 @@ public class EconomicInvestmentsTermsController extends SagiaAbstractPageControl
 
 	@RequestMapping(method = RequestMethod.GET, value = "/investmentsTermsData")
 	@ResponseBody
-	public List<SagiaIndicatorTermData> getInvestmentsTerms(@PathVariable int itemsPerPage) {
-		return sagiaIndicatorTermFacade.getAllActiveIndicatorTerms();
+	public ListSagiaIndicatorTermData getInvestmentsTerms() {
+		ListSagiaIndicatorTermData listSagiaIndicatorTermData = new ListSagiaIndicatorTermData();
+		List<SagiaIndicatorTermData> listTerms = sagiaIndicatorTermFacade.getAllActiveIndicatorTerms();
+		listSagiaIndicatorTermData.setSgiaIndicatorTerms(listTerms);
+		return listSagiaIndicatorTermData;
 	}
 
 }

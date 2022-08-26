@@ -183,12 +183,13 @@ public class LoginPageController extends AbstractLoginPageController
 		return getView();
 	}
 
+	//TODO: need to change this to POST
 	@RequestMapping(value = "/nafathLogin", method = RequestMethod.GET)
 	public String loginWithNafath(@RequestParam(value = "nationalID") final String nationalID, final Model model,
 								  final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) throws CMSItemNotFoundException {
 		NafathLoginData loginData = nafathFacade.login(nationalID);
 
-		//TODO: check the success response and set below value in the session
+		//TODO: check the success response and set below value in the session if success
 		getSessionService().setAttribute("nationalID", loginData.getNationalId());
 		getSessionService().setAttribute("transactionID", loginData.getTransactionId());
 		getSessionService().setAttribute("randomNafathText", loginData.getRandom());
@@ -202,7 +203,7 @@ public class LoginPageController extends AbstractLoginPageController
 		return "LoginPageUI";
 	}
 
-	//TODO: change method to POST and add produce attribute to get JSON response
+	//TODO: change JSON response
 	@RequestMapping(value = "/checkNafathStatus", method = RequestMethod.GET)
 	public String checkNafathStatus(final Model model,
 								   final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) {
@@ -212,19 +213,19 @@ public class LoginPageController extends AbstractLoginPageController
 	}
 
 	@RequestMapping(value = "/nafathLicenses", method = RequestMethod.GET)
-	public String displayLicenses(final Model model) {
+	public String displayLicenses(final Model mode, final HttpSession session, final HttpServletRequest request, final HttpServletResponse response) {
 		String nationalId = getSessionService().getAttribute("nationalID");
 		String transactionId = getSessionService().getAttribute("transactionID");
 		String randomNafathText = getSessionService().getAttribute("randomNafathText");
 		NafathLoginData loginStatus = nafathFacade.checkStatus(transactionId);
 		if (loginStatus.getStatus().equals(NafathStatus.COMPLETED)) {
 			//TODO: call CRM API here
-			List<SagiaLicense> response = null;
-			if (response.size() == 1) {
-				getSessionService().setAttribute("licenseList", response);
-				return REDIRECT_PREFIX + "/loginNafathUser";
+			List<SagiaLicense> licenseList = null;
+			if (licenseList.size() == 1) {
+				getSessionService().setAttribute("licenseList", licenseList);
+				return doNafathLogin(licenseList.get(0).getCode(), request, response);
 			} else {
-				getSessionService().setAttribute("licenseList", response);
+				getSessionService().setAttribute("licenseList", licenseList);
 				//TODO : call login selection page here
 				return "/loginSelectionUI";
 			}
@@ -235,10 +236,14 @@ public class LoginPageController extends AbstractLoginPageController
 
 	//TODO: change method to POST
 	@RequestMapping(value = "/loginNafathUser", method = RequestMethod.GET)
-	public String loginNafathUser(String selectedLicense, final Model mode, final HttpSession session, final HttpServletRequest request, final HttpServletResponse response) {
+	public String loginNafathUser(@RequestParam(value = "selectedLicense") final String selectedLicense, final Model mode, final HttpSession session, final HttpServletRequest request, final HttpServletResponse response) {
 		//TODO create a UI selectin form to get the license from that form if it's not more than one in the session list
-		List<String> licenseIds = getSessionService().getAttribute("licenseList");
-		if(CollectionUtils.isNotEmpty(licenseIds) && licenseIds.contains(selectedLicense))
+		return doNafathLogin(selectedLicense, request, response);
+	}
+
+	private String doNafathLogin(String selectedLicense, HttpServletRequest request, HttpServletResponse response) {
+		List<String> licenseList = getSessionService().getAttribute("licenseList");
+		if(CollectionUtils.isNotEmpty(licenseList) && licenseList.contains(selectedLicense))
 		{
 			try {
 				UserData user = nafathFacade.getUserForLicense(selectedLicense);
@@ -246,7 +251,7 @@ public class LoginPageController extends AbstractLoginPageController
 			} catch (RuntimeException e) {
 				return REDIRECT_PREFIX + "/login";
 			}
-			return "redirect:/";
+			return REDIRECT_PREFIX + "/";
 		}
 		//TODO: Redirects the browser to the login page displaying a configurable localized text
 		return REDIRECT_PREFIX + "/login";

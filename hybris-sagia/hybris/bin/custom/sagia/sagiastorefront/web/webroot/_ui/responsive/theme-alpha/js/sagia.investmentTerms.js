@@ -2,7 +2,7 @@ investmentTermsVar =  {};
 
 function loadInvestmentTermsData() {
             $.ajax({
-                url: ACC.config.encodedContextPath + "/economic/investmentsTermsData/10000",
+                url: ACC.config.encodedContextPath + "/economic/investmentsTermsData",
                 method: 'GET',
                 ajaxHideLoadingIndicator: true,
                 success: function (investmentTerms) {

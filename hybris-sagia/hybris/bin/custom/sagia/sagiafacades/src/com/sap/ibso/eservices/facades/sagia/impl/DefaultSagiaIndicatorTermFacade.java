@@ -1,6 +1,6 @@
 package com.sap.ibso.eservices.facades.sagia.impl;
 
-import com.sap.ibso.eservices.core.jalo.SagiaIndicatorTerm;
+import com.sap.ibso.eservices.core.model.SagiaIndicatorTermModel;
 import com.sap.ibso.eservices.facades.data.SagiaIndicatorTermData;
 import com.sap.ibso.eservices.facades.sagia.SagiaIndicatorTermFacade;
 import com.sap.ibso.eservices.sagiaservices.services.indicatorterm.SagiaIndicatorTermService;
@@ -18,15 +18,15 @@ public class DefaultSagiaIndicatorTermFacade implements SagiaIndicatorTermFacade
     private SagiaIndicatorTermService sagiaIndicatorTermService;
 
     @Resource
-    private Converter<SagiaIndicatorTerm, SagiaIndicatorTermData> sagiaIndicatorTermConverter;
+    private Converter<SagiaIndicatorTermModel, SagiaIndicatorTermData> sagiaIndicatorTermConverter;
 
 
 
     @Override
     public List<SagiaIndicatorTermData> getAllActiveIndicatorTerms() {
-        List<SagiaIndicatorTerm> listIndicorTermModels = sagiaIndicatorTermService.getActiveIndicatorTerms();
+        List<SagiaIndicatorTermModel> listIndicorTermModels = sagiaIndicatorTermService.getActiveIndicatorTerms();
         List<SagiaIndicatorTermData> listIndicorTermsData = new ArrayList<>();
-        for (SagiaIndicatorTerm sagiaIndicatorTermModel : listIndicorTermModels){
+        for (SagiaIndicatorTermModel sagiaIndicatorTermModel : listIndicorTermModels){
             SagiaIndicatorTermData sagiaIndicotrTermData = sagiaIndicatorTermConverter.convert(sagiaIndicatorTermModel);
             listIndicorTermsData.add(sagiaIndicotrTermData);
         }

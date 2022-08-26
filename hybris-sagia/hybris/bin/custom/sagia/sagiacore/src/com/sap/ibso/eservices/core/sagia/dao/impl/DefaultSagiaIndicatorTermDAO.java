@@ -1,6 +1,5 @@
 package com.sap.ibso.eservices.core.sagia.dao.impl;
 
-import com.sap.ibso.eservices.core.jalo.SagiaIndicatorTerm;
 import com.sap.ibso.eservices.core.model.SagiaIndicatorTermModel;
 import com.sap.ibso.eservices.core.sagia.dao.SagiaIndicatorTermDAO;
 import de.hybris.platform.servicelayer.internal.dao.DefaultGenericDao;
@@ -19,7 +18,7 @@ public class DefaultSagiaIndicatorTermDAO extends DefaultGenericDao<SagiaIndicat
     }
 
     @Override
-    public List<SagiaIndicatorTerm> getActiveIndicatorTerms() {
+    public List<SagiaIndicatorTermModel> getActiveIndicatorTerms() {
 
         final Map filterParameters = new HashMap();
         filterParameters.put(SagiaIndicatorTermModel.ISACTIVE, true);
@@ -33,7 +32,7 @@ public class DefaultSagiaIndicatorTermDAO extends DefaultGenericDao<SagiaIndicat
             return indicatorTermList;
         } else {
             //return empty list
-            return new ArrayList<SagiaIndicatorTerm>();
+            return new ArrayList<SagiaIndicatorTermModel>();
         }
     }
 }

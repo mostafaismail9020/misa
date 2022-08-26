@@ -27,6 +27,8 @@ public abstract class AbstractUrlMatchingFilter extends OncePerRequestFilter
 
 	public static final String BASE_SITES_ENDPOINT_PATH = "/basesites";
 
+	public static final String NAFATH_ENDPOINT_PATH = "/nafathPostServiceRequestStatus";
+
 	protected boolean matchesUrl(final HttpServletRequest request, final String regexp)
 	{
 		final Matcher matcher = getMatcher(request, regexp);
@@ -35,7 +37,8 @@ public abstract class AbstractUrlMatchingFilter extends OncePerRequestFilter
 
 	protected String getBaseSiteValue(final HttpServletRequest request, final String regexp)
 	{
-		if (BASE_SITES_ENDPOINT_PATH.equals(getPath(request)))
+		String path = getPath(request);
+		if (BASE_SITES_ENDPOINT_PATH.equals(path) || NAFATH_ENDPOINT_PATH.equals(path))
 		{
 			return null;
 		}

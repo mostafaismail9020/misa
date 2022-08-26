@@ -182,4 +182,11 @@
 				  type="java.util.List&lt;de.hybris.platform.commercefacades.basesite.data.BaseSiteData>"/>
 	</bean>
 
+	<bean class="com.sap.ibso.eservices.sagiaservices.core.nafath.data.NafathPostServiceRequestStatus">
+		<description>Request Body for the Nafath Post Service Request Status API</description>
+		<property name="response" type="String">
+			<description>JWT payload</description>
+		</property>
+	</bean>
+
 </beans>

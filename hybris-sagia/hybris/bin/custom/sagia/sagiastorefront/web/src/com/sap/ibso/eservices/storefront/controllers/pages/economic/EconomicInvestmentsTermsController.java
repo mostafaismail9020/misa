@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -48,26 +46,14 @@ public class EconomicInvestmentsTermsController extends SagiaAbstractPageControl
 		final ContentPageModel economicCMSPage = getContentPageForLabelOrId(INVESTMENTS_TERMS_PAGE);
 		storeCmsPageInModel(model, economicCMSPage);
 		setUpMetaDataForContentPage(model, economicCMSPage);
-
 		return getViewForPage(model);
 	}
 
 
-	@RequestMapping(method = RequestMethod.GET, value = "/investmentsTermsData/{itemsPerPage}")
+	@RequestMapping(method = RequestMethod.GET, value = "/investmentsTermsData")
 	@ResponseBody
-	public Map<String, Object> getInvestmentsTerms(@PathVariable int itemsPerPage) {
-		Map<String, Object> responseMap = new HashMap<>();
-		List<SagiaIndicatorTermData> sagiaIndicatorTermDataList = sagiaIndicatorTermFacade.getAllActiveIndicatorTerms();
-		getSessionService().setAttribute("Payments", sagiaIndicatorTermDataList);
-		responseMap.put("PaymentsPagesNumber",
-				sagiaPaginationFacade.getPagesNumber(sagiaIndicatorTermDataList.size(), itemsPerPage));
-		responseMap.put("paymentsItemsPerPage", itemsPerPage);
-		responseMap.put("showItemsPerPage", sagiaConfigurationFacade.getShowItemsPerPage());
-		responseMap.put("paymentData",
-				sagiaPaginationFacade.getIndicatorTermListForPage(sagiaIndicatorTermDataList,
-						Integer.valueOf(SAGIA_FIRST_PAGE_INDEX), itemsPerPage, sagiaIndicatorTermDataList.size()));
-
-		return responseMap;
+	public List<SagiaIndicatorTermData> getInvestmentsTerms(@PathVariable int itemsPerPage) {
+		return sagiaIndicatorTermFacade.getAllActiveIndicatorTerms();
 	}
 
 }

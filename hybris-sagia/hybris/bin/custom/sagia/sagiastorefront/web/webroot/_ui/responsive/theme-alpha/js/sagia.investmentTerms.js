@@ -12,8 +12,8 @@ function loadInvestmentTermsData() {
                         investmentTerms.sgiaIndicatorTerms.forEach(function (investmentTerm) {
                                 var code = investmentTerm.code;
                                 var name = investmentTerm.code;
-                                var $investmentTermRow = $branchRowTemplate.clone(true).show();
-                                $investmentTermRow.attr("id", branch.srId).children().first().html(code).next().text(name).next().text(name);
+                                var $investmentTermRow = {};
+                                $investmentTermRow.attr("id", code).children().first().html(code).next().text(name).next().text(name);
                                 setColorForDraftRow($investmentTermRow);
                                 investmentTermsVar.dataTable.row.add($investmentTermRow).draw();
                             $investmentsTermsTable.append($investmentTermRow);

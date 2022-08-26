@@ -202,7 +202,7 @@ public class LoginPageController extends AbstractLoginPageController
 		return "LoginPageUI";
 	}
 
-	//TODO: add produce attribute to get JSON response
+	//TODO: change method to POST and add produce attribute to get JSON response
 	@RequestMapping(value = "/checkNafathStatus", method = RequestMethod.GET)
 	public String checkNafathStatus(final Model model,
 								   final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) {
@@ -233,6 +233,7 @@ public class LoginPageController extends AbstractLoginPageController
 		return "/defaultLoginpage";
 	}
 
+	//TODO: change method to POST
 	@RequestMapping(value = "/loginNafathUser", method = RequestMethod.GET)
 	public String loginNafathUser(String selectedLicense, final Model mode, final HttpSession session, final HttpServletRequest request, final HttpServletResponse response) {
 		//TODO create a UI selectin form to get the license from that form if it's not more than one in the session list

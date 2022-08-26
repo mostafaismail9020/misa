@@ -1,6 +1,6 @@
 package com.sap.ibso.eservices.sagiaservices.services.indicatorterm;
 
-import com.sap.ibso.eservices.core.jalo.SagiaIndicatorTerm;
+import com.sap.ibso.eservices.core.model.SagiaIndicatorTermModel;
 
 import java.util.List;
 
@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface SagiaIndicatorTermService {
 
-    List<SagiaIndicatorTerm> getActiveIndicatorTerms();
+    List<SagiaIndicatorTermModel> getActiveIndicatorTerms();
 }

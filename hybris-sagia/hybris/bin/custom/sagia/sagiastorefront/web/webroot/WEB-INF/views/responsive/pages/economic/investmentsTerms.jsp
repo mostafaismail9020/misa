@@ -9,11 +9,17 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
 <link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/style.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/bootstrap-table.min.css"/>
+
+<script type="text/javascript" src="${themeResourcePath}/js/jquery-3.3.1.min.js${version}"></script>
+<script type="text/javascript" src="${themeResourcePath}/js/jquery.dataTables.min.js${version}"></script>
+<script type="text/javascript" src="${themeResourcePath}/js/sagia.investmentTerms.js"></script>
+
 
 <template:portalpage pageTitle="${pageTitle}">
 	<jsp:body>
     	<header:portalPageTitle />
-    	
+
         <!-- Banner start -->
         <cms:pageSlot position="PortalPageMain" var="feature">
             <cms:component component="${feature}" element="div" class=""/>
@@ -28,8 +34,8 @@
             </div>
 
             <div class="tableModule tableModule_slim tableModule_striped">
-                <table class="tableModule-table">
-                    <thead class="tableModule-head">
+                <table id="investmentsTermsTableId" class="tableModule-table">
+                        <thead class="tableModule-head">
                         <tr>
                             <th>#</th>
                             <th><spring:theme code="economic.investmentsterms.page.table.datapoint"/></th>
@@ -38,51 +44,11 @@
                             <th><spring:theme code="economic.investmentsterms.page.table.measurement"/></th>
                             <th><spring:theme code="economic.investmentsterms.page.table.source"/></th>
                         </tr>
-                    </thead>
-                    <tbody class="tableModule-body">
-                        <tr>
-                            <td>2.1.1</td>
-                            <td>GFCF by type of Capital Asset</td>
-                            <td>
-                                <a href="#"><div class="tableModule-headline">GFCF provided by Capital Asset type:</div></a>
-                                <ul>
-                                    <li>Residential and non-residential buidngs</li>
-                                    <li>Machinery and equipment</li>
-                                    <li>Transport equipment</li>
-                                </ul>
-                            </td>
-                            <td>N/A</td>
-                            <td>SAR (current prices)</td>
-                            <td>GaStat - directly obtained from GaSat</td>
-                        </tr>
-                        <tr>
-                            <td>2.1.2</td>
-                            <td>GFCF by expendture item (Capital Goods)</td>
-                            <td>
-                                <a href="#"><div class="tableModule-headline">All Capital Goods:</div></a>
-                                <ul>
-                                    <li>Oil sector</li>
-                                    <li>Fovernment sector</li>
-                                    <li>Private sector</li>
-                                </ul>
-                            </td>
-                            <td>N/A</td>
-                            <td>SAR (current prices)</td>
-                            <td>GaStat - directly obtained from GaSat</td>
-                        </tr>
-                        <tr>
-                            <td>2.1.3</td>
-                            <td>GFCF to GDP ratio</td>
-                            <td>
-                                <a href="#"><div class="tableModule-headline">GFCF as percentage of GDP (both indicators in current prices)</div></a>
-                            </td>
-                            <td>Total GFCF/GDP</td>
-                            <td>%</td>
-                            <td>Calculation</td>
-                        </tr>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody id="investmentsTermsId" class="tableModule-body"></tbody>
+                    </table>
             </div>
+
             <div class="paginationModule">
                 <!--  Insert pagination here -->
             </div>

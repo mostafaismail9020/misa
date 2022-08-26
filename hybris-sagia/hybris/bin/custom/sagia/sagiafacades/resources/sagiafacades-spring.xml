@@ -2226,5 +2226,7 @@
 		<property name="investSaudiProvinceRegionDao" ref="investSaudiProvinceRegionDao"/>
 	</bean>
 
+	<bean id="sagiaIndicatorTermFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaIndicatorTermFacade" />
+
 
 </beans>

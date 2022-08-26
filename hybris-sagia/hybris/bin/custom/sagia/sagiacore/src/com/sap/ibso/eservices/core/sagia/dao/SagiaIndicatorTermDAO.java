@@ -3,7 +3,7 @@
  */
 package com.sap.ibso.eservices.core.sagia.dao;
 
-import com.sap.ibso.eservices.core.jalo.SagiaIndicatorTerm;
+import com.sap.ibso.eservices.core.model.SagiaIndicatorTermModel;
 
 import java.util.List;
 
@@ -14,6 +14,6 @@ import java.util.List;
  */
 public interface SagiaIndicatorTermDAO
 {
-	public List<SagiaIndicatorTerm> getActiveIndicatorTerms();
+	public List<SagiaIndicatorTermModel> getActiveIndicatorTerms();
 
 }

@@ -21366,12 +21366,25 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
     font-size: 22px;
 }
 
+.page-economic-investments-terms table, .page-economic-investments-terms th, .page-economic-investments-terms tr {
+    border: none;
+}
+
+.page-economic-investments-terms td {
+    border: 1px solid #f4f4f4;
+}
+
+.page-economic-investments-terms table.dataTable.no-footer {
+    border-bottom: 1px solid #ededed;
+}
+
 .page-economic-investments-terms .tableModule-head th{
 	background-color: #f7f7f7 !important;
 	font-weight: 600;
     letter-spacing: 0;
     color: #707070;
     font-size: 16px;
+    border: 1px solid #ededed;
 }
 
 .page-economic-investments-terms .tableModule-head tr:last-child {
@@ -21379,7 +21392,7 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
 }
 
 .page-economic-investments-terms .tableModule {
-    margin-top: 24px;
+    margin: 50px 0;
 }
 .page-economic-investments-terms .tableModule-headline {
     color: #00a6be;
@@ -21394,8 +21407,17 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
     letter-spacing: 0;
     color: #707070;
     font-size: 14px;
+    vertical-align: top;
 }
 
 .page-economic-investments-terms .tableModule .tableModule-body td ul li {
     list-style-type: disc;
+}
+
+.page-economic-investments-terms .tableModule .dataTables_wrapper .dataTables_filter input {
+    margin-left: 0;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate, .tableModule select{
+    color: #707070 !important;
 }

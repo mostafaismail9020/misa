@@ -8,12 +8,8 @@
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/responsive/common/header"%>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
-<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/style.css"/>
-<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/bootstrap-table.min.css"/>
-
 <script type="text/javascript" src="${themeResourcePath}/js/jquery-3.3.1.min.js${version}"></script>
 <script type="text/javascript" src="${themeResourcePath}/js/jquery.dataTables.min.js${version}"></script>
-<script type="text/javascript" src="${themeResourcePath}/js/sagia.investmentTerms.js"></script>
 
 
 <template:portalpage pageTitle="${pageTitle}">
@@ -35,7 +31,7 @@
 
             <div class="tableModule tableModule_slim tableModule_striped">
                 <table id="investmentsTermsTableId" class="tableModule-table">
-                        <thead class="tableModule-head">
+                    <thead class="tableModule-head">
                         <tr>
                             <th>#</th>
                             <th><spring:theme code="economic.investmentsterms.page.table.datapoint"/></th>
@@ -44,9 +40,17 @@
                             <th><spring:theme code="economic.investmentsterms.page.table.measurement"/></th>
                             <th><spring:theme code="economic.investmentsterms.page.table.source"/></th>
                         </tr>
-                        </thead>
-                        <tbody id="investmentsTermsId" class="tableModule-body"></tbody>
-                    </table>
+                    </thead>
+                    <tbody id="investmentsTermsId" class="tableModule-body"></tbody>
+                </table>
+                <table style="display: none;">
+                    <tr class="investmentsTermsTemplate">
+                        <td><strong></strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
             </div>
 
             <div class="paginationModule">

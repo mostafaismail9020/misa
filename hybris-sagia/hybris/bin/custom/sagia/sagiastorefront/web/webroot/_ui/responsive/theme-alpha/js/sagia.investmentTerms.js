@@ -6,18 +6,21 @@ function loadInvestmentTermsData() {
                 method: 'GET',
                 ajaxHideLoadingIndicator: true,
                 success: function (investmentTerms) {
-                    setupTable();
+                    //setupTable(investmentTermsVar);
                     var $investmentsTermsTable = $('#investmentsTermsId').empty();
                     if (investmentTerms && investmentTerms.sgiaIndicatorTerms) {
                         investmentTerms.sgiaIndicatorTerms.forEach(function (investmentTerm) {
-                                var code = investmentTerm.code;
-                                var name = investmentTerm.code;
-                                var $investmentTermRow = {};
-                                $investmentTermRow.attr("id", code).children().first().html(code).next().text(name).next().text(name);
-                                setColorForDraftRow($investmentTermRow);
-                                investmentTermsVar.dataTable.row.add($investmentTermRow).draw();
-                            $investmentsTermsTable.append($investmentTermRow);
+                            var code = investmentTerm.code;
+//                            var name = investmentTerm.code;
+//                            var $investmentTermRow = $('.investmentsTermsTemplate').first().clone(true);
+//                                $investmentTermRow.attr("id", code).children().first().html(code).next().text(name).next().text(name);
+//                                setColorForDraftRow($investmentTermRow);
+//                                investmentTermsVar.dataTable.row.add($investmentTermRow).draw();
+//                            $investmentsTermsTable.append($investmentTermRow);
+                            console.log("investmentTerm", investmentTerm)
+                            $investmentsTermsTable.append('<tr id="'+code+'"><td>'+code+'</td><td>'+investmentTerm.dataPoint+'</td><td>'+investmentTerm.description+'</td><td>'+investmentTerm.calculation+'</td><td>'+investmentTerm.measurement+'</td><td>'+investmentTerm.source+'</td></tr>');
                         });
+                        $('#investmentsTermsTableId').DataTable();
                     }
                 },
                 error: function() {
@@ -52,7 +55,7 @@ var setupTable = function() {
         config.language = SAGIA.dataTablesArabic;
     }
 
-    investmentTermsVar.dataTable = $('#investmentsTermsTableId').DataTable(config);
+    investmentTermsVar.dataTable = $('#investmentsTermsTableId').dataTable(config);
 };
 
 

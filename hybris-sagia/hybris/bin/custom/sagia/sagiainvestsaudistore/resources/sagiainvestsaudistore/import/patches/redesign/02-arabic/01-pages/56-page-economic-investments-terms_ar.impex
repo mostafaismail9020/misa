@@ -1,0 +1,75 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = EconomicInvestmentsTermsPageTemplate
+$page = economic-investments-terms
+$pageName = الشروط الاقتصادية والاستثمارية
+$pageTitleEn = $pageName
+$pageLabel = /economic/investmentsTerms
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar] ; description[lang = ar]; keywords[lang = ar]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn     ; $pageName             ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+#######################################################
+
+INSERT_UPDATE CMSLinkComponent  ; $contentCV[unique = true]; uid[unique = true] 						    ; linkName [lang = ar]							;url										; &linkRef
+								;						   ; economic-investments-terms-tail-link1-$page 	; لوحة القيادة 		  	 					 	;economicHighlights/dashboard  				; economic-investments-terms-tail-link1-$page
+								;						   ; economic-investments-terms-tail-link2-$page	; المملكة العربية السعودية في المؤشرات الدولية 	 	;economicHighlights/saInternationalIndices	; economic-investments-terms-tail-link2-$page
+								;						   ; economic-investments-terms-tail-link3-$page	; البنى التحتية واللوجستيات				 	;economicHighlights/infraLogistics 			; economic-investments-terms-tail-link3-$page
+								;						   ; economic-investments-terms-tail-link4-$page	; القطاعات الاقتصادية السعودية  		  	 		 	;economicHighlights/saudiEconomicSectors	; economic-investments-terms-tail-link4-$page
+								;						   ; economic-investments-terms-tail-link5-$page	; بيانات الاستثمار  		  	 				 	;economicHighlights/investmentData			; economic-investments-terms-tail-link5-$page
+								;						   ; economic-investments-terms-tail-link6-$page	; بند بيانات الاستثمار الجديد  		  	 		;economicHighlights/investmentData			; economic-investments-terms-tail-link6-$page
+								;						   ; economic-investments-terms-tail-link7-$page	; بند بيانات الاستثمار الأخرى	 				;economicHighlights/investmentData			; economic-investments-terms-tail-link7-$page
+
+ 
+
+
+#########################################################################################
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; economic-investments-terms-banner.jpg 					; economic-investments-terms-banner.jpg						; $siteResource/economic-investments-terms-banner.jpg 									; image/png						    ;										   ; ""     ;
+					
+
+#####################################################################
+
+	
+INSERT_UPDATE EconomicDashboardBannerComponent  ; uid[unique = true]			 			; tailHeader [lang = ar]							 ; tailBanner (code, $contentCV)	      	; link(&linkRef)      									        ; &componentRef 			 	  	        ; $contentCV[unique = true]
+												; economic-investments-terms-tail-1			; لوحة القيادة 		  	 							 ; 											; economic-investments-terms-tail-link1-$page	    			; economic-investments-terms-tail-1			;
+												; economic-investments-terms-tail-2			; المملكة العربية السعودية في المؤشرات الدولية 		  	 ; 											; economic-investments-terms-tail-link2-$page	    			; economic-investments-terms-tail-2			;
+												; economic-investments-terms-tail-3			; البنى التحتية واللوجستيات			  	 		 ; 											; economic-investments-terms-tail-link3-$page	    			; economic-investments-terms-tail-3			;
+												; economic-investments-terms-tail-4			; القطاعات الاقتصادية السعودية  		  	 				 ; 											; economic-investments-terms-tail-link4-$page	    			; economic-investments-terms-tail-4			;
+												; economic-investments-terms-tail-5			; بيانات الاستثمار  		  	 						 ; 											; economic-investments-terms-tail-link5-$page	    			; economic-investments-terms-tail-5			;
+												; economic-investments-terms-tail-6			; بند بيانات الاستثمار الجديد  		  	 			 ; 											; economic-investments-terms-tail-link6-$page	    			; economic-investments-terms-tail-6			;
+												; economic-investments-terms-tail-7			; بند بيانات الاستثمار الأخرى  		  	 			 ; 											; economic-investments-terms-tail-link7-$page	    			; economic-investments-terms-tail-7			;
+
+	
+
+INSERT_UPDATE EconomicCustomBannerContainer		; uid[unique = true] 			   		        ; name 							  			    ; backgroundImage (code, $contentCV)			; title [lang = ar]					; simpleCMSComponents(&componentRef)	  										  											  						  ; &componentRef                         ; $contentCV[unique = true]
+												; economic-investments-terms-banner-container   ; economic investments terms banner Container   ; economic-investments-terms-banner.jpg  		; الشروط الاقتصادية والاستثمارية		; economic-investments-terms-tail-1,economic-investments-terms-tail-2,economic-investments-terms-tail-3,economic-investments-terms-tail-4,economic-investments-terms-tail-5,economic-investments-terms-tail-6,economic-investments-terms-tail-7 	; economic-investments-terms-banner-container   ;
+
+#############################################################
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)		                ; $contentCV	;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                             		                ;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; economic-investments-terms-banner-container		;				;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                    				                ;				;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+						 

@@ -710,6 +710,46 @@
 		</editorArea:editorArea>
 	</context>
 
+	<context type="SagiaIndicatorTerm" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="SagiaIndicatorTermTab">
+				<editorArea:section name="SagiaIndicatorTermSection">
+					<editorArea:attribute qualifier="code" />
+					<editorArea:attribute qualifier="dataPoint" />
+					<editorArea:attribute qualifier="description" />
+					<editorArea:attribute qualifier="calculation" />
+					<editorArea:attribute
+							qualifier="measurement" />
+					<editorArea:attribute
+							qualifier="source" />
+					<editorArea:attribute
+							qualifier="isActive" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="SagiaIndicatorTerm"  component="cs-editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="SagiaIndicatorTermTab">
+				<editorArea:section name="SagiaIndicatorTermSection">
+					<editorArea:attribute qualifier="code" />
+					<editorArea:attribute qualifier="dataPoint" />
+					<editorArea:attribute qualifier="description" />
+					<editorArea:attribute qualifier="calculation" />
+					<editorArea:attribute
+							qualifier="measurement" />
+					<editorArea:attribute
+							qualifier="source" />
+					<editorArea:attribute
+							qualifier="isActive" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
 
 	<context type="FinancialSurveyQuarter"  component="editor-area"
 			 merge-by="type">
@@ -2009,6 +2049,8 @@
 										 code="SagiaTutorial" />
 				<explorer-tree:type-node
 						id="SagiaLicenseTypeRequirement" code="SagiaLicenseTypeRequirement" />
+				<explorer-tree:type-node id="SagiaIndicatorTerm"
+										 code="SagiaIndicatorTerm" />
 			</explorer-tree:navigation-node>
 		</explorer-tree:explorer-tree>
 	</context>

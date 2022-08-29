@@ -10559,22 +10559,27 @@
             <itemtype code="InvestmentSaudiLastReportCategoryComponent" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.InvestmentSaudiLastReportCategoryComponent">
+                <description>Last Investment Report Category Component</description>
                 <attributes>
                     <attribute qualifier="box1Name" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>Name of box 1</description>
+                        <modifiers/>
                     </attribute>
                     <attribute qualifier="box2Name" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>Name of box 2</description>
+                        <modifiers/>
                     </attribute>
                     <attribute qualifier="box3Name" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>Name of box 3</description>
+                        <modifiers/>
                     </attribute>
                     <attribute qualifier="box4Name" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>Name of box 4</description>
+                        <modifiers/>
                     </attribute>
                 </attributes>
             </itemtype>

@@ -22846,6 +22846,7 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
     font-weight: 600;
 }
 
+.page-economic-investment-reports .InvestmentSaudiLastReportCategory-container,
 .page-economic-investment-reports .investment-reports-container {
     margin-top: 75px;
 }

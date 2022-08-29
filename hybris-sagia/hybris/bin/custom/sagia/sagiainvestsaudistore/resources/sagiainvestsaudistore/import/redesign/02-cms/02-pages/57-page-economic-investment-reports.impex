@@ -43,8 +43,8 @@ INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]          
 
 #############################################################
 
-INSERT_UPDATE InvestmentSaudiLastReportCategoryComponent		; uid[unique = true] 			   		        ; name 							  			    ; box1Name [lang = en]				; box2Name [lang = en]		; box3Name [lang = en]			; box4Name [lang = en]					    ; simpleCMSComponents(&componentRef)	        ; &componentRef        ; $contentCV[unique = true]
-												                ; economic-investment-reports-latest-container  ; economic investment report latest Container   ; Economic and Investment Monitor	; Investment Highlights     ; Monthly Bulletin              ; Economic and Investment Reports & Studies ; economic-investment-reports-latest-container  ;
+INSERT_UPDATE InvestmentSaudiLastReportCategoryComponent		; uid[unique = true] 			   		        ; name 							  			    ; box1Name [lang = en]				; box2Name [lang = en]		; box3Name [lang = en]			; box4Name [lang = en]					    ; &componentRef                                 ; $contentCV[unique = true]
+												                ; economic-investment-reports-latest-container  ; economic investment report latest Container   ; Economic and Investment Monitor	; Investment Highlights     ; Monthly Bulletin              ; Economic and Investment Reports & Studies ; economic-investment-reports-latest-container
 
 #############################################################
 

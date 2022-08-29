@@ -2,18 +2,12 @@ package com.sap.ibso.eservices.storefront.controllers.cms;
 
 
 import com.investsaudi.portal.core.model.InvestmentSaudiLastReportCategoryComponentModel;
-import com.investsaudi.portal.core.model.InvestSaudiNewsComponentModel;
-import com.investsaudi.portal.core.service.InvestSaudiMediaCenterService;
-import de.hybris.bootstrap.annotations.Accessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collection;
 import java.util.Date;
-import java.util.LinkedList;
 
 /*
 *   This controller is used to display the last n news present in the system
@@ -26,16 +20,13 @@ public class InvestmentSaudiLastReportCategoryComponentController extends Abstra
 
     @Override
     protected void fillModel(HttpServletRequest request, Model model, InvestmentSaudiLastReportCategoryComponentModel component) {
-        Collection<ReportDto> lastReports = new LinkedList<>();
-        lastReports.add(new ReportDto(new Date(), "title1", "/economic/investmentReports/categoryName1", "imageUrl"));
-        lastReports.add(new ReportDto(new Date(), "title2", "/economic/investmentReports/categoryName2", "imageUrl"));
-        lastReports.add(new ReportDto(new Date(), "title3", "/economic/investmentReports/categoryName3", "imageUrl"));
-        lastReports.add(new ReportDto(new Date(), "title4", "/economic/investmentReports/categoryName4", "imageUrl"));
-
-        model.addAttribute("lastReports", lastReports);
+        model.addAttribute("lastReportsBox1", new ReportDto(new Date(), component.getBox1Name(), "/economic/investmentReports/categoryName1", "/medias/news-national-center-for-waste-management-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwxMzU0MTN8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaGQ3L2gyOS84ODEwOTU4MjI1NDM4LmpwZ3w5YjYzYmEwZTEzYTJiOGY0ZjM1MTBmMTc0NmJlODEyNDE1NjYwNjhiOTFmNjZlZWI4MGFiYmEzN2UwNDI0ZWYy")); //Economic and Investment Monitor
+        model.addAttribute("lastReportsBox2", new ReportDto(new Date(), component.getBox2Name(), "/economic/investmentReports/categoryName1", "/medias/news-ministers-of-Misa-and-Malaysia-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwxMzIxMjV8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDBhL2g1Ni84ODEwOTU3OTk2MDYyLmpwZ3xlOTE0ZjY5ODgyMGE5MDQxOWE4MDAxOTgzNDBhMDNiNzYwMjE3ZGNmMGJlMjkzYTI3MjIzMzEyNDYxYTc4ODU0")); //Investment Highlights
+        model.addAttribute("lastReportsBox3", new ReportDto(new Date(), component.getBox3Name(), "/economic/investmentReports/categoryName1", "/medias/news-Roche-and-misa-partnership-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwxMzM2MTN8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDE5L2hhYS84ODExNzI0NzM0NDk0LmpwZ3xmYTYxNmE5YmRjODQ2MTI1NDZkOGMwZjZhNzJlZjI0ZGFkM2IwNDM5M2VhZTdjOGJhMDQ5YjRjNDhlNzQ5ZTQz")); //Monthly Bulletin
+        model.addAttribute("lastReportsBox4", new ReportDto(new Date(), component.getBox4Name(), "/economic/investmentReports/categoryName1", "/medias/news-saudi-uzbek-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwxMTMxMzV8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaGJhL2gxYS84ODExMTk5Mzk3OTE4LmpwZ3xkMmJlOTdlNjMwYTMzZmI5OGExMDk4ZDYzMTU1MjliMzBmZGJkNzczODZkMTE2MGNlNzQ2Y2Y3OGZkYWMwYzBj")); //Economic and Investment Reports & Studies
     }
 
-    private static class ReportDto {
+    public static class ReportDto {
         Date date;
         String title;
         String url;

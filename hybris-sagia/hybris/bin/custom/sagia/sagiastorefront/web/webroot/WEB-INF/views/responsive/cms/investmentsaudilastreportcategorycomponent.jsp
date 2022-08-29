@@ -4,39 +4,77 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<!--  InvestmentSaudiLastReportCategoryComponent start -->
 <c:if test="${component.visible}">
-	<section id="newsandupdates" class="newsAndUpdateContainer">
-	    <div class="container">
-	        <div class="row titleContainer">
-	            <div class="col-md-12 title-heading p-0" data-aos="fade-right" data-aos-delay="100">
-	                <h3 class="section-title ">${component.title}</h3>
-					<a href="${portal.cmsLinkUrl(component.exploreAllUrl)}" class="btn-primary explore-btn explore-gia-btn">
-						<spring:theme code="portal.exploreall.button.text"/>&nbsp;
-						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
-					</a>
-				</div>
-			</div>
-			
-           	<div class="row contentWrapper">
-           		<c:forEach var="currentComponent" items="${lastReports}" varStatus="status">
-			      	<c:set var="loopCount" value="${(status.index) * 150}" />
-			      	<c:url value="/mediaCenter/news" var="newsUrl"/>
-			      	<div class="col-lg-4 col-md-6 card-wrapper " data-aos="fade-up" data-aos-delay="${loopCount}">
-			        	<div class="flip-card">
-			            	<div class="card-img">
-			                	<img class="img-fluid" src="${fn:escapeXml(currentComponent.newsDetailsImage.url)}" alt="">
-			              	</div>
-			              	<div class="card-box p-3 pr-5 home-news-updates-content">
-			               		<strong><fmt:formatDate value="${currentComponent.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentComponent.newsDate}" pattern="MMMM" /></strong>
-			                  	<h2>${currentComponent.newsTitle}</h2>
-			                  	<p class="home-news-updates-content-p">${currentComponent.newsShortInformation}</p>
-	                  			<p><a class="know-more-link" href="${newsUrl}/${currentComponent.uid}"><spring:theme code="portal.sector.opportunity.know.more.label"/>&nbsp;<img src=""></a></p>
-	                      	</div>
-						</div>
-					</div>
-				</c:forEach>
-        	</div>
-    	</div>
-	</section>
+    <div class="container InvestmentSaudiLastReportCategory-container">
+        <div class="row">
+            <div class="col-12 col-lg-3 mb-5">
+                <div class="news-card">
+                    <div class="news-date text-center">
+                        <div class="day"><fmt:formatDate value="${lastReportsBox1.date}" pattern="d" /></div>
+                        <div class="month"><fmt:formatDate value="${lastReportsBox1.date}" pattern="MMMM" /></div>
+                    </div>
+                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(lastReportsBox1.image)}" alt="${lastReportsBox1.title}"/>
+                    <div class="news-card-inner">
+                        <h3 title="${lastReportsBox1.title}">${lastReportsBox1.title}</h3>
+                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox1.url}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
+                            <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 mb-5">
+                <div class="news-card">
+                    <div class="news-date text-center">
+                        <div class="day"><fmt:formatDate value="${lastReportsBox2.date}" pattern="d" /></div>
+                        <div class="month"><fmt:formatDate value="${lastReportsBox2.date}" pattern="MMMM" /></div>
+                    </div>
+                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(lastReportsBox2.image)}" alt="${lastReportsBox2.title}"/>
+                    <div class="news-card-inner">
+                        <h3 title="${lastReportsBox2.title}">${lastReportsBox2.title}</h3>
+                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox2.url}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
+                            <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 mb-5">
+                <div class="news-card">
+                    <div class="news-date text-center">
+                        <div class="day"><fmt:formatDate value="${lastReportsBox3.date}" pattern="d" /></div>
+                        <div class="month"><fmt:formatDate value="${lastReportsBox3.date}" pattern="MMMM" /></div>
+                    </div>
+                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(lastReportsBox3.image)}" alt="${lastReportsBox3.title}"/>
+                    <div class="news-card-inner">
+                        <h3 title="${lastReportsBox3.title}">${lastReportsBox3.title}</h3>
+                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox3.url}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
+                            <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 mb-5">
+                <div class="news-card">
+                    <div class="news-date text-center">
+                        <div class="day"><fmt:formatDate value="${lastReportsBox4.date}" pattern="d" /></div>
+                        <div class="month"><fmt:formatDate value="${lastReportsBox4.date}" pattern="MMMM" /></div>
+                    </div>
+                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(lastReportsBox4.image)}" alt="${lastReportsBox4.title}"/>
+                    <div class="news-card-inner">
+                        <h3 title="${lastReportsBox4.title}">${lastReportsBox4.title}</h3>
+                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox4.url}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
+                            <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--  InvestmentSaudiLastReportCategoryComponent end -->
 </c:if>

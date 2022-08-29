@@ -11,18 +11,25 @@ import de.hybris.platform.solrfacetsearch.provider.FieldValue;
 import de.hybris.platform.solrfacetsearch.provider.FieldValueProvider;
 import de.hybris.platform.solrfacetsearch.provider.impl.AbstractPropertyFieldValueProvider;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.MessageSource;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
-public class SagiaResourceComponentYearValueProvider extends AbstractPropertyFieldValueProvider implements FieldValueProvider
+public class SagiaResourceComponentQuarterValueProvider extends AbstractPropertyFieldValueProvider implements FieldValueProvider
 {
 
     private FieldNameProvider fieldNameProvider;
     private CommonI18NService commonI18NService;
+    private MessageSource messageSource;
+
+
 
     protected FieldNameProvider getFieldNameProvider()
     {
@@ -83,7 +90,9 @@ public class SagiaResourceComponentYearValueProvider extends AbstractPropertyFie
     {
         final List<FieldValue> fieldValues = new ArrayList<FieldValue>();
 
-        final String yearValue = getYearValue(investSaudiResourceComponentModel, language);
+        final String yearValue = getQuarterValue(investSaudiResourceComponentModel, language);
+
+
         if (yearValue != null)
         {
             addFieldValues(fieldValues, indexedProperty, language, yearValue);
@@ -92,11 +101,14 @@ public class SagiaResourceComponentYearValueProvider extends AbstractPropertyFie
         return fieldValues;
     }
 
-    private String getYearValue(InvestSaudiResourceComponentModel investSaudiResourceComponent, LanguageModel language) {
+    private String getQuarterValue(InvestSaudiResourceComponentModel investSaudiResourceComponent, LanguageModel language) {
+
+        Map<String, String> mapVals = createquarterMap(language);
         Date date = investSaudiResourceComponent.getResourceDate();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        return String.valueOf(calendar.get(Calendar.YEAR));
+
+        return mapVals.get(String.valueOf(calendar.get(Calendar.MONTH)));
     }
 
     protected void addFieldValues(final List<FieldValue> fieldValues, final IndexedProperty indexedProperty,
@@ -108,6 +120,38 @@ public class SagiaResourceComponentYearValueProvider extends AbstractPropertyFie
         {
             fieldValues.add(new FieldValue(fieldName, value));
         }
+    }
+
+
+    private  Map<String, String> createquarterMap(LanguageModel language) {
+        Map<String, String> monthVocab = new HashMap<>();
+        monthVocab.put("1", getLocalizedValue("1",language));
+        monthVocab.put("2", getLocalizedValue("1",language));
+        monthVocab.put("3", getLocalizedValue("1",language));
+        monthVocab.put("4", getLocalizedValue("2",language));
+        monthVocab.put("5", getLocalizedValue("2",language));
+        monthVocab.put("6", getLocalizedValue("2",language));
+        monthVocab.put("7", getLocalizedValue("3",language));
+        monthVocab.put("8", getLocalizedValue("3",language));
+        monthVocab.put("9", getLocalizedValue("3",language));
+        monthVocab.put("10", getLocalizedValue("4",language));
+        monthVocab.put("11", getLocalizedValue("4",language));
+        monthVocab.put("12", getLocalizedValue("4",language));
+       return monthVocab;
+    }
+
+    private  String  getLocalizedValue(String messageKey,  LanguageModel language) {
+        try {
+            Locale local = new Locale(language.getIsocode());
+            return messageSource.getMessage(messageKey, null, local );
+        } catch (Exception ex) {
+            return messageKey;
+        }
+    }
+
+
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
     }
 
 }

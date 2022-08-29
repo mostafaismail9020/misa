@@ -2215,6 +2215,26 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 	</bean>
 
+	<bean id="sagiaResourceComponentYearValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentYearValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="i18nService" ref="i18nService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+	</bean>
+
+	<bean id="sagiaResourceComponentMonthValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentMonthValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="i18nService" ref="i18nService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+
+	<bean id="sagiaResourceComponentQuarterValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentQuarterValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="i18nService" ref="i18nService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+
 	<bean id="sagiaRegionValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaRegionValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 		<property name="i18nService" ref="i18nService"/>

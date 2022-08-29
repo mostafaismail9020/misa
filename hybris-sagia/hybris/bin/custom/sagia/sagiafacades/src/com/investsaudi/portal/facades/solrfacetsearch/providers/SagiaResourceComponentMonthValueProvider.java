@@ -11,18 +11,25 @@ import de.hybris.platform.solrfacetsearch.provider.FieldValue;
 import de.hybris.platform.solrfacetsearch.provider.FieldValueProvider;
 import de.hybris.platform.solrfacetsearch.provider.impl.AbstractPropertyFieldValueProvider;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.MessageSource;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
-public class SagiaResourceComponentYearValueProvider extends AbstractPropertyFieldValueProvider implements FieldValueProvider
+public class SagiaResourceComponentMonthValueProvider extends AbstractPropertyFieldValueProvider implements FieldValueProvider
 {
 
     private FieldNameProvider fieldNameProvider;
     private CommonI18NService commonI18NService;
+    private MessageSource messageSource;
+
+
 
     protected FieldNameProvider getFieldNameProvider()
     {
@@ -83,7 +90,9 @@ public class SagiaResourceComponentYearValueProvider extends AbstractPropertyFie
     {
         final List<FieldValue> fieldValues = new ArrayList<FieldValue>();
 
-        final String yearValue = getYearValue(investSaudiResourceComponentModel, language);
+        final String yearValue = getMonthValue(investSaudiResourceComponentModel, language);
+
+
         if (yearValue != null)
         {
             addFieldValues(fieldValues, indexedProperty, language, yearValue);
@@ -92,11 +101,14 @@ public class SagiaResourceComponentYearValueProvider extends AbstractPropertyFie
         return fieldValues;
     }
 
-    private String getYearValue(InvestSaudiResourceComponentModel investSaudiResourceComponent, LanguageModel language) {
+    private String getMonthValue(InvestSaudiResourceComponentModel investSaudiResourceComponent, LanguageModel language) {
+
+        Map<String, String> mapVals = createMonthMap(language);
         Date date = investSaudiResourceComponent.getResourceDate();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        return String.valueOf(calendar.get(Calendar.YEAR));
+
+        return mapVals.get(String.valueOf(calendar.get(Calendar.MONTH)));
     }
 
     protected void addFieldValues(final List<FieldValue> fieldValues, final IndexedProperty indexedProperty,
@@ -108,6 +120,38 @@ public class SagiaResourceComponentYearValueProvider extends AbstractPropertyFie
         {
             fieldValues.add(new FieldValue(fieldName, value));
         }
+    }
+
+
+    private  Map<String, String> createMonthMap(LanguageModel language) {
+        Map<String, String> monthVocab = new HashMap<>();
+        monthVocab.put("1", getLocalizedValue("month.january",language));
+        monthVocab.put("2", getLocalizedValue("month.february",language));
+        monthVocab.put("3", getLocalizedValue("month.march",language));
+        monthVocab.put("4", getLocalizedValue("month.april",language));
+        monthVocab.put("5", getLocalizedValue("month.may",language));
+        monthVocab.put("6", getLocalizedValue("month.june",language));
+        monthVocab.put("7", getLocalizedValue("month.july",language));
+        monthVocab.put("8", getLocalizedValue("month.august",language));
+        monthVocab.put("9", getLocalizedValue("month.september",language));
+        monthVocab.put("10", getLocalizedValue("month.october",language));
+        monthVocab.put("11", getLocalizedValue("month.november",language));
+        monthVocab.put("12", getLocalizedValue("month.december",language));
+       return monthVocab;
+    }
+
+    private  String  getLocalizedValue(String messageKey,  LanguageModel language) {
+        try {
+            Locale local = new Locale(language.getIsocode());
+            return messageSource.getMessage(messageKey, null, local );
+        } catch (Exception ex) {
+            return messageKey;
+        }
+    }
+
+
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
     }
 
 }

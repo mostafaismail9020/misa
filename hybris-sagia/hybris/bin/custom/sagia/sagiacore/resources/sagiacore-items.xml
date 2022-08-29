@@ -10553,5 +10553,32 @@
                 <description>Sagia SearchBox Component</description>
             </itemtype>
         </typegroup>
-	</itemtypes>
+
+        <!-- InvestmentReports Starts-->
+        <typegroup name="InvestmentReports">
+            <itemtype code="InvestmentSaudiLastReportCategoryComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestmentSaudiLastReportCategoryComponent">
+                <attributes>
+                    <attribute qualifier="box1Name" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Name of box 1</description>
+                    </attribute>
+                    <attribute qualifier="box2Name" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Name of box 2</description>
+                    </attribute>
+                    <attribute qualifier="box3Name" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Name of box 3</description>
+                    </attribute>
+                    <attribute qualifier="box4Name" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Name of box 4</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
+    </itemtypes>
 </items>

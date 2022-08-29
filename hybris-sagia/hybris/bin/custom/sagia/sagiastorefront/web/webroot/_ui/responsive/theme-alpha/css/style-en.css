@@ -16921,7 +16921,7 @@ padding-left: 40px;
 	.page-economic-investments-terms .eh-page-breadcrums .thumbnail {
 	    height: 30px;
 	}
-	
+
 	.page-economic-highlights .eh-page-grid,
 	body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page-grid {
 		display: block;
@@ -21502,4 +21502,16 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
 
 .tableModule {
     overflow-x: auto;
+}
+
+.page-economic-investment-reports .paragraph-component {
+    margin: 25px 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+.page-economic-investment-reports .investment-reports-container {
+    margin-top: 75px;
 }

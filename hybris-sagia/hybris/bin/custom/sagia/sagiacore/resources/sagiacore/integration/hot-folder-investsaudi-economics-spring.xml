@@ -185,7 +185,7 @@
 		<property name="header">
 			<value>#{defaultImpexProductHeader}
 				# EconomicSectors
-				INSERT_UPDATE EconomicsSector;uid;index;value;label[allownull = true,lang = en];label[allownull = true,lang = ar];displayName[unique = true,lang = en];displayName[unique = true,lang = ar];year[unique = true]
+				INSERT_UPDATE EconomicsSector;uid;index;value;label[allownull = true,lang = en];label[allownull = true,lang = ar];displayName[unique = true,lang = en];displayName[unique = true,lang = ar];year
 			</value>
 		</property>
 		<property name="impexRow">

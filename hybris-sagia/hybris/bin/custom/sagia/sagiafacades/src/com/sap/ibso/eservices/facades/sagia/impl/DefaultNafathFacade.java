@@ -1,6 +1,5 @@
 package com.sap.ibso.eservices.facades.sagia.impl;
 
-import com.sap.ibso.eservices.core.enums.NafathStatus;
 import com.sap.ibso.eservices.core.model.NafathLoginModel;
 import com.sap.ibso.eservices.core.sagia.services.NafathService;
 import com.sap.ibso.eservices.facades.data.NafathLoginData;
@@ -24,8 +23,8 @@ public class DefaultNafathFacade implements NafathFacade {
     }
 
     @Override
-    public NafathLoginData checkStatus(String transactionID) {
-        return getNafathLoginConverter().convert(nafathService.getTransactionStatus(transactionID));
+    public NafathLoginData checkStatus(String transactionID, String nationalID, String randomText) {
+        return getNafathLoginConverter().convert(nafathService.getTransactionStatus(transactionID, nationalID, randomText));
     }
 
     @Override

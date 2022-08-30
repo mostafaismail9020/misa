@@ -9,7 +9,7 @@ public interface NafathService {
 
     boolean removeOldLoginRecords(Integer daysOld);
 
-    NafathLoginModel getTransactionStatus(String transactionID);
+    NafathLoginModel getTransactionStatus(String transactionID, String nationalID, String randomText);
 
     UserModel getUserModelForLicense(String license);
 

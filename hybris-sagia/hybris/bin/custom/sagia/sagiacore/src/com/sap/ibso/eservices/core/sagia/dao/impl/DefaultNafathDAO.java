@@ -32,14 +32,19 @@ public class DefaultNafathDAO implements NafathDAO {
     }
 
     @Override
-    public NafathLoginModel getLoginFromTransactionId(String transactionID) {
+    public NafathLoginModel getLoginFromTransactionId(String transactionID, String nationalId, String randomText) {
         final StringBuilder query = new StringBuilder();
 
         query.append(" SELECT ").append(NafathLoginModel.PK).append(" FROM ").append(NafathLoginModel._TYPECODE)
-                .append("WHERE ").append(NafathLoginModel.TRANSACTIONID).append(" = ?transactionId");
-
+                .append(" WHERE ").append(NafathLoginModel.TRANSACTIONID).append(" = ?transactionId");
+        query.append(" AND ").append(NafathLoginModel.NATIONALID).append(" = ?nationalId");
+        query.append(" AND ").append(NafathLoginModel.RANDOM).append(" = ?randomText");
         final HashMap<String, String> queryParams = new HashMap<>();
         queryParams.put("transactionId", transactionID);
+        queryParams.put("nationalId", nationalId);
+        queryParams.put("randomText", randomText);
+
+
 
         final SearchResult<NafathLoginModel> result = getFlexibleSearchService().search(query.toString(), queryParams);
         return result.getResult().get(0);

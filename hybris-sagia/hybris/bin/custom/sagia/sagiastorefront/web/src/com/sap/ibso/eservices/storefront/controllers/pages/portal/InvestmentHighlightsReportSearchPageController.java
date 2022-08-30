@@ -3,16 +3,57 @@
  */
 package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 
+import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
+import com.investsaudi.portal.facades.solrfacetsearch.InvestmentHighlightsReportSearchFacade;
+import com.sap.ibso.eservices.facades.data.InvestSaudiResourceComponentData;
+import com.sap.security.core.server.csi.XSSEncoder;
+import de.hybris.platform.acceleratorcms.model.components.SearchBoxComponentModel;
+import de.hybris.platform.acceleratorservices.controllers.page.PageType;
+import de.hybris.platform.acceleratorservices.customer.CustomerLocationService;
+import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.impl.SearchBreadcrumbBuilder;
+import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractSearchPageController;
+import de.hybris.platform.acceleratorstorefrontcommons.util.MetaSanitizerUtil;
+import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
+import de.hybris.platform.cms2.model.pages.ContentPageModel;
+import de.hybris.platform.cms2.servicelayer.services.CMSComponentService;
+import de.hybris.platform.commercefacades.product.data.OpportunityData;
+import de.hybris.platform.commercefacades.product.data.ProductData;
+import de.hybris.platform.commercefacades.search.data.AutocompleteResultData;
+import de.hybris.platform.commercefacades.search.data.SearchQueryData;
+import de.hybris.platform.commercefacades.search.data.SearchStateData;
+import de.hybris.platform.commerceservices.enums.SearchQueryContext;
+import de.hybris.platform.commerceservices.search.facetdata.FacetData;
+import de.hybris.platform.commerceservices.search.facetdata.FacetRefinement;
+import de.hybris.platform.commerceservices.search.facetdata.InvestSaudiResourceComponentSearchPageData;
+import de.hybris.platform.commerceservices.search.pagedata.PageableData;
+import de.hybris.platform.core.servicelayer.data.PaginationData;
+import de.hybris.platform.core.servicelayer.data.SearchPageData;
+import de.hybris.platform.servicelayer.dto.converter.ConversionException;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 @Controller
 @RequestMapping("/investment-highlights/resources")
 public class InvestmentHighlightsReportSearchPageController extends AbstractSearchPageController
 {
-	/*private static final String SEARCH_META_DESCRIPTION_ON = "search.meta.description.on";
+	private static final String SEARCH_META_DESCRIPTION_ON = "search.meta.description.on";
 	private static final String SEARCH_META_DESCRIPTION_RESULTS = "search.meta.description.results";
 
 	@SuppressWarnings("unused")
@@ -61,7 +102,7 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 
 		try
 		{
-			searchPageData = encodeSearchCustomePageData(investmentHighlightsReportSearchFacade.textSearch(searchState, pageableData));
+			///searchPageData = encodeSearchCustomePageData(investmentHighlightsReportSearchFacade.textSearch(searchState, pageableData));
 		}
 		catch (final ConversionException e) // NOSONAR
 		{
@@ -90,7 +131,7 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 			solrSearchPageData=searchPageData;
 			List<OpportunityData> opportunityDataList = new ArrayList<>();
 			for (InvestSaudiResourceComponentSearchPageData productData : searchPageData.getResults()) {
-				opportunityDataList.add(createOpportunityData(productData));
+				//opportunityDataList.add(createOpportunityData(productData));
 			}
 			SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
 			productDataSearchPageData.setResults(opportunityDataList);
@@ -185,8 +226,10 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 			@RequestParam(value = "text", required = false) final String searchText, final HttpServletRequest request,
 			final Model model) throws CMSItemNotFoundException
 	{
-		final InvestSaudiResourceComponentSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
-				sortCode, NUM_OF_RECORD_PER_PAGE);
+		/*final InvestSaudiResourceComponentSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
+				sortCode, NUM_OF_RECORD_PER_PAGE);*/
+
+        final InvestSaudiResourceComponentSearchPageData<SearchStateData, ProductData> searchPageData = null;
 		InvestSaudiResourceComponentSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
 
 		populateModel(model, searchPageData, showMode);
@@ -218,7 +261,7 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 			model.addAttribute("searchPageData", productDataSearchPageData);
 			storeCmsPageInModel(model, getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID));
 		}
-		model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchPageData));
+	//	model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchPageData));
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
 
 		final String metaDescription = MetaSanitizerUtil
@@ -305,11 +348,11 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 			resultData.setSuggestions(subList(investmentHighlightsReportSearchFacade.getAutocompleteSuggestions(term), component.getMaxSuggestions()));
 		}
 
-		if (component.isDisplayProducts())
+		/*if (component.isDisplayProducts())
 		{
 			resultData.setProducts(subList(investmentHighlightsReportSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
 					component.getMaxProducts()));
-		}
+		}*/
 
 		return resultData;
 	}
@@ -334,5 +377,5 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 		storeContentPageTitleInModel(model, getPageTitleResolver().resolveContentPageTitle(
 				getMessageSource().getMessage("search.meta.title", null, "search.meta.title", getI18nService().getCurrentLocale())
 						+ " " + searchText));
-	}*/
+	}
 }

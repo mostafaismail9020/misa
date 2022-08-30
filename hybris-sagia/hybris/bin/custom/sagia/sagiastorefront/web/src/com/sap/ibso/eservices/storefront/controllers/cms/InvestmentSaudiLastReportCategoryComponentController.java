@@ -42,16 +42,16 @@ public class InvestmentSaudiLastReportCategoryComponentController extends Abstra
         EconomicAndInvestmentMonitorModel lastEconomicAndInvestmentMonitor = investSaudiResourceService.getLastEconomicAndInvestmentMonitor();
 
         if (lastEconomicAndInvestmentMonitor != null ){
-            model.addAttribute("lastReportsBox1", new ReportDto(component.getBox1Name(), lastEconomicAndInvestmentMonitor.getResourceShortInformation(), lastEconomicAndInvestmentMonitor.getResourceDate(), "/economic/investmentReports/economicAndInvestmentMonitor", lastEconomicAndInvestmentMonitor.getResourceThumbnailImage())); //Economic and Investment Monitor
+            model.addAttribute("lastReportsBox1", new ReportDto(component.getBox1Name(), lastEconomicAndInvestmentMonitor.getResourceShortInformation(), lastEconomicAndInvestmentMonitor.getResourceDate(), "investmentReports/economicAndInvestmentMonitor", lastEconomicAndInvestmentMonitor.getResourceThumbnailImage())); //Economic and Investment Monitor
         }
         if (lastInvestmentHighlightsReportModel != null) {
-            model.addAttribute("lastReportsBox2", new ReportDto(component.getBox2Name(), lastInvestmentHighlightsReportModel.getResourceShortInformation(), lastInvestmentHighlightsReportModel.getResourceDate(), "/economic/investmentReports/investmentHighlightsReport", lastInvestmentHighlightsReportModel.getResourceThumbnailImage())); //Investment Highlights
+            model.addAttribute("lastReportsBox2", new ReportDto(component.getBox2Name(), lastInvestmentHighlightsReportModel.getResourceShortInformation(), lastInvestmentHighlightsReportModel.getResourceDate(), "investmentReports/investmentHighlightsReport", lastInvestmentHighlightsReportModel.getResourceThumbnailImage())); //Investment Highlights
         }
         if(lastMonthlyBulletinReport != null){
-            model.addAttribute("lastReportsBox3", new ReportDto(component.getBox3Name(), lastMonthlyBulletinReport.getResourceShortInformation(), lastMonthlyBulletinReport.getResourceDate(), "/economic/investmentReports/monthlyBulletinReport", lastMonthlyBulletinReport.getResourceThumbnailImage())); //Monthly Bulletin
+            model.addAttribute("lastReportsBox3", new ReportDto(component.getBox3Name(), lastMonthlyBulletinReport.getResourceShortInformation(), lastMonthlyBulletinReport.getResourceDate(), "investmentReports/monthlyBulletinReport", lastMonthlyBulletinReport.getResourceThumbnailImage())); //Monthly Bulletin
         }
         if(lastEconomicAndInvestmentReportsAndStudies != null ){
-            model.addAttribute("lastReportsBox4", new ReportDto(component.getBox4Name(), lastEconomicAndInvestmentReportsAndStudies.getResourceShortInformation(), lastEconomicAndInvestmentReportsAndStudies.getResourceDate(), "/economic/investmentReports/economicAndInvestmentReportsAndStudies", lastEconomicAndInvestmentReportsAndStudies.getResourceThumbnailImage())); //Economic and Investment Reports & Studies
+            model.addAttribute("lastReportsBox4", new ReportDto(component.getBox4Name(), lastEconomicAndInvestmentReportsAndStudies.getResourceShortInformation(), lastEconomicAndInvestmentReportsAndStudies.getResourceDate(), "investmentReports/economicAndInvestmentReportsAndStudies", lastEconomicAndInvestmentReportsAndStudies.getResourceThumbnailImage())); //Economic and Investment Reports & Studies
         }
            }
 

@@ -42,11 +42,10 @@
                     <thead class="tableModule-head">
                         <tr>
                             <th>#</th>
-                            <th><spring:theme code="economic.investmentsterms.page.table.datapoint"/></th>
+                            <th><spring:theme code="economic.investmentsterms.page.table.name"/></th>
                             <th><spring:theme code="economic.investmentsterms.page.table.description"/></th>
-                            <th><spring:theme code="economic.investmentsterms.page.table.calculation"/></th>
-                            <th><spring:theme code="economic.investmentsterms.page.table.measurement"/></th>
                             <th><spring:theme code="economic.investmentsterms.page.table.source"/></th>
+                            <th><spring:theme code="economic.investmentsterms.page.table.link"/></th>
                         </tr>
                     </thead>
                     <tbody id="investmentsTermsId" class="tableModule-body"></tbody>
@@ -54,6 +53,7 @@
                 <table style="display: none;">
                     <tr class="investmentsTermsTemplate">
                         <td><strong></strong></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>

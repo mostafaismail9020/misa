@@ -716,13 +716,12 @@
 			<editorArea:tab name="SagiaIndicatorTermTab">
 				<editorArea:section name="SagiaIndicatorTermSection">
 					<editorArea:attribute qualifier="code" />
-					<editorArea:attribute qualifier="dataPoint" />
+					<editorArea:attribute qualifier="name" />
 					<editorArea:attribute qualifier="description" />
-					<editorArea:attribute qualifier="calculation" />
-					<editorArea:attribute
-							qualifier="measurement" />
 					<editorArea:attribute
 							qualifier="source" />
+					<editorArea:attribute qualifier="linkText" />
+					<editorArea:attribute qualifier="linkURL" />
 					<editorArea:attribute
 							qualifier="isActive" />
 				</editorArea:section>
@@ -736,13 +735,12 @@
 			<editorArea:tab name="SagiaIndicatorTermTab">
 				<editorArea:section name="SagiaIndicatorTermSection">
 					<editorArea:attribute qualifier="code" />
-					<editorArea:attribute qualifier="dataPoint" />
+					<editorArea:attribute qualifier="name" />
 					<editorArea:attribute qualifier="description" />
-					<editorArea:attribute qualifier="calculation" />
-					<editorArea:attribute
-							qualifier="measurement" />
 					<editorArea:attribute
 							qualifier="source" />
+					<editorArea:attribute qualifier="linkText" />
+					<editorArea:attribute qualifier="linkURL" />
 					<editorArea:attribute
 							qualifier="isActive" />
 				</editorArea:section>

@@ -3870,11 +3870,11 @@
 
 	<bean class="com.sap.ibso.eservices.facades.data.SagiaIndicatorTermData">
 		<property name="code" type="java.lang.String"/>
-		<property name="dataPoint" type="java.lang.String"/>
+		<property name="name" type="java.lang.String"/>
 		<property name="description" type="java.lang.String"/>
-		<property name="calculation" type="java.lang.String"/>
-		<property name="measurement" type="java.lang.String"/>
 		<property name="source" type="java.lang.String"/>
+		<property name="linkText" type="java.lang.String"/>
+		<property name="linkURL" type="java.lang.String"/>
 		<property name="isActive" type="boolean"/>
 	</bean>
 

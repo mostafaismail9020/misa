@@ -2494,7 +2494,7 @@
                                optional="false" unique="true" initial="true" />
                     <persistence type="property" />
                 </attribute>
-                <attribute qualifier="dataPoint"
+                <attribute qualifier="name"
                            type="localized:java.lang.String">
                     <modifiers read="true" write="true" search="true"
                                optional="true" initial="true" />
@@ -2506,7 +2506,34 @@
                                optional="true" initial="true" />
                     <persistence type="property" />
                 </attribute>
-                <attribute qualifier="calculation"
+
+                <attribute qualifier="source"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+
+                <attribute qualifier="linkText"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="linkURL" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="false" unique="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+
+                <attribute type="boolean" qualifier="isActive">
+                    <persistence type="property" />
+                    <modifiers optional="false" />
+                    <defaultvalue>true</defaultvalue>
+                    <description>Indicates if the term is active or not.</description>
+                </attribute>
+
+                <attribute qualifier="dataPoint"
                            type="localized:java.lang.String">
                     <modifiers read="true" write="true" search="true"
                                optional="true" initial="true" />
@@ -2518,19 +2545,18 @@
                                optional="true" initial="true" />
                     <persistence type="property" />
                 </attribute>
-                <attribute qualifier="source"
+                <attribute qualifier="calculation"
                            type="localized:java.lang.String">
                     <modifiers read="true" write="true" search="true"
                                optional="true" initial="true" />
                     <persistence type="property" />
                 </attribute>
-                <attribute type="boolean" qualifier="isActive">
-                    <persistence type="property" />
-                    <modifiers optional="false" />
-                    <defaultvalue>true</defaultvalue>
-                    <description>Indicates if the term is active or not.</description>
-                </attribute>
+
+
             </attributes>
+
+
+
             </itemtype>
 
 
@@ -3849,7 +3875,7 @@
                     </attribute>
                 </attributes>
             </itemtype>
-            
+
 
             <itemtype code="SuccessStoryProduct" extends="Product"
                       autocreate="true" generate="true"

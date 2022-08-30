@@ -9,13 +9,14 @@ public class SagiaIndicatorTermPopulator implements Populator<SagiaIndicatorTerm
 
     @Override
     public void populate(SagiaIndicatorTermModel source, SagiaIndicatorTermData sagiaIndicatorTermData)  {
-        sagiaIndicatorTermData.setCalculation(source.getCalculation());
-        sagiaIndicatorTermData.setDataPoint(source.getDataPoint());
+
         sagiaIndicatorTermData.setCode(source.getCode());
         sagiaIndicatorTermData.setDescription(source.getDescription());
         sagiaIndicatorTermData.setIsActive(source.isIsActive());
-        sagiaIndicatorTermData.setMeasurement(source.getMeasurement());
         sagiaIndicatorTermData.setSource(source.getSource());
+        sagiaIndicatorTermData.setName(source.getName());
+        sagiaIndicatorTermData.setLinkText(source.getLinkText());
+        sagiaIndicatorTermData.setLinkURL(source.getLinkURL());
     }
 
 }

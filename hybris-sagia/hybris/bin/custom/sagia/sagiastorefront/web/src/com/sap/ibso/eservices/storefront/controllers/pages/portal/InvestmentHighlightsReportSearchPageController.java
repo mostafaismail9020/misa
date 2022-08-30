@@ -61,7 +61,7 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 	private static final String COMPONENT_UID_PATH_VARIABLE_PATTERN = "{componentUid:.*}";
 	private static final String FACET_SEPARATOR = ":";
 
-	private static final String SEARCH_CMS_PAGE_ID = "opportunity-search-page";
+	private static final String SEARCH_CMS_PAGE_ID = "reports-economic-investment-monitor-search";
 	private static final int NUM_OF_RECORD_PER_PAGE = 9;
 
 	@Resource(name = "investmentHighlightsReportSearchFacade")

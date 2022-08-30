@@ -10609,6 +10609,16 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            <itemtype code="SagiaReportsSearchBoxComponent" generate="true"
+                      extends="SearchBoxComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaReportsSearchBoxComponent">
+                <description>Sagia Reports SearchBox Component</description>
+            </itemtype>
+            <itemtype code="SagiaReportsSearchResultComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaReportsSearchResultComponent">
+                <description>Invest Saudi Reports Search Result Component</description>
+            </itemtype>
         </typegroup>
 
     </itemtypes>

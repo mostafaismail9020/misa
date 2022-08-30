@@ -7,6 +7,7 @@ import com.investsaudi.portal.core.model.InvestmentHighlightsReportModel;
 import com.investsaudi.portal.core.model.InvestmentSaudiLastReportCategoryComponentModel;
 import com.investsaudi.portal.core.model.MonthlyBulletinReportModel;
 import com.investsaudi.portal.core.service.InvestSaudiResourceService;
+import de.hybris.platform.core.model.media.MediaModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,62 +42,72 @@ public class InvestmentSaudiLastReportCategoryComponentController extends Abstra
         EconomicAndInvestmentMonitorModel lastEconomicAndInvestmentMonitor = investSaudiResourceService.getLastEconomicAndInvestmentMonitor();
 
         if (lastEconomicAndInvestmentMonitor != null ){
-            model.addAttribute("lastReportsBox1", new ReportDto(lastEconomicAndInvestmentMonitor.getResourceDate(), component.getBox1Name(), "/economic/investmentReports/categoryName1", "/medias/news-national-center-for-waste-management-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwyNDczOHxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oNzIvaGIzLzg4Njk1MzQzMzUwMDYuanBnfDg5OWUwOGY5ZmRmNzA5NjY4ZDY5NmNiMGNmNGI0NjYzM2RhNTQ2YmI2YWMyODhkNmNhM2JmNzhiMjUxZGI5M2U")); //Economic and Investment Monitor
+            model.addAttribute("lastReportsBox1", new ReportDto(component.getBox1Name(), lastEconomicAndInvestmentMonitor.getResourceShortInformation(), lastEconomicAndInvestmentMonitor.getResourceDate(), "/economic/investmentReports/economicAndInvestmentMonitor", lastEconomicAndInvestmentMonitor.getResourceThumbnailImage())); //Economic and Investment Monitor
         }
         if (lastInvestmentHighlightsReportModel != null) {
-            model.addAttribute("lastReportsBox2", new ReportDto(lastInvestmentHighlightsReportModel.getResourceDate(), component.getBox2Name(), "/economic/investmentReports/categoryName1", "/medias/news-ministers-of-Misa-and-Malaysia-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwyMTM3M3xpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oYjIvaDg2Lzg4Njk1MzQ1NjQzODIuanBnfGQwZWY2ZGY0YWExMWVkMzQ3NzU4ZTU2NWVhYzhkYWUwNGRmNTNhMzEwZDE3YzExODgxOGNkOTYzM2NkMGI0NDU")); //Investment Highlights
+            model.addAttribute("lastReportsBox2", new ReportDto(component.getBox2Name(), lastInvestmentHighlightsReportModel.getResourceShortInformation(), lastInvestmentHighlightsReportModel.getResourceDate(), "/economic/investmentReports/investmentHighlightsReport", lastInvestmentHighlightsReportModel.getResourceThumbnailImage())); //Investment Highlights
         }
         if(lastMonthlyBulletinReport != null){
-            model.addAttribute("lastReportsBox3", new ReportDto(lastEconomicAndInvestmentReportsAndStudies.getResourceDate(), component.getBox3Name(), "/economic/investmentReports/categoryName1", "/medias/news-Roche-and-misa-partnership-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwyNDEzOHxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oNzcvaDc2Lzg4Njk1MzQ3MjgyMjIuanBnfDU0ODMwYmY0MDM0M2VhODJkMTlhZWI2ZTMxNzM1NjUxNTgyMDRhMGY3YTkxY2IwY2E2OGMzOTAxNGY1YTY3ZGM")); //Monthly Bulletin
+            model.addAttribute("lastReportsBox3", new ReportDto(component.getBox3Name(), lastMonthlyBulletinReport.getResourceShortInformation(), lastMonthlyBulletinReport.getResourceDate(), "/economic/investmentReports/monthlyBulletinReport", lastMonthlyBulletinReport.getResourceThumbnailImage())); //Monthly Bulletin
         }
         if(lastEconomicAndInvestmentReportsAndStudies != null ){
-            model.addAttribute("lastReportsBox4", new ReportDto(lastEconomicAndInvestmentReportsAndStudies.getResourceDate(), component.getBox4Name(), "/economic/investmentReports/categoryName1", "/medias/news-saudi-uzbek-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwyMDM3N3xpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oNjAvaDU3Lzg4Njk1MzQzMDIyMzguanBnfGI4NDVlMjFmYWIxMDZjNDlhY2ZmOTRkZmY3ZjMyZDY4Yjc0MmE1NTYxNjVjMzU2NGYwYTE0MWYzMTFkYzZhNWE")); //Economic and Investment Reports & Studies
+            model.addAttribute("lastReportsBox4", new ReportDto(component.getBox4Name(), lastEconomicAndInvestmentReportsAndStudies.getResourceShortInformation(), lastEconomicAndInvestmentReportsAndStudies.getResourceDate(), "/economic/investmentReports/economicAndInvestmentReportsAndStudies", lastEconomicAndInvestmentReportsAndStudies.getResourceThumbnailImage())); //Economic and Investment Reports & Studies
         }
            }
 
     public static class ReportDto {
-        Date date;
-        String title;
-        String url;
-        String image;
+        String boxTitle;
+        String reportShortInformation;
+        Date reportDate;
+        String reportUrl;
+        MediaModel reportImage;
 
-        public ReportDto(Date date, String title, String url, String image) {
-            this.date = date;
-            this.title = title;
-            this.url = url;
-            this.image = image;
+        public ReportDto(String boxTitle, String reportShortInformation, Date reportDate, String reportUrl, MediaModel reportImage) {
+            this.boxTitle = boxTitle;
+            this.reportShortInformation = reportShortInformation;
+            this.reportDate = reportDate;
+            this.reportUrl = reportUrl;
+            this.reportImage = reportImage;
         }
 
-        public Date getDate() {
-            return date;
+        public String getBoxTitle() {
+            return boxTitle;
         }
 
-        public void setDate(Date date) {
-            this.date = date;
+        public void setBoxTitle(String boxTitle) {
+            this.boxTitle = boxTitle;
         }
 
-        public String getTitle() {
-            return title;
+        public String getReportShortInformation() {
+            return reportShortInformation;
         }
 
-        public void setTitle(String title) {
-            this.title = title;
+        public void setReportShortInformation(String reportShortInformation) {
+            this.reportShortInformation = reportShortInformation;
         }
 
-        public String getUrl() {
-            return url;
+        public Date getReportDate() {
+            return reportDate;
         }
 
-        public void setUrl(String url) {
-            this.url = url;
+        public void setReportDate(Date reportDate) {
+            this.reportDate = reportDate;
         }
 
-        public String getImage() {
-            return image;
+        public String getReportUrl() {
+            return reportUrl;
         }
 
-        public void setImage(String image) {
-            this.image = image;
+        public void setReportUrl(String reportUrl) {
+            this.reportUrl = reportUrl;
+        }
+
+        public MediaModel getReportImage() {
+            return reportImage;
+        }
+
+        public void setReportImage(MediaModel reportImage) {
+            this.reportImage = reportImage;
         }
     }
 }

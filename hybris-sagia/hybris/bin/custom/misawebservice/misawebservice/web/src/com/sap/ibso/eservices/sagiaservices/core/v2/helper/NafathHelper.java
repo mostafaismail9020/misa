@@ -63,4 +63,19 @@ public class NafathHelper {
         }
     }
 
+    public SignatureVerifier getVerifier() {
+        return verifier;
+    }
+
+    public void setVerifier(SignatureVerifier verifier) {
+        this.verifier = verifier;
+    }
+
+    public ConfigurationService getConfigurationService() {
+        return configurationService;
+    }
+
+    public void setConfigurationService(ConfigurationService configurationService) {
+        this.configurationService = configurationService;
+    }
 }

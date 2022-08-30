@@ -62,7 +62,7 @@ public class NafathPostServiceRequestStatusController extends BaseController {
 
         log.debug("Received new request: [{}]", nafathPostServiceRequestStatus != null ? nafathPostServiceRequestStatus.getResponse() : "null");
         String nafathApiKey = configurationService.getConfiguration().getString("nic.nafath.postservice.nafathapikey");
-        if (!StringUtils.endsWith(apiKey, nafathApiKey)) {
+        if (!StringUtils.equals(apiKey, nafathApiKey)) {
             log.warn("Wrong ApiKey received: [{}]", apiKey);
             return new ResponseEntity(HttpStatus.UNAUTHORIZED);
         }

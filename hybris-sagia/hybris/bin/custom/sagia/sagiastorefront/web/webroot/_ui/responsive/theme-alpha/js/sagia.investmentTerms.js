@@ -8,7 +8,7 @@ function loadInvestmentTermsData() {
             if (investmentTerms && investmentTerms.sgiaIndicatorTerms) {
                 investmentTerms.sgiaIndicatorTerms.forEach(function (investmentTerm) {
                     var code = investmentTerm.code;
-                    $investmentsTermsTable.append('<tr id="'+code+'"><td>'+code+'</td><td>'+investmentTerm.name+'</td><td>'+investmentTerm.description+'</td><td>'+investmentTerm.source+'</td><td><a href="'+investmentTerm.linkURL+'">'+investmentTerm.linkText+'</a></td></tr>');
+                    $investmentsTermsTable.append('<tr id="'+code+'"><td>'+code+'</td><td>'+investmentTerm.name+'</td><td>'+investmentTerm.description+'</td><td>'+investmentTerm.source+'</td><td><a href="'+investmentTerm.linkURL+'" > '+investmentTerm.linkText+'</a></td></tr>');
                 });
             }
             setupTable();

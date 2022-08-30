@@ -4,6 +4,9 @@
 package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 
 import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
+import com.investsaudi.portal.facades.solrfacetsearch.InvestmentHighlightsReportSearchFacade;
+import com.sap.ibso.eservices.facades.data.InvestSaudiResourceComponentData;
+import com.sap.security.core.server.csi.XSSEncoder;
 import de.hybris.platform.acceleratorcms.model.components.SearchBoxComponentModel;
 import de.hybris.platform.acceleratorservices.controllers.page.PageType;
 import de.hybris.platform.acceleratorservices.customer.CustomerLocationService;
@@ -17,14 +20,13 @@ import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSComponentService;
 import de.hybris.platform.commercefacades.product.data.OpportunityData;
 import de.hybris.platform.commercefacades.product.data.ProductData;
-import de.hybris.platform.commercefacades.search.ProductSearchFacade;
 import de.hybris.platform.commercefacades.search.data.AutocompleteResultData;
 import de.hybris.platform.commercefacades.search.data.SearchQueryData;
 import de.hybris.platform.commercefacades.search.data.SearchStateData;
 import de.hybris.platform.commerceservices.enums.SearchQueryContext;
 import de.hybris.platform.commerceservices.search.facetdata.FacetData;
 import de.hybris.platform.commerceservices.search.facetdata.FacetRefinement;
-import de.hybris.platform.commerceservices.search.facetdata.ProductSearchPageData;
+import de.hybris.platform.commerceservices.search.facetdata.InvestSaudiResourceComponentSearchPageData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
 import de.hybris.platform.core.servicelayer.data.PaginationData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
@@ -41,6 +43,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -62,8 +65,8 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 	private static final String SEARCH_CMS_PAGE_ID = "opportunity-search-page";
 	private static final int NUM_OF_RECORD_PER_PAGE = 9;
 
-	@Resource(name = "productSearchFacade")
-	private ProductSearchFacade<ProductData> productSearchFacade;
+	@Resource(name = "investmentHighlightsReportSearchFacade")
+	private InvestmentHighlightsReportSearchFacade<InvestSaudiResourceComponentData> investmentHighlightsReportSearchFacade;
 
 	@Resource(name = "searchBreadcrumbBuilder")
 	private SearchBreadcrumbBuilder searchBreadcrumbBuilder;
@@ -90,12 +93,16 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 		searchQueryData.setValue(searchText);
 		searchState.setQuery(searchQueryData);
 
-		ProductSearchPageData<SearchStateData, ProductData> searchPageData = null;
-		ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
+
+		InvestSaudiResourceComponentSearchPageData<SearchStateData,
+				InvestSaudiResourceComponentSearchPageData> searchPageData = null;
+
+		InvestSaudiResourceComponentSearchPageData<SearchStateData,
+				InvestSaudiResourceComponentSearchPageData> solrSearchPageData = null;
 
 		try
 		{
-			searchPageData = encodeSearchPageData(productSearchFacade.textSearch(searchState, pageableData));
+			searchPageData = encodeSearchCustomePageData(investmentHighlightsReportSearchFacade.textSearch(searchState, pageableData));
 		}
 		catch (final ConversionException e) // NOSONAR
 		{
@@ -123,7 +130,7 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 			populateModel(model, searchPageData, ShowMode.Page);
 			solrSearchPageData=searchPageData;
 			List<OpportunityData> opportunityDataList = new ArrayList<>();
-			for (ProductData productData : searchPageData.getResults()) {
+			for (InvestSaudiResourceComponentSearchPageData productData : searchPageData.getResults()) {
 				opportunityDataList.add(createOpportunityData(productData));
 			}
 			SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
@@ -163,6 +170,43 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 		return getViewForPage(model);
 	}
 
+	protected
+	InvestSaudiResourceComponentSearchPageData<SearchStateData,
+			InvestSaudiResourceComponentData> encodeSearchCustomePageData(
+			final
+			InvestSaudiResourceComponentSearchPageData<SearchStateData,
+					InvestSaudiResourceComponentData> searchPageData)
+	{
+		final SearchStateData currentQuery = searchPageData.getCurrentQuery();
+
+		if (currentQuery != null)
+		{
+			try
+			{
+				final SearchQueryData query = currentQuery.getQuery();
+				final String encodedQueryValue = XSSEncoder.encodeHTML(query.getValue());
+				query.setValue(encodedQueryValue);
+				currentQuery.setQuery(query);
+				searchPageData.setCurrentQuery(currentQuery);
+				searchPageData.setFreeTextSearch(XSSEncoder.encodeHTML(searchPageData.getFreeTextSearch()));
+
+				final List<FacetData<SearchStateData>> facets = searchPageData.getFacets();
+				if (CollectionUtils.isNotEmpty(facets))
+				{
+					processFacetData(facets);
+				}
+			}
+			catch (final UnsupportedEncodingException e)
+			{
+				if (LOG.isDebugEnabled())
+				{
+					LOG.debug("Error occured during Encoding the Search Page data values", e);
+				}
+			}
+		}
+		return searchPageData;
+	}
+
 	private OpportunityData createOpportunityData(ProductData productData) {
 		OpportunityData opportunityData = new OpportunityData();
 		opportunityData.setOpportunity(productData);
@@ -182,9 +226,9 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 			@RequestParam(value = "text", required = false) final String searchText, final HttpServletRequest request,
 			final Model model) throws CMSItemNotFoundException
 	{
-		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
+		final InvestSaudiResourceComponentSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
 				sortCode, NUM_OF_RECORD_PER_PAGE);
-		ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
+		InvestSaudiResourceComponentSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
 
 		populateModel(model, searchPageData, showMode);
 		model.addAttribute("userLocation", customerLocationService.getUserLocation());
@@ -231,7 +275,9 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 		return getViewForPage(model);
 	}
 
-	protected ProductSearchPageData<SearchStateData, ProductData> performSearch(final String searchQuery, final int page,
+
+
+	protected InvestSaudiResourceComponentSearchPageData<SearchStateData, InvestSaudiResourceComponentData> performSearch(final String searchQuery, final int page,
 			final ShowMode showMode, final String sortCode, final int pageSize)
 	{
 		final PageableData pageableData = createPageableData(page, pageSize, sortCode, showMode);
@@ -240,20 +286,21 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 		final SearchQueryData searchQueryData = new SearchQueryData();
 		searchQueryData.setValue(searchQuery);
 		searchState.setQuery(searchQueryData);
-
-		return encodeSearchPageData(productSearchFacade.textSearch(searchState, pageableData));
+		InvestSaudiResourceComponentSearchPageData<SearchStateData, InvestSaudiResourceComponentData> searchText = investmentHighlightsReportSearchFacade.textSearch(searchState, pageableData);
+		return encodeSearchCustomePageData(searchText);
 	}
+
 
 	@ResponseBody
 	@RequestMapping(value = "/results", method = RequestMethod.GET)
-	public SearchResultsData<ProductData> jsonSearchResults(@RequestParam("q") final String searchQuery,
+	public SearchResultsData<InvestSaudiResourceComponentData> jsonSearchResults(@RequestParam("q") final String searchQuery,
 			@RequestParam(value = "page", defaultValue = "0") final int page,
 			@RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
 			@RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
 	{
-		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
+		final InvestSaudiResourceComponentSearchPageData<SearchStateData, InvestSaudiResourceComponentData> searchPageData = performSearch(searchQuery, page, showMode,
 				sortCode, getSearchPageSize());
-		final SearchResultsData<ProductData> searchResultsData = new SearchResultsData<>();
+		final SearchResultsData<InvestSaudiResourceComponentData> searchResultsData = new SearchResultsData<>();
 		searchResultsData.setResults(searchPageData.getResults());
 		searchResultsData.setPagination(searchPageData.getPagination());
 		return searchResultsData;
@@ -271,7 +318,10 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 		searchQueryData.setValue(searchQuery);
 		searchState.setQuery(searchQueryData);
 
-		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = productSearchFacade.textSearch(searchState,
+
+
+
+		final InvestSaudiResourceComponentSearchPageData<SearchStateData, InvestSaudiResourceComponentData> searchPageData = investmentHighlightsReportSearchFacade.textSearch(searchState,
 				createPageableData(page, getSearchPageSize(), sortCode, showMode));
 		final List<FacetData<SearchStateData>> facets = refineFacets(searchPageData.getFacets(),
 				convertBreadcrumbsToFacets(searchPageData.getBreadcrumbs()));
@@ -293,12 +343,12 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 
 		if (component.isDisplaySuggestions())
 		{
-			resultData.setSuggestions(subList(productSearchFacade.getAutocompleteSuggestions(term), component.getMaxSuggestions()));
+			resultData.setSuggestions(subList(investmentHighlightsReportSearchFacade.getAutocompleteSuggestions(term), component.getMaxSuggestions()));
 		}
 
 		if (component.isDisplayProducts())
 		{
-			resultData.setProducts(subList(productSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
+			resultData.setProducts(subList(investmentHighlightsReportSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
 					component.getMaxProducts()));
 		}
 

@@ -28,6 +28,8 @@ import java.util.List;
 public class DefaultSolrInvestmentHighlightsReportSearchFacade<ITEM extends InvestSaudiResourceComponentData> implements InvestmentHighlightsReportSearchFacade<ITEM>
 {
 	private InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>> investmentHighlightsReportSearchService;
+
+
 	private Converter<InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>> investSaudiResourceComponentSearchPageConverter;
 	private Converter<SearchQueryData, SolrSearchQueryData> searchQueryDecoder;
 	private Converter<AutocompleteSuggestion, AutocompleteSuggestionData> autocompleteSuggestionConverter;
@@ -46,11 +48,15 @@ public class DefaultSolrInvestmentHighlightsReportSearchFacade<ITEM extends Inve
 		this.investmentHighlightsReportSearchService = investmentHighlightsReportSearchService;
 	}
 
-	protected Converter<InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>> getInvestSaudiResourceComponentSearchPageConverter()
-	{
+
+
+	public Converter<InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>> getInvestSaudiResourceComponentSearchPageConverter() {
 		return investSaudiResourceComponentSearchPageConverter;
 	}
 
+	public void setInvestSaudiResourceComponentSearchPageConverter(Converter<InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>> investSaudiResourceComponentSearchPageConverter) {
+		this.investSaudiResourceComponentSearchPageConverter = investSaudiResourceComponentSearchPageConverter;
+	}
 	protected Converter<SearchQueryData, SolrSearchQueryData> getSearchQueryDecoder()
 	{
 		return searchQueryDecoder;
@@ -171,4 +177,9 @@ public class DefaultSolrInvestmentHighlightsReportSearchFacade<ITEM extends Inve
 
 		return searchQueryData;
 	}
+
+	public InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>> getInvestmentHighlightsReportSearchService() {
+		return investmentHighlightsReportSearchService;
+	}
+
 }

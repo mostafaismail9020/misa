@@ -1891,4 +1891,20 @@
 		<property name="sagiaB2BCustomer" ref="sagiaB2BCustomer"/>
 	</bean>
 
+
+	<bean id="investmentHighlightsReportSearchService" class="com.sap.ibso.eservices.sagiaservices.jobs.WorkflowOpportunityDisableBDUserJob" parent="abstractJobPerformable">
+		<property name="modelService" ref="modelService"/>
+		<property name="sagiaB2BCustomer" ref="sagiaB2BCustomer"/>
+	</bean>
+
+	<alias name="defaultInvestmentHighlightsReportSearchService" alias="investmentHighlightsReportSearchService" />
+	<bean id="defaultInvestmentHighlightsReportSearchService" class="com.sap.ibso.eservices.sagiaservices.solrfacetsearch.impl.DefaultSolrInvestmentHighlightsReportSearchService">
+		<property name="searchQueryPageableConverter" ref="commerceSearchQueryPageableConverter" />
+		<property name="searchRequestConverter" ref="commerceSolrSearchRequestConverter" />
+		<property name="searchResponseConverter" ref="commerceSolrSearchResponseConverter" />
+	</bean>
+
+
+
+
 </beans>

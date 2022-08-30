@@ -1439,6 +1439,9 @@
         <constructor-arg value="InvestSaudiNewsComponent" />
     </bean>
 
+    <bean id="investSaudiResourceDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiResourceDaoImpl">
+    </bean>
+
     <bean id="investSaudiProvinceRegionDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiProvinceRegionDaoImpl">
         <constructor-arg value="ProvinceComponent" />
     </bean>
@@ -1483,6 +1486,9 @@
 
     <bean id="investSaudiSiteMapService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiSiteMapServiceImpl"/>
+
+    <bean id="investSaudiResourceService"
+          class="com.investsaudi.portal.core.service.impl.InvestSaudiResourceServiceImpl"/>
 
     <!-- <bean id="investSaudiWebinarRegistrationService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiWebinarRegistrationServiceImpl"/>

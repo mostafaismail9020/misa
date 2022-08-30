@@ -73,7 +73,7 @@ public class InvestSaudiResourceDaoImpl implements InvestSaudiResourceDao {
 
     @Override
     public MonthlyBulletinReportModel getLastMonthlyBulletinReport() {
-        final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(QUERY_LAST_ECONOMIC_AND_INVESTMENT_MONITOR);
+        final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(QUERY_LAST_MONTHLY_BULLETIN_REPORT);
 
         searchQuery.addQueryParameter("catalogVersion", catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));
         LOG.info("catalogVersion :"+catalogVersionService.getCatalogVersion(CATALOG_ID, ONLINE));

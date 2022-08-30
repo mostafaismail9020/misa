@@ -33,17 +33,17 @@ public class EconomicInvestmentReportsController extends SagiaAbstractPageContro
 
 //	Method for test the search page
 //	Anouar will create one controller for each category
-//	@RequestMapping(value = "/{category}", method = { RequestMethod.GET,
-//			RequestMethod.POST }, headers = "Accept=application/xml,application/json", produces = APPLICATION_JSON_VALUE)
-//	public String getInvestmentReportsCategory(final Model model, @PathVariable("category") String category) throws CMSItemNotFoundException {
-//
-//		model.addAttribute("category", category);
-//
-//		final ContentPageModel economicCMSPage = getContentPageForLabelOrId(INVESTMENTS_REPORTS_CATEGORY_PAGE);
-//		storeCmsPageInModel(model, economicCMSPage);
-//		setUpMetaDataForContentPage(model, economicCMSPage);
-//
-//		return getViewForPage(model);
-//	}
+	@RequestMapping(value = "/{category}", method = { RequestMethod.GET,
+			RequestMethod.POST }, headers = "Accept=application/xml,application/json", produces = APPLICATION_JSON_VALUE)
+	public String getInvestmentReportsCategory(final Model model, @PathVariable("category") String category) throws CMSItemNotFoundException {
+
+		model.addAttribute("category", category);
+
+		final ContentPageModel economicCMSPage = getContentPageForLabelOrId(INVESTMENTS_REPORTS_CATEGORY_PAGE);
+		storeCmsPageInModel(model, economicCMSPage);
+		setUpMetaDataForContentPage(model, economicCMSPage);
+
+		return getViewForPage(model);
+	}
 
 }

@@ -370,9 +370,4 @@
 	<bean id="defaultCsrfProtectionMatcher" class="com.investsaudi.security.CsrfProtectionMatcher">
 		<property name="csrfAllowedUrlPatterns" ref="csrfAllowedUrlPatternsList"/>
 	</bean>
-
-	<alias name="defaultNafathAutoLoginStrategy" alias="nafathAutoLoginStrategy"/>
-	<bean id="defaultNafathAutoLoginStrategy" class="com.investsaudi.security.impl.DefaultNafathAutoLoginStrategy" />
-
-	<bean id="nafathAuthenticationProvider" class="com.investsaudi.security.NafathAuthenticationProvider" parent="acceleratorAuthenticationProvider"/>
 </beans>

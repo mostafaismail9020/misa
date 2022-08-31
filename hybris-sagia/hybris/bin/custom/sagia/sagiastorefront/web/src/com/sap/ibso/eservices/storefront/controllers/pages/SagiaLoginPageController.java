@@ -10,7 +10,9 @@
  */
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
@@ -18,9 +20,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import atg.taglib.json.util.JSONException;
+import com.sap.ibso.eservices.core.enums.NafathStatus;
+import com.sap.ibso.eservices.core.jalo.SagiaLicense;
+import com.sap.ibso.eservices.facades.data.NafathLoginData;
+import com.sap.ibso.eservices.facades.sagia.NafathFacade;
+import com.sap.ibso.eservices.storefront.forms.SagiaLicenseSelectionForm;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
+import de.hybris.platform.acceleratorstorefrontcommons.security.AutoLoginStrategy;
+import de.hybris.platform.cmsfacades.data.UserData;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationDetailsSource;
@@ -60,6 +73,7 @@ import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.servicelayer.user.UserService;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 /**
@@ -74,6 +88,12 @@ public class SagiaLoginPageController extends SagiaAbstractLoginPageController {
 
     private HttpSessionRequestCache httpSessionRequestCache;
     private static final String ENTITY_NAME = "NIPHeaderSet";
+
+    @Resource
+    private AutoLoginStrategy autoLoginStrategy;
+
+    @Resource
+    private NafathFacade nafathFacade;
 
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
@@ -230,7 +250,7 @@ public class SagiaLoginPageController extends SagiaAbstractLoginPageController {
 				if (debug) {
 					LOGGER.debug("Authentication success: " + authResult);
 				}
-				oauthUserAutoLoginStrategy.login(authResult.getPrincipal().toString(), request, response);				
+				oauthUserAutoLoginStrategy.login(authResult.getPrincipal().toString(), request, response);
 			}
 		}
 		catch (OAuth2Exception failed) {
@@ -252,5 +272,96 @@ public class SagiaLoginPageController extends SagiaAbstractLoginPageController {
                 && StringUtils.contains(referer, request.getServerName())) {
             httpSessionRequestCache.saveRequest(request, response);
         }
+    }
+
+    //TODO: need to change this to POST
+    @RequestMapping(value = "/nafathLogin", method = RequestMethod.GET)
+    public String loginWithNafath(@RequestParam(value = "nationalID") final String nationalID, final Model model,
+                                  final HttpServletRequest request, final HttpServletResponse response, final HttpSession session, final RedirectAttributes redirectModel) throws CMSItemNotFoundException {
+        NafathLoginData loginData = nafathFacade.login(nationalID);
+
+        //TODO: check the success response and set below value in the session if success
+        getSessionService().setAttribute("nationalID", loginData.getNationalId());
+        getSessionService().setAttribute("transactionID", loginData.getTransactionId());
+        getSessionService().setAttribute("randomNafathText", loginData.getRandom());
+
+        //TODO: on error response, return to the login page with custom message
+        if (loginData.getStatus().equals(NafathStatus.REJECTED) || loginData.getStatus().equals(NafathStatus.EXPIRED)) {
+            GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER,"nafath.login.error");
+            return REDIRECT_PREFIX + "/login";
+        }
+
+        //TODO: return to success page
+        return REDIRECT_PREFIX + "/login/verify";
+    }
+
+
+    @RequestMapping(value = "/verify", method = RequestMethod.GET)
+    public String random(final Model model,
+                         final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) {
+        String randomNafathText = getSessionService().getAttribute("randomNafathText");
+        model.addAttribute("randomNafathText",randomNafathText);
+        //TODO: design the page to display random code. Also map the respective CMS page
+        return "verifyRandomTextPage";
+    }
+
+    //TODO: change JSON response
+    @RequestMapping(value = "/checkNafathStatus", method = RequestMethod.GET)
+    public String checkNafathStatus(final Model model,
+                                    final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) {
+        String transactionID = getSessionService().getAttribute("transactionID");
+        String nationalID = getSessionService().getAttribute("nationalID");
+        String randomNafathText = getSessionService().getAttribute("randomNafathText");
+        NafathLoginData loginStatus = nafathFacade.checkStatus(transactionID,nationalID,randomNafathText);
+        return loginStatus.getStatus().toString();
+    }
+
+    @RequestMapping(value = "/nafathLicenses", method = RequestMethod.GET)
+    public String displayLicenses(final Model mode, final HttpSession session, final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel) {
+        String nationalID = getSessionService().getAttribute("nationalID");
+        String transactionId = getSessionService().getAttribute("transactionID");
+        String randomNafathText = getSessionService().getAttribute("randomNafathText");
+        NafathLoginData loginStatus = nafathFacade.checkStatus(transactionId,nationalID,randomNafathText);
+
+        if (loginStatus.getStatus().equals(NafathStatus.COMPLETED)) {
+            //TODO: call CRM API here
+            List<SagiaLicense> licenseList = null;
+            if (licenseList.size() == 1) {
+                getSessionService().setAttribute("licenseList", licenseList);
+                return doNafathLogin(licenseList.get(0).getCode(), request, response, redirectModel);
+            } else {
+                getSessionService().setAttribute("licenseList", licenseList);
+                //TODO : redirect to license selection page here
+                return "/loginSelectionUI";
+            }
+        }
+        return REDIRECT_PREFIX + "/login/verify";
+    }
+
+    //TODO: change method to POST
+
+    /**
+     * When there are list of License, user will select one license and submit it
+     */
+    @RequestMapping(value = "/loginNafathUser", method = RequestMethod.GET)
+    public String loginNafathUser(@RequestParam(value = "selectedLicense") final String selectedLicense, final Model mode, final HttpSession session, final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel) {
+        return doNafathLogin(selectedLicense, request, response, redirectModel);
+    }
+
+    private String doNafathLogin(String selectedLicense, HttpServletRequest request, HttpServletResponse response, RedirectAttributes redirectModel) {
+        List<String> licenseList = getSessionService().getAttribute("licenseList");
+        if(CollectionUtils.isNotEmpty(licenseList) && licenseList.contains(selectedLicense))
+        {
+            try {
+                UserData user = nafathFacade.getUserForLicense(selectedLicense);
+                oauthUserAutoLoginStrategy.login(user.getUid(), request, response);
+            } catch (RuntimeException e) {
+                return REDIRECT_PREFIX + "/login";
+            }
+            return REDIRECT_PREFIX + "/";
+        }
+
+        GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER,"nafath.login.generic.error");
+        return REDIRECT_PREFIX + "/login";
     }
 }

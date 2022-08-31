@@ -29,7 +29,7 @@ public class DefaultNafathService implements NafathService {
 
     @Override
     public NafathLoginModel login(String id) {
-        if(Config.getString("nafath.api.login", "false").equals("true")){
+        if(Config.getString("nic.nafath.login.api.mock", "false").equals("false")){
             RestTemplate restTemplate = new RestTemplate();
 
             StringBuilder sb = new StringBuilder();
@@ -57,7 +57,7 @@ public class DefaultNafathService implements NafathService {
             testLoginData.setTransactionId("testTransactionId-"+ Math.random());
             testLoginData.setRandom(Math.random()+"-"+Math.random());
             NafathLoginModel model = createNafathLoginInstance(testLoginData);
-            modelService.save(model);;
+            modelService.save(model);
             return model;
         }
 

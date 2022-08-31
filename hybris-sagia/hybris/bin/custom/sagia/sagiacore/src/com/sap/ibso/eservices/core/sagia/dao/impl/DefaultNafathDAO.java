@@ -33,37 +33,24 @@ public class DefaultNafathDAO implements NafathDAO {
 
     @Override
     public NafathLoginModel getLoginFromTransactionId(String transactionID, String nationalId, String randomText) {
-        final StringBuilder query = new StringBuilder();
 
-        query.append(" SELECT ").append(NafathLoginModel.PK).append(" FROM ").append(NafathLoginModel._TYPECODE)
-                .append(" WHERE ").append(NafathLoginModel.TRANSACTIONID).append(" = ?transactionId");
-        query.append(" AND ").append(NafathLoginModel.NATIONALID).append(" = ?nationalId");
-        query.append(" AND ").append(NafathLoginModel.RANDOM).append(" = ?randomText");
-        final HashMap<String, String> queryParams = new HashMap<>();
-        queryParams.put("transactionId", transactionID);
-        queryParams.put("nationalId", nationalId);
-        queryParams.put("randomText", randomText);
+        NafathLoginModel nafathLoginModel = new NafathLoginModel();
+        nafathLoginModel.setTransactionId(transactionID);
+        nafathLoginModel.setNationalId(nationalId);
+        nafathLoginModel.setRandom(randomText);
 
-
-
-        final SearchResult<NafathLoginModel> result = getFlexibleSearchService().search(query.toString(), queryParams);
-        return result.getResult().get(0);
+        List<NafathLoginModel> modelsByExample = getFlexibleSearchService().getModelsByExample(nafathLoginModel);
+        return modelsByExample != null ? modelsByExample.get(0) : null;
     }
 
     @Override
     public SagiaLicenseModel getLicense(String license) {
-        try{
-            final StringBuilder query = new StringBuilder();
-
-            query.append(" SELECT ").append(SagiaLicenseModel.PK).append(" FROM ").append(SagiaLicenseModel._TYPECODE)
-                    .append("WHERE ").append(SagiaLicenseModel.CODE).append(" = ?license");
-
-            final HashMap<String, String> queryParams = new HashMap<>();
-            queryParams.put("license", license);
-
-            final SearchResult<SagiaLicenseModel> result = getFlexibleSearchService().search(query.toString(), queryParams);
-            return result.getResult().get(0);
-        }catch (Exception e){
+        try {
+            SagiaLicenseModel sagiaLicenseModel = new SagiaLicenseModel();
+            sagiaLicenseModel.setCode(license);
+            final List<SagiaLicenseModel> licenseModelList = getFlexibleSearchService().getModelsByExample(sagiaLicenseModel);
+            return licenseModelList != null ? licenseModelList.get(0) : null;
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }

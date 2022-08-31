@@ -48,8 +48,8 @@ INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]          
 #############################################################
 
 INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)		                                               ; $contentCV	;
-                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                           ;				;
-                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; investment-monitor-search-banner-container, generic-paragraph-investment-monitor, investment-monitor-search-bar-component, investment-monitor-search-result-component  ;				;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ; investment-monitor-search-banner-container                                                                                                          ;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; generic-paragraph-investment-monitor, investment-monitor-search-bar-component, investment-monitor-search-result-component  ;				;
                          ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                    				                                                                                                        ;				;
 
 
@@ -58,17 +58,3 @@ INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique =
                                 ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
                                 ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
 
-
-
-
-
-INSERT_UPDATE ContentSlot; uid[unique = true]       	; name           	; active	; cmsComponents(&componentRef)	; $contentCV[unique = true]	;
-                     	 ; PortalPageTopSlot-$page    	; PortalPageTop    	; false  	;                             	;							;
-						 ; PortalPageMainSlot-$page 	; PortalPageMain 	; true  	; generic-paragraph-investment-monitor, investment-monitor-search-bar-component, investment-monitor-search-result-component	;	;
-						 ; PortalPageBottomSlot-$page 	; PortalPageBottom 	; false  	;         						;							;
-
-
-INSERT_UPDATE ContentSlotForPage; uid[unique = true]    ; position[unique = true]	; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
-                         ; PortalPageTopSlot-$page    	; PortalPageTop          	; PortalPageTopSlot-$page                    ;						
-						 ; PortalPageMainSlot-$page 	; PortalPageMain 			; PortalPageMainSlot-$page 					 ;
-						 ; PortalPageBottomSlot-$page 	; PortalPageBottom       	; PortalPageBottomSlot-$page             	 ;

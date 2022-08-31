@@ -3,7 +3,7 @@
  */
 package com.investsaudi.portal.facades.solrfacetsearch.populators;
 
-import com.sap.ibso.eservices.facades.data.InvestSaudiResourceComponentData;
+import com.sap.ibso.eservices.facades.data.InvestmentHighlightsReportData;
 import de.hybris.platform.commercefacades.product.ImageFormatMapping;
 import de.hybris.platform.commercefacades.product.data.ImageData;
 import de.hybris.platform.commercefacades.product.data.ImageDataType;
@@ -23,7 +23,7 @@ import java.util.List;
  * Converter implementation for {@link SearchResultValueData} as
  * source and {@link ProductData} as target type.
  */
-public class SearchResultInvestSaudiResourceComponentPopulator implements Populator<SearchResultValueData, InvestSaudiResourceComponentData>
+public class SearchResultInvestmentHighlightsReportPopulator implements Populator<SearchResultValueData, InvestmentHighlightsReportData>
 {
 	private ImageFormatMapping imageFormatMapping;
 	private CommonI18NService commonI18NService;
@@ -51,7 +51,7 @@ public class SearchResultInvestSaudiResourceComponentPopulator implements Popula
 	}
 
 	@Override
-	public void populate(final SearchResultValueData source, final InvestSaudiResourceComponentData target)
+	public void populate(final SearchResultValueData source, final InvestmentHighlightsReportData target)
 	{
 		Assert.notNull(source, "Parameter source cannot be null.");
 		Assert.notNull(target, "Parameter target cannot be null.");

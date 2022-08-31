@@ -1,0 +1,88 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#
+# Import the Solr configuration for the sagia store
+#
+
+$contentCatalog = sagiaContentCatalog
+$catalogVersions=catalogVersions(catalog(id),version);
+$facetSearchConfigName=sagiaInvestmentHighlightsReportIndex
+$facetSearchConfigDescription=Sagia Economic And Investment Monitor Solr Index
+$searchIndexNamePrefix=sagiaInvestmentHighlightsReport
+$solrIndexedInvestmentHighlightsReportType=investmentHighlightsReportType
+$indexBaseSite=sagia
+$indexLanguages=en,ar
+$indexCurrencies=USD
+
+
+
+
+
+
+#
+# Setup the indexed types, `their properties, and the update queries
+#
+
+# Declare the indexed type Product
+INSERT_UPDATE SolrIndexedType ; identifier[unique=true] ; type(code) ; variant ; sorts(&sortRefID)
+                              ; $solrIndexedInvestmentHighlightsReportType ; InvestmentHighlightsReport ; false ; ;
+
+INSERT_UPDATE SolrFacetSearchConfig ; name[unique=true]      ; description                   ; indexNamePrefix        ; languages(isocode) ; currencies(isocode) ; solrServerConfig(name) ; solrSearchConfig(description) ; solrIndexConfig(name) ; solrIndexedTypes(identifier) ; enabledLanguageFallbackMechanism ; $catalogVersions
+                                    ; $facetSearchConfigName ; $facetSearchConfigDescription ; $searchIndexNamePrefix ; $indexLanguages    ; $indexCurrencies    ; Default                ; Default                       ; Default               ; $solrIndexedInvestmentHighlightsReportType             ; true                             ; $contentCatalog:Online,$contentCatalog:Staged
+
+UPDATE BaseSite ; uid[unique=true] ; solrFacetSearchConfiguration(name)
+                ; $indexBaseSite   ; $facetSearchConfigName
+
+# Define price range set
+INSERT_UPDATE SolrValueRangeSet ; name[unique=true] ; qualifier ; type ; solrValueRanges(&rangeValueRefID)
+
+# Define price ranges
+INSERT_UPDATE SolrValueRange ; &rangeValueRefID ; solrValueRangeSet(name)[unique=true] ; name[unique=true] ; from ; to
+
+# Non-facet properties
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true]      ; type(code) ; sortableType(code) ; currency[default=false] ; localized[default=false] ; multiValue[default=false] ; useForSpellchecking[default=false] ; useForAutocomplete[default=false] ; fieldValueProvider                         ; valueProviderParameter ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength
+                                  ; $solrIndexedInvestmentHighlightsReportType  ; resourceTitle      ; string    ;                    ;                         ;    true                      ;                           ;                                    ;                                   ; springELValueProvider                      ; getResourceTitle(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedInvestmentHighlightsReportType  ; resourceShortInformation ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ; getResourceShortInformation(#lang)                       ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedInvestmentHighlightsReportType  ; resourceFullDescription ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ;  getResourceFullDescription(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedInvestmentHighlightsReportType  ; resourceBulletPoints ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedInvestmentHighlightsReportType  ; resourceUrl ; string    ;              ;                         ;                          ;                           ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+
+
+# Create the queries that will be used to extract data for Solr
+INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; injectCurrentDate[default=true] ; injectCurrentTime[default=true] ; injectLastIndexTime[default=true] ; query                                                                                                 ; user(uid)
+                               ; $solrIndexedInvestmentHighlightsReportType                         ; $searchIndexNamePrefix-fullQuery   ; full       ;                                 ;                                 ; false                             ; "SELECT {PK} FROM {InvestmentHighlightsReport}" ; anonymous
+
+
+
+# Search query template
+INSERT_UPDATE SolrSearchQueryTemplate ; name[unique=true] ; indexedType(identifier)[unique=true] ; ftsQueryBuilder             ; enableHighlighting[default=true]
+                                      ; DEFAULT           ; $solrIndexedInvestmentHighlightsReportType                     ; defaultFreeTextQueryBuilder ;
+
+# Non-facet search query properties   SagiaExtSearchResultProductPopulator.java
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType] ; facet ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryFuzziness ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength ; includeInResponse[default=true] ; useForHighlighting[default=false]
+                                      ; itemtype:$solrIndexedInvestmentHighlightsReportType                                       ;                                                                                                   ;       ;                               ;                     ;                         ;               ;                              ;                        ;                    ;                                 ;                                             ;                       ;                               ;                                 ;
+                                      ; code:$solrIndexedInvestmentHighlightsReportType                                           ;                                                                                                   ;       ; TRUE                          ; 90                  ;                         ;               ; TRUE                         ;                        ;                    ;                                 ; POSTFIX                                     ; 45                    ; 3                             ;                                 ;
+                                      ; name:$solrIndexedInvestmentHighlightsReportType                                           ;                                                                                                   ;       ; TRUE                          ; 100                 ; TRUE                    ; 50            ; TRUE                         ;                        ; 25                 ;                                 ;                                             ;                       ;                               ;                                 ; true
+                                      ; description:$solrIndexedInvestmentHighlightsReportType                                    ;                                                                                                   ;       ;                               ;                     ;                         ;               ;                              ;                        ;                    ;                                 ;                                             ;                       ;                               ;                                 ;
+
+
+# Facet search query properties
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider         ; facetSortProvider ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType]
+                                      ; allCategories:$solrIndexedInvestmentHighlightsReportType                                  ;                     ; MultiSelectOr   ; 9999    ;categoryFacetDisplayNameProvider ; facetNameSortProviderAscending                  ; defaultTopValuesProvider ;                                 ;
+                                      ; sagiaRegion:$solrIndexedInvestmentHighlightsReportType                                    ;                     ; MultiSelectOr   ; 8000    ;regionFacetDisplayNameProvider    ; facetNameSortProviderAscending                  ; defaultTopValuesProvider ;                                 ;
+                                      ; categoryPath:$solrIndexedInvestmentHighlightsReportType                                   ;                     ; Refine          ; 7000    ;                                  ;                                                 ;                          ;                                 ;
+                                      ; category:$solrIndexedInvestmentHighlightsReportType                                       ;                     ; Refine          ; 6000     ; categoryFacetDisplayNameProvider ;                                                 ; defaultTopValuesProvider ;                                 ;
+                                      ; brand:$solrIndexedInvestmentHighlightsReportType                                          ;                     ; Refine          ; 5000     ; categoryFacetDisplayNameProvider ;                                                 ; defaultTopValuesProvider ;                                 ;
+                                      ; color:$solrIndexedInvestmentHighlightsReportType                                          ;                     ; Refine          ; 4000     ; categoryFacetDisplayNameProvider ;                                                 ; defaultTopValuesProvider ;                                 ;
+                                      ; fit:$solrIndexedInvestmentHighlightsReportType                                            ;                     ; Refine          ; 3000     ; categoryFacetDisplayNameProvider ;                                                 ; defaultTopValuesProvider ;                                 ;
+                                      ; size:$solrIndexedInvestmentHighlightsReportType                                           ;                     ; Refine          ; 2000     ; categoryFacetDisplayNameProvider ;                                                 ; defaultTopValuesProvider ;                                 ;
+#									 ;price:$solrIndexedType			;	;MultiSelectOr	;4000	;													;								;defaultTopValuesProvider	;;
+#									 ;availableInStores:$solrIndexedType;	;MultiSelectOr	;10000	;electronicsPointOfServiceFacetDisplayNameProvider	;distanceAttributeSortProvider	;							;;

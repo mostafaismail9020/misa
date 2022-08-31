@@ -3900,12 +3900,4 @@
 
 	</bean>
 
-
-	<bean class="de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData&lt;STATE, RESULT>" extends="de.hybris.platform.commerceservices.search.facetdata.FacetSearchPageData&lt;STATE, RESULT>">
-		<description>POJO containing the result page for product search.</description>
-		<property name="freeTextSearch" type="String"/>
-		<property name="categoryCode" type="String"/>
-		<property name="keywordRedirectUrl" type="String"/>
-		<property name="spellingSuggestion" type="de.hybris.platform.commerceservices.search.facetdata.SpellingSuggestionData&lt;STATE>"/>
-	</bean>
 </beans>

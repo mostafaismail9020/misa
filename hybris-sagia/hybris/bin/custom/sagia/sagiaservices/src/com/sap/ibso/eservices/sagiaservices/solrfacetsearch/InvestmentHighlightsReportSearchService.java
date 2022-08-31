@@ -5,7 +5,7 @@ package com.sap.ibso.eservices.sagiaservices.solrfacetsearch;
 
 import de.hybris.platform.commerceservices.enums.SearchQueryContext;
 import de.hybris.platform.commerceservices.search.facetdata.FacetSearchPageData;
-import de.hybris.platform.commerceservices.search.facetdata.InvestSaudiResourceComponentSearchPageData;
+import de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
 
 
@@ -30,7 +30,7 @@ import de.hybris.platform.commerceservices.search.pagedata.PageableData;
  * @param <RESULT>
  *           The type of the search page data returned. Must be (or extend) {@link FacetSearchPageData}.
  */
-public interface InvestmentHighlightsReportSearchService<STATE, ITEM, RESULT extends InvestSaudiResourceComponentSearchPageData<STATE, ITEM>>
+public interface InvestmentHighlightsReportSearchService<STATE, ITEM, RESULT extends InvestmentHighlightsReportSearchPageData<STATE, ITEM>>
 {
 	/**
 	 * Initiate a new search using simple free text query.

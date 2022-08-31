@@ -3,10 +3,10 @@
  */
 package com.investsaudi.portal.facades.solrfacetsearch.populators;
 
-import com.sap.ibso.eservices.facades.data.InvestSaudiResourceComponentData;
+import com.sap.ibso.eservices.facades.data.InvestmentHighlightsReportData;
 import de.hybris.platform.commerceservices.search.facetdata.BreadcrumbData;
 import de.hybris.platform.commerceservices.search.facetdata.FacetData;
-import de.hybris.platform.commerceservices.search.facetdata.InvestSaudiResourceComponentSearchPageData;
+import de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData;
 import de.hybris.platform.commerceservices.search.facetdata.SpellingSuggestionData;
 import de.hybris.platform.converters.Converters;
 import de.hybris.platform.converters.Populator;
@@ -16,14 +16,14 @@ import org.springframework.beans.factory.annotation.Required;
 
 /**
  */
-public class InvestSaudiResourceComponentSearchPagePopulator<QUERY, STATE, RESULT, ITEM extends InvestSaudiResourceComponentData, SCAT, CATEGORY>
-		implements Populator<InvestSaudiResourceComponentSearchPageData<QUERY, RESULT>, InvestSaudiResourceComponentSearchPageData<STATE, ITEM>>
+public class InvestmentHighlightsReportSearchPagePopulator<QUERY, STATE, RESULT, ITEM extends InvestmentHighlightsReportData, SCAT, CATEGORY>
+		implements Populator<InvestmentHighlightsReportSearchPageData<QUERY, RESULT>, InvestmentHighlightsReportSearchPageData<STATE, ITEM>>
 {
 	private Converter<QUERY, STATE> searchStateConverter;
 	private Converter<BreadcrumbData<QUERY>, BreadcrumbData<STATE>> breadcrumbConverter;
 	private Converter<FacetData<QUERY>, FacetData<STATE>> facetConverter;
 	private Converter<SpellingSuggestionData<QUERY>, SpellingSuggestionData<STATE>> spellingSuggestionConverter;
-	private Converter<RESULT, ITEM> searchResultInvestSaudiResourceComponentConverter;
+	private Converter<RESULT, ITEM> searchResultInvestmentHighlightsReportConverter;
 
 
 	protected Converter<QUERY, STATE> getSearchStateConverter()
@@ -59,15 +59,15 @@ public class InvestSaudiResourceComponentSearchPagePopulator<QUERY, STATE, RESUL
 		this.facetConverter = facetConverter;
 	}
 
-	protected Converter<RESULT, ITEM> getSearchResultInvestSaudiResourceComponentConverter()
+	protected Converter<RESULT, ITEM> getSearchResultInvestmentHighlightsReportConverter()
 	{
-		return searchResultInvestSaudiResourceComponentConverter;
+		return searchResultInvestmentHighlightsReportConverter;
 	}
 
 	@Required
-	public void setSearchResultInvestSaudiResourceComponentConverter(final Converter<RESULT, ITEM> searchResultInvestSaudiResourceComponentConverter)
+	public void setSearchResultInvestmentHighlightsReportConverter(final Converter<RESULT, ITEM> searchResultInvestmentHighlightsReportConverter)
 	{
-		this.searchResultInvestSaudiResourceComponentConverter = searchResultInvestSaudiResourceComponentConverter;
+		this.searchResultInvestmentHighlightsReportConverter = searchResultInvestmentHighlightsReportConverter;
 	}
 
 	protected Converter<SpellingSuggestionData<QUERY>, SpellingSuggestionData<STATE>> getSpellingSuggestionConverter()
@@ -82,8 +82,8 @@ public class InvestSaudiResourceComponentSearchPagePopulator<QUERY, STATE, RESUL
 	}
 
 	@Override
-	public void populate(final InvestSaudiResourceComponentSearchPageData<QUERY, RESULT> source,
-			final InvestSaudiResourceComponentSearchPageData<STATE, ITEM> target)
+	public void populate(final InvestmentHighlightsReportSearchPageData<QUERY, RESULT> source,
+			final InvestmentHighlightsReportSearchPageData<STATE, ITEM> target)
 	{
 		target.setFreeTextSearch(source.getFreeTextSearch());
 		target.setCategoryCode(source.getCategoryCode());
@@ -104,7 +104,7 @@ public class InvestSaudiResourceComponentSearchPagePopulator<QUERY, STATE, RESUL
 
 		if (source.getResults() != null)
 		{
-			target.setResults(Converters.convertAll(source.getResults(), getSearchResultInvestSaudiResourceComponentConverter()));
+			target.setResults(Converters.convertAll(source.getResults(), getSearchResultInvestmentHighlightsReportConverter()));
 		}
 
 		target.setSorts(source.getSorts());

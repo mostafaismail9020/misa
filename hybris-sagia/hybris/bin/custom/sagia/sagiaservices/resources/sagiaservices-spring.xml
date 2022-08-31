@@ -1899,11 +1899,56 @@
 
 	<alias name="defaultInvestmentHighlightsReportSearchService" alias="investmentHighlightsReportSearchService" />
 	<bean id="defaultInvestmentHighlightsReportSearchService" class="com.sap.ibso.eservices.sagiaservices.solrfacetsearch.impl.DefaultSolrInvestmentHighlightsReportSearchService">
-		<property name="searchQueryPageableConverter" ref="commerceSearchQueryPageableConverter" />
+		<property name="searchQueryPageableConverter" ref="investmentHighlightsReportCommerceSearchQueryPageableConverter" />
 		<property name="searchRequestConverter" ref="commerceSolrSearchRequestConverter" />
-		<property name="searchResponseConverter" ref="commerceSolrSearchResponseConverter" />
+		<property name="searchResponseConverter" ref="investmentHighlightsReportSolrSearchResponseConverter" />
 	</bean>
 
+	<bean id="investmentHighlightsReportSolrSearchResponseConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData" />
+		<property name="populators">
+			<list>
+				<ref bean="commerceSearchResponseQueryPopulator" />
+				<ref bean="commerceSearchResponsePaginationPopulator" />
+				<ref bean="commerceSearchResponseResultsPopulator" />
+				<ref bean="commerceSearchResponseFacetsPopulator" />
+				<ref bean="commerceSearchResponseFacetFilterPopulator" />
+				<ref bean="commerceSearchResponseBreadcrumbsPopulator" />
+				<ref bean="commerceSearchResponseSortsPopulator" />
+				<!--<ref bean="commerceSearchResponseFreeTextSearchPopulator" />-->
+				<!--<ref bean="commerceSearchResponseSpellingSuggestionPopulator" />
+				<ref bean="commerceSearchResponseKeywordRedirectPopulator" />-->
+			</list>
+		</property>
+	</bean>
+
+
+
+	<alias name="investmentHighlightsReportCommerceSearchQueryPageableConverter" alias="investmentHighlightsReportCommerceSearchQueryPageableConverter" />
+	<bean id="investmentHighlightsReportCommerceSearchQueryPageableConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commerceservices.search.solrfacetsearch.data.SolrSearchRequest" />
+		<property name="populators">
+			<list>
+				<ref bean="investmentHighlightsReportCommerceSearchSolrQueryPopulator" />
+				<ref bean="commerceSearchPagePopulator" />
+				<ref bean="commerceSearchSortPopulator" />
+				<ref bean="commerceSearchTextPopulator" />
+				<ref bean="commerceSearchFiltersPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="investmentHighlightsReportCommerceSearchSolrQueryPopulator" alias="investmentHighlightsReportCommerceSearchSolrQueryPopulator" />
+	<bean id="investmentHighlightsReportCommerceSearchSolrQueryPopulator" class="com.sap.ibso.eservices.sagiaservices.solrfacetsearch.populators.InvestmentHighlightsReportSearchSolrQueryPopulator">
+		<property name="catalogVersionService" ref="catalogVersionService" />
+		<property name="baseSiteService" ref="baseSiteService" />
+		<property name="commonI18NService" ref="commonI18NService" />
+		<property name="baseStoreService" ref="baseStoreService" />
+		<property name="facetSearchService" ref="facetSearchService" />
+		<property name="facetSearchConfigService" ref="facetSearchConfigService" />
+		<property name="solrFacetSearchConfigSelectionStrategy" ref="solrFacetSearchConfigSelectionStrategy" />
+		<property name="searchQueryTemplateNameResolver" ref="searchQueryTemplateNameResolver"/>
+	</bean>
 
 
 

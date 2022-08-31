@@ -4,14 +4,14 @@
 package com.investsaudi.portal.facades.solrfacetsearch.impl;
 
 import com.investsaudi.portal.facades.solrfacetsearch.InvestmentHighlightsReportSearchFacade;
-import com.sap.ibso.eservices.facades.data.InvestSaudiResourceComponentData;
+import com.sap.ibso.eservices.facades.data.InvestmentHighlightsReportData;
 import com.sap.ibso.eservices.sagiaservices.solrfacetsearch.InvestmentHighlightsReportSearchService;
 import de.hybris.platform.commercefacades.search.data.AutocompleteSuggestionData;
 import de.hybris.platform.commercefacades.search.data.SearchQueryData;
 import de.hybris.platform.commercefacades.search.data.SearchStateData;
 import de.hybris.platform.commerceservices.enums.SearchQueryContext;
 import de.hybris.platform.commerceservices.search.ProductSearchAutocompleteService;
-import de.hybris.platform.commerceservices.search.facetdata.InvestSaudiResourceComponentSearchPageData;
+import de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
 import de.hybris.platform.commerceservices.search.resultdata.SearchResultValueData;
 import de.hybris.platform.commerceservices.search.solrfacetsearch.data.AutocompleteSuggestion;
@@ -25,38 +25,20 @@ import org.springframework.util.Assert;
 import java.util.List;
 
 
-public class DefaultSolrInvestmentHighlightsReportSearchFacade<ITEM extends InvestSaudiResourceComponentData> implements InvestmentHighlightsReportSearchFacade<ITEM>
+public class DefaultSolrInvestmentHighlightsReportSearchFacade<ITEM extends InvestmentHighlightsReportData> implements InvestmentHighlightsReportSearchFacade<ITEM>
 {
-	private InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>> investmentHighlightsReportSearchService;
+	private InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, SearchResultValueData>> investmentHighlightsReportSearchService;
 
 
-	private Converter<InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>> investSaudiResourceComponentSearchPageConverter;
+	private Converter<InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM>> investmentHighlightsReportSearchPageConverter;
 	private Converter<SearchQueryData, SolrSearchQueryData> searchQueryDecoder;
 	private Converter<AutocompleteSuggestion, AutocompleteSuggestionData> autocompleteSuggestionConverter;
 	private ProductSearchAutocompleteService<AutocompleteSuggestion> autocompleteService;
 	private ThreadContextService threadContextService;
 
-	protected InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>> getInvestSaudiResourceComponentSearchService()
-	{
-		return investmentHighlightsReportSearchService;
-	}
-
-	@Required
-	public void setInvestmentHighlightsReportSearchService(
-			final InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>> investmentHighlightsReportSearchService)
-	{
-		this.investmentHighlightsReportSearchService = investmentHighlightsReportSearchService;
-	}
 
 
 
-	public Converter<InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>> getInvestSaudiResourceComponentSearchPageConverter() {
-		return investSaudiResourceComponentSearchPageConverter;
-	}
-
-	public void setInvestSaudiResourceComponentSearchPageConverter(Converter<InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>> investSaudiResourceComponentSearchPageConverter) {
-		this.investSaudiResourceComponentSearchPageConverter = investSaudiResourceComponentSearchPageConverter;
-	}
 	protected Converter<SearchQueryData, SolrSearchQueryData> getSearchQueryDecoder()
 	{
 		return searchQueryDecoder;
@@ -104,49 +86,49 @@ public class DefaultSolrInvestmentHighlightsReportSearchFacade<ITEM extends Inve
 
 
 	@Override
-	public InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM> textSearch(final String text)
+	public InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM> textSearch(final String text)
 	{
 		return getThreadContextService().executeInContext(
-				new ThreadContextService.Executor<InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>, ThreadContextService.Nothing>()
+				new ThreadContextService.Executor<InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM>, ThreadContextService.Nothing>()
 				{
 					@Override
-					public InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM> execute()
+					public InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM> execute()
 					{
-						return getInvestSaudiResourceComponentSearchPageConverter().convert(getInvestSaudiResourceComponentSearchService().textSearch(text, null,
+						return getInvestmentHighlightsReportSearchPageConverter().convert(getInvestmentHighlightsReportSearchService().textSearch(text, null,
 								null));
 					}
 				});
 	}
 
 	@Override
-	public InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM> textSearch(final String text, final SearchQueryContext searchQueryContext)
+	public InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM> textSearch(final String text, final SearchQueryContext searchQueryContext)
 	{
 		return getThreadContextService().executeInContext(
-				new ThreadContextService.Executor<InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>, ThreadContextService.Nothing>()
+				new ThreadContextService.Executor<InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM>, ThreadContextService.Nothing>()
 				{
 					@Override
-					public InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM> execute()
+					public InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM> execute()
 					{
-						return getInvestSaudiResourceComponentSearchPageConverter()
-								.convert(getInvestSaudiResourceComponentSearchService().textSearch(text, searchQueryContext, null));
+						return getInvestmentHighlightsReportSearchPageConverter()
+								.convert(getInvestmentHighlightsReportSearchService().textSearch(text, searchQueryContext, null));
 					}
 				});
 	}
 
 	@Override
-	public InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM> textSearch(final SearchStateData searchState,
+	public InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM> textSearch(final SearchStateData searchState,
 			final PageableData pageableData)
 	{
 		Assert.notNull(searchState, "SearchStateData must not be null.");
 
 		return getThreadContextService().executeInContext(
-				new ThreadContextService.Executor<InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM>, ThreadContextService.Nothing>()
+				new ThreadContextService.Executor<InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM>, ThreadContextService.Nothing>()
 				{
 					@Override
-					public InvestSaudiResourceComponentSearchPageData<SearchStateData, ITEM> execute()
+					public InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM> execute()
 					{
-						return getInvestSaudiResourceComponentSearchPageConverter()
-								.convert(getInvestSaudiResourceComponentSearchService().searchAgain(decodeState(searchState, null), pageableData));
+						return getInvestmentHighlightsReportSearchPageConverter()
+								.convert(getInvestmentHighlightsReportSearchService().searchAgain(decodeState(searchState, null), pageableData));
 					}
 				});
 	}
@@ -178,8 +160,25 @@ public class DefaultSolrInvestmentHighlightsReportSearchFacade<ITEM extends Inve
 		return searchQueryData;
 	}
 
-	public InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, SearchResultValueData>> getInvestmentHighlightsReportSearchService() {
+
+	public Converter<InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM>> getInvestmentHighlightsReportSearchPageConverter() {
+		return investmentHighlightsReportSearchPageConverter;
+	}
+
+	public void setInvestmentHighlightsReportSearchPageConverter(Converter<InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, SearchResultValueData>, InvestmentHighlightsReportSearchPageData<SearchStateData, ITEM>> investmentHighlightsReportSearchPageConverter) {
+		this.investmentHighlightsReportSearchPageConverter = investmentHighlightsReportSearchPageConverter;
+	}
+
+
+	protected InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, SearchResultValueData>> getInvestmentHighlightsReportSearchService()
+	{
 		return investmentHighlightsReportSearchService;
 	}
 
+	@Required
+	public void setInvestmentHighlightsReportSearchService(
+			final InvestmentHighlightsReportSearchService<SolrSearchQueryData, SearchResultValueData, InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, SearchResultValueData>> investmentHighlightsReportSearchService)
+	{
+		this.investmentHighlightsReportSearchService = investmentHighlightsReportSearchService;
+	}
 }

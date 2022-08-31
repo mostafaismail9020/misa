@@ -2255,20 +2255,19 @@
 	>
 		<property name="investmentHighlightsReportSearchService" ref="investmentHighlightsReportSearchService"/>
 		<property name="autocompleteService" ref="commerceAutocompleteService"/>
-		<!--<property name="investSaudiResourceComponentSearchPageConverter" ref="investSaudiResourceComponentSearchPageConverter"/>-->
+		<property name="investmentHighlightsReportSearchPageConverter" ref="investmentHighlightsReportSearchPageConverter"/>
 		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
 		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
 		<property name="threadContextService" ref="threadContextService"/>
     </bean>
 
-
-	<alias name="defaultInvestmentHighlightsReportSearchPageConverter" alias="investSaudiResourceComponentSearchPageConverter"/>
+	<alias name="defaultInvestmentHighlightsReportSearchPageConverter" alias="investmentHighlightsReportSearchPageConverter"/>
 	<bean id="defaultInvestmentHighlightsReportSearchPageConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass"
 				  value="de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData"/>
 		<property name="populators">
 			<list>
-				<ref bean="investSaudiResourceComponentSearchPagePopulator"/>
+				<ref bean="investmentHighlightsReportSearchPagePopulator"/>
 			</list>
 		</property>
 	</bean>
@@ -2276,30 +2275,30 @@
 
 
 
-	<alias name="defaultInvestSaudiResourceComponentSearchPagePopulator" alias="investSaudiResourceComponentSearchPagePopulator"/>
-	<bean id="defaultInvestSaudiResourceComponentSearchPagePopulator"
-		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.InvestSaudiResourceComponentSearchPagePopulator"
+	<alias name="defaultInvestmentHighlightsReportSearchPagePopulator" alias="investmentHighlightsReportSearchPagePopulator"/>
+	<bean id="defaultInvestmentHighlightsReportSearchPagePopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.InvestmentHighlightsReportSearchPagePopulator"
 	>
 		<property name="breadcrumbConverter" ref="breadcrumbConverter"/>
 		<property name="facetConverter" ref="facetConverter"/>
-		<property name="searchResultInvestSaudiResourceComponentConverter" ref="commerceSearchResultInvestSaudiResourceComponentConverter"/>
+		<property name="searchResultInvestmentHighlightsReportConverter" ref="commerceSearchResultInvestmentHighlightsReportConverter"/>
 		<property name="searchStateConverter" ref="solrSearchStateConverter"/>
 		<property name="spellingSuggestionConverter" ref="spellingSuggestionConverter"/>
 	</bean>
 
-	<alias name="defaultCommerceSearchResultInvestSaudiResourceComponentConverter" alias="commerceSearchResultInvestSaudiResourceComponentConverter"/>
-	<bean id="defaultCommerceSearchResultInvestSaudiResourceComponentConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.InvestSaudiResourceComponentData"/>
+	<alias name="defaultCommerceSearchResultInvestmentHighlightsReportConverter" alias="commerceSearchResultInvestmentHighlightsReportConverter"/>
+	<bean id="defaultCommerceSearchResultInvestmentHighlightsReportConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.InvestmentHighlightsReportData"/>
 		<property name="populators">
 			<list>
-				<ref bean="commerceSearchResultInvestSaudiResourceComponentPopulator"/>
+				<ref bean="commerceSearchResultInvestmentHighlightsReportPopulator"/>
 			</list>
 		</property>
 	</bean>
 
-	<alias name="defaultCommerceSearchResultInvestSaudiResourceComponentPopulator" alias="commerceSearchResultInvestSaudiResourceComponentPopulator"/>
-	<bean id="defaultCommerceSearchResultInvestSaudiResourceComponentPopulator"
-		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.SearchResultInvestSaudiResourceComponentPopulator">
+	<alias name="defaultCommerceSearchResultInvestmentHighlightsReportPopulator" alias="commerceSearchResultInvestmentHighlightsReportPopulator"/>
+	<bean id="defaultCommerceSearchResultInvestmentHighlightsReportPopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.SearchResultInvestmentHighlightsReportPopulator">
 		<property name="commonI18NService" ref="commonI18NService"/>
 		<property name="imageFormatMapping" ref="imageFormatMapping"/>
 	</bean>

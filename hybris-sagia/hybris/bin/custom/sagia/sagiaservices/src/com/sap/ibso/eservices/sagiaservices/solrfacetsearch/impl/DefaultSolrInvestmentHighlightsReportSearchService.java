@@ -5,8 +5,7 @@ package com.sap.ibso.eservices.sagiaservices.solrfacetsearch.impl;
 
 import com.sap.ibso.eservices.sagiaservices.solrfacetsearch.InvestmentHighlightsReportSearchService;
 import de.hybris.platform.commerceservices.enums.SearchQueryContext;
-import de.hybris.platform.commerceservices.search.ProductSearchService;
-import de.hybris.platform.commerceservices.search.facetdata.InvestSaudiResourceComponentSearchPageData;
+import de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
 import de.hybris.platform.commerceservices.search.solrfacetsearch.data.SearchQueryPageableData;
 import de.hybris.platform.commerceservices.search.solrfacetsearch.data.SolrSearchQueryData;
@@ -29,14 +28,14 @@ import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParamete
  *           the type of items returned as part of the search results
  */
 public class DefaultSolrInvestmentHighlightsReportSearchService<ITEM> implements
-		InvestmentHighlightsReportSearchService<SolrSearchQueryData, ITEM, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, ITEM>>
+		InvestmentHighlightsReportSearchService<SolrSearchQueryData, ITEM, InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, ITEM>>
 {
 	@SuppressWarnings("unused")
 	private static final Logger LOG = Logger.getLogger(DefaultSolrInvestmentHighlightsReportSearchService.class);
 
 	private Converter<SearchQueryPageableData<SolrSearchQueryData>, SolrSearchRequest> searchQueryPageableConverter;
 	private Converter<SolrSearchRequest, SolrSearchResponse> searchRequestConverter;
-	private Converter<SolrSearchResponse, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, ITEM>> searchResponseConverter;
+	private Converter<SolrSearchResponse, InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, ITEM>> searchResponseConverter;
 
 	protected Converter<SearchQueryPageableData<SolrSearchQueryData>, SolrSearchRequest> getSearchQueryPageableConverter()
 	{
@@ -61,14 +60,14 @@ public class DefaultSolrInvestmentHighlightsReportSearchService<ITEM> implements
 		this.searchRequestConverter = searchRequestConverter;
 	}
 
-	protected Converter<SolrSearchResponse, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, ITEM>> getSearchResponseConverter()
+	protected Converter<SolrSearchResponse, InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, ITEM>> getSearchResponseConverter()
 	{
 		return searchResponseConverter;
 	}
 
 	@Required
 	public void setSearchResponseConverter(
-			final Converter<SolrSearchResponse, InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, ITEM>> searchResponseConverter)
+			final Converter<SolrSearchResponse, InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, ITEM>> searchResponseConverter)
 	{
 		this.searchResponseConverter = searchResponseConverter;
 	}
@@ -76,7 +75,7 @@ public class DefaultSolrInvestmentHighlightsReportSearchService<ITEM> implements
 	// End spring inject methods
 
 	@Override
-	public InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, ITEM> textSearch(final String text,
+	public InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, ITEM> textSearch(final String text,
 			final PageableData pageableData)
 	{
 		final SolrSearchQueryData searchQueryData = createSearchQueryData();
@@ -87,7 +86,7 @@ public class DefaultSolrInvestmentHighlightsReportSearchService<ITEM> implements
 	}
 
 	@Override
-	public InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, ITEM> textSearch(final String text,
+	public InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, ITEM> textSearch(final String text,
 			final SearchQueryContext searchQueryContext, final PageableData pageableData)
 	{
 		final SolrSearchQueryData searchQueryData = createSearchQueryData();
@@ -100,13 +99,13 @@ public class DefaultSolrInvestmentHighlightsReportSearchService<ITEM> implements
 
 
 	@Override
-	public InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, ITEM> searchAgain(
+	public InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, ITEM> searchAgain(
 			final SolrSearchQueryData searchQueryData, final PageableData pageableData)
 	{
 		return doSearch(searchQueryData, pageableData);
 	}
 
-	protected InvestSaudiResourceComponentSearchPageData<SolrSearchQueryData, ITEM> doSearch(
+	protected InvestmentHighlightsReportSearchPageData<SolrSearchQueryData, ITEM> doSearch(
 			final SolrSearchQueryData searchQueryData, final PageableData pageableData)
 	{
 		validateParameterNotNull(searchQueryData, "SearchQueryData cannot be null");

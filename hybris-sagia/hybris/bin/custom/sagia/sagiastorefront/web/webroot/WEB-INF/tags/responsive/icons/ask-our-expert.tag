@@ -24,4 +24,4 @@
     <path id="Path_2325" data-name="Path 2325" d="M189.237,188.148v2.114s.016,1.171-1.655,1.041h-5.139" transform="translate(-164.876 -170.173)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
     <ellipse id="Ellipse_159" data-name="Ellipse 159" cx="0.413" cy="0.41" rx="0.413" ry="0.41" transform="translate(16.809 20.707)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="1"/>
   </g>
-</svg>  
+</svg>

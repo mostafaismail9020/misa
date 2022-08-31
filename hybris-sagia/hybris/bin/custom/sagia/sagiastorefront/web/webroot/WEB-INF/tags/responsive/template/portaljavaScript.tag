@@ -6,6 +6,8 @@
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template" %>
 <%@ taglib prefix="analytics" tagdir="/WEB-INF/tags/shared/analytics" %>
 
+<c:set var="jsPath" value="${not empty environment && environment != 'local' && environment != 'development' ?'js':'js'}" scope="request"/>
+<c:set var="version" value="${not empty staticResourceVersion ? '?v=': ''}${not empty staticResourceVersion != '' ? staticResourceVersion: ''}" scope="request"/>
 <template:javaScriptVariables/>
 
 <c:set var="commonResourcePathHtml" value="${fn:escapeXml(commonResourcePath)}"/>
@@ -24,9 +26,10 @@
 		<script src="${commonResourcePathHtml}/js/contact.js"></script>
 		<script type="text/javascript" src="${themeResourcePath}/js/sagia.I18n.js${version}"></script>
 
+        <script type="text/javascript" src="${commonResourcePath}/js/owl.carousel.custom.js${version}"></script>
 		<%-- jquery --%>
-		
-		
+
+
 		<%-- plugins --%>
 		<script src="${commonResourcePathHtml}/js/enquire.min.js"></script>
 		<script src="${commonResourcePathHtml}/js/Imager.min.js"></script>
@@ -48,9 +51,9 @@
 		<script src="${commonResourcePathHtml}/js/acc.autocomplete.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.sanitizer.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.paginationsort.js"></script>
-		
+
 		<%-- Custom ACC JS --%>
-		
+
 		<!--
 		<script src="${commonResourcePathHtml}/js/acc.address.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.autocomplete.js"></script>
@@ -98,17 +101,17 @@
 		<script src="${commonResourcePathHtml}/js/acc.csv-import.js"></script>-->
 
 		<script src="${commonResourcePathHtml}/js/_autoload.js"></script>
-		
+
 		<%-- Cms Action JavaScript files --%>
 		<c:forEach items="${cmsActionsJsFiles}" var="actionJsFile">
 		    <script src="${commonResourcePathHtml}/js/cms/${fn:escapeXml(actionJsFile)}"></script>
 		</c:forEach>
-		
+
 		<%-- AddOn JavaScript files --%>
 		<c:forEach items="${addOnJavaScriptPaths}" var="addOnJavaScript">
 		    <script src="${fn:escapeXml(addOnJavaScript)}"></script>
 		</c:forEach>
-		
+
 	</c:otherwise>
 </c:choose>
 <!--<script src="${fn:escapeXml(commonResourcePath)}/js/invest-saudi/vendor/swiper.min.js"></script>
@@ -125,9 +128,9 @@
 
 <%-- performance improvement - Home page --%>
 
-<c:if test = "${pageTitle != 'Homepage' && 
-pageTitle != 'About Invest Saudi' && 
-pageTitle!='Living in Saudi' && 
+<c:if test = "${pageTitle != 'Homepage' &&
+pageTitle != 'About Invest Saudi' &&
+pageTitle!='Living in Saudi' &&
 pageTitle != 'About The Kingdom' &&
 pageTitle != 'Regions Overview' &&
 pageTitle != 'Province' &&
@@ -159,6 +162,10 @@ pageTitle != 'Resource Details'
 	<script src="https://maps.googleapis.com/maps/api/js?key=${googleMapsAPIKey}&libraries=places&language=en&callback=initMap&region=SA"></script>
 	<c:set var="includeMapJavascripts" value="false" scope="session" />
 </c:if>
+
+<c:forEach var="sagiaJavascript" items="${sagiaJavascripts}">
+    <script type="text/javascript" src="${themeResourcePath}/${jsPath}/${sagiaJavascript}${version}"></script>
+</c:forEach>
 
 <analytics:googleTagManagerDatalayer />
 

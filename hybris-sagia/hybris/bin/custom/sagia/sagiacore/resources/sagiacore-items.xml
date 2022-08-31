@@ -2482,6 +2482,84 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="SagiaIndicatorTerm"
+                      jaloclass="com.sap.ibso.eservices.core.jalo.SagiaIndicatorTerm"
+                      extends="GenericItem" generate="true" autocreate="true">
+                      <description>the economic  and investment indicator terms</description>
+                      <deployment table="SagiaIndicatorTerms" typecode="32399"/>
+
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="false" unique="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="name"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="description"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+
+                <attribute qualifier="source"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+
+                <attribute qualifier="linkText"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="linkURL" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="false" unique="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+
+                <attribute type="boolean" qualifier="isActive">
+                    <persistence type="property" />
+                    <modifiers optional="false" />
+                    <defaultvalue>true</defaultvalue>
+                    <description>Indicates if the term is active or not.</description>
+                </attribute>
+
+                <attribute qualifier="dataPoint"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="measurement"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+                <attribute qualifier="calculation"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
+
+
+            </attributes>
+
+
+
+            </itemtype>
+
+
             <itemtype code="TicketQuestion"
 			jaloclass="com.sap.ibso.eservices.core.jalo.TicketQuestion"
 			extends="GenericItem" generate="true" autocreate="true">
@@ -3797,6 +3875,7 @@
                     </attribute>
                 </attributes>
             </itemtype>
+
 
             <itemtype code="SuccessStoryProduct" extends="Product"
                       autocreate="true" generate="true"
@@ -6548,15 +6627,57 @@
                     <attribute qualifier="quotation" type="NewsResourceQuotation">
                         <persistence type="property"/>
                         <modifiers/>
-						<description>Resource quotation</description>
+						     <description>Resource quotation</description>
                     </attribute>
                     <attribute qualifier="regionSpecific" type="java.lang.Boolean">
                         <defaultvalue>Boolean.TRUE</defaultvalue>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
+
                 </attributes>
-            </itemtype>
+
+      </itemtype>
+
+      <itemtype code="EconomicAndInvestmentMonitor" generate="true"
+                      extends="InvestSaudiResourceComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.EconomicAndInvestmentMonitor">
+                <description>Economic And Investment Monitor Component</description>
+
+      </itemtype>
+
+      <itemtype code="InvestmentHighlightsReport" generate="true"
+                      extends="InvestSaudiResourceComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestmentHighlightsReport">
+                <description>InvestmentHighlightsReport Component</description>
+
+      </itemtype>
+
+      <itemtype code="MonthlyBulletinReport" generate="true"
+                      extends="InvestSaudiResourceComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MonthlyBulletinReport">
+                <description>MonthlyBulletinReport Component</description>
+
+      </itemtype>
+
+      <itemtype code="EconomicAndInvestmentReportsAndStudies" generate="true"
+                      extends="InvestSaudiResourceComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.EconomicAndInvestmentReportsAndStudies">
+                <description>MonthlyBulletinReport Component</description>
+
+      </itemtype>
+
+
+
+
+
+
+
+
+
+
+
+
 
 			<itemtype code="InvestSaudiMediaCenterComponent" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
@@ -10458,5 +10579,47 @@
                 <description>Sagia SearchBox Component</description>
             </itemtype>
         </typegroup>
-	</itemtypes>
+
+        <!-- InvestmentReports Starts-->
+        <typegroup name="InvestmentReports">
+            <itemtype code="InvestmentSaudiLastReportCategoryComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestmentSaudiLastReportCategoryComponent">
+                <description>Last Investment Report Category Component</description>
+                <attributes>
+                    <attribute qualifier="box1Name" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Name of box 1</description>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="box2Name" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Name of box 2</description>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="box3Name" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Name of box 3</description>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="box4Name" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Name of box 4</description>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="SagiaReportsSearchBoxComponent" generate="true"
+                      extends="SearchBoxComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaReportsSearchBoxComponent">
+                <description>Sagia Reports SearchBox Component</description>
+            </itemtype>
+            <itemtype code="SagiaReportsSearchResultComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaReportsSearchResultComponent">
+                <description>Invest Saudi Reports Search Result Component</description>
+            </itemtype>
+        </typegroup>
+
+    </itemtypes>
 </items>

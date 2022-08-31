@@ -31,7 +31,10 @@
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/aos.css"/>
 <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/style-${currentLanguage.isocode eq 'ar' ? 'ar' : 'en'}.css" />
-
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.carousel.min.css" />
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/owlcarousel/owl.theme.default.min.css" />
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/popup-multiselect.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/jquery.dataTables.min.css"/>
 
 
 
@@ -44,7 +47,7 @@
 <%-- Theme CSS files --%>
 		<!--<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/style.css${version}"/>-->
 		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/particles.css${version}"/>
-		
+
 <!--<c:choose>
     <c:when test="${fn:contains(pageContext.response.locale,'ar')}">
         <link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(themeResourcePath)}/css/ar.css"/>
@@ -73,7 +76,7 @@
 <c:forEach items="${addOnCommonCssPaths}" var="addOnCommonCss">
 			<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(addOnCommonCss)}"/>
 		</c:forEach>
-		
+
 <c:forEach items="${addOnThemeCssPaths}" var="addOnThemeCss">
 	<link rel="stylesheet" type="text/css" media="all" href="${fn:escapeXml(addOnThemeCss)}"/>
 </c:forEach>

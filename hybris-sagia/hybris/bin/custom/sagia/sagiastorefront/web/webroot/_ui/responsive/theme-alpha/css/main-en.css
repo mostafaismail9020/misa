@@ -2851,6 +2851,7 @@ li a.about-us-nav {
 .succ-search-container a, .opp-search-container a {
   cursor: pointer; }
 
+.search-reports-container .a-search,
 .succ-search-container .a-search, .opp-search-container .a-search {
   position: absolute;
   top: 10px;

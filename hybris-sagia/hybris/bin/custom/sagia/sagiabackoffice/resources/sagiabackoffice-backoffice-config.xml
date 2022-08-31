@@ -710,6 +710,44 @@
 		</editorArea:editorArea>
 	</context>
 
+	<context type="SagiaIndicatorTerm" component="editor-area"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="SagiaIndicatorTermTab">
+				<editorArea:section name="SagiaIndicatorTermSection">
+					<editorArea:attribute qualifier="code" />
+					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute qualifier="description" />
+					<editorArea:attribute
+							qualifier="source" />
+					<editorArea:attribute qualifier="linkText" />
+					<editorArea:attribute qualifier="linkURL" />
+					<editorArea:attribute
+							qualifier="isActive" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
+	<context type="SagiaIndicatorTerm"  component="cs-editor-area" principal="customersupportadministratorrole,customersupportmanagerrole,customersupportagentrole"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="SagiaIndicatorTermTab">
+				<editorArea:section name="SagiaIndicatorTermSection">
+					<editorArea:attribute qualifier="code" />
+					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute qualifier="description" />
+					<editorArea:attribute
+							qualifier="source" />
+					<editorArea:attribute qualifier="linkText" />
+					<editorArea:attribute qualifier="linkURL" />
+					<editorArea:attribute
+							qualifier="isActive" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
 
 	<context type="FinancialSurveyQuarter"  component="editor-area"
 			 merge-by="type">
@@ -2009,6 +2047,8 @@
 										 code="SagiaTutorial" />
 				<explorer-tree:type-node
 						id="SagiaLicenseTypeRequirement" code="SagiaLicenseTypeRequirement" />
+				<explorer-tree:type-node id="SagiaIndicatorTerm"
+										 code="SagiaIndicatorTerm" />
 			</explorer-tree:navigation-node>
 		</explorer-tree:explorer-tree>
 	</context>
@@ -2155,7 +2195,7 @@
 						description="hmc.tab.section.ticket.answer"
 						name="hmc.tab.section.ticket.answer">
 
-					<editorArea:panel colspan="1">
+					<editorArea:panel colspan="1" >
 						<editorArea:attribute
 								editor="com.hybris.cockpitng.editor.extendedmultireferenceeditor"
 								qualifier="answers">
@@ -2350,12 +2390,20 @@
                 <explorer-tree:type-node code="InvestSaudiWebinarRegistration" id="InvestSaudiWebinarRegistration"/>
                 <explorer-tree:type-node code="InvestSaudiWebinarRegistrationProcess" id="InvestSaudiWebinarRegistrationProcess"/>
                  -->
+				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
+				<explorer-tree:navigation-node id="hmc.portal.economic.investment.reports">
+					<explorer-tree:type-node code="EconomicAndInvestmentMonitor" id="EconomicAndInvestmentMonitor"/>
+					<explorer-tree:type-node code="InvestmentHighlightsReport" id="InvestmentHighlightsReport"/>
+					<explorer-tree:type-node code="MonthlyBulletinReport" id="MonthlyBulletinReport"/>
+					<explorer-tree:type-node code="EconomicAndInvestmentReportsAndStudies" id="EconomicAndInvestmentReportsAndStudies"/>
+				</explorer-tree:navigation-node>
                 <explorer-tree:type-node code="ContactTicketPurpose" id="hmc.contact.us.subject" />
                 <explorer-tree:type-node code="ContactTicket" id="hmc.contact.ticket" />
 				<explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
 				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
+
             </explorer-tree:navigation-node>
         </explorer-tree:explorer-tree>
     </context>
@@ -2377,6 +2425,12 @@
 				<explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
+				<explorer-tree:navigation-node id="hmc.portal.economic.investment.reports">
+					<explorer-tree:type-node code="EconomicAndInvestmentMonitor" id="EconomicAndInvestmentMonitor"/>
+					<explorer-tree:type-node code="InvestmentHighlightsReport" id="InvestmentHighlightsReport"/>
+					<explorer-tree:type-node code="MonthlyBulletinReport" id="MonthlyBulletinReport"/>
+					<explorer-tree:type-node code="EconomicAndInvestmentReportsAndStudies" id="EconomicAndInvestmentReportsAndStudies"/>
+				</explorer-tree:navigation-node>
 				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
 			</explorer-tree:navigation-node>
 		</explorer-tree:explorer-tree>
@@ -2638,6 +2692,58 @@
         </editorArea:editorArea>
     </context>
 
+
+    <context parent="GenericItem" type="InvestSaudiNewsComponent" component="editor-area">
+        <editorArea:editorArea name="">
+            <editorArea:tab name="hmc.tab.newscomponent.properties" position="1">
+                <editorArea:section name="hmc.tab.newscomponent.properties">
+                    <editorArea:panel name="" colspan="2" rowspan="2">
+                        <editorArea:attribute qualifier="name" />
+                        <editorArea:attribute qualifier="newsTitle" />
+                        <editorArea:attribute qualifier="newsUrl"/>
+                        <editorArea:attribute qualifier="newsDetailsImage"/>
+                        <editorArea:attribute qualifier="newsThumbnailImage"/>
+                        <editorArea:attribute qualifier="newsFullReport"/>
+                        <editorArea:attribute qualifier="newsDate"/>
+                        <editorArea:attribute qualifier="galleryImages"/>
+						<editorArea:attribute qualifier="resourceFullReport"/>
+						<editorArea:attribute qualifier="newsShortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+                        <editorArea:attribute qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+                    </editorArea:panel>
+                </editorArea:section>
+            </editorArea:tab>
+        </editorArea:editorArea>
+    </context>
+    <context component="create-wizard" merge-by="type" parent="SimpleCMSComponent" type="InvestSaudiNewsComponent">
+        <wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="InvestSaudiNewsComponentWizard" title="create.title(ctx.TYPE_CODE)">
+            <wz:prepare id="InvestSaudiNewsComponentPrepare">
+                <wz:initialize property="newObject" type="ctx.TYPE_CODE" />
+            </wz:prepare>
+            <wz:step id="step1" label="">
+                <wz:content id="step1.content">
+                    <wz:property-list root="newObject"
+                                      include-non-declared-mandatory="false"
+                                      include-non-declared-writable-on-creation="false"
+                                      include-non-declared-unique="false"
+                                      enable-non-declared-includes="true">
+                        <wz:property qualifier="uid" />
+                        <wz:property qualifier="name" />
+                        <wz:property qualifier="catalogVersion" />
+                        <wz:property qualifier="newsTitle" />
+                        <wz:property qualifier="newsUrl" />
+                        <wz:property qualifier="newsDetailsImage" />
+                        <wz:property qualifier="newsThumbnailImage" />
+                        <wz:property qualifier="newsFullReport" />
+                        <wz:property qualifier="newsDate" />
+                        <wz:property qualifier="galleryImages" />
+						<wz:property qualifier="resourceFullReport"/>
+                        <wz:property qualifier="newsShortDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+                        <wz:property qualifier="newsFullDescription" editor="com.hybris.cockpitng.editor.localized(com.hybris.cockpitng.editor.wysiwyg)" />
+                    </wz:property-list>
+                </wz:content>
+            </wz:step>
+        </wz:flow>
+    </context>
 
 	<context type="InvestSaudiNewsComponent" merge-by="type" parent="GenericItem" component="advanced-search">
 		<advanced-search:advanced-search xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch">

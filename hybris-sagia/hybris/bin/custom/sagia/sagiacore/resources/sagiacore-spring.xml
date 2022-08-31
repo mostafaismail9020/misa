@@ -1439,6 +1439,9 @@
         <constructor-arg value="InvestSaudiNewsComponent" />
     </bean>
 
+    <bean id="investSaudiResourceDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiResourceDaoImpl">
+    </bean>
+
     <bean id="investSaudiProvinceRegionDao" class="com.investsaudi.portal.core.dao.impl.InvestSaudiProvinceRegionDaoImpl">
         <constructor-arg value="ProvinceComponent" />
     </bean>
@@ -1483,6 +1486,9 @@
 
     <bean id="investSaudiSiteMapService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiSiteMapServiceImpl"/>
+
+    <bean id="investSaudiResourceService"
+          class="com.investsaudi.portal.core.service.impl.InvestSaudiResourceServiceImpl"/>
 
     <!-- <bean id="investSaudiWebinarRegistrationService"
           class="com.investsaudi.portal.core.service.impl.InvestSaudiWebinarRegistrationServiceImpl"/>
@@ -1614,6 +1620,12 @@
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
 
+
+    <alias alias="sagiaIndicatorTermDAO" name="defaultSagiaIndicatorTermDAO"/>
+    <bean id="defaultSagiaIndicatorTermDAO"
+          class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultSagiaIndicatorTermDAO">
+        <constructor-arg value="SagiaIndicatorTerm"/>
+    </bean>
 
     <bean id="sagiaCategorySource" parent="abstractCategorySource"  class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.SagiaCategorySource">
         <property name="rootCategory" value="sector-opportunities"/>

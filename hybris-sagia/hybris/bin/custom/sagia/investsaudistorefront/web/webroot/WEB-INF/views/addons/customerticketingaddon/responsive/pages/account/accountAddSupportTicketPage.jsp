@@ -11,7 +11,7 @@
 
 
 <c:set var="requestType" value="supporttickets"/>
-<c:if test="${bdUserGroup eq 'BDUserGroup' or nipcUserGroup eq 'NIPCUserGroup' or bdUserGroup eq 'WOBDUserGroup'}">
+<c:if test="${bdUserGroup eq 'BDUserGroup' or nipcUserGroup eq 'NIPCUserGroup'}"> 
 <c:set var="requestType" value="opportunityrequests"/>
 </c:if>
 
@@ -28,7 +28,7 @@
             </div> 
         </div>
     </div>
-<c:if test="${bdUserGroup eq 'BDUserGroup' or bdUserGroup eq 'WOBDUserGroup'}">
+<c:if test="${bdUserGroup eq 'BDUserGroup'}"> 
 
 </c:if>
     <div class="row">
@@ -41,7 +41,7 @@
                                 
                                
                         <c:choose>
-                        <c:when test="${bdUserGroup eq 'BDUserGroup' or nipcUserGroup eq 'NIPCUserGroup'  or bdUserGroup eq 'WOBDUserGroup'}">
+                        <c:when test="${bdUserGroup eq 'BDUserGroup' or nipcUserGroup eq 'NIPCUserGroup'}">
                             
                         
                         	<div class="row">
@@ -51,7 +51,7 @@
                                         <label class="control-label control-label_mandatory label-color" for="text.account.supporttickets.createTicket.ticketCategory"> <spring:theme code="text.account.supporttickets.createTicket.ticketCategory" text="Category"/></label>
 										<form:select path="ticketCategory" cssClass="form-control">
                                             <c:choose>
-						                        <c:when test="${bdUserGroup eq 'BDUserGroup' or nipcUserGroup eq 'NIPCUserGroup' or bdUserGroup eq 'WOBDUserGroup'}">
+						                        <c:when test="${bdUserGroup eq 'BDUserGroup' or nipcUserGroup eq 'NIPCUserGroup'}">
 							                        <c:forEach var="category" items="${categories}">
 								                        <c:if test="${category eq 'OPPORTUNITYSUBMISSION'}">
 								                        	<form:option value="${category}"><spring:message code="text.account.supporttickets.createTicket.ticketCategory.${category}"/></form:option>
@@ -145,7 +145,7 @@
                                         <label class="control-label control-label_mandatory label-color" for="text.account.supporttickets.createTicket.ticketCategory"> <spring:theme code="text.account.supporttickets.createTicket.ticketCategory" text="Category"/></label>
 										<form:select path="ticketCategory" cssClass="form-control">
                                             <c:choose>
-						                        <c:when test="${bdUserGroup eq 'BDUserGroup' or nipcUserGroup eq 'NIPCUserGroup' or bdUserGroup eq 'WOBDUserGroup'}">
+						                        <c:when test="${bdUserGroup eq 'BDUserGroup' or nipcUserGroup eq 'NIPCUserGroup'}">
 							                        <c:forEach var="category" items="${categories}">
 								                        <c:if test="${category eq 'OPPORTUNITYSUBMISSION'}">
 								                        	<form:option value="${category}"><spring:message code="text.account.supporttickets.createTicket.ticketCategory.${category}"/></form:option>
@@ -223,7 +223,7 @@
                         </c:choose>
                         
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <form:hidden path="message"/>
                                     <%--<formElement:formTextArea idKey="createTicket-message" labelKey="text.account.supporttickets.createTicket.message" path="message" mandatory="true" areaCSS="form-control" labelCSS="control-label"/>--%>
                                 <div id="NotEmpty-BDSupportTicketForm-message" class="help-block" style="display: none;"></div>

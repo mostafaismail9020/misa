@@ -2187,6 +2187,18 @@
         </property>
     </bean>
 
+
+
+	<bean id="sagiaIndicatorTermPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaIndicatorTermPopulator" />
+
+	<bean id="sagiaIndicatorTermConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"  value="com.sap.ibso.eservices.facades.data.SagiaIndicatorTermData"/>
+		<property name="populators">
+			<list>
+				<ref bean="sagiaIndicatorTermPopulator"/>
+			</list>
+		</property>
+	</bean>
 	<!-- SiteMap Changes Ends -->
 
 
@@ -2203,10 +2215,45 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 	</bean>
 
+	<bean id="sagiaResourceComponentYearValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentYearValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="i18nService" ref="i18nService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+	</bean>
+
+	<bean id="sagiaResourceComponentMonthValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentMonthValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="i18nService" ref="i18nService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+
+	<bean id="sagiaResourceComponentQuarterValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentQuarterValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="i18nService" ref="i18nService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+
 	<bean id="sagiaRegionValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaRegionValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 		<property name="i18nService" ref="i18nService"/>
 		<property name="commonI18NService" ref="commonI18NService"/>
+	</bean>
+
+
+
+	<bean id="sagiaResourceComponentFullReportValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentFullReportValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
+
+	<bean id="sagiaResourceComponentDateValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentDateValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
+	<bean id="sagiaImageValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaImageValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
 	<bean id="regionFacetDisplayNameProvider"
@@ -2214,5 +2261,60 @@
 		<property name="investSaudiProvinceRegionDao" ref="investSaudiProvinceRegionDao"/>
 	</bean>
 
+	<bean id="sagiaIndicatorTermFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaIndicatorTermFacade" />
 
+
+	<alias name="defaultSolrInvestmentHighlightsReportSearchFacade" alias="investmentHighlightsReportSearchFacade"/>
+	<bean id="defaultSolrInvestmentHighlightsReportSearchFacade"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrInvestmentHighlightsReportSearchFacade"
+	>
+		<property name="investmentHighlightsReportSearchService" ref="investmentHighlightsReportSearchService"/>
+		<property name="autocompleteService" ref="commerceAutocompleteService"/>
+		<property name="investmentHighlightsReportSearchPageConverter" ref="investmentHighlightsReportSearchPageConverter"/>
+		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
+		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
+		<property name="threadContextService" ref="threadContextService"/>
+    </bean>
+
+	<alias name="defaultInvestmentHighlightsReportSearchPageConverter" alias="investmentHighlightsReportSearchPageConverter"/>
+	<bean id="defaultInvestmentHighlightsReportSearchPageConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"
+				  value="de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData"/>
+		<property name="populators">
+			<list>
+				<ref bean="investmentHighlightsReportSearchPagePopulator"/>
+			</list>
+		</property>
+	</bean>
+
+
+
+
+	<alias name="defaultInvestmentHighlightsReportSearchPagePopulator" alias="investmentHighlightsReportSearchPagePopulator"/>
+	<bean id="defaultInvestmentHighlightsReportSearchPagePopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.InvestmentHighlightsReportSearchPagePopulator"
+	>
+		<property name="breadcrumbConverter" ref="breadcrumbConverter"/>
+		<property name="facetConverter" ref="facetConverter"/>
+		<property name="searchResultInvestmentHighlightsReportConverter" ref="commerceSearchResultInvestmentHighlightsReportConverter"/>
+		<property name="searchStateConverter" ref="solrSearchStateConverter"/>
+		<property name="spellingSuggestionConverter" ref="spellingSuggestionConverter"/>
+	</bean>
+
+	<alias name="defaultCommerceSearchResultInvestmentHighlightsReportConverter" alias="commerceSearchResultInvestmentHighlightsReportConverter"/>
+	<bean id="defaultCommerceSearchResultInvestmentHighlightsReportConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.InvestmentHighlightsReportData"/>
+		<property name="populators">
+			<list>
+				<ref bean="commerceSearchResultInvestmentHighlightsReportPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultCommerceSearchResultInvestmentHighlightsReportPopulator" alias="commerceSearchResultInvestmentHighlightsReportPopulator"/>
+	<bean id="defaultCommerceSearchResultInvestmentHighlightsReportPopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.SearchResultInvestmentHighlightsReportPopulator">
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="imageFormatMapping" ref="imageFormatMapping"/>
+	</bean>
 </beans>

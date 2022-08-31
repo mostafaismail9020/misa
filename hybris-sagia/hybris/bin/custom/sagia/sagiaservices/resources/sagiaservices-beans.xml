@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- [y] hybris Platform Copyright (c) 2017 SAP SE or an SAP affiliate company. 
-	All rights reserved. This software is the confidential and proprietary information 
-	of SAP ("Confidential Information"). You shall not disclose such Confidential 
-	Information and shall use it only in accordance with the terms of the license 
+<!-- [y] hybris Platform Copyright (c) 2017 SAP SE or an SAP affiliate company.
+	All rights reserved. This software is the confidential and proprietary information
+	of SAP ("Confidential Information"). You shall not disclose such Confidential
+	Information and shall use it only in accordance with the terms of the license
 	agreement you entered into with SAP. -->
 
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -576,7 +576,7 @@
 		<property name="longDescr" type="java.lang.String" />
 		<property name="optionalAttach" type="java.lang.String" />
 	</bean>
-	
+
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GenInqAttSet">
 		<property name="OBJECT_ID" type="java.lang.String" />
@@ -820,15 +820,15 @@
 		<property name="DeleEmail" type="java.lang.String" />
 		<property name="DelePostalCode" type="java.lang.String" />
 		<property name="DelePoBox" type="java.lang.String" />
-		
+
 		<property name="OrgCountry" type="java.lang.String" />
 		<property name="OrgCRNumber" type="java.lang.String" />
 		<property name="OrgMCVer" type="java.lang.String" />
-		
+
 		<property name="PerIDType" type="java.lang.String" />
 		<property name="PerIDNum" type="java.lang.String" />
 		<property name="PerNICVerified" type="java.lang.String" />
-		
+
 		<property name="DeedNumber" type="java.lang.String"/>
 		<property name="DeceasedId" type="java.lang.String"/>
 		<property name="DeceasedName" type="java.lang.String"/>
@@ -1102,7 +1102,7 @@
 		<property name="ZZAPPLY_CAT_FLAG" type="java.lang.String" />
 		<property name="DESCRIPTION" type="java.lang.String" />
 	</bean>
-	
+
 	<!-- Contact Ticket related objects -->
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GeneralInquirySet">
@@ -1118,7 +1118,7 @@
 		<property name="TOATTACHMENTS"
 			type="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.UploadAssoNavData" />
 	</bean>
-	
+
 
 	<!-- Complaints related objects -->
 	<bean
@@ -1792,7 +1792,7 @@
 		<property name="classProperty" type="java.lang.String" />
 		<property name="text" type="java.lang.String" />
 	</bean>
-	
+
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.moj.MOJInheritSetData">
 		<property name="DeedNumber" type="java.lang.String"/>
@@ -2068,7 +2068,7 @@
 		<property name="attachmantHDRSet"
 			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.AttachmantHDRData&gt;" />
 	</bean>
-	
+
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.zesrvEnhOData.FinancialStatementHDRData">
 		<property name="srId" type="java.lang.String" />
@@ -2511,14 +2511,14 @@
 		class="com.sap.ibso.eservices.sagiaservices.data.odata.BasicContactInformationData">
 		<property name="Refid" type="java.lang.String" />
 		<property name="Objectid" type="java.lang.String" />
-		<property name="Guid" type="java.lang.String" />		
-		<property name="Title" type="java.lang.String" />	
-		<property name="FirstName" type="java.lang.String" />		
+		<property name="Guid" type="java.lang.String" />
+		<property name="Title" type="java.lang.String" />
+		<property name="FirstName" type="java.lang.String" />
 		<property name="LastName" type="java.lang.String" />
 		<property name="Role" type="java.lang.String" />
-		<property name="Education" type="java.lang.String" />		
+		<property name="Education" type="java.lang.String" />
 		<property name="Dob" type="java.lang.String" />
-		<property name="PassportNo" type="java.lang.String" />	
+		<property name="PassportNo" type="java.lang.String" />
 		<property name="PassportIssueDt" type="java.lang.String" />
 		<property name="PassportExpDt" type="java.lang.String" />
 		<property name="Country" type="java.lang.String" />
@@ -2533,14 +2533,14 @@
 		<property name="Email" type="java.lang.String" />
 		<property name="Return" type="java.lang.String" />
 	</bean>
-	
+
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.odata.EntityInformationData">
-		
+
 		<property name="Refid" type="java.lang.String" />
 		<property name="Objectid" type="java.lang.String" />
 		<property name="Guid" type="java.lang.String" />
- 		<property name="Hasadvlicno" type="java.lang.String" /> 
+ 		<property name="Hasadvlicno" type="java.lang.String" />
 		<property name="Advlicno" type="java.lang.String" />
 		<property name="LicenseType" type="java.lang.String" />
 		<property name="IsEntrepreneur" type="java.lang.String" />
@@ -2581,46 +2581,46 @@
 		<property name="listOfManagementActivities" type="java.lang.String" />
 		<property name="rhqCenterAdmin"  type="java.lang.String" />
 		<property name="rhqSubsidiaryPresence" type="java.lang.String" />
-		
+
 	</bean>
-	
+
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderData">
-		
+
 		<property name="Refid" type="java.lang.String" />
 		<property name="Objectid" type="java.lang.String" />
-		<property name="Guid" type="java.lang.String" />		
-		<property name="Shhldcode" type="java.lang.String" />		
-		<property name="ShareHolderType" type="java.lang.String" />		
+		<property name="Guid" type="java.lang.String" />
+		<property name="Shhldcode" type="java.lang.String" />
+		<property name="ShareHolderType" type="java.lang.String" />
 		<property name="SharesPercentage" type="java.lang.String" />
-		<property name="Delegate" type="java.lang.String" />		
-		<property name="SelfDelegate" type="java.lang.String" />		
-		<property name="DelIdentityType" type="java.lang.String" />	
-		<property name="DelIdentityNumber" type="java.lang.String" />		
-		<property name="DelDob" type="java.lang.String" />		
-		<property name="DelFirstName" type="java.lang.String" />	
-		<property name="DelLastName" type="java.lang.String" />	
-		<property name="DelFullName" type="java.lang.String" />	
-		<property name="DelGender" type="java.lang.String" />		
-		<property name="DelIdIssueDt" type="java.lang.String" />		
-		<property name="DelIdExpiryDt" type="java.lang.String" />	
-		<property name="DelCcode_tele" type="java.lang.String" />			
-		<property name="DelTelephoneNo" type="java.lang.String" />	
-		<property name="DelCcode_Mobile" type="java.lang.String" />	
-		<property name="DelMobileNo" type="java.lang.String" />	
+		<property name="Delegate" type="java.lang.String" />
+		<property name="SelfDelegate" type="java.lang.String" />
+		<property name="DelIdentityType" type="java.lang.String" />
+		<property name="DelIdentityNumber" type="java.lang.String" />
+		<property name="DelDob" type="java.lang.String" />
+		<property name="DelFirstName" type="java.lang.String" />
+		<property name="DelLastName" type="java.lang.String" />
+		<property name="DelFullName" type="java.lang.String" />
+		<property name="DelGender" type="java.lang.String" />
+		<property name="DelIdIssueDt" type="java.lang.String" />
+		<property name="DelIdExpiryDt" type="java.lang.String" />
+		<property name="DelCcode_tele" type="java.lang.String" />
+		<property name="DelTelephoneNo" type="java.lang.String" />
+		<property name="DelCcode_Mobile" type="java.lang.String" />
+		<property name="DelMobileNo" type="java.lang.String" />
 		<property name="DelEmail" type="java.lang.String" />
-		<property name="DelCountry" type="java.lang.String" />	
-		<property name="DelNationality" type="java.lang.String" />	
-		<property name="DelPostalCode" type="java.lang.String" />	
-		<property name="DelPoBox" type="java.lang.String" />	
+		<property name="DelCountry" type="java.lang.String" />
+		<property name="DelNationality" type="java.lang.String" />
+		<property name="DelPostalCode" type="java.lang.String" />
+		<property name="DelPoBox" type="java.lang.String" />
 		<property name="IsNICVerified" type="java.lang.String" />
-		<property name="EntityNo" type="java.lang.String" />	
-		<property name="ShareHolderName" type="java.lang.String" />	
-		<property name="ParCompCntry" type="java.lang.String" />	
-		<property name="Title" type="java.lang.String" />	
-		<property name="AcademicTitle" type="java.lang.String" />		
+		<property name="EntityNo" type="java.lang.String" />
+		<property name="ShareHolderName" type="java.lang.String" />
+		<property name="ParCompCntry" type="java.lang.String" />
+		<property name="Title" type="java.lang.String" />
+		<property name="AcademicTitle" type="java.lang.String" />
 		<property name="FirstName" type="java.lang.String" />
-		<property name="LastName" type="java.lang.String" />	
+		<property name="LastName" type="java.lang.String" />
 		<property name="FullName" type="java.lang.String" />
 		<property name="Dob" type="java.lang.String" />
 		<property name="PassportNo" type="java.lang.String" />
@@ -2629,9 +2629,9 @@
 		<property name="CurrNationality" type="java.lang.String" />
 		<property name="PrevNationality" type="java.lang.String" />
 		<property name="Country" type="java.lang.String" />
-		<property name="PremiumResident" type="java.lang.String" />		
+		<property name="PremiumResident" type="java.lang.String" />
 		<property name="ShCity" type="java.lang.String" />
-		<property name="ShPoBox" type="java.lang.String" />	
+		<property name="ShPoBox" type="java.lang.String" />
 		<property name="ShPostalCode" type="java.lang.String" />
 		<property name="ShCcode_Tele" type="java.lang.String" />
 		<property name="ShTelephoneNo" type="java.lang.String" />
@@ -2642,7 +2642,7 @@
 		<property name="OrgNameArabic" type="java.lang.String" />
 		<property name="LegalStatus" type="java.lang.String" />
 		<property name="MncCompany" type="java.lang.String" />
-		<property name="CompRegNo" type="java.lang.String" />		
+		<property name="CompRegNo" type="java.lang.String" />
 		<property name="CompCountry" type="java.lang.String" />
 		<property name="Capital" type="java.lang.String" />
 		<property name="Section" type="java.lang.String" />
@@ -2653,7 +2653,7 @@
 		<property name="City" type="java.lang.String" />
 		<property name="Street" type="java.lang.String" />
 		<property name="PoBox" type="java.lang.String" />
-		<property name="PostalCode" type="java.lang.String" />	
+		<property name="PostalCode" type="java.lang.String" />
 		<property name="Ccode_Tele" type="java.lang.String" />
 		<property name="TelephoneNo" type="java.lang.String" />
 		<property name="Ccode_Mobile" type="java.lang.String" />
@@ -2670,10 +2670,10 @@
 		<property name="PerIdentityType" type="java.lang.String"/>
 		<property name="MofaNumber" type="java.lang.String"/>
 		<property name="MofaNumberVerified" type="java.lang.String"/>
-		
+
 	</bean>
-	
-	
+
+
 	<bean class="com.sap.ibso.eservices.sagiaservices.data.odata.ShareholderAttachmentData">
 
 		<property name="Refid" type="java.lang.String" />
@@ -2685,9 +2685,9 @@
 		<property name="FileMtype" type="java.lang.String" />
 		<property name="Content" type="java.io.InputStream" />
 		<property name="Delegate" type="java.lang.String" />
-		<property name="Return" type="java.lang.String" />  
+		<property name="Return" type="java.lang.String" />
     </bean>
-    
+
     <bean class="com.sap.ibso.eservices.sagiaservices.data.odata.IsicInfoData">
 		<property name="Objectid" type="java.lang.String" />
 		<property name="Guid" type="java.lang.String" />
@@ -2695,16 +2695,16 @@
 		<property name="LicenseType" type="java.lang.String" />
 		<property name="BusinessType" type="java.lang.String" />
 		<property name="IsicSection" type="java.lang.String" />
-		<property name="IsicDivision" type="java.lang.String" />		
+		<property name="IsicDivision" type="java.lang.String" />
 		<property name="IsicGroup" type="java.lang.String" />
-		<property name="IsicClass" type="java.lang.String" />  
-		<property name="IsicActivity" type="java.lang.String" />  
-		<property name="IsicBranch" type="java.lang.String" />  
-		<property name="Act" type="java.lang.String" />  
-		<property name="ActDesc" type="java.lang.String" />  
-		<property name="Purofctrct" type="java.lang.String" />  
+		<property name="IsicClass" type="java.lang.String" />
+		<property name="IsicActivity" type="java.lang.String" />
+		<property name="IsicBranch" type="java.lang.String" />
+		<property name="Act" type="java.lang.String" />
+		<property name="ActDesc" type="java.lang.String" />
+		<property name="Purofctrct" type="java.lang.String" />
     </bean>
-    
+
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah.UserRegisterData">
 		<property name="userid" type="java.lang.String" />
@@ -2726,7 +2726,7 @@
 		<property name="fileName" type="java.lang.String" />
 		<property name="fileMtype" type="java.lang.String" />
 		<property name="returnProperty" type="java.lang.String" />
-		<!--<NavigationProperty Name="InfoToPoa" Relationship="ZQEEMAH_SRV.InfoToPoa" 
+		<!--<NavigationProperty Name="InfoToPoa" Relationship="ZQEEMAH_SRV.InfoToPoa"
 			FromRole="ToRole_InfoToPoa" ToRole="FromRole_InfoToPoa"/> -->
 	</bean>
 	<!--ZCONT_INFO_HEADER -->
@@ -3205,7 +3205,7 @@
 		<property name="Investorid" type="java.lang.String" />
 		<property name="NavGeqPost"
 			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.GeneralQuestionPostData&gt;" />
-		<!--<NavigationProperty Name="NavGeqPost" Relationship="ZQEEMAH2_EXT_SRV.AssGeqPost" 
+		<!--<NavigationProperty Name="NavGeqPost" Relationship="ZQEEMAH2_EXT_SRV.AssGeqPost"
 			FromRole="FromRole_AssGeqPost" ToRole="ToRole_AssGeqPost"/> -->
 	</bean>
 	<!--FinancialQues -->
@@ -3216,7 +3216,7 @@
 		<property name="Language" type="java.lang.String" />
 		<property name="QuestionTxt" type="java.lang.String" />
 		<property name="QuestionType" type="java.lang.String" />
-		<!--<NavigationProperty Name="NavFinQues" Relationship="ZQEEMAH2_EXT_SRV.AssFinQuest" 
+		<!--<NavigationProperty Name="NavFinQues" Relationship="ZQEEMAH2_EXT_SRV.AssFinQuest"
 			FromRole="FromRole_AssFinQuest" ToRole="ToRole_AssFinQuest"/> -->
 		<property name="NavFinQues"
 			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.FinancialQuestionDropdownData&gt;" />
@@ -3259,7 +3259,7 @@
 		<property name="AdvLicNo" type="java.lang.String" />
 		<property name="NavAttach"
 			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AttachmentData&gt;" />
-		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach" 
+		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach"
 			FromRole="FromRole_AssAttach" ToRole="ToRole_AssAttach"/> -->
 	</bean>
 	<bean
@@ -3271,7 +3271,7 @@
 		<property name="AdvLicNo" type="java.lang.String" />
 		<property name="NavAttach"
 			type="java.util.Collection&lt;com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AttachmentData&gt;" />
-		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach" 
+		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach"
 			FromRole="FromRole_AssAttach" ToRole="ToRole_AssAttach"/> -->
 	</bean>
 
@@ -3282,7 +3282,7 @@
 		<property name="Objectid" type="java.lang.String" />
 		<property name="Guid" type="java.lang.String" />
 		<property name="Return" type="java.lang.String" />
-		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach" 
+		<!--<NavigationProperty Name="NavAttach" Relationship="ZQEEMAH2_EXT_SRV.AssAttach"
 			FromRole="FromRole_AssAttach" ToRole="ToRole_AssAttach"/> -->
 	</bean>
 
@@ -3392,7 +3392,7 @@
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.ShareholderInvsData">
 		<property name="Refid" type="java.lang.String" />
-		<!--<NavigationProperty Name="NavShare" Relationship="ZQEEMAH2_EXT_SRV.AssShare" 
+		<!--<NavigationProperty Name="NavShare" Relationship="ZQEEMAH2_EXT_SRV.AssShare"
 			FromRole="FromRole_AssShare" ToRole="ToRole_AssShare"/> -->
 	</bean>
 	<!--updatelictypediv -->
@@ -3420,8 +3420,8 @@
 		<property name="Licensetype" type="java.lang.String" />
 	</bean>
 	<!--LicenseType -->
-	<!--<bean class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.LicenseTypeData"> 
-		<property name="Zkey" type="java.lang.String"/> <property name="Value" type="java.lang.String"/> 
+	<!--<bean class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.LicenseTypeData">
+		<property name="Zkey" type="java.lang.String"/> <property name="Value" type="java.lang.String"/>
 		</bean> -->
 	<!--LegalStatus -->
 	<bean
@@ -3478,7 +3478,7 @@
 		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.UpdateIsicLanguageData">
 		<property name="Language" type="java.lang.String" />
 		<property name="Questionid" type="java.lang.String" />
-		<!--<NavigationProperty Name="NavISIC" Relationship="ZQEEMAH2_EXT_SRV.AssISIC" 
+		<!--<NavigationProperty Name="NavISIC" Relationship="ZQEEMAH2_EXT_SRV.AssISIC"
 			FromRole="FromRole_AssISIC" ToRole="ToRole_AssISIC"/> -->
 	</bean>
 	<!--AnsQuesSection -->
@@ -3486,7 +3486,7 @@
 		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AnsweredQuestionSectionData">
 		<property name="Q2section" type="java.lang.String" />
 		<property name="Q2refid" type="java.lang.String" />
-		<!--<NavigationProperty Name="NavAnsQues" Relationship="ZQEEMAH2_EXT_SRV.AssAnsQues" 
+		<!--<NavigationProperty Name="NavAnsQues" Relationship="ZQEEMAH2_EXT_SRV.AssAnsQues"
 			FromRole="FromRole_AssAnsQues" ToRole="ToRole_AssAnsQues"/> -->
 	</bean>
 	<bean
@@ -3529,7 +3529,7 @@
 		class="com.sap.ibso.eservices.sagiaservices.data.zqeemah2.AttachmentHeaderData">
 		<property name="Q2refid" type="java.lang.String" />
 		<property name="Q2return" type="java.lang.String" />
-		<!--<NavigationProperty Name="NavAttachments" Relationship="ZQEEMAH2_EXT_SRV.AssAttachements" 
+		<!--<NavigationProperty Name="NavAttachments" Relationship="ZQEEMAH2_EXT_SRV.AssAttachements"
 			FromRole="FromRole_AssAttachements" ToRole="ToRole_AssAttachements"/> -->
 	</bean>
 	<!--attachementupdation -->
@@ -3655,6 +3655,15 @@
 		<property name="year2022" type="java.lang.String"/>
 		<property name="year2023" type="java.lang.String"/>
 		<property name="year2024" type="java.lang.String"/>
+	</bean>
+
+
+	<bean class="de.hybris.platform.commerceservices.search.facetdata.InvestmentHighlightsReportSearchPageData&lt;STATE, RESULT>" extends="de.hybris.platform.commerceservices.search.facetdata.FacetSearchPageData&lt;STATE, RESULT>">
+		<description>POJO containing the result page for InvestmentHighlightsReport search.</description>
+		<property name="freeTextSearch" type="String"/>
+		<property name="categoryCode" type="String"/>
+		<property name="keywordRedirectUrl" type="String"/>
+		<property name="spellingSuggestion" type="de.hybris.platform.commerceservices.search.facetdata.SpellingSuggestionData&lt;STATE>"/>
 	</bean>
 	<!--ZQEEMAH 2 -->
 </beans>

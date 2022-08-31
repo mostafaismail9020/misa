@@ -1102,7 +1102,7 @@ ul.dropdown-list li a {
 .float-button {
 	width: 100px;
 	height: 100px;
-	border-radius: 100px;
+	border-radius: 100px !important;
 	box-shadow: 0px 4px 8px #0000003b;
 	background-color: #0097a9;
 	color: white;
@@ -11943,22 +11943,27 @@ ul.INS_li_ul_under li {
 		line-height: 22px;
 		font-weight: unset;
 	}
+	.search-reports-container input[type="search"],
+	.search-reports-container input[type="text"],
 	.page-opportunity-search .opp-search-container input[type="search"],
 	.page-opportunity-search .opp-search-container input[type="text"] {
 		font-size: 14px;
 		height: 45px;
 		padding-left: 35px;
 	}
+	.search-reports-container .a-search img,
 	.page-opportunity-search .a-search img {
 		margin-top: -8px;
 		width: 14px;
 	}
+	.search-reports-container .search-btn,
 	.page-opportunity-search .opp-search-btn {
 		height: 45px;
 		top: 0;
 		right: 16px;
 		font-size: 14px;
 	}
+	.search-reports-container .reset-search,
 	.page-opportunity-search .opp-search-container .reset-search {
 		font-size: 10px;
 		line-height: 12px;
@@ -13613,6 +13618,8 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	color: #ffffff;
 }
 
+.search-reports-container input[type=search],
+.search-reports-container input[type=text],
 .opp-search-container input[type=search],
 .opp-search-container input[type=text] {
 	width: 100%;
@@ -13627,11 +13634,14 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	padding-left: 50px;
 }
 
+.search-reports-container input[type=search]::placeholder,
+.search-reports-container input[type=text]::placeholder,
 .opp-search-container input[type=search]::placeholder,
 .opp-search-container input[type=text]::placeholder {
 	color: #7B838C;
 }
 
+.search-reports-container .search-btn,
 .opp-search-btn,
 .opp-filter-btn {
 	color: #fff;
@@ -13671,18 +13681,21 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	text-transform: uppercase;
 }
 
+.search-reports-container,
 .opp-search-container {
 	background: url("../img/opp-search-background.png");
 	background-size: cover;
 	padding: 50px 50px 60px;
 }
 
+.search-reports-container-full,
 .opp-search-container-full {
 	background: url("../img/opp-search-background_full.png") !important;
 	background-size: cover;
 	padding: 50px 50px 60px;
 }
 
+.search-reports-container .reset-search,
 .opp-search-container .reset-search {
 	position: absolute;
 	right: 40px;
@@ -13755,6 +13768,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     margin-bottom: 25px !important;
 }
 
+.search-reports-container form a.a-search,
 .page-opportunity-search-page form a.a-search {
     cursor: default;
 }
@@ -16011,7 +16025,7 @@ padding-left: 40px;
 	.page-sector-details .Inc-section-baner-logo img {
 		width: 65px;
 	}
-	
+
 	.page-sector-details .page-sector-details .Inc-sector-keyDetails p:before {
 		top: 9px;
 	}
@@ -16442,6 +16456,8 @@ padding-left: 40px;
 	#corForm .ddl-countryCode.form-control {
 		padding-left: 50px !important;
 	}
+	.search-reports-container input[type="search"],
+	.search-reports-container input[type="text"],
 	.page-opportunity-search .opp-search-container input[type="search"],
 	.page-opportunity-search .opp-search-container input[type="text"] {
 		font-size: 14px;
@@ -16452,12 +16468,14 @@ padding-left: 40px;
 		margin-top: -8px;
 		width: 14px;
 	}
+	.search-reports-container .search-btn,
 	.page-opportunity-search .opp-search-btn {
 		height: 45px;
 		top: 0;
 		right: 16px;
 		font-size: 14px;
 	}
+	.search-reports-container .reset-search,
 	.page-opportunity-search .opp-search-container .reset-search {
 		font-size: 10px;
 		line-height: 12px;
@@ -16879,6 +16897,7 @@ padding-left: 40px;
 	.select-indicator .container input {
 		left: 0;
 	}
+	.page-economic-investments-terms .thumbnail .eh-page-grid-link,
 	.eh-page-grid-link {
 		position: absolute;
 		bottom: 0;
@@ -16917,7 +16936,10 @@ padding-left: 40px;
 		display: block;
 		height: 42px;
 	}
-	
+	.page-economic-investments-terms .eh-page-breadcrums .thumbnail {
+	    height: 30px;
+	}
+
 	.page-economic-highlights .eh-page-grid,
 	body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page-grid {
 		display: block;
@@ -18910,13 +18932,16 @@ padding-left: 40px;
 	#renderFDIGrowthChartDiv {
 		height: 650px !important;
 	}
+	.page-economic-investments-terms .eco-banner-container h1,
 	.page-investment-data .eco-banner-container h1 {
 		font-size: 32px;
 	}
+	.page-economic-investments-terms .eh-page-links,
 	.page-investment-data .eh-page-links {
 		display: block;
 		font-size: 14px;
 	}
+	.page-economic-investments-terms .eh-page-link,
 	.page-investment-data .eh-page-link {
 		display: block;
 		padding: 0 15px;
@@ -19315,12 +19340,14 @@ padding-left: 40px;
 		margin-top: -8px;
 		width: 14px;
 	}
+	.search-reports-container .search-btn,
 	.page-opportunity-search .opp-search-btn {
 		height: 45px;
 		top: 0;
 		right: 16px;
 		font-size: 14px;
 	}
+	.search-reports-container .reset-search,
 	.page-opportunity-search .opp-search-container .reset-search {
 		font-size: 10px;
 		line-height: 12px;
@@ -19644,6 +19671,10 @@ padding-left: 40px;
 	.eh-page-breadcrums {
 		top: -160px;
 	}
+	.page-economic-investments-terms .eh-page-breadcrums {
+	    top: -264px;
+    	background: #00000024;
+	}
 	.page-sa-international-indices .eh-page-breadcrums,
 	.page-infrastructure-logistics .eh-page-breadcrums,
 	.page-saudi-economic-sectors .eh-page-breadcrums,
@@ -19655,6 +19686,7 @@ padding-left: 40px;
 	.eh-page-breadcrums .thumbnail {
 		position: relative;
 	}
+	.page-economic-investments-terms .thumbnail .eh-page-grid-link,
 	.eh-page-grid-link {
 		font-size: 15px;
 	}
@@ -19664,6 +19696,7 @@ padding-left: 40px;
 		justify-content: space-between;
 		flex-direction: row;
 	}
+	.page-economic-investments-terms .eh-page-grid,
 	.page-infrastructure-logistics .eh-page-grid,
 	.page-sa-international-indices .eh-page-grid,
 	.page-saudi-economic-sectors .eh-page-grid,
@@ -19673,6 +19706,8 @@ padding-left: 40px;
 		justify-content: center;
 		flex-direction: column;
 	}
+	.page-economic-investments-terms .eh-page-breadcrums .thumbnail,
+    .page-economic-investments-terms .thumbnail .eh-page-grid-link,
 	.page-sa-international-indices .eh-page-breadcrums .thumbnail,
 	.page-sa-international-indices .thumbnail .eh-page-grid-link,
 	.page-infrastructure-logistics .eh-page-breadcrums .thumbnail,
@@ -20955,6 +20990,7 @@ padding-left: 40px;
 }
 /* 3.Ipad - Landscape*/
 @media (min-width: 961px) and (max-width: 1260px) {
+    .page-economic-investments-terms .thumbnail .eh-page-grid-link,
 	.page-economic-highlights .eh-page-grid-link {
 		position: absolute;
 		bottom: 0;
@@ -21049,6 +21085,13 @@ padding-left: 40px;
 		justify-content: space-evenly;
 		flex-direction: row;
 	}
+	.page-economic-investments-terms .eh-page-breadcrums {
+	    bottom: 80px;
+	}
+	.page-economic-investments-terms .thumbnail .eh-page-grid-link {
+	    width: 150px;
+	    font-size: 16px;
+	}
 	.page-infrastructure-logistics .thumbnail .eh-page-grid-link,
 	.page-sa-international-indices .thumbnail .eh-page-grid-link,
 	.page-saudi-economic-sectors .thumbnail .eh-page-grid-link,
@@ -21103,7 +21146,12 @@ padding-left: 40px;
 /* 110% zoom media query  */
 /* End */
 
-
+@media (max-width: 1550px) and (min-width: 1024px) {
+	.page-economic-investments-terms .eh-page-grid-link {
+        width: 180px !important;
+        font-size: 18px !important;
+    }
+}
 
 .font-zoom-icon{
     height: 25px;
@@ -21359,4 +21407,145 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
 
 .form-group.focused .mob-control-label{
 	left: 28px;
+}
+
+.page-economic-investments-terms .eh-page-grid-link {
+    width: 220px;
+    font-size: 20px;
+}
+
+.page-economic-investments-terms table, .page-economic-investments-terms th, .page-economic-investments-terms tr {
+    border: none;
+}
+
+.page-economic-investments-terms td {
+    border: 1px solid #f4f4f4;
+}
+
+.page-economic-investments-terms table.dataTable.no-footer {
+    border-bottom: 1px solid #ededed;
+}
+
+.page-economic-investments-terms .tableModule-head th{
+	background-color: #f7f7f7 !important;
+	font-weight: 600;
+    letter-spacing: 0;
+    color: #707070;
+    font-size: 16px;
+    border: 1px solid #ededed;
+}
+
+.page-economic-investments-terms .tableModule-head tr:last-child {
+    border-bottom: 0;
+}
+
+.page-economic-investments-terms .tableModule {
+    margin: 50px 0;
+}
+.page-economic-investments-terms .tableModule-headline {
+    color: #00a6be;
+    font-weight: 500;
+}
+
+.page-economic-investments-terms .tableModule .tableModule-body tr:hover {
+    background-color: #f7f7f7 !important;
+}
+
+.page-economic-investments-terms .tableModule .tableModule-body td {
+    letter-spacing: 0;
+    color: #707070;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.page-economic-investments-terms .tableModule .tableModule-body td ul li {
+    list-style-type: disc;
+}
+
+.page-economic-investments-terms .tableModule .dataTables_wrapper .dataTables_filter,
+.page-economic-investments-terms .tableModule .dataTables_wrapper .dataTables_filter label{
+    width: 50%
+}
+.page-economic-investments-terms .tableModule .dataTables_wrapper .dataTables_filter input {
+    margin-left: 10px;
+    width: 250px;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate, .tableModule select{
+    color: #707070 !important;
+}
+
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button:focus,
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus,
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    border-color: transparent;
+    color: #00a6be !important;
+    background: none;
+}
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button:focus,
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    text-decoration: underline !important;
+}
+
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button {
+    height: 24px;
+    line-height: 24px;
+    text-indent: -0.5px;
+    font-size: 15px;
+    color: #32465a !important;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.paginationModule-control {
+    width: 42px;
+    height: 32px;
+    padding: 0 5px;
+    margin: 0;
+    border: 0;
+}
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.paginationModule-control.disabled,
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.paginationModule-control.disabled:focus,
+.tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.paginationModule-control.disabled:hover {
+    cursor: not-allowed;
+    pointer-events: visible;
+    border: none;
+}
+
+.tableModule .dataTables_wrapper .dataTables_info,
+.tableModule .dataTables_wrapper .dataTables_paginate {
+    margin-top: 24px;
+    padding-top: 0;
+}
+
+.tableModule {
+    overflow-x: auto;
+}
+
+.paragraph-component,
+.paragraph-component p {
+    margin: 25px 0;
+    text-align: center;
+    font-size: 16px !important;
+    line-height: 25px !important;
+    font-weight: 600 !important;
+    color: #32465A !important;
+}
+
+.page-economic-investment-reports .InvestmentSaudiLastReportCategory-container,
+.page-economic-investment-reports .investment-reports-container {
+    margin-top: 75px;
+}
+
+.search-result-reports-container .btn-primary-fill,
+.search-result-reports-container .btn-primary-fill:hover {
+    color: #fff;
+}
+
+.reports-filter-header {
+    font-size: 20px !important;
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
 }

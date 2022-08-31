@@ -1,0 +1,62 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = EconomicInvestmentReportsPageTemplate
+$page = economic-investment-reports
+$pageName = Economic & Investment Reports
+$pageTitleAr = التقارير الاقتصادية والاستثمارية
+$pageLabel = /economic/investmentReports
+
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar] ; description[lang = ar]; keywords[lang = ar]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleAr     ; $pageTitleAr          ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+
+
+#########################################################################################
+
+INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+					; economic-investment-reports-banner.jpg 					; economic-investment-reports-banner.jpg					; $siteResource/economic-investment-reports-banner.jpg 									; image/png						    ;										   ; ""     ;
+
+
+#####################################################################
+
+INSERT_UPDATE PortalResourceCarouselComponent; uid[unique = true]   			; $contentCV[unique = true] ; &componentRef
+											 ; portalResorcesCarouselComponent	; 							; portalResorcesCarouselComponent
+
+INSERT_UPDATE EconomicCustomBannerContainer		; uid[unique = true] 			   		        ; name 							  			    ; backgroundImage (code, $contentCV)			; title [lang = ar]					; simpleCMSComponents(&componentRef)	; &componentRef                                 ; $contentCV[unique = true]
+												; economic-investment-reports-banner-container  ; economic investment report banner Container   ; economic-investment-reports-banner.jpg  		; التقارير الاقتصادية والاستثمارية		;                                       ; economic-investment-reports-banner-container  ;
+
+#####################################################################
+
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]           	                ; name                                              ; &componentRef                                 ; description[lang = ar]                                                                                                                                                                                                                                                                                                                                                        ; $contentCV[unique = true]
+                                                  ; economic-investment-reports-generic-paragraph   ; Economic Investment Reports Paragraph Component   ; economic-investment-reports-generic-paragraph	; <div class="container"><div class="paragraph-component"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in pretium nisl, dictum ultricies urna. Ut fringilla imperdiet velit, et pellentesque nulla placerat ut. Nunc vehicula posuere ipsum a convallis. Aliquam facilisis nunc orci, at tristique nisl tristique ac. Nullam luctus hendrerit iaculis.</p></div></div>  ;
+
+#############################################################
+
+INSERT_UPDATE InvestmentSaudiLastReportCategoryComponent		; uid[unique = true] 			   		        ; name 							  			    ; box1Name [lang = ar]				; box2Name [lang = ar]		; box3Name [lang = ar]			; box4Name [lang = ar]					    ; &componentRef                                 ; $contentCV[unique = true]
+												                ; economic-investment-reports-latest-container  ; economic investment report latest Container   ; Economic and Investment Monitor	; Investment Highlights     ; Monthly Bulletin              ; Economic and Investment Reports & Studies ; economic-investment-reports-latest-container
+
+#############################################################
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)		                                                                                                        ; $contentCV	;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ; portalResorcesCarouselComponent                                                                                                          ;				;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; economic-investment-reports-banner-container,economic-investment-reports-generic-paragraph,economic-investment-reports-latest-container  ;				;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                    				                                                                                                        ;				;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
+
+						 

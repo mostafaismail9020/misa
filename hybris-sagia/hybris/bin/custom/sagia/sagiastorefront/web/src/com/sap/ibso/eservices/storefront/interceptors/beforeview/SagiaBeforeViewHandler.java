@@ -11,11 +11,12 @@ import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.Abstrac
 import de.hybris.platform.acceleratorstorefrontcommons.interceptors.BeforeViewHandler;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
-import de.hybris.platform.cms2.model.pages.ProductPageModel;
-import de.hybris.platform.cms2.model.pages.CategoryPageModel;
+import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.i18n.I18NService;
 import de.hybris.platform.servicelayer.i18n.L10NService;
-
+import de.hybris.platform.servicelayer.user.UserService;
+import de.hybris.platform.util.Config;
+import org.apache.log4j.Logger;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,14 +25,13 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.*;
-
-import de.hybris.platform.core.model.user.CustomerModel;
-import de.hybris.platform.servicelayer.user.UserService;
-import de.hybris.platform.util.Config;
-
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.ResourceBundle;
 
 
 /**
@@ -461,6 +461,11 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
             }
             case "contact-update-history": {
                 javascripts.add("sagia.contactUpdateHistory.js");
+                break;
+            }
+            case "/economic/investmentsTerms": {
+                javascripts.addAll(Arrays.asList(
+                        "jquery.dataTables.min.js", "sagia.investmentTerms.js"));
                 break;
             }
             default:

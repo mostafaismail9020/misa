@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="#5CC83B" fill-rule="evenodd"><path d="M11.956 21.702c-5.375 0-9.746-4.371-9.746-9.746s4.37-9.746 9.746-9.746c5.375 0 9.746 4.37 9.746 9.746 0 5.375-4.371 9.746-9.746 9.746zm0-21.702c-6.58 0-11.956 5.375-11.956 11.956 0 6.58 5.375 11.906 11.956 11.906 6.58 0 11.906-5.325 11.906-11.906 0-6.58-5.325-11.956-11.906-11.956zM13.387 16.213l-1.005.452 1.306-6.681c.15-.703-.603-1.457-1.407-1.005l-2.461 1.357c-.452.25-.603.853-.352 1.306.251.452.854.602 1.306.351l.603-.301-1.256 6.38c-.1.552.352 1.155.955 1.155.15 0 .301-.05.402-.1l2.662-1.156c.503-.2.703-.753.503-1.256-.201-.502-.754-.703-1.256-.502m-.662-8.953a1.35 1.35 0 0 0 1.356-1.356 1.35 1.35 0 0 0-1.356-1.357 1.35 1.35 0 0 0-1.357 1.357 1.35 1.35 0 0 0 1.357 1.356"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="39.827" height="39.827" viewBox="0 0 39.827 39.827">
+  <g id="information-round-icon-blue" transform="translate(0.759 0.759)">
+    <g id="Group_1661" data-name="Group 1661" transform="translate(0.241 0.241)">
+      <circle id="Ellipse_169" data-name="Ellipse 169" cx="18.914" cy="18.914" r="18.914" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_2378" data-name="Path 2378" d="M200.9,218.355V215.8h6.189V226.53h1.528V229.4h-7.564V226.3h1.49v-7.55H200.9Z" transform="translate(-186.057 -199.838)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+      <circle id="Ellipse_170" data-name="Ellipse 170" cx="2.763" cy="2.763" r="2.763" transform="translate(15.187 9.311) rotate(-22.5)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_2379" data-name="Path 2379" d="M409.342,127.719a.86.86,0,1,1-.859-.86A.86.86,0,0,1,409.342,127.719Z" transform="translate(-377.314 -117.555)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_2380" data-name="Path 2380" d="M434.006,163.795s3.031,3.591,1.324,10.8" transform="translate(-401.723 -151.728)" fill="none" stroke="#00a6be" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

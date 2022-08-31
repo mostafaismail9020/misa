@@ -51,7 +51,7 @@
 																<iframe width="560" height="315" src="${provinceDetails.videoLink.url}" 
 																		title="YouTube video player" frameborder="0" 
 																		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-																		allowfullscreen></iframe>
+																		allowfullscreen loading="lazy"></iframe>
 															</div>
 														</div>
 													</c:if>
@@ -81,7 +81,7 @@
                                         <div class="province-container mt-5 pt-5">
                                             <div class="row h-100 m-0 strategic-sector-sWrapper">
                                                 <div class="col-lg-6 pl-0 map-area links map-bg-area">
-                                                    <img class="img-fluid mg-background map-bg-area-img" src="${strategicDetails.backgroundImage.url}" alt="" />
+                                                    <img class="img-fluid mg-background map-bg-area-img" src="${strategicDetails.backgroundImage.url}" alt="" loading="lazy"/>
                                                 </div>
                                                 <div class="col-lg-6 content-area pl-5">
                                                     <p class="pt-5 mt-5 pr-5">${strategicDetails.longDescription}</p>
@@ -114,7 +114,7 @@
                                                             <c:forEach var="sector" items="${sectors}">
 
                                                                 <li>
-                                                                    <img class="img-fluid" src="${sector.imageIcon.url}" alt="" />
+                                                                    <img class="img-fluid" src="${sector.imageIcon.url}" alt="" loading="lazy"/>
                                                                     <strong>${sector.headerText}</strong>
                                                                 </li>
 
@@ -140,7 +140,7 @@
                                                                 <div class="key-fact-box aos-init" data-aos="fade-up" data-aos-delay="0">
                                                                     <div class="macro_economic_icon box-img">
                                                                         <c:if test="${not empty keyFact.imageIcon}">
-                                                                            <img class="js-responsive-image achievement_header_icon" src="${keyFact.imageIcon.url}" alt="${keyFact.imageIcon.altText}" title="${keyFact.imageIcon.altText}" style="">
+                                                                            <img class="js-responsive-image achievement_header_icon" src="${keyFact.imageIcon.url}" alt="${keyFact.imageIcon.altText}" title="${keyFact.imageIcon.altText}" style="" loading="lazy">
                                                                         </c:if>
                                                                     </div>
 
@@ -168,7 +168,7 @@
                                                     <div class="key-strength-section pt-5 mt-5">
                                                         <c:forEach var="keyStrength" items="${keyStrengths}">
                                                             <div class="key-strength-box">
-                                                                <img class="img-fluid" src="${keyStrength.image.url}" alt="${keyStrength.image.altText}" title="${keyStrength.image.altText}" />
+                                                                <img class="img-fluid" src="${keyStrength.image.url}" alt="${keyStrength.image.altText}" title="${keyStrength.image.altText}" loading="lazy"/>
                                                                 <c:if test="${not empty keyStrength.text}">
                                                                     <div class="overlay-txt">${keyStrength.text}</div>
                                                                 </c:if>
@@ -189,7 +189,7 @@
                                                                         <div class="panel-box-block d-flex aos-init" data-aos="fade-up" data-aos-delay="0">
                                                                             <div class="macro_economic_icon box-img">
                                                                                 <c:if test="${not empty opportunity.iconImage.url}">
-                                                                                    <img class="js-responsive-image achievement_header_icon" src="${opportunity.iconImage.url}" alt="${opportunity.iconImage.altText}" title="${opportunity.iconImage.altText}" style="">
+                                                                                    <img class="js-responsive-image achievement_header_icon" src="${opportunity.iconImage.url}" alt="${opportunity.iconImage.altText}" title="${opportunity.iconImage.altText}" style="" loading="lazy">
                                                                                 </c:if>
                                                                             </div>
                                                                             <div class="box-img-right">
@@ -237,7 +237,7 @@
 																<iframe width="560" height="315" src="${provinceDetails.videoLink.url}" 
 																		title="YouTube video player" frameborder="0" 
 																		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-																		allowfullscreen></iframe>
+																		allowfullscreen loading="lazy"></iframe>
 															</div>
 														</div>
 													</c:if>
@@ -345,7 +345,7 @@
 				            	<c:url value="/mediaCenter/news" var="newsUrl" />
 				                <div class="container">
 				                    <div class="row text-center">
-				                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="" />
+				                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="" loading="lazy"/>
 				                        <h1 class="w-100 title service-title">
 				                            <spring:theme code="portal.region.media.news" text="NEWS" />
 				                            <a href="${newsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -370,7 +370,7 @@
 				                                        </div>
 				                                    </div>
 				                                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" 
-				                                    		alt="${newsComponent.newsTitle}">
+				                                    		alt="${newsComponent.newsTitle}" loading="lazy">
 				                                    <div class="news-card-inner">
 				                                        <h3>${newsComponent.newsTitle}</h3>
 				                                        <p>${newsComponent.newsShortInformation}</p>
@@ -391,7 +391,7 @@
             	<c:url value="/mediaCenter/events" var="eventsUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.region.media.events" text="EVENTS" />
                             <a href="${eventsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -416,7 +416,7 @@
                                         </div>
                                     </div>
                                     <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" 
-                                    		alt="${eventComponent.eventName}">
+                                    		alt="${eventComponent.eventName}" loading="lazy">
                                     <div class="news-card-inner">
                                         <h3>${eventComponent.eventName}</h3>
                                         <p>${eventComponent.eventShortInformation}</p>
@@ -437,7 +437,7 @@
             	<c:url value="/mediaCenter/resources" var="resourcesUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.region.media.resources" text="RESOURCES" />
                             <a href="${resourcesUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;

@@ -101,7 +101,7 @@
 							<a href="${encodedContextPath}/sectors-opportunities/${allCategories.code}">
 								<img class="sector-item-icon" src="${fn:escapeXml(allCategories.logo.url)}" 
 										data-norm="${fn:escapeXml(allCategories.logo.url)}" 
-										data-alt="${fn:escapeXml(allCategories.logo.url)}" alt=""/>
+										data-alt="${fn:escapeXml(allCategories.logo.url)}" alt="" loading="lazy"/>
 								<h2><c:out value="${allCategories.name}"/></h2>
 							</a>
 						</figure>						

@@ -9,7 +9,7 @@
 <div class="d-flex document_lic_inner">
     <div class="col invest_lic_inner text-center">
         <c:if test="${not empty localizedImage}">
-            <img  src="${localizedImage.url}" alt='${localizedImage.altText}' title='${localizedImage.altText}' style="">
+            <img  src="${localizedImage.url}" alt='${localizedImage.altText}' title='${localizedImage.altText}' style="" loading="lazy">
         </c:if>
         <p><span><c:if test="${not empty description}">${description}</c:if></span></p>
         

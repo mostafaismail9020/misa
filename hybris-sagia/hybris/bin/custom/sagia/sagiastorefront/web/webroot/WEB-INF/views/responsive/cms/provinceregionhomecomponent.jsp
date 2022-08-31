@@ -7,7 +7,7 @@
 <div class="region_component meetRegions_some-class" id="${componentId}" data-id="${componentId}">
 	
 	<c:if test="${not empty backgroundImage}">
-		<img class="region_component_image"  src="${backgroundImage.url}" alt='${backgroundImage.altText}' title='${backgroundImage.altText}' style="">
+		<img class="region_component_image"  src="${backgroundImage.url}" alt='${backgroundImage.altText}' title='${backgroundImage.altText}' style="" loading="lazy">
 		<input type="hidden" id="" value="${backgroundImage.url}">
 	</c:if>
 	

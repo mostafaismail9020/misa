@@ -8,7 +8,7 @@
      <div class="achievement_header w-100 text-center">
           <h1 data-aos="fade-up">
               <c:if test="${not empty imageIcon}">
-              <img class="achievement_header_icon"  src="${imageIcon.url}" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="">
+              <img class="achievement_header_icon"  src="${imageIcon.url}" alt='${imageIcon.altText}' title='${imageIcon.altText}' style="" loading="lazy">
               </c:if> 
               <c:if test="${not empty headerText}">
              <span >${headerText}</span>
@@ -27,7 +27,7 @@
        
             <c:if test="${not empty bannerImage && alignmentLeft}">
              <div class="col-12 col-lg-8 achievement_banner_right p-0">
-             <img class="img-fluid w-100"  src="${bannerImage.url}" alt='${bannerImage.altText}' title='${bannerImage.altText}' style="">
+             <img class="img-fluid w-100"  src="${bannerImage.url}" alt='${bannerImage.altText}' title='${bannerImage.altText}' style="" loading="lazy">
              </div>
             </c:if> 
             
@@ -46,7 +46,7 @@
             
             <c:if test="${not empty bannerImage && not alignmentLeft}">
               <div class="col-12 col-lg-8 achievement_banner_left p-0" >
-             <img class="img-fluid w-100"  src="${bannerImage.url}" alt='${bannerImage.altText}' title='${bannerImage.altText}' style="">
+             <img class="img-fluid w-100"  src="${bannerImage.url}" alt='${bannerImage.altText}' title='${bannerImage.altText}' style="" loading="lazy">
               
              </div>
             </c:if> 

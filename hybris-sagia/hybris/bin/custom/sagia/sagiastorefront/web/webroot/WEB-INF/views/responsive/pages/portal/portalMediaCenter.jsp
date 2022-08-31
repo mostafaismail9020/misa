@@ -33,7 +33,7 @@
             	<c:url value="/mediaCenter/news" var="newsUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.media.news" text="NEWS FROM INVEST SAUDI" />
                             <a href="${newsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                     <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" 
-                                    		alt="${newsComponent.newsTitle}">
+                                    		alt="${newsComponent.newsTitle}" loading="lazy">
                                     <div class="news-card-inner">
                                         <h3>${newsComponent.newsTitle}</h3>
                                         <p>${newsComponent.newsShortInformation}</p>
@@ -77,7 +77,7 @@
             	<c:url value="/mediaCenter/events" var="eventsUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.media.events" text="EVENTS" />
                             <a href="${eventsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -102,7 +102,7 @@
                                         </div>
                                     </div>
                                     <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" 
-                                    		alt="${eventComponent.eventName}">
+                                    		alt="${eventComponent.eventName}" loading="lazy">
                                     <div class="news-card-inner">
                                         <h3>${eventComponent.eventName}</h3>
                                         <p>${eventComponent.eventShortInformation}</p>
@@ -121,7 +121,7 @@
             	<c:url value="/mediaCenter/resources" var="resourcesUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.media.resources" text="RESOURCES" />
                             <a href="${resourcesUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -146,7 +146,7 @@
                                         </div>
                                     </div>
                                     <img class="img-fluid w-100 service-card-img news-card-img" src="${fn:escapeXml(resourceComponent.resourceThumbnailImage.url)}" 
-                                    		alt="${resourceComponent.resourceTitle}">
+                                    		alt="${resourceComponent.resourceTitle}" loading="lazy">
                                     <div class="service-card">
                                         <h3 title="${resourceComponent.resourceTitle}">${resourceComponent.resourceTitle}</h3>
                                         <p>${resourceComponent.resourceShortInformation}</p>
@@ -165,7 +165,7 @@
             	<c:url value="/mediaCenter/videos" var="videosUrl" />
                 <div class="container">
                     <div class="row text-center">
-                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="" />
+                        <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="" loading="lazy"/>
                         <h1 class="w-100 title service-title">
                             <spring:theme code="portal.media.webinar.videos" text="VIDEOS" />
                             <a href="${videosUrl}" class="btn-primary explore-btn webinar-service-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
@@ -198,7 +198,7 @@
                                                     <div class="embed-responsive embed-responsive-16by9">
                                                         <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" 
                                                             	src="${fn:escapeXml(videoComponent.embedURL.url)}" frameborder="0" 
-                                                            	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                                            	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                                     	</iframe>
                                                     </div>                                    
                                                     <h4 class="media-center-webinar" title="${videoComponent.title}">${videoComponent.title}</h4>
@@ -217,7 +217,7 @@
                                                     <div class="embed-responsive embed-responsive-16by9">
                                                         <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" 
                                                             src="${fn:escapeXml(successStoryComponent.embedURL.url)}" frameborder="0" 
-                                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                                     	</iframe>
                                                     </div>                                            
                                                     <h4>${videoComponent.title}</h4>

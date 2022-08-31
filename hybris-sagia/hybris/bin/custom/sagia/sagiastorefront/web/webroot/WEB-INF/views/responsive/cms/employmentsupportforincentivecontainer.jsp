@@ -19,7 +19,7 @@
                           <li class="nav-item">
                             <a class="nav-link <c:if test="${currentComponent.defaultIncentiveProgram}">active</c:if>" id="pills-${currentComponent.componentTabId}-tab" data-toggle="pill" href="#${currentComponent.componentId}" role="tab" aria-controls="pills-${currentComponent.componentTabId}" aria-selected="true">
                                 <div class="INS_EPM_border_set text-center p-3">
-                                    <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid " style="height: 52px;margin: 10px;"> 
+                                    <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid " style="height: 52px;margin: 10px;" loading="lazy"> 
                                     <h6 class="INS_EPM_SP_header p-${status.index}">${currentComponent.title}</h6>
                                 </div>
                             </a>

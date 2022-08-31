@@ -7,7 +7,7 @@
 
 <div class="video-player-container">
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="315" src="${fn:escapeXml(embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="315" src="${fn:escapeXml(embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
 </div>
 <div class="mt-2 d-flex justify-content-between">

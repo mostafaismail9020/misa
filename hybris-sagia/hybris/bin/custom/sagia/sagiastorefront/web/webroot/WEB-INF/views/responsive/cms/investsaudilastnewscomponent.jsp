@@ -13,7 +13,7 @@
 	                <h3 class="section-title ">${component.title}</h3>
 					<a href="${portal.cmsLinkUrl(component.exploreAllUrl)}" class="btn-primary explore-btn explore-gia-btn">
 						<spring:theme code="portal.exploreall.button.text"/>&nbsp;
-						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive"></a>
+						<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive" loading="lazy"></a>
 					</a>
 				</div>
 			</div>
@@ -25,7 +25,7 @@
 			      	<div class="col-lg-4 col-md-6 card-wrapper " data-aos="fade-up" data-aos-delay="${loopCount}">
 			        	<div class="flip-card">
 			            	<div class="card-img">
-			                	<img class="img-fluid" src="${fn:escapeXml(currentComponent.newsDetailsImage.url)}" alt="">
+			                	<img class="img-fluid" src="${fn:escapeXml(currentComponent.newsDetailsImage.url)}" alt="" loading="lazy">
 			              	</div>
 			              	<div class="card-box p-3 pr-5 home-news-updates-content">
 			               		<strong><fmt:formatDate value="${currentComponent.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${currentComponent.newsDate}" pattern="MMMM" /></strong>

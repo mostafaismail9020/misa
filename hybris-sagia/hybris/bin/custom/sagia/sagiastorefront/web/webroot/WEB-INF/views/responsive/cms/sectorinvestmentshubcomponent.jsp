@@ -6,7 +6,7 @@
 <div class="panel panle-box" data-aos="fade-left">
     <div class="panel-img">
 		<img class="img-fluid" src="${fn:escapeXml(imageIcon.url)}" data-norm="${fn:escapeXml(imageIcon.url)}" 
-			data-alt="${fn:escapeXml(imageIcon.url)}" alt="" />
+			data-alt="${fn:escapeXml(imageIcon.url)}" alt="" loading="lazy"/>
 	</div>
 	<p><a href="${investmentLink.url}">${investmentLink.linkName}</a></p>
 </div>

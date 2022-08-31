@@ -6,7 +6,7 @@
 <div class="key_reasons_component">
 	
 	<c:if test="${not empty backgroundImage}">
-		<img class="img-fluid w-100" src="${backgroundImage.url}" alt='${backgroundImage.altText}' title='${backgroundImage.altText}' style="">
+		<img class="img-fluid w-100" src="${backgroundImage.url}" alt='${backgroundImage.altText}' title='${backgroundImage.altText}' style="" loading="lazy">
 	</c:if>
 	
 	<!-- <c:if test="${not empty videoLink}">

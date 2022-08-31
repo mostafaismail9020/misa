@@ -36,7 +36,7 @@
                   <c:forEach var="culture" items="${provinceCultures}" >
                   <div class="col flex-column rhq-events-block">
                         <c:if test="${not empty culture.image}">
-                        <img class="img-fluid " src="${culture.image.url}" alt='${culture.image.altText}' title='${culture.image.altText}' style="">
+                        <img class="img-fluid " src="${culture.image.url}" alt='${culture.image.altText}' title='${culture.image.altText}' style="" loading="lazy">
                       </c:if>
                       <c:if test="${not empty culture.title}">
                         <h4 class="rhq-events">${culture.title}</h4>

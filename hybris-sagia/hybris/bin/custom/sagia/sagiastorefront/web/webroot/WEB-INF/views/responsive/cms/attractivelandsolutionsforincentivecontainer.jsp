@@ -19,7 +19,7 @@
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 INS_img_width">
                                   <!-- <img src="${commonResourcePath}/images/Incentives-for-Investor/مدن.jpg" class="img-fluid"> -->
-								  <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid">
+								  <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid" loading="lazy">
                               </div> 
                               <div class="INS_height_150px">
                                 <div class="INS_height_texts">

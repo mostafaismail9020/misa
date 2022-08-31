@@ -16,7 +16,7 @@
            		<c:url value="/mediaCenter/news" var="newsUrl"/>                            
                 <c:forEach items="${portalNews}" var="news">
                 	<div class="carousel-item">
-                        <img class="d-block w-100" src="${fn:escapeXml(news.newsDetailsImage .url)}" alt="${news.newsTitle}">
+                        <img class="d-block w-100" src="${fn:escapeXml(news.newsDetailsImage .url)}" alt="${news.newsTitle}" loading="lazy">
                         <div class="toplist">
                           	<div class="container-fluid">
                             	<div class="mask flex-center">

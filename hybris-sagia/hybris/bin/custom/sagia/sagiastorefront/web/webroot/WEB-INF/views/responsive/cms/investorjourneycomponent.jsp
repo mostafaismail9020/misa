@@ -7,7 +7,7 @@
 <div class="investor_journey_component d-flex document_lic_inner">
     <div class="col  investor_journey_inner" data-aos="fade-up">
         <c:if test="${not empty localizedImage}">
-            <img class="img-fluid w-40" src="${localizedImage.url}" alt='${localizedImage.altText}' title='${localizedImage.altText}' style="">
+            <img class="img-fluid w-40" src="${localizedImage.url}" alt='${localizedImage.altText}' title='${localizedImage.altText}' style="" loading="lazy">
         </c:if>
         
         <c:if test="${not empty mainHeader}">
@@ -36,7 +36,7 @@
             </c:if> 
             <c:if test="${not empty responsibleIcon}">
                 <c:forEach var="icon" items="${responsibleIcon}" >
-                    <img src="${icon.url}" alt='${icon.altText}' title='${icon.altText}' style="">
+                    <img src="${icon.url}" alt='${icon.altText}' title='${icon.altText}' style="" loading="lazy">
                 </c:forEach> 
             </c:if>
         </div>

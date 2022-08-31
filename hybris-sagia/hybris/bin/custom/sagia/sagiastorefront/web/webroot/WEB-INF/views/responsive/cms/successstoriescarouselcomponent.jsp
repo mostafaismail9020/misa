@@ -32,7 +32,7 @@
                                                             <c:if test="${not empty currentComponent.videoLink}">
                                                                 <div class="video-player-container">
                                                                     <div class="embed-responsive embed-responsive-16by9">
-                                                                        <iframe width="560" height="315" src="${currentComponent.videoLink.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                        <iframe width="560" height="315" src="${currentComponent.videoLink.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                                     </div>
                                                                 </div>
                                                             </c:if>

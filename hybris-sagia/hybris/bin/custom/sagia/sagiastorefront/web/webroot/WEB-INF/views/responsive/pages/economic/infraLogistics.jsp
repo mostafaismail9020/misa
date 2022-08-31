@@ -74,21 +74,21 @@
 					<div class="row pt-2">
 						<div class="col-xs-4 col-md-4">
 							<div class="INL_padding_Center text-center">
-								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/International_Airports_icon.png">
+								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/International_Airports_icon.png" loading="lazy">
 								<h6 class="INL_logistics_icons_headeron">${infraLogisticsLanding.internationalAirportsValue}</h6>
 								<p class="INL_logistics_icons_para">${infraLogisticsLanding.displayAirportslabel}</p>
 							</div>
 						</div>
 						<div class="col-xs-4 col-md-4">
 							<div class="INL_padding_Center text-center">
-								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Domestic _icon.png">
+								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Domestic _icon.png" loading="lazy">
 								<h6 class="INL_logistics_icons_headeron">${infraLogisticsLanding.domesticAirportsValue}</h6>
 								<p class="INL_logistics_icons_para">${infraLogisticsLanding.domesticAirportsLabel}</p>
 							</div>
 						</div>
 						<div class="col-xs-4 col-md-4">
 							<div class="INL_padding_Center text-center">
-								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Containers_icon.png">
+								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Containers_icon.png" loading="lazy">
 								<h6 class="INL_logistics_icons_headeron">${infraLogisticsLanding.containersValue}</h6>
 								<p class="INL_logistics_icons_para">${infraLogisticsLanding.containersLabel} ${infraLogisticsLanding.containersAmount}</p>
 							</div>
@@ -97,21 +97,21 @@
 					<div class="row pd-2">
 						<div class="col-xs-4 col-md-4">
 							<div class="INL_padding_Center text-center">
-								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Ports_Capacity_icon.png">
+								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Ports_Capacity_icon.png" loading="lazy">
 								<h6 class="INL_logistics_icons_headeron">${infraLogisticsLanding.portsCapacityValue}</h6>
 								<p class="INL_logistics_icons_para">${infraLogisticsLanding.portsCapacityLabel} ${infraLogisticsLanding.portsCapacityAmount}</p>
 							</div>
 						</div>
 						<div class="col-xs-4 col-md-4">
 							<div class="INL_padding_Center text-center">
-								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Airports_icon.png">
+								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Airports_icon.png" loading="lazy">
 								<h6 class="INL_logistics_icons_headeron">${infraLogisticsLanding.airportsValue}</h6>
 								<p class="INL_logistics_icons_para">${infraLogisticsLanding.airportsLabel}</p>
 							</div>
 						</div>
 						<div class="col-xs-4 col-md-4">
 							<div class="INL_padding_Center text-center">
-								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Ports_icon.png">
+								<img class="img-fluid" src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Ports_icon.png" loading="lazy">
 								<h6 class="INL_logistics_icons_headeron">${infraLogisticsLanding.portsValue}</h6>
 								<p class="INL_logistics_icons_para">${infraLogisticsLanding.portsLabel}</p>
 							</div>
@@ -2057,19 +2057,19 @@
                             <div class="text-center pt-2 pb-2">
                                 <c:set var = "imgString" value="${card.displayName}"/>
                                 <c:if test = "${fn:contains(imgString, 'Infrastructure') || fn:contains(imgString, 'إجمالي المساحة')}">
-                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Infrastructure_icon.png" class="img-fluid">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Infrastructure_icon.png" class="img-fluid" loading="lazy">
                                 </c:if>
                                 <c:if test = "${fn:contains(imgString, 'Employment') || fn:contains(imgString, 'التوظيف')}">
-                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Employment_icon.png" class="img-fluid">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Employment_icon.png" class="img-fluid" loading="lazy">
                                 </c:if>
                                 <c:if test = "${fn:contains(imgString, 'Area') || fn:contains(imgString, 'البنية التحتية')}">
-                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Total_Area_icon.png" class="img-fluid">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Total_Area_icon.png" class="img-fluid" loading="lazy">
                                 </c:if>
                                 <c:if test = "${fn:contains(imgString, 'Housing') || fn:contains(imgString, 'المرافق والإسكان')}">
-                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Housing_&_Facilities_icon.png" class="img-fluid">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Housing_&_Facilities_icon.png" class="img-fluid" loading="lazy">
                                 </c:if>
                                 <c:if test = "${fn:contains(imgString, 'Industrial') || fn:contains(imgString, 'المدن الصناعية')}">
-                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Industrial_Cities_icon.png" class="img-fluid">
+                                    <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/icon/Industrial_Cities_icon.png" class="img-fluid" loading="lazy">
                                 </c:if>                            </div>
                             <h5 class="INL_total_gold_header">${card.displayName}</h5>
                             <div class="row pt-4 INL_height_150px">
@@ -2979,7 +2979,7 @@
                     </c:otherwise>
                 </c:choose>
 						<div class="INL_technology_Text_Block">
-						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Riyadh_Technology_Valley.jpg"  style="width:100%;">
+						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Riyadh_Technology_Valley.jpg"  style="width:100%;" loading="lazy">
 						  <div class="INL_technology_text text-center mx-auto w-100">
 							<h4 class="INL_technology_text_content"><spring:theme code="economic.infralogistics.technology.zones.riyadhvalley.text"/></h4>
 						  </div>
@@ -2996,7 +2996,7 @@
                         </c:otherwise>
                     </c:choose>
 						<div class="INL_technology_Text_Block">
-						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Al_Raidah_Digital_City.jpg"  style="width:100%;">
+						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Al_Raidah_Digital_City.jpg"  style="width:100%;" loading="lazy">
 						  <div class="INL_technology_text text-center mx-auto w-100">
 							<h4 class="INL_technology_text_content"><spring:theme code="economic.infralogistics.technology.zones.alraidah.digital.city.text"/></h4>
 						  </div>
@@ -3013,7 +3013,7 @@
                         </c:otherwise>
                     </c:choose>
 						<div class="INL_technology_Text_Block">
-						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Wadi_Makkah_Technological_Complex.jpg"  style="width:100%;">
+						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Wadi_Makkah_Technological_Complex.jpg"  style="width:100%;" loading="lazy">
 						  <div class="INL_technology_text text-center mx-auto w-100">
 							<h4 class="INL_technology_text_content"><spring:theme code="economic.infralogistics.technology.zones.wadimakkah.complex.text"/></h4>
 						  </div>
@@ -3039,7 +3039,7 @@
 				<div class="col-md-6 mx-auto">
 					<a href="http://ecza.gov.sa/webcenter/faces/oracle/webcenter/page/scopedMD/s8bba98ff_4cbb_40b8_beee_296c916a23ed/businessRolePages/Page139.jspx?_adf.ctrl-state=15t3l15ynz_4&wc.contextURL=%2Fspaces&wc.contentSource=%2Fportal%2Fhome?wc.contentSource=%2Fportal%2Fhome&_afrLoop=49251248903339502" target="_blank">
 						<div class="INL_technology_Text_Block">
-						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Knowledge_Economic_City.jpg"  style="width:100%;">
+						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/Knowledge_Economic_City.jpg"  style="width:100%;" loading="lazy">
 						  <div class="INL_technology_text text-center mx-auto w-100">
 							<h4 class="INL_technology_text_content"><spring:theme code="economic.infralogistics.economic.cities.knowledge.economic.city.text"/></h4>
 						  </div>
@@ -3049,7 +3049,7 @@
 				<div class="col-md-6 mx-auto">
 					<a href="https://eur03.safelinks.protection.outlook.com/?url=http%3A%2F%2Fecza.gov.sa%2Fwebcenter%2Ffaces%2FmainNavInclude%2FecoCityCont%2FKAEC%3F_adf.ctrl-state%3D1dqzdhrr50_4%26wc.contentSource%3D%252Fportal%252Fhome%3Fwc.contentSource%3D%252Fportal%252Fhome%26wcnav.model%3D%252Foracle%252Fwebcenter%252Fsiteresources%252FscopedMD%252Fs8bba98ff_4cbb_40b8_beee_296c916a23ed%252Fnavigation%252Fgsr6e4c8b1a_55bc_4496_93ac_21c1bfe2c23e%252FNavigation%26_afrLoop%3D3601923884509849&data=04%7C01%7CSusanna.Joseph%40in.bosch.com%7C4f3066a5f14746909ad808d99267b7c7%7C0ae51e1907c84e4bbb6d648ee58410f4%7C0%7C0%7C637701796446809110%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=sZJl%2Ff%2Ft51sME2BPlBOH50KUKhBaIw5XA62mEKtVrGk%3D&reserved=0" target="_blank">
 						<div class="INL_technology_Text_Block">
-						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/King_Abdullah Economic_City.jpg"  style="width:100%;">
+						  <img src="${commonResourcePath}/images/Infrastructures_and_Logistics/tech/King_Abdullah Economic_City.jpg"  style="width:100%;" loading="lazy">
 						  <div class="INL_technology_text text-center mx-auto w-100">
 							<h4 class="INL_technology_text_content"><spring:theme code="economic.infralogistics.economic.cities.kingabdullah.economic.city.text"/></h4>
 						  </div>

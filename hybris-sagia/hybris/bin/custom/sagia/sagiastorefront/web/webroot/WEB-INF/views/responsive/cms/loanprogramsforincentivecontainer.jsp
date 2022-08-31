@@ -18,7 +18,7 @@
                       <div class="INS_col_loanpbm mb-5">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 INS_img_width">
-                                    <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid"/>
+                                    <img src="${fn:escapeXml(currentComponent.logo.url)}" class="img-fluid"  loading="lazy"/>
                               </div>
                               <div class="INS_height_350px">
                                 <div class="INS_height_text">

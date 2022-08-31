@@ -23,6 +23,7 @@
         <script src="${commonResourcePathHtml}/js/script.js"></script>
 		<script src="${commonResourcePathHtml}/js/contact.js"></script>
 		<script type="text/javascript" src="${themeResourcePath}/js/sagia.I18n.js${version}"></script>
+
 		<%-- jquery --%>
 		
 		
@@ -119,13 +120,42 @@
 <script src="${fn:escapeXml(commonResourcePath)}/js/invest-saudi/invest-saudi-brandpolicy.js"></script>
 <script src="${fn:escapeXml(commonResourcePath)}/js/invest-saudi/contact.js"></script>
 <script src="${fn:escapeXml(commonResourcePath)}/js/invest-saudi/registration.js"></script>-->
-<script src="${fn:escapeXml(commonResourcePath)}/intlTelInput/js/intlTelInput.js"></script>
-<script src="${fn:escapeXml(commonResourcePath)}/amCharts/core.js"></script>
-<script src="${fn:escapeXml(commonResourcePath)}/amCharts/charts.js"></script>
-<script src="${fn:escapeXml(commonResourcePath)}/yearPicker/dist/yearpicker.js"></script>
+<script src="${fn:escapeXml(commonResourcePath)}/intlTelInput/js/intlTelInput.js" defer></script>
+<script src="${fn:escapeXml(commonResourcePath)}/yearPicker/dist/yearpicker.js" defer></script>
+
+<%-- performance improvement - Home page --%>
+
+<c:if test = "${pageTitle != 'Homepage' && 
+pageTitle != 'About Invest Saudi' && 
+pageTitle!='Living in Saudi' && 
+pageTitle != 'About The Kingdom' &&
+pageTitle != 'Regions Overview' &&
+pageTitle != 'Province' &&
+pageTitle !=  'Regional Head Quarters' &&
+pageTitle != 'Sectors & Opportunities' &&
+pageTitle != 'Sector Details' &&
+pageTitle != 'Investment Guide' &&
+pageTitle != 'Incentives for Investor' &&
+pageTitle != 'Media Center' &&
+pageTitle != 'News' &&
+pageTitle != 'Events' &&
+pageTitle != 'Resources' &&
+pageTitle != 'Videos' &&
+pageTitle != 'About Invest Saudi' &&
+pageTitle != 'Contact Us' &&
+pageTitle != 'Economic Highlights' &&
+pageTitle != 'News Details' &&
+pageTitle != 'Event Details' &&
+pageTitle != 'Resource Details'
+}">
+<script src="${fn:escapeXml(commonResourcePath)}/amCharts/core.js" defer></script>
+<script src="${fn:escapeXml(commonResourcePath)}/amCharts/charts.js" defer></script>
+
+</c:if>
+<%-- performance improvement - Home page  - End --%>
 
 <c:if test="${includeMapJavascripts}">
-	<script src="${fn:escapeXml(commonResourcePath)}/js/invest-saudi/offices.js"></script>
+<!--	<script src="${fn:escapeXml(commonResourcePath)}/js/invest-saudi/offices.js"></script> -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=${googleMapsAPIKey}&libraries=places&language=en&callback=initMap&region=SA"></script>
 	<c:set var="includeMapJavascripts" value="false" scope="session" />
 </c:if>

@@ -218,6 +218,7 @@ public class AccountSupportTicketsPageController extends AbstractSearchPageContr
 		final PageableData pageableData = createPageableData(pageNumber, 10, sortCode, showMode);
 		
 		boolean nipcMember = false;
+		boolean bduMember = false;
 		String b2bUnit = "";
 		SearchPageData<TicketData> searchPageData = null;
 		UserModel currentUser = userService.getCurrentUser();
@@ -225,6 +226,7 @@ public class AccountSupportTicketsPageController extends AbstractSearchPageContr
 			Set<PrincipalGroupModel> curGroups = currentUser.getGroups();
 			for(PrincipalGroupModel curGroup : curGroups) {
 				if(BUSINESS_DEVELOPMENT_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
+					bduMember = true;
 					model.addAttribute("bdUserGroup",curGroup.getUid());
 				}
 				if(NIPC_USER_GROUP.equalsIgnoreCase(curGroup.getUid())) {
@@ -234,7 +236,10 @@ public class AccountSupportTicketsPageController extends AbstractSearchPageContr
 			}
 			if(currentUser instanceof B2BCustomerModel) {
 				B2BUnitModel b2bUnitModel = ((B2BCustomerModel)currentUser).getDefaultB2BUnit();
-				b2bUnit = b2bUnitModel.getUid();
+				if(null!=b2bUnitModel)
+				{
+					b2bUnit = b2bUnitModel.getUid();
+				}
 			}
 			model.addAttribute("isNipcMember",nipcMember);
 			
@@ -255,7 +260,12 @@ public class AccountSupportTicketsPageController extends AbstractSearchPageContr
 			model.addAttribute("oppType",oppType);
 			model.addAttribute("sec",sec);
 			
-		}else if(StringUtils.isNotBlank(b2bUnit)){
+		}
+		else if(bduMember && StringUtils.isNotBlank(b2bUnit)){
+			searchPageData = ticketFacade.getTickets(pageableData);
+
+		}
+		else if(StringUtils.isNotBlank(b2bUnit)){
 			searchPageData = ticketFacade.getTicketsByB2BUnit(pageableData, b2bUnit);
 			
 		}else {

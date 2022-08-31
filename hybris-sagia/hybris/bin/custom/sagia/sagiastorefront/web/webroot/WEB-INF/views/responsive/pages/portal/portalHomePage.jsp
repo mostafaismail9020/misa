@@ -33,7 +33,7 @@
                                                             <div class="day"><fmt:formatDate value="${latestNews.newsDate}" pattern="d" /></div>
                                                             <div class="month"><fmt:formatDate value="${latestNews.newsDate}" pattern="MMMM" /></div>
                                                         </div>
-                                                        <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestNews.newsThumbnailImage.url)}" alt="${latestNews.newsTitle}">
+                                                        <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestNews.newsThumbnailImage.url)}" alt="${latestNews.newsTitle}" loading="lazy">
                                                         <div class="news-card-inner">
                                                             <h3>${latestNews.newsTitle}</h3>
                                                             <p>${latestNews.newsShortDescription}</p>
@@ -57,7 +57,7 @@
                                                     <div class="day"><fmt:formatDate value="${latestEvent.eventStartDate}" pattern="d" /></div>
                                                 <div class="month"><fmt:formatDate value="${latestEvent.eventEndDate}" pattern="MMMM" /></div>
                                                 </div>
-                                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestEvent.eventThumbnailImage.url)}" alt="${latestEvent.eventName}">
+                                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestEvent.eventThumbnailImage.url)}" alt="${latestEvent.eventName}" loading="lazy">
                                                 <div class="events-card-inner">
                                                     <h3>${latestEvent.eventName}</h3>
                                                     <p>${latestEvent.eventShortDescription}</p>
@@ -79,7 +79,7 @@
                                                 <div class="day"><fmt:formatDate value="${latestResource.resourceDate}" pattern="d" /></div>
                                             <div class="month"><fmt:formatDate value="${latestResource.resourceDate}" pattern="MMMM" /></div>
                                             </div>
-                                            <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestResource.resourceThumbnailImage.url)}" alt="${latestResource.resourceTitle}">
+                                            <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(latestResource.resourceThumbnailImage.url)}" alt="${latestResource.resourceTitle}" loading="lazy">
                                             <div class="resource-card-inner">
                                                 <h3>${latestResource.resourceTitle}</h3>
                                                 <p>${latestResource.resourceShortDescription}</p>
@@ -97,7 +97,7 @@
                                                     <div class="col-sm-6 news vedio_outer mb-5">
                                                         <div class="video-player-container">
                                                             <div class="embed-responsive embed-responsive-16by9">
-                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(latestWebinar.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(latestWebinar.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                             </div>
                                                             <!-- <span class="video_text">
                                                                 Healthcare & Life Sciences Sector
@@ -113,7 +113,7 @@
                                        <div class="col-sm-6 news vedio_outer mb-5">
                                                         <div class="video-player-container">
                                                             <div class="embed-responsive embed-responsive-16by9">
-                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(latestSuccessStory.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(latestSuccessStory.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                             </div>
                                                             <!-- <span class="video_text">
                                                                 Healthcare & Life Sciences Sector
@@ -141,7 +141,7 @@
 
                         <div class="container">
                             <div class="row mb-5">
-                                <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="news-icon">
+                                <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="news-icon" loading="lazy">
                                 <h1 class="title"><spring:theme code="portal.media.news" text="NEWS FROM INVEST SAUDI"/></h1>
                             </div>
                             <div class="row pt-3">
@@ -153,7 +153,7 @@
                                                         <div class="day"><fmt:formatDate value="${newsComponent.newsDate}" pattern="d" /></div>
                                                         <div class="month"><fmt:formatDate value="${newsComponent.newsDate}" pattern="MMMM" /></div>
                                                     </div>
-                                                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" alt="${newsComponent.newsTitle}">
+                                                    <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" alt="${newsComponent.newsTitle}" loading="lazy">
                                                     <div class="news-card-inner">
                                                         <h3>${newsComponent.newsTitle}</h3>
                                                         <p>${newsComponent.newsShortDescription}</p>
@@ -170,7 +170,7 @@
                  <section class="Inc-mediaCenter-sectionwrapper">
                      <div class="container">
                             <div class="row mb-5">
-                                <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="events-icon">
+                                <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="events-icon" loading="lazy">
                                 <h1 class="title"> <spring:theme code="portal.media.events" text="EVENTS"/></h1>
                             </div>
                             <div class="row">
@@ -182,7 +182,7 @@
                                                     <div class="day"><fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" /></div>
                                                 <div class="month"><fmt:formatDate value="${eventComponent.eventEndDate}" pattern="MMMM" /></div>
                                                 </div>
-                                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" alt="${eventComponent.eventName}">
+                                                <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}" alt="${eventComponent.eventName}" loading="lazy">
                                                 <div class="news-card-inner">
                                                     <h3>${eventComponent.eventName}</h3>
                                                     <p>${eventComponent.eventShortDescription}</p>
@@ -199,7 +199,7 @@
                 <section class="Inc-mediaCenter-sectionwrapper">
                     <div class="container">
                         <div class="row mb-5">
-                            <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="events-icon">
+                            <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="events-icon" loading="lazy">
                             <h1 class="title"> <spring:theme code="portal.media.resources" text="RESOURCES"/></h1>
                         </div>
                             <c:url value="/mediaCenter/resources" var="resourcesUrl"/>
@@ -232,7 +232,7 @@
                     <div class="container">
 
                         <div class="row mb-5">
-                            <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="">
+                            <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="" loading="lazy">
                             <h1 class="title"><spring:theme code="portal.media.webinar.videos" text="WEBINAR VIDEOS"/></h1>
                         </div>
                         <div class="row">
@@ -240,7 +240,7 @@
                                                 <div class="col-sm-4 news vedio_outer mb-5">
                                                     <div class="video-player-container">
                                                         <div class="embed-responsive embed-responsive-16by9">
-                                                            <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(videoComponent.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                            <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(videoComponent.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                         </div>
                                                         <!-- <span class="video_text">
                                                             Healthcare & Life Sciences Sector
@@ -264,7 +264,7 @@
                                                     <div class="col-sm-6 news vedio_outer mb-5">
                                                         <div class="video-player-container">
                                                             <div class="embed-responsive embed-responsive-16by9">
-                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(successStoryComponent.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471" src="${fn:escapeXml(successStoryComponent.embedURL.url)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                                             </div>
                                                             <!-- <span class="video_text">
                                                                 Healthcare & Life Sciences Sector

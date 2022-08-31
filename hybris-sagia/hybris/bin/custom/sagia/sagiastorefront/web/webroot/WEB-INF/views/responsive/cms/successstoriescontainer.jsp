@@ -25,7 +25,7 @@
                                             <c:forEach var="entry" items="${components}">
                                                 <c:if test="${not empty entry}">
                                                     <li data-target="#carouselExampleControls" data-slide-to="">
-                                                        <img class="img-fluid js-responsive-image achievement_header_icon" id="${entry.uid}" src="${entry.companyLogo.url}" alt='${entry.companyLogo.altText}' title='${entry.companyLogo.altText}' style="">
+                                                        <img class="img-fluid js-responsive-image achievement_header_icon" id="${entry.uid}" src="${entry.companyLogo.url}" alt='${entry.companyLogo.altText}' title='${entry.companyLogo.altText}' style="" loading="lazy">
                                                     </li>
 
                                                 </c:if>

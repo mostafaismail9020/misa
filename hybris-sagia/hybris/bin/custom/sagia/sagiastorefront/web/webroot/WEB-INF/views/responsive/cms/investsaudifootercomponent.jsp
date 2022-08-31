@@ -75,7 +75,7 @@
             <div class="container my-3">
                 <div class="row no-gutters">
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-5 mb-lg-0 footer-column-text ft-logo">
-                        <img src="${commonResourcePath}/images/footer_logo.png" alt="" class="footer_logo" />
+                        <img src="${commonResourcePath}/images/footer_logo.png" alt="" class="footer_logo" loading="lazy"/>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 footer-column-text first-list text-right-ar">
                         <ul class="footer-menu">
@@ -112,7 +112,7 @@
                                 <a href=""><img src="${commonResourcePath}/images/facebook-square.png" alt="facebook" class="" /></a>
                             </li> --%>
                             <li>
-                                <a href="https://twitter.com/InvestSaudi"><img src="${commonResourcePath}/images/twitter-square.png" alt="twitter" class="" /></a>
+                                <a href="https://twitter.com/InvestSaudi"><img src="${commonResourcePath}/images/twitter-square.png" alt="twitter" class="" loading="lazy"/></a>
                             </li>                                                
                          </ul>
                      </div>                     

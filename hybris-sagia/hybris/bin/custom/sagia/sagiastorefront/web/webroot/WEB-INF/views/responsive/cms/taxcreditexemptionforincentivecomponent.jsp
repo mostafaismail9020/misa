@@ -17,7 +17,7 @@
                       <div class=" col-md-4 pull-left INS_tax_pos_image">
                           <div class="INS_tax_imageshadow">
                               <div class="text-center pt-2 pb-4 INS_margin_hed">
-                                  <img src="${fn:escapeXml(component.logo.url)}" class="img-fluid INS_financial_imageheight">
+                                  <img src="${fn:escapeXml(component.logo.url)}" class="img-fluid INS_financial_imageheight" loading="lazy">
                               </div>
                           </div>
                       </div>

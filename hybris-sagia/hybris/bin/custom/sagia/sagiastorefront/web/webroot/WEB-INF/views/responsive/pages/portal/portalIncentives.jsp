@@ -69,7 +69,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 INS_img_width">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/arab-fund.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/arab-fund.jpg" class="img-fluid" loading="lazy">
                               </div>
                               <h3 class="INS_loanpbm_header pt-3">Loan program for public/private investment projects</h3>
                               <p class="INS_loanpbm_para">Financing for public/private investment projects offering:</p>
@@ -86,7 +86,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 INS_img_width">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 114.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 114.jpg" class="img-fluid" loading="lazy">
                               </div>
                               <h3 class="INS_loanpbm_header pt-3">Loan program for economic development and reform in Arab countries</h3>
                               <p class="INS_loanpbm_para">This program offers loans and facilities to help address the overall balance of payment deficit of member countries, including 4 types of loans that vary in size, terms, and maturity.</p>
@@ -98,7 +98,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 INS_img_width">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/atfp.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/atfp.jpg" class="img-fluid" loading="lazy">
                               </div> 
                               <h3 class="INS_loanpbm_header pt-3">Financing facilities for trade transactions of goods of Arab origin</h3>
                               <p class="INS_loanpbm_para">This loan program offers refinancing of Arab exports to Arab & non-Arab countries through lines of credit, e.g., pre-export credits, post-shipment credits, buyers’ credits, and import credits.</p>
@@ -113,7 +113,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 ">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/20190630_1561924345-744688.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/20190630_1561924345-744688.jpg" class="img-fluid" loading="lazy">
                               </div>
                               <h3 class="INS_loanpbm_header pt-3">Political and commercial risk insurance for investments and export credit guarantees</h3>
                               <p class="INS_loanpbm_para">Insurance schemes and guarantees to encourage investments in Arab countries, and enhance inter-Arab trade and Arab exports worldwide.</p>
@@ -125,7 +125,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 115.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 115.jpg" class="img-fluid"  loading="lazy">
                               </div> 
                               <h3 class="INS_loanpbm_header pt-3">Equity and debt financing for enterprises and productive projects in member countries</h3>
                               <p class="INS_loanpbm_para">Offers different financing schemes to support investment capital of projects, grants loans to enterprises and productive projects, and accepts deposits to mobilize financial resources in accordance with the provisions of Islamic law.</p>
@@ -155,7 +155,7 @@
                         <div class="col mb-4">
                             <div class="INS_shadow_pad">
                                 <div class="text-center pt-2 pb-4">
-                                    <img src="${commonResourcePath}/images/Incentives-for-Investor/logo_ar.jpg" class="img-fluid">
+                                    <img src="${commonResourcePath}/images/Incentives-for-Investor/logo_ar.jpg" class="img-fluid" loading="lazy">
                                 </div> 
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4">
                                   <!-- <img src="${commonResourcePath}/images/Incentives-for-Investor/أرامكو السعودية.jpg" class="img-fluid"> -->
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/saudi-aramco.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/saudi-aramco.jpg" class="img-fluid" loading="lazy">
                               </div> 
                           </div>
                       </div>
@@ -174,7 +174,7 @@
                       <div class="col mb-4">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 109.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 109.jpg" class="img-fluid"  loading="lazy">
                               </div> 
                           </div>
                       </div>
@@ -183,7 +183,7 @@
                       <div class="col mb-4">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/1280px-Saudi_Electricity_Company_Logo.svg.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/1280px-Saudi_Electricity_Company_Logo.svg.jpg" class="img-fluid" loading="lazy">
                               </div> 
                           </div>
                       </div> 
@@ -193,7 +193,7 @@
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4">
                                   <!-- <img src="${commonResourcePath}/images/Incentives-for-Investor/شركة-المياه.jpg" class="img-fluid"> -->
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/national-water.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/national-water.jpg" class="img-fluid"  loading="lazy">
                               </div> 
                           </div>
                       </div>
@@ -220,14 +220,14 @@
                         <li class="nav-item">
                           <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#Tamheer" role="tab" aria-controls="pills-home" aria-selected="true">
                               <div class="INS_EPM_border_set p-3">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Group 686.jpg" class="img-fluid "> 
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Group 686.jpg" class="img-fluid "  loading="lazy"> 
                               </div>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#Program" role="tab" aria-controls="pills-profile" aria-selected="false">
                               <div class="INS_EPM_border_set text-center p-3">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 116.jpg" class="img-fluid " style="height: 52px;margin: 10px;"> 
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 116.jpg" class="img-fluid " style="height: 52px;margin: 10px;" loading="lazy"> 
                                   <h6 class="INS_EPM_SP_header p-1">Program to support the growth of Saudization of enterprises</h6>
                               </div>
                           </a>
@@ -235,7 +235,7 @@
                         <li class="nav-item">
                           <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#Professional" role="tab" aria-controls="pills-contact" aria-selected="false">
                               <div class="INS_EPM_border_set text-center p-3">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 117.jpg" class="img-fluid" style="height: 52px;margin: 10px;"> 
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Mask Group 117.jpg" class="img-fluid" style="height: 52px;margin: 10px;"  loading="lazy"> 
                                   <h6 class="INS_EPM_SP_header p-2">Professional certification support program</h6>
                               </div>
                           </a>
@@ -243,7 +243,7 @@
                         <li class="nav-item">
                           <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#Doroob" role="tab" aria-controls="pills-contact" aria-selected="false">
                               <div class="INS_EPM_border_set text-center p-3">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Image 77.jpg" class="img-fluid" style="height: 52px;margin: 10px;"> 
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Image 77.jpg" class="img-fluid" style="height: 52px;margin: 10px;" loading="lazy"> 
                                   <h6 class="INS_EPM_SP_header p-3">Doroob Program</h6>
                               </div>
                           </a>
@@ -307,7 +307,7 @@
                   <div class="row justify-content-center align-self-center w-100">  
                       <div class="col-4  my-auto">  
                             <div class="INC-main-item-box text-center p-4">
-                                <img src="${commonResourcePath}/images/Incentives-for-Investor/SIDF_logo.jpg" class="img-fluid">
+                                <img src="${commonResourcePath}/images/Incentives-for-Investor/SIDF_logo.jpg" class="img-fluid"   loading="lazy">
                             </div>  
                             <div class="text-center pt-2 pb-4"> 
                                 <a href="https://www.sidf.gov.sa/en/Pages/Home.aspx" class="alink" target="_blank">KNOW MORE - VISIT WEBSITE</a> 
@@ -315,7 +315,7 @@
                       </div>
                       <div class="col-4 my-auto">  
                             <div class="INC-main-item-box text-center p-4">
-                                <img src="${commonResourcePath}/images/Incentives-for-Investor/itfc_eng_rgb_vertical.jpg" class="img-fluid">
+                                <img src="${commonResourcePath}/images/Incentives-for-Investor/itfc_eng_rgb_vertical.jpg" class="img-fluid" loading="lazy">
                             </div> 
                             <div class="text-center pt-2 pb-4"> 
                                 <a href="https://www.itfc-idb.org/en" class="alink" target="_blank">KNOW MORE - VISIT WEBSITE</a> 
@@ -323,7 +323,7 @@
                       </div> 
                       <div class="col-4  my-auto"> 
                           <div class="INC-main-item-box text-center p-4">
-                              <img src="${commonResourcePath}/images/Incentives-for-Investor/saudi exim.jpg" class="img-fluid">
+                              <img src="${commonResourcePath}/images/Incentives-for-Investor/saudi exim.jpg" class="img-fluid" loading="lazy">
                           </div> 
                           <div class="text-center pt-2 pb-4"> 
                             <a href="https://saudiexim.gov.sa/en/Pages/default.aspx" class="alink" target="_blank">KNOW MORE - VISIT WEBSITE</a> 
@@ -355,7 +355,7 @@
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 INS_img_width">
                                   <!-- <img src="${commonResourcePath}/images/Incentives-for-Investor/مدن.jpg" class="img-fluid"> -->
-								  <img src="${commonResourcePath}/images/Incentives-for-Investor/modon.jpg" class="img-fluid">
+								  <img src="${commonResourcePath}/images/Incentives-for-Investor/modon.jpg" class="img-fluid"  loading="lazy">
                               </div> 
                               <p class="INS_loanpbm_para pt-4 text-center">Saudi Authority for Industrial Cities and Technology Zones (Modon)*:</p> 
                               <div class="text-center pt-2 pb-4"> 
@@ -366,7 +366,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 INS_img_width">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/fl-02.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/fl-02.jpg" class="img-fluid"  loading="lazy">
                               </div>
                               <p class="INS_loanpbm_para pt-4 text-center">Royal Commission for Jubail and Yanbu*:</p>
                                <div class="text-center pt-2 pb-4">
@@ -377,7 +377,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 INS_img_width">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Image 85.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Image 85.jpg" class="img-fluid" loading="lazy">
                               </div>  
                               <p class="INS_loanpbm_para pt-4 text-center">Economic Cities and Special Zones Authority (ECZA):</p>
                                <div class="text-center pt-2 pb-4">
@@ -391,7 +391,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4 ">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Image 90.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Image 90.jpg" class="img-fluid" loading="lazy">
                               </div> 
                               <p class="INS_loanpbm_para pt-3">King Abdullah Economic City (KAEC):</p>
                                <div class="text-center pt-2 pb-4">
@@ -402,7 +402,7 @@
                       <div class="INS_col_loanpbm">
                           <div class="INS_shadow_pad">
                               <div class="text-center pt-2 pb-4">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/industrial-clusters-seeklogo.com-01.jpg" class="img-fluid">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/industrial-clusters-seeklogo.com-01.jpg" class="img-fluid" loading="lazy">
                               </div> 
                               <p class="INS_loanpbm_para">National Industrial Development Centre</p>
                                <div class="text-center pt-2 pb-4">
@@ -431,7 +431,7 @@
                           <div class="INS_financial_paddding INS_border_right"> 
                               <h4 class="INS_financial_header">FINANCIAL INCENTIVES FOR R&amp;D</h4>  
                               <div class="text-center pt-2 pb-4">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/kacst.jpg" class="img-fluid INS_financial_imageheight">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/kacst.jpg" class="img-fluid INS_financial_imageheight" loading="lazy">
                               </div> 
                               <p class="INS_financial_para pt-2">Investment in selected local and international R&amp;D projects with potential to boost the country’s economic growth and self-reliance.</p>
                               <div class="text-center pt-2 pb-4">
@@ -443,7 +443,7 @@
                           <div class="INS_financial_paddding"> 
                               <h4 class="INS_financial_header">MULTI-PURPOSE LOAN</h4>  
                               <div class="text-center pt-2 pb-4">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/SIDF_logo.jpg" class="img-fluid INS_financial_imageheight">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/SIDF_logo.jpg" class="img-fluid INS_financial_imageheight"  loading="lazy">
                               </div> 
                               <p class="INS_financial_para pt-2">Finance capital expenditure items not resulting in rated production capacity increases, but potentially improving the borrower’s business or operations.</p>
                               <div class="text-center pt-2 pb-4">
@@ -470,7 +470,7 @@
                       <div class=" col-md-4 pull-left INS_tax_pos_image">
                           <div class="INS_tax_imageshadow">
                               <div class="text-center pt-2 pb-4 INS_margin_hed">
-                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Tax_credit.png" class="img-fluid INS_financial_imageheight">
+                                  <img src="${commonResourcePath}/images/Incentives-for-Investor/Tax_credit.png" class="img-fluid INS_financial_imageheight" loading="lazy">
                               </div>
                           </div>
                       </div>
@@ -502,7 +502,7 @@
                   <div class="row">  
                       <div class="col-md-4 pull-left INS_padd_Smes_20"> 
                           <div class="text-center p-4">
-                              <img src="${commonResourcePath}/images/Incentives-for-Investor/monshaat_logo.png" class="img-fluid">
+                              <img src="${commonResourcePath}/images/Incentives-for-Investor/monshaat_logo.png" class="img-fluid" loading="lazy">
                           </div> 
                       </div>
                       <div class="col-md-8 pull-right INS_padding_Smes_word">

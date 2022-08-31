@@ -2241,6 +2241,16 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 	</bean>
 
+
+
+	<bean id="sagiaResourceComponentFullReportValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentFullReportValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
+	<bean id="sagiaImageValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaImageValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
 	<bean id="regionFacetDisplayNameProvider"
 		  class="com.investsaudi.portal.facades.solrfacetsearch.providers.RegionFacetDisplayNameProvider">
 		<property name="investSaudiProvinceRegionDao" ref="investSaudiProvinceRegionDao"/>

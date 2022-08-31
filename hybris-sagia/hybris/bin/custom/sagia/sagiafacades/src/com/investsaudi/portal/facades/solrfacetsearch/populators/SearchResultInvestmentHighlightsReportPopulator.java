@@ -60,6 +60,9 @@ public class SearchResultInvestmentHighlightsReportPopulator implements Populato
 		target.setResourceDate(this.<String> getValue(source, "resourceDate"));
 		target.setRegionSpecific(this.<String> getValue(source, "regionSpecific"));
 		target.setResourceBulletPoints(this.<String> getValue(source, "resourceBulletPoints"));
+		target.setResourceThumbnailImage(this.<String> getValue(source, "resourceThumbnailImage"));
+		target.setResourceFullReport(this.<String> getValue(source, "resourceFullReportURL"));
+		target.setResourceShortInformation(this.<String> getValue(source, "resourceShortInformation"));
 		/*final List<ImageData> images = createImageData(source);
 		if (CollectionUtils.isNotEmpty(images))
 		{

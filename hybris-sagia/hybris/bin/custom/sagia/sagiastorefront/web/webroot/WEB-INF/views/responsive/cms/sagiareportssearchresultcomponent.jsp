@@ -36,27 +36,23 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" style="margin-top: 75px;">
                 <c:forEach var="result" items="${searchPageData.results}" varStatus="status">
-                    <div class="col-lg-4 col-md-6 col-sm-12 my-4 opportunity-card text-center">
-                        <div class="content-box">
-                            <h2 class="h1 font-bold opp-headtitle" title='<c:out value="${result.opportunity.name}"/>'>${result.opportunity.name}</h2>
-                            <h3 class="opp-type font-bold">${result.parentCategory.name}</h3>
-                            <div class="opp-container">
-                                <a href="${encodedContextPath}${result.opportunity.url}" class="opp-container-child">
-                                    <div class="button btn know-more-btn">
-                                        <spring:theme code="portal.opportunity.know.more.button"/>&nbsp;
-                                        <img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
-                                    </div>
-                                </a>
-                                <a href="${encodedContextPath}${result.opportunity.url}/?scrollTo=contact" class="opp-container-child">
-                                    <div class="button btn interest-btn">
-                                        <spring:theme code="portal.opportunity.iam.interested.button"/>&nbsp;
-                                        <img class="img-fluid arrow-icon" src="${commonResourcePath}/images/arrow_blue.png" alt=""/>
-                                    </div>
+                    <div class="col-12 col-lg-4 mb-5">
+                        <div class="news-card">
+                            <div class="news-date text-center">
+                                <div class="day"><fmt:formatDate value="${result.resourceDate}" pattern="d" /></div>
+                                <div class="month"><fmt:formatDate value="${result.resourceDate}" pattern="MMMM" /></div>
+                            </div>
+                            <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(lastReportsBox2.resourceShortInformation)}" alt="${result.resourceTitle}"/>
+                            <div class="news-card-inner">
+                                <h3 title="${result.resourceTitle}">${result.resourceTitle}</h3>
+                                <p>${result.resourceShortInformation}</p>
+                                <a class="btn btn-primary-fill btn-knowmore" href="${result.resourceUrl}">
+                                    <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/news_page/download.png" alt=""/></span>&nbsp;
+                                    <spring:theme code="portal.media.resourcedetails.download" text="Download"/>
                                 </a>
                             </div>
-
                         </div>
                     </div>
                 </c:forEach>

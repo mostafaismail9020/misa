@@ -16025,7 +16025,7 @@ padding-left: 40px;
 	.page-sector-details .Inc-section-baner-logo img {
 		width: 65px;
 	}
-	
+
 	.page-sector-details .page-sector-details .Inc-sector-keyDetails p:before {
 		top: 9px;
 	}
@@ -21524,15 +21524,28 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
     overflow-x: auto;
 }
 
-.paragraph-component {
+.paragraph-component,
+.paragraph-component p {
     margin: 25px 0;
     text-align: center;
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: 600;
+    font-size: 16px !important;
+    line-height: 25px !important;
+    font-weight: 600 !important;
+    color: #32465A !important;
 }
 
 .page-economic-investment-reports .InvestmentSaudiLastReportCategory-container,
 .page-economic-investment-reports .investment-reports-container {
     margin-top: 75px;
+}
+
+.search-result-reports-container .btn-primary-fill,
+.search-result-reports-container .btn-primary-fill:hover {
+    color: #fff;
+}
+
+.reports-filter-header {
+    font-size: 20px !important;
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
 }

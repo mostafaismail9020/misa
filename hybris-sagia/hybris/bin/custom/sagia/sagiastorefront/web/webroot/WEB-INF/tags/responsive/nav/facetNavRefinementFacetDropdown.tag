@@ -13,12 +13,12 @@
         <div class="facet js-facet">
             <div class="facet__values js-facet-values js-facet-form" data-facet="${facetData.code}">
                 <label for="facet-${facetData.code}" class="full">${facetData.name}:&nbsp;</label>
-                <select id="facet-${facetData.code}" name="facet-${facetData.code}" class="form-control--plp-sorting browser-default custom-select form-control" style=";padding: 6px 20px;">
+                <select id="facet-${facetData.code}" name="q" class="form-control--plp-sorting browser-default custom-select form-control" style=";padding: 6px 20px;">
                     <option value="">
                         <spring:theme code="economic.investmentreports.search.select"/>
                     </option>
                     <c:forEach items="${facetData.values}" var="facetValue">
-                        <option value="${fn:escapeXml(facetValue.code)}" ${facetValue.selected? 'selected="selected"' : ''}>
+                        <option value="${facetValue.query.query.value}" ${facetValue.selected? 'selected="selected"' : ''}>
                             ${fn:escapeXml(facetValue.name)}
                         </option>
                     </c:forEach>

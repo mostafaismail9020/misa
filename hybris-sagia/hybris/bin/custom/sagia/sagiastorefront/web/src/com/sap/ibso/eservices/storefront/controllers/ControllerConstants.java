@@ -88,6 +88,7 @@ public interface ControllerConstants
 				String AccountProfilePage = "pages/account/sagiaProfileCompany";
 				String VerificationPage = "pages/account/sagiaVerification";
 				String SubscriptionFeeCheckPage = "pages/account/sagiaSubscriptionFeeCheck";
+				String NafathVerifyRandomText = "pages/account/verifyNafathRandomText";
 				/** Invest Saudi Code */
 				String AccountHomePage = "pages/account/accountHomePage"; // NOSONAR
 				String AccountOrderHistoryPage = "pages/account/accountOrderHistoryPage"; // NOSONAR

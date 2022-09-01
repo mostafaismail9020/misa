@@ -1,9 +1,14 @@
+$defaultCurrency=USD
+$defaultLanguage=en
+
 INSERT_UPDATE CleanUpMediaCronJob ; code[unique=true]          ; job(code)            ; singleExecutable    ; sessionLanguage(isocode)
                                   ; cleanUpMediaFilesJob       ; cleanUpMediaFilesJob ; false               ; en
 
 INSERT_UPDATE CleanUpDraftCronJob ; code[unique=true]          ; job(code)            ; singleExecutable    ; sessionLanguage(isocode)
                                   ; cleanUpDraftJob            ; cleanUpDraftJob      ; false               ; en
 
+INSERT_UPDATE NafathLoginCleanupCronJob	;code[unique=true]	    ;job(code)				;xDaysOld           ;sessionLanguage(isocode)	;sessionCurrency(isocode)
+                                        ;nafathLoginCleanupJob	;nafathLoginCleanupJob  ;5		            ;$defaultLanguage			;$defaultCurrency
 
 INSERT_UPDATE Trigger             ; cronJob(code)[unique=true] ; cronExpression       ; active[default=true]
                                   ; cleanUpMediaFilesJob       ; 0 0/30 * * * ?

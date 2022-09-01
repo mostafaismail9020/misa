@@ -10,7 +10,6 @@
  */
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -20,12 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import atg.taglib.json.util.JSONException;
 import com.sap.ibso.eservices.core.enums.NafathStatus;
 import com.sap.ibso.eservices.core.jalo.SagiaLicense;
 import com.sap.ibso.eservices.facades.data.NafathLoginData;
 import com.sap.ibso.eservices.facades.sagia.NafathFacade;
-import com.sap.ibso.eservices.storefront.forms.SagiaLicenseSelectionForm;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.acceleratorstorefrontcommons.security.AutoLoginStrategy;
 import de.hybris.platform.cmsfacades.data.UserData;
@@ -33,7 +30,6 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationDetailsSource;
@@ -85,6 +81,8 @@ public class SagiaLoginPageController extends SagiaAbstractLoginPageController {
     private static final Logger LOGGER = LogManager.getLogger(SagiaLoginPageController.class);
 
     private static final String SPRING_SECURITY_LAST_EXCEPTION = "SPRING_SECURITY_LAST_EXCEPTION";
+    private static final String VERIFY_NAFATH_RANDOM_TEXT_CMS_PAGE = "verifyNafathRandomText";
+
 
     private HttpSessionRequestCache httpSessionRequestCache;
     private static final String ENTITY_NAME = "NIPHeaderSet";
@@ -298,11 +296,12 @@ public class SagiaLoginPageController extends SagiaAbstractLoginPageController {
 
     @RequestMapping(value = "/verify", method = RequestMethod.GET)
     public String random(final Model model,
-                         final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) {
+                         final HttpServletRequest request, final HttpServletResponse response, final HttpSession session) throws CMSItemNotFoundException {
         String randomNafathText = getSessionService().getAttribute("randomNafathText");
         model.addAttribute("randomNafathText",randomNafathText);
-        //TODO: design the page to display random code. Also map the respective CMS page
-        return "verifyRandomTextPage";
+        storeCmsPageInModel(model, getContentPageForLabelOrId(VERIFY_NAFATH_RANDOM_TEXT_CMS_PAGE));
+        setUpMetaDataForContentPage(model, getContentPageForLabelOrId(VERIFY_NAFATH_RANDOM_TEXT_CMS_PAGE));
+        return ControllerConstants.Views.Pages.Account.NafathVerifyRandomText;
     }
 
     //TODO: change JSON response

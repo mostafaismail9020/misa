@@ -1618,6 +1618,8 @@
     <alias alias="nafathDAO" name="defaultNafathDAO"/>
     <bean id="defaultNafathDAO" class="com.sap.ibso.eservices.core.sagia.dao.impl.DefaultNafathDAO">
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
+        <property name="timeService" ref="timeService"/>
+
     </bean>
 
     <alias alias="nafathService" name="defaultNafathService"/>

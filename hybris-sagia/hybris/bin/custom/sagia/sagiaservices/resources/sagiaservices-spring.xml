@@ -1932,8 +1932,27 @@
 				<ref bean="investmentHighlightsReportCommerceSearchSolrQueryPopulator" />
 				<ref bean="commerceSearchPagePopulator" />
 				<ref bean="commerceSearchSortPopulator" />
-				<ref bean="commerceSearchTextPopulator" />
+				<ref bean="investmentHighlightsReportSearchTextPopulator" />
 				<ref bean="commerceSearchFiltersPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="investmentHighlightsReportSearchTextPopulator" class="de.hybris.platform.commerceservices.search.solrfacetsearch.populators.SearchTextPopulator">
+		<property name="freeTextQueryBuilders">
+			<list>
+				<bean class="de.hybris.platform.commerceservices.search.solrfacetsearch.querybuilder.impl.DefaultFreeTextQueryBuilder">
+					<property name="propertyName" value="resourceFullDescription" />
+					<property name="boost" value="100" />
+				</bean>
+				<bean class="de.hybris.platform.commerceservices.search.solrfacetsearch.querybuilder.impl.DefaultFreeTextQueryBuilder">
+					<property name="propertyName" value="resourceShortInformation" />
+					<property name="boost" value="90" />
+				</bean>
+				<bean class="de.hybris.platform.commerceservices.search.solrfacetsearch.querybuilder.impl.DefaultFreeTextQueryBuilder">
+					<property name="propertyName" value="resourceShortInformation" />
+					<property name="boost" value="80" />
+				</bean>
 			</list>
 		</property>
 	</bean>

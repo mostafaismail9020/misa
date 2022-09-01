@@ -62,8 +62,8 @@ INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; n
 # facet properties
 INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ;fieldValueProvider ; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible
                            ; $solrIndexedInvestmentHighlightsReportType                         ;year     ;sagiaResourceComponentYearValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
-
-
+                           ; $solrIndexedInvestmentHighlightsReportType                         ;quarter     ;sagiaResourceComponentQuarterValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
+                           ; $solrIndexedInvestmentHighlightsReportType                         ;month     ;sagiaResourceComponentMonthValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
 # Create the queries that will be used to extract data for Solr
 INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; injectCurrentDate[default=true] ; injectCurrentTime[default=true] ; injectLastIndexTime[default=true] ; query                                                                                                 ; user(uid)
                                ; $solrIndexedInvestmentHighlightsReportType                         ; $searchIndexNamePrefix-fullQuery   ; full       ;                                 ;                                 ; false                             ; "SELECT {PK} FROM {InvestmentHighlightsReport}" ; anonymous
@@ -79,8 +79,8 @@ INSERT_UPDATE SolrSearchQueryTemplate ; name[unique=true] ; indexedType(identifi
 # Facet search query properties
 INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider         ; facetSortProvider ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedInvestmentHighlightsReportType]
                                       ; year:$solrIndexedInvestmentHighlightsReportType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentYearValueProvider                   ; defaultTopValuesProvider ;                                 ;
-
-
+                                      ; quarter:$solrIndexedInvestmentHighlightsReportType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentQuarterValueProvider                   ; defaultTopValuesProvider ;                                 ;
+                                      ; month:$solrIndexedInvestmentHighlightsReportType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentMonthValueProvider                   ; defaultTopValuesProvider ;                                 ;
 #
 ## Non-facet search query properties   SagiaExtSearchResultProductPopulator.java
 #INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType] ; facet ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryFuzziness ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength ; includeInResponse[default=true] ; useForHighlighting[default=false]

@@ -214,10 +214,9 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 			@RequestParam(value = "text", required = false) final String searchText, final HttpServletRequest request,
 			final Model model) throws CMSItemNotFoundException
 	{
-		/*final InvestmentHighlightsReportSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
-				sortCode, NUM_OF_RECORD_PER_PAGE);*/
+		final InvestmentHighlightsReportSearchPageData<SearchStateData, InvestmentHighlightsReportData> searchPageData = performSearch(searchQuery, page, showMode,
+				sortCode, NUM_OF_RECORD_PER_PAGE);
 
-        final InvestmentHighlightsReportSearchPageData<SearchStateData, InvestmentHighlightsReportData> searchPageData = null;
 		InvestmentHighlightsReportSearchPageData<SearchStateData, InvestmentHighlightsReportData> solrSearchPageData = null;
 
 		populateModel(model, searchPageData, showMode);

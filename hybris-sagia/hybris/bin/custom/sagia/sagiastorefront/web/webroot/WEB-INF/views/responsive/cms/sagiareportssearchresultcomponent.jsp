@@ -13,7 +13,8 @@
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                <form id="report-facet-form" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
+                <form method="get" id="report-facet-form" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
+                    <input type="hidden" name="text" value="${solrSearchPageData.freeTextSearch}"/>
                     <div>
                         <h1 class='section-headline my-5 reports-filter-header'>
                             <spring:theme code="economic.investmentreports.search.filter"/>
@@ -22,7 +23,7 @@
                     <hr/>
                     <nav:facetNavRefinementsDropdown pageData="${solrSearchPageData}"/>
                     <div id="report-facet-search">
-                        <button class="btn btn-primary-fill btn-knowmore" type="button">
+                        <button class="btn btn-primary-fill btn-knowmore">
                             <spring:theme code="economic.investmentreports.search.label"/>
                         </button>
                     </div>

@@ -21549,3 +21549,15 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
     margin-bottom: 1rem !important;
     margin-top: 0 !important;
 }
+
+.search-result-reports-container label.full {
+    width: 100%;
+}
+
+.search-result-reports-container .facet select {
+    width: 75%;
+}
+
+#report-facet-form #report-facet-search button {
+    margin-top: 20px;
+}

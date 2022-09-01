@@ -13,14 +13,20 @@
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                <div id="product-facet" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
+                <form id="report-facet-form" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
                     <div>
                         <h1 class='section-headline my-5 reports-filter-header'>
                             <spring:theme code="economic.investmentreports.search.filter"/>
                         </h1>
                     </div>
-                    <!-- insert nav:facetNavRefinements here -->
-                </div>
+                    <hr/>
+                    <nav:facetNavRefinementsDropdown pageData="${solrSearchPageData}"/>
+                    <div id="report-facet-search">
+                        <button class="btn btn-primary-fill btn-knowmore" type="button">
+                            <spring:theme code="economic.investmentreports.search.label"/>
+                        </button>
+                    </div>
+                </form>
             </div>
         </c:if>
         <div class="col-md-9 col-sm-12">
@@ -60,7 +66,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-sort">
                         <div class="dashboardWidget-headline js-dashboardWidget-headline">
                             <form id="sortForm1" name="sortForm1" method="get" action="#" class="form-group form-inline">
-                                <label for="opportunity-search" class="full"><spring:theme code="sagia.sort.sort.by"/>:&nbsp;</label>
+                                <label for="opportunity-search"><spring:theme code="sagia.sort.sort.by"/>:&nbsp;</label>
                                 <select id="sortOptions1" name="sort" class="form-control--plp-sorting browser-default custom-select form-control" style=";padding: 6px 20px;">
                                     <c:forEach items="${solrSearchPageData.sorts}" var="sort">
                                         <option value="${fn:escapeXml(sort.code)}" ${sort.selected? 'selected="selected"' : ''}>

@@ -30,10 +30,9 @@ $indexCurrencies=USD
 #
 # Setup the indexed types, `their properties, and the update queries
 #
-
 # Declare the indexed type Product
 INSERT_UPDATE SolrIndexedType ; identifier[unique=true] ; type(code) ; variant ; sorts(&sortRefID)
-                              ; $solrIndexedInvestmentHighlightsReportType ; InvestmentHighlightsReport ; false ; ;
+                              ; $solrIndexedInvestmentHighlightsReportType ; InvestmentHighlightsReport ; false ;sortRef3,sortRef4 ;
 
 INSERT_UPDATE SolrFacetSearchConfig ; name[unique=true]      ; description                   ; indexNamePrefix        ; languages(isocode) ; currencies(isocode) ; solrServerConfig(name) ; solrSearchConfig(description) ; solrIndexConfig(name) ; solrIndexedTypes(identifier) ; enabledLanguageFallbackMechanism ; $catalogVersions
                                     ; $facetSearchConfigName ; $facetSearchConfigDescription ; $searchIndexNamePrefix ; $indexLanguages    ; $indexCurrencies    ; Default                ; Default                       ; Default               ; $solrIndexedInvestmentHighlightsReportType             ; true                             ; $contentCatalog:Online,$contentCatalog:Staged
@@ -49,7 +48,7 @@ INSERT_UPDATE SolrValueRange ; &rangeValueRefID ; solrValueRangeSet(name)[unique
 
 # Non-facet properties
 INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true]      ; type(code) ; sortableType(code) ; currency[default=false] ; localized[default=false] ; multiValue[default=false] ; useForSpellchecking[default=false] ; useForAutocomplete[default=false] ; fieldValueProvider                         ; valueProviderParameter ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength
-                                  ; $solrIndexedInvestmentHighlightsReportType  ; resourceTitle      ; string    ;                    ;                         ;    true                      ;                           ;                                    ;                                   ; springELValueProvider                      ; getResourceTitle(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedInvestmentHighlightsReportType  ; resourceTitle      ; string    ;  sortabletext                  ;                         ;    true                      ;                           ;                                    ;                                   ; springELValueProvider                      ; getResourceTitle(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
                                   ; $solrIndexedInvestmentHighlightsReportType  ; resourceShortInformation ; string    ;              ;                         ;  true                       ;   false                        ;                                    ;                                   ; springELValueProvider                      ; getResourceShortInformation(#lang)                       ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
                                   ; $solrIndexedInvestmentHighlightsReportType  ; resourceFullDescription ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ;  getResourceFullDescription(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
                                   ; $solrIndexedInvestmentHighlightsReportType  ; resourceBulletPoints ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
@@ -81,6 +80,23 @@ INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(id
                                       ; year:$solrIndexedInvestmentHighlightsReportType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentYearValueProvider                   ; defaultTopValuesProvider ;                                 ;
                                       ; quarter:$solrIndexedInvestmentHighlightsReportType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentQuarterValueProvider                   ; defaultTopValuesProvider ;                                 ;
                                       ; month:$solrIndexedInvestmentHighlightsReportType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentMonthValueProvider                   ; defaultTopValuesProvider ;                                 ;
+
+
+
+# Define the available sorts
+INSERT_UPDATE SolrSort ; &sortRefID ; indexedType(identifier)[unique=true] ; code[unique=true] ; useBoost
+                       ; sortRef3   ; $solrIndexedInvestmentHighlightsReportType                     ; resourceTitle-asc          ; false
+                       ; sortRef4   ; $solrIndexedInvestmentHighlightsReportType                     ; resourceTitle-desc         ; false
+
+
+# Define the sort fields
+INSERT_UPDATE SolrSortField ; sort(indexedType(identifier),code)[unique=true] ; fieldName[unique=true] ; ascending[unique=true]
+                            ; $solrIndexedInvestmentHighlightsReportType:resourceTitle-asc                       ; resourceTitle                   ; true
+                            ; $solrIndexedInvestmentHighlightsReportType:resourceTitle-desc                      ; resourceTitle                   ; false
+
+#;sortRef5;$solrIndexedType;price-asc;false
+#;sortRef6;$solrIndexedType;price-desc;false
+
 #
 ## Non-facet search query properties   SagiaExtSearchResultProductPopulator.java
 #INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType] ; facet ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryFuzziness ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength ; includeInResponse[default=true] ; useForHighlighting[default=false]

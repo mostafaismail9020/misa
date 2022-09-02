@@ -2985,8 +2985,11 @@ li a.about-us-nav {
 .country-list li:before {
     content: '' !important; }
 
-.succ-search-container a, .opp-search-container a {
-    cursor: pointer; }
+.search-reports-container a,
+.succ-search-container a,
+.opp-search-container a {
+  cursor: pointer;
+}
 
 .search-reports-container .a-search,
 .succ-search-container .a-search, .opp-search-container .a-search {

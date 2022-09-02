@@ -2417,9 +2417,32 @@
 					<explorer-tree:type-node code="EconomicAndInvestmentReportsAndStudies" id="EconomicAndInvestmentReportsAndStudies"/>
 				</explorer-tree:navigation-node>
 				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
+				<explorer-tree:type-node id="SagiaIndicatorTerm"
+										 code="SagiaIndicatorTerm" />
 			</explorer-tree:navigation-node>
 		</explorer-tree:explorer-tree>
 	</context>
+
+
+	<context type="SagiaIndicatorTerm"  component="cs-editor-area" principal="CMS_PORTAL_USER,CMS_PORTAL_MANAGER"
+			 merge-by="type">
+		<editorArea:editorArea>
+			<editorArea:tab name="SagiaIndicatorTermTab">
+				<editorArea:section name="SagiaIndicatorTermSection">
+					<editorArea:attribute qualifier="code" />
+					<editorArea:attribute qualifier="name" />
+					<editorArea:attribute qualifier="description" />
+					<editorArea:attribute
+							qualifier="source" />
+					<editorArea:attribute qualifier="linkText" />
+					<editorArea:attribute qualifier="linkURL" />
+					<editorArea:attribute
+							qualifier="isActive" />
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
+
 
     <context merge-by="type" parent="BaseSite" type="CMSSite" component="editor-area" principal="portal-cmsmanagerrole">
         <editorArea:editorArea>

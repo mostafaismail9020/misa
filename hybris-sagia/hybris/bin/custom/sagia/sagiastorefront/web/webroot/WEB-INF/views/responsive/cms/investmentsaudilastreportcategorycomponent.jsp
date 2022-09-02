@@ -10,6 +10,8 @@
 <c:if test="${component.visible}">
     <div class="container InvestmentSaudiLastReportCategory-container">
         <div class="row">
+
+            <c:url value="${lastReportsBox1.reportUrl}" var="lastReportsBox1Url"/>
             <div class="col-12 col-lg-3 mb-5">
                 <div class="news-card">
                     <div class="news-date text-center">
@@ -20,13 +22,14 @@
                     <div class="news-card-inner">
                         <h3 title="${lastReportsBox1.boxTitle}">${lastReportsBox1.boxTitle}</h3>
                         <p>${lastReportsBox1.reportShortInformation}</p>
-                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox1.reportUrl}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
+                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox1Url}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
                             <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <c:url value="${lastReportsBox2.reportUrl}" var="lastReportsBox2Url"/>
             <div class="col-12 col-lg-3 mb-5">
                 <div class="news-card">
                     <div class="news-date text-center">
@@ -37,13 +40,14 @@
                     <div class="news-card-inner">
                         <h3 title="${lastReportsBox2.boxTitle}">${lastReportsBox2.boxTitle}</h3>
                         <p>${lastReportsBox2.reportShortInformation}</p>
-                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox2.reportUrl}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
+                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox2Url}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
                             <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <c:url value="${lastReportsBox3.reportUrl}" var="lastReportsBox3Url"/>
             <div class="col-12 col-lg-3 mb-5">
                 <div class="news-card">
                     <div class="news-date text-center">
@@ -54,13 +58,14 @@
                     <div class="news-card-inner">
                         <h3 title="${lastReportsBox3.boxTitle}">${lastReportsBox3.boxTitle}</h3>
                         <p>${lastReportsBox3.reportShortInformation}</p>
-                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox3.reportUrl}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
+                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox3Url}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
                             <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <c:url value="${lastReportsBox4.reportUrl}" var="lastReportsBox4Url"/>
             <div class="col-12 col-lg-3 mb-5">
                 <div class="news-card">
                     <div class="news-date text-center">
@@ -71,7 +76,7 @@
                     <div class="news-card-inner">
                         <h3 title="${lastReportsBox4.boxTitle}">${lastReportsBox4.boxTitle}</h3>
                         <p>${lastReportsBox4.reportShortInformation}</p>
-                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox4.reportUrl}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
+                        <a class="btn btn-primary-fill btn-knowmore" href="${lastReportsBox4Url}"><spring:theme code="portal.media.know.more" text="Know More"/>&nbsp;
                             <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
                         </a>
                     </div>

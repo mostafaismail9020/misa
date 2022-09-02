@@ -125,18 +125,18 @@ public class SagiaResourceComponentMonthValueProvider extends AbstractPropertyFi
 
     private  Map<String, String> createMonthMap(LanguageModel language) {
         Map<String, String> monthVocab = new HashMap<>();
-        monthVocab.put("0", getLocalizedValue("month.january",language));
-        monthVocab.put("1", getLocalizedValue("month.february",language));
-        monthVocab.put("2", getLocalizedValue("month.march",language));
-        monthVocab.put("3", getLocalizedValue("month.april",language));
-        monthVocab.put("4", getLocalizedValue("month.may",language));
-        monthVocab.put("5", getLocalizedValue("month.june",language));
-        monthVocab.put("6", getLocalizedValue("month.july",language));
-        monthVocab.put("7", getLocalizedValue("month.august",language));
-        monthVocab.put("8", getLocalizedValue("month.september",language));
-        monthVocab.put("9", getLocalizedValue("month.october",language));
-        monthVocab.put("10", getLocalizedValue("month.november",language));
-        monthVocab.put("11", getLocalizedValue("month.december",language));
+        monthVocab.put(String.valueOf(Calendar.JANUARY), getLocalizedValue("month.january",language));
+        monthVocab.put(String.valueOf(Calendar.FEBRUARY), getLocalizedValue("month.february",language));
+        monthVocab.put(String.valueOf(Calendar.MARCH), getLocalizedValue("month.march",language));
+        monthVocab.put(String.valueOf(Calendar.APRIL), getLocalizedValue("month.april",language));
+        monthVocab.put(String.valueOf(Calendar.MAY), getLocalizedValue("month.may",language));
+        monthVocab.put(String.valueOf(Calendar.JUNE), getLocalizedValue("month.june",language));
+        monthVocab.put(String.valueOf(Calendar.JULY), getLocalizedValue("month.july",language));
+        monthVocab.put(String.valueOf(Calendar.AUGUST), getLocalizedValue("month.august",language));
+        monthVocab.put(String.valueOf(Calendar.SEPTEMBER), getLocalizedValue("month.september",language));
+        monthVocab.put(String.valueOf(Calendar.OCTOBER), getLocalizedValue("month.october",language));
+        monthVocab.put(String.valueOf(Calendar.NOVEMBER), getLocalizedValue("month.november",language));
+        monthVocab.put(String.valueOf(Calendar.DECEMBER), getLocalizedValue("month.december",language));
        return monthVocab;
     }
 

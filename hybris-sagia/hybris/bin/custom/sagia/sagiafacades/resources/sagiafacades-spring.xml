@@ -2430,7 +2430,8 @@
 
 
 	<!--	EconomicAndInvestmentReportsAndStudies Search Facade Start-->
-	<alias name="defaultSolrMonthlyBulletinReportSearchFacade" alias="economicAndInvestmentReportsAndStudiesSearchFacade"/>
+
+	<alias name="defaultSolrEconomicAndInvestmentReportsAndStudiesSearchFacade" alias="economicAndInvestmentReportsAndStudiesSearchFacade"/>
 	<bean id="defaultSolrEconomicAndInvestmentReportsAndStudiesSearchFacade"
 		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrEconomicAndInvestmentReportsAndStudiesSearchFacade">
 		<property name="economicAndInvestmentReportsAndStudiesSearchService" ref="economicAndInvestmentReportsAndStudiesSearchService"/>

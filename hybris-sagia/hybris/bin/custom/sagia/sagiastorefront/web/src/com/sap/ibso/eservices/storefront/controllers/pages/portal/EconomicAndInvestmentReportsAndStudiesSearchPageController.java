@@ -62,7 +62,7 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 	private static final int NUM_OF_RECORD_PER_PAGE = 9;
 
 	@Resource(name = "economicAndInvestmentReportsAndStudiesSearchFacade")
-	private EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchFacade<EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesSearchFacade;
+	private EconomicAndInvestmentReportsAndStudiesSearchFacade<EconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesSearchFacade;
 
 	@Resource(name = "searchBreadcrumbBuilder")
 	private SearchBreadcrumbBuilder searchBreadcrumbBuilder;
@@ -91,10 +91,10 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 
 
 		EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
-				EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> searchPageData = null;
+				EconomicAndInvestmentReportsAndStudiesData> searchPageData = null;
 
 		EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
-				EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> solrSearchPageData = null;
+				EconomicAndInvestmentReportsAndStudiesData> solrSearchPageData = null;
 
 		try
 		{
@@ -125,11 +125,11 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 			storeContinueUrl(request);
 			populateModel(model, searchPageData, ShowMode.Page);
 			solrSearchPageData=searchPageData;
-			List<EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesDataList = new ArrayList<>();
-			for (EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData economicAndInvestmentReportsAndStudiesData : searchPageData.getResults()) {
+			List<EconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesDataList = new ArrayList<>();
+			for (EconomicAndInvestmentReportsAndStudiesData economicAndInvestmentReportsAndStudiesData : searchPageData.getResults()) {
 				economicAndInvestmentReportsAndStudiesDataList.add(economicAndInvestmentReportsAndStudiesData);
 			}
-			SearchPageData<EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesDataSearchPageData = new SearchPageData<>();
+			SearchPageData<EconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesDataSearchPageData = new SearchPageData<>();
 			economicAndInvestmentReportsAndStudiesDataSearchPageData.setResults(economicAndInvestmentReportsAndStudiesDataList);
 			PaginationData sagiaPaginationData = new PaginationData ();
 			sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
@@ -168,10 +168,10 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 
 	protected
 	EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
-			EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> encodeSearchCustomePageData(
+			EconomicAndInvestmentReportsAndStudiesData> encodeSearchCustomePageData(
 			final
 			EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
-					EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> searchPageData)
+					EconomicAndInvestmentReportsAndStudiesData> searchPageData)
 	{
 		final SearchStateData
 				currentQuery = searchPageData.getCurrentQuery();

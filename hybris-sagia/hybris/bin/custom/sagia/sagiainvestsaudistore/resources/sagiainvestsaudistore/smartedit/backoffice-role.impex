@@ -1,0 +1,3 @@
+INSERT_UPDATE BackofficeRole;uid[unique=true];name;locName[lang=en];
+;CMS_PORTAL_USER;CMS Users;CMS Users;
+;CMS_PORTAL_MANAGER;CMS Managers;CMS Managers;

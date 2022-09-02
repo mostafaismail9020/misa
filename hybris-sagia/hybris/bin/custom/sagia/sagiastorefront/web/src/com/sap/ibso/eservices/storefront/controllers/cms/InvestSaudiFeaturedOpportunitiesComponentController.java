@@ -55,7 +55,7 @@ public class InvestSaudiFeaturedOpportunitiesComponentController extends
     private ProductSearchFacade<ProductData> productSearchFacade;
 
     private static final String CHAR = "/";
-    private static final String SOLR_PRFIX_QUERY = "all:name-asc:allCategories:";
+    private static final String SOLR_PRFIX_QUERY = ":name-asc:allCategories:";
 
     @Override
     protected void fillModel(final HttpServletRequest request, final Model model, final InvestSaudiFeaturedOpportunitiesComponentModel component) 

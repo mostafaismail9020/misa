@@ -1,0 +1,107 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#
+# Import the Solr configuration for the sagia store
+#
+
+$contentCatalog = sagiaContentCatalog
+$catalogVersions=catalogVersions(catalog(id),version);
+$facetSearchConfigName=sagiaEconomicAndInvestmentReportsAndStudiesIndex
+$facetSearchConfigDescription=Economic And Investment Reports AndS tudies
+$searchIndexNamePrefix=sagiaEconomicAndInvestmentReportsAndStudies
+$solrIndexedEconomicAndInvestmentReportsAndStudiesType=economicAndInvestmentReportsAndStudiesType
+$indexBaseSite=sagia
+$indexLanguages=en,ar
+$indexCurrencies=USD
+
+
+
+
+
+
+#
+# Setup the indexed types, `their properties, and the update queries
+#
+# Declare the indexed type Product
+INSERT_UPDATE SolrIndexedType ; identifier[unique=true] ; type(code) ; variant ; sorts(&sortRefID)
+                              ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType ; EconomicAndInvestmentReportsAndStudies ; false ;sortRef3,sortRef4 ;
+
+INSERT_UPDATE SolrFacetSearchConfig ; name[unique=true]      ; description                   ; indexNamePrefix        ; languages(isocode) ; currencies(isocode) ; solrServerConfig(name) ; solrSearchConfig(description) ; solrIndexConfig(name) ; solrIndexedTypes(identifier) ; enabledLanguageFallbackMechanism ; $catalogVersions
+                                    ; $facetSearchConfigName ; $facetSearchConfigDescription ; $searchIndexNamePrefix ; $indexLanguages    ; $indexCurrencies    ; Default                ; Default                       ; Default               ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType             ; true                             ; $contentCatalog:Online,$contentCatalog:Staged
+
+UPDATE BaseSite ; uid[unique=true] ; solrFacetSearchConfiguration(name)
+                ; $indexBaseSite   ; $facetSearchConfigName
+
+# Define price range set
+INSERT_UPDATE SolrValueRangeSet ; name[unique=true] ; qualifier ; type ; solrValueRanges(&rangeValueRefID)
+
+# Define price ranges
+INSERT_UPDATE SolrValueRange ; &rangeValueRefID ; solrValueRangeSet(name)[unique=true] ; name[unique=true] ; from ; to
+
+# Non-facet properties
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true]      ; type(code) ; sortableType(code) ; currency[default=false] ; localized[default=false] ; multiValue[default=false] ; useForSpellchecking[default=false] ; useForAutocomplete[default=false] ; fieldValueProvider                         ; valueProviderParameter ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength
+                                  ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType  ; resourceTitle      ; string    ;  sortabletext                  ;                         ;    true                      ;                           ;                                    ;                                   ; springELValueProvider                      ; getResourceTitle(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType  ; resourceShortInformation ; string    ;              ;                         ;  true                       ;   false                        ;                                    ;                                   ; springELValueProvider                      ; getResourceShortInformation(#lang)                       ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType  ; resourceFullDescription ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ;  getResourceFullDescription(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType  ; resourceBulletPoints ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType  ; resourceUrl ; string    ;              ;                         ;                          ;                           ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType  ; resourceThumbnailImage ; string    ;              ;                         ;                          ;                           ;                                    ;                                   ; sagiaImageValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType  ; resourceFullReportURL ; string    ;              ;                         ;  true                        ;                           ;                                    ;                                   ; sagiaResourceComponentFullReportValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType  ; resourceDate     ; string    ;                    ;                         ;                          ;                           ;                                    ;                                   ; sagiaResourceComponentDateValueProvider                      ;                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+
+
+# facet properties
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; localized[default=false] ;fieldValueProvider ; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible
+                           ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType                         ;year     ; ;sagiaResourceComponentYearValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
+                           ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType                         ;quarter     ; ;sagiaResourceComponentQuarterValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
+                           ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType                         ;month     ; true ;sagiaResourceComponentMonthValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
+# Create the queries that will be used to extract data for Solr
+INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; injectCurrentDate[default=true] ; injectCurrentTime[default=true] ; injectLastIndexTime[default=true] ; query                                                                                                 ; user(uid)
+                               ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType                         ; $searchIndexNamePrefix-fullQuery   ; full       ;                                 ;                                 ; false                             ; "SELECT {PK} FROM {EconomicAndInvestmentReportsAndStudies}" ; anonymous
+
+
+
+# Search query template
+INSERT_UPDATE SolrSearchQueryTemplate ; name[unique=true] ; indexedType(identifier)[unique=true] ; ftsQueryBuilder             ; enableHighlighting[default=true]
+                                      ; DEFAULT           ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType                     ; defaultFreeTextQueryBuilder ;
+
+
+
+# Facet search query properties
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider         ; facetSortProvider ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedEconomicAndInvestmentReportsAndStudiesType]
+                                      ; year:$solrIndexedEconomicAndInvestmentReportsAndStudiesType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentYearValueProvider                   ; defaultTopValuesProvider ;                                 ;
+                                      ; quarter:$solrIndexedEconomicAndInvestmentReportsAndStudiesType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentQuarterValueProvider                   ; defaultTopValuesProvider ;                                 ;
+                                      ; month:$solrIndexedEconomicAndInvestmentReportsAndStudiesType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentMonthValueProvider                   ; defaultTopValuesProvider ;                                 ;
+
+
+
+# Define the available sorts
+INSERT_UPDATE SolrSort ; &sortRefID ; indexedType(identifier)[unique=true] ; code[unique=true] ; useBoost
+                       ; sortRef3   ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType                     ; resourceTitle-asc          ; false
+                       ; sortRef4   ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType                     ; resourceTitle-desc         ; false
+
+
+# Define the sort fields
+INSERT_UPDATE SolrSortField ; sort(indexedType(identifier),code)[unique=true] ; fieldName[unique=true] ; ascending[unique=true]
+                            ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType:resourceTitle-asc                       ; resourceTitle                   ; true
+                            ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType:resourceTitle-desc                      ; resourceTitle                   ; false
+
+
+
+# Non-facet search query properties   SagiaExtSearchResultProductPopulator.java
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedEconomicAndInvestmentReportsAndStudiesType] ; facet ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryFuzziness ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength ; includeInResponse[default=true] ; useForHighlighting[default=false]
+                                      ; resourceFullDescription:$solrIndexedEconomicAndInvestmentReportsAndStudiesType                                           ;                                                                                                   ;       ; TRUE                          ; 90                  ; TRUE                        ; 50              ; TRUE                         ;                        ;  25                  ;                                 ; POSTFIX                                     ; 45                    ; 3                             ;                                 ;
+                                      ; resourceShortInformation:$solrIndexedEconomicAndInvestmentReportsAndStudiesType                                           ;                                                                                                   ;       ; TRUE                          ; 100                 ; TRUE                    ; 50            ; TRUE                         ;                        ; 25                 ;                                 ; POSTFIX                                            ;                       ;                               ;                                 ; true
+                                      ; resourceTitle:$solrIndexedEconomicAndInvestmentReportsAndStudiesType                                    ;                                                                                                   ;       ;                               ;   100                  ;       TRUE                  ;  50             ;  TRUE                            ;                        ;     25               ;                                 ; POSTFIX                                            ;                       ;                               ;                                 ;
+
+# Facet search query properties
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider         ; facetSortProvider ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedEconomicAndInvestmentReportsAndStudiesType]
+                                      ; year:$solrIndexedEconomicAndInvestmentReportsAndStudiesType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentYearValueProvider ; facetNameSortProviderAscending                  ; defaultTopValuesProvider ;                                 ;

@@ -21,9 +21,9 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class InvestmentHighlightsReportSearchSolrQueryPopulator<INDEXED_PROPERTY_TYPE, INDEXED_TYPE_SORT_TYPE> extends  SearchSolrQueryPopulator<INDEXED_PROPERTY_TYPE, INDEXED_TYPE_SORT_TYPE> {
+public class EconomicAndInvestmentReportsAndStudiesSearchSolrQueryPopulator<INDEXED_PROPERTY_TYPE, INDEXED_TYPE_SORT_TYPE> extends  SearchSolrQueryPopulator<INDEXED_PROPERTY_TYPE, INDEXED_TYPE_SORT_TYPE> {
 
-    private static final Logger LOG = Logger.getLogger(InvestmentHighlightsReportSearchSolrQueryPopulator.class);
+    private static final Logger LOG = Logger.getLogger(EconomicAndInvestmentReportsAndStudiesSearchSolrQueryPopulator.class);
 
     @Resource
     CatalogVersionService catalogVersionService ;
@@ -94,7 +94,7 @@ public class InvestmentHighlightsReportSearchSolrQueryPopulator<INDEXED_PROPERTY
     protected FacetSearchConfig getFacetSearchConfig() throws NoValidSolrConfigException, FacetConfigServiceException
     {
 
-        return facetSearchConfigService.getConfiguration("sagiaInvestmentHighlightsReportIndex");
+        return facetSearchConfigService.getConfiguration("sagiaEconomicAndInvestmentReportsAndStudiesIndex");
     }
 
     protected IndexedType getIndexedType(final FacetSearchConfig config)

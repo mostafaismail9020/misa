@@ -3665,5 +3665,31 @@
 		<property name="keywordRedirectUrl" type="String"/>
 		<property name="spellingSuggestion" type="de.hybris.platform.commerceservices.search.facetdata.SpellingSuggestionData&lt;STATE>"/>
 	</bean>
+
+
+
+	<bean class="de.hybris.platform.commerceservices.search.facetdata.EconomicAndInvestmentMonitorSearchPageData&lt;STATE, RESULT>" extends="de.hybris.platform.commerceservices.search.facetdata.FacetSearchPageData&lt;STATE, RESULT>">
+		<description>POJO containing the result page for EconomicAndInvestmentMonitor search.</description>
+		<property name="freeTextSearch" type="String"/>
+		<property name="categoryCode" type="String"/>
+		<property name="keywordRedirectUrl" type="String"/>
+		<property name="spellingSuggestion" type="de.hybris.platform.commerceservices.search.facetdata.SpellingSuggestionData&lt;STATE>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commerceservices.search.facetdata.MonthlyBulletinReportSearchPageData&lt;STATE, RESULT>" extends="de.hybris.platform.commerceservices.search.facetdata.FacetSearchPageData&lt;STATE, RESULT>">
+		<description>POJO containing the result page for EconomicAndInvestmentMonitor search.</description>
+		<property name="freeTextSearch" type="String"/>
+		<property name="categoryCode" type="String"/>
+		<property name="keywordRedirectUrl" type="String"/>
+		<property name="spellingSuggestion" type="de.hybris.platform.commerceservices.search.facetdata.SpellingSuggestionData&lt;STATE>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commerceservices.search.facetdata.EconomicAndInvestmentReportsAndStudiesSearchPageData&lt;STATE, RESULT>" extends="de.hybris.platform.commerceservices.search.facetdata.FacetSearchPageData&lt;STATE, RESULT>">
+		<description>POJO containing the result page for EconomicAndInvestmentReportsAndStudies search.</description>
+		<property name="freeTextSearch" type="String"/>
+		<property name="categoryCode" type="String"/>
+		<property name="keywordRedirectUrl" type="String"/>
+		<property name="spellingSuggestion" type="de.hybris.platform.commerceservices.search.facetdata.SpellingSuggestionData&lt;STATE>"/>
+	</bean>
 	<!--ZQEEMAH 2 -->
 </beans>

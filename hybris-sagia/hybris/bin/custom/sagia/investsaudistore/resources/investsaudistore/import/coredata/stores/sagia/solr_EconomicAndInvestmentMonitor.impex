@@ -1,0 +1,107 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#
+# Import the Solr configuration for the sagia store
+#
+
+$contentCatalog = sagiaContentCatalog
+$catalogVersions=catalogVersions(catalog(id),version);
+$facetSearchConfigName=sagiaEconomicAndInvestmentMonitorIndex
+$facetSearchConfigDescription=Sagia Economic And Investment Monitor Solr Index
+$searchIndexNamePrefix=sagiaEconomicAndInvestmentMonitor
+$solrIndexedEconomicAndInvestmentMonitorType=economicAndInvestmentMonitorType
+$indexBaseSite=sagia
+$indexLanguages=en,ar
+$indexCurrencies=USD
+
+
+
+
+
+
+#
+# Setup the indexed types, `their properties, and the update queries
+#
+# Declare the indexed type Product
+INSERT_UPDATE SolrIndexedType ; identifier[unique=true] ; type(code) ; variant ; sorts(&sortRefID)
+                              ; $solrIndexedEconomicAndInvestmentMonitorType ; EconomicAndInvestmentMonitor ; false ;sortRef3,sortRef4 ;
+
+INSERT_UPDATE SolrFacetSearchConfig ; name[unique=true]      ; description                   ; indexNamePrefix        ; languages(isocode) ; currencies(isocode) ; solrServerConfig(name) ; solrSearchConfig(description) ; solrIndexConfig(name) ; solrIndexedTypes(identifier) ; enabledLanguageFallbackMechanism ; $catalogVersions
+                                    ; $facetSearchConfigName ; $facetSearchConfigDescription ; $searchIndexNamePrefix ; $indexLanguages    ; $indexCurrencies    ; Default                ; Default                       ; Default               ; $solrIndexedEconomicAndInvestmentMonitorType             ; true                             ; $contentCatalog:Online,$contentCatalog:Staged
+
+UPDATE BaseSite ; uid[unique=true] ; solrFacetSearchConfiguration(name)
+                ; $indexBaseSite   ; $facetSearchConfigName
+
+# Define price range set
+INSERT_UPDATE SolrValueRangeSet ; name[unique=true] ; qualifier ; type ; solrValueRanges(&rangeValueRefID)
+
+# Define price ranges
+INSERT_UPDATE SolrValueRange ; &rangeValueRefID ; solrValueRangeSet(name)[unique=true] ; name[unique=true] ; from ; to
+
+# Non-facet properties
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true]      ; type(code) ; sortableType(code) ; currency[default=false] ; localized[default=false] ; multiValue[default=false] ; useForSpellchecking[default=false] ; useForAutocomplete[default=false] ; fieldValueProvider                         ; valueProviderParameter ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength
+                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceTitle      ; string    ;  sortabletext                  ;                         ;    true                      ;                           ;                                    ;                                   ; springELValueProvider                      ; getResourceTitle(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceShortInformation ; string    ;              ;                         ;  true                       ;   false                        ;                                    ;                                   ; springELValueProvider                      ; getResourceShortInformation(#lang)                       ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceFullDescription ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ;  getResourceFullDescription(#lang)                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceBulletPoints ; string    ;              ;                         ;                          ;   true                        ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceUrl ; string    ;              ;                         ;                          ;                           ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceThumbnailImage ; string    ;              ;                         ;                          ;                           ;                                    ;                                   ; sagiaImageValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceFullReportURL ; string    ;              ;                         ;  true                        ;                           ;                                    ;                                   ; sagiaResourceComponentFullReportValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceDate     ; string    ;                    ;                         ;                          ;                           ;                                    ;                                   ; sagiaResourceComponentDateValueProvider                      ;                      ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
+
+
+# facet properties
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; localized[default=false] ;fieldValueProvider ; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible
+                           ; $solrIndexedEconomicAndInvestmentMonitorType                         ;year     ; ;sagiaResourceComponentYearValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
+                           ; $solrIndexedEconomicAndInvestmentMonitorType                         ;quarter     ; ;sagiaResourceComponentQuarterValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
+                           ; $solrIndexedEconomicAndInvestmentMonitorType                         ;month     ; true ;sagiaResourceComponentMonthValueProvider ;string      ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true
+# Create the queries that will be used to extract data for Solr
+INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; injectCurrentDate[default=true] ; injectCurrentTime[default=true] ; injectLastIndexTime[default=true] ; query                                                                                                 ; user(uid)
+                               ; $solrIndexedEconomicAndInvestmentMonitorType                         ; $searchIndexNamePrefix-fullQuery   ; full       ;                                 ;                                 ; false                             ; "SELECT {PK} FROM {EconomicAndInvestmentMonitor}" ; anonymous
+
+
+
+# Search query template
+INSERT_UPDATE SolrSearchQueryTemplate ; name[unique=true] ; indexedType(identifier)[unique=true] ; ftsQueryBuilder             ; enableHighlighting[default=true]
+                                      ; DEFAULT           ; $solrIndexedEconomicAndInvestmentMonitorType                     ; defaultFreeTextQueryBuilder ;
+
+
+
+# Facet search query properties
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider         ; facetSortProvider ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedEconomicAndInvestmentMonitorType]
+                                      ; year:$solrIndexedEconomicAndInvestmentMonitorType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentYearValueProvider                   ; defaultTopValuesProvider ;                                 ;
+                                      ; quarter:$solrIndexedEconomicAndInvestmentMonitorType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentQuarterValueProvider                   ; defaultTopValuesProvider ;                                 ;
+                                      ; month:$solrIndexedEconomicAndInvestmentMonitorType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentMonthValueProvider                   ; defaultTopValuesProvider ;                                 ;
+
+
+
+# Define the available sorts
+INSERT_UPDATE SolrSort ; &sortRefID ; indexedType(identifier)[unique=true] ; code[unique=true] ; useBoost
+                       ; sortRef3   ; $solrIndexedEconomicAndInvestmentMonitorType                     ; resourceTitle-asc          ; false
+                       ; sortRef4   ; $solrIndexedEconomicAndInvestmentMonitorType                     ; resourceTitle-desc         ; false
+
+
+# Define the sort fields
+INSERT_UPDATE SolrSortField ; sort(indexedType(identifier),code)[unique=true] ; fieldName[unique=true] ; ascending[unique=true]
+                            ; $solrIndexedEconomicAndInvestmentMonitorType:resourceTitle-asc                       ; resourceTitle                   ; true
+                            ; $solrIndexedEconomicAndInvestmentMonitorType:resourceTitle-desc                      ; resourceTitle                   ; false
+
+
+
+# Non-facet search query properties   SagiaExtSearchResultProductPopulator.java
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedEconomicAndInvestmentMonitorType] ; facet ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryFuzziness ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength ; includeInResponse[default=true] ; useForHighlighting[default=false]
+                                      ; resourceFullDescription:$solrIndexedEconomicAndInvestmentMonitorType                                           ;                                                                                                   ;       ; TRUE                          ; 90                  ; TRUE                        ; 50              ; TRUE                         ;                        ;  25                  ;                                 ; POSTFIX                                     ; 45                    ; 3                             ;                                 ;
+                                      ; resourceShortInformation:$solrIndexedEconomicAndInvestmentMonitorType                                           ;                                                                                                   ;       ; TRUE                          ; 100                 ; TRUE                    ; 50            ; TRUE                         ;                        ; 25                 ;                                 ; POSTFIX                                            ;                       ;                               ;                                 ; true
+                                      ; resourceTitle:$solrIndexedEconomicAndInvestmentMonitorType                                    ;                                                                                                   ;       ;                               ;   100                  ;       TRUE                  ;  50             ;  TRUE                            ;                        ;     25               ;                                 ; POSTFIX                                            ;                       ;                               ;                                 ;
+
+# Facet search query properties
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider         ; facetSortProvider ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedEconomicAndInvestmentMonitorType]
+                                      ; year:$solrIndexedEconomicAndInvestmentMonitorType                                  ;                     ; MultiSelectOr   ; 9999    ;sagiaResourceComponentYearValueProvider ; facetNameSortProviderAscending                  ; defaultTopValuesProvider ;                                 ;

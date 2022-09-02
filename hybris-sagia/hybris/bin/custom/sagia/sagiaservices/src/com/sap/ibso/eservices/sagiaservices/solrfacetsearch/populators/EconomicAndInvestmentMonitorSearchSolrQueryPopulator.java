@@ -10,26 +10,25 @@ import de.hybris.platform.commerceservices.search.solrfacetsearch.strategies.exc
 import de.hybris.platform.servicelayer.dto.converter.ConversionException;
 import de.hybris.platform.solrfacetsearch.config.FacetSearchConfig;
 import de.hybris.platform.solrfacetsearch.config.FacetSearchConfigService;
-import de.hybris.platform.solrfacetsearch.config.IndexConfig;
 import de.hybris.platform.solrfacetsearch.config.IndexedType;
 import de.hybris.platform.solrfacetsearch.config.exceptions.FacetConfigServiceException;
-import de.hybris.platform.solrfacetsearch.model.config.SolrFacetSearchConfigModel;
 import de.hybris.platform.solrfacetsearch.search.SearchQuery;
 import org.apache.log4j.Logger;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Collection;
 
-public class InvestmentHighlightsReportSearchSolrQueryPopulator<INDEXED_PROPERTY_TYPE, INDEXED_TYPE_SORT_TYPE> extends  SearchSolrQueryPopulator<INDEXED_PROPERTY_TYPE, INDEXED_TYPE_SORT_TYPE> {
+public class EconomicAndInvestmentMonitorSearchSolrQueryPopulator<INDEXED_PROPERTY_TYPE, INDEXED_TYPE_SORT_TYPE> extends  SearchSolrQueryPopulator<INDEXED_PROPERTY_TYPE, INDEXED_TYPE_SORT_TYPE> {
 
-    private static final Logger LOG = Logger.getLogger(InvestmentHighlightsReportSearchSolrQueryPopulator.class);
+    private static final Logger LOG = Logger.getLogger(EconomicAndInvestmentMonitorSearchSolrQueryPopulator.class);
 
     @Resource
     CatalogVersionService catalogVersionService ;
 
+
     @Resource
     FacetSearchConfigService facetSearchConfigService;
+
 
     @Override
     public void populate(final SearchQueryPageableData<SolrSearchQueryData> source,
@@ -84,32 +83,9 @@ public class InvestmentHighlightsReportSearchSolrQueryPopulator<INDEXED_PROPERTY
         target.setSearchQuery(searchQuery);
     }
 
-    /**
-     * Resolves suitable {@link FacetSearchConfig} for the query based on the configured strategy bean.<br>
-     *
-     * @return {@link FacetSearchConfig} that is converted from {@link SolrFacetSearchConfigModel}
-     * @throws NoValidSolrConfigException
-     *            , FacetConfigServiceException
-     */
     protected FacetSearchConfig getFacetSearchConfig() throws NoValidSolrConfigException, FacetConfigServiceException
     {
 
-        return facetSearchConfigService.getConfiguration("sagiaInvestmentHighlightsReportIndex");
-    }
-
-    protected IndexedType getIndexedType(final FacetSearchConfig config)
-    {
-        final IndexConfig indexConfig = config.getIndexConfig();
-
-        // Strategy for working out which of the available indexed types to use
-        final Collection<IndexedType> indexedTypes = indexConfig.getIndexedTypes().values();
-        if (indexedTypes != null && !indexedTypes.isEmpty())
-        {
-            // When there are multiple - select the first
-            return indexedTypes.iterator().next();
-        }
-
-        // No indexed types
-        return null;
+        return facetSearchConfigService.getConfiguration("sagiaEconomicAndInvestmentMonitorIndex");
     }
 }

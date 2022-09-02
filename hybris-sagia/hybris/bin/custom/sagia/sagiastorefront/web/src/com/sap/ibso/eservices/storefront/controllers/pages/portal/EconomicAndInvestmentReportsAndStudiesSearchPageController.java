@@ -5,6 +5,7 @@ package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 
 import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
 import com.sap.ibso.eservices.facades.data.EconomicAndInvestmentReportsAndStudiesData;
+import com.investsaudi.portal.facades.solrfacetsearch.EconomicAndInvestmentReportsAndStudiesSearchFacade;
 import com.sap.security.core.server.csi.XSSEncoder;
 import de.hybris.platform.acceleratorcms.model.components.SearchBoxComponentModel;
 import de.hybris.platform.acceleratorservices.controllers.page.PageType;
@@ -90,10 +91,10 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 		searchState.setQuery(searchQueryData);
 
 
-		EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
+		EconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
 				EconomicAndInvestmentReportsAndStudiesData> searchPageData = null;
 
-		EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
+		EconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
 				EconomicAndInvestmentReportsAndStudiesData> solrSearchPageData = null;
 
 		try
@@ -167,10 +168,10 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 	}
 
 	protected
-	EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
+	EconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
 			EconomicAndInvestmentReportsAndStudiesData> encodeSearchCustomePageData(
 			final
-			EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
+			EconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData,
 					EconomicAndInvestmentReportsAndStudiesData> searchPageData)
 	{
 		final SearchStateData
@@ -213,7 +214,7 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 							   @RequestParam(value = "text", required = false) final String searchText, final HttpServletRequest request,
 							   final Model model) throws CMSItemNotFoundException
 	{
-		final EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData, EconomicAndInvestmentReportsAndStudiesData> searchPageData = performSearch(searchQuery, page, showMode,
+		final EconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData, EconomicAndInvestmentReportsAndStudiesData> searchPageData = performSearch(searchQuery, page, showMode,
 				sortCode, NUM_OF_RECORD_PER_PAGE);
 
 		EconomicAndInvestmentReportsAndStudiesSearchPageData<SearchStateData, EconomicAndInvestmentReportsAndStudiesData> solrSearchPageData = null;

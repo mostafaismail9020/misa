@@ -38,12 +38,12 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 				; linkName[lang 
 
 
 ########## Content Pages Menu Links, link details are in file
-INSERT_UPDATE CMSLinkComponent; uid[unique = true] 				; name 							; linkName[lang = en] 		; linkName[lang = ar] 			; contentPage(uid, $contentCV)			; url	; $contentCV[unique = true]	; 
+INSERT_UPDATE CMSLinkComponent; uid[unique = true] 				; name 							; linkName[lang = en] 		; linkName[lang = ar] 			; contentPage(uid, $contentCV)			; url	; $contentCV[unique = true]	;
 							  ; about-kingdom-link      		; About the Kingdom 			; About the Kingdom 		; About the Kingdom 			; meet-the-kingdom 						;		;
 							  ; living-in-saudi-link    		; Living In Saudi Arabia		; Living In Saudi Arabia	; Living In Saudi Arabia		; living-in-saudi 						;		;
                               ; regions-link            		; Regions Overview 				; Regions Overview  		; Regions Overview  			; province-region-homepage				;		;
                               ; province-explore-more   		; Province Explore More 		; Explore More  	    	; Explore More 	        		; province-region-homepage				;		;
-									
+
 							  ; sectors-link 					; Sectors 						; Sectors 					; Sectors 						; sectors-opportunities 				;		;
                               ; explore-more-link           	; Explore More              	; Explore More              ; Explore More              	; sectors-opportunities					;		;
 							  ; opportunities-link 				; Opportunities 				; Opportunities 			; Opportunities 				; opportunity-search 					;		;
@@ -51,16 +51,16 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true] 				; name 							; linkName[
 
                               ; investor-journey-link         	; Investment Guide  			; Investment Guide  		; Investment Guide 				; guide 								;		;
                               ; incentives-for-investors-link 	; Incentives			  		; Incentives			    ; Incentives 					; incentives 							;		;
-							
+
 							  ; about-invest-saudi-link 		; About Invest Saudi			; About Invest Saudi  		; About Invest Saudi  			; about-invest-saudi  					;		;
 							  ; contact-us-link         		; Contact Us 	 				; Contact Us 	 			; Contact Us 	 				; contact-us 							;		;
-							
+
 							  ; media-center-overview-link 		; Media Center Overview 		; Media Center Overview 	; Media Center Overview 		; media-center 							;		;
 							  ; news-link               		; News 							; News 						; News 							; news 									;		;
 							  ; events-link             		; Events  						; Events  					; Events  						; events 								;		;
 							  ; resources-link          		; Resources 					; Resources 				; Resources 					; resources 							;		;
 							  ; videos-link             		; Videos 						; Videos 					; Videos 						; videos 								;		;
-				
+
                               ; dasboard-link                 	; Dashboard 					; Dashboard 				; Dashboard 					; economic-highlights  					;		;
                               ; international-link            	; SA in International Indices 	; SA in International Indices 	; SA in International Indices 	; sa-international-indices 			;		;
                               ; infrastructure-logistic-link  	; Infrastructures and Logistic 	; Infrastructures and Logistic 	; Infrastructures and Logistic 	; infrastructure-logistics 			;		;
@@ -70,20 +70,20 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true] 				; name 							; linkName[
 
 ########## Redesigning the Nodes
 INSERT_UPDATE CMSLinkComponent; uid[unique = true]          	; name             				; linkName[lang = en] 				; linkName[lang = ar] 					; url      											; $contentCV[unique = true]	;
-                              ; meet-the-kingdom-link       	; Meet the Kingdom 				; Meet the Kingdom    				; Meet the Kingdom    					; #				 									;       
-							  ; invest-in-saudi-arabia-link 	; Invest in Saudi Arabia 		; Invest in Saudi Arabia    		; Invest in Saudi Arabia    			; # 												;                              
+                              ; meet-the-kingdom-link       	; Meet the Kingdom 				; Meet the Kingdom    				; Meet the Kingdom    					; #				 									;
+							  ; invest-in-saudi-arabia-link 	; Invest in Saudi Arabia 		; Invest in Saudi Arabia    		; Invest in Saudi Arabia    			; # 												;
 							  ; investor-guide-link         	; Start Your Business 			; Start Your Business    			; Start Your Business   				; # 												;
-                              ; economic-highlight-link     	; Economic Highlights 			; Economic Highlights 				; Economic Highlights 					; #													;                             							  
+                              ; economic-highlight-link     	; Economic Highlights 			; Economic Highlights 				; Economic Highlights 					; #													;
 							  ; media-center-link           	; Media  						; Media     						; Media     							; # 												;
                               ; about-us-link               	; About 						; About    							; About   								; # 												;
-					
-#Defining 3rd level links		
+
+#Defining 3rd level links
                               ; riyadh-link                 	; Riyadh Province 				; Riyadh Province 					; Riyadh Province 						; /meetTheKingdom/province/riyadh 					;
                               ; makkah-link          			; Makkah Province 				; Makkah Province 					; Makkah Province 						; /meetTheKingdom/province/makkah 					;
                               ; eastern-link                	; Eastern Province				; Eastern Province 					; Eastern Province 						; /meetTheKingdom/province/eastern 		    		;
                               ; madinah-link                	; Madinah Province 				; Madinah Province 					; Madinah Province 						; /meetTheKingdom/province/medina 					;
                               ; al-baha-link                	; Al Baha Province 				; Al Baha Province 					; Al Baha Province 						; /meetTheKingdom/province/al-baha 					;
-                              ; al-jawf-link                	; Al Jawf Province				; Al Jawf Province 					; Al Jawf Province 						; /meetTheKingdom/province/al-jouf 					;	
+                              ; al-jawf-link                	; Al Jawf Province				; Al Jawf Province 					; Al Jawf Province 						; /meetTheKingdom/province/al-jouf 					;
                               ; northern-borders-link       	; Northern Borders Province 	; Northern Borders Province 		; Northern Borders Province 			; /meetTheKingdom/province/northern-borders 		;
                               ; qassim-link                 	; Qassim Province 				; Qassim Province 					; Qassim Province 						; /meetTheKingdom/province/qassim 					;
                               ; hail-link                   	; Ha'il Province				; Ha'il Province 					; Ha'il Province 						; /meetTheKingdom/province/hail 					;
@@ -91,7 +91,7 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true]          	; name             
                               ; aseer-link                 		; Aseer Province 				; Aseer Province 					; Aseer Province 						; /meetTheKingdom/province/asir						;
                               ; jazan-link                  	; Jazan Province				; Jazan Province 					; Jazan Province 						; /meetTheKingdom/province/jazan 					;
                               ; ajran-link                  	; Najran Province				; Najran Province 					; Najran Province 						; /meetTheKingdom/province/najran 					;
-							
+
                               ; chemicals-link					; Chemicals  					; Chemicals  						; Chemicals 							; /sectors-opportunities/chemicals					;
                               ; energy-link                 	; Energy   						; Energy   							; Energy  								; /sectors-opportunities/energy 					;
                               ; environment-services-link   	; Environment Services  		; Environment Services  			; Environment Services 					; /sectors-opportunities/environment-services 		;
@@ -103,7 +103,7 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true]          	; name             
                               ; transport-and-logistics-link	; Transport & Logistics   		; Transport & Logistics   			; Transport & Logistics  				; # 												;
                               ; real-estate-link            	; Real Estate 					; Real Estate  						; Real Estate 							; # 												;
                               ; education-link              	; Education  					; Education  						; Education 							; # 												;
-                              ; financial-services-link     	; Financial Services  			; Financial Services  				; Financial Services 					; # 												;         
+                              ; financial-services-link     	; Financial Services  			; Financial Services  				; Financial Services 					; # 												;
                               ; innovation-entrepreneurship-link; Innovation and Entrepreneurship	; Innovation and Entrepreneurship	; Innovation and entrepreneurship 	; # 												;
 
 
@@ -111,14 +111,14 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true]          	; name             
 INSERT_UPDATE CMSNavigationNode	; uid[unique = true]				; name						; nodeImage(code, $contentCV)	     ; title[lang = en] 		; title[lang = ar] 			; &nodeRef 						; $contentCV[unique = true]	; nodeDescription[lang = en];
 								; root 								; Root 						; 								     ;							;							;								;							;					;
 								; header-menu 						; Portal Header Menu		;								     ; Portal Header Menu 		; Portal Header Menu		; PortalHeaderMenu				;							;					;
-																																     
-# Meet the Kingdom                                                                                                                   
+
+# Meet the Kingdom
 								; meet-the-kingdom-navnode 			; Meet the Kingdom 			; meet_the_Kingdom_Banner.png		 ; Meet the Kingdom 		; Meet the Kingdom  		; meet-the-kingdom-navnode 		; 							; Explore why Saudi Arabia is your perfect investment destination.;
 								; about-the-kingdom-navnode 		; About the Kingdom 		;								     ; About the Kingdom 		; About the Kingdom 		; about-the-kingdom-navnode 	; 							; 					;
 								; living-in-saudi-arabia-navnode	; Living In Saudi Arabia	;								     ; Living In Saudi Arabia	; Living In Saudi Arabia 	; living-in-saudi-arabia-navnode; 							; 					;
 								; regions-navnode 					; Regions Overview 		 	;								     ; Regions Overview 		; Regions Overview  		; regions-navnode 				; 							;					;
-																																     
-# Invest in Saudi Arabia                                                                                                             
+
+# Invest in Saudi Arabia
 								; invest-in-saud-arabia-navnode		; Invest in Saudi Arabia 	; invest_In_Saudi_Arabia_Banner.png  ; Invest in Saudi Arabia	; Invest in Saudi Arabia 	; invest-in-saud-arabia-navnode ;							; Explore Saudi Arabia's exceptional dynamic sectors and key opportunities for business growth and success.;
 								; sectors-navnode 					; Sectors 					;								     ; Sectors 					; Sectors 					; sectors-navnode 				; 							; 					;
 								; opportunities-navnode 			; Opportunities 			;								     ; Opportunities 			; Opportunities 			; opportunities-navnode 		; 							;  					;
@@ -128,10 +128,10 @@ INSERT_UPDATE CMSNavigationNode	; uid[unique = true]				; name						; nodeImage(
 								; investor-guide-navnode 			; Investor Guide 			; investment_Guide_Banner.png	     ; Start Your Business 		; Start Your Business		; investor-guide-navnode 		;							; Discover our end-to-end facilitation services to support you in all your business needs and livability essentials.;
 								; investor-journey-navnode 			; Investor Journey 			;								     ; Investment Guide			; Investment Guide 			; investor-journey-navnode 		; 							;					;
 								; incentives-for-investors-navnode 	; Incentives for Investors 	;								     ; Incentives  				; Incentives 				; incentives-for-investors-navnode	; 						;					;
-																																     
-# Economic Highlights                                                                                                                
+
+# Economic Highlights
 								; economic-highlight-navnode 		; Economic Highlight 		; economic_Highlights_Banner.png	 ; Economic Highlights 		; Economic Highlights 		; economic-highlight-navnode 	; 							; Insights about key economic numbers in Saudi Arabia.;
-								; dasboard-navnode 					; Dashboard  				;								     ; Dashboard  				; Dashboard  				; dasboard-navnode 				; 							; 					;	
+								; dasboard-navnode 					; Dashboard  				;								     ; Dashboard  				; Dashboard  				; dasboard-navnode 				; 							; 					;
 								; international-navnode 			; SA in international Indices	;							     ; SA in International Indices	 ; SA in International Indices	; international-navnode ; 							; 					;
 								; infrastructure-logistic-navnode 	; Infrastructures and Logistic  ;							     ; Infrastructures and Logistic  ; Infrastructures and Logistic ; infrastructure-logistic-navnode ; 				;  					;
 								; economic-sectors-navnode 			; Saudi Economic Sectors  		;							     ; Saudi Economic Sectors  	; Saudi Economic Sectors  	; economic-sectors-navnode 		; 							; 					;
@@ -144,8 +144,8 @@ INSERT_UPDATE CMSNavigationNode	; uid[unique = true]				; name						; nodeImage(
                                 ; media-center-events-navnode       ; Events                    ;                                    ; Events                   ; Events                    ; media-center-events-navnode   ;                           ;                   ;
                                 ; media-center-resources-navnode    ; Resources                 ;                                    ; Resources                ; Resources                 ; media-center-resources-navnode;                           ;                   ;
                                 ; media-center-videos-navnode       ; Videos                    ;                                    ; Videos                   ; Videos                    ; media-center-videos-navnode   ;                           ;                   ;
-								
-# About Us                                                                                                                           
+
+# About Us
 								; about-us-navnode 					; About Us 					; about_Banner.png	                 ; About 				    ; About 					; about-us-navnode				;							; Learn more about us and our role as Saudi Arabia's global investment attraction and promotion platform.;
 								; about-invest-saudi-navnode 		; About Invest Saudi 		;								     ; About Invest Saudi 		; About Invest Saudi 		; about-invest-saudi-navnode 	; 							; 					;
 								; contact-and-faq-navnode 			; Contact Us  				;								     ; Contact Us  				; Contact Us  				; contact-and-faq-navnode 		; 							; 					;
@@ -158,7 +158,7 @@ REMOVE CMSNavigationNode		; uid[unique = true]   ; $contentCV[unique = true];
                                 ; videos-navnode 	   ;
 
 
-########## CMSNavigationNode - Parent and Child relationship					
+########## CMSNavigationNode - Parent and Child relationship
 INSERT_UPDATE CMSNavigationNode	; uid[unique = true]			; name					; cmsLink(uid, $contentCV) 	 	; &nodeRef 							; parent(uid, $contentCV) 	; children(uid, $contentCV)[mode = append]	; links(uid, $contentCV)[mode = replace]; $contentCV[unique = true]	;
 								; root 							; Root 					; 	 							;									; 							; 											; 										; 							;
 								; header-menu 					; Portal Header Menu	;								;									; root						;									 		; 									 	; 							;
@@ -218,7 +218,7 @@ UPDATE ContentSlot; uid[unique = true]	; cmsComponents(&componentRef) ; $content
 
 # Content Slots
 INSERT_UPDATE ContentSlot; $contentCV[unique=true]	; uid[unique=true]	; active	; cmsComponents(&componentRef)[mode=replace]
-						 ;							; TopHeaderSlot		; true		; 
+						 ;							; TopHeaderSlot		; true		;
 
 
 INSERT_UPDATE ComponentTypeGroups2ComponentType; source(code)[unique = true]; target(code)[unique = true]
@@ -227,4 +227,36 @@ INSERT_UPDATE ComponentTypeGroups2ComponentType; source(code)[unique = true]; ta
 
 UPDATE InvestSaudiNavigationBarComponent; uid[unique = true] ; name               ; &componentRef ; $contentCV[unique = true]
                                         ; portal-header-menu ; Portal Header Menu ; navigationbar ;
+
+
+
+
+
+#On Economic Highlights menu create 2 menu items
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]          ; name                          ; linkName[lang = en]           ; linkName[lang = ar]              ; url                         ; $contentCV[unique = true];
+							  ; economic-investments-terms-link  ; Economic & Investments terms  ; Economic & Investments term   ; الشروط الاقتصادية والاستثمارية   ; /economic/investmentsTerms ;                          ;
+							  ; economic-investment-reports-link ; Economic & Investment Reports ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية ; /economic/investmentReports ;                         ;
+
+#When mouse over on Economic & Investment Reports will show 4 submenu
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                      ; name                                    ; linkName[lang = en]                     ; linkName[lang = ar]                        ; url                              ; $contentCV[unique = true];
+							  ; economic-and-investment-monitor         ; Economic & Investment Monitor           ; Economic & Investment Monitor           ; مراقبة الاقتصادية والاستثمارية             ; /investment-monitor/resources    ;               ;
+							  ; investment-highlights                   ; Investment Highlights                   ; Investment Highlights                   ; أبرز الاستثمارات                           ; /investment-highlights/resources ;                ;
+							  ; monthly-bulletin                        ; Monthly Bulletin                        ; Monthly Bulletin                        ; النشرة الشهرية                             ; /monthly-bulletin/resources      ;             ;
+							  ; economic-and-investment-reports-Studies ; Economic & Investment Reports & Studies ; Economic & Investment Reports & Studies ; التقارير والدراسات الاقتصادية والاستثمارية ; /report-studies/resources        ;             ;
+
+
+#On Economic Highlights menu create 2 menu items [Name], [Title] and [Description]
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]                              ; title[lang = en]              ; title[lang = ar]                                    ; $contentCV[unique = true]; nodeDescription[lang = en]    ; nodeDescription[lang = ar]       ;
+							   ; economic-investments-terms-node    ; Economic & Investments term   ; الشروط الاقتصادية والاستثمارية    ;               ; Economic & Investments terms  ; الشروط الاقتصادية والاستثمارية   ;
+							   ; economic-investment-reports-node  ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية  ;                ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية ;
+
+#On Economic Highlights menu create 2 menu items [Parent] and [Child relationship]
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]          ; name                          ; cmsLink(uid, $contentCV)    ; &nodeRef                    ; parent(uid, $contentCV); children(uid, $contentCV)[mode = append]; links(uid, $contentCV)[mode = replace]                                                                         ; $contentCV[unique = true];
+							   ; economic-investments-terms-node  ; Economic & Investments terms  ; economic-investments-terms-link  ; economic-investments-terms-node  ; economic-highlight-navnode    ;                                         ;                                                                                                                ;                ;
+							   ; economic-investment-reports-node ; Economic & Investment Reports ; economic-investment-reports-link ; economic-investment-reports-node ; economic-highlight-navnode    ;                                         ; economic-and-investment-monitor,investment-highlights,monthly-bulletin,economic-and-investment-reports-Studies ;                ;
+
+
+
+
 

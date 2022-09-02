@@ -2264,10 +2264,65 @@
 	<bean id="sagiaIndicatorTermFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaIndicatorTermFacade" />
 
 
+
+	  <!--	EconomicAndInvestmentMonitor Search Facade Start -->
+
+
+	<alias name="defaultSolrEconomicAndInvestmentMonitorSearchFacade" alias="economicAndInvestmentMonitorSearchFacade"/>
+	<bean id="defaultSolrEconomicAndInvestmentMonitorSearchFacade"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrEconomicAndInvestmentMonitorSearchFacade">
+		<property name="economicAndInvestmentMonitorSearchService" ref="economicAndInvestmentMonitorSearchService"/>
+		<property name="autocompleteService" ref="commerceAutocompleteService"/>
+		<property name="economicAndInvestmentMonitorSearchPageConverter" ref="economicAndInvestmentMonitorSearchPageConverter"/>
+		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
+		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
+		<property name="threadContextService" ref="threadContextService"/>
+	</bean>
+
+	<alias name="defaultEconomicAndInvestmentMonitorSearchPageConverter" alias="economicAndInvestmentMonitorSearchPageConverter"/>
+	<bean id="defaultEconomicAndInvestmentMonitorSearchPageConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"
+				  value="de.hybris.platform.commerceservices.search.facetdata.EconomicAndInvestmentMonitorSearchPageData"/>
+		<property name="populators">
+			<list>
+				<ref bean="economicAndInvestmentMonitorSearchPagePopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultEconomicAndInvestmentMonitorSearchPagePopulator" alias="economicAndInvestmentMonitorSearchPagePopulator"/>
+	<bean id="defaultEconomicAndInvestmentMonitorSearchPagePopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.EconomicAndInvestmentMonitorSearchPagePopulator"
+	>
+		<property name="breadcrumbConverter" ref="breadcrumbConverter"/>
+		<property name="facetConverter" ref="facetConverter"/>
+		<property name="searchResultEconomicAndInvestmentMonitorConverter" ref="commerceSearchResultEconomicAndInvestmentMonitorConverter"/>
+		<property name="searchStateConverter" ref="solrSearchStateConverter"/>
+		<property name="spellingSuggestionConverter" ref="spellingSuggestionConverter"/>
+	</bean>
+
+	<alias name="defaultCommerceSearchResultEconomicAndInvestmentMonitorConverter" alias="commerceSearchResultEconomicAndInvestmentMonitorConverter"/>
+	<bean id="defaultCommerceSearchResultEconomicAndInvestmentMonitorConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.EconomicAndInvestmentMonitorData"/>
+		<property name="populators">
+			<list>
+				<ref bean="commerceSearchResultEconomicAndInvestmentMonitorPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultCommerceSearchResultEconomicAndInvestmentMonitorPopulator" alias="commerceSearchResultEconomicAndInvestmentMonitorPopulator"/>
+	<bean id="defaultCommerceSearchResultEconomicAndInvestmentMonitorPopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.SearchResultEconomicAndInvestmentMonitorPopulator">
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="imageFormatMapping" ref="imageFormatMapping"/>
+	</bean>
+
+	 <!--	EconomicAndInvestmentMonitor Search Facade END -->
+
+	<!--	InvestmentHighlightsReport Search Facade Start-->
 	<alias name="defaultSolrInvestmentHighlightsReportSearchFacade" alias="investmentHighlightsReportSearchFacade"/>
 	<bean id="defaultSolrInvestmentHighlightsReportSearchFacade"
-		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrInvestmentHighlightsReportSearchFacade"
-	>
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrInvestmentHighlightsReportSearchFacade">
 		<property name="investmentHighlightsReportSearchService" ref="investmentHighlightsReportSearchService"/>
 		<property name="autocompleteService" ref="commerceAutocompleteService"/>
 		<property name="investmentHighlightsReportSearchPageConverter" ref="investmentHighlightsReportSearchPageConverter"/>
@@ -2286,10 +2341,6 @@
 			</list>
 		</property>
 	</bean>
-
-
-
-
 	<alias name="defaultInvestmentHighlightsReportSearchPagePopulator" alias="investmentHighlightsReportSearchPagePopulator"/>
 	<bean id="defaultInvestmentHighlightsReportSearchPagePopulator"
 		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.InvestmentHighlightsReportSearchPagePopulator"
@@ -2317,4 +2368,120 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 		<property name="imageFormatMapping" ref="imageFormatMapping"/>
 	</bean>
+
+
+	<!--	InvestmentHighlightsReport Search Facade END-->
+
+
+
+	<!--	MonthlyBulletinReport Search Facade Start-->
+	<alias name="defaultSolrMonthlyBulletinReportSearchFacade" alias="monthlyBulletinReportSearchFacade"/>
+	<bean id="defaultSolrMonthlyBulletinReportSearchFacade"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrMonthlyBulletinReportSearchFacade">
+		<property name="monthlyBulletinReportSearchService" ref="monthlyBulletinReportSearchService"/>
+		<property name="autocompleteService" ref="commerceAutocompleteService"/>
+		<property name="monthlyBulletinReportSearchPageConverter" ref="monthlyBulletinReportSearchPageConverter"/>
+		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
+		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
+		<property name="threadContextService" ref="threadContextService"/>
+	</bean>
+
+	<alias name="defaultMonthlyBulletinReportSearchPageConverter" alias="monthlyBulletinReportSearchPageConverter"/>
+	<bean id="defaultMonthlyBulletinReportSearchPageConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"
+				  value="de.hybris.platform.commerceservices.search.facetdata.MonthlyBulletinReportSearchPageData"/>
+		<property name="populators">
+			<list>
+				<ref bean="monthlyBulletinReportSearchPagePopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultMonthlyBulletinReportSearchPagePopulator" alias="monthlyBulletinReportSearchPagePopulator"/>
+	<bean id="defaultMonthlyBulletinReportSearchPagePopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.MonthlyBulletinReportSearchPagePopulator"
+	>
+		<property name="breadcrumbConverter" ref="breadcrumbConverter"/>
+		<property name="facetConverter" ref="facetConverter"/>
+		<property name="searchResultMonthlyBulletinReportConverter" ref="commerceSearchResultMonthlyBulletinReportConverter"/>
+		<property name="searchStateConverter" ref="solrSearchStateConverter"/>
+		<property name="spellingSuggestionConverter" ref="spellingSuggestionConverter"/>
+	</bean>
+
+	<alias name="defaultCommerceSearchResultMonthlyBulletinReportConverter" alias="commerceSearchResultMonthlyBulletinReportConverter"/>
+	<bean id="defaultCommerceSearchResultMonthlyBulletinReportConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.MonthlyBulletinReportData"/>
+		<property name="populators">
+			<list>
+				<ref bean="commerceSearchResultMonthlyBulletinReportPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultCommerceSearchResultMonthlyBulletinReportPopulator" alias="commerceSearchResultMonthlyBulletinReportPopulator"/>
+	<bean id="defaultCommerceSearchResultMonthlyBulletinReportPopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.SearchResultMonthlyBulletinReportPopulator">
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="imageFormatMapping" ref="imageFormatMapping"/>
+	</bean>
+
+
+	<!--	MonthlyBulletinReport Search Facade END-->
+
+
+
+	<!--	EconomicAndInvestmentReportsAndStudies Search Facade Start-->
+
+	<alias name="defaultSolrEconomicAndInvestmentReportsAndStudiesSearchFacade" alias="economicAndInvestmentReportsAndStudiesSearchFacade"/>
+	<bean id="defaultSolrEconomicAndInvestmentReportsAndStudiesSearchFacade"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrEconomicAndInvestmentReportsAndStudiesSearchFacade">
+		<property name="economicAndInvestmentReportsAndStudiesSearchService" ref="economicAndInvestmentReportsAndStudiesSearchService"/>
+		<property name="autocompleteService" ref="commerceAutocompleteService"/>
+		<property name="economicAndInvestmentReportsAndStudiesSearchPageConverter" ref="economicAndInvestmentReportsAndStudiesSearchPageConverter"/>
+		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
+		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
+		<property name="threadContextService" ref="threadContextService"/>
+	</bean>
+
+	<alias name="defaultEconomicAndInvestmentReportsAndStudiesSearchPageConverter" alias="economicAndInvestmentReportsAndStudiesSearchPageConverter"/>
+	<bean id="defaultEconomicAndInvestmentReportsAndStudiesSearchPageConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass"
+				  value="de.hybris.platform.commerceservices.search.facetdata.EconomicAndInvestmentReportsAndStudiesSearchPageData"/>
+		<property name="populators">
+			<list>
+				<ref bean="economicAndInvestmentReportsAndStudiesSearchPagePopulator"/>
+			</list>
+		</property>
+	</bean>
+	<alias name="defaultEconomicAndInvestmentReportsAndStudiesSearchPagePopulator" alias="economicAndInvestmentReportsAndStudiesSearchPagePopulator"/>
+	<bean id="defaultEconomicAndInvestmentReportsAndStudiesSearchPagePopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.EconomicAndInvestmentReportsAndStudiesSearchPagePopulator"
+	>
+		<property name="breadcrumbConverter" ref="breadcrumbConverter"/>
+		<property name="facetConverter" ref="facetConverter"/>
+		<property name="searchResultEconomicAndInvestmentReportsAndStudiesConverter" ref="commerceSearchResultEconomicAndInvestmentReportsAndStudiesConverter"/>
+		<property name="searchStateConverter" ref="solrSearchStateConverter"/>
+		<property name="spellingSuggestionConverter" ref="spellingSuggestionConverter"/>
+	</bean>
+
+	<alias name="defaultCommerceSearchResultEconomicAndInvestmentReportsAndStudiesConverter" alias="commerceSearchResultEconomicAndInvestmentReportsAndStudiesConverter"/>
+	<bean id="defaultCommerceSearchResultEconomicAndInvestmentReportsAndStudiesConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.sap.ibso.eservices.facades.data.EconomicAndInvestmentReportsAndStudiesData"/>
+		<property name="populators">
+			<list>
+				<ref bean="commerceSearchResultEconomicAndInvestmentReportsAndStudiesPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultCommerceSearchResultEconomicAndInvestmentReportsAndStudiesPopulator" alias="commerceSearchResultEconomicAndInvestmentReportsAndStudiesPopulator"/>
+	<bean id="defaultCommerceSearchResultEconomicAndInvestmentReportsAndStudiesPopulator"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.populators.SearchResultEconomicAndInvestmentReportsAndStudiesPopulator">
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="imageFormatMapping" ref="imageFormatMapping"/>
+	</bean>
+
+
+	<!--	EconomicAndInvestmentReportsAndStudies Search Facade END-->
 </beans>
+
+

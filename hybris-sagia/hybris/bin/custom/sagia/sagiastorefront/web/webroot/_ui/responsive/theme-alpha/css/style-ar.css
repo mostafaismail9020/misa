@@ -11949,22 +11949,27 @@ ul.INS_li_ul_under li {
 		line-height: 22px;
 		font-weight: unset;
 	}
+	.search-reports-container input[type=search],
+    .search-reports-container input[type=text],
 	.page-opportunity-search .opp-search-container input[type=search],
 	.page-opportunity-search .opp-search-container input[type=text] {
 		font-size: 14px;
 		height: 45px;
 		padding-left: 35px;
 	}
+	.search-reports-container .a-search img,
 	.page-opportunity-search .a-search img {
 		margin-top: -8px;
 		width: 14px;
 	}
+	.search-reports-container .search-btn,
 	.page-opportunity-search .opp-search-btn {
 		height: 45px;
 		top: 0;
 		right: 16px;
 		font-size: 14px;
 	}
+	.search-reports-container .reset-search,
 	.page-opportunity-search .opp-search-container .reset-search {
 		font-size: 10px;
 		line-height: 12px;
@@ -13600,6 +13605,8 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	color: #FFFFFF;
 }
 
+.search-reports-container input[type=search],
+.search-reports-container input[type=text],
 .opp-search-container input[type=search],
 .opp-search-container input[type=text] {
 	width: 100%;
@@ -13613,11 +13620,14 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	outline: none;
 	padding-right: 50px;
 }
+.search-reports-container input[type=search]::placeholder,
+.search-reports-container input[type=text]::placeholder,
 .opp-search-container input[type=search]::placeholder,
 .opp-search-container input[type=text]::placeholder {
 	color: #7B838C;
 }
 
+.search-reports-container .search-btn,
 .opp-search-btn,
 .opp-filter-btn {
 	color: #fff;
@@ -13659,18 +13669,21 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	order: 1;
 }
 
+.search-reports-container,
 .opp-search-container {
 	background: url("../img/opp-search-background.png");
 	background-size: cover;
 	padding: 50px 50px 60px;
 }
 
+.search-reports-container-full,
 .opp-search-container-full {
 	background: url("../img/opp-search-background_full.png") !important;
 	background-size: cover;
 	padding: 50px 50px 60px;
 }
 
+.search-reports-container .reset-search,
 .opp-search-container .reset-search {
 	position: absolute;
 	right: 40px;
@@ -13744,6 +13757,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     margin-bottom: 25px !important;
 }
 
+.search-reports-container form a.a-search,
 .page-opportunity-search-page form a.a-search {
     cursor: default;
 }
@@ -16053,11 +16067,13 @@ ul.INS_list_font li,
 	transform: rotateY(180deg);
 }
 
+.search-reports-container .reset-search,
 .opp-search-container .reset-search {
 	left: 30px;
 	right: inherit;
 }
 
+.search-reports-container .search-btn,
 .opp-search-btn {
 	right: initial;
 	left: 20px;
@@ -17652,6 +17668,8 @@ ul.INS_list_font li,
 		text-align: right;
 		padding-right: 50px !important;
 	}
+	.search-reports-container input[type=search],
+    .search-reports-container input[type=text],
 	.page-opportunity-search .opp-search-container input[type=search],
 	.page-opportunity-search .opp-search-container input[type=text] {
 		font-size: 14px;
@@ -17662,12 +17680,14 @@ ul.INS_list_font li,
 		margin-top: -8px;
 		width: 14px;
 	}
+	.search-reports-container .search-btn,
 	.page-opportunity-search .opp-search-btn {
 		height: 45px;
 		top: 0;
 		right: 16px;
 		font-size: 14px;
 	}
+	.search-reports-container .reset-search,
 	.page-opportunity-search .opp-search-container .reset-search {
 		font-size: 10px;
 		line-height: 12px;
@@ -20561,12 +20581,14 @@ ul.INS_list_font li,
 		margin-top: -8px;
 		width: 14px;
 	}
+	.search-reports-container .search-btn,
 	.page-opportunity-search .opp-search-btn {
 		height: 45px;
 		top: 0;
 		right: 16px;
 		font-size: 14px;
 	}
+	.search-reports-container .reset-search,
 	.page-opportunity-search .opp-search-container .reset-search {
 		font-size: 10px;
 		line-height: 12px;
@@ -22863,4 +22885,16 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
     font-size: 20px !important;
     margin-bottom: 1rem !important;
     margin-top: 0 !important;
+}
+
+.search-result-reports-container label.full {
+    width: 100%;
+}
+
+.search-result-reports-container .facet select {
+    width: 75%;
+}
+
+#report-facet-form #report-facet-search button {
+    margin-top: 20px;
 }

@@ -4,6 +4,9 @@
 package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 
 import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
+import com.investsaudi.portal.facades.solrfacetsearch.MonthlyBulletinReportSearchFacade;
+import com.sap.ibso.eservices.facades.data.MonthlyBulletinReportData;
+import com.sap.security.core.server.csi.XSSEncoder;
 import de.hybris.platform.acceleratorcms.model.components.SearchBoxComponentModel;
 import de.hybris.platform.acceleratorservices.controllers.page.PageType;
 import de.hybris.platform.acceleratorservices.customer.CustomerLocationService;
@@ -24,6 +27,7 @@ import de.hybris.platform.commercefacades.search.data.SearchStateData;
 import de.hybris.platform.commerceservices.enums.SearchQueryContext;
 import de.hybris.platform.commerceservices.search.facetdata.FacetData;
 import de.hybris.platform.commerceservices.search.facetdata.FacetRefinement;
+import de.hybris.platform.commerceservices.search.facetdata.MonthlyBulletinReportSearchPageData;
 import de.hybris.platform.commerceservices.search.facetdata.ProductSearchPageData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
 import de.hybris.platform.core.servicelayer.data.PaginationData;
@@ -41,6 +45,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -59,11 +64,11 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 	private static final String COMPONENT_UID_PATH_VARIABLE_PATTERN = "{componentUid:.*}";
 	private static final String FACET_SEPARATOR = ":";
 
-	private static final String SEARCH_CMS_PAGE_ID = "opportunity-search-page";
+	private static final String SEARCH_CMS_PAGE_ID = "monthly-bulletin-search";
 	private static final int NUM_OF_RECORD_PER_PAGE = 9;
 
-	@Resource(name = "productSearchFacade")
-	private ProductSearchFacade<ProductData> productSearchFacade;
+	@Resource(name = "monthlyBulletinReportSearchFacade")
+	private MonthlyBulletinReportSearchFacade<MonthlyBulletinReportData> monthlyBulletinReportSearchFacade;
 
 	@Resource(name = "searchBreadcrumbBuilder")
 	private SearchBreadcrumbBuilder searchBreadcrumbBuilder;
@@ -79,7 +84,7 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 
 	@RequestMapping(method = RequestMethod.GET, params = "!q")
 	public String textSearch(@RequestParam(value = "text", defaultValue = "") String searchText,
-			final HttpServletRequest request, final Model model) throws CMSItemNotFoundException
+							 final HttpServletRequest request, final Model model) throws CMSItemNotFoundException
 	{
 		final ContentPageModel noResultPage = getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID);
 
@@ -90,12 +95,16 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 		searchQueryData.setValue(searchText);
 		searchState.setQuery(searchQueryData);
 
-		ProductSearchPageData<SearchStateData, ProductData> searchPageData = null;
-		ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
+
+		MonthlyBulletinReportSearchPageData<SearchStateData,
+				MonthlyBulletinReportData> searchPageData = null;
+
+		MonthlyBulletinReportSearchPageData<SearchStateData,
+				MonthlyBulletinReportData> solrSearchPageData = null;
 
 		try
 		{
-			searchPageData = encodeSearchPageData(productSearchFacade.textSearch(searchState, pageableData));
+			searchPageData = encodeSearchCustomePageData(monthlyBulletinReportSearchFacade.textSearch(searchState, pageableData));
 		}
 		catch (final ConversionException e) // NOSONAR
 		{
@@ -122,20 +131,20 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 			storeContinueUrl(request);
 			populateModel(model, searchPageData, ShowMode.Page);
 			solrSearchPageData=searchPageData;
-			List<OpportunityData> opportunityDataList = new ArrayList<>();
-			for (ProductData productData : searchPageData.getResults()) {
-				opportunityDataList.add(createOpportunityData(productData));
+			List<MonthlyBulletinReportData> monthlyBulletinReportDataList = new ArrayList<>();
+			for (MonthlyBulletinReportData monthlyBulletinReportData : searchPageData.getResults()) {
+				monthlyBulletinReportDataList.add(monthlyBulletinReportData);
 			}
-			SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
-			productDataSearchPageData.setResults(opportunityDataList);
+			SearchPageData<MonthlyBulletinReportData> monthlyBulletinReportDataSearchPageData = new SearchPageData<>();
+			monthlyBulletinReportDataSearchPageData.setResults(monthlyBulletinReportDataList);
 			PaginationData sagiaPaginationData = new PaginationData ();
 			sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
 			sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
 			sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
 			sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
-			productDataSearchPageData.setPagination(sagiaPaginationData);
+			monthlyBulletinReportDataSearchPageData.setPagination(sagiaPaginationData);
 			model.addAttribute("solrSearchPageData", solrSearchPageData);
-			model.addAttribute("searchPageData", productDataSearchPageData);
+			model.addAttribute("searchPageData", monthlyBulletinReportDataSearchPageData);
 		}
 		model.addAttribute("userLocation", customerLocationService.getUserLocation());
 		getRequestContextData(request).setSearch(solrSearchPageData);
@@ -155,7 +164,7 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 				.sanitizeDescription(getMessageSource().getMessage(SEARCH_META_DESCRIPTION_RESULTS, null,
 						SEARCH_META_DESCRIPTION_RESULTS, getI18nService().getCurrentLocale()) + " " + searchText + " "
 						+ getMessageSource().getMessage(SEARCH_META_DESCRIPTION_ON, null, SEARCH_META_DESCRIPTION_ON,
-								getI18nService().getCurrentLocale())
+						getI18nService().getCurrentLocale())
 						+ " " + getSiteName());
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(searchText);
 		setUpMetaData(model, metaKeywords, metaDescription);
@@ -163,28 +172,57 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 		return getViewForPage(model);
 	}
 
-	private OpportunityData createOpportunityData(ProductData productData) {
-		OpportunityData opportunityData = new OpportunityData();
-		opportunityData.setOpportunity(productData);
+	protected
+	MonthlyBulletinReportSearchPageData<SearchStateData,
+			MonthlyBulletinReportData> encodeSearchCustomePageData(
+			final
+			MonthlyBulletinReportSearchPageData<SearchStateData,
+					MonthlyBulletinReportData> searchPageData)
+	{
+		final SearchStateData
+				currentQuery = searchPageData.getCurrentQuery();
 
-		if(productData.getParentCategory() != null)
+		if (currentQuery != null)
 		{
-			opportunityData.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(productData.getParentCategory()));
+			try
+			{
+				final SearchQueryData query = currentQuery.getQuery();
+				final String encodedQueryValue = XSSEncoder.encodeHTML(query.getValue());
+				query.setValue(encodedQueryValue);
+				currentQuery.setQuery(query);
+				searchPageData.setCurrentQuery(currentQuery);
+				searchPageData.setFreeTextSearch(XSSEncoder.encodeHTML(searchPageData.getFreeTextSearch()));
+
+				final List<FacetData<SearchStateData>> facets = searchPageData.getFacets();
+				if (CollectionUtils.isNotEmpty(facets))
+				{
+					processFacetData(facets);
+				}
+			}
+			catch (final UnsupportedEncodingException e)
+			{
+				if (LOG.isDebugEnabled())
+				{
+					LOG.debug("Error occured during Encoding the Search Page data values", e);
+				}
+			}
 		}
-		return opportunityData;
+		return searchPageData;
 	}
+
 
 	@RequestMapping(method = RequestMethod.GET, params = "q")
 	public String refineSearch(@RequestParam("q") final String searchQuery,
-			@RequestParam(value = "page", defaultValue = "0") final int page,
-			@RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
-			@RequestParam(value = "sort", required = false) final String sortCode,
-			@RequestParam(value = "text", required = false) final String searchText, final HttpServletRequest request,
-			final Model model) throws CMSItemNotFoundException
+							   @RequestParam(value = "page", defaultValue = "0") final int page,
+							   @RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
+							   @RequestParam(value = "sort", required = false) final String sortCode,
+							   @RequestParam(value = "text", required = false) final String searchText, final HttpServletRequest request,
+							   final Model model) throws CMSItemNotFoundException
 	{
-		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
+		final MonthlyBulletinReportSearchPageData<SearchStateData, MonthlyBulletinReportData> searchPageData = performSearch(searchQuery, page, showMode,
 				sortCode, NUM_OF_RECORD_PER_PAGE);
-		ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
+
+		MonthlyBulletinReportSearchPageData<SearchStateData, MonthlyBulletinReportData> solrSearchPageData = null;
 
 		populateModel(model, searchPageData, showMode);
 		model.addAttribute("userLocation", customerLocationService.getUserLocation());
@@ -199,30 +237,33 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 			storeContinueUrl(request);
 			updatePageTitle(searchPageData.getFreeTextSearch(), model);
 			solrSearchPageData=searchPageData;
-			List<OpportunityData> opportunityDataList = new ArrayList<>();
-			for (ProductData productData : searchPageData.getResults()) {
-				opportunityDataList.add(createOpportunityData(productData));
+
+			List<MonthlyBulletinReportData> monthlyBulletinReportDataList = new ArrayList<>();
+			for (MonthlyBulletinReportData monthlyBulletinReportData : searchPageData.getResults()) {
+				monthlyBulletinReportDataList.add(monthlyBulletinReportData);
 			}
-			SearchPageData<OpportunityData> productDataSearchPageData = new SearchPageData<>();
-			productDataSearchPageData.setResults(opportunityDataList);
+
+
+			SearchPageData<MonthlyBulletinReportData> monthlyBulletinReportDataSearchPageData = new SearchPageData<>();
+			monthlyBulletinReportDataSearchPageData.setResults(monthlyBulletinReportDataList);
 			PaginationData sagiaPaginationData = new PaginationData ();
 			sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
 			sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
 			sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
 			sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
-			productDataSearchPageData.setPagination(sagiaPaginationData);
+			monthlyBulletinReportDataSearchPageData.setPagination(sagiaPaginationData);
 			model.addAttribute("solrSearchPageData", solrSearchPageData);
-			model.addAttribute("searchPageData", productDataSearchPageData);
+			model.addAttribute("searchPageData", monthlyBulletinReportDataSearchPageData);
 			storeCmsPageInModel(model, getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID));
 		}
-		model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchPageData));
+		//	model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchPageData));
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
 
 		final String metaDescription = MetaSanitizerUtil
 				.sanitizeDescription(getMessageSource().getMessage(SEARCH_META_DESCRIPTION_RESULTS, null,
 						SEARCH_META_DESCRIPTION_RESULTS, getI18nService().getCurrentLocale()) + " " + searchText + " "
 						+ getMessageSource().getMessage(SEARCH_META_DESCRIPTION_ON, null, SEARCH_META_DESCRIPTION_ON,
-								getI18nService().getCurrentLocale())
+						getI18nService().getCurrentLocale())
 						+ " " + getSiteName());
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(searchText);
@@ -231,8 +272,10 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 		return getViewForPage(model);
 	}
 
-	protected ProductSearchPageData<SearchStateData, ProductData> performSearch(final String searchQuery, final int page,
-			final ShowMode showMode, final String sortCode, final int pageSize)
+
+
+	protected MonthlyBulletinReportSearchPageData<SearchStateData, MonthlyBulletinReportData> performSearch(final String searchQuery, final int page,
+																													  final ShowMode showMode, final String sortCode, final int pageSize)
 	{
 		final PageableData pageableData = createPageableData(page, pageSize, sortCode, showMode);
 
@@ -240,20 +283,21 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 		final SearchQueryData searchQueryData = new SearchQueryData();
 		searchQueryData.setValue(searchQuery);
 		searchState.setQuery(searchQueryData);
-
-		return encodeSearchPageData(productSearchFacade.textSearch(searchState, pageableData));
+		MonthlyBulletinReportSearchPageData<SearchStateData, MonthlyBulletinReportData> searchText = monthlyBulletinReportSearchFacade.textSearch(searchState, pageableData);
+		return encodeSearchCustomePageData(searchText);
 	}
+
 
 	@ResponseBody
 	@RequestMapping(value = "/results", method = RequestMethod.GET)
-	public SearchResultsData<ProductData> jsonSearchResults(@RequestParam("q") final String searchQuery,
-			@RequestParam(value = "page", defaultValue = "0") final int page,
-			@RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
-			@RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
+	public SearchResultsData<MonthlyBulletinReportData> jsonSearchResults(@RequestParam("q") final String searchQuery,
+																			   @RequestParam(value = "page", defaultValue = "0") final int page,
+																			   @RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
+																			   @RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
 	{
-		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
+		final MonthlyBulletinReportSearchPageData<SearchStateData, MonthlyBulletinReportData> searchPageData = performSearch(searchQuery, page, showMode,
 				sortCode, getSearchPageSize());
-		final SearchResultsData<ProductData> searchResultsData = new SearchResultsData<>();
+		final SearchResultsData<MonthlyBulletinReportData> searchResultsData = new SearchResultsData<>();
 		searchResultsData.setResults(searchPageData.getResults());
 		searchResultsData.setPagination(searchPageData.getPagination());
 		return searchResultsData;
@@ -262,16 +306,19 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 	@ResponseBody
 	@RequestMapping(value = "/facets", method = RequestMethod.GET)
 	public FacetRefinement<SearchStateData> getFacets(@RequestParam("q") final String searchQuery,
-			@RequestParam(value = "page", defaultValue = "0") final int page,
-			@RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
-			@RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
+													  @RequestParam(value = "page", defaultValue = "0") final int page,
+													  @RequestParam(value = "show", defaultValue = "Page") final ShowMode showMode,
+													  @RequestParam(value = "sort", required = false) final String sortCode) throws CMSItemNotFoundException
 	{
 		final SearchStateData searchState = new SearchStateData();
 		final SearchQueryData searchQueryData = new SearchQueryData();
 		searchQueryData.setValue(searchQuery);
 		searchState.setQuery(searchQueryData);
 
-		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = productSearchFacade.textSearch(searchState,
+
+
+
+		final MonthlyBulletinReportSearchPageData<SearchStateData, MonthlyBulletinReportData> searchPageData = monthlyBulletinReportSearchFacade.textSearch(searchState,
 				createPageableData(page, getSearchPageSize(), sortCode, showMode));
 		final List<FacetData<SearchStateData>> facets = refineFacets(searchPageData.getFacets(),
 				convertBreadcrumbsToFacets(searchPageData.getBreadcrumbs()));
@@ -285,7 +332,7 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 	@ResponseBody
 	@RequestMapping(value = "/autocomplete/" + COMPONENT_UID_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public AutocompleteResultData getAutocompleteSuggestions(@PathVariable final String componentUid,
-			@RequestParam("term") final String term) throws CMSItemNotFoundException
+															 @RequestParam("term") final String term) throws CMSItemNotFoundException
 	{
 		final AutocompleteResultData resultData = new AutocompleteResultData();
 
@@ -293,14 +340,14 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 
 		if (component.isDisplaySuggestions())
 		{
-			resultData.setSuggestions(subList(productSearchFacade.getAutocompleteSuggestions(term), component.getMaxSuggestions()));
+			resultData.setSuggestions(subList(monthlyBulletinReportSearchFacade.getAutocompleteSuggestions(term), component.getMaxSuggestions()));
 		}
 
-		if (component.isDisplayProducts())
+		/*if (component.isDisplayProducts())
 		{
-			resultData.setProducts(subList(productSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
+			resultData.setProducts(subList(monthlyBulletinReportSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
 					component.getMaxProducts()));
-		}
+		}*/
 
 		return resultData;
 	}

@@ -1,0 +1,14 @@
+$lang=en
+$indexedType=monthlyBulletinReportType
+
+# Define the available sorts
+UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang]
+               ;;resourceTitle-asc;Title (ascending);
+               ;;resourceTitle-desc;Title (descending);
+
+
+
+UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true,default=$indexedType];name[unique=true];displayName[lang=$lang]
+                          ;;year;Year;
+                          ;;quarter;Quarter;
+                          ;;month;Month;

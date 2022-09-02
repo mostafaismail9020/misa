@@ -2050,11 +2050,11 @@
 
 	<!--	MonthlyBulletinReport Search Solr START-->
 
-	<alias name="defaultMonthlyBulletinReportSearchService" alias="MonthlyBulletinReportSearchService" />
+	<alias name="defaultMonthlyBulletinReportSearchService" alias="monthlyBulletinReportSearchService" />
 	<bean id="defaultMonthlyBulletinReportSearchService" class="com.sap.ibso.eservices.sagiaservices.solrfacetsearch.impl.DefaultSolrMonthlyBulletinReportSearchService">
-		<property name="searchQueryPageableConverter" ref="MonthlyBulletinReportCommerceSearchQueryPageableConverter" />
+		<property name="searchQueryPageableConverter" ref="monthlyBulletinReportCommerceSearchQueryPageableConverter" />
 		<property name="searchRequestConverter" ref="commerceSolrSearchRequestConverter" />
-		<property name="searchResponseConverter" ref="MonthlyBulletinReportSolrSearchResponseConverter" />
+		<property name="searchResponseConverter" ref="monthlyBulletinReportSolrSearchResponseConverter" />
 	</bean>
 
 	<bean id="monthlyBulletinReportSolrSearchResponseConverter" parent="abstractPopulatingConverter">
@@ -2128,11 +2128,11 @@
 
 	<!--	EconomicAndInvestmentReportsAndStudies Search Solr START-->
 
-	<alias name="defaultEconomicAndInvestmentReportsAndStudiesSearchService" alias="EconomicAndInvestmentReportsAndStudiesSearchService" />
+	<alias name="defaultEconomicAndInvestmentReportsAndStudiesSearchService" alias="economicAndInvestmentReportsAndStudiesSearchService" />
 	<bean id="defaultEconomicAndInvestmentReportsAndStudiesSearchService" class="com.sap.ibso.eservices.sagiaservices.solrfacetsearch.impl.DefaultSolrEconomicAndInvestmentReportsAndStudiesSearchService">
-		<property name="searchQueryPageableConverter" ref="EconomicAndInvestmentReportsAndStudiesCommerceSearchQueryPageableConverter" />
+		<property name="searchQueryPageableConverter" ref="economicAndInvestmentReportsAndStudiesCommerceSearchQueryPageableConverter" />
 		<property name="searchRequestConverter" ref="commerceSolrSearchRequestConverter" />
-		<property name="searchResponseConverter" ref="EconomicAndInvestmentReportsAndStudiesSolrSearchResponseConverter" />
+		<property name="searchResponseConverter" ref="economicAndInvestmentReportsAndStudiesSolrSearchResponseConverter" />
 	</bean>
 
 	<bean id="economicAndInvestmentReportsAndStudiesSolrSearchResponseConverter" parent="abstractPopulatingConverter">

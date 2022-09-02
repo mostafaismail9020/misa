@@ -4,7 +4,6 @@
 package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 
 import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
-import com.investsaudi.portal.facades.solrfacetsearch.EconomicAndInvestmentReportsAndStudiesSearchFacade;
 import com.sap.ibso.eservices.facades.data.EconomicAndInvestmentReportsAndStudiesData;
 import com.sap.security.core.server.csi.XSSEncoder;
 import de.hybris.platform.acceleratorcms.model.components.SearchBoxComponentModel;
@@ -62,7 +61,7 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 	private static final String SEARCH_CMS_PAGE_ID = "report-studies-search";
 	private static final int NUM_OF_RECORD_PER_PAGE = 9;
 
-	@Resource(name = "reportsAndStudiesSearchFacade")
+	@Resource(name = "economicAndInvestmentReportsAndStudiesSearchFacade")
 	private EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesSearchFacade<EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesSearchFacade;
 
 	@Resource(name = "searchBreadcrumbBuilder")
@@ -99,7 +98,7 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 
 		try
 		{
-			searchPageData = encodeSearchCustomePageData(reportsAndStudiesSearchFacade.textSearch(searchState, pageableData));
+			searchPageData = encodeSearchCustomePageData(economicAndInvestmentReportsAndStudiesSearchFacade.textSearch(searchState, pageableData));
 		}
 		catch (final ConversionException e) // NOSONAR
 		{
@@ -128,16 +127,16 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 			solrSearchPageData=searchPageData;
 			List<EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesDataList = new ArrayList<>();
 			for (EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData economicAndInvestmentReportsAndStudiesData : searchPageData.getResults()) {
-				reportsAndStudiesDataList.add(reportsAndStudiesData);
+				economicAndInvestmentReportsAndStudiesDataList.add(economicAndInvestmentReportsAndStudiesData);
 			}
 			SearchPageData<EconomicAndInvestmentEconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesDataSearchPageData = new SearchPageData<>();
-			reportsAndStudiesDataSearchPageData.setResults(reportsAndStudiesDataList);
+			economicAndInvestmentReportsAndStudiesDataSearchPageData.setResults(economicAndInvestmentReportsAndStudiesDataList);
 			PaginationData sagiaPaginationData = new PaginationData ();
 			sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
 			sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
 			sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
 			sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
-			reportsAndStudiesDataSearchPageData.setPagination(sagiaPaginationData);
+			economicAndInvestmentReportsAndStudiesDataSearchPageData.setPagination(sagiaPaginationData);
 			model.addAttribute("solrSearchPageData", solrSearchPageData);
 			model.addAttribute("searchPageData", economicAndInvestmentReportsAndStudiesDataSearchPageData);
 		}
@@ -235,18 +234,18 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 
 			List<EconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesDataList = new ArrayList<>();
 			for (EconomicAndInvestmentReportsAndStudiesData economicAndInvestmentReportsAndStudiesData : searchPageData.getResults()) {
-				reportsAndStudiesDataList.add(reportsAndStudiesData);
+				economicAndInvestmentReportsAndStudiesDataList.add(economicAndInvestmentReportsAndStudiesData);
 			}
 
 
 			SearchPageData<EconomicAndInvestmentReportsAndStudiesData> economicAndInvestmentReportsAndStudiesDataSearchPageData = new SearchPageData<>();
-			reportsAndStudiesDataSearchPageData.setResults(reportsAndStudiesDataList);
+			economicAndInvestmentReportsAndStudiesDataSearchPageData.setResults(economicAndInvestmentReportsAndStudiesDataList);
 			PaginationData sagiaPaginationData = new PaginationData ();
 			sagiaPaginationData.setPageSize(searchPageData.getPagination().getPageSize());
 			sagiaPaginationData.setNumberOfPages(searchPageData.getPagination().getNumberOfPages());
 			sagiaPaginationData.setTotalNumberOfResults(searchPageData.getPagination().getTotalNumberOfResults());
 			sagiaPaginationData.setCurrentPage(searchPageData.getPagination().getCurrentPage());
-			reportsAndStudiesDataSearchPageData.setPagination(sagiaPaginationData);
+			economicAndInvestmentReportsAndStudiesDataSearchPageData.setPagination(sagiaPaginationData);
 			model.addAttribute("solrSearchPageData", solrSearchPageData);
 			model.addAttribute("searchPageData", economicAndInvestmentReportsAndStudiesDataSearchPageData);
 			storeCmsPageInModel(model, getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID));
@@ -335,12 +334,12 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 
 		if (component.isDisplaySuggestions())
 		{
-			resultData.setSuggestions(subList(reportsAndStudiesSearchFacade.getAutocompleteSuggestions(term), component.getMaxSuggestions()));
+			resultData.setSuggestions(subList(economicAndInvestmentReportsAndStudiesSearchFacade.getAutocompleteSuggestions(term), component.getMaxSuggestions()));
 		}
 
 		/*if (component.isDisplayProducts())
 		{
-			resultData.setProducts(subList(reportsAndStudiesSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
+			resultData.setProducts(subList(economicAndInvestmentReportsAndStudiesSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
 					component.getMaxProducts()));
 		}*/
 

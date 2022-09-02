@@ -37,8 +37,6 @@ INSERT_UPDATE SolrIndexedType ; identifier[unique=true] ; type(code) ; variant ;
 INSERT_UPDATE SolrFacetSearchConfig ; name[unique=true]      ; description                   ; indexNamePrefix        ; languages(isocode) ; currencies(isocode) ; solrServerConfig(name) ; solrSearchConfig(description) ; solrIndexConfig(name) ; solrIndexedTypes(identifier) ; enabledLanguageFallbackMechanism ; $catalogVersions
                                     ; $facetSearchConfigName ; $facetSearchConfigDescription ; $searchIndexNamePrefix ; $indexLanguages    ; $indexCurrencies    ; Default                ; Default                       ; Default               ; $solrIndexedEconomicAndInvestmentReportsAndStudiesType             ; true                             ; $contentCatalog:Online,$contentCatalog:Staged
 
-UPDATE BaseSite ; uid[unique=true] ; solrFacetSearchConfiguration(name)
-                ; $indexBaseSite   ; $facetSearchConfigName
 
 # Define price range set
 INSERT_UPDATE SolrValueRangeSet ; name[unique=true] ; qualifier ; type ; solrValueRanges(&rangeValueRefID)

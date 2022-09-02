@@ -6,8 +6,8 @@
 # Macros / Replacement Parameter definitions
 $template = EconomicInvestmentsTermsPageTemplate
 $page = economic-investments-terms
-$pageName = الشروط الاقتصادية والاستثمارية
-$pageTitleEn = $pageName
+$pageName = Economic & Investments terms
+$pageTitleAr = الشروط الاقتصادية والاستثمارية
 $pageLabel = /economic/investmentsTerms
 
 
@@ -19,7 +19,7 @@ $siteResource =jar:com.sagia.investsaudi.portal.core.setup.Sagiainvestsaudistore
 
 
 INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = ar] ; description[lang = ar]; keywords[lang = ar]                       ; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
-                         ; $page             ; $pageName ; $pageTitleEn     ; $pageName             ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
+                         ; $page             ; $pageName ; $pageTitleAr     ; $pageName             ; Invest Saudi,Invest Saudi - Meet,Kingdom, ; $template                      ; $pageLabel ; false   ;                          ;                              ;
 
 
 #######################################################

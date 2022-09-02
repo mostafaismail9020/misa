@@ -1080,7 +1080,7 @@ $(document).ready(function () {
     });
     $("#report-facet-form").submit( function (e) {
         e.preventDefault()
-        //console.log('mount facet url')
+//        console.log('mount facet url')
         var facets = {}
         $("#report-facet-form").serializeArray().forEach(m => {
             var val = m.value.split(':').filter(element => element);
@@ -1088,13 +1088,17 @@ $(document).ready(function () {
         })
 //        console.log('facets',facets);
 
+        var notEmptyFacet = {};
         for (let k of Object.keys(facets)) {
-          facets[k] = facets[k].join(':')
+            //console.log(facets[k], typeof facets[k], Array.isArray(facets[k]))
+            if (facets[k].length > 0) {
+                notEmptyFacet[k] = ":"+facets[k].join(':')
+            }
         }
-//        console.log('facets',facets);
-//        console.log('params', $.param(facets))
+//        console.log('notEmptyFacet',notEmptyFacet);
+//        console.log('params', $.param(notEmptyFacet))
 
-        window.location.href = window.location.pathname +"?"+$.param(facets);
+        window.location.href = window.location.pathname +"?"+$.param(notEmptyFacet);
     });
 
 	var site = {};

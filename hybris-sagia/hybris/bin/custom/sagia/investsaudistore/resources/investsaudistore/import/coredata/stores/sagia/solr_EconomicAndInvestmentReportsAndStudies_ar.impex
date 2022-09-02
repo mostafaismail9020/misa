@@ -1,0 +1,14 @@
+$lang=ar
+$indexedType=economicAndInvestmentReportsAndStudiesType
+
+# Define the available sorts
+UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang]
+               ;;resourceTitle-asc;الاسم (تصاعدي);
+               ;;resourceTitle-desc;الاسم (تنازلي);
+
+
+
+UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true,default=$indexedType];name[unique=true];displayName[lang=$lang]
+                          ;;year;سنة;
+                          ;;quarter;ربع;
+                          ;;month;شهر;

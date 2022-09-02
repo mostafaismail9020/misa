@@ -34,8 +34,10 @@ public class PortalResourcesBannerCarouselComponentController extends AbstractAc
 			) {
 
 				continue;
+			} else {
+				listAllResourcesToBeDisplayed.add(investSaudiResourceComponentModel);
 			}
-			listAllResourcesToBeDisplayed.add(investSaudiResourceComponentModel);
+
 		}
 
 		model.addAttribute("resources", listAllResourcesToBeDisplayed);

@@ -90,12 +90,12 @@ public class SagiaResourceComponentMonthValueProvider extends AbstractPropertyFi
     {
         final List<FieldValue> fieldValues = new ArrayList<FieldValue>();
 
-        final String yearValue = getMonthValue(investSaudiResourceComponentModel, language);
+        final String monthValue = getMonthValue(investSaudiResourceComponentModel, language);
 
 
-        if (yearValue != null)
+        if (monthValue != null)
         {
-            addFieldValues(fieldValues, indexedProperty, language, yearValue);
+            addFieldValues(fieldValues, indexedProperty, language, monthValue);
         }
 
         return fieldValues;
@@ -125,18 +125,18 @@ public class SagiaResourceComponentMonthValueProvider extends AbstractPropertyFi
 
     private  Map<String, String> createMonthMap(LanguageModel language) {
         Map<String, String> monthVocab = new HashMap<>();
-        monthVocab.put("1", getLocalizedValue("month.january",language));
-        monthVocab.put("2", getLocalizedValue("month.february",language));
-        monthVocab.put("3", getLocalizedValue("month.march",language));
-        monthVocab.put("4", getLocalizedValue("month.april",language));
-        monthVocab.put("5", getLocalizedValue("month.may",language));
-        monthVocab.put("6", getLocalizedValue("month.june",language));
-        monthVocab.put("7", getLocalizedValue("month.july",language));
-        monthVocab.put("8", getLocalizedValue("month.august",language));
-        monthVocab.put("9", getLocalizedValue("month.september",language));
-        monthVocab.put("10", getLocalizedValue("month.october",language));
-        monthVocab.put("11", getLocalizedValue("month.november",language));
-        monthVocab.put("12", getLocalizedValue("month.december",language));
+        monthVocab.put("0", getLocalizedValue("month.january",language));
+        monthVocab.put("1", getLocalizedValue("month.february",language));
+        monthVocab.put("2", getLocalizedValue("month.march",language));
+        monthVocab.put("3", getLocalizedValue("month.april",language));
+        monthVocab.put("4", getLocalizedValue("month.may",language));
+        monthVocab.put("5", getLocalizedValue("month.june",language));
+        monthVocab.put("6", getLocalizedValue("month.july",language));
+        monthVocab.put("7", getLocalizedValue("month.august",language));
+        monthVocab.put("8", getLocalizedValue("month.september",language));
+        monthVocab.put("9", getLocalizedValue("month.october",language));
+        monthVocab.put("10", getLocalizedValue("month.november",language));
+        monthVocab.put("11", getLocalizedValue("month.december",language));
        return monthVocab;
     }
 

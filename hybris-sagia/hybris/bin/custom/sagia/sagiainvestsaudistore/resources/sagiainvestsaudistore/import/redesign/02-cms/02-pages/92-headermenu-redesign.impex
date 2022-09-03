@@ -231,3 +231,31 @@ INSERT_UPDATE ComponentTypeGroups2ComponentType; source(code)[unique = true]; ta
 UPDATE InvestSaudiNavigationBarComponent; uid[unique = true] ; name               ; &componentRef ; $contentCV[unique = true]
                                         ; portal-header-menu ; Portal Header Menu ; navigationbar ;
 
+
+
+#On Economic Highlights menu create 2 menu items
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]          ; name                          ; linkName[lang = en]           ; linkName[lang = ar]              ; url                         ; $contentCV[unique = true];
+							  ; economic-investments-terms-link  ; Economic & Investments terms  ; Economic & Investments term   ; الشروط الاقتصادية والاستثمارية   ; /economic/investmentsTerms ;                          ;
+							  ; economic-investment-reports-link ; Economic & Investment Reports ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية ; /economic/investmentReports ;                         ;
+
+#When mouse over on Economic & Investment Reports will show 4 submenu
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                      ; name                                    ; linkName[lang = en]                     ; linkName[lang = ar]                        ; url                              ; $contentCV[unique = true];
+							  ; economic-and-investment-monitor         ; Economic & Investment Monitor           ; Economic & Investment Monitor           ; مراقبة الاقتصادية والاستثمارية             ; /investment-monitor/resources    ;               ;
+							  ; investment-highlights                   ; Investment Highlights                   ; Investment Highlights                   ; أبرز الاستثمارات                           ; /investment-highlights/resources ;                ;
+							  ; monthly-bulletin                        ; Monthly Bulletin                        ; Monthly Bulletin                        ; النشرة الشهرية                             ; /monthly-bulletin/resources      ;             ;
+							  ; economic-and-investment-reports-Studies ; Economic & Investment Reports & Studies ; Economic & Investment Reports & Studies ; التقارير والدراسات الاقتصادية والاستثمارية ; /report-studies/resources        ;             ;
+
+
+#On Economic Highlights menu create 2 menu items [Name], [Title] and [Description]
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]                                   ; title[lang = en]              ; title[lang = ar]                                   ; $contentCV[unique = true]; nodeDescription[lang = en]    ; nodeDescription[lang = ar]       ;
+							   ; economic-investments-terms-node    ; Economic & Investments term   ; الشروط الاقتصادية والاستثمارية     ;               ; Economic & Investments terms  ; الشروط الاقتصادية والاستثمارية   ;
+							   ; economic-investment-reports-node  ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية ;                ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية ;
+
+#On Economic Highlights menu create 2 menu items [Parent] and [Child relationship]
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]          ; name                          ; cmsLink(uid, $contentCV)    ; &nodeRef                    ; parent(uid, $contentCV); children(uid, $contentCV)[mode = append]; links(uid, $contentCV)[mode = replace]                                                                         ; $contentCV[unique = true];
+							   ; economic-investments-terms-node  ; Economic & Investments terms  ; economic-investments-terms-link  ; economic-investments-terms-node  ; economic-highlight-navnode    ;                                         ;                                                                                                                ;                ;
+							   ; economic-investment-reports-node ; Economic & Investment Reports ; economic-investment-reports-link ; economic-investment-reports-node ; economic-highlight-navnode    ;                                         ; economic-and-investment-monitor,investment-highlights,monthly-bulletin,economic-and-investment-reports-Studies ;                ;
+
+
+

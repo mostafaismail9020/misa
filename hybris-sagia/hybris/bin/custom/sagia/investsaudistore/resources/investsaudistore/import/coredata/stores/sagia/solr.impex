@@ -21,16 +21,13 @@ $indexBaseSite=sagia
 $indexLanguages=en,ar
 $indexCurrencies=USD
 
-$solrIndexedEconomicAndInvestmentMonitorType=economicAndInvestmentMonitorType
-
 #
 # Setup the indexed types, `their properties, and the update queries
 #
 
 # Declare the indexed type Product
 INSERT_UPDATE SolrIndexedType ; identifier[unique=true] ; type(code) ; variant ; sorts(&sortRefID)
-                              ; $solrIndexedType        ; Product    ; false   ; ;
-                              ; $solrIndexedEconomicAndInvestmentMonitorType ; EconomicAndInvestmentMonitor ; false ; ;
+                              ; $solrIndexedType        ; Product    ; false   ; sortRef1,sortRef3,sortRef4
 
 INSERT_UPDATE SolrFacetSearchConfig ; name[unique=true]      ; description                   ; indexNamePrefix        ; languages(isocode) ; currencies(isocode) ; solrServerConfig(name) ; solrSearchConfig(description) ; solrIndexConfig(name) ; solrIndexedTypes(identifier) ; enabledLanguageFallbackMechanism ; $catalogVersions
                                     ; $facetSearchConfigName ; $facetSearchConfigDescription ; $searchIndexNamePrefix ; $indexLanguages    ; $indexCurrencies    ; Default                ; Default                       ; Default               ; $solrIndexedType             ; true                             ; $productCatalog:Online,$productCatalog:Staged
@@ -73,21 +70,6 @@ INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; n
                                   ; $solrIndexedType                         ; firstVariantUrl        ; string     ;                    ;                         ;                          ;                           ;                                    ;                                   ; firstGenericVariantProductUrlValueProvider ;                        ;                               ;                     ;                         ;               ;                              ;                    ;                                 ;                                             ;                       ;
                                   ; $solrIndexedType                         ; firstCategoryNameList  ; string     ;                    ;                         ;                          ;                           ;                                    ;                                   ; firstVariantCategoryNameListValueProvider  ;                        ;                               ;                     ;                         ;               ;                              ;                    ;                                 ;                                             ;                       ;
                                   ; $solrIndexedType                         ; configurable           ; boolean    ;                    ;                         ;                          ;                           ;                                    ;                                   ; productConfigurableProvider                ;                        ;                               ;                     ;                         ;               ;                              ;                    ;                                 ;                                             ;                       ;
-
-                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceTitle      ; string    ;                    ;                         ;                          ;                           ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
-                                  ; $solrIndexedEconomicAndInvestmentMonitorType  ; resourceShortInformation ; text    ;              ;                         ;                          ;                           ;                                    ;                                   ; springELValueProvider                      ;                        ; true                          ; 100                 ; true                    ; 50            ; true                         ; 25                 ;                                 ;                                             ;                       ;
-
-resourceFullDescription
-resourceBulletPoints
-resourceUrl
-resourceDate
-resourceDetailsImage
-resourceThumbnailImage
-resourceFullReport
-resourceGalleryImages
-quotation
-regionSpecific
-
 
 # Category fields
 INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; localized[default=false] ; multiValue[default=true] ; categoryField[default=true] ; useForSpellchecking[default=false] ; useForAutocomplete[default=false] ; fieldValueProvider                        ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryBoost

@@ -9,7 +9,7 @@ $page = reports-economic-investment-monitor-search
 $pageName = Economic and Investment Monitor
 $pageTitleEn = $pageName
 $pageTitleAr = مراقب الاقتصاد والاستثمار
-$pageLabel = /economic/investmentReports/economicAndInvestmentMonitor
+$pageLabel = /investment-monitor/resources
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
@@ -28,7 +28,7 @@ INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; tit
 
 INSERT_UPDATE Media	; code[unique = true]         								; realFileName             									; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]			; mime[default = 'image/jpeg']		; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
 					; reports-economic-investment-monitor-search.jpg 			; reports-economic-investment-monitor-search.jpg			; $siteResource/reports-economic-investment-monitor-search.jpg 							; image/png						    ;										   ; ""     ;
-					
+
 INSERT_UPDATE EconomicCustomBannerContainer		; uid[unique = true] 	    ; name 						    ; backgroundImage (code, $contentCV)			    ; title [lang = en]		; title [lang = ar] ; simpleCMSComponents(&componentRef)    ; &componentRef             ; $contentCV[unique = true]
 												; $page-banner-container    ; $pageName Banner Container    ; reports-economic-investment-monitor-search.jpg  	; $pageTitleEn		    ; $pageTitleAr      ;                                       ; $page-banner-container    ;
 

@@ -80,7 +80,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
 
     @Resource
 	private LicenseApplyService licenseApplyService;
-    
+
     /**
      * creates new customer from register data and persists it in  DB
      *
@@ -123,7 +123,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
         setUidForRegister(sagiaRegisterData, newCustomer);
 
         //Validation before saving
-        final List<ValidationError> validationErrors = sagiaUserService.validateUniqueUserAttributes(newCustomer.getUid(), sagiaRegisterData.getMobileNumber(), sagiaRegisterData.getMobileCountryCode(), sagiaRegisterData.getEmail());
+        final List<ValidationError> validationErrors = sagiaUserService.validateUniqueUserAttributes(newCustomer.getUid(), sagiaRegisterData.getEmail());
         if (!CollectionUtils.isEmpty(validationErrors)) {
             throw new RegistrationValidationFailException("Registration validation fails", validationErrors);
         }
@@ -166,7 +166,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
         final CustomerModel customerModel = getCurrentSessionCustomer();
         customerModel.setApplicationServiceRequestID(serviceRequestCreation.getObjectid());
         getModelService().save(customerModel);
-        
+
         SagiaLicenseModel draftLicense = licenseApplyService.getDraftLicense();
         draftLicense.setStatus(LicenseStatus.APPLIED);
         draftLicense.setApplicantReferenceID(customerModel.getApplicantReferenceID());
@@ -358,7 +358,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
         userModel.setProfilePicture(mediaModel);
         getModelService().save(userModel);
     }
-    
+
     /**
      * update the media item that represents company logs picture attached to the current user.
      * userId represents the media code and will be replaced with new image each time user updates it.
@@ -372,8 +372,8 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
         // create media
         if(userModel instanceof CustomerModel) {
         	CustomerModel customer = (CustomerModel)userModel;
-        	
-            MediaModel mediaModel = customer.getCompanyLogo() ; 
+
+            MediaModel mediaModel = customer.getCompanyLogo() ;
             if(mediaModel == null) {
             	mediaModel = getModelService().create(MediaModel.class) ;
             	mediaModel.setCode(customer.getUid()+COMPANY+System.currentTimeMillis());
@@ -384,7 +384,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
             //add it to user
             customer.setCompanyLogo(mediaModel);
             getModelService().save(customer);
-        	
+
         }
     }
 
@@ -488,7 +488,7 @@ public class SagiaCustomerFacade extends DefaultCustomerFacade {
 		return getCustomerConverter().convert(getUserService().getUserForUID(uid.toLowerCase(), CustomerModel.class));
 
 	}
-    
+
     @Override
     public PasswordEncoderService getPasswordEncoderService() {
         return passwordEncoderService;

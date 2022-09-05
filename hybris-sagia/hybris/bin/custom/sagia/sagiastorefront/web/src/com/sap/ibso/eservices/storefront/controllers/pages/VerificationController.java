@@ -333,15 +333,6 @@ public class VerificationController extends AbstractLoginPageController {
 		model.addAttribute(IS_VERIFICATION_PAGE, true);
 		if(sagiaVerificationForm.getMobile() != null) {
 			CustomerModel customerModel = (CustomerModel)userService.getUserForUID((String)session.getAttribute(HYBRIS_USERNAME));
-			if(!customerModel.getMobileNumber().equalsIgnoreCase(sagiaVerificationForm.getMobile())) {
-				boolean validationResult = sagiaUserFacade.validateUniqueValue("", "", sagiaVerificationForm.getMobile(), sagiaVerificationForm.getCountryCode());
-				if (!validationResult) {
-					GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER,
-							"register.mobileNumber.duplicate");
-					return "redirect:/verification";
-				}
-			}
-
 			customerModel.setMobileNumber(sagiaVerificationForm.getMobile());
 			customerModel.setMobileCountryCode(sagiaVerificationForm.getCountryCode());
 			modelService.save(customerModel);
@@ -445,7 +436,7 @@ public class VerificationController extends AbstractLoginPageController {
 			CustomerModel customerModel = (CustomerModel)userService.getUserForUID((String)session.getAttribute(HYBRIS_USERNAME));
 
 			if(!customerModel.getUserNameEmail().equalsIgnoreCase(sagiaVerificationForm.getRegEmail())) {
-				boolean validationResult = sagiaUserFacade.validateUniqueValue("", sagiaVerificationForm.getRegEmail(), "", "");
+				boolean validationResult = sagiaUserFacade.validateUniqueValue("", sagiaVerificationForm.getRegEmail());
 				if (!validationResult) {
 					GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER,
 							"update.email.duplicate");
@@ -483,7 +474,7 @@ public class VerificationController extends AbstractLoginPageController {
 			CustomerModel customerModel = (CustomerModel)userService.getUserForUID((String)session.getAttribute(HYBRIS_USERNAME));
 
 			if(!customerModel.getQeemahEmail().equalsIgnoreCase(sagiaVerificationForm.getQeemahEmail())) {
-				boolean validationResult = sagiaUserFacade.validateUniqueValue("", sagiaVerificationForm.getQeemahEmail(), "", "");
+				boolean validationResult = sagiaUserFacade.validateUniqueValue("", sagiaVerificationForm.getQeemahEmail());
 				if (!validationResult) {
 					GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER,
 							"update.email.duplicate");

@@ -13,39 +13,35 @@
  */
 package com.sap.ibso.eservices.facades.user.impl;
 
-import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
-import com.sap.ibso.eservices.facades.user.SagiaUserFacade;
 import com.investsaudi.portal.core.model.ServiceRequestModel;
+import com.sap.ibso.eservices.core.enums.IncidentCategory;
+import com.sap.ibso.eservices.core.enums.Priority;
+import com.sap.ibso.eservices.core.enums.ServiceCategory;
+import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
+import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
+import com.sap.ibso.eservices.facades.populators.SagiaServiceRequestReversePopulator;
+import com.sap.ibso.eservices.facades.user.SagiaUserFacade;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
+import de.hybris.platform.catalog.CatalogVersionService;
 import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.commercefacades.user.data.CustomerData;
+import de.hybris.platform.core.model.media.MediaModel;
+import de.hybris.platform.enumeration.EnumerationService;
 import de.hybris.platform.search.restriction.SearchRestrictionService;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.media.MediaService;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.session.SessionExecutionBody;
 import de.hybris.platform.servicelayer.session.SessionService;
-import de.hybris.platform.catalog.CatalogVersionService;
-import de.hybris.platform.core.model.media.MediaModel;
-
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.String;
-
-import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
-import com.sap.ibso.eservices.facades.populators.SagiaServiceRequestReversePopulator;
-import com.sap.ibso.eservices.core.enums.IncidentCategory;
-import com.sap.ibso.eservices.core.enums.ServiceCategory;
-import com.sap.ibso.eservices.core.enums.Priority;
-import de.hybris.platform.enumeration.EnumerationService;
-
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import javax.annotation.Resource;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -62,23 +58,23 @@ import java.util.UUID;
 public class DefaultSagiaUserFacade implements SagiaUserFacade {
     private static final Logger LOG = Logger.getLogger(DefaultSagiaUserFacade.class);
 	private static final String CA_1 = "CA_1";
-	
+
 	private static final String CATALOG_ID = "sagiaContentCatalog";
 	private static final String VERSION_ONLINE = "Online";
-	
+
     private SagiaUserService sagiaUserService;
     private SagiaServiceRequestReversePopulator sagiaServiceRequestReversePopulator;
-    
+
     @Autowired
     private MediaService mediaService;
-	
+
 	@Autowired
 	private ModelService modelService;
-	
+
 	@Resource
     private CatalogVersionService catalogVersionService;
-    
-    
+
+
 
 	/**
 	 * @return the sagiaServiceRequestReversePopulator
@@ -121,12 +117,10 @@ public class DefaultSagiaUserFacade implements SagiaUserFacade {
      *
      * @param userName          userName
      * @param email             email
-     * @param mobileNumber      mobileNumber
-     * @param mobileCountryCode mobileCountryCode
      * @return boolean
      */
-    public boolean validateUniqueValue(final String userName, final String email, final String mobileNumber, final String mobileCountryCode) {
-        return sagiaUserService.validateUniqueness(userName, email, mobileNumber, mobileCountryCode);
+    public boolean validateUniqueValue(final String userName, final String email) {
+        return sagiaUserService.validateUniqueness(userName, email);
     }
 
     @Override
@@ -155,7 +149,7 @@ public class DefaultSagiaUserFacade implements SagiaUserFacade {
 
         return childB2BCustomerDataList;
     }
-	
+
 	@Override
     public boolean validateSagiaUerFormData(SagiaServiceRequestFormData sagiaServiceRequestFormData, String ticketId) {
 
@@ -175,25 +169,25 @@ public class DefaultSagiaUserFacade implements SagiaUserFacade {
 		attachRequestToTicket = getSagiaUserService().attachServiceRequestToContactTicket(serviceRequest, ticketId);
     	return attachRequestToTicket;
     }
-    
+
     @Override
     public List<IncidentCategory> getIncidentCategoryEnumValues() {
     	return getEnumerationService().getEnumerationValues(com.sap.ibso.eservices.core.enums.IncidentCategory.class);
     }
-    
+
     @Override
     public List<ServiceCategory> getServiceCategoryEnumValues() {
     	return getEnumerationService().getEnumerationValues(com.sap.ibso.eservices.core.enums.ServiceCategory.class);
     }
-    
+
     @Override
     public List<Priority> getPriorityEnumValues() {
     	return getEnumerationService().getEnumerationValues(com.sap.ibso.eservices.core.enums.Priority.class);
     }
-    
-    
-    
-    
+
+
+
+
     public void saveTicketAttachments(final byte[] bytes, final String ticketId) {
 		final MediaModel mediaModel = saveToMedia(bytes, ticketId);
 		if(mediaModel != null) {
@@ -201,8 +195,8 @@ public class DefaultSagiaUserFacade implements SagiaUserFacade {
 		}
 	}
 
-	
-    
+
+
     private MediaModel saveToMedia(final byte[] bytes, final String ticketId) {
 		final CatalogVersionModel catalogVersion = catalogVersionService.getCatalogVersion(CATALOG_ID, VERSION_ONLINE);
 		 MediaModel mediaModel = null;
@@ -225,7 +219,7 @@ public class DefaultSagiaUserFacade implements SagiaUserFacade {
             mediaService.setStreamForMedia(mediaModel, inputStream);
 
              inputStream.close();
-            }	
+            }
         }
             catch (final IOException ex)
             {

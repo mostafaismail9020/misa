@@ -10,12 +10,24 @@
  */
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
 import com.sap.ibso.eservices.core.sagia.enums.ValidationError;
-import com.sap.ibso.eservices.facades.data.*;
+import com.sap.ibso.eservices.facades.data.ListItem;
+import com.sap.ibso.eservices.facades.data.NIPCountrySet;
+import com.sap.ibso.eservices.facades.data.NIPLeagalStatusSet;
+import com.sap.ibso.eservices.facades.data.NIPRegionSet;
+import com.sap.ibso.eservices.facades.data.NationalInvestorAtachment;
+import com.sap.ibso.eservices.facades.data.NationalInvestorHeaderSet;
+import com.sap.ibso.eservices.facades.data.NipCitySet;
+import com.sap.ibso.eservices.facades.data.NipISICSectionSet;
 import com.sap.ibso.eservices.facades.data.appintments.NationalInvestorAppointment;
-import com.sap.ibso.eservices.facades.sagia.*;
+import com.sap.ibso.eservices.facades.sagia.SagiaAppointmentFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaCountryFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaNationalInvestorFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaSectorFacade;
+import com.sap.ibso.eservices.facades.sagia.SagiaTermsAndConditionsFacade;
 import com.sap.ibso.eservices.facades.user.SagiaUserFacade;
 import com.sap.ibso.eservices.facades.user.data.SagiaRegisterData;
 import com.sap.ibso.eservices.facades.user.exception.DuplicateEmailException;
@@ -35,7 +47,6 @@ import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMe
 import de.hybris.platform.acceleratorstorefrontcommons.forms.ConsentForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.GuestForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.LoginForm;
-import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.commercefacades.constants.CommerceFacadesConstants;
@@ -47,8 +58,6 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.util.Strings;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -61,7 +70,14 @@ import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
@@ -76,7 +92,13 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -159,8 +181,8 @@ public class SagiaRegisterPageController extends SagiaAbstractRegisterPageContro
     	model.addAttribute(new SagiaRegisterForm());
     	model.addAttribute(new NationalInvestorForm());
     	model.addAttribute(new NationalInvestorAppointment());
-    	
-    	
+
+
         return getDefaultRegistrationPage(model);
     }
 
@@ -448,7 +470,7 @@ public class SagiaRegisterPageController extends SagiaAbstractRegisterPageContro
             return FALSE;
         }
 
-        boolean validationResult = sagiaUserFacade.validateUniqueValue(userName, email, mobileNumber, mobileCountryCode);
+        boolean validationResult = sagiaUserFacade.validateUniqueValue(userName, email);
         if (!validationResult) {
             return FALSE;
         }

@@ -13,12 +13,12 @@
  */
 package com.sap.ibso.eservices.core.sagia.dao;
 
-import java.util.List;
-
 import com.investsaudi.portal.core.model.ContactTicketModel;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.ticket.model.CsTicketModel;
+
+import java.util.List;
 
 /**
  * @author Roman Plokhikh <roman.plokhikh@sap.com>
@@ -28,7 +28,7 @@ import de.hybris.platform.ticket.model.CsTicketModel;
  */
 public interface SagiaUserDao
 {
-	List<CustomerModel> getCustomers(final String uid, final String mobileNumber, final String mobileCountryCode, final String email);
+	List<CustomerModel> getCustomers(final String uid,  final String email);
 	List<CustomerModel> getCustomerByUid(final String uid);
 	List<CustomerModel> getCustomerByMobileNumber(final String mobileNumber, final String mobileCountryCode);
 	List<CustomerModel> getCustomerByEmail(final String email);

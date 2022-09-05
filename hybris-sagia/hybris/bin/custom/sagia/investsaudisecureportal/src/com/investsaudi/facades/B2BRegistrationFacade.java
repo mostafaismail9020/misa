@@ -30,22 +30,20 @@ public interface B2BRegistrationFacade
 	 * Initiates the registration process for B2B. This method will first validate the submitted data, check if a user or
 	 * a company to the given name already exists, persist the registration request (as a model) and initiate the
 	 * workflow so that the registration request either gets approved OR rejected.
-	 * 
+	 *
 	 * @param data
 	 *           The registration data
-	 * @throws PhoneNumberUsedException 
+	 * @throws PhoneNumberUsedException
 	 */
 	public void register(B2BRegistrationData data) throws CustomerAlreadyExistsException, PhoneNumberUsedException;
-	
+
 	/**
 	 * validates UniqueValue
 	 * @param userName userName
 	 * @param email email
-	 * @param mobileNumber mobileNumber
-	 * @param mobileCountryCode mobileCountryCode
  	 * @return boolean
 	 */
-	boolean validateUniqueValue(final String userName, final String email, final String mobileNumber, final String mobileCountryCode);
+	boolean validateUniqueValue(final String userName, final String email);
 
 	/**
 	 * Creates the child unit.
@@ -53,7 +51,7 @@ public interface B2BRegistrationFacade
 	 * @param data the data
 	 */
 	void createChildUnit(SagiaB2BUnitData data);
-    
+
     /**
      * Creates the user.
      *

@@ -199,13 +199,11 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
      * validates UniqueValue
      * @param userName          userName
      * @param email             email
-     * @param mobileNumber      mobileNumber
-     * @param mobileCountryCode mobileCountryCode
      * @return boolean
      */
 	@Override
-    public boolean validateUniqueValue(final String userName, final String email, final String mobileNumber, final String mobileCountryCode) {
-        return userService.validateUniqueness(userName, email, mobileNumber, mobileCountryCode);
+    public boolean validateUniqueValue(final String userName, final String email) {
+        return userService.validateUniqueness(userName, email);
     }
 
 	/*
@@ -228,7 +226,7 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 			data.setEmail(data.getEmail().toLowerCase());
 			LOG.debug(String.format("Process data with user with uid '%s'", data.getEmail()));
 
-			boolean userExists = userService.validateUniqueness("", data.getEmail(), "", "");
+			boolean userExists = userService.validateUniqueness("", data.getEmail());
 			// Check if a user using the same email exist, if so we need to abort the current operation!
 			//final boolean userExists = userService.isUserExisting(data.getEmail());
 			if (!userExists)
@@ -240,16 +238,8 @@ public class DefaultB2BRegistrationFacade implements B2BRegistrationFacade
 				throw new CustomerAlreadyExistsException(String.format("User with uid '%s' already exists!", data.getEmail()));
 			}
 
-			boolean userMobileExists = userService.validateUniqueness("", "", data.getTelephone(), data.getTelephoneExtension());
-			  // Check if a user using the same email exist, if so we need to abort the
-			//if (userService.getCustomerByMobileNumber(data.getTelephone(), data.getTelephoneExtension()) != null ) {
-			if (!userMobileExists) {
-				if (LOG.isDebugEnabled())
-				{
-					LOG.debug(String.format("user with phone number '%s' already exists!", data.getTelephone()));
-				}
-				throw new PhoneNumberUsedException(String.format("User with phone number '%s' already exists!", data.getTelephone()));
-			}
+
+
 
 			// Save the registration model so that it is accessible to the workflow actions. The registration model will be deleted as part of the cleanup
 			// of the workflow.

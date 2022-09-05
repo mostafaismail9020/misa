@@ -23,11 +23,9 @@ import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
 import de.hybris.platform.ticket.model.CsTicketModel;
-
-import javax.annotation.Resource;
-
 import org.apache.commons.lang3.StringUtils;
 
+import javax.annotation.Resource;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -81,10 +79,10 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 	private static final String QUERY_CONTACT_TICKET_LIST = "SELECT {ct:pk} FROM "
 			+ " {ContactTicket AS ct JOIN Customer AS cu ON {ct:customer} = {cu:pk}}"
 			+ " WHERE {cu:userNameEmail} = ?userNameEmail ORDER BY {ct:modifiedtime} DESC";
-		
+
 	private static final String QUERY_CONTACT_TICKET = "SELECT {p:pk} FROM {ContactTicket AS p} WHERE {p.ticketID} = ?ticketId";
 
-	
+
 	private FlexibleSearchService flexibleSearchService;
 
 	public DefaultSagiaUserDao(final String typecode)
@@ -92,18 +90,16 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 		super(typecode);
 	}
 
-	public List<CustomerModel> getCustomers(final String uid, final String mobileNumber, final String mobileCountryCode, final String email) {
+	public List<CustomerModel> getCustomers(final String uid, final String email) {
 
-		final String query = "SELECT {PK} FROM {Customer} WHERE {UID} = ?uidValue OR ({mobileNumber} = ?mobileNumberValue AND {mobileCountryCode} = ?mobileCountryCode) OR {usernameemail} = ?emailValue";
+		final String query = "SELECT {PK} FROM {Customer} WHERE {UID} = ?uidValue  OR {usernameemail} = ?emailValue";
 
 		final Map<String, String> parameters = new HashMap<>();
 		parameters.put("pk", CustomerModel.PK);
 
 		parameters.put(CUSTOMER_TABLE, CustomerModel._TYPECODE);
 		parameters.put(UID_VALUE, uid.toLowerCase());
-		parameters.put(MOBILE_NUMBER_VALUE, mobileNumber);
 		parameters.put(EMAIL_VALUE, email.toLowerCase());
-		parameters.put(MOBILE_COUNTRY_CODE, mobileCountryCode);
 
 		return getResults(query, parameters, CustomerModel.class);
 	}
@@ -174,18 +170,18 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 	@Override
 	public List<ContactTicketModel> getUserRaisedOpportunities(String userNameEmail) {
 		validateParameterNotNull(userNameEmail, "User userNameEmail cannot be null");
-		
+
 //		final String query = "SELECT {PK} FROM {ContactTicket} WHERE {email} = ?contactEmail ";
 //		final Map<String, String> parameters = new HashMap<>();
 //		parameters.put(CONTACT_EMAIL, contactEmail);
 //		return getResults(query, parameters, ContactTicketModel.class);
-		
+
 		final Map<String, Object> params = new HashMap<String, Object>();
 		params.put("userNameEmail", userNameEmail);
 		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(QUERY_CONTACT_TICKET_LIST, params);
 		final SearchResult<ContactTicketModel> resultList = flexibleSearchService.search(searchQuery);
-		
-		return resultList.getResult(); 
+
+		return resultList.getResult();
 	}
 
 	@Override
@@ -194,7 +190,7 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 		params.put("ticketId", ticketId);
 		final FlexibleSearchQuery searchQuery = new FlexibleSearchQuery(QUERY_CONTACT_TICKET, params);
 		final SearchResult<ContactTicketModel> resultList = flexibleSearchService.search(searchQuery);
-		
+
 		return (null != resultList && resultList.getResult().size() > 0) ? resultList.getResult().get(0) : null;
 	}
 
@@ -221,7 +217,7 @@ public class DefaultSagiaUserDao extends DefaultGenericDao<CustomerModel> implem
 		query.setNeedTotal(false);
 		searchRestrictionService.disableSearchRestrictions();
 		final SearchResult<T> results = flexibleSearchService.search(query);
-		
+
 		return results.getResult();
 	}
 

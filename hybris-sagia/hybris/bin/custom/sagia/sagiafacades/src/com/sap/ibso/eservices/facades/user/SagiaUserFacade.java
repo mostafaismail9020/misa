@@ -13,14 +13,11 @@
  */
 package com.sap.ibso.eservices.facades.user;
 
-import de.hybris.platform.commercefacades.user.data.CustomerData;
-import java.lang.String;
-
-import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
 import com.sap.ibso.eservices.core.enums.IncidentCategory;
-import com.sap.ibso.eservices.core.enums.ServiceCategory;
 import com.sap.ibso.eservices.core.enums.Priority;
-
+import com.sap.ibso.eservices.core.enums.ServiceCategory;
+import com.sap.ibso.eservices.facades.data.SagiaServiceRequestFormData;
+import de.hybris.platform.commercefacades.user.data.CustomerData;
 
 import java.util.List;
 
@@ -38,11 +35,9 @@ public interface SagiaUserFacade
 	 * validates UniqueValue
 	 * @param userName userName
 	 * @param email email
-	 * @param mobileNumber mobileNumber
-	 * @param mobileCountryCode mobileCountryCode
  	 * @return boolean
 	 */
-	boolean validateUniqueValue(final String userName, final String email, final String mobileNumber, final String mobileCountryCode);
+	boolean validateUniqueValue(final String userName, final String email);
 
 	/**
 	 * Gets all child b 2 b customers.
@@ -50,16 +45,16 @@ public interface SagiaUserFacade
 	 * @return the all child b 2 b customers
 	 */
 	List<CustomerData> getAllChildB2BCustomers();
-	
+
 	boolean validateSagiaUerFormData(final SagiaServiceRequestFormData sagiaServiceRequestFormData, final String ticketId);
-	
+
 	List<IncidentCategory> getIncidentCategoryEnumValues();
-	
+
 	List<ServiceCategory> getServiceCategoryEnumValues();
-	
+
 	List<Priority> getPriorityEnumValues();
-	
+
 	 void saveTicketAttachments(final byte[] bytes, final String ticketId);
-	
-	
+
+
 }

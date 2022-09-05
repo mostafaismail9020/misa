@@ -13,7 +13,6 @@
  */
 package com.sap.ibso.eservices.core.sagia.services.impl;
 
-import com.investsaudi.data.SagiaB2BUnitData;
 import com.investsaudi.portal.core.model.ContactTicketModel;
 import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.investsaudi.portal.core.service.ContactTicketBusinessService;
@@ -24,7 +23,8 @@ import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
 import de.hybris.platform.b2b.services.B2BUnitService;
-import de.hybris.platform.cms2.model.contents.components.AbstractCMSComponentModel;
+import de.hybris.platform.comments.model.CommentModel;
+import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.security.PrincipalModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserGroupModel;
@@ -32,22 +32,21 @@ import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.servicelayer.user.exceptions.PasswordEncoderNotFoundException;
 import de.hybris.platform.servicelayer.user.impl.DefaultUserService;
-
-import de.hybris.platform.comments.model.CommentModel;
-import de.hybris.platform.ticket.strategies.TicketEventStrategy;
-import de.hybris.platform.core.model.media.MediaModel;
-import de.hybris.platform.ticket.model.CsTicketModel;
 import de.hybris.platform.ticket.enums.CsEventReason;
 import de.hybris.platform.ticket.enums.CsInterventionType;
 import de.hybris.platform.ticket.events.model.CsCustomerEventModel;
-
+import de.hybris.platform.ticket.model.CsTicketModel;
+import de.hybris.platform.ticket.strategies.TicketEventStrategy;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 import org.fest.util.Strings;
-import java.nio.charset.StandardCharsets;
 
 import javax.annotation.Resource;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Default implementation of UserService
@@ -73,10 +72,10 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
 	private ContactTicketBusinessService contactTicketBusinessService;
 
     @Override
-    public List<ValidationError> validateUniqueUserAttributes(final String uid, final String mobileNumber,
-    		final String mobileCountryCode, final String email) {
+    public List<ValidationError> validateUniqueUserAttributes(final String uid,
+    		 final String email) {
         final List<ValidationError> result = new ArrayList<>();
-        final List<CustomerModel> customers = sagiaUserDao.getCustomers(uid, mobileNumber, mobileCountryCode, email);
+        final List<CustomerModel> customers = sagiaUserDao.getCustomers(uid, email);
         if (!CollectionUtils.isEmpty(customers)) {
             customers.forEach(customer -> {
                 if (email.equals(customer.getUserNameEmail())) {
@@ -91,15 +90,13 @@ public class DefaultSagiaUserService extends DefaultUserService implements Sagia
     }
 
     @Override
-    public boolean validateUniqueness(final String userName, final String email, final String mobileNumber,
-                                      final String mobileCountryCode) {
+    public boolean validateUniqueness(final String userName, final String email
+                                      ) {
         List<CustomerModel> customers = new ArrayList<>();
         if (!Strings.isEmpty(userName)) {
             customers = sagiaUserDao.getCustomerByUid(userName);
         } else if (!Strings.isEmpty(email)) {
             customers = sagiaUserDao.getCustomerByEmail(email);
-        } else if (!Strings.isEmpty(mobileCountryCode) && !Strings.isEmpty(mobileNumber)) {
-            customers = sagiaUserDao.getCustomerByMobileNumber(mobileNumber, mobileCountryCode);
         }
 
         return customers.isEmpty();

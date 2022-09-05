@@ -1,27 +1,21 @@
 package com.investsaudi.portal.facades.contact;
 
-import javax.annotation.Resource;
-import java.util.List;
-
 import com.investsaudi.portal.core.model.ContactTicketPurposeModel;
 import com.investsaudi.portal.core.service.ContactTicketBusinessService;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
 import com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaCountryService;
 import com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaSectorService;
 import com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaUserService;
-import de.hybris.platform.catalog.model.CatalogAgreementsHandler;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.customerticketingfacades.customerticket.DefaultCustomerTicketingFacade;
 import de.hybris.platform.customerticketingfacades.data.ContactTicketData;
 import de.hybris.platform.customerticketingfacades.data.ContactTicketSubjectData;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
-import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.session.SessionService;
-import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.ticket.enums.CsEventReason;
 import de.hybris.platform.ticket.enums.CsInterventionType;
 import de.hybris.platform.ticket.enums.CsTicketCategory;
@@ -31,10 +25,12 @@ import de.hybris.platform.ticketsystem.data.ContactTicketParameter;
 import de.hybris.platform.ticketsystem.data.CsTicketParameter;
 import de.hybris.platform.util.Config;
 import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.apache.commons.lang.StringUtils;
+import javax.annotation.Resource;
+import java.util.List;
 
 public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
     private static final Logger LOG = Logger.getLogger(ContactTicketFacade.class);
@@ -107,7 +103,7 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         ticketParameter.setMessage(StringUtils.isNotBlank(ticketData.getMessage()) ? ticketData.getMessage() : "Interested in business opportunity");
         ticketParameter.setMobile(ticketData.getCountryCode()+ticketData.getMobile());
         ticketParameter.setContactSubject(ticketData.getContactSubject());
-        ticketParameter.setOpportunity(ticketData.getOpportunity());      
+        ticketParameter.setOpportunity(ticketData.getOpportunity());
         ticketParameter.setProductCode(ticketData.getProductCode());
         ticketParameter.setCommerceUserID(ticketParameter.getCustomer().getUid());
         ticketParameter.setC4CAccountID(((CustomerModel) ticketParameter.getCustomer()).getC4cAccountID());
@@ -117,8 +113,7 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
 
     private UserModel CheckIfUserExistElseCreateUser(ContactTicketData ticketData) {
         UserModel userForEmail = userService.getCustomerByEmail(ticketData.getEmail().toLowerCase());
-        UserModel userForMobile = userService.getCustomerByMobileNumber(ticketData.getMobile(),ticketData.getCountryCode().substring(1));
-        if (null==userForEmail && null==userForMobile) {
+        if (null==userForEmail ) {
             try {
                 CustomerModel customer=modelService.create(CustomerModel.class);
                 customer.setCompany(ticketData.getCompany());
@@ -148,10 +143,7 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
 
         }
         sessionService.setAttribute(IS_NEW_CUSTOMER,false);
-        if(null!=userForEmail) {
-            return userForEmail;
-        }
-        return userForMobile;
+        return userForEmail;
     }
 
     private String generateRandomPassword() {

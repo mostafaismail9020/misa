@@ -13,18 +13,17 @@
  */
 package com.sap.ibso.eservices.core.sagia.services;
 
-import java.util.List;
-import java.util.Set;
-
 import com.investsaudi.portal.core.model.ContactTicketModel;
 import com.investsaudi.portal.core.model.ServiceRequestModel;
 import com.sap.ibso.eservices.core.sagia.enums.ValidationError;
 import de.hybris.platform.b2b.model.B2BCustomerModel;
 import de.hybris.platform.b2b.model.B2BUnitModel;
+import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.user.UserService;
-import de.hybris.platform.core.model.media.MediaModel;
-import java.lang.String;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * Provides access to the User Service
@@ -38,22 +37,18 @@ public interface SagiaUserService extends UserService
 	/**
 	 * validates UniqueUserAttributes
 	 * @param uid uid
-	 * @param mobileNumber mobileNumber
-	 * @param mobileCountryCode mobileCountryCode
 	 * @param email email
 	 * @return List of ValidationError
 	 */
-	List<ValidationError> validateUniqueUserAttributes(String uid, String mobileNumber, String mobileCountryCode, String email);
+	List<ValidationError> validateUniqueUserAttributes(String uid, String email);
 
 	/**
 	 * validates Uniqueness
 	 * @param userName userName
 	 * @param email email
-	 * @param mobileNumber mobileNumber
-	 * @param mobileCountryCode mobileCountryCode
 	 * @return boolean
 	 */
-	boolean validateUniqueness(final String userName, final String email, final String mobileNumber, final String mobileCountryCode);
+	boolean validateUniqueness(final String userName, final String email);
 
 	/**
 	 * Returns a customer by her email.
@@ -97,7 +92,7 @@ public interface SagiaUserService extends UserService
 	 * @return the ticket raised by the customer
 	 */
 	ContactTicketModel getContactTicketForTicketId(String ticketId);
-	
+
 	/**
 	 * Add comments to ContactTicket
 	 * @param ticketId ticketId
@@ -107,9 +102,9 @@ public interface SagiaUserService extends UserService
 	ContactTicketModel addContactTicketComments(String ticketId, String comments);
 
         boolean attachServiceRequestToContactTicket(ServiceRequestModel serviceRequest, String ticketId);
-        
-        
-        
+
+
+
   	  /**
     	 * Add comments to ContactTicket
     	 * @param ticketId ticketId
@@ -118,5 +113,5 @@ public interface SagiaUserService extends UserService
     	 */
         public void saveTicketAttachments(final byte[] bytes, final String ticketId,
     			final MediaModel mediaModel);
-        
+
 }

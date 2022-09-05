@@ -21561,3 +21561,49 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
 #report-facet-form #report-facet-search button {
     margin-top: 20px;
 }
+
+
+/* Changes to edit PortalHeaderSlot on SmartEdidt */
+
+span[data-smartedit-component-id="PortalHeaderSlot"] #topbar {
+    position: inherit;
+}
+
+span[data-smartedit-component-id="PortalHeaderSlot"] #topbar .social-links a {
+    color: #787878;
+}
+
+span[data-smartedit-component-id="PortalHeaderSlot"] header#header {
+    position: inherit;
+    background: #f7f7f7;
+}
+
+span[data-smartedit-component-id="PortalHeaderSlot"] header#header a{
+    color: #787878
+}
+
+span[data-smartedit-component-id="PortalHeaderSlot"] header#header .logo {
+    z-index: 1;
+}
+
+span[data-smartedit-component-id="PortalHeaderSlot"] header#header .hd-scroll {
+    display: block;
+}
+
+span[data-smartedit-component-id="PortalHeaderSlot"] header#header .hd-static {
+    display: none;
+}
+
+smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-decorative-body__inner-border,
+smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] > smartedit-element {
+    margin-top: 32px;
+}
+
+
+smartedit-element[data-smartedit-component-id="PortalHeaderSlot"]  .se-decorative-panel-area {
+    margin-top: 0 !important;
+}
+
+smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__overlay {
+    /* margin-top: 32px !important; */
+}

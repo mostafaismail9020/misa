@@ -66,7 +66,6 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true] 				; name 							; linkName[
                               ; infrastructure-logistic-link  	; Infrastructures and Logistic 	; Infrastructures and Logistic 	; Infrastructures and Logistic 	; infrastructure-logistics 			;		;
                               ; economic-sectors-link         	; Saudi Economic Sectors 		; Saudi Economic Sectors 	; Saudi Economic Sectors 		; saudi-economic-sectors 				;		;
                               ; investment-data-link          	; Investment Data 				; Investment Data 			; Investment Data 				; investment-data						;		;
-                              ; investment-indicator-terms-link          	; The Economic and Ivestment Indicator Terms 				; The Economic and Ivestment Indiactor Terms 			; The Economic and Ivestment Indicator Terms 				; economic-investments-terms						;		;
 
 ########## Redesigning the Nodes
 INSERT_UPDATE CMSLinkComponent; uid[unique = true]          	; name             				; linkName[lang = en] 				; linkName[lang = ar] 					; url      											; $contentCV[unique = true]	;
@@ -136,7 +135,6 @@ INSERT_UPDATE CMSNavigationNode	; uid[unique = true]				; name						; nodeImage(
 								; infrastructure-logistic-navnode 	; Infrastructures and Logistic  ;							     ; Infrastructures and Logistic  ; Infrastructures and Logistic ; infrastructure-logistic-navnode ; 				;  					;
 								; economic-sectors-navnode 			; Saudi Economic Sectors  		;							     ; Saudi Economic Sectors  	; Saudi Economic Sectors  	; economic-sectors-navnode 		; 							; 					;
 								; investment-data-navnode 			; Investment Data 			;								     ; Investment Data 			; Investment Data 			; investment-data-navnode 		; 							;  					;
-                                ; investment-indicator-terms-navnode ; The Economic and Ivestment Indiactor Terms 			;		 ; The Economic and Ivestment Indiactor Terms 			; The Economic and Ivestment Indiactor Terms 			; investment-indicator-terms-navnode 		; 							;  					;
 # Media Center
 								; media-center-navnode 				; Media 					; media_Center_Banner.png			 ; Media 					; Media 					; media-center-navnode 			; 							; Explore our collection of resources to guide you through the investment opportunities in Saudi Arabia.;
 								; media-center-overview-navnode 	; Media Center Overview  	;								     ; Media Center Overview  	; Media Center Overview  	; media-center-overview-navnode ; 							; 					;
@@ -188,7 +186,6 @@ INSERT_UPDATE CMSNavigationNode	; uid[unique = true]			; name					; cmsLink(uid,
 								; infrastructure-logistic-navnode ; Infrastructures and logistic  	; infrastructure-logistic-link	; infrastructure-logistic-navnode  	; economic-highlight-navnode	;  							; 									 	; 							;
 								; economic-sectors-navnode 		; Saudi Economic Sectors  			; economic-sectors-link			; economic-sectors-navnode   		; economic-highlight-navnode 	;  							; 									 	; 							;
 								; investment-data-navnode 		; Investment Data 					; investment-data-link			; investment-data-navnode   		; economic-highlight-navnode 	;  							; 									 	; 							;
-								; investment-indicator-terms-navnode 		; The Economic and Ivestment Indiactor Terms 					; investment-indicator-terms-link			; investment-indicator-terms-navnode   		; economic-highlight-navnode 	;  							; 									 	; 							;
 # Media Center
 								; media-center-navnode 			  ; Media 				            ; media-center-link 			; media-center-navnode 				; header-menu 				    ;  							; 									 	; 							;
 								; media-center-overview-navnode   ; Media Center Overview           ; media-center-overview-link	; media-center-overview-navnode   	; media-center-navnode 		    ;  							;                       				;	                        ;
@@ -234,17 +231,17 @@ UPDATE InvestSaudiNavigationBarComponent; uid[unique = true] ; name             
 
 
 #On Economic Highlights menu create 2 menu items
-INSERT_UPDATE CMSLinkComponent; uid[unique = true]          ; name                          ; linkName[lang = en]           ; linkName[lang = ar]              ; url                         ; $contentCV[unique = true];
-							  ; economic-investments-terms-link  ; Economic & Investments terms  ; Economic & Investments term   ; الشروط الاقتصادية والاستثمارية   ; /economic/investmentsTerms ;                          ;
-							  ; economic-investment-reports-link ; Economic & Investment Reports ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية ; /economic/investmentReports ;                         ;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]          ; name                          ; linkName[lang = en]           ; linkName[lang = ar]              ; url   ;contentPage(uid, $contentCV)	;                      ; $contentCV[unique = true];
+							  ; economic-investments-terms-link  ; Economic & Investments terms  ; Economic & Investments term   ; الشروط الاقتصادية والاستثمارية   ;  ; economic-investments-terms  ;                       ;
+                              ; economic-investment-reports-link ; Economic & Investment Reports ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية ;  ; economic-investment-reports ;                       ;
 
 #When mouse over on Economic & Investment Reports will show 4 submenu
 
-INSERT_UPDATE CMSLinkComponent; uid[unique = true]                      ; name                                    ; linkName[lang = en]                     ; linkName[lang = ar]                        ; url                              ; $contentCV[unique = true];
-							  ; economic-and-investment-monitor         ; Economic & Investment Monitor           ; Economic & Investment Monitor           ; مراقبة الاقتصادية والاستثمارية             ; /investment-monitor/resources    ;               ;
-							  ; investment-highlights                   ; Investment Highlights                   ; Investment Highlights                   ; أبرز الاستثمارات                           ; /investment-highlights/resources ;                ;
-							  ; monthly-bulletin                        ; Monthly Bulletin                        ; Monthly Bulletin                        ; النشرة الشهرية                             ; /monthly-bulletin/resources      ;             ;
-							  ; economic-and-investment-reports-Studies ; Economic & Investment Reports & Studies ; Economic & Investment Reports & Studies ; التقارير والدراسات الاقتصادية والاستثمارية ; /report-studies/resources        ;             ;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]                      ; name                                    ; linkName[lang = en]                     ; linkName[lang = ar]                        ; url      ;contentPage(uid, $contentCV)	;                        ; $contentCV[unique = true];
+							  ; economic-and-investment-monitor         ; Economic & Investment Monitor           ; Economic & Investment Monitor           ; مراقبة الاقتصادية والاستثمارية             ;     ;  reports-economic-investment-monitor-search ;            ;
+							  ; investment-highlights                   ; Investment Highlights                   ; Investment Highlights                   ; أبرز الاستثمارات                           ;  ; reports-investment-highlights-search ;              ;
+							  ; monthly-bulletin                        ; Monthly Bulletin                        ; Monthly Bulletin                        ; النشرة الشهرية                             ;      ;monthly-bulletin-search ;             ;
+							  ; economic-and-investment-reports-Studies ; Economic & Investment Reports & Studies ; Economic & Investment Reports & Studies ; التقارير والدراسات الاقتصادية والاستثمارية ;       ; report-studies-search ;             ;
 
 
 #On Economic Highlights menu create 2 menu items [Name], [Title] and [Description]

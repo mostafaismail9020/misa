@@ -9,7 +9,7 @@ $page = monthly-bulletin-search
 $pageName = Monthly Bulletin
 $pageTitleEn = $pageName
 $pageTitleAr = النشرة الشهرية
-$pageLabel = /economic/investmentReports/monthlyBulletinReport
+$pageLabel = /monthly-bulletin/resources
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]

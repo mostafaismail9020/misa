@@ -9,7 +9,7 @@ $page = reports-investment-highlights-search
 $pageName = Investment Highlights
 $pageTitleEn = $pageName
 $pageTitleAr = ويبرز الاستثمار
-$pageLabel = /economic/investmentReports/investmentHighlightsReport
+$pageLabel = /investment-highlights/resources
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]

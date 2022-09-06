@@ -2407,10 +2407,27 @@
             </explorer-tree:navigation-node>
         </explorer-tree:explorer-tree>
     </context>
-
-	<context merge-by="authority" component="explorer-tree" principal="CMS_PORTAL_USER" >
-		<explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree" >
-			<explorer-tree:navigation-node id="hmc.portal" >
+	
+	<context parent="auto" component="explorer-tree">
+		<explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
+			<explorer-tree:navigation-node id="hmc.resources">
+				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
+				<explorer-tree:navigation-node id="hmc.portal.economic.investment.reports">
+					<explorer-tree:type-node code="EconomicAndInvestmentMonitor" id="EconomicAndInvestmentMonitor"/>
+					<explorer-tree:type-node code="InvestmentHighlightsReport" id="InvestmentHighlightsReport"/>
+					<explorer-tree:type-node code="MonthlyBulletinReport" id="MonthlyBulletinReport"/>
+					<explorer-tree:type-node code="EconomicAndInvestmentReportsAndStudies" id="EconomicAndInvestmentReportsAndStudies"/>
+				</explorer-tree:navigation-node>
+				<explorer-tree:type-node id="SagiaIndicatorTerm"
+										 code="SagiaIndicatorTerm" />
+				
+			</explorer-tree:navigation-node>
+		</explorer-tree:explorer-tree>
+	</context>
+	
+	<context merge-by="authority" component="explorer-tree" principal="CMS_PORTAL_MANAGER">
+		<explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
+			<explorer-tree:navigation-node id="hmc.portal">
 				<explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
@@ -2419,19 +2436,15 @@
 		</explorer-tree:explorer-tree>
 	</context>
 
-	<context merge-by="authority" component="explorer-tree" principal="CMS_PORTAL_MANAGER">
+	<context merge-by="authority" parent="auto" component="explorer-tree" principal="CMS_PORTAL_USER,CMS_PORTAL_MANAGER">
 		<explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
-			<explorer-tree:navigation-node id="hmc.portal">
-				<explorer-tree:type-node code="InvestSaudiNewsComponent" id="InvestSaudiNewsComponent"/>
-				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
-				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
+			<explorer-tree:navigation-node id="hmc.resources">
 				<explorer-tree:navigation-node id="hmc.portal.economic.investment.reports">
 					<explorer-tree:type-node code="EconomicAndInvestmentMonitor" id="EconomicAndInvestmentMonitor"/>
 					<explorer-tree:type-node code="InvestmentHighlightsReport" id="InvestmentHighlightsReport"/>
 					<explorer-tree:type-node code="MonthlyBulletinReport" id="MonthlyBulletinReport"/>
 					<explorer-tree:type-node code="EconomicAndInvestmentReportsAndStudies" id="EconomicAndInvestmentReportsAndStudies"/>
 				</explorer-tree:navigation-node>
-				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
 				<explorer-tree:type-node id="SagiaIndicatorTerm"
 										 code="SagiaIndicatorTerm" />
 			</explorer-tree:navigation-node>

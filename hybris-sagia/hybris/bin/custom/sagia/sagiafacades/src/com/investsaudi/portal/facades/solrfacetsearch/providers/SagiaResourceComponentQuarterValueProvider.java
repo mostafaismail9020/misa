@@ -125,18 +125,18 @@ public class SagiaResourceComponentQuarterValueProvider extends AbstractProperty
 
     private  Map<String, String> createquarterMap(LanguageModel language) {
         Map<String, String> monthVocab = new HashMap<>();
-        monthVocab.put("1", getLocalizedValue("1",language));
-        monthVocab.put("2", getLocalizedValue("1",language));
-        monthVocab.put("3", getLocalizedValue("1",language));
-        monthVocab.put("4", getLocalizedValue("2",language));
-        monthVocab.put("5", getLocalizedValue("2",language));
-        monthVocab.put("6", getLocalizedValue("2",language));
-        monthVocab.put("7", getLocalizedValue("3",language));
-        monthVocab.put("8", getLocalizedValue("3",language));
-        monthVocab.put("9", getLocalizedValue("3",language));
-        monthVocab.put("10", getLocalizedValue("4",language));
-        monthVocab.put("11", getLocalizedValue("4",language));
-        monthVocab.put("12", getLocalizedValue("4",language));
+        monthVocab.put(String.valueOf(Calendar.JANUARY), getLocalizedValue("1",language));
+        monthVocab.put(String.valueOf(Calendar.FEBRUARY), getLocalizedValue("1",language));
+        monthVocab.put(String.valueOf(Calendar.MARCH), getLocalizedValue("1",language));
+        monthVocab.put(String.valueOf(Calendar.APRIL), getLocalizedValue("2",language));
+        monthVocab.put(String.valueOf(Calendar.MAY), getLocalizedValue("2",language));
+        monthVocab.put(String.valueOf(Calendar.JUNE), getLocalizedValue("2",language));
+        monthVocab.put(String.valueOf(Calendar.JULY), getLocalizedValue("3",language));
+        monthVocab.put(String.valueOf(Calendar.AUGUST), getLocalizedValue("3",language));
+        monthVocab.put(String.valueOf(Calendar.SEPTEMBER), getLocalizedValue("3",language));
+        monthVocab.put(String.valueOf(Calendar.OCTOBER), getLocalizedValue("4",language));
+        monthVocab.put(String.valueOf(Calendar.NOVEMBER), getLocalizedValue("4",language));
+        monthVocab.put(String.valueOf(Calendar.DECEMBER), getLocalizedValue("4",language));
        return monthVocab;
     }
 

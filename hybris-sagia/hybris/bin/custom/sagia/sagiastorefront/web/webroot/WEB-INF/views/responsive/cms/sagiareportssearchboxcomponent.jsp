@@ -8,7 +8,7 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <c:set var="searchUrl" value="${pageContext.request.request.getAttribute('javax.servlet.forward.request_uri')}"/>
-<spring:url value="/search/autocomplete/{/componentuid}" var="autocompleteUrl" htmlEscape="false">
+<spring:url value="/investment-monitor/resources/autocomplete/{/componentuid}" var="autocompleteUrl" htmlEscape="false">
 	<spring:param name="componentuid"  value="${component.uid}"/>
 </spring:url>
 <section id="search-results" class="pb-3 search-reports-container">

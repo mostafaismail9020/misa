@@ -7,7 +7,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<c:url value="/investment-highlights/resources" var="searchUrl" />
+<c:set var="searchUrl" value="${pageContext.request.request.getAttribute('javax.servlet.forward.request_uri')}"/>
 <spring:url value="/search/autocomplete/{/componentuid}" var="autocompleteUrl" htmlEscape="false">
 	<spring:param name="componentuid"  value="${component.uid}"/>
 </spring:url>

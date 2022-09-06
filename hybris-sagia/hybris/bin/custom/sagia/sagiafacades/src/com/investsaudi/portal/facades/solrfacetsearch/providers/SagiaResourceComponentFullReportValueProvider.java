@@ -90,13 +90,13 @@ public class SagiaResourceComponentFullReportValueProvider extends AbstractPrope
         if ( "EN".equalsIgnoreCase(language.getIsocode())){
             for ( MediaModel media : investSaudiResourceComponent.getResourceFullReport().getMedias() ) {
                 if ( media.getURL().contains("english") ) {
-                    return media.getURL();
+                    return media.getDownloadURL();
                 }
             }
         }else {
             for ( MediaModel media : investSaudiResourceComponent.getResourceFullReport().getMedias() ) {
                 if ( media.getURL().contains("arabic") ) {
-                    return media.getURL();
+                    return media.getDownloadURL();
                 }
             }
         }

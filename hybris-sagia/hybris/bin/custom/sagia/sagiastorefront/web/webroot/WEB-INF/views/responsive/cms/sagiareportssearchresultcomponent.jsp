@@ -13,7 +13,7 @@
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                <form method="get" id="report-facet-form" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
+                <form method="get" style="height: inherit" class="report-facet-form-js content-box hidden-sm hidden-xs product__facet js-product-facet">
                     <input type="hidden" name="text" value="${solrSearchPageData.freeTextSearch}"/>
                     <div>
                         <h1 class='section-headline my-5 reports-filter-header'>
@@ -54,7 +54,14 @@
                                     <div class="modal-body">
                                         <div class="pt-3" >
                                             <div class="opp-filter-container" style="padding: 20px;">
-                                                <!-- insert nav:facetNavRefinements here -->
+                                                <form method="get" style="height: inherit" class="report-facet-form-js hidden-sm hidden-xs product__facet js-product-facet">
+                                                    <nav:facetNavRefinementsDropdown pageData="${solrSearchPageData}"/>
+                                                    <div id="report-facet-search">
+                                                        <button class="btn btn-primary-fill btn-knowmore">
+                                                            <spring:theme code="economic.investmentreports.search.label"/>
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
                                        </div>
                                     </div>

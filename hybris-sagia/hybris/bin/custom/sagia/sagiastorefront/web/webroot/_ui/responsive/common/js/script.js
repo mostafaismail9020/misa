@@ -1079,11 +1079,11 @@ $(document).ready(function () {
 	$(".filter-reset-search").on("click", function () {
         window.location.href = window.location.pathname;
     });
-    $("#report-facet-form").submit( function (e) {
+    $(".report-facet-form-js").submit( function (e) {
         e.preventDefault()
 //        console.log('mount facet url')
         var facets = {}
-        $("#report-facet-form").serializeArray().forEach(m => {
+        $(this).serializeArray().forEach(m => {
             var val = m.value.split(':').filter(element => element);
             facets[m.name] = [...new Set(facets[m.name] ? [...facets[m.name], ...val] : [...val])];
         })

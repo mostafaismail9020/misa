@@ -62,6 +62,7 @@ INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; n
 # Create the queries that will be used to extract data for Solr
 INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; injectCurrentDate[default=true] ; injectCurrentTime[default=true] ; injectLastIndexTime[default=true] ; query                                                                                                 ; user(uid)
                                ; $solrIndexedInvestmentHighlightsReportType                         ; $searchIndexNamePrefix-fullQuery   ; full       ;                                 ;                                 ; false                             ; "SELECT {PK} FROM {InvestmentHighlightsReport}" ; anonymous
+                               ; $solrIndexedInvestmentHighlightsReportType                         ; $searchIndexNamePrefix-updateQuery   ; update       ;                                 ;                                 ; true                             ; "SELECT {PK} FROM {InvestmentHighlightsReport} where ({modifiedtime} >= ?lastIndexTime)" ; anonymous
 
 
 

@@ -64,6 +64,7 @@ INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; n
 # Create the queries that will be used to extract data for Solr
 INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; injectCurrentDate[default=true] ; injectCurrentTime[default=true] ; injectLastIndexTime[default=true] ; query                                                                                                 ; user(uid)
                                ; $solrIndexedMonthlyBulletinReportType                         ; $searchIndexNamePrefix-fullQuery   ; full       ;                                 ;                                 ; false                             ; "SELECT {PK} FROM {MonthlyBulletinReport}" ; anonymous
+                               ; $solrIndexedMonthlyBulletinReportType                         ; $searchIndexNamePrefix-updateQuery   ; update       ;                                 ;                                 ; true                             ; "SELECT {PK} FROM {MonthlyBulletinReport} where ({modifiedtime} >= ?lastIndexTime)" ; anonymous
 
 
 

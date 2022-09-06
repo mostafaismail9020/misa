@@ -136,7 +136,7 @@
                                     <div class="news-card-inner">
                                         <h3 title="${result.resourceTitle}">${result.resourceTitle}</h3>
                                         <p>${result.resourceShortInformation}</p>
-                                        <a class="btn btn-primary-fill btn-knowmore" href="${fn:escapeXml(result.resourceFullReport)}" download="${result.resourceFullReport}">
+                                        <a class="btn btn-primary-fill btn-knowmore" href="${fn:escapeXml(result.resourceFullReportURL)}" download="${result.resourceFullReportURL}">
                                             <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/news_page/download.png" alt=""/></span>&nbsp;
                                             <spring:theme code="portal.media.resourcedetails.download" text="Download"/>
                                         </a>

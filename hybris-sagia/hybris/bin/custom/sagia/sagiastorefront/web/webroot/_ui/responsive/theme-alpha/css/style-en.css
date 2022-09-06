@@ -21558,6 +21558,6 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
     width: 75%;
 }
 
-#report-facet-form #report-facet-search button {
+.report-facet-form-js #report-facet-search button {
     margin-top: 20px;
 }

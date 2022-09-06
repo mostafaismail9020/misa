@@ -16,10 +16,31 @@ INSERT_UPDATE SolrIndexerCronJob; code[unique = true]; job(code); singleExecutab
                                 ; full-sagiaIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaIndex ; update
                                 ; update-sagiaIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaIndex ; full
 
+                                ; full-sagiaEconomicAndInvestmentMonitorIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaEconomicAndInvestmentMonitorIndex ; update
+                                ; update-sagiaEconomicAndInvestmentMonitorIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaEconomicAndInvestmentMonitorIndex ; full
+
+                                ; full-sagiaEconomicAndInvestmentReportsAndStudiesIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaEconomicAndInvestmentReportsAndStudiesIndex ; update
+                                ; update-sagiaEconomicAndInvestmentReportsAndStudiesIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaEconomicAndInvestmentReportsAndStudiesIndex ; full
+
+                                ; full-sagiaInvestmentHighlightsReportIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaInvestmentHighlightsReportIndex ; update
+                                ; update-sagiaInvestmentHighlightsReportIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaInvestmentHighlightsReportIndex ; full
+
+
+                                ; full-sagiaMonthlyBulletinReportIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaMonthlyBulletinReportIndex ; update
+                                ; update-sagiaMonthlyBulletinReportIndex-cronJob ; solrIndexerJob ; false ; en ; true ; sagiaMonthlyBulletinReportIndex ; full
+
 INSERT_UPDATE Trigger;cronJob(code)[unique=true];second;minute;hour;day;month;year;relative;active;maxAcceptableDelay
 
 # Run the full-sagiaIndex-cronJob at 3:05 AM every day
 ;full-sagiaIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
+
+;full-sagiaEconomicAndInvestmentMonitorIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
+;full-sagiaEconomicAndInvestmentReportsAndStudiesIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
+;full-sagiaInvestmentHighlightsReportIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
+;full-sagiaMonthlyBulletinReportIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
+
+
+
 
 # Run the update-sagiaIndex-cronJob every 1 minutes
 ;update-sagiaIndex-cronJob;0;1;-1;-1;-1;-1;true;false;-1

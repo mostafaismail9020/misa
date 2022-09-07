@@ -1,5 +1,6 @@
 <%@ tag body-content="empty" trimDirectiveWhitespaces="true" %>
 <%@ attribute name="facetData" required="true" type="de.hybris.platform.commerceservices.search.facetdata.FacetData" %>
+<%@ attribute name="sortCodeSelected" required="true" type="java.lang.String" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -18,7 +19,7 @@
                         <spring:theme code="economic.investmentreports.search.select"/>
                     </option>
                     <c:forEach items="${facetData.values}" var="facetValue">
-                        <option value="${facetValue.query.query.value}" ${facetValue.selected? 'selected="selected"' : ''}>
+                        <option value=":${sortCodeSelected}:${facetData.code}:${facetValue.code}" ${facetValue.selected? 'selected="selected"' : ''}>
                             ${fn:escapeXml(facetValue.name)}
                         </option>
                     </c:forEach>

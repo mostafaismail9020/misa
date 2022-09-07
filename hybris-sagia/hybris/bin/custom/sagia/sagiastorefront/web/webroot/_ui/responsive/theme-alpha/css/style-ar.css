@@ -16078,6 +16078,8 @@ ul.INS_list_font li,
 
 /*Sector Opportunities - Opprtunities landing page START*/
 
+.page-economic-investments-terms .pagination .page-item .page-link img,
+.search-result-reports-container .pagination .page-item .page-link img,
 .opportunity-card img,
 .all-opportunity .pagination .page-item .page-link img {
 	transform: rotateY(180deg);
@@ -16199,6 +16201,9 @@ ul.INS_list_font li,
 	margin-left: 10px;
 }
 
+.search-result-reports-container .news-card .btn-knowmore span.arow-icon img {
+    transform: none;
+}
 .btn-knowmore span.arow-icon img {
 	transform: rotate(180deg);
 }
@@ -20597,14 +20602,12 @@ ul.INS_list_font li,
 		margin-top: -8px;
 		width: 14px;
 	}
-	.search-reports-container .search-btn,
 	.page-opportunity-search .opp-search-btn {
 		height: 45px;
 		top: 0;
 		right: 16px;
 		font-size: 14px;
 	}
-	.search-reports-container .reset-search,
 	.page-opportunity-search .opp-search-container .reset-search {
 		font-size: 10px;
 		line-height: 12px;
@@ -20627,6 +20630,7 @@ ul.INS_list_font li,
 		font-size: 14px !important;
 		line-height: 24px;
 	}
+	.search-result-reports-container .news-card .headtitle,
 	.page-opportunity-search-page .opportunity-card .opp-headtitle {
 		font-size: 22px;
 		line-height: 27px;
@@ -20640,6 +20644,7 @@ ul.INS_list_font li,
 		height: unset;
 		min-height: unset;
 	}
+	.search-result-reports-container .news-card .btn-knowmore,
 	.page-opportunity-search-page .opportunity-card .know-more-btn,
 	.page-opportunity-search-page .opportunity-card .interest-btn {
 		

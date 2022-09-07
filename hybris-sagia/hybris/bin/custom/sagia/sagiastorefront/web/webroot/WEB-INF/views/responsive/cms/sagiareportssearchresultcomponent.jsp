@@ -134,7 +134,7 @@
                                     </div>
                                     <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(result.resourceThumbnailImage)}" alt="${result.resourceTitle}"/>
                                     <div class="news-card-inner">
-                                        <h3 title="${result.resourceTitle}">${result.resourceTitle}</h3>
+                                        <h3 class="headtitle" title="${result.resourceTitle}">${result.resourceTitle}</h3>
                                         <p>${result.resourceShortInformation}</p>
                                         <a class="btn btn-primary-fill btn-knowmore" href="${fn:escapeXml(result.resourceFullReport)}" download="${result.resourceFullReport}">
                                             <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/news_page/download.png" alt=""/></span>&nbsp;

@@ -19356,14 +19356,12 @@ padding-left: 40px;
 		margin-top: -8px;
 		width: 14px;
 	}
-	.search-reports-container .search-btn,
 	.page-opportunity-search .opp-search-btn {
 		height: 45px;
 		top: 0;
 		right: 16px;
 		font-size: 14px;
 	}
-	.search-reports-container .reset-search,
 	.page-opportunity-search .opp-search-container .reset-search {
 		font-size: 10px;
 		line-height: 12px;
@@ -19386,6 +19384,7 @@ padding-left: 40px;
 		font-size: 14px !important;
 		line-height: 24px;
 	}
+	.search-result-reports-container .news-card .headtitle,
 	.page-opportunity-search-page .opportunity-card .opp-headtitle {
 		font-size: 22px;
 		line-height: 27px;
@@ -19399,6 +19398,7 @@ padding-left: 40px;
 		height: unset;
 		min-height: unset;
 	}
+	.search-result-reports-container .news-card .btn-knowmore,
 	.page-opportunity-search-page .opportunity-card .know-more-btn,
 	.page-opportunity-search-page .opportunity-card .interest-btn {
 		letter-spacing: 0.58px;

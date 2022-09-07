@@ -21612,12 +21612,12 @@ span[data-smartedit-component-id="PortalHeaderSlot"] header#header .hd-static {
 
 smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-decorative-body__inner-border,
 smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] > smartedit-element {
-    margin-top: 32px;
+    /*margin-top: 32px;*/
 }
 
 
 smartedit-element[data-smartedit-component-id="PortalHeaderSlot"]  .se-decorative-panel-area {
-    margin-top: 0 !important;
+    /*margin-top: 0 !important;*/
 }
 
 smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__overlay {

@@ -13773,26 +13773,26 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     cursor: default;
 }
 
-.reports-economic-investment-monitor-search .ui-autocomplete .name,
+.page-reports-economic-investment-monitor-search .ui-autocomplete .name,
 .page-reports-investment-highlights-search .ui-autocomplete .name,
-.monthly-bulletin-search .ui-autocomplete .name,
-.report-studies-search .ui-autocomplete .name,
+.page-monthly-bulletin-search .ui-autocomplete .name,
+.page-report-studies-search .ui-autocomplete .name,
 .page-opportunity-search-page .ui-autocomplete .name {
     color: #646464;
 }
 
-.reports-economic-investment-monitor-search .ui-autocomplete .price,
+.page-reports-economic-investment-monitor-search .ui-autocomplete .price,
 .page-reports-investment-highlights-search .ui-autocomplete .price,
-.monthly-bulletin-search .ui-autocomplete .price,
-.report-studies-search .ui-autocomplete .price,
+.page-monthly-bulletin-search .ui-autocomplete .price,
+.page-report-studies-search .ui-autocomplete .price,
 .page-opportunity-search-page .ui-autocomplete .price {
     display: none;
 }
 
-.reports-economic-investment-monitor-search .ui-autocomplete,
+.page-reports-economic-investment-monitor-search .ui-autocomplete,
 .page-reports-investment-highlights-search .ui-autocomplete,
-.monthly-bulletin-search .ui-autocomplete,
-.report-studies-search .ui-autocomplete,
+.page-monthly-bulletin-search .ui-autocomplete,
+.page-report-studies-search .ui-autocomplete,
 .page-opportunity-search-page .ui-autocomplete {
     width: 100px;
     background: #FFF;
@@ -13802,10 +13802,10 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     padding: 10px 50px 30px 50px;
 }
 
-.reports-economic-investment-monitor-search .ui-autocomplete li,
+.page-reports-economic-investment-monitor-search .ui-autocomplete li,
 .page-reports-investment-highlights-search .ui-autocomplete li,
-.monthly-bulletin-search .ui-autocomplete li,
-.report-studies-search .ui-autocomplete li,
+.page-monthly-bulletin-search .ui-autocomplete li,
+.page-report-studies-search .ui-autocomplete li,
 .page-opportunity-search-page .ui-autocomplete li {
     margin: 10px;
 }

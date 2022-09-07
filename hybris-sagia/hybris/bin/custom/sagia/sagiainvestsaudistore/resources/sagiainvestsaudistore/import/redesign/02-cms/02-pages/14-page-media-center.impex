@@ -31,6 +31,10 @@ INSERT_UPDATE PortalMediaCenterCarouselComponent ; uid[unique = true]   			    ;
 												 ; portalmediaCenterCarouselComponent	; latestnews,latestevents,latestresources,latestwebinar,latestsuccessstory    ; portalmediaCenterCarouselComponent   ; 							    
 
 
+INSERT_UPDATE InvestSaudiMediaCenterMainComponent	; uid[unique = true] 			   	    ; name 							  			; newsSectionTitle [lang = en]	; eventsSectionTitle [lang = en]	; resourcesSectionTitle [lang = en] ; videosSectionTitle [lang = en]	; &componentRef                         ; $contentCV[unique = true]
+												    ; investSaudiMediaCenterMainComponent   ; Invest Saudi Media Center Main Component  ; NEWS FROM INVEST SAUDI	    ; EVENTS                            ; RESOURCES                         ; VIDEOS                            ; investSaudiMediaCenterMainComponent
+
+
 INSERT_UPDATE ContentPage; uid[unique = true]; name  		; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage ; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved'] ; $contentCV[unique = true]
                          ; $page             ; $pageName	; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pageLabel ; false    ;                              ;                                            ;                          
 
@@ -38,7 +42,7 @@ INSERT_UPDATE ContentPage; uid[unique = true]; name  		; title[lang = en]; title
 						 
 INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active ; cmsComponents(&componentRef)       ; $contentCV ;
                          ; PortalPageTopSlot-$page    ; PortalPageTop    ; true   ; portalmediaCenterCarouselComponent ;            ;
-                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true   ; 						           ;            ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true   ; investSaudiMediaCenterMainComponent;            ;
                          ; PortalPageBottomSlot-$page ; PortalPageBottom ; true   ;                                    ;            ;
 
 

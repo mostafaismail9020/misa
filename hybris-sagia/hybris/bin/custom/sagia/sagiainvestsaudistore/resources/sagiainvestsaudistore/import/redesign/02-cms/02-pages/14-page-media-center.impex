@@ -38,7 +38,7 @@ INSERT_UPDATE ContentPage; uid[unique = true]; name  		; title[lang = en]; title
 						 
 INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active ; cmsComponents(&componentRef)       ; $contentCV ;
                          ; PortalPageTopSlot-$page    ; PortalPageTop    ; true   ; portalmediaCenterCarouselComponent ;            ;
-                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true   ; 						           ;            ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true   ;                                    ;            ;
                          ; PortalPageBottomSlot-$page ; PortalPageBottom ; true   ;                                    ;            ;
 
 

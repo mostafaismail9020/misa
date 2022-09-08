@@ -6758,6 +6758,34 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="InvestSaudiMediaCenterMainComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiMediaCenterContentComponent">
+                <description>Last Investment Report Category Component</description>
+                <attributes>
+                    <attribute qualifier="newsSectionTitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Title of news section</description>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="eventsSectionTitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Title of events section</description>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="resourcesSectionTitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Title of resources section</description>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="videosSectionTitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Title of videos section</description>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
             <itemtype code="InvestSaudiAboutSaudiOverviewContainer" generate="true"
                       extends="InvestSaudiComponentContainer" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiAboutSaudiOverviewContainer">

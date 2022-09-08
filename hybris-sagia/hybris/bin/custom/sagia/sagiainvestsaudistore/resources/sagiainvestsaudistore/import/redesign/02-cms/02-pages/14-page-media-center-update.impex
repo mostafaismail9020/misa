@@ -1,0 +1,28 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$page = media-center
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
+
+$siteUid = sagia
+$mediafolder = portal-media
+$siteResource=jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+				   
+
+INSERT_UPDATE InvestSaudiMediaCenterMainComponent	; uid[unique = true] 			   	    ; name 							  			; newsSectionTitle [lang = en]	; eventsSectionTitle [lang = en]	; resourcesSectionTitle [lang = en] ; videosSectionTitle [lang = en]	; &componentRef                         ; $contentCV[unique = true]
+												    ; investSaudiMediaCenterMainComponent   ; Invest Saudi Media Center Main Component  ; NEWS FROM INVEST SAUDI	    ; EVENTS                            ; RESOURCES                         ; VIDEOS                            ; investSaudiMediaCenterMainComponent
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active ; cmsComponents(&componentRef)       ; $contentCV ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true   ; investSaudiMediaCenterMainComponent;            ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page] ; $contentCV[unique = true] ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;                                                       ;                           ;
+

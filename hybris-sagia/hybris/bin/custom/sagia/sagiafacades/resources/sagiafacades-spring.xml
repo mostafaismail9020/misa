@@ -2336,12 +2336,22 @@
 	<bean id="defaultSolrInvestmentHighlightsReportSearchFacade"
 		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrInvestmentHighlightsReportSearchFacade">
 		<property name="investmentHighlightsReportSearchService" ref="investmentHighlightsReportSearchService"/>
-		<property name="autocompleteService" ref="commerceAutocompleteService"/>
+		<property name="autocompleteService" ref="defaultInvestmentHighlightsReportAutocompleteService"/>
 		<property name="investmentHighlightsReportSearchPageConverter" ref="investmentHighlightsReportSearchPageConverter"/>
 		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
 		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
 		<property name="threadContextService" ref="threadContextService"/>
     </bean>
+
+	<bean id="defaultInvestmentHighlightsReportAutocompleteService"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.InvestmentHighlightsReportSearchAutocompleteService">
+
+		<property name="facetSearchConfigService" ref="facetSearchConfigService" />
+		<property name="commonI18NService" ref="commonI18NService" />
+		<property name="solrAutoSuggestService" ref="solrAutoSuggestService" />
+		<property name="solrIndexedTypeCodeResolver" ref="solrIndexedTypeCodeResolver" />
+		<property name="solrFacetSearchConfigSelectionStrategy" ref="solrFacetSearchConfigSelectionStrategy" />
+	</bean>
 
 	<alias name="defaultInvestmentHighlightsReportSearchPageConverter" alias="investmentHighlightsReportSearchPageConverter"/>
 	<bean id="defaultInvestmentHighlightsReportSearchPageConverter" parent="abstractPopulatingConverter">
@@ -2391,11 +2401,21 @@
 	<bean id="defaultSolrMonthlyBulletinReportSearchFacade"
 		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrMonthlyBulletinReportSearchFacade">
 		<property name="monthlyBulletinReportSearchService" ref="monthlyBulletinReportSearchService"/>
-		<property name="autocompleteService" ref="commerceAutocompleteService"/>
+		<property name="autocompleteService" ref="defaultMonthlyBulletinReportAutocompleteService"/>
 		<property name="monthlyBulletinReportSearchPageConverter" ref="monthlyBulletinReportSearchPageConverter"/>
 		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
 		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
 		<property name="threadContextService" ref="threadContextService"/>
+	</bean>
+
+	<bean id="defaultMonthlyBulletinReportAutocompleteService"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.MonthlyBulletinReportSearchAutocompleteService">
+
+		<property name="facetSearchConfigService" ref="facetSearchConfigService" />
+		<property name="commonI18NService" ref="commonI18NService" />
+		<property name="solrAutoSuggestService" ref="solrAutoSuggestService" />
+		<property name="solrIndexedTypeCodeResolver" ref="solrIndexedTypeCodeResolver" />
+		<property name="solrFacetSearchConfigSelectionStrategy" ref="solrFacetSearchConfigSelectionStrategy" />
 	</bean>
 
 	<alias name="defaultMonthlyBulletinReportSearchPageConverter" alias="monthlyBulletinReportSearchPageConverter"/>
@@ -2447,11 +2467,22 @@
 	<bean id="defaultSolrEconomicAndInvestmentReportsAndStudiesSearchFacade"
 		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrEconomicAndInvestmentReportsAndStudiesSearchFacade">
 		<property name="economicAndInvestmentReportsAndStudiesSearchService" ref="economicAndInvestmentReportsAndStudiesSearchService"/>
-		<property name="autocompleteService" ref="commerceAutocompleteService"/>
+		<property name="autocompleteService" ref="defaultEconomicAndInvestmentReportsAndStudiesAutocompleteService"/>
 		<property name="economicAndInvestmentReportsAndStudiesSearchPageConverter" ref="economicAndInvestmentReportsAndStudiesSearchPageConverter"/>
 		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
 		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
 		<property name="threadContextService" ref="threadContextService"/>
+	</bean>
+
+
+	<bean id="defaultEconomicAndInvestmentReportsAndStudiesAutocompleteService"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.EconomicAndInvestmentReportsAndStudiesSearchAutocompleteService">
+
+		<property name="facetSearchConfigService" ref="facetSearchConfigService" />
+		<property name="commonI18NService" ref="commonI18NService" />
+		<property name="solrAutoSuggestService" ref="solrAutoSuggestService" />
+		<property name="solrIndexedTypeCodeResolver" ref="solrIndexedTypeCodeResolver" />
+		<property name="solrFacetSearchConfigSelectionStrategy" ref="solrFacetSearchConfigSelectionStrategy" />
 	</bean>
 
 	<alias name="defaultEconomicAndInvestmentReportsAndStudiesSearchPageConverter" alias="economicAndInvestmentReportsAndStudiesSearchPageConverter"/>

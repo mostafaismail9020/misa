@@ -2272,11 +2272,23 @@
 	<bean id="defaultSolrEconomicAndInvestmentMonitorSearchFacade"
 		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.DefaultSolrEconomicAndInvestmentMonitorSearchFacade">
 		<property name="economicAndInvestmentMonitorSearchService" ref="economicAndInvestmentMonitorSearchService"/>
-		<property name="autocompleteService" ref="commerceAutocompleteService"/>
+		<property name="autocompleteService" ref="defaultEconomicAndInvestmentMonitorAutocompleteService"/>
 		<property name="economicAndInvestmentMonitorSearchPageConverter" ref="economicAndInvestmentMonitorSearchPageConverter"/>
 		<property name="searchQueryDecoder" ref="solrSearchQueryDecoder"/>
 		<property name="autocompleteSuggestionConverter" ref="autocompleteSuggestionConverter"/>
 		<property name="threadContextService" ref="threadContextService"/>
+	</bean>
+
+
+
+	<bean id="defaultEconomicAndInvestmentMonitorAutocompleteService"
+		  class="com.investsaudi.portal.facades.solrfacetsearch.impl.EconomicAndInvestmentMonitortSearchAutocompleteService">
+		
+		<property name="facetSearchConfigService" ref="facetSearchConfigService" />
+		<property name="commonI18NService" ref="commonI18NService" />
+		<property name="solrAutoSuggestService" ref="solrAutoSuggestService" />
+		<property name="solrIndexedTypeCodeResolver" ref="solrIndexedTypeCodeResolver" />
+		<property name="solrFacetSearchConfigSelectionStrategy" ref="solrFacetSearchConfigSelectionStrategy" />
 	</bean>
 
 	<alias name="defaultEconomicAndInvestmentMonitorSearchPageConverter" alias="economicAndInvestmentMonitorSearchPageConverter"/>

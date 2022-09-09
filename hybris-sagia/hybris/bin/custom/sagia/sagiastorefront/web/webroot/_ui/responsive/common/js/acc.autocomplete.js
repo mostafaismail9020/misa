@@ -19,7 +19,9 @@ ACC.autocomplete = {
 					displayProductImages: option.displayProductImages,
 					delay: option.waitTimeBeforeRequest,
 					autocompleteUrl: option.autocompleteUrl,
-					source: this.source
+					source: this.source,
+					autocompleteUrlClick: option.autocompleteUrlClick,
+					autocompleteUrlParam: option.autocompleteUrlParam
 				});
 				
 				// call the _super()
@@ -73,9 +75,17 @@ ACC.autocomplete = {
 					if(data.suggestions != null){
 						$.each(data.suggestions, function (i, obj)
 						{
+						    //set url click
+						    var url = self.options.autocompleteUrlClick
+                                ? self.options.autocompleteUrlClick+"?"
+                                : ACC.config.encodedContextPath + "/search?";
+                            //set url param
+						    url += self.options.autocompleteUrlParam
+						        ? self.options.autocompleteUrlParam+"=" + obj.term
+						        : "text=" + obj.term;
 							autoSearchData.push({
 								value: obj.term,
-								url: ACC.config.encodedContextPath + "/search?text=" + obj.term,
+								url: url,
 								type: "autoSuggestion"
 							});
 						});

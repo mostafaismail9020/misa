@@ -1,0 +1,17 @@
+UPDATE SyncAttributeDescriptorConfig[batchmode=true];attributeDescriptor(enclosingType(code),qualifier)[unique=true];copyByValue
+                                                    ;InvestSaudiNewsComponent:newsDetailsImage;true
+                                                    ;InvestSaudiNewsComponent:newsThumbnailImage;true
+                                                    ;InvestSaudiNewsComponent:newsFullReport;true
+                                                    ;InvestSaudiEventsComponent:eventUrl;true
+                                                    ;InvestSaudiEventsComponent:eventBannerImage;true
+                                                    ;InvestSaudiEventsComponent:eventThumbnailImage;true
+                                                    ;InvestSaudiEventsComponent:eventGalleryImages;true
+                                                    ;InvestSaudiEventsComponent:eventLocation;true
+                                                    ;InvestSaudiResourceComponent:resourceDetailsImage;true
+                                                    ;InvestSaudiResourceComponent:resourceThumbnailImage;true
+                                                    ;InvestSaudiResourceComponent:resourceFullReport;true
+                                                    ;InvestSaudiWebinarVideoComponent:videosDetailsImage;true
+                                                    ;InvestSaudiWebinarVideoComponent:companyLogo;true
+                                                    ;InvestSaudiVideoComponent:video;true
+                                                    ;InvestSaudiNewsComponent:galleryImages;true
+                                                    ;InvestSaudiNewsComponent:resourceFullReport;true

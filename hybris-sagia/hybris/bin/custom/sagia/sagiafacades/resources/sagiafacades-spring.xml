@@ -2228,6 +2228,13 @@
 		<property name="messageSource" ref="messageSource"/>
 	</bean>
 
+	<bean id="sagiaResourceComponentFreeTextValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentFreeTextValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+		<property name="i18nService" ref="i18nService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+
 	<bean id="sagiaResourceComponentQuarterValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentQuarterValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 		<property name="i18nService" ref="i18nService"/>

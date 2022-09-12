@@ -3,8 +3,8 @@ $indexedType=monthlyBulletinReportType
 
 # Define the available sorts
 UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang]
-               ;;resourceTitle-asc;الاسم (تصاعدي);
-               ;;resourceTitle-desc;الاسم (تنازلي);
+               ;;resourceDate-asc;تاريخ (تصاعدي);
+               ;;resourceDate-desc;تاريخ (تنازلي);
 
 
 

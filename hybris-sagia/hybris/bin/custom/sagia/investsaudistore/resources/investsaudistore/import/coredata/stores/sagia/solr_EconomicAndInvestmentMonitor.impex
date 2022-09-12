@@ -82,14 +82,14 @@ INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(id
 
 # Define the available sorts
 INSERT_UPDATE SolrSort ; &sortRefID ; indexedType(identifier)[unique=true] ; code[unique=true] ; useBoost
-                       ; sortRef3   ; $solrIndexedEconomicAndInvestmentMonitorType                     ; resourceTitle-asc          ; false
-                       ; sortRef4   ; $solrIndexedEconomicAndInvestmentMonitorType                     ; resourceTitle-desc         ; false
+                       ; sortRef4   ; $solrIndexedEconomicAndInvestmentMonitorType                     ; resourceDate-asc          ; false
+                       ; sortRef3   ; $solrIndexedEconomicAndInvestmentMonitorType                     ; resourceDate-desc         ; false
 
 
 # Define the sort fields
 INSERT_UPDATE SolrSortField ; sort(indexedType(identifier),code)[unique=true] ; fieldName[unique=true] ; ascending[unique=true]
-                            ; $solrIndexedEconomicAndInvestmentMonitorType:resourceTitle-asc                       ; resourceTitle                   ; true
-                            ; $solrIndexedEconomicAndInvestmentMonitorType:resourceTitle-desc                      ; resourceTitle                   ; false
+                            ; $solrIndexedEconomicAndInvestmentMonitorType:resourceDate-asc                       ; resourceDate                   ; true
+                            ; $solrIndexedEconomicAndInvestmentMonitorType:resourceDate-desc                      ; resourceDate                   ; false
 
 
 

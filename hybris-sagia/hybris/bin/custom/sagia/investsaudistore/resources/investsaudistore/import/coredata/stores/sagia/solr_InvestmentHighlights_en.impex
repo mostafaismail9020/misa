@@ -3,8 +3,8 @@ $indexedType=investmentHighlightsReportType
 
 # Define the available sorts
 UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang]
-               ;;resourceTitle-asc;Title (ascending);
-               ;;resourceTitle-desc;Title (descending);
+               ;;resourceDate-asc;Date (ascending);
+               ;;resourceDate-desc;Date (descending);
 
 
 

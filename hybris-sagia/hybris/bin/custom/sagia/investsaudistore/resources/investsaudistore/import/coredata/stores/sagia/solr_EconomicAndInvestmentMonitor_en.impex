@@ -3,8 +3,8 @@ $indexedType=economicAndInvestmentMonitorType
 
 # Define the available sorts
 UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang]
-               ;;resourceTitle-asc;Title (ascending);
-               ;;resourceTitle-ascdesc;Title (descending);
+               ;;resourceDate-asc;Date (ascending);
+               ;;resourceDate-desc;Date (descending);
 
 
 

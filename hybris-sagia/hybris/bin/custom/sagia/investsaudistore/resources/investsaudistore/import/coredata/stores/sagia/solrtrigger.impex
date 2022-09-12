@@ -34,13 +34,20 @@ INSERT_UPDATE Trigger;cronJob(code)[unique=true];second;minute;hour;day;month;ye
 # Run the full-sagiaIndex-cronJob at 3:05 AM every day
 ;full-sagiaIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
 
-;full-sagiaEconomicAndInvestmentMonitorIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
-;full-sagiaEconomicAndInvestmentReportsAndStudiesIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
-;full-sagiaInvestmentHighlightsReportIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
-;full-sagiaMonthlyBulletinReportIndex-cronJob;0;5;3;-1;-1;-1;false;false;-1
+;full-sagiaEconomicAndInvestmentMonitorIndex-cronJob;0;5;3;-1;-1;-1;false;true;-1
+;full-sagiaEconomicAndInvestmentReportsAndStudiesIndex-cronJob;0;5;3;-1;-1;-1;false;true;-1
+;full-sagiaInvestmentHighlightsReportIndex-cronJob;0;5;3;-1;-1;-1;false;true;-1
+;full-sagiaMonthlyBulletinReportIndex-cronJob;0;5;3;-1;-1;-1;false;true;-1
 
 
 
 
 # Run the update-sagiaIndex-cronJob every 1 minutes
-;update-sagiaIndex-cronJob;0;1;-1;-1;-1;-1;true;false;-1
+;update-sagiaIndex-cronJob;0;1;-1;-1;-1;-1;true;true;-1
+;update-sagiaEconomicAndInvestmentMonitorIndex-cronJob;0;1;-1;-1;-1;-1;true;true;-1
+;update-sagiaEconomicAndInvestmentReportsAndStudiesIndex-cronJob;0;1;-1;-1;-1;-1;true;true;-1
+;update-sagiaInvestmentHighlightsReportIndex-cronJob;0;1;-1;-1;-1;-1;true;true;-1
+;update-sagiaMonthlyBulletinReportIndex-cronJob;0;1;-1;-1;-1;-1;true;true;-1
+
+
+

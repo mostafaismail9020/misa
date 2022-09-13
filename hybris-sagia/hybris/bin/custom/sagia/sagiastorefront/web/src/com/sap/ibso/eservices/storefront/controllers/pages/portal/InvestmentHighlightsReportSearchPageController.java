@@ -148,7 +148,7 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 			model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchText,
 					CollectionUtils.isEmpty(solrSearchPageData.getBreadcrumbs())));
 		}
-
+		model.addAttribute("pageURL", "investment-highlights/resources");
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
 		model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_FOLLOW);
 		ContentPageModel contentPageModel = getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID);
@@ -253,7 +253,7 @@ public class InvestmentHighlightsReportSearchPageController extends AbstractSear
 		}
 	//	model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchPageData));
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
-
+		model.addAttribute("pageURL", "investment-highlights/resources");
 		final String metaDescription = MetaSanitizerUtil
 				.sanitizeDescription(getMessageSource().getMessage(SEARCH_META_DESCRIPTION_RESULTS, null,
 						SEARCH_META_DESCRIPTION_RESULTS, getI18nService().getCurrentLocale()) + " " + searchText + " "

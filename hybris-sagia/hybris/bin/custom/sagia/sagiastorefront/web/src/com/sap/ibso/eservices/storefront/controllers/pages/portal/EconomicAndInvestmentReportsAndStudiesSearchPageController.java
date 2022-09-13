@@ -152,6 +152,8 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
 		model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_FOLLOW);
 		ContentPageModel contentPageModel = getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID);
+
+		model.addAttribute("pageURL", "report-studies/resources");
 		storeCmsPageInModel(model, contentPageModel);
 		storeContentPageTitleInModel(model, contentPageModel.getTitle());
 
@@ -221,6 +223,7 @@ public class EconomicAndInvestmentReportsAndStudiesSearchPageController extends 
 
 		populateModel(model, searchPageData, showMode);
 		model.addAttribute("userLocation", customerLocationService.getUserLocation());
+		model.addAttribute("pageURL", "report-studies/resources");
 
 		if (searchPageData.getPagination().getTotalNumberOfResults() == 0)
 		{

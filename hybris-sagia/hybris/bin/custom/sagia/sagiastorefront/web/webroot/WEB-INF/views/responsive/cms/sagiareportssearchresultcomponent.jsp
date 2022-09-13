@@ -7,8 +7,10 @@
 
 
 <c:set var="hasPreviousPage" value="${searchPageData.pagination.currentPage > 0}"/>
-<c:set var="hasNextPage"
-       value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
+<c:set var="hasNextPage" value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
+<%--<c:set var="searchUrl" value="${pageContext.request.request.getAttribute('javax.servlet.forward.request_uri')}"/>--%>
+<c:set var="searchUrl" value="${pageURL}"/>
+
 <div class="container-fluid search-result-reports-container">
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
@@ -159,7 +161,7 @@
                     <ul class="pagination pg-darkgrey justify-content-center mt-4">
 
                         <c:if test="${hasPreviousPage}">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search',${component.uid})}" var="previousPageUrl" htmlEscape="true">
+                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search',searchUrl)}" var="previousPageUrl" htmlEscape="true">
                                 <spring:param name="page" value="${solrSearchPageData.pagination.currentPage - 1}"/>
                             </spring:url>
                             <li class="page-item previous-page">
@@ -212,7 +214,7 @@
                         <c:set var="startPagination" value="${beginPage}"/>
                         <c:set var="endPagination" value="${endPage}"/>
                         <c:forEach begin="${startPagination}" end="${endPagination}" var="currentPage">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search',${component.uid})}" var="pageNumberUrl" htmlEscape="true">
+                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search',searchUrl)}" var="pageNumberUrl" htmlEscape="true">
                                 <spring:param name="page" value="${currentPage - 1}"/>
                             </spring:url>
 
@@ -228,7 +230,7 @@
                             </c:choose>
                         </c:forEach>
                         <c:if test="${hasNextPage}">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search',${component.uid})}" var="nextPageUrl" htmlEscape="true">
+                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search',searchUrl)}" var="nextPageUrl" htmlEscape="true">
                                 <spring:param name="page" value="${solrSearchPageData.pagination.currentPage + 1}"/>
                             </spring:url>
                             <li class="page-item next-page">

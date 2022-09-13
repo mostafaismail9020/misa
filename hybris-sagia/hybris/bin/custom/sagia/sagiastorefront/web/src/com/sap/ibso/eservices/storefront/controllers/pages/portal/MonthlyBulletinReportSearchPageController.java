@@ -18,17 +18,12 @@ import de.hybris.platform.acceleratorstorefrontcommons.util.MetaSanitizerUtil;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSComponentService;
-import de.hybris.platform.commercefacades.product.data.OpportunityData;
-import de.hybris.platform.commercefacades.product.data.ProductData;
-import de.hybris.platform.commercefacades.search.ProductSearchFacade;
 import de.hybris.platform.commercefacades.search.data.AutocompleteResultData;
 import de.hybris.platform.commercefacades.search.data.SearchQueryData;
 import de.hybris.platform.commercefacades.search.data.SearchStateData;
-import de.hybris.platform.commerceservices.enums.SearchQueryContext;
 import de.hybris.platform.commerceservices.search.facetdata.FacetData;
 import de.hybris.platform.commerceservices.search.facetdata.FacetRefinement;
 import de.hybris.platform.commerceservices.search.facetdata.MonthlyBulletinReportSearchPageData;
-import de.hybris.platform.commerceservices.search.facetdata.ProductSearchPageData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
 import de.hybris.platform.core.servicelayer.data.PaginationData;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
@@ -145,7 +140,9 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 			monthlyBulletinReportDataSearchPageData.setPagination(sagiaPaginationData);
 			model.addAttribute("solrSearchPageData", solrSearchPageData);
 			model.addAttribute("searchPageData", monthlyBulletinReportDataSearchPageData);
+			
 		}
+		
 		model.addAttribute("userLocation", customerLocationService.getUserLocation());
 		getRequestContextData(request).setSearch(solrSearchPageData);
 		if (solrSearchPageData != null)
@@ -153,7 +150,7 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 			model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchText,
 					CollectionUtils.isEmpty(solrSearchPageData.getBreadcrumbs())));
 		}
-
+		model.addAttribute("pageURL", "monthly-bulletin/resources");
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
 		model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_FOLLOW);
 		ContentPageModel contentPageModel = getContentPageForLabelOrId(SEARCH_CMS_PAGE_ID);
@@ -258,7 +255,7 @@ public class MonthlyBulletinReportSearchPageController extends AbstractSearchPag
 		}
 		//	model.addAttribute(WebConstants.BREADCRUMBS_KEY, searchBreadcrumbBuilder.getBreadcrumbs(null, searchPageData));
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
-
+		model.addAttribute("pageURL", "monthly-bulletin/resources");
 		final String metaDescription = MetaSanitizerUtil
 				.sanitizeDescription(getMessageSource().getMessage(SEARCH_META_DESCRIPTION_RESULTS, null,
 						SEARCH_META_DESCRIPTION_RESULTS, getI18nService().getCurrentLocale()) + " " + searchText + " "

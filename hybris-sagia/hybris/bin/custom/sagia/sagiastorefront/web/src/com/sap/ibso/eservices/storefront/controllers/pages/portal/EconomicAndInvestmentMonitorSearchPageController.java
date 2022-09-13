@@ -85,6 +85,7 @@ public class EconomicAndInvestmentMonitorSearchPageController extends AbstractSe
 
 		final PageableData pageableData = createPageableData(0,NUM_OF_RECORD_PER_PAGE, null, ShowMode.Page);
 
+		model.addAttribute("pageURL", "investment-monitor/resources");
 		final SearchStateData searchState = new SearchStateData();
 		final SearchQueryData searchQueryData = new SearchQueryData();
 		searchQueryData.setValue(searchText);
@@ -220,6 +221,7 @@ public class EconomicAndInvestmentMonitorSearchPageController extends AbstractSe
 		EconomicAndInvestmentMonitorSearchPageData<SearchStateData, EconomicAndInvestmentMonitorData> solrSearchPageData = null;
 
 		populateModel(model, searchPageData, showMode);
+		model.addAttribute("pageURL", "investment-monitor/resources");
 		model.addAttribute("userLocation", customerLocationService.getUserLocation());
 
 		if (searchPageData.getPagination().getTotalNumberOfResults() == 0)

@@ -11,7 +11,7 @@ public class SagiaIndicatorTermPopulator implements Populator<SagiaIndicatorTerm
     public void populate(SagiaIndicatorTermModel source, SagiaIndicatorTermData sagiaIndicatorTermData)  {
 
         sagiaIndicatorTermData.setCode(source.getCode());
-        sagiaIndicatorTermData.setDescription(source.getDescription());
+        sagiaIndicatorTermData.setDescription(source.getLongDescription());
         sagiaIndicatorTermData.setIsActive(source.isIsActive());
         sagiaIndicatorTermData.setSource(source.getSource());
         sagiaIndicatorTermData.setName(source.getName());

@@ -2496,7 +2496,7 @@
                                optional="true" initial="true" />
                     <persistence type="property" />
                 </attribute>
-                <attribute qualifier="description"
+                <attribute qualifier="longDescription"
                            type="localized:java.lang.String">
                     <modifiers read="true" write="true" search="true"
                                optional="true" initial="true" />

@@ -4,7 +4,7 @@
 # ImpEx for Importing CMS Content
 
 # Macros / Replacement Parameter definitions
-$template = EconomicInvestmentReportsPageTemplate
+$template = portalProductSearchTemplate
 $page = economic-investment-reports
 $pageName = Economic & Investment Reports
 $pageTitleEn = $pageName

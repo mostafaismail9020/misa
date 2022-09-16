@@ -21581,41 +21581,42 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
 
 /* Changes to edit PortalHeaderSlot on SmartEdidt */
 
-span[data-smartedit-component-id="PortalHeaderSlot"] #topbar {
+
+span[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] #topbar {
     position: inherit;
 }
 
-span[data-smartedit-component-id="PortalHeaderSlot"] #topbar .social-links a {
+span[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] #topbar .social-links a {
     color: #787878;
 }
 
-span[data-smartedit-component-id="PortalHeaderSlot"] header#header {
+span[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] header#header {
     position: inherit;
     background: #f7f7f7;
 }
 
-span[data-smartedit-component-id="PortalHeaderSlot"] header#header a{
+span[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] header#header a{
     color: #787878
 }
 
-span[data-smartedit-component-id="PortalHeaderSlot"] header#header .logo {
+span[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] header#header .logo {
     z-index: 1;
 }
 
-span[data-smartedit-component-id="PortalHeaderSlot"] header#header .hd-scroll {
+span[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] header#header .hd-scroll {
     display: block;
 }
 
-span[data-smartedit-component-id="PortalHeaderSlot"] header#header .hd-static {
+span[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] header#header .hd-static {
     display: none;
 }
 
-smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-decorative-body__inner-border,
-smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] > smartedit-element {
+smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] .se-decorative-body__inner-border,
+smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"] > smartedit-element {
     margin-top: 32px;
 }
 
 
-smartedit-element[data-smartedit-component-id="PortalHeaderSlot"]  .se-decorative-panel-area {
+smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"]  .se-decorative-panel-area {
     margin-top: 0 !important;
 }

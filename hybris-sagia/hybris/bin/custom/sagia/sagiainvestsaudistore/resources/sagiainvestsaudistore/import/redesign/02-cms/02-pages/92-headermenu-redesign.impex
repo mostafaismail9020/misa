@@ -254,5 +254,14 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]          ; name             
 							   ; economic-investments-terms-node  ; Economic & Investments terms  ; economic-investments-terms-link  ; economic-investments-terms-node  ; economic-highlight-navnode    ;                                         ;                                                                                                                ;                ;
 							   ; economic-investment-reports-node ; Economic & Investment Reports ; economic-investment-reports-link ; economic-investment-reports-node ; economic-highlight-navnode    ;                                         ; economic-and-investment-monitor,investment-highlights,monthly-bulletin,economic-and-investment-reports-Studies ;                ;
 
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]                ; title[lang = en]              ; title[lang = ar]                                   ; $contentCV[unique = true]; nodeDescription[lang = en]    ; nodeDescription[lang = ar]       ;
+							   ; economic-investment-reports-node  ; Reports ; التقارير الاقتصادية والاستثمارية ;                ; Economic & Investment Reports ; التقارير الاقتصادية والاستثمارية ;
+
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]          	; name                          	; cmsLink(uid, $contentCV)    	; &nodeRef                    	; parent(uid, $contentCV); children(uid, $contentCV)[mode = append]	; links(uid, $contentCV)[mode = replace]                                                                        ; $contentCV[unique = true];
+								; dasboard-navnode 				; Dashboard  			            ; dasboard-link					; dasboard-navnode 				; economic-highlight-navnode 	;  									;infrastructure-logistic-link,international-link,economic-sectors-link,economic-investments-terms-link			; 							;
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]          		; name     	; linkName[lang = en]   ; linkName[lang = ar]   ; url   ;contentPage(uid, $contentCV)	;                      ; $contentCV[unique = true];
+                              ; economic-investment-reports-link 	; Reports 	; Reports 				; التقارير 				;  		; economic-investment-reports 	;                       ;
+
 
 

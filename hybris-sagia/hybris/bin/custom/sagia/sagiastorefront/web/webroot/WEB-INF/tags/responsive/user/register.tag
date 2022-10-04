@@ -254,7 +254,7 @@
 								<div class="input-wrapper focus-on-change">
 									<formElement:formInputBox idKey="quickregistration.register.mobileNumber"
 												labelKey="register.mobileNumber" path="mobileNumber"
-												helpBlockSuccessCSS="js-help-block-success"  maxlength="10"
+												helpBlockSuccessCSS="js-help-block-success"  maxlength="12"
 												inputCSS="js-quick-mobile-number register-user-details validate-mobile mobile-number" labelCSS="control-label_mandatory register-user-info-label" inputBoxCSS="formInputBox_big"
 												mandatory="true"/>
 								</div>								

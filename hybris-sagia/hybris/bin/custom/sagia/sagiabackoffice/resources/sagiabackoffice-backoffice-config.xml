@@ -2419,7 +2419,7 @@
 			</explorer-tree:navigation-node>
 		</explorer-tree:explorer-tree>
 	</context>
-	
+
 	<context merge-by="authority" component="explorer-tree" principal="CMS_PORTAL_MANAGER">
 		<explorer-tree:explorer-tree xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree">
 			<explorer-tree:navigation-node id="hmc.portal">
@@ -2427,6 +2427,41 @@
 				<explorer-tree:type-node code="InvestSaudiEventsComponent" id="InvestSaudiEventsComponent"/>
 				<explorer-tree:type-node code="InvestSaudiResourceComponent" id="InvestSaudiResourceComponent"/>
 				<explorer-tree:type-node code="InvestSaudiWebinarVideoComponent" id="InvestSaudiWebinarVideoComponent"/>
+			</explorer-tree:navigation-node>
+			<explorer-tree:navigation-node id="hmc.cms2">
+				<explorer-tree:type-node code="CMSSite" id="CMSSite" />
+				<explorer-tree:type-node code="CMSPageType" id="CMSPageType" />
+				<explorer-tree:type-node code="PageTemplate" id="PageTemplate" />
+				<explorer-tree:type-node code="ContentSlotForTemplate" id="ContentSlotForTemplate" />
+				<explorer-tree:type-node code="AbstractPage" id="AbstractPage" />
+				<explorer-tree:type-node code="ContentSlot" id="ContentSlot" />
+				<explorer-tree:type-node code="ContentSlotForPage" id="ContentSlotForPage" />
+				<explorer-tree:type-node code="SimpleCMSComponent" id="SimpleCMSComponent" />
+				<explorer-tree:type-node code="CMSLinkComponent" id="CMSLinkComponent" />
+				<explorer-tree:type-node code="ComponentTypeGroup" id="ComponentTypeGroup" />
+				<explorer-tree:type-node code="AbstractCMSComponentContainer" id="AbstractCMSComponentContainer" />
+				<explorer-tree:type-node code="RestrictionType" id="RestrictionType" />
+				<explorer-tree:type-node code="AbstractRestriction" id="AbstractRestriction" />
+				<explorer-tree:type-node code="CMSNavigationNode" id="CMSNavigationNode" />
+				<explorer-tree:type-node code="CMSVersion" id="CMSVersion" />
+				<explorer-tree:type-node code="CMSVersionGCProcess" id="CMSVersionGCProcess" />
+			</explorer-tree:navigation-node>
+			<explorer-tree:navigation-node id="hmc_treenode_catalog">
+				<explorer-tree:type-node code="OpportunityProduct" id="hmc.opportunity.product" />
+				<explorer-tree:type-node code="SuccessStoryProduct" id="hmc.success.story.product"/>
+			</explorer-tree:navigation-node>
+			<explorer-tree:navigation-node id="hmc_treenode_system">
+				<explorer-tree:navigation-node id="hmc.solrfacetsearch">
+					<explorer-tree:navigation-node id="hmc_treenode_solr_backoffice">
+						<explorer-tree:type-node code="BackofficeIndexedTypeToSolrFacetSearchConfig"
+												 id="hmc_typenode_BackofficeIndexedTypeToSolrFacetSearchConfig"/>
+					</explorer-tree:navigation-node>
+					<explorer-tree:navigation-node id="hmc.legacysolrfacetsearch">
+						<explorer-tree:type-node code="SolrFacetSearchConfig" id="hmc_type_tree_solrfacetsearchconfig" />
+						<explorer-tree:type-node code="SolrIndexedType" id="hmc_type_tree_solrindexedtype" />
+						<explorer-tree:type-node code="SolrValueRangeSet" id="hmc_type_tree_solrvaluerangeset" />
+					</explorer-tree:navigation-node>
+				</explorer-tree:navigation-node>
 			</explorer-tree:navigation-node>
 		</explorer-tree:explorer-tree>
 	</context>

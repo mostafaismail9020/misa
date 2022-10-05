@@ -2448,7 +2448,6 @@
 			</explorer-tree:navigation-node>
 			<explorer-tree:navigation-node id="hmc_treenode_catalog">
 				<explorer-tree:type-node code="OpportunityProduct" id="hmc.opportunity.product" />
-				<explorer-tree:type-node code="SuccessStoryProduct" id="hmc.success.story.product"/>
 			</explorer-tree:navigation-node>
 			<explorer-tree:navigation-node id="hmc_treenode_system">
 				<explorer-tree:navigation-node id="hmc.solrfacetsearch">
@@ -2551,7 +2550,7 @@
         </editorArea:editorArea>
     </context>
 
-    <context principal="portal-cmsmanagerrole" merge-by="type" parent="GenericItem" type="OpportunityProduct"
+    <context principal="portal-cmsmanagerrole,CMS_PORTAL_MANAGER" merge-by="type" parent="GenericItem" type="OpportunityProduct"
              component="editor-area">
         <editorArea:editorArea name="">
             <editorArea:essentials>

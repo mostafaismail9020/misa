@@ -6,7 +6,7 @@
 <%@ taglib prefix="modals" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
+<spring:theme code="financial.survey.transaction.header"/>
 <div id="accordionTransaction2" class="services-container-tabcontent">
     <div class="accordion-item" style="width: 100%">
         <h5 class="mb-0">
@@ -55,7 +55,7 @@
                                     <td>
                                         <div class="formInputBox">
                                             <div class="form-group">
-                                                <input id="tradeDebitPreviousQuarterId" name="tradeDebitPreviousQuarter"
+                                                <input id="tradeDebitPreviousQuarterId" name="tradeDebitPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -82,7 +82,7 @@
                                     <td>
                                         <div class="formInputBox">
                                             <div class="form-group">
-                                                <input id="loansAssetsPreviousQuarterId" name="loansAssetsPreviousQuarter"
+                                                <input id="loansAssetsPreviousQuarterId" name="loansAssetsPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -110,7 +110,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="interestReceivedPreviousQuarterId"
-                                                       name="interestReceivedPreviousQuarter" onchange="caluculateTotalTansactionDebit()"
+                                                       name="interestReceivedPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -140,7 +140,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="dividendsReceivedPreviousQuarterId"
-                                                       name="dividendsReceivedPreviousQuarter" onchange="caluculateTotalTansactionDebit()"
+                                                       name="dividendsReceivedPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -166,7 +166,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="expensesReceivedPreviousQuarterId"
-                                                       name="expensesReceivedPreviousQuarter"
+                                                       name="expensesReceivedPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -192,7 +192,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="sellProductionSuppliesPreviousQuarterId"
-                                                       name="sellProductionSuppliesPreviousQuarter"
+                                                       name="sellProductionSuppliesPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -219,7 +219,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="sellMachineryPreviousQuarterId"
-                                                       name="sellMachineryPreviousQuarter"
+                                                       name="sellMachineryPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -245,7 +245,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="currentDebitAccountPreviousQuarterId"
-                                                       name="currentDebitAccountPreviousQuarter"
+                                                       name="currentDebitAccountPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -271,7 +271,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="expensesReceivablePreviousQuarterId"
-                                                       name="expensesReceivablePreviousQuarter" onchange="caluculateTotalTansactionDebit()"
+                                                       name="expensesReceivablePreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -297,7 +297,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="insuranceCommissionReceivablePreviousQuarterId"
-                                                       name="insuranceCommissionReceivablePreviousQuarter"
+                                                       name="insuranceCommissionReceivablePreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -323,7 +323,7 @@
                                         <div class="formInputBox">
                                             <div class="form-group">
                                                 <input id="otherDebitPreviousQuarterId"
-                                                       name="otherDebitPreviousQuarter"
+                                                       name="otherDebitPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterDebit()"
                                                        class="form-control" placeholder="." value="" type="text">
                                             </div>
                                             <div class="help-block"></div>
@@ -409,7 +409,7 @@
                                 <td>
                                     <div class="formInputBox">
                                         <div class="form-group">
-                                            <input id="tradeCreditPreviousQuarterId" name="tradeCreditPreviousQuarter"
+                                            <input id="tradeCreditPreviousQuarterId" name="tradeCreditPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -438,7 +438,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="loansLiabilitiesPreviousQuarterId"
-                                                   name="loansLiabilitiesPreviousQuarter"
+                                                   name="loansLiabilitiesPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -467,7 +467,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="interestPayablePreviousQuarterId"
-                                                   name="interestPayablePreviousQuarter"
+                                                   name="interestPayablePreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -497,7 +497,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="dividendsPaidPreviousQuarterId"
-                                                   name="dividendsPaidPreviousQuarter"
+                                                   name="dividendsPaidPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -526,7 +526,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="expensesPaidPreviousQuarterId"
-                                                   name="expensesPaidPreviousQuarter"
+                                                   name="expensesPaidPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -555,7 +555,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="purchaseProductionSuppliesPreviousQuarterId"
-                                                   name="purchaseProductionSuppliesPreviousQuarter"
+                                                   name="purchaseProductionSuppliesPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -584,7 +584,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="purchaseMachineryPreviousQuarterId"
-                                                   name="purchaseMachineryPreviousQuarter"
+                                                   name="purchaseMachineryPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -613,7 +613,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="currentCreditAccountPreviousQuarterId"
-                                                   name="currentCreditAccountPreviousQuarter"
+                                                   name="currentCreditAccountPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -643,7 +643,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="expensesPayablePreviousQuarterId"
-                                                   name="expensesPayablePreviousQuarter"
+                                                   name="expensesPayablePreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -672,7 +672,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="insuranceCommissionPayablePreviousQuarterId"
-                                                   name="insuranceCommissionPayablePreviousQuarter"
+                                                   name="insuranceCommissionPayablePreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -701,7 +701,7 @@
                                 <div class="formInputBox">
                                     <div class="form-group">
                                         <input id="otherCreditPreviousQuarterId"
-                                               name="otherCreditPreviousQuarter"
+                                               name="otherCreditPreviousQuarter" onchange="caluculateTotalTansactionPreviousQuarterCredit()"
                                                class="form-control" placeholder="." value="" type="text">
                                     </div>
                                     <div class="help-block"></div>

@@ -485,7 +485,7 @@ public class SagiaFinancialSurveyServiceImpl implements SagiaFinancialSurveyServ
 
         if ( financialSurvey.getShareholderEquity().getAdditionalPaidUpCapitalPreviousQuarter().equals(prevFinancialSurveyModel.getAdditionalPaidUpCapitalCurrentQuarter())
            && financialSurvey.getShareholderEquity().getRetainedEarningsIncludePreviousQuarter().equals(prevFinancialSurveyModel.getRetainedEarningsIncludeCurrentQuarter())
-           && financialSurvey.getShareholderEquity().getProfitLossQuarterPreviousQuarter().equals(prevFinancialSurveyModel.getProfitLossQuarterCurrentQuarter())
+           /*&& financialSurvey.getShareholderEquity().getProfitLossQuarterPreviousQuarter().equals(prevFinancialSurveyModel.getProfitLossQuarterCurrentQuarter())*/
            && financialSurvey.getShareholderEquity().getTotalReservesPreviousQuarter().equals(prevFinancialSurveyModel.getTotalReservesCurrentQuarter())
            && financialSurvey.getShareholderEquity().getTreasurySharesPreviousQuarter().equals(prevFinancialSurveyModel.getTreasurySharesCurrentQuarter())
            && financialSurvey.getShareholderEquity().getHeadOfficeAccountInBranchPreviousQuarter().equals(prevFinancialSurveyModel.getHeadOfficeAccountInBranchCurrentQuarter())

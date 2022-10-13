@@ -6,13 +6,13 @@
 <%@ taglib prefix="modals" tagdir="/WEB-INF/tags/responsive/common" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
+<spring:theme code="financial.survey.transaction.affiliate.header"/>
 <div id="accordionTransactionAffeliate" class="services-container-tabcontent">
     <div class="accordion-item" style="width: 100%">
         <h5 class="mb-0">
             <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTransactionAffeliate1"
                     aria-expanded="false" aria-controls="collapseThree">
-                <h5 class="mb-0"> <spring:theme code="financial.survey.transaction.title.assets"/>
+                <h5 class="mb-0"> <spring:theme code="financial.survey.transaction.affiliate.title.assets"/>
                 </h5>
                 <div class="plus-minus-icon"></div>
             </button>
@@ -55,7 +55,7 @@
                                 <td>
                                     <div class="formInputBox">
                                         <div class="form-group">
-                                            <input id="tradeDebitPreviousQuarterId" name="tradeDebitPreviousQuarter"
+                                            <input id="tradeDebitPreviousQuarterId" name="tradeDebitPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -82,7 +82,7 @@
                                 <td>
                                     <div class="formInputBox">
                                         <div class="form-group">
-                                            <input id="loansAssetsPreviousQuarterId" name="loansAssetsPreviousQuarter"
+                                            <input id="loansAssetsPreviousQuarterId" name="loansAssetsPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -110,7 +110,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="interestReceivedPreviousQuarterId"
-                                                   name="interestReceivedPreviousQuarter" onchange="caluculateTotalAffeliateTansactionDebit()"
+                                                   name="interestReceivedPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -140,7 +140,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="dividendsReceivedPreviousQuarterId"
-                                                   name="dividendsReceivedPreviousQuarter" onchange="caluculateTotalAffeliateTansactionDebit()"
+                                                   name="dividendsReceivedPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -166,7 +166,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="expensesReceivedPreviousQuarterId"
-                                                   name="expensesReceivedPreviousQuarter"
+                                                   name="expensesReceivedPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -192,7 +192,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="sellProductionSuppliesPreviousQuarterId"
-                                                   name="sellProductionSuppliesPreviousQuarter"
+                                                   name="sellProductionSuppliesPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -219,7 +219,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="sellMachineryPreviousQuarterId"
-                                                   name="sellMachineryPreviousQuarter"
+                                                   name="sellMachineryPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -245,7 +245,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="currentDebitAccountPreviousQuarterId"
-                                                   name="currentDebitAccountPreviousQuarter"
+                                                   name="currentDebitAccountPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -271,7 +271,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="expensesReceivablePreviousQuarterId"
-                                                   name="expensesReceivablePreviousQuarter" onchange="caluculateTotalAffeliateTansactionDebit()"
+                                                   name="expensesReceivablePreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -297,7 +297,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="insuranceCommissionReceivablePreviousQuarterId"
-                                                   name="insuranceCommissionReceivablePreviousQuarter"
+                                                   name="insuranceCommissionReceivablePreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -323,7 +323,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="otherDebitPreviousQuarterId"
-                                                   name="otherDebitPreviousQuarter"
+                                                   name="otherDebitPreviousQuarter" onchange="caluculateTotalAffeliatePreviousTansactionDebit()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>
@@ -369,7 +369,7 @@
         <h5 class="mb-0">
             <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTransactionAffeliate2"
                     aria-expanded="false" aria-controls="collapseThree">
-                <h5 class="mb-0"> <spring:theme code="financial.survey.transaction.title.liabilities"/>
+                <h5 class="mb-0"> <spring:theme code="financial.survey.transaction.affiliate.title.liabilities"/>
                 </h5>
                 <div class="plus-minus-icon"></div>
             </button>
@@ -701,7 +701,7 @@
                                     <div class="formInputBox">
                                         <div class="form-group">
                                             <input id="otherCreditPreviousQuarterId"
-                                                   name="otherCreditPreviousQuarter" onchange="calculateTotalPrevQuarterTansactionCreditForAffeliate()"
+                                                   name="otherCreditPreviousQuarter"  onchange="calculateTotalPrevQuarterTansactionCreditForAffeliate()"
                                                    class="form-control" placeholder="." value="" type="text">
                                         </div>
                                         <div class="help-block"></div>

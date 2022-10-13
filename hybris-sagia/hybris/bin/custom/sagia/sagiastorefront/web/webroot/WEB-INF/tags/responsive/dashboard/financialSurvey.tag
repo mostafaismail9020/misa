@@ -27,7 +27,7 @@
 								<th><spring:theme code="dashboard.financialsurveys.quarter"/></th>
 								<th><spring:theme code="dashboard.financialsurveys.lastupdate"/></th>
 								<th><spring:theme code="dashboard.financialsurveys.status"/></th>
-								<th><spring:theme code="dashboard.financialsurveys.connectWithUs"/></th>
+								<%--<th><spring:theme code="dashboard.financialsurveys.connectWithUs"/></th>--%>
 								<th><spring:theme code="dashboard.financialsurveys.completesurvey"/></th>
 							</tr>
 							</thead>
@@ -38,6 +38,38 @@
                  </div>
 			  </div>
  			</div>
+        </div>
+        <div class="firstBlock-contact d-flex row mt-5 mb-3">
+		<div class="firstBlock-contact-local line-after col-md-6">
+                                    <div>
+                                        <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
+                                    </div>
+                                    <div>
+                                        <span class="firstBlock-contact-local-label">
+                                            <spring:theme code="financial.survey.connectwithus.phone"/>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="firstBlock-contact-local-number local-connect-number">
+                                            <spring:theme code="financial.survey.connectwithus.phone.number"/>
+                                        </span>
+                                    </div>
+                                </div>
+        <div class="firstBlock-contact-local col-md-3">
+                                    <div>
+                                        <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>
+                                    </div>
+                                    <div class="d-none d-md-block">
+                                        <span class="firstBlock-contact-local-label">
+                                           <spring:theme code="financial.survey.connectwithus.email"/>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="firstBlock-contact-local-number emailBlock d-email-id">
+                                            <spring:theme code="financial.survey.connectwithus.email.number"/>
+                                        </span>
+                                    </div>
+                                </div>
         </div>
 	 </div>
 	</div>
@@ -51,9 +83,9 @@
 				<%--<td>
 					<a href="javascript:void(0)" class="link dashboardWidgetFinancialSurvey-btn"><spring:theme code="dashboard.financialsurveys.completesurvey"/></a>
 				</td>--%>
-				<td>
+				<%--<td>
 					<a href="javascript:void(0)" class="link dashboardWidgetFinancialSurveys-btn"><spring:theme code="dashboard.financial.survey.connectWithUs"/></a>
-				</td>
+				</td>--%>
 				<td>
 					<div class="dashboardWidgetFinancialSurvey-btn">
 						<a href="" class="" style=""></a>

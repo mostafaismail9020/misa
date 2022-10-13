@@ -2,12 +2,12 @@ function entityValidator() {
 
 
     //custom validation rule
-    $.validator.addMethod("unifiedNo700",
+    /*$.validator.addMethod("unifiedNo700",
         function(value, element) {
             return /^7/.test(value);
         }, getI18nText("validation.basicinformation.unifiedNo700")
     );
-
+*/
     $.validator.addMethod("emailAddress",
         function(value, element) {
             return /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(value);
@@ -42,12 +42,12 @@ function entityValidator() {
                 maxlength: 10
 
             },
-            unifiedNo700: {
+            /*unifiedNo700: {
                 digits: true,
                 minlength: 10,
                 maxlength: 10,
                 unifiedNo700: true
-            },
+            },*/
             companyName: {
                 required: true,
             },
@@ -108,10 +108,10 @@ function entityValidator() {
                 required: getI18nText("validation.empty"),
                 number: getI18nText("validation.shareholder.delegate.idNumber.10digit")
             },
-            unifiedNo700: {
+            /*unifiedNo700: {
                 number: getI18nText("validation.shareholder.delegate.idNumber.10digit"),
                 minlength: getI18nText("validation.shareholder.delegate.idNumber.10digit"),
-            },
+            },*/
             companyName: {
                 required: getI18nText("validation.empty"),
             },
@@ -748,8 +748,12 @@ function subsidiaryValidator() {
         rules: {
             registrationName: "required",
             subsidiaryName: "required",
-            unifiedNo: "required",
-            contribution: "required"
+            //unifiedNo: "required",
+            contribution: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        }
         },
 
         messages: {
@@ -763,7 +767,9 @@ function subsidiaryValidator() {
                 required: getI18nText("validation.empty")
             },
             contribution: {
-                required: getI18nText("validation.empty")
+                required: getI18nText("validation.empty"),
+                number: getI18nText("validation.sharePerc"),
+                 range: getI18nText("validation.sharePerc")
             }
         }
     });

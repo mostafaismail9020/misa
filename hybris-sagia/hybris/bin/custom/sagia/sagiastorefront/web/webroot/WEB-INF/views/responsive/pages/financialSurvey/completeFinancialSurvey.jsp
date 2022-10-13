@@ -205,7 +205,7 @@ data-expand-target="expand01">
                     </div>
                     <div class="panelTabs-body">
                         <div id="entityAmendTabId" class="contentModule">
-
+                        <p align=center><spring:theme code="survery.companyprofile.header"/></p>
                             <div class="contentModule-section">
                                 <form:form id="entityFormId">
                                     <div class="contentModule-section">
@@ -409,8 +409,9 @@ data-expand-target="expand01">
                                                     </div>
                                                 </div>
                                             </div>
-
-
+                                            <div class="formSelectBox">
+                                            <spring:theme code="survey.scale.disclosurecurrency.header"/>
+                                            </div>
                                             <div class="col-md-6">
                                                 <div class="formSelectBox">
                                                     <div class="form-group">
@@ -419,10 +420,10 @@ data-expand-target="expand01">
                                                             <option></option>
                                                             <option value="SAR" selected><spring:theme
                                                                     code="survey.currency.sar"/></option>
-                                                            <option value="USD"><spring:theme
+                                                            <%--<option value="USD"><spring:theme
                                                                     code="survey.currency.usd"/></option>
                                                             <option value="EURO"><spring:theme
-                                                                    code="survey.currency.euro"/></option>
+                                                                    code="survey.currency.euro"/></option>--%>
                                                         </select> <label class="control-label control-label_mandatory"
                                                                          for="legalStatusId"><spring:theme
                                                             code="survey.disclosureCurrency"/></label>
@@ -693,6 +694,7 @@ data-expand-target="expand01">
                                         <tbody id="branchesId" class="tableModule-body"></tbody>
                                     </table>
                                 </div>
+                                <spring:theme code="survery.branchesandsubsidiaries.header"/>
                                 <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
                                     <button type="button" class="btn btn-primary newBranchBtn"
                                             data-toggle="modal" data-target="#branchModalId"
@@ -917,7 +919,7 @@ data-expand-target="expand01">
 
 
 
-                                            <tr>
+                                            <%-- <tr>
                                                 <td class="lastUpdate"  style="padding-right: 5px">
                                                     <spring:theme
                                                             code="financial.survey.shareholderEquity.profitLossQuarter.currentQuarter"/>
@@ -948,7 +950,7 @@ data-expand-target="expand01">
                                                         </div>
                                                     </div>
                                                 </td>
-                                            </tr>
+                                            </tr>--%>
 
 
                                             <tr>
@@ -1211,8 +1213,8 @@ data-expand-target="expand01">
                                     <table class="tableModule-table">
                                         <thead class="tableModule-head">
                                         <tr>
-                                            <th><spring:theme code="general.name"/></th>
-                                            <th><spring:theme code="license.type"/></th>
+                                            <th><spring:theme code="survey.shareholder.name"/></th>
+                                            <th><spring:theme code="survey.shareholder.type"/></th>
                                             <th><spring:theme code="license.percentage"/></th>
                                             <th><spring:theme
                                                     code="financial.survey.shareholders.shareValue"/></th>
@@ -1281,8 +1283,8 @@ data-expand-target="expand01">
                                     <table class="tableModule-table">
                                         <thead class="tableModule-head">
                                         <tr>
-                                            <th><spring:theme code="general.name"/></th>
-                                            <th><spring:theme code="license.type"/></th>
+                                            <th><spring:theme code="survey.affiliate.name"/></th>
+                                            <th><spring:theme code="survey.affiliate.type"/></th>
                                             <th><spring:theme
                                                     code="text.account.profile.license.shareholders.nationality"/></th>
                                             <th id="affiliateBtnColumnId"></th>
@@ -1550,6 +1552,11 @@ data-expand-target="expand01">
         <form id="shareholderFormId">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content panelModule panelModule_halfRadius">
+                <div class="modal-header">
+                	<div class="modal-title"></div>
+                	<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" onclick="closeErrorModal()">
+                	<svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg></button>
+                </div>
                     <div class="contentModule-headline">
                         <spring:theme code="financial.survey.shareholder"/>
                     </div>
@@ -1580,7 +1587,7 @@ data-expand-target="expand01">
                     <div class="contentModule-separator"></div>
                     <div id="contentNewShareholderForm">
                         <div class="contentModule-headline">
-                            <spring:theme code="license.basicinformation"/>
+                            <spring:theme code="financial.survey.shareholder.basicinformation"/>
                         </div>
                         <hr class="hr w-100">
                         <%--Entity shareholder--%>
@@ -2239,6 +2246,11 @@ data-expand-target="expand01">
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content panelModule panelModule_halfRadius">
+            <div class="modal-header">
+            	<div class="modal-title"></div>
+            	<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" onclick="closeErrorModal()">
+            	<svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg></button>
+            </div>
                 <form id="branchFormId">
 
                     <div class="contentModule-headline">
@@ -2247,7 +2259,7 @@ data-expand-target="expand01">
                     <hr class="hr w-100">
 
                     <div class="row">
-                        <div class="col-md-6">
+                         <div class="col-md-6">
                             <div class="formSelectBox">
                                 <div class="form-group">
                                     <select id="branchTypeId" name="branchType"
@@ -2309,7 +2321,7 @@ data-expand-target="expand01">
                                 <div class="help-block"></div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <%--<div class="col-md-6">
                             <div class="formInputBox-split">
                                 <div class="formInputBox formInputBox_big">
                                     <div class="form-group">
@@ -2336,7 +2348,7 @@ data-expand-target="expand01">
                                     <div class="help-block"></div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="col-md-6">
                             <div class="formSelectBox">
                                 <div class="form-group">
@@ -2360,7 +2372,7 @@ data-expand-target="expand01">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <%-- <div class="col-md-6">
                             <div class="formInputBox">
                                 <div class="form-group">
                                     <input id="branchTelephoneId" name="branchTelephone"
@@ -2404,7 +2416,7 @@ data-expand-target="expand01">
                                 </div>
                                 <div class="help-block"></div>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
 
                     <div
@@ -2432,6 +2444,11 @@ data-expand-target="expand01">
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content panelModule panelModule_halfRadius">
+            <div class="modal-header">
+            	<div class="modal-title"></div>
+            	<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" onclick="closeErrorModal()">
+            	<svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg></button>
+            </div>
                 <form id="subsidiaryFormId">
 
                     <div class="contentModule-headline">
@@ -2474,8 +2491,8 @@ data-expand-target="expand01">
                             <div class="formInputBox">
                                 <div class="form-group">
                                     <input id="unifiedNoId" name="unifiedNo" class="form-control"
-                                           placeholder="." value="" type="text" maxlength="10"> <label
-                                        class="control-label control-label_mandatory" for="unifiedNoId"> <spring:theme
+                                           placeholder="." value="" type="text"> <label
+                                        class="control-label" for="unifiedNoId"> <spring:theme
                                         code="license.subsidiary.unifiedno"/>
                                 </label>
                                     <div class="help-block"></div>
@@ -2757,6 +2774,11 @@ data-expand-target="expand01">
         <form id="affiliateFormId">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content panelModule panelModule_halfRadius">
+                 <div class="modal-header">
+                 	<div class="modal-title"></div>
+                 	<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" onclick="closeErrorModal()">
+                 	<svg version="1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path stroke="#000" stroke-width="2" stroke-miterlimit="10" fill="none" d="M1 .922l14 14M1 14.922l14-14"></path></svg></button>
+                 </div>
                     <div class="contentModule-headline">
                         <spring:theme code="financial.survey.affiliate"/>
                     </div>
@@ -2787,7 +2809,7 @@ data-expand-target="expand01">
                     <div class="contentModule-separator"></div>
                     <div id="contentNewAffiliateForm">
                         <div class="contentModule-headline">
-                            <spring:theme code="license.basicinformation"/>
+                            <spring:theme code="financial.survey.affiliate.basicinformation"/>
                         </div>
                         <hr class="hr w-100">
 
@@ -2805,7 +2827,7 @@ data-expand-target="expand01">
                                                    placeholder="." value="" type="text"> <label
                                                 class="control-label control-label_mandatory"
                                                 for="affiliateNameEnglishId"> <spring:theme
-                                                code="financial.survey.nameEntity"/>
+                                                code="financial.survey.affiliate.nameEntity"/>
                                         </label>
                                             <div class="help-block"></div>
                                         </div>
@@ -2930,7 +2952,7 @@ data-expand-target="expand01">
                         <div class="contentModule-separator"></div>
 
                         <div class="contentModule-headline">
-                            <spring:theme code="financial.survey.shareholderTransaction"/>
+                            <spring:theme code="financial.survey.affiliateTransaction"/>
                         </div>
                         <hr class="hr w-100">
                         <tags:transaction-affeliate/>

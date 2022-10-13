@@ -219,11 +219,11 @@
 		<property name="header">
 			<value>#{defaultImpexProductHeader}
 				# GenderDistribution
-				INSERT_UPDATE GenderDistribution ;uid[unique=true];year[unique=true];males;females;total
+				INSERT_UPDATE GenderDistribution ;uid[unique=true];year[unique=true];total
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;{0};{1};{2};{3};{4};{S}</value>
+			<value>;{0};{1};{2};{S}</value>
 		</property>
 	</bean>
 

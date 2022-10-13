@@ -34,7 +34,6 @@ var setupBranchesTable = function() {
             var $inputSearch = $('#branchesTableId_filter input[type="search"]').addClass('searchInputBox-input').attr('placeholder', searchBranchText);
             var $labelSearch = $inputSearch.closest("label");
             $labelSearch.replaceWith($inputSearch);
-
             var $pagination = $('#branchesTableId_paginate').addClass('paginationModule-wrapper').wrap('<div class="paginationModule"></div>');
             $pagination.find('span a').addClass('paginationModule-link').css('cursor', 'pointer').wrap('<div class="paginationModule-item"></div>');
             $pagination.find('span a.current').addClass('active');

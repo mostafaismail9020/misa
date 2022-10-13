@@ -56,6 +56,53 @@ function caluculateTotalTansactionDebit() {
     $('#totalDebitCurrentQuarterId').val(sum);
 }
 
+function caluculateTotalTansactionPreviousQuarterDebit() {
+    var sum = 0 ;
+    sum = sum +  1*($('#tradeDebitPreviousQuarterId').val());
+    sum = sum +  1*($('#loansAssetsPreviousQuarterId').val());
+    sum = sum +  1*($('#interestReceivedPreviousQuarterId').val());
+    sum = sum +  1*($('#dividendsReceivedPreviousQuarterId').val());
+    sum = sum +  1*($('#expensesReceivedPreviousQuarterId').val());
+    sum = sum +  1*($('#sellProductionSuppliesPreviousQuarterId').val());
+    sum = sum +  1*($('#sellMachineryPreviousQuarterId').val());
+    sum = sum +  1*($('#currentDebitAccountPreviousQuarterId').val());
+    sum = sum +  1*($('#expensesReceivablePreviousQuarterId').val());
+    sum = sum +  1*($('#insuranceCommissionReceivablePreviousQuarterId').val());
+    sum = sum +  1*($('#otherDebitPreviousQuarterId').val());
+    $('#totalDebitPreviousQuarterId').val(sum);
+}
+
+function caluculateTotalAffeliatePreviousTansactionDebit() {
+    var sum = 0 ;
+    sum = sum +  1*($('#accordionTransactionAffeliate #tradeDebitPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #loansAssetsPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #interestReceivedPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #dividendsReceivedPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesReceivedPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #sellProductionSuppliesPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #sellMachineryPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #currentDebitAccountPreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #expensesReceivablePreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionReceivablePreviousQuarterId').val());
+    sum = sum +  1*($('#accordionTransactionAffeliate #otherDebitPreviousQuarterId').val());
+    $('#accordionTransactionAffeliate #totalDebitPreviousQuarterId').val(sum);
+}
+
+function caluculateTotalTansactionPreviousQuarterCredit() {
+    var sum = 0 ;
+    sum = sum +  1*($('#tradeCreditPreviousQuarterId').val());
+    sum = sum +  1*($('#loansLiabilitiesPreviousQuarterId').val());
+    sum = sum +  1*($('#interestPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#dividendsPaidPreviousQuarterId').val());
+    sum = sum +  1*($('#expensesPaidPreviousQuarterId').val());
+    sum = sum +  1*($('#purchaseProductionSuppliesPreviousQuarterId').val());
+    sum = sum +  1*($('#purchaseMachineryPreviousQuarterId').val());
+    sum = sum +  1*($('#currentCreditAccountPreviousQuarterId').val());
+    sum = sum +  1*($('#expensesPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#insuranceCommissionPayablePreviousQuarterId').val());
+    sum = sum +  1*($('#otherCreditPreviousQuarterId').val());
+    $('#totalCreditPreviousQuarterId').val(sum);
+}
 
 function caluculateTotalAffeliateTansactionDebit() {
     var sum = 0 ;
@@ -108,21 +155,21 @@ function calculateTotalTansactionCreditForAffeliate() {
 }
 
 function calculateTotalPrevQuarterTansactionCreditForAffeliate() {
-    var sum = 0 ;
+           var sum = 0 ;
 
-    sum = sum +  1*($('#accordionTransactionAffeliate #tradeCreditPreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #loansLiabilitiesPreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #interestPayablePreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #dividendsPaidPreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPaidPreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseProductionSuppliesPreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #currentCreditAccountPreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #expensesPayablePreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionPayablePreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #otherCreditPreviousQuarterId').val());
-    sum = sum +  1*($('#accordionTransactionAffeliate #purchaseMachineryPreviousQuarterId').val());
-    $('#accordionTransactionAffeliate #totalCreditPreviousQuarterId').val(sum);
-}
+           sum = sum +  1*($('#accordionTransactionAffeliate #tradeCreditPreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #loansLiabilitiesPreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #interestPayablePreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #dividendsPaidPreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #expensesPaidPreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #purchaseProductionSuppliesPreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #currentCreditAccountPreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #expensesPayablePreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #insuranceCommissionPayablePreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #otherCreditPreviousQuarterId').val());
+           sum = sum +  1*($('#accordionTransactionAffeliate #purchaseMachineryPreviousQuarterId').val());
+           $('#accordionTransactionAffeliate #totalCreditPreviousQuarterId').val(sum);
+       }
 
 function calculateShareholderEquity() {
 

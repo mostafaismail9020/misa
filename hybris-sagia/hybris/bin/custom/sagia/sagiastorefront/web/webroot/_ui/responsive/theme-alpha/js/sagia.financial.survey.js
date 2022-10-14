@@ -171,6 +171,33 @@ function calculateTotalPrevQuarterTansactionCreditForAffeliate() {
            $('#accordionTransactionAffeliate #totalCreditPreviousQuarterId').val(sum);
        }
 
+function caluculateTotalShareholderEquityCurrentQuarter() {
+    var sum = 0 ;
+    sum = sum +  1*($('#shareholderPaidUpCapitalCurrentQuarterId').val());
+    sum = sum +  1*($('#shareholderAdditionalPaidUpCapitalCurrentQuarterId').val());
+    sum = sum +  1*($('#shareholderRetainedEarningsIncludeCurrentQuarterId').val());
+    sum = sum +  1*($('#shareholderProfitLossQuarterCurrentQuarterId').val());
+    sum = sum +  1*($('#shareholderTotalReservesCurrentQuarterId').val());
+    sum = sum +  1*($('#shareholderTreasurySharesCurrentQuarterId').val());
+    sum = sum +  1*($('#shareholderHeadOfficeAccountInBranchCurrentQuarterId').val());
+    sum = sum +  1*($('#shareholderShareholderEquityOthersCurrentQuarterId').val());
+    sum = sum +  1*($('#shareholderMinorityRightsCurrentQuarterId').val());
+    $('#shareholderTotalShareholderEquityCurrentQuarterId').val(sum);
+}
+
+function caluculateTotalShareholderEquityPreviousQuarter() {
+    var sum = 0 ;
+    sum = sum +  1*($('#shareholderPaidUpCapitalPreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderAdditionalPaidUpCapitalPreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderRetainedEarningsIncludePreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderProfitLossQuarterPreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderTotalReservesPreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderTreasurySharesPreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderHeadOfficeAccountInBranchPreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderShareholderEquityOthersPreviousQuarterId').val());
+    sum = sum +  1*($('#shareholderMinorityRightsPreviousQuarterId').val());
+    $('#shareholderTotalShareholderEquityPreviousQuarterId').val(sum);
+}
 function calculateShareholderEquity() {
 
     var sharePercentage = $('#shareholderPercentageId').val();

@@ -1916,7 +1916,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderAdditionalPaidUpCapitalCurrentQuarterId"
-                                                                       name="shareholderAdditionalPaidUpCapitalCurrentQuarter"
+                                                                       name="shareholderAdditionalPaidUpCapitalCurrentQuarter" onchange="caluculateTotalShareholderEquityCurrentQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -1928,7 +1928,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderAdditionalPaidUpCapitalPreviousQuarterId"
-                                                                       name="shareholderAdditionalPaidUpCapitalPreviousQuarter"
+                                                                       name="shareholderAdditionalPaidUpCapitalPreviousQuarter" onchange="caluculateTotalShareholderEquityPreviousQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -1949,7 +1949,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderRetainedEarningsIncludeCurrentQuarterId"
-                                                                       name="shareholderRetainedEarningsIncludeCurrentQuarter"
+                                                                       name="shareholderRetainedEarningsIncludeCurrentQuarter" onchange="caluculateTotalShareholderEquityCurrentQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -1961,7 +1961,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderRetainedEarningsIncludePreviousQuarterId"
-                                                                       name="shareholderRetainedEarningsIncludePreviousQuarter"
+                                                                       name="shareholderRetainedEarningsIncludePreviousQuarter" onchange="caluculateTotalShareholderEquityPreviousQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -1982,7 +1982,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderProfitLossQuarterCurrentQuarterId"
-                                                                       name="shareholderProfitLossQuarterCurrentQuarter"
+                                                                       name="shareholderProfitLossQuarterCurrentQuarter" onchange="caluculateTotalShareholderEquityCurrentQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -1994,7 +1994,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderProfitLossQuarterPreviousQuarterId"
-                                                                       name="shareholderProfitLossQuarterPreviousQuarter"
+                                                                       name="shareholderProfitLossQuarterPreviousQuarter" onchange="caluculateTotalShareholderEquityPreviousQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -2013,7 +2013,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderTotalReservesCurrentQuarterId"
-                                                                       name="shareholderTotalReservesCurrentQuarter"
+                                                                       name="shareholderTotalReservesCurrentQuarter" onchange="caluculateTotalShareholderEquityCurrentQuarter()"
                                                                        onchange="caluculateTotalCapital()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
@@ -2026,7 +2026,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderTotalReservesPreviousQuarterId"
-                                                                       name="shareholderTotalReservesPreviousQuarter"
+                                                                       name="shareholderTotalReservesPreviousQuarter" onchange="caluculateTotalShareholderEquityPreviousQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -2046,7 +2046,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderTreasurySharesCurrentQuarterId"
-                                                                       name="shareholderTreasurySharesCurrentQuarter"
+                                                                       name="shareholderTreasurySharesCurrentQuarter" onchange="caluculateTotalShareholderEquityCurrentQuarter()"
                                                                        onchange="caluculateTotalCapital()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
@@ -2059,7 +2059,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderTreasurySharesPreviousQuarterId"
-                                                                       name="shareholderTreasurySharesPreviousQuarter"
+                                                                       name="shareholderTreasurySharesPreviousQuarter" onchange="caluculateTotalShareholderEquityPreviousQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -2081,7 +2081,7 @@ data-expand-target="expand01">
                                                             <div class="form-group">
                                                                 <input id="shareholderHeadOfficeAccountInBranchCurrentQuarterId"
                                                                        name="shareholderHeadOfficeAccountInBranchCurrentQuarter"
-                                                                       onchange="caluculateTotalCapital()"
+                                                                        onchange="caluculateTotalShareholderEquityCurrentQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -2093,7 +2093,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderHeadOfficeAccountInBranchPreviousQuarterId"
-                                                                       name="shareholderHeadOfficeAccountInBranchPreviousQuarter"
+                                                                       name="shareholderHeadOfficeAccountInBranchPreviousQuarter" onchange="caluculateTotalShareholderEquityPreviousQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -2113,7 +2113,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderShareholderEquityOthersCurrentQuarterId"
-                                                                       name="shareholderShareholderEquityOthersCurrentQuarter"
+                                                                       name="shareholderShareholderEquityOthersCurrentQuarter" onchange="caluculateTotalShareholderEquityCurrentQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -2125,7 +2125,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderShareholderEquityOthersPreviousQuarterId"
-                                                                       name="shareholderShareholderEquityOthersPreviousQuarter"
+                                                                       name="shareholderShareholderEquityOthersPreviousQuarter" onchange="caluculateTotalShareholderEquityPreviousQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -2145,7 +2145,7 @@ data-expand-target="expand01">
                                                             <div class="form-group">
                                                                 <input id="shareholderMinorityRightsCurrentQuarterId"
                                                                        name="shareholderMinorityRightsCurrentQuarter"
-                                                                       onchange="caluculateTotalCapital()"
+                                                                        onchange="caluculateTotalShareholderEquityCurrentQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">
@@ -2157,7 +2157,7 @@ data-expand-target="expand01">
                                                         <div class="formInputBox">
                                                             <div class="form-group">
                                                                 <input id="shareholderMinorityRightsPreviousQuarterId"
-                                                                       name="shareholderMinorityRightsPreviousQuarter"
+                                                                       name="shareholderMinorityRightsPreviousQuarter" onchange="caluculateTotalShareholderEquityPreviousQuarter()"
                                                                        class="form-control" placeholder="." value="" type="text"
                                                                        dir="ltr"
                                                                        maxlength="80">

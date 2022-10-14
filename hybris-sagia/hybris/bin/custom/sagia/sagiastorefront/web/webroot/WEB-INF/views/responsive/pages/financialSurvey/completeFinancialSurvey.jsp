@@ -694,7 +694,7 @@ data-expand-target="expand01">
                                         <tbody id="branchesId" class="tableModule-body"></tbody>
                                     </table>
                                 </div>
-                                <spring:theme code="survery.branchesandsubsidiaries.header"/>
+
                                 <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
                                     <button type="button" class="btn btn-primary newBranchBtn"
                                             data-toggle="modal" data-target="#branchModalId"
@@ -763,7 +763,7 @@ data-expand-target="expand01">
                                         <tbody id="subsidiariesId" class="tableModule-body"></tbody>
                                     </table>
                                 </div>
-
+                                <spring:theme code="survery.branchesandsubsidiaries.header"/>
                                 <div class="contentModule-actions contentModule-actions_centered contentModule-actions_insideSection">
                                     <button type="button" class="btn btn-primary newSubsidiaryBtn"
                                             data-toggle="modal" data-target="#subsidiaryModalId"

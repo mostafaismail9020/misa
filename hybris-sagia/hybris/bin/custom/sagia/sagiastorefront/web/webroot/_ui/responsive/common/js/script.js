@@ -5148,3 +5148,20 @@ $("#facetFilterModal .close-facet").click(function(){
     //hide facet values
     $("#facetFilterModal .facet__values[data-facet='"+codeFacet+"']").attr("style","display: none;");
 });
+
+$(document).ready(function () {
+	try {
+		$(".page-economic-investment-reports .news-card .news-card-inner p").text(function (index, currentText) {
+			// var maxLength = $(this).parent().attr('data-maxlength');
+			var maxLength = 55;
+			if (currentText.length >= maxLength) {
+				return currentText.substr(0, maxLength) + "...";
+			} else {
+				return currentText
+			}
+		});
+	}
+	catch (err) {
+		console.log(err);
+	}
+});

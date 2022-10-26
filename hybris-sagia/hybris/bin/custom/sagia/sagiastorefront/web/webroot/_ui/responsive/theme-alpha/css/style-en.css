@@ -9210,6 +9210,7 @@ select {
 	text-overflow: ellipsis;
 	-webkit-line-clamp: 2;
 }
+.page-economic-investment-reports .news-card .news-card-inner h3{-webkit-line-clamp: 5 !important;}
 
 .news-card .news-card-inner p {
 	font-size: 18px;

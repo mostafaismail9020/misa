@@ -316,8 +316,20 @@
             </div>
             <div class="modal-body">
                 <div class="modal-description js-description-text">
-                <label class="control-label" for="department">${licenseCancellationMessage}</label>
-                </div>
+                    <label class="control-label" for="department">${licenseCancellationMessage}</label>
+                    <p style="color:red;"><spring:theme code="licenseCancellation.entity.withNoCr.message"/>
+                    <c:if test="${language eq 'en'}">
+                        <a target="" href="/en/my-sagia/sagia-profile#enquiriesTab">
+                          <spring:theme code="licenseCancellation.entity.withNoCr.enquiries.complaints.link"/>
+                        </a>
+                     </c:if>
+                     <c:if test="${language eq 'ar'}">
+                        <a target="" href="/ar/my-sagia/sagia-profile#enquiriesTab">
+                          <spring:theme code="licenseCancellation.entity.withNoCr.enquiries.complaints.link"/>
+                        </a>
+                     </c:if>
+                     </p>
+               </div>
             </div>
             <div class="modal-footer">
                 <a class="btn js-close-btn btn_a" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>

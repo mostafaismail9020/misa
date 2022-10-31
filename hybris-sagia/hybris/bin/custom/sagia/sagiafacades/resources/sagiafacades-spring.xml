@@ -2259,6 +2259,10 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
+	<bean id="sagiaProductCreationDateValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaProductCreationDateValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
 	<bean id="sagiaImageValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaImageValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>

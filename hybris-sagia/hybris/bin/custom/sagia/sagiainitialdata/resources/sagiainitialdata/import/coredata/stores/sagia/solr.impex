@@ -75,3 +75,41 @@ INSERT_UPDATE SolrSort;&sortRefID;indexedType(identifier)[unique=true];code[uniq
 
 # Define the sort fields
 INSERT_UPDATE SolrSortField;sort(indexedType(identifier),code)[unique=true];fieldName[unique=true];ascending[unique=true]
+
+# Updating Impex for creationTime for Opportunity Product
+$lang=en
+$indexedType=sagiaProductType
+
+
+INSERT_UPDATE SolrIndexedType ; identifier[unique=true] ; type(code) ; variant ; sorts(&sortRefID)
+                              ; sagiaProductType  ; Product ; false  ; sortRef5,sortRef4,sortRef2,sortRef3
+
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true]      ; type(code) ; sortableType(code) ; currency[default=false] ; localized[default=false] ; multiValue[default=false] ; useForSpellchecking[default=false] ; useForAutocomplete[default=false] ; fieldValueProvider                         ; valueProviderParameter ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength
+                                  ; sagiaProductType 						 ; creationTime     	  ; string     ;                    ;                         ;                          ;                           ;                                    ;                                   ; sagiaProductCreationDateValueProvider      ;                        ;                               ;                     ;                         ;               ;                              ;                    ;                                 ;                                             ;                       ;
+
+
+# Define the available sorts
+INSERT_UPDATE SolrSort ; &sortRefID ; indexedType(identifier)[unique=true] ; code[unique=true] ; useBoost
+#                     ; sortRef1  ; sagiaProductType                      ; relevance          ; true
+                       ; sortRef2  ; sagiaProductType                      ; name-asc           ; false
+                       ; sortRef3  ; sagiaProductType                      ; name-desc          ; false
+                       ; sortRef4   ; sagiaProductType                     ; creationTime-asc  ; false
+                       ; sortRef5   ; sagiaProductType                     ; creationTime-desc ; true
+
+
+# Define the sort fields
+INSERT_UPDATE SolrSortField ; sort(indexedType(identifier),code)[unique=true] ; fieldName[unique=true] ; ascending[unique=true]
+                            ; sagiaProductType:creationTime-asc               ; creationTime           ; true
+                            ; sagiaProductType:creationTime-desc              ; creationTime           ; false
+#                           ; sagiaProductType :relevance                      ; score                  ; false
+                            ; sagiaProductType:name-asc                        ; name                   ; true
+                            ; sagiaProductType:name-desc                       ; name                   ; false
+
+
+# Define the available sorts
+UPDATE SolrSort;indexedType(identifier)[unique=true,default=$indexedType];code[unique=true];name[lang=$lang]
+               ;;creationTime-asc;Date (ascending);
+               ;;creationTime-desc;Date (descending);
+               ;;name-asc;"Name (ascending)"
+               ;;name-desc;"Name (descending)"
+#			   ;;relevance;"Relevance"

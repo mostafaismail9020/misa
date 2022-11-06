@@ -72,7 +72,7 @@ ACC.autocomplete = {
 				$.getJSON(self.options.autocompleteUrl, {term: request.term}, function (data)
 				{
 					var autoSearchData = [];
-					if(data.suggestions != null){
+					/*if(data.suggestions != null){
 						$.each(data.suggestions, function (i, obj)
 						{
 						    //set url click
@@ -89,7 +89,7 @@ ACC.autocomplete = {
 								type: "autoSuggestion"
 							});
 						});
-					}
+					}*/
 					if(data.products != null){
 						$.each(data.products, function (i, obj)
 						{

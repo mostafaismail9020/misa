@@ -3875,6 +3875,7 @@
 		<property name="source" type="java.lang.String"/>
 		<property name="linkText" type="java.lang.String"/>
 		<property name="linkURL" type="java.lang.String"/>
+		<property name="linkLocalizedURL" type="java.lang.String"/>
 		<property name="isActive" type="boolean"/>
 	</bean>
 

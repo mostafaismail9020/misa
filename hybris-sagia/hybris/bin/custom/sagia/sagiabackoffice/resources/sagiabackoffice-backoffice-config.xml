@@ -721,7 +721,8 @@
 					<editorArea:attribute
 							qualifier="source" />
 					<editorArea:attribute qualifier="linkText" />
-					<editorArea:attribute qualifier="linkURL" />
+					<!--<editorArea:attribute qualifier="linkURL" />-->
+					<editorArea:attribute qualifier="linkLocalizedURL" />
 					<editorArea:attribute
 							qualifier="isActive" />
 				</editorArea:section>

@@ -2537,7 +2537,12 @@
                                optional="false" unique="true" initial="true" />
                     <persistence type="property" />
                 </attribute>
-
+                <attribute qualifier="linkLocalizedURL"
+                           type="localized:java.lang.String">
+                    <modifiers read="true" write="true" search="true"
+                               optional="true" initial="true" />
+                    <persistence type="property" />
+                </attribute>
                 <attribute type="boolean" qualifier="isActive">
                     <persistence type="property" />
                     <modifiers optional="false" />

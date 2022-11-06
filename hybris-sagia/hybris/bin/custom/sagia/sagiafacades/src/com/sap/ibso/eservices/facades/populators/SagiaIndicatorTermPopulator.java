@@ -17,6 +17,7 @@ public class SagiaIndicatorTermPopulator implements Populator<SagiaIndicatorTerm
         sagiaIndicatorTermData.setName(source.getName());
         sagiaIndicatorTermData.setLinkText(source.getLinkText());
         sagiaIndicatorTermData.setLinkURL(source.getLinkURL());
+        sagiaIndicatorTermData.setLinkLocalizedURL(source.getLinkLocalizedURL());
     }
 
 }

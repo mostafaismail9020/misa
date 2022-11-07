@@ -26,7 +26,7 @@ var setupTable = function() {
         "drawCallback": function () {
             $('#investmentsTermsTableId_length').remove();
             $('#investmentsTermsTableId_filter').addClass('searchInputBox searchInputBox_dark').css('margin-bottom', '15px');
-            var searchBranchText = getI18nText("search.branch.placehoder");
+            var searchBranchText = getI18nText("search.branch.placehoder.investmentterm");
             var $inputSearch = $('#investmentsTermsTableId_filter input[type="search"]').addClass('searchInputBox-input').attr('placeholder', searchBranchText);
             var $labelSearch = $inputSearch.closest("label");
             $labelSearch.replaceWith($inputSearch);

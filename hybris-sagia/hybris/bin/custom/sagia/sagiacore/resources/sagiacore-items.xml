@@ -2534,7 +2534,7 @@
                 </attribute>
                 <attribute qualifier="linkURL" type="java.lang.String">
                     <modifiers read="true" write="true" search="true"
-                               optional="false" unique="true" initial="true" />
+                               optional="true" unique="true" initial="true" />
                     <persistence type="property" />
                 </attribute>
                 <attribute qualifier="linkLocalizedURL"

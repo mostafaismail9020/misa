@@ -238,10 +238,10 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true]          ; name              
 #When mouse over on Economic & Investment Reports will show 4 submenu
 
 INSERT_UPDATE CMSLinkComponent; uid[unique = true]                      ; name                                    ; linkName[lang = en]                     ; linkName[lang = ar]                        ; url      ;contentPage(uid, $contentCV)	;                        ; $contentCV[unique = true];
-							  ; economic-and-investment-monitor         ; Economic & Investment Monitor           ; Economic & Investment Monitor           ; مراقبة الاقتصادية والاستثمارية             ;     ;  reports-economic-investment-monitor-search ;            ;
-							  ; investment-highlights                   ; Investment Highlights                   ; Investment Highlights                   ; أبرز الاستثمارات                           ;  ; reports-investment-highlights-search ;              ;
-							  ; monthly-bulletin                        ; Monthly Bulletin                        ; Monthly Bulletin                        ; النشرة الشهرية                             ;      ;monthly-bulletin-search ;             ;
-							  ; economic-and-investment-reports-Studies ; Economic & Investment Reports & Studies ; Economic & Investment Reports & Studies ; التقارير والدراسات الاقتصادية والاستثمارية ;       ; report-studies-search ;             ;
+							  ; economic-and-investment-monitor         ; Economic & Investment Monitor           ; Economic and investment monitor         ; راصد الاقتصاد والاستثمار السعودي             ;     ;  reports-economic-investment-monitor-search ;            ;
+							  ; investment-highlights                   ; Investment Highlights                   ; Investment highlights                   ; مستجدات الاستثمار                           ;  ; reports-investment-highlights-search ;              ;
+							  ; monthly-bulletin                        ; Monthly Bulletin                        ; Monthly bulletin                        ; النشرة الشهرية                             ;      ;monthly-bulletin-search ;             ;
+							  ; economic-and-investment-reports-Studies ; Economic & Investment Reports & Studies ; Economic & Investment Reports & studies ; التقارير والدراسات الاقتصادية والاستثمارية ;       ; report-studies-search ;             ;
 
 
 #On Economic Highlights menu create 2 menu items [Name], [Title] and [Description]
@@ -261,7 +261,7 @@ INSERT_UPDATE CMSNavigationNode	; uid[unique = true]          	; name           
 								; dasboard-navnode 				; Dashboard  			            ; dasboard-link					; dasboard-navnode 				; economic-highlight-navnode 	;  									;infrastructure-logistic-link,international-link,economic-sectors-link,economic-investments-terms-link			; 							;
 
 INSERT_UPDATE CMSLinkComponent; uid[unique = true]          		; name     	; linkName[lang = en]   ; linkName[lang = ar]   ; url   ;contentPage(uid, $contentCV)	;                      ; $contentCV[unique = true];
-                              ; economic-investment-reports-link 	; Reports 	; Reports 				; التقارير 				;  		; economic-investment-reports 	;                       ;
+                              ; economic-investment-reports-link 	; Reports 	; Investment and Economic Reports 				; التقارير الاقتصادية والاستثمارية 				;  		; economic-investment-reports 	;                       ;
 
 
 

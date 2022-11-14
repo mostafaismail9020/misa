@@ -106,6 +106,16 @@
         </div>
 		<div class="help-block"></div>
      </div>
+     
+     <div class="formRadioButton rhqSubsidiaryPresence-formRadioButtonDiv">
+         <div class="form-group optionalActivity ">
+		 <label class="control-label rhqSubsidiaryPresence-label control-label_mandatory" for="rhqCurrentMarketValue"><spring:theme code="rhq.mnc.market.value" /></label>
+		 <div id="rhqCurrentMarketValue">
+
+		  </div>
+        </div>
+		<div class="help-block"></div>
+     </div>
 
 
 <!--Center of Administrative End-->
@@ -1191,6 +1201,11 @@
 
 }
 
+.page-new-license-apply #rhqCurrentMarketValue .form-item .control-label span {
+	top:0 !important;
+
+}
+
 .page-new-license-apply .rhqSubsidiaryPresence-label{
 	font-size: 14px !important;
     text-transform: uppercase;
@@ -1200,6 +1215,11 @@
 }
 .page-new-license-apply .formRadioButton .form-group.has-error .control-label.rhqSubsidiaryPresence-label {color: #707070;}
 .page-new-license-apply #rhqSubsidiaryPresence .control-label {
+	color: #707070 !important;
+    font-size: 15px !important;
+}
+
+.page-new-license-apply #rhqCurrentMarketValue .control-label {
 	color: #707070 !important;
     font-size: 15px !important;
 }
@@ -1359,6 +1379,8 @@ html[dir="rtl"]  .page-new-license-apply .select.modal .modal-body > .option.sel
 	var rhqCenterAdminInJS =  ('${sagiaApplyEntityInfoForm.rhqCenterAdmin}');
 	var rhqSubsidiaryPresenceInJS =  ('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}');
 	var listOfManagementActivitiesInJS = ('${sagiaApplyEntityInfoForm.listOfManagementActivities}');
+	
+	var rhqCurrentMarketValueInJS =  ('${sagiaApplyEntityInfoForm.rhqCurrentMarketValue}');
 	console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
 
 

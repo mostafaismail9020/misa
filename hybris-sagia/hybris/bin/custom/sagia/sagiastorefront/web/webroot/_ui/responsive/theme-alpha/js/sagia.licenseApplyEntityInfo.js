@@ -309,6 +309,16 @@ bindRhqCountryInformationEvents: function () {
                     $('#rhqSubsidiaryPresence').append('<div class="form-item"><input name="rhqSubsidiaryPresence" class="form-control" type="radio" id=' + (objectRhqSubsidiaryOptions[i]['value'])  + ' value=' + (objectRhqSubsidiaryOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqSubsidiaryOptions[i]['value'])  + '><span></span> ' + (objectRhqSubsidiaryOptions[i]['text'])  + '</label></div>');
 
                  }
+                 
+                 let objectRhqMarketValueOptions = [{"value":"lessthan_375M","text":getI18nText("rhq.lessthan.market.value")}, {"value":"between_375Mand40B","text":getI18nText("rhq.between.market.value")},{"value":"morethan_40B","text":getI18nText("rhq.morethan.market.value")}]
+                 $('#rhqCurrentMarketValue').html('');
+                 for(var i = 0; i < objectRhqMarketValueOptions.length; i++) {
+                   // $('#rhqSubsidiaryPresence').append('<div class="form-item"><input type="radio" name="rhqSubsidiaryPresence" value='+i+'>'+objectRhqSubsidiaryOptions[i]+'</input></div>');
+
+                    $('#rhqCurrentMarketValue').append('<div class="form-item"><input name="rhqCurrentMarketValue" class="form-control" type="radio" id=' + (objectRhqMarketValueOptions[i]['value'])  + ' value=' + (objectRhqMarketValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqMarketValueOptions[i]['value'])  + '><span></span> ' + (objectRhqMarketValueOptions[i]['text'])  + '</label></div>');
+
+                 }
+
 
                 //22-Jan-22 - End
 
@@ -1155,6 +1165,7 @@ bindRhqCountryInformationEvents: function () {
                 self.setRhqSubsidiaryPresence();
                 self.setSelectedRhqCountries();
 				self.entrepreneurAttachment.hide();
+				self.setRhqCurrentMarketValue();
         	}
             else{
         		//self.licenseInformationSection.find('input[name=isEntrepreneur]').prop("disabled", false);
@@ -1599,6 +1610,16 @@ bindRhqCountryInformationEvents: function () {
         catch (err) {
             console.log(err);
         }
+      },setRhqCurrentMarketValue: function () {
+        var self = this;
+        try {
+            if(rhqCurrentMarketValueInJS != "" &&  rhqCurrentMarketValueInJS != undefined){
+                $("input[type=radio][name=rhqCurrentMarketValue][value=" + rhqCurrentMarketValueInJS + "]").prop('checked', true);
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
     },setSelectedRhqCountries: function () {
 
                   setTimeout(function () {
@@ -1710,6 +1731,7 @@ bindRhqCountryInformationEvents: function () {
          }catch(e){console.log(e)}
 
          $('input[name="rhqSubsidiaryPresence"]').prop('checked', false);
+         $('input[name="rhqCurrentMarketValue"]').prop('checked', false);
 
 
 
@@ -2327,6 +2349,15 @@ if($("#licenseTypes").val() === "11"){
                 $('#rhqSubsidiaryPresence').parents('.formRadioButton').find('.help-block').text(getI18nText(""));
                 $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
             }
+            
+        if (typeof ($('input[type=radio][name=rhqCurrentMarketValue]:checked').val()) == "undefined") {
+            hasErrors = true;
+                $('#rhqCurrentMarketValue').parents('.formRadioButton').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
+                $('#rhqCurrentMarketValue').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCurrentMarketValue').parents('.formRadioButton').find('.help-block').text(getI18nText(""));
+                $('#rhqCurrentMarketValue').parents('.form-group').removeClass('has-error');
+            }
 
 
         if($('#rhqCenterAdmin').val().length <1){
@@ -2551,6 +2582,16 @@ if($("#licenseTypes").val() === "11"){
             } else {
                 $('#rhqSubsidiaryPresence').parents('.formRadioButton').find('.help-block').text(getI18nText(""));
                 $('#rhqSubsidiaryPresence').parents('.form-group').removeClass('has-error');
+            }
+        });
+        
+        $('input[type=radio][name=rhqCurrentMarketValue]').change(function() {
+            if (typeof ($('input[type=radio][name=rhqCurrentMarketValue]:checked').val()) == "undefined") {
+                $('#rhqCurrentMarketValue').parents('.formRadioButton').find('.help-block').text(getI18nText("rhq.subsidiary.presence.validation"));
+                $('#rhqCurrentMarketValue').parents('.form-group').addClass('has-error');
+            } else {
+                $('#rhqCurrentMarketValue').parents('.formRadioButton').find('.help-block').text(getI18nText(""));
+                $('#rhqCurrentMarketValue').parents('.form-group').removeClass('has-error');
             }
         });
 

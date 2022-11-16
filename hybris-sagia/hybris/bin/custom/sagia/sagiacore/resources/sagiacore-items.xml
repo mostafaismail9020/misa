@@ -3158,6 +3158,25 @@
                         <persistence type="property"/>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                     </attribute>
+                    <attribute qualifier="rhqCurrentMarketValue" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="rhqAverage3YearRevenue" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="rhqLastYearAsset" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="rhqNumberOfEmployees" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                    </attribute>
+                    <attribute qualifier="rhqCompanyRankedInFortuneList" type="java.lang.String">
+                        <persistence type="property"/>
+                    </attribute>
                 </attributes>
             </itemtype>
 

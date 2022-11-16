@@ -22,7 +22,7 @@ public class SagiaApplyEntityInfoForm implements Serializable{
     private String mainBranchCRFileName;
     private String otherBranchCR1FileName;
     private String otherBranchCR2FileName;
-    
+
     private String entityListedInStockMarketFileName;
     private String entityAssetFileName;
     private String entityRevenueFileName;
@@ -43,6 +43,16 @@ public class SagiaApplyEntityInfoForm implements Serializable{
     private List<String> rhqSubsidiaryPresence;
     private List<String> listOfRhqRegions;
     private List<String> listOfRhqCountries;
+    private String rhqCurrentMarketValue;
+    private String rhqAverage3YearRevenue;
+    private String rhqLastYearAsset;
+    private String rhqNumberOfEmployees;
+    private String rhqCompanyRankedInFortune;
+    private String rhqCurrentMarketValueFileName;
+    private String rhqAverage3YearRevenueFileName;
+    private String rhqLastYearAssetFileName;
+    private String rhqNumberOfEmployeesFileName;
+
 
     private String entityFinancialStatementFileName;
     private String commercialRegMainEntryFileName;

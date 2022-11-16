@@ -117,6 +117,42 @@
 		<div class="help-block"></div>
      </div>
 
+    <div class="formRadioButton rhqSubsidiaryPresence-formRadioButtonDiv">
+         <div class="form-group optionalActivity ">
+		 <label class="control-label rhqSubsidiaryPresence-label control-label_mandatory" for="rhqAverage3YearRevenue"><spring:theme code="rhq.mnc.average.revenue" /></label>
+		 <div id="rhqAverage3YearRevenue">
+
+		  </div>
+        </div>
+		<div class="help-block"></div>
+     </div>
+     <div class="formRadioButton rhqSubsidiaryPresence-formRadioButtonDiv">
+              <div class="form-group optionalActivity ">
+     		 <label class="control-label rhqSubsidiaryPresence-label control-label_mandatory" for="rhqLastYearAsset"><spring:theme code="rhq.mnc.last.year.asset.value" /></label>
+     		 <div id="rhqLastYearAsset">
+
+     		  </div>
+             </div>
+     		<div class="help-block"></div>
+          </div>
+          <div class="formRadioButton rhqSubsidiaryPresence-formRadioButtonDiv">
+                   <div class="form-group optionalActivity ">
+          		 <label class="control-label rhqSubsidiaryPresence-label control-label_mandatory" for="rhqNumberOfEmployees"><spring:theme code="rhq.mnc.no.of.employees.value" /></label>
+          		 <div id="rhqNumberOfEmployees">
+
+          		  </div>
+                  </div>
+          		<div class="help-block"></div>
+               </div>
+               <div class="formRadioButton rhqSubsidiaryPresence-formRadioButtonDiv">
+                        <div class="form-group optionalActivity ">
+               		 <label class="control-label rhqSubsidiaryPresence-label control-label_mandatory" for="rhqCompanyRankedInFortune"><spring:theme code="rhq.mnc.company.ranked.in.fortune.list.value" /></label>
+               		 <div id="rhqCompanyRankedInFortune">
+
+               		  </div>
+                       </div>
+               		<div class="help-block"></div>
+                    </div>
 
 <!--Center of Administrative End-->
 </div>
@@ -1246,6 +1282,45 @@
 	    padding-top: 0px;
 }
 
+.page-new-license-apply #rhqAverage3YearRevenue .form-item .control-label span {
+	top:0 !important;
+
+}
+
+.page-new-license-apply #rhqAverage3YearRevenue .control-label {
+	color: #707070 !important;
+    font-size: 15px !important;
+}
+
+.page-new-license-apply #rhqLastYearAsset .form-item .control-label span {
+	top:0 !important;
+
+}
+
+.page-new-license-apply #rhqLastYearAsset .control-label {
+	color: #707070 !important;
+    font-size: 15px !important;
+}
+
+.page-new-license-apply #rhqNumberOfEmployees .form-item .control-label span {
+	top:0 !important;
+
+}
+
+.page-new-license-apply #rhqNumberOfEmployees .control-label {
+	color: #707070 !important;
+    font-size: 15px !important;
+}
+
+.page-new-license-apply #rhqCompanyRankedInFortune .form-item .control-label span {
+	top:0 !important;
+
+}
+
+.page-new-license-apply #rhqCompanyRankedInFortune .control-label {
+	color: #707070 !important;
+    font-size: 15px !important;
+}
 
 
 #addBranchTable .modal-dialog .modal-body,
@@ -1381,8 +1456,10 @@ html[dir="rtl"]  .page-new-license-apply .select.modal .modal-body > .option.sel
 	var listOfManagementActivitiesInJS = ('${sagiaApplyEntityInfoForm.listOfManagementActivities}');
 	
 	var rhqCurrentMarketValueInJS =  ('${sagiaApplyEntityInfoForm.rhqCurrentMarketValue}');
+	var rhqAverage3YearRevenueInJS =  ('${sagiaApplyEntityInfoForm.rhqAverage3YearRevenue}');
+	var rhqLastYearAssetInJS =  ('${sagiaApplyEntityInfoForm.rhqLastYearAsset}');
+	var rhqNumberOfEmployeesInJS =  ('${sagiaApplyEntityInfoForm.rhqNumberOfEmployees}');
+	var rhqCompanyRankedInFortuneInJS =  ('${sagiaApplyEntityInfoForm.rhqCompanyRankedInFortune}');
 	console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
-
-
 
 </script>

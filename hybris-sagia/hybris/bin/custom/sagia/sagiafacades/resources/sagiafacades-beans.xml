@@ -3288,6 +3288,12 @@
 		<property name="commercialRegMainEntryFileAdded" type="boolean"/>
 		<property name="commercialRegBranch1FileAdded" type="boolean"/>
 		<property name="commercialRegBranch2FileAdded" type="boolean"/>
+		<property name="rhqCurrentMarketValue" type="String"/>
+		<property name="rhqAverage3YearRevenue" type="String"/>
+		<property name="rhqLastYearAsset" type="String"/>
+		<property name="rhqNumberOfEmployees" type="String"/>
+		<property name="rhqCompanyRankedInFortune" type="String"/>
+
 	</bean>
 
 	<!-- Shareholder -->

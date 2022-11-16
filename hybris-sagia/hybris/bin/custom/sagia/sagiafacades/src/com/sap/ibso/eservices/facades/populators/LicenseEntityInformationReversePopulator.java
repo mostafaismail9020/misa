@@ -227,7 +227,11 @@ public class LicenseEntityInformationReversePopulator
 			target.setRhqCenterAdmin(null);
 		}
 			target.setRhqSubsidiaryPresence(source.getRhqSubsidiaryPresence());
-
+			target.setRhqCurrentMarketValue(source.getRhqCurrentMarketValue());
+			target.setRhqLastYearAsset(source.getRhqLastYearAsset());
+			target.setRhqAverage3YearRevenue(source.getRhqAverage3YearRevenue());
+			target.setRhqNumberOfEmployees(source.getRhqNumberOfEmployees());
+			target.setRhqCompanyRankedInFortuneList(source.getRhqCompanyRankedInFortune());
 //New RHQ end
 		
 		//TODO: need to create more file attribute to get file stream, file name etc. also change below logic in a way so if it's new file then only update it.

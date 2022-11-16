@@ -118,6 +118,11 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 		    target.setPostalCode(source.getPostalCode());
 		    target.setInvestment(source.getInvestment());
 		    target.setWebsite(source.getWebsite());
+		    target.setRhqCurrentMarketValue(source.getRhqCurrentMarketValue());
+		    target.setRhqLastYearAsset(source.getRhqLastYearAsset());
+		    target.setRhqAverage3YearRevenue(source.getRhqAverage3YearRevenue());
+		    target.setRhqNumberOfEmployees(source.getRhqNumberOfEmployees());
+		    target.setRhqCompanyRankedInFortune(source.getRhqCompanyRankedInFortuneList());
 		    
 		    target.setHasProfessionalLicenseCr(sagiaFormatProvider.formatBooleanForODATA(source.isHasProfessionalLicenseCr()));
 		    if(source.isHasProfessionalLicenseCr()) {

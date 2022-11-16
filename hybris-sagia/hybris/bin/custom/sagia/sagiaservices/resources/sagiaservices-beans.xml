@@ -2581,6 +2581,11 @@
 		<property name="listOfManagementActivities" type="java.lang.String" />
 		<property name="rhqCenterAdmin"  type="java.lang.String" />
 		<property name="rhqSubsidiaryPresence" type="java.lang.String" />
+		<property name="rhqCompanyRankedInFortune" type="java.lang.String" />
+		<property name="rhqCurrentMarketValue" type="java.lang.String" />
+		<property name="rhqAverage3YearRevenue" type="java.lang.String" />
+		<property name="rhqLastYearAsset" type="java.lang.String" />
+		<property name="rhqNumberOfEmployees" type="java.lang.String" />
 
 	</bean>
 

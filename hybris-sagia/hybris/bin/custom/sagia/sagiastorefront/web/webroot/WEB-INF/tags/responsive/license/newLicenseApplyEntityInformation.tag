@@ -52,6 +52,7 @@
             <license:licenseApplyEntityInformation-technicalAndFinancialCriteriaSection/>
            <%--            <license:newLicenseApplyEntityInformation-basicInformationSection/>--%>
             <license:newLicenseApplyEntityInformation-basicInformationExtendedSection/>
+			<license:newLicenseApplyEntityInformation-rhqAttachmentSection/>
             <div class="businessActivitiesJsonInputs">
                 <c:if test="${not empty isicActivities}">
                     <c:forEach items="${isicActivities}" var="isicActivity">

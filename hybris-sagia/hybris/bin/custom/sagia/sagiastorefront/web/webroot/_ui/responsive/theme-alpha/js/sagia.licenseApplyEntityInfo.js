@@ -1193,6 +1193,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 				self.setRhqLastYearAsset();
 				self.setRhqNumberOfEmployees();
 				self.setRhqCompanyRankedInFortune();
+				self.setRHQAttachments();
         	}
             else{
         		//self.licenseInformationSection.find('input[name=isEntrepreneur]').prop("disabled", false);
@@ -1269,6 +1270,36 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 
 	attachmentsOnLoad: function(){
 
+	},
+	
+		setRHQAttachments: function () {
+
+    	var self = this;
+		this.setRhqAttachmentTypeShow();
+    	//self.loadYearsDropDownForRHQ();
+    },
+    
+    setRhqAttachmentTypeShow: function () {
+		let showRhqAttachment=false;
+	       
+	       if ($('[name=rhqCurrentMarketValue]').filter(':checked').val() != 'lessthan_375M'){
+				showRhqAttachment=true;
+	        	this.currentMarketValueAttachment.show();
+	
+	        }else{
+				this.currentMarketValueAttachment.hide();
+				
+	        } 
+	        
+	   		if(showRhqAttachment=true)
+			{
+				console.log("showRhqAttachment true")
+				this.rhqAttachmentSection.show()
+			}
+			else
+			{
+				this.rhqAttachmentSection.hide()
+			}   
 	},
 
  setAttachmentTypeShow: function () {
@@ -1726,6 +1757,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
     	var isPreApprovalNumber = $('[name=isPreApprovalNumber]').filter(':checked').val();
     	var self = this;
         $('#branchAttachmentNewRhq').css("display", "none");
+		$('#rhqAttachmentSection').css("display", "none");
 
     	if(isEntrepreneur === 'yes'){
     		self.loadYearsDropDownForEntrepreneur();
@@ -2699,6 +2731,11 @@ if (typeof ($('input[type=radio][name=rhqCompanyRankedInFortune]:checked').val()
                 $('#rhqCurrentMarketValue').parents('.formRadioButton').find('.help-block').text(getI18nText(""));
                 $('#rhqCurrentMarketValue').parents('.form-group').removeClass('has-error');
             }
+        });
+		
+		$(document.body).on('change', '#rhqCurrentMarketValue', function () {
+			console.log("inside change of rhqCurrentMarketValue ");
+			this.setRHQAttachments();
         });
 
         $('input[type=radio][name=rhqAverage3YearRevenue]').change(function() {

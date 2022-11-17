@@ -314,8 +314,7 @@ bindRhqCountryInformationEvents: function () {
                  $('#rhqCurrentMarketValue').html('');
                  for(var i = 0; i < objectRhqMarketValueOptions.length; i++) {
                    // $('#rhqSubsidiaryPresence').append('<div class="form-item"><input type="radio" name="rhqSubsidiaryPresence" value='+i+'>'+objectRhqSubsidiaryOptions[i]+'</input></div>');
-
-                    $('#rhqCurrentMarketValue').append('<div class="form-item"><input name="rhqCurrentMarketValue" class="form-control" type="radio" id=' + (objectRhqMarketValueOptions[i]['value'])  + ' value=' + (objectRhqMarketValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqMarketValueOptions[i]['value'])  + '><span></span> ' + (objectRhqMarketValueOptions[i]['text'])  + '</label></div>');
+                    $('#rhqCurrentMarketValue').append('<div class="form-item"><input name="rhqCurrentMarketValue" class="form-control" type="radio" onchange="showRhqAttachmentSection(this);" id=' + (objectRhqMarketValueOptions[i]['value'])  + ' value=' + (objectRhqMarketValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqMarketValueOptions[i]['value'])  + '><span></span> ' + (objectRhqMarketValueOptions[i]['text'])  + '</label></div>');
 
                  }
 
@@ -1273,7 +1272,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 	},
 	
 		setRHQAttachments: function () {
-
+        //console.log("Inside RHQ Attachment")
     	var self = this;
 		this.setRhqAttachmentTypeShow();
     	//self.loadYearsDropDownForRHQ();
@@ -1282,24 +1281,28 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
     setRhqAttachmentTypeShow: function () {
 		let showRhqAttachment=false;
 	       
-	       if ($('[name=rhqCurrentMarketValue]').filter(':checked').val() != 'lessthan_375M'){
-				showRhqAttachment=true;
-	        	this.currentMarketValueAttachment.show();
-	
-	        }else{
-				this.currentMarketValueAttachment.hide();
-				
-	        } 
-	        
-	   		if(showRhqAttachment=true)
-			{
-				console.log("showRhqAttachment true")
-				this.rhqAttachmentSection.show()
-			}
-			else
-			{
-				this.rhqAttachmentSection.hide()
-			}   
+           if ($('[name=rhqCurrentMarketValue]').filter(':checked').val() != 'lessthan_375M'){
+                           showRhqAttachment=true;
+                           //this.currentMarketValueAttachment.show();
+                           $('#currentMarketValueAttachment').css("display", "block");
+
+                       }else{
+                           $('#currentMarketValueAttachment').css("display", "none");
+                           //this.currentMarketValueAttachment.hide();
+
+                       }
+
+                          if(showRhqAttachment=true)
+                       {
+                           //console.log("showRhqAttachment true")
+                           $('#rhqAttachmentSection').css("display", "block");
+                           //this.rhqAttachmentSection.show()
+                       }
+                       else
+                       {
+                           $('#rhqAttachmentSection').css("display", "none");
+                           //this.rhqAttachmentSection.hide()
+                       }
 	},
 
  setAttachmentTypeShow: function () {
@@ -2731,11 +2734,6 @@ if (typeof ($('input[type=radio][name=rhqCompanyRankedInFortune]:checked').val()
                 $('#rhqCurrentMarketValue').parents('.formRadioButton').find('.help-block').text(getI18nText(""));
                 $('#rhqCurrentMarketValue').parents('.form-group').removeClass('has-error');
             }
-        });
-		
-		$(document.body).on('change', '#rhqCurrentMarketValue', function () {
-			console.log("inside change of rhqCurrentMarketValue ");
-			this.setRHQAttachments();
         });
 
         $('input[type=radio][name=rhqAverage3YearRevenue]').change(function() {

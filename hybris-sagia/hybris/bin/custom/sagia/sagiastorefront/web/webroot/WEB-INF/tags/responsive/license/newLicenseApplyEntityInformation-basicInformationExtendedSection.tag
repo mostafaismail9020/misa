@@ -9,7 +9,7 @@
 <%@ taglib prefix="account" tagdir="/WEB-INF/tags/responsive/user" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
-
+<%@ taglib prefix="license" tagdir="/WEB-INF/tags/responsive/license" %>
 
 
 <!--Basic information extended-->
@@ -156,7 +156,7 @@
 
 <!--Center of Administrative End-->
 </div>
-
+<license:newLicenseApplyEntityInformation-rhqAttachmentSection/>
 <!--Edit Branch Table Model-->
 
 <div class="modal fade" id="EditBranchTable"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1461,5 +1461,30 @@ html[dir="rtl"]  .page-new-license-apply .select.modal .modal-body > .option.sel
 	var rhqNumberOfEmployeesInJS =  ('${sagiaApplyEntityInfoForm.rhqNumberOfEmployees}');
 	var rhqCompanyRankedInFortuneInJS =  ('${sagiaApplyEntityInfoForm.rhqCompanyRankedInFortune}');
 	console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
+
+    function showRhqAttachmentSection(myRadio) {
+            //alert('New value: ' + myRadio.value);
+            var showRhqAttachment=false;
+            var rhqAttachmentSectionId = document.getElementById("rhqAttachmentSection");
+            var currentMarketValueAttachmentId = document.getElementById("currentMarketValueAttachment");
+
+               if (myRadio.value != 'lessthan_375M'){
+                  // alert("show currentMarketValueAttachment");
+                    showRhqAttachment=true;
+                    currentMarketValueAttachmentId.style.display = "block";
+                }else{
+                    currentMarketValueAttachmentId.style.display = "none";
+                }
+
+                   if(showRhqAttachment==true)
+                {
+                    //alert("show showRhqAttachment");
+                    rhqAttachmentSectionId.style.display = "block";
+                }
+                else
+                {
+                    rhqAttachmentSectionId.style.display = "none";
+                }
+        }
 
 </script>

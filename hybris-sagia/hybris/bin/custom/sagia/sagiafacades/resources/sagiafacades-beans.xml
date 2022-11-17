@@ -3293,6 +3293,7 @@
 		<property name="rhqLastYearAsset" type="String"/>
 		<property name="rhqNumberOfEmployees" type="String"/>
 		<property name="rhqCompanyRankedInFortune" type="String"/>
+		<property name="currentMarketValueFile" type="de.hybris.platform.cmsfacades.data.MediaData"/>
 
 	</bean>
 

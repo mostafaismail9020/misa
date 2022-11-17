@@ -3667,6 +3667,14 @@
 						<persistence type="property"></persistence>
 						<description>Email</description>
 					</attribute>
+                    <attribute qualifier="fullName" type="java.lang.String">
+                        <persistence type="property"></persistence>
+                        <description>English Full name for Contact Person</description>
+                    </attribute>
+                    <attribute qualifier="nationality" type="SagiaCountry">
+                        <persistence type="property"></persistence>
+                        <description>Contact Person Nationality</description>
+                    </attribute>
 				</attributes>
 			</itemtype>
 

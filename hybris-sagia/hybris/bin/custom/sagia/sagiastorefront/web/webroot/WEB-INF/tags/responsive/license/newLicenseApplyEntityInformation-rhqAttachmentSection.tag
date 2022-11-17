@@ -19,8 +19,8 @@
              <div class="formInputFile ${not empty sagiaApplyEntityInfoForm.currentMarketValueFile ? "active" : ""}">
              <div class="form-group">
                 <input id="currentMarketValueFile" name="customCurrentMarketValueFile" class="form-control js-inputFile validate__file" type="file" accept="application/pdf" value="" data-maxsize="5"/>
-                <input id="currentMarketValueFileName" name="currentMarketValueFileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.currentMarketValueFile.fileName}" readonly tabindex="-1"/>
-                <label class="control-label control-label_mandatory" for="currentMarketValueFileName">
+                <input id="rhqCurrentMarketValueFileName" name="rhqCurrentMarketValueFileName" class="form-control" type="text" value="" placeholder="${sagiaApplyEntityInfoForm.currentMarketValueFile.fileName}" readonly tabindex="-1"/>
+                <label class="control-label control-label_mandatory" for="rhqCurrentMarketValueFileName">
                    <spring:theme code="licenseApplyEntityInformation.attachmentSection.currentMarketValueFile"/>
                 </label>
                 <div class="form-icon form-icon_browse">

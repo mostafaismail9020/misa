@@ -1282,27 +1282,71 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 		let showRhqAttachment=false;
 	       
            if ($('[name=rhqCurrentMarketValue]').filter(':checked').val() != 'lessthan_375M'){
-                           showRhqAttachment=true;
-                           //this.currentMarketValueAttachment.show();
-                           $('#currentMarketValueAttachment').css("display", "block");
+               showRhqAttachment=true;
+               //this.currentMarketValueAttachment.show();
+               $('#currentMarketValueAttachment').css("display", "block");
 
-                       }else{
-                           $('#currentMarketValueAttachment').css("display", "none");
-                           //this.currentMarketValueAttachment.hide();
+           	}else{
+               $('#currentMarketValueAttachment').css("display", "none");
+               //this.currentMarketValueAttachment.hide();
 
-                       }
+           	}
+           	
+           	if ($('[name=rhqAverage3YearRevenue]').filter(':checked').val() != 'lessthan_375M_Rev'){
+               showRhqAttachment=true;
+               //this.average3YearRevenueAttachment.show();
+               $('#average3YearRevenueAttachment').css("display", "block");
 
-                          if(showRhqAttachment=true)
-                       {
-                           //console.log("showRhqAttachment true")
-                           $('#rhqAttachmentSection').css("display", "block");
-                           //this.rhqAttachmentSection.show()
-                       }
-                       else
-                       {
-                           $('#rhqAttachmentSection').css("display", "none");
-                           //this.rhqAttachmentSection.hide()
-                       }
+           	}else{
+               $('#average3YearRevenueAttachment').css("display", "none");
+               //this.average3YearRevenueAttachment.hide();
+
+           	}
+           	
+           	if ($('[name=rhqLastYearAsset]').filter(':checked').val() != 'lessthan_750M'){
+               showRhqAttachment=true;
+               //this.lastYearAssetAttachment.show();
+               $('#lastYearAssetAttachment').css("display", "block");
+
+           	}else{
+               $('#lastYearAssetAttachment').css("display", "none");
+               //this.lastYearAssetAttachment.hide();
+
+           	}
+           	
+           	if ($('[name=rhqNumberOfEmployees]').filter(':checked').val() != 'lessthan_10000'){
+               showRhqAttachment=true;
+               //this.numberOfEmployeesAttachment.show();
+               $('#numberOfEmployeesAttachment').css("display", "block");
+
+           	}else{
+               $('#numberOfEmployeesAttachment').css("display", "none");
+               //this.numberOfEmployeesAttachment.hide();
+
+           	}
+           	
+           	if ($('[name=companyRankedInFortuneList]').filter(':checked').val() != 'No'){
+               showRhqAttachment=true;
+               //this.companyRankedInFortuneAttachment.show();
+               $('#companyRankedInFortuneAttachment').css("display", "block");
+
+           	}else{
+               $('#companyRankedInFortuneAttachment').css("display", "none");
+               //this.companyRankedInFortuneAttachment.hide();
+
+           	}
+
+           if(showRhqAttachment=true)
+           {
+               //console.log("showRhqAttachment true")
+               $('#rhqAttachmentSection').css("display", "block");
+               //this.rhqAttachmentSection.show()
+           }
+           else
+           {
+               $('#rhqAttachmentSection').css("display", "none");
+               //this.rhqAttachmentSection.hide()
+           }
 	},
 
  setAttachmentTypeShow: function () {
@@ -2564,6 +2608,46 @@ if (typeof ($('input[type=radio][name=rhqCompanyRankedInFortune]:checked').val()
                     hasErrors = true;
                     $('#commercialRegBranch2File-helper').text(getI18nText("rhq.attachment.validation"));
                     $('#commercialRegBranch2File').parents('.form-group').addClass('has-error');
+                }
+            })
+			
+			entityForm.find('#currentMarketValueFile').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                    hasErrors = true;
+                    $('#currentMarketValueFile-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#currentMarketValueFile').parents('.form-group').addClass('has-error');
+                }
+            })
+            
+            entityForm.find('#average3YearRevenueFile').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                    hasErrors = true;
+                    $('#average3YearRevenueFile-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#average3YearRevenueFile').parents('.form-group').addClass('has-error');
+                }
+            })
+            
+            entityForm.find('#lastYearAssetFile').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                    hasErrors = true;
+                    $('#lastYearAssetFile-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#lastYearAssetFile').parents('.form-group').addClass('has-error');
+                }
+            })
+            
+            entityForm.find('#numberOfEmployeesFile').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                    hasErrors = true;
+                    $('#numberOfEmployeesFile-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#numberOfEmployeesFile').parents('.form-group').addClass('has-error');
+                }
+            })
+            
+            entityForm.find('#companyRankedInFortuneFile').each(function () {
+                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                    hasErrors = true;
+                    $('#companyRankedInFortuneFile-helper').text(getI18nText("rhq.attachment.validation"));
+                    $('#companyRankedInFortuneFile').parents('.form-group').addClass('has-error');
                 }
             })
 

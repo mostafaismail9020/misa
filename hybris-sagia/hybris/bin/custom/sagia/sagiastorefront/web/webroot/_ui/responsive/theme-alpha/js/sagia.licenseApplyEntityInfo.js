@@ -1281,7 +1281,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
     setRhqAttachmentTypeShow: function () {
 		let showRhqAttachment=false;
 	       
-           if ($('[name=rhqCurrentMarketValue]').filter(':checked').val() != 'lessthan_375M'){
+           if ($('[name=rhqCurrentMarketValue]').filter(':checked').val() == 'between_375Mand40B' || $('[name=rhqCurrentMarketValue]').filter(':checked').val() == 'morethan_40B'){
                showRhqAttachment=true;
                //this.currentMarketValueAttachment.show();
                $('#currentMarketValueAttachment').css("display", "block");
@@ -1292,7 +1292,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 
            	}
            	
-           	if ($('[name=rhqAverage3YearRevenue]').filter(':checked').val() != 'lessthan_375M_Rev'){
+           	if ($('[name=rhqAverage3YearRevenue]').filter(':checked').val() == 'between_375Mand40B_Rev' || $('[name=rhqAverage3YearRevenue]').filter(':checked').val() == 'morethan_40B_Rev'){
                showRhqAttachment=true;
                //this.average3YearRevenueAttachment.show();
                $('#average3YearRevenueAttachment').css("display", "block");
@@ -1303,7 +1303,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 
            	}
            	
-           	if ($('[name=rhqLastYearAsset]').filter(':checked').val() != 'lessthan_750M'){
+           	if ($('[name=rhqLastYearAsset]').filter(':checked').val() == 'between_750Mand50B' || $('[name=rhqLastYearAsset]').filter(':checked').val() == 'morethan_50B'){
                showRhqAttachment=true;
                //this.lastYearAssetAttachment.show();
                $('#lastYearAssetAttachment').css("display", "block");
@@ -1314,7 +1314,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 
            	}
            	
-           	if ($('[name=rhqNumberOfEmployees]').filter(':checked').val() != 'lessthan_10000'){
+           	if ($('[name=rhqNumberOfEmployees]').filter(':checked').val() == 'between_10000and70000' || $('[name=rhqNumberOfEmployees]').filter(':checked').val() == 'morethan_70000'){
                showRhqAttachment=true;
                //this.numberOfEmployeesAttachment.show();
                $('#numberOfEmployeesAttachment').css("display", "block");
@@ -1325,7 +1325,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 
            	}
            	
-           	if ($('[name=companyRankedInFortuneList]').filter(':checked').val() != 'No'){
+           	if ($('[name=companyRankedInFortuneList]').filter(':checked').val() == 'Yes'){
                showRhqAttachment=true;
                //this.companyRankedInFortuneAttachment.show();
                $('#companyRankedInFortuneAttachment').css("display", "block");

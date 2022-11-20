@@ -168,6 +168,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				saveCommercialRegMainEntryEntityInfo(request, entityInformationModel);
 				saveCommercialRegBranch1EntryEntityInfo(request, entityInformationModel);
 				saveCommercialRegBranch2EntryEntityInfo(request, entityInformationModel);
+				saveCurrentMarketValueEntityInfo(request, entityInformationModel);
+				saveAverage3YearRevenueEntityInfo(request, entityInformationModel);
+				saveLastYearAssetEntityInfo(request, entityInformationModel);
+				saveNumberOfEmployeesEntityInfo(request, entityInformationModel);
 			}
 			licenseApplyService.saveEntityInformation(entityInformationModel);
 		} else {
@@ -216,6 +220,11 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				saveCommercialRegMainEntryEntityInfo(request, entityInformationModel);
 				saveCommercialRegBranch1EntryEntityInfo(request, entityInformationModel);
 				saveCommercialRegBranch2EntryEntityInfo(request, entityInformationModel);
+				saveCurrentMarketValueEntityInfo(request, entityInformationModel);
+				saveAverage3YearRevenueEntityInfo(request, entityInformationModel);
+				saveLastYearAssetEntityInfo(request, entityInformationModel);
+				saveNumberOfEmployeesEntityInfo(request, entityInformationModel);
+				saveCompanyRankedInFortuneEntityInfo(request, entityInformationModel);
 			}
 			else
 			{
@@ -223,6 +232,11 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				entityInformationModel.setCommercialRegMainEntryFile(null);
 				entityInformationModel.setCommercialRegBranch1File(null);
 				entityInformationModel.setCommercialRegBranch2File(null);
+				entityInformationModel.setCurrentMarketValueFile(null);
+				entityInformationModel.setAverage3YearRevenueFile(null);
+				entityInformationModel.setLastYearAssetFile(null);
+				entityInformationModel.setNumberOfEmployeesFile(null);
+				entityInformationModel.setCompanyRankedInFortuneFile(null);
 			}
 			modelService.save(entityInformationModel);
 		}
@@ -934,6 +948,152 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 
 		}
 	}
+
+	/**
+	 * Check if CurrentMarketValue PDF file is present in request and if so, set in EntityInformationModel
+	 * @param request
+	 * @param entityInformationModel
+	 */
+	public void saveCurrentMarketValueEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCurrentMarketValueFile");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "CurrentMarketValueFile_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setCurrentMarketValueFile(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	/**
+	 * Check if Average3YearRevenue PDF file is present in request and if so, set in EntityInformationModel
+	 * @param request
+	 * @param entityInformationModel
+	 */
+	public void saveAverage3YearRevenueEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customAverage3YearRevenueFile");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "Average3YearRevenueFile_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setAverage3YearRevenueFile(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	/**
+	 * Check if LastYearAsset PDF file is present in request and if so, set in EntityInformationModel
+	 * @param request
+	 * @param entityInformationModel
+	 */
+	public void saveLastYearAssetEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customLastYearAssetFile");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "LastYearAssetFile_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setLastYearAssetFile(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	/**
+	 * Check if NumberOfEmployees PDF file is present in request and if so, set in EntityInformationModel
+	 * @param request
+	 * @param entityInformationModel
+	 */
+	public void saveNumberOfEmployeesEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customNumberOfEmployeesFile");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "NumberOfEmployeesFile_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setNumberOfEmployeesFile(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	/**
+	 * Check if CompanyRankedInFortune PDF file is present in request and if so, set in EntityInformationModel
+	 * @param request
+	 * @param entityInformationModel
+	 */
+	public void saveCompanyRankedInFortuneEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
+
+		if (request instanceof MultipartHttpServletRequest) {
+			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCompanyRankedInFortuneFile");
+
+			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
+
+			try {
+				if (file.isEmpty() || file.getContentType() == null) {
+					return;
+				}
+				final Date nowTime = new Date();
+				if (extension.equals(PDF)) {
+					String fileName = "CompanyRankedInFortuneFile_" + nowTime.getTime() + "_" + file.getOriginalFilename();
+					MediaModel media = licenseApplyService.uploadFile(file.getInputStream(), fileName, file.getOriginalFilename());
+					entityInformationModel.setCompanyRankedInFortuneFile(media);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
 
 	/**
 	 * Get Share Holders from Current User License
@@ -1665,6 +1825,11 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			boolean checkCommericaRegMainEntryFile = editingForm != null && editingForm.getCommercialRegMainEntryFile() != null;
 			boolean checkCommericaRegBranch1EntryFile = editingForm != null && editingForm.getCommercialRegBranch1File() != null;
 			boolean checkCommericaRegBranch2EntryFile = editingForm != null && editingForm.getCommercialRegBranch2File() != null;
+			boolean checkCurrentMarketValueFile = editingForm != null && editingForm.getCurrentMarketValueFile() != null;
+			boolean checkAverage3YearRevenueFile = editingForm != null && editingForm.getAverage3YearRevenueFile() != null;
+			boolean checkLastYearAssetFile = editingForm != null && editingForm.getLastYearAssetFile() != null;
+			boolean checkNumberOfEmployeesFile = editingForm != null && editingForm.getNumberOfEmployeesFile() != null;
+			boolean checkCompanyRankedInFortuneFile = editingForm != null && editingForm.getCompanyRankedInFortuneFile() != null;
 
 			if (sagiaApplyEntityInfoForm.isIsEntrepreneur()) {
 
@@ -1732,6 +1897,28 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				sagiaApplyEntityInfoForm.setCommercialRegBranch2FileAdded(true);
 			}
 
+			// New RHQ Files 17-11-2022 Start
+			MultipartFile currentMarketValueFile = ((MultipartHttpServletRequest) request).getFile("customCurrentMarketValueFile");
+			if ((currentMarketValueFile != null && !currentMarketValueFile.isEmpty()) || checkCurrentMarketValueFile) {
+				sagiaApplyEntityInfoForm.setCurrentMarketValueFileAdded(true);
+			}
+			MultipartFile average3YearRevenueFile = ((MultipartHttpServletRequest) request).getFile("customAverage3YearRevenueFile");
+			if ((average3YearRevenueFile != null && !average3YearRevenueFile.isEmpty()) || checkAverage3YearRevenueFile) {
+				sagiaApplyEntityInfoForm.setAverage3YearRevenueFileAdded(true);
+			}
+			MultipartFile lastYearAssetFile = ((MultipartHttpServletRequest) request).getFile("customLastYearAssetFile");
+			if ((lastYearAssetFile != null && !lastYearAssetFile.isEmpty()) || checkLastYearAssetFile) {
+				sagiaApplyEntityInfoForm.setLastYearAssetFileAdded(true);
+			}
+			MultipartFile numberOfEmployeesFile = ((MultipartHttpServletRequest) request).getFile("customNumberOfEmployeesFile");
+			if ((numberOfEmployeesFile != null && !numberOfEmployeesFile.isEmpty()) || checkNumberOfEmployeesFile) {
+				sagiaApplyEntityInfoForm.setNumberOfEmployeesFileAdded(true);
+			}
+			MultipartFile companyRankedInFortuneFile = ((MultipartHttpServletRequest) request).getFile("customCompanyRankedInFortuneFile");;;;
+			if ((companyRankedInFortuneFile != null && !companyRankedInFortuneFile.isEmpty()) || checkCompanyRankedInFortuneFile) {
+				sagiaApplyEntityInfoForm.setNumberOfEmployeesFileAdded(true);
+			}
+			//New RHQ Files 17-11-2022 End
 		}
 	}
 

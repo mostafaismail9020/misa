@@ -98,7 +98,7 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 			target.setListOfRhqCountries(listOfRhqCountries.deleteCharAt(listOfRhqCountries.length() - 1).toString());
 
 		}*/
-			target.setRhqSubsidiaryPresence(source.getRhqSubsidiaryPresence());
+			target.setRhqSubsidiaryPresence(returnCodeForSubsidiaryPresenceInCRM(source.getRhqSubsidiaryPresence()));
 		    target.setLicenseDuration(source.getLicenseDuration());
 		    target.setEntityName(source.getEntityName());
 		    target.setEntityNameArabic(source.getEntityNameArabic());
@@ -118,11 +118,11 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 		    target.setPostalCode(source.getPostalCode());
 		    target.setInvestment(source.getInvestment());
 		    target.setWebsite(source.getWebsite());
-		    target.setRhqCurrentMarketValue(source.getRhqCurrentMarketValue());
-		    target.setRhqLastYearAsset(source.getRhqLastYearAsset());
-		    target.setRhqAverage3YearRevenue(source.getRhqAverage3YearRevenue());
-		    target.setRhqNumberOfEmployees(source.getRhqNumberOfEmployees());
-		    target.setRhqCompanyRankedInFortune(source.getRhqCompanyRankedInFortuneList());
+		    target.setRhqMarketValue(returnCodeForCRM(source.getRhqCurrentMarketValue()));
+		    target.setRhqFinStmntAsset(returnCodeForCRM(source.getRhqLastYearAsset()));
+		    target.setRhq3YrsRev(returnCodeForCRM(source.getRhqAverage3YearRevenue()));
+		    target.setRhqTotalEmployees(returnCodeForCRM(source.getRhqNumberOfEmployees()));
+		    target.setRhqFortuneListedEnt(returnCodeForCRM(source.getRhqCompanyRankedInFortuneList()));
 		    
 		    target.setHasProfessionalLicenseCr(sagiaFormatProvider.formatBooleanForODATA(source.isHasProfessionalLicenseCr()));
 		    if(source.isHasProfessionalLicenseCr()) {
@@ -134,6 +134,36 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 		    if(source.isIsPreApprovalNumber()) {
 		    	target.setPreApprovalNumber(source.getPreApprovalNumber());
 		    }
+	}
+
+	private String returnCodeForCRM(String entityData) {
+		if(entityData.startsWith("less"))
+		{
+			return "1";
+		}
+		else if(entityData.startsWith("between"))
+		{
+			return "2";
+		}
+		else
+		{
+			return "3";
+		}
+	}
+
+	private String returnCodeForSubsidiaryPresenceInCRM(String entityData) {
+		if(entityData.startsWith("2"))
+		{
+			return "1";
+		}
+		else if(entityData.startsWith("6"))
+		{
+			return "2";
+		}
+		else
+		{
+			return "3";
+		}
 	}
 
 	private String isMNCComp(EntityInformationModel source) {

@@ -3177,6 +3177,21 @@
                     <attribute qualifier="rhqCompanyRankedInFortuneList" type="java.lang.String">
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="currentMarketValueFile" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="average3YearRevenueFile" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="lastYearAssetFile" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="numberOfEmployeesFile" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="companyRankedInFortuneFile" type="Media">
+                        <persistence type="property"/>
+                    </attribute>
                 </attributes>
             </itemtype>
 

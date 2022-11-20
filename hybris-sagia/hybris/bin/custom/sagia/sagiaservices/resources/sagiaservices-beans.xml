@@ -2581,11 +2581,11 @@
 		<property name="listOfManagementActivities" type="java.lang.String" />
 		<property name="rhqCenterAdmin"  type="java.lang.String" />
 		<property name="rhqSubsidiaryPresence" type="java.lang.String" />
-		<property name="rhqCompanyRankedInFortune" type="java.lang.String" />
-		<property name="rhqCurrentMarketValue" type="java.lang.String" />
-		<property name="rhqAverage3YearRevenue" type="java.lang.String" />
-		<property name="rhqLastYearAsset" type="java.lang.String" />
-		<property name="rhqNumberOfEmployees" type="java.lang.String" />
+		<property name="rhqFortuneListedEnt" type="java.lang.String" />
+		<property name="rhqMarketValue" type="java.lang.String" />
+		<property name="rhq3YrsRev" type="java.lang.String" />
+		<property name="rhqFinStmntAsset" type="java.lang.String" />
+		<property name="rhqTotalEmployees" type="java.lang.String" />
 
 	</bean>
 

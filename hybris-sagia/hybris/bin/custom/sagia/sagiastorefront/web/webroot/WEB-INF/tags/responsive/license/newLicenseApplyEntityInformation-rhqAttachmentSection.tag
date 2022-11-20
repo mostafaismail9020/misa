@@ -10,7 +10,7 @@
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
 
 
-<div class="contentModule-section" id="rhqAttachmentSection" style="display: none">
+<div class="contentModule-section" id="rhqAttachmentSection">
     <div class="contentModule-headline contentModule-headline_smallMargin mw2" id="attachmentSectionTitle"><spring:theme code="licenseApplyEntityInformation.rhqattachmentSection.attachment"/></div>
     <hr class="hr">
    	<div id="currentMarketValueAttachment" style="display: none">

@@ -272,7 +272,38 @@ public class LicenseEntityInformationReversePopulator
 			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
 			target.setCommercialRegBranch2File(mediaModel);
 		}
-		
+
+		if (source.getCurrentMarketValueFile() != null) {
+			MediaModel mediaModel = getModelService().create(MediaModel.class);
+			MediaData mediaData = source.getCurrentMarketValueFile();
+			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
+			target.setCurrentMarketValueFile(mediaModel);
+		}
+		if (source.getAverage3YearRevenueFile() != null) {
+			MediaModel mediaModel = getModelService().create(MediaModel.class);
+			MediaData mediaData = source.getAverage3YearRevenueFile();
+			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
+			target.setAverage3YearRevenueFile(mediaModel);
+		}
+		if (source.getLastYearAssetFile() != null) {
+			MediaModel mediaModel = getModelService().create(MediaModel.class);
+			MediaData mediaData = source.getLastYearAssetFile();
+			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
+			target.setAverage3YearRevenueFile(mediaModel);
+		}
+		if (source.getNumberOfEmployeesFile() != null) {
+			MediaModel mediaModel = getModelService().create(MediaModel.class);
+			MediaData mediaData = source.getNumberOfEmployeesFile();
+			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
+			target.setNumberOfEmployeesFile(mediaModel);
+		}
+		if (source.getCompanyRankedInFortuneFile() != null) {
+			MediaModel mediaModel = getModelService().create(MediaModel.class);
+			MediaData mediaData = source.getCompanyRankedInFortuneFile();
+			getSagiaMediaReversePopulator().populate(mediaData, mediaModel);
+			target.setCompanyRankedInFortuneFile(mediaModel);
+		}
+
 		target.setLicenseDuration(source.getLicenseDuration());
 		target.setEntityName(source.getEntityName());
 		target.setEntityNameArabic(source.getEntityNameArabic());

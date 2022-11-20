@@ -166,6 +166,11 @@ public class EntityInfoValidator implements Validator {
         final boolean gosiCertificateFileAdded = entityInformationData.isGosiCertificateFileAdded();
         final boolean noObjectionCertificateFileAdded = entityInformationData.isNoObjectionCertificateFileAdded();
 
+        final boolean currentMarketValueFileAdded = entityInformationData.isCurrentMarketValueFileAdded();
+        final boolean average3YearRevenueFileAdded = entityInformationData.isAverage3YearRevenueFileAdded();
+        final boolean lastYearAssetFileAdded = entityInformationData.isLastYearAssetFileAdded();
+        final boolean numberOfEmployeesFileAdded = entityInformationData.isNumberOfEmployeesFileAdded();
+
         if(entityInformationData.isIsEntrepreneur()){
 
             if (!boardResolutionFileAdded) {
@@ -245,6 +250,24 @@ public class EntityInfoValidator implements Validator {
             if (!commercialRegBranch2EntryFileAdded) {
                 errors.rejectValue("commercialRegBranch2FileAdded", "validation.basicinformation.file");
             }
+
+            //New RHQ changes 17-11-2022 Start
+
+            if (!currentMarketValueFileAdded) {
+                errors.rejectValue("currentMarketValueFileAdded", "validation.basicinformation.file");
+            }
+            if (!average3YearRevenueFileAdded) {
+                errors.rejectValue("average3YearRevenueFileAdded", "validation.basicinformation.file");
+            }
+            if (!lastYearAssetFileAdded) {
+                errors.rejectValue("lastYearAssetFileAdded", "validation.basicinformation.file");
+            }
+            if (!numberOfEmployeesFileAdded) {
+                errors.rejectValue("numberOfEmployeesFileAdded", "validation.basicinformation.file");
+            }
+
+            //New RHQ changes 17-11-2022 End
+
         }
 
     }

@@ -314,31 +314,31 @@ bindRhqCountryInformationEvents: function () {
                  $('#rhqCurrentMarketValue').html('');
                  for(var i = 0; i < objectRhqMarketValueOptions.length; i++) {
                    // $('#rhqSubsidiaryPresence').append('<div class="form-item"><input type="radio" name="rhqSubsidiaryPresence" value='+i+'>'+objectRhqSubsidiaryOptions[i]+'</input></div>');
-                    $('#rhqCurrentMarketValue').append('<div class="form-item"><input name="rhqCurrentMarketValue" class="form-control" type="radio" onchange="showRhqAttachmentSection(this);" id=' + (objectRhqMarketValueOptions[i]['value'])  + ' value=' + (objectRhqMarketValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqMarketValueOptions[i]['value'])  + '><span></span> ' + (objectRhqMarketValueOptions[i]['text'])  + '</label></div>');
+                    $('#rhqCurrentMarketValue').append('<div class="form-item"><input name="rhqCurrentMarketValue" class="form-control" type="radio" onchange="showRhqAttachmentSection();" id=' + (objectRhqMarketValueOptions[i]['value'])  + ' value=' + (objectRhqMarketValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqMarketValueOptions[i]['value'])  + '><span></span> ' + (objectRhqMarketValueOptions[i]['text'])  + '</label></div>');
 
                  }
 
 let objectRhqAverage3YearRevenueOptions = [{"value":"lessthan_375M_Rev","text":getI18nText("rhq.lessthan.average.revenue")}, {"value":"between_375Mand40B_Rev","text":getI18nText("rhq.between.average.revenue")},{"value":"morethan_40B_Rev","text":getI18nText("rhq.morethan.average.revenue")}]
                  $('#rhqAverage3YearRevenue').html('');
                  for(var i = 0; i < objectRhqAverage3YearRevenueOptions.length; i++) {
-                    $('#rhqAverage3YearRevenue').append('<div class="form-item"><input name="rhqAverage3YearRevenue" class="form-control" type="radio" id=' + (objectRhqAverage3YearRevenueOptions[i]['value'])  + ' value=' + (objectRhqAverage3YearRevenueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqAverage3YearRevenueOptions[i]['value'])  + '><span></span> ' + (objectRhqAverage3YearRevenueOptions[i]['text'])  + '</label></div>');
+                    $('#rhqAverage3YearRevenue').append('<div class="form-item"><input name="rhqAverage3YearRevenue" class="form-control" type="radio" onchange="showRhqAttachmentSection();" id=' + (objectRhqAverage3YearRevenueOptions[i]['value'])  + ' value=' + (objectRhqAverage3YearRevenueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqAverage3YearRevenueOptions[i]['value'])  + '><span></span> ' + (objectRhqAverage3YearRevenueOptions[i]['text'])  + '</label></div>');
                  }
 let objectRhqLastYearAssetValueOptions = [{"value":"lessthan_750M","text":getI18nText("rhq.lessthan.year.asset.value")}, {"value":"between_750Mand50B","text":getI18nText("rhq.between.year.asset.value")},{"value":"morethan_50B","text":getI18nText("rhq.morethan.year.asset.value")}]
                  $('#rhqLastYearAsset').html('');
                  for(var i = 0; i < objectRhqLastYearAssetValueOptions.length; i++) {
-                    $('#rhqLastYearAsset').append('<div class="form-item"><input name="rhqLastYearAsset" class="form-control" type="radio" id=' + (objectRhqLastYearAssetValueOptions[i]['value'])  + ' value=' + (objectRhqLastYearAssetValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqLastYearAssetValueOptions[i]['value'])  + '><span></span> ' + (objectRhqLastYearAssetValueOptions[i]['text'])  + '</label></div>');
+                    $('#rhqLastYearAsset').append('<div class="form-item"><input name="rhqLastYearAsset" class="form-control" type="radio" onchange="showRhqAttachmentSection();" id=' + (objectRhqLastYearAssetValueOptions[i]['value'])  + ' value=' + (objectRhqLastYearAssetValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqLastYearAssetValueOptions[i]['value'])  + '><span></span> ' + (objectRhqLastYearAssetValueOptions[i]['text'])  + '</label></div>');
 
                  }
 let objectRhqNumberOfEmployeesValueOptions = [{"value":"lessthan_10000","text":getI18nText("rhq.lessthan.no.of.employees.value")}, {"value":"between_10000and70000","text":getI18nText("rhq.between.no.of.employees.value")},{"value":"morethan_70000","text":getI18nText("rhq.morethan.no.of.employees.value")}]
                  $('#rhqNumberOfEmployees').html('');
                  for(var i = 0; i < objectRhqNumberOfEmployeesValueOptions.length; i++) {
-                    $('#rhqNumberOfEmployees').append('<div class="form-item"><input name="rhqNumberOfEmployees" class="form-control" type="radio" id=' + (objectRhqNumberOfEmployeesValueOptions[i]['value'])  + ' value=' + (objectRhqNumberOfEmployeesValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqNumberOfEmployeesValueOptions[i]['value'])  + '><span></span> ' + (objectRhqNumberOfEmployeesValueOptions[i]['text'])  + '</label></div>');
+                    $('#rhqNumberOfEmployees').append('<div class="form-item"><input name="rhqNumberOfEmployees" class="form-control" type="radio" onchange="showRhqAttachmentSection();" id=' + (objectRhqNumberOfEmployeesValueOptions[i]['value'])  + ' value=' + (objectRhqNumberOfEmployeesValueOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqNumberOfEmployeesValueOptions[i]['value'])  + '><span></span> ' + (objectRhqNumberOfEmployeesValueOptions[i]['text'])  + '</label></div>');
 
                  }
 let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText("rhq.yes.company.ranked.in.fortune.list.value")}, {"value":"No","text":getI18nText("rhq.no.company.ranked.in.fortune.list.value")}]
                  $('#rhqCompanyRankedInFortune').html('');
                  for(var i = 0; i < objectRhqCompanyRankedInFortuneOptions.length; i++) {
-                    $('#rhqCompanyRankedInFortune').append('<div class="form-item"><input name="rhqCompanyRankedInFortune" class="form-control" type="radio" id=' + (objectRhqCompanyRankedInFortuneOptions[i]['value'])  + ' value=' + (objectRhqCompanyRankedInFortuneOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqCompanyRankedInFortuneOptions[i]['value'])  + '><span></span> ' + (objectRhqCompanyRankedInFortuneOptions[i]['text'])  + '</label></div>');
+                    $('#rhqCompanyRankedInFortune').append('<div class="form-item"><input name="rhqCompanyRankedInFortune" class="form-control" type="radio" onchange="showRhqAttachmentSection();" id=' + (objectRhqCompanyRankedInFortuneOptions[i]['value'])  + ' value=' + (objectRhqCompanyRankedInFortuneOptions[i]['value'])  + '><label  class="control-label" for=' + (objectRhqCompanyRankedInFortuneOptions[i]['value'])  + '><span></span> ' + (objectRhqCompanyRankedInFortuneOptions[i]['text'])  + '</label></div>');
                  }
 
 

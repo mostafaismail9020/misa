@@ -1460,64 +1460,69 @@ html[dir="rtl"]  .page-new-license-apply .select.modal .modal-body > .option.sel
 	var rhqLastYearAssetInJS =  ('${sagiaApplyEntityInfoForm.rhqLastYearAsset}');
 	var rhqNumberOfEmployeesInJS =  ('${sagiaApplyEntityInfoForm.rhqNumberOfEmployees}');
 	var rhqCompanyRankedInFortuneInJS =  ('${sagiaApplyEntityInfoForm.rhqCompanyRankedInFortune}');
-	console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
+	//console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
 
-    function showRhqAttachmentSection(ins) {
-	    //alert('id value: ' + ins.value);	    
-	    var showRhqAttachment=false;
-	    var rhqAttachmentSectionId = document.getElementById("rhqAttachmentSection");
-	    var currentMarketValueAttachmentId = document.getElementById("currentMarketValueAttachment");
-	    var average3YearRevenueAttachmentId = document.getElementById("average3YearRevenueAttachment");
-	    var lastYearAssetAttachmentId = document.getElementById("lastYearAssetAttachment");
-	    var numberOfEmployeesAttachmentId = document.getElementById("numberOfEmployeesAttachment");
-	    var companyRankedInFortuneAttachmentId = document.getElementById("companyRankedInFortuneAttachment");
-	       
-	       if (ins.value == 'between_375Mand40B' || ins.value == 'morethan_40B'){
-	    	   //alert("show currentMarketValueAttachment");
-				showRhqAttachment=true;
-				currentMarketValueAttachmentId.style.display = "block";
-	        }else{
-	        	currentMarketValueAttachmentId.style.display = "none";
-	        } 
-	       
-	       if (ins.value == 'between_375Mand40B_Rev' || ins.value == 'morethan_40B_Rev'){
-				showRhqAttachment=true;
-				average3YearRevenueAttachmentId.style.display = "block";
-	        }else{
-	        	average3YearRevenueAttachmentId.style.display = "none";
-	        }
-	       
-	       if (ins.value == 'between_750Mand50B' || ins.value == 'morethan_50B'){
-				showRhqAttachment=true;
-				lastYearAssetAttachmentId.style.display = "block";
-	        }else{
-	        	lastYearAssetAttachmentId.style.display = "none";
-	        }
-	       
-	       if (ins.value == 'between_10000and70000' || ins.value == 'morethan_70000'){
-				showRhqAttachment=true;
-				numberOfEmployeesAttachmentId.style.display = "block";
-	        }else{
-	        	numberOfEmployeesAttachmentId.style.display = "none";
-	        }
-	       
-	       if (ins.value == 'Yes'){
-				showRhqAttachment=true;
-				companyRankedInFortuneAttachmentId.style.display = "block";
-	        }else{
-	        	companyRankedInFortuneAttachmentId.style.display = "none";
-	        }
-	        
-	       
-	   		if(showRhqAttachment == true)
-			{
-				//alert("show showRhqAttachment");
-				rhqAttachmentSectionId.style.display = "block";
-			}
-			else
-			{
-				rhqAttachmentSectionId.style.display = "none";
-			} 
-	}
+   function showRhqAttachmentSection() {
+                      //alert('id value: ' + ins.value);
+                      var showRhqAttachment=false;
+                      var rhqAttachmentSectionId = document.getElementById("rhqAttachmentSection");
+                      var currentMarketValueAttachmentId = document.getElementById("currentMarketValueAttachment");
+                      var average3YearRevenueAttachmentId = document.getElementById("average3YearRevenueAttachment");
+                      var lastYearAssetAttachmentId = document.getElementById("lastYearAssetAttachment");
+                      var numberOfEmployeesAttachmentId = document.getElementById("numberOfEmployeesAttachment");
+                      var companyRankedInFortuneAttachmentId = document.getElementById("companyRankedInFortuneAttachment");
+                       var  rhqCurrentMarketValueName = document.querySelector('input[name="rhqCurrentMarketValue"]:checked');
+                       var  rhqAverage3YearRevenueName = document.querySelector('input[name="rhqAverage3YearRevenue"]:checked');
+                       var  rhqLastYearAssetName = document.querySelector('input[name="rhqLastYearAsset"]:checked');
+                       var  rhqNumberOfEmployeesName = document.querySelector('input[name="rhqNumberOfEmployees"]:checked');
+                       var  rhqCompanyRankedInFortuneName = document.querySelector('input[name="rhqCompanyRankedInFortune"]:checked');
+                       if (rhqCurrentMarketValueName.value == 'between_375Mand40B' || rhqCurrentMarketValueName.value == 'morethan_40B'){
+                                    //alert("show currentMarketValueAttachment");
+                                                               showRhqAttachment=true;
+                                                currentMarketValueAttachmentId.style.display = "block";
+                          }else{
+                          currentMarketValueAttachmentId.style.display = "none";
+                          }
+                         if (rhqAverage3YearRevenueName.value == 'between_375Mand40B_Rev' || rhqAverage3YearRevenueName.value == 'morethan_40B_Rev'){
+                                                               showRhqAttachment=true;
+                                                average3YearRevenueAttachmentId.style.display = "block";
+                          }else{
+                          average3YearRevenueAttachmentId.style.display = "none";
+                          }
+                         if (rhqLastYearAssetName.value == 'between_750Mand50B' || rhqLastYearAssetName.value == 'morethan_50B'){
+                                                              showRhqAttachment=true;
+                                                             lastYearAssetAttachmentId.style.display = "block";
+                          }else{
+                                       lastYearAssetAttachmentId.style.display = "none";
+                          }
+                         if (rhqNumberOfEmployeesName.value == 'between_10000and70000' || rhqNumberOfEmployeesName.value == 'morethan_70000'){
+                                                               showRhqAttachment=true;
+                                                numberOfEmployeesAttachmentId.style.display = "block";
+                          }else{
+                          numberOfEmployeesAttachmentId.style.display = "none";
+                          }
+                         if (rhqCompanyRankedInFortuneName.value == 'Yes'){
+                                                               showRhqAttachment=true;
+                                                companyRankedInFortuneAttachmentId.style.display = "block";
+                          }else{
+                          companyRankedInFortuneAttachmentId.style.display = "none";
+                          }
+                         if(showRhqAttachment == true)
+                         {
+                                        //alert("show showRhqAttachment");
+                                        rhqAttachmentSectionId.style.display = "block";
+                         }
+                         else
+                         {
+   							if(rhqCurrentMarketValueName.value == 'lessthan_375M' && rhqAverage3YearRevenueName.value == 'lessthan_375M_Rev' && rhqLastYearAssetName.value == 'lessthan_750M' && rhqNumberOfEmployeesName.value == 'lessthan_10000' && rhqCompanyRankedInFortuneName.value == 'No')
+   							{
+   										rhqAttachmentSectionId.style.display = "none";
+   							}
+   							else
+   							{
+   										rhqAttachmentSectionId.style.display = "block";
+   							}
+                         }
+                  }
 
 </script>

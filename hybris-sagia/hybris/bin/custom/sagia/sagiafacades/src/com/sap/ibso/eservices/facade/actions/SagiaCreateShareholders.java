@@ -144,6 +144,19 @@ public class SagiaCreateShareholders extends AbstractAction<SagiaPublishLicenseP
 		sagiaODataFacade.uploadAttachmentOData(commercialRegBranch1File, "E",refId,guid,"ENCRBR1",objectid,null);
 		MediaModel commercialRegBranch2File = entityInformation.getCommercialRegBranch2File();
 		sagiaODataFacade.uploadAttachmentOData(commercialRegBranch2File, "E",refId,guid,"ENCRBR2",objectid,null);
+
+		// New RHQ changes start 17-11-2022 Start
+		MediaModel currentMarketValueFile = entityInformation.getCurrentMarketValueFile();
+		sagiaODataFacade.uploadAttachmentOData(currentMarketValueFile, "E",refId,guid,"ENCMV",objectid,null);
+		MediaModel average3YearRevenueFile = entityInformation.getAverage3YearRevenueFile();
+		sagiaODataFacade.uploadAttachmentOData(average3YearRevenueFile, "E",refId,guid,"ENA3YR",objectid,null);
+		MediaModel lastYearAssetFile = entityInformation.getLastYearAssetFile();
+		sagiaODataFacade.uploadAttachmentOData(lastYearAssetFile, "E",refId,guid,"ENLYA",objectid,null);
+		MediaModel numberOfEmployeesFile = entityInformation.getNumberOfEmployeesFile();
+		sagiaODataFacade.uploadAttachmentOData(numberOfEmployeesFile, "E",refId,guid,"ENNOE",objectid,null);
+		MediaModel companyRankedInFortuneFile = entityInformation.getCompanyRankedInFortuneFile();
+		sagiaODataFacade.uploadAttachmentOData(companyRankedInFortuneFile, "E",refId,guid,"ENCRIF",objectid,null);
+		// New RHQ changes start 17-11-2022 End
 	}
 
 	private void uploadAttachments(ShareHolderModel shareHolderModel) {

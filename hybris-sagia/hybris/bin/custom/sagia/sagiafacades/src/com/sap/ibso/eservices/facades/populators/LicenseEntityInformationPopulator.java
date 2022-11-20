@@ -200,6 +200,22 @@ public class LicenseEntityInformationPopulator implements Populator<EntityInform
 		if (source.getCommercialRegBranch2File() != null) {
 			target.setCommercialRegBranch2File(getMediaConverter().convert(source.getCommercialRegBranch2File()));
 		}
+
+		if (source.getCurrentMarketValueFile() != null) {
+			target.setCurrentMarketValueFile(getMediaConverter().convert(source.getCurrentMarketValueFile()));
+		}
+		if (source.getAverage3YearRevenueFile() != null) {
+			target.setAverage3YearRevenueFile(getMediaConverter().convert(source.getAverage3YearRevenueFile()));
+		}
+		if (source.getLastYearAssetFile() != null) {
+			target.setLastYearAssetFile(getMediaConverter().convert(source.getLastYearAssetFile()));
+		}
+		if (source.getNumberOfEmployeesFile() != null) {
+			target.setNumberOfEmployeesFile(getMediaConverter().convert(source.getNumberOfEmployeesFile()));
+		}
+		if (source.getCompanyRankedInFortuneFile() != null) {
+			target.setCompanyRankedInFortuneFile(getMediaConverter().convert(source.getCompanyRankedInFortuneFile()));
+		}
 //New RHQ End
 		if (source.getBoardResolutionFile() != null) {
 			target.setBoardResolutionFile(getMediaConverter().convert(source.getBoardResolutionFile()));

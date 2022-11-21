@@ -376,7 +376,39 @@
                                     <dd class="rhqListItems"        id="rhqSubsidiaryPresenceDiv">${subsidiary}</dd>
                             </c:forEach>
                        </dl>
+                      <dl class="dlList">
+                           <dt><spring:theme code="rhq.mnc.market.value"/></dt>
+                           <c:forEach items="${entityInformation.rhqCurrentMarketValue}" var="marketValue">
+                                   <dd class="rhqListItems"        id="rhqCurrentMarketValueDiv">${marketValue}</dd>
+                           </c:forEach>
+                        </dl>
+                       <dl class="dlList">
+                           <dt><spring:theme code="rhq.mnc.average.revenue"/></dt>
+                           <c:forEach items="${entityInformation.rhqAverage3YearRevenue}" var="averageRevenue">
+                                   <dd class="rhqListItems"        id="rhqAverage3YearRevenueDiv">${averageRevenue}</dd>
+                           </c:forEach>
+                        </dl>
+                       <dl class="dlList">
+                           <dt><spring:theme code="rhq.mnc.last.year.asset.value"/></dt>
+                           <c:forEach items="${entityInformation.rhqLastYearAsset}" var="lastYearAsset">
+                                   <dd class="rhqListItems"        id="rhqLastYearAssetDiv">${lastYearAsset}</dd>
+                           </c:forEach>
+                        </dl>
+                       <dl class="dlList">
+                           <dt><spring:theme code="rhq.mnc.no.of.employees.value"/></dt>
+                           <c:forEach items="${entityInformation.rhqNumberOfEmployees}" var="noOfEmployees">
+                                   <dd class="rhqListItems"        id="rhqNumberOfEmployeesDiv">${noOfEmployees}</dd>
+                           </c:forEach>
+                        </dl>
+                      <dl class="dlList">
+                           <dt><spring:theme code="rhq.mnc.company.ranked.in.fortune.list.value"/></dt>
+                           <c:forEach items="${entityInformation.rhqCompanyRankedInFortune}" var="rankedInFortuneList">
+                                   <dd class="rhqListItems"        id="rhqCompanyRankedInFortuneListDiv">${rankedInFortuneList}</dd>
+                           </c:forEach>
+                        </dl>
                     </div>
+
+
                 </div>
                  <hr class="contentModule-separator"/>
             </div>
@@ -1006,6 +1038,17 @@
 
       subsidiaryString ='';
       subsidiaryString =  '${entityInformation.rhqSubsidiaryPresence}';
+
+      currentMarketValueString ='';
+      currentMarketValueString =  '${entityInformation.rhqCurrentMarketValue}';
+      average3YearRevenueString ='';
+      average3YearRevenueString =  '${entityInformation.rhqAverage3YearRevenue}';
+      lastYearAssetString ='';
+      lastYearAssetString =  '${entityInformation.rhqLastYearAsset}';
+      numberOfEmployeesString ='';
+      numberOfEmployeesString =  '${entityInformation.rhqNumberOfEmployees}';
+      companyRankedInFortuneListString ='';
+      companyRankedInFortuneListString =  '${entityInformation.rhqCompanyRankedInFortune}';
 
     }
         catch(error){

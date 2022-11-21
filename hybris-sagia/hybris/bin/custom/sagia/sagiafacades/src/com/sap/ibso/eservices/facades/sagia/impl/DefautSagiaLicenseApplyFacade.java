@@ -956,7 +956,7 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 	 */
 	public void saveCurrentMarketValueEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
 
-		if (request instanceof MultipartHttpServletRequest) {
+		if (request instanceof MultipartHttpServletRequest && !entityInformationModel.getRhqCurrentMarketValue().startsWith("less")) {
 			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCurrentMarketValueFile");
 
 			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
@@ -976,6 +976,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			}
 
 		}
+		else
+		{
+			entityInformationModel.setCurrentMarketValueFile(null);
+		}
 	}
 
 	/**
@@ -985,7 +989,7 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 	 */
 	public void saveAverage3YearRevenueEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
 
-		if (request instanceof MultipartHttpServletRequest) {
+		if (request instanceof MultipartHttpServletRequest && !entityInformationModel.getRhqAverage3YearRevenue().startsWith("less")) {
 			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customAverage3YearRevenueFile");
 
 			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
@@ -1005,6 +1009,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			}
 
 		}
+		else
+		{
+			entityInformationModel.setAverage3YearRevenueFile(null);
+		}
 	}
 
 	/**
@@ -1014,7 +1022,7 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 	 */
 	public void saveLastYearAssetEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
 
-		if (request instanceof MultipartHttpServletRequest) {
+		if (request instanceof MultipartHttpServletRequest && !entityInformationModel.getRhqLastYearAsset().startsWith("less")) {
 			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customLastYearAssetFile");
 
 			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
@@ -1034,6 +1042,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			}
 
 		}
+		else
+		{
+			entityInformationModel.setLastYearAssetFile(null);
+		}
 	}
 
 	/**
@@ -1043,7 +1055,7 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 	 */
 	public void saveNumberOfEmployeesEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
 
-		if (request instanceof MultipartHttpServletRequest) {
+		if (request instanceof MultipartHttpServletRequest && !entityInformationModel.getRhqNumberOfEmployees().startsWith("less")) {
 			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customNumberOfEmployeesFile");
 
 			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
@@ -1063,6 +1075,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			}
 
 		}
+		else
+		{
+			entityInformationModel.setNumberOfEmployeesFile(null);
+		}
 	}
 
 	/**
@@ -1072,7 +1088,7 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 	 */
 	public void saveCompanyRankedInFortuneEntityInfo(HttpServletRequest request, EntityInformationModel entityInformationModel) {
 
-		if (request instanceof MultipartHttpServletRequest) {
+		if (request instanceof MultipartHttpServletRequest && entityInformationModel.getRhqCompanyRankedInFortuneList().startsWith("Yes")) {
 			MultipartFile file = ((MultipartHttpServletRequest) request).getFile("customCompanyRankedInFortuneFile");
 
 			String extension = FilenameUtils.getExtension(file.getOriginalFilename());
@@ -1091,6 +1107,10 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 				e.printStackTrace();
 			}
 
+		}
+		else
+		{
+			entityInformationModel.setCompanyRankedInFortuneFile(null);
 		}
 	}
 
@@ -1914,9 +1934,9 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			if ((numberOfEmployeesFile != null && !numberOfEmployeesFile.isEmpty()) || checkNumberOfEmployeesFile) {
 				sagiaApplyEntityInfoForm.setNumberOfEmployeesFileAdded(true);
 			}
-			MultipartFile companyRankedInFortuneFile = ((MultipartHttpServletRequest) request).getFile("customCompanyRankedInFortuneFile");;;;
+			MultipartFile companyRankedInFortuneFile = ((MultipartHttpServletRequest) request).getFile("customCompanyRankedInFortuneFile");
 			if ((companyRankedInFortuneFile != null && !companyRankedInFortuneFile.isEmpty()) || checkCompanyRankedInFortuneFile) {
-				sagiaApplyEntityInfoForm.setNumberOfEmployeesFileAdded(true);
+				sagiaApplyEntityInfoForm.setCompanyRankedInFortuneFileAdded(true);
 			}
 			//New RHQ Files 17-11-2022 End
 		}

@@ -1460,7 +1460,7 @@ html[dir="rtl"]  .page-new-license-apply .select.modal .modal-body > .option.sel
 	var rhqLastYearAssetInJS =  ('${sagiaApplyEntityInfoForm.rhqLastYearAsset}');
 	var rhqNumberOfEmployeesInJS =  ('${sagiaApplyEntityInfoForm.rhqNumberOfEmployees}');
 	var rhqCompanyRankedInFortuneInJS =  ('${sagiaApplyEntityInfoForm.rhqCompanyRankedInFortune}');
-	//console.log('rhqSubsidiaryPresenceInJS'+('${sagiaApplyEntityInfoForm.rhqSubsidiaryPresence}'));
+	//alert("rhqCompanyRankedInFortuneInJS "+('${sagiaApplyEntityInfoForm.rhqCompanyRankedInFortune}'));
 
    function showRhqAttachmentSection() {
                       //alert('id value: ' + ins.value);

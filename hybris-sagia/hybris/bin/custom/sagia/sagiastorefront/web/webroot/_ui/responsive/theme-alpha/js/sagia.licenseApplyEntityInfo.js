@@ -2610,50 +2610,54 @@ if (typeof ($('input[type=radio][name=rhqCompanyRankedInFortune]:checked').val()
                     $('#commercialRegBranch2File').parents('.form-group').addClass('has-error');
                 }
             })
-			
-			entityForm.find('#currentMarketValueFile').each(function () {
-                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
-                    hasErrors = true;
-                    $('#currentMarketValueFile-helper').text(getI18nText("rhq.attachment.validation"));
-                    $('#currentMarketValueFile').parents('.form-group').addClass('has-error');
-                }
-            })
-            
-            entityForm.find('#average3YearRevenueFile').each(function () {
-                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
-                    hasErrors = true;
-                    $('#average3YearRevenueFile-helper').text(getI18nText("rhq.attachment.validation"));
-                    $('#average3YearRevenueFile').parents('.form-group').addClass('has-error');
-                }
-            })
-            
-            entityForm.find('#lastYearAssetFile').each(function () {
-                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
-                    hasErrors = true;
-                    $('#lastYearAssetFile-helper').text(getI18nText("rhq.attachment.validation"));
-                    $('#lastYearAssetFile').parents('.form-group').addClass('has-error');
-                }
-            })
-            
-            entityForm.find('#numberOfEmployeesFile').each(function () {
-                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
-                    hasErrors = true;
-                    $('#numberOfEmployeesFile-helper').text(getI18nText("rhq.attachment.validation"));
-                    $('#numberOfEmployeesFile').parents('.form-group').addClass('has-error');
-                }
-            })
-            
-            entityForm.find('#companyRankedInFortuneFile').each(function () {
-                if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
-                    hasErrors = true;
-                    $('#companyRankedInFortuneFile-helper').text(getI18nText("rhq.attachment.validation"));
-                    $('#companyRankedInFortuneFile').parents('.form-group').addClass('has-error');
-                }
-            })
+            if ($('[name=rhqCurrentMarketValue]').filter(':checked').val() == 'between_375Mand40B' || $('[name=rhqCurrentMarketValue]').filter(':checked').val() == 'morethan_40B'){
+                entityForm.find('#currentMarketValueFile').each(function () {
+                    if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                        hasErrors = true;
+                        $('#currentMarketValueFile-helper').text(getI18nText("rhq.attachment.validation"));
+                        $('#currentMarketValueFile').parents('.form-group').addClass('has-error');
+                    }
+                })
+            }
+           	if ($('[name=rhqAverage3YearRevenue]').filter(':checked').val() == 'between_375Mand40B_Rev' || $('[name=rhqAverage3YearRevenue]').filter(':checked').val() == 'morethan_40B_Rev'){
+                entityForm.find('#average3YearRevenueFile').each(function () {
+                    if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                        hasErrors = true;
+                        $('#average3YearRevenueFile-helper').text(getI18nText("rhq.attachment.validation"));
+                        $('#average3YearRevenueFile').parents('.form-group').addClass('has-error');
+                    }
+                })
+            }
 
+            if ($('[name=rhqLastYearAsset]').filter(':checked').val() == 'between_750Mand50B' || $('[name=rhqLastYearAsset]').filter(':checked').val() == 'morethan_50B'){
+                entityForm.find('#lastYearAssetFile').each(function () {
+                    if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                        hasErrors = true;
+                        $('#lastYearAssetFile-helper').text(getI18nText("rhq.attachment.validation"));
+                        $('#lastYearAssetFile').parents('.form-group').addClass('has-error');
+                    }
+                })
+            }
 
+            if ($('[name=rhqNumberOfEmployees]').filter(':checked').val() == 'between_10000and70000' || $('[name=rhqNumberOfEmployees]').filter(':checked').val() == 'morethan_70000'){
+                entityForm.find('#numberOfEmployeesFile').each(function () {
+                    if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                        hasErrors = true;
+                        $('#numberOfEmployeesFile-helper').text(getI18nText("rhq.attachment.validation"));
+                        $('#numberOfEmployeesFile').parents('.form-group').addClass('has-error');
+                    }
+                })
+            }
 
-
+                if ($('[name=companyRankedInFortuneList]').filter(':checked').val() == 'Yes'){
+                entityForm.find('#companyRankedInFortuneFile').each(function () {
+                    if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
+                        hasErrors = true;
+                        $('#companyRankedInFortuneFile-helper').text(getI18nText("rhq.attachment.validation"));
+                        $('#companyRankedInFortuneFile').parents('.form-group').addClass('has-error');
+                    }
+                })
+            }
         }
 
 

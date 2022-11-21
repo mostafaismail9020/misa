@@ -3302,6 +3302,7 @@
 		<property name="average3YearRevenueFileAdded" type="boolean"/>
 		<property name="lastYearAssetFileAdded" type="boolean"/>
 		<property name="numberOfEmployeesFileAdded" type="boolean"/>
+		<property name="companyRankedInFortuneFileAdded" type="boolean"/>
 	</bean>
 
 	<!-- Shareholder -->

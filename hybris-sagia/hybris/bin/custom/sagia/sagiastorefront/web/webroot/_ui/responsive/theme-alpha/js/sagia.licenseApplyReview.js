@@ -404,6 +404,114 @@ SAGIA.licenseApplyReview = {
 		});}
 		catch(e){console.log(e);}
 
+    $("#rhqCurrentMarketValueDiv").html('');
+    		try {
+    			$('#rhqCurrentMarketValueDiv').html(currentMarketValueString);
+    			switch (currentMarketValueString) {
+    				case "lessthan_375M":
+    					$('#rhqCurrentMarketValueDiv').html(getI18nText("rhq.lessthan.market.value"));
+    					break;
+    				case "between_375Mand40B":
+    					$('#rhqCurrentMarketValueDiv').html(getI18nText("rhq.between.market.value"));
+    					break;
+    				case "morethan_40B":
+    					$('#rhqCurrentMarketValueDiv').html(getI18nText("rhq.morethan.market.value"));
+    					break;
+    				default:
+    					$(rhqCurrentMarketValueDiv).html('');
+    			}
+    		}
+    		catch (err) {
+    			console.log(err);
+    		}
+    		$("#rhqAverage3YearRevenueDiv").html('');
+            		try {
+
+            			$('#rhqAverage3YearRevenueDiv').html(average3YearRevenueString);
+            			switch (average3YearRevenueString) {
+            				case "lessthan_375M_Rev":
+            					$('#rhqAverage3YearRevenueDiv').html(getI18nText("rhq.lessthan.average.revenue"));
+            					break;
+            				case "between_375Mand40B_Rev":
+            					$('#rhqAverage3YearRevenueDiv').html(getI18nText("rhq.between.average.revenue"));
+            					break;
+            				case "morethan_40B_Rev":
+            					$('#rhqAverage3YearRevenueDiv').html(getI18nText("rhq.morethan.average.revenue"));
+            					break;
+            				default:
+            					$(rhqAverage3YearRevenueDiv).html('');
+            			}
+
+            		}
+            		catch (err) {
+            			console.log(err);
+            		}
+
+             $("#rhqLastYearAssetDiv").html('');
+             		try {
+
+             			$('#rhqLastYearAssetDiv').html(lastYearAssetString);
+             			switch (lastYearAssetString) {
+             				case "lessthan_750M":
+             					$('#rhqLastYearAssetDiv').html(getI18nText("rhq.lessthan.year.asset.value"));
+             					break;
+             				case "between_750Mand50B":
+             					$('#rhqLastYearAssetDiv').html(getI18nText("rhq.between.year.asset.value"));
+             					break;
+             				case "morethan_50B":
+             					$('#rhqLastYearAssetDiv').html(getI18nText("rhq.morethan.year.asset.value"));
+             					break;
+             				default:
+             					$(rhqLastYearAssetDiv).html('');
+             			}
+
+             		}
+             		catch (err) {
+             			console.log(err);
+             		}
+
+             $("#rhqNumberOfEmployeesDiv").html('');
+             		try {
+
+             			$('#rhqNumberOfEmployeesDiv').html(numberOfEmployeesString);
+             			switch (numberOfEmployeesString) {
+             				case "lessthan_10000":
+             					$('#rhqNumberOfEmployeesDiv').html(getI18nText("rhq.lessthan.no.of.employees.value"));
+             					break;
+             				case "between_10000and70000":
+             					$('#rhqNumberOfEmployeesDiv').html(getI18nText("rhq.between.no.of.employees.value"));
+             					break;
+             				case "morethan_70000":
+             					$('#rhqNumberOfEmployeesDiv').html(getI18nText("rhq.morethan.no.of.employees.value"));
+             					break;
+             				default:
+             					$(rhqNumberOfEmployeesDiv).html('');
+             			}
+
+             		}
+             		catch (err) {
+             			console.log(err);
+             		}
+             /*$("#rhqCompanyRankedInFortuneListDiv").html('');
+             		try {
+
+             			$('#rhqCompanyRankedInFortuneListDiv').html(companyRankedInFortuneListString);
+             			switch (companyRankedInFortuneListString) {
+             				case "Yes":
+             					$('#rhqCompanyRankedInFortuneListDiv').html(getI18nText("rhq.yes.company.ranked.in.fortune.list.value"));
+             					break;
+             				case "No":
+             					$('#rhqCompanyRankedInFortuneListDiv').html(getI18nText("rhq.no.company.ranked.in.fortune.list.value"));
+             					break;
+             				default:
+             					$(rhqCompanyRankedInFortuneListDiv).html('');
+             			}
+
+             		}
+             		catch (err) {
+             			console.log(err);
+             		}*/
+
 	}
 	else{
 		try{

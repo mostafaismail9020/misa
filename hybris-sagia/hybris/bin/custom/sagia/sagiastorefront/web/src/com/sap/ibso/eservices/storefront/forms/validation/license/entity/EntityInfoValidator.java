@@ -170,6 +170,7 @@ public class EntityInfoValidator implements Validator {
         final boolean average3YearRevenueFileAdded = entityInformationData.isAverage3YearRevenueFileAdded();
         final boolean lastYearAssetFileAdded = entityInformationData.isLastYearAssetFileAdded();
         final boolean numberOfEmployeesFileAdded = entityInformationData.isNumberOfEmployeesFileAdded();
+        final boolean companyRankedInFortuneFileAdded = entityInformationData.isCompanyRankedInFortuneFileAdded();
 
         if(entityInformationData.isIsEntrepreneur()){
 
@@ -265,7 +266,9 @@ public class EntityInfoValidator implements Validator {
             if (!numberOfEmployeesFileAdded) {
                 errors.rejectValue("numberOfEmployeesFileAdded", "validation.basicinformation.file");
             }
-
+            /*if (!companyRankedInFortuneFileAdded) {
+                errors.rejectValue("companyRankedInFortuneFileAdded", "validation.basicinformation.file");
+            }*/
             //New RHQ changes 17-11-2022 End
 
         }

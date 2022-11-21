@@ -896,7 +896,8 @@ SAGIA.licenseApplyShareholderCommons = {
                 var element = $("#addShareholderQM1NewPersonSection");
                 if(element.find("#shareholderIdType").val()==="4"){
                 	element.find("#mofaNumberSection").show();
-                    element.find("#isMofaVerified").val(false)
+                    element.find("#isMofaVerified").val(false);
+					setAndDisableFieldIfValueNotBlank(element.find("#premiumResident"),'no');
                 }else{
                 	element.find("#mofaNumberSection").hide();
                 	element.find("#personAttachmentTitle").hide();

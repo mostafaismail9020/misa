@@ -122,7 +122,7 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 		    target.setRhqFinStmntAsset(returnCodeForCRM(source.getRhqLastYearAsset()));
 		    target.setRhq3YrsRev(returnCodeForCRM(source.getRhqAverage3YearRevenue()));
 		    target.setRhqTotalEmployees(returnCodeForCRM(source.getRhqNumberOfEmployees()));
-		    target.setRhqFortuneListedEnt(returnCodeForCRM(source.getRhqCompanyRankedInFortuneList()));
+		    target.setRhqFortuneListedEnt(source.getRhqCompanyRankedInFortuneList());
 		    
 		    target.setHasProfessionalLicenseCr(sagiaFormatProvider.formatBooleanForODATA(source.isHasProfessionalLicenseCr()));
 		    if(source.isHasProfessionalLicenseCr()) {

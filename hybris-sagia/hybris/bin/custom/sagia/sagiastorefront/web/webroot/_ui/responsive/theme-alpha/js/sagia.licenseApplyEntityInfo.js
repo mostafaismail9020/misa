@@ -1325,7 +1325,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 
            	}
            	
-           	if ($('[name=companyRankedInFortuneList]').filter(':checked').val() == 'Yes'){
+           	if ($('[name=rhqCompanyRankedInFortune]').filter(':checked').val() == 'Yes'){
                showRhqAttachment=true;
                //this.companyRankedInFortuneAttachment.show();
                $('#companyRankedInFortuneAttachment').css("display", "block");
@@ -2649,7 +2649,7 @@ if (typeof ($('input[type=radio][name=rhqCompanyRankedInFortune]:checked').val()
                 })
             }
 
-                if ($('[name=companyRankedInFortuneList]').filter(':checked').val() == 'Yes'){
+                if ($('[name=rhqCompanyRankedInFortune]').filter(':checked').val() == 'Yes'){
                 entityForm.find('#companyRankedInFortuneFile').each(function () {
                     if (SAGIA.licenseApply.validateFileTypeAndSize($(this)) === false) {
                         hasErrors = true;

@@ -1845,11 +1845,11 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			boolean checkCommericaRegMainEntryFile = editingForm != null && editingForm.getCommercialRegMainEntryFile() != null;
 			boolean checkCommericaRegBranch1EntryFile = editingForm != null && editingForm.getCommercialRegBranch1File() != null;
 			boolean checkCommericaRegBranch2EntryFile = editingForm != null && editingForm.getCommercialRegBranch2File() != null;
-			boolean checkCurrentMarketValueFile = editingForm != null && editingForm.getCurrentMarketValueFile() != null;
-			boolean checkAverage3YearRevenueFile = editingForm != null && editingForm.getAverage3YearRevenueFile() != null;
-			boolean checkLastYearAssetFile = editingForm != null && editingForm.getLastYearAssetFile() != null;
-			boolean checkNumberOfEmployeesFile = editingForm != null && editingForm.getNumberOfEmployeesFile() != null;
-			boolean checkCompanyRankedInFortuneFile = editingForm != null && editingForm.getCompanyRankedInFortuneFile() != null;
+			boolean checkCurrentMarketValueFile = editingForm != null && !sagiaApplyEntityInfoForm.getRhqCurrentMarketValue().startsWith("less");
+			boolean checkAverage3YearRevenueFile = editingForm != null && !sagiaApplyEntityInfoForm.getRhqAverage3YearRevenue().startsWith("less");
+			boolean checkLastYearAssetFile = editingForm != null && !sagiaApplyEntityInfoForm.getRhqLastYearAsset().startsWith("less");
+			boolean checkNumberOfEmployeesFile = editingForm != null && !sagiaApplyEntityInfoForm.getRhqNumberOfEmployees().startsWith("less");
+			boolean checkCompanyRankedInFortuneFile = editingForm != null && sagiaApplyEntityInfoForm.getRhqCompanyRankedInFortune().startsWith("Yes");
 
 			if (sagiaApplyEntityInfoForm.isIsEntrepreneur()) {
 

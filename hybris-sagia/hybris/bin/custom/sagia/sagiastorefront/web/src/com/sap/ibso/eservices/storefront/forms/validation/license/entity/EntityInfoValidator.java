@@ -166,11 +166,11 @@ public class EntityInfoValidator implements Validator {
         final boolean gosiCertificateFileAdded = entityInformationData.isGosiCertificateFileAdded();
         final boolean noObjectionCertificateFileAdded = entityInformationData.isNoObjectionCertificateFileAdded();
 
-        final boolean currentMarketValueFileAdded = entityInformationData.isCurrentMarketValueFileAdded();
-        final boolean average3YearRevenueFileAdded = entityInformationData.isAverage3YearRevenueFileAdded();
-        final boolean lastYearAssetFileAdded = entityInformationData.isLastYearAssetFileAdded();
-        final boolean numberOfEmployeesFileAdded = entityInformationData.isNumberOfEmployeesFileAdded();
-        final boolean companyRankedInFortuneFileAdded = entityInformationData.isCompanyRankedInFortuneFileAdded();
+        final boolean currentMarketValueFileAdded = entityInformationData.isCurrentMarketValueFileAdded() && !entityInformationData.getRhqCurrentMarketValue().startsWith("less");
+        final boolean average3YearRevenueFileAdded = entityInformationData.isAverage3YearRevenueFileAdded() && !entityInformationData.getRhqAverage3YearRevenue().startsWith("less");
+        final boolean lastYearAssetFileAdded = entityInformationData.isLastYearAssetFileAdded() && !entityInformationData.getRhqLastYearAsset().startsWith("less");
+        final boolean numberOfEmployeesFileAdded = entityInformationData.isNumberOfEmployeesFileAdded() && !entityInformationData.getRhqNumberOfEmployees().startsWith("less");
+        final boolean companyRankedInFortuneFileAdded = entityInformationData.isCompanyRankedInFortuneFileAdded() && !entityInformationData.getRhqCompanyRankedInFortune().startsWith("No");
 
         if(entityInformationData.isIsEntrepreneur()){
 
@@ -254,21 +254,21 @@ public class EntityInfoValidator implements Validator {
 
             //New RHQ changes 17-11-2022 Start
 
-            if (!currentMarketValueFileAdded) {
+            if (!currentMarketValueFileAdded && !entityInformationData.getRhqCurrentMarketValue().startsWith("less")) {
                 errors.rejectValue("currentMarketValueFileAdded", "validation.basicinformation.file");
             }
-            if (!average3YearRevenueFileAdded) {
+            if (!average3YearRevenueFileAdded && !entityInformationData.getRhqAverage3YearRevenue().startsWith("less")) {
                 errors.rejectValue("average3YearRevenueFileAdded", "validation.basicinformation.file");
             }
-            if (!lastYearAssetFileAdded) {
+            if (!lastYearAssetFileAdded && !entityInformationData.getRhqLastYearAsset().startsWith("less")) {
                 errors.rejectValue("lastYearAssetFileAdded", "validation.basicinformation.file");
             }
-            if (!numberOfEmployeesFileAdded) {
+            if (!numberOfEmployeesFileAdded && !entityInformationData.getRhqNumberOfEmployees().startsWith("less")) {
                 errors.rejectValue("numberOfEmployeesFileAdded", "validation.basicinformation.file");
             }
-            /*if (!companyRankedInFortuneFileAdded) {
+            if (!companyRankedInFortuneFileAdded && !entityInformationData.getRhqCompanyRankedInFortune().startsWith("No")) {
                 errors.rejectValue("companyRankedInFortuneFileAdded", "validation.basicinformation.file");
-            }*/
+            }
             //New RHQ changes 17-11-2022 End
 
         }

@@ -897,7 +897,7 @@ SAGIA.licenseApplyShareholderCommons = {
                 if(element.find("#shareholderIdType").val()==="4"){
                 	element.find("#mofaNumberSection").show();
                     element.find("#isMofaVerified").val(false);
-					setAndDisableFieldIfValueNotBlank(element.find("#premiumResident"),'no');
+					//setAndDisableFieldIfValueNotBlank(element.find("#premiumResident"),'no');
                 }else{
                 	element.find("#mofaNumberSection").hide();
                 	element.find("#personAttachmentTitle").hide();
@@ -1353,6 +1353,9 @@ SAGIA.licenseApplyShareholderCommons = {
             toggleFieldsOnValue(element);
             toggleSectionsOnValue(element);
             resetDataSectionFields(element,type);
+            if(element.find("#shareholderIdType").val()==="4"){
+                setAndDisableFieldIfValueNotBlank(element.find("#premiumResident"),'no');
+              }
         };
 
         var onchangeOfCompanyCountry = function()
@@ -1695,7 +1698,7 @@ SAGIA.licenseApplyShareholderCommons = {
             {
                 element.find(".idCopyFile").text(getI18nText("license.apply.shareholder.idCopyFile.passport"));
                 element.find('#idCopyFileDiv').show();
-                
+
                 var passportFileAttachment = $("#passportFileAttachment");
                	$("#passportFileAttachment").show();
                	passportFileAttachment.find('[name=passportFile]').addClass('validate__file');
@@ -1762,7 +1765,7 @@ SAGIA.licenseApplyShareholderCommons = {
            //  element.find("#premiumResident").find("option").remove();
              element.find("#premiumResident").append(new Option("", "", false, false));
              element.find("#premiumResident").val("");
-             
+
              
         }
 
@@ -1784,7 +1787,7 @@ SAGIA.licenseApplyShareholderCommons = {
                 var passportFileAttachment = $("#passportFileAttachment");
                	$("#passportFileAttachment").show();
                	passportFileAttachment.find('[name=passportFile]').addClass('validate__file');
-                
+
                 
             }
             
@@ -1811,7 +1814,7 @@ SAGIA.licenseApplyShareholderCommons = {
             {
                 element.find('#postalCodeDiv').show();
                 element.find('#poBoxDiv').show();
-                
+
                 
             }
         };

@@ -68,9 +68,9 @@
 	<div class="formSelectBox">
 			<div class="form-group">
 				<select id="rhqCenterAdmin" name="rhqCenterAdmin" class="form-control" multiple data-value="">
-					 <option value="GCC">GCC</option>
+					 <!--<option value="GCC">GCC</option>-->
                      <option value="MENA">MENA</option>
-                     <option value="Middle_East_ME">Middle East (ME)</option>
+                     <!--<option value="Middle_East_ME">Middle East (ME)</option>-->
 				</select>
 				<label class="control-label control-label_mandatory" for="rhqCenterAdmin"><spring:theme code="rhq.investor.activities.center.of.administrative.label"/></label>
 				<div id="rhqCenterAdmin-error" class="help-block"></div>

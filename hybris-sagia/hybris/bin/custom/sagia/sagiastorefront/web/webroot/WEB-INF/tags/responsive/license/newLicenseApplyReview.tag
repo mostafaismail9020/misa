@@ -349,7 +349,18 @@
                         <dl class="dlList">
                             <dt><spring:theme code="review.rhq.investor.activities.center.of.administrative.label"/></dt>
                             <c:forEach items="${entityInformation.rhqCenterAdmin}" var="centerOfAdmin">
-                                <dd class="rhqListItems centre-of-admin" >${centerOfAdmin}</dd>
+                                <dd class="rhqListItems centre-of-admin" >
+                                <c:if test="${centerOfAdmin eq 'GCC'}">
+                                    <spring:theme code="review.rhq.investor.activities.center.of.administrative.gcc.value"/>
+                                </c:if>
+                                <c:if test="${centerOfAdmin eq 'MENA'}">
+                                    <spring:theme code="review.rhq.investor.activities.center.of.administrative.mena.value"/>
+                                </c:if>
+                                <c:if test="${centerOfAdmin eq 'Middle_East_ME'}">
+                                    <spring:theme code="review.rhq.investor.activities.center.of.administrative.middleeast.value"/>
+                                </c:if>
+
+                                </dd>
                             </c:forEach>
                        </dl>
                     </div>

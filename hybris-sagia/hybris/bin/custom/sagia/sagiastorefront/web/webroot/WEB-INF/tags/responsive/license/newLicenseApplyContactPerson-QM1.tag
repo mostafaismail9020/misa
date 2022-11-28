@@ -135,6 +135,40 @@
                               itemLabel="educationText" mandatory="true"/>
             </div>
 
+
+			<div class="col-md-6">
+							<div class="formInputBox ">
+				<div class="form-group">
+							<input id="qm1FullName" name="contactPersonFullName" class="validate__mandatory validate__characters-only form-control" placeholder="." type="text" value="" maxlength="100"><label class="control-label control-label_mandatory" for="qm1FullName">
+							<spring:theme code="general.nationality.contact.person.fullname"/></label>
+						<div class="help-block"></div>
+						<div class="success-message-block "></div>
+					</div>
+					</div>
+			</div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="formSelectBox">
+                        <div class="form-group">
+                            <select id="qm1Nationality" name="contactPersonNationality" class="js-select2-oneColumn form-control"></select>
+                            <label class="control-label control-label_mandatory" for="qm1Nationality"><spring:theme code="general.nationality.contact.person"/></label>
+                        </div>
+                        <div class="help-block"></div>
+                    </div>
+                </div>
+            <div class="col-md-6">
+                <div class="formInputBox formInputBox_group ">
+                    <div class="form-group">
+                        <input id="qm1DateOfBirth" name="dateOfBirth" class="form-control js-form-control_date" placeholder="." value="" type="text"/>
+                        <label class="control-label control-label_mandatory" for="qm1DateOfBirth"><spring:theme code="licenseApply.contactPerson.qm1.dateOfBirth"/></label>
+                        <div class="formInputBox-append" id="calendar-icon-pos">
+                            <span class="formInputBox-text"><icon:calendar-gray/></span>
+                        </div>
+                    </div>
+                    <div class="help-block"></div>
+                </div>
+            </div>
+
             <div class="col-md-6">
                 <div class="formInputBox formInputBox_group ">
                     <c:set var="dateOfBirthErrors">

@@ -3444,6 +3444,7 @@
 		<property name="title" type="String"/>
 		<property name="firstName" type="String"/>
 		<property name="lastName" type="String"/>
+		<property name="fullName" type="String"/>
 		<property name="role" type="String"/>
 		<property name="education" type="String"/>
 		<property name="dateOfBirth" type="String"/>
@@ -3451,6 +3452,7 @@
 		<property name="passportIssueDate" type="String"/>
 		<property name="passportExpiryDate" type="String"/>
 		<property name="country" type="String"/>
+		<property name="contactPersonNationality" type="String"/>
 		<property name="countryText" type="String"/>
 		<property name="city" type="String"/>
 		<property name="address" type="String"/>

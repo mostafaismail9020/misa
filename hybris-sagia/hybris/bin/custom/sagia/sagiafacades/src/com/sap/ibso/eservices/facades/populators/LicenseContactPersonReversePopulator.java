@@ -53,7 +53,11 @@ public class LicenseContactPersonReversePopulator implements Populator<ContactPe
 		target.setRole(ContactPersonRole.valueOf(source.getRole()));
 		target.setEducation(source.getEducation());
 		target.setPassportNumber(source.getPassportNumber());
-
+		target.setFullName(source.getFullName());
+		if(null!=source.getContactPersonNationality()) {
+			SagiaCountryModel contactPersonNationality = sagiaCountryDAO.getCountryForCode(source.getContactPersonNationality());
+			target.setNationality(contactPersonNationality);
+		}
 		if(source.getDateOfBirth() != null) {
 			target.setDateOfBirth(formatToGregorianDate(source.getDateOfBirth(),  isUMQDate));
 		}

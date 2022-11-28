@@ -49,6 +49,10 @@ public class LicenseContactPersonPopulator implements Populator<ContactPersonMod
 		target.setRole(source.getRole().getCode());
 		target.setEducation(source.getEducation());
 		target.setPassportNumber(source.getPassportNumber());
+		target.setFullName(source.getFullName());
+		if(null!=source.getNationality()) {
+			target.setContactPersonNationality(source.getNationality().getCode());
+		}
 
 		if(source.getDateOfBirth() != null){
 			if(!isUMQDate) {

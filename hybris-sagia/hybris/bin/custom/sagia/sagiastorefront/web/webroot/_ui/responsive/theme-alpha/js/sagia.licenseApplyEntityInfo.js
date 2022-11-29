@@ -301,7 +301,7 @@ bindRhqCountryInformationEvents: function () {
 
                 //  let objectRhqSubsidiaryOptions = new Array("Only one country","2 to 5 countries","6 to 10 countries","over 10 countries");
                 // let objectRhqSubsidiaryOptions = [{"value":"only_one_country","text":"Only one country"}, {"value":"2_to_5_countries","text":"2 to 5 countries"}, {"value":"6_to_10_countries","text":"6 to 10 countries"},{"value":"over_10_countries","text":"over 10 countries"}]
-                 let objectRhqSubsidiaryOptions = [{"value":"2_to_5_countries","text":"2 to 5 countries"}, {"value":"6_to_10_countries","text":"6 to 10 countries"},{"value":"over_10_countries","text":"over 10 countries"}]
+                 let objectRhqSubsidiaryOptions = [{"value":"2_to_5_countries","text":getI18nText("rhq.lessthan.company.presence.value")}, {"value":"6_to_10_countries","text":getI18nText("rhq.between.company.presence.value")},{"value":"over_10_countries","text":getI18nText("rhq.morethan.company.presence.value")}]
                  $('#rhqSubsidiaryPresence').html('');
                  for(var i = 0; i < objectRhqSubsidiaryOptions.length; i++) {
                    // $('#rhqSubsidiaryPresence').append('<div class="form-item"><input type="radio" name="rhqSubsidiaryPresence" value='+i+'>'+objectRhqSubsidiaryOptions[i]+'</input></div>');

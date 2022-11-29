@@ -5,6 +5,7 @@ SAGIA.licenseApplyContactPerson = {
     
     bindAll: function () {
         this.loadCountry();
+        this.loadContactPersonNationality();
         this.bindCountryEvent();
         this.setDateObjects();
         this.bindNextButton();
@@ -45,6 +46,32 @@ SAGIA.licenseApplyContactPerson = {
         
         
     },
+     loadContactPersonNationality: function () {
+            var self = this;
+
+            $.ajax(ACC.config.encodedContextPath + controllerUrl + "/dropdownsQeemah1", {
+                type: "GET",
+                responseType: "application/json;charset=utf-8",
+                contentType: "application/json;charset=utf-8",
+                cache: false,
+                success: function (data) {
+                    var jsonData = JSON.parse(data);
+
+                    var countries = $("#contactPersonQM1 #qm1Nationality");
+                    countries.find("option").remove();
+                    countries.append(new Option("", "", false, false));
+                    jsonData.countries.forEach(function (currentValue) {
+                        countries.append(new Option(currentValue.countryText, currentValue.country, false, false));
+                    });
+
+                    if(countries.data("value")) {
+                    	countries.val(countries.data("value")).trigger("change").next().addClass("select2Container_selected");
+                    }
+                }
+            });
+
+
+        },
     
     loadIDType: function () {
 
@@ -300,6 +327,7 @@ SAGIA.licenseApplyContactPerson = {
   		$("#qm1Country").prop('disabled', true);
   		$("#qm1FirstName").prop('disabled', true);
   		$("#qm1LastName").prop('disabled', true);
+  		$("#qm1FullName").prop('disabled', false);
   		$("#qm1DateOfBirth").prop('disabled', true);
   		$("#qm1PassportExpiryDate").prop('disabled', true);
   		$("#qm1PassportIssueDate").prop('disabled', true);
@@ -356,6 +384,8 @@ SAGIA.licenseApplyContactPerson = {
     		self.setAndDisableFieldIfValueNotBlank($("#qm1Country"), data.country);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1FirstName"), data.firstNameArabic);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1LastName"), data.lastNameArabic);
+    		self.setFieldIfValueNotBlank($("#qm1FullName"), data.fullName);
+    		self.setFieldIfValueNotBlank($("#qm1Nationality"), data.currentNationality);
     		self.setFieldIfValueNotBlank($("#qm1DateOfBirth"), data.dateOfBirth);
     		self.setFieldIfValueNotBlank($("#qm1PassportExpiryDate"), data.passportExpiryDate);
     		self.setFieldIfValueNotBlank($("#qm1PassportIssueDate"), data.passportIssueDate);
@@ -363,7 +393,9 @@ SAGIA.licenseApplyContactPerson = {
     		 	
     		self.setAndDisableFieldIfValueNotBlank($("#qm1PassportNumber"), data.delegateIdentityNumber);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1Email"), data.delegateEmail);
-    		self.setAndDisableFieldIfValueNotBlank($("#qm1CountryCodeForMobileNumber"), data.delegateCountryCodeMobile);	
+    		self.setFieldIfValueNotBlank($("#qm1FullName"), data.delegateFullName);
+    		self.setFieldIfValueNotBlank($("#qm1Nationality"), data.delegateNationality);
+    		self.setAndDisableFieldIfValueNotBlank($("#qm1CountryCodeForMobileNumber"), data.delegateCountryCodeMobile);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1MobileNumber"), data.delegateMobileNumber);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1CountryCodeForTelephone"), data.delegateCountryCodeTel);
     		self.setAndDisableFieldIfValueNotBlank($("#qm1Telephone"), data.delegateTelephoneNumber);

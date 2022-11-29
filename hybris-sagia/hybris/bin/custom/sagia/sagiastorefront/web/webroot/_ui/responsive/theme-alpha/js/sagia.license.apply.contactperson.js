@@ -34,7 +34,7 @@ $(function() {
             $contactPersonQeemah1Div.find("#qm1Title").find("input[value=" + contactPersonQeemah1Data.title + "]").click();
             $contactPersonQeemah1Div.find("#qm1FirstName").val(contactPersonQeemah1Data.firstName);
             $contactPersonQeemah1Div.find("#qm1LastName").val(contactPersonQeemah1Data.lastName);
-            $contactPersonQeemah1Div.find("#qm1FullName").val(contactPersonQeemah1Data.contactPersonFullName);
+            $contactPersonQeemah1Div.find("#qm1FullName").val(contactPersonQeemah1Data.fullName);
             $contactPersonQeemah1Div.find("#qm1Role").val(contactPersonQeemah1Data.role).trigger("change").next().addClass("select2Container_selected");
             $contactPersonQeemah1Div.find("#qm1Education").val(contactPersonQeemah1Data.education).trigger("change").next().addClass("select2Container_selected");
             $contactPersonQeemah1Div.find("#qm1PassportNumber").val(contactPersonQeemah1Data.passportNumber);
@@ -208,19 +208,6 @@ $(function() {
         }
     });
 
-    $(document).on('change', '#qm1Nationality', function () {
-        var countryCode = $(this).val().substr(0, 2);
-        if (countryCode) {
-            $.ajax(ACC.config.encodedContextPath + "/my-sagia/license/bidding-code/" + countryCode, {
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("Accept", "application/json");
-                    xhr.setRequestHeader("Content-Type", "application/json");
-                    xhr.setRequestHeader('CSRFToken', ACC.config.CSRFToken);
-                }
-            });
-        }
-    });
-
     var qeemah2DataLoaded = false;
     var loadQeemah2Data = function() {
         if(qeemah2DataLoaded) {
@@ -362,7 +349,7 @@ $(function() {
         SAGIA.license.apply.data.qeemah1Data.contactPerson.firstName = $(this).val();
     });
     $(document).on("blur", "#contactPersonQM1 #qm1FullName", function() {
-        SAGIA.license.apply.data.qeemah1Data.contactPerson.contactPersonFullName = $(this).val();
+        SAGIA.license.apply.data.qeemah1Data.contactPerson.fullName = $(this).val();
     });
     $(document).on("blur", "#contactPersonQM1 #qm1LastName", function() {
         SAGIA.license.apply.data.qeemah1Data.contactPerson.lastName = $(this).val();

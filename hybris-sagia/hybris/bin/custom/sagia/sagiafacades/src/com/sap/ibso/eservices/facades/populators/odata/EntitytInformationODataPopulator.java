@@ -98,7 +98,6 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 			target.setListOfRhqCountries(listOfRhqCountries.deleteCharAt(listOfRhqCountries.length() - 1).toString());
 
 		}*/
-			target.setRhqSubsidiaryPresence(returnCodeForSubsidiaryPresenceInCRM(source.getRhqSubsidiaryPresence()));
 		    target.setLicenseDuration(source.getLicenseDuration());
 		    target.setEntityName(source.getEntityName());
 		    target.setEntityNameArabic(source.getEntityNameArabic());
@@ -118,11 +117,26 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 		    target.setPostalCode(source.getPostalCode());
 		    target.setInvestment(source.getInvestment());
 		    target.setWebsite(source.getWebsite());
-		    target.setRhqMarketValue(returnCodeForCRM(source.getRhqCurrentMarketValue()));
-		    target.setRhqFinStmntAsset(returnCodeForCRM(source.getRhqLastYearAsset()));
-		    target.setRhq3YrsRev(returnCodeForCRM(source.getRhqAverage3YearRevenue()));
-		    target.setRhqTotalEmployees(returnCodeForCRM(source.getRhqNumberOfEmployees()));
-		    target.setRhqFortuneListedEnt(source.getRhqCompanyRankedInFortuneList());
+
+		    if(null!=source.getRhqSubsidiaryPresence()) {
+				target.setRhqSubsidiaryPresence(returnCodeForSubsidiaryPresenceInCRM(source.getRhqSubsidiaryPresence()));
+			}
+		    if(null!=source.getRhqCurrentMarketValue()) {
+		    	target.setRhqMarketValue(returnCodeForCRM(source.getRhqCurrentMarketValue()));
+		    }
+		    if(null!=source.getRhqLastYearAsset()) {
+		    	target.setRhqFinStmntAsset(returnCodeForCRM(source.getRhqLastYearAsset()));
+		    }
+		    if(null!=source.getRhqAverage3YearRevenue()) {
+		    	target.setRhq3YrsRev(returnCodeForCRM(source.getRhqAverage3YearRevenue()));
+		    }
+		    if(null!=source.getRhqNumberOfEmployees()) {
+		    	target.setRhqTotalEmployees(returnCodeForCRM(source.getRhqNumberOfEmployees()));
+		    }
+		    if(null!=source.getRhqCompanyRankedInFortuneList()) {
+		    	target.setRhqFortuneListedEnt(source.getRhqCompanyRankedInFortuneList());
+			}
+
 		    
 		    target.setHasProfessionalLicenseCr(sagiaFormatProvider.formatBooleanForODATA(source.isHasProfessionalLicenseCr()));
 		    if(source.isHasProfessionalLicenseCr()) {

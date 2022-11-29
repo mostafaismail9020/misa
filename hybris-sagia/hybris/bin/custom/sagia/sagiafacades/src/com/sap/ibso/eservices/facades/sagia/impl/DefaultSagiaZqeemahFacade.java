@@ -572,7 +572,7 @@ public class DefaultSagiaZqeemahFacade implements SagiaZqeemahFacade {
     			nicUserData.setResult("Valid Data");
     			String date = "";
     		 	
-    	    	date = sagiaFormatProvider.formatBackEndStrToUIStr("20210628");
+    	    	date = sagiaFormatProvider.formatBackEndStrToUIStr("20300628");
     	    	
     			nicUserData.setExpiryDate(date);
     			nicUserData.setFirstName_AR("حمد");

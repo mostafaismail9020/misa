@@ -2016,6 +2016,7 @@ SAGIA.licenseApplyShareholderCommons = {
                         setAndDisableFieldIfValueNotBlank(element.find("#qm1FirstName"),jsonData.firstName_AR);
                         setAndDisableFieldIfValueNotBlank(element.find("#qm1LastName"),jsonData.lastName_AR);
                         setAndDisableFieldIfValueNotBlank(element.find("#delegateFullNameEnglish"),jsonData.fullName_EN);
+                        setAndDisableFieldIfValueNotBlank(element.find("#qm1FullName"),jsonData.fullName_EN);
                         setAndDisableFieldIfValueNotBlank(element.find("#delegateGender"),jsonData.gender);
                         setAndDisableFieldIfValueNotBlank(element.find("#qm1PassportNumber"),jsonData.idNumber);
                         setAndDisableFieldIfValueNotBlank(element.find("#qm1PassportExpiryDate"),jsonData.expiryDate);

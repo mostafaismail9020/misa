@@ -116,6 +116,45 @@
             </div>
 
             <div class="col-md-6">
+            			  <div class="formInputBox ">
+            				<div class="form-group">
+            					<input id="qm1FullName" name="fullName" class="form-control" placeholder="." type="text" value="${contactPersonsData.fullName}"/>
+                                   <label class="control-label control-label_mandatory" for="qm1FullName">
+                                      <spring:theme code="general.nationality.contact.person.fullname"/></label>
+            						<div class="help-block"></div>
+            						<div class="success-message-block "></div>
+            					</div>
+            			  </div>
+            			</div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="formSelectBox">
+                                    <div class="form-group">
+                                    <formElement:formSelectBoxCustom idKey="qm1Nationality"
+                                                                  labelKey="general.nationality.contact.person"
+                                                                  path="contactPersonNationality" labelCSS="control-label control-label_mandatory"
+                                                                  selectCSSClass="js-select2-oneColumn form-control"
+                                                                  selectedDataValue="${contactPersonsData.contactPersonNationality}"/>
+                                    </div>
+                                    <div class="help-block"></div>
+                                </div>
+                            </div>
+                      <div class="col-md-6">
+                                <div class="formInputBox formInputBox_group ">
+                                    <c:set var="dateOfBirthErrors">
+                                        <form:errors path="dateOfBirth"/>
+                                    </c:set>
+                                    <div class="form-group ${not empty dateOfBirthErrors ? 'has-error' : ''}">
+                                        <input id="qm1DateOfBirth" name="dateOfBirth" class="form-control js-form-control_date" placeholder="." value="${contactPersonsData.dateOfBirth}" data-date="${contactPersonsData.dateOfBirth}" type="text"/>
+                                        <label class="control-label control-label_mandatory" for="qm1DateOfBirth"><spring:theme code="licenseApply.contactPerson.qm1.dateOfBirth"/></label>
+                                        <div class="formInputBox-append">
+                                            <span class="formInputBox-text"><icon:calendar-gray/></span>
+                                        </div>
+                                    </div>
+                                    <div class="help-block">${dateOfBirthErrors}</div>
+                                </div>
+                            </div>
+            <div class="col-md-6">
                <formElement:formSelectBoxCustom idKey="qm1Role"
                               labelKey="licenseApply.contactPerson.qm1.role"
                               path="role" labelCSS="control-label control-label_mandatory"
@@ -134,32 +173,6 @@
                               items="${educations}" itemValue="educationText"
                               itemLabel="educationText" mandatory="true"/>
             </div>
-
-
-			<div class="col-md-6">
-			  <div class="formInputBox ">
-				<div class="form-group">
-					<input id="qm1FullName" name="fullName" class="form-control" placeholder="." type="text" value="${contactPersonsData.fullName}"/>
-                       <label class="control-label control-label_mandatory" for="qm1FullName">
-                          <spring:theme code="general.nationality.contact.person.fullname"/></label>
-						<div class="help-block"></div>
-						<div class="success-message-block "></div>
-					</div>
-			  </div>
-			</div>
-
-                <div class="col-md-6 mb-3">
-                    <div class="formSelectBox">
-                        <div class="form-group">
-                        <formElement:formSelectBoxCustom idKey="qm1Nationality"
-                                                      labelKey="general.nationality.contact.person"
-                                                      path="contactPersonNationality" labelCSS="control-label control-label_mandatory"
-                                                      selectCSSClass="js-select2-oneColumn form-control"
-                                                      selectedDataValue="${contactPersonsData.contactPersonNationality}"/>
-                        </div>
-                        <div class="help-block"></div>
-                    </div>
-                </div>
 
             <div class="col-md-6">
                  <formElement:formInputBoxCustom idKey="qm1PassportNumber" maxlength="60"  

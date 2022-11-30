@@ -807,6 +807,14 @@
                         <dd><c:out value="${contactPerson.email}"/></dd>
                     </dl>
                 </div>
+                  <div class="col-sm-6 col-md-4">
+                    <dl class="dlList">
+                        <dt><spring:theme code="general.nationality.contact.person"/></dt>
+                        <dd><c:out value="${contactPerson.nationalityText}"/></dd>
+                        <dt><spring:theme code="general.nationality.contact.person.fullname"/></dt>
+                        <dd><c:out value="${contactPerson.fullName}"/></dd>
+                    </dl>
+                </div>
             </div>
         </div>
 

@@ -1490,7 +1490,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
             });
 
             $("#branchInformationRhqCountry").multiselect({
-                title: "Select / تحديد",
+                title: getI18nText("rhq.select.option.value"),
                 modalSize: "md"
             });
           //  self.updateSelectValues($("#branchInformationRhqCountry"));
@@ -1528,7 +1528,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
                     }
                     setTimeout(function () {
                     $("#rhqCheckbox").multiselect({
-                        title: "Select / تحديد",
+                        title: getI18nText("rhq.select.option.value"),
                         modalSize: "md"
                     });},500);
 
@@ -1562,7 +1562,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
                            });
                        }
                        $("#branchInformationRhqRegionsSection").multiselect({
-                           title: "Select / تحديد",
+                           title: getI18nText("rhq.select.option.value"),
                            modalSize: "md"
                        });
 
@@ -1601,7 +1601,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
                            }
 
                         $("#rhqStrategicCheckbox").multiselect({
-                            title: "Select / تحديد",
+                            title: getI18nText("rhq.select.option.value"),
                             modalSize: "md"
                         });
 
@@ -1653,7 +1653,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
 
 
                 $("#rhqManagementFunCheckbox").multiselect({
-                    title: "Select / تحديد",
+                    title: getI18nText("rhq.select.option.value"),
                     modalSize: "md"
                 });
             },1500);
@@ -1695,7 +1695,7 @@ let objectRhqCompanyRankedInFortuneOptions = [{"value":"Yes","text":getI18nText(
                 catch(e){console.log(e);}
 
                 $("#rhqCenterAdmin").multiselect({
-                    title: "Select / تحديد",
+                    title: getI18nText("rhq.select.option.value"),
                     modalSize: "md"
                 });
             },1500);

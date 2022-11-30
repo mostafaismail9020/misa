@@ -3453,6 +3453,7 @@
 		<property name="passportExpiryDate" type="String"/>
 		<property name="country" type="String"/>
 		<property name="contactPersonNationality" type="String"/>
+		<property name="nationalityText" type="String"/>
 		<property name="countryText" type="String"/>
 		<property name="city" type="String"/>
 		<property name="address" type="String"/>

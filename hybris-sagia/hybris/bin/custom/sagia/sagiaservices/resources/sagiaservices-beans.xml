@@ -2532,6 +2532,8 @@
 		<property name="MobileNo" type="java.lang.String" />
 		<property name="Email" type="java.lang.String" />
 		<property name="Return" type="java.lang.String" />
+		<property name="EnglishName" type="java.lang.String" />
+		<property name="Nationality" type="java.lang.String" />
 	</bean>
 
 	<bean

@@ -202,10 +202,10 @@
 			<div class="form-group">
 				<select id="editBranchBuz" name="editBranchBuz" class="js-select2-search form-control" >
 					<option></option>
-					 <option value="Joint Venture">Joint Venture</option>
-                     <option value="Affiliate">Affiliate</option>
-                     <option value="Distributor">Distributor</option>
-                     <option value="Others">Others</option>
+					 <option value="<spring:theme code='rhq.addbranch.jointventure.label' />"><spring:theme code="rhq.addbranch.jointventure.label" /></option>
+                     <option value="<spring:theme code='rhq.addbranch.affiliate.label' />"><spring:theme code="rhq.addbranch.affiliate.label" /></option>
+                     <option value="<spring:theme code='rhq.addbranch.distributor.label'/>"><spring:theme code="rhq.addbranch.distributor.label" /></option>
+                     <option value="<spring:theme code='rhq.addbranch.others.label'/>"><spring:theme code="rhq.addbranch.others.label" /></option>
 				</select>
 				<label class="control-label" for=""><spring:theme code="rhq.business.relationship.type.label" /></label>
 				<div id="editBranchBuz-error" class="help-block"></div>
@@ -230,9 +230,9 @@
 			<div class="form-group">
 				<select id="editBranchOperation" name="editBranchOperation" class="js-select2-search form-control" data-search-placeholder="">
 					<option></option>
-					 <option value="Manufacturing">Manufacturing</option>
-                    <option value="Assembly">Assembly</option>
-                    <option value="Others">Others</option>
+					 <option value="<spring:theme code='rhq.addbranchoperation.manufacturing.label' />"><spring:theme code="rhq.addbranchoperation.manufacturing.label" /></option>
+                    <option value="<spring:theme code='rhq.addbranchoperation.assembly.label' />"><spring:theme code="rhq.addbranchoperation.assembly.label" /></option>
+                    <option value="<spring:theme code='rhq.addbranchoperation.others.label' />"><spring:theme code="rhq.addbranchoperation.others.label" /></option>
 				</select>
 				<label class="control-label" for=""><spring:theme code="rhq.operation.label" /></label>
 				<div id="editBranchOperation-error" class="help-block"></div>
@@ -313,10 +313,10 @@
 			<div class="form-group">
 				<select id="addBranchBuz" name="addBranchBuz" class="js-select2-search form-control" >
 					<option></option>
-					 <option value="Joint Venture">Joint Venture</option>
-                     <option value="Affiliate">Affiliate</option>
-                     <option value="Distributor">Distributor</option>
-                     <option value="Others">Others</option>
+					 <option value="<spring:theme code='rhq.addbranch.jointventure.label' />"><spring:theme code="rhq.addbranch.jointventure.label" /></option>
+                     <option value="<spring:theme code='rhq.addbranch.affiliate.label' />"><spring:theme code="rhq.addbranch.affiliate.label" /></option>
+                     <option value="<spring:theme code='rhq.addbranch.distributor.label' />"><spring:theme code="rhq.addbranch.distributor.label" /></option>
+                     <option value="<spring:theme code='rhq.addbranch.others.label' />"><spring:theme code="rhq.addbranch.others.label" /></option>
 				</select>
 				<label class="control-label" for=""><spring:theme code="rhq.business.relationship.type.label" /></label>
 				<div id="addBranchBuz-error" class="help-block"></div>
@@ -341,9 +341,9 @@
 			<div class="form-group">
 				<select id="addBranchOperation" name="addBranchOperation" class="js-select2-search form-control" data-search-placeholder="">
 					<option></option>
-					 <option value="Manufacturing">Manufacturing</option>
-                    <option value="Assembly">Assembly</option>
-                    <option value="Others">Others</option>
+					 <option value="<spring:theme code='rhq.addbranchoperation.manufacturing.label' />"><spring:theme code="rhq.addbranchoperation.manufacturing.label" /></option>
+                    <option value="<spring:theme code='rhq.addbranchoperation.assembly.label' />"><spring:theme code="rhq.addbranchoperation.assembly.label" /></option>
+                    <option value="<spring:theme code='rhq.addbranchoperation.others.label' />"><spring:theme code="rhq.addbranchoperation.others.label" /></option>
 				</select>
 				<label class="control-label" for=""><spring:theme code="rhq.operation.label" /></label>
 				<div id="addBranchOperation-error" class="help-block"></div>
@@ -367,7 +367,7 @@
 			</div>
 			<div class="modal-footer modal-footer_centered">
 
-				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddBranch">Add</button>
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddBranch"><spring:theme code="rhq.newbranch.add.label" /></button>
 			</div>
 		</div>
 	</div>
@@ -460,7 +460,7 @@
 				</div>
 			</div>
 			<div class="modal-footer modal-footer_centered">
-				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddBrand">Add</button>
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddBrand"><spring:theme code="rhq.add.new.label" /></button>
 			</div>
 		</div>
 	</div>
@@ -554,7 +554,7 @@
 				</div>
 			</div>
 			<div class="modal-footer modal-footer_centered">
-				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditBrand">Update</button>
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditBrand"><spring:theme code="rhq.update.label" /></button>
 			</div>
 		</div>
 	</div>
@@ -672,7 +672,7 @@
 				</div>
 			</div>
 			<div class="modal-footer modal-footer_centered">
-				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddItem">Add</button>
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityAddItem"><spring:theme code="rhq.add.new.label" /></button>
 			</div>
 		</div>
 	</div>
@@ -791,7 +791,7 @@
 				</div>
 			</div>
 			<div class="modal-footer modal-footer_centered">
-				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditItem">Update</button>
+				<button type="button" class="btn btn_slim" data-dismiss="modal" id="entityEditItem"><spring:theme code="rhq.update.label" /></button>
 			</div>
 		</div>
 	</div>

@@ -45,6 +45,11 @@ public class ContactPersonODataPopulator implements Populator<ContactPersonModel
 	        target.setCcode_Mobile(source.getCountryCodeMobile());
 	        target.setMobileNo(source.getMobileNumber());
 	        target.setEmail(source.getEmail());
+	        target.setEnglishName(source.getFullName());
+	        if(null!=source.getNationality())
+			{
+				target.setNationality(source.getNationality().getCode());
+			}
 	}
 	
 	private String odataDate(Date value) {

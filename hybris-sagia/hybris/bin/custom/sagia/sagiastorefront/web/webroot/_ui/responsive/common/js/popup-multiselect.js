@@ -41,7 +41,7 @@
       '<div class="select modal in" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><div><h5 class="modal-title"></h5><div class="help-block"></div></div><span class="float-right clickable close" aria-hidden="true">&#9747;</span></div><div class="modal-body"></div></div></div></div>',
     modalOptionTemplate:
       '<div class="option clickable"><span class="option-text"></span><span class="option-tick"><span class="icon icon-ok" aria-hidden="true">&#x2713;</span></span></div>',
-    title: "Select Options"
+    title: getI18nText("rhq.select.option.value")
   };
 
   MultiSelect.prototype.init = function(element, options) {

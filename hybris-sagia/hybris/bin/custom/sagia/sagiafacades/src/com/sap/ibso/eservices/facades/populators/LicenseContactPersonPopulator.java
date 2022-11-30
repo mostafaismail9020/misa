@@ -52,6 +52,7 @@ public class LicenseContactPersonPopulator implements Populator<ContactPersonMod
 		target.setFullName(source.getFullName());
 		if(null!=source.getNationality()) {
 			target.setContactPersonNationality(source.getNationality().getCode());
+			target.setNationalityText(source.getNationality().getName());
 		}
 
 		if(source.getDateOfBirth() != null){

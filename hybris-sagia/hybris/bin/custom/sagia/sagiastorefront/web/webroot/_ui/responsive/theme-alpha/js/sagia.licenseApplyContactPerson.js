@@ -462,6 +462,8 @@ SAGIA.licenseApplyContactPerson = {
 
     		$("#qm1FirstName").val("").removeAttr('disabled');
     		$("#qm1LastName").val("").removeAttr('disabled');
+    		$("#qm1FullName").val("").removeAttr('disabled');
+    		$("#qm1Nationality").val("").trigger("blur").trigger('change');
     		$("#qm1Role").val("").trigger("blur").trigger('change');
     		$("#qm1Education").val("").trigger("blur").trigger('change');
         	$("#qm1DateOfBirth").val("").removeAttr('disabled');

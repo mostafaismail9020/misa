@@ -105,22 +105,23 @@
               <formElement:formInputBoxCustom idKey="qm1FirstName" maxlength="40"
                                             labelKey="licenseApply.contactPerson.qm1.firstName" path="firstName"
                                             labelCSS="control-label control-label_mandatory"
-                                            inputCSS="text validate__no-special-chars-with-arabic" mandatory="true" />
+                                            inputCSS="validate__mandatory validate__arabic-only" mandatory="true" />
             </div>
 
             <div class="col-md-6">
                  <formElement:formInputBoxCustom idKey="qm1LastName" maxlength="40"
                                     labelKey="licenseApply.contactPerson.qm1.lastName" path="lastName"
                                     labelCSS="control-label control-label_mandatory"
-                                    inputCSS="text validate__no-special-chars-with-arabic" mandatory="true" />
+                                    inputCSS="validate__mandatory validate__arabic-only" mandatory="true" />
             </div>
 
             <div class="col-md-6">
             			  <div class="formInputBox ">
             				<div class="form-group">
-            					<input id="qm1FullName" name="fullName" class="form-control" placeholder="." type="text" value="${contactPersonsData.fullName}"/>
-                                   <label class="control-label control-label_mandatory" for="qm1FullName">
-                                      <spring:theme code="general.nationality.contact.person.fullname"/></label>
+            				        <formElement:formInputBox idKey="qm1FullName"
+                                    					labelKey="general.fullname.english" path="fullName"
+                                    					labelCSS="control-label_mandatory" maxlength="100"
+                                    					inputCSS="validate__mandatory validate__characters-only" />
             						<div class="help-block"></div>
             						<div class="success-message-block "></div>
             					</div>

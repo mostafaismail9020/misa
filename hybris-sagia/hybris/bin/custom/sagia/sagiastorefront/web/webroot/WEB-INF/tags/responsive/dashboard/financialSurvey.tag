@@ -40,7 +40,7 @@
  			</div>
         </div>
         <div class="firstBlock-contact d-flex row mt-5 mb-3">
-		<div class="firstBlock-contact-local line-after col-md-6">
+		<%--<div class="firstBlock-contact-local line-after col-md-6">
                                     <div>
                                         <img  alt="" src="${commonResourcePath}/images/Contact-us/local.png"/>
                                     </div>
@@ -54,7 +54,7 @@
                                             <spring:theme code="financial.survey.connectwithus.phone.number"/>
                                         </span>
                                     </div>
-                                </div>
+                                </div>--%>
         <div class="firstBlock-contact-local col-md-3">
                                     <div>
                                         <img  alt="" src="${commonResourcePath}/images/Contact-us/email.png"/>

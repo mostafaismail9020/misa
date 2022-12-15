@@ -141,7 +141,7 @@ public class MeetTheKingdomController extends DefaultPageController {
         if (null != provinceId) {
         	provinceDetails = investSaudiProvinceRegionService.getProvinceRegionDetails(provinceId);
 	    }
-                    
+        model.addAttribute("provinceReport", provinceDetails.getProvinceReport());
         model.addAttribute("provinceDetails", provinceDetails);
         
         if(null != provinceDetails.getStrategicDetails()) {

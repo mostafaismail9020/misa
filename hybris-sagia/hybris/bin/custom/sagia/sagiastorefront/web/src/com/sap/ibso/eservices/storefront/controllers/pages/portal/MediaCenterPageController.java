@@ -1,10 +1,8 @@
 package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 
-import com.investsaudi.portal.core.model.InvestSaudiNewsComponentModel;
-import com.investsaudi.portal.core.model.InvestSaudiEventsComponentModel;
-import com.investsaudi.portal.core.model.InvestSaudiResourceComponentModel;
-import com.investsaudi.portal.core.model.InvestSaudiWebinarVideoComponentModel;
+import com.investsaudi.portal.core.model.*;
 import com.investsaudi.portal.core.service.InvestSaudiMediaCenterService;
+import com.investsaudi.portal.core.service.InvestSaudiProvinceRegionService;
 import com.investsaudi.portal.core.service.utils.PaginationUtils;
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.impl.ContentPageBreadcrumbBuilder;
 import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
@@ -81,7 +79,9 @@ public class MediaCenterPageController extends AbstractPageController {
     
     @Resource
     private CommonI18NService commonI18NService;
-    
+
+	@Resource
+	private InvestSaudiProvinceRegionService investSaudiProvinceRegionService;
     
     @RequestMapping(method = {RequestMethod.GET})
     public String homePage(final Model model, final HttpServletRequest request, final HttpServletResponse response)
@@ -288,7 +288,9 @@ public class MediaCenterPageController extends AbstractPageController {
     }
     
     @RequestMapping(value = "/downloadResoruce/{resourceCode}", method = RequestMethod.GET)
-    public void getResourceFile(@PathVariable("resourceCode") final String resourceCode, final Model model,
+    public void getResourceFile(@PathVariable("resourceCode") final String resourceCode,
+								@RequestParam(name="report", required = false) String report,
+								final Model model,
             final HttpServletRequest request, final HttpServletResponse response)
     {
     	LOG.info("Entered into resource file service controller");
@@ -298,10 +300,26 @@ public class MediaCenterPageController extends AbstractPageController {
     	 
     	try {
 			MediaContainerModel containerModel=null;
+			MediaContainerModel containerModel1=null;
+
     		if(resourceCode.contains("news"))
 			{
 				InvestSaudiNewsComponentModel newsResourceModel  = investSaudiMediaCenterService.getNewsDetailsPage(resourceCode);
 				containerModel = newsResourceModel.getResourceFullReport();
+			}
+    		else if (resourceCode.contains("province"))
+			{
+				if(resourceCode.contains("regionOverview")) {
+					ProvinceComponentModel provinceResourceModel = investSaudiProvinceRegionService.getProvinceRegionDetails("regionOverview");
+					containerModel = provinceResourceModel.getProvinceReport().getRegionalReport();
+				}
+				else
+				{
+					ProvinceComponentModel provinceResourceModel = investSaudiProvinceRegionService.getProvinceRegionDetails(resourceCode.replace("province-",""));
+					containerModel = provinceResourceModel.getProvinceReport().getRegionalReport();
+					containerModel1 = provinceResourceModel.getProvinceReport().getStatisticalReport();
+
+				}
 			}
     		else
 			{
@@ -309,37 +327,54 @@ public class MediaCenterPageController extends AbstractPageController {
 				containerModel = resourceModel.getResourceFullReport();
 			}
 
-    		final Collection<MediaModel> mediaModels = containerModel.getMedias();           
-    		if (CollectionUtils.isNotEmpty(mediaModels))
-    		{
-    			for (final MediaModel media : mediaModels)
-    			{
-    				LOG.info("media code: " +media.getCode());
-    				LOG.info("current Language: " +commonI18NService.getCurrentLanguage().getName());    				
-    				if (media != null && media.getCode().toLowerCase().contains(commonI18NService.getCurrentLanguage().getName().toLowerCase()))
-    				{
-    					LOG.info("entered into media code and Language");	
-    					is = mediaService.getStreamFromMedia(media);
-    					fileName = media.getRealFileName();
-    				}
-    			}	
-    		}
+			if(null!=containerModel && null!=report && report.equals("regional")) {
+				final Collection<MediaModel> mediaModels = containerModel.getMedias();
+					setMediaToDownload(response, is, fileName, mediaModels);
+			}
+			else if (null!=containerModel && null!=report && report.equals("statistical")) {
+				final Collection<MediaModel> mediaModels1 = containerModel1.getMedias();
+					setMediaToDownload(response, is, fileName, mediaModels1);
+			}
+			else{
+				final Collection<MediaModel> mediaModels = containerModel.getMedias();
+				setMediaToDownload(response, is, fileName, mediaModels);
+			}
 
-    		// copy it to response's OutputStream
-    		if(is != null)	
-    		{    		
-    			response.setContentType("application/pdf");
-                response.addHeader("Content-Disposition", "attachment; filename="+fileName);
-
-    			LOG.info("before downloading the file");	
-    			org.apache.commons.io.IOUtils.copy(is, response.getOutputStream());
-    			response.getOutputStream().flush();
-    		}
-    		LOG.info("Exit from resource file service controller");
-
-    	} catch (IOException ex) {
+		} catch (IOException ex) {
     		LOG.info("Error writing file to output stream. Filename was '{}'"+ ex);
     		throw new RuntimeException("IOError writing file to output stream");
     	}
-    }       
+    }
+
+	private void setMediaToDownload(HttpServletResponse response, InputStream is, String fileName, Collection<MediaModel> mediaModels) throws IOException {
+		if (CollectionUtils.isNotEmpty(mediaModels))
+		{
+			for (final MediaModel media : mediaModels)
+			{
+				LOG.info("media code: " +media.getCode());
+				LOG.info("current Language: " +commonI18NService.getCurrentLanguage().getName());
+				if (media != null && media.getCode().toLowerCase().contains(commonI18NService.getCurrentLanguage().getName().toLowerCase()))
+				{
+					LOG.info("entered into media code and Language");
+					is = mediaService.getStreamFromMedia(media);
+					fileName = media.getRealFileName();
+				}
+				// copy it to response's OutputStream
+				flushMedia(response, is, fileName);
+			}
+		}
+	}
+
+	private void flushMedia(HttpServletResponse response, InputStream is, String fileName) throws IOException {
+		if(is != null)
+		{
+			response.setContentType("application/pdf");
+			response.addHeader("Content-Disposition", "attachment; filename="+fileName);
+
+			LOG.info("before downloading the file");
+			org.apache.commons.io.IOUtils.copy(is, response.getOutputStream());
+			response.getOutputStream().flush();
+		}
+		LOG.info("Exit from resource file service controller");
+	}
 }

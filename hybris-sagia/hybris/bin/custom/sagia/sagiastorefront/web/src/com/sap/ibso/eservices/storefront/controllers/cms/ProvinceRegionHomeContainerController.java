@@ -3,9 +3,11 @@
  */
 package com.sap.ibso.eservices.storefront.controllers.cms;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import com.investsaudi.portal.core.model.ProvinceRegionHomeContainerModel;
 
+import com.investsaudi.portal.core.service.InvestSaudiProvinceRegionService;
 import de.hybris.platform.cms2.model.contents.components.SimpleCMSComponentModel;
 import de.hybris.platform.acceleratorcms.model.components.CMSTabParagraphContainerModel;
 import org.springframework.stereotype.Controller;
@@ -25,12 +27,17 @@ import org.slf4j.LoggerFactory;
 public class ProvinceRegionHomeContainerController extends AbstractAcceleratorCMSComponentController<ProvinceRegionHomeContainerModel>
 {
 	private static final Logger LOG = LoggerFactory.getLogger(ProvinceRegionHomeContainerController.class);
-	
+	@Resource
+	private InvestSaudiProvinceRegionService investSaudiProvinceRegionService;
+
 	@Override
 	protected void fillModel(final HttpServletRequest request, final Model model, final ProvinceRegionHomeContainerModel component)
 	{
 		LOG.debug("---------ProvinceRegionHomeContainerController---------------");
-		
+		if(null!= investSaudiProvinceRegionService.getProvinceRegionDetails("regionOverview"))
+		{
+			model.addAttribute("provinceReport", investSaudiProvinceRegionService.getProvinceRegionDetails("regionOverview").getProvinceReport());
+		}
 		List<SimpleCMSComponentModel> simpleCMSComponents = new ArrayList<>();
         simpleCMSComponents.addAll(component.getSimpleCMSComponents());
 		model.addAttribute("components", simpleCMSComponents);

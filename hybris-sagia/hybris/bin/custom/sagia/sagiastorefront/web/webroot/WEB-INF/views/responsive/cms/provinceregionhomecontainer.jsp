@@ -3,7 +3,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
-                    
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <!-- Breadcurms -->
 <!--End of  Breadcurms -->
 <section class="regions-title-container"> 
@@ -205,8 +206,35 @@
                     <c:forEach var="currentComponent" items="${components}" varStatus="status">
                         <cms:component component="${currentComponent}" element="div" class="item meetRegions_item"/>
                     </c:forEach>
-                </div>  
+                </div>
+                <div class="banner-container container aos-init aos-animate" >
+                        <c:if test="${not empty provinceReport.regionalReport}">
+                            <div class="text-center download_btn">
+                             <h1 class="title-heading">${provinceReport.regionReportTitle}</h1>
+                              <h2>${provinceReport.regionReportDescription}</h2>
+                              <br>
+                                 <c:url value="/mediaCenter/downloadResoruce/${provinceReport.uid}" var="resourcedownloadURL"/>
+                                 	<button><a href="${resourcedownloadURL}" target="_blank"><spring:theme code="province.guide.to.uncover.proposition.download.button.home" text= "Download your copy"/></a></button>
+                             </div>
+                        </c:if>
+                </div>
         <!-- <c:if test="${not empty mapLogo}">
                 <img class="img-fluid w-100" src="${mapLogo.url}" alt='${mapLogo.altText}' title='${mapLogo.altText}' style="">
             </c:if> -->
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

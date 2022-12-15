@@ -5953,6 +5953,48 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="ProvinceRegionReportComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.ProvinceRegionReportComponent">
+                <description>Province Region Report Component</description>
+                <attributes>
+                    <attribute qualifier="regionReportTitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Region Report Title</description>
+                    </attribute>
+                    <attribute qualifier="regionReportDescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <description>Region Report Description</description>
+                    </attribute>
+                    <attribute qualifier="regionalReport" type="MediaContainer">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Regional Report</description>
+                    </attribute>
+                    <attribute qualifier="statisticalReport" type="MediaContainer">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Statistical Report of a Region</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
 			<itemtype code="ExploreKeyReasonsComponent" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.ExploreKeyReasonsComponent">
@@ -7519,6 +7561,11 @@
 	                    </persistence>
 	                    <modifiers dontOptimize="true"/>
 	            	</attribute>
+                    <attribute qualifier="provinceReport" type="ProvinceRegionReportComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Province Report</description>
+                    </attribute>
                 </attributes>
 			</itemtype>
 

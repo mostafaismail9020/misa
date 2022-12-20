@@ -478,20 +478,25 @@
             </section>
             </c:if>
              <div class="banner-container container aos-init aos-animate" >
-                <c:if test="${not empty provinceReport.regionalReport}">
+                <c:if test="${not empty provinceReport.regionalReport || not empty provinceReport.statisticalReport }">
                     <div class="text-center download_btn">
                         <h1 class="title-heading">${provinceReport.regionReportTitle}</h1>
                          <h2>${provinceReport.regionReportDescription}</h2>
                          <br>
+                         <c:if test="${not empty provinceReport.regionalReport}">
                          <c:url value="/mediaCenter/downloadResoruce/${provinceReport.uid}?report=regional" var="resourcedownloadURL"/>
                             <button class=""><a href="${resourcedownloadURL}" target="_blank"><spring:theme code="province.guide.to.uncover.proposition.download.button" text= "Download your copy"/></a></button>
-                      <c:url value="/mediaCenter/downloadResoruce/${provinceReport.uid}?report=statistical" var="resourcedownloadURL"/>
-                      <button class=""><a href="${resourcedownloadURL}" target="_blank"><spring:theme code="province.statistical.report.download.button" text= "Download your copy"/></a></button>
+                         </c:if>
+                         <c:if test="${not empty provinceReport.statisticalReport }">
+                         <c:url value="/mediaCenter/downloadResoruce/${provinceReport.uid}?report=statistical" var="resourcedownloadURL"/>
+                            <button class=""><a href="${resourcedownloadURL}" target="_blank"><spring:theme code="province.statistical.report.download.button" text= "Download your copy"/></a></button>
+                         </c:if>
                       </div>
                  </c:if>
                 <br>
                 <br>
              </div>
+
                                         <%-- <div class="inc-strategic-details row" style="background-image: url(${strategicDetails.backgroundImage.url});">
 <p>${strategicDetails.sectorHeader}</p>
 <p>${strategicDetails.longDescription}</p>

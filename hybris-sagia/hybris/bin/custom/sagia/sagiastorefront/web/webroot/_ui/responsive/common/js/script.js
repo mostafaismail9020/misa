@@ -5150,6 +5150,14 @@ $("#facetFilterModal .close-facet").click(function(){
 });
 
 $(document).ready(function () {
+	var PageLang = document.getElementsByTagName("html")[0].getAttribute("lang");
+    		if(PageLang == 'en'){
+    			$('.socialMediaFeedEn').css({'display' : 'block'});
+    			$('.socialMediaFeedAr').css({'display' : 'none'});
+    		}else if(PageLang == 'ar'){
+    			$('.socialMediaFeedEn').css({'display' : 'none'});
+    			$('.socialMediaFeedAr').css({'display' : 'block'});
+    		}
 	try {
 		$(".page-economic-investment-reports .news-card .news-card-inner p").text(function (index, currentText) {
 			// var maxLength = $(this).parent().attr('data-maxlength');

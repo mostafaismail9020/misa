@@ -25,6 +25,7 @@ import de.hybris.platform.servicelayer.dto.converter.ConversionException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
+import de.hybris.platform.servicelayer.session.SessionService;
 import de.hybris.platform.ticketsystem.data.ContactTicketParameter;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -51,46 +52,56 @@ public class ContactTicketPopulator<SOURCE extends ContactTicketParameter, TARGE
     @Resource(name = "configurationService")
     private ConfigurationService configurationService;
 
+    @Resource(name = "sessionService")
+    private SessionService sessionService;
+
+
     @Override
     public void populate(SOURCE source, TARGET target) throws ConversionException {
 
-        List<String> sendEmailsTo = new ArrayList<>();
-        sendEmailsTo.add(configurationService.getConfiguration().getString(CONTACT_DEFAULT_EMAIL_TO));
-        try {
-            CategoryModel sector = categoryService.getCategoryForCode(source.getCategoryCode());
-            if (sector != null && StringUtils.isNotBlank(sector.getEmailList())) {
-                sendEmailsTo.addAll(Arrays.asList(StringUtils.split(sector.getEmailList(), ",")));
+        if(null!=sessionService.getAttribute("isMizaContactUsFlow"))
+        {
+            target.setSendEmailTo("miza@misa.gov.sa");
+        }
+        else {
+            List<String> sendEmailsTo = new ArrayList<>();
+            sendEmailsTo.add(configurationService.getConfiguration().getString(CONTACT_DEFAULT_EMAIL_TO));
+            try {
+                CategoryModel sector = categoryService.getCategoryForCode(source.getCategoryCode());
+                if (sector != null && StringUtils.isNotBlank(sector.getEmailList())) {
+                    sendEmailsTo.addAll(Arrays.asList(StringUtils.split(sector.getEmailList(), ",")));
+                }
+
+                String opportunity = StringUtils.isNoneEmpty(source.getOpportunity()) ?
+                        " - Opportunity: " + source.getOpportunity() : "";
+                target.setSectorCategory((sector != null ? sector.getName() :
+                        source.getCategoryCode()) + opportunity);
+                target.setSectorCategoryCode(source.getCategoryCode());
+                target.setOpportunityCode(StringUtils.isNoneEmpty(source.getProductCode()) ? source.getProductCode() : "");
+                target.setOpportunityName(StringUtils.isNoneEmpty(source.getOpportunity()) ? source.getOpportunity() : "");
+                target.setSectorCategoryName(sector != null ? sector.getName() : source.getCategoryCode());
+                target.setC4CAccountID(StringUtils.isNoneEmpty(source.getC4CAccountID()) ? source.getC4CAccountID() : "");
+                target.setCommerceUserID(StringUtils.isNoneEmpty(source.getCommerceUserID()) ? source.getCommerceUserID() : "");
+
+            } catch (UnknownIdentifierException e) {
+                log.warn("Category with code [{}]  not found", source.getCategoryCode(), e);
+                target.setSectorCategory(source.getOpportunity());
             }
 
-            String opportunity = StringUtils.isNoneEmpty(source.getOpportunity()) ?
-                " - Opportunity: " + source.getOpportunity() : "";
-            target.setSectorCategory((sector != null ? sector.getName() :
-                source.getCategoryCode()) + opportunity);
-			target.setSectorCategoryCode(source.getCategoryCode());
-            target.setOpportunityCode(StringUtils.isNoneEmpty(source.getProductCode()) ? source.getProductCode() : "");
-            target.setOpportunityName(StringUtils.isNoneEmpty(source.getOpportunity()) ? source.getOpportunity() : "");
-            target.setSectorCategoryName(sector != null ? sector.getName() : source.getCategoryCode());
-            target.setC4CAccountID(StringUtils.isNoneEmpty(source.getC4CAccountID()) ? source.getC4CAccountID() : "");
-            target.setCommerceUserID(StringUtils.isNoneEmpty(source.getCommerceUserID()) ? source.getCommerceUserID() : "");
-
-        } catch (UnknownIdentifierException e) {
-            log.warn("Category with code [{}]  not found", source.getCategoryCode(), e);
-            target.setSectorCategory(source.getOpportunity());
-        }
-
-        String queryString = "Select {pk} FROM {ContactTicketPurpose} WHERE {code}=?code";
-        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
-        query.addQueryParameter("code", StringUtils.isNotBlank(source.getContactSubject()) ? source.getContactSubject():"interest-invest");
-        var contactSubjects = flexibleSearchService.<ContactTicketPurposeModel>search(query).getResult();
-        if (CollectionUtils.isNotEmpty(contactSubjects)) {
-            if (StringUtils.isNoneEmpty(contactSubjects.get(0).getEmailList())) {
-                sendEmailsTo.addAll(Arrays.asList(StringUtils.split(contactSubjects.get(0).getEmailList(), ",")));
+            String queryString = "Select {pk} FROM {ContactTicketPurpose} WHERE {code}=?code";
+            final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+            query.addQueryParameter("code", StringUtils.isNotBlank(source.getContactSubject()) ? source.getContactSubject() : "interest-invest");
+            var contactSubjects = flexibleSearchService.<ContactTicketPurposeModel>search(query).getResult();
+            if (CollectionUtils.isNotEmpty(contactSubjects)) {
+                if (StringUtils.isNoneEmpty(contactSubjects.get(0).getEmailList())) {
+                    sendEmailsTo.addAll(Arrays.asList(StringUtils.split(contactSubjects.get(0).getEmailList(), ",")));
+                }
+                target.setHeadline(contactSubjects.get(0).getLabel());
+                target.setContactSubject(contactSubjects.get(0).getLabel());
             }
-            target.setHeadline(contactSubjects.get(0).getLabel());
-            target.setContactSubject(contactSubjects.get(0).getLabel());
-        }
-        target.setSendEmailTo(StringUtils.join(sendEmailsTo, ","));
+            target.setSendEmailTo(StringUtils.join(sendEmailsTo, ","));
 
+        }
         target.setName(source.getName());
         target.setEmail(source.getEmail());
         target.setMobile(source.getMobile());

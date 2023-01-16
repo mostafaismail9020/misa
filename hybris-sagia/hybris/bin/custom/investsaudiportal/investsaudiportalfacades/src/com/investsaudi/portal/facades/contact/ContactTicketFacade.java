@@ -4,10 +4,12 @@ import javax.annotation.Resource;
 import java.util.List;
 
 import com.investsaudi.portal.core.model.ContactTicketSubjectModel;
+import com.investsaudi.portal.core.model.MizaServiceTypeForFormModel;
 import com.investsaudi.portal.core.service.ContactTicketBusinessService;
 import de.hybris.platform.customerticketingfacades.customerticket.DefaultCustomerTicketingFacade;
 import de.hybris.platform.customerticketingfacades.data.ContactTicketData;
 import de.hybris.platform.customerticketingfacades.data.ContactTicketSubjectData;
+import de.hybris.platform.customerticketingfacades.data.MizaServiceTypeForFormData;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
@@ -25,6 +27,9 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
     @Autowired
     @Resource(name = "contactTicketSubjectConverter")
     private Converter<ContactTicketSubjectModel, ContactTicketSubjectData> contactTicketSubjectConverter;
+    @Autowired
+    @Resource(name = "mizaServiceTypeConverter")
+    private Converter<MizaServiceTypeForFormModel, MizaServiceTypeForFormData> mizaServiceTypeConverter;
 
     @Autowired
     private ContactTicketBusinessService contactTicketBusinessService;
@@ -71,5 +76,11 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         final FlexibleSearchQuery query = new FlexibleSearchQuery("Select {pk} FROM {ContactTicketSubject}");
         var contactSubjects = flexibleSearchService.<ContactTicketSubjectModel>search(query).getResult();
         return contactTicketSubjectConverter.convertAll(contactSubjects);
+    }
+
+    public List<MizaServiceTypeForFormData> getMizaServiceTypes() {
+        final FlexibleSearchQuery query = new FlexibleSearchQuery("Select {pk} FROM {MizaServiceTypeForForm}");
+        var contactSubjects = flexibleSearchService.<MizaServiceTypeForFormModel>search(query).getResult();
+        return mizaServiceTypeConverter.convertAll(contactSubjects);
     }
 }

@@ -337,10 +337,18 @@
 		<property name="resource" value="classpath:/investsaudisecureportal/processes/opportunityUserEmailProcess.xml"/>
 	</bean>
 
+	<bean id="mizaTicketEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/mizaTicketEmailProcess.xml"/>
+	</bean>
+
 	<bean id="opportunityUserEmailAction" parent="abstractGenerateEmailAction">
 		<property name="frontendTemplateName" value="OpportunityUserEmailTemplate"/>
 	</bean>
+	<bean id="mizaUserEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="MizaUserEmailTemplate"/>
+	</bean>
 
 	<bean id="opportunityUserEmailContext" class="com.investsaudi.email.context.OpportunityUserEmailContext" parent="abstractEmailContext" scope="prototype" />
+	<bean id="mizaTicketDetailsEmailContext" class="com.investsaudi.email.context.MizaTicketDetailsEmailContext" parent="abstractEmailContext" scope="prototype" />
 
 </beans>

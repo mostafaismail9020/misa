@@ -1341,6 +1341,15 @@ $(document).ready(function () {
 				valid = false;
 			}
 		}
+		else if(ctrl[0].id === "mizaContactForm"){
+        	var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();
+        	var lblSectorErrorCaptcha = document.getElementById("lblSectorPageErrorCaptcha");
+        	lblSectorErrorCaptcha.innerHTML = "";
+        	if (recaptcha == "") {
+        		lblSectorErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+        		valid = false;
+        	}
+        }
 		
 		return valid;
 	}
@@ -3979,7 +3988,79 @@ $(document).ready(function () {
 		return false;
 	}
 
+//MIZA CHANGES
 
+    var mizaelement = document.getElementsByClassName('btn-miza-contact');
+     var btnText = mizaelement[0] && mizaelement[0].textContent;
+
+	$("#btn-miza-contact").on("click", function () {
+        element.onclick = validateMizaContact(mizaelement);
+    });
+
+ function validateMizaContact(event) {
+    		// console.log(validateForm($("#corForm")));
+    		if (!validateForm($("#mizaContactForm")) == true) {
+    			onMizaContactSubmit();
+    			return true;
+    		}
+    		return false;
+    	}
+
+    function onMizaContactSubmit() {
+        		alert("HI");
+        		//alert(grecaptcha.getResponse(1));
+        		alert(recaptchaChallangeAnswered);
+        		// element[0].disabled = true;
+        		// element[0].textContent = site.messages().sending;
+        		$.ajax({
+        			url: ACC.config.contextPath + '/en/miza-contactus',
+        			async: true,
+        			type: "POST",
+        			contentType: "application/json; charset=utf-8",
+        			dataType: "json",
+        			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
+        			data: JSON.stringify({
+        				name: $.trim($("#mizacrName").val()),
+        				email: $.trim($("#mizacrEmail").val()),
+        				countryCode: $.trim(($(".ddl-countryCode").val() ? $(".ddl-countryCode").val() : "+966")),
+        				mobile: $.trim($("#mizacrMobile").val()),
+        				company: $.trim($("#mizacrCompany").val()),
+        				jobTitle: $.trim($("#mizacrPosition").val()),
+        				message: $.trim($("#mizacrMessage").val()),
+        				contactSubject: $.trim($("#mizacrSubjectID").val())
+        			}),
+        			success: function (data) {
+        				// console.log(data);
+        				// return;
+        				if (data == "mir-robot") {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
+        				}
+        				if (data.indexOf("success") != -1){
+        						dataLayer.push({
+        							'event': 'fire_event',
+        							'category': 'Contact Us Form',
+        							'action': 'Successful Submit'
+        						});
+        					$(".contactSuccess").removeClass("d-none");
+        					$("#mizaContactForm").addClass("d-none");
+        					$('.contact-sucess-ticket').text("Your reference number : "+ data.substring(8));
+        					var scrollDiv = document.getElementById("opp-contact-form").offsetTop - 80;
+        					window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+        				}
+
+        				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
+        				}
+
+        				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
+        					$('#opp-contact-form').find('#g-recaptcha_incorrect').show();
+        				}
+        				// element[0].disabled = false;
+        				// element[0].textContent = btnText;
+        			}
+        		});
+        	}
+   //MIZA CHANGES END
 	$(".open-popup-contact-form").on("click", function () {
 		var buttonId = $(this).attr('id');
        $(".modal-body #buttonId").val(buttonId);
@@ -5165,3 +5246,4 @@ $(document).ready(function () {
 		console.log(err);
 	}
 });
+

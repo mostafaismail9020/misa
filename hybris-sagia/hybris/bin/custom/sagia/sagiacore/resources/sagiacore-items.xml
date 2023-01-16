@@ -37,6 +37,10 @@
        <collectiontype code="BrandPresenceInMENARegionList" elementtype="BrandPresence" autocreate="true" type="list"/>
        <collectiontype code="EstimatedOperatingCostForRhqList" elementtype="OperatingCostForRhq" autocreate="true" type="list"/>
        <collectiontype code="RhqActivitiesList" elementtype="RhqActivities" autocreate="true" type="list"/>
+       <collectiontype code="MizaOurServicesList" elementtype="MizaOurServices" autocreate="true" type="list"/>
+       <collectiontype code="MizaServiceTypeList" elementtype="MizaServiceType" autocreate="true" type="list"/>
+       <collectiontype code="MizaBenefitsAndFeatureCardsList" elementtype="MizaBenefitsAndFeatureCards" autocreate="true" type="list"/>
+       <collectiontype code="MizaOneCoreEngineChildList" elementtype="MizaOneCoreEngineChild" autocreate="true" type="list"/>
 
    </collectiontypes>
 
@@ -10753,6 +10757,315 @@
                       jaloclass="com.investsaudi.portal.core.jalo.SagiaReportsSearchResultComponent">
                 <description>Invest Saudi Reports Search Result Component</description>
             </itemtype>
+        </typegroup>
+        <typegroup name="MIZA">
+            <itemtype code="MizaMainParagraph" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaMainParagraph">
+                <description>MIZA Main Paragraph Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="mizamainparalogo">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaBenefitsAndFeatureCards" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaBenefitsAndFeatureCards">
+                <description>MIZA Benefits And Feature Cards</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Benefits And Feature Cards Title</description>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="mizabenefitsandfeaturecardsimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="knowMore" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaBenefitsAndFeatureParent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaBenefitsAndFeatureParent">
+                <description>MIZA Benefits And Feature Parent</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Benefits And Feature Title</description>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="benefitsandfeatures" type="MizaBenefitsAndFeatureCardsList">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaServiceTypeContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaServiceTypeContainer">
+                <description>MIZA Service Type Container</description>
+                <attributes>
+                <attribute qualifier="servicetypelist" type="MizaServiceTypeList">
+                    <persistence type="property"/>
+                    <description>MIZA Service Type Title</description>
+                </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaOurServiceContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaOurServiceContainer">
+                <description>MIZA Our Services Container</description>
+                <attributes>
+                    <attribute qualifier="ourserviceslist" type="MizaOurServicesList">
+                        <persistence type="property"/>
+                        <description>MIZA Service Type Title</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaServiceType" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaServiceType">
+                <description>MIZA Service Type</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Service Type Title</description>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Service Type Description</description>
+                    </attribute>
+                    <attribute type="Media" qualifier="servicetypeimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaOurServices" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaOurServices">
+                <description>MIZA Benefits And Feature Cards</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Benefits And Feature Cards Title</description>
+                </attribute>
+                <attribute qualifier="description" type="localized:java.lang.String">
+                    <persistence type="property">
+                        <columntype database="oracle">
+                            <value>CLOB</value>
+                        </columntype>
+                        <columntype database="mysql">
+                            <value>TEXT</value>
+                        </columntype>
+                        <columntype database="sqlserver">
+                            <value>nvarchar(max)</value>
+                        </columntype>
+                        <columntype database="sap">
+                            <value>NCLOB</value>
+                        </columntype>
+                        <columntype>
+                            <value>HYBRIS.LONG_STRING</value>
+                        </columntype>
+                    </persistence>
+                </attribute>
+                <attribute type="Media" qualifier="ourserviceimage">
+                    <persistence type="property"/>
+                    <modifiers/>
+                </attribute>
+            </attributes>
+        </itemtype>
+          <itemtype code="MizaContactUsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaContactUsComponent">
+                <description>Miza Contact Us Component</description>
+                <attributes>
+                    <attribute qualifier="customerName" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="company" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mobileNumber" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="email" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="position" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="serviceType" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="enquiry" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaServiceTypeForForm" generate="true" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaServiceTypeForForm">
+                <description>Invest Saudi Contact Us Ticket Purpose</description>
+                <deployment table="MizaServiceTypeForForm" typecode="32084"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="label" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="MizaOneCoreEngineChild" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaOneCoreEngineChild">
+                <description>MIZA Benefits And Feature Cards</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Benefits And Feature Cards Title</description>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute type="Media" qualifier="mizaonecorechildimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaOneCoreEngineParent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaOneCoreEngineParent">
+                <description>MIZA Benefits And Feature Parent</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Benefits And Feature Title</description>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="childCards" type="MizaOneCoreEngineChildList">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
         </typegroup>
 
     </itemtypes>

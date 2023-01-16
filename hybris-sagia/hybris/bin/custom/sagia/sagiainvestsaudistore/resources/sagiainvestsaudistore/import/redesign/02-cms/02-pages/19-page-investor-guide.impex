@@ -31,19 +31,19 @@ INSERT_UPDATE Media	; code[unique = true]         							; realFileName         
 					; investment-guide-bannerimage.png 						; investment-guide-bannerimage.png 			                ; $siteResource/investment-guide-bannerimage.png 	 								  	; image/png						;										   ; ""  ;
 					; business-day.png 										; business-day.png 							                ; $siteResource/business-day.png 					 								    ; image/png						;										   ; ""  ;
 					; documents.png 										; documents.png 							                ; $siteResource/documents.png 					 								  		; image/png						;										   ; ""  ;
-					
+
 					; business-day-ar.png									; business-day-ar.png						                ; $siteResource/business-day-ar.png 					 								    ; image/png						;										   ; ""  ;
 					; documents-ar.png   									; documents-ar.png   						                ; $siteResource/documents-ar.png   				 								  		; image/png						;										   ; ""  ;
-						
-										
+
+
 					; type-of-businesses-background.png 					; type-of-businesses-background.png 		                ; $siteResource/type-of-businesses-background.png 	 								  	; image/png						;										   ; ""  ;
 					; foreign-company-branch.svg 							; foreign-company-branch.svg 				                ; $siteResource/foreign-company-branch.svg 			 								  	; image/svg+xml						;										   ; ""  ;
 					; joint-stock-company.svg 								; joint-stock-company.svg 					                ; $siteResource/joint-stock-company.svg 				 								; image/svg+xml						;										   ; ""  ;
 					; limited-liability-company.svg 						; limited-liability-company.svg 			                ; $siteResource/limited-liability-company.svg 		 								  	; image/svg+xml						;										   ; ""  ;
 					; limited-liability-personcompany.svg 					; limited-liability-personcompany.svg 		                ; $siteResource/limited-liability-personcompany.svg 	 								; image/svg+xml						;										   ; ""  ;
 					; solidarity-professional-company.svg 					; solidarity-professional-company.svg 		                ; $siteResource/solidarity-professional-company.svg 	 								; image/svg+xml						;										   ; ""  ;
-					
-					
+
+
 					; agricultura-llicense.png 								; agricultura-llicense.png 									; $siteResource/agricultura-llicense.png 					 							; image/png						;										   ; ""  ;
 					; audiovisual-media-license.png 						; audiovisual-media-license.png 							; $siteResource/audiovisual-media-license.png 										  	; image/png						;										   ; ""  ;
 					; commercial-license.png 								; commercial-license.png 									; $siteResource/commercial-license.png 												  	; image/png						;										   ; ""  ;
@@ -59,13 +59,13 @@ INSERT_UPDATE Media	; code[unique = true]         							; realFileName         
 					; province-real-estate-image.png						; province-real-estate-image.png							; $siteResource/province-real-estate-image.png														  	; image/png						;										   ; ""  ;
 					; services-license.png 									; services-license.png 										; $siteResource/services-license.png 						 							; image/png						;										   ; ""  ;
 					; transport-license.png 								; transport-license.png 									; $siteResource/transport-license.png 												  	; image/png						;										   ; ""  ;
-					
+
 					; 1.png													; 1.png														; $siteResource/1.png						 								  			; image/png						;										   ; ""  ;
 					; 2.png 												; 2.png 													; $siteResource/2.png 												  					; image/png						;										   ; ""  ;
 					; 2-documents.png 										; 2-documents.png 											; $siteResource/2-documents.png 												  					; image/png						;										   ; ""  ;
-					
+
 					; 2-documents-ar.png 									; 2-documents-ar.png 										; $siteResource/2-documents-ar.png 												  					; image/png						;										   ; ""  ;
-					
+
 					; 2-documents-1.png									    ; 2-documents-1.png									     	; $siteResource/2-documents-1.png								 	 					; image/png						;										   ; ""  ;
 					; gcam-logo.png                                 	    ; gcam-logo.png                                 	     	; $siteResource/gcam-logo.png                                 	 						; image/png						;										   ; ""  ;
 					; ministry-of-foregin-affairs-logo.png          	    ; ministry-of-foregin-affairs-logo.png          	     	; $siteResource/ministry-of-foregin-affairs-logo.png          							; image/png						;										   ; ""  ;
@@ -76,30 +76,30 @@ INSERT_UPDATE Media	; code[unique = true]         							; realFileName         
 					; additional-doc-background-image.jpg		    		; additional-doc-background-image.jpg		     			; $siteResource/additional-doc-background-image.jpg		 								; image/png						;										   ; ""  ;
 				    ; public-buses-or-metros-license.png                    ; public-buses-or-metros-license.png                        ; $siteResource/public-buses-or-metros-license.png                               		; image/png						;										   ; ""  ;
 					; entrepreneurship-license.png              		    ; entrepreneurship-license.png              		     	; $siteResource/entrepreneurship-license.png                							; image/png						;										   ; ""  ;
-					; consulting-license-for-engineering-offices.png	    ; consulting-license-for-engineering-offices.png		    ; $siteResource/consulting-license-for-engineering-offices.png							; image/png						;										   ; ""  ;	
-					
-					
+					; consulting-license-for-engineering-offices.png	    ; consulting-license-for-engineering-offices.png		    ; $siteResource/consulting-license-for-engineering-offices.png							; image/png						;										   ; ""  ;
+
+
 					; investor-journey-01.png 	                            ; investor-journey-01.png	     	                        ; $siteResource/investor-journey-01.png						  							; image/png						;										   ; ""  ;
 					; investor-journey-02.png 	                            ; investor-journey-02.png	     	                        ; $siteResource/investor-journey-02.png						  							; image/png						;										   ; ""  ;
 					; investor-journey-03.png	                            ; investor-journey-03.png	     	                        ; $siteResource/investor-journey-03.png							  						; image/png						;										   ; ""  ;
 					; investor-journey-04.png		                        ; investor-journey-04.png	     	                        ; $siteResource/investor-journey-04.png							  						; image/png						;										   ; ""  ;
 					; investor-journey-05.png		                        ; investor-journey-05.png	     	                        ; $siteResource/investor-journey-05.png	 								  				; image/png						;										   ; ""  ;
-					
+
 					; investor-journey-ar-01.png 	                            ; investor-journey-ar-01.png	     	                        ; $siteResource/investor-journey-ar-01.png						  							; image/png						;										   ; ""  ;
 					; investor-journey-ar-02.png 	                            ; investor-journey-ar-02.png	     	                        ; $siteResource/investor-journey-ar-02.png						  							; image/png						;										   ; ""  ;
 					; investor-journey-ar-03.png	                            ; investor-journey-ar-03.png	     	                        ; $siteResource/investor-journey-ar-03.png							  						; image/png						;										   ; ""  ;
 					; investor-journey-ar-04.png		                        ; investor-journey-ar-04.png	     	                        ; $siteResource/investor-journey-ar-04.png							  						; image/png						;										   ; ""  ;
 					; investor-journey-ar-05.png		                        ; investor-journey-ar-05.png	     	                        ; $siteResource/investor-journey-ar-05.png	 								  				; image/png						;										   ; ""  ;
-					
-					
+
+
 					; ministry-of-investment-logo-2.png	    					; ministry-of-investment-logo-2.png 	     				; $siteResource/ministry-of-investment-logo-2.png 							  		; image/png						;										   ; ""  ;
 					; ministry-of-commerce-industry-ministry-justice-logo.png	; ministry-of-commerce-industry-ministry-justice-logo.png 	; $siteResource/ministry-of-commerce-industry-ministry-justice-logo.png 			; image/png						;										   ; ""  ;
 					; ministry-of-commerce-and-industry.png		    			; ministry-of-commerce-and-industry.png		     			; $siteResource/ministry-of-commerce-and-industry.png								; image/png						;										   ; ""  ;
 					; general-authority-zakat-tax.png	    					; general-authority-zakat-tax.png		     				; $siteResource/general-authority-zakat-tax.png								  		; image/png						;										   ; ""  ;
 					; general-organization-for-social-insurance.png	    		; general-organization-for-social-insurance.png		     	; $siteResource/general-organization-for-social-insurance.png		 				; image/png						;										   ; ""  ;
 					; human-resources-and-social-development.png	    		; human-resources-and-social-development.png		     	; $siteResource/human-resources-and-social-development.png		 					; image/png						;										   ; ""  ;
-					
-					
+
+
 
 
 
@@ -107,7 +107,7 @@ INSERT_UPDATE Media	; code[unique = true]         							; realFileName         
 ###########################################################################
 
 INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]		 ; name								 ; descriptionText[lang = ar]	 ; descriptionText[lang = en]	;descriptionText2 [lang = en]									 ; buttonText[lang = en]    ; buttonText[lang = ar]   ; image(code, $contentCV)            ; buttonURL(&linkRef)     ; link   ; &componentRef ; $contentCV[unique = true]
-										; investment-guide-banner    ; Investment guide banner 			 ; 							 	 ; INVESTMENT GUIDE				; Everything you need to know to start investing in Saudi Arabia.;  						;						  ; investment-guide-bannerimage.png   ; 						  ; true   ; investment-guide-banner  ; 
+										; investment-guide-banner    ; Investment guide banner 			 ; 							 	 ; INVESTMENT GUIDE				; Everything you need to know to start investing in Saudi Arabia.;  						;						  ; investment-guide-bannerimage.png   ; 						  ; true   ; investment-guide-banner  ;
 
 
 
@@ -119,7 +119,7 @@ INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true] 			  	 ; name 					
 
 
 INSERT_UPDATE InvestmentLicenseComponent ; uid[unique = true]	 ; headerText [lang = en]	 ; localizedImage (code, $contentCV)[lang = en]   ; description [lang = en] 							; &componentRef ; $contentCV[unique = true]
-										 ; business-day			 ; Business Day			  	 ; business-day.png					  			  ;  to obtain your investment license		; business-day	;	
+										 ; business-day			 ; Business Day			  	 ; business-day.png					  			  ;  to obtain your investment license		; business-day	;
 										 ; documents			 ; Documents				 ; documents.png					  			  ; required for an investment license     ; documents		;
 
 
@@ -166,23 +166,23 @@ INSERT_UPDATE TypeOfInvestmentLicensesComponent ; uid[unique = true]	   		 	; te
                                                ; investment-licenses13		 	; Real estate license												; province-real-estate-image.png									; This license is issued to companies in the real estate field.			                                                                                                                                                                                                                                                                                          ; investment-licenses13	            ;
                                                ; investment-licenses14		 	; Services license													; services-license.png 								; This license is issued for service activities including: construction, administrative investment, information technology, tourism, training, healthcare, insurance and re-insurance, education, advertising and media, logistic services, organizing exhibitions, catering and food services, financial services, aviation and handling services.		          ; investment-licenses14	            ;
                                                ; investment-licenses15		 	; Transport license													; transport-license.png 							; This license is issued for bus public transportation within cities, metro public repetition , and other public transport activities.			                                                                                                                                                                                                                  ; investment-licenses15	            ;
-                                               
-  
- 
-  
+
+
+
+
 INSERT_UPDATE TypeOfInvestmentLicensesContainer ; uid[unique = true] 							; simpleCMSComponents(&componentRef)  																																																																												; name              			 ; title[lang=en]        									    ; &componentRef    							; $contentCV[unique = true]
 												; type-of-investment-licenses-container			; investment-licenses1, investment-licenses2, investment-licenses3, investment-licenses4, investment-licenses5, investment-licenses6, investment-licenses7, investment-licenses8, investment-licenses9, investment-licenses10, investment-licenses11, investment-licenses12, investment-licenses13, investment-licenses14, investment-licenses15    ; Type of Investment Licenses	 ; <h2 class="invest_lic_first_text pt-5" >TYPES OF LICENSES INVESTORS</h2> <h2>CAN APPLY FOR IN SAUDI ARABIA</h2>		; type-of-investment-licenses-container		;
 
 ##############################################################################
 
-INSERT_UPDATE InvestorRequiredDocumentsComponent ; uid[unique = true] 			; icon (code, $contentCV)    ; longDescription [lang = en] 																									; $contentCV[unique = true]																								 
+INSERT_UPDATE InvestorRequiredDocumentsComponent ; uid[unique = true] 			; icon (code, $contentCV)    ; longDescription [lang = en] 																									; $contentCV[unique = true]
 												 ; acquire-investor1-point1		; 1.png						 ; Copy of the commercial registration of the entity in its original country, authenticated by a Saudi Embassy							;
 												 ; acquire-investor1-point2     ; 2.png                      ; Financial statements for the last year, prepared by an internationally acclaimed legal office and authenticated by a Saudi Embassy	;
-												
-														
+
+
 INSERT_UPDATE OnlyTwoDocumentsInvestorLicenseComponent ; uid[unique = true] 	; localizedImage (code, $contentCV)[lang = en]                         ; description[lang = en]                                    ; subText[lang = en]                                                        ; text[lang = en]                                                                                         ; documentsRequired(uid, $contentCV)         								; &componentRef 		; $contentCV[unique = true]
-													   ; acquire-investor1		; 2-documents.png					                        ; Only documents are needed to acquire an investor license  ; For the issuance of investment licenses, two documents are required:      ; *Additional documents may be required depending on the business activity and the required license type.	; acquire-investor1-point1, acquire-investor1-point2			; acquire-investor1		;	                       			
-														
+													   ; acquire-investor1		; 2-documents.png					                        ; Only documents are needed to acquire an investor license  ; For the issuance of investment licenses, two documents are required:      ; *Additional documents may be required depending on the business activity and the required license type.	; acquire-investor1-point1, acquire-investor1-point2			; acquire-investor1		;
+
 
 
 INSERT_UPDATE OnlyTwoDocumentsInvestorLicenseContainer ; uid[unique = true]     				  ; simpleCMSComponents(&componentRef) 	  	; name  			             ; title[lang=en]        											; &componentRef    						; $contentCV[unique = true]
@@ -207,9 +207,9 @@ INSERT_UPDATE AdditionalDocumentsLicenseComponent ; uid[unique = true] 		; icon 
 
 INSERT_UPDATE AdditionalDocumentsLicenseContainer ; uid[unique = true] 							; backgroundImage (code, $contentCV)  ; simpleCMSComponents(&componentRef) 																														   ; name  			              ; title[lang=en] 														; &componentRef    							; $contentCV[unique = true]
 												  ; additional-documents-license-container		; additional-doc-background-image.jpg ; additional-documents1,additional-documents2,additional-documents3,additional-documents4,additional-documents5,additional-documents6,additional-documents7  ;	additional documents license  ; <h2 class="invest_lic_first_text">ADDITIONAL DOCUMENTS REQUIRED</h2> <h2>DEPENDING ON THE LICENSE ACTIVITY</h2>		; additional-documents-license-container	;
-				
-		
-				
+
+
+
 ###############################################################################################
 
 
@@ -220,11 +220,11 @@ INSERT_UPDATE InvestorJourneyComponent ; uid[unique = true] ; localizedImage (co
 				                      ; investor-journey3	; investor-journey-03.png			                     ; STAGE					; Issuance of commercial Registration  				; Requirements				  		; <p>Commercial registration of the parent company</p> <p>Decision of the Board of directors of opening a branch ( branches of foreign companies only)</p> <p>Memorandum of Association (for new companies)</p> <p>Appointing the general director</p> <p>Proof of the owners and general director's ID</p>				; Responsible Provider								; ministry-of-commerce-and-industry.png									; investor-journey3				;
 				                      ; investor-journey4	; investor-journey-04.png			                     ; STAGE					; Open Files  										; Requirements				  		; <p>Obtaining a file of the General Authority of Zakat and Tax</p> <p>Obtaining a file of Saudi Ministry of Labor and Social Development</p> <p>Obtaining a file of The General Organization for Social Insurance</p>																										; Responsible Provider							; general-authority-zakat-tax.png,general-organization-for-social-insurance.png,human-resources-and-social-development.png			; investor-journey4				;
 				                      ; investor-journey5	; investor-journey-05.png			                     ; STAGE					; Issuance of General Directors Visa  				; Requirements				 		; <p>A letter of appointing the general director</p> <p>Proof of the general director's ID</p>																																																								; Responsible Provider							; human-resources-and-social-development.png							; investor-journey5				;
-				                      
-				
-				
-				
-				
+
+
+
+
+
 INSERT_UPDATE InvestorJourneyContainer ; uid[unique = true]			 ; simpleCMSComponents(&componentRef) 														  ;  name  			             	 ; title[lang=en] 						; &componentRef    					; $contentCV[unique = true]
 									   ; investor-journey-container	 ; investor-journey1,investor-journey2,investor-journey3,investor-journey4,investor-journey5  ;  investor journey				 ; INVESTOR JOURNEY						; investor-journey-container		;
 
@@ -233,17 +233,16 @@ INSERT_UPDATE InvestorJourneyContainer ; uid[unique = true]			 ; simpleCMSCompon
 
 ############# MEDIA AND COMPONENTS END ######################
 
-                                      
+
 
 INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef); $contentCV;
                          ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;  ;
                          ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ;	   investment-guide-banner-container, investment-license-container, businesses-investment-license-container, type-of-investment-licenses-container,only-two-investor-license-container, additional-documents-license-container, investor-journey-container         ;
-                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;  ; 
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;  ;
 
 
 INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
                                 ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;
                                 ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;
                                 ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;
- 
-      
+

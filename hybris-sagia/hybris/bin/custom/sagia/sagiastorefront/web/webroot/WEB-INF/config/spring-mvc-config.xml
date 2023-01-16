@@ -383,6 +383,7 @@
 	<util:list id="csrfAllowedUrlPatternsList" value-type="java.lang.String" >
 		<value>/payment/process3DSecure</value>
 		<value>/contactus</value>
+		<value>/miza-contactus</value>
 	</util:list>
 	
 	<!-- Invest Saudi Code start -->

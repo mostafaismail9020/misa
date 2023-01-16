@@ -1,0 +1,9 @@
+INSERT_UPDATE MizaServiceTypeForForm; code[unique = true]  ; label[lang = en]     ; label[lang = ar];
+                                    ; management           ; Management           ;
+                                    ; logistics            ; Logistics            ;
+                                    ; personal             ; Personal             ;
+                                    ; financial            ; Financial            ;
+                                    ; legal                ; Legal                ;
+                                    ; corporate            ; Corporate            ;
+                                    ; operational-services ; Operational Services ;
+                                    ; human-resources      ; Human Resources      ;

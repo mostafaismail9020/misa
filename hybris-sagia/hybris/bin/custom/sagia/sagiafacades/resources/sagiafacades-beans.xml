@@ -3550,6 +3550,10 @@
         <property name="code" type="java.lang.String"/>
         <property name="label" type="java.lang.String"/>
     </bean>
+	<bean class="de.hybris.platform.customerticketingfacades.data.MizaServiceTypeForFormData">
+		<property name="code" type="java.lang.String"/>
+		<property name="label" type="java.lang.String"/>
+	</bean>
 
     <bean class="de.hybris.platform.commercefacades.product.data.SiteMapItemData">
         <property name="url" type="java.lang.String"/>

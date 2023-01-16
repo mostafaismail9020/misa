@@ -14,6 +14,7 @@ import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.model.ModelService;
+import de.hybris.platform.servicelayer.session.SessionService;
 import de.hybris.platform.tx.AfterSaveEvent;
 import de.hybris.platform.tx.AfterSaveListener;
 import de.hybris.platform.util.Config;
@@ -53,9 +54,16 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
     private InvestSaudiProductService investSaudiProductService;
     @Resource
     private OpportunityProductMediaRestApiService opportunityProductMediaRestApiService;
+    @Resource(name = "sessionService")
+    private SessionService sessionService;
 
     @Override
     public void afterSave(Collection<AfterSaveEvent> collection) {
+        boolean isMizaContactUsFlow=false;
+        if(null!=sessionService.getAttribute("isMizaContactUsFlow"))
+        {
+            isMizaContactUsFlow=true;
+        }
         for (final AfterSaveEvent event : collection) {
             final int type = event.getType();
             if (AfterSaveEvent.UPDATE == type) {
@@ -73,10 +81,14 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
 			if (AfterSaveEvent.CREATE == type ) {
                 final PK pk = event.getPk();
                 Object object = getModelService().get(pk);
-                if(object instanceof CustomerModel){
+                if(object instanceof CustomerModel && !isMizaContactUsFlow){
                    String initialPassword=RandomStringUtils.randomAlphanumeric(Config.getInt("default.password.length", 8));
                    contactTicketBusinessService.sendOpportunityUserDetails(null, (UserModel) object, initialPassword,
 				      SagiaCoreConstants.ORIGINSYSTEM.equalsIgnoreCase(((CustomerModel) object).getSystemOrigin()));
+                }
+                if(isMizaContactUsFlow)
+                {
+                    contactTicketBusinessService.sendMizaTicketDetails(null, (UserModel) object);
                 }
                 if(object instanceof OpportunityProductModel){
                     uploadPdfForOpportunity(((OpportunityProductModel) object));

@@ -1,6 +1,7 @@
 package com.investsaudi.portal.facades.contact;
 
 import com.investsaudi.portal.core.model.ContactTicketPurposeModel;
+import com.investsaudi.portal.core.model.MizaServiceTypeForFormModel;
 import com.investsaudi.portal.core.service.ContactTicketBusinessService;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
 import com.sap.ibso.eservices.core.sagia.services.impl.DefaultSagiaCountryService;
@@ -11,6 +12,7 @@ import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.customerticketingfacades.customerticket.DefaultCustomerTicketingFacade;
 import de.hybris.platform.customerticketingfacades.data.ContactTicketData;
 import de.hybris.platform.customerticketingfacades.data.ContactTicketSubjectData;
+import de.hybris.platform.customerticketingfacades.data.MizaServiceTypeForFormData;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
@@ -38,6 +40,10 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
     @Autowired
     @Resource(name = "contactTicketSubjectConverter")
     private Converter<ContactTicketPurposeModel, ContactTicketSubjectData> contactTicketSubjectConverter;
+
+    @Autowired
+    @Resource(name = "mizaServiceTypeConverter")
+    private Converter<MizaServiceTypeForFormModel, MizaServiceTypeForFormData> mizaServiceTypeConverter;
 
     @Autowired
     private ContactTicketBusinessService contactTicketBusinessService;
@@ -70,12 +76,9 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
 
     protected CsTicketParameter createCsTicketParameter(final ContactTicketData ticketData) {
         final ContactTicketParameter ticketParameter = new ContactTicketParameter();
-        ticketParameter
-            .setPriority(getEnumerationService().getEnumerationValue(CsTicketPriority._TYPECODE, getTicketPriority()));
-        ticketParameter
-            .setReason(getEnumerationService().getEnumerationValue(CsEventReason._TYPECODE, getTicketReason()));
-        ticketParameter
-            .setAssociatedTo(getTicketService().getAssociatedObject(ticketData.getAssociatedTo(), null, null));
+        ticketParameter.setPriority(getEnumerationService().getEnumerationValue(CsTicketPriority._TYPECODE, getTicketPriority()));
+        ticketParameter.setReason(getEnumerationService().getEnumerationValue(CsEventReason._TYPECODE, getTicketReason()));
+        ticketParameter.setAssociatedTo(getTicketService().getAssociatedObject(ticketData.getAssociatedTo(), null, null));
         ticketParameter.setAssignedGroup(getDefaultCsAgentManagerGroup());
         ticketParameter.setCategory(CsTicketCategory.ENQUIRY);
         ticketParameter.setHeadline(ticketData.getContactSubject());
@@ -93,7 +96,15 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         {
 			user= CheckIfUserExistElseCreateUser(ticketData);
         }
-        ticketParameter.setCustomer(user);
+        if(null!=sessionService.getAttribute("isMizaContactUsFlow"))
+        {
+            ticketParameter.setCustomer(userService.getCustomerByEmail("miza@misa.gov.sa"));
+        }
+        else
+        {
+            ticketParameter.setCustomer(user);
+        }
+
         ticketParameter.setAttachments(ticketData.getAttachments());
 
         ticketParameter.setName(ticketData.getName());
@@ -112,8 +123,14 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
     }
 
     private UserModel CheckIfUserExistElseCreateUser(ContactTicketData ticketData) {
+        boolean isMizaContactUsFlow = false;
+        if(null!=sessionService.getAttribute("isMizaContactUsFlow"))
+        {
+            isMizaContactUsFlow=true;
+        }
+
         UserModel userForEmail = userService.getCustomerByEmail(ticketData.getEmail().toLowerCase());
-        if (null==userForEmail ) {
+        if (null==userForEmail && !isMizaContactUsFlow ) {
             try {
                 CustomerModel customer=modelService.create(CustomerModel.class);
                 customer.setCompany(ticketData.getCompany());
@@ -154,5 +171,11 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         final FlexibleSearchQuery query = new FlexibleSearchQuery("Select {pk} FROM {ContactTicketPurpose}");
         var contactSubjects = flexibleSearchService.<ContactTicketPurposeModel>search(query).getResult();
         return contactTicketSubjectConverter.convertAll(contactSubjects);
+    }
+
+    public List<MizaServiceTypeForFormData> getMizaServiceTypes() {
+        final FlexibleSearchQuery query = new FlexibleSearchQuery("Select {pk} FROM {MizaServiceTypeForForm}");
+        var contactSubjects = flexibleSearchService.<MizaServiceTypeForFormModel>search(query).getResult();
+        return mizaServiceTypeConverter.convertAll(contactSubjects);
     }
 }

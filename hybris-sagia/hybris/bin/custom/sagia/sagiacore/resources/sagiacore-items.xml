@@ -82,6 +82,8 @@
             <value code="GOVERNMENT_DOCUMENTS"/>
             <value code="LEGAL_CONSULTATION"/>
 			<value code="APPLY_NEW_LICENSE"/>
+            <value code="IGNITE_OPERATIONS"/>
+            <value code="IGNITE_PERMISSIONS"/>
         </enumtype>
 
         <enumtype generate="true" code="TutorialPosition" autocreate="true" dynamic="true">

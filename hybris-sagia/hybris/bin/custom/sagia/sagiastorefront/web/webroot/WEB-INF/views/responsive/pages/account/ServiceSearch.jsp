@@ -223,9 +223,71 @@
                         </div>
                     </div>
                 </li>
+				<li class="nav-item" onclick="location.href='${encodedContextPath}/service-search/IGNITE SERVICES';">
+                    <div class="service-wrapper mx-3">
+                        <a class="nav-link " id="pills-ignite-tab" data-toggle="pill" href="#IGNITE SERVICES" role="tab" aria-controls="pills-ignite" aria-selected="true">
+                            <div class="INS_EPM_border_set text-center">
+                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-1"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-white-100x100-2.png" alt="IGNITE SERVICES" class="text-center service-icon-2"/>
+                                <span class="licensing-heading"><spring:theme code="dashboard.ignite.service.name"/></span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="mobile_services mb-5">
+                    <div class="tab-content services-container-tabcontent" id="pills-tabContent1">
+                        <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="IGNITE SERVICES" role="tabpanel" aria-labelledby="pills-ignite-tab" role="tablist">
+                            <div class="p-4 serviceModule-detail border-top-0">
+                                <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
+                                    <spring:theme code="sagia.ignite.catagory.description"/>
+                                </p>
+                            </div>
+                            <div class="accordion pb-1" id="igniteServices">
+                                <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
+                                    <c:set value="${category.value[0].category.code}" var="categoryCode"></c:set>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header mb-0" id="heading-g${loop.index}">
+                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-g${loop.index}" aria-expanded="true" aria-controls="collapse-g${loop.index}">
+                                            <img class="services-category-img icon-1" src="${commonResourcePath}/images/dashboard-media/services/blue/${categoryCode}.png" alt="" />
+                                            <img class="services-category-img icon-2" src="${commonResourcePath}/images/dashboard-media/services/white/${categoryCode}.png" alt="" />
+                                            <h5 class="mb-0">${category.key}</h5>
+                                            <div class="plus-minus-icon"></div>
+                                          </button>
+                                        </h2>
+                                        <div id="collapse-g${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-g${loop.index}" data-parent="#igniteServices" data-bs-parent="#igniteServices">
+                                          <div class="accordion-body serviceModule-detail border-top-0">
+                                            <p class="service-para">${category.value[0].category.description}</p>
+                                            <c:forEach items="${category.value}" var="service">
+                                                    <div id="serviceModule" class="serviceModule serviceModule_list">
+                                                        <div class="serviceModule-section">
+                                                            <div class="serviceModule-content">
+                                                                <div class="serviceModule-description">
+                                                                    <span class="serviceModule-headline cursor-pointer">${service.name}</span>
+                                                                    <div class="serviceModule-detail">
+                                                                        <div class="">
+                                                                            <p>${service.description}</p>
+                                                                        </div>
+                                                                        <div class=" serviceModule-request">
+                                                                            <a class="text-uppercase request-service" href=${encodedContextPath}/services/government/${service.category.code}/${service.code}><spring:theme code="sagia.services.request.service"/></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </c:forEach>
+                                          	</div>
+                                        </div>
+                                	</div>
+                                </c:forEach>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
             </div>
-            
+
             <!--Desktop-->
             <!-- Licensing Services -->
             <div class=" col-lg-8 tab-content desktop_services services-container-tabcontent" id="pills-tabContent">
@@ -255,7 +317,7 @@
                             </div>
                         </div>
                 	</c:forEach>
-                
+
                 	<!-- Governmental Services -->
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="GOVERNMENTAL SERVICES" role="tabpanel" aria-labelledby="pills-govt-tab" role="tablist">
                         <div class="p-4 serviceModule-detail mx-2 border-top-0">
@@ -263,7 +325,7 @@
                                 <spring:theme code="sagia.governmental.catagory.description"/>
                             </p>
                         </div>
-						
+
 						<!-- <div class="p-4 serviceModule-detail mx-2 border-top-0">
                             <p class="INS_letter_set_para pb-3 mb-3 service-para text-center" style="color:red">
                                 <spring:theme code="services.government.create.disclaimer.title"/>
@@ -314,7 +376,7 @@
                             </c:forEach>
                         </div>
                     </div>
-                   
+
 					<!-- MISA Services -->
                     <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="SAGIA SERVICES" role="tabpanel" aria-labelledby="pills-misa-tab" role="tablist">
                         <div class="p-4 serviceModule-detail  mx-2 border-top-0">
@@ -358,10 +420,60 @@
                                      	</c:forEach>
                                  	</div>
                                	</div>
-                            </div>                                
+                            </div>
                      	</c:forEach>
                    	</div>
              	</div>
+
+				<!-- IGNITE Services -->
+                    <div class="tab-pane fade service-wrapper show service_tab_pane_show pb-5 m-auto" id="IGNITE SERVICES" role="tabpanel" aria-labelledby="pills-ignite-tab" role="tablist">
+                        <div class="p-4 serviceModule-detail mx-2 border-top-0">
+                            <p class="INS_letter_set_para pb-3 mb-3 service-para text-center">
+                                <spring:theme code="sagia.ignite.catagory.description"/>
+                            </p>
+                        </div>
+
+                        <div class="accordion pb-1" id="igniteServices">
+                            <c:forEach items="${SagiaServices}" var="category"  varStatus="loop">
+                                <c:set value="${category.value[0].category.code}" var="categoryCode"></c:set>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header mb-0" id="heading-g${loop.index}">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-g${loop.index}" aria-expanded="true" aria-controls="collapse-g${loop.index}">
+                                        <img class="services-category-img icon-1" src="${commonResourcePath}/images/dashboard-media/services/blue/${categoryCode}.png" alt="" />
+                                        <img class="services-category-img icon-2" src="${commonResourcePath}/images/dashboard-media/services/white/${categoryCode}.png" alt="" />
+                                        <h5 class="mb-0">${category.key}</h5>
+                                        <div class="plus-minus-icon"></div>
+                                      </button>
+                                    </h2>
+                                    <div id="collapse-g${loop.index}" class="accordion-collapse collapse " aria-labelledby="heading-g${loop.index}" data-parent="#igniteServices" data-bs-parent="#igniteServices">
+                                      <div class="accordion-body serviceModule-detail border-top-0">
+                                        <p class="service-para"></p>
+                                        <c:forEach items="${category.value}" var="service">
+                                                <div id="serviceModule" class="serviceModule serviceModule_list">
+                                                    <div class="serviceModule-section">
+                                                        <div class="serviceModule-content">
+                                                            <div class="serviceModule-description">
+                                                                <span class="serviceModule-headline cursor-pointer">${service.name}</span>
+                                                                <div class="serviceModule-detail service-search-module">
+                                                                    <div class="w-75">
+                                                                        <p>${service.description}</p>
+                                                                    </div>
+                                                                    <div class="w-25 serviceModule-request">
+                                                                        <a class="text-uppercase request-service" href=${encodedContextPath}/services/ignite/${service.category.code}/${service.code}><spring:theme code="sagia.services.request.service"/></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </c:forEach>
+                                      	</div>
+                                    </div>
+                           		</div>
+                            </c:forEach>
+                        </div>
+                    </div>
+
             </div>
         </div>
     </div>

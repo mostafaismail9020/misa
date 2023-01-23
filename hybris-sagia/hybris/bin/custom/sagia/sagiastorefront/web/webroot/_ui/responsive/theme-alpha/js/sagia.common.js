@@ -208,6 +208,11 @@ $(function() {
                     uiMenu.append('<li class="sagiaNavigation-subNav-subtitle">'+getI18nText("sagia.services")+'</li>');
                     uiMenu.append(getCategoriesHtml(menuData.navcategories["SAGIA SERVICES"]));
                 }
+
+                if (menuData.navcategories["IGNITE SERVICES"] && menuData.navcategories["IGNITE SERVICES"].length) {
+                                    uiMenu.append('<li class="sagiaNavigation-subNav-subtitle">'+getI18nText("sagia.ignite.services")+'</li>');
+                                    uiMenu.append(getCategoriesHtml(menuData.navcategories["IGNITE SERVICES"]));
+                                }
             }
 
             var uiMenuRight = $(".sagiaNavigation-subRight").empty();

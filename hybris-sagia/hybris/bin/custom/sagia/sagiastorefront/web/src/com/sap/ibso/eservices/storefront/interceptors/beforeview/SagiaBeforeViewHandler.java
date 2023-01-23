@@ -339,6 +339,14 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
                 javascripts.addAll(Arrays.asList("sagia.services.js", SAGIA_DRAFT_JS));
                 break;
             }
+            case "sagia-igniteServices": {
+                javascripts.add("sagia.services.js");
+                break;
+            }
+            case "sagia-createIgniteServices": {
+                javascripts.addAll(Arrays.asList("sagia.services.js", SAGIA_DRAFT_JS));
+                break;
+            }
             case "license-cancellation":
                 javascripts.add(SAGIA_LICENSE_CANCELLATION_JS);
                 break;

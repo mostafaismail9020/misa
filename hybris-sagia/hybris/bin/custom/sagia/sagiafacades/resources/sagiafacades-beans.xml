@@ -1897,6 +1897,35 @@
 		<property name="SrCrDateData" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
 	</bean>
 
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.SagiaCRMIgniteServiceData">
+		<property name="LicID" type="java.lang.String"/>
+		<property name="LicType" type="java.lang.String"/>
+		<property name="SrStCode" type="java.lang.String"/>
+		<property name="SrGuid" type="java.lang.String"/>
+		<property name="Action" type="java.lang.String"/>
+		<property name="BpChangeID" type="java.lang.String"/>
+		<property name="SalesrepCount" type="java.lang.String"/>
+		<property name="LicExDate" type="java.lang.String"/>
+		<property name="LicExDateData" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
+		<property name="TransType" type="java.lang.String"/>
+		<property name="TermCond" type="java.lang.String"/>
+		<property name="LicTypeDesc" type="java.lang.String"/>
+		<property name="LicGuid" type="java.lang.String"/>
+		<property name="BpID" type="java.lang.String"/>
+		<property name="MinistryType" type="java.lang.String"/>
+		<property name="ServiceType" type="java.lang.String"/>
+		<property name="BpName" type="java.lang.String"/>
+		<property name="ValidFrom" type="java.lang.String"/>
+		<property name="ValidFromData" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
+		<property name="LicRenFlag" type="java.lang.String"/>
+		<property name="BpGuid" type="java.lang.String"/>
+		<property name="SrStDesc" type="java.lang.String"/>
+		<property name="ContactChInd" type="java.lang.String"/>
+		<property name="SrID" type="java.lang.String"/>
+		<property name="SrCrDate" type="java.lang.String"/>
+		<property name="SrCrDateData" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
+	</bean>
+
 	<bean class="com.sap.ibso.eservices.sagiaservices.data.payment.PaymentDetailsData">
 		<property name="items" type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.payment.PaymentDetailsItemData&gt;"/>
 		<property name="total" type="java.lang.String"/>
@@ -1920,11 +1949,30 @@
 		<property name="fileText" type="java.lang.String"/>
 	</bean>
 
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.CRMIgniteServiceUploadData">
+		<property name="scenario" type="java.lang.String"/>
+		<property name="fieldname" type="java.lang.String"/>
+		<property name="fieldkey" type="java.lang.String"/>
+		<property name="fieldSubtype" type="java.lang.String"/>
+		<property name="description" type="java.lang.String"/>
+		<property name="dockeyID" type="java.lang.String"/>
+		<property name="longDescr" type="java.lang.String"/>
+		<property name="optionalAttach" type="java.lang.String"/>
+		<property name="fileText" type="java.lang.String"/>
+	</bean>
+
 	<bean class="com.sap.ibso.eservices.sagiaservices.data.SagiaGovtServiceFileUpload">
 		<property name="srID" type="java.lang.String"/>
 		<property name="ministryType" type="java.lang.String"/>
 		<property name="serviceType" type="java.lang.String"/>
 		<property name="govtServicesToUploadNav" type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.GovtServicesToUploadNav&gt;"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.SagiaIgniteServiceFileUpload">
+		<property name="srID" type="java.lang.String"/>
+		<property name="ministryType" type="java.lang.String"/>
+		<property name="serviceType" type="java.lang.String"/>
+		<property name="igniteServicesToUploadNav" type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.IgniteServicesToUploadNav&gt;"/>
 	</bean>
 
 	<bean class="com.sap.ibso.eservices.sagiaservices.data.GovtServicesToUploadNav">
@@ -1934,7 +1982,42 @@
 		<property name="DockeyID" type="java.lang.String"/>
 	</bean>
 
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.IgniteServicesToUploadNav">
+		<property name="filename" type="java.lang.String"/>
+		<property name="mimeType" type="java.lang.String"/>
+		<property name="fileContString" type="java.lang.String"/>
+		<property name="DockeyID" type="java.lang.String"/>
+	</bean>
+
 	<bean class="com.sap.ibso.eservices.sagiaservices.data.SagiaGovtServiceInfo">
+		<property name="bpID" type="java.lang.String"/>
+		<property name="crNumber" type="java.lang.String"/>
+		<property name="crIssueDate" type="java.lang.String"/>
+		<property name="crExpiryDate" type="java.lang.String"/>
+		<property name="zakatNumber" type="java.lang.String"/>
+		<property name="zakatIssueDate" type="java.lang.String"/>
+		<property name="zakatExpiryDate" type="java.lang.String"/>
+		<property name="molNumber" type="java.lang.String"/>
+		<property name="molSize" type="java.lang.String"/>
+		<property name="molColor" type="java.lang.String"/>
+		<property name="saudiPercent" type="java.lang.String"/>
+		<property name="cocNumber" type="java.lang.String"/>
+		<property name="cocIssue" type="java.lang.String"/>
+		<property name="cocExpiry" type="java.lang.String"/>
+		<property name="gosiNumber" type="java.lang.String"/>
+		<property name="gosiIssue" type="java.lang.String"/>
+		<property name="gosiExpiry" type="java.lang.String"/>
+		<property name="zakatTax" type="java.lang.String"/>
+		<property name="zakatAccurrKey" type="java.lang.String"/>
+		<property name="zakatAccPer" type="java.lang.String"/>
+		<property name="maAmanah" type="java.lang.String"/>
+		<property name="maBladiya" type="java.lang.String"/>
+		<property name="maLicIssueDate" type="java.lang.String"/>
+		<property name="maLicExpiryDate" type="java.lang.String"/>
+		<property name="sevenHundredNumber" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.sap.ibso.eservices.sagiaservices.data.SagiaIgniteServiceInfo">
 		<property name="bpID" type="java.lang.String"/>
 		<property name="crNumber" type="java.lang.String"/>
 		<property name="crIssueDate" type="java.lang.String"/>

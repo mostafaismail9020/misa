@@ -889,16 +889,18 @@
 		<property name="sagiaGovtServiceUploadPopulator" ref="sagiaGovtServiceUploadPopulator"/>
 		<property name="sagiaGovtCreationService" ref="sagiaGovtCreationService"/>
 	</bean>
-
+	<bean id="sagiaIgniteServiceFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaIgniteServiceFacade">
+		<property name="sagiaIgniteServiceUploadPopulator" ref="sagiaIgniteServiceUploadPopulator"/>
+		<property name="sagiaIgniteCreationService" ref="sagiaIgniteCreationService"/>
+	</bean>
 	<bean id="sagiaGovtServicePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServicePopulator">
 		<property name="sagiaCategoryDataPopulator" ref="sagiaCategoryDataPopulator"/>
 	</bean>
 	<bean id="sagiaGovtInfoDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtInfoDataPopulator">
 		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
 	</bean>
-	<bean id="sagiaGovtServiceUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServiceUploadPopulator">
-
-	</bean>
+	<bean id="sagiaGovtServiceUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServiceUploadPopulator"/>
+	<bean id="sagiaIgniteServiceUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaIgniteServiceUploadPopulator"/>
 
 	<bean id="sagiaDashboardWithoutLicenseFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaDashboardWithoutLicenseFacade">
 		<property name="licenseInformationService" ref="licenseInformationService"/>
@@ -2533,9 +2535,18 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 		<property name="imageFormatMapping" ref="imageFormatMapping"/>
 	</bean>
-
-
 	<!--	EconomicAndInvestmentReportsAndStudies Search Facade END-->
+
+	<bean id="sagiaIgniteCategoryFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaIgniteCategoryFacade">
+		<property name="sagiaIgniteService" ref="sagiaIgniteService"/>
+		<property name="sagiaGovtInfoDataService" ref="sagiaGovtInfoDataService"/>
+		<property name="sagiaCategoryDataPopulator" ref="sagiaCategoryDataPopulator"/>
+		<property name="sagiaGovtServicePopulator" ref="sagiaGovtServicePopulator"/>
+		<property name="sagiaIgniteServiceCRMPopulator" ref="sagiaIgniteServiceCRMPopulator"/>
+		<property name="sagiaIgniteCRMUploadPopulator" ref="sagiaIgniteCRMUploadPopulator"/>
+		<property name="sagiaIgniteSupportingDocumentsService" ref="sagiaIgniteSupportingDocumentsService"/>
+		<property name="sagiaGovtInfoDataPopulator" ref="sagiaGovtInfoDataPopulator"/>
+	</bean>
 </beans>
 
 

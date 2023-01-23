@@ -200,6 +200,11 @@
                     <img src="${commonResourcePath}/images/dashboard-media/services/MISA Services.png" alt="MISA SERVICES" class="text-center"/>
                     <span class="licensing-heading cursor-pointer"><spring:theme code="dashboard.misa.service.name"/></span>
                 </div>
+                ABCD
+                <div class="service-card" onclick="location.href='${encodedContextPath}/service-search/IGNITE SERVICES';">
+                    <img src="${commonResourcePath}/images/dashboard-media/services/MISA Services.png" alt="IGNITE SERVICES" class="text-center"/>
+                    <span class="licensing-heading cursor-pointer"><spring:theme code="dashboard.ignite.service.name"/></span>
+                 </div>
             </div>
         </div> -->
 
@@ -291,6 +296,35 @@
                         </div>
                     </div>
                 </li>
+                <li class="nav-item col-lg-4 col-md-12">
+                                    <div class="service-wrapper mx-3">
+                                        <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#govt-service" role="tab" aria-controls="pills-govt" aria-selected="true">
+                                            <div class="INS_EPM_border_set text-center">
+                                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-1"/>
+                                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-blue-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-2"/>
+                                                <span class="licensing-heading">
+                                                    <spring:theme code="dashboard.ignite.service.name" />
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="mobile_services mb-5">
+                                    <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
+                                        <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
+                                            <div class="p-4 dashboard-service-wrapper serviceModule-detail">
+                                                <div class="content-wrapper">
+                                                    <p class="INS_letter_set_para pb-3 mb-3">
+                                                        <spring:theme code="sagia.governmental.catagory.description"/>
+                                                    </p>
+                                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
+                                                    	<spring:theme code="dashboard.goto.services.label"/>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
             </ul>
             <div class="tab-content desktop_services services-container-tabcontent" id="pills-tabContent">
                 <div class="tab-pane fade show service_tab_pane_show active m-auto" id="licensing" role="tabpanel"

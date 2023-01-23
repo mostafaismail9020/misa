@@ -388,8 +388,14 @@
 	<bean id="sagiaGovtServiceCRMPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServiceCRMPopulator">
 		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
 	</bean>
+
+	<bean id="sagiaIgniteServiceCRMPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaIgniteServiceCRMPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
+
 	<bean id="govtServiceSupportingDocumentsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GovtServiceSupportingDocumentsPopulator"/>
 	<bean id="sagiaGovtCRMUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtCRMUploadPopulator"/>
+	<bean id="sagiaIgniteCRMUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaIgniteCRMUploadPopulator"/>
 
 	<bean name="investorNotificationPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.notifications.InvestorNotificationPopulator"/>
 	<bean name="investorNotificationReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.notifications.InvestorNotificationReversePopulator"/>
@@ -944,13 +950,27 @@
 		<property name="oDataPopulator" ref="govtServiceInfoDataPopulator"/>
 	</bean>
 
-	<bean id="sagiaGovtCreationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaGovtCreationService">
+	<bean id="sagiaIgniteInfoDataService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteInfoDataService">
 		<property name="oDataService" ref="zui5SagiaODataService"/>
-		<property name="entitySetName" value="GovtServices"/>
-		<property name="entityUrl" value="GovtServices"/>
+		<property name="entitySetName" value="BpGovtServices"/>
+		<property name="entityUrl" value="BpGovtServices"/>
+		<property name="oDataPopulator" ref="govtServiceInfoDataPopulator"/>
 	</bean>
 
+	<bean id="sagiaGovtCreationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaGovtCreationService">
+	<property name="oDataService" ref="zui5SagiaODataService"/>
+	<property name="entitySetName" value="GovtServices"/>
+	<property name="entityUrl" value="GovtServices"/>
+</bean>
+
 	<bean id="sagiaSupportingDocumentsService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaSupportingDocumentsService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="CustomizingGetList"/>
+		<property name="entityUrl" value="CustomizingGetList"/>
+		<property name="oDataPopulator" ref="govtServiceSupportingDocumentsPopulator"/>
+	</bean>
+
+	<bean id="sagiaIgniteSupportingDocumentsService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteSupportingDocumentsService">
 		<property name="oDataService" ref="zui5SagiaODataService"/>
 		<property name="entitySetName" value="CustomizingGetList"/>
 		<property name="entityUrl" value="CustomizingGetList"/>
@@ -2202,4 +2222,24 @@
 
 	<!--	EconomicAndInvestmentReportsAndStudies  Search Solr End-->
 
+	<!--	Ignite Services Start-->
+	<bean id="igniteServiceDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SagiaIgniteServiceDataPopulator">
+		<property name="getTextDataPopulator" ref="getTextDataPopulator"/>
+		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
+	</bean>
+
+	<bean id="sagiaIgniteService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="IgniteServices"/>
+		<property name="entityUrl" value="IgniteServices"/>
+		<property name="oDataPopulator" ref="igniteServiceDataPopulator"/>
+		<property name="sagiaGovtServiceDAO" ref="sagiaGovtServiceDAO"/>
+	</bean>
+
+	<bean id="sagiaIgniteCreationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteCreationService">
+		<property name="oDataService" ref="zui5SagiaODataService"/>
+		<property name="entitySetName" value="IgniteServices"/>
+		<property name="entityUrl" value="IgniteServices"/>
+	</bean>
+	<!-- Ignite Services End -->
 </beans>

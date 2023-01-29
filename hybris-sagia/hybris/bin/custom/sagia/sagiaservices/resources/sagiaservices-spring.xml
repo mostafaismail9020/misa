@@ -385,6 +385,7 @@
 		<property name="contentHDRPopulator" ref="zui5ContentHDRPopulator"/>
 	</bean>
 	<bean id="govtServiceInfoDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SagiaOdataGovtInfoDataPopulator"/>
+	<bean id="igniteServiceInfoDataPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.SagiaOdataIgniteInfoDataPopulator"/>
 	<bean id="sagiaGovtServiceCRMPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServiceCRMPopulator">
 		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
 	</bean>
@@ -396,6 +397,7 @@
 	<bean id="govtServiceSupportingDocumentsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.GovtServiceSupportingDocumentsPopulator"/>
 	<bean id="sagiaGovtCRMUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtCRMUploadPopulator"/>
 	<bean id="sagiaIgniteCRMUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaIgniteCRMUploadPopulator"/>
+	<bean id="igniteServiceSupportingDocumentsPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.IgniteServiceSupportingDocumentsPopulator"/>
 
 	<bean name="investorNotificationPopulator" class="com.sap.ibso.eservices.sagiaservices.converters.notifications.InvestorNotificationPopulator"/>
 	<bean name="investorNotificationReversePopulator" class="com.sap.ibso.eservices.sagiaservices.converters.notifications.InvestorNotificationReversePopulator"/>
@@ -954,7 +956,7 @@
 		<property name="oDataService" ref="zui5SagiaODataService"/>
 		<property name="entitySetName" value="BpGovtServices"/>
 		<property name="entityUrl" value="BpGovtServices"/>
-		<property name="oDataPopulator" ref="govtServiceInfoDataPopulator"/>
+		<property name="oDataPopulator" ref="igniteServiceInfoDataPopulator"/>
 	</bean>
 
 	<bean id="sagiaGovtCreationService" class="com.sap.ibso.eservices.sagiaservices.services.impl.SagiaGovtCreationService">
@@ -974,7 +976,7 @@
 		<property name="oDataService" ref="zui5SagiaODataService"/>
 		<property name="entitySetName" value="CustomizingGetList"/>
 		<property name="entityUrl" value="CustomizingGetList"/>
-		<property name="oDataPopulator" ref="govtServiceSupportingDocumentsPopulator"/>
+		<property name="oDataPopulator" ref="igniteServiceSupportingDocumentsPopulator"/>
 	</bean>
 
 	<bean id="govDocWasselCheckService" class="com.sap.ibso.eservices.sagiaservices.services.impl.GovDocWasselCheckService" parent="abstractSagiaService">

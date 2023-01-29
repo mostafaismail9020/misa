@@ -1624,8 +1624,8 @@
 					<editorArea:attribute qualifier="category" />
 					<editorArea:attribute qualifier="tabs" />
 					<editorArea:attribute qualifier="serviceTypes" />
-					<editorArea:attribute
-							qualifier="maxFileUploadSize" />
+					<editorArea:attribute qualifier="maxFileUploadSize" />
+					<editorArea:attribute qualifier="serviceApplication" />
 				</editorArea:section>
 			</editorArea:tab>
 		</editorArea:editorArea>

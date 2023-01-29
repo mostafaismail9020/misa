@@ -298,7 +298,7 @@
                 </li>
                 <li class="nav-item col-lg-4 col-md-12">
                                     <div class="service-wrapper mx-3">
-                                        <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#govt-service" role="tab" aria-controls="pills-govt" aria-selected="true">
+                                        <a class="nav-link " id="pills-ignite-tab" data-toggle="pill" href="#ignite-service" role="tab" aria-controls="pills-ignite" aria-selected="true">
                                             <div class="INS_EPM_border_set text-center">
                                                 <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-1"/>
                                                 <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-blue-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-2"/>
@@ -311,13 +311,13 @@
                                 </li>
                                 <li class="mobile_services mb-5">
                                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
-                                        <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="govt-service1" role="tabpanel" aria-labelledby="pills-govt-tab">
+                                        <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="ignite-service1" role="tabpanel" aria-labelledby="pills-ignite-tab">
                                             <div class="p-4 dashboard-service-wrapper serviceModule-detail">
                                                 <div class="content-wrapper">
                                                     <p class="INS_letter_set_para pb-3 mb-3">
-                                                        <spring:theme code="sagia.governmental.catagory.description"/>
+                                                        <spring:theme code="sagia.ignite.catagory.description"/>
                                                     </p>
-                                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/GOVERNMENTAL SERVICES';">
+                                                    <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/IGNITE SERVICES';">
                                                     	<spring:theme code="dashboard.goto.services.label"/>
                                                     </button>
                                                 </div>
@@ -360,6 +360,19 @@
                                <spring:theme code="sagia.misa.services.catagory.description"/>
                             </p>
                             <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/SAGIA SERVICES';">
+                            	<spring:theme code="dashboard.goto.services.label"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show service_tab_pane_show m-auto" id="ignite-service" role="tabpanel"
+                    aria-labelledby="pills-ignite-tab" role="tablist">
+                    <div class="p-4 dashboard-service-wrapper serviceModule-detail my-5 shadow-none">
+                        <div class="content-wrapper">
+                            <p class="INS_letter_set_para pb-3 mb-3">
+                              <spring:theme code="sagia.ignite.catagory.description"/>
+                            </p>
+                            <button class="btn-dashboard text-uppercase" onclick="location.href='${encodedContextPath}/service-search/IGNITE SERVICES';">
                             	<spring:theme code="dashboard.goto.services.label"/>
                             </button>
                         </div>

@@ -899,6 +899,9 @@
 	<bean id="sagiaGovtInfoDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtInfoDataPopulator">
 		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
 	</bean>
+	<bean id="sagiaIgniteInfoDataPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaIgniteInfoDataPopulator">
+		<property name="sagiaFormatProvider" ref="sagiaFormatProvider"/>
+	</bean>
 	<bean id="sagiaGovtServiceUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaGovtServiceUploadPopulator"/>
 	<bean id="sagiaIgniteServiceUploadPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaIgniteServiceUploadPopulator"/>
 
@@ -2539,13 +2542,13 @@
 
 	<bean id="sagiaIgniteCategoryFacade" class="com.sap.ibso.eservices.facades.sagia.impl.DefaultSagiaIgniteCategoryFacade">
 		<property name="sagiaIgniteService" ref="sagiaIgniteService"/>
-		<property name="sagiaGovtInfoDataService" ref="sagiaGovtInfoDataService"/>
+		<property name="sagiaIgniteInfoDataService" ref="sagiaIgniteInfoDataService"/>
 		<property name="sagiaCategoryDataPopulator" ref="sagiaCategoryDataPopulator"/>
 		<property name="sagiaGovtServicePopulator" ref="sagiaGovtServicePopulator"/>
 		<property name="sagiaIgniteServiceCRMPopulator" ref="sagiaIgniteServiceCRMPopulator"/>
 		<property name="sagiaIgniteCRMUploadPopulator" ref="sagiaIgniteCRMUploadPopulator"/>
 		<property name="sagiaIgniteSupportingDocumentsService" ref="sagiaIgniteSupportingDocumentsService"/>
-		<property name="sagiaGovtInfoDataPopulator" ref="sagiaGovtInfoDataPopulator"/>
+		<property name="sagiaIgniteInfoDataPopulator" ref="sagiaIgniteInfoDataPopulator"/>
 	</bean>
 </beans>
 

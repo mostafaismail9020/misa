@@ -19,25 +19,25 @@ UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.Co
 $jarResourceCms = $config-jarResourceCmsValue
 
 INSERT_UPDATE Media; code[unique = true]              ; realFileName                     ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/pdf']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
-                   ; dummy-arabic.pdf  				  ; dummy-arabic.pdf  				 ; $siteResource/dummy-arabic.pdf                               ; application/pdf             ;                                          ; ""     ;
-                   ; dummy-english.pdf 				  ; dummy-english.pdf 				 ; $siteResource/dummy-english.pdf								; application/pdf             ;                                          ; ""     ;
+#                   ; dummy-arabic.pdf  				  ; dummy-arabic.pdf  				 ; $siteResource/dummy-arabic.pdf                               ; application/pdf             ;                                          ; ""     ;
+#                   ; dummy-english.pdf 				  ; dummy-english.pdf 				 ; $siteResource/dummy-english.pdf								; application/pdf             ;                                          ; ""     ;
 
 
 INSERT_UPDATE MediaContainer; qualifier[unique = true]       ; $medias                             ; $contentCV;
-                            ;ZLIC_01-media-container      	 ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZLIC_02-media-container         ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZLIC_03-media-container         ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZLIC_04-media-container         ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZLIC_05-media-container         ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZLIC_06-media-container         ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZPER_GAME_01-media-container    ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZPER_GAME_02-media-container    ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZPER_VIDEO_01-media-container   ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZPER_VIDEO_02-media-container   ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZPER_VIDEO_03-media-container   ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZPER_VIDEO_04-media-container   ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZPER_AUD_01-media-container     ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
-                            ;ZPER_AUD_02-media-container     ; dummy-english.pdf,dummy-arabic.pdf  ;           ;
+                            ;ZLIC_01-media-container      	 ;                                     ;           ;
+                            ;ZLIC_02-media-container         ;                                     ;           ;
+                            ;ZLIC_03-media-container         ;                                     ;           ;
+                            ;ZLIC_04-media-container         ;                                     ;           ;
+                            ;ZLIC_05-media-container         ;                                     ;           ;
+                            ;ZLIC_06-media-container         ;                                     ;           ;
+                            ;ZPER_GAME_01-media-container    ;                                     ;           ;
+                            ;ZPER_GAME_02-media-container    ;                                     ;           ;
+                            ;ZPER_VIDEO_01-media-container   ;                                     ;           ;
+                            ;ZPER_VIDEO_02-media-container   ;                                     ;           ;
+                            ;ZPER_VIDEO_03-media-container   ;                                     ;           ;
+                            ;ZPER_VIDEO_04-media-container   ;                                     ;           ;
+                            ;ZPER_AUD_01-media-container     ;                                     ;           ;
+                            ;ZPER_AUD_02-media-container     ;                                     ;           ;
 
 
 
@@ -142,24 +142,6 @@ INSERT_UPDATE SagiaService; code[unique = true]; serviceDocuments[lang = $langen
                                                                    <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
                                                                    </ol>" ;
 
-
-UPDATE SagiaService; code[unique = true]; serviceFinancialFees[lang = $langen]; serviceDuration[lang = $langen];
-                   ; ZLIC_01            ;                                     ; Three working day
-                   ; ZLIC_02            ;                                     ; Three working day
-                   ; ZLIC_03            ;                                     ; Three working day
-                   ; ZLIC_04            ;                                     ; Three working day
-                   ; ZLIC_05            ;                                     ; Three working day
-                   ; ZLIC_06            ;                                     ; Three working day
-                   ; ZPER_GAME_01       ;                                     ; Three working day
-                   ; ZPER_GAME_02       ;                                     ; Three working day
-                   ; ZPER_VIDEO_01      ;                                     ; Three working day
-                   ; ZPER_VIDEO_02      ;                                     ; Three working day
-                   ; ZPER_VIDEO_03      ;                                     ; Three working day
-                   ; ZPER_VIDEO_04      ;                                     ; Three working day
-                   ; ZPER_AUD_01        ;                                     ; Three working day
-                   ; ZPER_AUD_02        ;                                     ; Three working day
-
-
 INSERT_UPDATE SagiaCategory; code[unique = true]; label                                ; services(code)                                                                                            ; categoryUrl
                            ; igniteOperational  ; IGNITE SERVICES 			; ZLIC_01,ZLIC_02,ZLIC_03,ZLIC_04,ZLIC_05,ZLIC_06                                                           ; ZLIC
                            ; ignitePermission   ; IGNITE SERVICES           ; ZPER_GAME_01,ZPER_GAME_02,ZPER_VIDEO_01,ZPER_VIDEO_02,ZPER_VIDEO_03,ZPER_VIDEO_04,ZPER_AUD_01,ZPER_AUD_02 ; ZPER
@@ -168,3 +150,19 @@ INSERT_UPDATE SagiaCategory; code[unique = true]; label                         
 UPDATE SagiaCategory; code[unique = true]; name[lang = $langen]                 ; description[lang = $langen]          ;
                     ; igniteOperational  ; IGNITE Operational Licenses SERVICES ; IGNITE Operational Licenses SERVICES ;
                     ; ignitePermission   ; IGNITE Permission Services           ; IGNITE Permission Services           ;
+
+UPDATE SagiaService; code[unique = true]; serviceFinancialFees[lang = $langen]; serviceDuration[lang = $langen]; category(code)         ; url
+                   ; ZLIC_01            ;                                     ; Three working day               ; igniteOperational     ; ZLIC_01
+                   ; ZLIC_02            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_02
+                   ; ZLIC_03            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_03
+                   ; ZLIC_04            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_04
+                   ; ZLIC_05            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_05
+                   ; ZLIC_06            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_06
+                   ; ZPER_GAME_01       ;                                     ; Three working day               ;ignitePermission       ; ZPER_GAME_01
+                   ; ZPER_GAME_02       ;                                     ; Three working day               ;ignitePermission       ; ZPER_GAME_02
+                   ; ZPER_VIDEO_01      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_01
+                   ; ZPER_VIDEO_02      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_02
+                   ; ZPER_VIDEO_03      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_03
+                   ; ZPER_VIDEO_04      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_04
+                   ; ZPER_AUD_01        ;                                     ; Three working day               ;ignitePermission       ; ZPER_AUD_01
+                   ; ZPER_AUD_02        ;                                     ; Three working day               ;ignitePermission       ; ZPER_AUD_02

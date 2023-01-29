@@ -9,6 +9,7 @@ import com.sap.ibso.eservices.facades.sagia.SagiaIgniteCategoryFacade;
 import com.sap.ibso.eservices.sagiaservices.data.*;
 import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.IgniteServiceUploadData;
 import com.sap.ibso.eservices.sagiaservices.services.impl.SagiaGovtInfoDataService;
+import com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteInfoDataService;
 import com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteService;
 import com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteSupportingDocumentsService;
 import de.hybris.platform.jalo.JaloObjectNoLongerValidException;
@@ -25,12 +26,12 @@ import java.util.*;
 public class DefaultSagiaIgniteCategoryFacade implements SagiaIgniteCategoryFacade {
 
     private SagiaIgniteService sagiaIgniteService;
-    private SagiaGovtInfoDataService sagiaGovtInfoDataService;
+    private SagiaIgniteInfoDataService sagiaIgniteInfoDataService;
     private SagiaCategoryDataPopulator sagiaCategoryDataPopulator;
     private SagiaGovtServicePopulator sagiaGovtServicePopulator;
     private SagiaIgniteServiceCRMPopulator sagiaIgniteServiceCRMPopulator;
     private SagiaIgniteCRMUploadPopulator sagiaIgniteCRMUploadPopulator;
-    private SagiaGovtInfoDataPopulator sagiaGovtInfoDataPopulator;
+    private SagiaIgniteInfoDataPopulator sagiaIgniteInfoDataPopulator;
     private SagiaIgniteSupportingDocumentsService sagiaIgniteSupportingDocumentsService;
     private static final Logger LOG = LoggerFactory.getLogger(DefaultSagiaIgniteCategoryFacade.class);
 
@@ -122,9 +123,9 @@ public class DefaultSagiaIgniteCategoryFacade implements SagiaIgniteCategoryFaca
      */
     @Override
     public SagiaIgniteServiceInfo getInfoData() {
-        SagiaGovtServiceInfoDataCRM crmInfoData = sagiaGovtInfoDataService.getInfoData();
+        SagiaIgniteServiceInfoDataCRM crmInfoData = sagiaIgniteInfoDataService.getInfoData();
         SagiaIgniteServiceInfo infoData = new SagiaIgniteServiceInfo();
-        //sagiaGovtInfoDataPopulator.populate(crmInfoData, infoData);
+        sagiaIgniteInfoDataPopulator.populate(crmInfoData, infoData);
         return infoData;
     }
 
@@ -171,16 +172,16 @@ public class DefaultSagiaIgniteCategoryFacade implements SagiaIgniteCategoryFaca
     }
 
     /**
-     * @param sagiaGovtInfoDataService
+     * @param sagiaIgniteInfoDataService
      */
-    public void setSagiaGovtInfoDataService(SagiaGovtInfoDataService sagiaGovtInfoDataService) {
-        this.sagiaGovtInfoDataService = sagiaGovtInfoDataService;
+    public void setSagiaIgniteInfoDataService(SagiaIgniteInfoDataService sagiaIgniteInfoDataService) {
+        this.sagiaIgniteInfoDataService = sagiaIgniteInfoDataService;
     }
 
     /**
-     * @param sagiaGovtInfoDataPopulator
+     * @param sagiaIgniteInfoDataPopulator
      */
-    public void setSagiaGovtInfoDataPopulator(SagiaGovtInfoDataPopulator sagiaGovtInfoDataPopulator) {
-        this.sagiaGovtInfoDataPopulator = sagiaGovtInfoDataPopulator;
+    public void setSagiaIgniteInfoDataPopulator(SagiaIgniteInfoDataPopulator sagiaIgniteInfoDataPopulator) {
+        this.sagiaIgniteInfoDataPopulator = sagiaIgniteInfoDataPopulator;
     }
 }

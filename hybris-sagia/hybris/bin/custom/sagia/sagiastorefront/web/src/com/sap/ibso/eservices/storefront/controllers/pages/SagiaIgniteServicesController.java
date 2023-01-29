@@ -64,7 +64,7 @@ public class SagiaIgniteServicesController extends SagiaAbstractPageController {
     private SagiaIgniteCategoryFacade sagiaIgniteCategoryFacade;
 
     @Resource
-    private SagiaGovtServiceFacade sagiaGovtServiceFacade;
+    private SagiaIgniteServiceFacade sagiaIgniteServiceFacade;
 
     @Resource
     private Validator createIgniteServiceValidator;
@@ -248,7 +248,7 @@ public class SagiaIgniteServicesController extends SagiaAbstractPageController {
 
         if (!result.hasErrors()) {
             redirectAttributes.addAttribute(SERVICE_NAME, URLDecoder.decode(createIgniteService.getServiceName(), UTF_8));
-            sagiaGovtServiceFacade.createGovtService(populateForm(createIgniteService));
+            sagiaIgniteServiceFacade.createIgniteService(populateForm(createIgniteService));
             handleTermsAndConditionsAcceptance(createIgniteService.getCategoryUrl());
             sessionService.removeAttribute(CREATE_IGNITE_SERVICE);
             redirectAttributes.addFlashAttribute("requestFeedback", "true");
@@ -313,37 +313,37 @@ public class SagiaIgniteServicesController extends SagiaAbstractPageController {
         sagiaTermsAndConditionsFacade.acceptTermsAndConditions((CustomerModel) userService.getCurrentUser(),event);
     }
 
-    private SagiaGovtServiceFileUpload populateForm(CreateIgniteServiceForm createIgniteService) {
+    private SagiaIgniteServiceFileUpload populateForm(CreateIgniteServiceForm createIgniteService) {
         List<MultipartFile> files = createIgniteService.getFiles();
 
-        SagiaGovtServiceFileUpload sagiaGovtServiceFileUpload = new SagiaGovtServiceFileUpload();
+        SagiaIgniteServiceFileUpload sagiaIgniteServiceFileUpload = new SagiaIgniteServiceFileUpload();
 
         if (CollectionUtils.isEmpty(files)) {
-            return sagiaGovtServiceFileUpload;
+            return sagiaIgniteServiceFileUpload;
         }
         int index = 0;
-        List<GovtServicesToUploadNav> attachments = new ArrayList<>();
+        List<IgniteServicesToUploadNav> attachments = new ArrayList<>();
 
         for (MultipartFile file : files) {
-            GovtServicesToUploadNav govtFile = new GovtServicesToUploadNav();
+            IgniteServicesToUploadNav igniteFile = new IgniteServicesToUploadNav();
             if (file.getSize() > 0) {
-                govtFile.setMimeType(file.getContentType());
-                govtFile.setFilename(file.getOriginalFilename());
-                govtFile.setDockeyID(createIgniteService.getDockeyID().get(index++));
+                igniteFile.setMimeType(file.getContentType());
+                igniteFile.setFilename(file.getOriginalFilename());
+                igniteFile.setDockeyID(createIgniteService.getDockeyID().get(index++));
                 try {
-                    govtFile.setFileContString(Base64.encode(file.getBytes()));
+                    igniteFile.setFileContString(Base64.encode(file.getBytes()));
                 } catch (IOException e) {
                     LOG.error("Content could not be parsed for file: " + file.getOriginalFilename(), e);
                 }
 
-                attachments.add(govtFile);
+                attachments.add(igniteFile);
             }
         }
-        sagiaGovtServiceFileUpload.setGovtServicesToUploadNav(attachments);
-        sagiaGovtServiceFileUpload.setMinistryType(createIgniteService.getMinistryType());
-        sagiaGovtServiceFileUpload.setServiceType(createIgniteService.getServiceType());
+        sagiaIgniteServiceFileUpload.setIgniteServicesToUploadNav(attachments);
+        sagiaIgniteServiceFileUpload.setMinistryType(createIgniteService.getMinistryType());
+        sagiaIgniteServiceFileUpload.setServiceType(createIgniteService.getServiceType());
 
-        return sagiaGovtServiceFileUpload;
+        return sagiaIgniteServiceFileUpload;
     }
 
     private String getView(Model model, String page) throws CMSItemNotFoundException {

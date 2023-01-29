@@ -269,7 +269,7 @@
                                                                             <p>${service.description}</p>
                                                                         </div>
                                                                         <div class=" serviceModule-request">
-                                                                            <a class="text-uppercase request-service" href=${encodedContextPath}/services/government/${service.category.code}/${service.code}><spring:theme code="sagia.services.request.service"/></a>
+                                                                            <a class="text-uppercase request-service" href=${encodedContextPath}/services/ignite/${service.category.code}/${service.code}><spring:theme code="sagia.services.request.service"/></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>

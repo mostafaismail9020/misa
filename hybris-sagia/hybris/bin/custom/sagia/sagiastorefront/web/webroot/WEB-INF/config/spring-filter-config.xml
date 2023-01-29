@@ -201,6 +201,7 @@
 		<entry key="/draft/save" value-ref="importMultipartFilter"/>
 		<entry key="/potentialOpportunity/{ticketId}/uploadAttachment" value-ref="importMultipartFilter"/>
 		<entry key="/my-sagia/financial-survey/complete/saveAttachment" value-ref="importMultipartFilter"/>
+		<entry key="/services/ignite/create" value-ref="importMultipartFilter"/>
 	</util:map>
 
 	<bean id="fileUploadFilter" class="com.sap.ibso.eservices.storefront.filters.FileUploadFilter" >

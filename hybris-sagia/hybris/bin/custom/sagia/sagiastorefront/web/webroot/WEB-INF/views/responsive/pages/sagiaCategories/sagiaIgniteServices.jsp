@@ -97,7 +97,7 @@
     <div class="container">
         <div class="mainSection-linkActions mainSection-linkActions_right">
             <div id="serviceUrl">
-                <c:url value="/services/government/${categoryUrl}/${serviceUrl}/create" var="url">
+                <c:url value="/services/ignite/${categoryUrl}/${serviceUrl}/create" var="url">
                     <c:param name="serviceName" value="${serviceName}"/>
                     <c:if test="${fn:length(serviceList) gt 0}">
                         <c:param name="srID" value="${serviceList[0].srID}"/>
@@ -127,7 +127,7 @@
                 <div class="col-xl-3 col-md-6 col-12">
                     <div class=" mainSection-linkActions_right amend-service-link govt-service-btn">
                         <div id="serviceUrl">
-                            <c:url value="/services/government/${categoryUrl}/${serviceUrl}/create" var="url">
+                            <c:url value="/services/ignite/${categoryUrl}/${serviceUrl}/create" var="url">
                                 <c:param name="serviceName" value="${serviceName}"/>
                                 <c:if test="${fn:length(serviceList) gt 0}">
                                     <c:param name="srID" value="${serviceList[0].srID}"/>

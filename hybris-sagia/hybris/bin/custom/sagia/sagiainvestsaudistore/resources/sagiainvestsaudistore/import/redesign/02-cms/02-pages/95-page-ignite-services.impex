@@ -1,0 +1,23 @@
+#
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $contentCatalog]), CatalogVersion.version[default = Staged])[default = $contentCatalog:Staged]
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms = $config-jarResourceCmsValue
+
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]         ; name                         ; masterTemplate(uid, $contentCV); label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']; previewImage(code, $contentCV)[default = 'ContentPageModel__function_preview'];
+                         ;                          ; sagia-igniteServices       ; Sagia Ignite Services        ; SagiaTemplate                  ; sagia-igniteServices
+                         ;                          ; sagia-createIgniteServices ; Sagia Create Ignite Services ; SagiaTemplate                  ; sagia-createIgniteServices
+
+INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                 ; name                       ; page                                                                          ; actions(uid, $contentCV); &componentRef
+                                 ;                          ; SagiaIgniteServicesComponent       ; Sagia Ignite Services        ; /WEB-INF/views/responsive/pages/sagiaCategories/sagiaIgniteServices.jsp       ;                         ; SagiaIgniteServicesComponent
+                                 ;                          ; SagiaCreateIgniteServicesComponent ; Sagia Create Ignite Services ; /WEB-INF/views/responsive/pages/sagiaCategories/sagiaCreateIgniteServices.jsp ;                         ; SagiaCreateIgniteServicesComponent
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                        ; name                         ; active; cmsComponents(&componentRef)       ; ; ;
+                         ;                          ; InnerPageContentSlot-IgniteServices       ; SAGIA IGNITE SERVICES        ; true  ; SagiaIgniteServicesComponent       ; ; ;
+                         ;                          ; InnerPageContentSlot-CreateIgniteServices ; SAGIA CREATE IGNITE SERVICES ; true  ; SagiaCreateIgniteServicesComponent ; ; ;
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]                        ; position[unique = true]; page(uid, $contentCV)[unique = true]; contentSlot(uid, $contentCV)[unique = true]; ; ;
+                                ;                          ; InnerPageContentSlot-IgniteServices       ; InnerPageContentSlot   ; sagia-igniteServices                ; InnerPageContentSlot-IgniteServices        ; ; ;
+                                ;                          ; InnerPageContentSlot-CreateIgniteServices ; InnerPageContentSlot   ; sagia-createIgniteServices          ; InnerPageContentSlot-CreateIgniteServices  ; ; ;

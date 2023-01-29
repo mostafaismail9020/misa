@@ -4,6 +4,9 @@ import com.investsaudi.portal.core.model.*;
 import com.investsaudi.portal.core.service.InvestSaudiMediaCenterService;
 import com.investsaudi.portal.core.service.InvestSaudiProvinceRegionService;
 import com.investsaudi.portal.core.service.utils.PaginationUtils;
+import com.sap.ibso.eservices.core.jalo.SagiaService;
+import com.sap.ibso.eservices.core.model.SagiaServiceModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaSearchService;
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.impl.ContentPageBreadcrumbBuilder;
 import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
@@ -82,7 +85,10 @@ public class MediaCenterPageController extends AbstractPageController {
 
 	@Resource
 	private InvestSaudiProvinceRegionService investSaudiProvinceRegionService;
-    
+
+	@Resource(name = "sagiaSearchService")
+	private SagiaSearchService sagiaSearchService;
+
     @RequestMapping(method = {RequestMethod.GET})
     public String homePage(final Model model, final HttpServletRequest request, final HttpServletResponse response)
             throws CMSItemNotFoundException
@@ -362,6 +368,32 @@ public class MediaCenterPageController extends AbstractPageController {
 				// copy it to response's OutputStream
 				flushMedia(response, is, fileName);
 			}
+		}
+	}
+
+	@RequestMapping(value = "/downloadServiceApplication/{resourceCode}", method = RequestMethod.GET)
+	public void getServiceApplicationFile(@PathVariable("resourceCode") final String resourceCode,
+								@RequestParam(name="report", required = false) String report,
+								final Model model,
+								final HttpServletRequest request, final HttpServletResponse response)
+	{
+		LOG.info("Entered into Service Application file service controller");
+
+		InputStream is = null;
+		String fileName = null;
+
+		try {
+			MediaContainerModel containerModel=null;
+
+			SagiaServiceModel serviceModel = sagiaSearchService.getSagiaServiceByCode(resourceCode);
+			containerModel = serviceModel.getServiceApplication();
+
+			final Collection<MediaModel> mediaModels = containerModel.getMedias();
+			setMediaToDownload(response, is, fileName, mediaModels);
+
+		} catch (IOException ex) {
+			LOG.info("Error writing file to output stream. Filename was '{}'"+ ex);
+			throw new RuntimeException("IOError writing file to output stream");
 		}
 	}
 

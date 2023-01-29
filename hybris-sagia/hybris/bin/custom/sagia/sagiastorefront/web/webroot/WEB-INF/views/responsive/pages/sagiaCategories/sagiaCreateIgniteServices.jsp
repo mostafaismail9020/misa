@@ -19,8 +19,8 @@
 <c:set var="splitURI" value="${fn:split(currentPage, '/')}"/>
 <c:set var="serviceUrl" value="${splitURI[fn:length(splitURI)-2]}"/>
 <c:set var="categoryUrl" value="${splitURI[fn:length(splitURI)-3]}"/>
-<c:set var="formName" value="createGovtService"/>
-<c:url value="/services/government/create" var="createGovtServiceUrl"/>
+<c:set var="formName" value="createIgniteService"/>
+<c:url value="/services/ignite/create" var="createIgniteServiceUrl"/>
 
 <div class="mainSection mainSection">
     <div class="achievement_header">
@@ -77,9 +77,9 @@
     <div class="container">
         <div class="row w-100 renewal-services">
             <div class="col-md-3">
-                <a href="${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}" class="btn btn_leftIconLink btn_darkLink back_to_service">
+                <a href="${request.contextPath}/services/ignite/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}" class="btn btn_leftIconLink btn_darkLink back_to_service">
                     <span class="iconElement iconElement_closeBack  " id="image-pos-arrow"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span>
-                    <spring:theme code="createGovtServices.backToServiceDetails.text"/>
+                    <spring:theme code="createIgniteServices.backToServiceDetails.text"/>
                 </a>
             </div>
         </div>
@@ -113,7 +113,7 @@
                         <div class="statusBox">
                             <div class="statusBox-description">
                                 <div class="statusBox-info">
-                                    <spring:theme code="createGovtServices.info.text"/>
+                                    <spring:theme code="createIgniteServices.info.text"/>
                                     <span class="tip" data-tip-title="Tooltip Information to be shown to the user." data-original-title="" title="">
                                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="#999ca4" d="M7.567 6.081c.407-.433.965-.649 1.674-.649.657 0 1.182.186 1.577.556s.592.844.592 1.42c0 .349-.07.632-.214.849-.144.218-.437.537-.88.958-.323.305-.533.564-.63.776-.098.213-.146.526-.146.94h-.879c0-.471.056-.85.167-1.138s.361-.618.748-.99l.402-.39c.122-.111.219-.227.295-.35.136-.213.205-.436.205-.666 0-.323-.099-.603-.295-.84s-.522-.355-.975-.355c-.561 0-.949.204-1.165.612-.121.228-.189.555-.207.983h-.878c0-.711.203-1.283.609-1.716zm1.074 5.67h.982v1.027h-.982v-1.027z" enable-background="new"></path><path fill="#999ca4" d="M9 17.389c-4.625 0-8.389-3.763-8.389-8.389 0-4.625 3.764-8.389 8.389-8.389 4.626 0 8.389 3.764 8.389 8.389 0 4.626-3.763 8.389-8.389 8.389zm0-16c-4.197 0-7.611 3.414-7.611 7.611 0 4.196 3.414 7.611 7.611 7.611 4.196 0 7.611-3.415 7.611-7.611 0-4.197-3.415-7.611-7.611-7.611z"></path>
                                         </svg>
@@ -150,38 +150,6 @@
                                                 <span>${infoData.molColor}</span>
                                             </div>
                                         </c:when>
-                                        <c:when test="${fn:startsWith(serviceUrl,'ZIGGS')}">
-                                            <div>
-                                               <spring:theme code="services.ignite.gaming.message" text="To know more about the required document to be uploaded here, please check the"/>&nbsp
-                                                  <a target="_blank" href="<spring:theme code="services.undertakingLetters.url" text="https://misa.gov.sa/media/1279/misa-service-manual-en.pdf"/>">
-                                                      <spring:theme code="services.gaming.manual" text="Gaming Page"/>
-                                                  </a>
-                                            </div>
-                                        </c:when>
-                                        <c:when test="${fn:startsWith(serviceUrl,'ZIGAS')}">
-                                             <div>
-                                                <spring:theme code="services.ignite.audio.message" text="To know more about the required document to be uploaded here, please check the"/>&nbsp
-                                                   <a target="_blank" href="<spring:theme code="services.undertakingLetters.url" text="https://misa.gov.sa/media/1279/misa-service-manual-en.pdf"/>">
-                                                       <spring:theme code="services.audio.manual" text="Audio Page"/>
-                                                   </a>
-                                             </div>
-                                        </c:when>
-                                        <c:when test="${fn:startsWith(serviceUrl,'ZIGVS')}">
-                                             <div>
-                                                <spring:theme code="services.ignite.video.message" text="To know more about the required document to be uploaded here, please check the"/>&nbsp
-                                                   <a target="_blank" href="<spring:theme code="services.undertakingLetters.url" text="https://misa.gov.sa/media/1279/misa-service-manual-en.pdf"/>">
-                                                       <spring:theme code="services.video.manual" text="Video Page"/>
-                                                   </a>
-                                             </div>
-                                        </c:when>
-                                        <c:when test="${fn:startsWith(serviceUrl,'ZIGADS')}">
-                                             <div>
-                                                <spring:theme code="services.ignite.advertisement.message" text="To know more about the required document to be uploaded here, please check the"/>&nbsp
-                                                   <a target="_blank" href="<spring:theme code="services.undertakingLetters.url" text="https://misa.gov.sa/media/1279/misa-service-manual-en.pdf"/>">
-                                                       <spring:theme code="services.advertisement.manual" text="Advertisement Page"/>
-                                                   </a>
-                                             </div>
-                                        </c:when>
                                         <c:otherwise>
                                             <div>
                                                 <spring:theme code="services.type.zmoip.number700" text="700 Number: "/>
@@ -190,6 +158,7 @@
                                         </c:otherwise>
                                     </c:choose>
                                     <services:undertakingLetters/>
+                                    <services:serviceApplication serviceUrl="${serviceUrl}"/>
                                 </div>
                             </div>
                         </div>
@@ -199,8 +168,8 @@
             </div>
         </div>
 
-        <form:form method="post" modelAttribute="${formName}" action="${createGovtServiceUrl}" enctype="multipart/form-data" class="js-create-governamentalDocuments">
-            <c:if test="${fn:length(createGovtService.documentsToUpload) gt 0}">
+        <form:form method="post" modelAttribute="${formName}" action="${createIgniteServiceUrl}" enctype="multipart/form-data" class="js-create-governamentalDocuments">
+            <c:if test="${fn:length(createIgniteService.documentsToUpload) gt 0}">
                 <div class="panelModule panelModule_halfRadius panelModule_smallMargin">
                     <div class="contentModule">
                         <div class="contentModule-section">
@@ -217,7 +186,7 @@
                             </div>
 
                             <div class="row mt-5">
-                                <c:forEach items="${createGovtService.documentsToUpload}" var="document" varStatus="count">
+                                <c:forEach items="${createIgniteService.documentsToUpload}" var="document" varStatus="count">
                                     <div class="col-md-6">
                                         <div class="formInputFile">
                                             <div class="form-group <c:if test="${hasErrors && empty document.fileText}">has-error</c:if>">
@@ -239,7 +208,7 @@
 												<div class="help-block"></div>
                                                 <c:if test="${hasErrors && empty document.fileText}">
                                                     <div class="help-block">
-                                                        <span id="create.govtServices.uploadError"><spring:theme code="create.govtServices.uploadError" text="You must also upload a file in here."/></span>
+                                                        <span id="create.igniteServices.uploadError"><spring:theme code="create.igniteServices.uploadError" text="You must also upload a file in here."/></span>
                                                     </div>
                                                 </c:if>
                                             </div>
@@ -259,7 +228,7 @@
                         <formElement:termsAndConditionsCheckbox event="LABOUR" id="termsAndConditions" path="termsAndConditionsChecked"/>
                     </div>
                 </div>
-                <button type="button" class="btn btn_leftIconLink btn_outline" onclick="window.location.href='${request.contextPath}/services/government/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}'">
+                <button type="button" class="btn btn_leftIconLink btn_outline" onclick="window.location.href='${request.contextPath}/services/ignite/${categoryUrl}/${serviceUrl}?serviceName=${serviceName}'">
                     <spring:theme code="general.cancel"/>
                 </button>
 

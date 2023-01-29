@@ -57,6 +57,9 @@
             <c:when test="${event == 'LEGAL_CONSULTATION'}">
                 <c:url var="TandCUrl" value="/cms/sagia-cms-TandC-legalConsultation"/>
             </c:when>
+            <c:when test="${event == 'IGNITE'}">
+                <c:url var="TandCUrl" value="/cms/sagia-cms-TandC-govDocs"/>
+            </c:when>
         </c:choose>
         <spring:theme code="register.termsConditions" arguments="${TandCUrl}"/>
     </label>

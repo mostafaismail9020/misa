@@ -1806,6 +1806,11 @@
                         </persistence>
                         <modifiers dontOptimize="true"/>
                     </attribute>
+                    <attribute qualifier="serviceApplication" type="MediaContainer">
+                        <persistence type="property"/>
+                        <modifiers/>
+                        <description>Service Application to be used for service</description>
+                    </attribute>
                 </attributes>
                 <indexes>
                     <index name="codeIndex" unique="true">

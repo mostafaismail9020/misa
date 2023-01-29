@@ -57,7 +57,7 @@ public class SagiaIgniteServicesController extends SagiaAbstractPageController {
     private static final String ENTITY_NAME = "GovtServices";
     private static final String UTF_8 = "UTF-8";
     private static final String SERVICE_NAME = "serviceName";
-    private static final String CREATE_IGNITE_SERVICE = "createIgniteServices";
+    private static final String CREATE_IGNITE_SERVICE = "createIgniteService";
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
     @Resource

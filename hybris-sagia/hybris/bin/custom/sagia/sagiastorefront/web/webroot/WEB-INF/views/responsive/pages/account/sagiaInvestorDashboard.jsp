@@ -210,7 +210,7 @@
 
         <div class="col-xs-12 col-md-12 services-category-list">
             <ul class="nav nav-pills sagiaNavigation-services" id="pills-tab" role="tablist">
-                <li class="nav-item col-lg-4 col-md-12">
+                <li class="nav-item col-lg-3 col-md-12">
                     <div class="service-wrapper mx-3">
                         <a class="nav-link active" id="pills-licensing-tab" data-toggle="pill" href="#licensing" role="tab" aria-controls="pills-licensing" aria-selected="true">
                             <div class="INS_EPM_border_set text-center">
@@ -237,7 +237,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item col-lg-4 col-md-12">
+                <li class="nav-item col-lg-3 col-md-12">
                     <div class="service-wrapper mx-3">
                         <a class="nav-link " id="pills-govt-tab" data-toggle="pill" href="#govt-service" role="tab" aria-controls="pills-govt" aria-selected="true">
                             <div class="INS_EPM_border_set text-center">
@@ -266,7 +266,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item col-lg-4 col-md-12">
+                <li class="nav-item col-lg-3 col-md-12">
                     <div class="service-wrapper mx-3">
                         <a class="nav-link " id="pills-misa-tab" data-toggle="pill" href="#sagia-services" role="tab"
                             aria-controls="pills-misa" aria-selected="true">
@@ -296,7 +296,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item col-lg-4 col-md-12">
+                <li class="nav-item col-lg-3 col-md-12">
                                     <div class="service-wrapper mx-3">
                                         <a class="nav-link " id="pills-ignite-tab" data-toggle="pill" href="#ignite-service" role="tab" aria-controls="pills-ignite" aria-selected="true">
                                             <div class="INS_EPM_border_set text-center">

@@ -256,7 +256,7 @@
                                 </div>
                                 <ul id="history-list" class="historyList">
                                     <c:forEach items="${serviceList}" var="service">
-                                        <li class="historyList-item serviceItem cursor-pointer"
+                                        <li class="historyList-item serviceIgniteItem cursor-pointer"
                                             data-expand-target="expand01" data-param1="${service.srID}">
                                             <input type="hidden" id="category" value="${categoryUrl}"/>
                                             <input type="hidden" id="service" value="${serviceUrl}"/>
@@ -409,7 +409,7 @@
                                 </div>
                             </div>
 
-                            <div id="govtServicesAttachments">
+                            <div id="igniteServicesAttachments">
                                 <ul class="downloadList downloadList_maxHeight">
                                     <c:forEach items="${attachments}" var="attachment">
                                         <li class="downloadList-item">
@@ -472,7 +472,7 @@
     </div>
 </div>
 
-<script id="messagesSagiaGovtServices-template" type="text/template">
+<script id="messagesSagiaIgniteServices-template" type="text/template">
 
   <li class="messageList-item">
   <div class="messageList-img">

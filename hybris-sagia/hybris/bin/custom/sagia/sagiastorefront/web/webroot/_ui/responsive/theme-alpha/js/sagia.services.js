@@ -244,6 +244,10 @@ $('#createGovtServiceButton').click(function () {
     window.location.href = $('input#createGovtServUrl').val();
 });
 
+$('#createIgniteServiceButton').click(function () {
+    window.location.href = $('input#createIgniteServUrl').val();
+});
+
 $(".js-load-draft").click(
     function () {
         var id = $(this).data("targetForm");

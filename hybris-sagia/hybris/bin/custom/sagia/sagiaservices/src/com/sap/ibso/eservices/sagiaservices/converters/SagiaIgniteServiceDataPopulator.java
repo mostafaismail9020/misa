@@ -33,11 +33,11 @@ public class SagiaIgniteServiceDataPopulator extends ODataPopulator<SagiaCRMIgni
 	}
 
 	private List<ContentHDRData> readAttachments(Map<String, Object> map) {
-		return contentHDRPopulator.readAttachmentByOdataProperty(map, "GovtServicesToContentHDRNav");
+		return contentHDRPopulator.readAttachmentByOdataProperty(map, "IgniteServicesToContentHDRNav");
 	}
     
 	private List<GetTextData> readMessages(Map<String, Object> map) {
-		Object govtMessages = map.get("GovtServicesToTextNav");
+		Object govtMessages = map.get("IgniteServicesToTextNav");
 		List<GetTextData> textDataList = new ArrayList<>();
 		if (govtMessages != null) {
 			List<ODataEntry> messagesODataEntries = ((ODataDeltaFeedImpl) govtMessages).getEntries();

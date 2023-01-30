@@ -103,8 +103,8 @@
                         <c:param name="srID" value="${serviceList[0].srID}"/>
                     </c:if>
                 </c:url>
-                <button class="btn btn_slim" id="createGovtServiceButton">
-                    <input id="createGovtServUrl" type="hidden" value="${url}">
+                <button class="btn btn_slim" id="createIgniteServiceButton">
+                    <input id="createIgniteServUrl" type="hidden" value="${url}">
                     <spring:theme code="create.govtServices"/>
                 </button>
             </div>
@@ -117,7 +117,7 @@
         <div class="mainSection-linkActions mainSection-linkActions_spaceBetween">
             <div class="d-flex row renewal-services w-100">
                 <div class="col-xl-3 col-md-6 col-12">
-                    <a href="${encodedContextPath}/service-search/GOVERNMENTAL SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
+                    <a href="${encodedContextPath}/service-search/IGNITE SERVICES" class="btn btn_leftIconLink btn_darkLink back_to_service"><span class="iconElement iconElement_closeBack  " id="image-pos"><img src="${commonResourcePath}/images/dashboard-media/arrow-back.png" alt="back"/></span><spring:theme code="service.back.all"/></a>
                 </div>
                 <c:if test="${fn:length(sagiaService.tabs) > 0}">
                     <div class="col-xl-3 col-md-6 col-12">
@@ -133,8 +133,8 @@
                                     <c:param name="srID" value="${serviceList[0].srID}"/>
                                 </c:if>
                             </c:url>
-                            <button class="btn btn_slim back_to_service" id="createGovtServiceButton">
-                                <input id="createGovtServUrl" type="hidden" value="${url}">
+                            <button class="btn btn_slim back_to_service" id="createIgniteServiceButton">
+                                <input id="createIgniteServUrl" type="hidden" value="${url}">
                                 <spring:theme code="create.govtServices"/>
                             </button>
                         </div>

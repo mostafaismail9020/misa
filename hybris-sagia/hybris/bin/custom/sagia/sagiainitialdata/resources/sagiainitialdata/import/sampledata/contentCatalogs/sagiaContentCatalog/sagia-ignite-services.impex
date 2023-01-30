@@ -166,3 +166,7 @@ UPDATE SagiaService; code[unique = true]; serviceFinancialFees[lang = $langen]; 
                    ; ZPER_VIDEO_04      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_04
                    ; ZPER_AUD_01        ;                                     ; Three working day               ;ignitePermission       ; ZPER_AUD_01
                    ; ZPER_AUD_02        ;                                     ; Three working day               ;ignitePermission       ; ZPER_AUD_02
+
+INSERT_UPDATE SagiaTermsAndConditions;acceptanceEvent(code)[unique=true];active[default=true];version[default=0]
+                                     ;IGNITE_OPERATIONS;;
+                                     ;IGNITE_PERMISSIONS;;

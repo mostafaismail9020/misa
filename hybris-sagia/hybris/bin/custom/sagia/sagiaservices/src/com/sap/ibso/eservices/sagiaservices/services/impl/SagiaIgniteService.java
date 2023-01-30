@@ -56,7 +56,7 @@ public class SagiaIgniteService extends AbstractSagiaService<SagiaCRMIgniteServi
      * @return CRM service insance based on a given id.
      */
     public SagiaCRMIgniteService getCRMServiceById(String serviceId) {
-        return super.get(SagiaCRMIgniteService.class, (Object)serviceId, REQUEST_PARAMETER_EXPAND, "GovtServicesToContentHDRNav,GovtServicesToTextNav");
+        return super.get(SagiaCRMIgniteService.class, (Object)serviceId, REQUEST_PARAMETER_EXPAND, "IgniteServicesToContentHDRNav,IgniteServicesToTextNav");
     }
 
     public void setSagiaGovtServiceDAO(SagiaGovtServiceDAO sagiaGovtServiceDAO) {

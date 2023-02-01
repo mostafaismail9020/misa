@@ -4,7 +4,9 @@ import com.sap.ibso.eservices.facades.populators.SagiaIgniteServiceUploadPopulat
 import com.sap.ibso.eservices.facades.sagia.SagiaIgniteServiceFacade;
 import com.sap.ibso.eservices.sagiaservices.data.SagiaIgniteServiceFileUpload;
 import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.SagiaIgniteServiceFileUploadData;
+import com.sap.ibso.eservices.sagiaservices.services.impl.GlobalValsService;
 import com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteCreationService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * DefaultSagiaGovtServiceFacade
@@ -12,6 +14,8 @@ import com.sap.ibso.eservices.sagiaservices.services.impl.SagiaIgniteCreationSer
 public class DefaultSagiaIgniteServiceFacade implements SagiaIgniteServiceFacade {
     private SagiaIgniteServiceUploadPopulator sagiaIgniteServiceUploadPopulator;
     private SagiaIgniteCreationService sagiaIgniteCreationService;
+    @Autowired
+    private GlobalValsService globalValsService;
 
     /**
      * Create Ignite service method.
@@ -22,6 +26,11 @@ public class DefaultSagiaIgniteServiceFacade implements SagiaIgniteServiceFacade
         SagiaIgniteServiceFileUploadData sagiaIgniteServiceFileUploadData = new SagiaIgniteServiceFileUploadData();
         sagiaIgniteServiceUploadPopulator.populate(sagiaIgniteServiceFileUpload, sagiaIgniteServiceFileUploadData);
         sagiaIgniteCreationService.createIgniteService(sagiaIgniteServiceFileUploadData);
+    }
+
+    @Override
+    public void checkCreateIgniteCRMReply() {
+        globalValsService.checkIgniteServicesAvailability();
     }
 
     /**

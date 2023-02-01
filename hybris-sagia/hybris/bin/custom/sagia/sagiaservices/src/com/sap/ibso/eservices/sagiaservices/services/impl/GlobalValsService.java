@@ -38,7 +38,7 @@ public final class GlobalValsService extends AbstractSagiaService<GlobalVals>
 	private static final String SCENARIO_WL = "ZS15";
 	private static final String SCENARIO_LR = "ZSR8";
 	private static final String SCENARIO_LICENSE_RENEWAL = "ZSR4";
-
+	private static final String SCENARIO_IGNITE_SERVICES = "ZS32";
 	/**
 	 * checks WarningLetterCreateAvalability
 	 */
@@ -84,6 +84,14 @@ public final class GlobalValsService extends AbstractSagiaService<GlobalVals>
 	 */
 	public void checkLicenseRenewalAvailability() {
 		final String filterParameters = SCENARIO + EQ + SCENARIO_LICENSE_RENEWAL +"'";
+		checkValidResponseCode(null, SagiaservicesConstants.REQUEST_PARAMETER_FILTER, filterParameters);
+	}
+
+	/**
+	 * checks IgniteServicesAvailability
+	 */
+	public void checkIgniteServicesAvailability() {
+		final String filterParameters = SCENARIO + EQ + SCENARIO_IGNITE_SERVICES +"'";
 		checkValidResponseCode(null, SagiaservicesConstants.REQUEST_PARAMETER_FILTER, filterParameters);
 	}
 }

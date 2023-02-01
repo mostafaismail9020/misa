@@ -11,4 +11,9 @@ public interface SagiaIgniteServiceFacade {
      * @param sagiaIgniteServiceFileUpload sagiaIgniteServiceFileUpload
      */
     void createIgniteService(SagiaIgniteServiceFileUpload sagiaIgniteServiceFileUpload);
+
+    /**
+     * checks checkCreateIgniteCRMReply
+     */
+    void checkCreateIgniteCRMReply();
 }

@@ -158,7 +158,10 @@
                                         </c:otherwise>
                                     </c:choose>
                                     <services:undertakingLetters/>
-                                    <services:serviceApplication serviceUrl="${serviceUrl}"/>
+                                     <c:if test="${fn:startsWith(serviceUrl,'ZPER')}">
+                                        <services:serviceApplication serviceUrl="${serviceUrl}"/>
+                                    </c:if>
+
                                 </div>
                             </div>
                         </div>

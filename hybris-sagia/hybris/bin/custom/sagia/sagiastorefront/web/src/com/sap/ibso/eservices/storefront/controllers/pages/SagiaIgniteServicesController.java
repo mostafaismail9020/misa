@@ -1,5 +1,7 @@
 package com.sap.ibso.eservices.storefront.controllers.pages;
 
+import atg.taglib.json.util.JSONException;
+import atg.taglib.json.util.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Iterables;
@@ -10,8 +12,10 @@ import com.sap.ibso.eservices.facades.sagia.*;
 import com.sap.ibso.eservices.sagiaservices.data.*;
 import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData;
 import com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GetTextData;
+import com.sap.ibso.eservices.sagiaservices.exception.SagiaCRMException;
 import com.sap.ibso.eservices.storefront.controllers.pages.abs.SagiaAbstractPageController;
 import com.sap.ibso.eservices.storefront.forms.CreateIgniteServiceForm;
+import com.sap.ibso.eservices.storefront.response.SagiaAjaxResponse;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
@@ -195,39 +199,59 @@ public class SagiaIgniteServicesController extends SagiaAbstractPageController {
                                      @RequestParam(value = SERVICE_NAME, required = false) String serviceName,
                                      @PathVariable("categoryUrl") String categoryUrl,
                                      @PathVariable("serviceUrl") String serviceUrl,
-                                     @ModelAttribute(CREATE_IGNITE_SERVICE) CreateIgniteServiceForm createIgniteService
-    ) throws CMSItemNotFoundException, UnsupportedEncodingException {
-        model.addAttribute("srID", srID);
-        model.addAttribute("categoryUrl", categoryUrl);
-        model.addAttribute("serviceUrl", serviceUrl);
-        if(StringUtils.isNotEmpty(serviceName)) {
-            model.addAttribute(SERVICE_NAME, URLDecoder.decode(serviceName, UTF_8));
-        }
-        model.addAttribute("infoData", sagiaIgniteCategoryFacade.getInfoData());
-
-        if (sessionService.getAttribute(CREATE_IGNITE_SERVICE) != null) {
-            createIgniteService = sessionService.getAttribute(CREATE_IGNITE_SERVICE);
-            model.addAttribute("hasErrors", "true");
-            model.addAttribute("consent", createIgniteService.isConsentBox());
-        }
-		SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(serviceUrl);        
-        model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
-
-        createIgniteService.setDocumentsToUpload(sagiaIgniteCategoryFacade.getFilesToBeUploaded(serviceUrl));
-
-        if (CollectionUtils.isNotEmpty(createIgniteService.getFileText()) && CollectionUtils.isNotEmpty(createIgniteService.getDocumentsToUpload())) {
-            int index = 0;
-            for (CRMIgniteServiceUploadData uploadData : createIgniteService.getDocumentsToUpload()) {
-                uploadData.setFileText(createIgniteService.getFileText().get(index++));
+                                     @ModelAttribute(CREATE_IGNITE_SERVICE) CreateIgniteServiceForm createIgniteService,final RedirectAttributes redirectModel
+    ) throws CMSItemNotFoundException, UnsupportedEncodingException, JSONException {
+        try {
+            sagiaIgniteServiceFacade.checkCreateIgniteCRMReply();
+            model.addAttribute("srID", srID);
+            model.addAttribute("categoryUrl", categoryUrl);
+            model.addAttribute("serviceUrl", serviceUrl);
+            if (StringUtils.isNotEmpty(serviceName)) {
+                model.addAttribute(SERVICE_NAME, URLDecoder.decode(serviceName, UTF_8));
             }
+            model.addAttribute("infoData", sagiaIgniteCategoryFacade.getInfoData());
+
+            if (sessionService.getAttribute(CREATE_IGNITE_SERVICE) != null) {
+                createIgniteService = sessionService.getAttribute(CREATE_IGNITE_SERVICE);
+                model.addAttribute("hasErrors", "true");
+                model.addAttribute("consent", createIgniteService.isConsentBox());
+            }
+            SagiaServiceModel sagiaService = searchService.getSagiaServiceByCode(serviceUrl);
+            model.addAttribute("maxUploadSize", sagiaService.getMaxFileUploadSize());
+
+            createIgniteService.setDocumentsToUpload(sagiaIgniteCategoryFacade.getFilesToBeUploaded(serviceUrl));
+
+            if (CollectionUtils.isNotEmpty(createIgniteService.getFileText()) && CollectionUtils.isNotEmpty(createIgniteService.getDocumentsToUpload())) {
+                int index = 0;
+                for (CRMIgniteServiceUploadData uploadData : createIgniteService.getDocumentsToUpload()) {
+                    uploadData.setFileText(createIgniteService.getFileText().get(index++));
+                }
+            }
+            model.addAttribute(CREATE_IGNITE_SERVICE, createIgniteService);
+
+            boolean draftExists = sagiaDraftFacade.isDraftExists(serviceUrl);
+            model.addAttribute("draftExists", draftExists);
+            model.addAttribute("serviceId", serviceUrl);
+
+            return getView(model, SAGIA_CREATE_IGNITE_SERVICES_CMS_PAGE);
         }
-        model.addAttribute(CREATE_IGNITE_SERVICE, createIgniteService);
-
-        boolean draftExists = sagiaDraftFacade.isDraftExists(serviceUrl);
-        model.addAttribute("draftExists", draftExists);
-        model.addAttribute("serviceId", serviceUrl);
-
-        return getView(model, SAGIA_CREATE_IGNITE_SERVICES_CMS_PAGE);
+        catch (SagiaCRMException e) {
+            LOG.warn(e.getMessage(), e);
+            String message = "";
+            if(e.getMessage().indexOf('{') >= 0){
+                String jsonError = new JSONObject(e.getMessage().substring(e.getMessage().indexOf('{'))).getString("error");
+                if(StringUtils.isNotEmpty(jsonError)){
+                    String jsonMessage = new JSONObject(jsonError).getString("message");
+                    if(StringUtils.isNotEmpty(jsonMessage)){
+                        message = new JSONObject(jsonMessage).getString("value");
+                    }
+                }
+            }
+            GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.ERROR_MESSAGES_HOLDER,message, null);
+            model.addAttribute("igniteServiceRestrictionMessage", message);
+            return REDIRECT_PREFIX + "/services/ignite/{categoryUrl}/{serviceUrl}";
+            //return REDIRECT_PREFIX + "/services/ignite";
+        }
     }
 
     /**
@@ -351,4 +375,5 @@ public class SagiaIgniteServicesController extends SagiaAbstractPageController {
         setUpMetaDataForContentPage(model, getContentPageForLabelOrId(page));
         return getViewForPage(model);
     }
+
 }

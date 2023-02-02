@@ -4,8 +4,9 @@
 
 <div>
 	<c:url value="/mediaCenter/downloadServiceApplication/${serviceUrl}" var="resourcedownloadURL"/>
-    <spring:theme code="services.serviceApplication.message" text="To Proceed with the service application, please use the"/>&nbsp
+    <spring:theme code="services.serviceApplication.message1" text="To Proceed with the service application, please use the"/>&nbsp
     <a target="_blank" href="${resourcedownloadURL}">
-        <spring:theme code="services.serviceApplication.manual" text="Service Application"/>
+        <spring:theme code="services.serviceApplication.manual" text="Please fill-out the form"/>&nbsp
     </a>
+    <spring:theme code="services.serviceApplication.message2"/>
 </div>

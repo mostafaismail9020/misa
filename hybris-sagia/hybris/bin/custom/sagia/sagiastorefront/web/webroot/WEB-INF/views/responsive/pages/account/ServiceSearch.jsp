@@ -227,8 +227,8 @@
                     <div class="service-wrapper mx-3">
                         <a class="nav-link " id="pills-ignite-tab" data-toggle="pill" href="#IGNITE SERVICES" role="tab" aria-controls="pills-ignite" aria-selected="true">
                             <div class="INS_EPM_border_set text-center">
-                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-1"/>
-                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-white-100x100-2.png" alt="IGNITE SERVICES" class="text-center service-icon-2"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-Yellow-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-1"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-white-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-2"/>
                                 <span class="licensing-heading"><spring:theme code="dashboard.ignite.service.name"/></span>
                             </div>
                         </a>
@@ -439,8 +439,8 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header mb-0" id="heading-g${loop.index}">
                                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-g${loop.index}" aria-expanded="true" aria-controls="collapse-g${loop.index}">
-                                        <img class="services-category-img icon-1" src="${commonResourcePath}/images/dashboard-media/services/blue/${categoryCode}.png" alt="" />
-                                        <img class="services-category-img icon-2" src="${commonResourcePath}/images/dashboard-media/services/white/${categoryCode}.png" alt="" />
+                                        <img class="services-category-img icon-1" src="${commonResourcePath}/images/dashboard-media/services/blue/6.png" alt="" />
+                                        <img class="services-category-img icon-2" src="${commonResourcePath}/images/dashboard-media/services/white/6.png" alt="" />
                                         <h5 class="mb-0">${category.key}</h5>
                                         <div class="plus-minus-icon"></div>
                                       </button>

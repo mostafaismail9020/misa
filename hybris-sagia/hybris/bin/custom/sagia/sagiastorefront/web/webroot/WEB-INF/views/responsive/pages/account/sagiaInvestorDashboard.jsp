@@ -297,18 +297,18 @@
                     </div>
                 </li>
                 <li class="nav-item col-lg-3 col-md-12">
-                                    <div class="service-wrapper mx-3">
-                                        <a class="nav-link " id="pills-ignite-tab" data-toggle="pill" href="#ignite-service" role="tab" aria-controls="pills-ignite" aria-selected="true">
-                                            <div class="INS_EPM_border_set text-center">
-                                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-Yellow-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-1"/>
-                                                <img src="${commonResourcePath}/images/dashboard-media/services/Government-Documents-blue-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-2"/>
-                                                <span class="licensing-heading">
-                                                    <spring:theme code="dashboard.ignite.service.name" />
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
+                    <div class="service-wrapper mx-3">
+                        <a class="nav-link " id="pills-ignite-tab" data-toggle="pill" href="#ignite-service" role="tab" aria-controls="pills-ignite" aria-selected="true">
+                            <div class="INS_EPM_border_set text-center">
+                                <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-Yellow-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-1"/>
+                                <img src="${commonResourcePath}/images/dashboard-media/services/License-Services-white-100x100.png" alt="IGNITE SERVICES" class="text-center service-icon-2"/>
+                                <span class="licensing-heading">
+                                    <spring:theme code="dashboard.ignite.service.name" />
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
                                 <li class="mobile_services mb-5">
                                     <div class="tab-content services-container-tabcontent" id="pills-tabContent0">
                                         <div class="tab-pane fade service_tab_pane_show pb-5 m-auto" id="ignite-service1" role="tabpanel" aria-labelledby="pills-ignite-tab">

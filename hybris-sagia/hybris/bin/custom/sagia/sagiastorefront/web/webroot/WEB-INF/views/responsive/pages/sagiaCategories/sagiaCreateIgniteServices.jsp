@@ -151,13 +151,16 @@
                                             </div>
                                         </c:when>
                                         <c:otherwise>
+                                         <c:if test="${fn:startsWith(serviceUrl,'ZLIC')}">
                                             <div>
-                                                <spring:theme code="services.type.zmoip.number700" text="700 Number: "/>
-                                                <span>${infoData.sevenHundredNumber}</span>
-                                            </div>
+                                               <spring:theme code="services.type.zmoip.number700" text="700 Number: "/>
+                                               <span>${infoData.sevenHundredNumber}</span>
+                                               <services:undertakingLetters/>
+                                           </div>
+                                        </c:if>
+
                                         </c:otherwise>
                                     </c:choose>
-                                    <services:undertakingLetters/>
                                      <c:if test="${fn:startsWith(serviceUrl,'ZPER')}">
                                         <services:serviceApplication serviceUrl="${serviceUrl}"/>
                                     </c:if>

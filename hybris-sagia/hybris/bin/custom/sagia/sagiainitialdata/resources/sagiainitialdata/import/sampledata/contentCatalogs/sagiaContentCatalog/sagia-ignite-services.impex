@@ -7,6 +7,7 @@ $menuIcon = menuIcon(code, $contentCV)
 $sagiaCategory = category(code)
 
 $langen = en
+$langar = ar
 
 $mediafolder = portal-media
 $media = media(code, $contentCV)
@@ -18,155 +19,344 @@ $siteResource = jar:com.sagia.investsaudi.portal.core.setup.Sagiainvestsaudistor
 UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
 $jarResourceCms = $config-jarResourceCmsValue
 
-INSERT_UPDATE Media; code[unique = true]              ; realFileName                     ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/pdf']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
+INSERT_UPDATE Media; code[unique = true]; realFileName; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/pdf']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true]
 #                   ; dummy-arabic.pdf  				  ; dummy-arabic.pdf  				 ; $siteResource/dummy-arabic.pdf                               ; application/pdf             ;                                          ; ""     ;
 #                   ; dummy-english.pdf 				  ; dummy-english.pdf 				 ; $siteResource/dummy-english.pdf								; application/pdf             ;                                          ; ""     ;
 
 
-INSERT_UPDATE MediaContainer; qualifier[unique = true]       ; $medias                             ; $contentCV;
-                            ;ZLIC_01-media-container      	 ;                                     ;           ;
-                            ;ZLIC_02-media-container         ;                                     ;           ;
-                            ;ZLIC_03-media-container         ;                                     ;           ;
-                            ;ZLIC_04-media-container         ;                                     ;           ;
-                            ;ZLIC_05-media-container         ;                                     ;           ;
-                            ;ZLIC_06-media-container         ;                                     ;           ;
-                            ;ZPER_GAME_01-media-container    ;                                     ;           ;
-                            ;ZPER_GAME_02-media-container    ;                                     ;           ;
-                            ;ZPER_VIDEO_01-media-container   ;                                     ;           ;
-                            ;ZPER_VIDEO_02-media-container   ;                                     ;           ;
-                            ;ZPER_VIDEO_03-media-container   ;                                     ;           ;
-                            ;ZPER_VIDEO_04-media-container   ;                                     ;           ;
-                            ;ZPER_AUD_01-media-container     ;                                     ;           ;
-                            ;ZPER_AUD_02-media-container     ;                                     ;           ;
+INSERT_UPDATE MediaContainer; qualifier[unique = true]     ; $medias; $contentCV;
+                            ; ZLIC_GAME_01-media-container ;        ;           ;
+                            ; ZLIC_GAME_02-media-container ;        ;           ;
+                            ; ZLIC_GAME_03-media-container ;        ;           ;
+                            ; ZLIC_VDEO_01-media-container ;        ;           ;
+                            ; ZLIC_VDEO_02-media-container ;        ;           ;
+                            ; ZLIC_VDEO_03-media-container ;        ;           ;
+                            ; ZLIC_AUDO_01-media-container ;        ;           ;
+                            ; ZLIC_AUDO_02-media-container ;        ;           ;
+                            ; ZLIC_AUDO_03-media-container ;        ;           ;
+                            ; ZLIC_ADVT_01-media-container ;        ;           ;
+                            ; ZLIC_ADVT_02-media-container ;        ;           ;
+                            ; ZLIC_ADVT_03-media-container ;        ;           ;
+                            ; ZLIC_ADVT_04-media-container ;        ;           ;
+                            ; ZPER_GAME_01-media-container ;        ;           ;
+                            ; ZPER_GAME_02-media-container ;        ;           ;
+                            ; ZPER_VDEO_01-media-container ;        ;           ;
+                            ; ZPER_VDEO_02-media-container ;        ;           ;
+                            ; ZPER_ADVT_01-media-container ;        ;           ;
+
+INSERT_UPDATE ServiceType; code[unique = true]; overviewRelevant[default = false]; categoryConsideration[default = false]; name[lang = $langen]; name[lang = $langar]
+                         ; ZS32               ; true                             ; true                                  ; "IGNITE Service"    ; "الخدمات الحكومية"
 
 
+INSERT_UPDATE ServiceTypeCategory; code[unique = true]; name[lang = $langen]                                                                                      ; name[lang = $langar]                                                                ; serviceType(code); level; parentCategory(code)
+                                 ; ZLIC               ; "Operational Licenses"                                                                                    ; "وزارة الداخلية/ الجوازات"                                                          ; ZS32             ; 1    ;
+                                 ; ZLIC_GAME          ; "Gaming License"                                                                                          ; "Gaming License"                                                                    ; ZS32             ; 2    ; ZLIC
+                                 ; ZLIC_VDEO          ; "Video License"                                                                                           ; "Video License"                                                                     ; ZS32             ; 2    ; ZLIC
+                                 ; ZLIC_AUDO          ; "Audio License"                                                                                           ; "Audio License"                                                                     ; ZS32             ; 2    ; ZLIC
+                                 ; ZLIC_ADVT          ; "Advertising License"                                                                                     ; "Advertising License"                                                               ; ZS32             ; 2    ; ZLIC
+                                 ; ZLIC_GAME_01       ; "Gaming License-Audiovisual Content Production License"                                                   ; "ترخيص انتاج المحتوى المرئي والمسموع"                                               ; ZS32             ; 3    ; ZLIC_GAME
+                                 ; ZLIC_GAME_02       ; "Gaming License-License to Operate a Production Studio"                                                   ; "ترخيص لتشغيل استوديو انتاج"                                                        ; ZS32             ; 3    ; ZLIC_GAME
+                                 ; ZLIC_GAME_03       ; "Gaming License-Importing and distributing Audiovisual Media Content"                                     ; "استيراد وتوزيع المحتوى الإعلامي المرئي والمسموع"                                   ; ZS32             ; 3    ; ZLIC_GAME
+                                 ; ZLIC_VDEO_01       ; "Video License-Audiovisual Content Production License"                                                    ; "ترخيص انتاج المحتوى المرئي والمسموع"                                               ; ZS32             ; 3    ; ZLIC_VDEO
+                                 ; ZLIC_VDEO_02       ; "Video License-License to Operate a Production Studio"                                                    ; "ترخيص لتشغيل استوديو انتاج"                                                        ; ZS32             ; 3    ; ZLIC_VDEO
+                                 ; ZLIC_VDEO_03       ; "Video License-Importing and distributing Audiovisual Media Content"                                      ; "استيراد وتوزيع المحتوى الإعلامي المرئي والمسموع"                                   ; ZS32             ; 3    ; ZLIC_VDEO
+                                 ; ZLIC_AUDO_01       ; "Audio License-Audiovisual Content Production License"                                                    ; "ترخيص انتاج المحتوى المرئي والمسموع"                                               ; ZS32             ; 3    ; ZLIC_AUDO
+                                 ; ZLIC_AUDO_02       ; "Audio License-License to Operate a Production Studio"                                                    ; "ترخيص لتشغيل استوديو انتاج"                                                        ; ZS32             ; 3    ; ZLIC_AUDO
+                                 ; ZLIC_AUDO_03       ; "Audio License-Importing and distributing Audiovisual Media Content"                                      ; "استيراد وتوزيع المحتوى الإعلامي المرئي والمسموع"                                   ; ZS32             ; 3    ; ZLIC_AUDO
+                                 ; ZLIC_ADVT_01       ; "Advertising License-Audiovisual Content Production License"                                              ; "ترخيص انتاج المحتوى المرئي والمسموع"                                               ; ZS32             ; 3    ; ZLIC_ADVT
+                                 ; ZLIC_ADVT_02       ; "Advertising License-License to Operate a Production Studio"                                              ; "ترخيص لتشغيل استوديو انتاج"                                                        ; ZS32             ; 3    ; ZLIC_ADVT
+                                 ; ZLIC_ADVT_03       ; "Advertising License-Importing and distributing Audiovisual Media Content"                                ; "استيراد وتوزيع المحتوى الإعلامي المرئي والمسموع"                                   ; ZS32             ; 3    ; ZLIC_ADVT
+                                 ; ZLIC_ADVT_04       ; "Advertising License-Advertising offices, audio-visual media, marketing offices and advertising agencies" ; "مكاتب الدعاية والاعلان الإعلامية المرئية والمسموعة ومكاتب التسويق ووكالات الدعاية" ; ZS32             ; 3    ; ZLIC_ADVT
+                                 ; ZPER               ; "Permission Services"                                                                                     ; "تجديد الإقامة"                                                                     ; ZS32             ; 1    ;
+                                 ; ZPER_GAME          ; "Gaming Permission"                                                                                       ; "Gaming Permission"                                                                 ; ZS32             ; 2    ; ZPER
+                                 ; ZPER_VDEO          ; "Video Permission"                                                                                        ; "Video Permission"                                                                  ; ZS32             ; 2    ; ZPER
+                                 ; ZPER_ADVT          ; "Advertisement Permission"                                                                                ; "Advertisement Permission"                                                          ; ZS32             ; 2    ; ZPER
+                                 ; ZPER_GAME_01       ; "Gaming Permission-Age Classification Of Electronic Games"                                                ; "التصنيف العمري للألعاب الإلكترونية"                                                ; ZS32             ; 3    ; ZPER_GAME
+                                 ; ZPER_GAME_02       ; "Gaming Permission-Clearing Electronic Games"                                                             ; "فسح الألعاب الإلكترونية"                                                           ; ZS32             ; 3    ; ZPER_GAME
+                                 ; ZPER_VDEO_01       ; "Video Permission-Drone Usage in Film"                                                                    ; "استعمال الدرون في تصوير الأفلام"                                                   ; ZS32             ; 3    ; ZPER_VDEO
+                                 ; ZPER_VDEO_02       ; "Video Permission-Shooting Clearance"                                                                     ; "تصريح بالتصوير"                                                                    ; ZS32             ; 3    ; ZPER_VDEO
+                                 ; ZPER_ADVT_01       ; "Advertisement Permission-Drone usage in Digital Advertising Shooting"                                    ; "استعمال الدرون في تصوير المحتوى الإعلامي"                                          ; ZS32             ; 3    ; ZPER_ADVT
 
 
-INSERT_UPDATE ServiceType; code[unique = true]; overviewRelevant[default = false]; categoryConsideration[default = false]; name[lang = EN]  ; name[lang = AR]
-                         ; ZS32               ; true                             ; true                                  ; "IGNITE Service" ; "الخدمات الحكومية"
+INSERT_UPDATE SagiaService; code[unique = true]; name[lang = $langen]                                                                                      ; name[lang = $langar]                                                                ; description[lang = $langen]                                                                               ; description[lang = $langar]                                                                               ; serviceApplication(qualifier, $contentCV)
+                          ; ZLIC_GAME_01       ; "Gaming License-Audiovisual Content Production License"                                                   ; "ترخيص انتاج المحتوى المرئي والمسموع"                                               ; "Gaming License-Audiovisual Content Production License"                                                   ; "Gaming License-Audiovisual Content Production License"                                                   ; ZLIC_GAME_01-media-container
+                          ; ZLIC_GAME_02       ; "Gaming License-License to Operate a Production Studio"                                                   ; "ترخيص لتشغيل استوديو انتاج"                                                        ; "Gaming License-License to Operate a Production Studio"                                                   ; "Gaming License-License to Operate a Production Studio"                                                   ; ZLIC_GAME_02-media-container
+                          ; ZLIC_GAME_03       ; "Gaming License-Importing and distributing Audiovisual Media Content"                                     ; "استيراد وتوزيع المحتوى الإعلامي المرئي والمسموع"                                   ; "Gaming License-Importing and distributing Audiovisual Media Content"                                     ; "Gaming License-Importing and distributing Audiovisual Media Content"                                     ; ZLIC_GAME_03-media-container
+                          ; ZLIC_VDEO_01       ; "Video License-Audiovisual Content Production License"                                                    ; "ترخيص انتاج المحتوى المرئي والمسموع"                                               ; "Video License-Audiovisual Content Production License"                                                    ; "Video License-Audiovisual Content Production License"                                                    ; ZLIC_VDEO_01-media-container
+                          ; ZLIC_VDEO_02       ; "Video License-License to Operate a Production Studio"                                                    ; "ترخيص لتشغيل استوديو انتاج"                                                        ; "Video License-License to Operate a Production Studio"                                                    ; "Video License-License to Operate a Production Studio"                                                    ; ZLIC_VDEO_02-media-container
+                          ; ZLIC_VDEO_03       ; "Video License-Importing and distributing Audiovisual Media Content"                                      ; "استيراد وتوزيع المحتوى الإعلامي المرئي والمسموع"                                   ; "Video License-Importing and distributing Audiovisual Media Content"                                      ; "Video License-Importing and distributing Audiovisual Media Content"                                      ; ZLIC_VDEO_03-media-container
+                          ; ZLIC_AUDO_01       ; "Audio License-Audiovisual Content Production License"                                                    ; "ترخيص انتاج المحتوى المرئي والمسموع"                                               ; "Audio License-Audiovisual Content Production License"                                                    ; "Audio License-Audiovisual Content Production License"                                                    ; ZLIC_AUDO_01-media-container
+                          ; ZLIC_AUDO_02       ; "Audio License-License to Operate a Production Studio"                                                    ; "ترخيص لتشغيل استوديو انتاج"                                                        ; "Audio License-License to Operate a Production Studio"                                                    ; "Audio License-License to Operate a Production Studio"                                                    ; ZLIC_AUDO_02-media-container
+                          ; ZLIC_AUDO_03       ; "Audio License-Importing and distributing Audiovisual Media Content"                                      ; "استيراد وتوزيع المحتوى الإعلامي المرئي والمسموع"                                   ; "Audio License-Importing and distributing Audiovisual Media Content"                                      ; "Audio License-Importing and distributing Audiovisual Media Content"                                      ; ZLIC_AUDO_03-media-container
+                          ; ZLIC_ADVT_01       ; "Advertising License-Audiovisual Content Production License"                                              ; "ترخيص انتاج المحتوى المرئي والمسموع"                                               ; "Advertising License-Audiovisual Content Production License"                                              ; "Advertising License-Audiovisual Content Production License"                                              ; ZLIC_ADVT_01-media-container
+                          ; ZLIC_ADVT_02       ; "Advertising License-License to Operate a Production Studio"                                              ; "ترخيص لتشغيل استوديو انتاج"                                                        ; "Advertising License-License to Operate a Production Studio"                                              ; "Advertising License-License to Operate a Production Studio"                                              ; ZLIC_ADVT_02-media-container
+                          ; ZLIC_ADVT_03       ; "Advertising License-Importing and distributing Audiovisual Media Content"                                ; "استيراد وتوزيع المحتوى الإعلامي المرئي والمسموع"                                   ; "Advertising License-Importing and distributing Audiovisual Media Content"                                ; "Advertising License-Importing and distributing Audiovisual Media Content"                                ; ZLIC_ADVT_03-media-container
+                          ; ZLIC_ADVT_04       ; "Advertising License-Advertising offices, audio-visual media, marketing offices and advertising agencies" ; "مكاتب الدعاية والاعلان الإعلامية المرئية والمسموعة ومكاتب التسويق ووكالات الدعاية" ; "Advertising License-Advertising offices, audio-visual media, marketing offices and advertising agencies" ; "Advertising License-Advertising offices, audio-visual media, marketing offices and advertising agencies" ; ZLIC_ADVT_04-media-container
+                          ; ZPER_GAME_01       ; "Gaming Permission-Age Classification Of Electronic Games"                                                ; "التصنيف العمري للألعاب الإلكترونية"                                                ; "Gaming Permission-Age Classification Of Electronic Games"                                                ; "Gaming Permission-Age Classification Of Electronic Games"                                                ; ZPER_GAME_01-media-container
+                          ; ZPER_GAME_02       ; "Gaming Permission-Clearing Electronic Games"                                                             ; "فسح الألعاب الإلكترونية"                                                           ; "Gaming Permission-Clearing Electronic Games"                                                             ; "Gaming Permission-Clearing Electronic Games"                                                             ; ZPER_GAME_02-media-container
+                          ; ZPER_VDEO_01       ; "Video Permission-Drone Usage in Film"                                                                    ; "استعمال الدرون في تصوير الأفلام"                                                   ; "Video Permission-Drone Usage in Film"                                                                    ; "Video Permission-Drone Usage in Film"                                                                    ; ZPER_VDEO_01-media-container
+                          ; ZPER_VDEO_02       ; "Video Permission-Shooting Clearance"                                                                     ; "تصريح بالتصوير"                                                                    ; "Video Permission-Shooting Clearance"                                                                     ; "Video Permission-Shooting Clearance"                                                                     ; ZPER_VDEO_02-media-container
+                          ; ZPER_ADVT_01       ; "Advertisement Permission-Drone usage in Digital Advertising Shooting"                                    ; "استعمال الدرون في تصوير المحتوى الإعلامي"                                          ; "Advertisement Permission-Drone usage in Digital Advertising Shooting"                                    ; "Advertisement Permission-Drone usage in Digital Advertising Shooting"                                    ; ZPER_ADVT_01-media-container
 
+INSERT_UPDATE SagiaCategory; code[unique = true]; label           ; services(code)                                                                                                                                                           ; categoryUrl
+                           ; igniteOperational  ; IGNITE SERVICES ; ZLIC_GAME_01,ZLIC_GAME_02,ZLIC_GAME_03,ZLIC_VDEO_01,ZLIC_VDEO_02,ZLIC_VDEO_03,ZLIC_AUDO_01,ZLIC_AUDO_02,ZLIC_AUDO_03,ZLIC_ADVT_01,ZLIC_ADVT_02,ZLIC_ADVT_03,ZLIC_ADVT_04 ; ZLIC
+                           ; ignitePermission   ; IGNITE SERVICES ; ZPER_GAME_01,ZPER_GAME_02,ZPER_VDEO_01,ZPER_VDEO_02,ZPER_ADVT_01                                                                                                         ; ZPER
 
-INSERT_UPDATE ServiceTypeCategory; code[unique = true]; name[lang = EN]                                      ; name[lang = AR]            ; serviceType(code); level; parentCategory(code)
-                                 ; ZLIC               ; "Operational Licenses"                               ; "وزارة الداخلية/ الجوازات" ; ZS32             ; 1    ;
-                                 ; ZLIC_01            ; "Register in Manassa Tech"                           ; "تجديد الإقامة"            ; ZS32             ; 2    ; ZLIC
-                                 ; ZLIC_02            ; "Audiovisual Content Production License"             ; "تجديد الإقامة"            ; ZS32             ; 2    ; ZLIC
-                                 ; ZLIC_03            ; "License to Operate a Production Studio"             ; "تجديد الإقامة"            ; ZS32             ; 2    ; ZLIC
-                                 ; ZLIC_04            ; "Photography Activity License"                       ; "تجديد الإقامة"            ; ZS32             ; 2    ; ZLIC
-                                 ; ZLIC_05            ; "Importing and distributing audiovisual media Cntnt" ; "تجديد الإقامة"            ; ZS32             ; 2    ; ZLIC
-                                 ; ZLIC_06            ; "Advertising offices/agencies, Marketing & Media Of" ; "تجديد الإقامة"            ; ZS32             ; 2    ; ZLIC
-                                 ; ZPER               ; "Permission Services"                                ; "تجديد الإقامة"            ; ZS32             ; 1    ;
-                                 ; ZPER_GAME          ; "Gaming Permission"                                  ; "تجديد الإقامة"            ; ZS32             ; 2    ; ZPER
-                                 ; ZPER_VIDEO         ; "Video Permission"                                   ; "تجديد الإقامة"            ; ZS32             ; 2    ; ZPER
-                                 ; ZPER_AUD           ; "Audio Permission"                                   ; "مكتب العمل"               ; ZS32             ; 2    ; ZPER
-                                 ; ZPER_GAME_01       ; "Age Classification Of Electronic Games"             ; "نقل خدمات الأجنبي"        ; ZS32             ; 3    ; ZPER_GAME
-                                 ; ZPER_GAME_02       ; "Copyrights Of Electronic Game"                      ; "نقل خدمات الأجنبي"        ; ZS32             ; 3    ; ZPER_GAME
-                                 ; ZPER_VIDEO_01      ; "Script Revisions"                                   ; "نقل خدمات الأجنبي"        ; ZS32             ; 3    ; ZPER_VIDEO
-                                 ; ZPER_VIDEO_02      ; "Shooting Clearance"                                 ; "نقل خدمات الأجنبي"        ; ZS32             ; 3    ; ZPER_VIDEO
-                                 ; ZPER_VIDEO_03      ; "Drone Usage in Film"                                ; "نقل خدمات الأجنبي"        ; ZS32             ; 3    ; ZPER_VIDEO
-                                 ; ZPER_VIDEO_04      ; "Inspection for video materials circulation"         ; "نقل خدمات الأجنبي"        ; ZS32             ; 3    ; ZPER_VIDEO
-                                 ; ZPER_AUD_01        ; "Drone usage in Digital advertising shooting"        ; "نقل خدمات الأجنبي"        ; ZS32             ; 3    ; ZPER_AUD
-                                 ; ZPER_AUD_02        ; "Inspection & Permit of Digital Advertising Content" ; "نقل خدمات الأجنبي"        ; ZS32             ; 3    ; ZPER_AUD
-
-
-INSERT_UPDATE SagiaService; code[unique = true]; name[lang = $langen]                                 ; description[lang = $langen]								; serviceApplication(qualifier, $contentCV)
-                          ; ZLIC_01            ; "Register in Manassa Tech"                           ; "Register in Manassa Tech"                              ;  ZLIC_01-media-container
-                          ; ZLIC_02            ; "Audiovisual Content Production License"             ; "Audiovisual Content Production License"                ;  ZLIC_02-media-container
-                          ; ZLIC_03            ; "License to Operate a Production Studio"             ; "License to Operate a Production Studio"                ;  ZLIC_03-media-container
-                          ; ZLIC_04            ; "Photography Activity License"                       ; "Photography Activity License"                          ;  ZLIC_04-media-container
-                          ; ZLIC_05            ; "Importing and distributing audiovisual media Cntnt" ; "Importing and distributing audiovisual media Cntnt"    ;  ZLIC_05-media-container
-                          ; ZLIC_06            ; "Advertising offices/agencies, Marketing & Media Of" ; "Advertising offices/agencies, Marketing & Media Of"    ;  ZLIC_06-media-container
-                          ; ZPER_GAME_01       ; "Age Classification Of Electronic Games"             ; "Age Classification Of Electronic Games"                ;  ZPER_GAME_01-media-container
-                          ; ZPER_GAME_02       ; "Copyrights Of Electronic Game"                      ; "Copyrights Of Electronic Game"                         ;  ZPER_GAME_02-media-container
-                          ; ZPER_VIDEO_01      ; "Script Revisions"                                   ; "Script Revisions"                                      ;  ZPER_VIDEO_01-media-container
-                          ; ZPER_VIDEO_02      ; "Shooting Clearance"                                 ; "Shooting Clearance"                                    ;  ZPER_VIDEO_02-media-container
-                          ; ZPER_VIDEO_03      ; "Drone Usage in Film"                                ; "Drone Usage in Film"                                   ;  ZPER_VIDEO_03-media-container
-                          ; ZPER_VIDEO_04      ; "Inspection for video materials circulation"         ; "Inspection for video materials circulation"            ;  ZPER_VIDEO_04-media-container
-                          ; ZPER_AUD_01        ; "Drone usage in Digital advertising shooting"        ; "Drone usage in Digital advertising shooting"           ;  ZPER_AUD_01-media-container
-                          ; ZPER_AUD_02        ; "Inspection & Permit of Digital Advertising Content" ; "Inspection & Permit of Digital Advertising Content"    ;  ZPER_AUD_02-media-container
-
-INSERT_UPDATE SagiaService; code[unique = true]; serviceDocuments[lang = $langen]                                          ;
-                          ; ZLIC_01            ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZLIC_02            ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZLIC_03            ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZLIC_04            ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZLIC_05            ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZLIC_06            ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
+INSERT_UPDATE SagiaService; code[unique = true]; serviceDocuments[lang = $langen]                        ; serviceDocuments[lang = $langar]
+                          ; ZLIC_GAME_01       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 </ol>"
+                          ; ZLIC_GAME_02       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 </ol>"
+                          ; ZLIC_GAME_03       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 <li>A copy of the company’s founding contract and copies of national identities or passports (for non-Saudis) for all partners director and members of the board of directors </li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 <li>صور الهويات الوطنية أو جوازات السفر (لغير السعوديين) لكافة الشركاء والمدير وأعضاء مجلس الإدارة</li>
+                                                 </ol>"
+                          ; ZLIC_VDEO_01       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 </ol>"
+                          ; ZLIC_VDEO_02       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 </ol>"
+                          ; ZLIC_VDEO_03       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 <li>A copy of the company’s founding contract and copies of national identities or passports (for non-Saudis) for all partners director and members of the board of directors </li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 <li>صور الهويات الوطنية أو جوازات السفر (لغير السعوديين) لكافة الشركاء والمدير وأعضاء مجلس الإدارة</li>
+                                                 </ol>"
+                          ; ZLIC_AUDO_01       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 </ol>"
+                          ; ZLIC_AUDO_02       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 </ol>"
+                          ; ZLIC_AUDO_03       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 <li>A copy of the company’s founding contract and copies of national identities or passports (for non-Saudis) for all partners director and members of the board of directors </li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 <li>صور الهويات الوطنية أو جوازات السفر (لغير السعوديين) لكافة الشركاء والمدير وأعضاء مجلس الإدارة</li>
+                                                 </ol>"
+                          ; ZLIC_ADVT_01       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 </ol>"
+                          ; ZLIC_ADVT_02       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 </ol>"
+                          ; ZLIC_ADVT_03       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 <li>The company’s articles of incorporation if the application is submitted by a company</li>
+                                                 <li>A copy of the company’s founding contract and copies of national identities or passports (for non-Saudis) for all partners director and members of the board of directors </li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 <li>عقـد تأسـيس الشـركة في حـال كان الطلـب مقدماً من شركة</li>
+                                                 <li>صور الهويات الوطنية أو جوازات السفر (لغير السعوديين) لكافة الشركاء والمدير وأعضاء مجلس الإدارة</li>
+                                                 </ol>"
+                          ; ZLIC_ADVT_04       ; "<ol start= '1'>
+                                                 <li>A commercial register corresponding to the activity</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>سجل تجاري</li>
+                                                 </ol>"
                           ; ZPER_GAME_01       ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
+                                                 <li>Permission Request.</li>
+                                                 <li>Content upload.</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>طلب التصريح </li>
+                                                 <li>المستندات الدعمة</li>
+                                                 </ol>"
                           ; ZPER_GAME_02       ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZPER_VIDEO_01      ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZPER_VIDEO_02      ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZPER_VIDEO_03      ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZPER_VIDEO_04      ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZPER_AUD_01        ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
-                          ; ZPER_AUD_02        ; "<ol start= '1'>
-                                                                   <li>A copy or number of the commercial registration.</li>
-                                                                   <li>Delegation approved for the applicant with a proof of delegating person identity or power of attorney.</li>
-                                                                   </ol>" ;
+                                                 <li>Permission Request</li>
+                                                 <li>Game scenario and script</li>
+                                                 <li>Game digital certificate</li>
+                                                 <li>Endorsement letter</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>طلب التصريح</li>
+                                                 <li>سيناريو و قصة اللعبة</li>
+                                                 <li>الشهادة الالكترونية للعبة</li>
+                                                 <li>وثيقة اقرار</li>
+                                                 </ol>"
+                          ; ZPER_VDEO_01       ; "<ol start= '1'>
+                                                 <li>Permission Request.</li>
+                                                 <li>Content upload.</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>طلب التصريح </li>
+                                                 <li>المستندات الدعمة</li>
+                                                 </ol>"
+                          ; ZPER_VDEO_02       ; "<ol start= '1'>
+                                                 <li>Permission Request.</li>
+                                                 <li>Content upload.</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>طلب التصريح </li>
+                                                 <li>المستندات الدعمة</li>
+                                                 </ol>"
+                          ; ZPER_ADVT_01       ; "<ol start= '1'>
+                                                 <li>Permission Request.</li>
+                                                 <li>Content upload.</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>طلب التصريح </li>
+                                                 <li>المستندات الدعمة</li>
+                                                 </ol>"
 
-INSERT_UPDATE SagiaCategory; code[unique = true]; label                                ; services(code)                                                                                            ; categoryUrl
-                           ; igniteOperational  ; IGNITE SERVICES 			; ZLIC_01,ZLIC_02,ZLIC_03,ZLIC_04,ZLIC_05,ZLIC_06                                                           ; ZLIC
-                           ; ignitePermission   ; IGNITE SERVICES           ; ZPER_GAME_01,ZPER_GAME_02,ZPER_VIDEO_01,ZPER_VIDEO_02,ZPER_VIDEO_03,ZPER_VIDEO_04,ZPER_AUD_01,ZPER_AUD_02 ; ZPER
+INSERT_UPDATE SagiaService; code[unique = true]; rulesRestrictions[lang = $langen]                       ; rulesRestrictions[lang = $langar]
+                          ; ZLIC_GAME_01       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_GAME_02       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_GAME_03       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_VDEO_01       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_VDEO_02       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_VDEO_03       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_AUDO_01       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_AUDO_02       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_AUDO_03       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_ADVT_01       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_ADVT_02       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_ADVT_03       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZLIC_ADVT_04       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZPER_GAME_01       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZPER_GAME_02       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZPER_VDEO_01       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZPER_VDEO_02       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
+                          ; ZPER_ADVT_01       ; "<ol start= '1'>
+                                                 <li>Attach Require Documents</li>
+                                                 </ol>" ; "<ol start= '1'>
+                                                 <li>إرفاق المستندات الدعمة لطلب الخدمة</li>
+                                                 </ol>"
 
 #Production Data
-UPDATE SagiaCategory; code[unique = true]; name[lang = $langen]                 ; description[lang = $langen]          ;
-                    ; igniteOperational  ; IGNITE Operational Licenses SERVICES ; IGNITE Operational Licenses SERVICES ;
-                    ; ignitePermission   ; IGNITE Permission Services           ; IGNITE Permission Services           ;
+UPDATE SagiaCategory; code[unique = true]; name[lang = $langen] ; description[lang = $langen];
+                    ; igniteOperational  ; Operational Licenses ; خدمات التراخيص التشغيلية   ;
+                    ; ignitePermission   ; Permission Services  ; خدمات التصاريح             ;
 
-UPDATE SagiaService; code[unique = true]; serviceFinancialFees[lang = $langen]; serviceDuration[lang = $langen]; category(code)         ; url
-                   ; ZLIC_01            ;                                     ; Three working day               ; igniteOperational     ; ZLIC_01
-                   ; ZLIC_02            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_02
-                   ; ZLIC_03            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_03
-                   ; ZLIC_04            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_04
-                   ; ZLIC_05            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_05
-                   ; ZLIC_06            ;                                     ; Three working day               ;igniteOperational      ; ZLIC_06
-                   ; ZPER_GAME_01       ;                                     ; Three working day               ;ignitePermission       ; ZPER_GAME_01
-                   ; ZPER_GAME_02       ;                                     ; Three working day               ;ignitePermission       ; ZPER_GAME_02
-                   ; ZPER_VIDEO_01      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_01
-                   ; ZPER_VIDEO_02      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_02
-                   ; ZPER_VIDEO_03      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_03
-                   ; ZPER_VIDEO_04      ;                                     ; Three working day               ;ignitePermission       ; ZPER_VIDEO_04
-                   ; ZPER_AUD_01        ;                                     ; Three working day               ;ignitePermission       ; ZPER_AUD_01
-                   ; ZPER_AUD_02        ;                                     ; Three working day               ;ignitePermission       ; ZPER_AUD_02
+UPDATE SagiaService; code[unique = true]; serviceFinancialFees[lang = $langen]     ; serviceFinancialFees[lang = $langar]             ; serviceDuration[lang = $langen]; serviceDuration[lang = $langar]; category(code)    ; url
+                   ; ZLIC_GAME_01       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_GAME_01
+                   ; ZLIC_GAME_02       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_GAME_01
+                   ; ZLIC_GAME_03       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_GAME_01
+                   ; ZLIC_VDEO_01       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_VDEO_01
+                   ; ZLIC_VDEO_02       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_VDEO_02
+                   ; ZLIC_VDEO_03       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_VDEO_03
+                   ; ZLIC_AUDO_01       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_AUDO_01
+                   ; ZLIC_AUDO_02       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_AUDO_02
+                   ; ZLIC_AUDO_03       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_AUDO_03
+                   ; ZLIC_ADVT_01       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_ADVT_01
+                   ; ZLIC_ADVT_02       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_ADVT_02
+                   ; ZLIC_ADVT_03       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_ADVT_03
+                   ; ZLIC_ADVT_04       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 14 working day                 ; 14 يوم عمل                     ; igniteOperational ; ZLIC_ADVT_04
+                   ; ZPER_GAME_01       ; N/A                                      ; لايوجد                                           ; 3 working day                  ; ثلاث أيام عمل                  ; ignitePermission  ; ZPER_GAME_01
+                   ; ZPER_GAME_02       ; Payment of fees for the service provider ; تسديد الرسوم الخاصة بالجهة الحكومية مقدمة الخدمة ; 5 working day                  ; خمس أيام عمل                   ; ignitePermission  ; ZPER_GAME_02
+                   ; ZPER_VDEO_01       ;                                          ;                                                  ; Three working day              ; Three working day              ; ignitePermission  ; ZPER_VDEO_01
+                   ; ZPER_VDEO_02       ;                                          ;                                                  ; Three working day              ; Three working day              ; ignitePermission  ; ZPER_VDEO_02
+                   ; ZPER_ADVT_01       ;                                          ;                                                  ; Three working day              ; Three working day              ; ignitePermission  ; ZPER_ADVT_01
 
-INSERT_UPDATE SagiaTermsAndConditions;acceptanceEvent(code)[unique=true];active[default=true];version[default=0]
-                                     ;IGNITE_OPERATIONS;;
-                                     ;IGNITE_PERMISSIONS;;
+INSERT_UPDATE SagiaTermsAndConditions; acceptanceEvent(code)[unique = true]; active[default = true]; version[default = 0]
+                                     ; IGNITE_OPERATIONS                   ;                       ;
+                                     ; IGNITE_PERMISSIONS                  ;                       ;

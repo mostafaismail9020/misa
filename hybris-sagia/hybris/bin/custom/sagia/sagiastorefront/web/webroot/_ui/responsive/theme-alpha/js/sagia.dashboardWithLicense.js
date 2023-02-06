@@ -458,7 +458,8 @@ SAGIA.dashboardWithLicense = {
                                 	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
                                 	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link");
                                 	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","float: left;");
-                                	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+payment.serviceId+",'"+payment.name+"',"+payment.amount+",'"+payment.currency+"')");
+                                	//template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+payment.serviceId+",'"+payment.name+"',"+payment.amount+",'"+payment.currency+"')");
+                                	template.find(".dashboardWidgetPayments-pay").find("a").attr("href", ACC.config.encodedContextPath + "/payment/details/" + payment.serviceId);
                                 	isAwaitingPayment = true;
                                 }
                                 paymentsTable.append(template.html());

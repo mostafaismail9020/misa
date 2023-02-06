@@ -20,7 +20,7 @@
 <template:page pageTitle="${pageTitle}">
 
 	<c:url value="/verification/backtologin" var="backToLoginActionUrl" />
-	<c:url value="https://investsaudi.sa/en/contact/" var="contactUs" />
+	<c:url value="https://investsaudi.sa/en/contactUs" var="contactUs" />
 
 	<div class="accountLogin">
 		<div class="accountLogin-background">

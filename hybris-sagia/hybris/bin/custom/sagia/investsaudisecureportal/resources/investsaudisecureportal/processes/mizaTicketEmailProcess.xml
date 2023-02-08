@@ -1,6 +1,6 @@
 
 <process xmlns="http://www.hybris.de/xsd/processdefinition" start="mizaUserEmail" name="mizaTicketEmailProcess"
-         processClass="com.investsaudi.model.OpportunityUserEmailProcessModel" onError="error">
+         processClass="com.investsaudi.model.MizaTicketDetailsEmailProcessModel" onError="error">
 
     <action id="mizaUserEmail" bean="mizaUserEmailAction">
         <transition name="OK" to="sendEmail"/>

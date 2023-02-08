@@ -1,4 +1,4 @@
-$contentCatalog = investsaudiportalContentCatalog
+$contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $wideContent = CMSImageComponent, BannerComponent
 $emailFromEmail = info@misa.gov.sa
@@ -9,7 +9,7 @@ $jarResourceCms = jar:com.sap.ibso.eservices.core.setup.CoreSystemSetup&/sagiaco
 
 ################## Start Opportunity User Email Template  #####################
 # Email page Template
-INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]    ; name                     ; active; frontendTemplateName  ; subject(code)                     ; htmlTemplate(code)             ; restrictedPageTypes(code)
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]    ; name                                    ; active; frontendTemplateName  ; subject(code)                     ; htmlTemplate(code)             ; restrictedPageTypes(code)
                                ;                          ; MizaUserEmailTemplate ; MIZA User Email Template ; true  ; MizaUserEmailTemplate ; miza_Ticket_Details_Email_Subject ; miza_Ticket_Details_Email_Body ; EmailPage
 
 # Templates for CMS Cockpit Page Edit
@@ -18,10 +18,14 @@ UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]    ; vel
 
 
 INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'MizaUserEmailTemplate']; validComponentTypes(code)
-                             ; SiteLogo           ;                                                                            ; logo         ;
+                             ; SiteLogo           ;                                                                            ;          ;
                              ; TopContent         ;                                                                            ; $wideContent ;
                              ; BottomContent      ;                                                                            ; $wideContent ;
 
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; name                      ; active
+                         ;                          ; EmailTopSlot      ; Default Email Top Slot    ; true
+                         ;                          ; EmailBottomSlot   ; Default Email Bottom Slot ; true
+                         ;                          ; EmailSiteLogoSlot ; Default Email Site Slot   ; true
 
 INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]          ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'MizaUserEmailTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
                                     ;                          ; SiteLogo-MizaUserEmail      ; SiteLogo               ;                                                                                ; EmailSiteLogoSlot                          ; true

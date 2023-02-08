@@ -1,0 +1,141 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$template = portalMediaCenterLandingPageTemplate
+$page = miza-homepage
+$pageName = MIZA Homepage
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /miza-homepage
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique = true, default=$contentCatalog:Online]
+
+$siteUid = sagia
+$mediafolder = portal-media
+#$siteResource = $config-portalRedesignMediaResources
+$siteResource = jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+
+INSERT_UPDATE Media; code[unique = true]                ; realFileName                       ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
+                   ; arab_fund.jpg                      ; arab_fund.jpg                      ; $siteResource/arab_fund.jpg                                                 ; image/jpeg                  ;                                          ; ""     ;                          ;
+                   ; Mask_Group_114.jpg                 ; Mask_Group_114.jpg                 ; $siteResource/Mask_Group_114.jpg                                            ; image/jpeg                  ;                                          ; ""     ;                          ;
+                   ; atfp.jpg                           ; atfp.jpg                           ; $siteResource/atfp.jpg                                                      ; image/jpeg                  ;                                          ; ""     ;                          ;
+                   ; arab_investment.jpg                ; arab_investment.jpg                ; $siteResource/arab_investment.jpg                                           ; image/jpeg                  ;                                          ; ""     ;                          ;
+                   ; sample-banner-01.jpg               ; sample-banner-01.jpg               ; $siteResource/biban-banner-image.jpg                                        ; image/jpg                   ;                                          ; ""     ;
+                   ; sample-banner-02.jpg               ; sample-banner-02.jpg               ; $siteResource/Banner-Image-Spring-2020.jpg                                  ; image/jpg                   ;                                          ; ""     ;
+                   ; sample-banner-03.jpg               ; sample-banner-03.jpg               ; $siteResource/Banner-Image-spring-2019.jpg                                  ; image/jpg                   ;                                          ; ""     ;
+                   ; public-buses-or-metros-license.png ; public-buses-or-metros-license.png ; $siteResource/public-buses-or-metros-license.png                            ; image/png                   ;                                          ; ""     ;
+
+
+
+
+INSERT_UPDATE MizaMainParagraph; uid[unique = true]; mizamainparalogo (code, $contentCV); title [lang = en]                                         ; description [lang = en]                                                                                                         ; &componentRef  ; $contentCV[unique = true]
+                               ; miza-main-para    ; public-buses-or-metros-license.png ; Services for public buses or metros within cities license ; <ul class="INS_li_ul_under"><li> 3 additional documents required </li>  <li> Licensing entity: Ministry of Transport </li></ul> ; miza-main-para ;
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]; name            ; descriptionText[lang = ar]                                                                                 ; descriptionText[lang = en]                                                                                              ; image(code, $contentCV); &componentRef   ; $contentCV[unique = true]
+#                                        ; sample-banner-1   ; Sample Banner 1 ; موجز الاستثمار – صيف 2020 <span class="diff-color mp-bold">استمرارية ومرونة للأعمال والاستثمار  </span>    ; INVESTMENT HIGHLIGHTS SUMMER 2020 <span class="diff-color mp-bold">A RETURN TO BUSINESS WITH AGILITY AND RESILIENCE</span> ; sample-banner-01.jpg   ; sample-banner-1 ;
+#                                        ; sample-banner-2   ; Sample Banner 2 ; (MCRC) مركز الاستجابة لأزمة كورونا  <span class="diff-color mp-bold"></span>                               ; The MISA COVID-19 RESPONSE CENTER (MCRC) <span class="diff-color mp-bold"></span>                                          ; sample-banner-02.jpg   ; sample-banner-2 ;
+                                        ; sample-banner-3   ; Sample Banner 3 ; مرحبا بك في <span class="diff-color mp-bold">المملكة العربية السعودية</span><br>البيئة الاستثمارية الرائدة ; Welcome to <span class="diff-color mp-bold">Saudi Arabia,</span> <br/>   the land of growing businesses and investments ; sample-banner-03.jpg   ; sample-banner-3 ;
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      ; name                    ; simpleCMSComponents(&componentRef); &componentRef           ; $contentCV[unique = true]
+                                        ; sample-banner-container ; Sample Banner Container ; sample-banner-3                   ; sample-banner-container ;
+#                                        ; sample-banner-container ; Sample Banner Container ; sample-banner-1,sample-banner-2,sample-banner-3 ; sample-banner-container ;
+
+
+INSERT_UPDATE MizaBenefitsAndFeatureCards; uid[unique = true]            ; name                          ; title[lang = en]              ; description[lang = en]                                                                                                                 ; mizabenefitsandfeaturecardsimage(code, $contentCV); &componentRef                 ; $contentCV[unique = true];
+                                         ; mizabenefitsandfeaturecards-1 ; mizabenefitsandfeaturecards-1 ; mizabenefitsandfeaturecards-1 ; "Financing for public/private investment projects offering:"                                                                           ; arab_fund.jpg                                     ; mizabenefitsandfeaturecards-1 ;                          ;
+                                         ; mizabenefitsandfeaturecards-2 ; mizabenefitsandfeaturecards-2 ; mizabenefitsandfeaturecards-2 ; "This program offers loans and facilities to help address the overall balance of payment deficit of member countries"                  ; Mask_Group_114.jpg                                ; mizabenefitsandfeaturecards-2 ;                          ;
+                                         ; mizabenefitsandfeaturecards-3 ; mizabenefitsandfeaturecards-3 ; mizabenefitsandfeaturecards-3 ; "This loan program offers refinancing of Arab exports to Arab & non-Arab countries through lines of credit"                            ; atfp.jpg                                          ; mizabenefitsandfeaturecards-3 ;                          ;
+                                         ; mizabenefitsandfeaturecards-4 ; mizabenefitsandfeaturecards-4 ; mizabenefitsandfeaturecards-4 ; "Insurance schemes and guarantees to encourage investments in Arab countries, and enhance inter-Arab trade and Arab exports worldwide" ; arab_investment.jpg                               ; mizabenefitsandfeaturecards-4 ;                          ;
+
+INSERT_UPDATE MizaBenefitsAndFeatureParent; uid[unique = true]                     ; name                                  ; title[lang = en]                   ; title[lang = ar]                   ; description[lang = en]                   ; description[lang = ar]                   ; benefitsandfeatures(&componentRef)                                                                                      ; &componentRef                          ; $contentCV[unique = true];
+                                          ; mizabenefitsandfeatureparent-container ; mizabenefitsandfeatureparentContainer ; mizabenefitsandfeatureparent title ; mizabenefitsandfeatureparent title ; mizabenefitsandfeatureparent description ; mizabenefitsandfeatureparent description ; mizabenefitsandfeaturecards-1,mizabenefitsandfeaturecards-2,mizabenefitsandfeaturecards-3,mizabenefitsandfeaturecards-4 ; mizabenefitsandfeatureparent-container ;                          ;
+
+INSERT_UPDATE MizaOneCoreEngineChild; uid[unique = true]       ; name                     ; title[lang = en]         ; description[lang = en]                                                                                                ; mizaonecorechildimage(code, $contentCV); &componentRef            ; $contentCV[unique = true];
+                                    ; mizaonecoreenginechild-1 ; mizaonecoreenginechild-1 ; mizaonecoreenginechild-1 ; "Financing for public/private investment projects offering:"                                                          ; arab_fund.jpg                          ; mizaonecoreenginechild-1 ;                          ;
+                                    ; mizaonecoreenginechild-2 ; mizaonecoreenginechild-2 ; mizaonecoreenginechild-2 ; "This program offers loans and facilities to help address the overall balance of payment deficit of member countries" ; Mask_Group_114.jpg                     ; mizaonecoreenginechild-2 ;                          ;
+                                    ; mizaonecoreenginechild-3 ; mizaonecoreenginechild-3 ; mizaonecoreenginechild-3 ; "This loan program offers refinancing of Arab exports to Arab & non-Arab countries through lines of credit"           ; atfp.jpg                               ; mizaonecoreenginechild-3 ;                          ;
+
+INSERT_UPDATE MizaOneCoreEngineParent; uid[unique = true]                ; name                             ; title[lang = en]     ; title[lang = ar]     ; description[lang = en]                                                     ; description[lang = ar]                                                     ; childCards(&componentRef)                                                  ; &componentRef                     ; $contentCV[unique = true];
+                                     ; mizaonecoreengineparent-container ; mizaonecoreengineparentContainer ; MIZA ONE CORE ENGINE ; MIZA ONE CORE ENGINE ; Lorem Ipsum is simply dummy text of the printing and typesetting industry. ; Lorem Ipsum is simply dummy text of the printing and typesetting industry. ; mizaonecoreenginechild-1,mizaonecoreenginechild-2,mizaonecoreenginechild-3 ; mizaonecoreengineparent-container ;                          ;
+
+
+INSERT_UPDATE MizaServiceType; uid[unique = true]; name              ; title[lang = en]  ; description[lang = en]                                                                                                                                                                                                               ; servicetypeimage(code, $contentCV); &componentRef     ; $contentCV[unique = true];
+                             ; mizaservicetype-1 ; mizaservicetype 1 ; mizaservicetype 1 ; "<p class=""INS_loanpbm_para"">Financing for public/private investment projects offering:</p><ul class=""INS_list_font""><li>Reduced interest rate</li><li>4-6 grace period</li><li>Long term extended to 22-25 years</li></ul>"     ; arab_fund.jpg                     ; mizaservicetype-1 ;                          ;
+                             ; mizaservicetype-2 ; mizaservicetype 2 ; mizaservicetype 2 ; "<p class=""INS_loanpbm_para"">This program offers loans and facilities to help address the overall balance of payment deficit of member countries, including 4 types of loans that vary in size, terms, and maturity.</p>"          ; Mask_Group_114.jpg                ; mizaservicetype-2 ;                          ;
+                             ; mizaservicetype-3 ; mizaservicetype 3 ; mizaservicetype 3 ; "<p class=""INS_loanpbm_para"">This loan program offers refinancing of Arab exports to Arab & non-Arab countries through lines of credit, e.g., pre-export credits, post-shipment credits, buyers’ credits, and import credits.</p>" ; atfp.jpg                          ; mizaservicetype-3 ;                          ;
+                             ; mizaservicetype-4 ; mizaservicetype 4 ; mizaservicetype 4 ; "<p class=""INS_loanpbm_para"">Insurance schemes and guarantees to encourage investments in Arab countries, and enhance inter-Arab trade and Arab exports worldwide.</p>"                                                            ; arab_investment.jpg               ; mizaservicetype-4 ;                          ;
+                             ; mizaservicetype-5 ; mizaservicetype 5 ; mizaservicetype 5 ; "<p class=""INS_loanpbm_para"">Offers different financing schemes to support investment capital of projects, grants loans to enterprises and productive projects</p>"                                                                ; Mask_Group_115.jpg                ; mizaservicetype-5 ;                          ;
+
+INSERT_UPDATE MizaServiceTypeContainer; uid[unique = true]        ; name                     ; servicetypelist(&componentRef)                                                            ; &componentRef             ; $contentCV[unique = true];
+                                      ; mizaservicetype-container ; mizaservicetypeContainer ; mizaservicetype-1,mizaservicetype-2,mizaservicetype-3,mizaservicetype-4,mizaservicetype-5 ; mizaservicetype-container ;                          ;
+
+INSERT_UPDATE MizaOurServices; uid[unique = true]; name              ; title[lang = en]  ; description[lang = en]                                                                                                                                                                                                               ; ourserviceimage(code, $contentCV); &componentRef     ; $contentCV[unique = true];
+                             ; mizaourservices-1 ; mizaourservices-1 ; mizaourservices-1 ; "<p class=""INS_loanpbm_para"">Financing for public/private investment projects offering:</p><ul class=""INS_list_font""><li>Reduced interest rate</li><li>4-6 grace period</li><li>Long term extended to 22-25 years</li></ul>"     ; arab_fund.jpg                    ; mizaourservices-1 ;                          ;
+                             ; mizaourservices-2 ; mizaourservices-2 ; mizaourservices-2 ; "<p class=""INS_loanpbm_para"">This program offers loans and facilities to help address the overall balance of payment deficit of member countries, including 4 types of loans that vary in size, terms, and maturity.</p>"          ; Mask_Group_114.jpg               ; mizaourservices-2 ;                          ;
+                             ; mizaourservices-3 ; mizaourservices-3 ; mizaourservices-3 ; "<p class=""INS_loanpbm_para"">This loan program offers refinancing of Arab exports to Arab & non-Arab countries through lines of credit, e.g., pre-export credits, post-shipment credits, buyers’ credits, and import credits.</p>" ; atfp.jpg                         ; mizaourservices-3 ;                          ;
+                             ; mizaourservices-4 ; mizaourservices-4 ; mizaourservices-4 ; "<p class=""INS_loanpbm_para"">Insurance schemes and guarantees to encourage investments in Arab countries, and enhance inter-Arab trade and Arab exports worldwide.</p>"                                                            ; arab_investment.jpg              ; mizaourservices-4 ;                          ;
+                             ; mizaourservices-5 ; mizaourservices-5 ; mizaourservices-5 ; "<p class=""INS_loanpbm_para"">Offers different financing schemes to support investment capital of projects, grants loans to enterprises and productive projects</p>"                                                                ; Mask_Group_115.jpg               ; mizaourservices-5 ;                          ;
+
+INSERT_UPDATE MizaOurServiceContainer; uid[unique = true]        ; name                     ; ourserviceslist(&componentRef)                                                            ; &componentRef             ; $contentCV[unique = true];
+                                     ; mizaourservices-container ; mizaourservicesContainer ; mizaourservices-1,mizaourservices-2,mizaourservices-3,mizaourservices-4,mizaourservices-5 ; mizaourservices-container ;                          ;
+
+INSERT_UPDATE MizaContactUsComponent; uid[unique = true]; name                ; customerName[lang = en]; company[lang = en]; mobileNumber[lang = en]; position[lang = en]; email[lang = en]; serviceType[lang = en]; enquiry[lang = en]; &componentRef     ; $contentCV[unique = true];
+                                    ; miza-contact-form ; MIZA Contact Expert ; Name                   ; Company           ; Mobile                 ; Job Title          ; Email           ; Purpose of Contacting ; Message           ; miza-contact-form ;
+
+INSERT_UPDATE MizaContactUsComponent; uid[unique = true]; name                ; customerName[lang = ar]; company[lang = ar]; mobileNumber[lang = ar]; position[lang = ar]; email[lang = ar]  ; serviceType[lang = ar]; enquiry[lang = ar]; &componentRef     ; $contentCV[unique = true];
+                                    ; miza-contact-form ; MIZA Contact Expert ;                        ; الشركة            ; رقم الجوال             ; المسمى الوظيفي     ; البريد الالكتروني ; الغرض من الاتصال      ; الرسالة           ; miza-contact-form ;
+
+INSERT_UPDATE MizaContactUsComponent; uid[unique = true]; $contentCV; &componentRef
+                                    ; miza-contact-form ;           ; miza-contact-form
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; $contentCV[unique = true]
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pageLabel ; false   ;                              ;                                           ;
+
+
+
+UPDATE MizaContactUsComponent; uid[unique = true]; $contentCV[unique = true]; successMessage[lang = en]
+                             ; miza-contact-form ;                          ; "
+<div class='formSuccess d-none diff-color'>
+    <p class='font-bold'>Thank you for your interest in the Invest Saudi.</p>
+    <p>We received your inquiry, and we will get back to you shortly.</p>
+</div>
+<div class='formTicketCreationConfirmation d-none' style='display: flex;'>
+  Ticket number &nbsp;<div class='formTicketNumber'></div>.
+</div>
+"
+
+UPDATE MizaContactUsComponent; uid[unique = true]; $contentCV[unique = true]; successMessage[lang = ar]
+                             ; miza-contact-form ;                          ; "
+<div class='formSuccess d-none diff-color'>
+  <p class='font-bold'>شكراَ لتواصلك مع الهيئة العامة للاستثمار</p>
+    <p>لقد تم استلام رسالتك، سوف يتم التواصل معك في أقرب وقت
+  </p>
+</div>
+<div class='formTicketCreationConfirmation d-none' style='display: flex;'>
+    <div class='formTicketNumber'></div>&nbsp; رقم التذكرة
+</div>
+"
+
+INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(&componentRef)                                                                                                                                                          ; $contentCV;
+                         ; PortalPageTopSlot-$page    ; PortalPageTop    ; true  ;                                                                                                                                                                                       ;           ;
+                         ; PortalPageMainSlot-$page   ; PortalPageMain   ; true  ; sample-banner-container,miza-main-para,mizabenefitsandfeatureparent-container,mizaonecoreengineparent-container,mizaservicetype-container,mizaourservices-container,miza-contact-form ;           ;
+                         ; PortalPageBottomSlot-$page ; PortalPageBottom ; true  ;                                                                                                                                                                                       ;           ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true];
+                                ; PortalPageTopSlot-$page    ; PortalPageTop          ; PortalPageTopSlot-$page                    ;                                                      ;                          ;
+                                ; PortalPageMainSlot-$page   ; PortalPageMain         ; PortalPageMainSlot-$page                   ;                                                      ;                          ;
+                                ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;                                                      ;                          ;
+
+
+
+##############################################################################################################################
+
+INSERT_UPDATE Customer; uid[unique = true]; usernameemail    ; name                  ; country       ; mobileCountryCode; mobileNumber; company; sector
+                      ; miza@misa.gov.sa  ; miza@misa.gov.sa ; MIZA Default Customer ; 8796093427543 ; 966              ; 0000000000  ; MIZA   ; 8796093132681

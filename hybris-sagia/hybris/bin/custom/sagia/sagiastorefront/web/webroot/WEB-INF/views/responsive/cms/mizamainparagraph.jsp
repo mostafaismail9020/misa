@@ -7,9 +7,15 @@
 
 
 <c:if test="${component.visible}">
-    <div class="container">
-    <img class="img-fluid" src="${component.mizamainparalogo.url}" loading="lazy"/>
-        <h2 class="heading my-4">${component.title}</h2>
-        <h2 class="heading my-4">${component.description}</h2>
-    </div>
+          <section class="aboutSection p100" style="padding-top:50px">
+        <div class="container">
+           <div class="aboutContentWrap">
+              <img class="aboutLogo"src="${component.mizamainparalogo.url}">
+              <h4 class="wow fadeIn  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeIn;">
+                ${component.title}
+              </h4>
+              <p class="wow fadeInUp  animated" data-wow-delay="400ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 400ms; animation-name: fadeInUp;">${component.description}</p>
+           </div>
+        </div>
+     </section>
 </c:if >

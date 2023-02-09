@@ -7,9 +7,20 @@
 
 
 <c:if test="${component.visible}">
-    <div class="container">
-    <img class="img-fluid" src="${component.ourserviceimage.url}" loading="lazy"/>
-        <h2 class="heading my-4">${component.title}</h2>
-        <h2 class="heading my-4">${component.description}</h2>
-    </div>
+     
+        <div class="d2OurSeriviceItem">
+           <div class="d2OurSeriviceItemContent d2OurSeriviceItemInner">
+              <div class="d2OurSeriviceItemContentWrap">
+                 <img class="serviceIcons" src="${commonResourcePath}/images/miza-real-estate.png">
+                 <h4>${component.title}</h4>
+                 ${component.description}
+                 <a class="knowmoreBtn" href="#">Know More</a>
+              </div>
+           </div>
+           <div class="d2OurSeriviceItemImage d2OurSeriviceItemInner">
+              <img src="${component.ourserviceimage.url}">
+           </div>
+        </div>
+         
+     
 </c:if >

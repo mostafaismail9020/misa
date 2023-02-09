@@ -7,11 +7,19 @@
 
 
 <c:if test="${component.visible}">
-    <div class="container">
-        <h2 class="heading my-4">${component.title}</h2>
-        <h2 class="heading my-4">${component.description}</h2>
-        <c:forEach var="currentComponent" items="${childCards}" varStatus="status">
-            <cms:component component="${currentComponent}" element="tr" style="text-align: center;"/>
-        </c:forEach>
-    </div>
+     <section class="mizaSection mizacoreEngine p100" style="padding-bottom: 0;">
+        <div class="container">
+           <div class="oneCoreHeader">
+              <h2 class="mizaTitle  wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeInUp;">${component.title} <span class="clr_gld"> MIZA</span></h2>
+              <p>${component.description}</p>
+           </div>
+        </div>
+        <div class="container-fluid">
+           <div class="row " style="justify-content: center;">
+            <c:forEach var="currentComponent" items="${childCards}" varStatus="status">
+                <cms:component component="${currentComponent}" element="tr" style="text-align: center;"/>
+            </c:forEach>
+           </div>
+        </div>
+     </section>
 </c:if >

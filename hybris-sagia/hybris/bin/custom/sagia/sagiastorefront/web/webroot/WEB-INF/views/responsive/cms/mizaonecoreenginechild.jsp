@@ -7,9 +7,18 @@
 
 
 <c:if test="${component.visible}">
-    <div class="container">
-    <img class="img-fluid" src="${component.mizaonecorechildimage.url}" loading="lazy"/>
-        <h2 class="heading my-4">${component.title}</h2>
-        <h2 class="heading my-4">${component.description}</h2>
-    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="oneCoreEngineItem  wow fadeIn" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeIn;">
+           <div class="oneCoreEngineItemImage">
+              <img src="${commonResourcePath}/images/service1.jpg" >
+           </div>
+           <span class="oceNumber">
+           <img class="oceImageDark" src="${component.mizaonecorechildimage.url}">
+           <img class="oceImagelight" src="${component.mizaonecorechildimage.url}">
+           </span>
+           <h4>${component.title}</h4>
+           <p>${component.description}</p>
+        </div>
+     </div>
 </c:if >
+    

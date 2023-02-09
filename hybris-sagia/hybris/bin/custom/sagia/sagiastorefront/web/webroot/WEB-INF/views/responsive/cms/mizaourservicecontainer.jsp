@@ -6,11 +6,16 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
 
 <c:if test="${component.visible}">
-    <div class="container">
+    <section class="ourServices p100" style="padding-bottom:0">
+        <div class="container">
+            <h2 class="mizaTitle  wow fadeInUp   animated" data-wow-delay="300ms" data-wow-duration="1s" ><span class="clr_gld">OUR SERVICES</span></h2>
+         </div>
+        <div class="d2OurSeriviceWrap">
         <c:forEach var="currentComponent" items="${ourserviceslist}" varStatus="status">
             <cms:component component="${currentComponent}" element="tr" style="text-align: center;"/>
         </c:forEach>
-    </div>
+        </div>
+     </section>
 </c:if >
 
 	

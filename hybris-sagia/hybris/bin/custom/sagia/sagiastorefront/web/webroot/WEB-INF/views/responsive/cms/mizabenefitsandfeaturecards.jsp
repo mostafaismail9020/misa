@@ -7,10 +7,26 @@
 
 
 <c:if test="${component.visible}">
-    <div class="container">
+    <!-- <div class="container">
     <img class="img-fluid" src="${component.mizabenefitsandfeaturecardsimage.url}" loading="lazy"/>
         <h2 class="heading my-4">${component.title}</h2>
         <h2 class="heading my-4">${component.description}</h2>
         <a href="${component.knowMore.url}" class="alink" target="_blank">${component.knowMore.linkName}</a>
-    </div>
+    </div> -->
+
+    <div class="col-lg-6">
+        <div class="benifitFeatureItem  wow fadeInUp  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeInUp;">
+           <div class="benifitFeatureText newDivDesign">
+              <div class="benifiIcon">
+                 <div class="benifiIconWrap">								
+                    <img src="${component.mizabenefitsandfeaturecardsimage.url}" loading="lazy">
+                 </div>
+              </div>
+              <h4>${component.title}</h4>
+              <p>${component.description}</p>
+              <div class="secDivid"></div>
+              <a href="${component.knowMore.url}" class="alink" target="_blank">Know More</a>
+           </div>
+        </div>
+     </div>
 </c:if >

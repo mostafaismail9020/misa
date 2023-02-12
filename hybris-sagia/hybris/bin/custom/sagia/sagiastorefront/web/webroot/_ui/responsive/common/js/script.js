@@ -3990,12 +3990,18 @@ $(document).ready(function () {
 
 //MIZA CHANGES
 
-    var mizaelement = document.getElementsByClassName('btn-miza-contact');
+function validateMizaContact(event) {
+       onMizaContactSubmit();
+}
+function onMizaContactload() {
+    element.onclick = validateMizaContact(element);
+}
+/*    var mizaelement = document.getElementsByClassName('btn-miza-contact');
      var btnText = mizaelement[0] && mizaelement[0].textContent;
 
 	$("#btn-miza-contact").on("click", function () {
         element.onclick = validateMizaContact(mizaelement);
-    });
+    });*/
 
  function validateMizaContact(event) {
     		// console.log(validateForm($("#corForm")));
@@ -4007,9 +4013,7 @@ $(document).ready(function () {
     	}
 
     function onMizaContactSubmit() {
-        		alert("HI");
         		//alert(grecaptcha.getResponse(1));
-        		alert(recaptchaChallangeAnswered);
         		// element[0].disabled = true;
         		// element[0].textContent = site.messages().sending;
         		$.ajax({
@@ -4030,8 +4034,6 @@ $(document).ready(function () {
         				contactSubject: $.trim($("#mizacrSubjectID").val())
         			}),
         			success: function (data) {
-        				// console.log(data);
-        				// return;
         				if (data == "mir-robot") {
         					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
         				}
@@ -4055,8 +4057,6 @@ $(document).ready(function () {
         				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
         					$('#opp-contact-form').find('#g-recaptcha_incorrect').show();
         				}
-        				// element[0].disabled = false;
-        				// element[0].textContent = btnText;
         			}
         		});
         	}

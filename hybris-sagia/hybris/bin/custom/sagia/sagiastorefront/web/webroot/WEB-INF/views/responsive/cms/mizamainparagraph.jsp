@@ -12,9 +12,9 @@
            <div class="aboutContentWrap">
               <img class="aboutLogo"src="${component.mizamainparalogo.url}">
               <h4 class="wow fadeIn  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeIn;">
-                ${component.title}
+                ${component.mizamainparatitle}
               </h4>
-              <p class="wow fadeInUp  animated" data-wow-delay="400ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 400ms; animation-name: fadeInUp;">${component.description}</p>
+              <p class="wow fadeInUp  animated" data-wow-delay="400ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 400ms; animation-name: fadeInUp;">${component.mizamainparadescription}</p>
            </div>
         </div>
      </section>

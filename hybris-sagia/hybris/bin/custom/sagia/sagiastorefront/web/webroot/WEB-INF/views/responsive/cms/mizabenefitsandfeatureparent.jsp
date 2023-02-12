@@ -14,12 +14,12 @@
               <div class="col-lg-6 colDived">
                  <div class="secTitle">
                     <span class="smallTag  wow fadeIn  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeIn;">MIZA</span>
-                    <h1><span class="wow fadeInLeft  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeInLeft;">${component.title}</span></h1>
+                    <h1><span class="wow fadeInLeft  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeInLeft;">${component.mizabenefitsparenttitle}</span></h1>
                  </div>
               </div>
               <div class="col-lg-6">
                  <div class="secDesc  wow fadeInUp  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeInUp;">
-                    <p>${component.description}</p>
+                    <p>${component.mizabenefitsparentdescription}</p>
                  </div>
               </div>
            </div>

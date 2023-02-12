@@ -16,8 +16,8 @@
            <img class="oceImageDark" src="${component.mizaonecorechildimage.url}">
            <img class="oceImagelight" src="${component.mizaonecorechildimage.url}">
            </span>
-           <h4>${component.title}</h4>
-           <p>${component.description}</p>
+           <h4>${component.mizaonecorechildtitle}</h4>
+           <p>${component.mizaonecorechilddescription}</p>
         </div>
      </div>
 </c:if >

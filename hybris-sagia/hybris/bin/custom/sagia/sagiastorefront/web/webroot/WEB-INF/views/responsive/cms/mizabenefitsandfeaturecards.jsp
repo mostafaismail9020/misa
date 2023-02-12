@@ -9,8 +9,8 @@
 <c:if test="${component.visible}">
     <!-- <div class="container">
     <img class="img-fluid" src="${component.mizabenefitsandfeaturecardsimage.url}" loading="lazy"/>
-        <h2 class="heading my-4">${component.title}</h2>
-        <h2 class="heading my-4">${component.description}</h2>
+        <h2 class="heading my-4">${component.mizabenefitscardtitle}</h2>
+        <h2 class="heading my-4">${component.mizabenefitscarddescription}</h2>
         <a href="${component.knowMore.url}" class="alink" target="_blank">${component.knowMore.linkName}</a>
     </div> -->
 
@@ -22,8 +22,8 @@
                     <img src="${component.mizabenefitsandfeaturecardsimage.url}" loading="lazy">
                  </div>
               </div>
-              <h4>${component.title}</h4>
-              <p>${component.description}</p>
+              <h4>${component.mizabenefitscardtitle}</h4>
+              <p>${component.mizabenefitscarddescription}</p>
               <div class="secDivid"></div>
               <a href="${component.knowMore.url}" class="alink" target="_blank">Know More</a>
            </div>

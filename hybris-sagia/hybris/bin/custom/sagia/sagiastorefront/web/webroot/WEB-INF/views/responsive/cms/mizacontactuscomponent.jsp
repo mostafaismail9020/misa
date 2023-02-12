@@ -21,7 +21,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="mb-3 my-form pos-rel wow fadeIn" data-wow-delay="0.2s" id="corForm">
+                    <div class="mb-3 pos-rel wow fadeIn" data-wow-delay="0.2s" id="corForm">
 
                         <div class="row">
                                <div class="form-group form-floating col-md-6 form-normal-item">
@@ -105,7 +105,7 @@
                         <input id="mizacrSubjectID" name="SubjectID" type="hidden" value=""/>
                         <span class="field-validation-valid" data-valmsg-for="Subject"
                               data-valmsg-replace="true"></span>
-                        <div class="md-form show-interest-form-normal-item-textarea">
+                        <div class="form-group md-form show-interest-form-normal-item-textarea">
                          <label class="control-label" for="crJobTitle">
                                                         <spring:theme code="portal.sector.contact.expert.enquiry.label"/>
                                                         <span class="mandatory">* </span>
@@ -121,17 +121,15 @@
                                    <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
                                       <span id="lblSectorPageErrorCaptcha" class="mandatory"></span>
                              </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-md-7 d-flex justify-content-start">
-                                <label class="lbError d-none"></label>
-                            </div>
-                            <div class="col-md-5 d-flex justify-content-end">
-                                <button id="btn-miza-contact" type="button" class="btn btn-primary-fill btn-knowmore text-uppercase">${submitButtonLabel}
-                                </button>
-                            </div>
-                        </div>
+                        <div class="row form-action-btn my-4" style="padding-left: 15px; padding-right: 15px;">
+                       <div class="col-md-3">
+                            	<button type="button" id="contact-clear" class="btn btn-primary-fill btn-form-outline w-100">
+                            		<spring:theme code="portal.sector.download.clear.button"/></button></div>
+                            <div class="col-md-3"><button id="btn-miza-contact" type="submit" class="responsive-contact-btn btn btn-primary-fill btn-form-fill  w-100">
+                            		<spring:theme code="portal.sector.download.submit.button"/></button></div>
+                          </div>
                     </div>
-                        ${successMessage}
+                    ${successMessage}
                     <!--<input type="hidden" id="hfSectorID" value="${categoryCode}"/>
                     <input type="hidden" id="hfOpportunity" value="${productName}"/>
                     <input type="hidden" id="hfPageTitle" value="${sectorOrProduct}"/>

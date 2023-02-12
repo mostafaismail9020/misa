@@ -12,8 +12,8 @@
            <div class="d2OurSeriviceItemContent d2OurSeriviceItemInner">
               <div class="d2OurSeriviceItemContentWrap">
                  <img class="serviceIcons" src="${commonResourcePath}/images/miza-real-estate.png">
-                 <h4>${component.title}</h4>
-                 ${component.description}
+                 <h4>${component.mizaourservicestitle}</h4>
+                 ${component.mizaourservicesdescription}
                  <a class="knowmoreBtn" href="#">Know More</a>
               </div>
            </div>

@@ -54,16 +54,9 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
     private InvestSaudiProductService investSaudiProductService;
     @Resource
     private OpportunityProductMediaRestApiService opportunityProductMediaRestApiService;
-    @Resource(name = "sessionService")
-    private SessionService sessionService;
 
     @Override
     public void afterSave(Collection<AfterSaveEvent> collection) {
-        boolean isMizaContactUsFlow=false;
-        if(null!=sessionService.getAttribute("isMizaContactUsFlow"))
-        {
-            isMizaContactUsFlow=true;
-        }
         for (final AfterSaveEvent event : collection) {
             final int type = event.getType();
             if (AfterSaveEvent.UPDATE == type) {
@@ -81,14 +74,10 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
 			if (AfterSaveEvent.CREATE == type ) {
                 final PK pk = event.getPk();
                 Object object = getModelService().get(pk);
-                if(object instanceof CustomerModel && !isMizaContactUsFlow){
+                if(object instanceof CustomerModel){
                    String initialPassword=RandomStringUtils.randomAlphanumeric(Config.getInt("default.password.length", 8));
                    contactTicketBusinessService.sendOpportunityUserDetails(null, (UserModel) object, initialPassword,
 				      SagiaCoreConstants.ORIGINSYSTEM.equalsIgnoreCase(((CustomerModel) object).getSystemOrigin()));
-                }
-                if(isMizaContactUsFlow)
-                {
-                    contactTicketBusinessService.sendMizaTicketDetails(null, (UserModel) object);
                 }
                 if(object instanceof OpportunityProductModel){
                     uploadPdfForOpportunity(((OpportunityProductModel) object));

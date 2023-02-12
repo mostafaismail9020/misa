@@ -65,7 +65,7 @@ public class ContactUsController extends AbstractController {
         }
 
         try {
-            CsTicketModel contactTicket  = contactTicketFacade.saveTicket(ticket);
+            CsTicketModel contactTicket  = contactTicketFacade.saveMizaTicket(ticket);
             return String.format("success_%s", contactTicket.getTicketID());
         } catch (Exception e) {
             log.error("Error generating contact ticket", e);

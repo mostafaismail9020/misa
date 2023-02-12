@@ -10,6 +10,7 @@ import de.hybris.platform.core.model.user.CustomerModel;
 public class MizaTicketDetailsEmailContext extends AbstractEmailContext<MizaTicketDetailsEmailProcessModel> {
     private String opportunityId;
     private String mizaTicketUserCompanyName;
+    private String mizaTicketUserName;
     private String mizaTicketUserPhoneNumber;
     private String mizaTicketUserPosition;
     private String mizaTicketUserEmail;
@@ -20,11 +21,13 @@ public class MizaTicketDetailsEmailContext extends AbstractEmailContext<MizaTick
     public void init(final MizaTicketDetailsEmailProcessModel businessProcessModel, final EmailPageModel emailPageModel) {
         super.init(businessProcessModel, emailPageModel);
 
-        put("email", "miza@misa.gov.sa");
+        put(EMAIL, "miza@misa.gov.sa");
+        put(DISPLAY_NAME, "MIZA Default Customer");
         if (businessProcessModel instanceof MizaTicketDetailsEmailProcessModel) {
 
             final MizaTicketDetailsEmailProcessModel processModel = (MizaTicketDetailsEmailProcessModel) businessProcessModel;
             this.opportunityId = ((MizaTicketDetailsEmailProcessModel) processModel).getOpportunityId();
+            this.mizaTicketUserName = ((MizaTicketDetailsEmailProcessModel) processModel).getMizaTicketUserName();
             this.mizaTicketUserCompanyName = ((MizaTicketDetailsEmailProcessModel) processModel).getMizaTicketUserCompanyName();
             this.mizaTicketUserPhoneNumber = ((MizaTicketDetailsEmailProcessModel) processModel).getMizaTicketUserPhoneNumber();
             this.mizaTicketUserPosition = ((MizaTicketDetailsEmailProcessModel) processModel).getMizaTicketUserPosition();
@@ -48,8 +51,6 @@ public class MizaTicketDetailsEmailContext extends AbstractEmailContext<MizaTick
     public void setMizaTicketUserName(String mizaTicketUserName) {
         this.mizaTicketUserName = mizaTicketUserName;
     }
-
-    private String mizaTicketUserName;
 
     public String getMizaTicketUserCompanyName() {
         return mizaTicketUserCompanyName;

@@ -203,7 +203,7 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
         }
     }
 
-    public void sendMizaTicketDetails(String id, UserModel customer) {
+    public void sendMizaTicketDetails(String id) {
         ContactTicketModel mizaTicket = sagiaUserService.getContactTicketForTicketId(id);
         if (null != mizaTicket) {
             final MizaTicketDetailsEmailProcessModel mizaTicketDetailEmailProcess =

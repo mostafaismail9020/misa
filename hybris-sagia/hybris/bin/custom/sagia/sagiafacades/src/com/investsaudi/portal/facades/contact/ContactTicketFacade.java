@@ -74,6 +74,15 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         return ticket;
     }
 
+    public CsTicketModel saveMizaTicket(ContactTicketData contactTicketData) {
+
+        CsTicketParameter csTicketParameter = createCsTicketParameter(contactTicketData);
+        CsTicketModel ticket = contactTicketBusinessService.createTicket(csTicketParameter);
+        CustomerModel customer = (CustomerModel)csTicketParameter.getCustomer();
+        contactTicketBusinessService.sendMizaTicketDetails(ticket.getTicketID());
+        return ticket;
+    }
+
     protected CsTicketParameter createCsTicketParameter(final ContactTicketData ticketData) {
         final ContactTicketParameter ticketParameter = new ContactTicketParameter();
         ticketParameter.setPriority(getEnumerationService().getEnumerationValue(CsTicketPriority._TYPECODE, getTicketPriority()));

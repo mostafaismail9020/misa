@@ -49,3 +49,5 @@ UPDATE RendererTemplate; code[unique = true]               ; description[lang = 
                        ; miza_Ticket_Details_Email_Subject ; "Miza Ticket Details Subject" ; $jarResource/email-mizaTicketDetailsEmailSubject.vm
 
 ################## End Opportunity User Email Template  #####################
+#INSERT_UPDATE Customer; uid[unique = true]; usernameemail    ; name                  ; country       ; mobileCountryCode; mobileNumber; company; sector
+#                      ; miza@misa.gov.sa  ; miza@misa.gov.sa ; MIZA Default Customer ; 8796093427543 ; 966              ; 0000000000  ; MIZA   ; 8796093132681

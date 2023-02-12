@@ -38,7 +38,7 @@
        <collectiontype code="EstimatedOperatingCostForRhqList" elementtype="OperatingCostForRhq" autocreate="true" type="list"/>
        <collectiontype code="RhqActivitiesList" elementtype="RhqActivities" autocreate="true" type="list"/>
        <collectiontype code="MizaOurServicesList" elementtype="MizaOurServices" autocreate="true" type="list"/>
-       <collectiontype code="MizaServiceTypeList" elementtype="MizaServiceType" autocreate="true" type="list"/>
+       <!--<collectiontype code="MizaServiceTypeList" elementtype="MizaServiceType" autocreate="true" type="list"/>-->
        <collectiontype code="MizaBenefitsAndFeatureCardsList" elementtype="MizaBenefitsAndFeatureCards" autocreate="true" type="list"/>
        <collectiontype code="MizaOneCoreEngineChildList" elementtype="MizaOneCoreEngineChild" autocreate="true" type="list"/>
 
@@ -10764,7 +10764,7 @@
                       jaloclass="com.investsaudi.portal.core.jalo.MizaMainParagraph">
                 <description>MIZA Main Paragraph Component</description>
                 <attributes>
-                    <attribute qualifier="title" type="localized:java.lang.String">
+                    <attribute qualifier="mizamainparatitle" type="localized:java.lang.String">
                         <persistence type="property">
                             <columntype database="oracle">
                                 <value>CLOB</value>
@@ -10783,7 +10783,7 @@
                             </columntype>
                         </persistence>
                     </attribute>
-                    <attribute qualifier="description" type="localized:java.lang.String">
+                    <attribute qualifier="mizamainparadescription" type="localized:java.lang.String">
                         <persistence type="property">
                             <columntype database="oracle">
                                 <value>CLOB</value>
@@ -10814,11 +10814,11 @@
                       jaloclass="com.investsaudi.portal.core.jalo.MizaBenefitsAndFeatureCards">
                 <description>MIZA Benefits And Feature Cards</description>
                 <attributes>
-                    <attribute qualifier="title" type="localized:java.lang.String">
+                    <attribute qualifier="mizabenefitscardtitle" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>MIZA Benefits And Feature Cards Title</description>
                     </attribute>
-                    <attribute qualifier="description" type="localized:java.lang.String">
+                    <attribute qualifier="mizabenefitscarddescription" type="localized:java.lang.String">
                         <persistence type="property">
                             <columntype database="oracle">
                                 <value>CLOB</value>
@@ -10853,11 +10853,11 @@
                       jaloclass="com.investsaudi.portal.core.jalo.MizaBenefitsAndFeatureParent">
                 <description>MIZA Benefits And Feature Parent</description>
                 <attributes>
-                    <attribute qualifier="title" type="localized:java.lang.String">
+                    <attribute qualifier="mizabenefitsparenttitle" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>MIZA Benefits And Feature Title</description>
                     </attribute>
-                    <attribute qualifier="description" type="localized:java.lang.String">
+                    <attribute qualifier="mizabenefitsparentdescription" type="localized:java.lang.String">
                         <persistence type="property">
                             <columntype database="oracle">
                                 <value>CLOB</value>
@@ -10883,7 +10883,7 @@
                 </attributes>
             </itemtype>
 
-            <itemtype code="MizaServiceTypeContainer" generate="true"
+            <!--<itemtype code="MizaServiceTypeContainer" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.MizaServiceTypeContainer">
                 <description>MIZA Service Type Container</description>
@@ -10893,7 +10893,7 @@
                     <description>MIZA Service Type Title</description>
                 </attribute>
                 </attributes>
-            </itemtype>
+            </itemtype>-->
 
             <itemtype code="MizaOurServiceContainer" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
@@ -10907,7 +10907,7 @@
                 </attributes>
             </itemtype>
 
-            <itemtype code="MizaServiceType" generate="true"
+            <!--<itemtype code="MizaServiceType" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.MizaServiceType">
                 <description>MIZA Service Type</description>
@@ -10925,18 +10925,18 @@
                         <modifiers/>
                     </attribute>
                 </attributes>
-            </itemtype>
+            </itemtype>-->
 
             <itemtype code="MizaOurServices" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.MizaOurServices">
                 <description>MIZA Benefits And Feature Cards</description>
                 <attributes>
-                    <attribute qualifier="title" type="localized:java.lang.String">
+                    <attribute qualifier="mizaourservicestitle" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>MIZA Benefits And Feature Cards Title</description>
                 </attribute>
-                <attribute qualifier="description" type="localized:java.lang.String">
+                <attribute qualifier="mizaourservicesdescription" type="localized:java.lang.String">
                     <persistence type="property">
                         <columntype database="oracle">
                             <value>CLOB</value>
@@ -10994,7 +10994,7 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute qualifier="successMessage" type="localized:java.lang.String" generate="true"
+                    <attribute qualifier="mizasuccessMessage" type="localized:java.lang.String" generate="true"
                                autocreate="true">
                         <persistence type="property">
                             <columntype database="oracle">
@@ -11014,6 +11014,7 @@
                             </columntype>
                         </persistence>
                     </attribute>
+
                 </attributes>
             </itemtype>
 
@@ -11037,11 +11038,11 @@
                       jaloclass="com.investsaudi.portal.core.jalo.MizaOneCoreEngineChild">
                 <description>MIZA Benefits And Feature Cards</description>
                 <attributes>
-                    <attribute qualifier="title" type="localized:java.lang.String">
+                    <attribute qualifier="mizaonecorechildtitle" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>MIZA Benefits And Feature Cards Title</description>
                     </attribute>
-                    <attribute qualifier="description" type="localized:java.lang.String">
+                    <attribute qualifier="mizaonecorechilddescription" type="localized:java.lang.String">
                         <persistence type="property"/>
                     </attribute>
                     <attribute type="Media" qualifier="mizaonecorechildimage">
@@ -11056,11 +11057,11 @@
                       jaloclass="com.investsaudi.portal.core.jalo.MizaOneCoreEngineParent">
                 <description>MIZA Benefits And Feature Parent</description>
                 <attributes>
-                    <attribute qualifier="title" type="localized:java.lang.String">
+                    <attribute qualifier="mizaonecoreparenttitle" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>MIZA Benefits And Feature Title</description>
                     </attribute>
-                    <attribute qualifier="description" type="localized:java.lang.String">
+                    <attribute qualifier="mizaonecoreparentdescription" type="localized:java.lang.String">
                         <persistence type="property">
                             <columntype database="oracle">
                                 <value>CLOB</value>

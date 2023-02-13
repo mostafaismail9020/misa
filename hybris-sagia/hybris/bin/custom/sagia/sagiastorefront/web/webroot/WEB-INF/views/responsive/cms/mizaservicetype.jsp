@@ -6,10 +6,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 
-<c:if test="${component.visible}">
-    <div class="container">
-    <img class="img-fluid" src="${component.servicetypeimage.url}" loading="lazy"/>
-        <h2 class="heading my-4">${component.title}</h2>
-        <h2 class="heading my-4">${component.description}</h2>
-    </div>
+<c:if test="${component.visible}" >
+    <div class="servicePortfolioItemInner1 servicePortfolioItemInner">
+        <img src="${component.servicetypeimage.url}" loading="lazy">
+        <div class="servicePortfolioContent">
+           <h4>Legal</h4>
+           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+     </div>
 </c:if >

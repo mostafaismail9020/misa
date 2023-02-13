@@ -9,15 +9,15 @@
 
 <c:if test="${component.visible}">
     <section class="company-mgr-quote mt-4 opportunity-contact" id="miza-contact-form">
-       <div class="accountLogin-background">
+       <div class="">
         <div class="container">
-         <div class="accountLogin-headline">
-                        <a href="${encodedContextPath}/" class="accountLogin-headline-logo">
-                            <img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/common/images/logo-en.svg">
-                        </a>
-                    </div>
+            <!--<div class="accountLogin-headline">
+                <a href="${encodedContextPath}/" class="accountLogin-headline-logo">
+                    <img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/common/images/logo-en.svg">
+                </a>
+            </div> -->
             <div class="row">
-                <h2 class="heading text-center mb-5 col-md-12" style="color: rgb(255, 255, 255);">${componentTitle}</h2>
+                <h2 class="mizaTitle wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeInUp;"><span class="clr_gld"><spring:theme code="portal.miza.contact.expert.name.label"/></span></h2>
             </div>
             <div class="contactSuccess d-none">
                 <p class="font-bold">Thank you for your interest in the Invest Saudi.</p>
@@ -110,15 +110,15 @@
                         <input id="mizacrSubjectID" name="SubjectID" type="hidden" value=""/>
                         <span class="field-validation-valid" data-valmsg-for="Subject"
                               data-valmsg-replace="true"></span>
-                        <div class="form-group md-form show-interest-form-normal-item-textarea">
-                         <label class="control-label" for="crJobTitle">
+                        <div class="form-group form-floating col-md-12 form-normal-item">
+                            <label class="control-label" for="crJobTitle">
                                                         <spring:theme code="portal.sector.contact.expert.enquiry.label"/>
                                                         <span class="mandatory">* </span>
                                                     </label>
-                            <textarea class="md-textarea form-control required" cols="10" data-val="true"
+                            <textarea class="form-control required" cols="10" data-val="true"
                                       data-val-length="Name length should be between 2 &amp; 1000" data-val-length-max="1000"
                                       data-val-length-min="2" data-val-required="Required" id="mizacrMessage" name="Enquiry"
-                                      placeholder="${messageLabel}" rows="5">
+                                      placeholder="${messageLabel}" rows="5" style="padding: 20px; padding-left: 35px; padding-top: 25px;">
                              </textarea>
                         </div>
                             <div class="form-group form-floating col-md-12 form-normal-item">
@@ -127,13 +127,13 @@
                                       <span id="lblSectorPageErrorCaptcha" class="mandatory"></span>
                              </div>
                         <div class="row form-action-btn my-4" style="padding-left: 15px; padding-right: 15px;">
-                       <div class="col-md-3">
-                            	<button type="button" id="contact-clear" class="btn btn-primary-fill btn-form-outline w-100">
-                            		<spring:theme code="portal.sector.download.clear.button"/></button></div>
-                            <div class="col-md-3"><button id="btn-miza-contact" type="submit" class="responsive-contact-btn btn btn-primary-fill btn-form-fill  w-100" onclick="onMizaContactload()">
-                            		<spring:theme code="portal.sector.download.submit.button"/></button></div>
-                          </div>
-                    </div>
+                           <div class="col-md-3">
+                                    <button type="button" id="contact-clear" class="btn btn-primary-fill btn-form-outline w-100">
+                                        <spring:theme code="portal.sector.download.clear.button"/></button></div>
+                                <div class="col-md-3"><button id="btn-miza-contact" type="submit" class="responsive-contact-btn btn btn-primary-fill btn-form-fill  w-100" onclick="onMizaContactload()">
+                                        <spring:theme code="portal.sector.download.submit.button"/></button></div>
+                              </div>
+                        </div>
                     ${successMessage}
                     <!--<input type="hidden" id="hfSectorID" value="${categoryCode}"/>
                     <input type="hidden" id="hfOpportunity" value="${productName}"/>

@@ -5209,9 +5209,7 @@ function onMizaContactload() {
 
  function validateMizaContact(event) {
     		// console.log(validateForm($("#corForm")));
-            alert("Inside validateMizaContact(event)");
     		/*if (!validateForm($("#mizaContactForm")) == true) {*/
-    			 alert("Inside validateForm");
     			onMizaContactSubmit();
     			return true;
     		/*
@@ -5219,7 +5217,6 @@ function onMizaContactload() {
     	}
 
     function onMizaContactSubmit() {
-        		alert("Inside onMizaContactSubmit");
         		// element[0].disabled = true;
         		// element[0].textContent = site.messages().sending;
         		$.ajax({
@@ -5244,7 +5241,6 @@ function onMizaContactload() {
         					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
         				}
         				if (data.indexOf("success") != -1){
-        						   alert("Inside Success");
         						dataLayer.push({
         							'event': 'fire_event',
         							'category': 'Contact Us Form',

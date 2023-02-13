@@ -183,4 +183,15 @@ public interface SagiaConfigurationFacade {
      */
     String getSagiaPartnerList();
 
+    /**
+     * getEnableSalaryAndEmploymentOnDashboard
+     * @return
+     */
+    String getMizaEmailId();
+
+    /**
+     * getEnableSalaryAndEmploymentOnDashboard
+     * @return
+     */
+    String getMizaEmailUserName();
 }

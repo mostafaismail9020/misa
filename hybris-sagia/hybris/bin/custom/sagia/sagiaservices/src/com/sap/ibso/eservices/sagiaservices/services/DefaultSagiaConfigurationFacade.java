@@ -197,5 +197,15 @@ public class DefaultSagiaConfigurationFacade implements SagiaConfigurationFacade
         return get("sagiaPartnerList");
     }
 
+    @Override
+    public String getMizaEmailId() {
+        return get("mizaEmailId");
+    }
+
+    @Override
+    public String getMizaEmailUserName() {
+        return get("mizaEmailUserName");
+    }
+
 
 }

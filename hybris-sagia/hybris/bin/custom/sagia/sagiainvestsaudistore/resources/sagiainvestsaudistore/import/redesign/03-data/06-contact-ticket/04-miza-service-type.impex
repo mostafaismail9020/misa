@@ -7,3 +7,7 @@ INSERT_UPDATE MizaServiceTypeForForm; code[unique = true]  ; label[lang = en]   
                                     ; corporate            ; Corporate            ;
                                     ; operational-services ; Operational Services ;
                                     ; human-resources      ; Human Resources      ;
+
+INSERT_UPDATE SagiaConfiguration; key[unique = true]; value            ; displayValue[default = true]
+                                ; mizaEmailId       ; miza@misa.gov.sa ; ;
+                                ; mizaEmailUserName ; MIZA             ; ;

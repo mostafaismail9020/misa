@@ -38,7 +38,7 @@
        <collectiontype code="EstimatedOperatingCostForRhqList" elementtype="OperatingCostForRhq" autocreate="true" type="list"/>
        <collectiontype code="RhqActivitiesList" elementtype="RhqActivities" autocreate="true" type="list"/>
        <collectiontype code="MizaOurServicesList" elementtype="MizaOurServices" autocreate="true" type="list"/>
-       <!--<collectiontype code="MizaServiceTypeList" elementtype="MizaServiceType" autocreate="true" type="list"/>-->
+       <collectiontype code="MizaServiceTypeList" elementtype="MizaServiceType" autocreate="true" type="list"/>
        <collectiontype code="MizaBenefitsAndFeatureCardsList" elementtype="MizaBenefitsAndFeatureCards" autocreate="true" type="list"/>
        <collectiontype code="MizaOneCoreEngineChildList" elementtype="MizaOneCoreEngineChild" autocreate="true" type="list"/>
 
@@ -10883,7 +10883,7 @@
                 </attributes>
             </itemtype>
 
-            <!--<itemtype code="MizaServiceTypeContainer" generate="true"
+            <itemtype code="MizaServiceTypeContainer" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.MizaServiceTypeContainer">
                 <description>MIZA Service Type Container</description>
@@ -10893,7 +10893,7 @@
                     <description>MIZA Service Type Title</description>
                 </attribute>
                 </attributes>
-            </itemtype>-->
+            </itemtype>
 
             <itemtype code="MizaOurServiceContainer" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
@@ -10907,16 +10907,16 @@
                 </attributes>
             </itemtype>
 
-            <!--<itemtype code="MizaServiceType" generate="true"
+            <itemtype code="MizaServiceType" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.MizaServiceType">
                 <description>MIZA Service Type</description>
                 <attributes>
-                    <attribute qualifier="title" type="localized:java.lang.String">
+                    <attribute qualifier="mizaservicetypetitle" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>MIZA Service Type Title</description>
                     </attribute>
-                    <attribute qualifier="description" type="localized:java.lang.String">
+                    <attribute qualifier="mizaservicetypedescription" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <description>MIZA Service Type Description</description>
                     </attribute>
@@ -10925,7 +10925,7 @@
                         <modifiers/>
                     </attribute>
                 </attributes>
-            </itemtype>-->
+            </itemtype>
 
             <itemtype code="MizaOurServices" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"

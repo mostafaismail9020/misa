@@ -1,11 +1,13 @@
 package com.investsaudi.email.context;
 
 import com.investsaudi.model.MizaTicketDetailsEmailProcessModel;
+import com.sap.ibso.eservices.sagiaservices.services.SagiaConfigurationFacade;
 import de.hybris.platform.acceleratorservices.model.cms2.pages.EmailPageModel;
 import de.hybris.platform.acceleratorservices.process.email.context.AbstractEmailContext;
 import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
 import de.hybris.platform.core.model.c2l.LanguageModel;
 import de.hybris.platform.core.model.user.CustomerModel;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MizaTicketDetailsEmailContext extends AbstractEmailContext<MizaTicketDetailsEmailProcessModel> {
     private String opportunityId;
@@ -16,13 +18,15 @@ public class MizaTicketDetailsEmailContext extends AbstractEmailContext<MizaTick
     private String mizaTicketUserEmail;
     private String mizaTicketUserService;
     private String mizaTicketUserEnquiry;
+    @Autowired
+    private SagiaConfigurationFacade sagiaConfigurationFacade;
 
     @Override
     public void init(final MizaTicketDetailsEmailProcessModel businessProcessModel, final EmailPageModel emailPageModel) {
         super.init(businessProcessModel, emailPageModel);
 
-        put(EMAIL, "miza@misa.gov.sa");
-        put(DISPLAY_NAME, "MIZA Default Customer");
+        put(EMAIL, sagiaConfigurationFacade.getMizaEmailId());
+        put(DISPLAY_NAME, sagiaConfigurationFacade.getMizaEmailUserName());
         if (businessProcessModel instanceof MizaTicketDetailsEmailProcessModel) {
 
             final MizaTicketDetailsEmailProcessModel processModel = (MizaTicketDetailsEmailProcessModel) businessProcessModel;

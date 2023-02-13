@@ -22966,3 +22966,15 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"]  .se-decorativ
 smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__overlay {
     /* margin-top: 32px !important; */
 }
+
+.themeStart47 .slick-prev {
+
+    left:100% !important;
+}
+@media(max-width:768px){
+
+ .themeStart47 .slick-prev {
+
+    left:100% !important;
+}
+}

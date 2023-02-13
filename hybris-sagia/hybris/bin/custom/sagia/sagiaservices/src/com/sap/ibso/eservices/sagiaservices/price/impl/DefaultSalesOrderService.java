@@ -40,7 +40,8 @@ public class DefaultSalesOrderService extends BackendAwareService implements Sal
 
     public com.sap.ibso.eservices.bol.price.SalesOrderParam convert(SalesOrderParam salesOrderParam){
         com.sap.ibso.eservices.bol.price.SalesOrderParam convertedParam = new com.sap.ibso.eservices.bol.price.SalesOrderParam();
-        convertedParam.setAmountPayed(salesOrderParam.getSalesOrderAmount());
+        //convertedParam.setAmountPayed(salesOrderParam.getSalesOrderAmount()); Commented as per CRM request
+        convertedParam.setAmountPayed(salesOrderParam.getTotalAmountPayed());
         convertedParam.setSalesOrderId(salesOrderParam.getSalesOrderId());
         convertedParam.setInvestorId(salesOrderParam.getInvestorId());
         convertedParam.setTransactionNumber(salesOrderParam.getTransactionNumber());

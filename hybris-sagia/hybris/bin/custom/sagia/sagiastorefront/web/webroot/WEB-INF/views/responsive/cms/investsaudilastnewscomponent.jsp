@@ -39,4 +39,26 @@
         	</div>
     	</div>
 	</section>
+
+	<section id="socialMediaFeedEn" class="socialMediaFeedEn" style="display: none;">
+		<div class="container where-to-invest">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="title-heading">SOCIAL MEDIA</h2>
+				</div>
+			</div>
+		</div>
+		<div id="loadEnFeed"></div>
+	</section>
+
+	<section id="socialMediaFeedAr" class="socialMediaFeedAr" style="display: none;">
+		<div class="container where-to-invest">
+			<div class="row">
+				<div class="col-md-12">                         
+					<h2 class="title-heading"> <spring:theme code="feedTitle.arabic"/> </h2>                           
+				 </div>
+			 </div>         
+		</div>
+		<div id="loadArFeed"></div>	
+	</section>
 </c:if>

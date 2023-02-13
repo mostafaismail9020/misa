@@ -5175,6 +5175,21 @@ $(document).ready(function () {
 	}
 });
 
+$( window ).on("load", function() {
+	var PageLang = document.getElementsByTagName("html")[0].getAttribute("lang");
+	
+	if(PageLang == 'en'){				
+		$('.socialMediaFeedEn').css({'display' : 'block'});
+		$('.socialMediaFeedAr').css({'display' : 'none'});
+		$('#loadEnFeed').append('<div class="tagembed-container" style=" width:100%;height:100%;overflow: auto;"><div class="tagembed-socialwall" data-wall-id="80663"></div></div><script src="//widget.tagembed.com/embed.min.js" type="text/javascript"></script>');
+	}else if(PageLang == 'ar'){
+		$('.socialMediaFeedEn').css({'display' : 'none'});
+		$('.socialMediaFeedAr').css({'display' : 'block'});
+		$('#loadArFeed').append('<div class="tagembed-container" style=" width:100%;height:100%;overflow: auto;"><div class="tagembed-socialwall" data-wall-id="81404"></div></div><script src="//widget.tagembed.com/embed.min.js" type="text/javascript"></script>');	
+	}
+	
+});
+
 function validateMizaContact(event) {
        onMizaContactSubmit();
 }

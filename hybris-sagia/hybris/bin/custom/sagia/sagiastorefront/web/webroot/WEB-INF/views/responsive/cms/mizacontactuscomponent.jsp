@@ -8,8 +8,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <c:if test="${component.visible}">
-    <section class="show-interest-wrapper">
-    <div class="accountLogin-background">
+    <section class="company-mgr-quote mt-4 opportunity-contact" id="miza-contact-form">
+       <div class="accountLogin-background">
         <div class="container">
          <div class="accountLogin-headline">
                         <a href="${encodedContextPath}/" class="accountLogin-headline-logo">
@@ -19,9 +19,14 @@
             <div class="row">
                 <h2 class="heading text-center mb-5 col-md-12" style="color: rgb(255, 255, 255);">${componentTitle}</h2>
             </div>
+            <div class="contactSuccess d-none">
+                <p class="font-bold">Thank you for your interest in the Invest Saudi.</p>
+                <p>We received your inquiry, and we will get back to you shortly.</p>
+                <p class="contact-sucess-ticket"></p>
+            </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="mb-3 pos-rel wow fadeIn" data-wow-delay="0.2s" id="corForm">
+                    <div class="mb-3 pos-rel wow fadeIn" data-wow-delay="0.2s" id="mizaContactForm">
 
                         <div class="row">
                                <div class="form-group form-floating col-md-6 form-normal-item">
@@ -125,7 +130,7 @@
                        <div class="col-md-3">
                             	<button type="button" id="contact-clear" class="btn btn-primary-fill btn-form-outline w-100">
                             		<spring:theme code="portal.sector.download.clear.button"/></button></div>
-                            <div class="col-md-3"><button id="btn-miza-contact" type="submit" class="responsive-contact-btn btn btn-primary-fill btn-form-fill  w-100">
+                            <div class="col-md-3"><button id="btn-miza-contact" type="submit" class="responsive-contact-btn btn btn-primary-fill btn-form-fill  w-100" onclick="onMizaContactload()">
                             		<spring:theme code="portal.sector.download.submit.button"/></button></div>
                           </div>
                     </div>

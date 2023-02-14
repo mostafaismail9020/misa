@@ -1102,7 +1102,7 @@ $(document).ready(function () {
         window.location.href = window.location.pathname +"?"+$.param(notEmptyFacet);
     });
 
-	var site = {};
+	site = {};
 	site = {
 		utils: {
 			language: function () {
@@ -5029,6 +5029,80 @@ function validateFormContactUs(){
 }
 
 
+var mizaelement = document.getElementsByClassName('btn-miza-contact');
+var btnText = mizaelement[0] && mizaelement[0].textContent;
+
+/*function validateMizaContact(event) {
+       onMizaContactSubmit();
+}*/
+function onMizaContactload() {
+    mizaelement.onclick = validateMizaContact(mizaelement);
+}
+
+//MIZA CHANGES
+
+	/*    $("#btn-miza-contact").on("click", function () {
+        element.onclick = validateMizaContact(mizaelement);
+    });*/
+
+ function validateMizaContact(event) {
+    		// console.log(validateForm($("#corForm")));
+    		/*if (!validateForm($("#mizaContactForm")) == true) {*/
+    		alert("Inside validateMizaContact");
+    			onMizaContactSubmit();
+    			return true;
+    		/*
+    		return false;*/
+    	}
+
+    function onMizaContactSubmit() {
+        		// element[0].disabled = true;
+        		// element[0].textContent = site.messages().sending;
+        		$.ajax({
+        			url: ACC.config.contextPath + '/en/miza-contactus',
+        			async: true,
+        			type: "POST",
+        			contentType: "application/json; charset=utf-8",
+        			dataType: "json",
+        			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
+        			data: JSON.stringify({
+        				name: $.trim($("#mizacrName").val()),
+        				email: $.trim($("#mizacrEmail").val()),
+        				countryCode: $.trim(($(".ddl-countryCode").val() ? $(".ddl-countryCode").val() : "+966")),
+        				mobile: $.trim($("#mizacrMobile").val()),
+        				company: $.trim($("#mizacrCompany").val()),
+        				jobTitle: $.trim($("#mizacrPosition").val()),
+        				message: $.trim($("#mizacrMessage").val()),
+        				contactSubject: $.trim($("#mizacrSubjectID").val())
+        			}),
+        			success: function (data) {
+        				if (data == "mir-robot") {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
+        				}
+        				if (data.indexOf("success") != -1){
+        						dataLayer.push({
+        							'event': 'fire_event',
+        							'category': 'Contact Us Form',
+        							'action': 'Successful Submit'
+        						});
+        					$(".contactSuccess").removeClass("d-none");
+        					$("#mizaContactForm").addClass("d-none");
+        					$('.contact-sucess-ticket').text("Your reference number : "+ data.substring(8));
+        					var scrollDiv = document.getElementById("miza-contact-form").offsetTop - 80;
+        					window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+        				}
+
+        				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
+        				}
+
+        				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
+        					$('#miza-contact-form').find('#g-recaptcha_incorrect').show();
+        				}
+        			}
+        		});
+        	}
+
 //-----------------------
 var role = 0;
 $(".login-role-selection .login-role-selection-box").on('click',function(){
@@ -5189,78 +5263,3 @@ $( window ).on("load", function() {
 	}
 	
 });
-
-function validateMizaContact(event) {
-       onMizaContactSubmit();
-}
-function onMizaContactload() {
-    element.onclick = validateMizaContact(element);
-}
-
-//MIZA CHANGES
-
-
-/*    var mizaelement = document.getElementsByClassName('btn-miza-contact');
-     var btnText = mizaelement[0] && mizaelement[0].textContent;
-
-	$("#btn-miza-contact").on("click", function () {
-        element.onclick = validateMizaContact(mizaelement);
-    });*/
-
- function validateMizaContact(event) {
-    		// console.log(validateForm($("#corForm")));
-    		/*if (!validateForm($("#mizaContactForm")) == true) {*/
-    			onMizaContactSubmit();
-    			return true;
-    		/*
-    		return false;*/
-    	}
-
-    function onMizaContactSubmit() {
-        		// element[0].disabled = true;
-        		// element[0].textContent = site.messages().sending;
-        		$.ajax({
-        			url: ACC.config.contextPath + '/en/miza-contactus',
-        			async: true,
-        			type: "POST",
-        			contentType: "application/json; charset=utf-8",
-        			dataType: "json",
-        			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
-        			data: JSON.stringify({
-        				name: $.trim($("#mizacrName").val()),
-        				email: $.trim($("#mizacrEmail").val()),
-        				countryCode: $.trim(($(".ddl-countryCode").val() ? $(".ddl-countryCode").val() : "+966")),
-        				mobile: $.trim($("#mizacrMobile").val()),
-        				company: $.trim($("#mizacrCompany").val()),
-        				jobTitle: $.trim($("#mizacrPosition").val()),
-        				message: $.trim($("#mizacrMessage").val()),
-        				contactSubject: $.trim($("#mizacrSubjectID").val())
-        			}),
-        			success: function (data) {
-        				if (data == "mir-robot") {
-        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
-        				}
-        				if (data.indexOf("success") != -1){
-        						dataLayer.push({
-        							'event': 'fire_event',
-        							'category': 'Contact Us Form',
-        							'action': 'Successful Submit'
-        						});
-        					$(".contactSuccess").removeClass("d-none");
-        					$("#mizaContactForm").addClass("d-none");
-        					$('.contact-sucess-ticket').text("Your reference number : "+ data.substring(8));
-        					var scrollDiv = document.getElementById("miza-contact-form").offsetTop - 80;
-        					window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
-        				}
-
-        				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
-        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
-        				}
-
-        				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
-        					$('#opp-contact-form').find('#g-recaptcha_incorrect').show();
-        				}
-        			}
-        		});
-        	}
-   //MIZA CHANGES END

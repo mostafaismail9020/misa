@@ -10,8 +10,8 @@
     <div class="servicePortfolioItemInner1 servicePortfolioItemInner">
         <img src="${component.servicetypeimage.url}" loading="lazy">
         <div class="servicePortfolioContent">
-           <h4>Legal</h4>
-           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+           <h4>${component.mizaservicetypetitle}</h4>
+           <p>${component.mizaservicetypedescription}</p>
         </div>
      </div>
 </c:if >

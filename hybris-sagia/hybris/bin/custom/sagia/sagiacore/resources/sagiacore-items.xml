@@ -10959,6 +10959,10 @@
                     <persistence type="property"/>
                     <modifiers/>
                 </attribute>
+                <attribute qualifier="knowMore" type="CMSLinkComponent">
+                    <persistence type="property"/>
+                    <modifiers/>
+                </attribute>
             </attributes>
         </itemtype>
           <itemtype code="MizaContactUsComponent" generate="true"

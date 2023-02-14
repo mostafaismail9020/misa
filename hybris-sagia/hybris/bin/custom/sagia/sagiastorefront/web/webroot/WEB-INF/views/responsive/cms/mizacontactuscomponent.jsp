@@ -8,29 +8,34 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <c:if test="${component.visible}">
-    <section class="company-mgr-quote mt-4 opportunity-contact" id="miza-contact-form">
-       <div class="">
-        <div class="container">
+    <section class="mizaSection mizaEnquiry p100 company-mgr-quote" id="miza-contact-form">
+    
+            <div class="container-fluid">
+               <h2 class="mizaTitle  wow fadeInUp    animated" data-wow-delay="300ms" data-wow-duration="1s"><span class="clr_gld"><spring:theme code="portal.miza.contact.expert.name.label"/></span></h2>
+
+
+
+     
+       
             <!--<div class="accountLogin-headline">
                 <a href="${encodedContextPath}/" class="accountLogin-headline-logo">
                     <img src="https://investsaudi.sa/investsaudistorefront/_ui/responsive/common/images/logo-en.svg">
                 </a>
             </div> -->
-            <div class="row">
-                <h2 class="mizaTitle wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeInUp;"><span class="clr_gld"><spring:theme code="portal.miza.contact.expert.name.label"/></span></h2>
-            </div>
+         
             <div class="contactSuccess d-none">
                 <p class="font-bold">Thank you for your interest in the Invest Saudi.</p>
                 <p>We received your inquiry, and we will get back to you shortly.</p>
                 <p class="contact-sucess-ticket"></p>
             </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="mb-3 pos-rel wow fadeIn" data-wow-delay="0.2s" id="mizaContactForm">
+          
+             
+                    <div class=" wow fadeIn mizaEnquiryFromWrap " data-wow-delay="0.2s" id="mizaContactForm">
 
                         <div class="row">
-                               <div class="form-group form-floating col-md-6 form-normal-item">
-                                       <label class="control-label" for="mizacrName">
+                               <div class=" col-md-6 ">
+                                <div class="form-group">
+                                       <label class="" for="mizacrName">
                                         <spring:theme code="portal.sector.contact.expert.name.label"/>
                                         <span class="mandatory">* </span>
                                        </label>
@@ -39,10 +44,12 @@
                                        data-val-regex-pattern="^[A-Za-z\u0600-\u065F\u066A-\u06EF\u06FA-\u06FF\s]*$"
                                        data-val-required="Required" id="mizacrName" name="Name"/>
                                        <div class="error-msg"></div>
+                                    </div>
                                 </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                         <div class="form-group form-floating form-normal-item">
-                                            <label class="control-label" for="mizacrCompany">
+
+                                <div class=" col-md-6 ">
+                                         <div class="form-group ">
+                                            <label class="" for="mizacrCompany">
                                                 <spring:theme code="portal.sector.contact.expert.companyName.label"/>
                                                 <span class="mandatory">* </span>
                                             </label>
@@ -55,23 +62,29 @@
                                     </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group form-floating form-normal-item country-code-mobile">
-                                    <input type="text" class="ddl-countryCode form-control" placeholder="+966" autocomplete="off">
-
-                                    <div class="input-wrapper">
-                                        <label class="control-label" for="mizacrMobile">
-                                            <spring:theme code="portal.sector.contact.expert.phoneNumber.label"/>
-                                            <span class="mandatory">* </span>
-                                        </label>
-                                        <input type="text" style="padding-left: 50px;" class="form-control validate-mobile required mobile-number" id="mizacrMobile" name="MobileNumber"  type="number"/>
-                                        <div class="error-msg"></div>
+                            <div class=" col-md-6 ">
+                                <div class="form-group ">
+                                    <label class="" for="mizacrMobile">
+                                        <spring:theme code="portal.sector.contact.expert.phoneNumber.label"/>
+                                        <span class="mandatory">* </span>
+                                    </label>
+                                    <div class="country-code-mobile">
+                                        <input type="text" class="ddl-countryCode form-control" placeholder="+966" autocomplete="off">
+                                        <div class="input-wrapper">
+                                           
+                                            <input type="text" style="padding-left: 50px;" class="form-control validate-mobile required mobile-number" id="mizacrMobile" name="MobileNumber"  type="number"/>
+                                            <div class="error-msg"></div>
+                                        </div>
                                     </div>
+
+                                  
+
+                                   
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group form-floating form-normal-item">
-                                    <label class="control-label" for="mizacrPosition">
+                            <div class=" col-md-6 ">
+                                <div class="form-group  ">
+                                    <label class="" for="mizacrPosition">
                                         <spring:theme code="portal.sector.contact.expert.position.label"/>
                                         <span class="mandatory">* </span>
                                     </label>
@@ -84,9 +97,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group form-floating form-normal-item">
-                                    <label class="control-label" for="mizacrEmail">
+                            <div class=" col-md-6 ">
+                                <div class="form-group  ">
+                                    <label class="" for="mizacrEmail">
                                         <spring:theme code="portal.sector.contact.expert.email.label"/><span class="mandatory">* </span>
                                     </label>
                                     <input type="text" class="form-control validate-email required" data-val="true"
@@ -96,9 +109,9 @@
                                     <div class="error-msg"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group form-normal-item-select">
-                                   <label class="control-label" for="mizacrSubjectID"><spring:theme code="portal.sector.contact.expert.service.type.label"/><span class="mandatory">* </span></label>
+                            <div class=" col-md-6 ">
+                                <div class="form-group ">
+                                   <label class="" for="mizacrSubjectID"><spring:theme code="portal.sector.contact.expert.service.type.label"/><span class="mandatory">* </span></label>
                                    <select id="mizacrSubjectID" class="form-control required drop-item">
                                         <c:forEach var="contactSubject" items="${contactSubjects}">
                                             <option value="${contactSubject.code}">${contactSubject.label}</option>
@@ -110,8 +123,10 @@
                         <input id="mizacrSubjectID" name="SubjectID" type="hidden" value=""/>
                         <span class="field-validation-valid" data-valmsg-for="Subject"
                               data-valmsg-replace="true"></span>
-                        <div class="form-group form-floating col-md-12 form-normal-item">
-                            <label class="control-label" for="crJobTitle">
+                              <div class="row ">
+                        <div class=" col-md-12 ">
+                            <div class="form-group">
+                            <label class="" for="crJobTitle">
                                                         <spring:theme code="portal.sector.contact.expert.enquiry.label"/>
                                                         <span class="mandatory">* </span>
                                                     </label>
@@ -120,13 +135,18 @@
                                       data-val-length-min="2" data-val-required="Required" id="mizacrMessage" name="Enquiry"
                                       placeholder="${messageLabel}" rows="5" style="padding: 20px; padding-left: 35px; padding-top: 25px;">
                              </textarea>
+                            </div>
                         </div>
-                            <div class="form-group form-floating col-md-12 form-normal-item">
+                    </div>
+
+                            <div class="col-md-12 ">
+                                <div class="form-group">
                                 <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
                                    <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
                                       <span id="lblSectorPageErrorCaptcha" class="mandatory"></span>
+                                      </div>
                              </div>
-                        <div class="row form-action-btn my-4" style="padding-left: 15px; padding-right: 15px;">
+                        <div class="row form-action-btn" style="padding-left: 15px; padding-right: 15px;justify-content: center;margin-top: 40px;">
                            <div class="col-md-3">
                                     <button type="button" id="contact-clear" class="btn btn-primary-fill btn-form-outline w-100">
                                         <spring:theme code="portal.sector.download.clear.button"/></button></div>
@@ -139,10 +159,10 @@
                     <input type="hidden" id="hfOpportunity" value="${productName}"/>
                     <input type="hidden" id="hfPageTitle" value="${sectorOrProduct}"/>
                     <input type="hidden" id="hfProductCode" value="${productCode}"/> -->
-                </div>
+              
 
-            </div>
+            
         </div>
-        </div>
+       
     </section>
 </c:if>

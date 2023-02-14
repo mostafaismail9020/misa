@@ -1193,6 +1193,7 @@ $(document).ready(function () {
 	/* newsletter subscription ends */
 	/* general form validation */
 	function validateForm(ctrl) {
+		alert("Inside MIZA validte");
 		var valid = true;
 		if (ctrl.length == 0) {
 			valid = false;
@@ -1227,16 +1228,20 @@ $(document).ready(function () {
 				$(this).parent().removeClass('error');
 			}
 		});
+		//alert("Inside Validate Name "+$('.validate-name', ctrl));
 		$.each($('.validate-name', ctrl), function (i, e) {
 			var pattern = new RegExp(/^[-\sa-zA-Z,\u0600-\u06FF]+$/);
+			//alert("Inside Validate Name "+$(this).val());
 			if (pattern.test($.trim($(this).val()))) {
 				if (valid) {
+					//alert("Inside MIZA validte Name IF");
 					$(this).removeClass('error');
 					$(this).parent().find(".error-msg").text("");
 					$(this).parents("div." + ctrl.attr("id")).find(".validation-name").hide();
 				}
 			}
 			else {
+				//alert("Inside MIZA validte Name ELSE");
 				$(this).addClass('error');
 				if ($(this).parent().find("label").find("em").length == 0) {
 					$(this).parent().find(".error-msg").html("<em><span>" + site.messages().noSplChars + "</span></em>");
@@ -5047,12 +5052,12 @@ function onMizaContactload() {
 
  function validateMizaContact(event) {
     		// console.log(validateForm($("#corForm")));
-    		/*if (!validateForm($("#mizaContactForm")) == true) {*/
-    		alert("Inside validateMizaContact");
+    		if (!validateForm($("#mizaContactForm")) == true) {
+    		//alert("Inside validateMizaContact");
     			onMizaContactSubmit();
     			return true;
-    		/*
-    		return false;*/
+    			}
+    		return false;
     	}
 
     function onMizaContactSubmit() {

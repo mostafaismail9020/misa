@@ -3723,9 +3723,7 @@ li a.about-us-nav {
 .page-miza-homepage li.mobileMenuLogo a{
 	border-bottom: unset;
 }
-.page-miza-homepage .mobMainMenu li {
-	
-}
+
 .page-miza-homepage .menuBtn{
 	left: 0;
     position: absolute;
@@ -3853,12 +3851,12 @@ width: 25px;
 
 
 /*Banner*/
-.page-miza-homepage .bannerContent{
+.page-miza-homepage .banner-section{
 	width: 100%;
 	height: 100vh;
-	position: revert;
+	position: relative;
 }
-.page-miza-homepage .bannerContent::after{
+.page-miza-homepage .banner-section::after{
 content: '';
 position: absolute;
 top: 0;
@@ -3867,6 +3865,7 @@ background-image: linear-gradient(180deg,#000,rgba(0,0,0,.333),#000);
 width: 100%;
 height: 100%;
 opacity: 0.8;
+z-index: -1;
 }
 .page-miza-homepage .bannerImage img{
 	width: 100%;
@@ -3919,19 +3918,19 @@ opacity: 0.8;
 }
 
 
-.page-miza-homepage .bnr-content-box h1 {
+.page-miza-homepage .banner-section h1 {
    font-family: 'diodrum-arabic-bold', sans-serif;
     position: relative;
     display: block;
   	font-size: 100px;
-	font-weight: bold;
+	font-weight: normal;
 	text-transform: uppercase;
 	margin-bottom: 20px;
 	letter-spacing: normal;
     color: #fff;
     text-transform: capitalize;
   
-    opacity: 0;
+    /* opacity: 0;
     -webkit-transform: translateX(100px);
     -moz-transform: translateX(100px);
     -ms-transform: translateX(100px);
@@ -3942,7 +3941,7 @@ opacity: 0.8;
     -ms-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
-     
+      */
 
 }
 .page-miza-homepage .bnr-content-box h1:first-child{
@@ -3964,13 +3963,14 @@ opacity: 0.8;
 
 
 
-.page-miza-homepage .bnr-content-box p {
+.page-miza-homepage .banner-section p {
     position: relative;
    font-size: 35px;
 	lighting-color: 27px;
 	text-transform: uppercase;
 	letter-spacing: normal;
-    opacity: 0;
+    color: #fff;
+    /* opacity: 0;
     -webkit-transform: translateX(-100px);
     -moz-transform: translateX(-100px);
     -ms-transform: translateX(-100px);
@@ -3980,7 +3980,7 @@ opacity: 0.8;
     -moz-transition: all 1.3s ease;
     -ms-transition: all 1.3s ease;
     -o-transition: all 1.3s ease;
-    transition: all 1.3s ease;
+    transition: all 1.3s ease; */
       font-family: "the-sans-regular", 'Source Sans Pro', sans-serif;
         letter-spacing: normal;
 }
@@ -4989,8 +4989,8 @@ opacity: 1;
     position: relative;
     padding-left: 100px;
     padding-right: 100px;
-    background-color: #90c36414;
-     border-top: 1px solid #90c36552;
+    background-color:  #02657317;
+    border-top: 1px solid #02657317;
 }
 .page-miza-homepage .mizaEnquiry::after{
     content: '';
@@ -5079,7 +5079,7 @@ opacity: 1;
 .page-miza-homepage .mizaEnquiryFromWrap input.form-control:focus {
     outline: none;
     box-shadow: unset;
-    border: unset;
+    border:1px solid #00a6be;
 /*    border-bottom: 1px solid var(--miza-primary);*/
      transition: all 500ms ease;
 }
@@ -5087,7 +5087,7 @@ opacity: 1;
 .page-miza-homepage .mizaEnquiryFromWrap textarea.form-control:focus {
     outline: none;
     box-shadow: unset;
-    border: unset;
+    border:1px solid #00a6be;
      transition: all 500ms ease;
 }
 
@@ -5103,6 +5103,29 @@ opacity: 1;
          border-radius: 15px;
          padding-left: 15px;
 }
+.page-miza-homepage .mizaEnquiryFromWrap select.form-control {
+    border: unset;
+    border-radius: unset;
+    height: 60px;
+     box-shadow: var(--mixa-card-shadow); 
+/*    border-bottom: 1px solid #c7c7c794;*/
+    margin-bottom: 40px;
+       font-weight: 500;
+         transition: all 500ms ease;
+         border-radius: 15px;
+         padding-left: 15px;
+}
+.page-miza-homepage  .intl-tel-input.allow-dropdown .flag-container:hover .selected-flag{
+    background-color: transparent;
+  }
+  .page-miza-homepage .intl-tel-input .selected-flag .iti-arrow{
+    left: 6px;
+    right: unset;
+  }
+  #mizacrMobile{
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+  }
 
 .page-miza-homepage .mizaEnquiryFromWrap textarea.form-control {
 /*    border: 1px solid #c7c7c794;*/
@@ -5851,14 +5874,18 @@ top: 113px;
     bottom: -30px;
 }
 
+.page-miza-homepage .servicePortfolioItem{
+    width: 50%;
+}
+.page-miza-homepage .servicePortWrapper{
+    flex-wrap: wrap;
+}
 
 
-
-
-	.page-miza-homepage .bnr-content-box h1{
-		font-size: 65px;
+	.page-miza-homepage .banner-section h1{
+		font-size: 65px !important;
 	}
-	.page-miza-homepage .bnr-content-box p{
+	.page-miza-homepage .banner-section p{
 		font-size: 25px;
 	}
 	.page-miza-homepage .aboutContentWrap{
@@ -5983,6 +6010,10 @@ top: 113px;
 	height: 47px;
 	margin-bottom: 30px;
 }
+.page-miza-homepage .mizaEnquiryFromWrap select.form-control{
+	height: 47px;
+	margin-bottom: 30px;
+}
 .page-miza-homepage .mizaEnquiryFromWrap textarea.form-control{
 	height: 150px;
 }
@@ -6041,10 +6072,10 @@ top: 113px;
 
 
 
-	.page-miza-homepage .bnr-content-box h1{
-		font-size: 65px;
+	.page-miza-homepage .banner-section h1{
+		font-size: 65px !important;
 	}
-	.page-miza-homepage .bnr-content-box p{
+	.page-miza-homepage .banner-section p{
 		font-size: 25px;
 	}
 	.page-miza-homepage .aboutContentWrap{
@@ -6176,6 +6207,10 @@ top: 113px;
 	top: 17px;
 }
 .page-miza-homepage .mizaEnquiryFromWrap input.form-control{
+	height: 47px;
+	margin-bottom: 30px;
+}
+.page-miza-homepage .mizaEnquiryFromWrap select.form-control{
 	height: 47px;
 	margin-bottom: 30px;
 }
@@ -6321,10 +6356,10 @@ height: 350px;
 }
 
 
-	.page-miza-homepage .bnr-content-box h1{
-		font-size: 45px;
+	.page-miza-homepage .banner-section h1{
+		font-size: 45px !important;
 	}
-	.page-miza-homepage .bnr-content-box p{
+	.page-miza-homepage .banner-section p{
 		font-size: 18px;
 	}
 	.page-miza-homepage .aboutContentWrap{
@@ -6485,6 +6520,10 @@ height: 350px;
 	height: 47px;
 	margin-bottom: 30px;
 }
+.page-miza-homepage .mizaEnquiryFromWrap select.form-control{
+	height: 47px;
+	margin-bottom: 30px;
+}
 .page-miza-homepage .mizaEnquiryFromWrap textarea.form-control{
 	height: 115px;
 }
@@ -6496,13 +6535,54 @@ height: 350px;
 .page-miza-homepage .servicePortfolioItem{
 	width: 100%;
 }
-.page-miza-homepage .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner1 img, .page-miza-homepage .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner2 img, .page-miza-homepage .servicePortfolioItemInner1 img, .page-miza-homepage .servicePortfolioItemInner2 img{
+/* .page-miza-homepage .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner1 img, .page-miza-homepage .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner2 img, .page-miza-homepage .servicePortfolioItemInner1 img, .page-miza-homepage .servicePortfolioItemInner2 img{
 	min-height: 350px;
 }
 .page-miza-homepage .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner1, .page-miza-homepage .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner2, .page-miza-homepage .servicePortfolioItemInner1, .page-miza-homepage .servicePortfolioItem, .page-miza-homepage .servicePortfolioItemInner2{
 	min-height: auto;
-}
-
+} */
+.page-miza-homepage  .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner1:nth-child(odd){
+    width: 100%;
+  height: auto;
+  }
+  
+  .page-miza-homepage  .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner1:nth-child(odd) img{
+    width: 100%;
+    height: 350px;
+  }
+  
+  .page-miza-homepage .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner1:nth-child(even){
+    width: 100%;
+    height: auto;
+  }
+  
+  .page-miza-homepage .servicePortfolioItem:nth-child(odd) .servicePortfolioItemInner1:nth-child(even) img{
+    width: 100%;
+    height: 350px;
+  }
+  
+  .page-miza-homepage .servicePortfolioItem:nth-child(even) .servicePortfolioItemInner1:nth-child(odd){
+    width: 100%;
+    height: auto;
+  }
+  
+  .page-miza-homepage .servicePortfolioItem:nth-child(even) .servicePortfolioItemInner1:nth-child(odd) img{
+    width: 100%;
+    height: 350px;
+  }
+  
+  .page-miza-homepage .servicePortfolioItem:nth-child(even) .servicePortfolioItemInner1:nth-child(even){
+    width: 100%;
+    height: auto;
+  }
+  
+  .page-miza-homepage .servicePortfolioItem:nth-child(even) .servicePortfolioItemInner1:nth-child(even) img{
+    width: 100%;
+  height: 350px;
+  }
+  .page-miza-homepage .servicePortfolioItem{
+    min-height: auto;
+  }
 .page-miza-homepage .d2OurSeriviceItemInner{
 	width: 100%;
 }

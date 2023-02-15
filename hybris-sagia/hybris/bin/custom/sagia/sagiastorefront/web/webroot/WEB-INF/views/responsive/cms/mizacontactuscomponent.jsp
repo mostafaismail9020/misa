@@ -143,7 +143,7 @@
                             <div class="col-md-12 ">
                                 <div class="form-group captchaWrapper" style="    display: flex;  align-items: center; justify-content: center; margin-top: 20px;">
                                 <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
-                                   <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
+                                   <div class="form_field-elements control-group js-recaptcha-captchaaddon sector-page-captcha"></div>
                                       <span id="lblSectorPageErrorCaptcha" class="mandatory"></span>
                                       </div>
                              </div>

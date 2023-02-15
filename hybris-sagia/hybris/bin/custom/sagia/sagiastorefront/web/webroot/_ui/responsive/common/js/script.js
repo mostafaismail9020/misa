@@ -5052,7 +5052,7 @@ function onMizaContactload() {
 
  function validateMizaContact(event) {
     		// console.log(validateForm($("#corForm")));
-    		if (!validateForm($("#mizaContactForm")) == true) {
+    		if (validateForm($("#mizaContactForm")) == true) {
     		//alert("Inside validateMizaContact");
     			onMizaContactSubmit();
     			return true;

@@ -1192,8 +1192,8 @@ $(document).ready(function () {
 
 	/* newsletter subscription ends */
 	/* general form validation */
-	function validateForm(ctrl) {
-		alert("Inside MIZA validte");
+	window.validateForm = function(ctrl) {
+		//alert("Inside MIZA validte");
 		var valid = true;
 		if (ctrl.length == 0) {
 			valid = false;

@@ -3450,6 +3450,20 @@ li a.about-us-nav {
 
 
 /*MIZA CSS*/
+
+.page-miza-homepage .error-msg {
+  margin-left: 15px;
+  font-size: 13px;
+  color: #ff0000;
+  text-transform: capitalize;
+  text-align: left;
+  position: absolute;
+  bottom: -22px;
+}
+
+.page-miza-homepage .intl-tel-input.allow-dropdown .selected-flag{
+top:0;
+}
 @font-face {
   font-family: "lucida-grande";
   src: url("../font/LucidaGrande.ttc");
@@ -3630,9 +3644,7 @@ margin: auto;
 .page-miza-homepage li.mobileMenuLogo a{
 border-bottom: unset;
 }
-.page-miza-homepage .mobMainMenu li {
 
-}
 .page-miza-homepage .menuBtn{
 right: 20px;
   position: absolute;
@@ -4260,7 +4272,7 @@ background-color: var(--miza-dark);
   opacity: 0;
 }
 
-.page-miza-homepage /*.benifitFeatureItem:hover .benifitFeatureText::after{
+ /*.benifitFeatureItem:hover .benifitFeatureText::after{
     opacity: 1;
   width: 100%;
   height: 100%;
@@ -4307,7 +4319,7 @@ position: relative;
   opacity: 0;
   width: 280px;
 }
-.page-miza-homepage /*.hover-effect::before {
+ /*.hover-effect::before {
   right: 0;
   opacity: 1;
   top: 0;
@@ -4378,13 +4390,13 @@ border: 1px solid #63b2d9;
   line-height: 30px;
   color: #707070;
 }
-.page-miza-homepage /*.mizaServiceItem .mizaServiceImg{
+ /*.mizaServiceItem .mizaServiceImg{
 
 position: absolute;
 bottom: 15px;
 left: 40px;
 }*/
-.page-miza-homepage /*.mizaServiceItem .mizaServiceImg::after{
+ /*.mizaServiceItem .mizaServiceImg::after{
     width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -4621,7 +4633,7 @@ opacity: 0.8;
 top: 0;
 left: 0;
 }
-.page-miza-homepage /*.oneCoreEngineItem::before{
+/*.oneCoreEngineItem::before{
 content: '';
 position: absolute;
 left: 0;
@@ -4634,7 +4646,7 @@ transition: 0.3s all linear;
 background-image: url(../images/serport7.jpg);
 opacity: 0;
 }*/
-.page-miza-homepage /*.oneCoreEngineItem:hover:before{
+ /*.oneCoreEngineItem:hover:before{
 width: 100%;
 transition: 0.3s all linear;
 opacity: 1;
@@ -5265,9 +5277,7 @@ width: 95px !important;
 width: 30px;
 margin-right: 4px;
 }
-.page-miza-homepage .mizaFooter .footer-menu-links .no-gutters :nth-child(3) ul li:nth-child(5) a {
-/*    color: var(--miza-secondary);*/
-}
+
 .page-miza-homepage .mizaFooter .copyright {
   width: 100%;
   background-color: #161719;
@@ -6168,9 +6178,6 @@ font-size: 20px;
 .page-miza-homepage .newDivDesign{
 padding-left: 10px;
 padding-top: 240px;
-}
-.page-miza-homepage .benifiIcon{
-
 }
 .page-miza-homepage .benifiIcon{
     width: 100%;

@@ -72,7 +72,7 @@
                                         <input type="text" class="ddl-countryCode form-control" placeholder="+966" autocomplete="off">
                                         <div class="input-wrapper">
                                            
-                                            <input type="text" style="padding-left: 50px;" class="form-control validate-mobile required mobile-number" id="mizacrMobile" name="MobileNumber"  type="number"/>
+                                            <input type="text" style="padding-left: 50px;margin-bottom: 0;" class="form-control validate-mobile required mobile-number" id="mizacrMobile" name="MobileNumber"  type="number"/>
                                             <div class="error-msg"></div>
                                         </div>
                                     </div>
@@ -135,12 +135,13 @@
                                       data-val-length-min="2" data-val-required="Required" id="mizacrMessage" name="Enquiry"
                                       placeholder="${messageLabel}" rows="5" style="padding: 20px; padding-left: 35px; padding-top: 25px;">
                              </textarea>
+                               <div class="error-msg"></div>
                             </div>
                         </div>
                     </div>
 
                             <div class="col-md-12 ">
-                                <div class="form-group">
+                                <div class="form-group captchaWrapper" style="    display: flex;  align-items: center; justify-content: center; margin-top: 20px;">
                                 <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
                                    <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
                                       <span id="lblSectorPageErrorCaptcha" class="mandatory"></span>

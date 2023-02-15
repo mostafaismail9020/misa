@@ -5069,7 +5069,7 @@ function onMizaContactload() {
         			type: "POST",
         			contentType: "application/json; charset=utf-8",
         			dataType: "json",
-        			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
+        			//headers : {"g-recaptcha-response": grecaptcha.getResponse()},
         			data: JSON.stringify({
         				name: $.trim($("#mizacrName").val()),
         				email: $.trim($("#mizacrEmail").val()),

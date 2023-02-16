@@ -13,7 +13,7 @@ INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]  
                                ;                          ; MizaUserEmailTemplate ; MIZA User Email Template ; true  ; MizaUserEmailTemplate ; miza_Ticket_Details_Email_Subject ; miza_Ticket_Details_Email_Body ; EmailPage
 
 # Templates for CMS Cockpit Page Edit
-UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]    ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]    ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
                         ;                          ; MizaUserEmailTemplate ; $jarResourceCms/structure-view/structure_miza_Ticket_Details_Email.vm
 
 

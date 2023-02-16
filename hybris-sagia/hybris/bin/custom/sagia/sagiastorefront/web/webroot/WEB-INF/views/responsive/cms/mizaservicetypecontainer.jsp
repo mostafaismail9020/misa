@@ -9,8 +9,8 @@
                             <section class="mizaSection mizaServiceTypes p100" style="padding-bottom:0">
                                 <div class="container">
                                     <h2 class="mizaTitle  wow fadeInUp   animated" data-wow-delay="300ms"
-                                        data-wow-duration="1s">MIZA<span class="clr_gld"
-                                            style="color: var(--miza-primary)"> SERVICE TYPES</span></h2>
+                                        data-wow-duration="1s"><span class="clr_gld"
+                                            style="color: var(--miza-primary)"><spring:theme code="portal.sector.miza.servicetypes.label"/></span></h2>
                                 </div>
                                 <div class="servicePortfolio">
                                     <div class="servicePortWrapper">

@@ -8,7 +8,7 @@
 <c:if test="${component.visible}">
     <section class="ourServices p100" style="padding-bottom:0">
         <div class="container">
-            <h2 class="mizaTitle  wow fadeInUp   animated" data-wow-delay="300ms" data-wow-duration="1s" ><span class="clr_gld">OUR SERVICES</span></h2>
+            <h2 class="mizaTitle  wow fadeInUp   animated" data-wow-delay="300ms" data-wow-duration="1s" ><span class="clr_gld"><spring:theme code="portal.sector.miza.ourservices.label"/></span></h2>
          </div>
         <div class="d2OurSeriviceWrap">
         <c:forEach var="currentComponent" items="${ourserviceslist}" varStatus="status">

@@ -25,7 +25,7 @@
               <h4>${component.mizabenefitscardtitle}</h4>
               <p>${component.mizabenefitscarddescription}</p>
               <div class="secDivid"></div>
-              <a href="${component.knowMore.url}" class="alink" target="_blank">Know More</a>
+              <!-- <a href="${component.knowMore.url}" class="alink" target="_blank"><spring:theme code="portal.sector.miza.knowmore.label"/></a> -->
            </div>
         </div>
      </div>

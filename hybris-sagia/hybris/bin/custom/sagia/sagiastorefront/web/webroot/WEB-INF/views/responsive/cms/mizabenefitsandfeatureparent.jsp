@@ -13,7 +13,7 @@
            <div class="row">
               <div class="col-lg-6 colDived">
                  <div class="secTitle">
-                    <span class="smallTag  wow fadeIn  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeIn;">MIZA</span>
+                    <span class="smallTag  wow fadeIn  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeIn;"><spring:theme code="portal.sector.miza.label"/></span>
                     <h1><span class="wow fadeInLeft  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeInLeft;">${component.mizabenefitsparenttitle}</span></h1>
                  </div>
               </div>

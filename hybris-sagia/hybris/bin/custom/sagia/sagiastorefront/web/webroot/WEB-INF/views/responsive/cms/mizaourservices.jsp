@@ -14,7 +14,7 @@
                  <img class="serviceIcons" src="${commonResourcePath}/images/miza-real-estate.png">
                  <h4>${component.mizaourservicestitle}</h4>
                  ${component.mizaourservicesdescription}
-                 <a class="knowmoreBtn" href="#">Know More</a>
+                 <!-- <a class="knowmoreBtn" href="#"><spring:theme code="portal.sector.miza.knowmore.label"/></a> -->
               </div>
            </div>
            <div class="d2OurSeriviceItemImage d2OurSeriviceItemInner">

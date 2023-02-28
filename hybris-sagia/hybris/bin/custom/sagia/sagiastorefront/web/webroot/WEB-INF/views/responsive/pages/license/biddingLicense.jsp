@@ -14,6 +14,9 @@
 <script>
     var configuredFileSize = ${maxUploadSize};
 	
+	document.getElementById("mobileId").onkeypress = function() {return restrictAlphabets(event)};
+	document.getElementById("telephoneId").onkeypress = function() {return restrictAlphabets(event)};
+	
 	/*code: 48-57 Numbers*/
          function restrictAlphabets(e) {
              var x = e.which || e.keycode;
@@ -133,7 +136,7 @@
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                                 <div class="formInputBox formInputBox_big">
-                                                                                    <formElement:formInputBox idKey="mobileId" labelKey="temporaryBiddingLicense.mobile" path="mobile" inputCSS="form-control form-control_labeled" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" onkeypress='return restrictAlphabets(event)' />
+                                                                                    <formElement:formInputBox idKey="mobileId" labelKey="temporaryBiddingLicense.mobile" path="mobile" inputCSS="form-control form-control_labeled" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                             </div>
@@ -149,7 +152,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="formInputBox formInputBox_big">
-                                                                                    <formElement:formInputBox idKey="telephoneId" labelKey="temporaryBiddingLicense.telephone" path="telephone" inputCSS="form-control form-control_labeled" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" onkeypress='return restrictAlphabets(event)' />
+                                                                                    <formElement:formInputBox idKey="telephoneId" labelKey="temporaryBiddingLicense.telephone" path="telephone" inputCSS="form-control form-control_labeled" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                             </div>

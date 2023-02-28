@@ -124,7 +124,7 @@
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                                 <div class="formInputBox formInputBox_big">
-                                                                                    <formElement:formInputBox idKey="mobileId" labelKey="temporaryBiddingLicense.mobile" path="mobile" inputCSS="form-control form-control_labeled" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
+                                                                                    <formElement:formInputBox idKey="mobileId" labelKey="temporaryBiddingLicense.mobile" path="mobile" inputCSS="form-control form-control_labeled validate__numbers-only" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                             </div>
@@ -140,7 +140,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="formInputBox formInputBox_big">
-                                                                                    <formElement:formInputBox idKey="telephoneId" labelKey="temporaryBiddingLicense.telephone" path="telephone" inputCSS="form-control form-control_labeled" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
+                                                                                    <formElement:formInputBox idKey="telephoneId" labelKey="temporaryBiddingLicense.telephone" path="telephone" inputCSS="form-control form-control_labeled validate__numbers-only" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                             </div>

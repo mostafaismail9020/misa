@@ -4629,7 +4629,7 @@ border: 1px solid #63b2d9;
 /*    border-radius: 10px;*/
     overflow: hidden;
        position: relative;
-       cursor: pointer;
+       cursor: default;
         transition: 0.5s all linear;
 }
 
@@ -4702,7 +4702,7 @@ border: 1px solid #63b2d9;
     margin-bottom: 40px;
     position: relative;
     padding-right: 30px !important;
-    cursor: pointer;
+    cursor: default;
     margin-top: 30px;
     overflow: hidden;
     min-height: 300px;

@@ -249,7 +249,7 @@
                                 <div class="col-md-6">
                                     <div class="formInputBox">
                                         <div class="form-group">
-                                            <input id="sagiaProfileGeneralManagerFormMobileNumberInput" name="mobileNumber" class=" form-control" placeholder="." type="text"/>
+                                            <input id="sagiaProfileGeneralManagerFormMobileNumberInput" name="mobileNumber" class=" form-control validate__numbers-only-profile" placeholder="." type="text"/>
                                             <label class="control-label"><spring:theme code="general.mobilenumber"/></label>
                                         </div>
                                     </div>

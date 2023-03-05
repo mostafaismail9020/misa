@@ -4518,7 +4518,7 @@ height: 500px;
 /*    border-radius: 10px;*/
   overflow: hidden;
      position: relative;
-     cursor: pointer;
+     cursor: default;
       transition: 0.5s all linear;
 }
 
@@ -4590,7 +4590,7 @@ padding: 15px;
   margin-bottom: 40px;
   position: relative;
   padding-left: 30px !important;
-  cursor: pointer;
+  cursor: default;
   margin-top: 30px;
   overflow: hidden;
   min-height: 300px;

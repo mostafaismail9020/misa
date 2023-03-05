@@ -2082,7 +2082,13 @@ public class DefautSagiaLicenseApplyFacade implements SagiaLicenseApplyFacade {
 			List<String> activitiesId = new ArrayList<>();
 			activitiesId.add(businessActivity.getActivityId());
 			List<IsicTextsModel> isicTextsList = isicMasterDataService.getTextsDataFromType("ACTIVITY", activitiesId);
-			String activityDescription = isicTextsList.get(0).getDescription();
+			
+			String activityDescription ="";
+			if(isicTextsList.size()>0 && null!=isicTextsList.get(0) && null!=isicTextsList.get(0).getDescription()) {
+			   activityDescription = isicTextsList.get(0).getDescription();
+			}
+
+			//String activityDescription = isicTextsList.get(0).getDescription();
 
 			String descriptionName = businessActivity.getActivityId() + " - " + activityDescription;
 

@@ -1666,4 +1666,6 @@
         <lookup-method name="getImportConfig" bean="importConfig" />
     </bean>
 
+    <bean id="opportunityProductCellDecorator" class="com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator"/>
+
 </beans>

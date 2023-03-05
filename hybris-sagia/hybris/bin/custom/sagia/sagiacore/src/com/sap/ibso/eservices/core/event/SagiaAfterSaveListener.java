@@ -9,17 +9,18 @@ import com.sap.ibso.eservices.core.enums.TermsAndConditionsAcceptanceEventEnum;
 import com.sap.ibso.eservices.core.sagia.services.SagiaTermsAndConditionsService;
 import de.hybris.platform.cms2.model.contents.components.CMSParagraphComponentModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSSiteService;
+import de.hybris.platform.commerceservices.setup.impl.DefaultSetupSolrIndexerService;
 import de.hybris.platform.core.PK;
 import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.model.ModelService;
-import de.hybris.platform.servicelayer.session.SessionService;
 import de.hybris.platform.tx.AfterSaveEvent;
 import de.hybris.platform.tx.AfterSaveListener;
 import de.hybris.platform.util.Config;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.RandomStringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
@@ -43,6 +44,7 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
     private static final String TC_CMS_PARAGRAPH_FOLLOW_UP = TC_CMS_PARAGRAPH_TERMS_AND_CONDITIONS + "FollowUp" + COMPONENT;
     private static final String TC_CMS_PARAGRAPH_LEGAL_CONSULTATION = TC_CMS_PARAGRAPH_TERMS_AND_CONDITIONS + "LegalConsultation" + COMPONENT;
     private static final String TC_CMS_PARAGRAPH_APPLY_NEW_LICENSE = TC_CMS_PARAGRAPH_TERMS_AND_CONDITIONS + "ApplyNewLicense" + COMPONENT;
+    private static final Logger LOG = Logger.getLogger(SagiaAfterSaveListener.class);
 
     private ModelService modelService;
     private SagiaTermsAndConditionsService sagiaTermsAndConditionsService;
@@ -54,6 +56,8 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
     private InvestSaudiProductService investSaudiProductService;
     @Resource
     private OpportunityProductMediaRestApiService opportunityProductMediaRestApiService;
+    @Autowired
+    private DefaultSetupSolrIndexerService setupSolrIndexerService;
 
     @Override
     public void afterSave(Collection<AfterSaveEvent> collection) {
@@ -101,6 +105,12 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
                             opportunityProductModel.setDetail(productDetails);
                             getModelService().save(opportunityProductModel);
                         }
+                    }
+                    if(opportunityProductModel.getCatalogVersion().getVersion().equals("ONLINE"));
+                    {
+                        LOG.debug("Starting SOLR Indexing for Opportunity Product "+opportunityProductModel.getCode());
+                        setupSolrIndexerService.executeSolrIndexerCronJob("sagiaIndex",true);
+                        LOG.debug("Completed SOLR Indexing for Opportunity Product "+opportunityProductModel.getCode());
                     }
                 }
             }

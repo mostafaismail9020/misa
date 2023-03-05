@@ -363,7 +363,7 @@
 		<property name="header">
 			<value>#{sagiaStagedImpexMacros}
 				# Import media from filesystem
-				$importFolder=file:$BASE_SOURCE_DIR$/images
+				$importFolder=file:$BASE_SOURCE_DIR$
 				INSERT_UPDATE Media;code[unique=true];mime[default='image/jpeg'];$productCV;folder(qualifier)[default=images];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
 			</value>
 		</property>

@@ -364,11 +364,11 @@
 			<value>#{sagiaStagedImpexMacros}
 				# Import media from filesystem
 				$importFolder=file:$BASE_SOURCE_DIR$
-				INSERT_UPDATE Media;code[unique=true];mime[default='image/jpeg'];$productCV;folder(qualifier)[default=images];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+				INSERT_UPDATE Media; code[unique = true]; $productCV; folder(qualifier)[default = images]; realfilename; mime[default = 'application/pdf']; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;{+0};{+1};;;{+0};$importFolder/{+0}.{+2};{S}</value>
+			<value>;{+0};;;{+0};;$importFolder/{+0}.{+1};{S}</value>
 		</property>
 	</bean>
 
@@ -382,11 +382,11 @@
 			<value>#{sagiaOnlineImpexMacros}
 				# Import media from filesystem
 				$importFolder=file:$BASE_SOURCE_DIR$
-				INSERT_UPDATE Media;code[unique=true];mime[default='image/jpeg'];$productCV;folder(qualifier)[default=images];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+				INSERT_UPDATE Media; code[unique = true]; $productCV; folder(qualifier)[default = images]; realfilename; mime[default = 'application/pdf']; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;{+0};{+1};;;{+0};$importFolder/{+0}.{+2};{S}</value>
+			<value>;{+0};;;{+0};;$importFolder/{+0}.{+1};{S}</value>
 		</property>
 	</bean>
 

@@ -368,7 +368,7 @@
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;{+0};;;{+0};;$importFolder/{+0}.pdf;{S}</value>
+			<value>;{+0};;;{+0};;$importFolder/{+0}.{+1};{S}</value>
 		</property>
 	</bean>
 
@@ -386,7 +386,7 @@
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;{+0};;;{+0};;$importFolder/{+0}.pdf;{S}</value>
+			<value>;{+0};;;{+0};;$importFolder/{+0}.{+1};{S}</value>
 		</property>
 	</bean>
 

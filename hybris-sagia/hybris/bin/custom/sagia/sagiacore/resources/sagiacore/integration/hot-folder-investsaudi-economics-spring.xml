@@ -386,7 +386,7 @@
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;{+10};;;{+10};;$importFolder/{+10}.pdf;{S}</value>
+			<value>;{+9};;;{+9};;$importFolder/{+9}.pdf;{S}</value>
 		</property>
 	</bean>
 	<bean id="opportunityProductStagedConverterMapping"

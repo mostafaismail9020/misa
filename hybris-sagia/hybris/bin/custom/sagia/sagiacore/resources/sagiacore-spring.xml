@@ -1667,5 +1667,6 @@
     </bean>
 
     <bean id="opportunityProductCellDecorator" class="com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator"/>
+    <bean id="opportunityProductRegionCellDecorator" class="com.sap.ibso.eservices.core.decorators.OpportunityProductRegionCellDecorator"/>
 
 </beans>

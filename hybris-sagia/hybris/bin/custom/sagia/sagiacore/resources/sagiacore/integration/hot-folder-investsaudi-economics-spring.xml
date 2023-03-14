@@ -398,7 +398,7 @@
 	<property name="header">
 			<value>#{sagiaStagedImpexMacros}
 				# Opportunity Product
-				INSERT_UPDATE OpportunityProduct; code[unique = true]; name [lang = en]; name [lang = ar]; description[lang = en]; description[lang = ar]; highlights[lang = en][cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator]; highlights[lang = ar][cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator]; supercategories(code, $productCV); region(uid, $contentCV); detail (code, $productCV);featured[default=false]; approvalStatus(code)[default = 'approved']; $productCV
+				INSERT_UPDATE OpportunityProduct; code[unique = true]; name [lang = en]; name [lang = ar]; description[lang = en]; description[lang = ar]; highlights[lang = en][cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator]; highlights[lang = ar][cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator]; supercategories(code, $productCV); region(uid, $contentCV)[cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductRegionCellDecorator]; detail (code, $productCV);featured[default=false]; approvalStatus(code)[default = 'approved']; $productCV
 			</value>
 		</property>
 		<property name="impexRow">
@@ -415,7 +415,7 @@
 		<property name="header">
 			<value>#{sagiaOnlineImpexMacros}
 				# Opportunity Product
-				INSERT_UPDATE OpportunityProduct; code[unique = true]; name [lang = en]; name [lang = ar]; description[lang = en]; description[lang = ar]; highlights[lang = en][cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator]; highlights[lang = ar][cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator]; supercategories(code, $productCV); region(uid, $contentCV); detail (code, $productCV);featured[default=false]; approvalStatus(code)[default = 'approved']; $productCV
+				INSERT_UPDATE OpportunityProduct; code[unique = true]; name [lang = en]; name [lang = ar]; description[lang = en]; description[lang = ar]; highlights[lang = en][cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator]; highlights[lang = ar][cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator]; supercategories(code, $productCV); region(uid, $contentCV)[cellDecorator=com.sap.ibso.eservices.core.decorators.OpportunityProductRegionCellDecorator]; detail (code, $productCV);featured[default=false]; approvalStatus(code)[default = 'approved']; $productCV
 			</value>
 		</property>
 		<property name="impexRow">

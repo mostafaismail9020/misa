@@ -63,14 +63,17 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
     private SessionService sessionService;
 
     String initialPassword=generateRandomPassword();
-
+    boolean newCustomer=false;
     public CsTicketModel saveTicket(ContactTicketData contactTicketData) {
 
         CsTicketParameter csTicketParameter = createCsTicketParameter(contactTicketData);
         CsTicketModel ticket = contactTicketBusinessService.createTicket(csTicketParameter);
 		CustomerModel customer = (CustomerModel)csTicketParameter.getCustomer();
-        contactTicketBusinessService.sendOpportunityUserDetails(ticket.getTicketID(),csTicketParameter.getCustomer(),initialPassword,
-		              SagiaCoreConstants.ORIGINSYSTEM.equalsIgnoreCase(customer.getSystemOrigin()));
+        if(null!=contactTicketData.getJobTitle() || (null==contactTicketData.getJobTitle() && newCustomer==true)) {
+            contactTicketBusinessService.sendOpportunityUserDetails(ticket.getTicketID(), csTicketParameter.getCustomer(), initialPassword,
+                    SagiaCoreConstants.ORIGINSYSTEM.equalsIgnoreCase(customer.getSystemOrigin()));
+            newCustomer=false;
+        }
         return ticket;
     }
 
@@ -160,6 +163,7 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
                 customer.setPassword(initialPassword);
                 sessionService.setAttribute(IS_NEW_CUSTOMER,true);
                 modelService.save(customer);
+                newCustomer=true;
                 return customer;
             }
             catch (Exception e)

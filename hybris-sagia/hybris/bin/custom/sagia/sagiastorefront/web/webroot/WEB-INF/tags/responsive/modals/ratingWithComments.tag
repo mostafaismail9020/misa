@@ -23,6 +23,16 @@
                 <div class="modal-footer">
                     <button id="feedbackDashboardButtonId" type="button" class="btn btn_slim back_to_service" data-dismiss="modal"><spring:theme code="feedback.modal.goto.dashboard"/></button>
                 </div>
+				
+				<div class="modal-secondaryContent modal-secondaryContent_wide">
+					<div class="modal-headline"><spring:theme code="dga.feedback.modal.experience"/></div>
+					<div class="modal-footer tc-footer">
+						
+						<a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A" target="_blank" class="btn btn-ctrl btn_slim text-uppercase font-weight-bold download" style="margin-top: 17px"><spring:theme code="dga.feedback.modal.button"/></a>
+						
+					</div>
+				</div>
+				
                 <div class="modal-secondaryContent modal-secondaryContent_wide">
                     <div class="modal-headline"><spring:theme code="feedback.modal.experience"/></div>
                     <div class="ratingModule review">

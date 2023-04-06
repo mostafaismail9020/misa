@@ -28,7 +28,7 @@
 					<div class="modal-headline"><spring:theme code="dga.feedback.modal.experience"/></div>
 					<div class="modal-footer tc-footer">
 						
-						<a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A" target="_blank" class="btn btn-ctrl btn_slim text-uppercase font-weight-bold download" style="margin-top: 17px"><spring:theme code="dga.feedback.modal.button"/></a>
+						<a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A" target="_blank" class="btn btn-ctrl btn_slim text-uppercase font-weight-bold download" style="margin-top: 17px;width: 280px!important;"><spring:theme code="dga.feedback.modal.button"/></a>
 						
 					</div>
 				</div>

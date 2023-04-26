@@ -178,20 +178,32 @@ public interface SagiaConfigurationFacade {
     boolean isEnableInvestSaudi2FactorAuthService();
 
     /**
-     * getEnableSalaryAndEmploymentOnDashboard
+     * getSagiaPartnerList
      * @return
      */
     String getSagiaPartnerList();
 
     /**
-     * getEnableSalaryAndEmploymentOnDashboard
+     * getMizaEmailId
      * @return
      */
     String getMizaEmailId();
 
     /**
-     * getEnableSalaryAndEmploymentOnDashboard
+     * getMizaEmailUserName
      * @return
      */
     String getMizaEmailUserName();
+
+    /**
+     * getStrategicInvestorEmailId
+     * @return
+     */
+    String getStrategicInvestorEmailId();
+
+    /**
+     * getStrategicInvestorEmailUserName
+     * @return
+     */
+    String getStrategicInvestorEmailUserName();
 }

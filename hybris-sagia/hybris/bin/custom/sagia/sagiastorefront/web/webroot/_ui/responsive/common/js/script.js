@@ -1355,6 +1355,15 @@ $(document).ready(function () {
         		valid = false;
         	}
         }
+        else if(ctrl[0].id === "strategicContactForm"){
+                        	var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();
+                        	var lblSectorErrorCaptcha = document.getElementById("lblSectorPageErrorCaptcha");
+                        	lblSectorErrorCaptcha.innerHTML = "";
+                        	if (recaptcha == "") {
+                        		lblSectorErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+                        		valid = false;
+                        	}
+                }
 		
 		return valid;
 	}
@@ -4089,10 +4098,6 @@ function validatePopupContact(event) {
 		return false;
 	}
 
-
-
-
-
 });
 
 function updateSubjectId(e) {
@@ -5103,6 +5108,67 @@ function onMizaContactload() {
 
         				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
         					$('#miza-contact-form').find('#g-recaptcha_incorrect').show();
+        				}
+        			}
+        		});
+        	}
+
+var strategicelement = document.getElementsByClassName('btn-strategic-contact');
+var btnText = strategicelement[0] && strategicelement[0].textContent;
+
+function onStrategicContactload() {
+    strategicelement.onclick = validateStrategicContact(strategicelement);
+}
+
+ function validateStrategicContact(event) {
+    		if (validateForm($("#strategicContactForm")) == true) {
+    			onStrategicContactSubmit();
+    			return true;
+    			}
+    		return false;
+    	}
+
+function onStrategicContactSubmit() {
+        		$.ajax({
+        			url: ACC.config.contextPath + '/en/strategic-investor-contactus',
+        			async: true,
+        			type: "POST",
+        			contentType: "application/json; charset=utf-8",
+        			dataType: "json",
+        			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
+        			data: JSON.stringify({
+        				name: $.trim($("#strategiccrName").val()),
+        				email: $.trim($("#strategiccrEmail").val()),
+        				countryCode: $.trim(($(".ddl-countryCode").val() ? $(".ddl-countryCode").val() : "+966")),
+        				mobile: $.trim($("#strategiccrMobile").val()),
+        				company: $.trim($("#strategiccrCompany").val()),
+        				jobTitle: $.trim($("#strategiccrPosition").val()),
+        				message: $.trim($("#strategiccrMessage").val()),
+        				contactSubject: $.trim($("#strategiccrSubjectID").val())
+        			}),
+        			success: function (data) {
+        				if (data == "mir-robot") {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
+        				}
+        				if (data.indexOf("success") != -1){
+        						dataLayer.push({
+        							'event': 'fire_event',
+        							'category': 'Contact Us Form',
+        							'action': 'Successful Submit'
+        						});
+        					$(".contactSuccess").removeClass("d-none");
+        					$("#strategicContactForm").addClass("d-none");
+        					$('.contact-sucess-ticket').text("Your reference number : "+ data.substring(8));
+        					var scrollDiv = document.getElementById("strategic-contact-form").offsetTop - 80;
+        					window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+        				}
+
+        				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
+        				}
+
+        				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
+        					$('#strategic-contact-form').find('#g-recaptcha_incorrect').show();
         				}
         			}
         		});

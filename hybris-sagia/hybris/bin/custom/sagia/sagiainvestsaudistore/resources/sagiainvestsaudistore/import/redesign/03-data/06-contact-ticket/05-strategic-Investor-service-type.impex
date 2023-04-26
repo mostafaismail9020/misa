@@ -1,0 +1,13 @@
+INSERT_UPDATE StrategicInvestorServiceType; code[unique = true]  ; label[lang = en]     ; label[lang = ar];
+                                    ; management           ; Management1           ;الإدارة
+                                    ; logistics            ; Logistics1            ;اللوجستية
+                                    ; personal             ; Personal1             ;الشخصية
+                                    ; financial            ; Financial1            ;المالية
+                                    ; legal                ; Legal1                ;القانونية
+                                    ; corporate            ; Corporate1            ;المؤسسات
+                                    ; operational-services ; Operational Services1 ;الخدمات التشغيلية
+                                    ; human-resources      ; Human Resources1      ;الموارد البشرية
+
+INSERT_UPDATE SagiaConfiguration; key[unique = true]; value            ; displayValue[default = true]
+                                ; strategicInvestorEmailId       ; strategicInvestor@misa.gov.sa ; ;
+                                ; strategicInvestorEmailUserName ; Strategic Investor             ; ;

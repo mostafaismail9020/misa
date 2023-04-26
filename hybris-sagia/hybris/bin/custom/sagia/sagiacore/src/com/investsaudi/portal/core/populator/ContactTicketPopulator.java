@@ -63,6 +63,10 @@ public class ContactTicketPopulator<SOURCE extends ContactTicketParameter, TARGE
         {
             target.setSendEmailTo("miza@misa.gov.sa");
         }
+        else if(null!=sessionService.getAttribute("isStrategicContactUsFlow"))
+        {
+            target.setSendEmailTo("strategicInvestor@misa.gov.sa");
+        }
         else {
             List<String> sendEmailsTo = new ArrayList<>();
             sendEmailsTo.add(configurationService.getConfiguration().getString(CONTACT_DEFAULT_EMAIL_TO));

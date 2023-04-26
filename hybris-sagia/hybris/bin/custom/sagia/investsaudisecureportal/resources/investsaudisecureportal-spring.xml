@@ -340,6 +340,9 @@
 	<bean id="mizaTicketEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
 		<property name="resource" value="classpath:/investsaudisecureportal/processes/mizaTicketEmailProcess.xml"/>
 	</bean>
+	<bean id="strategicInvestorTicketEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/strategicInvestorTicketEmailProcess.xml"/>
+	</bean>
 
 	<bean id="opportunityUserEmailAction" parent="abstractGenerateEmailAction">
 		<property name="frontendTemplateName" value="OpportunityUserEmailTemplate"/>
@@ -347,8 +350,12 @@
 	<bean id="mizaUserEmailAction" parent="abstractGenerateEmailAction">
 		<property name="frontendTemplateName" value="MizaUserEmailTemplate"/>
 	</bean>
+	<bean id="strategicInvestorUserEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="StrategicInvestorUserEmailTemplate"/>
+	</bean>
 
 	<bean id="opportunityUserEmailContext" class="com.investsaudi.email.context.OpportunityUserEmailContext" parent="abstractEmailContext" scope="prototype" />
 	<bean id="mizaTicketDetailsEmailContext" class="com.investsaudi.email.context.MizaTicketDetailsEmailContext" parent="abstractEmailContext" scope="prototype" />
+	<bean id="strategicInvestorTicketDetailsEmailContext" class="com.investsaudi.email.context.StrategicInvestorTicketDetailsEmailContext" parent="abstractEmailContext" scope="prototype" />
 
 </beans>

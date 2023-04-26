@@ -384,6 +384,7 @@
 		<value>/payment/process3DSecure</value>
 		<value>/contactus</value>
 		<value>/miza-contactus</value>
+		<value>/strategic-investor-contactus</value>
 	</util:list>
 	
 	<!-- Invest Saudi Code start -->

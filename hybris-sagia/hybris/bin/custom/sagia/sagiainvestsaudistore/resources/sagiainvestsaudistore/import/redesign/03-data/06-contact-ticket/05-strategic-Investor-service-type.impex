@@ -9,5 +9,5 @@ INSERT_UPDATE StrategicInvestorServiceType; code[unique = true]  ; label[lang = 
                                     ; human-resources      ; Human Resources1      ;الموارد البشرية
 
 INSERT_UPDATE SagiaConfiguration; key[unique = true]; value            ; displayValue[default = true]
-                                ; strategicInvestorEmailId       ; strategicInvestor@misa.gov.sa ; ;
+                                ; strategicInvestorEmailId       ; strategicinvestor@misa.gov.sa ; ;
                                 ; strategicInvestorEmailUserName ; Strategic Investor             ; ;

@@ -6,17 +6,21 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
 
 <c:if test="${component.visible}">
-    <section class="ourServices p100" style="padding-bottom:0">
-        <div class="container">
-            <h2 class="mizaTitle  wow fadeInUp   animated" data-wow-delay="300ms" data-wow-duration="1s" ><span class="clr_gld"><spring:theme code="portal.sector.program.benefits.label"/></span></h2>
-         </div>
-        <div class="d2OurSeriviceWrap">
-        <c:forEach var="currentComponent" items="${strategicprogrambenefitslist}" varStatus="status">
-            <cms:component component="${currentComponent}" element="tr" style="text-align: center;"/>
-        </c:forEach>
+     <section id="programBenefit" class="programPenefit pt-100">
+        <div class="benefitBgOverlay"></div>
+        <div class="container-fluid">
+            <div class="strategicTitle wow zoomIn animated" data-wow-duration="1s" >
+            <h1 style="position: relative;"><spring:theme code="portal.sector.program.benefits.label"/></h1>
         </div>
-     </section>
+        </div>
+        <div class="container-fluid">
+            <div class="programBenefitItemWrap">
+                <div class="row">
+                    <c:forEach var="currentComponent" items="${strategicprogrambenefitslist}" varStatus="status">
+                        <cms:component component="${currentComponent}" element="tr" style="text-align: center;"/>
+                    </c:forEach>
+                </div>
+            </div>
+        </div>
+    </section>
 </c:if >
-
-	
-

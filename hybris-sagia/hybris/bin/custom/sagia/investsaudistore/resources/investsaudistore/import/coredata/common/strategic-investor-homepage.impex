@@ -299,3 +299,18 @@ INSERT_UPDATE ContentSlotForPage; uid[unique = true]         ; position[unique =
                                 ; PortalPageBottomSlot-$page ; PortalPageBottom       ; PortalPageBottomSlot-$page                 ;                                                      ;                          ;
 
 
+##############################################################################################################################
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]      ; name                        ; linkName[lang = en]         ; linkName[lang = ar]; contentPage(uid, $contentCV); url; $contentCV[unique = true];
+                              ; strategic-investor-link ; Strategic Investor Homepage ; Strategic Investor Homepage ; تعرف أكثر على ميزا ; strategic-investor-homepage ;    ;
+                              ; investor-journey-link   ; Investment Guide            ; Investment Guide            ; Investment Guide   ; guide                       ;    ;
+
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]         ; name               ; nodeImage(code, $contentCV); title[lang = en]            ; title[lang = ar]   ; &nodeRef                   ; $contentCV[unique = true]; nodeDescription[lang = en];
+                               ; strategic-investor-navnode ; Strategic Investor ;                            ; Strategic Investor Homepage ; تعرف أكثر على ميزا ; strategic-investor-navnode ;                          ;                           ;
+                               ; investor-journey-navnode   ; Investor Journey   ;                            ; Investment Guide            ; Investment Guide   ; investor-journey-navnode   ;                          ;                           ;
+
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]         ; name             ; cmsLink(uid, $contentCV); &nodeRef                   ; parent(uid, $contentCV); children(uid, $contentCV)[mode = append]; links(uid, $contentCV)[mode = replace]; $contentCV[unique = true];
+                               ; strategic-investor-navnode ; Investment Guide ; strategic-investor-link ; strategic-investor-navnode ; investor-guide-navnode ;                                         ;                                       ;                          ;
+                               ; investor-journey-navnode   ; Investment Guide ; investor-journey-link   ; investor-journey-navnode   ; investor-guide-navnode ;                                         ;                                       ;                          ;

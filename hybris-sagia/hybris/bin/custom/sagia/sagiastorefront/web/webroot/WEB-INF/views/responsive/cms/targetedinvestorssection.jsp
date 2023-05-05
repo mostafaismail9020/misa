@@ -7,11 +7,9 @@
 
 
 <c:if test="${component.visible}">
-     
-        <div class="d2OurSeriviceItem">
+  <!--      <div class="d2OurSeriviceItem">
            <div class="d2OurSeriviceItemContent d2OurSeriviceItemInner">
               <div class="d2OurSeriviceItemContentWrap">
-                  <!--<img class="serviceIcons" src="${commonResourcePath}/images/miza-real-estate.png">-->
                  <h4>${component.targetedinvestortitle}</h4>
                  ${component.targetedinvestordescription}
               </div>
@@ -19,5 +17,18 @@
            <div class="d2OurSeriviceItemImage d2OurSeriviceItemInner">
               <img src="${component.targetedinvestorimage.url}">
            </div>
-        </div>
+        </div>-->
+        <div class="swiper-slide">
+         <div class="targerSectionV3Item wow fadeInUp  animated">
+               <div class="targerSectionV3Top">
+                   <div class="targerSectionV3Img">
+                       <img src="${component.targetedinvestorimage.url}">
+                   </div>
+               </div>
+               <div class="targerSectionV3Btm">
+                   <h4>${component.targetedinvestortitle}</h4>
+                   <p>${component.targetedinvestordescription}</p>
+               </div>
+           </div>
+     </div>
 </c:if >

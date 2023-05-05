@@ -7,15 +7,20 @@
 
 
 <c:if test="${component.visible}">
-          <section class="aboutSection p100" style="padding-top:50px">
-        <div class="container">
-           <div class="aboutContentWrap">
-              <img class="aboutLogo"src="${component.enrollmentparaimage.url}">
-              <h4 class="wow fadeIn  animated" data-wow-delay="300ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: fadeIn;">
-                ${component.enrollmentparatitle}
-              </h4>
-              <p class="wow fadeInUp  animated" data-wow-delay="400ms" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 400ms; animation-name: fadeInUp;">${component.enrollmentparadescription}</p>
-           </div>
-        </div>
-     </section>
+     <section class="enroleRequirement pt-100">
+      <div class="enroleRequirementBgImg">
+         <img src="${component.enrollmentparaimage.url}">
+      </div>
+      <div class="container-fluid">
+               <div class="enroleRequirementWrap">
+                     <div class="strategicTitle wow zoomIn animated" data-wow-duration="1s" >
+         <h1>  ${component.enrollmentparatitle}</h1>
+      </div>
+                  <ul class="wow fadeInUp   animated">
+                     <p>${component.enrollmentparadescription}</p>
+
+                  </ul>
+               </div>
+      </div>
+   </section>
 </c:if >

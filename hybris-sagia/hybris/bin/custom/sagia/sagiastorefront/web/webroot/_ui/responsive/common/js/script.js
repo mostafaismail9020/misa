@@ -5334,3 +5334,38 @@ $( window ).on("load", function() {
 	}
 	
 });
+
+var swiper = new Swiper(".targetedMySwiper", {
+	slidesPerView: 1,
+	spaceBetween: 10,
+	pagination: {
+	  el: ".swiper-pagination",
+
+	},
+	breakpoints: {
+	  640: {
+		slidesPerView: 1,
+		spaceBetween: 20,
+	  },
+	  768: {
+		slidesPerView: 1.5,
+		spaceBetween: 40,
+	  },
+		992: {
+		slidesPerView: 2.5,
+		spaceBetween: 10,
+	  },
+	   1199: {
+		slidesPerView: 3,
+		spaceBetween: 10,
+	  },
+	  1300: {
+		slidesPerView: 3,
+		spaceBetween: 10,
+	  },
+	  1800: {
+slidesPerView: 3,
+		spaceBetween: 50,
+		},
+	},
+  });

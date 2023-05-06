@@ -10857,4 +10857,17 @@ border-bottom:1px solid var(--strategic-theme-green) !important;
   .page-strategic-investor-homepage .INS_EnergynUtil_bg{
     padding: 0;
   }
+
+  .page-strategic-investor-homepage .contactSuccess {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+  }
+  .page-strategic-investor-homepage .contactSuccess p {
+      font-size: 24px;
+      margin-bottom: 15px;
+  }
+  .page-strategic-investor-homepage .aboutImageGrid img {
+  width:100%;
+  }
   /*strategic CSS END*/

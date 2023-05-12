@@ -6751,61 +6751,61 @@ text-align: center;
     --strategic-theme-green: #006f44;
     --strategic-pColour : #707070;
   }
-  .page-strategic-investor-homepage .banner-container{
+  .page-strategic-investor-program .banner-container{
     z-index: 1;
   }
-  .page-strategic-investor-homepage .banner-container h1 {
+  .page-strategic-investor-program .banner-container h1 {
     line-height: 77px;
 }
-.page-strategic-investor-homepage .banner-container p {
+.page-strategic-investor-program .banner-container p {
     font-size: 30px;
     line-height: 36px;
     font-weight: 500;
     margin-bottom: 40px;
     color: #fff;
 }
-  .page-strategic-investor-homepage .commingSoon{
+  .page-strategic-investor-program .commingSoon{
           font-size: 20px;
       font-weight: bold;
       color: #006f44;
       margin-top: 15px;
       display: block;
   }
-  .page-strategic-investor-homepage .strategicKnowMoreBtn{
+  .page-strategic-investor-program .strategicKnowMoreBtn{
           color: var(--strategic-theme-blue) !important;
       font-weight: 500;
       text-decoration: underline;
   }
-  .page-strategic-investor-homepage .servicesv1 .myServiceItem img{
+  .page-strategic-investor-program .servicesv1 .myServiceItem img{
       min-height: 411px;
   }
-  .page-strategic-investor-homepage .pt-100{
+  .page-strategic-investor-program .pt-100{
       padding-top: 100px;
       padding-bottom: 100px;
   }
-  .page-strategic-investor-homepage p {
+  .page-strategic-investor-program p {
       color: var(--strategic-text-color);
   }
-  .page-strategic-investor-homepage .p0{
+  .page-strategic-investor-program .p0{
       padding: 0;
   }
-  .page-strategic-investor-homepage .mainStrategicFlex{
+  .page-strategic-investor-program .mainStrategicFlex{
       display: flex;
       align-items: center;
   }
-  .page-strategic-investor-homepage .secDark{
+  .page-strategic-investor-program .secDark{
       background-color: var(--strategic-text-color);
   }
 
 
   /*BannerSection*/
-  .page-strategic-investor-homepage .banner-section{
+  .page-strategic-investor-program .banner-section{
       width: 100%;
       height: 110vh;
       position: relative;
   }
 
-  .page-strategic-investor-homepage .banner-section::after{
+  .page-strategic-investor-program .banner-section::after{
       content: '';
   position: absolute;
   width: 100%;
@@ -6815,12 +6815,12 @@ text-align: center;
   background:#000;
   opacity: 0.5;
   }
-  .page-strategic-investor-homepage .bannerContentVideo img{
+  .page-strategic-investor-program .bannerContentVideo img{
       width: 100%;
       height: 110vh;
       object-fit: cover;
   }
-  .page-strategic-investor-homepage .bannerContentDesc{
+  .page-strategic-investor-program .bannerContentDesc{
       position: absolute;
       width: 80%;
       margin: auto;
@@ -6834,7 +6834,7 @@ text-align: center;
       align-items: center;
           padding-top: 140px;
   }
-  .page-strategic-investor-homepage .bannerContentDesc h1{
+  .page-strategic-investor-program .bannerContentDesc h1{
       color: #fff;
       font-size: 60px;
       line-height: 87px;
@@ -6845,7 +6845,7 @@ text-align: center;
           visibility: hidden;
   }
 
-  .page-strategic-investor-homepage .bannerContentDesc p {
+  .page-strategic-investor-program .bannerContentDesc p {
       color: #fff;
       opacity: 0.9;
       font-size: 30px;
@@ -6858,7 +6858,7 @@ text-align: center;
           text-align: center;
 
   }
-  .page-strategic-investor-homepage .videoPlayIcon{
+  .page-strategic-investor-program .videoPlayIcon{
           background: #fff;
       padding: 15px;
       width: 150px;
@@ -6872,7 +6872,7 @@ text-align: center;
           opacity: 0;
           visibility: hidden;
   }
-  .page-strategic-investor-homepage .bannerContentDesc.active h1{
+  .page-strategic-investor-program .bannerContentDesc.active h1{
        transform: translateY(0);
           transition: 0.5s all linear;
           opacity: 1;
@@ -6880,24 +6880,24 @@ text-align: center;
           margin-bottom: 40px;
           text-align: center;
   }
-  .page-strategic-investor-homepage .bannerContentDesc.active p{
+  .page-strategic-investor-program .bannerContentDesc.active p{
        transform: translateY(0);
           transition: 0.5s all linear;
        transition-delay: 0.5s;
           opacity: 1;
           visibility: visible;
   }
-  .page-strategic-investor-homepage .bannerContentDesc.active .videoPlayIcon{
+  .page-strategic-investor-program .bannerContentDesc.active .videoPlayIcon{
        transform: translateY(0);
           transition: 0.5s all linear;
         transition-delay: 1s;
           opacity: 1;
           visibility: visible;
   }
-  .page-strategic-investor-homepage .videoPlayIcon i {
+  .page-strategic-investor-program .videoPlayIcon i {
       margin-left: 15px;
   }
-  .page-strategic-investor-homepage .icon-scroll {
+  .page-strategic-investor-program .icon-scroll {
       position: absolute;
       left: 0;
       width: 1em;
@@ -6910,13 +6910,13 @@ text-align: center;
       cursor: pointer;
   }
 
-  .page-strategic-investor-homepage .icon-arrows::after,
-  .page-strategic-investor-homepage .icon-arrows::before {
+  .page-strategic-investor-program .icon-arrows::after,
+  .page-strategic-investor-program .icon-arrows::before {
     content: '';
   }
-  .page-strategic-investor-homepage .icon-arrows span,
-  .page-strategic-investor-homepage .icon-arrows::after,
-  .page-strategic-investor-homepage .icon-arrows::before {
+  .page-strategic-investor-program .icon-arrows span,
+  .page-strategic-investor-program .icon-arrows::after,
+  .page-strategic-investor-program .icon-arrows::before {
       display: block;
       width: 0.315em;
       height: 0.315em;
@@ -6928,20 +6928,20 @@ text-align: center;
       animation-direction: alternate;
   }
 
-  .page-strategic-investor-homepage .icon-arrows::before {
+  .page-strategic-investor-program .icon-arrows::before {
       margin-top: 0.315em;
       animation-delay: .1s;
   }
 
-  .page-strategic-investor-homepage .icon-scroll span {
+  .page-strategic-investor-program .icon-scroll span {
       animation-delay: .2s;
   }
 
-  .page-strategic-investor-homepage .icon-arrows::after {
+  .page-strategic-investor-program .icon-arrows::after {
       animation-delay: .3s;
   }
 
-  .page-strategic-investor-homepage .icon-scroll .mouse {
+  .page-strategic-investor-program .icon-scroll .mouse {
           height: 18px;
       width: 10px;
       margin: auto;
@@ -6949,7 +6949,7 @@ text-align: center;
       border-radius: 2em;
   }
 
-  .page-strategic-investor-homepage .icon-scroll .wheel {
+  .page-strategic-investor-program .icon-scroll .wheel {
     position: relative;
     display: block;
     height: 0.1875em;
@@ -6980,44 +6980,44 @@ text-align: center;
   /*BannerSection*/
 
   /*About Section*/
-  .page-strategic-investor-homepage .logoIconHead{
+  .page-strategic-investor-program .logoIconHead{
              position: absolute;
       top: -55px;
       left: 17px;
      }
-  .page-strategic-investor-homepage .aboutSection{
+  .page-strategic-investor-program .aboutSection{
       min-height: 100vh;
       background-color: #f0f8ff78;
       overflow: hidden;
   }
-  .page-strategic-investor-homepage .strategicTitle{
+  .page-strategic-investor-program .strategicTitle{
       text-align: center;
       margin-bottom: 80px !important;
   }
-  .page-strategic-investor-homepage .strategicSubTitle{
+  .page-strategic-investor-program .strategicSubTitle{
           text-transform: uppercase;
       color: var(--strategic-theme-green);
       font-weight: bold;
   }
-   .page-strategic-investor-homepage .strategicTitle h1,  .page-strategic-investor-homepage .INS_header_golden{
+   .page-strategic-investor-program .strategicTitle h1,  .page-strategic-investor-program .INS_header_golden{
       text-transform: uppercase;
       font-size: 45px;
       font-weight: 600;
       line-height: 56px;
           color: var(--strategic-text-color);
   }
-  .page-strategic-investor-homepage .strategicContent p {
+  .page-strategic-investor-program .strategicContent p {
       text-align: right;
       font-size: 20px;
       margin-bottom: 20px;
       line-height: 34px;
   }
 
-  .page-strategic-investor-homepage .objectiveContentImg img{
+  .page-strategic-investor-program .objectiveContentImg img{
       width: 80%;
       box-shadow: var(--strategic-card-shadow);
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrapRow{
+  .page-strategic-investor-program .whatWeExpectItemWrapRow{
       width: 100%;
       margin: auto;
         padding: 100px 100px;
@@ -7025,7 +7025,7 @@ text-align: center;
             position: relative;
       z-index: 2;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem{
+  .page-strategic-investor-program .whatWeExpectItem{
       display: flex;
       margin-bottom: 20px;
       padding: 20px;
@@ -7034,40 +7034,40 @@ text-align: center;
       border-radius: 15px;
   }
 
-  .page-strategic-investor-homepage .whatWeExpectItem.active{
+  .page-strategic-investor-program .whatWeExpectItem.active{
       box-shadow:0 4px 10px rgb(0 0 0 / 25%);
       transition: 0.2s all linear;
       background-color: #fff;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem.active h5{
+  .page-strategic-investor-program .whatWeExpectItem.active h5{
       color: var(--strategic-theme-green);
   }
 
-  .page-strategic-investor-homepage .whatWeExpectItem.active p {
+  .page-strategic-investor-program .whatWeExpectItem.active p {
       color: #000 !important;
   }
 
 
 
-  .page-strategic-investor-homepage .whatWeExpectItem:hover{
+  .page-strategic-investor-program .whatWeExpectItem:hover{
       box-shadow: 0 4px 10px rgb(0 0 0 / 25%);
       transition: 0.2s all linear;
       background-color: #fff;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem:hover h5{
+  .page-strategic-investor-program .whatWeExpectItem:hover h5{
       color:var(--strategic-theme-green);
   }
-  .page-strategic-investor-homepage .whatWeExpectItem p{
+  .page-strategic-investor-program .whatWeExpectItem p{
       font-weight: 500;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem:hover p {
+  .page-strategic-investor-program .whatWeExpectItem:hover p {
       color: #000 !important;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem img{
+  .page-strategic-investor-program .whatWeExpectItem img{
       height: 100%;
 
   }
-  .page-strategic-investor-homepage .whatWeExpectItemImages{
+  .page-strategic-investor-program .whatWeExpectItemImages{
       position: relative;
       width: 80px;
       height: 80px;
@@ -7080,44 +7080,44 @@ text-align: center;
       border-radius: 100%;
       margin-left: 15px;
   }
-  .page-strategic-investor-homepage .benefitsLight{
+  .page-strategic-investor-program .benefitsLight{
       opacity: 1;
       transition: 0.2s all linear;
   }
-  .page-strategic-investor-homepage .benefitsDark{
+  .page-strategic-investor-program .benefitsDark{
       display: none;
       position: absolute;
       opacity: 0;
       transition: 0.2s all linear;
       left: 0;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem:hover .benefitsLight{
+  .page-strategic-investor-program .whatWeExpectItem:hover .benefitsLight{
       opacity: 1;
       transition: 0.2s all linear;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem:hover .benefitsDark{
+  .page-strategic-investor-program .whatWeExpectItem:hover .benefitsDark{
           opacity: 1;
       transition: 0.2s all linear;
   }
 
-  .page-strategic-investor-homepage .whatWeExpectItem.active .benefitsLight{
+  .page-strategic-investor-program .whatWeExpectItem.active .benefitsLight{
       opacity: 1;
       transition: 0.2s all linear;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem.active .benefitsDark{
+  .page-strategic-investor-program .whatWeExpectItem.active .benefitsDark{
           opacity: 1;
       transition: 0.2s all linear;
   }
 
 
-  .page-strategic-investor-homepage .whatWeExpectSection {
+  .page-strategic-investor-program .whatWeExpectSection {
       min-height: 100vh;
   }
-  .page-strategic-investor-homepage .whatWeExpectSection.secDark{
+  .page-strategic-investor-program .whatWeExpectSection.secDark{
       background-color: #eeeeee;
       position: relative;
   }
-  .page-strategic-investor-homepage #whatWeExpectSection::after {
+  .page-strategic-investor-program #whatWeExpectSection::after {
       background-image: url(../images/pattern.png);
       width: 50%;
       position: absolute;
@@ -7125,10 +7125,10 @@ text-align: center;
       right: 0;
       z-index: 1;
   }
-  .page-strategic-investor-homepage .whatWeExpectSection .container-fluid{
+  .page-strategic-investor-program .whatWeExpectSection .container-fluid{
       padding-right: 0 !important;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgSec{
+  .page-strategic-investor-program .whatWeExpectSectionBgSec{
       position: relative;
       min-height: 100vh;
           display: flex;
@@ -7137,18 +7137,18 @@ text-align: center;
       background-repeat: no-repeat;
       background-size: cover;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgDiv{
+  .page-strategic-investor-program .whatWeExpectSectionBgDiv{
       position: absolute;
       width: 50%;
       height: 100%;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgDiv img{
+  .page-strategic-investor-program .whatWeExpectSectionBgDiv img{
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: left;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgSec .strategicTitle{
+  .page-strategic-investor-program .whatWeExpectSectionBgSec .strategicTitle{
           position: relative;
       z-index: 1;
       margin: 0 !important;
@@ -7156,7 +7156,7 @@ text-align: center;
       padding: 20px 20px 20px 120px;
       width: 100% !important;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgDiv::after{
+  .page-strategic-investor-program .whatWeExpectSectionBgDiv::after{
       position: absolute;
       content: '';
       background-color: #000;
@@ -7166,22 +7166,22 @@ text-align: center;
       top: 0;
       left: 0;
   }
-  .page-strategic-investor-homepage .whatWeExpect{
+  .page-strategic-investor-program .whatWeExpect{
       border-radius: 20px;
   }
-  .page-strategic-investor-homepage .whatWeExpect .smTitle{
+  .page-strategic-investor-program .whatWeExpect .smTitle{
       margin-bottom: 60px;
       text-align: center;
       margin-top: 40px;
   }
-  .page-strategic-investor-homepage .itemTitle{
+  .page-strategic-investor-program .itemTitle{
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 20px;
       transition: 0.2s all linear;
       color: var(--strategic-theme-green);
   }
-  .page-strategic-investor-homepage .whatWeExpect p {
+  .page-strategic-investor-program .whatWeExpect p {
       font-size: 17px;
       opacity: 1;
       line-height: 27px;
@@ -7189,7 +7189,7 @@ text-align: center;
       margin-bottom: 0;
       font-weight: normal;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrap{
+  .page-strategic-investor-program .whatWeExpectItemWrap{
       position: relative;
       border-radius: 20px;
       padding-right: 15px;
@@ -7197,7 +7197,7 @@ text-align: center;
       cursor: default;
       transition: 0.2s all linear;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrap::after{
+  .page-strategic-investor-program .whatWeExpectItemWrap::after{
       position: absolute;
       top: 0;
       bottom: 0;
@@ -7209,7 +7209,7 @@ text-align: center;
   }
 
 
-  .page-strategic-investor-homepage .whatWeExpectItemWrap span{
+  .page-strategic-investor-program .whatWeExpectItemWrap span{
           font-size: 50px;
       position: absolute;
          bottom: -3px;
@@ -7225,11 +7225,11 @@ text-align: center;
 
 
 
-  .page-strategic-investor-homepage .whatWeExpect .strategicTitle{
+  .page-strategic-investor-program .whatWeExpect .strategicTitle{
       margin-top: 40px !important;
       margin-bottom: 40px !important;
   }
-  .page-strategic-investor-homepage .secDark .strategicTitle h1{
+  .page-strategic-investor-program .secDark .strategicTitle h1{
       color: #fff;
   }
 
@@ -7239,10 +7239,10 @@ text-align: center;
 
 
   /*****************************************/
-  .page-strategic-investor-homepage .aboutSection{
+  .page-strategic-investor-program .aboutSection{
       position: relative;
   }
-  .page-strategic-investor-homepage .aboutSection::after{
+  .page-strategic-investor-program .aboutSection::after{
           width: 50%;
       content: '';
       right: 0;
@@ -7252,7 +7252,7 @@ text-align: center;
       position: absolute;
           z-index: -1;
   }
-  .page-strategic-investor-homepage .aboutSection::before{
+  .page-strategic-investor-program .aboutSection::before{
           width: 50%;
       content: '';
       right: 62px;
@@ -7264,19 +7264,19 @@ text-align: center;
       opacity: 0.2;
       background-size: 171px 100%;
   }
-  .page-strategic-investor-homepage .aboutImageGrid {
+  .page-strategic-investor-program .aboutImageGrid {
       overflow: visible;
           transform: scaleX(-1);
               position: relative;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridRight .aboutImageGridItem {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridRight .aboutImageGridItem {
       position: absolute;
       padding: 10px;
       box-sizing: border-box;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridRight .aboutImageGridItem:before {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridRight .aboutImageGridItem:before {
       content: "";
       position: absolute;
       display: block;
@@ -7288,39 +7288,39 @@ text-align: center;
       background-size: contain;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridRight img {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridRight img {
       display: block;
       width: 100%;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGrid-images-2x2 .aboutImageGridItem {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGrid-images-2x2 .aboutImageGridItem {
       width: 400px;
       height: 400px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGrid-images-2x1 .aboutImageGridItem {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGrid-images-2x1 .aboutImageGridItem {
       width: 300px;
       height: 300px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGrid-images-2x1 .aboutImageGridItem:before {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGrid-images-2x1 .aboutImageGridItem:before {
       background-image: url(../images/rect-blue.png);
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGrid-images-1x1 .aboutImageGridItem {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGrid-images-1x1 .aboutImageGridItem {
       width: 200px;
       height: 200px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer {
       height: auto;
       min-height: 580px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGridWrapper {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGridWrapper {
       position: relative;
   }
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight {
       position: absolute;
       top: 0;
 
@@ -7328,7 +7328,7 @@ text-align: center;
       left: 0;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight:before {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight:before {
       content: "";
       display: block;
       width: 190px;
@@ -7342,7 +7342,7 @@ text-align: center;
       z-index: 1;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight:after {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight:after {
       content: "";
       display: block;
       width: 190px;
@@ -7355,55 +7355,55 @@ text-align: center;
       right: -100px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x2 .aboutImageGridItem:nth-child(1) {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x2 .aboutImageGridItem:nth-child(1) {
       top: 0;
       left: 300px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x2 .aboutImageGridItem:nth-child(2) {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x2 .aboutImageGridItem:nth-child(2) {
       top: 300px;
       left: 0;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x2 .aboutImageGridItem:nth-child(2):before {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x2 .aboutImageGridItem:nth-child(2):before {
       background-image: url(../images/diamond-aqua.png);
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x1 .aboutImageGridItem:nth-child(1) {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x1 .aboutImageGridItem:nth-child(1) {
       top: 0;
       left: 100px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x1 .aboutImageGridItem:nth-child(2) {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x1 .aboutImageGridItem:nth-child(2) {
       top: 200px;
       left: 500px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x1 .aboutImageGridItem:nth-child(2):before {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-2x1 .aboutImageGridItem:nth-child(2):before {
       background-image: url(../images/rect-aqua.png);
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(1) {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(1) {
       top: 200px;
       left: 0;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(2) {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(2) {
       top: 0;
       left: 0;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(3) {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(3) {
       top: 200px;
       left: 200px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(4) {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(4) {
       top: 300px;
       left: 300px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(4):before {
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGrid-images-1x1 .aboutImageGridItem:nth-child(4):before {
       background-image: url(../images/diamond-aqua.png);
   }
 
@@ -7418,11 +7418,11 @@ text-align: center;
 
 
   /*Our Partners*/
-  .page-strategic-investor-homepage .strategicOurPartners{
+  .page-strategic-investor-program .strategicOurPartners{
       background-color: #f9f9f9;
   }
 
-  .page-strategic-investor-homepage .strategicOurPartners .partnersItem{
+  .page-strategic-investor-program .strategicOurPartners .partnersItem{
       height: 125px;
       margin-bottom: 40px;
       border-radius: 5px;
@@ -7431,16 +7431,16 @@ text-align: center;
       overflow: hidden;
 
   }
-  .page-strategic-investor-homepage .strategicOurPartners .partnersItem:hover{
+  .page-strategic-investor-program .strategicOurPartners .partnersItem:hover{
       filter: grayscale(0%);
       transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .strategicOurPartners .partnersItem a{
+  .page-strategic-investor-program .strategicOurPartners .partnersItem a{
       display: block;
       width: 100%;
       height: 100%;
   }
-  .page-strategic-investor-homepage .strategicOurPartners .partnersItem img{
+  .page-strategic-investor-program .strategicOurPartners .partnersItem img{
           width: 100%;
       object-fit: contain;
       padding: 10px;
@@ -7448,7 +7448,7 @@ text-align: center;
       transform: scale(1.0);
       transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .strategicOurPartners .partnersItem:hover img{
+  .page-strategic-investor-program .strategicOurPartners .partnersItem:hover img{
        transform: scale(0.95);
        transition: 0.3s all linear;
   }
@@ -7457,14 +7457,14 @@ text-align: center;
 
 
   /*ProgramBenefit*/
-  .page-strategic-investor-homepage .programPenefit{
+  .page-strategic-investor-program .programPenefit{
       position: relative;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       background-image: url('../img/programBenifit.jpg');
   }
-  .page-strategic-investor-homepage .benefitBgOverlay{
+  .page-strategic-investor-program .benefitBgOverlay{
       position: absolute;
       width: 100%;
       height: 100%;
@@ -7475,14 +7475,14 @@ text-align: center;
       transition: background .3s,border-radius .3s,opacity .3s;
 
   }
-  .page-strategic-investor-homepage .programPenefit .strategicTitle h1{
+  .page-strategic-investor-program .programPenefit .strategicTitle h1{
       color: #fff;
   }
-  .page-strategic-investor-homepage .programPenefit {
+  .page-strategic-investor-program .programPenefit {
       background-size: cover;
 
   }
-  .page-strategic-investor-homepage .programBenefitItem{
+  .page-strategic-investor-program .programBenefitItem{
       padding: 40px 0px;
       background: rgba(255,255,255,.07);
       border-radius: 7px;
@@ -7493,11 +7493,11 @@ text-align: center;
           min-height: 535px;
       padding-bottom: 20px;
   }
-  .page-strategic-investor-homepage .programBenefitItemContent{
+  .page-strategic-investor-program .programBenefitItemContent{
       position: relative;
 
   }
-  .page-strategic-investor-homepage .programBenefitItemHover{
+  .page-strategic-investor-program .programBenefitItemHover{
       position: absolute;
       width: 25%;
       background-color:var(--strategic-theme-green);
@@ -7508,43 +7508,43 @@ text-align: center;
       opacity: 0;
       transition: .3s ease-in-out;
   }
-  .page-strategic-investor-homepage .programBenefitItem:hover .programBenefitItemHover{
+  .page-strategic-investor-program .programBenefitItem:hover .programBenefitItemHover{
        opacity: 1;
       bottom: 0;
       transform: translate(0)
   }
 
-  .page-strategic-investor-homepage .programBenefitItemHover2{
+  .page-strategic-investor-program .programBenefitItemHover2{
       left: 25%;
       transform: translateY(40%);
       transition: .5s ease-in-out;
   }
-  .page-strategic-investor-homepage .programBenefitItemHover3{
+  .page-strategic-investor-program .programBenefitItemHover3{
       left: 50%;
       transition: .7s ease-in-out;
       transform: translateY(20%);
   }
-  .page-strategic-investor-homepage .programBenefitItemHover4{
+  .page-strategic-investor-program .programBenefitItemHover4{
       left: 75%;
       transition: .9s ease-in-out;
       transform: translateY(30%);
   }
-  .page-strategic-investor-homepage .programBenefitIcon{
+  .page-strategic-investor-program .programBenefitIcon{
       width: 65px;
       height: 65px;
       margin: auto;
       margin-bottom: 20px;
   }
-  .page-strategic-investor-homepage .programBenefitIcon img{
+  .page-strategic-investor-program .programBenefitIcon img{
       width: 100%;
   }
-  .page-strategic-investor-homepage .programBenefitItemTop h4{
+  .page-strategic-investor-program .programBenefitItemTop h4{
       color: #fff;
       font-size: 24px;
       min-height: 30px;
       padding: 0 15px;
   }
-  .page-strategic-investor-homepage .programBenefitItemBtm p {
+  .page-strategic-investor-program .programBenefitItemBtm p {
       font-size: 18px;
       line-height: 30px;
       color: #fff;
@@ -7553,11 +7553,11 @@ text-align: center;
       margin-bottom: 0;
 
   }
-  .page-strategic-investor-homepage .divLine{
+  .page-strategic-investor-program .divLine{
       padding: 40px 0;
       position: relative;
   }
-  .page-strategic-investor-homepage .divLine .programBenefitLine{
+  .page-strategic-investor-program .divLine .programBenefitLine{
        position: absolute;
       top: 0;
       bottom: 0;
@@ -7568,7 +7568,7 @@ text-align: center;
       width: 50%;
       transition: all .6s ease;
   }
-  .page-strategic-investor-homepage .programBenefitItem:hover .programBenefitLine{
+  .page-strategic-investor-program .programBenefitItem:hover .programBenefitLine{
       width: 100%;
       opacity: 1;
   }
@@ -7578,36 +7578,36 @@ text-align: center;
 
 
   @media(min-width:1200px){
-      .page-strategic-investor-homepage .strategicTitle{
+      .page-strategic-investor-program .strategicTitle{
           width: 80%;
           margin: auto;
       }
-      .page-strategic-investor-homepage .strategicTitle.insideTitle{
+      .page-strategic-investor-program .strategicTitle.insideTitle{
           width: 100%;
 
       }
   }
   /*About Section*/
   @media(min-width:1300px) and (max-width:1600px){
-      .page-strategic-investor-homepage .faqBg-sec{
+      .page-strategic-investor-program .faqBg-sec{
           padding-top: 50px !important;
       }
-      .page-strategic-investor-homepage .programBenefitItemTop h4{
+      .page-strategic-investor-program .programBenefitItemTop h4{
           font-size: 20px;
           line-height: 27px;
       }
-      .page-strategic-investor-homepage .divLine{
+      .page-strategic-investor-program .divLine{
           padding: 20px 0;
       }
-      .page-strategic-investor-homepage .programPenefit .container-fluid{
+      .page-strategic-investor-program .programPenefit .container-fluid{
           padding-right: 30px;
           padding-left: 30px;
       }
-      .page-strategic-investor-homepage .programBenefitItem{
+      .page-strategic-investor-program .programBenefitItem{
           min-height: 541px;
           padding-top: 20px;
       }
-          .page-strategic-investor-homepage .programBenefitItemBtm p{
+          .page-strategic-investor-program .programBenefitItemBtm p{
           font-size: 18px !important;
           line-height: 27px;
       }
@@ -7615,62 +7615,62 @@ text-align: center;
   @media(min-width:1300px){
 
 
-      .page-strategic-investor-homepage .container-fluid{
+      .page-strategic-investor-program .container-fluid{
           padding-left: 80px;
           padding-right: 80px;
       }
-      .page-strategic-investor-homepage .howToApply  .container-fluid{
+      .page-strategic-investor-program .howToApply  .container-fluid{
       padding-left: 120px;
       padding-right: 120px;
   }
-      .page-strategic-investor-homepage .howToApply .termsConditionV2  .container-fluid{
+      .page-strategic-investor-program .howToApply .termsConditionV2  .container-fluid{
       padding-left: 15px;
       padding-right: 120px;
   }
-  .page-strategic-investor-homepage .stscontactForm-sec{
+  .page-strategic-investor-program .stscontactForm-sec{
       width: 80% !important;
       margin: auto;
   }
   }
   @media(min-width:1400px){
-      .page-strategic-investor-homepage .container{
+      .page-strategic-investor-program .container{
           min-width: 1360px;
       }
   }
   /*How TO Apply*/
-  .page-strategic-investor-homepage .howToApply{
+  .page-strategic-investor-program .howToApply{
       position: relative;
       min-height: 500px;
       padding: 100px 0px 150px 0px;
       overflow: hidden;
   }
-  .page-strategic-investor-homepage .posRel{
+  .page-strategic-investor-program .posRel{
       position: relative;
       z-index: 1;
   }
-  .page-strategic-investor-homepage .strategicTitleLight h5{
+  .page-strategic-investor-program .strategicTitleLight h5{
       color: #fff;
       opacity: 0.6;
   }
-  .page-strategic-investor-homepage .strategicTitleLight h1{
+  .page-strategic-investor-program .strategicTitleLight h1{
       color: #fff;
   }
-  .page-strategic-investor-homepage .howToApplyItem{
+  .page-strategic-investor-program .howToApplyItem{
       position: relative;
       min-height: 420px;
       position: relative;
       box-shadow: var(--strategic-card-shadow);
   }
-  .page-strategic-investor-homepage .stepArrow{
+  .page-strategic-investor-program .stepArrow{
   position: absolute;
   right: -25px;
   top: 50%;
   height: 21px;
   }
-  .page-strategic-investor-homepage .howToApplyItemLoop:last-child .howToApplyItem .stepArrow{
+  .page-strategic-investor-program .howToApplyItemLoop:last-child .howToApplyItem .stepArrow{
       display: none;
   }
-  .page-strategic-investor-homepage .howToApplyHeader{
+  .page-strategic-investor-program .howToApplyHeader{
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -7679,7 +7679,7 @@ text-align: center;
       padding-top: 0;
       background-color:#f1ead3;
   }
-  .page-strategic-investor-homepage .howToApplyIcon{
+  .page-strategic-investor-program .howToApplyIcon{
              margin-left: 30px;
       opacity: 0.8;
       background-color: #bf9b2e;
@@ -7691,10 +7691,10 @@ text-align: center;
       align-items: center;
       justify-content: center
   }
-  .page-strategic-investor-homepage .howToApplyHeader img{
+  .page-strategic-investor-program .howToApplyHeader img{
       width: 100%;
   }
-  .page-strategic-investor-homepage .howToApplyStep{
+  .page-strategic-investor-program .howToApplyStep{
       color: var(--strategic-text-color);
       font-weight: bold;
       font-size: 25px;
@@ -7703,45 +7703,45 @@ text-align: center;
       margin-left: 20px;
       width: 47%;
   }
-  .page-strategic-investor-homepage .howToApplyBody{
+  .page-strategic-investor-program .howToApplyBody{
       padding: 15px;
       margin-top: 10px;
       text-align: center;
   }
-  .page-strategic-investor-homepage .howToApplyBody{
+  .page-strategic-investor-program .howToApplyBody{
 
           transform: translateY(30px);
       transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .howToApplyItem:hover .howToApplyHeader{
+  .page-strategic-investor-program .howToApplyItem:hover .howToApplyHeader{
       transform: translateY(0px);
       transition: 0.2s all linear;
 
   }
-  .page-strategic-investor-homepage .howToApplyItem:hover .howToApplyBody{
+  .page-strategic-investor-program .howToApplyItem:hover .howToApplyBody{
       transform: translateY(0px);
       transition: 0.2s ease-in-out;
       transition-delay: 0.1s;
 
   }
-  .page-strategic-investor-homepage .howToApplyBody h5{
+  .page-strategic-investor-program .howToApplyBody h5{
       color: #000;
       margin-bottom: 40px;
       font-size: 21px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .howToApplyBody p{
+  .page-strategic-investor-program .howToApplyBody p{
       color: var(--strategic-text-color);
       font-size: 17px;
       line-height: 27px;
   }
 
 
-  .page-strategic-investor-homepage .howTOApplyV2{
+  .page-strategic-investor-program .howTOApplyV2{
       margin: auto;
       margin-top: 40px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item{
+  .page-strategic-investor-program .howTOApplyV2Item{
       width: 350px;
       margin: auto;
       box-shadow: 0 4px 71px rgb(0 0 0 / 23%);
@@ -7756,7 +7756,7 @@ text-align: center;
       /* background-image: url(../images/card-pattern.png); */
       transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .cardBackgroundLogo{
+  .page-strategic-investor-program .cardBackgroundLogo{
           position: absolute;
       top: 0;
       bottom: 0;
@@ -7768,11 +7768,11 @@ text-align: center;
       transition: 0.2s;
 
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item:hover .cardBackgroundLogo{
+  .page-strategic-investor-program .howTOApplyV2Item:hover .cardBackgroundLogo{
       opacity: 0.08;
       transition: 0.2s;
   }
-  .page-strategic-investor-homepage .lineAnimationWrap {
+  .page-strategic-investor-program .lineAnimationWrap {
       position: absolute;
       width: 65px;
       height: 3px;
@@ -7781,16 +7781,16 @@ text-align: center;
       margin: auto;
       bottom: -15px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item:nth-child(2) .lineAnimationWrap{
+  .page-strategic-investor-program .howTOApplyV2Item:nth-child(2) .lineAnimationWrap{
        background:#834df5;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item:nth-child(3) .lineAnimationWrap{
+  .page-strategic-investor-program .howTOApplyV2Item:nth-child(3) .lineAnimationWrap{
        background: var(--strategic-theme-green);
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item:nth-child(4) .lineAnimationWrap{
+  .page-strategic-investor-program .howTOApplyV2Item:nth-child(4) .lineAnimationWrap{
        background: #f5b023;
   }
-  .page-strategic-investor-homepage .lineAnimation {
+  .page-strategic-investor-program .lineAnimation {
       width: 12px;
       background-color: #fff;
       height: 3px;
@@ -7807,25 +7807,25 @@ text-align: center;
           left: 100%
       }
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item:hover{
+  .page-strategic-investor-program .howTOApplyV2Item:hover{
       box-shadow:0px 0px 120px rgb(0 0 0 / 7%);
       transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Wrapper{
+  .page-strategic-investor-program .howTOApplyV2Wrapper{
       display: flex;
       align-items: center;
       justify-content: space-between;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item h5{
+  .page-strategic-investor-program .howTOApplyV2Item h5{
       margin-bottom: 30px;
       font-size: 24px;
       line-height: 34px;
       position: relative;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item p {
+  .page-strategic-investor-program .howTOApplyV2Item p {
       justify-content: center;
   }
-  .page-strategic-investor-homepage .onlineApplyBtn{
+  .page-strategic-investor-program .onlineApplyBtn{
           color: #fff !important;
       background: #00a6be;
       display: inline-block;
@@ -7842,10 +7842,10 @@ text-align: center;
       font-weight: 500;
       margin-top: 30px;
   }
-  .page-strategic-investor-homepage .applyCountNum{
+  .page-strategic-investor-program .applyCountNum{
       font-size: 25px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2ItemCountWrap{
+  .page-strategic-investor-program .howTOApplyV2ItemCountWrap{
              width: 100px;
       height: 100px;
       position: absolute;
@@ -7858,7 +7858,7 @@ text-align: center;
       padding: 10px;
       border-radius: 20px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2ItemCount{
+  .page-strategic-investor-program .howTOApplyV2ItemCount{
           display: flex;
       flex-direction: column;
       background: var(--strategic-theme-blue);
@@ -7873,7 +7873,7 @@ text-align: center;
       letter-spacing: 1px;
       border-radius: 10px;
   }
-  .page-strategic-investor-homepage .patternRight{
+  .page-strategic-investor-program .patternRight{
           position: absolute;
       left: 0px;
       top: 0px;
@@ -7882,7 +7882,7 @@ text-align: center;
       background-size: cover;
       background-repeat: no-repeat;
   }
-  .page-strategic-investor-homepage .patternLeft{
+  .page-strategic-investor-program .patternLeft{
           position: absolute;
       right: 0px;
       top: 0px;
@@ -7891,7 +7891,7 @@ text-align: center;
       background-size: cover;
       background-repeat: no-repeat;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Arrow{
+  .page-strategic-investor-program .howTOApplyV2Arrow{
               position: absolute;
       left: -19px;
       transform: rotate(180deg);
@@ -7899,32 +7899,32 @@ text-align: center;
       font-size: 30px;
       color: var(--strategic-theme-green);
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item:last-child .howTOApplyV2Arrow{
+  .page-strategic-investor-program .howTOApplyV2Item:last-child .howTOApplyV2Arrow{
       display: none;
   }
   /*How TO Apply*/
   /*T&C*/
-  .page-strategic-investor-homepage .strategicTitle.inlineTitile{
+  .page-strategic-investor-program .strategicTitle.inlineTitile{
       width: 100%;
       text-align: right;
       margin-bottom: 20px !important;
   }
 
-  .page-strategic-investor-homepage .termsConditionText h4{
+  .page-strategic-investor-program .termsConditionText h4{
           margin-bottom: 40px;
           line-height: 37px;
   }
-  .page-strategic-investor-homepage .termsConditionText p{
+  .page-strategic-investor-program .termsConditionText p{
          font-size: 18px;
       line-height: 27px;
       margin-bottom: 20px;
   }
-  .page-strategic-investor-homepage .termsConditionText ul {
+  .page-strategic-investor-program .termsConditionText ul {
       list-style: none;
       padding: 0;
       margin: 0;
   }
-  .page-strategic-investor-homepage .termsConditionText ul li{
+  .page-strategic-investor-program .termsConditionText ul li{
       font-size: 17px;
       color: var(--strategic-text-color);
       line-height: 27px;
@@ -7932,28 +7932,28 @@ text-align: center;
       align-items: baseline;
       margin-bottom: 25px;
   }
-  .page-strategic-investor-homepage .termsConditionText ul li i{
+  .page-strategic-investor-program .termsConditionText ul li i{
       font-size: 17px;
       margin-left: 20px;
       color: var(--strategic-theme-green);
   }
-  .page-strategic-investor-homepage .termsConditionV2{
+  .page-strategic-investor-program .termsConditionV2{
           position: absolute;
       width: 100%;
       bottom: -157px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap .container-fluid{
+  .page-strategic-investor-program .termsConditionV2Wtap .container-fluid{
       position: relative;
       z-index: 1;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap{
+  .page-strategic-investor-program .termsConditionV2Wtap{
       width: calc(100% - 360px);
       background-color: var(--strategic-theme-blue);
       min-height: 250px;
       padding: 15px 0;
       position: relative;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap::after{
+  .page-strategic-investor-program .termsConditionV2Wtap::after{
           position: absolute;
       content: '';
       width: 200px;
@@ -7964,30 +7964,30 @@ text-align: center;
       transform: skew(-26deg);
       z-index: 0;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap h1{
+  .page-strategic-investor-program .termsConditionV2Wtap h1{
       color: #fff;
       font-size: 40px;
       margin-bottom: 35px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap p {
+  .page-strategic-investor-program .termsConditionV2Wtap p {
       color: #fff;
       font-size: 18px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Text p:last-child{
+  .page-strategic-investor-program .termsConditionV2Text p:last-child{
       opacity: 0.8;
   }
-  .page-strategic-investor-homepage .termsConditionV2List{
+  .page-strategic-investor-program .termsConditionV2List{
       display: flex;
       justify-content: space-evenly;
   }
-  .page-strategic-investor-homepage .termsConditionV2List p{
+  .page-strategic-investor-program .termsConditionV2List p{
   width: 310px;
   opacity: 0.8;
   position: relative;
   padding-right: 15px;
   }
-  .page-strategic-investor-homepage .termsConditionV2List p .divClr{
+  .page-strategic-investor-program .termsConditionV2List p .divClr{
       width: 4px;
       display: inline-block;
       position: absolute;
@@ -7998,7 +7998,7 @@ text-align: center;
       left: 0;
 
   }
-  .page-strategic-investor-homepage .tacCount{
+  .page-strategic-investor-program .tacCount{
           display: inline-block;
       position: absolute;
       top: -52px;
@@ -8011,24 +8011,24 @@ text-align: center;
   /*SErvicev2*/
 
   /*ServiceMobile *****************/
-  .page-strategic-investor-homepage .serviceMobileView{
+  .page-strategic-investor-program .serviceMobileView{
       padding: 20px;
   }
-  .page-strategic-investor-homepage .serviceMobileView .card-header{
+  .page-strategic-investor-program .serviceMobileView .card-header{
       background-color: #fff;
       border:unset;
       box-shadow: var(--strategic-card-shadow);
       padding: 0;
   }
-  .page-strategic-investor-homepage .serviceMobileView .card{
+  .page-strategic-investor-program .serviceMobileView .card{
       border: unset;
       margin-bottom: 20px;
   }
-  .page-strategic-investor-homepage .serviceMobileView .iconImageService img{
+  .page-strategic-investor-program .serviceMobileView .iconImageService img{
       width: 100%;
       padding: 7px;
   }
-  .page-strategic-investor-homepage .serviceMobileView button{
+  .page-strategic-investor-program .serviceMobileView button{
           width: 100%;
       display: flex;
       align-items: center;
@@ -8037,16 +8037,16 @@ text-align: center;
       text-decoration: none !important;
       white-space: pre-wrap;
   }
-  .page-strategic-investor-homepage .serviceMobileView .seviceV3Title{
+  .page-strategic-investor-program .serviceMobileView .seviceV3Title{
   color: var(--strategic-text-color);
   font-weight: bold;
   }
-  .page-strategic-investor-homepage .serviceMobileView .card-body{
+  .page-strategic-investor-program .serviceMobileView .card-body{
       position: relative;
       overflow: hidden;
       padding: 0;
   }
-  .page-strategic-investor-homepage .serviceMobileView .card-body::after{
+  .page-strategic-investor-program .serviceMobileView .card-body::after{
       content: '';
       position: absolute;
       width: 100%;
@@ -8057,42 +8057,42 @@ text-align: center;
       top: 0;
       left: 0;
   }
-  .page-strategic-investor-homepage .serviceMobileView  .serviceTabPaneContent img{
+  .page-strategic-investor-program .serviceMobileView  .serviceTabPaneContent img{
       position: absolute;
       width: 100%;
       left: 0;
       height: 100%;
       object-fit: cover;
   }
-  .page-strategic-investor-homepage .serviceMobileView  .serviceSectionV3Description p {
+  .page-strategic-investor-program .serviceMobileView  .serviceSectionV3Description p {
       font-size: 15px;
   }
-  .page-strategic-investor-homepage #serviceAccordion button[aria-expanded = 'true'] .iconImageService{
+  .page-strategic-investor-program #serviceAccordion button[aria-expanded = 'true'] .iconImageService{
           background-color: transparent;
       border: 1px solid #fff;
   }
-  .page-strategic-investor-homepage #serviceAccordion button[aria-expanded = 'true'] .seviceV3Title{
+  .page-strategic-investor-program #serviceAccordion button[aria-expanded = 'true'] .seviceV3Title{
   color: #fff;
   }
-  .page-strategic-investor-homepage #serviceAccordion button[aria-expanded = 'true']{
+  .page-strategic-investor-program #serviceAccordion button[aria-expanded = 'true']{
       background-color: var(--strategic-theme-blue);
   }
   /*ServiceMobile *****************/
 
 
 
-  .page-strategic-investor-homepage .strategyServicesV2Icon{
+  .page-strategic-investor-program .strategyServicesV2Icon{
       margin-bottom: 15px;
   }
-  .page-strategic-investor-homepage .strategyServicesV2Icon img{
+  .page-strategic-investor-program .strategyServicesV2Icon img{
       height: 60px;
   }
-  .page-strategic-investor-homepage .strategyServicesV2Item{
+  .page-strategic-investor-program .strategyServicesV2Item{
       text-align: center;
       position: relative;
       box-shadow: var(--strategic-card-shadow);
   }
-  .page-strategic-investor-homepage .strategyServicesV2Item::before{
+  .page-strategic-investor-program .strategyServicesV2Item::before{
       content: '';
       width: 20%;
       height: 4px;
@@ -8104,11 +8104,11 @@ text-align: center;
       background-color: var(--strategic-theme-green);
       transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .strategyServicesV2Item:hover:before{
+  .page-strategic-investor-program .strategyServicesV2Item:hover:before{
       width: 100%;
   transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .strategyServicesV2Item{
+  .page-strategic-investor-program .strategyServicesV2Item{
       min-height: 200px;
       transition: 0.4s all linear;
       padding: 15px;
@@ -8120,23 +8120,23 @@ text-align: center;
       justify-content: center;
       flex-direction: column;
   }
-  .page-strategic-investor-homepage .strategyServicesV2Item:hover{
+  .page-strategic-investor-program .strategyServicesV2Item:hover{
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
       transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .strategyServicesV2Item h4{
+  .page-strategic-investor-program .strategyServicesV2Item h4{
       font-size: 25px;
       transform: scale(0.8);
       transition: 0.4s all linear;
       display: block;
   }
-  .page-strategic-investor-homepage .strategyServicesV2Item:hover h4{
+  .page-strategic-investor-program .strategyServicesV2Item:hover h4{
       transform: scale(1);
       transition: 0.4s all linear;
   }
 
-  .page-strategic-investor-homepage .strategyServicesV2Item:hover{
+  .page-strategic-investor-program .strategyServicesV2Item:hover{
       box-shadow: 0 4px 71px rgb(0 0 0 / 23%);
       transition: 0.4s all linear;
 
@@ -8148,13 +8148,13 @@ text-align: center;
   /*FAQ*/
   /*FAQ Section Start*/
 
-   .page-strategic-investor-homepage .stsFaq-Section {
+   .page-strategic-investor-program .stsFaq-Section {
 
        width: 100%;
        background: #fff;
    }
 
-   .page-strategic-investor-homepage .faqBg-sec {
+   .page-strategic-investor-program .faqBg-sec {
 
        width: 100%;
         background-size: cover;
@@ -8165,33 +8165,33 @@ text-align: center;
       padding: 120px 0;
       padding-bottom: 100px;
    }
-   .page-strategic-investor-homepage .faqdescription-sec {
+   .page-strategic-investor-program .faqdescription-sec {
 
        width: 100%;
 
    }
-   .page-strategic-investor-homepage .faqTitletext-Section {
+   .page-strategic-investor-program .faqTitletext-Section {
 
            width: 100%;
            text-align: center;
        margin-top: 25px;
        margin-bottom: 20px;
    }
-   .page-strategic-investor-homepage .stsFaqbox-sec {
+   .page-strategic-investor-program .stsFaqbox-sec {
 
            margin-top: 32px;
            box-shadow: 2px 3.464px 24px 0 rgb(106 105 194 / 25%);
            padding: 25px;
            border-radius: 9px;
    }
-   .page-strategic-investor-homepage .faqsubTitle-text {
+   .page-strategic-investor-program .faqsubTitle-text {
 
          font-size: 24px;
       line-height: 31.2px;
       margin-bottom: 25px;
       color: #2ad1ed;
    }
-   .page-strategic-investor-homepage .faqTitle-text {
+   .page-strategic-investor-program .faqTitle-text {
 
            font-size: 57px;
       line-height: 74.1px;
@@ -8199,7 +8199,7 @@ text-align: center;
       font-weight: 700;
       margin-bottom: 22px;
    }
-   .page-strategic-investor-homepage .faqTitle-description {
+   .page-strategic-investor-program .faqTitle-description {
 
         font-weight: 400;
       font-size: 22px;
@@ -8207,7 +8207,7 @@ text-align: center;
        color: var(--strategic-text-color);
        text-align: center;
    }
-   .page-strategic-investor-homepage .faqdescription-subtitle {
+   .page-strategic-investor-program .faqdescription-subtitle {
 
            font-size: 30px;
            font-weight: 400;
@@ -8216,7 +8216,7 @@ text-align: center;
 
    }
 
-   .page-strategic-investor-homepage .faqdescription-title {
+   .page-strategic-investor-program .faqdescription-title {
 
            font-size: 48px;
            color: #27477d;
@@ -8226,69 +8226,69 @@ text-align: center;
 
    }
 
-   .page-strategic-investor-homepage .faqdescription-text {
+   .page-strategic-investor-program .faqdescription-text {
 
            padding-left: 8px;
            color: #27477d;
            font-size: 16px;
            line-height: 27.2px;
    }
-   .page-strategic-investor-homepage .faqIcontext-sec {
+   .page-strategic-investor-program .faqIcontext-sec {
 
        width: 100%;
    }
-   .page-strategic-investor-homepage .faqIcontext-sec .faqIcon-box {
+   .page-strategic-investor-program .faqIcontext-sec .faqIcon-box {
 
        display: flex;
        margin-bottom: 25px;
    }
-   .page-strategic-investor-homepage .faqIcontext-sec .faqIcon-sec {
+   .page-strategic-investor-program .faqIcontext-sec .faqIcon-sec {
 
        margin-left: 14px;
    }
-   .page-strategic-investor-homepage .faqIcontext-sec .faqIcon-sec img {
+   .page-strategic-investor-program .faqIcontext-sec .faqIcon-sec img {
 
        height: 44px;
    }
-   .page-strategic-investor-homepage .faqIcontext-sec .faqIcon-sec i {
+   .page-strategic-investor-program .faqIcontext-sec .faqIcon-sec i {
 
            color: #07ccec;
            font-size: 34px;
    }
 
-  .page-strategic-investor-homepage .faqIcon-bdytext .faqbx-title {
+  .page-strategic-investor-program .faqIcon-bdytext .faqbx-title {
 
       font-size: 18px;
       font-weight: 500;
       color: #27477d;
       margin-bottom: 12px;
   }
-  .page-strategic-investor-homepage .faqIcon-bdytext  .faqbx-Desc {
+  .page-strategic-investor-program .faqIcon-bdytext  .faqbx-Desc {
 
       font-size: 15px;
       margin-bottom: 15px;
       color: #888c92;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection {
+  .page-strategic-investor-program .stsFaq-AccordinSection {
 
       width: 100%;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsaccordion-item {
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsaccordion-item {
 
       border-bottom:1px solid var(--strategic-theme-green);
       padding: 15px 0;
       min-height: 119px;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsaccordion-item:last-child {
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsaccordion-item:last-child {
 
       border-bottom:unset;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn span {
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn span {
           cursor: pointer;
       display: inline-block;
       width: 90%;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn{
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn{
 
         border: none;
       padding: 0;
@@ -8307,22 +8307,22 @@ text-align: center;
       border: unset;
       padding: 10px;
   }
-  .page-strategic-investor-homepage .stsFaqAcc-btn[aria-expanded="true"] {
+  .page-strategic-investor-program .stsFaqAcc-btn[aria-expanded="true"] {
       background-color: var(--strategic-theme-blue);
       border-radius: 9px;
       color: #fff !important;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn:focus {
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn:focus {
 
       outline: unset;
       box-shadow: unset;
       border: unset;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn:hover {
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn:hover {
 
       text-decoration: none;
   }
-  .page-strategic-investor-homepage .sts-accordion-body  {
+  .page-strategic-investor-program .sts-accordion-body  {
 
         padding: 10px 0;
       color: var(--strategic-pColour);
@@ -8332,11 +8332,11 @@ text-align: center;
       font-size: 20px;
       line-height: 34px;
   }
-  .page-strategic-investor-homepage .sts-accordion-body:hover {
+  .page-strategic-investor-program .sts-accordion-body:hover {
 
       text-decoration: none;
   }
-  .page-strategic-investor-homepage .faqIcon-ChangeSec {
+  .page-strategic-investor-program .faqIcon-ChangeSec {
 
         width: 30px;
       height: 30px;
@@ -8348,7 +8348,7 @@ text-align: center;
       margin-right:20px;
       position: relative;
   }
-  .page-strategic-investor-homepage .stsFaqAcc-btn[aria-expanded="true"] .faqIcon-ChangeSec{
+  .page-strategic-investor-program .stsFaqAcc-btn[aria-expanded="true"] .faqIcon-ChangeSec{
 
               background-image: unset;
       background-image: unset;
@@ -8357,52 +8357,52 @@ text-align: center;
       background-image: unset;
       background-color: #fff;
   }
-  .page-strategic-investor-homepage .faqIcon-ChangeSec .faqPlus-icon {
+  .page-strategic-investor-program .faqIcon-ChangeSec .faqPlus-icon {
 
         font-size: 15px;
       color: #fff;
       position: absolute;
 
   }
-  .page-strategic-investor-homepage .stsFaqAcc-btn[aria-expanded="true"] .faqIcon-ChangeSec .faqPlus-icon {
+  .page-strategic-investor-program .stsFaqAcc-btn[aria-expanded="true"] .faqIcon-ChangeSec .faqPlus-icon {
 
     visibility: hidden;
     opacity: 0;
     transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .faqIcon-ChangeSec .faqMinus-icon{
+  .page-strategic-investor-program .faqIcon-ChangeSec .faqMinus-icon{
 
           font-size: 15px;
       color: #fff;
       opacity: 0;
       visibility: hidden;
   }
-  .page-strategic-investor-homepage .stsFaqAcc-btn[aria-expanded="true"] .faqIcon-ChangeSec .faqMinus-icon {
+  .page-strategic-investor-program .stsFaqAcc-btn[aria-expanded="true"] .faqIcon-ChangeSec .faqMinus-icon {
 
     visibility: visible;
     opacity: 1;
     transition: 0.3s all linear;
     color: #c9ab4f;
   }
-  .page-strategic-investor-homepage .stsAcBody-sublist {
+  .page-strategic-investor-program .stsAcBody-sublist {
 
       margin-top: 10px;
       padding-right: 8px;
       list-style: none;
   }
-  .page-strategic-investor-homepage .acdbdylist-subtitle  {
+  .page-strategic-investor-program .acdbdylist-subtitle  {
 
       font-size: 17px;
       font-weight: 500;
       margin-bottom: 9px;
   }
-  .page-strategic-investor-homepage .stsAcBody-sublistItem {
+  .page-strategic-investor-program .stsAcBody-sublistItem {
 
       font-size: 16px;
       margin-top: 12px;
       padding-right: 8px;
   }
-  .page-strategic-investor-homepage .stsAcBody-sublistItem i {
+  .page-strategic-investor-program .stsAcBody-sublistItem i {
 
       color:var(--strategic-theme-green);
       font-size: 16px;
@@ -8418,26 +8418,26 @@ text-align: center;
   /*Target*/
 
    /*NavBar Tab Section Start*/
-   .page-strategic-investor-homepage .targerSection{
+   .page-strategic-investor-program .targerSection{
        position: relative;
    }
-   .page-strategic-investor-homepage .targerSectionV2ItemWrapper{
+   .page-strategic-investor-program .targerSectionV2ItemWrapper{
        display: flex;
            flex-wrap: wrap;
    }
-   .page-strategic-investor-homepage .targerSectionV2ItemImg {
+   .page-strategic-investor-program .targerSectionV2ItemImg {
        width: 70px;
       height: 70px;
       margin-bottom: 40px;
       position: relative;
       z-index: 1;
    }
-   .page-strategic-investor-homepage .targerSectionV2ItemImg img {
+   .page-strategic-investor-program .targerSectionV2ItemImg img {
        width: 100%;
        height: 100%;
        object-fit: contain;
    }
-   .page-strategic-investor-homepage .targerSectionV2ItemDes{
+   .page-strategic-investor-program .targerSectionV2ItemDes{
        text-align: center;
        position: relative;
        z-index: 1;
@@ -8445,15 +8445,15 @@ text-align: center;
        width: 80%;
        margin-right: 40px;
    }
-   .page-strategic-investor-homepage .targerSectionV2ItemDes h4{
+   .page-strategic-investor-program .targerSectionV2ItemDes h4{
        margin-bottom: 20px;
        color: #fff;
    }
-   .page-strategic-investor-homepage .targerSectionV2ItemDes p {
+   .page-strategic-investor-program .targerSectionV2ItemDes p {
        color: #fff;
        font-size: 18px;
    }
-   .page-strategic-investor-homepage .targerSectionV2Item{
+   .page-strategic-investor-program .targerSectionV2Item{
             width: calc(100% / 2);
       min-height: 310px;
       padding: 20px 68px;
@@ -8462,16 +8462,16 @@ text-align: center;
       position: relative;
       overflow: hidden;
    }
-    .page-strategic-investor-homepage .targetedList{
+    .page-strategic-investor-program .targetedList{
         padding-right: 24px;
     }
-   .page-strategic-investor-homepage .targetedList li {
+   .page-strategic-investor-program .targetedList li {
        margin-bottom: 10px;
       color: #fff;
       text-align: right;
       font-size: 18px;
    }
-   .page-strategic-investor-homepage .targerSectionV2Item::after{
+   .page-strategic-investor-program .targerSectionV2Item::after{
        position: absolute;
        width: 100%;
        height: 100%;
@@ -8482,16 +8482,16 @@ text-align: center;
        z-index: 0;
        opacity: 0.7;
    }
-    .page-strategic-investor-homepage .targerSectionV2Item:nth-child(2):after{
+    .page-strategic-investor-program .targerSectionV2Item:nth-child(2):after{
         background-color:#0062cc;
     }
-     .page-strategic-investor-homepage .targerSectionV2Item:nth-child(3):after{
+     .page-strategic-investor-program .targerSectionV2Item:nth-child(3):after{
         background-color: #1b844a;
     }
-     .page-strategic-investor-homepage .targerSectionV2Item:nth-child(4):after{
+     .page-strategic-investor-program .targerSectionV2Item:nth-child(4):after{
         background-color: #9a17f4;
     }
-   .page-strategic-investor-homepage .targerSectionV2ItemBgImg{
+   .page-strategic-investor-program .targerSectionV2ItemBgImg{
        position: absolute;
        width: 100%;
        height: 100%;
@@ -8503,12 +8503,12 @@ text-align: center;
       left: 0;
 
    }
-   .page-strategic-investor-homepage .targerSectionV2Item:hover .targerSectionV2ItemBgImg{
+   .page-strategic-investor-program .targerSectionV2Item:hover .targerSectionV2ItemBgImg{
        transform: scale(1);
       transition: .65s cubic-bezier(.05,0.2,.1,1);
    }
 
-  .page-strategic-investor-homepage .targerSection::after{
+  .page-strategic-investor-program .targerSection::after{
           background-image: url(../images/pattern.png);
 
       width: 50%;
@@ -8519,125 +8519,125 @@ text-align: center;
       z-index: 1;
       top: 0;
   }
-  .page-strategic-investor-homepage .targerSection .strategicTitle h1{
+  .page-strategic-investor-program .targerSection .strategicTitle h1{
       font-size: 45px;
   }
-  .page-strategic-investor-homepage .targerSection .mainStrategicFlex{
+  .page-strategic-investor-program .targerSection .mainStrategicFlex{
   flex-direction: column;
   padding-right: 120px;
   justify-content: center;
   }
-  .page-strategic-investor-homepage .targerSectionContent h4{
+  .page-strategic-investor-program .targerSectionContent h4{
       font-size: 25px;
       color: #fff;
       margin-top: 40px;
       margin-bottom: 20px;
   }
-  .page-strategic-investor-homepage .targerSectionContent p{
+  .page-strategic-investor-program .targerSectionContent p{
       font-size: 18px;
       color: #fff;
       opacity: 0.8;
   }
 
   /*targerSectionV3Item*/
-  .page-strategic-investor-homepage .targerSectionV3{
+  .page-strategic-investor-program .targerSectionV3{
       overflow: unset;
       padding-bottom: 80px;
   }
 
-  .page-strategic-investor-homepage .targerSectionV3Item{
+  .page-strategic-investor-program .targerSectionV3Item{
       min-height: 562px;
       box-shadow: 0 4px 20px 0px #2196f333;
       padding: 20px;
       border-radius: 7px;
   }
-  .page-strategic-investor-homepage .targerSectionV3Top{
+  .page-strategic-investor-program .targerSectionV3Top{
           width: 100%;
       height: 265px;
       overflow: hidden;
   }
-  .page-strategic-investor-homepage .targerSectionV3Img{
+  .page-strategic-investor-program .targerSectionV3Img{
       width: 100%;
       height: 100%;
   }
-  .page-strategic-investor-homepage .targerSectionV3Img img{
+  .page-strategic-investor-program .targerSectionV3Img img{
       width: 100%;
       height: 100%;
       transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
           transform: translateZ(0);
           object-fit: cover;
   }
-  .page-strategic-investor-homepage .targerSectionV3Item:hover .targerSectionV3Img img{
+  .page-strategic-investor-program .targerSectionV3Item:hover .targerSectionV3Img img{
           transform: scale(1.15);
   }
-  .page-strategic-investor-homepage .targerSectionV3Top{
+  .page-strategic-investor-program .targerSectionV3Top{
       margin-bottom: 20px;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm h4{
+  .page-strategic-investor-program .targerSectionV3Btm h4{
       font-size: 24px;
       margin-bottom: 15px;
       min-height: 46px;
       text-align: right;
       line-height: 40px;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm p {
+  .page-strategic-investor-program .targerSectionV3Btm p {
       font-size: 18px;
       line-height: 32px;
       color: #666;
       font-weight: 400;
       text-align: right;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm p b{
+  .page-strategic-investor-program .targerSectionV3Btm p b{
       margin-bottom: 10px;
       display: inline-block;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm ul {
+  .page-strategic-investor-program .targerSectionV3Btm ul {
       padding: 0;
       list-style: none;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm ul li {
+  .page-strategic-investor-program .targerSectionV3Btm ul li {
       display: flex;
       align-items: baseline;
       margin-bottom: 10px;
 
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm ul li i{
+  .page-strategic-investor-program .targerSectionV3Btm ul li i{
       width: 7%;
       font-size: 15px;
       color: #bf9b2e;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm ul li span{
+  .page-strategic-investor-program .targerSectionV3Btm ul li span{
       display: inline-block;
       width: 90%;
       font-size: 15px;
       color: #666;
       font-weight: 400;
   }
-  .page-strategic-investor-homepage .targetedMySwiper {
+  .page-strategic-investor-program .targetedMySwiper {
       overflow: unset;
   }
 
-  .page-strategic-investor-homepage .targerSectionV3Item{
+  .page-strategic-investor-program .targerSectionV3Item{
       min-height: 575px;
   }
 
   /*targerSectionV3Item*/
 
-  .page-strategic-investor-homepage .enroleRequirement {
+  .page-strategic-investor-program .enroleRequirement {
       background-color: #f5f5f5;
       position: relative;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap{
+  .page-strategic-investor-program .enroleRequirementWrap{
           width: 60%;
 
   }
   @media(min-width:1600px){
-      .page-strategic-investor-homepage .enroleRequirementWrap{
+      .page-strategic-investor-program .enroleRequirementWrap{
 
       padding-right: 11%;
   }
   }
-  .page-strategic-investor-homepage .enroleRequirementBgImg{
+  .page-strategic-investor-program .enroleRequirementBgImg{
       position: absolute;
       width: 40%;
       left: 0;
@@ -8645,38 +8645,38 @@ text-align: center;
       /* padding: 20px; */
       height: 100%;
   }
-  .page-strategic-investor-homepage .enroleRequirementBgImg img{
+  .page-strategic-investor-program .enroleRequirementBgImg img{
       width: 100%;
       height: 100%;
       object-fit: cover;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap .strategicTitle {
+  .page-strategic-investor-program .enroleRequirementWrap .strategicTitle {
       width: 100%;
       text-align: right;
 
 
       margin-bottom: 40px !important;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap .strategicTitle h1{
+  .page-strategic-investor-program .enroleRequirementWrap .strategicTitle h1{
           font-size: 45px;
       font-weight: unset;
       line-height: 67px;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul p {
+  .page-strategic-investor-program .enroleRequirementWrap ul p {
       font-size: 25px;
       margin-bottom: 30px;
       text-align: right;
 
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul  {
+  .page-strategic-investor-program .enroleRequirementWrap ul  {
       padding: 0;
       list-style: none;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul li i{
+  .page-strategic-investor-program .enroleRequirementWrap ul li i{
       color: #bf9b2e;
       margin-left: 15px;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul li {
+  .page-strategic-investor-program .enroleRequirementWrap ul li {
       margin-bottom: 20px;
       font-size: 20px;
       line-height: 34px;
@@ -8690,7 +8690,7 @@ text-align: center;
    /*Contact-Us Section Start*/
 
 
-   .page-strategic-investor-homepage .stsContact-section {
+   .page-strategic-investor-program .stsContact-section {
     background-image: url(../img/contact-ar-bg2.jpg);
       overflow:hidden;
        width: 100%;
@@ -8704,7 +8704,7 @@ text-align: center;
     background-position: center;
     background-repeat: no-repeat;
    }
-   .page-strategic-investor-homepage .stsContact-section:after {
+   .page-strategic-investor-program .stsContact-section:after {
 
       top: 0;
       left: 0;
@@ -8717,18 +8717,18 @@ text-align: center;
       opacity: 0.5;
 
    }
-   .page-strategic-investor-homepage .contactus-contentSec {
+   .page-strategic-investor-program .contactus-contentSec {
 
        width: 80%;
    }
-   .page-strategic-investor-homepage .contactus-contentSec .contactcnt-title {
+   .page-strategic-investor-program .contactus-contentSec .contactcnt-title {
 
          font-size: 48px;
       line-height: 60px;
       color: #fff;
       margin-bottom: 20px;
    }
-   .page-strategic-investor-homepage .contactus-contentSec .contactcnt-text {
+   .page-strategic-investor-program .contactus-contentSec .contactcnt-text {
 
             color: #fff;
             font-size: 16px;
@@ -8736,13 +8736,13 @@ text-align: center;
             width: 90%;
             line-height: 26px;
    }
-   .page-strategic-investor-homepage .contactBox-sec {
+   .page-strategic-investor-program .contactBox-sec {
 
        display: flex;
        gap: 30px;
        width: 100%;
    }
-   .page-strategic-investor-homepage .sts-contactbox {
+   .page-strategic-investor-program .sts-contactbox {
 
          display: flex;
          gap: 15px;
@@ -8754,15 +8754,15 @@ text-align: center;
       min-width: 333px;
 
    }
-  .page-strategic-investor-homepage .sts-contactbox:hover {
+  .page-strategic-investor-program .sts-contactbox:hover {
 
       text-decoration: none;
   }
-   .page-strategic-investor-homepage .sts-contactboxIcon img {
+   .page-strategic-investor-program .sts-contactboxIcon img {
 
        height: 50px;
    }
-   .page-strategic-investor-homepage .sts-contsubxsubtitle {
+   .page-strategic-investor-program .sts-contsubxsubtitle {
 
            font-size: 16px;
       line-height: 20px;
@@ -8772,7 +8772,7 @@ text-align: center;
       font-weight: 400;
       margin-bottom: 10px;
    }
-  .page-strategic-investor-homepage .sts-contbxContent {
+  .page-strategic-investor-program .sts-contbxContent {
 
       font-size: 22px;
       line-height: 26px;
@@ -8781,7 +8781,7 @@ text-align: center;
       color: #fff;
       font-weight: 500;
   }
-  .page-strategic-investor-homepage .stscontactForm-sec {
+  .page-strategic-investor-program .stscontactForm-sec {
 
       width: 100%;
       box-shadow: 0px 10px 30px rgb(4 33 63 / 5%);
@@ -8789,11 +8789,11 @@ text-align: center;
       background: #fff;
       border-radius: 4px;
   }
-  .page-strategic-investor-homepage .stscontactForm-sec .stscontactForm-header  {
+  .page-strategic-investor-program .stscontactForm-sec .stscontactForm-header  {
 
       margin-bottom: 40px;
   }
-  .page-strategic-investor-homepage .stscontactForm-header .stscontactForm-subtitle {
+  .page-strategic-investor-program .stscontactForm-header .stscontactForm-subtitle {
       text-align: right;
       font-size: 30px;
     line-height: 24px;
@@ -8802,7 +8802,7 @@ text-align: center;
     position: relative;
     padding-right: 15px;
   }
-  .page-strategic-investor-homepage .stscontactForm-subtitle::after{
+  .page-strategic-investor-program .stscontactForm-subtitle::after{
       content: '';
 
       background-color: var(--strategic-theme-green);
@@ -8815,32 +8815,32 @@ text-align: center;
       margin: auto;
 
   }
-  .page-strategic-investor-homepage .stscontactForm-header .stscontactForm-subtitle img {
+  .page-strategic-investor-program .stscontactForm-header .stscontactForm-subtitle img {
 
       margin-left: 10px;
       width: 26px;
   }
-  .page-strategic-investor-homepage .stscontactForm-header .stscontactForm-title {
+  .page-strategic-investor-program .stscontactForm-header .stscontactForm-title {
 
       font-size: 36px;
       line-height: 48px;
       color: #0E1E36;
 
   }
-  .page-strategic-investor-homepage .stscontactForm-sec .sts-single-personal-info {
+  .page-strategic-investor-program .stscontactForm-sec .sts-single-personal-info {
 
       margin-bottom: 40px;
   }
-  .page-strategic-investor-homepage .frmSubmitBtn{
+  .page-strategic-investor-program .frmSubmitBtn{
           text-align: center;
       display: flex;
       align-items: center;
       justify-content: space-between;
   }
-  .page-strategic-investor-homepage .frmSubmitBtn img{
+  .page-strategic-investor-program .frmSubmitBtn img{
       height: 70px;
   }
-  .page-strategic-investor-homepage .sts-single-personal-info .form-control {
+  .page-strategic-investor-program .sts-single-personal-info .form-control {
 
         width: 100%;
       outline: none;
@@ -8857,16 +8857,16 @@ text-align: center;
       border: 1.5px solid rgba(14, 30, 54, 0.2);
   }
 
-  .page-strategic-investor-homepage .sts-single-personal-info .form-control:focus {
+  .page-strategic-investor-program .sts-single-personal-info .form-control:focus {
 
       box-shadow: unset;
       outline: unset;
   }
-  .page-strategic-investor-homepage .sts-single-personal-info textarea.form-control  {
+  .page-strategic-investor-program .sts-single-personal-info textarea.form-control  {
       resize: none;
       height: 120px;
   }
-  .page-strategic-investor-homepage .ContactTheme-btn {
+  .page-strategic-investor-program .ContactTheme-btn {
 
           background: var(--strategic-theme-blue);
       padding: 15px 29px;
@@ -8888,19 +8888,19 @@ text-align: center;
       border-radius: 11px;
       cursor: pointer;
   }
-  .page-strategic-investor-homepage .ContactTheme-btn:hover{
+  .page-strategic-investor-program .ContactTheme-btn:hover{
       background-color: transparent;
       color: var(--strategic-theme-blue);
       transition: 0.2s all linear;
   }
-  .page-strategic-investor-homepage .ContactTheme-btn i {
+  .page-strategic-investor-program .ContactTheme-btn i {
 
       font-size: 15px;
           transform: rotate(180deg);
 
   }
 
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle {
+  .page-strategic-investor-program .stsContact-section .strategicTitle {
           position: relative;
       z-index: 1;
       margin: 0 !important;
@@ -8908,7 +8908,7 @@ text-align: center;
       padding: 20px 20px 20px 120px;
       width: 100% !important
   }
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle p {
+  .page-strategic-investor-program .stsContact-section .strategicTitle p {
       font-size: 30px;
       line-height: 46px;
       color: #fff;
@@ -8921,13 +8921,13 @@ text-align: center;
 
 
   /*ServiceV3*/
-  .page-strategic-investor-homepage span.servicesNavLink{
+  .page-strategic-investor-program span.servicesNavLink{
       visibility: hidden;
   }
-  .page-strategic-investor-homepage .strategyServices{
+  .page-strategic-investor-program .strategyServices{
       position: relative;
   }
-  .page-strategic-investor-homepage .strategyServices::after{
+  .page-strategic-investor-program .strategyServices::after{
       position: absolute;
       top: 0;
       width: 100%;
@@ -8940,27 +8940,27 @@ text-align: center;
       z-index: -2;
       left: 0;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Tabs .strategicTitle {
+  .page-strategic-investor-program .serviceSectionV3Tabs .strategicTitle {
       margin-bottom: 20px !important;
       margin-top: 20px !important;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper{
+  .page-strategic-investor-program .serviceSectionV3Wrapper{
       display: flex;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Col{
       width: 60%;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Col:last-child{
+  .page-strategic-investor-program .serviceSectionV3Col:last-child{
       width: 40%;
       display: flex;
   }
-  .page-strategic-investor-homepage .servicesNavLinkWrap{
+  .page-strategic-investor-program .servicesNavLinkWrap{
       justify-content: space-between;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Tabs.serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Tabs.serviceSectionV3Col{
       padding: 0 60px 0 60px;
   }
-  .page-strategic-investor-homepage .servicesNavLink{
+  .page-strategic-investor-program .servicesNavLink{
       display: inline-block;
       width: 30%;
       min-height: 100px;
@@ -8977,24 +8977,24 @@ text-align: center;
       z-index: 1;
 
   }
-  .page-strategic-investor-homepage .seviceV3Title{
+  .page-strategic-investor-program .seviceV3Title{
       font-size: 18px;
       display: inline-block;
       position: relative;
       padding-bottom: 10px;
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover{
+  .page-strategic-investor-program .servicesNavLink:hover{
       background-color: transparent;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .nav-pills .nav-link.active .seviceV3Title:after, .page-strategic-investor-homepage .nav-pills .show>.nav-link .seviceV3Title:after{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .nav-pills .nav-link.active .seviceV3Title:after, .page-strategic-investor-program .nav-pills .show>.nav-link .seviceV3Title:after{
           width: 40%;
       transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover .seviceV3Title:after{
+  .page-strategic-investor-program .servicesNavLink:hover .seviceV3Title:after{
       width: 40%;
       transition: 0.4s all linear;
       }
-  .page-strategic-investor-homepage .seviceV3Title:after{
+  .page-strategic-investor-program .seviceV3Title:after{
       width: 0%;
       height: 2px;
       background-color:#ffffff;
@@ -9006,7 +9006,7 @@ text-align: center;
       content: '';
       transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .servicesNavLink::after{
+  .page-strategic-investor-program .servicesNavLink::after{
       position: absolute;
       width: 100%;
       height: 50%;
@@ -9020,16 +9020,16 @@ text-align: center;
       z-index: -2;
        transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover:after{
+  .page-strategic-investor-program .servicesNavLink:hover:after{
   opacity: 1;
   height: 100%;
   transition: 0.4s ease-in-out;
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover .seviceV3Title{
+  .page-strategic-investor-program .servicesNavLink:hover .seviceV3Title{
       color: #fff;
       opacity: 1;
   }
-  .page-strategic-investor-homepage .seviceV3ImageWrap{
+  .page-strategic-investor-program .seviceV3ImageWrap{
   /*	    background-image: url(../images/service-round.png);*/
       width: 70px;
       height: 70px;
@@ -9041,7 +9041,7 @@ text-align: center;
       margin-bottom: 15px;
 
   }
-  .page-strategic-investor-homepage .iconImageService{
+  .page-strategic-investor-program .iconImageService{
       height: 60px;
       padding: 5px;
       /* transform: scale(0.9); */
@@ -9052,19 +9052,19 @@ text-align: center;
       transition: 0.4s all linear;
       width: 60px;
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover .iconImageService{
+  .page-strategic-investor-program .servicesNavLink:hover .iconImageService{
       background-color: var(--strategic-theme-blue);
       transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .nav-pills .nav-link.active .iconImageService, .page-strategic-investor-homepage .nav-pills .show>.nav-link .iconImageService{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .nav-pills .nav-link.active .iconImageService, .page-strategic-investor-program .nav-pills .show>.nav-link .iconImageService{
       background-color: var(--strategic-theme-blue);
       transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .servicesNavLink img{
+  .page-strategic-investor-program .servicesNavLink img{
      width: 100%;
      padding: 8px;
   }
-  .page-strategic-investor-homepage .seviceV3BgIcon{
+  .page-strategic-investor-program .seviceV3BgIcon{
       position: absolute;
       z-index: -1;
       /* background-color: #fff; */
@@ -9075,7 +9075,7 @@ text-align: center;
            transition: 0.4s all linear;
            transform: scale(1.0);
   }
-  .page-strategic-investor-homepage .seviceV3BgIcon img{
+  .page-strategic-investor-program .seviceV3BgIcon img{
   width: 100%;
       /* height: 90px; */
       background: transparent;
@@ -9083,56 +9083,56 @@ text-align: center;
       height: 100%;
       transform: scale(1.4);
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover .seviceV3BgIcon img{
+  .page-strategic-investor-program .servicesNavLink:hover .seviceV3BgIcon img{
        transform: scale(1.2);
        transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover img{
+  .page-strategic-investor-program .servicesNavLink:hover img{
 
       transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover .seviceV3BgIcon{
+  .page-strategic-investor-program .servicesNavLink:hover .seviceV3BgIcon{
        transform: scale(0.85);
        transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .nav-pills .nav-link.active .seviceV3BgIcon{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .nav-pills .nav-link.active .seviceV3BgIcon{
        transform: scale(0.85);
        transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .nav-pills .nav-link.active .seviceV3BgIcon img, .page-strategic-investor-homepage .nav-pills .show>.nav-link .seviceV3BgIcon img{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .nav-pills .nav-link.active .seviceV3BgIcon img, .page-strategic-investor-program .nav-pills .show>.nav-link .seviceV3BgIcon img{
        transform: scale(1.5);
        transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .nav-pills .nav-link.active img, .page-strategic-investor-homepage .nav-pills .show>.nav-link img{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .nav-pills .nav-link.active img, .page-strategic-investor-program .nav-pills .show>.nav-link img{
 
       transition: 0.4s all linear;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .nav-pills .nav-link.active, .page-strategic-investor-homepage .nav-pills .show>.nav-link{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .nav-pills .nav-link.active, .page-strategic-investor-program .nav-pills .show>.nav-link{
       background-color: var(--strategic-theme-blue);
       color: #fff;
 
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper  .nav-pills .nav-link{
+  .page-strategic-investor-program .serviceSectionV3Wrapper  .nav-pills .nav-link{
   color: var(--strategic-text-color);
       font-size: 15px;
   /*    box-shadow: var(--strategic-card-shadow);*/
       font-weight: bold;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .tab-content>.tab-pane{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .tab-content>.tab-pane{
       width: 100%;
       height: 100%;
   }
-  .page-strategic-investor-homepage .serviceTabPaneContent {
+  .page-strategic-investor-program .serviceTabPaneContent {
 
       width: 100%;
       min-height: 100%;
       display: flex;
       overflow: hidden;
   }
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents{
+  .page-strategic-investor-program .serviceSectionV3TabsContents{
       position: relative;
   }
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents::after {
+  .page-strategic-investor-program .serviceSectionV3TabsContents::after {
       position: absolute;
       width: calc(100% + 20px);
       height: calc(100% + 40px);
@@ -9149,7 +9149,7 @@ text-align: center;
       box-shadow: 0 3px 6px rgb(122 122 122 / 35%), -1px -3px 6px rgb(185 185 185 / 28%);
   }
 
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents::before{
+  .page-strategic-investor-program .serviceSectionV3TabsContents::before{
       position: absolute;
       width: 100%;
       height: 100%;
@@ -9161,7 +9161,7 @@ text-align: center;
       z-index: 1;
   }
 
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .tab-content>.tab-pane .serviceTabPaneContent img{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .tab-content>.tab-pane .serviceTabPaneContent img{
       position: absolute;
       width: 100%;
       height: 100%;
@@ -9169,30 +9169,30 @@ text-align: center;
       transform: scale(1.2);
       transition:  0.4s all linear;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper .tab-content>.active .serviceTabPaneContent img{
+  .page-strategic-investor-program .serviceSectionV3Wrapper .tab-content>.active .serviceTabPaneContent img{
       transform: scale(1);
       transition: .65s cubic-bezier(.05,0.2,.1,1);
   }
 
-  .page-strategic-investor-homepage .serviceSectionV3Description{
+  .page-strategic-investor-program .serviceSectionV3Description{
       position: relative;
           width: 60%;
       margin: auto;
       z-index: 3;
       text-align: center;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description h4, .page-strategic-investor-homepage .serviceSectionV3Description p{
+  .page-strategic-investor-program .serviceSectionV3Description h4, .page-strategic-investor-program .serviceSectionV3Description p{
       color: #fff;
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description h4{
+  .page-strategic-investor-program .serviceSectionV3Description h4{
       margin-bottom: 40px	;
       font-size: 38px;
   }
   /*ServiceV3*/
 
 
-     .page-strategic-investor-homepage .serviceLoadMoreBtn{
+     .page-strategic-investor-program .serviceLoadMoreBtn{
          width: 150px;
          padding: 15px;
          background-color: var(--strategic-theme-blue);
@@ -9210,47 +9210,47 @@ text-align: center;
 
      }
 
-     .page-strategic-investor-homepage .serviceLoadmore-show{
+     .page-strategic-investor-program .serviceLoadmore-show{
              height: 100%;
          opacity: 1;
              transition: all .65s cubic-bezier(.05,0.2,.1,1);
              visibility: visible;
      }
-     .page-strategic-investor-homepage .myServiceSwiper {
+     .page-strategic-investor-program .myServiceSwiper {
          padding-right: 200px;
 
      }
-     .page-strategic-investor-homepage .myServiceSwiper .swiper-wrapper{
+     .page-strategic-investor-program .myServiceSwiper .swiper-wrapper{
          padding-top: 65px;
      }
-     .page-strategic-investor-homepage .strategyServices{
+     .page-strategic-investor-program .strategyServices{
          position: relative;
      }
-  .page-strategic-investor-homepage .myServiceSwiperBtns{
+  .page-strategic-investor-program .myServiceSwiperBtns{
           position: absolute;
       top: -51px;
       width: 150px;
       right: 77px;
       height: 150px;
   }
-  .page-strategic-investor-homepage .myServiceSwiperBtns .swiper-button-next, .page-strategic-investor-homepage .myServiceSwiperBtns .swiper-rtl .swiper-button-prev{
+  .page-strategic-investor-program .myServiceSwiperBtns .swiper-button-next, .page-strategic-investor-program .myServiceSwiperBtns .swiper-rtl .swiper-button-prev{
           background: var(--strategic-theme-blue);
       width: 50px;
       height: 50px;
       border-radius: 100%;
   }
-  .page-strategic-investor-homepage .myServiceSwiperBtns .swiper-button-prev, .page-strategic-investor-homepage .myServiceSwiperBtns .swiper-rtl .swiper-button-next{
+  .page-strategic-investor-program .myServiceSwiperBtns .swiper-button-prev, .page-strategic-investor-program .myServiceSwiperBtns .swiper-rtl .swiper-button-next{
           background: var(--strategic-theme-blue);
       width: 50px;
       height: 50px;
       border-radius: 100%;
   }
-  .page-strategic-investor-homepage .myServiceSwiperBtns .swiper-button-next:after, .page-strategic-investor-homepage .myServiceSwiperBtns .swiper-button-prev:after{
+  .page-strategic-investor-program .myServiceSwiperBtns .swiper-button-next:after, .page-strategic-investor-program .myServiceSwiperBtns .swiper-button-prev:after{
       font-size: 20px;
       color: #fff;
       font-weight: bold;
   }
-     .page-strategic-investor-homepage .myServiceSwiperWrapper::after{
+     .page-strategic-investor-program .myServiceSwiperWrapper::after{
          position: absolute;
       width: 100%;
       height: 75%;
@@ -9261,20 +9261,20 @@ text-align: center;
       z-index: -1;
      }
 
-  .page-strategic-investor-homepage .container-fluid.serviceContainer{
+  .page-strategic-investor-program .container-fluid.serviceContainer{
       padding-right: 200px;
       padding-left: 200px;
   }
-  .page-strategic-investor-homepage .myServiceItem img{
+  .page-strategic-investor-program .myServiceItem img{
       width: 100%;
           transform: scale(1);
           transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .myServiceItem:hover img{
+  .page-strategic-investor-program .myServiceItem:hover img{
       transform: scale(1.2);
           transition: all .65s cubic-bezier(.05,0.2,.1,1);
   }
-  .page-strategic-investor-homepage .myServiceItem{
+  .page-strategic-investor-program .myServiceItem{
       position: relative;
       width: 340px;
       margin: auto;
@@ -9284,7 +9284,7 @@ text-align: center;
       overflow: hidden;
 
   }
-  .page-strategic-investor-homepage .myServiceItem::after{
+  .page-strategic-investor-program .myServiceItem::after{
       content: '';
       position: absolute;
       width: 100%;
@@ -9295,11 +9295,11 @@ text-align: center;
       left: 0;
       transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .myServiceItem:hover:after{
+  .page-strategic-investor-program .myServiceItem:hover:after{
       transition: all .65s cubic-bezier(.05,0.2,.1,1);
           opacity: 0.6;
   }
-  .page-strategic-investor-homepage .myServiceContent{
+  .page-strategic-investor-program .myServiceContent{
       position: absolute;
       bottom: 0;
       left: 0;
@@ -9309,7 +9309,7 @@ text-align: center;
       z-index: 2;
       padding-top: 30px;
   }
-  .page-strategic-investor-homepage .myServiceContent:after{
+  .page-strategic-investor-program .myServiceContent:after{
       width: 100%;
       height: 55%;
       content: '';
@@ -9321,7 +9321,7 @@ text-align: center;
       z-index: -1;
       transition: 0.2s all linear;
   }
-  .page-strategic-investor-homepage span.servicesItemCount {
+  .page-strategic-investor-program span.servicesItemCount {
       position: absolute;
       color: #fff;
       right: 15px;
@@ -9330,17 +9330,17 @@ text-align: center;
       font-weight: bold;
       z-index: 1;
   }
-  .page-strategic-investor-homepage .swiper-slide-active .myServiceItem .myServiceContent:after{
+  .page-strategic-investor-program .swiper-slide-active .myServiceItem .myServiceContent:after{
       opacity: 0.8;
       height: 100%;
       transition: all .65s cubic-bezier(.05,0.2,.1,1);
   }
-  .page-strategic-investor-homepage .myServiceItem:hover .myServiceContent:after{
+  .page-strategic-investor-program .myServiceItem:hover .myServiceContent:after{
       opacity: 0.8;
       height: 100%;
       transition: all .65s cubic-bezier(.05,0.2,.1,1);
   }
-  .page-strategic-investor-homepage .myServiceContent h4{
+  .page-strategic-investor-program .myServiceContent h4{
       color: #fff;
       font-size: 22px;
       position: relative;
@@ -9350,7 +9350,7 @@ text-align: center;
       top: 15px;
           transition: 0.3s all linear;
   }
-  .page-strategic-investor-homepage .myServiceContent h4::after{
+  .page-strategic-investor-program .myServiceContent h4::after{
       position: absolute;
       width: 3px;
       height: 100%;
@@ -9359,7 +9359,7 @@ text-align: center;
       top: 0;
       background-color: var(--strategic-theme-green);
   }
-  .page-strategic-investor-homepage .myServiceContent p{
+  .page-strategic-investor-program .myServiceContent p{
       color: #fff;
       opacity: 0;
       position: relative;
@@ -9367,21 +9367,21 @@ text-align: center;
       font-size: 18px;
       transition: 0.2s all linear;
   }
-  .page-strategic-investor-homepage .swiper-slide-active .myServiceItem .myServiceContent h4{
+  .page-strategic-investor-program .swiper-slide-active .myServiceItem .myServiceContent h4{
   transition: 0.2s all linear;
           top: 0px;
   }
 
-  .page-strategic-investor-homepage .myServiceItem:hover .myServiceContent h4{
+  .page-strategic-investor-program .myServiceItem:hover .myServiceContent h4{
       transition: 0.2s all linear;
           top: 0px;
   }
-  .page-strategic-investor-homepage .myServiceItem:hover .myServiceContent p{
+  .page-strategic-investor-program .myServiceItem:hover .myServiceContent p{
       opacity: 0.8;
       transition: 0.2s all linear;
           top: 0px;
   }
-  .page-strategic-investor-homepage .swiper-slide-active .myServiceItem .myServiceContent p{
+  .page-strategic-investor-program .swiper-slide-active .myServiceItem .myServiceContent p{
       opacity: 0.8;
       transition: 0.2s all linear;
           top: 0px;
@@ -9391,14 +9391,14 @@ text-align: center;
 
    /*Social Media Section Start*/
 
-   .page-strategic-investor-homepage .stssocialMedia-feed {
+   .page-strategic-investor-program .stssocialMedia-feed {
 
            width: 100%;
            background: #f0f5f6;
            padding: 100px 0 20px;
            padding-top: 50px !important;
    }
-   .page-strategic-investor-homepage .stsMediatitle-heading {
+   .page-strategic-investor-program .stsMediatitle-heading {
 
            font-size: 45px;
       font-weight: 600;
@@ -9414,15 +9414,15 @@ text-align: center;
       width: 100%;
       justify-content: center;
    }
-   .page-strategic-investor-homepage .strategicMediaSwiper {
+   .page-strategic-investor-program .strategicMediaSwiper {
 
        width: 100%;
    }
-   .page-strategic-investor-homepage .strategicMediaSwiper .swiper-wrapper {
+   .page-strategic-investor-program .strategicMediaSwiper .swiper-wrapper {
 
        margin-bottom: 80px;
    }
-  .page-strategic-investor-homepage .smFeed-box  {
+  .page-strategic-investor-program .smFeed-box  {
 
       width: 100%;
       box-shadow: 0 2px 4px rgb(0 0 0 / 17%);
@@ -9430,18 +9430,18 @@ text-align: center;
       background-color: #ffffff;
   }
 
-  .page-strategic-investor-homepage .smFeedbox-img {
+  .page-strategic-investor-program .smFeedbox-img {
 
       width: 100%;
       position: relative;
   }
 
-  .page-strategic-investor-homepage .smFeedbox-img img {
+  .page-strategic-investor-program .smFeedbox-img img {
 
       width: 100%;
       object-fit: cover;
   }
-  .page-strategic-investor-homepage .smFeed-twticon {
+  .page-strategic-investor-program .smFeed-twticon {
 
       position: absolute;
       top: 16px;
@@ -9452,24 +9452,24 @@ text-align: center;
       justify-content: center;
       width: 100%;
   }
-  .page-strategic-investor-homepage .smFeed-twticon i  {
+  .page-strategic-investor-program .smFeed-twticon i  {
 
       color: #fff;
       font-size: 24px;
       text-shadow: 0 0 8px rgb(0 0 0 / 42%);
   }
 
-  .page-strategic-investor-homepage .smFeedbox-text {
+  .page-strategic-investor-program .smFeedbox-text {
 
       width: 100%;
       position: relative;
       padding: 10px 15px;
 
   }
-  .page-strategic-investor-homepage .smFeedbox-text p{
+  .page-strategic-investor-program .smFeedbox-text p{
       overflow:hidden;
   }
-  .page-strategic-investor-homepage .smfeedlogo-img {
+  .page-strategic-investor-program .smfeedlogo-img {
 
         border: 2px solid #fff;
       box-shadow: 0 1px 2px hsl(0deg 0% 47% / 30%) !important;
@@ -9486,14 +9486,14 @@ text-align: center;
       margin: auto;
       background: #fff;
   }
-  .page-strategic-investor-homepage .smfeedlogo-img img  {
+  .page-strategic-investor-program .smfeedlogo-img img  {
 
       width: 100%;
       object-fit: cover;
   }
 
 
-  .page-strategic-investor-homepage .smfeedbox-title {
+  .page-strategic-investor-program .smfeedbox-title {
 
         font-size: 14px;
       width: 100%;
@@ -9504,7 +9504,7 @@ text-align: center;
       color: #454545;
       margin-top: 35px;
   }
-  .page-strategic-investor-homepage .smfeedpost-date  {
+  .page-strategic-investor-program .smfeedpost-date  {
 
 
       overflow: hidden;
@@ -9517,7 +9517,7 @@ text-align: center;
   }
 
 
-  .page-strategic-investor-homepage .smfeedbox-description {
+  .page-strategic-investor-program .smfeedbox-description {
 
       color: #7B838C;
       font-size:16px;
@@ -9526,7 +9526,7 @@ text-align: center;
       font-weight: 500;
   }
 
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-next {
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-next {
 
         width: 50px;
       height: 50px;
@@ -9534,7 +9534,7 @@ text-align: center;
       border: 1px solid #e1e6e4;
   }
 
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next:after, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev:after, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next:after, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-prev:after {
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next:after, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev:after, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next:after, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-prev:after {
 
       font-size: 16px;
       line-height: 48px;
@@ -9544,7 +9544,7 @@ text-align: center;
     transition-duration: .5s;
     transition-property: all;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next:after, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev:after {
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next:after, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev:after {
 
       color: #fff;
       transition-delay: .1s;
@@ -9552,23 +9552,23 @@ text-align: center;
     transition-duration: .2s;
     transition-property: all;
   }
-  .page-strategic-investor-homepage .strategicMediaSwiper .smNavigation-sec {
+  .page-strategic-investor-program .strategicMediaSwiper .smNavigation-sec {
 
       position: absolute;
       bottom: 30px;
       left: 0;
       width: 100%;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-prev {
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-prev {
 
       right: 46%;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-next {
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-next {
 
       left: 47%;
   }
 
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next:before, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev:before {
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next:before, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev:before {
 
         content: "";
       position: absolute;
@@ -9591,7 +9591,7 @@ text-align: center;
       transition-property: all;
   }
 
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next:hover:before, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev:hover:before  {
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next:hover:before, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev:hover:before  {
 
          opacity: 1.0;
       -webkit-transform: perspective(400px) rotateX(0deg) scale(1.0);
@@ -9602,7 +9602,7 @@ text-align: center;
       transition-duration: .2s;
       transition-property: all;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next.activeArrow:before, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev.activeArrow:before  {
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next.activeArrow:before, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev.activeArrow:before  {
 
          opacity: 1.0;
       -webkit-transform: perspective(400px) rotateX(0deg) scale(1.0);
@@ -9618,259 +9618,259 @@ text-align: center;
    /*Social Media Section End*/
 
   @media(max-width:1399px){
-      .page-strategic-investor-homepage .container-fluid.serviceContainer{
+      .page-strategic-investor-program .container-fluid.serviceContainer{
       padding-right: 20px;
       padding-left: 20px;
   }
-  .page-strategic-investor-homepage .myServiceItem{
+  .page-strategic-investor-program .myServiceItem{
       width: 100%;
   }
-      .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight{
+      .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight{
               transform: scale(0.8);
       }
 
-  .page-strategic-investor-homepage .termsConditionV2{
+  .page-strategic-investor-program .termsConditionV2{
       bottom: -215px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap{
+  .page-strategic-investor-program .termsConditionV2Wtap{
       width: calc(100% - 215px);
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap::after{
+  .page-strategic-investor-program .termsConditionV2Wtap::after{
       right: -110px;
   }
 
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle{
+  .page-strategic-investor-program .stsContact-section .strategicTitle{
       padding:11px 20px 20px 0 ;
   }
-  .page-strategic-investor-homepage .stscontactForm-sec{
+  .page-strategic-investor-program .stscontactForm-sec{
       width: 100% !important;
   }
 
-  .page-strategic-investor-homepage .strategicTitle h1{
+  .page-strategic-investor-program .strategicTitle h1{
       font-size: 45px;
   }
-  .page-strategic-investor-homepage .servicesItemWrapperContent h4{
+  .page-strategic-investor-program .servicesItemWrapperContent h4{
       font-size: 30px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap p{
+  .page-strategic-investor-program .termsConditionV2Wtap p{
       font-size: 16px;
   }
-  .page-strategic-investor-homepage .smfeedbox-description{
+  .page-strategic-investor-program .smfeedbox-description{
       font-size: 14px;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-next{
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-next{
       left: 43%;
   }
-  .page-strategic-investor-homepage .strategicContent p{
+  .page-strategic-investor-program .strategicContent p{
       font-size: 18px;
   }
 
 
-  .page-strategic-investor-homepage .myServiceItem img{
+  .page-strategic-investor-program .myServiceItem img{
       min-height: 400px;
       object-fit: cover;
   }
-  .page-strategic-investor-homepage .myServiceContent h4{
+  .page-strategic-investor-program .myServiceContent h4{
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .myServiceContent p{
+  .page-strategic-investor-program .myServiceContent p{
       font-size: 16px;
   }
-  .page-strategic-investor-homepage .myServiceContent{
+  .page-strategic-investor-program .myServiceContent{
       padding-bottom: 25px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item{
+  .page-strategic-investor-program .howTOApplyV2Item{
       width: auto;
       min-height: 490px;
   }
-      .page-strategic-investor-homepage .howToApply .container-fluid{
+      .page-strategic-investor-program .howToApply .container-fluid{
               padding-left: 15px;
       padding-right: 15px;
       }
-      .page-strategic-investor-homepage .howTOApplyV2ItemCountWrap{
+      .page-strategic-investor-program .howTOApplyV2ItemCountWrap{
           right: -22px;
       }
-      .page-strategic-investor-homepage .howTOApplyV2Arrow {
+      .page-strategic-investor-program .howTOApplyV2Arrow {
       left: -10px;
       height: 10px;
       font-size: 25px;
 
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item h5{
+  .page-strategic-investor-program .howTOApplyV2Item h5{
       font-size: 22px;
   }
-  .page-strategic-investor-homepage .howToApplyBody p{
+  .page-strategic-investor-program .howToApplyBody p{
       font-size: 16px;
   }
 
-  .page-strategic-investor-homepage .targerSectionV3 .container-fluid{
+  .page-strategic-investor-program .targerSectionV3 .container-fluid{
       padding-left: 15px;
       padding-right: 15px;
   }
   }
 
   @media(min-width: 1601px) and (max-width:1800px){
-      .page-strategic-investor-homepage .howToApply .container-fluid{
+      .page-strategic-investor-program .howToApply .container-fluid{
               padding-left: 15px;
       padding-right: 15px;
       }
-          .page-strategic-investor-homepage .container-fluid.serviceContainer {
+          .page-strategic-investor-program .container-fluid.serviceContainer {
       padding-right: 50px;
       padding-left: 50px;
   }
-  .page-strategic-investor-homepage .myServiceItem{
+  .page-strategic-investor-program .myServiceItem{
       width: 100%;
   }
   }
   @media(min-width:1400px) and (max-width:1600px) {
-      .page-strategic-investor-homepage .stsFaq-Section .strategicTitle{
+      .page-strategic-investor-program .stsFaq-Section .strategicTitle{
           padding-top:50px;
       }
-      .page-strategic-investor-homepage .container-fluid.serviceContainer {
+      .page-strategic-investor-program .container-fluid.serviceContainer {
       padding-right: 100px;
       padding-left: 100px;
   }
-  .page-strategic-investor-homepage .myServiceItem{
+  .page-strategic-investor-program .myServiceItem{
       width: 100%;
   }
-  .page-strategic-investor-homepage .termsConditionV2{
+  .page-strategic-investor-program .termsConditionV2{
       bottom: -215px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap{
+  .page-strategic-investor-program .termsConditionV2Wtap{
       width: calc(100% - 215px);
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap::after{
+  .page-strategic-investor-program .termsConditionV2Wtap::after{
       right: -110px;
   }
-  .page-strategic-investor-homepage .howToApply .container-fluid{
+  .page-strategic-investor-program .howToApply .container-fluid{
               padding-left: 40px;
       padding-right: 40px;
       }
-      .page-strategic-investor-homepage .howTOApplyV2Wrapper{
+      .page-strategic-investor-program .howTOApplyV2Wrapper{
           max-width: 1320px;
           margin: auto;
       }
-      .page-strategic-investor-homepage .howTOApplyV2Arrow{
+      .page-strategic-investor-program .howTOApplyV2Arrow{
           height: 12px;
           right: -50px;
       }
 
-      .page-strategic-investor-homepage .howTOApplyV2Item{
+      .page-strategic-investor-program .howTOApplyV2Item{
       width: auto;
       min-height: 490px;
   }
 
-      .page-strategic-investor-homepage .howTOApplyV2ItemCountWrap{
+      .page-strategic-investor-program .howTOApplyV2ItemCountWrap{
           right: -22px;
       }
-      .page-strategic-investor-homepage .howTOApplyV2Arrow {
+      .page-strategic-investor-program .howTOApplyV2Arrow {
       right: -10px;
       height: 10px;
       font-size: 25px;
 
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item h5{
+  .page-strategic-investor-program .howTOApplyV2Item h5{
       font-size: 22px;
   }
-  .page-strategic-investor-homepage .howToApplyBody p{
+  .page-strategic-investor-program .howToApplyBody p{
       font-size: 16px;
   }
 
 
-      .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-next{
+      .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-next{
       left: 43%;
   }
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle {
+  .page-strategic-investor-program .stsContact-section .strategicTitle {
       padding: 11px 20px 20px 0;
   }
-  .page-strategic-investor-homepage .stscontactForm-sec{
+  .page-strategic-investor-program .stscontactForm-sec{
       width: 90% !important;
   }
 
-  .page-strategic-investor-homepage .myServiceItem img{
+  .page-strategic-investor-program .myServiceItem img{
       min-height: 390px;
       object-fit: cover;
   }
-  .page-strategic-investor-homepage .myServiceContent h4{
+  .page-strategic-investor-program .myServiceContent h4{
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .myServiceContent p{
+  .page-strategic-investor-program .myServiceContent p{
       font-size: 16px;
   }
-  .page-strategic-investor-homepage .myServiceContent{
+  .page-strategic-investor-program .myServiceContent{
       padding-bottom: 25px;
   }
   }
 
   @media(min-width:1200px) and (max-width:1299px){
 
-  .page-strategic-investor-homepage .programBenefitItem{
+  .page-strategic-investor-program .programBenefitItem{
       min-height: 585px;
   }
-  .page-strategic-investor-homepage .programBenefitItemTop h4{
+  .page-strategic-investor-program .programBenefitItemTop h4{
       font-size: 20px;
       line-height: 27px;
       min-height: 54px;
   }
-  .page-strategic-investor-homepage .divLine{
+  .page-strategic-investor-program .divLine{
       padding: 20px 0;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgSec .strategicTitle{
+  .page-strategic-investor-program .whatWeExpectSectionBgSec .strategicTitle{
       padding: 20px 20px 20px 40px;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrapRow{
+  .page-strategic-investor-program .whatWeExpectItemWrapRow{
       padding: 100px 40px;
   }
-  .page-strategic-investor-homepage .whatWeExpect p{
+  .page-strategic-investor-program .whatWeExpect p{
       font-weight: normal;
       opacity: 1;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description h4{
+  .page-strategic-investor-program .serviceSectionV3Description h4{
       font-size: 30px;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemImg{
+  .page-strategic-investor-program .targerSectionV2ItemImg{
       width: 70px;
       height: 70px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item h5{
+  .page-strategic-investor-program .howTOApplyV2Item h5{
       margin-bottom: 20px;
   }
-  .page-strategic-investor-homepage .howToApplyBody{
+  .page-strategic-investor-program .howToApplyBody{
       transform: unset;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap h1{
+  .page-strategic-investor-program .termsConditionV2Wtap h1{
       font-size: 35px;
   }
   }
 
   @media(min-width:992px) and (max-width:1199px){
-    .page-strategic-investor-homepage .banner-container p {
+    .page-strategic-investor-program .banner-container p {
         font-size: 20px;
         line-height: 31px;
         font-weight: normal;
     }
-  .page-strategic-investor-homepage .pt-100{
+  .page-strategic-investor-program .pt-100{
   padding-top: 50px;
   padding-bottom: 50px;
   }
   /*Enrol*/
-  .page-strategic-investor-homepage .enroleRequirementWrap{
+  .page-strategic-investor-program .enroleRequirementWrap{
       padding-right: 4%;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap .strategicTitle h1{
+  .page-strategic-investor-program .enroleRequirementWrap .strategicTitle h1{
       font-size: 30px;
       line-height: 47px;
       font-weight: bold;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul p{
+  .page-strategic-investor-program .enroleRequirementWrap ul p{
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul li{
+  .page-strategic-investor-program .enroleRequirementWrap ul li{
       font-size: 18px;
       display: flex;
       align-items: baseline;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm h4{
+  .page-strategic-investor-program .targerSectionV3Btm h4{
       line-height: 34px;
       font-size: 20px;
   }
@@ -9878,175 +9878,175 @@ text-align: center;
 
 
   /*Banner*/
-  .page-strategic-investor-homepage .bannerContentDesc h1{
+  .page-strategic-investor-program .bannerContentDesc h1{
       font-size: 45px;
       line-height: 67px;
       font-weight: 500;
   }
-  .page-strategic-investor-homepage .bannerContentDesc p{
+  .page-strategic-investor-program .bannerContentDesc p{
       font-size: 20px;
   }
   /*Banner*/
-  .page-strategic-investor-homepage .aboutSection{
+  .page-strategic-investor-program .aboutSection{
       padding-top:50px;
   }
 
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer{
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer{
       min-height: 500px;
   }
 
 
   /*benefit*/
-  .page-strategic-investor-homepage .strategicTitle h1{
+  .page-strategic-investor-program .strategicTitle h1{
       font-size: 30px;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgSec .strategicTitle{
+  .page-strategic-investor-program .whatWeExpectSectionBgSec .strategicTitle{
       padding: 20px 20px 20px 20px;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrapRow{
+  .page-strategic-investor-program .whatWeExpectItemWrapRow{
       padding: 20px 20px;
       padding-left: 20px;
   }
-  .page-strategic-investor-homepage .whatWeExpect p{
+  .page-strategic-investor-program .whatWeExpect p{
       font-size: 15px;
       line-height: 27px;
       opacity: 1;
   }
   /*benefit*/
   /*Service*/
-  .page-strategic-investor-homepage .serviceSectionV3Tabs.serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Tabs.serviceSectionV3Col{
       padding: 0 20px 0 20px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description {
+  .page-strategic-investor-program .serviceSectionV3Description {
       width: 90%;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description h4{
+  .page-strategic-investor-program .serviceSectionV3Description h4{
       font-size: 30px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents::after{
+  .page-strategic-investor-program .serviceSectionV3TabsContents::after{
           width: calc(100% + 10px);
       height: calc(100% + 31px);
           left: -12px;
   }
-  .page-strategic-investor-homepage .seviceV3Title{
+  .page-strategic-investor-program .seviceV3Title{
       font-weight: normal;
       opacity: 1;
   }
-  .page-strategic-investor-homepage .servicesNavLink:hover .seviceV3Title{
+  .page-strategic-investor-program .servicesNavLink:hover .seviceV3Title{
       opacity: 1;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description p{
+  .page-strategic-investor-program .serviceSectionV3Description p{
       font-size: 18px;
       line-height: 27px;
   }
   /*Service*/
 
   /*Target*/
-  .page-strategic-investor-homepage .targerSection .strategicTitle h1{
+  .page-strategic-investor-program .targerSection .strategicTitle h1{
       font-size: 30px;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemImg{
+  .page-strategic-investor-program .targerSectionV2ItemImg{
       width: 65px;
       height: 65px;
       margin-bottom: 20px;
       margin-top: 20px;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemDes h4{
+  .page-strategic-investor-program .targerSectionV2ItemDes h4{
       font-size: 22px;
   }
-  .page-strategic-investor-homepage .targerSectionV2Item{
+  .page-strategic-investor-program .targerSectionV2Item{
           justify-content: flex-start;
   }
-  .page-strategic-investor-homepage .targerSectionV2Item{
+  .page-strategic-investor-program .targerSectionV2Item{
       padding: 20px 20px;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemDes p, .page-strategic-investor-homepage .targetedList li{
+  .page-strategic-investor-program .targerSectionV2ItemDes p, .page-strategic-investor-program .targetedList li{
       font-size: 16px;
   }
-  .page-strategic-investor-homepage .programBenefitItem{
+  .page-strategic-investor-program .programBenefitItem{
       min-height: 550px;
   }
-  .page-strategic-investor-homepage .divLine{
+  .page-strategic-investor-program .divLine{
       padding: 25px 0;
   }
-  .page-strategic-investor-homepage .programBenefitItemTop h4{
+  .page-strategic-investor-program .programBenefitItemTop h4{
       font-size: 20px;
   }
   /*Target*/
 
   /*How to apply*/
-  .page-strategic-investor-homepage .howTOApplyV2Item{
+  .page-strategic-investor-program .howTOApplyV2Item{
       min-height: 450px;
   }
-  .page-strategic-investor-homepage .howToApplyBody{
+  .page-strategic-investor-program .howToApplyBody{
       min-height: auto;
   }
-  .page-strategic-investor-homepage .howToApplyBody p{
+  .page-strategic-investor-program .howToApplyBody p{
       font-size: 18px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Wrapper .col-xl-3:nth-child(2) .howTOApplyV2Arrow{
+  .page-strategic-investor-program .howTOApplyV2Wrapper .col-xl-3:nth-child(2) .howTOApplyV2Arrow{
       display: none;
   }
-  .page-strategic-investor-homepage .howToApply{
+  .page-strategic-investor-program .howToApply{
       padding-bottom: 50px;
   }
   /*How to apply*/
 
   /*T&D*/
-  .page-strategic-investor-homepage .termsConditionV2Wtap::after{
+  .page-strategic-investor-program .termsConditionV2Wtap::after{
       display: none;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap{
+  .page-strategic-investor-program .termsConditionV2Wtap{
       width: 100%;
       padding: 20px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap h1{
+  .page-strategic-investor-program .termsConditionV2Wtap h1{
       font-size: 30px;
   }
   /*T&D*/
   /*FAQ*/
-  .page-strategic-investor-homepage .stsFaq-Section .strategicTitle{
+  .page-strategic-investor-program .stsFaq-Section .strategicTitle{
       margin-bottom: 20px !important;
       margin-top: 0;
   }
-  .page-strategic-investor-homepage .faqBg-sec{
+  .page-strategic-investor-program .faqBg-sec{
       padding-top: 50px;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn{
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn{
       font-size: 18px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .sts-accordion-body{
+  .page-strategic-investor-program .sts-accordion-body{
       font-size: 17px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle p{
+  .page-strategic-investor-program .stsContact-section .strategicTitle p{
       font-size: 24px;
       line-height: 37px;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm p{
+  .page-strategic-investor-program .targerSectionV3Btm p{
       font-size: 16px;
       line-height: 27px;
   }
   /*FAQ*/
 
-  .page-strategic-investor-homepage .programBenefitItemBtm p{
+  .page-strategic-investor-program .programBenefitItemBtm p{
           font-size: 16px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .targerSectionV3Item{
+  .page-strategic-investor-program .targerSectionV3Item{
       min-height: 580px;
   }
   /*SOCIAL MEDIA*/
-  .page-strategic-investor-homepage .stssocialMedia-feed .strategicTitle   {
+  .page-strategic-investor-program .stssocialMedia-feed .strategicTitle   {
       width: 100%;
       margin-bottom: 20px !important;
   }
   /*SOCIAL MEDIA*/
 
   /*Contact*/
-  .page-strategic-investor-homepage .stscontactForm-sec{
+  .page-strategic-investor-program .stscontactForm-sec{
       padding: 40px 20px;
   }
 
@@ -10057,22 +10057,22 @@ text-align: center;
   @media(min-width:768px) and (max-width:991px){
 
   /*Enrol*/
-  .page-strategic-investor-homepage .programPenefit {
+  .page-strategic-investor-program .programPenefit {
       background-attachment: fixed;
 
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap{
+  .page-strategic-investor-program .enroleRequirementWrap{
       padding-right: 4%;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap .strategicTitle h1{
+  .page-strategic-investor-program .enroleRequirementWrap .strategicTitle h1{
       font-size: 30px;
       line-height: 47px;
       font-weight: bold;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul p{
+  .page-strategic-investor-program .enroleRequirementWrap ul p{
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul li{
+  .page-strategic-investor-program .enroleRequirementWrap ul li{
       font-size: 18px;
       display: flex;
       align-items: baseline;
@@ -10081,172 +10081,172 @@ text-align: center;
   /*Enrol*/
 
 
-      .page-strategic-investor-homepage .bannerContentDesc{
+      .page-strategic-investor-program .bannerContentDesc{
           width: 90%;
       }
-      .page-strategic-investor-homepage .bannerContentDesc h1{
+      .page-strategic-investor-program .bannerContentDesc h1{
           font-size: 30px;
           margin-bottom: 25px;
           line-height: 45px;
       }
-      .page-strategic-investor-homepage .bannerContentDesc p{
+      .page-strategic-investor-program .bannerContentDesc p{
           font-size: 17px;
       }
-      .page-strategic-investor-homepage .aboutSection{
+      .page-strategic-investor-program .aboutSection{
           min-height: auto;
       }
-      .page-strategic-investor-homepage .strategicTitle h1{
+      .page-strategic-investor-program .strategicTitle h1{
           font-size: 30px;
           line-height: 45px;
       }
-      .page-strategic-investor-homepage .strategicSubTitle{
+      .page-strategic-investor-program .strategicSubTitle{
           font-size: 18px;
       }
-      .page-strategic-investor-homepage .strategicContent p {
+      .page-strategic-investor-program .strategicContent p {
       font-size: 17px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .aboutSection .align-items-center{
+  .page-strategic-investor-program .aboutSection .align-items-center{
       align-items: none !important;
   }
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGridWrapper{
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGridWrapper{
       top: 26px;
   }
-  .page-strategic-investor-homepage .aboutSection {
+  .page-strategic-investor-program .aboutSection {
       padding-top: 90px !important;
   }
-  .page-strategic-investor-homepage .strategicTitle.inlineTitile{
+  .page-strategic-investor-program .strategicTitle.inlineTitile{
       text-align: center;
   }
-  .page-strategic-investor-homepage .logoIconHead{
+  .page-strategic-investor-program .logoIconHead{
       left: 0;
       right: 0;
       margin: auto;
   }
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight{
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight{
           transform: scale(0.6);
   }
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer{
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer{
       min-height: 450px;
   }
-  .page-strategic-investor-homepage .divLine{
+  .page-strategic-investor-program .divLine{
       padding: 20px 0;
   }
 
   /*2*/
-  .page-strategic-investor-homepage .whatWeExpectItem{
+  .page-strategic-investor-program .whatWeExpectItem{
       width: 40%;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgDiv {
+  .page-strategic-investor-program .whatWeExpectSectionBgDiv {
       width: 100%;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgSec{
+  .page-strategic-investor-program .whatWeExpectSectionBgSec{
       min-height: auto;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgSec .strategicTitle{
+  .page-strategic-investor-program .whatWeExpectSectionBgSec .strategicTitle{
       padding: 20px 20px 20px 20px;
       text-align: center;
       margin-bottom: 0 !important;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrapRow{
+  .page-strategic-investor-program .whatWeExpectItemWrapRow{
       padding: 20px 20px;
           padding-right: 35px;
               display: flex;
       flex-wrap: wrap;
       justify-content: center;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgDiv::after{
+  .page-strategic-investor-program .whatWeExpectSectionBgDiv::after{
       opacity: 0.7;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem{
+  .page-strategic-investor-program .whatWeExpectItem{
       flex-direction: column;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrap{
+  .page-strategic-investor-program .whatWeExpectItemWrap{
       text-align: center;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem img{
+  .page-strategic-investor-program .whatWeExpectItem img{
       margin-left: 0;
           margin-bottom: 0px;
   }
-  .page-strategic-investor-homepage .whatWeExpect p{
+  .page-strategic-investor-program .whatWeExpect p{
       font-size: 15px;
       font-weight: normal;
       opacity: 1;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrap::after{
+  .page-strategic-investor-program .whatWeExpectItemWrap::after{
       content: unset;
   }
 
 
 
-  .page-strategic-investor-homepage .whatWeExpectItemImages{
+  .page-strategic-investor-program .whatWeExpectItemImages{
       margin-left: 0;
       margin-bottom: 15px;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem img{
+  .page-strategic-investor-program .whatWeExpectItem img{
       margin-left: 0;
 
   }
-  .page-strategic-investor-homepage .whatWeExpectItem h5, .page-strategic-investor-homepage .whatWeExpectItem.active h5, .page-strategic-investor-homepage .whatWeExpectItem:hover p{
+  .page-strategic-investor-program .whatWeExpectItem h5, .page-strategic-investor-program .whatWeExpectItem.active h5, .page-strategic-investor-program .whatWeExpectItem:hover p{
       color: #fff;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem.active p{
+  .page-strategic-investor-program .whatWeExpectItem.active p{
       color: #fff !important;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem.active{
+  .page-strategic-investor-program .whatWeExpectItem.active{
       background-color: transparent;
   }
-  .page-strategic-investor-homepage .whatWeExpect p{
+  .page-strategic-investor-program .whatWeExpect p{
       font-size: 15px;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrap::after{
+  .page-strategic-investor-program .whatWeExpectItemWrap::after{
       content: unset;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgDiv::after{
+  .page-strategic-investor-program .whatWeExpectSectionBgDiv::after{
       opacity: 0.7;
   }
-  .page-strategic-investor-homepage .whatWeExpect p{
+  .page-strategic-investor-program .whatWeExpect p{
       font-weight: normal;
       opacity: 1;
       color: #fff;
   }
 
   /*Service*/
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents  .tab-content{
+  .page-strategic-investor-program .serviceSectionV3TabsContents  .tab-content{
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Col{
       width: 100%;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Col:last-child{
+  .page-strategic-investor-program .serviceSectionV3Col:last-child{
       width: 100%;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper{
+  .page-strategic-investor-program .serviceSectionV3Wrapper{
       display: block;
   }
-  .page-strategic-investor-homepage .servicesNavLink{
+  .page-strategic-investor-program .servicesNavLink{
       width: 100%;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Tabs.serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Tabs.serviceSectionV3Col{
       padding: 0 20px 0 20px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description{
+  .page-strategic-investor-program .serviceSectionV3Description{
       width: 100%;
       padding: 20px;
   }
-  .page-strategic-investor-homepage .targerSection .mainStrategicFlex{
+  .page-strategic-investor-program .targerSection .mainStrategicFlex{
       padding: 20px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description h4 {
+  .page-strategic-investor-program .serviceSectionV3Description h4 {
       margin-bottom: 20px;
       font-size: 25px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Tabs.serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Tabs.serviceSectionV3Col{
       display: none;
   }
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents  .tab-content>.tab-pane{
+  .page-strategic-investor-program .serviceSectionV3TabsContents  .tab-content>.tab-pane{
       display: block;
       opacity: 1;
           height: auto;
@@ -10256,11 +10256,11 @@ text-align: center;
           width: 45%;
 
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description p{
+  .page-strategic-investor-program .serviceSectionV3Description p{
       font-size: 16px;
   }
 
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents  .tab-content>.tab-pane::after{
+  .page-strategic-investor-program .serviceSectionV3TabsContents  .tab-content>.tab-pane::after{
       position: absolute;
       width: 100%;
       height: 100%;
@@ -10270,117 +10270,117 @@ text-align: center;
       top: 0;
       left: 0;
   }
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents::before{
+  .page-strategic-investor-program .serviceSectionV3TabsContents::before{
       background-color: transparent;
   }
-  .page-strategic-investor-homepage .serviceMobileView .serviceSectionV3Description p{
+  .page-strategic-investor-program .serviceMobileView .serviceSectionV3Description p{
       font-size: 16px;
   }
   /*Service*/
-  .page-strategic-investor-homepage .programBenefitItemTop h4{
+  .page-strategic-investor-program .programBenefitItemTop h4{
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .targerSection .strategicTitle{
+  .page-strategic-investor-program .targerSection .strategicTitle{
       text-align: center;
       padding: 20px;
           margin-bottom: 0px !important;
   }
-  .page-strategic-investor-homepage .targerSection .strategicTitle h1{
+  .page-strategic-investor-program .targerSection .strategicTitle h1{
       font-size: 30px;
   }
 
-  .page-strategic-investor-homepage .targerSectionV2ItemImg{
+  .page-strategic-investor-program .targerSectionV2ItemImg{
       width: 65px;
       height: 65px;
       margin-bottom: 20px;
       margin-top: 20px;
   }
-  .page-strategic-investor-homepage .targerSectionV2Item{
+  .page-strategic-investor-program .targerSectionV2Item{
       justify-content: unset;
       flex-direction: column;
       padding: 40px 20px;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemDes{
+  .page-strategic-investor-program .targerSectionV2ItemDes{
       margin-right: 0;
       width: 100%;
   }
 
-  .page-strategic-investor-homepage .targerSectionV2ItemDes h4{
+  .page-strategic-investor-program .targerSectionV2ItemDes h4{
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemDes p, .page-strategic-investor-homepage .targetedList li{
+  .page-strategic-investor-program .targerSectionV2ItemDes p, .page-strategic-investor-program .targetedList li{
       font-size: 15px;
   }
-  .page-strategic-investor-homepage .targerSectionContent {
+  .page-strategic-investor-program .targerSectionContent {
       text-align: center;
   }
-  .page-strategic-investor-homepage .targerSectionContent h4{
+  .page-strategic-investor-program .targerSectionContent h4{
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .targerSectionContent p{
+  .page-strategic-investor-program .targerSectionContent p{
       font-size: 16px;
   }
-  .page-strategic-investor-homepage .Sts-tabContentSection .tab-pane.fade{
+  .page-strategic-investor-program .Sts-tabContentSection .tab-pane.fade{
       display: block;
       opacity: 1;
   }
-  .page-strategic-investor-homepage .stratTab-image{
+  .page-strategic-investor-program .stratTab-image{
       display: none;
   }
-  .page-strategic-investor-homepage .stsNav-Tabs.nav-tabs{
+  .page-strategic-investor-program .stsNav-Tabs.nav-tabs{
       display: none;
   }
-  .page-strategic-investor-homepage .Sts-tabContentSection .tab-pane .strategicTitle {
+  .page-strategic-investor-program .Sts-tabContentSection .tab-pane .strategicTitle {
       display: none;
   }
-  .page-strategic-investor-homepage .Sts-tabContentSection .tab-pane:first-child .strategicTitle {
+  .page-strategic-investor-program .Sts-tabContentSection .tab-pane:first-child .strategicTitle {
       display: block;
   }
 
   /*T&C*/
-  .page-strategic-investor-homepage .termsConditionV2Wtap{
+  .page-strategic-investor-program .termsConditionV2Wtap{
       padding: 50px 0;
   }
-  .page-strategic-investor-homepage .termsConditionV2{
+  .page-strategic-investor-program .termsConditionV2{
       position: unset;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap{
+  .page-strategic-investor-program .termsConditionV2Wtap{
       width: 100%;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap::after{
+  .page-strategic-investor-program .termsConditionV2Wtap::after{
       content: unset;
   }
-  .page-strategic-investor-homepage .termsConditionV2List p{
+  .page-strategic-investor-program .termsConditionV2List p{
       width: 100%;
   }
-  .page-strategic-investor-homepage .termsConditionV2List{
+  .page-strategic-investor-program .termsConditionV2List{
       display: block;
       margin-top: 60px;
   }
-  .page-strategic-investor-homepage .termsConditionV2List p:first-child{
+  .page-strategic-investor-program .termsConditionV2List p:first-child{
       margin-bottom: 80px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap h1{
+  .page-strategic-investor-program .termsConditionV2Wtap h1{
       font-size: 30px;
   }
   /*T&C*/
 
   /*How to apply*/
-  .page-strategic-investor-homepage .howToApply{
+  .page-strategic-investor-program .howToApply{
       padding: 50px 0px 0px 0px;
   }
-  .page-strategic-investor-homepage .patternRight{
+  .page-strategic-investor-program .patternRight{
       display: none;
   }
-  .page-strategic-investor-homepage .patternLeft{
+  .page-strategic-investor-program .patternLeft{
       display: none;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item{
+  .page-strategic-investor-program .howTOApplyV2Item{
       min-height: auto;
       padding-bottom: 40px;
       margin-bottom: 40px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Arrow {
+  .page-strategic-investor-program .howTOApplyV2Arrow {
       right: 0;
       left: 0;
       margin: auto;
@@ -10390,89 +10390,89 @@ text-align: center;
       transform: rotate(90deg);
       display: none;
   }
-  .page-strategic-investor-homepage .howToApplyIcon{
+  .page-strategic-investor-program .howToApplyIcon{
       height: 70px;
   }
-  .page-strategic-investor-homepage .howToApplyHeader img{
+  .page-strategic-investor-program .howToApplyHeader img{
       padding: 5px;
   }
-  .page-strategic-investor-homepage .howToApplyBody{
+  .page-strategic-investor-program .howToApplyBody{
       min-height: 320px;
   }
-  .page-strategic-investor-homepage .howToApplyBody p{
+  .page-strategic-investor-program .howToApplyBody p{
       font-size: 18px;
       line-height: 27px;
   }
   /*How to apply*/
   /*FAQ*/
-  .page-strategic-investor-homepage .stsFaq-Section .strategicTitle{
+  .page-strategic-investor-program .stsFaq-Section .strategicTitle{
       margin-top: 0;
       margin-bottom: 20px !important;
   }
-  .page-strategic-investor-homepage .faqBg-sec{
+  .page-strategic-investor-program .faqBg-sec{
       padding:50px 0;
   }
-  .page-strategic-investor-homepage .faqTitle-description{
+  .page-strategic-investor-program .faqTitle-description{
       font-size: 18px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .stsFaqbox-sec{
+  .page-strategic-investor-program .stsFaqbox-sec{
       padding: 0;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn{
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn{
       font-weight: 500;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn{
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn{
       font-size: 18px;
       font-weight: 500;
       line-height: 28px;
   }
-  .page-strategic-investor-homepage .sts-accordion-body{
+  .page-strategic-investor-program .sts-accordion-body{
       font-size: 18px;
       line-height: 27px;
   }
   /*FAQ*/
   /*Social*/
-  .page-strategic-investor-homepage .strategicMediaSwiper .smNavigation-sec{
+  .page-strategic-investor-program .strategicMediaSwiper .smNavigation-sec{
       width: 300px;
       left: 0;
       right: 0;
       margin: auto;
   }
 
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-prev{
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-prev{
       right:30%;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-next{
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-next{
       left: 30%;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-next{
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-next{
       width: 45px;
       height: 45px;
   }
-  .page-strategic-investor-homepage .strategicTitle{
+  .page-strategic-investor-program .strategicTitle{
       width: 100%;
       margin-bottom: 40px !important;
   }
   /*Social*/
   /*Contact*/
-  .page-strategic-investor-homepage .stsContact-section{
+  .page-strategic-investor-program .stsContact-section{
       padding: 50px 0;
   }
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle{
+  .page-strategic-investor-program .stsContact-section .strategicTitle{
       padding: 0;
       text-align: center;
       margin-bottom: 40px !important;
   }
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle p{
+  .page-strategic-investor-program .stsContact-section .strategicTitle p{
       font-size: 18px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .stscontactForm-sec{
+  .page-strategic-investor-program .stscontactForm-sec{
       padding: 50px 15px;
   }
-  .page-strategic-investor-homepage .pt-100{
+  .page-strategic-investor-program .pt-100{
       padding-top: 50px;
       padding-bottom: 50px;
   }
@@ -10481,173 +10481,173 @@ text-align: center;
   }
 
   @media(max-width:767px){
-    .page-strategic-investor-homepage  .swiper-slide{
+    .page-strategic-investor-program  .swiper-slide{
 height: auto !important;
     }
-    .page-strategic-investor-homepage  .swiper-pagination-bullets.swiper-pagination-horizontal{
+    .page-strategic-investor-program  .swiper-pagination-bullets.swiper-pagination-horizontal{
         bottom: 28px;
     }
-    .page-strategic-investor-homepage .banner-container h1 {
+    .page-strategic-investor-program .banner-container h1 {
         line-height: 37px;
     }
-    .page-strategic-investor-homepage .banner-container p {
+    .page-strategic-investor-program .banner-container p {
         font-size: 16px;
         line-height: 28px;
         font-weight: normal;
     }
-  .page-strategic-investor-homepage .benefitBgOverlay{
+  .page-strategic-investor-program .benefitBgOverlay{
       opacity:0.7;
   }
-  .page-strategic-investor-homepage .bannerContentVideo{
+  .page-strategic-investor-program .bannerContentVideo{
       height:100vh;
   }
-  .page-strategic-investor-homepage .bannerContentVideo img{
+  .page-strategic-investor-program .bannerContentVideo img{
        height:100vh;
   }
 
 
-      .page-strategic-investor-homepage .bannerContentDesc{
+      .page-strategic-investor-program .bannerContentDesc{
           width: 90%;
       }
-      .page-strategic-investor-homepage .aboutSection.pt-100{
+      .page-strategic-investor-program .aboutSection.pt-100{
           padding-top: 90px !important;
       }
-      .page-strategic-investor-homepage .bannerContentDesc h1{
+      .page-strategic-investor-program .bannerContentDesc h1{
           font-size: 25px;
           margin-bottom: 25px;
           line-height: 37px;
       }
-      .page-strategic-investor-homepage .bannerContentDesc p{
+      .page-strategic-investor-program .bannerContentDesc p{
           font-size: 17px;
       }
-      .page-strategic-investor-homepage .aboutSection{
+      .page-strategic-investor-program .aboutSection{
           min-height: auto;
       }
-      .page-strategic-investor-homepage .strategicTitle h1{
+      .page-strategic-investor-program .strategicTitle h1{
           font-size: 30px;
           line-height: 46px;
       }
-      .page-strategic-investor-homepage .strategicSubTitle{
+      .page-strategic-investor-program .strategicSubTitle{
           font-size: 18px;
       }
-      .page-strategic-investor-homepage .strategicContent p {
+      .page-strategic-investor-program .strategicContent p {
       font-size: 17px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .aboutSection::before{
+  .page-strategic-investor-program .aboutSection::before{
       content: unset;
   }
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer{
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer{
       min-height: 670px;
           width: 400px;
       margin: auto;
   }
-  .page-strategic-investor-homepage .aboutSection::after{
+  .page-strategic-investor-program .aboutSection::after{
       content: unset;
   }
-  .page-strategic-investor-homepage .abt-odr-1{
+  .page-strategic-investor-program .abt-odr-1{
       order: 2;
       /* margin-top: -240px; */
   }
-  .page-strategic-investor-homepage .abt-odr-2{
+  .page-strategic-investor-program .abt-odr-2{
       order: 1;
   }
-  .page-strategic-investor-homepage .strategicTitle.inlineTitile{
+  .page-strategic-investor-program .strategicTitle.inlineTitile{
       text-align: center;
   }
-  .page-strategic-investor-homepage .logoIconHead{
+  .page-strategic-investor-program .logoIconHead{
       left: 0;
       right: 0;
       margin: auto;
   }
-  .page-strategic-investor-homepage .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight{
+  .page-strategic-investor-program .aboutImageGrid .aboutImageGridContainer .aboutImageGridRight{
           transform: scale(0.6);
   }
 
   /*2*/
-  .page-strategic-investor-homepage .whatWeExpectSectionBgDiv {
+  .page-strategic-investor-program .whatWeExpectSectionBgDiv {
       width: 100%;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgSec{
+  .page-strategic-investor-program .whatWeExpectSectionBgSec{
       min-height: auto;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgSec .strategicTitle{
+  .page-strategic-investor-program .whatWeExpectSectionBgSec .strategicTitle{
       padding: 20px 20px 20px 20px;
       text-align: center;
       margin-bottom: 0 !important;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrapRow{
+  .page-strategic-investor-program .whatWeExpectItemWrapRow{
       padding: 20px 20px;
           padding-right: 35px;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem{
+  .page-strategic-investor-program .whatWeExpectItem{
       flex-direction: column;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrap{
+  .page-strategic-investor-program .whatWeExpectItemWrap{
       text-align: center;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemImages{
+  .page-strategic-investor-program .whatWeExpectItemImages{
       margin-left: 0;
       margin-bottom: 15px;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem img{
+  .page-strategic-investor-program .whatWeExpectItem img{
       margin-left: 0;
 
   }
-  .page-strategic-investor-homepage .whatWeExpectItem h5, .page-strategic-investor-homepage .whatWeExpectItem.active h5, .page-strategic-investor-homepage .whatWeExpectItem:hover p{
+  .page-strategic-investor-program .whatWeExpectItem h5, .page-strategic-investor-program .whatWeExpectItem.active h5, .page-strategic-investor-program .whatWeExpectItem:hover p{
       color: #fff;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem.active p{
+  .page-strategic-investor-program .whatWeExpectItem.active p{
       color: #fff !important;
   }
-  .page-strategic-investor-homepage .whatWeExpectItem.active{
+  .page-strategic-investor-program .whatWeExpectItem.active{
       background-color: transparent;
   }
-  .page-strategic-investor-homepage .whatWeExpect p{
+  .page-strategic-investor-program .whatWeExpect p{
       font-size: 15px;
   }
-  .page-strategic-investor-homepage .whatWeExpectItemWrap::after{
+  .page-strategic-investor-program .whatWeExpectItemWrap::after{
       content: unset;
   }
-  .page-strategic-investor-homepage .whatWeExpectSectionBgDiv::after{
+  .page-strategic-investor-program .whatWeExpectSectionBgDiv::after{
       opacity: 0.7;
   }
-  .page-strategic-investor-homepage .whatWeExpect p{
+  .page-strategic-investor-program .whatWeExpect p{
       font-weight: normal;
       opacity: 1;
       color: #fff;
   }
   /*Service*/
-  .page-strategic-investor-homepage .serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Col{
       width: 100%;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Col:last-child{
+  .page-strategic-investor-program .serviceSectionV3Col:last-child{
       width: 100%;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Wrapper{
+  .page-strategic-investor-program .serviceSectionV3Wrapper{
       display: block;
   }
-  .page-strategic-investor-homepage .servicesNavLink{
+  .page-strategic-investor-program .servicesNavLink{
       width: 100%;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Tabs.serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Tabs.serviceSectionV3Col{
       padding: 0 20px 0 20px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description{
+  .page-strategic-investor-program .serviceSectionV3Description{
       width: 100%;
       padding: 20px;
   }
-  .page-strategic-investor-homepage .targerSection .mainStrategicFlex{
+  .page-strategic-investor-program .targerSection .mainStrategicFlex{
       padding: 20px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Description h4 {
+  .page-strategic-investor-program .serviceSectionV3Description h4 {
       margin-bottom: 20px;
       font-size: 25px;
   }
-  .page-strategic-investor-homepage .serviceSectionV3Tabs.serviceSectionV3Col{
+  .page-strategic-investor-program .serviceSectionV3Tabs.serviceSectionV3Col{
       display: none;
   }
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents  .tab-content>.tab-pane{
+  .page-strategic-investor-program .serviceSectionV3TabsContents  .tab-content>.tab-pane{
       display: block;
       opacity: 1;
           height: auto;
@@ -10656,7 +10656,7 @@ height: auto !important;
       overflow: hidden;
 
   }
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents  .tab-content>.tab-pane::after{
+  .page-strategic-investor-program .serviceSectionV3TabsContents  .tab-content>.tab-pane::after{
       position: absolute;
       width: 100%;
       height: 100%;
@@ -10666,119 +10666,119 @@ height: auto !important;
       top: 0;
       left: 0;
   }
-  .page-strategic-investor-homepage .serviceSectionV3TabsContents::before{
+  .page-strategic-investor-program .serviceSectionV3TabsContents::before{
       background-color: transparent;
   }
-  .page-strategic-investor-homepage .serviceMobileView .serviceSectionV3Description p{
+  .page-strategic-investor-program .serviceMobileView .serviceSectionV3Description p{
       font-size: 16px;
       line-height:29px;
   }
   /*Service*/
-  .page-strategic-investor-homepage .targerSection.pt-100{
+  .page-strategic-investor-program .targerSection.pt-100{
       padding-top: 0;
   }
 
-  .page-strategic-investor-homepage .targerSection .strategicTitle{
+  .page-strategic-investor-program .targerSection .strategicTitle{
       text-align: center;
       padding: 0px;
           margin-bottom: 20px !important;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemWrapper{
+  .page-strategic-investor-program .targerSectionV2ItemWrapper{
       display: block;
   }
-  .page-strategic-investor-homepage .targerSectionV2Item{
+  .page-strategic-investor-program .targerSectionV2Item{
       width: 100%;
       flex-direction: column;
       padding: 40px 20px;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemDes{
+  .page-strategic-investor-program .targerSectionV2ItemDes{
   margin-right: 0;
   width: 100%;
       text-align: center;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemImg{
+  .page-strategic-investor-program .targerSectionV2ItemImg{
       width: 65px;
       height: 65px;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemDes p, .page-strategic-investor-homepage .targetedList li{
+  .page-strategic-investor-program .targerSectionV2ItemDes p, .page-strategic-investor-program .targetedList li{
       font-size: 15px;
   }
-  .page-strategic-investor-homepage .targerSection .strategicTitle h1{
+  .page-strategic-investor-program .targerSection .strategicTitle h1{
           font-size: 30px;
       padding: 20px 0;
       padding-top: 36px
   }
-  .page-strategic-investor-homepage .targerSectionContent {
+  .page-strategic-investor-program .targerSectionContent {
       text-align: center;
   }
-  .page-strategic-investor-homepage .targerSectionContent h4{
+  .page-strategic-investor-program .targerSectionContent h4{
       font-size: 20px;
   }
-  .page-strategic-investor-homepage .targerSectionContent p{
+  .page-strategic-investor-program .targerSectionContent p{
       font-size: 16px;
   }
-  .page-strategic-investor-homepage .Sts-tabContentSection .tab-pane.fade{
+  .page-strategic-investor-program .Sts-tabContentSection .tab-pane.fade{
       display: block;
       opacity: 1;
   }
-  .page-strategic-investor-homepage .stratTab-image{
+  .page-strategic-investor-program .stratTab-image{
       display: none;
   }
-  .page-strategic-investor-homepage .stsNav-Tabs.nav-tabs{
+  .page-strategic-investor-program .stsNav-Tabs.nav-tabs{
       display: none;
   }
-  .page-strategic-investor-homepage .Sts-tabContentSection .tab-pane .strategicTitle {
+  .page-strategic-investor-program .Sts-tabContentSection .tab-pane .strategicTitle {
       display: none;
   }
-  .page-strategic-investor-homepage .Sts-tabContentSection .tab-pane:first-child .strategicTitle {
+  .page-strategic-investor-program .Sts-tabContentSection .tab-pane:first-child .strategicTitle {
       display: block;
   }
 
   /*T&C*/
-  .page-strategic-investor-homepage .termsConditionV2Wtap{
+  .page-strategic-investor-program .termsConditionV2Wtap{
       padding: 50px 0;
   }
-  .page-strategic-investor-homepage .termsConditionV2{
+  .page-strategic-investor-program .termsConditionV2{
       position: unset;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap{
+  .page-strategic-investor-program .termsConditionV2Wtap{
       width: 100%;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap::after{
+  .page-strategic-investor-program .termsConditionV2Wtap::after{
       content: unset;
   }
-  .page-strategic-investor-homepage .termsConditionV2List p{
+  .page-strategic-investor-program .termsConditionV2List p{
       width: 100%;
   }
-  .page-strategic-investor-homepage .termsConditionV2List{
+  .page-strategic-investor-program .termsConditionV2List{
       display: block;
       margin-top: 60px;
   }
-  .page-strategic-investor-homepage .termsConditionV2List p:first-child{
+  .page-strategic-investor-program .termsConditionV2List p:first-child{
       margin-bottom: 80px;
   }
-  .page-strategic-investor-homepage .termsConditionV2Wtap h1{
+  .page-strategic-investor-program .termsConditionV2Wtap h1{
       font-size: 30px;
   }
   /*T&C*/
 
   /*How to apply*/
-  .page-strategic-investor-homepage .howToApply{
+  .page-strategic-investor-program .howToApply{
       padding: 50px 0px 0px 0px;
       overflow:hidden;
   }
-  .page-strategic-investor-homepage .patternRight{
+  .page-strategic-investor-program .patternRight{
       display: none;
   }
-  .page-strategic-investor-homepage .patternLeft{
+  .page-strategic-investor-program .patternLeft{
       display: none;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Item{
+  .page-strategic-investor-program .howTOApplyV2Item{
       min-height: auto;
       padding-bottom: 40px;
       margin-bottom: 40px;
   }
-  .page-strategic-investor-homepage .howTOApplyV2Arrow {
+  .page-strategic-investor-program .howTOApplyV2Arrow {
       right: 0;
       left: 0;
       margin: auto;
@@ -10787,123 +10787,123 @@ height: auto !important;
       text-align: center;
       transform: rotate(90deg);
   }
-  .page-strategic-investor-homepage .howToApplyIcon{
+  .page-strategic-investor-program .howToApplyIcon{
       height: 70px;
   }
-  .page-strategic-investor-homepage .howToApplyHeader img{
+  .page-strategic-investor-program .howToApplyHeader img{
       padding: 5px;
   }
   /*How to apply*/
   /*FAQ*/
-  .page-strategic-investor-homepage .stsFaq-Section .strategicTitle{
+  .page-strategic-investor-program .stsFaq-Section .strategicTitle{
       margin-top: 0;
       margin-bottom: 20px !important;
   }
-  .page-strategic-investor-homepage .faqBg-sec{
+  .page-strategic-investor-program .faqBg-sec{
       padding:50px 0;
   }
-  .page-strategic-investor-homepage .faqTitle-description{
+  .page-strategic-investor-program .faqTitle-description{
       font-size: 18px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn{
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn{
       font-size: 18px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .sts-accordion-body{
+  .page-strategic-investor-program .sts-accordion-body{
       font-size: 17px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .stsFaqbox-sec{
+  .page-strategic-investor-program .stsFaqbox-sec{
       padding: 0;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsFaqAcc-btn{
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsFaqAcc-btn{
       font-weight: 500;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection #accordion .stsaccordion-item:last-child{
+  .page-strategic-investor-program .stsFaq-AccordinSection #accordion .stsaccordion-item:last-child{
   border-bottom:1px solid var(--strategic-theme-green) !important;
   }
   /*FAQ*/
   /*Social*/
 
-  .page-strategic-investor-homepage .strategicTitle{
+  .page-strategic-investor-program .strategicTitle{
       width: 100%;
       margin-bottom: 40px !important;
   }
-  .page-strategic-investor-homepage .strategicMediaSwiper .smNavigation-sec{
+  .page-strategic-investor-program .strategicMediaSwiper .smNavigation-sec{
       width: 300px;
       left: 0;
       right: 0;
       margin: auto;
   }
 
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-prev{
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-prev{
       right:30%;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-next{
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-next{
       left: 30%;
   }
-  .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-homepage .stssocialMedia-feed .swiper-rtl .swiper-button-next{
+  .page-strategic-investor-program .stssocialMedia-feed .swiper-button-next, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-button-prev, .page-strategic-investor-program .stssocialMedia-feed .swiper-rtl .swiper-button-next{
       width: 45px;
       height: 45px;
   }
   /*Social*/
   /*Contact*/
-  .page-strategic-investor-homepage .stsContact-section{
+  .page-strategic-investor-program .stsContact-section{
       padding: 50px 0;
   }
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle{
+  .page-strategic-investor-program .stsContact-section .strategicTitle{
       padding: 0;
       text-align: center;
       margin-bottom: 40px !important;
   }
-  .page-strategic-investor-homepage .stsContact-section .strategicTitle p{
+  .page-strategic-investor-program .stsContact-section .strategicTitle p{
       font-size: 18px;
       line-height: 27px;
   }
-  .page-strategic-investor-homepage .stscontactForm-sec{
+  .page-strategic-investor-program .stscontactForm-sec{
       padding: 30px 15px;
   }
-  .page-strategic-investor-homepage .pt-100{
+  .page-strategic-investor-program .pt-100{
       padding-top: 50px;
       padding-bottom: 50px;
   }
-  .page-strategic-investor-homepage .frmSubmitBtn{
+  .page-strategic-investor-program .frmSubmitBtn{
       flex-direction: column;
   }
-  .page-strategic-investor-homepage .frmSubmitBtn img {
+  .page-strategic-investor-program .frmSubmitBtn img {
       margin-bottom: 20px;
   }
   /*Contact*/
-  .page-strategic-investor-homepage .servicesv1 .myServiceItem img{
+  .page-strategic-investor-program .servicesv1 .myServiceItem img{
       min-height:200px;
   }
 
 
   /*programPenefit*/
-  .page-strategic-investor-homepage .programBenefitItem{
+  .page-strategic-investor-program .programBenefitItem{
       min-height: auto;
   }
-  .page-strategic-investor-homepage .programBenefitItemTop h4{
+  .page-strategic-investor-program .programBenefitItemTop h4{
       font-size: 20px;
       min-height: auto;
   }
-  .page-strategic-investor-homepage .targerSectionV2ItemDes h4{
+  .page-strategic-investor-program .targerSectionV2ItemDes h4{
       font-size: 20px;
   }
   /*programPenefit*/
-  .page-strategic-investor-homepage .strategicOurPartners .partnersItem{
+  .page-strategic-investor-program .strategicOurPartners .partnersItem{
       margin-bottom: 25px;
   }
 
 
 
   /*Enroll*/
-  .page-strategic-investor-homepage .enroleRequirementBgImg{
+  .page-strategic-investor-program .enroleRequirementBgImg{
       width: 100%;
   }
-  .page-strategic-investor-homepage .enroleRequirementBgImg::after{
+  .page-strategic-investor-program .enroleRequirementBgImg::after{
           content: '';
       position: absolute;
       background: #000;
@@ -10914,45 +10914,45 @@ height: auto !important;
       opacity: 0.7;
       z-index: 0;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap {
+  .page-strategic-investor-program .enroleRequirementWrap {
       width: 100%;
       padding-right: 0%;
       position: relative;
       z-index: 2;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap .strategicTitle{
+  .page-strategic-investor-program .enroleRequirementWrap .strategicTitle{
       width: 100%;
       text-align: center;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap .strategicTitle h1 {
+  .page-strategic-investor-program .enroleRequirementWrap .strategicTitle h1 {
       font-size: 25px;
       line-height: 35px;
       color: #fff;
       font-weight: bold;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul p {
+  .page-strategic-investor-program .enroleRequirementWrap ul p {
       font-size: 18px;
       margin-bottom: 30px;
       color: #fff;
   }
-  .page-strategic-investor-homepage .enroleRequirementWrap ul li {
+  .page-strategic-investor-program .enroleRequirementWrap ul li {
       font-size: 16px;
       color: #fff;
       display: flex;
       align-items: baseline;
        line-height: 29px;
   }
-  .page-strategic-investor-homepage .programPenefit {
+  .page-strategic-investor-program .programPenefit {
       background-attachment: fixed;
 
   }
-  .page-strategic-investor-homepage .targerSectionV3Item{
+  .page-strategic-investor-program .targerSectionV3Item{
       min-height:665px;
   }
-  .page-strategic-investor-homepage .howToApplyBody p{
+  .page-strategic-investor-program .howToApplyBody p{
       font-size: 18px;
   }
-  .page-strategic-investor-homepage .targerSectionV3Btm h4{
+  .page-strategic-investor-program .targerSectionV3Btm h4{
       line-height: 37px;
   }
   /*Enroll*/
@@ -10961,91 +10961,91 @@ height: auto !important;
   }
 
   @media(min-width:768px) and (max-width:991px){
-    .page-strategic-investor-homepage .banner-container p {
+    .page-strategic-investor-program .banner-container p {
         font-size: 16px;
         line-height: 28px;
         font-weight: normal;
     }
-  .page-strategic-investor-homepage .stsFaq-AccordinSection .stsaccordion-item{
+  .page-strategic-investor-program .stsFaq-AccordinSection .stsaccordion-item{
           min-height: 136px;
       }
   }
   @media(min-width:992px) and (max-width:1875px){
-      .page-strategic-investor-homepage .stsFaq-AccordinSection .stsaccordion-item{
+      .page-strategic-investor-program .stsFaq-AccordinSection .stsaccordion-item{
           min-height: 106px;
       }
   }
   @media(min-width:1200px) and (max-width:1400px){
-      .page-strategic-investor-homepage .serviceSectionV3Description{
+      .page-strategic-investor-program .serviceSectionV3Description{
           width: 90%;
       }
-      .page-strategic-investor-homepage .programBenefitItemBtm p{
+      .page-strategic-investor-program .programBenefitItemBtm p{
           font-size: 16px;
           line-height: 27px;
       }
-      .page-strategic-investor-homepage .targerSectionV3Item{
+      .page-strategic-investor-program .targerSectionV3Item{
           min-height: 640px;
       }
   }
 
-  .page-strategic-investor-homepage .htaCol:last-child .howTOApplyV2Arrow{
+  .page-strategic-investor-program .htaCol:last-child .howTOApplyV2Arrow{
     display: none;
     }
-    .page-strategic-investor-homepage .ddl-countryCode{
+    .page-strategic-investor-program .ddl-countryCode{
       height: 38px;
       padding-top: 6px;
     }
-    .page-strategic-investor-homepage  .selected-flag{
+    .page-strategic-investor-program  .selected-flag{
       top:0;
     }
-    .page-strategic-investor-homepage .country-code-mobile .intl-tel-input.allow-dropdown input,   .page-strategic-investor-homepage .intl-tel-input.allow-dropdown input[type="text"]{
+    .page-strategic-investor-program .country-code-mobile .intl-tel-input.allow-dropdown input,   .page-strategic-investor-program .intl-tel-input.allow-dropdown input[type="text"]{
       padding-top: 3px;
     }
-    .page-strategic-investor-homepage .error-msg{
+    .page-strategic-investor-program .error-msg{
       position: absolute;
       font-size: 11px;
       bottom: 0px;
       left: 0;
     }
-    .page-strategic-investor-homepage .country-code-mobile .error-msg{
+    .page-strategic-investor-program .country-code-mobile .error-msg{
       bottom: -18px;
     }
-    .page-strategic-investor-homepage .stsContact-section .form-group {
+    .page-strategic-investor-program .stsContact-section .form-group {
 
       margin-bottom: 25px;
     }
     @media(min-width:768px) and (max-width:991px){
-      .page-strategic-investor-homepage .INS_rowcenter{
+      .page-strategic-investor-program .INS_rowcenter{
         flex-direction: row;
       }
-      .page-strategic-investor-homepage  .INS_rowcenter a{
+      .page-strategic-investor-program  .INS_rowcenter a{
         width: 50%;
       }
     }
     @media(min-width:992px){
-      .page-strategic-investor-homepage  .INS_rowcenter a{
+      .page-strategic-investor-program  .INS_rowcenter a{
         width: 25%;
       }
     }
 
-    .page-strategic-investor-homepage  .INS_shadow_pad{
+    .page-strategic-investor-program  .INS_shadow_pad{
       box-shadow: unset;
       background-color: transparent;
     }
-    .page-strategic-investor-homepage .INS_EnergynUtil_bg{
+    .page-strategic-investor-program .INS_EnergynUtil_bg{
       padding: 0;
     }
 
-    .page-strategic-investor-homepage .contactSuccess {
+    .page-strategic-investor-program .contactSuccess {
         background: #fff;
         padding: 20px;
         border-radius: 15px;
     }
-    .page-strategic-investor-homepage .contactSuccess p {
+    .page-strategic-investor-program .contactSuccess p {
         font-size: 24px;
         margin-bottom: 15px;
     }
-    .page-strategic-investor-homepage .aboutImageGrid img {
+    .page-strategic-investor-program .aboutImageGrid img {
     width:100%;
     }
   /*Strategic CSS END*/

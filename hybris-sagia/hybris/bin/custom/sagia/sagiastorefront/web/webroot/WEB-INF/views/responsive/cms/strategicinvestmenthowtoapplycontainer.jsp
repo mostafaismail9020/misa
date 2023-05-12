@@ -12,9 +12,9 @@
                             <section id="howToApply" class="howToApply ">
                                 <div class="container-fluid posRel">
                                     <div class="strategicTitle   wow fadeInUp animated" data-wow-duration="0.5s">
-                                        <h5 class="strategicSubTitle">
+                                        <!--  <h5 class="strategicSubTitle">
                                             <spring:theme code="portal.sector.how.to.apply.label" />
-                                        </h5>
+                                        </h5>-->
                                         <h1>
                                             <spring:theme code="portal.sector.how.to.apply.main.label" />
                                         </h1>
@@ -41,12 +41,8 @@
                                                         <div class="howToApplyBody">
                                                             <h5>${currentComponent1.howtoapplytitle} </h5>
                                                             <p> ${currentComponent1.howtoapplydescription}</p>
-                                                            <a href="#"
-                                                                class="onlineApplyBtn  ${loop.first  ? '' : 'd-none' }">Apply
-                                                                Now</a>
-                                                            <span
-                                                                class="commingSoon  ${loop.first  ? '' : 'd-none' }">Comming
-                                                                Soon</span>
+                                                            <a href="https://shareek.gov.sa/Portal/" class="onlineApplyBtn  ${loop.first  ? '' : 'd-none' }"><spring:theme code="portal.sector.how.to.apply.apply.now.label"/></a>
+                                                            <span class="commingSoon  ${loop.first  ? '' : 'd-none' }"><spring:theme code="portal.sector.how.to.apply.coming.soon.label"/></span>
                                                         </div>
                                                     </div>
                                                 </div>

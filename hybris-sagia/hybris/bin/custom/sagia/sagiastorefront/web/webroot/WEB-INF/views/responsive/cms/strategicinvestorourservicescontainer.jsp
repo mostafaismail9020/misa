@@ -8,7 +8,7 @@
 							<section id="strategyServices" class="strategyServices pt-100">
 								<div class="strategicTitle wow zoomIn animated" data-wow-duration="1s">
 									<!-- <h5 class="strategicSubTitle">Strategic</h5> -->
-									<h1>Our Services</h1>
+									<h1><spring:theme code="portal.sector.strategic.ourservices.label"/></h1>
 								</div>
 								<!-- Service Mobile view -->
 								<div class="serviceMobileView d-lg-none">

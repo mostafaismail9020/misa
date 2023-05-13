@@ -226,14 +226,14 @@ INSERT_UPDATE StrategicInvestorAccordionsContainer; uid[unique = true]  ; name  
 ############# Government Partners Start ###################
 
 INSERT_UPDATE CMSLinkComponent; uid[unique = true]          ; $contentCV[unique = true]; linkName  [lang = en]     ; linkName [lang = ar]      ; url                                               ;
-                              ; strategic-government-link-1 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.mim.gov.sa/mim/index-ltr.html         ;
-                              ; strategic-government-link-2 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.aramco.com/                           ;
-                              ; strategic-government-link-3 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://modon.gov.sa/en/Pages/default.aspx        ;
-                              ; strategic-government-link-4 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.se.com.sa/en-us/Pages/home.aspx       ;
-                              ; strategic-government-link-5 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.nwc.com.sa/English/pages/default.aspx ;
-                              ; strategic-government-link-6 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.nwc.com.sa/English/pages/default.aspx ;
-                              ; strategic-government-link-7 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.nwc.com.sa/English/pages/default.aspx ;
-                              ; strategic-government-link-8 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.nwc.com.sa/English/pages/default.aspx ;
+                              ; strategic-government-link-1 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.moj.gov.sa/en/        ;
+                              ; strategic-government-link-2 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.mofa.gov.sa/en                          ;
+                              ; strategic-government-link-3 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://momrah.gov.sa/en        ;
+                              ; strategic-government-link-4 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.gosi.gov.sa/en       ;
+                              ; strategic-government-link-5 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://zatca.gov.sa/en/ ;
+                              ; strategic-government-link-6 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://mc.gov.sa/en ;
+                              ; strategic-government-link-7 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.hrsd.gov.sa/en ;
+                              ; strategic-government-link-8 ;                          ; KNOW MORE - VISIT WEBSITE ; KNOW MORE - VISIT WEBSITE ; https://www.moi.gov.sa/en ;
 
 INSERT_UPDATE EnergynUtilityforIncentiveComponent; uid[unique = true]             ; name                          ; logo(code, $contentCV); logoUrl(uid, $contentCV)    ; &componentRef                  ; $contentCV[unique = true];
                                                  ; strategic-government-partner-1 ; strategic-government-partner 1 ; moj.png               ; strategic-government-link-1 ; strategic-government-partner-1 ;                          ;

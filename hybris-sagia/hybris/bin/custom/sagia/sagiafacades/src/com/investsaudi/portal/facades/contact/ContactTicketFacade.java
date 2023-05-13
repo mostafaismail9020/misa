@@ -131,7 +131,7 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         }
         else if(null!=sessionService.getAttribute("isStrategicContactUsFlow"))
         {
-            ticketParameter.setCustomer(userService.getCustomerByEmail("strategicinvestor@misa.gov.sa"));
+            ticketParameter.setCustomer(userService.getCustomerByEmail("Strategic_Investors@misa.gov.sa"));
         }
         else
         {

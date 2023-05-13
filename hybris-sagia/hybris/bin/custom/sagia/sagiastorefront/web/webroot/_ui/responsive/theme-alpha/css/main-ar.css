@@ -11048,4 +11048,61 @@ height: auto !important;
     .page-strategic-investor-program .aboutImageGrid img {
     width:100%;
     }
+
+    .stsContact-section .strategicTitle ul {
+        padding: 0;
+        color: #fff;
+        margin-top: 25px;
+    }
+
+    .stsContact-section .strategicTitle ul li {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .stsContact-section .strategicTitle ul li i {
+        margin-left: 10px;
+        color: #c5a84d;
+    }
+
+    .stsContact-section .strategicTitle ul li a {
+        text-decoration: underline;
+    }
+
+    .page-strategic-investor-program .strategicContent p,
+    .page-strategic-investor-program .targerSectionV3Btm p,
+    .page-strategic-investor-program .enroleRequirementWrap ul p,
+    .page-strategic-investor-program .enroleRequirementWrap ul li{
+         text-align: justify;
+    }
+
+    .enroleRequirementWrap ol li{
+        position: relative;
+    }
+
+    .enroleRequirementWrap ol li span{
+        color: #bf9b2e;
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute;
+        right: -35px;
+        top: 0;
+    }
+.page-strategic-investor-program .stsContact-section .form-group{
+    text-align: right;
+}
+.page-strategic-investor-program .enroleRequirementWrap ul{
+    margin-left: 15px;
+}
+
+@media(max-width:1199px){
+    .page-strategic-investor-program .stsContact-section .strategicTitle{
+    text-align:center
+    }
+     .page-strategic-investor-program .stsContact-section .strategicTitle ul{
+     display: inline-block;
+    text-align: right;
+     }
+}
+
   /*Strategic CSS END*/

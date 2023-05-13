@@ -17,33 +17,9 @@
                       <!-- <h5 class="strategicSubTitle">STRATEGIC</h5> -->
               <h1><spring:theme code="portal.strategic.contact.expert.name.label"/></h1>
               <p class="contactcnt-text">
-               <c:if test="${currentLanguage.isocode == 'en'}">
-                    <p>You can reach program team via the following channels:&nbsp;<br />
-                                         &nbsp;</p>
-
-                         <ul>
-                            <li>Fill up the electronic form</li>
-                            <li>&nbsp;Local calls 8002449990</li>
-                            <li>&nbsp;International Calls 00966115065777</li>
-                            <li>Investors care email <a href="mailto:InvestorCare@misa.gov.sa">InvestorCare@misa.gov.sa</a></li>
-                         </ul>
-                </c:if>
-              <c:if test="${currentLanguage.isocode == 'ar'}">
-                  <p>يمكن التواصل مع فريق البرنامج من خلال القنوات التالية:</p>
-
-                  <ul>
-                  	<li>تعبئة نموذج التواصل الالكتروني.</li>
-                  	<li>المكالمات المحلية 8002449990</li>
-                  	<li>المكالمات الدولية 00966115065777</li>
-                  	<li>بريد العناية بالمستثمرين <a href="mailto:InvestorCare@misa.gov.sa">InvestorCare@misa.gov.sa</a></li>
-                  </ul>
-
-                  <p>&nbsp;</p>
-              </c:if>
+                <spring:theme code="portal.sector.contact.us.description"/>
           </div>
-
              </div>
-
             <div class="col-xl-6">
                 <div class="contactSuccess d-none">
                     <p class="font-bold">Thank you for your interest in the Invest Saudi.</p>

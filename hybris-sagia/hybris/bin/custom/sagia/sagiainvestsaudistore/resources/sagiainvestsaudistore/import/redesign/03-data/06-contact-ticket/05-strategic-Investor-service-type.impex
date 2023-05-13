@@ -10,5 +10,5 @@ INSERT_UPDATE StrategicInvestorServiceType; code[unique = true]              ; l
                                           ; others                           ; Others                              ; أخرى
 
 INSERT_UPDATE SagiaConfiguration; key[unique = true]             ; value                         ; displayValue[default = true]
-                                ; strategicInvestorEmailId       ; strategicinvestor@misa.gov.sa ; ;
+                                ; strategicInvestorEmailId       ; Strategic_Investors@misa.gov.sa ; ;
                                 ; strategicInvestorEmailUserName ; Strategic Investor            ; ;

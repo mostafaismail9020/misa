@@ -10870,4 +10870,64 @@ border-bottom:1px solid var(--strategic-theme-green) !important;
   .page-strategic-investor-program .aboutImageGrid img {
   width:100%;
   }
+
+  .stsContact-section .strategicTitle ul {
+      padding: 0;
+      color: #fff;
+  }
+
+  .stsContact-section .strategicTitle ul li {
+      margin-bottom: 15px;
+  }
+
+  .stsContact-section .strategicTitle ul li i {
+      margin-right: 10px;
+      color: #c5a84d;
+  }
+
+  .stsContact-section .strategicTitle ul li a {
+      text-decoration: underline;
+  }
+  .page-strategic-investor-program .strategicContent p,
+  .page-strategic-investor-program .targerSectionV3Btm p,
+  .page-strategic-investor-program .enroleRequirementWrap ul p,
+  .page-strategic-investor-program .enroleRequirementWrap ul li{
+       text-align: justify;
+  }
+
+.enroleRequirementWrap ol li{
+    position: relative;
+}
+
+.enroleRequirementWrap ol li span{
+    color: #bf9b2e;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    left: -25px;
+    top: 0;
+}
+
+@media(min-width:1123px) and (max-width:1562px){
+    .page-strategic-investor-program .stsFaq-AccordinSection .stsaccordion-item{
+    min-height: 147px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+    .page-strategic-investor-program .stsaccordion-item div:first-child{
+    width:100%
+    }
+}
+
+@media(max-width:1199px){
+    .page-strategic-investor-program .stsContact-section .strategicTitle{
+    text-align:center
+    }
+     .page-strategic-investor-program .stsContact-section .strategicTitle ul{
+     display: inline-block;
+    text-align: left;
+     }
+}
   /*strategic CSS END*/

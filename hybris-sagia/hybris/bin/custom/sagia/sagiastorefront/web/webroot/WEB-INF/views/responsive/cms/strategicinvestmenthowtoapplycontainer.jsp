@@ -41,7 +41,8 @@
                                                         <div class="howToApplyBody">
                                                             <h5>${currentComponent1.howtoapplytitle} </h5>
                                                             <p> ${currentComponent1.howtoapplydescription}</p>
-                                                            <a href="https://shareek.gov.sa/Portal/" class="onlineApplyBtn  ${loop.first  ? '' : 'd-none' }"><spring:theme code="portal.sector.how.to.apply.apply.now.label"/></a>
+                                                            <!--<a href="https://shareek.gov.sa/Portal/" class="onlineApplyBtn  ${loop.first  ? '' : 'd-none' }"><spring:theme code="portal.sector.how.to.apply.apply.now.label"/></a> -->
+                                                            <!--<a href="https://misa.gov.sa/en/" class="onlineApplyBtn  ${loop.first  ? '' : 'd-none' }"><spring:theme code="portal.sector.how.to.apply.apply.now.label"/></a> -->
                                                             <span class="commingSoon  ${loop.first  ? '' : 'd-none' }"><spring:theme code="portal.sector.how.to.apply.coming.soon.label"/></span>
                                                         </div>
                                                     </div>

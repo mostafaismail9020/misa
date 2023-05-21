@@ -4983,7 +4983,7 @@ function validateFormContactUs(){
 	var email = $("#contact-us-page-contact-us-form #email").val();
 	var selectedEnquiryType = $("#contact-us-page-contact-us-form #selectedEnquiryType").val();
 	var selectedCategoryOne = $("#contact-us-page-contact-us-form #selectedCategoryOne").val();
-	var invalidCheck = $("#contact-us-page-contact-us-form #invalidCheck");
+	/*var invalidCheck = $("#contact-us-page-contact-us-form #invalidCheck");*/
 	var lblError = document.getElementById("lblError");
 	lblError.innerHTML = "";
 	var isValid = true;
@@ -4993,11 +4993,11 @@ function validateFormContactUs(){
 	$("#lblErrorPhoneNumber").text("");	
 	$("#lblErrorselectedEnquiryType").text("");	
 	$("#lblErrorselectedCategoryOne").text("");	
-	$("#lblErrorinvalidCheck").text("");	
+	/*$("#lblErrorinvalidCheck").text("");
 	if(firstName === ""){
 		$("#lblErrorfirstName").text("Only Letters Are Allowed");	
 		isValid = false;
-	}
+	}*/
 	if(lastName === ""){
 		$("#lblErrorlastName").text("Only Letters Are Allowed");
 		isValid = false;
@@ -5018,10 +5018,10 @@ function validateFormContactUs(){
 		$("#lblErrorselectedCategoryOne").text("Required");	
 		isValid = false;
 	}
-	if(!invalidCheck.is(":checked")){
+	/*if(!invalidCheck.is(":checked")){
 		$("#lblErrorinvalidCheck").text("Required");
 		isValid = false;
-	}
+	}*/
 
 	var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 	if (email !== "" && !expr.test(email)) {

@@ -12,3 +12,7 @@ INSERT_UPDATE StrategicInvestorServiceType; code[unique = true]              ; l
 INSERT_UPDATE SagiaConfiguration; key[unique = true]             ; value                         ; displayValue[default = true]
                                 ; strategicInvestorEmailId       ; Strategic_Investors@misa.gov.sa ; ;
                                 ; strategicInvestorEmailUserName ; Strategic Investor            ; ;
+
+################## End Opportunity User Email Template  #####################
+#INSERT_UPDATE Customer; uid[unique = true]; usernameemail    ; name                  ; country       ; mobileCountryCode; mobileNumber; company; sector
+#                      ; Strategic_Investors@misa.gov.sa  ; strategic_investors@misa.gov.sa ; Strategic Default Customer ; 8796093427543 ; 966              ; 0000000000  ; Strategic   ; 8796093132681

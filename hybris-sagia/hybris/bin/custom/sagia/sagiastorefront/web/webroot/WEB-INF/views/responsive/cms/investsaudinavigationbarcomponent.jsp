@@ -268,10 +268,10 @@
 				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
 				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
 				 -->
-				 <a href="#" class="skype d-none d-sm-inline">
+				 <!-- <a href="#" class="skype d-none d-sm-inline">
 					<span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
 					<span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
-				</a>
+				</a> -->
 				 <!-- <c:if test="${userLoggedIn eq 'false'}">
 					 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
 					 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>

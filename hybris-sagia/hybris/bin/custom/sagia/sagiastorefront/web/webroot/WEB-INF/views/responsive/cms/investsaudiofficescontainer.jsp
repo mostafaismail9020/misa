@@ -158,7 +158,7 @@
                                     <span class="pvcy-policy"><spring:theme code="portal.contactus.form.browse.label"/></span></label>
                                   </div>
                                 </div>
-                                <div class="form-group col-md-12">
+                                <%--<div class="form-group col-md-12">
                                   <!-- <label for="floatingInput " class="mand-field-text"><span class="mandatory">* </span>
                                   <spring:theme code="portal.contactus.form.fill.fields.label"/></label> -->
                                   <div class="form-check p-0 d-flex align-items-center mb-3">
@@ -176,7 +176,7 @@
                                     </div>
                                   </div>
                                   <em><span id="lblErrorinvalidCheck" class="error-msg"></span></em>
-                                </div>
+                                </div>--%>
                                 
                                 <div class="form-group col-md-12">
                                   <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />

@@ -12,6 +12,7 @@
 
 <template:portalpage pageTitle="${pageTitle}">
 	<jsp:body>
+	<!--
 	<script>
     document.querySelector("html").style.cssText = 'background:#000!important';
     document.querySelector("body").style.cssText += 'opacity:0!important;display:block!important;';
@@ -24,6 +25,7 @@
     n=e.getElementsByTagName(ss)[0];n.parentNode.insertBefore(o,n);
     })(window,document,'script','SessionForward Loaded.');
     </script>
+	-->
 
 		<header:portalPageTitle />
 

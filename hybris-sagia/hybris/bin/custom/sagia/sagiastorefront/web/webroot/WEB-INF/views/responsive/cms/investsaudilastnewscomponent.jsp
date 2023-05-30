@@ -77,7 +77,7 @@
 		  <h4>Invest in the Kingdom of Opportunities - Land of the Future</h4>
 		  <p>Apply for a business visit visa - "Visiting Investor" - and explore the rich investment opportunities that the Kingdom of Saudi Arabia offers.</p>
 		  <div class="applyBtn">
-			 <a href="#" target="_blank">Apply For a Business Visit Visa</a>
+			 <a href="https://www.mofa.gov.sa/en" target="_blank">Apply For a Business Visit Visa</a>
 		  </div>
 	   </div>
 	</div>
@@ -99,7 +99,7 @@
 		  <h4><spring:theme code="homepage.visa.subtitle.text"/></h4>
 		  <p><spring:theme code="homepage.visa.para.text"/></p>
 		  <div class="applyBtn">
-			 <a href="#" target="_blank"><spring:theme code="homepage.visa.link.text"/></a>
+			 <a href="https://www.mofa.gov.sa/ar" target="_blank"><spring:theme code="homepage.visa.link.text"/></a>
 		  </div>
 	   </div>
 	</div>

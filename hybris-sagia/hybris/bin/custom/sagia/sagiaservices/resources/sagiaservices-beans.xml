@@ -1107,6 +1107,7 @@
 	<bean
 		class="com.sap.ibso.eservices.sagiaservices.data.zui5sagia.GeneralInquirySet">
 		<property name="firstName" type="java.lang.String" />
+		<!--<property name="contactUsName" type="java.lang.String" />-->
 		<property name="lastName" type="java.lang.String" />
 		<property name="telNo" type="java.lang.String" />
 		<property name="email" type="java.lang.String" />

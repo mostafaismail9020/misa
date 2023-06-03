@@ -11104,5 +11104,84 @@ height: auto !important;
     text-align: right;
      }
 }
-
   /*Strategic CSS END*/
+
+  /*Contact Upload Button -Start*/
+  .page-contact-us .form-icon.form-icon_browse {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 84px;
+      height: 100%;
+      background: #0097a9;
+      z-index: 1;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+  }
+  .page-contact-us .form-icon.form-icon_browse svg {
+
+      width: auto;
+      height: 28px;
+
+  }
+
+  .page-contact-us .form-icon.form-icon_reset {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 84px;
+      height: 100%;
+      background: #0097a9;
+      z-index: 9;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+  }
+
+  .page-contact-us .form-icon.form-icon_reset svg {
+
+      color: #fff;
+      fill: #fff;
+      width: auto;
+      height: 24px;
+  }
+
+  .page-contact-us .custom-file-input:lang(ar)~.custom-file-label::after{
+
+      display:none;
+  }
+
+  @media(max-width:500px) {
+
+  .page-contact-us .custom-file .custom-file-label {
+
+        width: 85%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+  }
+  }
+
+  @media(min-width:501px) and (max-width:1023px) {
+
+  .page-contact-us .custom-file .custom-file-label {
+
+        width: 95%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+
+  }
+
+  }
+  /*Contact Upload Button -End*/

@@ -4663,6 +4663,15 @@ function onlyAlphabets(evt){
 	else
 		return false;
 }
+
+function onlyAlphabetsWithSpace(evt){
+	evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+	if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode === 32))
+		return true;
+	else
+		return false;
+}
 function validateEmailReg(evt){
 	var email = evt.target.value;
 	var lblError = document.getElementById("lblError");
@@ -4977,27 +4986,32 @@ $("#btnContactModalClose").on('hidden.bs.modal',function(){
 })
 
 function validateFormContactUs(){
-	var firstName = $("#contact-us-page-contact-us-form #firstName").val();
-	var lastName = $("#contact-us-page-contact-us-form #lastName").val();
-	var phoneNumber = $("#contact-us-page-contact-us-form #phoneNumber").val();
+	var contactUsName = $("#contact-us-page-contact-us-form #contactUsName").val();
+	/*var firstName = $("#contact-us-page-contact-us-form #firstName").val();
+	var lastName = $("#contact-us-page-contact-us-form #lastName").val();*/
+	//var phoneNumber = $("#contact-us-page-contact-us-form #phoneNumber").val();
 	var email = $("#contact-us-page-contact-us-form #email").val();
-	var selectedEnquiryType = $("#contact-us-page-contact-us-form #selectedEnquiryType").val();
-	var selectedCategoryOne = $("#contact-us-page-contact-us-form #selectedCategoryOne").val();
+	var message = $("#contact-us-page-contact-us-form #message").val();
+	//var selectedEnquiryType = $("#contact-us-page-contact-us-form #selectedEnquiryType").val();
+	//var selectedCategoryOne = $("#contact-us-page-contact-us-form #selectedCategoryOne").val();
 	/*var invalidCheck = $("#contact-us-page-contact-us-form #invalidCheck");*/
 	var lblError = document.getElementById("lblError");
 	lblError.innerHTML = "";
 	var isValid = true;
 
-	$("#lblErrorfirstName").text("");	
-	$("#lblErrorlastName").text("");	
-	$("#lblErrorPhoneNumber").text("");	
-	$("#lblErrorselectedEnquiryType").text("");	
-	$("#lblErrorselectedCategoryOne").text("");	
+	/*$("#lblErrorfirstName").text("");
+	$("#lblErrorlastName").text("");	*/
+	//$("#lblErrorPhoneNumber").text("");
+	//$("#lblErrorselectedEnquiryType").text("");
+	//$("#lblErrorselectedCategoryOne").text("");
+	$("#lblErrorMessage").text("");
+	$("#lblErrorContactUsName").text("");
+
 	/*$("#lblErrorinvalidCheck").text("");
 	if(firstName === ""){
 		$("#lblErrorfirstName").text("Only Letters Are Allowed");	
 		isValid = false;
-	}*/
+	}
 	if(lastName === ""){
 		$("#lblErrorlastName").text("Only Letters Are Allowed");
 		isValid = false;
@@ -5005,19 +5019,29 @@ function validateFormContactUs(){
 	if(phoneNumber === ""){
 		$("#lblErrorPhoneNumber").text("Invalid Mobile Number");
 		isValid = false;	
-	}
+	}*/
+	/*if(contactUsName === ""){
+    		$("#lblErrorContactUsName").text("Only Letters Are Allowed");
+    		isValid = false;
+    	}*/
+
 	if(email === ""){
-		$("#lblError").text("Invalid Email Id");	
+		$("#lblError").text("Required");
 		isValid = false;
 	}
-	if(selectedEnquiryType === ""){
+	if(message === ""){
+    		$("#lblErrorMessage").text("Required");
+    		isValid = false;
+    	}
+
+	/*if(selectedEnquiryType === ""){
 		$("#lblErrorselectedEnquiryType").text("Required");	
 		isValid = false;
 	}
 	if(selectedCategoryOne === ""){
 		$("#lblErrorselectedCategoryOne").text("Required");	
 		isValid = false;
-	}
+	}*/
 	/*if(!invalidCheck.is(":checked")){
 		$("#lblErrorinvalidCheck").text("Required");
 		isValid = false;
@@ -5334,6 +5358,26 @@ $( window ).on("load", function() {
 	}
 	
 });
+
+//Contact Upload Button -Start
+
+$('#contactfile').change(function() {
+
+    $('.form-icon_browse').hide();
+    $('.js-inputFile-reset').show();
+});
+
+$('.form-icon_reset').click(function(){
+
+    var control = $("#contactfile");
+     control.replaceWith( control.val('').clone( true ) );
+    $('#contact-us-upload-file').text('');
+    $('.form-icon_browse').show();
+    $('.js-inputFile-reset').hide();
+
+});
+
+//Contact Upload Button -End
 
 var swiper = new Swiper(".targetedMySwiper", {
 	slidesPerView: 1,

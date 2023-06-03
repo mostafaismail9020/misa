@@ -112,6 +112,7 @@ public class AboutSaudiPageController extends DefaultPageController {
 		if(Objects.nonNull(contactUsFormData)) {
 			LOG.debug("First Name "+contactUsFormData.getFirstName());
 			LOG.debug("Last Name "+contactUsFormData.getLastName());
+			LOG.debug("Contact Us Name "+contactUsFormData.getContactUsName());
 			LOG.debug("email  "+contactUsFormData.getEmail());
 			LOG.debug("phone Number "+contactUsFormData.getPhoneNumber());
 			LOG.debug(" message  "+contactUsFormData.getMessage());

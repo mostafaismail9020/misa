@@ -5379,6 +5379,54 @@ $('.form-icon_reset').click(function(){
 
 //Contact Upload Button -End
 
+// Investor Visa Js - Start 
+	$( window ).on("load", function() {
+
+       // Display Popup Again One Hour - Start
+		/*var hours = 1  ; 
+        var now = new Date().getTime();
+        var setupTime = localStorage.getItem('setupTime');
+		if (setupTime == null) {
+			localStorage.setItem('setupTime', now)
+		} else {
+			if(now-setupTime > hours*60*60*1000) {
+				localStorage.clear()
+				//alert('Clear called')
+				localStorage.setItem('setupTime', now);
+			}
+		}*/
+		// Display Popup Again One Hour - End
+
+
+
+		// Display Popup  - Start
+		var PageLang = document.getElementsByTagName("html")[0].getAttribute("lang");
+		
+		if(PageLang == 'en'){	
+			if(localStorage.getItem('popEnState') != 'shown'){
+				$('#visaPopupBodyEn').show();
+				$('.visaBodyPopup').addClass('visaBodyPopupShow');
+				//localStorage.setItem('popEnState','shown')
+				$('.page-portal-homepage').css({'overflow' : 'hidden'});
+			}
+			}else if(PageLang == 'ar'){
+				if(localStorage.getItem('popArState') != 'shown'){
+				$('#visaPopupBodyAr').show();
+				$('.visaBodyPopup').addClass('visaBodyPopupShow');
+				//localStorage.setItem('popArState','shown')
+				$('.page-portal-homepage').css({'overflow' : 'hidden'});
+			}
+			}
+		});
+		
+			$('.visaPopupCloseBtn, .visaBodyBg').click(function(){
+				$('.page-portal-homepage').css({'overflow' : 'auto'})
+				$('.visaBodyPopup').removeClass('visaBodyPopupShow');
+				$('.visaPopupBody').hide();
+			});
+         // Display Popup  - End
+      // Investor Visa Js - End 
+			
 var swiper = new Swiper(".targetedMySwiper", {
 	slidesPerView: 1,
 	spaceBetween: 10,

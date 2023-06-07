@@ -471,6 +471,25 @@
         </div>
     </div>
 </div>
+         <c:if test="${sagiaServicesMessage != null }">
+            <div class="modal fade" id="blockSagiaServices"  tabindex="-1" role="dialog" aria-labelledby="blockSagiaServices" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-xs modal-dialog-centeredContent" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <%-- <div class="modal-title"><spring:theme code="general.requestsubmitted"/></div> --%>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-description js-description-text">
+                            <label class="control-label" for="department">${sagiaServicesMessage}</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn js-close-btn btn_a" href="${encodedContextPath}/dashboard"><spring:theme code="general.close"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </c:if>
 
 <script id="messagesSagiaGovtServices-template" type="text/template">
 
@@ -493,4 +512,5 @@
 <script>
     var serviceName = "${serviceName}";
     var srID = ${srID};
+    var sagiaServicesMessage = '${sagiaServicesMessage}';
 </script>

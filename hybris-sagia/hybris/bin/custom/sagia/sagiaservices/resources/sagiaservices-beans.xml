@@ -1986,6 +1986,7 @@
 		<property name="ContactChInd" type="java.lang.String" />
 		<property name="SrID" type="java.lang.String" />
 		<property name="SrCrDate" type="java.lang.String" />
+		<property name="MsgToInvestor" type="java.lang.String" />
 		<property name="attachments"
 			type="java.util.List&lt;com.sap.ibso.eservices.sagiaservices.data.zui5sagia.ContentHDRData&gt;" />
 		<property name="govtServicesToTextNav"

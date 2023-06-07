@@ -47,6 +47,7 @@ public class SagiaGovtServiceCRMPopulator implements Populator<SagiaCRMGovtServi
         target.setSrID(source.getSrID());
         target.setSrCrDate(source.getSrCrDate());
         target.setSrCrDateData(sagiaFormatProvider.getLocalizedDateData(Long.parseLong(source.getSrCrDate())));
+        target.setMsgToInvestor(source.getMsgToInvestor());
     }
 
     /**

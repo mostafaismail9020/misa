@@ -238,6 +238,12 @@ $(function () {
         });
     };
 
+	if(sagiaServicesMessage.length > 0){
+		var $modal = $('#blockSagiaServices');
+		$("#blockSagiaServices").modal({backdrop: "static"});
+	    $modal.modal('toggle');
+	}
+
 });
 
 $('#createGovtServiceButton').click(function () {

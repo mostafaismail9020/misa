@@ -5406,6 +5406,7 @@ $('.form-icon_reset').click(function(){
 			if(localStorage.getItem('popEnState') != 'shown'){
 				$('#visaPopupBodyEn').show();
 				$('.visaBodyPopup').addClass('visaBodyPopupShow');
+				$("#investorPopupVid")[0].play();
 				//localStorage.setItem('popEnState','shown')
 				$('.page-portal-homepage').css({'overflow' : 'hidden'});
 			}
@@ -5413,6 +5414,7 @@ $('.form-icon_reset').click(function(){
 				if(localStorage.getItem('popArState') != 'shown'){
 				$('#visaPopupBodyAr').show();
 				$('.visaBodyPopup').addClass('visaBodyPopupShow');
+				$("#investorPopupVid")[0].play();
 				//localStorage.setItem('popArState','shown')
 				$('.page-portal-homepage').css({'overflow' : 'hidden'});
 			}

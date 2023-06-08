@@ -62,24 +62,17 @@
 		<div id="loadArFeed"></div>	
 	</section>
 	
-	<!--APPLY VISA POPUP En -->
+<!--APPLY VISA POPUP En -->
 
 <div id="visaPopupBodyEn" class="visaPopupBody" style="display:none">
 	<div class="visaBodyBg"></div>
 	<div class="visaBodyPopup">
-	   <span  class="visaPopupClose visaPopupCloseBtn"><img src="/_ui/responsive/theme-alpha/img/visa-close-white.png"></span>
-	   <div class="visaPopupOverlay"></div>
-	   <div class="visaBodyPopupContent">
-		  <div class="visaPopupLogo">
-			 <img src="/_ui/responsive/theme-alpha/img/visa-logo.png">
-		  </div>
-		  <h2>Apply for the business visa</h2>
-		  <h4>Invest in the Kingdom of Opportunities - Land of the Future</h4>
-		  <p>Apply for a business visit visa - "Visiting Investor" - and explore the rich investment opportunities that the Kingdom of Saudi Arabia offers.</p>
-		  <div class="applyBtn">
-			 <a href="https://www.mofa.gov.sa/en" target="_blank">Apply For a Business Visit Visa</a>
-		  </div>
-	   </div>
+		<a href="https://visa.mofa.gov.sa/Account/Loginindividuals" target="_blank" class="homePopupGifLink">
+		<video class="investorPopupVidDiv" id="investorPopupVid" autoplay=""  muted="" playsinline="" loop="">
+			<source src="/_ui/responsive/theme-alpha/img/investor-visit-visa-en.mp4" type="video/mp4">
+	   </video>
+		</a>
+		<span class="visaPopupClose visaPopupCloseBtn"><img src="/_ui/responsive/theme-alpha/img/visa-close-white.png"></span>
 	</div>
   </div>
   <!--APPLY VISA POPUP En End -->
@@ -88,23 +81,14 @@
   <div id="visaPopupBodyAr" class="visaPopupBody" style="display:none">
 	<div class="visaBodyBg"></div>
 	<div class="visaBodyPopup">
-	   <span class="visaPopupClose visaPopupCloseBtn"><img src="/_ui/responsive/theme-alpha/img/visa-close-white.png"></span>
-	   <div class="visaPopupOverlay"></div>
-	   <div class="visaBodyPopupContent">
-		  <div class="visaPopupLogo">
-			 <img src="/_ui/responsive/theme-alpha/img/visa-logo.png">
-		  </div>
-		  
-		  <h2><spring:theme code="homepage.visa.title.text"/></h2>
-		  <h4><spring:theme code="homepage.visa.subtitle.text"/></h4>
-		  <p><spring:theme code="homepage.visa.para.text"/></p>
-		  <div class="applyBtn">
-			 <a href="https://www.mofa.gov.sa/ar" target="_blank"><spring:theme code="homepage.visa.link.text"/></a>
-		  </div>
-	   </div>
+		<a href="https://visa.mofa.gov.sa/Account/Loginindividuals" target="_blank" class="homePopupGifLink">
+			<video class="investorPopupVidDiv" id="investorPopupVid" autoplay=""  muted="" playsinline="" loop="">
+				<source src="/_ui/responsive/theme-alpha/img/investor-visit-visa-ar.mp4" type="video/mp4">
+		   </video>
+		</a>
+	    <span class="visaPopupClose visaPopupCloseBtn"><img src="/_ui/responsive/theme-alpha/img/visa-close-white.png"></span>
 	</div>
   </div>
   
   <!--APPLY VISA POPUP Ar End-->
-	
 </c:if>

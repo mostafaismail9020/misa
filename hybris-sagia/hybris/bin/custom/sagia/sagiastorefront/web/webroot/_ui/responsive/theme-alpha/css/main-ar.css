@@ -11187,234 +11187,115 @@ height: auto !important;
   /*Contact Upload Button -End*/ 
 
 /*Apply Investor Visa Popup - Start*/
-  .visaPopupBody {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index:9999;
+.visaPopupBody {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+    z-index: 99999;
 }
 
 .visaBodyBg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #0000009e;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #0000009e;
 }
 
 .visaBodyPopup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    bottom: 0;
-    width: 900px;
-    height: 550px;
-    background-image: url(../img/visa-popup-bg.jpg);
-    background-size: cover;
-    background-position: top;
-    border-radius: 15px;
-    overflow: hidden;
-    transform: scale(0.5);
-    transition: 0.2s ease-in-out;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: 0;
+	width: 700px;
+	height: 700px;
+	padding: 5px;
+	background-size: cover;
+	background-position: top;
+	border-radius: 15px;
+	overflow: hidden;
+	transform: scale(0.5);
+	transition: 0.2s ease-in-out;
 }
 .visaBodyPopupShow{
-    transform: scale(1);
-    transition: 0.7s ease-in-out;
+	transform: scale(1);
+	transition: 0.7s ease-in-out;
 }
-
-.visaPopupOverlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, #fff, rgb(255 255 255 / 75%), #ffffffb3, #ffffff00);
-    top: 0;
-    left: 0;
-
+.homePopupGifLink{
+	display: block;
 }
-
-.visaBodyPopupContent {
-    position: relative;
-    z-index: 1;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.visaPopupLogo img {
-    height: 65px;
-}
-
-.visaPopupBody h2 {
-    color: #bf9b2e;
-    font-size: 38px;
-    line-height: 47px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    margin-top: 75px;
-}
-
-.visaPopupBody h4 {
-    font-size: 24px;
-    line-height: 32px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #025635;
-    margin-bottom: 20px;
-}
-
-.visaPopupBody p {
-    font-size: 20px;
-    color: #000;
-    width: 80%;
-    margin: auto;
-    margin-top: 25px;
-    line-height: 27px;
-}
-
-.visaPopupBody .applyBtn {
-    width: 80%;
-    margin: auto;
-    margin-top: 40px;
-}
-
-.visaPopupBody a {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    background-color: #0097a9;
-    padding:10px 20px;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    border-radius: 50px;
-}
-
 .visaPopupBody .visaPopupClose {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 35px;
-    height: 35px;
-    border: 2px solid #0097a9;
-    border-radius: 100%;
-    padding: 6px;
-    display: inline-block;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0097a9;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    z-index: 2;
-    cursor: pointer;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	width: 35px;
+	height: 35px;
+	
+	border-radius: 100%;
+	
+	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 7px;
+	z-index: 2;
+	cursor: pointer;
 }
 
 .visaPopupClose img {
-    width: 100%;
+	width: 100%;
+}
+.investorPopupVidDiv{
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
 }
 
 @media(min-width:768px) and (max-width:991px) {
-    .visaBodyPopup {
-        width: 95%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .visaPopupLogo img {
-        height: 57px;
-    }
-
-    .visaBodyPopupContent {
-        padding: 40px 15px;
-    }
-
-    .visaPopupBody h2 {
-        font-size: 32px;
-        line-height: 39px;
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
-
-    .visaPopupBody h4 {
-        font-size: 24px;
-        line-height: 34px;
-    }
-
-    .visaPopupBody p {
-        font-size: 20px;
-        line-height: 29px;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .visaPopupOverlay {
-        background-image: radial-gradient(circle, #fff, rgb(255 255 255), #ffffffb3, #ffffff00);
-    }
-
-    .visaPopupBody .applyBtn {
-        width: 100%;
-    }
-
-    .visaPopupBody .visaPopupClose {
-        width: 30px;
-        height: 30px;
-        padding: 5;
-    }
+	.visaBodyPopup {
+		width: 709px;
+		height: 709px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.visaPopupBody .visaPopupClose {
+		width: 30px;
+		height: 30px;
+		padding: 5;
+	}
 }
 
 @media(max-width:767px) {
-    .visaBodyPopup {
-        width: 95%;
-        height: auto;
-        bottom: unset;
-        margin-top: 60px;
-    }
+	.visaBodyPopup {
+		width: 95%;
+		height: auto;
+		bottom: unset;
+		margin-top: 50px;
+	}
+	.visaPopupBody .visaPopupClose {
+		width: 30px;
+		height: 30px;
+		padding: 5;
+	}
 
-    .visaPopupLogo img {
-        height: 57px;
-    }
-
-    .visaBodyPopupContent {
-        padding: 40px 15px;
-    }
-
-    .visaPopupBody h2 {
-        font-size: 24px;
-        line-height: 33px;
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-
-    .visaPopupBody h4 {
-        font-size: 20px;
-        line-height: 29px;
-    }
-
-    .visaPopupBody p {
-        font-size: 18px;
-        line-height: 27px;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .visaPopupOverlay {
-        background-image:radial-gradient(circle, #fff, rgb(255 255 255), #ffffffb3, #ffffff8c);
-    }
-
-    .visaPopupBody .applyBtn {
-        width: 100%;
-    }
-
-    .visaPopupBody .visaPopupClose {
-        width: 30px;
-        height: 30px;
-        padding: 5;
-    }
-
+}
+@media(max-width:380px) {
+.visaPopupBody .visaPopupClose {
+	padding: 9px;
+    top:10px;
+    left:10px
+}
+}
+@media(min-width:1260px) and (max-width:1600px){
+	.visaBodyPopup{
+		width: 600px;
+		height: 600px;
+	}
 }
 /*Apply Investor Visa Popup - End*/

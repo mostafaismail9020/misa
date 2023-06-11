@@ -72,13 +72,11 @@
 						</c:if>
 						<c:if test="${not empty productData.pdfUrl}">
 							<p class="text-center" style="width: 100%">
-							<a rel="noopener" id="pdfDownloadTrigerrer" href="${productData.pdfUrl}" target="_blank" download></a>
-								<a rel="noopener"  id="download" 
-										data-toggle="modal" data-target="#downloadModal" target="_blank" class="download-opportunity" download="">									
+								<a rel="noopener"  href="${productData.pdfUrl}" target="_blank" class="download-opportunity" download="">
 									<spring:theme code="portal.opportunity.download.here.label"/>
 									<img class="img-fluid download-icon" src="${commonResourcePath}/images/Icon awesome-download.png" alt="" />
 								</a>
-							</p>							
+							</p>
 						</c:if>
 						<%-- <c:if test="${not empty productData.imageUrl}"> 
 							<p class="text-center"><spring:theme code="text.scan.mobile"/>: <br>&nbsp;

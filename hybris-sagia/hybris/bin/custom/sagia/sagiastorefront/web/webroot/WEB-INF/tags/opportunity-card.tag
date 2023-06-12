@@ -15,10 +15,10 @@
                 <spring:theme code="portal.opportunity.know.more.button"/>&nbsp;
                 <img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
             </a>
-            <a href="${encodedContextPath}${result.opportunity.url}/?scrollTo=contact" class="button btn interest-btn">
+            <!-- <a href="${encodedContextPath}${result.opportunity.url}/?scrollTo=contact" class="button btn interest-btn">
                 <spring:theme code="portal.opportunity.iam.interested.button"/>&nbsp;
                 <img class="img-fluid arrow-icon" src="${commonResourcePath}/images/arrow_blue.png" alt=""/>
-            </a>
+            </a> -->
         </div>
     </div>
 </div>

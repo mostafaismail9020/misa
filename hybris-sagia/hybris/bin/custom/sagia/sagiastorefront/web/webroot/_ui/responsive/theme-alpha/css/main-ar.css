@@ -11292,10 +11292,26 @@ height: auto !important;
     left:10px
 }
 }
-@media(min-width:1260px) and (max-width:1600px){
+@media(min-width:1301px) and (max-width:1600px){
 	.visaBodyPopup{
-		width: 600px;
-		height: 600px;
+		width: 520px;
+		height: 520px;
 	}
+    .visaPopupBody .visaPopupClose{
+        width:30px;
+        height:30px;
+        padding:7px;
+    }
+}
+@media(min-width:1200px) and (max-width:1300px){
+	.visaBodyPopup{
+		width: 450px;
+		height: 450px;
+	}
+  .visaPopupBody .visaPopupClose{
+    width:30px;
+    height:30px;
+    padding:10px;
+}
 }
 /*Apply Investor Visa Popup - End*/

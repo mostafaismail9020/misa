@@ -68,9 +68,11 @@
 	<div class="visaBodyBg"></div>
 	<div class="visaBodyPopup">
 		<a href="https://visa.mofa.gov.sa/Account/Loginindividuals" target="_blank" class="homePopupGifLink">
-		<video class="investorPopupVidDiv" id="investorPopupVid" autoplay=""  muted="" playsinline="" loop="">
+		<video class="investorPopupVidDiv d-none d-lg-block" id="investorPopupVid" autoplay=""  muted="" playsinline="" loop="">
 			<source src="/_ui/responsive/theme-alpha/img/investor-visit-visa-en.mp4" type="video/mp4">
 	   </video>
+	   <div id="investorPopupVidDivGifEn" class="investorPopupVidDivGif  d-lg-none" style="width:100%;min-height:330px;background-image: url('/_ui/responsive/theme-alpha/img/popup-mobile-bg.jpg');border-radius: 15px;background-size: cover;"></div>
+
 		</a>
 		<span class="visaPopupClose visaPopupCloseBtn"><img src="/_ui/responsive/theme-alpha/img/visa-close-white.png"></span>
 	</div>
@@ -82,9 +84,10 @@
 	<div class="visaBodyBg"></div>
 	<div class="visaBodyPopup">
 		<a href="https://visa.mofa.gov.sa/Account/Loginindividuals" target="_blank" class="homePopupGifLink">
-			<video class="investorPopupVidDiv" id="investorPopupVid" autoplay=""  muted="" playsinline="" loop="">
+			<video class="investorPopupVidDiv d-none d-lg-block" id="investorPopupVid" autoplay=""  muted="" playsinline="" loop="">
 				<source src="/_ui/responsive/theme-alpha/img/investor-visit-visa-ar.mp4" type="video/mp4">
 		   </video>
+		   <div id="investorPopupVidDivGifAr" class="investorPopupVidDivGif  d-lg-none" style="width:100%;min-height:330px;background-image: url('/_ui/responsive/theme-alpha/img/popup-mobile-bg.jpg');border-radius: 15px;background-size: cover;"></div>
 		</a>
 	    <span class="visaPopupClose visaPopupCloseBtn"><img src="/_ui/responsive/theme-alpha/img/visa-close-white.png"></span>
 	</div>

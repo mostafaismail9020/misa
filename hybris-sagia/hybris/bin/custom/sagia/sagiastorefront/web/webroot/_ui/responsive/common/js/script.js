@@ -5404,6 +5404,9 @@ $('.form-icon_reset').click(function(){
 		
 		if(PageLang == 'en'){	
 			if(localStorage.getItem('popEnState') != 'shown'){
+				if($(window).width() < 992) {
+					$('#investorPopupVidDivGifEn').append('<img class="investorPopupVidDiv" src="https://investsaudi.sa/medias/investor-visit-visa-en.gif?context=bWFzdGVyfHJvb3R8NDE2MTgzNHxpbWFnZS9naWZ8aDIzL2gyZi85MDUxOTEzMDI3NjE0LmdpZnxlNzFjZTQzN2UwZTkxMDBiNjE5YjNhOTA4Y2FkMWU4YTE4NzlkMmQ4MDA5ODc5YmMzN2U5YzIyYTA4ZjE1NTVj" />');
+				};
 				$('#visaPopupBodyEn').show();
 				$('.visaBodyPopup').addClass('visaBodyPopupShow');
 				$("#investorPopupVid")[0].play();
@@ -5412,6 +5415,9 @@ $('.form-icon_reset').click(function(){
 			}
 			}else if(PageLang == 'ar'){
 				if(localStorage.getItem('popArState') != 'shown'){
+				if($(window).width() < 992) {
+					$('#investorPopupVidDivGifAr').append('<img class="investorPopupVidDiv" src="https://investsaudi.sa/medias/investor-visit-visa-ar.gif?context=bWFzdGVyfHJvb3R8NDIyMjE4MHxpbWFnZS9naWZ8aDQ1L2g3MS85MDUxOTEzMjI0MjIyLmdpZnwzMjBmODkxZWM2YTY3MmZlOWU2OGE5YzIxNDk0NmMzYWUyMzgzNDllOWFjMWQwMzhiODU5ODZjNWI2YmY5M2Y3" />');
+				};
 				$('#visaPopupBodyAr').show();
 				$('.visaBodyPopup').addClass('visaBodyPopupShow');
 				$("#investorPopupVid")[0].play();

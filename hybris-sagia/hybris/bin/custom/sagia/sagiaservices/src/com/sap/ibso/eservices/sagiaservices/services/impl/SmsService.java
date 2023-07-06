@@ -60,13 +60,23 @@ public class SmsService {
          */
 
 
-        String urlString = new StringBuilder(sapHttpDestination.getTargetURL())
+        /* String urlString = new StringBuilder(sapHttpDestination.getTargetURL())
                 .append("username=").append(sapHttpDestination.getUserid())
                 .append("&password=").append(sapHttpDestination.getPassword())
                 .append("&Sender=").append("MISA")
                 .append("&Text=").append("Your%20OTP%20code%20is%3A").append(code)
                 .append("%20to%20login%20Investor%20Eservices")
                 .append("&number=").append(mobileNumber).toString();
+		*/
+				
+		String urlString = new StringBuilder(sapHttpDestination.getTargetURL())
+                .append("UserName=").append(sapHttpDestination.getUserid())
+                .append("&Password=").append(sapHttpDestination.getPassword())
+                .append("&MessageType=").append("text")
+                .append("&Recipients=").append(mobileNumber)
+                .append("&SenderName=").append("MISA")
+                .append("&MessageText=").append("Your%20OTP%20code%20is%3A").append(code)
+                .append("%20to%20login%20Investor%20Eservices").toString();
 
 //        HttpURLConnectionResponse httpURLConnectionResponse =
 //                httpURLConnectionService.execute(new HttpURLConnectionRequest(REQUEST_TYPE_GET, new URL(url)));
@@ -125,13 +135,23 @@ public class SmsService {
                 .append("%20to%20login%20Invest%20Saudi")
                 .append("&number=").append(mobileNumber).toString();*/
 
-        String urlString = new StringBuilder(sapHttpDestination.getTargetURL())
+        /* String urlString = new StringBuilder(sapHttpDestination.getTargetURL())
                 .append("username=").append(sapHttpDestination.getUserid())
                 .append("&password=").append(sapHttpDestination.getPassword())
                 .append("&Sender=").append("MISA")
                 .append("&Text=").append("Your%20OTP%20code%20is%3A").append(code)
                 .append("%20to%20login%20Investor%20Eservices")
                 .append("&number=").append(mobileNumber).toString();
+		*/
+				
+		String urlString = new StringBuilder(sapHttpDestination.getTargetURL())
+                .append("UserName=").append(sapHttpDestination.getUserid())
+                .append("&Password=").append(sapHttpDestination.getPassword())
+                .append("&MessageType=").append("text")
+                .append("&Recipients=").append(mobileNumber)
+                .append("&SenderName=").append("MISA")
+                .append("&MessageText=").append("Your%20OTP%20code%20is%3A").append(code)
+                .append("%20to%20login%20Investor%20Eservices").toString();
 
         LOG.info("The SMS URL is Created for Phone number " +mobileNumber+ " is "+ urlString);
         URL url = new URL(urlString);

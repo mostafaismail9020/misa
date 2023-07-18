@@ -102,6 +102,14 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         contactTicketBusinessService.sendStrategicInvestorTicketDetails(ticket.getTicketID());
         return ticket;
     }
+    public CsTicketModel saveInvestorVisaTicket(ContactTicketData contactTicketData) {
+
+        CsTicketParameter csTicketParameter = createCsTicketParameter(contactTicketData);
+        CsTicketModel ticket = contactTicketBusinessService.createTicket(csTicketParameter);
+        CustomerModel customer = (CustomerModel)csTicketParameter.getCustomer();
+        contactTicketBusinessService.sendInvestorVisaTicketDetails(ticket.getTicketID());
+        return ticket;
+    }
 
     protected CsTicketParameter createCsTicketParameter(final ContactTicketData ticketData) {
         final ContactTicketParameter ticketParameter = new ContactTicketParameter();
@@ -133,6 +141,10 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
         {
             ticketParameter.setCustomer(userService.getCustomerByEmail("Strategic_Investors@misa.gov.sa"));
         }
+        else if(null!=sessionService.getAttribute("isInvestorVisaContactUsFlow"))
+        {
+            ticketParameter.setCustomer(userService.getCustomerByEmail("investorvisa@misa.gov.sa"));
+        }
         else
         {
             ticketParameter.setCustomer(user);
@@ -156,14 +168,14 @@ public class ContactTicketFacade extends DefaultCustomerTicketingFacade {
     }
 
     private UserModel CheckIfUserExistElseCreateUser(ContactTicketData ticketData) {
-        boolean isMizaContactUsFlow = false;
-        if(null!=sessionService.getAttribute("isMizaContactUsFlow") || null!=sessionService.getAttribute("isStrategicContactUsFlow") )
+        boolean isStaticPageFlow = false;
+        if(null!=sessionService.getAttribute("isMizaContactUsFlow") || null!=sessionService.getAttribute("isStrategicContactUsFlow") || null!=sessionService.getAttribute("isInvestorVisaContactUsFlow"))
         {
-            isMizaContactUsFlow=true;
+            isStaticPageFlow=true;
         }
 
         UserModel userForEmail = userService.getCustomerByEmail(ticketData.getEmail().toLowerCase());
-        if (null==userForEmail && !isMizaContactUsFlow ) {
+        if (null==userForEmail && !isStaticPageFlow ) {
             try {
                 CustomerModel customer=modelService.create(CustomerModel.class);
                 customer.setCompany(ticketData.getCompany());

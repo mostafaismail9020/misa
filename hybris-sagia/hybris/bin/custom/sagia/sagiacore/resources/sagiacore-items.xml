@@ -46,6 +46,9 @@
        <collectiontype code="TargetedInvestorsSectionList" elementtype="TargetedInvestorsSection" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
+       <collectiontype code="InvestorVisaApplyTermsList" elementtype="InvestorVisaApplyTerm" autocreate="true" type="list"/>
+       <collectiontype code="InvestorVisaFollowingList" elementtype="InvestorVisaFollowing" autocreate="true" type="list"/>
+
 
    </collectiontypes>
 
@@ -11498,6 +11501,220 @@
                     <attribute qualifier="label" type="localized:java.lang.String">
                         <persistence type="property"/>
                         <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestorVisaBannerComponent" generate="true"
+                      extends="InvestSaudiBannerComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaBannerComponent">
+                <description>Investor Visa Banner Component</description>
+            </itemtype>
+            <itemtype code="InvestorVisaMainPara" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaMainPara">
+                <description>Investor Visa Main Paragraph Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="primaryImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="innerImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestorVisaImagesComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaImagesComponent">
+                <description>Investor Visa Images Component</description>
+                <attributes>
+                    <attribute type="Media" qualifier="firstImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="secondImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="thirdImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestorVisaApplyTerm" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaApplyTerm">
+                <description>Investor Visa Apply Term</description>
+                <attributes>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="investorVisaApplyTermImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestorVisaApplyTerms" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaApplyTerms">
+                <description>Investor Visa Apply Term</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Investor Visa Apply Terms Title</description>
+                    </attribute>
+                    <attribute type="Media" qualifier="mainImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="listOfTerms" type="InvestorVisaApplyTermsList">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Accordions Container List</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestorVisaFollowing" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaFollowing">
+                <description>Investor Visa Apply Term</description>
+                <attributes>
+                    <attribute qualifier="number" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Investor Visa Terms Following number</description>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Investor Visa Terms Following description</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestorVisaTermsFollowing" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaTermsFollowing">
+                <description>Investor Visa Apply Term</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Investor Visa Terms Following Title</description>
+                    </attribute>
+                    <attribute qualifier="listOfFollowings" type="InvestorVisaFollowingList">
+                        <persistence type="property"/>
+                        <description>Investor Visa Terms Following List</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestorVisaApplyNowComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaApplyNowComponent">
+                <description>Investor Visa Apply Now Component</description>
+                <attributes>
+                    <attribute type="Media" qualifier="borderImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="insideImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="InvestorVisaContactUsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaContactUsComponent">
+                <description>Investor Visa Contact Us Component</description>
+                <attributes>
+                    <attribute qualifier="customerName" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mobileNumber" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="email" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="enquiry" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="investorvisasuccessMessage" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
                     </attribute>
                 </attributes>
             </itemtype>

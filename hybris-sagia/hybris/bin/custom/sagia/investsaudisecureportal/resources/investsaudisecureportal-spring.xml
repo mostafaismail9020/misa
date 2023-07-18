@@ -343,6 +343,9 @@
 	<bean id="strategicInvestorTicketEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
 		<property name="resource" value="classpath:/investsaudisecureportal/processes/strategicInvestorTicketEmailProcess.xml"/>
 	</bean>
+	<bean id="investorVisaTicketEmailProcess" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/investsaudisecureportal/processes/investorVisaTicketEmailProcess.xml"/>
+	</bean>
 
 	<bean id="opportunityUserEmailAction" parent="abstractGenerateEmailAction">
 		<property name="frontendTemplateName" value="OpportunityUserEmailTemplate"/>
@@ -352,6 +355,9 @@
 	</bean>
 	<bean id="strategicInvestorUserEmailAction" parent="abstractGenerateEmailAction">
 		<property name="frontendTemplateName" value="StrategicInvestorUserEmailTemplate"/>
+	</bean>
+	<bean id="investorVisaUserEmailAction" parent="abstractGenerateEmailAction">
+		<property name="frontendTemplateName" value="InvestorVisaUserEmailTemplate"/>
 	</bean>
 
 	<bean id="opportunityUserEmailContext" class="com.investsaudi.email.context.OpportunityUserEmailContext" parent="abstractEmailContext" scope="prototype" />

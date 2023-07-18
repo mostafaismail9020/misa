@@ -1,0 +1,2 @@
+## messageSource=classpath:/investsaudisecureportal/messages/email-investorVisaTicketDetailsEmail_$lang.properties
+${ctx.messages.emailSubject}

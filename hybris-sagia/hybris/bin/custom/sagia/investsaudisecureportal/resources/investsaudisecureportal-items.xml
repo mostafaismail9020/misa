@@ -230,6 +230,23 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+		<itemtype code="InvestorVisaTicketDetailsEmailProcess"
+				  extends="OpportunityCreatedEmailProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="investorVisaTicketUserName" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="investorVisaTicketUserPhoneNumber" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="investorVisaTicketUserEmail" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="investorVisaTicketUserEnquiry" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
 		<itemtype code="OpportunityUpdatedEmailProcess"
 				  extends="StoreFrontCustomerProcess" autocreate="true" generate="true">
 			<attributes>

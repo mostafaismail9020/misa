@@ -91,4 +91,23 @@ public class ContactUsController extends AbstractController {
             return "error";
         }
     }
+
+    @RequestMapping(value = "/investor-visa-contactus", method = {RequestMethod.POST,RequestMethod.GET}, consumes = {"application/json"})
+    public @ResponseBody String investorVisaContactus(@RequestBody ContactTicketData ticket
+            ,HttpServletRequest request, HttpServletResponse response,  final BindingResult bindingResult) {
+
+        sessionService.setAttribute("isInvestorVisaContactUsFlow", true);
+        if (bindingResult.hasErrors()) {
+            log.error("Invalid Captcha");
+            return ERROR_INVALID_CAPTCHA;
+        }
+
+        try {
+            CsTicketModel contactTicket  = contactTicketFacade.saveInvestorVisaTicket(ticket);
+            return String.format("success_%s", contactTicket.getTicketID());
+        } catch (Exception e) {
+            log.error("Error generating contact ticket", e);
+            return "error";
+        }
+    }
 }

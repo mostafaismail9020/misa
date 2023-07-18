@@ -1,0 +1,53 @@
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$wideContent = CMSImageComponent, BannerComponent
+$emailFromEmail = info@misa.gov.sa
+$emailFromName = Customer Services Team
+$lang = en
+$jarResource = jar:com.investsaudi.constants.InvestsaudisecureportalConstants&/investsaudisecureportal/import/contentCatalogs/investsaudiContentCatalog/emails
+$jarResourceCms = jar:com.sap.ibso.eservices.core.setup.CoreSystemSetup&/sagiacore/import/cockpits/cmscockpit
+
+################## Start Investor Visa Email Template  #####################
+# Email page Template
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]                 ; name                                   ; active; frontendTemplateName               ; subject(code)                                   ; htmlTemplate(code)                           ; restrictedPageTypes(code)
+                               ;                          ; InvestorVisaUserEmailTemplate ; Investor Visa User Email Template ; true  ; InvestorVisaUserEmailTemplate ; investor_Visa_Ticket_Details_Email_Subject ; investor_Visa_Ticket_Details_Email_Body ; EmailPage
+
+# Templates for CMS Cockpit Page Edit
+INSERT_UPDATE EmailPageTemplate; $contentCV[unique = true]; uid[unique = true]                 ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                               ;                          ; InvestorVisaUserEmailTemplate ; $jarResourceCms/structure-view/structure_investor_visa_Ticket_Details_Email.vm
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]; template(uid, $contentCV)[unique = true][default = 'InvestorVisaUserEmailTemplate']; validComponentTypes(code)
+                             ; SiteLogo           ;                                                                            ;              ;
+                             ; TopContent         ;                                                                            ; $wideContent ;
+                             ; BottomContent      ;                                                                            ; $wideContent ;
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; name                      ; active
+                         ;                          ; EmailTopSlot      ; Default Email Top Slot    ; true
+                         ;                          ; EmailBottomSlot   ; Default Email Bottom Slot ; true
+                         ;                          ; EmailSiteLogoSlot ; Default Email Site Slot   ; true
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                       ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'InvestorVisaUserEmailTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+                                    ;                          ; SiteLogo-InvestorVisaUserEmail      ; SiteLogo               ;                                                                                             ; EmailSiteLogoSlot                          ; true
+                                    ;                          ; TopContent-InvestorVisaUserEmail    ; TopContent             ;                                                                                             ; EmailTopSlot                               ; true
+                                    ;                          ; BottomContent-InvestorVisaUserEmail ; BottomContent          ;                                                                                             ; EmailBottomSlot                            ; true
+
+# Customer Registration Email Page
+INSERT_UPDATE EmailPage; $contentCV[unique = true]; uid[unique = true]         ; name                          ; masterTemplate(uid, $contentCV)    ; defaultPage; approvalStatus(code)[default = 'approved']; fromEmail[lang = en][default = 'info@misa.gov.sa']; fromName[lang = en][default = 'Customer Services Team']
+                       ;                          ; InvestorVisaUserEmail ; Investor Visa User Email ; InvestorVisaUserEmailTemplate ; true       ;                                           ;                                                   ;
+
+
+# Email velocity templates
+INSERT_UPDATE RendererTemplate; code[unique = true]                             ; contextClass; rendererType(code)[default = 'velocity']
+                              ; investor_Visa_Ticket_Details_Email_Body    ; com.investsaudi.email.context.InvestorVisaTicketDetailsEmailContext
+                              ; investor_Visa_Ticket_Details_Email_Subject ; com.investsaudi.email.context.InvestorVisaTicketDetailsEmailContext
+
+
+# CMS components and Email velocity templates
+UPDATE RendererTemplate; code[unique = true]                             ; description[lang = $lang]                   ; templateScript[lang = $lang, translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                       ; investor_Visa_Ticket_Details_Email_Body    ; "Investor Visa Ticket Details Body"    ; $jarResource/email-investorVisaTicketDetailsEmailBody.vm
+                       ; investor_Visa_Ticket_Details_Email_Subject ; "Investor Visa Ticket Details Subject" ; $jarResource/email-investorVisaTicketDetailsEmailSubject.vm
+
+################## End Opportunity User Email Template  #####################
+#INSERT_UPDATE Customer; uid[unique = true]            ; usernameemail                 ; name                                ; country       ; mobileCountryCode; mobileNumber; company            ; sector
+#                      ; strategicinvestor@misa.gov.sa ; strategicinvestor@misa.gov.sa ; Strategic Investor Default Customer ; 8796093427543 ; 966              ; 0000000000  ; Strategic Investor ; 8796093132681

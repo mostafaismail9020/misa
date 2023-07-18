@@ -7,6 +7,11 @@
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
 <%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
+<script>
+function recaptchaCallback(){
+    $(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');
+    }
+    </script>
 <style type="text/css">
 	.investsaudiHeader,
 	.sagiaNavigation,
@@ -34,7 +39,7 @@
 						<div class="register-role-selection">
 							<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid login-role" />
 						</div>
-						<form:form method="post" modelAttribute="sagiaVerificationForm">
+						<form:form method="post" id="sagiaVerificationForm" modelAttribute="sagiaVerificationForm">
 							<div class="login-verification-processs">
 								<c:if test="${isMobileVerificationEnabled}">
 									<div class="row register-user-info">
@@ -102,6 +107,9 @@
 												</button>
 											</div>
 										</div>
+										<input type="hidden" id="recaptchaChallangeAnswered"
+                                        							value="${requestScope.recaptchaChallangeAnswered}" />
+                                              <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
 									</div>
 									<hr class="dotted-lines" />
 								</c:if>

@@ -43,10 +43,14 @@
 			<aop:around method="prepare"
 						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.twoFactorAuth(..))"/>
 		</aop:aspect>-->
-		<!--<aop:aspect id="prepVerificationReCaptchaAspect" ref="reCaptchaAspect">
+		<aop:aspect id="prepVerificationReCaptchaAspect" ref="reCaptchaAspect">
 			<aop:around method="prepare"
 						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.getVerification(..))"/>
-		</aop:aspect>-->
+		</aop:aspect>
+		<aop:aspect id="advVerificationReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise"
+						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.mobileVerify(..))"/>
+		</aop:aspect>
 		<!--<aop:aspect id="TwoFactorAuthReCaptchaAspect" ref="reCaptchaAspect">
 			<aop:around method="advise"
 						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages..*.authenticate(..))"/>

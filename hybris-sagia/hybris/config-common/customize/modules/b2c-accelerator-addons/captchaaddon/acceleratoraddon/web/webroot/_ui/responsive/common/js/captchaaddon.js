@@ -28,7 +28,7 @@ ACC.captcha = {
 
 $(document).ready(function ()
 {
-	if ($('#contact-us-page-contact-us-form').html() != null || $('#sagiaRegisterFormQuickRegistration').html() != null || $('#updateEmailForm').html() != null || $('#corForm').html() != null || $('#sagiaAuthenticationForm').html() != null || $('#sagiaAuthenticateCodeForm').html() != null || $('#SagiaVerificationForm').html() != null || $('#mizaContactForm').html() != null || $('#strategicContactForm').html() != null)
+	if ($('#contact-us-page-contact-us-form').html() != null || $('#sagiaRegisterFormQuickRegistration').html() != null || $('#updateEmailForm').html() != null || $('#corForm').html() != null || $('#sagiaAuthenticationForm').html() != null || $('#sagiaAuthenticateCodeForm').html() != null || $('#sagiaVerificationForm').html() != null || $('#mizaContactForm').html() != null || $('#strategicContactForm').html() != null|| $('#investorVisaContactForm').html() != null)
 
 	{
 		ACC.captcha.bindAll();

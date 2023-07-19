@@ -1637,3 +1637,33 @@ $("#quickregistrationEmail").on('blur',function(){
 
     }
 })
+
+$(document).ready(function() {
+
+  $("#sagiaVerificationForm .js-recaptcha-captchaaddon").append("<span style='color: red;font-size: 14px;' id='lblErrorCaptcha'></span>");
+  $("#sagiaVerificationForm .js-recaptcha-captchaaddon").css({'display' : 'flex', 'flex-direction' : 'column', 'margin' : 'auto'});
+
+
+	$("#sagiaVerificationForm #mobileBtn").css({'display' : 'none'});
+
+
+  });
+
+ $("#TempMobileVerify").click(function() {
+           var recaptcha = document.forms["sagiaVerificationForm"]["g-recaptcha-response"].value;
+           var valid     = true;
+           if(recaptcha === ""){
+		        $("#lblErrorCaptcha").text("Please fill reCAPTCHA");
+		        valid = false;
+		       }
+		      if(valid) {
+
+		       $("#mobileBtn").trigger('click');
+		      }
+      }
+   );
+
+function recaptchaCallback(){
+     $(".js-recaptcha-captchaaddon").siblings('span#lblErrorCaptcha').text('');
+    $("#sagiaVerificationForm #lblErrorCaptcha").text("");
+}

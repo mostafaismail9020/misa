@@ -102,15 +102,27 @@ function recaptchaCallback(){
 										<div class="help-block has-error"></div>
 										<div class="row d-block login-buttons verify-mobile m-auto">
 											<div class="col-md-12 col-12">
-												<button class="login-btn login-btn-next <c:if test='${mobileStatus == "NOT_VERIFIED"}'>active</c:if>" name="smsverify" id="mobileBtn" <c:if test='${mobileStatus == "VERIFIED"}'>disabled="disabled"</c:if>>
+											<a id="TempMobileVerify" style="
+                                            <c:if test='${mobileStatus == "VERIFIED"}'> pointer-events: none;background-color: #bac4c5!important;</c:if>
+                                                background-color:#00a6de;
+                                                color: #fff !important;
+                                                padding: 15px;
+                                                border-radius: 50px;
+                                                font-weight: bold;
+                                                font-size: 14px;
+                                                width: 170px;
+                                                cursor: pointer;
+                                            "><spring:theme code="text.verification.verify.mobile" /></a>
+												<button class="login-btn login-btn-next <c:if test='${mobileStatus == "NOT_VERIFIED"}'>active</c:if>"
+												name="smsverify" id="mobileBtn" <c:if test='${mobileStatus == "VERIFIED"}'>disabled="disabled"</c:if>>
 													<spring:theme code="text.verification.verify.mobile" />
 												</button>
 											</div>
 										</div>
-										<input type="hidden" id="recaptchaChallangeAnswered"
-                                        							value="${requestScope.recaptchaChallangeAnswered}" />
-                                              <div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
-									</div>
+                                            <input type="hidden" id="recaptchaChallangeAnswered"
+                                                                        value="${requestScope.recaptchaChallangeAnswered}" />
+                                                  <div class="form_field-elements control-group js-recaptcha-captchaaddon <c:if test='${mobileStatus == "VERIFIED"}'>d-none</c:if>"></div>
+                                                </div>
 									<hr class="dotted-lines" />
 								</c:if>
 								<c:if test="${isEmailVerificationEnabled}">

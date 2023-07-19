@@ -11508,6 +11508,12 @@
                       extends="InvestSaudiBannerComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaBannerComponent">
                 <description>Investor Visa Banner Component</description>
+                <attributes>
+                    <attribute type="Media" qualifier="bannerVideo">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
             </itemtype>
             <itemtype code="InvestorVisaMainPara" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
@@ -11620,7 +11626,7 @@
                         <persistence type="property"/>
                         <description>Investor Visa Apply Terms Title</description>
                     </attribute>
-                    <attribute type="Media" qualifier="mainImage">
+                    <attribute type="Media" qualifier="backgroundImage">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
@@ -11654,6 +11660,10 @@
                         <persistence type="property"/>
                         <description>Investor Visa Terms Following Title</description>
                     </attribute>
+                    <attribute type="Media" qualifier="backgroundImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
                     <attribute qualifier="listOfFollowings" type="InvestorVisaFollowingList">
                         <persistence type="property"/>
                         <description>Investor Visa Terms Following List</description>
@@ -11669,7 +11679,15 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute type="Media" qualifier="insideImage">
+                    <attribute type="Media" qualifier="insideVideo">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="backgroundImage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="planeAnimation">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
@@ -11693,6 +11711,10 @@
                         <modifiers/>
                     </attribute>
                     <attribute qualifier="enquiry" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="backgroundImage">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>

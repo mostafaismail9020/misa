@@ -9,14 +9,18 @@
 <section id="hero" class="d-flex align-items-center">
     
     <img class="home-banner" src="${component.backgroundBannerImage.url}" alt="homepage-banner" loading="lazy">
-    <div class="container position-relative" >
-      <h2  data-aos="zoom-in" data-aos-easing="ease" data-aos-delay="150">${component.title}</h2>
-      <h1  data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">${component.description}</h1>
-      <div class="col-md-5 p-0 d-flex video-popup-btn" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="450">
-            <a href="${portal.cmsLinkUrl(component.exploreNowUrl)}" class="btn-primary-fill btn-video">${component.exploreNowUrl.linkName} <span class="btn-icon"><img src="${commonResourcePath}/images/arow_Path.png" /></span></a>
-            <a href="#" class="glightbox play-btn mb-4" data-toggle="modal" data-target="#videoModal"></a>
+    <div class="container" >
+      <h1 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300" class="text-md-left text-center">${component.title}</h1>
+      <div class="d-inline-flex p-2 text-white text-left">
+      	<div class="p-2 header-home-container">
+      		<p>New Investor?</p>
+      		<h5><a href="#">View opportunities</a></h5>
+      	</div>
+      	<div class="p-2 header-home-container">
+			<p>Already Investor?</p>
+			<h5><a href="#">Log in</a></h5>
+		</div>
       </div>
-      <!-- <a href="#about" class="btn-get-started scrollto">Explore Oppurtunities</a> -->
     </div>
 
     <a href="#when-number-talk" class="m-scrollButton scrollto">

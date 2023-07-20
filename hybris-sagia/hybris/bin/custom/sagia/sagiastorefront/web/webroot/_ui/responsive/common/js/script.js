@@ -1102,7 +1102,7 @@ $(document).ready(function () {
         window.location.href = window.location.pathname +"?"+$.param(notEmptyFacet);
     });
 
-	var site = {};
+	site = {};
 	site = {
 		utils: {
 			language: function () {
@@ -1192,7 +1192,8 @@ $(document).ready(function () {
 
 	/* newsletter subscription ends */
 	/* general form validation */
-	function validateForm(ctrl) {
+	window.validateForm = function(ctrl) {
+		//alert("Inside MIZA validte");
 		var valid = true;
 		if (ctrl.length == 0) {
 			valid = false;
@@ -1227,16 +1228,20 @@ $(document).ready(function () {
 				$(this).parent().removeClass('error');
 			}
 		});
+		//alert("Inside Validate Name "+$('.validate-name', ctrl));
 		$.each($('.validate-name', ctrl), function (i, e) {
 			var pattern = new RegExp(/^[-\sa-zA-Z,\u0600-\u06FF]+$/);
+			//alert("Inside Validate Name "+$(this).val());
 			if (pattern.test($.trim($(this).val()))) {
 				if (valid) {
+					//alert("Inside MIZA validte Name IF");
 					$(this).removeClass('error');
 					$(this).parent().find(".error-msg").text("");
 					$(this).parents("div." + ctrl.attr("id")).find(".validation-name").hide();
 				}
 			}
 			else {
+				//alert("Inside MIZA validte Name ELSE");
 				$(this).addClass('error');
 				if ($(this).parent().find("label").find("em").length == 0) {
 					$(this).parent().find(".error-msg").html("<em><span>" + site.messages().noSplChars + "</span></em>");
@@ -1341,6 +1346,24 @@ $(document).ready(function () {
 				valid = false;
 			}
 		}
+		else if(ctrl[0].id === "mizaContactForm"){
+        	var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();
+        	var lblSectorErrorCaptcha = document.getElementById("lblSectorPageErrorCaptcha");
+        	lblSectorErrorCaptcha.innerHTML = "";
+        	if (recaptcha == "") {
+        		lblSectorErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+        		valid = false;
+        	}
+        }
+        else if(ctrl[0].id === "strategicContactForm"){
+                        	var recaptcha = $(".sector-page-captcha .g-recaptcha-response").val();
+                        	var lblSectorErrorCaptcha = document.getElementById("lblSectorPageErrorCaptcha");
+                        	lblSectorErrorCaptcha.innerHTML = "";
+                        	if (recaptcha == "") {
+                        		lblSectorErrorCaptcha.innerHTML = "Please fill reCAPTCHA";
+                        		valid = false;
+                        	}
+                }
 		
 		return valid;
 	}
@@ -4075,10 +4098,6 @@ function validatePopupContact(event) {
 		return false;
 	}
 
-
-
-
-
 });
 
 function updateSubjectId(e) {
@@ -4644,6 +4663,15 @@ function onlyAlphabets(evt){
 	else
 		return false;
 }
+
+function onlyAlphabetsWithSpace(evt){
+	evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+	if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode === 32))
+		return true;
+	else
+		return false;
+}
 function validateEmailReg(evt){
 	var email = evt.target.value;
 	var lblError = document.getElementById("lblError");
@@ -4777,7 +4805,7 @@ function cookieConsent() {
 
 $('#btnDeny').click(()=>{
     eraseCookie('allowCookies')
-    $('.toast').hide()
+    $('.cookie-desclaimer').hide()
 })
 
 $('#btnAccept').click(()=>{
@@ -4958,23 +4986,28 @@ $("#btnContactModalClose").on('hidden.bs.modal',function(){
 })
 
 function validateFormContactUs(){
-	var firstName = $("#contact-us-page-contact-us-form #firstName").val();
-	var lastName = $("#contact-us-page-contact-us-form #lastName").val();
-	var phoneNumber = $("#contact-us-page-contact-us-form #phoneNumber").val();
+	var contactUsName = $("#contact-us-page-contact-us-form #contactUsName").val();
+	/*var firstName = $("#contact-us-page-contact-us-form #firstName").val();
+	var lastName = $("#contact-us-page-contact-us-form #lastName").val();*/
+	//var phoneNumber = $("#contact-us-page-contact-us-form #phoneNumber").val();
 	var email = $("#contact-us-page-contact-us-form #email").val();
-	var selectedEnquiryType = $("#contact-us-page-contact-us-form #selectedEnquiryType").val();
-	var selectedCategoryOne = $("#contact-us-page-contact-us-form #selectedCategoryOne").val();
-	var invalidCheck = $("#contact-us-page-contact-us-form #invalidCheck");
+	var message = $("#contact-us-page-contact-us-form #message").val();
+	//var selectedEnquiryType = $("#contact-us-page-contact-us-form #selectedEnquiryType").val();
+	//var selectedCategoryOne = $("#contact-us-page-contact-us-form #selectedCategoryOne").val();
+	/*var invalidCheck = $("#contact-us-page-contact-us-form #invalidCheck");*/
 	var lblError = document.getElementById("lblError");
 	lblError.innerHTML = "";
 	var isValid = true;
 
-	$("#lblErrorfirstName").text("");	
-	$("#lblErrorlastName").text("");	
-	$("#lblErrorPhoneNumber").text("");	
-	$("#lblErrorselectedEnquiryType").text("");	
-	$("#lblErrorselectedCategoryOne").text("");	
-	$("#lblErrorinvalidCheck").text("");	
+	/*$("#lblErrorfirstName").text("");
+	$("#lblErrorlastName").text("");	*/
+	//$("#lblErrorPhoneNumber").text("");
+	//$("#lblErrorselectedEnquiryType").text("");
+	//$("#lblErrorselectedCategoryOne").text("");
+	$("#lblErrorMessage").text("");
+	$("#lblErrorContactUsName").text("");
+
+	/*$("#lblErrorinvalidCheck").text("");
 	if(firstName === ""){
 		$("#lblErrorfirstName").text("Only Letters Are Allowed");	
 		isValid = false;
@@ -4986,23 +5019,33 @@ function validateFormContactUs(){
 	if(phoneNumber === ""){
 		$("#lblErrorPhoneNumber").text("Invalid Mobile Number");
 		isValid = false;	
-	}
+	}*/
+	/*if(contactUsName === ""){
+    		$("#lblErrorContactUsName").text("Only Letters Are Allowed");
+    		isValid = false;
+    	}*/
+
 	if(email === ""){
-		$("#lblError").text("Invalid Email Id");	
+		$("#lblError").text("Required");
 		isValid = false;
 	}
-	if(selectedEnquiryType === ""){
+	if(message === ""){
+    		$("#lblErrorMessage").text("Required");
+    		isValid = false;
+    	}
+
+	/*if(selectedEnquiryType === ""){
 		$("#lblErrorselectedEnquiryType").text("Required");	
 		isValid = false;
 	}
 	if(selectedCategoryOne === ""){
 		$("#lblErrorselectedCategoryOne").text("Required");	
 		isValid = false;
-	}
-	if(!invalidCheck.is(":checked")){
+	}*/
+	/*if(!invalidCheck.is(":checked")){
 		$("#lblErrorinvalidCheck").text("Required");
 		isValid = false;
-	}
+	}*/
 
 	var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 	if (email !== "" && !expr.test(email)) {
@@ -5019,6 +5062,141 @@ function validateFormContactUs(){
 	return isValid;
 }
 
+
+var mizaelement = document.getElementsByClassName('btn-miza-contact');
+var btnText = mizaelement[0] && mizaelement[0].textContent;
+
+/*function validateMizaContact(event) {
+       onMizaContactSubmit();
+}*/
+function onMizaContactload() {
+    mizaelement.onclick = validateMizaContact(mizaelement);
+}
+
+//MIZA CHANGES
+
+	/*    $("#btn-miza-contact").on("click", function () {
+        element.onclick = validateMizaContact(mizaelement);
+    });*/
+
+ function validateMizaContact(event) {
+    		// console.log(validateForm($("#corForm")));
+    		if (validateForm($("#mizaContactForm")) == true) {
+    		//alert("Inside validateMizaContact");
+    			onMizaContactSubmit();
+    			return true;
+    			}
+    		return false;
+    	}
+
+    function onMizaContactSubmit() {
+        		// element[0].disabled = true;
+        		// element[0].textContent = site.messages().sending;
+        		$.ajax({
+        			url: ACC.config.contextPath + '/en/miza-contactus',
+        			async: true,
+        			type: "POST",
+        			contentType: "application/json; charset=utf-8",
+        			dataType: "json",
+        			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
+        			data: JSON.stringify({
+        				name: $.trim($("#mizacrName").val()),
+        				email: $.trim($("#mizacrEmail").val()),
+        				countryCode: $.trim(($(".ddl-countryCode").val() ? $(".ddl-countryCode").val() : "+966")),
+        				mobile: $.trim($("#mizacrMobile").val()),
+        				company: $.trim($("#mizacrCompany").val()),
+        				jobTitle: $.trim($("#mizacrPosition").val()),
+        				message: $.trim($("#mizacrMessage").val()),
+        				contactSubject: $.trim($("#mizacrSubjectID").val())
+        			}),
+        			success: function (data) {
+        				if (data == "mir-robot") {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
+        				}
+        				if (data.indexOf("success") != -1){
+        						dataLayer.push({
+        							'event': 'fire_event',
+        							'category': 'Contact Us Form',
+        							'action': 'Successful Submit'
+        						});
+        					$(".contactSuccess").removeClass("d-none");
+        					$("#mizaContactForm").addClass("d-none");
+        					$('.contact-sucess-ticket').text("Your reference number : "+ data.substring(8));
+        					var scrollDiv = document.getElementById("miza-contact-form").offsetTop - 80;
+        					window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+        				}
+
+        				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
+        				}
+
+        				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
+        					$('#miza-contact-form').find('#g-recaptcha_incorrect').show();
+        				}
+        			}
+        		});
+        	}
+
+var strategicelement = document.getElementsByClassName('btn-strategic-contact');
+var btnText = strategicelement[0] && strategicelement[0].textContent;
+
+function onStrategicContactload() {
+    strategicelement.onclick = validateStrategicContact(strategicelement);
+}
+
+ function validateStrategicContact(event) {
+    		if (validateForm($("#strategicContactForm")) == true) {
+    			onStrategicContactSubmit();
+    			return true;
+    			}
+    		return false;
+    	}
+
+function onStrategicContactSubmit() {
+        		$.ajax({
+        			url: ACC.config.contextPath + '/en/strategic-investor-contactus',
+        			async: true,
+        			type: "POST",
+        			contentType: "application/json; charset=utf-8",
+        			dataType: "json",
+        			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
+        			data: JSON.stringify({
+        				name: $.trim($("#strategiccrName").val()),
+        				email: $.trim($("#strategiccrEmail").val()),
+        				countryCode: $.trim(($(".ddl-countryCode").val() ? $(".ddl-countryCode").val() : "+966")),
+        				mobile: $.trim($("#strategiccrMobile").val()),
+        				company: $.trim($("#strategiccrCompany").val()),
+        				jobTitle: $.trim($("#strategiccrPosition").val()),
+        				message: $.trim($("#strategiccrMessage").val()),
+        				contactSubject: $.trim($("#strategiccrSubjectID").val())
+        			}),
+        			success: function (data) {
+        				if (data == "mir-robot") {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
+        				}
+        				if (data.indexOf("success") != -1){
+        						dataLayer.push({
+        							'event': 'fire_event',
+        							'category': 'Contact Us Form',
+        							'action': 'Successful Submit'
+        						});
+        					$(".contactSuccess").removeClass("d-none");
+        					$("#strategicContactForm").addClass("d-none");
+        					$('.contact-sucess-ticket').text("Your reference number : "+ data.substring(8));
+        					var scrollDiv = document.getElementById("strategic-contact-form").offsetTop - 80;
+        					window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+        				}
+
+        				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
+        				}
+
+        				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
+        					$('#strategic-contact-form').find('#g-recaptcha_incorrect').show();
+        				}
+        			}
+        		});
+        	}
 
 //-----------------------
 var role = 0;
@@ -5180,3 +5358,108 @@ $( window ).on("load", function() {
 	}
 	
 });
+
+//Contact Upload Button -Start
+
+$('#contactfile').change(function() {
+
+    $('.form-icon_browse').hide();
+    $('.js-inputFile-reset').show();
+});
+
+$('.form-icon_reset').click(function(){
+
+    var control = $("#contactfile");
+     control.replaceWith( control.val('').clone( true ) );
+    $('#contact-us-upload-file').text('');
+    $('.form-icon_browse').show();
+    $('.js-inputFile-reset').hide();
+
+});
+
+//Contact Upload Button -End
+
+// Investor Visa Js - Start 
+	$( window ).on("load", function() {
+
+       // Display Popup Again One Hour - Start
+		/*var hours = 1  ; 
+        var now = new Date().getTime();
+        var setupTime = localStorage.getItem('setupTime');
+		if (setupTime == null) {
+			localStorage.setItem('setupTime', now)
+		} else {
+			if(now-setupTime > hours*60*60*1000) {
+				localStorage.clear()
+				//alert('Clear called')
+				localStorage.setItem('setupTime', now);
+			}
+		}*/
+		// Display Popup Again One Hour - End
+
+
+
+		// Display Popup  - Start
+		var PageLang = document.getElementsByTagName("html")[0].getAttribute("lang");
+		
+		if(PageLang == 'en'){	
+			if(localStorage.getItem('popEnState') != 'shown'){
+				$('#visaPopupBodyEn').show();
+				$('.visaBodyPopup').addClass('visaBodyPopupShow');
+				$("#investorPopupVid")[0].play();
+				//localStorage.setItem('popEnState','shown')
+				$('.page-portal-homepage').css({'overflow' : 'hidden'});
+			}
+			}else if(PageLang == 'ar'){
+				if(localStorage.getItem('popArState') != 'shown'){
+				$('#visaPopupBodyAr').show();
+				$('.visaBodyPopup').addClass('visaBodyPopupShow');
+				$("#investorPopupVid")[0].play();
+				//localStorage.setItem('popArState','shown')
+				$('.page-portal-homepage').css({'overflow' : 'hidden'});
+			}
+			}
+		});
+		
+			$('.visaPopupCloseBtn, .visaBodyBg').click(function(){
+				$('.page-portal-homepage').css({'overflow' : 'auto'})
+				$('.visaBodyPopup').removeClass('visaBodyPopupShow');
+				$('.visaPopupBody').hide();
+			});
+         // Display Popup  - End
+      // Investor Visa Js - End 
+			
+var swiper = new Swiper(".targetedMySwiper", {
+	slidesPerView: 1,
+	spaceBetween: 10,
+	pagination: {
+	  el: ".swiper-pagination",
+
+	},
+	breakpoints: {
+	  640: {
+		slidesPerView: 1,
+		spaceBetween: 20,
+	  },
+	  768: {
+		slidesPerView: 1.5,
+		spaceBetween: 40,
+	  },
+		992: {
+		slidesPerView: 2.5,
+		spaceBetween: 10,
+	  },
+	   1199: {
+		slidesPerView: 3,
+		spaceBetween: 10,
+	  },
+	  1300: {
+		slidesPerView: 3,
+		spaceBetween: 10,
+	  },
+	  1800: {
+slidesPerView: 3,
+		spaceBetween: 50,
+		},
+	},
+  });

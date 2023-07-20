@@ -784,8 +784,10 @@ ul.dropdown-list li a {
 }
 .footer {
 	width: 100%;
-	background-color: #ffffff;
-	color: #707070;
+	/*background-color: #025635;
+	color: #ffffff;*/
+	background-color: #f7f7f7;
+	color: #787878;
 }
 
 .footer-menu-faq {
@@ -906,7 +908,7 @@ ul.dropdown-list li a {
 }
 
 .footer .footer-menu li a {
-	color: #707070;
+	color: #787878;
 }
 
 .footer .footer-menu li:first-child {
@@ -976,7 +978,7 @@ ul.dropdown-list li a {
 	font-weight: bold;
 	color: #fff;
 	width: 100%;
-	background-color: #025635;
+	border-top: 1px solid #FFFFFF;
 }
 
 .copyright .copyrightText {
@@ -1048,7 +1050,7 @@ ul.dropdown-list li a {
 		margin-top: 12px;
 	}
 	.footer .footer-menu li {
-		color: #707070;
+		color: #ffffff;
 		text-align: center;
 	}
 	.copyright .container {
@@ -1190,21 +1192,20 @@ button:focus {
 }
 #hero {
 	width: 100%;
-	height: 100vh;
+	height: 70vh;
 	position: relative;
 }
 
 #hero .container {
-	padding-top: 70px;
+	padding-top: 320px;
 	z-index: 9;
+    padding-left: 0;
 }
 
 #hero h1 {
 	margin: 0 0 25px 0;
-	font-size: 60px;
 	font-weight: 700;
 	line-height: 56px;
-	text-transform: uppercase;
 	color: #fff;
 	text-shadow: 0px 0px 10px #00000073;
 }
@@ -1232,6 +1233,24 @@ button:focus {
 	border-color: #cc1616;
 }
 
+.header-home-container {
+	width: 190px;
+    background-color: #025635;
+    margin-right: 10px;
+}
+
+.header-home-container h5 {
+	margin-top: 15px;
+}
+
+#accordion .card .card-header {
+	background-color: #f7f7f7;
+}
+
+#accordion .card .card-header a {
+	color: #025635;
+}
+
 @media (min-width: 1024px) {
 	#hero {
 		background-attachment: fixed;
@@ -1249,9 +1268,6 @@ button:focus {
 	#hero {
 		text-align: center;
 	}
-	#hero .container {
-		padding-top: 40px;
-	}
 	#hero h1 {
 		font-size: 28px;
 		line-height: 36px;
@@ -1262,6 +1278,9 @@ button:focus {
 		line-height: 24px;
 		margin-bottom: 30px;
 		text-align: left;
+	}
+	.m-scrollButton {
+		display: none;
 	}
 }
 
@@ -9652,14 +9671,14 @@ body.page-living-in-saudi .content {
 	right: 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: left;
 	flex-direction: column;
-	text-align: center;
+	text-align: left;
 	z-index: 9;
 }
 
 .Inc-sector-banner-container h1 {
-	margin: 0 0 10px 0;
+	margin: 0 0 10px 10px;
 	font-size: 60px;
 	font-weight: 700;
 	line-height: 56px;
@@ -9675,7 +9694,7 @@ body.page-living-in-saudi .content {
 
 .Inc-baner-btnwraper {
 	display: inline-block;
-	align-items: center;
+	align-items: left;
 	justify-content: space-between;
 	flex-direction: column;
 }
@@ -10063,10 +10082,10 @@ body.page-living-in-saudi .content {
 	margin-top: 80px8;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 176px) {
 	.Inc-baner-btnwraper {
 		display: flex;
-		align-items: center;
+		align-items: left;
 		justify-content: space-between;
 		flex-direction: column;
 	}
@@ -13411,7 +13430,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .opportunity-productData-description p {
 	font-size: 20px !important;
 	color: #646464;
-	text-align: center;
+	text-align: left;
 }
 
 .opportunity-productData-description h3,
@@ -16016,11 +16035,8 @@ padding-left: 40px;
 		overflow: hidden;
 	}
 	.footer img.footer_logo {
-		width: 93px;
-		position: relative;
-		left: 12%;
-		top: -2px;
-	}
+    	width: 30%;
+  	}
 	.copyright div {
 		font-weight: 400;
 		font-size: 16px;
@@ -16387,8 +16403,8 @@ padding-left: 40px;
 	.Inc-baner-btnwraper .btn {
 		font-size: 11px;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: left;
+		justify-content: left;
 	}
 	.Inc-baner-btnwraper {
 		flex-direction: unset;
@@ -19270,8 +19286,8 @@ padding-left: 40px;
 	.Inc-baner-btnwraper .btn {
 		font-size: 11px;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: left;
+		justify-content: left;
 	}
 	.Inc-baner-btnwraper {
 		flex-direction: unset;

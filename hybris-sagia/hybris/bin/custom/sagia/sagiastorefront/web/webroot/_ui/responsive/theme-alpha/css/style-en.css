@@ -1238,7 +1238,7 @@ button:focus {
   text-overflow: ellipsis; /* Adds ellipsis (...) when the text overflows */
 }
 .header-home-container {
-  position: sticky;
+  position: relative;
     background-color: #025635;
    flex: 1 0 40%;
     margin-right: 10px;

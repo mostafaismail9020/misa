@@ -1232,16 +1232,32 @@ button:focus {
 	background: #cc1616;
 	border-color: #cc1616;
 }
-
+.single-line {
+  white-space: nowrap; /* Prevents the text from wrapping */
+  overflow: hidden;    /* Hides any overflowing text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) when the text overflows */
+}
 .header-home-container {
-	width: 190px;
+  position: sticky;
     background-color: #025635;
+   flex: 1 0 40%;
     margin-right: 10px;
+     margin-bottom: 10px;
+    margin-bottom: 50px
+
 }
 
-.header-home-container h5 {
-	margin-top: 15px;
+.header-home-container p {
+  font-size: 2vw;  /* Adjust the font size for the paragraph */
+    margin: 0; /* Remove any margin around the paragraph text */
+  font-family: "Georgia", serif; /* Use "Georgia" font for the paragraph text */
 }
+.header-home-container a {
+  font-size: 2vw; /* Adjust the font size for the links */
+    margin: 0; /* Remove any margin around the links */
+  font-family: "Georgia", serif; /* Use "Georgia" font for the link text */
+}
+
 
 #accordion .card .card-header {
 	background-color: #f7f7f7;
@@ -1516,14 +1532,13 @@ svg #wheel {
 }
 
 #when-number-talk {
-	position: relative;
 	padding: 90px 0px;
 	padding-bottom: 48px;
 }
 
 #when-number-talk:before {
 	content: "";
-	position: absolute;
+	position: relative;
 	background-image: url(../img/WhenNumberTalk.png);
 	background-size: cover;
 	width: 100%;

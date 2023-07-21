@@ -14,7 +14,7 @@
       <div class="d-inline-flex p-2 text-white text-left">
       	<div class="p-2 header-home-container">
       		<p>New Investor?</p>
-      		<h5><a href="#">View opportunities</a></h5>
+      		<h5 class="single-line"><a href="#">View opportunities</a></h5>
       	</div>
       	<div class="p-2 header-home-container">
 			<p>Already Investor?</p>

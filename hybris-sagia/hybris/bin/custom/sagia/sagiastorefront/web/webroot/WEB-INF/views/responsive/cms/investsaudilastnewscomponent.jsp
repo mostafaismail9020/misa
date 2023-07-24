@@ -40,7 +40,7 @@
     	</div>
 	</section>
 
-	<section id="socialMediaFeedEn" class="socialMediaFeedEn" style="display: none;">
+	<!-- <section id="socialMediaFeedEn" class="socialMediaFeedEn" style="display: none;">
 		<div class="container where-to-invest">
 			<div class="row">
 				<div class="col-md-12">
@@ -60,5 +60,5 @@
 			 </div>         
 		</div>
 		<div id="loadArFeed"></div>	
-	</section>
+	</section> -->
 </c:if>

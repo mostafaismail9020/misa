@@ -14,18 +14,14 @@
                                     </div>
                                 </div>
 
-                                <div class="row pt-5">
-                                    <div class="col-lg-12 order-1 order-lg-2">
-                                        <div class="row">
-                                            <c:forEach var="currentComponent" items="${components}" varStatus="status">
-                                                <c:set var="loopCount" value="${(status.index + 1) * 150}" />
-                                                <div class="col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${loopCount}">
-                                                    <cms:component component="${currentComponent}" element="div" />
-                                                </div>
-                                            </c:forEach>
-                                        </div>
-                                    </div>
-                                </div>
+								<div class="row number-talk-items-container">
+									<c:forEach var="currentComponent" items="${components}" varStatus="status">
+									<c:set var="-**" value="${(status.index + 1) * 150}" />
+										<div class="col-md-2 col-sm-6 col-6">
+											<cms:component component="${currentComponent}" element="div" />
+										</div>
+									</c:forEach>
+								</div>
 
                             </div>
                         </section>

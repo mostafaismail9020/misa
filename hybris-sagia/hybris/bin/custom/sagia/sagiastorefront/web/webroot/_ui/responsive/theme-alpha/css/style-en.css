@@ -784,10 +784,9 @@ ul.dropdown-list li a {
 }
 .footer {
 	width: 100%;
-	/*background-color: #025635;
-	color: #ffffff;*/
 	background-color: #f7f7f7;
 	color: #787878;
+	margin-top: 25px;
 }
 
 .footer-menu-faq {
@@ -1050,7 +1049,6 @@ ul.dropdown-list li a {
 		margin-top: 12px;
 	}
 	.footer .footer-menu li {
-		color: #ffffff;
 		text-align: center;
 	}
 	.copyright .container {
@@ -1243,11 +1241,15 @@ button:focus {
 	margin-top: 15px;
 }
 
-#accordion .card .card-header {
+#accordion-explore {
+	margin-top: 25px;
+}
+
+#accordion-explore .card .card-header {
 	background-color: #f7f7f7;
 }
 
-#accordion .card .card-header a {
+#accordion-explore .card .card-header a {
 	color: #025635;
 }
 
@@ -1486,6 +1488,11 @@ svg #wheel {
 	background-color: #45d9ef !important;
 	opacity: 1 !important;
 }
+
+.number-talk-items-container {
+	margin-top: 20px;
+}
+
 .when-number-talk-container h2 {
 	font-size: 45px;
 	text-transform: uppercase;
@@ -1546,7 +1553,7 @@ svg #wheel {
 }
 
 .when-number-talk-container .talk_item-number {
-	font-size: 42px;
+	font-size: 35px;
 	font-weight: 600;
 	line-height: 40px;
 	letter-spacing: 0px;
@@ -1559,16 +1566,6 @@ svg #wheel {
 	letter-spacing: 0px;
 	color: #025635;
 	line-height: 32px;
-}
-
-.talk_item {
-	text-align: center;
-	background-color: #fff;
-	border-radius: 20px;
-	height: auto;
-	margin: 20px 15px;
-	padding: 40px 15px 30px;
-	transition: transform 0.2s ease;
 }
 
 .talk_item-number {
@@ -1590,11 +1587,6 @@ svg #wheel {
 @media (max-width: 575.98px) {
 	#when-number-talk {
 		padding: 40px 0;
-	}
-	.when-number-talk-container .talk_item {
-		margin: 0 15px;
-		padding: 0 0 30px;
-		margin-bottom: 30px;
 	}
 	.when-number-talk-container h2 {
 		font-size: 30px;
@@ -1618,11 +1610,6 @@ svg #wheel {
 		font-size: 30px;
 		line-height: 34px;
 	}
-	.when-number-talk-container .talk_item {
-		margin: 0px 15px;
-		margin-bottom: 30px;
-		padding: 16px 15px 30px;
-	}
 	.when-number-talk-container .talk_item-number {
 		font-size: 30px;
 		line-height: 40px;
@@ -1635,17 +1622,13 @@ svg #wheel {
 }
 
 @media (min-width: 768px) {
-	.when-number-talk-container .talk_item {
-		margin: 20px 15px;
-		padding: 40px 15px 30px;
-	}
 	.when-number-talk-container .talk_item-number {
-		font-size: 42px;
+		font-size: 35px;
 		line-height: 40px;
 		padding-bottom: 0;
 	}
 	.when-number-talk-container .talk_item-text {
-		font-size: 25px;
+		font-size: 18px;
 		line-height: 32px;
 	}
 	.opportunity-card .know-more-btn, .opportunity-card .interest-btn {
@@ -1660,9 +1643,6 @@ svg #wheel {
 	.where-to-invest-main-wrapper .hexagen-grid-wrapper svg {
 		width: auto;
 		height: auto;
-	}
-	.when-number-talk-container .talk_item {
-		height: 315px;
 	}
 }
 .reasons .where_totitle {
@@ -2079,7 +2059,7 @@ p.contowl {
 	letter-spacing: 0.58px;
 	text-transform: uppercase;
 	border-radius: 27px;
-	padding: 8px 10px 15px 20px;
+	padding: 12px 10px 15px 20px;
 }
 
 .explore-key-section .reasons .get-explore-btn svg {
@@ -8000,9 +7980,6 @@ figure h2 {
 }
 
 @media (min-width: 1200px) {
-	.when-number-talk-container .talk_item {
-		height: 315px;
-	}
 	.aboutusContainer .section-bg {
 		margin-top: 20px;
 		background-size: cover;

@@ -20,29 +20,29 @@
 						</a>
 					</div>
 				</div>
-				<div id="accordion">
-					<c:forEach var="currentComponent1" items="${ExploreSaudi}">
+				<div id="accordion-explore">
+					<c:forEach var="currentComponent1" items="${ExploreSaudi}" varStatus="loop">
 						<div class="card">
 							<div class="card-header">
-								<a class="card-link" data-toggle="collapse" href="#${currentComponent1.getIndex()}">
+								<a class="card-link" data-toggle="collapse" href="#${loop.index}">
 									${currentComponent1.reasonTitle}
 								</a>
 							</div>
-							<div id="${currentComponent1.getIndex()}" class="collapse" data-parent="#accordion">
+							<div id="${loop.index}" class="collapse" data-parent="#accordion">
 								<div class="card-body">
 									${currentComponent1.reasonFullDescription}
 								</div>
 							</div>
 						</div>
 					</c:forEach>
-					<c:forEach var="currentComponent2" items="${ExploreSaudi}">
+					<c:forEach var="currentComponent2" items="${ExploreSaudi}" varStatus="loop">
 						<div class="card">
 							<div class="card-header">
-								<a class="card-link" data-toggle="collapse" href="#${currentComponent1.getIndex()}">
+								<a class="card-link" data-toggle="collapse" href="#${loop.index}0">
 									${currentComponent2.reasonTitle}
 								</a>
 							</div>
-							<div id="${currentComponent1.getIndex()}" class="collapse" data-parent="#accordion">
+							<div id="${loop.index}0" class="collapse" data-parent="#accordion">
 								<div class="card-body">
 									${currentComponent2.reasonFullDescription}
 								</div>

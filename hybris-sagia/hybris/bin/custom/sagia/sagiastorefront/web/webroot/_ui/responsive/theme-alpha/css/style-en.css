@@ -1239,12 +1239,20 @@ button:focus {
 }
 .header-home-container {
   position: relative;
-    background-color: #025635;
-   flex: 1 0 40%;
-    margin-right: 10px;
-     margin-bottom: 10px;
-    margin-bottom: 50px
+  z-index: 1000;
+  flex: 1 0 40%;
+  margin-right: 10px;
+  margin-bottom: 60px;
+}
 
+.header-home-container button {
+  background-color: #025635; /* Set the background color for the button */
+  color: #ffffff; /* Set the text color to white */
+  border: none; /* Remove the default button border */
+  padding: 10px; /* Add padding to create space inside the button */
+  cursor: pointer; /* Add a cursor pointer to indicate interactivity */
+  font-size: 2vw; /* Adjust the font size for the button text */
+  font-family: "Georgia", serif; /* Use "Georgia" font for the button text */
 }
 
 .header-home-container p {

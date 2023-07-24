@@ -13,12 +13,16 @@
       <h1 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300" class="text-md-left text-center">${component.title}</h1>
       <div class="d-inline-flex p-2 text-white text-left">
       	<div class="p-2 header-home-container">
-      		<p>New Investor?</p>
-      		<h5 class="single-line"><a href="#">View opportunities</a></h5>
+      		<button class="square-button">
+            <p>New Investor?</p>
+            <h5 class="single-line"><a href="#">View opportunities</a></h5>
+          </button>
       	</div>
       	<div class="p-2 header-home-container">
-			<p>Already Investor?</p>
-			<h5><a href="#">Log in</a></h5>
+			<button class="square-button">
+            <p>Already Investor?</p>
+            <h5><a href="#">Login</a></h5>
+          </button>
 		</div>
       </div>
     </div>

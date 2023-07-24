@@ -206,4 +206,15 @@ public interface SagiaConfigurationFacade {
      * @return
      */
     String getStrategicInvestorEmailUserName();
+    /**
+     * getStrategicInvestorEmailId
+     * @return
+     */
+    String getInvestorVisaEmailId();
+
+    /**
+     * getStrategicInvestorEmailUserName
+     * @return
+     */
+    String getInvestorVisaEmailUserName();
 }

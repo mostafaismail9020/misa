@@ -216,5 +216,15 @@ public class DefaultSagiaConfigurationFacade implements SagiaConfigurationFacade
     public String getStrategicInvestorEmailUserName() {
         return get("strategicInvestorEmailUserName");
     }
+    @Override
+    public String getInvestorVisaEmailId() {
+        return get("investorVisaEmailId");
+    }
+
+    @Override
+    public String getInvestorVisaEmailUserName() {
+        return get("investorVisaEmailUserName");
+    }
+
 
 }

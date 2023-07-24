@@ -15,8 +15,16 @@
             </div>
             <div class="col-md-6 abt-odr-2">
                <div  class=" aboutImageGrid">
-                  <img class="aboutLogo"src="${component.insideImage.url}">
+                  <img class="aboutLogo"src="${component.backgroundImage.url}">
                 </div>
             </div>
+             <div class="col-md-6 abt-odr-2">
+                <div  class=" aboutImageGrid">
+                   <img class="aboutLogo"src="${component.planeAnimation.url}">
+                 </div>
+             </div>
+            <video class="int-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                  <source src="${fn:escapeXml(component.insideVideo.url)}" type="${fn:escapeXml(component.insideVideo.mime)}">
+                </video>
    </section>
 </c:if >

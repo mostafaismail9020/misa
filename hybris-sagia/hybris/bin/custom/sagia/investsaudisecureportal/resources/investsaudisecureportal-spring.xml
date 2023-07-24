@@ -363,5 +363,6 @@
 	<bean id="opportunityUserEmailContext" class="com.investsaudi.email.context.OpportunityUserEmailContext" parent="abstractEmailContext" scope="prototype" />
 	<bean id="mizaTicketDetailsEmailContext" class="com.investsaudi.email.context.MizaTicketDetailsEmailContext" parent="abstractEmailContext" scope="prototype" />
 	<bean id="strategicInvestorTicketDetailsEmailContext" class="com.investsaudi.email.context.StrategicInvestorTicketDetailsEmailContext" parent="abstractEmailContext" scope="prototype" />
+	<bean id="investorVisaTicketDetailsEmailContext" class="com.investsaudi.email.context.InvestorVisaTicketDetailsEmailContext" parent="abstractEmailContext" scope="prototype" />
 
 </beans>

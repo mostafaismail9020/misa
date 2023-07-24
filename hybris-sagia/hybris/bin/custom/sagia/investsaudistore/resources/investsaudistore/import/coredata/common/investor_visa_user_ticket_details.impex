@@ -1,5 +1,5 @@
 $contentCatalog = sagiaContentCatalog
-$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $wideContent = CMSImageComponent, BannerComponent
 $emailFromEmail = info@misa.gov.sa
 $emailFromName = Customer Services Team
@@ -48,6 +48,10 @@ UPDATE RendererTemplate; code[unique = true]                             ; descr
                        ; investor_Visa_Ticket_Details_Email_Body    ; "Investor Visa Ticket Details Body"    ; $jarResource/email-investorVisaTicketDetailsEmailBody.vm
                        ; investor_Visa_Ticket_Details_Email_Subject ; "Investor Visa Ticket Details Subject" ; $jarResource/email-investorVisaTicketDetailsEmailSubject.vm
 
+INSERT_UPDATE SagiaConfiguration; key[unique = true]             ; value                         ; displayValue[default = true]
+                                ; investorVisaEmailId       ; investorvisa@misa.gov.sa ; ;
+                                ; investorVisaEmailUserName ; Investor Visa User            ; ;
+
 ################## End Opportunity User Email Template  #####################
 #INSERT_UPDATE Customer; uid[unique = true]            ; usernameemail                 ; name                                ; country       ; mobileCountryCode; mobileNumber; company            ; sector
-#                      ; strategicinvestor@misa.gov.sa ; strategicinvestor@misa.gov.sa ; Strategic Investor Default Customer ; 8796093427543 ; 966              ; 0000000000  ; Strategic Investor ; 8796093132681
+#                      ; investorvisa@misa.gov.sa ; investorvisa@misa.gov.sa ; Investor Visa Default Customer ; 8796093427543 ; 966              ; 0000000001  ; Strategic Investor ; 8796093132681

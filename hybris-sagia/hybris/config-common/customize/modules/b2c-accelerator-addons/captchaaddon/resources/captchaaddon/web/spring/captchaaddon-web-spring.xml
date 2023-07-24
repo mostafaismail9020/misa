@@ -89,6 +89,14 @@
 						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.pages.portal.AboutSaudiPageController.submitForm(..))"/>
 		</aop:aspect>
 
+		<aop:aspect id="prepInvestorVisaContactUsReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="prepare"
+						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.misc.ContactUsController.investorVisaContactus(..))"/>
+		</aop:aspect>
+		<aop:aspect id="investorVisaContactUsReCaptchaAspect" ref="reCaptchaAspect">
+			<aop:around method="advise"
+						pointcut="execution(* com.sap.ibso.eservices.storefront.controllers.misc.ContactUsController.investorVisaContactus(..))"/>
+		</aop:aspect>
 
 		<aop:aspect id="prepCheckoutRegistratonReCaptchaAspect" ref="reCaptchaAspect">
 			<aop:around method="prepare"

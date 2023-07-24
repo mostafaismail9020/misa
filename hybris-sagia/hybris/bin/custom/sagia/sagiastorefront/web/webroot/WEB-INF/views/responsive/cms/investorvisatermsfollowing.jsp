@@ -12,6 +12,7 @@
 								<div class="serviceSectionV3TabsContents serviceSectionV3Col">
                                             <c:forEach var="currentComponent2" items="${listOfFollowings}" varStatus="loop">
                                                         <div class="serviceSectionV3Description animated zoomIn">
+                                                        <p>${currentComponent2.number}</p>
                                                             <p>${currentComponent2.description}</p>
                                                         </div>
                                             </c:forEach>

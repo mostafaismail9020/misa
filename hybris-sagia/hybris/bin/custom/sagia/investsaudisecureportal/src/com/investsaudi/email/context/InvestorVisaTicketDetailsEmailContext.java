@@ -23,8 +23,8 @@ public class InvestorVisaTicketDetailsEmailContext extends AbstractEmailContext<
     public void init(final InvestorVisaTicketDetailsEmailProcessModel businessProcessModel, final EmailPageModel emailPageModel) {
         super.init(businessProcessModel, emailPageModel);
 
-        put(EMAIL, sagiaConfigurationFacade.getStrategicInvestorEmailId());
-        put(DISPLAY_NAME, sagiaConfigurationFacade.getStrategicInvestorEmailUserName());
+        put(EMAIL, sagiaConfigurationFacade.getInvestorVisaEmailId());
+        put(DISPLAY_NAME, sagiaConfigurationFacade.getInvestorVisaEmailUserName());
         if (businessProcessModel instanceof InvestorVisaTicketDetailsEmailProcessModel) {
 
             final InvestorVisaTicketDetailsEmailProcessModel processModel = (InvestorVisaTicketDetailsEmailProcessModel) businessProcessModel;

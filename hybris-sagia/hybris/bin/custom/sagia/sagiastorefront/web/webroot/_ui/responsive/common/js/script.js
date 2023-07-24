@@ -5197,7 +5197,67 @@ function onStrategicContactSubmit() {
         			}
         		});
         	}
+// Investor Visa Static Page Start
 
+var investorvisaelement = document.getElementsByClassName('btn-investor-visa-contact');
+var btnText = investorvisaelement[0] && investorvisaelement[0].textContent;
+
+function onInvestorVisaContactload() {
+    investorvisaelement.onclick = validateInvestorContact(investorvisaelement);
+}
+
+ function validateInvestorContact(event) {
+    		if (validateForm($("#investorVisaContactForm")) == true) {
+    			onInvestorVisaContactSubmit();
+    			return true;
+    			}
+    		return false;
+    	}
+
+function onInvestorVisaContactSubmit() {
+        		$.ajax({
+        			url: ACC.config.contextPath + '/en/investor-visa-contactus',
+        			async: true,
+        			type: "POST",
+        			contentType: "application/json; charset=utf-8",
+        			dataType: "json",
+        			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
+        			data: JSON.stringify({
+        				name: $.trim($("#investorVisaName").val()),
+        				email: $.trim($("#investorVisaEmail").val()),
+        				countryCode: $.trim(($(".ddl-countryCode").val() ? $(".ddl-countryCode").val() : "+966")),
+        				mobile: $.trim($("#investorVisaMobile").val()),
+        				message: $.trim($("#investorVisaMessage").val()),
+        			}),
+        			success: function (data) {
+        				if (data == "mir-robot") {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");
+        				}
+        				if (data.indexOf("success") != -1){
+        						dataLayer.push({
+        							'event': 'fire_event',
+        							'category': 'Contact Us Form',
+        							'action': 'Successful Submit'
+        						});
+        					$(".contactSuccess").removeClass("d-none");
+        					$("#investorVisaContactForm").addClass("d-none");
+        					$('.contact-sucess-ticket').text("Your reference number : "+ data.substring(8));
+        					var scrollDiv = document.getElementById("investor-visa-contact-form").offsetTop - 80;
+        					window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+        				}
+
+        				if (data.indexOf('error') >= 0 || data.indexOf('Error') >= 0) {
+        					$("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().formSubmissionFailed + "</span></em>");
+        				}
+
+        				if (data.indexOf('captcha') >= 0 || data.indexOf('Captcha') >= 0) {
+        					$('#investor-visa-contact-form').find('#g-recaptcha_incorrect').show();
+        				}
+        			}
+        		});
+        	}
+
+// Investor Visa Static Page End
 //-----------------------
 var role = 0;
 $(".login-role-selection .login-role-selection-box").on('click',function(){

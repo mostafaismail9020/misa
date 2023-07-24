@@ -27,6 +27,7 @@ import org.springframework.validation.BindingResult;
 public class ContactUsController extends AbstractController {
 
     private static final String ERROR_INVALID_CAPTCHA = "error : invalid captcha.";
+    private static final String INVESTOR_VISA_HEADLINE = "Investor Visa Details";
 
 	private final static Logger log = LoggerFactory.getLogger(ContactUsController.class);
 
@@ -103,6 +104,7 @@ public class ContactUsController extends AbstractController {
         }
 
         try {
+            ticket.setContactSubject(INVESTOR_VISA_HEADLINE);
             CsTicketModel contactTicket  = contactTicketFacade.saveInvestorVisaTicket(ticket);
             return String.format("success_%s", contactTicket.getTicketID());
         } catch (Exception e) {

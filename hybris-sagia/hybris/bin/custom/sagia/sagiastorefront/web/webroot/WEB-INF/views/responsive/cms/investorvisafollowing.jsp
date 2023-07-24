@@ -14,4 +14,6 @@
                  ${component.description}
               </div>
            </div>
+           <img src="${component.investorVisaApplyTermImage.url}">
+                                     </div>
 </c:if >

@@ -17,5 +17,7 @@
                                                         </div>
                                             </c:forEach>
                                 </div>
+                                <img src="${component.backgroundImage.url}">
+                                                          </div>
                                 </section>
                             </c:if>

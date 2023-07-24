@@ -40,8 +40,8 @@ public class EntitytInformationODataPopulator implements Populator<EntityInforma
 		    	target.setAdvlicno(source.getAdvanceLicenseNr());
 		    }
 		    target.setLicenseType(source.getLicenseType().getCode());
-		    /*target.setIsEntrepreneur(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntrepreneur()));
-		    target.setIsMoreThan2Branch(sagiaFormatProvider.formatBooleanForODATA(source.isIsMoreThan2Branch()));
+		    target.setIsEntrepreneur(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntrepreneur()));
+		    /*target.setIsMoreThan2Branch(sagiaFormatProvider.formatBooleanForODATA(source.isIsMoreThan2Branch()));
 		    target.setIsMoreThan6Branch(sagiaFormatProvider.formatBooleanForODATA(source.isIsMoreThan6Branch()));
 		    target.setIsEntityAssetMoreThanThreshold(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntityAssetMoreThanThreshold()));
 		    target.setIsEntityRevenueMoreThanThreshold(sagiaFormatProvider.formatBooleanForODATA(source.isIsEntityRevenueMoreThanThreshold()));

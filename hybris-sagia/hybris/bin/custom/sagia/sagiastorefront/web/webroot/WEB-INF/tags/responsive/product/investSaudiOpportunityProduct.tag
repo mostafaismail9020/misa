@@ -6,29 +6,43 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <main>
-	<div class="Inc-sector-banner" style="background-image: url(${productData.banner.url});">
+	<!-- <div class="Inc-sector-banner" style="background-image: url(${productData.banner.url});"> -->
+	<div class="Inc-sector-banner">
 		<div class="Inc-sector-banner-container" data-aos="fade-up">
-			<div class="Inc-section-baner-logo">
+			<!-- <div class="Inc-section-baner-logo">
 				<img src="${productData.logo.url}" alt="${fn:escapeXml(productData.name)}" title="${fn:escapeXml(productData.name)}"/>
-			</div>
+			</div> -->
 			<h1>${fn:escapeXml(productData.name)}</h1>
 			<div class="Inc-baner-btnwraper">
-				<%--  
+				<!--  
 				<button class="btn btn-sector-secondary open-popup-contact-form" id="download" data-toggle="modal" data-target="#downloadModal">
 					<img class="img-fluid download-icon" src="${commonResourcePath}/images/download.png" alt=""/> 
 					<spring:theme code="portal.sector.download.label"/>
 				</button>
-				--%>
+				-->
+
+				<!-- 
 				<button class="btn btn-sector-secondary" id="i-am-interested">
 					<spring:theme code="portal.sector.iaminterested.label"/> 
 					<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
 				</button>
+				-->
 				<button class="btn btn-sector-primary">
 					<a href="/en/investsaudi-login">
 						<spring:theme code="portal.sector.investnow.label"/>
 						<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
 					</a>
 				</button>
+				<c:if test="${not empty productData.pdfUrl}">
+							<!--<p class="text-center" style="width: 100%">-->
+							<a rel="noopener" id="pdfDownloadTrigerrer" href="${productData.pdfUrl}" target="_blank" download></a>
+								<a rel="noopener"  id="download" 
+										data-toggle="modal" data-target="#downloadModal" target="_blank" class="download-opportunity" download="">									
+									<!-- <spring:theme code="portal.opportunity.download.here.label"/> -->
+									<img class="img-fluid download-icon" src="${commonResourcePath}/images/Icon awesome-download.png" alt="" />
+								</a>
+							</p>							
+						</c:if>
 			</div>
 		</div>    
 	</div>
@@ -72,11 +86,13 @@
 						</c:if>
 						<c:if test="${not empty productData.pdfUrl}">
 							<p class="text-center" style="width: 100%">
-								<a rel="noopener"  href="${productData.pdfUrl}" target="_blank" class="download-opportunity" download="">
+							<a rel="noopener" id="pdfDownloadTrigerrer" href="${productData.pdfUrl}" target="_blank" download></a>
+								<a rel="noopener"  id="download" 
+										data-toggle="modal" data-target="#downloadModal" target="_blank" class="download-opportunity" download="">									
 									<spring:theme code="portal.opportunity.download.here.label"/>
 									<img class="img-fluid download-icon" src="${commonResourcePath}/images/Icon awesome-download.png" alt="" />
 								</a>
-							</p>
+							</p>							
 						</c:if>
 						<%-- <c:if test="${not empty productData.imageUrl}"> 
 							<p class="text-center"><spring:theme code="text.scan.mobile"/>: <br>&nbsp;

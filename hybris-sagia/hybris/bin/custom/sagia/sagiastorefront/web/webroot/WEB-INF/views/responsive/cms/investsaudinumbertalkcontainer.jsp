@@ -9,7 +9,7 @@
                             <div class="container">
 
                                 <div class="row">
-                                    <div class="col-lg-12 pt-4 pt-lg-0 content mx-auto text-center" data-aos="fade-right" data-aos-delay="100">
+                                    <div class="col-lg-12 pt-4 pt-lg-0 content mx-auto" data-aos="fade-right" data-aos-delay="100">
                                         <h2>${component.title}</h2>
                                     </div>
                                 </div>

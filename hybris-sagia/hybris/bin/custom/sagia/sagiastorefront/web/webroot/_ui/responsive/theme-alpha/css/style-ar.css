@@ -12646,6 +12646,10 @@ ul.INS_li_ul_under li {
 	.ft-logo {
 		left: 0;
 	}
+	
+	#hero h1 {
+		text-align: center;
+	}
 }
 
 @media (min-width:768px) and (max-width:769px) {

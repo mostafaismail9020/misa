@@ -6279,6 +6279,10 @@ img.accountLogin-headline-logo {
 	.Inc-tab-banner-content {
 		padding-top: 40px;
 	}
+	
+	#hero h1 {
+		text-align: center;
+	}
 }
 
 @media (min-width: 320px) and (max-width: 430px) {

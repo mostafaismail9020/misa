@@ -5,6 +5,7 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <c:if test="${component.visible}">
@@ -64,7 +65,12 @@
                         </c:forEach>
                     </ul>
                 </div>
-                <div class="col-md-6 col-sm-6 copyrightText d-flex d-sm-block">${component.copyrightText}</div>
+                <div class="col-md-6 col-sm-6 copyrightText d-flex d-sm-block">
+                	<spring:theme code="footer.copyright.sign"/>
+					<c:set var="now" value="<%=new java.util.Date()%>" />
+                	<fmt:formatDate value="${now}" pattern="yyyy" />&nbsp;
+                	<spring:theme code="footer.copyright.text"/>
+                </div>
             </div>
         </div>
     </div>

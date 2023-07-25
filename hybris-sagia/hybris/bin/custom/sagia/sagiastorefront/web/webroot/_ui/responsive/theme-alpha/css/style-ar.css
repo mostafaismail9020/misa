@@ -93,7 +93,6 @@ section {
 }
 
 .section-title {
-	text-align: center;
 	padding: 30px 0;
 	position: relative;
 }
@@ -794,8 +793,9 @@ ul.dropdown-list li a {
 }
 .footer {
 	width: 100%;
-	background-color: #FFFFFF;
-	color: #707070;
+	background-color: #f7f7f7;
+	color: #787878;
+	margin-top: 25px;
 }
 
 .footer-menu-faq {
@@ -994,7 +994,7 @@ ul.dropdown-list li a {
 	font-weight: bold;
 	color: #fff;
 	width: 100%;
-	background-color: #025635;
+	border-top: 1px solid #FFFFFF;
 }
 
 .copyright .copyrightText {
@@ -1066,7 +1066,7 @@ ul.dropdown-list li a {
 		margin-top: 12px;
 	}
 	.footer .footer-menu li {
-		color: #707070;
+		color: #ffffff;
 		text-align: center;
 	}
 	.copyright .container {
@@ -1208,24 +1208,23 @@ button:focus {
 }
 #hero {
 	width: 100%;
-	height: 100vh;
+	height: 70vh;
 	position: relative;
 }
 
 #hero .container {
-	padding-top: 70px;
+	padding-top: 320px;
 	z-index: 9;
 	text-align: right;
 }
 
 #hero h1 {
 	margin: 0 0 25px 0;
-	font-size: 60px;
 	font-weight: 700;
 	line-height: 56px;
-	text-transform: uppercase;
 	color: #fff;
 	text-shadow: 0px 0px 10px #00000073;
+	text-align: right;
 }
 
 #hero h2 {
@@ -1248,6 +1247,11 @@ button:focus {
 #hero .btn-get-started:hover {
 	background: #cc1616;
 	border-color: #cc1616;
+}
+
+.explore-keys-btn {
+	margin-top: 20px;
+    margin-right: 0px;
 }
 
 @media (min-width: 1024px) {
@@ -1484,6 +1488,11 @@ svg #wheel {
 	background-color: #45D9EF !important;
 	opacity: 1 !important;
 }
+
+.number-talk-items-container {
+	margin-top: 20px;
+}
+
 .when-number-talk-container h2 {
 	font-size: 45px;
 	text-transform: uppercase;
@@ -1491,7 +1500,7 @@ svg #wheel {
 	padding-bottom: 0;
 	position: relative;
 	z-index: 2;
-	text-align: center;
+	text-align: right;
 }
 
 .when-number-talk-container .content ul {
@@ -1534,7 +1543,6 @@ svg #wheel {
 	font-size: 45px;
 	font-weight: 600;
 	color: #707070;
-	text-align: center;
 	line-height: 50px;
 }
 
@@ -1543,32 +1551,23 @@ svg #wheel {
 }
 
 .when-number-talk-container .talk_item-number {
-	font-size: 42px;
+	font-size: 30px;
 	font-weight: 600;
 	line-height: 40px;
 	padding-top: 8.5px;
 }
 
 .when-number-talk-container .talk_item-text {
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 600;
 	color: #025635;
 	line-height: 32px;
 }
 
-.talk_item {
-	text-align: center;
-	background-color: #fff;
-	border-radius: 20px;
-	height: auto;
-	margin: 20px 15px;
-	padding: 40px 15px 30px;
-	transition: transform .2s ease;
-}
-
 .talk_item-number {
 	font-size: 42px;
 	color: #025635;
+	text-align: right;
 }
 
 .talk_item-text {
@@ -1576,6 +1575,7 @@ svg #wheel {
 	color: #025635;
 	min-height: 6rem;
 	line-height: 32px;
+	text-align: right;
 }
 
 .talk_item:hover {
@@ -1586,17 +1586,13 @@ svg #wheel {
 	#when-number-talk {
 		padding: 40px 0;
 	}
-	.when-number-talk-container .talk_item {
-		margin: 0 15px;
-		padding: 0 0 30px;
-		margin-bottom: 30px;
-	}
+
 	.when-number-talk-container h2 {
 		font-size: 30px;
 		line-height: 34px;
 	}
 	.when-number-talk-container .talk_item-number {
-		font-size: 30px;
+		font-size: 25px;
 		line-height: 40px;
 	}
 	.when-number-talk-container .talk_item-text {
@@ -1613,11 +1609,7 @@ svg #wheel {
 		font-size: 30px;
 		line-height: 34px;
 	}
-	.when-number-talk-container .talk_item {
-		margin: 0px 15px;
-		margin-bottom: 30px;
-		padding: 16px 15px 30px;
-	}
+	
 	.when-number-talk-container .talk_item-number {
 		font-size: 30px;
 		line-height: 40px;
@@ -1630,17 +1622,13 @@ svg #wheel {
 }
 
 @media (min-width: 768px) {
-	.when-number-talk-container .talk_item {
-		margin: 20px 15px;
-		padding: 40px 15px 30px;
-	}
 	.when-number-talk-container .talk_item-number {
-		font-size: 42px;
+		font-size: 30px;
 		line-height: 1.5;
 		padding-bottom: 0;
 	}
 	.when-number-talk-container .talk_item-text {
-		font-size: 25px;
+		font-size: 18px;
 		line-height: 1.2;
 		padding-top: 5px;
 	}
@@ -1654,13 +1642,9 @@ svg #wheel {
 		width: auto;
 		height: auto;
 	}
-	.when-number-talk-container .talk_item {
-		height: 315px;
-	}
 }
 .reasons .where_totitle {
 	font-size: 45px;
-	text-align: center;
 	text-transform: uppercase;
 }
 
@@ -2065,7 +2049,7 @@ p.contowl {
 	
 	text-transform: uppercase;
 	border-radius: 27px;
-	padding: 8px 10px 15px 20px;
+	padding: 12px 10px 15px 20px;
 }
 
 .explore-key-section .reasons .get-explore-btn svg {
@@ -3712,7 +3696,6 @@ p.contowl {
 	font-size: 45px;
 	font-weight: 600;
 	color: #BF9B2E;
-	text-align: center;
 	text-transform: uppercase;
 }
 
@@ -3773,7 +3756,6 @@ p.contowl {
 	font-size: 45px;
 	font-weight: 600;
 	color: #BF9B2E;
-	text-align: center;
 	line-height: 50px;
 	padding-bottom: 33px;
 	text-transform: uppercase;
@@ -3813,6 +3795,20 @@ p.contowl {
 #newsandupdates .titleContainer .pagination .page-item a svg {
 	width: 28px;
 	height: 28px;
+}
+
+.know-more-link h6 {
+	margin-bottom: -20px;
+	color: #000;
+	cursor: pointer;
+}
+
+.know-more-link h6:hover {
+	cursor: pointer;
+}
+
+.badge-pill-custom {
+	padding-left: 0px;
 }
 
 @keyframes fadeInAnimation {
@@ -5388,7 +5384,6 @@ p.contowl {
 	line-height: 47px;
 	font-weight: 600;
 	color: #BF9B2E;
-	text-align: center;
 	padding-bottom: 30px;
 	margin-bottom: 0;
 	text-transform: uppercase;
@@ -6187,6 +6182,11 @@ img.accountLogin-headline-logo {
 	.key-reason-invest .count-block {
 		width: 95% !important;
 	}
+	
+	.flip-card-custom {
+		margin-bottom: 30px;
+	}
+	
 }
 
 @media (max-width: 1024px) {
@@ -7959,9 +7959,6 @@ figure h2 {
 }
 
 @media (min-width: 1200px) {
-	.when-number-talk-container .talk_item {
-		height: 315px;
-	}
 	.aboutusContainer .section-bg {
 		margin-top: 20px;
 		background-size: cover;
@@ -10336,6 +10333,18 @@ body.page-living-in-saudi .content {
 	display: flex;
 	justify-content: center;
 	margin-top: 15px;
+}
+
+#accordion-explore {
+	margin-top: 25px;
+}
+
+#accordion-explore .card .card-header {
+	background-color: #f7f7f7;
+}
+
+#accordion-explore .card .card-header a {
+	color: #025635;
 }
 
 .sector-modal-dialog .opp-contact-buttons div.btns {

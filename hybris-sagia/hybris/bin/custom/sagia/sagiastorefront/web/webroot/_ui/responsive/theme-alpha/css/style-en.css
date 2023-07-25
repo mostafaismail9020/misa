@@ -1205,6 +1205,7 @@ button:focus {
 	line-height: 56px;
 	color: #fff;
 	text-shadow: 0px 0px 10px #00000073;
+	text-align: left;
 }
 
 #hero h2 {
@@ -1555,7 +1556,7 @@ svg #wheel {
 }
 
 .when-number-talk-container .talk_item-number {
-	font-size: 35px;
+	font-size: 30px;
 	font-weight: 600;
 	line-height: 40px;
 	letter-spacing: 0px;
@@ -1563,7 +1564,7 @@ svg #wheel {
 }
 
 .when-number-talk-container .talk_item-text {
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 600;
 	letter-spacing: 0px;
 	color: #025635;
@@ -1595,7 +1596,7 @@ svg #wheel {
 		line-height: 34px;
 	}
 	.when-number-talk-container .talk_item-number {
-		font-size: 30px;
+		font-size: 25px;
 		line-height: 40px;
 	}
 	.when-number-talk-container .talk_item-text {
@@ -1625,7 +1626,7 @@ svg #wheel {
 
 @media (min-width: 768px) {
 	.when-number-talk-container .talk_item-number {
-		font-size: 35px;
+		font-size: 30px;
 		line-height: 40px;
 		padding-bottom: 0;
 	}

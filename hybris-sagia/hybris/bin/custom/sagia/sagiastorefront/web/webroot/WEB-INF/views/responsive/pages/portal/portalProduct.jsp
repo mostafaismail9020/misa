@@ -29,6 +29,79 @@
         <!-- <header:productPageTitle /> -->
         <c:choose>
             <c:when test="${productData.productType eq 'OpportunityProduct'}">
+            
+            
+  <!-- Start button for merged pdf download -->
+                
+<style>
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+
+  .button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function callController() {
+    // Disable the button and show "Processing..." text
+    $("#controllerButton").prop("disabled", true).text("Processing...");
+
+    $.ajax({
+      url: "<c:url value='/merged-pdf-download/${productData.code}' />", // Replace with the actual URL of your controller
+      type: "GET", // Use 'POST' or 'GET' depending on your controller configuration
+      xhrFields: {
+        responseType: 'blob' // Set the response type to 'blob' for binary data
+      },
+      success: function(response) {
+        // Create a temporary URL for the downloaded file
+        var url = window.URL.createObjectURL(new Blob([response]));
+
+        // Create a link element and trigger the download
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = 'opportunity.pdf'; // Set the desired file name
+        link.click();
+
+        // Cleanup by revoking the temporary URL
+        window.URL.revokeObjectURL(url);
+      },
+      error: function(xhr, status, error) {
+        // Handle error if the request fails
+        console.error("Error:", error);
+      },
+      complete: function() {
+        // Enable the button and restore the original text
+        $("#controllerButton").prop("disabled", false).text("Download Opportunity PDF");
+      }
+    });
+  }
+</script>
+
+<div class="center">
+  <button id="controllerButton" class="button" onclick="callController()">Download Opportunity PDF</button>
+  <form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
+</div>
+
+                
+<!-- End button for merged pdf download -->
+            
+            
+            
                 <product:investSaudiOpportunityProduct />
             </c:when>
             <c:otherwise>

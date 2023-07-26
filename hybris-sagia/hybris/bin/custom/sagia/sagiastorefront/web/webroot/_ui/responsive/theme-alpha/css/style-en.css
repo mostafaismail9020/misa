@@ -13647,6 +13647,10 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .search-reports-container input[type=text],
 .opp-search-container input[type=search],
 .opp-search-container input[type=text] {
+    position: absolute;
+    right: 45%;
+    top: 4.17%;
+    bottom: 4.17%;
 	width: 100%;
 	box-shadow: 0px 19px 41px #00000017;
 	border: 1px solid #5F6D7E;
@@ -13659,6 +13663,10 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	outline: none;
 	padding-left: 50px;
 }
+
+.img-fluid.search-icon {
+          margin-right: 20vw;
+    }
 
 .search-reports-container input[type=search]::placeholder,
 .search-reports-container input[type=text]::placeholder,
@@ -13812,6 +13820,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .page-opportunity-search-page form a.a-search {
     cursor: default;
 }
+
 
 .page-reports-economic-investment-monitor-search .ui-autocomplete .name,
 .page-reports-investment-highlights-search .ui-autocomplete .name,

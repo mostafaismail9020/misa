@@ -9638,7 +9638,7 @@ body.page-living-in-saudi .content {
 }
 .Inc-sector-banner {
 	width: 100%;
-	height: 100vh;
+	height: 50vh;
 	background-position: top center;
 	background-size: cover;
 	position: relative;
@@ -9651,15 +9651,16 @@ body.page-living-in-saudi .content {
 	left: 0;
 	right: 0;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: start;
 	flex-direction: column;
 	text-align: left;
 	z-index: 9;
+	margin-bottom: 15px;
 }
 
 .Inc-sector-banner-container h1 {
-	margin: 0 0 10px 10px;
+	margin: 0 0 15px 10px;
 	font-size: 60px;
 	font-weight: 700;
 	line-height: 56px;
@@ -9694,9 +9695,9 @@ body.page-living-in-saudi .content {
 	color: #fff;
 	background-color: #00a6be;
 	border: 1px solid #00a6be;
-	border-radius: 27px;
+	border-radius: 4px;
 	font-size: 16px;
-	padding: 10px 20px;
+	padding: 15px 20px;
 	text-transform: uppercase;
 }
 
@@ -9892,6 +9893,11 @@ body.page-living-in-saudi .content {
 	border-radius: 100px;
 }
 
+.container.sectors-content {
+	margin-left: 15px;
+	max-width: 800px;
+}
+
 .Inc-sector-keyFacts ul.keyFacts {
 	padding: 0;
 	display: flex;
@@ -10071,7 +10077,7 @@ body.page-living-in-saudi .content {
 		flex-direction: column;
 	}
 	.Inc-baner-btnwraper .btn {
-		margin: 10px;
+		margin: 15px;
 		width: 100%;
 	}
 	.Inc-sectordetails-tab ul li a {
@@ -13411,7 +13417,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .opportunity-productData-description p {
 	font-size: 20px !important;
 	color: #646464;
-	text-align: center;
+	text-align: left;
 }
 
 .opportunity-productData-description h3,
@@ -13424,7 +13430,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .opportunity-productData-description ul {
 	font-size: 20px !important;
 	color: #646464;
-	padding: 50px;
+	padding: 0px;
 	display: block;
 }
 
@@ -13434,11 +13440,12 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	flex-direction: column;
 	justify-content: center;
 	font-size: 18px;
-	padding: 50px 60px !important;	
+	padding: 10px 20px !important;	
 	width: 360px;
-	height: 242px;
+	height: auto;
 	background: #fff;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
+	margin-top: 15px;
 	vertical-align: top;
 }
 
@@ -13451,9 +13458,20 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	background-size: cover;
 }
 
-.opp_description {
+.opp-metadata {
+	background: #f8f8f8
+}
+.opp-contact-card {
 	background: url("../img/opp_highlights.png");
 	background-size: cover;
+	max-width: 500px;
+	justify-content: center;
+}
+
+.data-contact-field {
+	min-width: 300px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 .opportunity-contact textarea {
 	box-shadow: 0px 19px 47px rgb(0 0 0 / 16%);
@@ -13712,7 +13730,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .download-opportunity {
-	background: #ffffff;
+	background: #f8f8f8;
 	border-radius: 27px;
 	color: #00a6be;
 	padding: 10px 25px;
@@ -16377,7 +16395,7 @@ padding-left: 40px;
 		line-height: 40px;
 	}
 	.Inc-sector-banner {
-		height: 434px;
+		height: 300px;
 	}
 	.Inc-section-baner-logo img {
 		width: 82px;
@@ -19260,7 +19278,7 @@ padding-left: 40px;
 		line-height: 40px !important;
 	}
 	.Inc-sector-banner {
-		height: 600px;
+		height: 400px;
 	}
 	.Inc-section-baner-logo img {
 		width: 82px;

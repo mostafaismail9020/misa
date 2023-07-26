@@ -407,7 +407,7 @@ ul.sagiaNavigation-subNav li svg {
 .nav-menu a {
 	display: block;
 	position: relative;
-	color: #fff;
+	color: #646464;
 	transition: 0.3s;
 	font-size: 13px;
 	padding: 12px 28px 12px 12px;
@@ -7574,12 +7574,17 @@ figure h2 {
 }
 
 .banner-section h1 {
-	margin: 0 0 10px 0;
-	font-size: 60px;
-	font-weight: 700;
-	line-height: 56px;
-	color: #fff;
+    font-family: 'Arial';
+    font-style: normal;
+    margin-right: 45vw;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 37px;
+    display: flex;
+    align-items: flex-end;
+    color: #5F6D7E;
 }
+
 
 .banner-section h2 {
 	color: #ffffff;
@@ -13644,10 +13649,11 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .opp-search-container input[type=text] {
 	width: 100%;
 	box-shadow: 0px 19px 41px #00000017;
-	border: 1px solid #f2f2f2;
+	border: 1px solid #5F6D7E;
 	border-radius: 30px;
 	height: 60px;
-	color: #7B838C;
+	box-sizing: border-box;
+	color: #5F6D7E;
 	font-size: 16px;
 	line-height: 24px;
 	outline: none;
@@ -13658,7 +13664,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .search-reports-container input[type=text]::placeholder,
 .opp-search-container input[type=search]::placeholder,
 .opp-search-container input[type=text]::placeholder {
-	color: #7B838C;
+	color: #5F6D7E;
 }
 
 .search-reports-container .search-btn,
@@ -13674,6 +13680,20 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	top: 4px;
 	height: 52px;
 	text-transform: uppercase;
+}
+
+.opp-search-btn-hidden {
+	color: #fff;
+	padding: 9px 20px;
+	background: #00a6be;
+	border: 1px solid #00a6be;
+	border-radius: 30px;
+	position: absolute;
+	right: 19px;
+	top: 4px;
+	height: 52px;
+	text-transform: uppercase;
+	visibility:hidden;
 }
 
 .opp-filter-btn img {

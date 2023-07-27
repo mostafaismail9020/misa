@@ -30,7 +30,7 @@
 						</a>
 					</ycommerce:testId>
 
-					<button class="button btn opp-search-btn search-btn js_search_button" type="submit" disabled="true">
+					<button class="button btn opp-search-btn-hidden search-btn js_search_button" type="submit"  disabled="true">
 						<spring:theme code="portal.opportunity.search.label"/></button>
 					<a class="reset-search small-font"><spring:theme code="portal.opportunity.search.clear.label"/></a>
 

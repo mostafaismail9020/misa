@@ -9699,6 +9699,7 @@ body.page-living-in-saudi .content {
 	font-size: 16px;
 	padding: 15px 20px;
 	text-transform: uppercase;
+	min-width: 300px;
 }
 
 .btn-sector-secondary .download-icon {
@@ -9895,7 +9896,40 @@ body.page-living-in-saudi .content {
 
 .container.sectors-content {
 	margin-left: 15px;
-	max-width: 800px;
+	max-width: 1200px;
+}
+
+.row.kpi-row{
+	margin-left: 15px;
+	margin-bottom: 15px;
+	color: #646464;
+}
+
+.kpi{
+	margin-right: 15px;
+}
+
+.kpi-value{
+	font-size: 1.5rem;
+}
+
+.kpi-postfix{
+	font-size: 1.2rem;
+}
+
+.contact-name{
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+.contact-role{
+	color: #fff;
+}
+
+.contact-row{
+	margin-left: 0px;
+	margin-bottom: 15px;
+	font-size: 1.2rem;
 }
 
 .Inc-sector-keyFacts ul.keyFacts {
@@ -13459,19 +13493,27 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .opp-metadata {
-	background: #f8f8f8
+	background: #f8f8f8;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .opp-contact-card {
 	background: url("../img/opp_highlights.png");
 	background-size: cover;
 	max-width: 500px;
 	justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .data-contact-field {
 	min-width: 210px;
 	margin-left: 15px;
 	margin-right: 15px;
+}
+
+.opportunity-article-row {
+	justify-content: center;
 }
 .opportunity-contact textarea {
 	box-shadow: 0px 19px 47px rgb(0 0 0 / 16%);
@@ -16395,7 +16437,7 @@ padding-left: 40px;
 		line-height: 40px;
 	}
 	.Inc-sector-banner {
-		height: 300px;
+		height: 430px;
 	}
 	.Inc-section-baner-logo img {
 		width: 82px;

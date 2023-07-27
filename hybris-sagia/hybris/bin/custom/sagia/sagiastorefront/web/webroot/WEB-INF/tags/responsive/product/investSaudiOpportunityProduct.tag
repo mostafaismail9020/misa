@@ -14,6 +14,19 @@
 				<img src="${productData.logo.url}" alt="${fn:escapeXml(productData.name)}" title="${fn:escapeXml(productData.name)}"/>
 			</div> -->
 			<h1>${fn:escapeXml(productData.name)}</h1>
+
+			<c:if test="${true}"><!-- test, if kpis are available-->
+				<div class="row kpi-row">
+					<div class="kpi">
+						<div class="kpi-value">XX%</div>
+						<div class="kpi-postfix">TODO actual data</div>
+					</div>
+					<div class="kpi">
+						<div class="kpi-value">$X</div>
+						<div class="kpi-postfix">TODO actual data</div>
+					</div>
+				</div>
+			</c:if>
 			<div class="Inc-baner-btnwraper">
 				<!--  
 				<button class="btn btn-sector-secondary open-popup-contact-form" id="download" data-toggle="modal" data-target="#downloadModal">
@@ -49,7 +62,7 @@
 	</div>
 
 	<!-- <div class="container"> -->
-	<div class="row">
+	<div class="row opportunity-article-row">
 		
 		<c:if test="${not empty productData.description}">
 			<section class="container sectors-content">
@@ -68,10 +81,7 @@
 									</p>
 									<p>&nbsp;</p>
 								</c:if>					 -->
-								${productData.description}
-								<p>&nbsp;</p>
-								<p>&nbsp;</p>
-								<p>&nbsp;</p>					
+								${productData.description}					
 							</div>
 						
 					</div>
@@ -79,12 +89,21 @@
 			</section>
 		</c:if>
 		<div class="sectors-content data-contact-field">
-			<section class="sectors-content opp-metadata">
-				
-			</section>
+			<c:if test="${true}"><!-- test, if meta data is available-->
+				<section class="sectors-content opp-metadata">
+					
+				</section>
+			</c:if>
 			
 			<section class="sectors-content opp-contact-card">
-				
+				<div class="opportunity-contact-name">
+					<c:if test="${true}"><!-- test, if contact data is available-->
+						<div class="row contact-row">
+							<div class="contact-name col-md-12">Firstname Lastname</div>
+							<div class="contact-role col-md-12">Role description</div>
+						</div>
+					</c:if>
+				</div>
 				<div class="Inc-baner-btnwraper">
 					<button class="btn btn-sector-primary">
 						<a href="/en/investsaudi-login">
@@ -94,7 +113,7 @@
 					</button>
 				</div>
 				
-				<div class="text-center mx-4">
+				<!-- <div class="text-center mx-4">
 					<!-- 
 					<button class="download-opportunity" data-toggle="modal" data-target="#downloadModal" style="display:none;">
 						<img class="img-fluid download-icon" src="${commonResourcePath}/images/Icon awesome-download.png" alt="" />
@@ -102,7 +121,7 @@
 					</button>
 					-->
 					<!-- Modal -->
-					<div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalTitle" aria-hidden="true">
+					<!--<div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalTitle" aria-hidden="true">
 						<div class="modal-dialog opportunity-modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -110,7 +129,7 @@
 										<spring:theme code="portal.sector.download.label"/>
 									</h5>
 									<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> -->							
-								</div>
+								<!--</div>
 								<div class="modal-body">
 									<div id="popup-contact-form" class="contact-form pt-3" >
 										<div class="form-row" style="padding: 20px;">
@@ -185,12 +204,12 @@
 						</div>
 					</div>						
 					<!-- Modal End -->
-				</div>
+				<!--</div> -->
 			</section>
 		</div>
 			
 	</div>
-	<!-- </div> -->
+ </div>
 	
 
 	<!-- <div>

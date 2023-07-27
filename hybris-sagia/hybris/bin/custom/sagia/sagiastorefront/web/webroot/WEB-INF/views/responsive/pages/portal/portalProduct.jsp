@@ -78,7 +78,7 @@
 			</section>
 		</c:if>
 		
-		<c:if test="${not empty productData.partnerMap}">
+		<!-- <c:if test="${not empty productData.partnerMap}">
 			<div class="Inc-sector-panel">
 				<div class="container py-5">
 						<div class="">
@@ -105,9 +105,9 @@
 					</div>
 				</div>
 			</div>
-		</c:if>
+		</c:if> -->
 				
-		<div class="Inc-sector-panel">
+		<!-- <div class="Inc-sector-panel">
 			<h1 class="Inc-sector-panel-header"><spring:theme code="portal.sector.explore.other.label"/></h1>								
 			<div class="hexagon-portal">
 				<c:forEach var="allCategories" items="${mainCategories}">	
@@ -123,7 +123,7 @@
 					</article>						
 				</c:forEach>
 			</div>
-		</div>	
+		</div>	 -->
 		
     </jsp:body>
 </template:portalpage>

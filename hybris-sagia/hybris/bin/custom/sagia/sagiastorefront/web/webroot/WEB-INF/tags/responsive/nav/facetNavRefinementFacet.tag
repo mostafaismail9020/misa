@@ -19,7 +19,6 @@
                 <hr>
             </div>
 
-
             <div class="facet__values js-facet-values js-facet-form" data-facet="${facetData.code}">
                 <ul class="facet__list js-facet-list <c:if test="${not empty facetData.topValues}">facet__list--hidden js-facet-list-hidden</c:if>">
                     <c:forEach items="${facetData.values}" var="facetValue">
@@ -31,30 +30,20 @@
                                         <input type="hidden" name="q" value="${facetValue.query.query.value}"/>
                                         <input type="hidden" name="text" value="${solrSearchPageData.freeTextSearch}"/>
                                         <label class="text-capitalize ${facetValue.selected ? 'selected' : ''}">
-                                            <input style="width: inherit" data-href="${fn:replace(facetValue.query.url,'/search','')}" data-sectorName="${facetValue.code}" data-sectorid="${facetValue.query.url}"
-                                                   type="checkbox" ${facetValue.selected ? 'checked="checked"' : ''}
-                                                   class=" js-facet-checkbox sectorfilterselector"/>
-                                                ${fn:escapeXml(facetValue.name)}&nbsp;
-                                            <ycommerce:testId code="facetNav_count">
-                                                <span class="facet__value__count"><spring:theme
-                                                        code="search.nav.facetValueCount"
-                                                        arguments="${facetValue.count}"/></span>
-                                            </ycommerce:testId>
+                                            <button type="button" class="btn btn-primary custom-button" onclick="redirectToLink('${fn:replace(facetValue.query.url,'/search','')}')">
+                                                ${fn:escapeXml(facetValue.name)}
+                                                <span class="badge badge-danger custom-badge">${facetValue.count}</span>
+                                            </button>
                                         </label>
-
                                     </form>
                                 </ycommerce:testId>
-                            <%--</c:if>--%>
                             </c:if>
                             <c:if test="${not facetData.multiSelect}">
                                 <c:url value="${facetValue.query.url}" var="facetValueQueryUrl"/>
-                                <span class="facet__text strong font-weight-bold">
-								<a href="${facetValueQueryUrl}">${fn:escapeXml(facetValue.name)}</a>
-								<ycommerce:testId code="facetNav_count">
-                                    <span class="facet__value__count"><spring:theme code="search.nav.facetValueCount"
-                                                                                    arguments="${facetValue.count}"/></span>
-                                </ycommerce:testId>
-							</span>
+                                <button type="button" class="btn btn-primary" onclick="redirectToLink('${facetValueQueryUrl}')">
+                                    ${fn:escapeXml(facetValue.name)}
+                                    <span class="badge badge-light">${facetValue.count}</span>
+                                </button>
                             </c:if>
                         </li>
                     </c:forEach>
@@ -63,3 +52,9 @@
         </div>
     </ycommerce:testId>
 </c:if>
+
+<script>
+    function redirectToLink(url) {
+        window.location.href = url;
+    }
+</script>

@@ -13587,8 +13587,13 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .opportunity-card.total-results {
-    margin-top: 7px;
-    text-align: right;
+    margin-right: 60px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #5F6D7E;
 }
 
 .all-opportunity .pagination .page-item .page-link {

@@ -108,11 +108,6 @@
                             </form>
                         </div>
                     </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
-                        <spring:message code="portal.opportunity.search.opportunities.totalResults"
-                            arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-                    </div>
                 </div>
             </c:if>
             <c:choose>

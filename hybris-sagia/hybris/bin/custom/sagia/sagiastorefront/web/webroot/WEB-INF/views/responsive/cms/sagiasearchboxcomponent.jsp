@@ -32,8 +32,10 @@
 
 					<button class="button btn opp-search-btn-hidden search-btn js_search_button" type="submit"  disabled="true">
 						<spring:theme code="portal.opportunity.search.label"/></button>
-					<a class="reset-search small-font"><spring:theme code="portal.opportunity.search.clear.label"/></a>
-
+					<div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
+                                            <spring:message code="portal.opportunity.search.opportunities.totalResults"
+                                                arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+                                        </div>
 					<span class="input-group-btn"> <ycommerce:testId code="header_search_button">
 								<button class="btn btn-link js_search_button" type="submit" disabled="true">
 									<span class="glyphicon glyphicon-search"></span>

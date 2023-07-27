@@ -27,7 +27,7 @@
 			        		</div>
 			        		<div class="col-md-7 col-8">
 			        			<a class="know-more-link" href="${newsUrl}/${currentComponent.uid}">
-			        				<h6>${currentComponent.newsTitle}</h6>
+			        				<p>${currentComponent.newsTitle}</p>
 								</a>
 								<span class="badge badge-pill badge-pill-custom">
 									<fmt:formatDate value="${currentComponent.newsDate}" type="both" dateStyle="long" timeStyle="long" pattern="d MMMM yyyy" />

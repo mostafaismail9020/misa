@@ -13645,7 +13645,21 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .search-reports-container input[type=search],
 .search-reports-container input[type=text],
-.opp-search-container input[type=search],
+.opp-search-container input[type=search]
+{
+	width: 100%;
+	box-shadow: 0px 19px 41px #00000017;
+	border: 1px solid #f2f2f2;
+	border-radius: 30px;
+	height: 60px;
+	color: #7B838C;
+	font-size: 16px;
+	line-height: 24px;
+	outline: none;
+	padding-left: 50px;
+}
+
+
 .opp-search-container input[type=text] {
     position: absolute;
     right: 45%;
@@ -13663,6 +13677,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	outline: none;
 	padding-left: 50px;
 }
+
 
 .img-fluid.search-icon {
           margin-right: 20vw;

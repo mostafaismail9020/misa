@@ -33,7 +33,7 @@ import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 public class SagiaOpportunityDetailPrePersistHook implements PrePersistHook {
 
 	private static final Logger LOG = LoggerFactory.getLogger(SagiaOpportunityDetailPrePersistHook.class);
-	private static final String REAL_FILE_NAME = "test-file";
+	private static final String REAL_FILE_NAME = "opportunity-";
 	private static final String PDF_EXTENSION = ".pdf";
 	private static final String SAGIA_PRODUCT_CATALOG = "sagiaProductCatalog";
 	private static final String CATALOG_VERSION_STAGED = "Staged";
@@ -56,13 +56,13 @@ public class SagiaOpportunityDetailPrePersistHook implements PrePersistHook {
 		if (item instanceof OpportunityProductModel) {
 
 			LOG.info(
-					"***************** In SagiaOpportunityDetailPrePersistHook persist hook *************");
+					" In SagiaOpportunityDetailPrePersistHook persist hook ");
 			OpportunityProductModel opportunity = (OpportunityProductModel) item;
 
 			
 			
-			if ( Objects.nonNull(opportunity)) {
-				LOG.info("***************** Before calling savePdfToProduct *************");
+			if ( Objects.nonNull(opportunity) && Objects.nonNull(opportunity.getTransientEncodendPdf())) {
+				LOG.info(" Before saving pdf to opportunity ");
 				savePdfToProduct( opportunity);
 			}
 
@@ -70,7 +70,7 @@ public class SagiaOpportunityDetailPrePersistHook implements PrePersistHook {
 			return Optional.of(opportunity);
 		} else {
 			// Return the original item if it is not a product model.
-			LOG.info("***************** Before returning item object *************");
+			LOG.debug(" Before returning item object ");
 			return Optional.of(item);
 		}
 	}
@@ -129,7 +129,7 @@ public class SagiaOpportunityDetailPrePersistHook implements PrePersistHook {
 	    MediaModel media = modelService.create(MediaModel.class);
 
 	    media.setCode(transientModel.getCode());
-	    media.setRealFileName(REAL_FILE_NAME + ".pdf");
+	    media.setRealFileName(REAL_FILE_NAME + getCurrentDateTime() + ".pdf");
 	    media.setCatalogVersion(catalogVersionService.getCatalogVersion(SAGIA_PRODUCT_CATALOG, CATALOG_VERSION_STAGED));
 	    media.setMime(PDF_MIME_TYPE);
 	    
@@ -144,14 +144,13 @@ public class SagiaOpportunityDetailPrePersistHook implements PrePersistHook {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyHHmmssSSSnnn");
         String formattedDateTime = now.format(formatter);
-        LOG.info("Current time is ----> "+formattedDateTime);
 		return formattedDateTime;
     }
 	
 	public List<MediaModel> getMedia(String mediaCode) {
 		final FlexibleSearchQuery query = new FlexibleSearchQuery("SELECT {PK} FROM {Media} WHERE {code} = ?mediaCode");
         query.addQueryParameter("mediaCode", mediaCode);
-        LOG.info("The query is: {}", query.getQuery());
+        LOG.debug("The query is: {}", query.getQuery());
 
         SearchResult<MediaModel> result = flexibleSearchService.search(query);
         return result.getResult();

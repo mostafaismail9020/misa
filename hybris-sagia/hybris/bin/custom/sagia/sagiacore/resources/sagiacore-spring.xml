@@ -1666,4 +1666,12 @@
         <lookup-method name="getImportConfig" bean="importConfig" />
     </bean>
 
+
+    <bean id="opportunityProductCellDecorator" class="com.sap.ibso.eservices.core.decorators.OpportunityProductCellDecorator"/>
+    <bean id="opportunityProductRegionCellDecorator" class="com.sap.ibso.eservices.core.decorators.OpportunityProductRegionCellDecorator"/>
+
+    <bean id="sagiaOpportunityDetailPrePersistHook" class="com.sap.ibso.eservices.core.odata.persistence.hook.SagiaOpportunityDetailPrePersistHook">
+    </bean>
+
+
 </beans>

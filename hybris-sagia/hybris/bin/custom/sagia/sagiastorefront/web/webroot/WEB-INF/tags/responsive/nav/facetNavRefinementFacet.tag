@@ -13,9 +13,9 @@
         <div class="facet js-facet">
             <div class="facet__name js-facet-name text-center clr_gld text-uppercase" style="margin-top: 10px;">
                 <span class="glyphicon facet__arrow"></span>
-                    ${facetData.name}
-                    <i class="fa fa-plus plus-minus-facet open-facet" data-facet="${facetData.code}" style="display: none"></i>
-                    <i class="fa fa-minus plus-minus-facet close-facet" data-facet="${facetData.code}" style="display: none"></i>
+                ${facetData.name}
+                <i class="fa fa-plus plus-minus-facet open-facet" data-facet="${facetData.code}" style="display: none"></i>
+                <i class="fa fa-minus plus-minus-facet close-facet" data-facet="${facetData.code}" style="display: none"></i>
                 <hr>
             </div>
 
@@ -24,11 +24,10 @@
                     <c:forEach items="${facetData.values}" var="facetValue">
                         <li>
                             <c:if test="${facetData.multiSelect}">
-<%--                            <c:if test="${facetValue.code != 'sector-opportunities'} ">--%>
                                 <ycommerce:testId code="facetNav_selectForm">
                                     <form action="#" method="get">
-                                        <input type="hidden" name="q" value="${facetValue.query.query.value}"/>
-                                        <input type="hidden" name="text" value="${solrSearchPageData.freeTextSearch}"/>
+                                        <input type="hidden" name="q" value="${facetValue.query.query.value}" />
+                                        <input type="hidden" name="text" value="${solrSearchPageData.freeTextSearch}" />
                                         <label class="text-capitalize ${facetValue.selected ? 'selected' : ''}">
                                             <button type="button" class="btn btn-primary custom-button" onclick="redirectToLink('${fn:replace(facetValue.query.url,'/search','')}')">
                                                 ${fn:escapeXml(facetValue.name)}
@@ -39,10 +38,10 @@
                                 </ycommerce:testId>
                             </c:if>
                             <c:if test="${not facetData.multiSelect}">
-                                <c:url value="${facetValue.query.url}" var="facetValueQueryUrl"/>
-                                <button type="button" class="btn btn-primary" onclick="redirectToLink('${facetValueQueryUrl}')">
+                                <c:url value="${facetValue.query.url}" var="facetValueQueryUrl" />
+                                <button type="button" class="btn btn-primary custom-button" onclick="redirectToLink('${facetValueQueryUrl}')">
                                     ${fn:escapeXml(facetValue.name)}
-                                    <span class="badge badge-light">${facetValue.count}</span>
+                                    <span class="badge badge-light custom-badge">${facetValue.count}</span>
                                 </button>
                             </c:if>
                         </li>
@@ -53,8 +52,16 @@
     </ycommerce:testId>
 </c:if>
 
+
 <script>
     function redirectToLink(url) {
-        window.location.href = url;
+
+        var baseUrl = window.location.origin + window.location.pathname.replace(/\/en\//, '/');
+
+        var completeUrl = baseUrl + url;
+
+        window.location.href = completeUrl;
     }
 </script>
+
+

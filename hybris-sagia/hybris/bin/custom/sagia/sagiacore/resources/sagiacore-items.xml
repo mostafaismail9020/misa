@@ -47,6 +47,17 @@
        <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
 
+       <collectiontype code="MizaOurServicesList" elementtype="MizaOurServices" autocreate="true" type="list"/>
+       <collectiontype code="MizaServiceTypeList" elementtype="MizaServiceType" autocreate="true" type="list"/>
+       <collectiontype code="MizaBenefitsAndFeatureCardsList" elementtype="MizaBenefitsAndFeatureCards" autocreate="true" type="list"/>
+       <collectiontype code="MizaOneCoreEngineChildList" elementtype="MizaOneCoreEngineChild" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorOurServicesList" elementtype="StrategicInvestorOurServices" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorProgramBenefitsList" elementtype="StrategicInvestorProgramBenefits" autocreate="true" type="list"/>
+       <collectiontype code="TargetedInvestorsSectionList" elementtype="TargetedInvestorsSection" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
+
+
    </collectiontypes>
 
     <enumtypes>
@@ -624,6 +635,16 @@
                 <modifiers read="true" write="true" search="true" optional="true" partof="true"/>
             </targetElement>
         </relation>
+        
+        <relation code="OpportunityProduct2TransientEncodedPdf" generate="true" autocreate="true"  localized="false" >
+			<sourceElement qualifier="product" type="OpportunityProduct" cardinality="one">
+				<modifiers />
+			</sourceElement>
+			<targetElement qualifier="transientEncodendPdf" type="TransientEncodedPdf" cardinality="many">
+				<modifiers />
+			</targetElement>
+		</relation>
+        
         <!-- Invest Saudi Changes Ends  -->
     </relations>
 
@@ -3941,6 +3962,43 @@
                             </property>
                         </custom-properties>
                     </attribute>
+                    
+                </attributes>
+            </itemtype>
+            
+            
+            <itemtype code="TransientEncodedPdf" generate="true" autocreate="true">
+                <description>To temporarily store encoded string from CPI for conversion to pdf media file</description>
+                <deployment table="TransientEncodedPdf" typecode="21910"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers optional="false" unique="true"/>
+                    </attribute>
+                    
+                    <attribute autocreate="true" qualifier="encodedString" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <custom-properties>
+                            <property name="hmcIndexField">
+                                <value>"thefield"</value>
+                            </property>
+                        </custom-properties>
+                    </attribute>
+                    
                 </attributes>
             </itemtype>
 

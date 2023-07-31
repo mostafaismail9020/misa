@@ -4464,7 +4464,16 @@ var script = document.createElement('script');
 
 $(document).ready(function () {
 	SectorOppCarousel();
+	
+	handleAccordion();
 })
+
+function handleAccordion() {
+	function toggleIcon(e) {
+		$(e.target).find('.more-less').toggleClass('glyphicon-minus').toggleClass('glyphicon-plus');
+	}
+	$('.card-link').click(toggleIcon);
+}
 
 function SectorOppCarousel(){
 	if (window.matchMedia("(max-width:1024px)").matches) {

@@ -17,7 +17,7 @@
 	    		<p><spring:theme code="text.home.header.newinvestor"/></p>
 	    		<h5>
 	    			<strong>
-	    				<a href="#"><spring:theme code="text.home.header.newinvestor.viewopportunities"/></a>
+	    				<a href="${portal.cmsLinkUrl(component.viewOpportunities)}"><spring:theme code="text.home.header.newinvestor.viewopportunities"/></a>
 	    			</strong>
 	    		</h5>
 	    	</div>
@@ -25,7 +25,7 @@
 				<p><spring:theme code="text.home.header.alreadyinvestor"/></p>
 				<h5>
 					<strong>
-						<a href="#"><spring:theme code="text.home.header.alreadyinvestor.login"/></a>
+						<a href="${portal.cmsLinkUrl(component.login)}"><spring:theme code="text.home.header.alreadyinvestor.login"/></a>
 					</strong>
 				</h5>
 			</div>

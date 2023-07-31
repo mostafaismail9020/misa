@@ -88,7 +88,7 @@ a:hover {
 	margin-left: 5px;
 }
 section {
-	padding: 60px 0;
+	padding: 25px 0;
 	overflow: hidden;
 }
 
@@ -3891,9 +3891,6 @@ p.contowl {
 }
 
 @media (max-width: 575.98px) {
-	#newsandupdates {
-		padding-top: 50px;
-	}
 	#newsandupdates .titleContainer .title-heading .section-title {
 		font-size: 30px;
 		line-height: 34px;
@@ -10356,8 +10353,12 @@ body.page-living-in-saudi .content {
 	margin-top: 25px;
 }
 
-#accordion-explore .card .card-header {
-	background-color: #f7f7f7;
+#accordion-explore .card {
+	border: 1px solid #fff;	
+}
+
+#accordion-explore .card-header {
+	background-color: #fff;
 }
 
 #accordion-explore .card .card-header a {
@@ -11622,6 +11623,13 @@ ul.INS_li_ul_under li {
 	}
 }
 
+@media (max-width: 1024px) {
+	.newsAndUpdateContainer .titleContainer .section-title {
+		font-size: 30px;
+		line-height: 40px;
+		letter-spacing: 1.68px;
+	}
+}
 
 @media (max-width:1024px) and (min-width:992px) {
 	.page-sector-details .Inc-energyoppertunities .Inc-title-header {
@@ -19170,9 +19178,6 @@ ul.INS_list_font li,
 	.page-portal-homepage .inc-card span img {
 		width: 60px;
 	}
-	.page-portal-homepage .section-title {
-		padding: 15px 15px;
-	}
 	.page-portal-homepage #mg #mg-slider .tab-content .top-logo img {
 		height: auto;
 		display: block;
@@ -23007,4 +23012,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
     left:100% !important;
 }
+}
+
+.glyphicon-plus:before{content:"\2b";}
+
+.glyphicon-minus:before{content:"\2212";}
+
+.more-less {
+    float: right;
 }

@@ -8,17 +8,18 @@
 <section class="figures explore-key-section">
 	<div class="container">
 		<div class="row reasons">
-			<div class="col-lg-12 p-0">
-				<div class="col-lg-12 pt-4 pt-lg-0 content mx-auto aos-init" data-aos="fade-right" data-aos-delay="100">
-					<h2 class="where_totitle">${component.carouselTitle}</h2>
-				</div>
+			<div class="col-lg-12 pt-4 pt-lg-0 content mx-auto aos-init" data-aos="fade-right" data-aos-delay="100">
+				<h2 class="where_totitle">${component.carouselTitle}</h2>
+			</div>
+			<div class="col-lg-12">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 order-lg-1 order-md-1 order-2">
 						<div id="accordion-explore">
 							<c:forEach var="currentComponent1" items="${ExploreSaudi}" varStatus="loop">
 								<div class="card">
 									<div class="card-header">
 										<a class="card-link" data-toggle="collapse" href="#${loop.index}">
+											<i class="more-less glyphicon-plus"></i>
 											${currentComponent1.reasonTitle}
 										</a>
 									</div>
@@ -33,6 +34,7 @@
 								<div class="card">
 									<div class="card-header">
 										<a class="card-link" data-toggle="collapse" href="#${loop.index}0">
+											<i class="more-less glyphicon glyphicon-plus"></i>
 											${currentComponent2.reasonTitle}
 										</a>
 									</div>
@@ -45,7 +47,7 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 order-lg-2 order-md-2 order-1">
 						<div class="embed-responsive embed-responsive-16by9">
 						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cLsS998ORpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 						</div>

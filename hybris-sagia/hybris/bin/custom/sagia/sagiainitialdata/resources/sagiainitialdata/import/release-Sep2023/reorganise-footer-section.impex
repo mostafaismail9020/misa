@@ -1,0 +1,6 @@
+$contentCatalog = sagiaContentCatalog
+$catalogVersionStaged = catalogVersion(catalog(id[default=$contentCatalog]), version[default='Online'])[unique=true, default=$contentCatalog:Online]
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+
+INSERT_UPDATE InvestSaudiFooterComponent; uid[unique = true]; name          ; navigationLinks(uid, $catalogVersionStaged); navigationFollowUs(uid, $catalogVersionStaged); NavigationNodesList(uid, $catalogVersionStaged)[mode = replace]  			; navigationMapPolicy(uid, $catalogVersionStaged); copyrightText[lang = en]                  ; cmsComponents(uid, $catalogVersionStaged) ; $contentCV[unique = true]
+                                        ; portal-footer     ; Portal Footer ; PortalFooterMenu         					 ; FollowUsNavigation         					 ; SectorsIndustriesNavigation,ProgramIncentivesNavigation 						; MapPolicyNavigation          					 ; © 2023 Invest Saudi. All rights reserved. ; portal-footer ;;

@@ -84,12 +84,11 @@ a:hover {
 	margin-left: 5px;
 }
 section {
-	padding: 60px 0;
+	padding: 25px 0;
 	overflow: hidden;
 }
 
 .section-title {
-	text-align: center;
 	padding: 30px 0;
 	position: relative;
 }
@@ -784,8 +783,9 @@ ul.dropdown-list li a {
 }
 .footer {
 	width: 100%;
-	background-color: #ffffff;
-	color: #707070;
+	background-color: #f7f7f7;
+	color: #787878;
+	margin-top: 25px;
 }
 
 .footer-menu-faq {
@@ -906,7 +906,7 @@ ul.dropdown-list li a {
 }
 
 .footer .footer-menu li a {
-	color: #707070;
+	color: #787878;
 }
 
 .footer .footer-menu li:first-child {
@@ -976,7 +976,7 @@ ul.dropdown-list li a {
 	font-weight: bold;
 	color: #fff;
 	width: 100%;
-	background-color: #025635;
+	border-top: 1px solid #FFFFFF;
 }
 
 .copyright .copyrightText {
@@ -1048,7 +1048,6 @@ ul.dropdown-list li a {
 		margin-top: 12px;
 	}
 	.footer .footer-menu li {
-		color: #707070;
 		text-align: center;
 	}
 	.copyright .container {
@@ -1190,23 +1189,23 @@ button:focus {
 }
 #hero {
 	width: 100%;
-	height: 100vh;
+	height: 70vh;
 	position: relative;
 }
 
 #hero .container {
-	padding-top: 70px;
+	padding-top: 320px;
 	z-index: 9;
+    text-align: left;
 }
 
 #hero h1 {
 	margin: 0 0 25px 0;
-	font-size: 60px;
 	font-weight: 700;
 	line-height: 56px;
-	text-transform: uppercase;
 	color: #fff;
 	text-shadow: 0px 0px 10px #00000073;
+	text-align: left;
 }
 
 #hero h2 {
@@ -1232,6 +1231,46 @@ button:focus {
 	border-color: #cc1616;
 }
 
+.header-home-container-wrapper {
+	display: flex;
+}
+
+.header-home-container {
+	width: 200px;
+    background-color: #025635;
+    padding: 10px;
+}
+
+.header-home-container:nth-of-type(1)
+{
+   margin-right: 10px;
+}
+
+.header-home-container h5 {
+	margin-top: 15px;
+}
+
+#accordion-explore {
+	margin-top: 25px;
+}
+
+#accordion-explore .card {
+	border: 1px solid #fff;	
+}
+
+#accordion-explore .card-header {
+	background-color: #fff;
+}
+
+#accordion-explore .card .card-header a {
+	color: #025635;
+}
+
+.explore-keys-btn {
+	margin-top: 20px;
+    margin-left: 0px;
+}
+
 @media (min-width: 1024px) {
 	#hero {
 		background-attachment: fixed;
@@ -1246,12 +1285,6 @@ button:focus {
 		width: 100%;
 		height: 10%;
 	}
-	#hero {
-		text-align: center;
-	}
-	#hero .container {
-		padding-top: 40px;
-	}
 	#hero h1 {
 		font-size: 28px;
 		line-height: 36px;
@@ -1262,6 +1295,9 @@ button:focus {
 		line-height: 24px;
 		margin-bottom: 30px;
 		text-align: left;
+	}
+	.m-scrollButton {
+		display: none;
 	}
 }
 
@@ -1467,6 +1503,11 @@ svg #wheel {
 	background-color: #45d9ef !important;
 	opacity: 1 !important;
 }
+
+.number-talk-items-container {
+	margin-top: 20px;
+}
+
 .when-number-talk-container h2 {
 	font-size: 45px;
 	text-transform: uppercase;
@@ -1474,7 +1515,6 @@ svg #wheel {
 	padding-bottom: 0;
 	position: relative;
 	z-index: 2;
-	text-align: center;
 }
 
 .when-number-talk-container .content ul {
@@ -1517,7 +1557,6 @@ svg #wheel {
 	font-size: 45px;
 	font-weight: 600;
 	color: #707070;
-	text-align: center;
 	line-height: 50px;
 	letter-spacing: 2.52px;
 }
@@ -1527,7 +1566,7 @@ svg #wheel {
 }
 
 .when-number-talk-container .talk_item-number {
-	font-size: 42px;
+	font-size: 30px;
 	font-weight: 600;
 	line-height: 40px;
 	letter-spacing: 0px;
@@ -1535,21 +1574,11 @@ svg #wheel {
 }
 
 .when-number-talk-container .talk_item-text {
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 600;
 	letter-spacing: 0px;
 	color: #025635;
 	line-height: 32px;
-}
-
-.talk_item {
-	text-align: center;
-	background-color: #fff;
-	border-radius: 20px;
-	height: auto;
-	margin: 20px 15px;
-	padding: 40px 15px 30px;
-	transition: transform 0.2s ease;
 }
 
 .talk_item-number {
@@ -1572,17 +1601,12 @@ svg #wheel {
 	#when-number-talk {
 		padding: 40px 0;
 	}
-	.when-number-talk-container .talk_item {
-		margin: 0 15px;
-		padding: 0 0 30px;
-		margin-bottom: 30px;
-	}
 	.when-number-talk-container h2 {
 		font-size: 30px;
 		line-height: 34px;
 	}
 	.when-number-talk-container .talk_item-number {
-		font-size: 30px;
+		font-size: 25px;
 		line-height: 40px;
 	}
 	.when-number-talk-container .talk_item-text {
@@ -1599,11 +1623,6 @@ svg #wheel {
 		font-size: 30px;
 		line-height: 34px;
 	}
-	.when-number-talk-container .talk_item {
-		margin: 0px 15px;
-		margin-bottom: 30px;
-		padding: 16px 15px 30px;
-	}
 	.when-number-talk-container .talk_item-number {
 		font-size: 30px;
 		line-height: 40px;
@@ -1616,17 +1635,13 @@ svg #wheel {
 }
 
 @media (min-width: 768px) {
-	.when-number-talk-container .talk_item {
-		margin: 20px 15px;
-		padding: 40px 15px 30px;
-	}
 	.when-number-talk-container .talk_item-number {
-		font-size: 42px;
+		font-size: 30px;
 		line-height: 40px;
 		padding-bottom: 0;
 	}
 	.when-number-talk-container .talk_item-text {
-		font-size: 25px;
+		font-size: 18px;
 		line-height: 32px;
 	}
 	.opportunity-card .know-more-btn, .opportunity-card .interest-btn {
@@ -1642,13 +1657,9 @@ svg #wheel {
 		width: auto;
 		height: auto;
 	}
-	.when-number-talk-container .talk_item {
-		height: 315px;
-	}
 }
 .reasons .where_totitle {
 	font-size: 45px;
-	text-align: center;
 	text-transform: uppercase;
 }
 
@@ -2060,7 +2071,7 @@ p.contowl {
 	letter-spacing: 0.58px;
 	text-transform: uppercase;
 	border-radius: 27px;
-	padding: 8px 10px 15px 20px;
+	padding: 12px 10px 15px 20px;
 }
 
 .explore-key-section .reasons .get-explore-btn svg {
@@ -3720,7 +3731,6 @@ p.contowl {
 	font-weight: 600;
 	letter-spacing: 2.52px;
 	color: #bf9b2e;
-	text-align: center;
 	text-transform: uppercase;
 }
 
@@ -3783,7 +3793,6 @@ p.contowl {
 	font-size: 45px;
 	font-weight: 600;
 	color: #bf9b2e;
-	text-align: center;
 	line-height: 50px;
 	letter-spacing: 2.52px;
 	padding-bottom: 33px;
@@ -3825,6 +3834,20 @@ p.contowl {
 #newsandupdates .titleContainer .pagination .page-item a svg {
 	width: 28px;
 	height: 28px;
+}
+
+.know-more-link h6 {
+	margin-bottom: -20px;
+	color: #000;
+	cursor: pointer;
+}
+
+.know-more-link h6:hover {
+	cursor: pointer;
+}
+
+.badge-pill-custom {
+	padding-left: 0px;
 }
 
 @keyframes fadeInAnimation {
@@ -3893,7 +3916,7 @@ p.contowl {
 	letter-spacing: 0.28px;
 	color: #0489a3;
 	transition: 0.3s;
-	text-transform: uppercase;
+	margin-left: -15px;
 }
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .know-more-link:hover {
@@ -3909,9 +3932,6 @@ p.contowl {
 }
 
 @media (max-width: 575.98px) {
-	#newsandupdates {
-		padding-top: 50px;
-	}
 	#newsandupdates .titleContainer .title-heading .section-title {
 		font-size: 30px;
 		line-height: 34px;
@@ -5385,7 +5405,6 @@ p.contowl {
 	font-weight: 600;
 	letter-spacing: 2.35px;
 	color: #bf9b2e;
-	text-align: center;
 	padding-bottom: 30px;
 	margin-bottom: 0;
 	text-transform: uppercase;
@@ -6199,6 +6218,10 @@ img.accountLogin-headline-logo {
 	.key-reason-invest .count-block {
 		width: 95% !important;
 	}
+	
+	.flip-card-custom {
+		margin-bottom: 30px;
+	}
 }
 
 @media (max-width: 1024px) {
@@ -6262,6 +6285,15 @@ img.accountLogin-headline-logo {
 	}
 	.Inc-tab-banner-content {
 		padding-top: 40px;
+	}
+	
+	#hero h1 {
+		text-align: center;
+	}
+
+	.header-home-container-wrapper {
+		justify-content: center;
+		margin-bottom: 120px;
 	}
 }
 
@@ -7271,6 +7303,9 @@ body.page-province-region-homepage .regions-title-container .region-title-data {
 	.rhq-map-info-wrapper .rhq-events-block {
 		margin-bottom: 15px;
 	}
+	#hero .container {
+		padding-top: 150px;
+	}
 }
 
 @media (min-width: 1199px) {
@@ -7530,6 +7565,15 @@ figure h2 {
 		background-color: #fff;
 		border-radius: 15px 15px 0px 0px;
 		color: #00a6be;
+	}
+	
+	.footer .footer-menu {
+		margin-top: 40px;
+	}
+
+	.footer .footer-menu li {
+		float: Left;
+		margin-right: 35px;
 	}
 }
 .banner-section {
@@ -7981,9 +8025,6 @@ figure h2 {
 }
 
 @media (min-width: 1200px) {
-	.when-number-talk-container .talk_item {
-		height: 315px;
-	}
 	.aboutusContainer .section-bg {
 		margin-top: 20px;
 		background-size: cover;
@@ -9652,14 +9693,14 @@ body.page-living-in-saudi .content {
 	right: 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: left;
 	flex-direction: column;
-	text-align: center;
+	text-align: left;
 	z-index: 9;
 }
 
 .Inc-sector-banner-container h1 {
-	margin: 0 0 10px 0;
+	margin: 0 0 10px 10px;
 	font-size: 60px;
 	font-weight: 700;
 	line-height: 56px;
@@ -9675,7 +9716,7 @@ body.page-living-in-saudi .content {
 
 .Inc-baner-btnwraper {
 	display: inline-block;
-	align-items: center;
+	align-items: left;
 	justify-content: space-between;
 	flex-direction: column;
 }
@@ -10063,10 +10104,10 @@ body.page-living-in-saudi .content {
 	margin-top: 80px8;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 176px) {
 	.Inc-baner-btnwraper {
 		display: flex;
-		align-items: center;
+		align-items: left;
 		justify-content: space-between;
 		flex-direction: column;
 	}
@@ -11588,6 +11629,14 @@ ul.INS_li_ul_under li {
 	}
 	.page-saudi-economic-sectors .INL_SD_Real_Sector_header_green {
 		height: unset;
+	}
+}
+
+@media (max-width: 1024px) {
+	.newsAndUpdateContainer .titleContainer .section-title {
+		font-size: 30px;
+		line-height: 40px;
+		letter-spacing: 1.68px;
 	}
 }
 
@@ -13411,7 +13460,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .opportunity-productData-description p {
 	font-size: 20px !important;
 	color: #646464;
-	text-align: center;
+	text-align: left;
 }
 
 .opportunity-productData-description h3,
@@ -16014,11 +16063,8 @@ padding-left: 40px;
 		overflow: hidden;
 	}
 	.footer img.footer_logo {
-		width: 93px;
-		position: relative;
-		left: 12%;
-		top: -2px;
-	}
+    	width: 30%;
+  	}
 	.copyright div {
 		font-weight: 400;
 		font-size: 16px;
@@ -16385,8 +16431,8 @@ padding-left: 40px;
 	.Inc-baner-btnwraper .btn {
 		font-size: 11px;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: left;
+		justify-content: left;
 	}
 	.Inc-baner-btnwraper {
 		flex-direction: unset;
@@ -17891,9 +17937,6 @@ padding-left: 40px;
 	.page-portal-homepage .inc-card span img {
 		width: 60px;
 	}
-	.page-portal-homepage .section-title {
-		padding: 15px 15px;
-	}
 	.page-portal-homepage #mg #mg-slider .tab-content .top-logo img {
 		height: auto;
 		display: block;
@@ -19268,8 +19311,8 @@ padding-left: 40px;
 	.Inc-baner-btnwraper .btn {
 		font-size: 11px;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: left;
+		justify-content: left;
 	}
 	.Inc-baner-btnwraper {
 		flex-direction: unset;
@@ -21618,4 +21661,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edit-component-process-status="processComponent"]  .se-decorative-panel-area {
     margin-top: 0 !important;
+}
+
+.glyphicon-plus:before{content:"\2b";}
+
+.glyphicon-minus:before{content:"\2212";}
+
+.more-less {
+    float: right;
 }

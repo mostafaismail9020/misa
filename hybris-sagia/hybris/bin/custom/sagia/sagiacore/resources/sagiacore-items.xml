@@ -5159,7 +5159,35 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
+                    <attribute qualifier="viewOpportunities" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="login" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
                     <attribute qualifier="videoLink" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+			<itemtype code="InvestSaudiHomePageIconsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiHomePageIconsComponent">
+                <description>Invest Saudi Home Page Icons Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="icons" type="SyncMediaList">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>

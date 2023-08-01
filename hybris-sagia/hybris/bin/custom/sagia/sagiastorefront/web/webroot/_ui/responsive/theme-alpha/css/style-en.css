@@ -13608,6 +13608,19 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     background: #D7DEE6;
      border: 0px solid;
 }
+.parentCategory-button{
+   font-family: 'Arial';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 12px;
+     line-height: 18px;
+     display: flex;
+     align-items: flex-end;
+     color: #5F6D7E;
+     background: #E6E9EC;
+     border: 1.33px solid #FFFFFF;
+     border-radius: 2px;
+}
 
 .custom-badge{
 

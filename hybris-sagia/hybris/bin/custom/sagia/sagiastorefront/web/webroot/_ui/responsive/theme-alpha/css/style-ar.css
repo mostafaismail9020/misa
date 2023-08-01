@@ -1254,6 +1254,10 @@ button:focus {
     margin-right: 0px;
 }
 
+#homepage-icons a {
+	color: #000;
+}
+
 @media (min-width: 1024px) {
 	#hero {
 		background-attachment: fixed;

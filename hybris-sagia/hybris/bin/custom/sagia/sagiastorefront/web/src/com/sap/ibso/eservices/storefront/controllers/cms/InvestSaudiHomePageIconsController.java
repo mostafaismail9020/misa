@@ -25,7 +25,7 @@ public class InvestSaudiHomePageIconsController extends AbstractAcceleratorCMSCo
     @Override
     protected void fillModel(HttpServletRequest request, Model model, InvestSaudiHomePageIconsComponentModel component) {
     	LOGGER.debug(" Entered into InvestSaudiHomePageIconsController ");
-		model.addAttribute("homepageIcons", component.getIcons());
+		//model.addAttribute("homepageIcons", component.getIcons());
 		LOGGER.debug(" Exit into InvestSaudiHomePageIconsController ");
     }
 }

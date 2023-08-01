@@ -57,7 +57,7 @@
        <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
 
-
+	   <collectiontype code="InvestSaudiMediaList" elementtype="InvestSaudiMedia" autocreate="true" generate="true" type="list"/>
    </collectiontypes>
 
     <enumtypes>
@@ -5173,6 +5173,15 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            
+            <itemtype code="InvestSaudiMedia" extends="Media" autocreate="true" generate="true">
+            	<attributes>
+            		<attribute type="CMSLinkComponent" qualifier="link">
+            			<persistence type="property"/>
+                        <modifiers/>
+            		</attribute>
+            	</attributes>
+            </itemtype>
 
 			<itemtype code="InvestSaudiHomePageIconsComponent" generate="true"
                       extends="SimpleCMSComponent" autocreate="true"
@@ -5187,7 +5196,7 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute qualifier="icons" type="SyncMediaList">
+                    <attribute qualifier="clickableIcons" type="InvestSaudiMediaList">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>

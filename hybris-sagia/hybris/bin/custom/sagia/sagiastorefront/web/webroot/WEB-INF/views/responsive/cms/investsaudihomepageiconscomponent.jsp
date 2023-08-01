@@ -8,14 +8,18 @@
 	<section id="homepage-icons" class="homepageIcons">
 	    <div class="container">
 			<div class="row justify-content-center">
-				 <c:forEach var="homepageIcon" items="${component.icons}" varStatus="status">
+				 <c:forEach var="homepageIcon" items="${component.clickableIcons}" varStatus="status">
 					<div class="col-md-1 col-3">
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<img src="${homepageIcon.url}" class="rounded-circle" alt='${homepageIcon.altText}' title='${homepageIcon.altText}' style="" loading="lazy" width="50" height="50">
+								<a href="${portal.cmsLinkUrl(homepageIcon.link)}">
+									<img src="${homepageIcon.url}" class="rounded-circle" alt='${homepageIcon.altText}' title='${homepageIcon.altText}' style="" loading="lazy" width="50" height="50">
+								</a>
 							</div>
 							<div class="col-md-12">
-								<p class="text-center">test</p>
+								<a href="${portal.cmsLinkUrl(homepageIcon.link)}">
+									<p class="text-center">${homepageIcon.link.linkName}</p>
+								</a>
 							</div>
 						</div>
 					</div>

@@ -604,13 +604,21 @@ nav button:focus {
 
 /* cookie desclaimer */
 .cookie-desclaimer {
-  position: fixed;
+  /*position: fixed;
   bottom: 10px;
   margin: 5px;
   width: 45%;
   z-index: 999;
   display: block;
-  background-color: rgba(226, 227, 229, 0.75); }
+  background-color: rgba(226, 227, 229, 0.75);*/
+  z-index: 999;
+  opacity: 0.75;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
   .cookie-desclaimer .fa {
     display: inline-block;
     position: absolute;
@@ -2974,7 +2982,6 @@ li a.about-us-nav {
     padding-right: 0.25rem !important;
     font-size: 12px; }
   .cookie-desclaimer {
-    width: 90%;
     font-size: 0.8rem; } }
 
 @media only screen and (max-width: 991px) {
@@ -3094,7 +3101,7 @@ li a.about-us-nav {
       margin: 0 auto;
       text-align: center !important; }
       .copyright div .nav-bottom-footer {
-        margin: 0.5rem auto; }
+        margin: 0.5rem 0; }
         .copyright div .nav-bottom-footer li {
           float: none; } }
 
@@ -11121,26 +11128,10 @@ border-bottom:1px solid var(--strategic-theme-green) !important;
   right:10px
 }
 }
-@media(min-width:1301px) and (max-width:1600px){
+@media(min-width:1260px) and (max-width:1600px){
 	.visaBodyPopup{
-		width: 520px;
-		height: 520px;
+		width: 600px;
+		height: 600px;
 	}
-  .visaPopupBody .visaPopupClose{
-    width:30px;
-    height:30px;
-    padding:7px;
-}
-}
-@media(min-width:1200px) and (max-width:1300px){
-	.visaBodyPopup{
-		width: 450px;
-		height: 450px;
-	}
-  .visaPopupBody .visaPopupClose{
-    width:30px;
-    height:30px;
-    padding:10px;
-}
 }
 /*Apply Investor Visa Popup - End*/

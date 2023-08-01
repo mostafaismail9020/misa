@@ -1,0 +1,16 @@
+# Macros / Replacement Parameter definitions
+
+$productCatalog = sagiaProductCatalog
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$catalogVersionOnline = catalogVersion(catalog(id[default=$productCatalog]), version[default='Online'])[unique=true, default=$productCatalog':Online']
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$contentCVOnline = catalogVersion(catalogVersion.catalog(Catalog.id[default=$contentCatalog]), catalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+
+INSERT_UPDATE InvestSaudiHomePageIconsComponent	; uid[unique = true] ; name()				; title()       ; description[lang = en]; $contentCV[unique = true]	;  
+										   		; home-page-icons 	; Home Page Icons 		; Invest Saudi 	;         				; 							;
+
+INSERT_UPDATE InvestSaudiHomePageIconsComponent	; uid[unique = true] ; name()				; title()       ; description[lang = en]; $contentCVOnline[unique = true];  
+												; home-page-icons 	; Home Page Icons 		; Invest Saudi 	;         				; 								 ;
+										   	

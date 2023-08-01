@@ -23,6 +23,8 @@
 		
 		<requires-extension name="sapcoreconfiguration"/> <!-- to enhance SAP Configuration with SAP HTTP Destination -->
         <requires-extension name="customerticketingfacades"/> 
+        <requires-extension name="odata2services"/> 
+        
        
 		<coremodule generated="true" manager="com.sap.ibso.eservices.core.jalo.SagiaCoreManager" packageroot="com.sap.ibso.eservices.core"/>
 

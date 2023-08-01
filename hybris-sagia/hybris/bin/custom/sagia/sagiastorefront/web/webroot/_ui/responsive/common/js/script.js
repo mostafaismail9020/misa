@@ -4473,6 +4473,10 @@ function handleAccordion() {
 		$(e.target).find('.more-less').toggleClass('glyphicon-minus').toggleClass('glyphicon-plus');
 	}
 	$('.card-link').click(toggleIcon);
+	$('.more-less').click(toggleIconGly);
+	function toggleIconGly(e) {
+		$(e.target).toggleClass('glyphicon-minus').toggleClass('glyphicon-plus');
+	}
 }
 
 function SectorOppCarousel(){

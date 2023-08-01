@@ -5,33 +5,8 @@
 				<%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 					<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 						<c:if test="${component.visible}">
-							<!-- <section id="strategyServices" class="strategyServices pt-100">
-								<div class="strategicTitle wow zoomIn animated" data-wow-duration="1s">
-								
-									<h1>${component.title}</h1>
-								</div>
-								<div class="serviceSectionV3TabsContents serviceSectionV3Col">
-                                            <c:forEach var="currentComponent2" items="${listOfTerms}" varStatus="loop">
-                                                        <img class="animated fadeIn"
-                                                            src="${currentComponent2.investorVisaApplyTermImage.url}">
-                                                        <div class="serviceSectionV3Description animated zoomIn">
-                                                            <p>${currentComponent2.description}</p>
-                                                        </div>
-                                            </c:forEach>
-                                </div>
-                                <img src="${component.backgroundImage.url}">
-                                                          </div>
-                                </section> -->
-
-
                                 <section class="investorVisaApplyTrems invVisa-ptb reveal">
-  
                                     <div class="container-fluid">
-                                    
-                                    
-                                    
-                                    
-                                      
                                          <div class="tremsWrapper">
                                        
                                           <div class="tremsWrapperItem">
@@ -47,9 +22,7 @@
                                            </div>
                                             </div>
                                         </c:forEach>
-                                             
-                                    
-                                          
+
                                           </div>
                                           </div>
                                     
@@ -59,17 +32,4 @@
                                     </div>
                                     
                                     </section>
-                                    
-
-
-
-
-
-
-
-
-
-
-
-
                             </c:if>

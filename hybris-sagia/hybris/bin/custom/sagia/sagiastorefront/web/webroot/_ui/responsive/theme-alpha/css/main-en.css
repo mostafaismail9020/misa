@@ -12547,7 +12547,7 @@ body.page-investor-visa-program {
 .page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus {
   outline: none;
   box-shadow: unset;
-  border-bottom: 1px solid #074775;
+ border: 1px solid #074775;
   transition: all 500ms ease;
 }
 
@@ -12562,7 +12562,7 @@ body.page-investor-visa-program {
 }
 
 .page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control {
-  border:unset;
+  /* border:unset; */
   border-bottom: 1px solid #c7c7c794;
   border-radius: unset;
   padding-top: 30px;
@@ -14147,5 +14147,31 @@ body.page-investor-visa-program {
 }
 .page-investor-visa-program section.footer-menu-faq, .page-investor-visa-program section.footer-menu-links{
   padding: 60px 0;
+}
+
+.page-investor-visa-program .invVisaApplyEnquiry::after{
+    background-size: auto 100%;
+}
+
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label{
+    top: -15px;
+
+}
+
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label {
+  top: -15px;
+}
+
+.invVisaApplyEnquiryFromWrap input.form-control:focus+label,
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap input.form-control.has-value+label {
+color: #006f44;
+}
+
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label{
+color: #006f44;
+}
+
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label{
+color: #006f44;
 }
 /* Inveinvestor-visa-program End */

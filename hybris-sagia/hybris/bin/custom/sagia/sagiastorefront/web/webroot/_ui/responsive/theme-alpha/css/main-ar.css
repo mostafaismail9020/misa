@@ -14210,4 +14210,29 @@ body.page-investor-visa-program {
     padding: 60px 0;
   }
 
+.page-investor-visa-program .invVisaApplyEnquiry::after{
+    background-size: auto 100%;
+}
+
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label{
+    top: -15px;
+
+}
+
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label {
+  top: -15px;
+}
+
+.invVisaApplyEnquiryFromWrap input.form-control:focus+label,
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap input.form-control.has-value+label {
+color: #006f44;
+}
+
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label{
+color: #006f44;
+}
+
+.page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label{
+color: #006f44;
+}
   /* Investor-visa-program  End*/

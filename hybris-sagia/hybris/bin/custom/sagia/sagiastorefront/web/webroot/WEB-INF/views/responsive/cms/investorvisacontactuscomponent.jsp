@@ -7,6 +7,7 @@
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
+
 <c:if test="${component.visible}">
     <section class="invVisaApplySection invVisaApplyEnquiry" id="investor-visa-contact-form">
         <div class="container-fluid" >
@@ -111,7 +112,7 @@
                         <textarea class="form-control required" cols="10" data-val="true"
                                   data-val-length="Name length should be between 2 &amp; 1000" data-val-length-max="1000"
                                   data-val-length-min="2" data-val-required="Required" id="investorVisaMessage" name="Enquiry"
-                                  placeholder="${messageLabel}" rows="5" style="padding: 20px; padding-left: 35px; padding-top: 25px; margin-top:20px">
+                                  placeholder="${messageLabel}" rows="5" style="padding: 20px; padding-left: 20px; padding-top: 15px; margin-top:35px">
                          </textarea>
                           <label class="" for="crJobTitle">
                                                     <spring:theme code="portal.sector.contact.expert.enquiry.label"/>

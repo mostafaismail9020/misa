@@ -11675,19 +11675,11 @@
                       jaloclass="com.investsaudi.portal.core.jalo.InvestorVisaApplyNowComponent">
                 <description>Investor Visa Apply Now Component</description>
                 <attributes>
-                    <attribute type="Media" qualifier="borderImage">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
                     <attribute type="Media" qualifier="insideVideoEn">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
                     <attribute type="Media" qualifier="insideVideoAr">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                    <attribute type="Media" qualifier="backgroundImage">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>

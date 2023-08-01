@@ -9,7 +9,7 @@ $page = investor-visa-program
 $pageName = Investor Visa Program
 $pageTitleEn = $pageName
 $pageTitleAr = $pageName
-$pageLabel = /investor-visa-program
+$pageLabel = /investor-visa
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]

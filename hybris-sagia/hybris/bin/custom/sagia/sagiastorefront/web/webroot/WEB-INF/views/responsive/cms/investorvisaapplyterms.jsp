@@ -5,9 +5,9 @@
 				<%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 					<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 						<c:if test="${component.visible}">
-							<section id="strategyServices" class="strategyServices pt-100">
+							<!-- <section id="strategyServices" class="strategyServices pt-100">
 								<div class="strategicTitle wow zoomIn animated" data-wow-duration="1s">
-									<!-- <h5 class="strategicSubTitle">Strategic</h5> -->
+								
 									<h1>${component.title}</h1>
 								</div>
 								<div class="serviceSectionV3TabsContents serviceSectionV3Col">
@@ -21,5 +21,55 @@
                                 </div>
                                 <img src="${component.backgroundImage.url}">
                                                           </div>
-                                </section>
+                                </section> -->
+
+
+                                <section class="investorVisaApplyTrems invVisa-ptb reveal">
+  
+                                    <div class="container-fluid">
+                                    
+                                    
+                                    
+                                    
+                                      
+                                         <div class="tremsWrapper">
+                                       
+                                          <div class="tremsWrapperItem">
+                                        <div class="investorVisaTitle">
+                                        <h2 id="sectionTitle2" class="sectionTitle-animation">${component.title}</h2>
+                                      </div>
+                                    
+                                          <div class="row tremsWrapperItemRow">
+                                            <c:forEach var="currentComponent2" items="${listOfTerms}" varStatus="loop">
+                                            <div class="col-lg-6 col-xl-5">
+                                               <div class="tremsItemPoints wow fadeInUp  animated" data-wow-delay="0.2s" data-wow-duration="1s">
+                                             <p><img src="${currentComponent2.investorVisaApplyTermImage.url}"/><span>${currentComponent2.description}</span></p>
+                                           </div>
+                                            </div>
+                                        </c:forEach>
+                                             
+                                    
+                                          
+                                          </div>
+                                          </div>
+                                    
+                                       </div>
+                                    
+                                     
+                                    </div>
+                                    
+                                    </section>
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
                             </c:if>

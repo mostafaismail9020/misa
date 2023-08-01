@@ -125,6 +125,7 @@
 <script src="${fn:escapeXml(commonResourcePath)}/js/invest-saudi/registration.js"></script>-->
 <script src="${fn:escapeXml(commonResourcePath)}/intlTelInput/js/intlTelInput.js" defer></script>
 <script src="${fn:escapeXml(commonResourcePath)}/yearPicker/dist/yearpicker.js" defer></script>
+<script src="${fn:escapeXml(commonResourcePath)}/js/select2.full.js" defer></script>
 
 <%-- performance improvement - Home page --%>
 

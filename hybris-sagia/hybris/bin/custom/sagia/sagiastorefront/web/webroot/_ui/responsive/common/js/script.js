@@ -5469,7 +5469,6 @@ $('.form-icon_reset').click(function(){
 				};
 				$('#visaPopupBodyEn').show();
 				$('.visaBodyPopup').addClass('visaBodyPopupShow');
-				$("#investorPopupVid")[0].play();
 				//localStorage.setItem('popEnState','shown')
 				$('.page-portal-homepage').css({'overflow' : 'hidden'});
 			}
@@ -5480,7 +5479,6 @@ $('.form-icon_reset').click(function(){
 				};
 				$('#visaPopupBodyAr').show();
 				$('.visaBodyPopup').addClass('visaBodyPopupShow');
-				$("#investorPopupVid")[0].play();
 				//localStorage.setItem('popArState','shown')
 				$('.page-portal-homepage').css({'overflow' : 'hidden'});
 			}
@@ -5494,7 +5492,219 @@ $('.form-icon_reset').click(function(){
 			});
          // Display Popup  - End
       // Investor Visa Js - End 
-			
+
+
+// invstor-visa-program start
+var invVisaPageLang = document.getElementsByTagName("html")[0].getAttribute("lang");
+if(invVisaPageLang == 'en'){
+
+
+	$('.countrytypeEnglish').css({'display' : 'block'})
+	$('.countrytypeArabic').css({'display' : 'none'})
+
+	}else if(invVisaPageLang == 'ar'){
+
+
+		$('.countrytypeEnglish').css({'display' : 'none'})
+		$('.countrytypeArabic').css({'display' : 'block'})
+
+		}
+
+
+// Banner load more
+
+
+$('.visaBannerLoadMore').click(function(){
+
+    $('.investorBannerContent').addClass('active');
+
+      $('.visaBannerLoadMore').hide();
+
+  })
+
+
+    // Visa Type English
+
+const nationalityChange = () => {
+
+	var instantVisaCountry = ["AD", "AU", "NZ", "BN", "CN", "JP", "KZ", "MY", "SG", "SK", "AT", "BE", "HR", "CY", "CR", "DK", "EE", "FI", "FR", "DE", "GR", "NL", "HU", "IS", "IE", "IT", "LV", "LI", "LT", "LU", "MT", "MC", "ME", "NO", "PL", "PT", "RO", "RU", "SM", "SK", "SI", "ES", "SE", "CH", "UA", "GB", "CA", "US" , "CZ"
+	  ];
+	  var nationalityChangeVal = $('#visaCountry').val();
+
+	  if (instantVisaCountry.includes(nationalityChangeVal)) {
+
+		$('.investorVisaStatus').fadeIn(200);
+		$('.visaType1').fadeIn(200);
+		$('.visaType2').hide();
+		$('.visaType0').hide();
+		$('#counrtyVisaType').prop('disabled', true);
+	  } else {
+
+		$('#counrtyVisaType').prop('disabled', false);
+		$('.investorVisaStatus').hide();
+		$('.visaType1').hide();
+		$('.visaType2').hide();
+		$('.visaType0').hide();
+	  }
+	}
+
+	const counrtyVisaTypeChange = () => {
+
+	counrtyVisaTypeChangeVal = $('#counrtyVisaType').val()
+
+	  if (counrtyVisaTypeChangeVal == 1 || counrtyVisaTypeChangeVal == 2) {
+
+		$('.investorVisaStatus').fadeIn(200);
+		$('.visaType1').fadeIn(200);
+		$('.visaType2').hide();
+		$('.visaType0').hide();
+		$('#visaCountry_msdd').addClass('disabled');
+		   $('#visaCountry').prop('disabled', true);
+
+
+	  } else if(counrtyVisaTypeChangeVal == 3 || counrtyVisaTypeChangeVal == 4 ){
+
+		 $('.investorVisaStatus').fadeIn(200);
+		$('.visaType1').hide();
+		$('.visaType2').fadeIn(200);
+		$('.visaType0').hide();
+		$('#visaCountry_msdd').addClass('disabled');
+		$('#visaCountry').prop('disabled', true);
+
+
+	  }
+
+
+	}
+
+    // Visa Type  Arabic
+
+	const nationalityChangeAr = () => {
+
+		var instantVisaCountry = ["AD", "AU", "NZ", "BN", "CN", "JP", "KZ", "MY", "SG", "SK", "AT", "BE", "HR", "CY", "CR", "DK", "EE", "FI", "FR", "DE", "GR", "NL", "HU", "IS", "IE", "IT", "LV", "LI", "LT", "LU", "MT", "MC", "ME", "NO", "PL", "PT", "RO", "RU", "SM", "SK", "SI", "ES", "SE", "CH", "UA", "GB", "CA", "US" , "CZ"
+		  ];
+		  var nationalityChangeVal = $('#visaCountry').val();
+
+		  if (instantVisaCountry.includes(nationalityChangeVal)) {
+
+			$('.investorVisaStatus').fadeIn(200);
+			$('.visaType1').fadeIn(200);
+			$('.visaType2').hide();
+			$('.visaType0').hide();
+			$('#counrtyVisaTypeAr').prop('disabled', true);
+		  } else {
+
+			$('#counrtyVisaTypeAr').prop('disabled', false);
+			$('.investorVisaStatus').hide();
+			$('.visaType1').hide();
+			$('.visaType2').hide();
+			$('.visaType0').hide();
+		  }
+		}
+
+		const counrtyVisaTypeChangeAr = () => {
+
+		counrtyVisaTypeChangeVal = $('#counrtyVisaTypeAr').val()
+
+		  if (counrtyVisaTypeChangeVal == 1 || counrtyVisaTypeChangeVal == 2) {
+
+			$('.investorVisaStatus').fadeIn(200);
+			$('.visaType1').fadeIn(200);
+			$('.visaType2').hide();
+			$('.visaType0').hide();
+			$('#visaCountry_msddAr').addClass('disabled');
+			   $('#visaCountryAr').prop('disabled', true);
+
+
+		  } else if(counrtyVisaTypeChangeVal == 3 || counrtyVisaTypeChangeVal == 4 ){
+
+			 $('.investorVisaStatus').fadeIn(200);
+			$('.visaType1').hide();
+			$('.visaType2').fadeIn(200);
+			$('.visaType0').hide();
+			$('#visaCountry_msddAr').addClass('disabled');
+			$('#visaCountryAr').prop('disabled', true);
+
+
+		  }
+
+
+		}
+
+
+
+
+	// Flag Image
+
+	  function format(item, state) {
+	  if (!item.id) {
+		return item.text;
+	  }
+	  var countryUrl = "/_ui/responsive/theme-alpha/img/flags/";
+	  // var stateUrl = "https://oxguy3.github.io/flags/svg/us/";
+	  var url = state ? stateUrl : countryUrl;
+	  var img = $("<img>", {
+		class: "img-flag",
+		width: 26,
+		src: url + item.element.value.toLowerCase() + ".png"
+	  });
+	  var span = $("<span>", {
+		text: " " + item.text
+	  });
+	  span.prepend(img);
+	  return span;
+	}
+
+	// Select 2 dropdown
+
+	$(document).ready(function() {
+
+	  $(".counrtyVisaType").select2();
+
+	  $(".counrtyVisaTypeAr").select2();
+
+	  $("#visaCountry").select2({
+		templateResult: function(item) {
+		  return format(item, false);
+		}
+
+
+	  });
+
+	  $("#visaCountryAr").select2({
+		templateResult: function(item) {
+		  return format(item, false);
+		}
+
+
+	  });
+
+	});
+	// Text Animation
+$('document').ready(function(){
+	const titleSplit = document.querySelectorAll('.page-investor-visa-program .investorVisaTitle h1, .page-investor-visa-program .investorVisaTitle h2');
+
+	// Each El
+	Array.prototype.forEach.call(titleSplit, function(el, i) {
+
+	  let ElText = el.innerText;
+	  el.setAttribute('data-word', ElText);
+
+	  const chars = ElText.split('');
+
+	  var res = chars.map(function(el, i) {
+
+		return `<span class="wow fadeIn animated" data-wow-delay="${i * 0.01}s" data-wow-duration="${i * 0.1}s">${el}</span>`;
+	  }).join('');
+
+	  el.innerHTML = res;
+
+	});
+
+	});
+
+// invstor-visa-program End
+
 var swiper = new Swiper(".targetedMySwiper", {
 	slidesPerView: 1,
 	spaceBetween: 10,

@@ -11679,7 +11679,11 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute type="Media" qualifier="insideVideo">
+                    <attribute type="Media" qualifier="insideVideoEn">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="insideVideoAr">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
@@ -11688,6 +11692,14 @@
                         <modifiers/>
                     </attribute>
                     <attribute type="Media" qualifier="planeAnimation">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="defaultImageEn">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="defaultImageAr">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>

@@ -30,6 +30,7 @@
                                         <label class="text-capitalize ${facetValue.selected ? 'selected' : ''}">
                                             <button type="button" class="btn btn-primary custom-button" onclick="redirectToLink('${fn:replace(facetValue.query.url,'/search','')}')">
                                                 ${fn:escapeXml(facetValue.name)}
+                                                &nbsp;
                                                 <span class="badge badge-danger custom-badge">${facetValue.count}</span>
                                             </button>
                                         </label>

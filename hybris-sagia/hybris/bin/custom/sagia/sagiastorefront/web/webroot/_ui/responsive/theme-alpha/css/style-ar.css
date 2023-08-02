@@ -83,6 +83,73 @@ a:hover {
 	font-size: 16px;
 	text-transform: uppercase;
 }
+.custom-button{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+    color: #5F6D7E;
+    background: #D7DEE6;
+     border: 0px solid;
+}
+.custom-badge{
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px 6px;
+gap: 4px;
+
+width: 30px;
+height: 20px;
+background: #5F6D7E;
+border-radius: 20px;
+flex: none;
+order: 1;
+width: 18px;
+height: 20px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+display: flex;
+align-items: center;
+letter-spacing: -0.001em;
+color: #F8F9FB;
+
+}
+.parentCategory-button{
+   font-family: 'Arial';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 12px;
+     line-height: 18px;
+     display: flex;
+     align-items: flex-end;
+     color: #5F6D7E;
+     background: #E6E9EC;
+     border: 1.33px solid #FFFFFF;
+     border-radius: 2px;
+}
+.opp-search-btn-hidden {
+	color: #fff;
+	margin-right:  35vw;
+	padding: 9px 20px;
+	background: #00a6be;
+	border: 1px solid #00a6be;
+	border-radius: 30px;
+	position: absolute;
+	right: 19px;
+	top: 4px;
+	height: 52px;
+	text-transform: uppercase;
+	visibility:hidden;
+}
 
 .btn-knowmore span.arow-icon {
 	margin-left: 5px;

@@ -19,7 +19,7 @@
                         <spring:theme code="portal.opportunity.search.filter"/>
                     </h1>
                 </div>
-                <div id="product-facet" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
+                <div id="product-facet" style="height: inherit" class=" hidden-sm hidden-xs product__facet js-product-facet">
                     <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> --!>
                     <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
                 </div>

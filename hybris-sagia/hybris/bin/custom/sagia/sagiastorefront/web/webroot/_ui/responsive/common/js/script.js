@@ -5241,7 +5241,7 @@ function onInvestorVisaContactSubmit() {
         						});
         					$(".contactSuccess").removeClass("d-none");
         					$("#investorVisaContactForm").addClass("d-none");
-        					$('.contact-sucess-ticket').text("Your reference number : "+ data.substring(8));
+        					$('.contact-sucess-ticket').html("Your reference number : <b>"+ data.substring(8) + "</b>");
         					var scrollDiv = document.getElementById("investor-visa-contact-form").offsetTop - 80;
         					window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
         				}

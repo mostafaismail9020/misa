@@ -71,18 +71,18 @@
 
     <div class="container ">
          <div class="investorVisaTitle">
-      <h1 id="sectionTitle3" class="sectionTitle-animation">Find out what type of Visa you need to Visit Saudi</h1>
+      <h1 id="sectionTitle3" class="sectionTitle-animation"><spring:theme code="portal.investor.visa.type.label"/></h1>
   
   
       <div class="investorVisaTypeContent">
         <div class="row">
           <div class="col-md-6">
              <div class="investorVisaTNationality investorVisaTypeItem">
-         <label class="visatypeLabel" for="visaCountry">What is your nationality? </label>
+         <label class="visatypeLabel" for="visaCountry"><spring:theme code="portal.investor.visa.nationality.label"/> </label>
      
       
   <select class="form-control visatypeLabelSelect" id="visaCountry" onchange="nationalityChange()">  
-      <option selected value="">Choose your nationality</option>   
+      <option selected value=""><spring:theme code="portal.investor.visa.nationality.selector.label"/></option>
       <option value="AF" data-capital="Kabul">Afghanistan</option>
       <option value="AX" data-capital="Mariehamn">Aland Islands</option>
       <option value="AL" data-capital="Tirana">Albania</option>

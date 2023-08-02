@@ -3909,11 +3909,6 @@ p.contowl {
 	text-transform: uppercase;
 }
 
-#newsandupdates .contentWrapper .card-wrapper .flip-card .card-box p {
-	color: #1c1c1c;
-	letter-spacing: 0.4px;
-}
-
 #newsandupdates .contentWrapper .card-wrapper .flip-card .know-more-link {
 	font-size: 14px;
 	font-weight: 600;
@@ -6523,9 +6518,6 @@ img.accountLogin-headline-logo {
 	}
 }
 @media (min-width: 763px) {
-	.home-news-updates-content {
-		height: 30rem !important;
-	}
 	.home-news-updates-content-p {
 		-webkit-box-orient: vertical;
 		display: -webkit-box;

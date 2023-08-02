@@ -14,7 +14,26 @@
 				</div>
 			</div>
 			
-           	<div class="row contentWrapper">
+			<div class="row contentWrapper">
+           		<c:forEach var="currentComponent" items="${lastNews}" varStatus="status">
+			      	<c:set var="loopCount" value="${(status.index) * 150}" />
+			      	<c:url value="/mediaCenter/news" var="newsUrl"/>
+			      	<div class="col-lg-4 col-md-6 card-wrapper " data-aos="fade-up" data-aos-delay="${loopCount}">
+			        	<div class="flip-card">
+			            	<div class="card-img">
+			                	<img class="img-fluid" src="${fn:escapeXml(currentComponent.newsDetailsImage.url)}" alt="" loading="lazy">
+			              	</div>
+			              	<div class="card-box p-3 pr-5 home-news-updates-content">
+			               		<strong><fmt:formatDate value="${currentComponent.newsDate}" type="both" dateStyle="long" timeStyle="long" pattern="d MMMM yyyy" /></strong>
+			                  	<h2>${currentComponent.newsTitle}</h2>
+			                  	<p class="home-news-updates-content-p">${currentComponent.newsShortInformation}</p>
+	                      	</div>
+						</div>
+					</div>
+				</c:forEach>
+        	</div>
+			
+           	<!-- <div class="row contentWrapper">
            		<c:forEach var="currentComponent" items="${lastNews}" varStatus="status">
 			      	<c:set var="loopCount" value="${(status.index) * 150}" />
 			      	<c:url value="/mediaCenter/news" var="newsUrl"/>
@@ -36,7 +55,7 @@
 						</div>
 					</div>
 				</c:forEach>
-        	</div>
+        	</div> -->
 			<div class="row explore-keys-btn">
 				<a href="${portal.cmsLinkUrl(component.exploreAllUrl)}" class="btn btn-primary-fill btn-video">
 					<spring:theme code="portal.seemoreupdates.button.text"/>&nbsp;

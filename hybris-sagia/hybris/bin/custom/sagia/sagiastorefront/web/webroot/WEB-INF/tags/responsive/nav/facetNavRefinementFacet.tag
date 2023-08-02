@@ -11,7 +11,7 @@
 	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
     <input type="text" id="js-site-search-input" class="form-control js-site-search-input custom-search-input" name="q" value=""
         maxlength="100" placeholder="${searchPlaceholder}">
-    <button class="btn btn-primary custom" type="submit">Search</button>
+    <button class="btn btn-primary custom-button" type="submit">Search</button>
 </form>
 <c:if test="${not empty facetData.values}">
     <ycommerce:testId code="facetNav_title_${facetData.name}">

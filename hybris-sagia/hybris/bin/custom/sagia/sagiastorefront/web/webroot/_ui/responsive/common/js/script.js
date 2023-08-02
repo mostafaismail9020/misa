@@ -5503,8 +5503,7 @@ if(invVisaPageLang == 'en'){
 	$('.countrytypeArabic').css({'display' : 'none'})
 
 	}else if(invVisaPageLang == 'ar'){
-
-
+        $(".page-investor-visa-program #topbar .Header_vs_logo img").attr("src", "/_ui/responsive/common/images/Header_VS_2030-white.svg");
 		$('.countrytypeEnglish').css({'display' : 'none'})
 		$('.countrytypeArabic').css({'display' : 'block'})
 

@@ -132,10 +132,10 @@
                          </div>
                         </div>
                     <div class="row form-action-btn" style="padding-left: 15px; padding-right: 15px;justify-content: center;margin-top: 40px;">
-                       <div class="col-md-3">
+                       <div class="col-md-4">
                                 <button type="button" id="contact-clear" class="btn btn-primary-fill btn-form-outline w-100">
                                     <spring:theme code="portal.sector.download.clear.button"/></button></div>
-                            <div class="col-md-3"><button id="btn-investor-visa-contact" type="submit" class="responsive-contact-btn btn btn-primary-fill btn-form-fill  w-100" onclick="onInvestorVisaContactload()">
+                            <div class="col-md-4"><button id="btn-investor-visa-contact" type="submit" class="responsive-contact-btn btn btn-primary-fill btn-form-fill  w-100" onclick="onInvestorVisaContactload()">
                                     <spring:theme code="portal.sector.download.submit.button"/></button></div>
                                 </div>
                          

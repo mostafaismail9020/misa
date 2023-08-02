@@ -14174,4 +14174,13 @@ color: #006f44;
 .page-investor-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label{
 color: #006f44;
 }
+
+.page-investor-visa-program  .select2-container--open .select2-dropdown--below{
+box-shadow: 0 14px 28px rgb(0 0 0 / 45%), 0 10px 10px rgb(0 0 0 / 1%);
+}
+
+.page-investor-visa-program  .contactSuccess p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 /* Inveinvestor-visa-program End */

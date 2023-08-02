@@ -1,0 +1,27 @@
+# Macros / Replacement Parameter definitions
+
+$page = portal-homepage
+
+$catalogVersionStaged = catalogVersion(catalog(id[default=$contentCatalog]), version[default='Staged'])[unique=true, default=$contentCatalog:Staged]
+
+$catalogVersionOnline = catalogVersion(catalog(id[default=$contentCatalog]), version[default='Online'])[unique=true, default=$contentCatalog:Online]
+
+$contentCatalog = sagiaContentCatalog
+
+$contentCVStaged = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$contentCVOnline = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+
+# Remove Sectors Component from home page and replace with new components
+
+INSERT_UPDATE ContentSlot; uid[unique = true]	; name 			 ; active; cmsComponents(uid, $catalogVersionStaged); $contentCVStaged[unique = true] ;
+						 ; PortalPageMain-$page ; PortalPageMain ; true  ; 											;
+			 
+INSERT_UPDATE ContentSlot; uid[unique = true]	; name 			 ; active; cmsComponents(uid, $catalogVersionOnline); $contentCVOnline[unique = true] ;
+						 ; PortalPageMain-$page ; PortalPageMain ; true  ; 											;
+
+INSERT_UPDATE ContentSlot; uid[unique = true]             ; name                 ; active; cmsComponents(uid, $catalogVersionStaged)														; $contentCVStaged[unique = true] ;
+                         ; PortalPageTopSlot-$page        ; PortalPageTop        ; true  ; home-page-icons, explore7KeyReasonsCarouselComponent, numbertalk-container, last-news-component  ;   
+
+INSERT_UPDATE ContentSlot; uid[unique = true]             ; name                 ; active; cmsComponents(uid, $catalogVersionOnline)														; $contentCVOnline[unique = true] ;
+                         ; PortalPageTopSlot-$page        ; PortalPageTop        ; true  ; home-page-icons, explore7KeyReasonsCarouselComponent, numbertalk-container, last-news-component  ;   
+                         

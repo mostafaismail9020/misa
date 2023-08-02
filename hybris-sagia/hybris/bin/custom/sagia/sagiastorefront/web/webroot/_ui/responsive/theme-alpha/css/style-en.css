@@ -13717,6 +13717,20 @@ color: #F8F9FB;
 	outline: none;
 	padding-left: 50px;
 }
+.custom-search-input{
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     padding: 8px 18px;
+     gap: 6px;
+    width: 85%;
+     background: #F8F9FB;
+     border: 1px solid #5F6D7E;
+     border-radius: 8px;
+     order: 1;
+     align-self: stretch;
+ }
 
 .search-reports-container input[type=search]::placeholder,
 .search-reports-container input[type=text]::placeholder,

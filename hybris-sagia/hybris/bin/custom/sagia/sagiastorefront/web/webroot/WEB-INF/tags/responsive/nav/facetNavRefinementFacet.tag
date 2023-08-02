@@ -7,13 +7,17 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <spring:htmlEscape defaultHtmlEscape="true"/>
-
+<form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
+	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
+    <input type="text" id="js-site-search-input" class="form-control js-site-search-input custom-search-input" name="q" value=""
+        maxlength="100" placeholder="${searchPlaceholder}">
+    <button class="btn btn-primary custom" type="submit">Search</button>
+</form>
 <c:if test="${not empty facetData.values}">
     <ycommerce:testId code="facetNav_title_${facetData.name}">
         <div class="facet js-facet">
             <div class="facet__name js-facet-name text-center clr_gld text-uppercase" style="margin-top: 10px;">
                 <span class="glyphicon facet__arrow"></span>
-                ${facetData.name}
                 <i class="fa fa-plus plus-minus-facet open-facet" data-facet="${facetData.code}" style="display: none"></i>
                 <i class="fa fa-minus plus-minus-facet close-facet" data-facet="${facetData.code}" style="display: none"></i>
             </div>
@@ -63,5 +67,6 @@
         window.location.href = completeUrl;
     }
 </script>
+
 
 

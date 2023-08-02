@@ -16,7 +16,6 @@
                 ${facetData.name}
                 <i class="fa fa-plus plus-minus-facet open-facet" data-facet="${facetData.code}" style="display: none"></i>
                 <i class="fa fa-minus plus-minus-facet close-facet" data-facet="${facetData.code}" style="display: none"></i>
-                <hr>
             </div>
 
             <div class="facet__values js-facet-values js-facet-form" data-facet="${facetData.code}">

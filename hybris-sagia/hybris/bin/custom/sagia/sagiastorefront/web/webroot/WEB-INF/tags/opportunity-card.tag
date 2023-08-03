@@ -11,7 +11,7 @@
     <div class="flip-card flip-card-custom row">
         <div class="col-md-3">
             <a class="know-more-link" href="${newsUrl}/${currentComponent.uid}">
-                <img class="img-fluid" src="https://pixabay.com/get/gc02f7b13514e3f05c2b6f8358024e33ba31efd4d3bd3843d9fbcea38c6bcabfc2f3276190022b9be15391f8a4dde8cc2_1280.jpg" alt="" loading="lazy">
+                <img class="img-fluid" src="https://pixabay.com/get/g48741768e85aa9caa5e102358bf75c4e994c4a6328b84bc951459741fd9a2db5558456d89155d0c17fa8694265c32c94_1280.jpg" alt="" loading="lazy">
             </a>
         </div>
         <div class="col-md-3">

@@ -13650,8 +13650,7 @@ color: #F8F9FB;
 
 }
 .custom-button:hover {
-    background-color: #5F6D7E; /* Replace YOUR_COLOR_HERE with the color you want */
-}
+    background-color: #5F6D7E;
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
 	color: #bf9b2e;

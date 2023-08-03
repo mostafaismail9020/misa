@@ -14,11 +14,7 @@
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                <div>
-                    <h1 class='section-headline my-5 all-opportunity-filter'>
-                        <spring:theme code="portal.opportunity.search.filter"/>
-                    </h1>
-                </div>
+
                 <div id="product-facet" style="height: inherit" class=" hidden-sm hidden-xs product__facet js-product-facet">
                     <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> --!>
                     <nav:facetNavRefinements pageData="${solrSearchPageData}"/>

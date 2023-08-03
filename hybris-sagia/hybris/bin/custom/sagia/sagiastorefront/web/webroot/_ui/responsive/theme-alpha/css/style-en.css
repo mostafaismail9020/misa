@@ -7342,6 +7342,9 @@ body.page-province-region-homepage .regions-title-container .region-title-data {
 	--Nhexa: 4;
 	--gap: 2vw;
 	--size: calc(calc(100vw / var(--Nhexa)) - var(--gap));
+	--misaLeafGreen: #00714D;
+	--misaMintGreen: #65DC89;
+	--misaLeafGreen: #00714D;
 	margin: 0;
 	padding: 0;
 	border: 0 none;

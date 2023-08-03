@@ -13649,6 +13649,9 @@ letter-spacing: -0.001em;
 color: #F8F9FB;
 
 }
+.custom-button:hover {
+    background-color: #5F6D7E; /* Replace YOUR_COLOR_HERE with the color you want */
+}
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
 	color: #bf9b2e;

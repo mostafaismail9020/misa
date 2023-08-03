@@ -7,15 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <spring:htmlEscape defaultHtmlEscape="true"/>
-<form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
-	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-    <input type="text" id="js-site-search-input" class="form-control js-site-search-input custom-search-input" name="q" value=""
-        maxlength="100" placeholder="${searchPlaceholder}">
-    <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
-        <spring:message code="portal.opportunity.search.opportunities.totalResults"
-                      arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-                         </div>
-</form>
+
 <c:if test="${not empty facetData.values}">
     <ycommerce:testId code="facetNav_title_${facetData.name}">
         <div class="facet js-facet">

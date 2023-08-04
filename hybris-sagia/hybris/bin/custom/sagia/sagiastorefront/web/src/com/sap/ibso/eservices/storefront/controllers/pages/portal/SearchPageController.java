@@ -43,6 +43,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sap.ibso.eservices.facades.data.GlobalAutocompleteResultData;
+
 
 @Controller
 @RequestMapping("/search")
@@ -244,6 +246,29 @@ public class SearchPageController extends AbstractSearchPageController
 															 @RequestParam("term") final String term) throws CMSItemNotFoundException
 	{
 		final AutocompleteResultData resultData = new AutocompleteResultData();
+
+		final SearchBoxComponentModel component = (SearchBoxComponentModel) cmsComponentService.getSimpleCMSComponent(componentUid);
+
+		if (component.isDisplaySuggestions())
+		{
+			resultData.setSuggestions(subList(productSearchFacade.getAutocompleteSuggestions(term), component.getMaxSuggestions()));
+		}
+
+		if (component.isDisplayProducts())
+		{
+			resultData.setProducts(subList(productSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
+					component.getMaxProducts()));
+		}
+
+		return resultData;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/autocomplete/global/" + COMPONENT_UID_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
+	public GlobalAutocompleteResultData getAutocompleteGlobalSuggestions(@PathVariable final String componentUid,
+															 @RequestParam("term") final String term) throws CMSItemNotFoundException
+	{
+		final GlobalAutocompleteResultData resultData = new GlobalAutocompleteResultData();
 
 		final SearchBoxComponentModel component = (SearchBoxComponentModel) cmsComponentService.getSimpleCMSComponent(componentUid);
 

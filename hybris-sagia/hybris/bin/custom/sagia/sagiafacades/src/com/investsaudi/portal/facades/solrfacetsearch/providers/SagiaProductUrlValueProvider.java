@@ -1,8 +1,12 @@
 package com.investsaudi.portal.facades.solrfacetsearch.providers;
 
+import com.investsaudi.portal.core.model.ArticleProductModel;
+import com.investsaudi.portal.core.model.EventProductModel;
+import com.investsaudi.portal.core.model.NewsProductModel;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
 import de.hybris.platform.category.model.CategoryModel;
 import de.hybris.platform.commerceservices.url.UrlResolver;
+import de.hybris.platform.core.model.ItemModel;
 import de.hybris.platform.core.model.c2l.LanguageModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.i18n.CommonI18NService;
@@ -69,10 +73,6 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
     public Collection<FieldValue> getFieldValues(final IndexConfig indexConfig, final IndexedProperty indexedProperty,
                                                  final Object model) throws FieldValueProviderException
     {
-        if (model instanceof OpportunityProductModel)
-        {
-            final OpportunityProductModel opportunityProduct = (OpportunityProductModel) model;
-
             final Collection<FieldValue> fieldValues = new ArrayList<FieldValue>();
 
             if (indexedProperty.isLocalized())
@@ -80,28 +80,22 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
                 final Collection<LanguageModel> languages = indexConfig.getLanguages();
                 for (final LanguageModel language : languages)
                 {
-                    fieldValues.addAll(createFieldValue(opportunityProduct, language, indexedProperty));
+                    fieldValues.addAll(createFieldValue(model, language, indexedProperty));
                 }
             }
             else
             {
-                fieldValues.addAll(createFieldValue(opportunityProduct, null, indexedProperty));
+                fieldValues.addAll(createFieldValue(model, null, indexedProperty));
             }
             return fieldValues;
-        }
-        else
-        {
-            final OpportunityProductModel opportunityProduct = (OpportunityProductModel) model;
-            throw new FieldValueProviderException("Category structure not valid for :"+ opportunityProduct.getCode());
-        }
     }
 
-    protected List<FieldValue> createFieldValue(final OpportunityProductModel opportunityProduct, final LanguageModel language,
-                                                final IndexedProperty indexedProperty)
+    protected List<FieldValue> createFieldValue(final Object model, final LanguageModel language,
+                                                final IndexedProperty indexedProperty) throws FieldValueProviderException
     {
         final List<FieldValue> fieldValues = new ArrayList<FieldValue>();
 
-        final String productUrl = getProductUrl(opportunityProduct, language);
+        final String productUrl = getProductUrl(model, language);
         if (productUrl != null)
         {
             addFieldValues(fieldValues, indexedProperty, language, productUrl);
@@ -121,9 +115,12 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
         }
     }
 
-    protected String getProductUrl(final OpportunityProductModel opportunityProduct, final LanguageModel language)
+    protected String getProductUrl(final Object model, final LanguageModel language) throws FieldValueProviderException
     {
         String url= FORWARD_SLASH;
+    	if(model instanceof OpportunityProductModel) {
+    		final OpportunityProductModel opportunityProduct = (OpportunityProductModel) model;
+   
         if (CollectionUtils.isNotEmpty(opportunityProduct.getSupercategories())) {
 
             List<CategoryModel> prdSuperCategory = (List<CategoryModel>) opportunityProduct.getSupercategories();
@@ -133,7 +130,20 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
                 url=  SECTOR_URL + parentCategory.get().getCode() + FORWARD_SLASH + opportunityProduct.getCode();
             }
         }
-
+    	}
+    	else if (model instanceof ArticleProductModel) {
+			return "/aboutSaudi";			
+		}
+    	else if (model instanceof EventProductModel) {
+			return "/mediaCenter/events/" + ((EventProductModel) model).getCode();
+		}
+    	else if (model instanceof NewsProductModel) {
+    		return "/mediaCenter/news/" +  ((NewsProductModel) model).getCode();	
+    	}
+        else
+        {
+            throw new FieldValueProviderException("Category structure not valid for :"+ ((ItemModel) model).getPk());
+        }
         return url;
     }
 }

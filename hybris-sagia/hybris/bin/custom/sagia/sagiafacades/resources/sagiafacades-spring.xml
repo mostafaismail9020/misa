@@ -1825,6 +1825,28 @@
 		</property>
 	</bean>
 
+	<bean id="mizaServiceTypePopulator" class="com.investsaudi.portal.facades.contact.populator.MizaServiceTypeForFormPopulator" />
+
+	<bean id="mizaServiceTypeConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.customerticketingfacades.data.MizaServiceTypeForFormData"/>
+		<property name="populators">
+			<list>
+				<ref bean="mizaServiceTypePopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="strategicServiceTypePopulator" class="com.investsaudi.portal.facades.contact.populator.StrategicInvestorServiceTypePopulator" />
+
+	<bean id="strategicServiceTypeConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.customerticketingfacades.data.StrategicInvestorServiceTypeData"/>
+		<property name="populators">
+			<list>
+				<ref bean="strategicServiceTypePopulator"/>
+			</list>
+		</property>
+	</bean>
+
 	<bean name="contactTicketFacade" class="com.investsaudi.portal.facades.contact.ContactTicketFacade" parent="defaultCustomerTicketingFacade" />
 
 	<bean id="investSaudiSiteMapContentPagePopulator" class="com.investsaudi.portal.facades.sitemap.populator.InvestSaudiSiteMapContentPagePopulator"/>

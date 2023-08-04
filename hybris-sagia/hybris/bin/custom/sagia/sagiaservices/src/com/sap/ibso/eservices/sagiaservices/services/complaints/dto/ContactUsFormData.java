@@ -6,6 +6,7 @@ import java.util.Collection;
 
 public class ContactUsFormData {
 	private String firstName;
+	private String contactUsName;
 	private String lastName;
 	private String phoneNumber;
 	private String email;
@@ -77,12 +78,18 @@ public class ContactUsFormData {
 		this.categoryTwo = categoryTwo;
 	}
 	private MultipartFile contactfile;
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+	public String getContactUsName() {
+		return contactUsName;
+	}
+	public void setContactUsName(String contactUsName) {
+		this.contactUsName = contactUsName;
 	}
 	public MultipartFile getContactfile() {
 		return contactfile;

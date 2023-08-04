@@ -268,10 +268,10 @@
 				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
 				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
 				 -->
-				 <a href="#" class="skype d-none d-sm-inline">
+				 <!-- <a href="#" class="skype d-none d-sm-inline">
 					<span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
 					<span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
-				</a>
+				</a> -->
 				 <!-- <c:if test="${userLoggedIn eq 'false'}">
 					 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
 					 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
@@ -292,7 +292,10 @@
 	                    <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer d-none d-lg-inline">
 	                    	<span><spring:theme code="dashboard.logout.label"/></span>
 	                    </a>
-					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener ">
+					    <!-- <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener ">
+					    	<span><spring:theme code="portal.header.feedback.label"/></span>
+					    </a> -->
+					    <a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A" class="login-details linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener ">
 					    	<span><spring:theme code="portal.header.feedback.label"/></span>
 					    </a>
 					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
@@ -301,7 +304,10 @@
 					    <a href="${encodedContextPath}/investsaudi-login" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
 					      	<span><spring:theme code="portal.header.login.label"/></span>
 						</a>
-					    <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
+					    <!-- <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
+					    	<span><spring:theme code="portal.header.feedback.label"/></span>
+					    </a> -->
+					    <a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
 					    	<span><spring:theme code="portal.header.feedback.label"/></span>
 					    </a>
 					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
@@ -438,7 +444,14 @@
 				<div class="p-3 d-flex  justify-content-center d-lg-none">
 					<c:choose>
 						<c:when test="${userLoggedIn}">
-							<a href="https://eservices.sagia.gov.sa:2443/gensurvey"
+							<!-- <a href="https://eservices.sagia.gov.sa:2443/gensurvey"
+								class="btn-outline login-details linkedin login-text" target="_blank"
+								rel="nofollow noreferrer noopener">
+								<span>
+									<spring:theme code="portal.header.feedback.label" />
+								</span>
+							</a> -->
+							<a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A"
 								class="btn-outline login-details linkedin login-text" target="_blank"
 								rel="nofollow noreferrer noopener">
 								<span>
@@ -454,7 +467,14 @@
 							</a>
 						</c:when>
 						<c:otherwise>
-							<a href="https://eservices.sagia.gov.sa:2443/gensurvey"
+							<!-- <a href="https://eservices.sagia.gov.sa:2443/gensurvey"
+								class="linkedin login-text" target="_blank"
+								rel="btn-outline nofollow noreferrer noopener">
+								<span>
+									<spring:theme code="portal.header.feedback.label" />
+								</span>
+							</a> -->
+							<a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A"
 								class="linkedin login-text" target="_blank"
 								rel="btn-outline nofollow noreferrer noopener">
 								<span>

@@ -297,6 +297,15 @@ function fillReviewTab() {
     })
 }
 
+$('.validate__numbers-only-bidding').on('keypress', function (event) {
+        var regex = new RegExp("^[0-9]+$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        }
+    });
+
 var removeErrorIfExists = function(){
     if ($(this.closest('.form-group')).hasClass('has-error')) {
         $(this.closest('.form-group')).removeClass('has-error');

@@ -8,47 +8,72 @@
 <section class="figures explore-key-section">
 	<div class="container">
 		<div class="row reasons">
-			<div class="col-lg-12 p-0">
-				<div class="titleArea">
-					<h2 class="where_totitle aos-init" data-aos="fade-right" data-aos-delay="100">${component.carouselTitle}</h2>
-					<div id="headingOne">
-						<a href="${portal.cmsLinkUrl(component.carouselExploreAllButton)}" class="get-explore-btn rounded-pill">
-							${component.carouselExploreAllButton.linkName}
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right pt-1" viewBox="0 0 16 16">
-								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-							</svg>
-						</a>
+			<div class="col-lg-12 pt-4 pt-lg-0 content mx-auto aos-init" data-aos="fade-right" data-aos-delay="100">
+				<h2 class="where_totitle">${component.carouselTitle}</h2>
+			</div>
+			<div class="col-lg-12">
+				<div class="row">
+					<div class="col-md-6 order-lg-1 order-md-1 order-2">
+						<div id="accordion-explore">
+							<c:forEach var="currentComponent1" items="${ExploreSaudi}" varStatus="loop">
+								<div class="card">
+									<div class="card-header">
+										<a class="card-link" data-toggle="collapse" href="#${loop.index}">
+											<i class="more-less glyphicon-plus"></i>
+											${currentComponent1.reasonTitle}
+										</a>
+									</div>
+									<div id="${loop.index}" class="collapse" data-parent="#accordion">
+										<div class="card-body">
+											${currentComponent1.reasonFullDescription}
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+							<c:forEach var="currentComponent2" items="${ExploreSaudi}" varStatus="loop">
+								<div class="card">
+									<div class="card-header">
+										<a class="card-link" data-toggle="collapse" href="#${loop.index}0">
+											<i class="more-less glyphicon glyphicon-plus"></i>
+											${currentComponent2.reasonTitle}
+										</a>
+									</div>
+									<div id="${loop.index}0" class="collapse" data-parent="#accordion">
+										<div class="card-body">
+											${currentComponent2.reasonFullDescription}
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+					<div class="col-md-6 order-lg-2 order-md-2 order-1">
+						<div class="embed-responsive embed-responsive-16by9">
+						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cLsS998ORpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+						</div>
+						<!-- <div id="videoModal" class="modal fade">
+						    <button type="button" class="btn-dismiss close" data-dismiss="modal" aria-label="Close">
+						      <span aria-hidden="true">x</span>
+						    </button>
+						    <c:if test="${not empty videoLink}">
+						    <div class="modal-dialog modal-dialog-centered video_section">
+						        <div class="modal-content">
+						            <div class="modal-body">
+						              <div class="embed-responsive embed-responsive-16by9">
+						                <iframe id="cartoonVideo" width="560" height="315" src="${videoLink.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+						                
+						              </div>
+						            </div>
+						        </div>
+						    </div>
+						    </c:if>
+						</div> -->
 					</div>
 				</div>
-				<div id="accordion">
-					<c:forEach var="currentComponent1" items="${ExploreSaudi}">
-						<div class="card">
-							<div class="card-header">
-								<a class="card-link" data-toggle="collapse" href="#${currentComponent1.getIndex()}">
-									${currentComponent1.reasonTitle}
-								</a>
-							</div>
-							<div id="${currentComponent1.getIndex()}" class="collapse" data-parent="#accordion">
-								<div class="card-body">
-									${currentComponent1.reasonFullDescription}
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-					<c:forEach var="currentComponent2" items="${ExploreSaudi}">
-						<div class="card">
-							<div class="card-header">
-								<a class="card-link" data-toggle="collapse" href="#${currentComponent1.getIndex()}">
-									${currentComponent2.reasonTitle}
-								</a>
-							</div>
-							<div id="${currentComponent1.getIndex()}" class="collapse" data-parent="#accordion">
-								<div class="card-body">
-									${currentComponent2.reasonFullDescription}
-								</div>
-							</div>
-						</div>
-					</c:forEach>
+				<div class="row explore-keys-btn">
+					<a href="${portal.cmsLinkUrl(component.carouselExploreAllButton)}" class="btn btn-primary-fill btn-video">
+						${component.carouselExploreAllButton.linkName}
+					</a>
 				</div>
 			</div>
 		</div>

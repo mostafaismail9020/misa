@@ -1,0 +1,18 @@
+INSERT_UPDATE StrategicInvestorServiceType; code[unique = true]              ; label[lang = en]                    ; label[lang = ar];
+                                          ; advisory-and-guidance            ; Advisory & Guidance                 ; الدراسات الاقتصادية
+                                          ; government-licensing             ; Government Licensing                ; الفرص الاستثمارية
+                                          ; multinational-partnerships       ; Multinational Partnerships          ; الاستشارة الخاصة
+                                          ; economic-market-industry-studies ; Economic, Market & Industry Studies ; دعم
+                                          ; rules-and-regulations            ; Up-to-date Rules and Regulations    ; برامج القروض والحوافز
+                                          ; ministry-of-investment-referral  ; Ministry of Investment Referral     ; التراخيص الحكومية
+                                          ; financing-and-incentives-program ; Financing and Incentives program    ; الشراكات الدولية
+                                          ; investment-opportunities         ; Investment Opportunities            ; مرجع الأنظمة واللوائح
+                                          ; others                           ; Others                              ; أخرى
+
+INSERT_UPDATE SagiaConfiguration; key[unique = true]             ; value                         ; displayValue[default = true]
+                                ; strategicInvestorEmailId       ; Strategic_Investors@misa.gov.sa ; ;
+                                ; strategicInvestorEmailUserName ; Strategic Investor            ; ;
+
+################## End Opportunity User Email Template  #####################
+#INSERT_UPDATE Customer; uid[unique = true]; usernameemail    ; name                  ; country       ; mobileCountryCode; mobileNumber; company; sector
+#                      ; Strategic_Investors@misa.gov.sa  ; strategic_investors@misa.gov.sa ; Strategic Default Customer ; 8796093427543 ; 966              ; 0000000000  ; Strategic   ; 8796093132681

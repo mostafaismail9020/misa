@@ -96,7 +96,7 @@
 	                        <div class="col-md-6">
 	                            <div style="text-align: right;">
 			                        <a onclick="SAGIA.payment.requestCreditBillPayment(${paymentData.serviceId},'${paymentData.serviceDescription}',${paymentData.amount},'${paymentData.currency}')" target="_blank" class="btn-outline">
-			                            <spring:theme code="license.apply.paywithcc" />
+			                            <spring:theme code="license.apply.paywithcc.detail.page" />
 			                        </a>
 	                			</div>
 	                        </div>

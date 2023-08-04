@@ -1,0 +1,21 @@
+$catalogVersionStaged = catalogVersion(catalog(id[default=$contentCatalog]), version[default='Staged'])[unique=true, default=$contentCatalog:Staged]
+
+$catalogVersionOnline = catalogVersion(catalog(id[default=$contentCatalog]), version[default='Online'])[unique=true, default=$contentCatalog:Online]
+
+$contentCatalog = sagiaContentCatalog
+
+$contentCVStaged = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$contentCVOnline = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+                               
+INSERT_UPDATE CMSNavigationNode; uid[unique = true] ; name                ; title[lang = en]   ; title[lang = ar]    ; parent(uid, $contentCVStaged)	; children(uid, $contentCVStaged) 																													; links(uid, $contentCVStaged); $contentCVStaged[unique = true]	;
+                               ; footer-menu        ; Portal Footer Menu  ; Portal Footer Menu ; Portal Footer Menu  ; root                   		 	; opportunities-navnode, media-center-resources-navnode, why-saudi-arabia-navnode, media-center-news-navnode, footer-about-navnode, contact-navnode ;                       	  ;
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true] ; name                ; title[lang = en]   ; title[lang = ar]    ; parent(uid, $contentCVOnline)	; children(uid, $contentCVOnline) 																													; links(uid, $contentCVOnline); $contentCVOnline[unique = true]	;
+                               ; footer-menu        ; Portal Footer Menu  ; Portal Footer Menu ; Portal Footer Menu  ; root                   			; opportunities-navnode, media-center-resources-navnode, why-saudi-arabia-navnode, media-center-news-navnode, footer-about-navnode, contact-navnode ;                       	  ;
+        
+INSERT_UPDATE CMSNavigationNode; uid[unique = true][mode = replace]; name                 ; title[lang = en]     ; title[lang = ar]     ; parent(uid, $contentCVStaged); children(uid, $contentCVStaged)[mode = replace] ; links(uid, $contentCVStaged); $contentCVStaged[unique = true]
+                               ; map-policy                        ; Sitemap and Policies ; Sitemap and Policies ; Sitemap and Policies ; root                   ; privacy-policy-navnode 					 ;                  	 ;
+
+INSERT_UPDATE CMSNavigationNode; uid[unique = true][mode = replace]; name                 ; title[lang = en]     ; title[lang = ar]     ; parent(uid, $contentCVOnline); children(uid, $contentCVOnline)[mode = replace] ; links(uid, $contentCVOnline); $contentCVOnline[unique = true]
+                               ; map-policy                        ; Sitemap and Policies ; Sitemap and Policies ; Sitemap and Policies ; root                   ; privacy-policy-navnode 					 ;                  	 ;
+                               

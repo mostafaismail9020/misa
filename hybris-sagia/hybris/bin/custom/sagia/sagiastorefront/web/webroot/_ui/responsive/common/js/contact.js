@@ -98,3 +98,4 @@ function updateSubjectId(e) {
     document.getElementById(e.currentTarget.id).classList.remove("required", "error");
     document.getElementById(e.currentTarget.id).parentElement.classList.remove("error");
 }
+

@@ -49,12 +49,12 @@
                                         <img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
                                     </div>
                                 </a>
-                                <a href="${encodedContextPath}${result.opportunity.url}/?scrollTo=contact" class="opp-container-child">
+                                <!-- <a href="${encodedContextPath}${result.opportunity.url}/?scrollTo=contact" class="opp-container-child">
                                     <div class="button btn interest-btn">
                                         <spring:theme code="portal.opportunity.iam.interested.button"/>&nbsp;
                                         <img class="img-fluid arrow-icon" src="${commonResourcePath}/images/arrow_blue.png" alt=""/>
                                     </div>
-                                </a>
+                                </a> -->
                             </div>
 
                         </div>

@@ -7,6 +7,23 @@
 <template:portalpage pageTitle="${pageTitle}">
 
     <jsp:body>
+	
+	<!--
+	<script>
+    document.querySelector("html").style.cssText = 'background:#000!important';
+    document.querySelector("body").style.cssText += 'opacity:0!important;display:block!important;';
+    window['_sfw_host'] ='https://www.sessionforward.com/assets/js/';
+    window['_sfw_script'] = 'sf_ab.min.js?v=1.0.4';
+    window['_sfw_key'] = 'a2dc6f16-8c9e-4dfe-a3a4-66b765ee29c8';
+    (function(s,e,ss,i,o,n){
+    if(s.console && s.console.log) { s.console.log(i);};
+    o=e.createElement(ss);o.async=1;o.src=_sfw_host+_sfw_script;
+    n=e.getElementsByTagName(ss)[0];n.parentNode.insertBefore(o,n);
+    })(window,document,'script','SessionForward Loaded.');
+    </script>
+	-->
+
+
         
         <main>
             <cms:pageSlot position="PartnerContactUsPageMain" var="slotComponent">

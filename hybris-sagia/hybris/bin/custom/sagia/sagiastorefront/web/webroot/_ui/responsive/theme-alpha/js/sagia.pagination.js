@@ -180,7 +180,8 @@ $(document).on("change", ".dashboardWidgetPayments .paginationModule .pagination
                     	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
                     	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link payment-link");
                     	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","text-align: center;");
-                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
+                    	//template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
+                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("href", ACC.config.encodedContextPath + "/payment/details/" + paymentsList[key].serviceId);
                     	isAwaitingPayment = true;
                     }
                     paymentsTable.append(template.html());
@@ -193,7 +194,7 @@ $(document).on("change", ".dashboardWidgetPayments .paginationModule .pagination
             }
             $(".dashboardWidgetPayments .paginationModule-items").empty().append(paginationHtml);
             new CreatePagination($(".dashboardWidgetPayments .paginationModule"));
-            
+
             if (isAwaitingPayment) {
                 $("#awaitingPaymentDiv").css("display", "block");
             }else{
@@ -240,9 +241,10 @@ $(document).on('click', '.paginationModule-link.payment', function () {
                     template.find(".dashboardWidgetPayments-currency").html(paymentsList[key].currency);
                     if (paymentsList[key].status == 'E0003' && paymentsList[key].hybrisStatusDescription != 'Paid') {
                     	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
-                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link  payment-link");
+                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link payment-link");
                     	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","text-align: center;");
-                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
+                    	//template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
+                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("href", ACC.config.encodedContextPath + "/payment/details/" + paymentsList[key].serviceId);
                     	isAwaitingPayment = true;
                     }
                     paymentsTable.append(template.html());
@@ -299,7 +301,8 @@ function sortPayments() {
                     	template.find(".dashboardWidgetPayments-pay").find("a").text(getI18nText("payment.pay"));
                     	template.find(".dashboardWidgetPayments-pay").find("a").attr("class","print-not-link payment-link");
                     	// template.find(".dashboardWidgetPayments-pay").find("a").attr("style","text-align: center;");
-                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
+                    	//template.find(".dashboardWidgetPayments-pay").find("a").attr("onclick", "SAGIA.payment.requestCreditBillPayment("+paymentsList[key].serviceId+",'"+paymentsList[key].name+"',"+paymentsList[key].amount+",'"+paymentsList[key].currency+"')");
+                    	template.find(".dashboardWidgetPayments-pay").find("a").attr("href", ACC.config.encodedContextPath + "/payment/details/" + paymentsList[key].serviceId);
                     	isAwaitingPayment = true;
                     }
                     paymentsTable.append(template.html());

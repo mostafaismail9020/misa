@@ -18,7 +18,8 @@ public class ContactUsTicketConverter {
 	
 	public static GeneralInquirySet fromFormToData(ContactUsFormData contactUsFormData) {
 		GeneralInquirySet newContactTicket = new GeneralInquirySet();
-		newContactTicket.setFirstName(contactUsFormData.getFirstName());
+		//newContactTicket.setFirstName(contactUsFormData.getFirstName());
+		newContactTicket.setFirstName(contactUsFormData.getContactUsName());
 		newContactTicket.setLastName(contactUsFormData.getLastName());
 		newContactTicket.setTelNo(contactUsFormData.getPhoneNumber());
 		newContactTicket.setEmail(contactUsFormData.getEmail());

@@ -178,7 +178,58 @@
 			</attributes>
 		</itemtype>
 
-
+		<itemtype code="MizaTicketDetailsEmailProcess"
+				  extends="OpportunityCreatedEmailProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="mizaTicketUserName" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="mizaTicketUserCompanyName" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="mizaTicketUserPhoneNumber" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="mizaTicketUserPosition" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="mizaTicketUserEmail" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="mizaTicketUserService" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="mizaTicketUserEnquiry" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+		<itemtype code="StrategicInvestorTicketDetailsEmailProcess"
+				  extends="OpportunityCreatedEmailProcess" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="strategicInvestorTicketUserName" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="strategicInvestorTicketUserCompanyName" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="strategicInvestorTicketUserPhoneNumber" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="strategicInvestorTicketUserPosition" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="strategicInvestorTicketUserEmail" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="strategicInvestorTicketUserService" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="strategicInvestorTicketUserEnquiry" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
 		<itemtype code="OpportunityUpdatedEmailProcess"
 				  extends="StoreFrontCustomerProcess" autocreate="true" generate="true">
 			<attributes>

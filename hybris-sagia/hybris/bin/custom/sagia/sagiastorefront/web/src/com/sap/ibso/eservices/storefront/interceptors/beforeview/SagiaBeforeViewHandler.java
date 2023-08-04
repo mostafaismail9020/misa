@@ -120,7 +120,11 @@ public class SagiaBeforeViewHandler implements BeforeViewHandler {
             	}else {
             		if(customer != null && Boolean.TRUE.equals(customer.getIsOutstandingFee())) {
             			//LOG.info("########## IsOutstandingFee "+customer.getIsOutstandingFee());
-            			redirectStrategy.sendRedirect(request, response, "/payments-overview");
+            			if(request.getRequestURI().contains("/payment/details/")) {
+            				return;
+            			}else {
+            				redirectStrategy.sendRedirect(request, response, "/payments-overview");
+            			}
             		}
             		if(customer != null && Boolean.TRUE.equals(customer.getIsPendingFinancialStatement())) {
             			//LOG.info("^^^^^^ getIsPendingFinancialStatement: "+customer.getIsPendingFinancialStatement());

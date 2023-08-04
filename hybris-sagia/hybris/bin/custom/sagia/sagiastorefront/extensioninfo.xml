@@ -32,6 +32,8 @@
                         
         
         <requires-extension name="sagiafacades"/>
+        
+        <requires-extension name="cockpit"/>
                         
         
         <webmodule jspcompile="false" webroot="/sagiastorefront"/>

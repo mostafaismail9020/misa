@@ -58,6 +58,7 @@ public class SagiaServicesController extends SagiaAbstractPageController {
     private static final String UTF_8 = "UTF-8";
     private static final String SERVICE_NAME = "serviceName";
     private static final String CREATE_GOVT_SERVICE = "createGovtService";
+    private static final String CHECK_VAL = "9999999999";
     @Resource(name = "averageProcessingTimeFacade")
     private AverageProcessingTimeFacade averageProcessingTimeFacade;
     @Resource
@@ -112,6 +113,11 @@ public class SagiaServicesController extends SagiaAbstractPageController {
         if ("ZMOCI_22".equals(serviceUrl)) {
             return REDIRECT_PREFIX + "/legalconsultations/";
         }
+        SagiaCRMGovtService checkValService = sagiaGovtCategoryFacade.getGovtServiceById(CHECK_VAL);
+        if(null!=checkValService.getMsgToInvestor())
+        {
+            model.addAttribute("sagiaServicesMessage", checkValService.getMsgToInvestor());
+        }
         Collection<SagiaCRMGovtServiceData> serviceList = sagiaGovtCategoryFacade.getCRMServicesByCategory(serviceUrl);
         if (CollectionUtils.isNotEmpty(serviceList)) {
             String sagiaCRMGovtServiceDataId = serviceList.iterator().next().getSrID();
@@ -121,6 +127,7 @@ public class SagiaServicesController extends SagiaAbstractPageController {
                 List<GetTextData> messages = service.getGovtServicesToTextNav();
                 model.addAttribute("attachments", attachments);
                 model.addAttribute("messages", messages);
+
             }
             model.addAttribute("serviceList", serviceList);
         }

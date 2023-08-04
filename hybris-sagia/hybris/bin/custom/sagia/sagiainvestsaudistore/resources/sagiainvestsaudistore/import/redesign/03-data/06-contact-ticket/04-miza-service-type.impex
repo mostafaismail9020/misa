@@ -1,0 +1,13 @@
+INSERT_UPDATE MizaServiceTypeForForm; code[unique = true]  ; label[lang = en]     ; label[lang = ar];
+                                    ; management           ; Management           ;الإدارة
+                                    ; logistics            ; Logistics            ;اللوجستية
+                                    ; personal             ; Personal             ;الشخصية
+                                    ; financial            ; Financial            ;المالية
+                                    ; legal                ; Legal                ;القانونية
+                                    ; corporate            ; Corporate            ;المؤسسات
+                                    ; operational-services ; Operational Services ;الخدمات التشغيلية
+                                    ; human-resources      ; Human Resources      ;الموارد البشرية
+
+INSERT_UPDATE SagiaConfiguration; key[unique = true]; value            ; displayValue[default = true]
+                                ; mizaEmailId       ; miza@misa.gov.sa ; ;
+                                ; mizaEmailUserName ; MIZA             ; ;

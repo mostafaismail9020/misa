@@ -12,7 +12,7 @@
 <%@ include file="/WEB-INF/tags/responsive/common/termsAndConditionsModal.tag" %>
 
 <script>
-    var configuredFileSize = ${maxUploadSize};
+    var configuredFileSize = ${maxUploadSize};	
 </script>
 
 <div class="mainSection mainSection_white">
@@ -116,7 +116,7 @@
                                                                             <div class="formInputBox-split">
                                                                                 <div class="formInputBox">
                                                                                     <div class="form-group">
-                                                                                        <input id="countryPrefixMobileId" name="countryPrefixMobile" class="form-control form-control_preNumber" placeholder="." type="text" value="">
+                                                                                        <input id="countryPrefixMobileId" name="countryPrefixMobile" class="form-control form-control_preNumber validate__numbers-only-bidding" placeholder="." type="text" value="">
                                                                                         <label class="control-label" for="countryPrefixMobileId">
                                             <spring:theme code="temporaryBiddingLicense.countryCode"/>
                                         </label>
@@ -124,7 +124,7 @@
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                                 <div class="formInputBox formInputBox_big">
-                                                                                    <formElement:formInputBox idKey="mobileId" labelKey="temporaryBiddingLicense.mobile" path="mobile" inputCSS="form-control form-control_labeled" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
+                                                                                    <formElement:formInputBox idKey="mobileId" labelKey="temporaryBiddingLicense.mobile" path="mobile" inputCSS="form-control form-control_labeled validate__numbers-only-bidding" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                             </div>
@@ -133,14 +133,14 @@
                                                                             <div class="formInputBox-split">
                                                                                 <div class="formInputBox">
                                                                                     <div class="form-group">
-                                                                                        <input id="countryPrefixTelephoneId" name="countryPrefixTelephone" class="form-control form-control_preNumber" id="address.telephone.prefix" placeholder="." type="text" value="">
+                                                                                        <input id="countryPrefixTelephoneId" name="countryPrefixTelephone" class="form-control form-control_preNumber validate__numbers-only-bidding" id="address.telephone.prefix" placeholder="." type="text" value="">
                                                                                         <label class="control-label" for="address.telephone.prefix">
                                             <spring:theme code="temporaryBiddingLicense.countryCode"/>
                                         </label>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="formInputBox formInputBox_big">
-                                                                                    <formElement:formInputBox idKey="telephoneId" labelKey="temporaryBiddingLicense.telephone" path="telephone" inputCSS="form-control form-control_labeled" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
+                                                                                    <formElement:formInputBox idKey="telephoneId" labelKey="temporaryBiddingLicense.telephone" path="telephone" inputCSS="form-control form-control_labeled validate__numbers-only-bidding" labelCSS="control-label_mandatory" mandatory="true" maxlength="32" />
                                                                                     <div class="help-block"></div>
                                                                                 </div>
                                                                             </div>

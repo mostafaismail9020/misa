@@ -5,6 +5,7 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <c:if test="${component.visible}">
@@ -17,7 +18,7 @@
         <section class="footer-menu-links">
             <div class="container my-3">
                 <div class="row no-gutters">
-                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 footer-column-text first-list text-right-ar">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 footer-column-text first-list text-right-ar">
                         <ul class="footer-menu">
                             <c:forEach items="${component.navigationLinks.children}" var="childLevel1" varStatus="childLevel1index">
                                 <c:forEach items="${childLevel1.entries}" var="childlink1">
@@ -27,7 +28,7 @@
                         </ul>
                     </div>
 
-                    <c:forEach items="${component.navigationNodesList}" var="NavigationNode">
+                    <!-- <c:forEach items="${component.navigationNodesList}" var="NavigationNode">
                         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 footer-column-text text-right-ar">
                             <ul class="footer-menu">
                                 <li><p>${NavigationNode.title}</p></li>
@@ -43,8 +44,8 @@
                                 <ul class="list-unstyled row m-0 p-0"></ul>
                             </div>
                         </div>
-                    </c:forEach>
-                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    </c:forEach> -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <img src="${commonResourcePath}/images/footer_logo.png" alt="" class="footer_logo" loading="lazy"/>
                     </div>                   
                  </div>
@@ -64,7 +65,12 @@
                         </c:forEach>
                     </ul>
                 </div>
-                <div class="col-md-6 col-sm-6 copyrightText d-flex d-sm-block">${component.copyrightText}</div>
+                <div class="col-md-6 col-sm-6 copyrightText d-flex d-sm-block">
+                	<spring:theme code="footer.copyright.sign"/>
+					<c:set var="now" value="<%=new java.util.Date()%>" />
+                	<fmt:formatDate value="${now}" pattern="yyyy" />&nbsp;
+                	<spring:theme code="footer.copyright.text"/>
+                </div>
             </div>
         </div>
     </div>

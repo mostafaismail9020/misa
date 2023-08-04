@@ -37,7 +37,27 @@
        <collectiontype code="BrandPresenceInMENARegionList" elementtype="BrandPresence" autocreate="true" type="list"/>
        <collectiontype code="EstimatedOperatingCostForRhqList" elementtype="OperatingCostForRhq" autocreate="true" type="list"/>
        <collectiontype code="RhqActivitiesList" elementtype="RhqActivities" autocreate="true" type="list"/>
+       <collectiontype code="MizaOurServicesList" elementtype="MizaOurServices" autocreate="true" type="list"/>
+       <collectiontype code="MizaServiceTypeList" elementtype="MizaServiceType" autocreate="true" type="list"/>
+       <collectiontype code="MizaBenefitsAndFeatureCardsList" elementtype="MizaBenefitsAndFeatureCards" autocreate="true" type="list"/>
+       <collectiontype code="MizaOneCoreEngineChildList" elementtype="MizaOneCoreEngineChild" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorOurServicesList" elementtype="StrategicInvestorOurServices" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorProgramBenefitsList" elementtype="StrategicInvestorProgramBenefits" autocreate="true" type="list"/>
+       <collectiontype code="TargetedInvestorsSectionList" elementtype="TargetedInvestorsSection" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
 
+       <collectiontype code="MizaOurServicesList" elementtype="MizaOurServices" autocreate="true" type="list"/>
+       <collectiontype code="MizaServiceTypeList" elementtype="MizaServiceType" autocreate="true" type="list"/>
+       <collectiontype code="MizaBenefitsAndFeatureCardsList" elementtype="MizaBenefitsAndFeatureCards" autocreate="true" type="list"/>
+       <collectiontype code="MizaOneCoreEngineChildList" elementtype="MizaOneCoreEngineChild" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorOurServicesList" elementtype="StrategicInvestorOurServices" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorProgramBenefitsList" elementtype="StrategicInvestorProgramBenefits" autocreate="true" type="list"/>
+       <collectiontype code="TargetedInvestorsSectionList" elementtype="TargetedInvestorsSection" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
+       <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
+
+	   <collectiontype code="InvestSaudiMediaList" elementtype="InvestSaudiMedia" autocreate="true" generate="true" type="list"/>
    </collectiontypes>
 
     <enumtypes>
@@ -615,6 +635,16 @@
                 <modifiers read="true" write="true" search="true" optional="true" partof="true"/>
             </targetElement>
         </relation>
+        
+        <relation code="OpportunityProduct2TransientEncodedPdf" generate="true" autocreate="true"  localized="false" >
+			<sourceElement qualifier="product" type="OpportunityProduct" cardinality="one">
+				<modifiers />
+			</sourceElement>
+			<targetElement qualifier="transientEncodendPdf" type="TransientEncodedPdf" cardinality="many">
+				<modifiers />
+			</targetElement>
+		</relation>
+        
         <!-- Invest Saudi Changes Ends  -->
     </relations>
 
@@ -3932,6 +3962,43 @@
                             </property>
                         </custom-properties>
                     </attribute>
+                    
+                </attributes>
+            </itemtype>
+            
+            
+            <itemtype code="TransientEncodedPdf" generate="true" autocreate="true">
+                <description>To temporarily store encoded string from CPI for conversion to pdf media file</description>
+                <deployment table="TransientEncodedPdf" typecode="21910"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers optional="false" unique="true"/>
+                    </attribute>
+                    
+                    <attribute autocreate="true" qualifier="encodedString" type="java.lang.String">
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                        <custom-properties>
+                            <property name="hmcIndexField">
+                                <value>"thefield"</value>
+                            </property>
+                        </custom-properties>
+                    </attribute>
+                    
                 </attributes>
             </itemtype>
 
@@ -5092,7 +5159,44 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
+                    <attribute qualifier="viewOpportunities" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="login" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
                     <attribute qualifier="videoLink" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            
+            <itemtype code="InvestSaudiMedia" extends="Media" autocreate="true" generate="true">
+            	<attributes>
+            		<attribute type="CMSLinkComponent" qualifier="link">
+            			<persistence type="property"/>
+                        <modifiers/>
+            		</attribute>
+            	</attributes>
+            </itemtype>
+
+			<itemtype code="InvestSaudiHomePageIconsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiHomePageIconsComponent">
+                <description>Invest Saudi Home Page Icons Component</description>
+                <attributes>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="description" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="clickableIcons" type="InvestSaudiMediaList">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
@@ -10754,6 +10858,744 @@
                 <description>Invest Saudi Reports Search Result Component</description>
             </itemtype>
         </typegroup>
+        <typegroup name="MIZA">
+            <itemtype code="MizaMainParagraph" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaMainParagraph">
+                <description>MIZA Main Paragraph Component</description>
+                <attributes>
+                    <attribute qualifier="mizamainparatitle" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="mizamainparadescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="mizamainparalogo">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
 
+            <itemtype code="MizaBenefitsAndFeatureCards" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaBenefitsAndFeatureCards">
+                <description>MIZA Benefits And Feature Cards</description>
+                <attributes>
+                    <attribute qualifier="mizabenefitscardtitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Benefits And Feature Cards Title</description>
+                    </attribute>
+                    <attribute qualifier="mizabenefitscarddescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="mizabenefitsandfeaturecardsimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="knowMore" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaBenefitsAndFeatureParent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaBenefitsAndFeatureParent">
+                <description>MIZA Benefits And Feature Parent</description>
+                <attributes>
+                    <attribute qualifier="mizabenefitsparenttitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Benefits And Feature Title</description>
+                    </attribute>
+                    <attribute qualifier="mizabenefitsparentdescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="benefitsandfeatures" type="MizaBenefitsAndFeatureCardsList">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaServiceTypeContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaServiceTypeContainer">
+                <description>MIZA Service Type Container</description>
+                <attributes>
+                <attribute qualifier="servicetypelist" type="MizaServiceTypeList">
+                    <persistence type="property"/>
+                    <description>MIZA Service Type Title</description>
+                </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaOurServiceContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaOurServiceContainer">
+                <description>MIZA Our Services Container</description>
+                <attributes>
+                    <attribute qualifier="ourserviceslist" type="MizaOurServicesList">
+                        <persistence type="property"/>
+                        <description>MIZA Service Type Title</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaServiceType" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaServiceType">
+                <description>MIZA Service Type</description>
+                <attributes>
+                    <attribute qualifier="mizaservicetypetitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Service Type Title</description>
+                    </attribute>
+                    <attribute qualifier="mizaservicetypedescription" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Service Type Description</description>
+                    </attribute>
+                    <attribute type="Media" qualifier="servicetypeimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaOurServices" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaOurServices">
+                <description>MMIZA Our Services</description>
+                <attributes>
+                    <attribute qualifier="mizaourservicestitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>MIZA Our Services Title</description>
+                </attribute>
+                <attribute qualifier="mizaourservicesdescription" type="localized:java.lang.String">
+                    <persistence type="property">
+                        <columntype database="oracle">
+                            <value>CLOB</value>
+                        </columntype>
+                        <columntype database="mysql">
+                            <value>TEXT</value>
+                        </columntype>
+                        <columntype database="sqlserver">
+                            <value>nvarchar(max)</value>
+                        </columntype>
+                        <columntype database="sap">
+                            <value>NCLOB</value>
+                        </columntype>
+                        <columntype>
+                            <value>HYBRIS.LONG_STRING</value>
+                        </columntype>
+                    </persistence>
+                </attribute>
+                <attribute type="Media" qualifier="ourserviceimage">
+                    <persistence type="property"/>
+                    <modifiers/>
+                </attribute>
+                <attribute qualifier="knowMore" type="CMSLinkComponent">
+                    <persistence type="property"/>
+                    <modifiers/>
+                </attribute>
+            </attributes>
+        </itemtype>
+          <itemtype code="MizaContactUsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaContactUsComponent">
+                <description>Miza Contact Us Component</description>
+                <attributes>
+                    <attribute qualifier="customerName" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="company" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mobileNumber" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="email" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="position" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="serviceType" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="enquiry" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mizasuccessMessage" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaServiceTypeForForm" generate="true" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaServiceTypeForForm">
+                <description>Miza Service Type For Form</description>
+                <deployment table="MizaServiceTypeForForm" typecode="32084"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="label" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="MizaOneCoreEngineChild" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaOneCoreEngineChild">
+                <description>Miza One Core Engine Child</description>
+                <attributes>
+                    <attribute qualifier="mizaonecorechildtitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Miza One Core Engine Child Title</description>
+                    </attribute>
+                    <attribute qualifier="mizaonecorechilddescription" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute type="Media" qualifier="mizaonecorechildimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="MizaOneCoreEngineParent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.MizaOneCoreEngineParent">
+                <description>Miza One Core Engine Parent</description>
+                <attributes>
+                    <attribute qualifier="mizaonecoreparenttitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Miza One Core Engine Parent Title</description>
+                    </attribute>
+                    <attribute qualifier="mizaonecoreparentdescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="childCards" type="MizaOneCoreEngineChildList">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+        </typegroup>
+        <typegroup name="StrategicInvestor">
+            <itemtype code="StrategicInvestorMainPara" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorMainPara">
+                <description>Strategic Investor Component Main Paragraph</description>
+                <attributes>
+                    <attribute qualifier="strategicmainparatitle" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="strategicmainparadescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="strategicmainparalogo">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="StrategicInvestorOurServices" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorOurServices">
+                <description>Strategic Investor Our Services </description>
+                <attributes>
+                    <attribute qualifier="strategicourservicestitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Our Services Title</description>
+                    </attribute>
+                    <attribute qualifier="strategicourservicesdescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="strategicourserviceicon">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute type="Media" qualifier="strategicourserviceimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="strategicknowMore" type="CMSLinkComponent">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="StrategicInvestorOurServicesContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorOurServicesContainer">
+                <description>Strategic Investor Our Services Container</description>
+                <attributes>
+                    <attribute qualifier="strategicourserviceslist" type="StrategicInvestorOurServicesList">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Our Services Container Title</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="StrategicInvestorProgramBenefits" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorProgramBenefits">
+                <description>Strategic Investor Program Benefits  </description>
+                <attributes>
+                    <attribute qualifier="strategicprogrambenefitstitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Program Benefits Title</description>
+                    </attribute>
+                    <attribute qualifier="strategicprogrambenefitsdescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="strategicprogrambenefitsicon">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="StrategicInvestorProgramBenefitsContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorProgramBenefitsContainer">
+                <description>Strategic Investor Program Benefits Container</description>
+                <attributes>
+                    <attribute qualifier="strategicprogrambenefitslist" type="StrategicInvestorProgramBenefitsList">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Program Benefits Container Title</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="TargetedInvestorsSection" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.TargetedInvestorsSection">
+                <description>Targeted Investors Section</description>
+                <attributes>
+                    <attribute qualifier="targetedinvestortitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Program Benefits Title</description>
+                    </attribute>
+                    <attribute qualifier="targetedinvestordescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="targetedinvestorimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="TargetedInvestorsSectionContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorProgramBenefitsContainer">
+                <description>Targeted Investors Section Container</description>
+                <attributes>
+                    <attribute qualifier="targetedinvestorlist" type="TargetedInvestorsSectionList">
+                        <persistence type="property"/>
+                        <description>Targeted Investors Section Container Title</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="EnrollmentForNationalAndForeignInvestor" generate="true"
+                                 extends="SimpleCMSComponent" autocreate="true"
+                                 jaloclass="com.investsaudi.portal.core.jalo.EnrollmentForNationalAndForeignInvestor">
+            <description>Enrollment For National And Foreign Investor</description>
+            <attributes>
+                <attribute qualifier="enrollmentparatitle" type="localized:java.lang.String">
+                    <persistence type="property">
+                        <columntype database="oracle">
+                            <value>CLOB</value>
+                        </columntype>
+                        <columntype database="mysql">
+                            <value>TEXT</value>
+                        </columntype>
+                        <columntype database="sqlserver">
+                            <value>nvarchar(max)</value>
+                        </columntype>
+                        <columntype database="sap">
+                            <value>NCLOB</value>
+                        </columntype>
+                        <columntype>
+                            <value>HYBRIS.LONG_STRING</value>
+                        </columntype>
+                    </persistence>
+                </attribute>
+                <attribute qualifier="enrollmentparadescription" type="localized:java.lang.String">
+                    <persistence type="property">
+                        <columntype database="oracle">
+                            <value>CLOB</value>
+                        </columntype>
+                        <columntype database="mysql">
+                            <value>TEXT</value>
+                        </columntype>
+                        <columntype database="sqlserver">
+                            <value>nvarchar(max)</value>
+                        </columntype>
+                        <columntype database="sap">
+                            <value>NCLOB</value>
+                        </columntype>
+                        <columntype>
+                            <value>HYBRIS.LONG_STRING</value>
+                        </columntype>
+                    </persistence>
+                </attribute>
+                <attribute type="Media" qualifier="enrollmentparaimage">
+                    <persistence type="property"/>
+                    <modifiers/>
+                </attribute>
+            </attributes>
+        </itemtype>
+            <itemtype code="StrategicInvestmentHowToApplyCard" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestmentHowToApplyCard">
+                <description>Strategic Investment How To Apply Card</description>
+                <attributes>
+                    <attribute qualifier="howtoapplystep" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Strategic Investment How To Apply Card Step number</description>
+                    </attribute>
+                    <attribute qualifier="howtoapplytitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Program Benefits Title</description>
+                    </attribute>
+                    <attribute qualifier="howtoapplydescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="Media" qualifier="howtoapplyimage">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="StrategicInvestmentHowToApplyContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestmentHowToApplyContainer">
+                <description>Strategic Investment How To Apply Container</description>
+                <attributes>
+                    <attribute qualifier="howtoapplycardlist" type="StrategicInvestmentHowToApplyList">
+                        <persistence type="property"/>
+                        <description>Strategic Investment How To Apply List</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="StrategicInvestorAccordions" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorAccordions">
+                <description>Strategic Investor Accordions</description>
+                <attributes>
+                    <attribute qualifier="strategicinvestoraccordiontitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Program Benefits Title</description>
+                    </attribute>
+                    <attribute qualifier="strategicinvestoraccordiondescription" type="localized:java.lang.String">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="StrategicInvestorAccordionsContainer" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorAccordionsContainer">
+                <description>Strategic Investor Accordions Container</description>
+                <attributes>
+                    <attribute qualifier="accordionList" type="StrategicInvestorAccordionsList">
+                        <persistence type="property"/>
+                        <description>Strategic Investor Accordions Container List</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
+            <itemtype code="StrategicInvestorContactUsComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorContactUsComponent">
+                <description>Miza Contact Us Component</description>
+                <attributes>
+                    <attribute qualifier="customerName" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="company" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="mobileNumber" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="email" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="position" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="serviceType" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="enquiry" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="strategicsuccessMessage" type="localized:java.lang.String" generate="true"
+                               autocreate="true">
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>TEXT</value>
+                            </columntype>
+                            <columntype database="sqlserver">
+                                <value>nvarchar(max)</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+
+                </attributes>
+            </itemtype>
+            <itemtype code="StrategicInvestorServiceType" generate="true" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorServiceType">
+                <description>Miza Service Type For Form</description>
+                <deployment table="StrategicInvestorService" typecode="32086"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+                    </attribute>
+                    <attribute qualifier="label" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
     </itemtypes>
 </items>

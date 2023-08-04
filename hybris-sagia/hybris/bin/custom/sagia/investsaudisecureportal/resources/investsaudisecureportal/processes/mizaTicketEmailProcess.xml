@@ -1,0 +1,24 @@
+
+<process xmlns="http://www.hybris.de/xsd/processdefinition" start="mizaUserEmail" name="mizaTicketEmailProcess"
+         processClass="com.investsaudi.model.MizaTicketDetailsEmailProcessModel" onError="error">
+
+    <action id="mizaUserEmail" bean="mizaUserEmailAction">
+        <transition name="OK" to="sendEmail"/>
+        <transition name="NOK" to="error"/>
+    </action>
+
+    <action id="sendEmail" bean="sendEmail">
+        <transition name="OK" to="removeSentEmail"/>
+        <transition name="NOK" to="failed"/>
+    </action>
+
+    <action id="removeSentEmail" bean="removeSentEmail">
+        <transition name="OK" to="success"/>
+        <transition name="NOK" to="failed"/>
+    </action>
+
+    <end id="error" state="ERROR">Something went wrong while Notifying Opportunity User.</end>
+    <end id="failed" state="FAILED">Process failed while  Notifying Opportunity User.</end>
+    <end id="success" state="SUCCEEDED">Opportunity User Successfully Notified</end>
+
+</process>

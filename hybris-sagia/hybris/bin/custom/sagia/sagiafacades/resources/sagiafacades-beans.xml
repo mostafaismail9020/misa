@@ -1894,6 +1894,7 @@
 		<property name="ContactChInd" type="java.lang.String"/>
 		<property name="SrID" type="java.lang.String"/>
 		<property name="SrCrDate" type="java.lang.String"/>
+		<property name="MsgToInvestor" type="java.lang.String" />
 		<property name="SrCrDateData" type="com.sap.ibso.eservices.core.sagia.format.SagiaDateData"/>
 	</bean>
 
@@ -3550,6 +3551,15 @@
         <property name="code" type="java.lang.String"/>
         <property name="label" type="java.lang.String"/>
     </bean>
+	<bean class="de.hybris.platform.customerticketingfacades.data.MizaServiceTypeForFormData">
+		<property name="code" type="java.lang.String"/>
+		<property name="label" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.customerticketingfacades.data.StrategicInvestorServiceTypeData">
+		<property name="code" type="java.lang.String"/>
+		<property name="label" type="java.lang.String"/>
+	</bean>
 
     <bean class="de.hybris.platform.commercefacades.product.data.SiteMapItemData">
         <property name="url" type="java.lang.String"/>

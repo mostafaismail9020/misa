@@ -1,12 +1,16 @@
 package com.investsaudi.portal.core.service;
 
+import com.investsaudi.model.MizaTicketDetailsEmailProcessModel;
 import com.investsaudi.model.OpportunityUserEmailProcessModel;
+import com.investsaudi.model.StrategicInvestorTicketDetailsEmailProcessModel;
 import com.investsaudi.portal.core.model.ContactTicketModel;
 import com.investsaudi.portal.core.model.ServiceRequestModel;
+import com.investsaudi.portal.core.model.StrategicInvestorContactUsComponentModel;
 import com.sap.ibso.eservices.core.constants.SagiaCoreConstants;
 import com.sap.ibso.eservices.core.model.ScpiOutCsCustomerEventProcessModel;
 import com.sap.ibso.eservices.core.model.ScpiOutServiceRequestProcessModel;
 import com.sap.ibso.eservices.core.model.ScpiOutTicketAttachmentProcessModel;
+import com.sap.ibso.eservices.core.sagia.services.SagiaUserService;
 import de.hybris.platform.cms2.servicelayer.services.CMSSiteService;
 import de.hybris.platform.comments.services.CommentService;
 import de.hybris.platform.core.model.user.CustomerModel;
@@ -38,7 +42,7 @@ import de.hybris.platform.util.Config;
 
 public class ContactTicketBusinessService extends DefaultTicketBusinessService {
 
-    private static final Logger log = LoggerFactory.getLogger(ContactTicketBusinessService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ContactTicketBusinessService.class);
 
     private static final String IS_NEW_CUSTOMER = "isNewCustomer";
     
@@ -56,6 +60,9 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
     
     @Resource(name = "sessionService")
     private SessionService sessionService;
+
+    @Resource(name = "sagiaUserService")
+    private SagiaUserService sagiaUserService;
 
     @Resource
     private CMSSiteService cmsSiteService;
@@ -78,12 +85,29 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
 
     @Override
     public CsTicketModel createTicket(CsTicketParameter ticketParameter) {
-
+        boolean isMizaContactUsFlow=false;
+        if(null!=sessionService.getAttribute("isMizaContactUsFlow"))
+        {
+            isMizaContactUsFlow=true;
+        }
+        boolean isStrategicContactUsFlow=false;
+        if(null!=sessionService.getAttribute("isStrategicContactUsFlow"))
+        {
+            isStrategicContactUsFlow=true;
+        }
         if (ticketParameter instanceof ContactTicketParameter) {
             ContactTicketParameter contactTicketParameter = (ContactTicketParameter) ticketParameter;
             if(null!=sessionService.getAttribute("partnerSystem"))
             {
                 contactTicketParameter.setPartnerSystem(sessionService.getAttribute("partnerSystem"));
+            }
+            if(isMizaContactUsFlow)
+            {
+                contactTicketParameter.setPartnerSystem("MIZA");
+            }
+            if(isStrategicContactUsFlow)
+            {
+                contactTicketParameter.setPartnerSystem("STRATEGIC-INVESTOR");
             }
             CsTicketModel ticket = contactTicketParameterConverter.convert(contactTicketParameter);
             CsCustomerEventModel creationEvent = ticketEventStrategy.createCreationEventForTicket(ticket,
@@ -93,23 +117,25 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
             getModelService().save(csTicket);
 
             // added by c4p\mpop - lead management - start
-            if (Config.getBoolean("leadticket.scpi.interface.enable", true)) {
-                final ScpiOutLeadTicketProcessModel
-                        scpiOutLeadTicketProcessModel =
-                        (ScpiOutLeadTicketProcessModel) businessProcessService
-                                .createProcess("scpiOutLeadTicketProcess-" + csTicket.getTicketID()
-                                        + "-" + System.currentTimeMillis(), "scpiOutLeadTicketProcess");
-                scpiOutLeadTicketProcessModel.setCsTicket(csTicket);
-                getModelService().save(scpiOutLeadTicketProcessModel);
-                businessProcessService.startProcess(scpiOutLeadTicketProcessModel);
-                sessionService.setAttribute("partnerSystem",null);
+            if(!(isMizaContactUsFlow || isStrategicContactUsFlow)) {
+                if (Config.getBoolean("leadticket.scpi.interface.enable", true)) {
+                    final ScpiOutLeadTicketProcessModel
+                            scpiOutLeadTicketProcessModel =
+                            (ScpiOutLeadTicketProcessModel) businessProcessService
+                                    .createProcess("scpiOutLeadTicketProcess-" + csTicket.getTicketID()
+                                            + "-" + System.currentTimeMillis(), "scpiOutLeadTicketProcess");
+                    scpiOutLeadTicketProcessModel.setCsTicket(csTicket);
+                    getModelService().save(scpiOutLeadTicketProcessModel);
+                    businessProcessService.startProcess(scpiOutLeadTicketProcessModel);
+                    sessionService.setAttribute("partnerSystem", null);
+                }
             }
             // added by c4p\mpop - lead management - end
 
             return csTicket;
         }
 
-        log.warn("This service can only create ticket of type ContactTicketParameter, parameter type: [{}]",
+        LOG.warn("This service can only create ticket of type ContactTicketParameter, parameter type: [{}]",
             ticketParameter
                 .getClass().getName());
         return null;
@@ -130,7 +156,7 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
         	opportunityUserEmailProcessModel.setStore(baseStoreService.getBaseStoreForUid(SagiaCoreConstants.SITE));
         }
 		else {
-			log.info("IS_NEW_CUSTOMER sessionService= " + sessionService.getAttribute(IS_NEW_CUSTOMER));
+			LOG.info("IS_NEW_CUSTOMER sessionService= " + sessionService.getAttribute(IS_NEW_CUSTOMER));
 			if (null != sessionService.getAttribute(IS_NEW_CUSTOMER))
 			{
 				opportunityUserEmailProcessModel.setIsNewCustomer(sessionService.getAttribute(IS_NEW_CUSTOMER));
@@ -185,6 +211,65 @@ public class ContactTicketBusinessService extends DefaultTicketBusinessService {
             getModelService().save(scpiOutTicketAttachmentProcessModel);
             businessProcessService.startProcess(scpiOutTicketAttachmentProcessModel);
             sessionService.setAttribute("partnerSystem",null);
+        }
+    }
+
+    public void sendMizaTicketDetails(String id) {
+        ContactTicketModel mizaTicket = sagiaUserService.getContactTicketForTicketId(id);
+        if (null != mizaTicket) {
+            final MizaTicketDetailsEmailProcessModel mizaTicketDetailEmailProcess =
+                    (MizaTicketDetailsEmailProcessModel) businessProcessService.createProcess("mizaTicketEmailProcess-" + id + "-"
+                            + System.currentTimeMillis(), "mizaTicketEmailProcess");
+
+            mizaTicketDetailEmailProcess.setOpportunityId(id);
+            mizaTicketDetailEmailProcess.setMizaTicketUserName(mizaTicket.getName());
+            mizaTicketDetailEmailProcess.setMizaTicketUserCompanyName(mizaTicket.getCompany());
+            mizaTicketDetailEmailProcess.setMizaTicketUserPhoneNumber(mizaTicket.getMobile());
+            mizaTicketDetailEmailProcess.setMizaTicketUserPosition(mizaTicket.getJobTitle());
+            mizaTicketDetailEmailProcess.setMizaTicketUserEmail(mizaTicket.getEmail());
+            mizaTicketDetailEmailProcess.setMizaTicketUserService(mizaTicket.getHeadline());
+            mizaTicketDetailEmailProcess.setMizaTicketUserEnquiry(mizaTicket.getMessage());
+
+            mizaTicketDetailEmailProcess.setSite(cmsSiteService.getCurrentSite());
+            mizaTicketDetailEmailProcess.setStore(baseStoreService.getCurrentBaseStore());
+            mizaTicketDetailEmailProcess.setLanguage(commonI18NService.getCurrentLanguage());
+            mizaTicketDetailEmailProcess.setCurrency(commonI18NService.getCurrentCurrency());
+
+            getModelService().save(mizaTicketDetailEmailProcess);
+            businessProcessService.startProcess(mizaTicketDetailEmailProcess);
+        }
+        else
+        {
+            LOG.error("No Contact Ticket Found with Ticket ID "+id);
+        }
+    }
+    public void sendStrategicInvestorTicketDetails(String id) {
+        ContactTicketModel strategicTicket = sagiaUserService.getContactTicketForTicketId(id);
+        if (null != strategicTicket) {
+            final StrategicInvestorTicketDetailsEmailProcessModel strategicInvestorTicketDetailEmailProcess =
+                    (StrategicInvestorTicketDetailsEmailProcessModel) businessProcessService.createProcess("strategicInvestorTicketEmailProcess-" + id + "-"
+                            + System.currentTimeMillis(), "strategicInvestorTicketEmailProcess");
+
+            strategicInvestorTicketDetailEmailProcess.setOpportunityId(id);
+            strategicInvestorTicketDetailEmailProcess.setStrategicInvestorTicketUserName(strategicTicket.getName());
+            strategicInvestorTicketDetailEmailProcess.setStrategicInvestorTicketUserCompanyName(strategicTicket.getCompany());
+            strategicInvestorTicketDetailEmailProcess.setStrategicInvestorTicketUserPhoneNumber(strategicTicket.getMobile());
+            strategicInvestorTicketDetailEmailProcess.setStrategicInvestorTicketUserPosition(strategicTicket.getJobTitle());
+            strategicInvestorTicketDetailEmailProcess.setStrategicInvestorTicketUserEmail(strategicTicket.getEmail());
+            strategicInvestorTicketDetailEmailProcess.setStrategicInvestorTicketUserService(strategicTicket.getHeadline());
+            strategicInvestorTicketDetailEmailProcess.setStrategicInvestorTicketUserEnquiry(strategicTicket.getMessage());
+
+            strategicInvestorTicketDetailEmailProcess.setSite(cmsSiteService.getCurrentSite());
+            strategicInvestorTicketDetailEmailProcess.setStore(baseStoreService.getCurrentBaseStore());
+            strategicInvestorTicketDetailEmailProcess.setLanguage(commonI18NService.getCurrentLanguage());
+            strategicInvestorTicketDetailEmailProcess.setCurrency(commonI18NService.getCurrentCurrency());
+
+            getModelService().save(strategicInvestorTicketDetailEmailProcess);
+            businessProcessService.startProcess(strategicInvestorTicketDetailEmailProcess);
+        }
+        else
+        {
+            LOG.error("No Contact Ticket Found with Ticket ID "+id);
         }
     }
 }

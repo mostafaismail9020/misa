@@ -6,6 +6,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="icon" tagdir="/WEB-INF/tags/responsive/icons" %>
 
             <!-- Contact form section  -->
             <section id="contactpage-form" class="contactpage-form">
@@ -92,15 +93,15 @@
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />	
                               <div class="form-row">
                                 <div class="form-group col-md-6 form-normal-item">
-                                    <label class="control-label" for="firstName"><spring:theme code="portal.contactus.form.firstname.label"/> <span class="mandatory">* </span></label>
-                                    <input type="text" class="form-control" name="firstName" id="firstName" maxlength="300" onkeypress="return onlyAlphabets(event)" onCopy="return false" onpaste="return false;"/>
-                                    <em><span id="lblErrorfirstName" class="error-msg"></span></em>
+                                    <label class="control-label" for="contactUsName"><spring:theme code="portal.contactus.form.name.label"/></label>
+                                    <input type="text" class="form-control" name="contactUsName" id="contactUsName" maxlength="300" onkeypress="return onlyAlphabetsWithSpace(event)" onCopy="return false" onpaste="return false;"/>
+                                    <em><span id="lblErrorContactUsName" class="error-msg"></span></em>
                                 </div>
-                                <div class="form-group form-floating col-md-6 form-normal-item">
+                                 <!--<div class="form-group form-floating col-md-6 form-normal-item">
                                     <label class="control-label" for="lastName"><spring:theme code="portal.contactus.form.lastname.label"/> <span class="mandatory">* </span></label>
                                     <input type="text" class="form-control" name="lastName" id="lastName" maxlength="300" onkeypress="return onlyAlphabets(event)" onCopy="return false" onpaste="return false;"/>
                                     <em><span id="lblErrorlastName" class="error-msg"></span></em>
-                                </div>
+                                </div> -->
                                 <!-- <div class="form-group form-floating col-md-6 form-normal-item">
                                     <label class="control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/> <span class="mandatory">* </span></label>
                                     <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" maxlength="20" onkeypress="return isNumber(event)" required/>
@@ -108,7 +109,7 @@
                                 <div class="form-group form-floating col-md-6 form-normal-item country-code-mobile">
                                   <input type="text" class="ddl-countryCode form-control" placeholder="+966" autocomplete="off">
                                   <div class="input-wrapper">
-                                    <label class="control-label mob-control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/><span class="mandatory">* </span></label>
+                                    <label class="control-label mob-control-label" for="phoneNumber"><spring:theme code="portal.contactus.form.phoneno.label"/></label>
                                     <input type="text"  class="form-control r" id="phoneNumber" name="phoneNumber"  type="number" maxlength="20" onkeypress="return isNumber(event)" onCopy="return false" onpaste="return false;"/>
                                     <em><span id="lblErrorPhoneNumber" class="error-msg"></span></em>
                                   </div>    
@@ -119,7 +120,7 @@
                                     <em><span id="lblError" class="mandatory"></span></em>
                                 </div>
                                                                                   
-                                <div class="form-group col-md-6 form-normal-item-select">
+                                 <%--<div class="form-group col-md-6 form-normal-item-select">
                                     <label class="control-label" for="selectedEnquiryType"><spring:theme code="portal.contactus.form.enquirytype.label"/><span class="mandatory">* </span></label>
                                     <form:select path="selectedEnquiryType" id="selectedEnquiryType" class="form-control required error contact-us-enquirytype" onchange="OnChangeEnquiryType()" aria-required="true" >
                                         <option value=""><spring:theme code="portal.contactus.form.enquirytype.label"/></option>                       	
@@ -136,7 +137,7 @@
                                   </form:select>
                                   <i class="caret"></i>
                                   <em><span id="lblErrorselectedCategoryOne" class="error-msg"></span></em>
-                                </div>     
+                                </div>     --%>
                                  
 					 
                           <%-- <form:select path="categoryTwo">
@@ -147,18 +148,31 @@
 			 			 
                           <br />             							  
                                 <div class="form-group col-md-12 form-normal-item-textarea">
-                                  <label class="control-label" for="message"><spring:theme code="portal.contactus.form.your.message.label"/></label>
+                                  <label class="control-label" for="message"><spring:theme code="portal.contactus.form.your.message.label"/><span class="mandatory">* </span></label>
                                   <textarea class="form-control" id="message" name="message" style="height: 190px" ></textarea>
+                                  <em><span id="lblErrorMessage" class="error-msg"></span></em>
                                 </div>
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-6">
                                   <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input" id="contactfile" name="contactfile">
                                     <!-- <label class="custom-file-label" for="contactfile"><spring:theme code="portal.contactus.form.drag.file.label"/>  -->
-                                      <label class="custom-file-label" for="contactfile" id="contact-us-upload-file"><spring:theme code="portal.contactus.form.drag.file.label"/> 
+                                      <label class="custom-file-label" for="contactfile" id="contact-us-upload-file"><!--<spring:theme code="portal.contactus.form.drag.file.label"/> -->
                                     <span class="pvcy-policy"><spring:theme code="portal.contactus.form.browse.label"/></span></label>
+                                  <div class="form-icon form-icon_browse" style=""><svg id="Upload-icon" xmlns="http://www.w3.org/2000/svg" width="30.222" height="31.179" viewBox="0 0 30.222 31.179">
+                                    <path id="Path_1958" data-name="Path 1958" d="M680.545,1506.881a1,1,0,0,0-1,1v13.074H653.323v-13.074a1,1,0,0,0-2,0v15.074h30.222v-15.074A1,1,0,0,0,680.545,1506.881Z" transform="translate(-651.323 -1491.776)" fill="#fff"></path>
+                                    <path id="Path_1959" data-name="Path 1959" d="M660.183,1500.854l5.251-5.251v17.622a1,1,0,0,0,2,0v-17.618l5.247,5.247a1,1,0,0,0,1.414-1.414l-7.663-7.664-7.663,7.664a1,1,0,0,0,1.414,1.414Z" transform="translate(-651.323 -1491.776)" fill="#fff"></path>
+                                  </svg>
+                                  </div>
+
+                                  <div class="form-icon form-icon_reset js-inputFile-reset" style="display:none">
+                                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 18 18" enable-background="new 0 0 18 18" xml:space="preserve">
+                                      <path d="M9,17.5c-4.687,0-8.5-3.813-8.5-8.5c0-4.687,3.813-8.5,8.5-8.5c4.687,0,8.5,3.813,8.5,8.5C17.5,13.687,13.687,17.5,9,17.5z M9,1.5C4.864,1.5,1.5,4.864,1.5,9s3.364,7.5,7.5,7.5s7.5-3.364,7.5-7.5S13.136,1.5,9,1.5z M11.813,12.812c-0.268,0-0.519-0.104-0.707-0.292l-1.949-1.949l-1.95,1.949c-0.378,0.377-1.037,0.377-1.414,0c-0.189-0.188-0.293-0.439-0.293-0.707s0.104-0.519,0.293-0.707l1.949-1.949l-1.95-1.95c-0.39-0.39-0.39-1.024,0-1.414c0.377-0.377,1.037-0.377,1.414,0l1.95,1.95l1.949-1.95c0.377-0.377,1.039-0.377,1.414,0c0.389,0.39,0.389,1.023,0,1.413l-1.95,1.95l1.95,1.949c0.39,0.392,0.389,1.025,0,1.414C12.332,12.709,12.081,12.812,11.813,12.812z"></path>
+                                  </svg>
+                                  </div>
                                   </div>
                                 </div>
-                                <div class="form-group col-md-12">
+							   </div>
+                                <%--<div class="form-group col-md-12">
                                   <!-- <label for="floatingInput " class="mand-field-text"><span class="mandatory">* </span>
                                   <spring:theme code="portal.contactus.form.fill.fields.label"/></label> -->
                                   <div class="form-check p-0 d-flex align-items-center mb-3">
@@ -176,7 +190,7 @@
                                     </div>
                                   </div>
                                   <em><span id="lblErrorinvalidCheck" class="error-msg"></span></em>
-                                </div>
+                                </div>--%>
                                 
                                 <div class="form-group col-md-12">
                                   <input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />

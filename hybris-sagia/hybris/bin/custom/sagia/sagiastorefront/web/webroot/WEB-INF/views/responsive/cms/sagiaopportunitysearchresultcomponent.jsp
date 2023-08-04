@@ -35,9 +35,6 @@
                 <div class="row opp-sort-filter-total">
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
-                        <div>
-                            <label for="opportunity-search" class="full"><spring:theme code="portal.opportunity.search.filter.title"/></label>
-                        </div>
                         <!-- Modal -->
                         <div class="modal fade" id="facetFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog opportunity-modal-dialog" role="document">

@@ -37,7 +37,6 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
                         <div>
                             <label for="opportunity-search" class="full"><spring:theme code="portal.opportunity.search.filter.title"/></label>
-                            <span id="opp-open-modal-filter"><spring:theme code="portal.opportunity.search.filter.span"/></span>
                         </div>
                         <!-- Modal -->
                         <div class="modal fade" id="facetFilterModal" tabindex="-1" role="dialog" aria-hidden="true">

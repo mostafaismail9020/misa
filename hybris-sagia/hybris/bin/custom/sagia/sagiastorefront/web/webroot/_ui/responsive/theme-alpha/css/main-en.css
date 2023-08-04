@@ -238,7 +238,7 @@ a.diff-color {
 .my-list-template li, .news-contents ul li, .page-contents ul li, .general-info ul li {
     padding-right: 15px;
     color: #7B838C; }
-.my-list-template li:before, .news-contents ul li:before, .page-contents ul li:before, .general-info ul li:before {
+.my-list-template li:before, .news-contents ul li:before, .page-contents ul li:before {
     content: "\f111";
     display: inline-block;
     color: #5CC83B;

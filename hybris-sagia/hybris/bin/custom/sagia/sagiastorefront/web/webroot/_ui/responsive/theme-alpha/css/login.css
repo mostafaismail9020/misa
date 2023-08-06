@@ -663,3 +663,65 @@ max-width :100% ;
 .float-button,#dashboardNoLicenseHelper,.js-license-apply{
     display: none !important;
 }
+
+/* Investor instend visa Css start */
+.investorVisaTypeItemDb{
+width: 100%;
+background: red;
+padding: 15px;
+min-height: 250px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 15px;
+background-image: url('/_ui/responsive/theme-alpha/img/visaBg2.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+position:relative;
+overflow: hidden;
+ }
+ .investorVisaTypeContent{
+text-align:center
+ }
+ .investorVisaTypeItemDb::after{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-color:#000;
+opacity:0.2;
+ }
+ .eligibleStatusInfo{
+position:relative;
+z-index:1;
+ }
+ .eligibleStatusInfo h3{
+color:#fff;
+font-size:35px;
+ }
+
+ .investorVisaTypeItemDb a{
+background: #00a6be;
+text-decoration: none;
+min-height: 50px;
+width: 180px;
+display: inline-block;
+border-radius: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto;
+margin-top: 30px;
+color: #fff !important;
+text-transform: uppercase;
+font-weight: bold;
+ }
+ @media(max-width:992px){
+.eligibleStatusInfo h3{
+
+font-size:25px;
+}
+ }
+/* Investor instend visa Css start End*/

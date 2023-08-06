@@ -336,6 +336,8 @@
     </div>
 </section>
 
+
+
 <section class="container mainSection_noPaddingTop js-dashboard  p-0">
     <div class="container row p-0 m-0">
         <div class="Inc-title-header col-12">
@@ -530,7 +532,34 @@
         </div>
     </div>
 </section>
+<!-- Investor Instant   VISA -->
+<section id="applyInstantVisaDb" class=" py-3 py-sm-5 mt-3 mt-sm-0">
+    <div class="container">
+        <div class="investorVisaTypeItemDb investorVisaStatus " style="">
+                <div class="eligibleStatusInfo">
+                    <c:if test="${language eq 'en'}">
 
+
+                  <div class="visaType1 investorVisaTypeContent" style="">
+                     <h3 class="instendVisaStatus"><spring:theme code="sagia.license.dashboard.visa.txt"/></h3>
+                     <a href="https://visa.mofa.gov.sa/" target="_blank" class="visaTypeApplyBtn">Apply now</a>
+                  </div>
+                </c:if>
+                <c:if test="${language eq 'ar'}">
+                  <div class="visaType1 investorVisaTypeContent" style="">
+                    <h3 class="instendVisaStatus"><spring:theme code="instend.dashboard.visa.txt"/></h3>
+                    <a href="https://visa.mofa.gov.sa/" target="_blank" class="visaTypeApplyBtn"><spring:theme code="sagia.license.dashboard.visa.txt"/></a>
+                 </div>
+
+                </c:if>
+
+                </div>
+
+
+              </div>
+            </div>
+    </section>
+    <!-- Investor Instant   VISA End-->
 <section class="mainSection license mainSection_grey mainSection_noPaddingTop js-dashboard ">
     <div class="container px-0">
         <dashboard:financialSurvey></dashboard:financialSurvey>

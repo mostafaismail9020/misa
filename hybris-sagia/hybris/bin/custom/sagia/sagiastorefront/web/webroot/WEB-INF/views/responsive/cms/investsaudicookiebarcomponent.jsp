@@ -17,7 +17,7 @@
                 	<spring:theme code="text.cookie.notification.description"/>
                 </p>
                 <div class="d-flex mt-5">
-                    <button type="button" class="btn btn-video text-muted mx-3" id="btnDeny">
+                    <button type="button" class="btn btn-video text-muted" id="btnDeny">
                         <spring:theme code="text.cookie.notification.deny"/>
                     </button>
                     <button type="button" class="btn btn-primary-fill btn-video" id="btnAccept">

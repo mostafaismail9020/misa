@@ -20,27 +20,12 @@
 									<div class="card-header">
 										<a class="card-link" data-toggle="collapse" href="#${loop.index}">
 											<i class="more-less glyphicon-plus"></i>
-											${currentComponent1.reasonTitle}
+											${loop.index + 1}&nbsp;&nbsp;${currentComponent1.reasonTitle}
 										</a>
 									</div>
 									<div id="${loop.index}" class="collapse" data-parent="#accordion">
 										<div class="card-body">
 											${currentComponent1.reasonFullDescription}
-										</div>
-									</div>
-								</div>
-							</c:forEach>
-							<c:forEach var="currentComponent2" items="${ExploreSaudi}" varStatus="loop">
-								<div class="card">
-									<div class="card-header">
-										<a class="card-link" data-toggle="collapse" href="#${loop.index}0">
-											<i class="more-less glyphicon glyphicon-plus"></i>
-											${currentComponent2.reasonTitle}
-										</a>
-									</div>
-									<div id="${loop.index}0" class="collapse" data-parent="#accordion">
-										<div class="card-body">
-											${currentComponent2.reasonFullDescription}
 										</div>
 									</div>
 								</div>

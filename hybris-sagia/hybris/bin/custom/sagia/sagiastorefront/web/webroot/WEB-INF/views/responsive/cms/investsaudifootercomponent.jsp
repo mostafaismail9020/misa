@@ -53,11 +53,11 @@
          </section>
 	</footer>
 	
-    <div class="copyright py-2 text-center text-white">
+    <div class="copyright">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6  d-flex d-sm-block">
-                    <ul class="nav-bottom-footer clearfix">
+                <div class="col-md-12 text-right-ar">
+                    <ul class="nav-bottom-footer">
                         <c:forEach items="${component.navigationMapPolicy.children}" var="childLevel1" varStatus="childLevel1index">                       
                             <c:forEach items="${childLevel1.entries}" var="childlink1">
                                 <cms:component component="${childlink1.item}" evaluateRestriction="true" element="li" class="nav-item" />
@@ -65,11 +65,13 @@
                         </c:forEach>
                     </ul>
                 </div>
-                <div class="col-md-6 col-sm-6 copyrightText d-flex d-sm-block">
-                	<spring:theme code="footer.copyright.sign"/>
-					<c:set var="now" value="<%=new java.util.Date()%>" />
-                	<fmt:formatDate value="${now}" pattern="yyyy" />&nbsp;
-                	<spring:theme code="footer.copyright.text"/>
+                <div class="col-md-12">
+                	<p class="footer-second-part">
+	                	<spring:theme code="footer.copyright.sign"/>
+						<c:set var="now" value="<%=new java.util.Date()%>" />
+	                	<fmt:formatDate value="${now}" pattern="yyyy" />&nbsp;
+	                	<spring:theme code="footer.copyright.text"/>
+                	</p>
                 </div>
             </div>
         </div>

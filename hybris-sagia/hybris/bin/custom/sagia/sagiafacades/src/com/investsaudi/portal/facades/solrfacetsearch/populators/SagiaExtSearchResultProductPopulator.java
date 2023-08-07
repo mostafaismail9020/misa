@@ -28,5 +28,6 @@ public class SagiaExtSearchResultProductPopulator extends SearchResultProductPop
         if(StringUtils.isNotBlank(target.getName())){
             target.setName(target.getName().replaceAll(FORMAT_TO_REMOVE, "").replaceAll(FORMAT_TO_REMOVE_2,""));
         }
+        target.setResource(this.getValue(source, "resource"));
     }
 }

@@ -4037,6 +4037,24 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="ArticleProduct" extends="Product"
+                      autocreate="true" generate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.ArticleProduct">
+                <description>Article product</description>
+            </itemtype>
+            
+            <itemtype code="EventProduct" extends="Product"
+                      autocreate="true" generate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.EventProduct">
+                <description>Event product</description>
+            </itemtype>
+            
+            <itemtype code="NewsProduct" extends="Product"
+                      autocreate="true" generate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.NewsProduct">
+                <description>News product</description>
+            </itemtype>
+             
             <itemtype code="Category" generate="false" autocreate="false">
                 <attributes>
                     <attribute qualifier="emailList" type="java.lang.String">
@@ -5529,6 +5547,12 @@
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiOpportunitySearchBarComponent">
                 <description>Invest Saudi Opportunity SearchBar Component</description>
+            </itemtype>
+            
+            <itemtype code="SagiaGlobalSearchBarComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaGlobalSearchBarComponent">
+                <description>Sagia Global SearchBar Component</description>
             </itemtype>
 
             <itemtype code="InvestSaudiOpportunitySearchResultComponent" generate="true"

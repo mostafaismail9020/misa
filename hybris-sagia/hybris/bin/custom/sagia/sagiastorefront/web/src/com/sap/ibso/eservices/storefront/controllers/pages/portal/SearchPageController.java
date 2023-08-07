@@ -28,6 +28,7 @@ import de.hybris.platform.servicelayer.dto.converter.ConversionException;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -263,6 +264,14 @@ public class SearchPageController extends AbstractSearchPageController
 		return resultData;
 	}
 	
+	/**
+	 * This method is used in auto-suggestions for global search. It returns all opportunities, news, articles and events based on the search term.
+	 * 
+	 * @param componentUid
+	 * @param term
+	 * @return GlobalAutocompleteResultData
+	 * @throws CMSItemNotFoundException
+	 */
 	@ResponseBody
 	@RequestMapping(value = "/autocomplete/global/" + COMPONENT_UID_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public GlobalAutocompleteResultData getAutocompleteGlobalSuggestions(@PathVariable final String componentUid,
@@ -279,8 +288,21 @@ public class SearchPageController extends AbstractSearchPageController
 
 		if (component.isDisplayProducts())
 		{
-			resultData.setProducts(subList(productSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
-					component.getMaxProducts()));
+			List<ProductData> results = productSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults();
+			if (CollectionUtils.isNotEmpty(results)) {
+				resultData.setOpportunities(subList(results.stream().filter(data ->  
+				StringUtils.isNotEmpty(data.getResource()) && data.getResource().equals("Opportunity")).collect(Collectors.toList()), 
+						component.getMaxProducts()));
+				resultData.setNews(subList(results.stream().filter(data ->  
+				StringUtils.isNotEmpty(data.getResource()) && data.getResource().equals("News")).collect(Collectors.toList()), 
+						component.getMaxProducts()));
+				resultData.setArticles(subList(results.stream().filter(data ->  
+				StringUtils.isNotEmpty(data.getResource()) && data.getResource().equals("Article")).collect(Collectors.toList()), 
+						component.getMaxProducts()));
+				resultData.setEvents(subList(results.stream().filter(data ->  
+				StringUtils.isNotEmpty(data.getResource()) && data.getResource().equals("Event")).collect(Collectors.toList()), 
+						component.getMaxProducts()));
+			}
 		}
 
 		return resultData;

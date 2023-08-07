@@ -29,11 +29,13 @@ import static org.apache.commons.collections4.CollectionUtils.emptyIfNull;
 
 public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProvider implements FieldValueProvider
 {
-    private UrlResolver<ProductModel> urlResolver;
+	private UrlResolver<ProductModel> urlResolver;
     private FieldNameProvider fieldNameProvider;
     private CommonI18NService commonI18NService;
     private static final String FORWARD_SLASH = "/";
     private static final String SECTOR_URL = "/sectors-opportunities/";
+    private static final String EVENT_URL = "/mediaCenter/events/";
+    private static final String NEWS_URL = "/mediaCenter/news/";
 
     protected FieldNameProvider getFieldNameProvider()
     {
@@ -135,10 +137,10 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
 			return "/aboutSaudi";			
 		}
     	else if (model instanceof EventProductModel) {
-			return "/mediaCenter/events/" + ((EventProductModel) model).getCode();
+			return EVENT_URL + ((EventProductModel) model).getCode();
 		}
     	else if (model instanceof NewsProductModel) {
-    		return "/mediaCenter/news/" +  ((NewsProductModel) model).getCode();	
+    		return NEWS_URL +  ((NewsProductModel) model).getCode();	
     	}
         else
         {

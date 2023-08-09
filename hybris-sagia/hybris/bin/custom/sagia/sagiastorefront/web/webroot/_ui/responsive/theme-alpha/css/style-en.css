@@ -13679,9 +13679,9 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .custom-button{
-    font-family: 'Arial';
+    font-family: '7';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 12px;
     line-height: 18px;
     display: flex;
@@ -13715,7 +13715,7 @@ gap: 4px;
 
 width: 30px;
 height: 20px;
-background: #5F6D7E;
+background: #BF9B2E;
 border-radius: 20px;
 flex: none;
 order: 1;
@@ -13732,10 +13732,10 @@ color: #F8F9FB;
 
 }
 .custom-button:hover {
-    background-color: #5F6D7E;
+    background-color: #BF9B2E;
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
-	color: #bf9b2e;
+	color: #FFFFFF;
 }
 
 .all-opportunity .pagination .page-item.active .page-link,

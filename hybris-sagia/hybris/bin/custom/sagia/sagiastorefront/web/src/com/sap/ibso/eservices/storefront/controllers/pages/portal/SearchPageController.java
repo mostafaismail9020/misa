@@ -257,7 +257,9 @@ public class SearchPageController extends AbstractSearchPageController
 
 		if (component.isDisplayProducts())
 		{
-			resultData.setProducts(subList(productSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults(),
+			resultData.setProducts(subList(productSearchFacade.textSearch(term, SearchQueryContext.SUGGESTIONS).getResults().
+					stream().filter(data ->  
+					StringUtils.isNotEmpty(data.getResource()) && data.getResource().equals("Opportunity")).collect(Collectors.toList()),
 					component.getMaxProducts()));
 		}
 

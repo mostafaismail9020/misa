@@ -17,7 +17,7 @@
         <div class="mainSection-header">
             <h1 class="mainSection-headline"><spring:theme code="service.requests.title"/></h1>
             <div>
-                <div class="controlBar">
+                <%--<div class="controlBar">
                     <a href="${encodedContextPath}/service-search" class="controlBar-action">
                         <span class="iconElement iconElement_controlBar iconElement_controlBar_active"><icon:book-green/></span>
                         <span class="iconElement iconElement_controlBar"><icon:book-grey/></span>
@@ -26,7 +26,7 @@
                         <span class="iconElement iconElement_controlBar iconElement_controlBar_active"><icon:head-green/></span>
                         <span class="iconElement iconElement_controlBar"><icon:head-grey/></span>
                     </a>
-                </div>
+                </div>--%>
             </div>
         </div>
     </div>

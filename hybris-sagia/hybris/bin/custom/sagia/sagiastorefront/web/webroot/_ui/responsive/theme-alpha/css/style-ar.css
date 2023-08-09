@@ -77,80 +77,6 @@ a:hover {
 	font-size: 16px;
 	text-transform: uppercase;
 }
-.custom-button{
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 18px;
-    display: flex;
-    align-items: flex-end;
-    color: #5F6D7E;
-    background: #D7DEE6;
-     border: 0px solid;
-}
-
-.custom-button:hover {
-    background-color: #BF9B2E;
-.all-opportunity .pagination .page-item .page-link {
-	font-size: 20px;
-	color: #FFFFFF;
-}
-.custom-badge{
-
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 0px 6px;
-gap: 4px;
-
-width: 30px;
-height: 20px;
-background: #BF9B2E;
-border-radius: 20px;
-flex: none;
-order: 1;
-width: 18px;
-height: 20px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 20px;
-display: flex;
-align-items: center;
-letter-spacing: -0.001em;
-color: #F8F9FB;
-
-}
-.parentCategory-button{
-   font-family: 'Arial';
-     font-style: normal;
-     font-weight: 400;
-     font-size: 12px;
-     line-height: 18px;
-     display: flex;
-     align-items: flex-end;
-     color: #5F6D7E;
-     background: #E6E9EC;
-     border: 1.33px solid #FFFFFF;
-     border-radius: 2px;
-}
-.opp-search-btn-hidden {
-	color: #fff;
-	margin-right:  35vw;
-	padding: 9px 20px;
-	background: #00a6be;
-	border: 1px solid #00a6be;
-	border-radius: 30px;
-	position: absolute;
-	right: 19px;
-	top: 4px;
-	height: 52px;
-	text-transform: uppercase;
-	visibility:hidden;
-}
 
 .btn-knowmore span.arow-icon {
 	margin-left: 5px;
@@ -2040,7 +1966,7 @@ p.contowl {
 	width: 175px;
 	height: 45px;
 	line-height: 19px;
-	
+
 	text-transform: uppercase;
 	border-radius: 27px;
 	padding: 12px 10px 15px 20px;
@@ -6133,11 +6059,11 @@ img.accountLogin-headline-logo {
 	.key-reason-invest .count-block {
 		width: 95% !important;
 	}
-	
+
 	.flip-card-custom {
 		margin-bottom: 30px;
 	}
-	
+
 	#newsandupdates .contentWrapper .card-wrapper .flip-card {
 		margin-bottom: 30px;
 	}
@@ -6206,7 +6132,7 @@ img.accountLogin-headline-logo {
 	.Inc-tab-banner-content {
 		padding-top: 40px;
 	}
-	
+
 	.when-number-talk-container h2 {
 		font-size: 24px;
 		font-weight: 600;
@@ -6223,7 +6149,7 @@ img.accountLogin-headline-logo {
 		letter-spacing: 0em;
 		text-align: center;
 	}
-	
+
 	.number-talk-items-container .talk_item {
 		margin-bottom: 20px;
 	}
@@ -6235,7 +6161,7 @@ img.accountLogin-headline-logo {
 		letter-spacing: 0em;
 		color: var(--misaFirstColor);
 	}
-	
+
 	.when-number-talk-container .talk_item-text {
 		font-size: 14px;
 		font-weight: 400;
@@ -6250,7 +6176,7 @@ img.accountLogin-headline-logo {
 		line-height: 16px;
 		letter-spacing: 0em;
 	}
-	
+
 	.header-home-container h5 {
 		font-size: 16px;
 		font-weight: 700;
@@ -6265,12 +6191,12 @@ img.accountLogin-headline-logo {
 	#hero .container-home-hero {
 		padding-top: 450px;
 	}
-	
+
 	#hero {
 		overflow: unset;
 		height: 75vh
 	}
-	
+
 	#hero img.home-banner {
 		width: 100%;
 	}
@@ -6278,7 +6204,7 @@ img.accountLogin-headline-logo {
 	#homepage-icons {
 		padding: 100px 0;
 	}
-	
+
 	.newsAndUpdateContainer .titleContainer .section-title {
 		font-size: 24px;
 		line-height: 28px;
@@ -7536,12 +7462,12 @@ figure h2 {
 		border-radius: 15px 15px 0px 0px;
 		color: #00A6BE;
 	}
-	
+
 	.footer .footer-menu {
 		margin-top: 40px;
 		margin-right: -40px;
 	}
-	
+
 	.footer .footer-menu li {
 	    float: right;
     	margin-left: 35px;
@@ -7570,15 +7496,11 @@ figure h2 {
 }
 
 .banner-section h1 {
-    font-family: 'Arial';
-    font-style: normal;
-    margin-left: 45vw;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 37px;
-    display: flex;
-    align-items: flex-end;
-    color: #5F6D7E;
+	margin: 0 0 10px 0;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 56px;
+	color: #fff;
 }
 
 .banner-section h2 {
@@ -10409,7 +10331,7 @@ body.page-living-in-saudi .content {
 }
 
 #accordion-explore .card {
-	border: 1px solid #fff;	
+	border: 1px solid #fff;
 }
 
 #accordion-explore .card-header {
@@ -12293,13 +12215,12 @@ ul.INS_li_ul_under li {
 		font-weight: unset;
 		padding: 0 15px;
 	}
-.banner-section h1 {
-	margin: 0 0 10px 0;
-	font-size: 60px;
-	font-weight: 700;
-	line-height: 56px;
-	color: #fff;
-}
+	.banner-section h1 {
+		font-size: 30px;
+		font-weight: unset;
+		padding: 0 15px;
+		line-height: 30px;
+	}
 	body.page-living-in-saudi .achievement_header h1 {
 		font-size: 30px;
 	}
@@ -12700,7 +12621,7 @@ ul.INS_li_ul_under li {
 	.ft-logo {
 		left: 0;
 	}
-	
+
 	#hero h1 {
 		text-align: center;
 	}
@@ -13469,7 +13390,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	flex-direction: column;
 	justify-content: center;
 	font-size: 18px;
-	padding: 50px 60px !important;	
+	padding: 50px 60px !important;
 	width: 360px;
 	height: 242px;
 	background: #fff;
@@ -13534,7 +13455,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .opportunity-card .content-box {
 	background: #ffffff;
-	box-shadow: 0px 30px 75px #00000029;	
+	box-shadow: 0px 30px 75px #00000029;
 	transition: all ease .5s;
 	-webkit-transition: all ease .5s;
 	-moz-transition: all ease 0.5s;
@@ -13664,21 +13585,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	outline: none;
 	padding-right: 50px;
 }
-.custom-search-input{
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 8px 18px;
-    gap: 6px;
-   width: 85%;
-    background: #F8F9FB;
-    border: 1px solid #5F6D7E;
-    border-radius: 8px;
-    order: 1;
-    align-self: stretch;
-}
-
 .search-reports-container input[type=search]::placeholder,
 .search-reports-container input[type=text]::placeholder,
 .opp-search-container input[type=search]::placeholder,

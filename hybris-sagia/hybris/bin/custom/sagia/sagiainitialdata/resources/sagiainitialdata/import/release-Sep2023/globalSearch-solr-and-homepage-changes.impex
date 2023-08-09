@@ -1,0 +1,37 @@
+$searchIndexNamePrefix=sagia
+$solrIndexedType=sagiaProductType
+$contentCatalog=sagiaContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online, unique=true]
+
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible ; fieldValueProvider       ;
+                                  ; $solrIndexedType                         ; resource          ; string     ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true   ; sagiaProductTypeProvider ;
+
+
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider ; facetSortProvider              ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType]
+                                      ; resource:$solrIndexedType                                       ;                      ; MultiSelectOr  ; 1001     ; solrFieldNameProvider    ; facetNameSortProviderAscending ; defaultTopValuesProvider ;                                 ;
+
+
+INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; query ;
+                               ; $solrIndexedType                         ; $searchIndexNamePrefix-fullQuery   ; full       ; "SELECT DISTINCT tbl.pk FROM (
+  {{
+  SELECT {PK} FROM {OpportunityProduct}
+  }}
+  UNION
+  {{
+  SELECT {PK} FROM {NewsProduct}
+  }}
+  UNION
+  {{
+  SELECT {PK} FROM {ArticleProduct}
+  }}
+  UNION
+  {{
+  SELECT {PK} FROM {EventProduct}
+  }}
+) tbl"
+
+INSERT_UPDATE SagiaGlobalSearchBarComponent; uid[unique = true]                     ; name                            ; $contentCV[unique = true] ; &componentRef                          ;
+                                           ; SagiaGlobalSearchBarComponent-homepage ; Sagia Global SearchBar Component;                           ; SagiaGlobalSearchBarComponent-homepage ;
+										   
+UPDATE ContentSlot; uid[unique = true]             ; cmsComponents(&componentRef)[mode=append]; $contentCV ;
+                  ; PortalPageMain-portal-homepage ; SagiaGlobalSearchBarComponent-homepage   ;            ;

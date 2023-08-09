@@ -10,7 +10,7 @@
 	    <div class="container">
 	        <div class="row titleContainer">
 	            <div class="col-lg-12 pt-4 pt-lg-0 content mx-auto aos-init" data-aos="fade-right" data-aos-delay="100">
-	                <h2 class="section-title ">${component.title}</h2>
+	                <h2 class="section-title">${component.title}</h2>
 				</div>
 			</div>
 			
@@ -24,7 +24,7 @@
 			                	<img class="img-fluid" src="${fn:escapeXml(currentComponent.newsDetailsImage.url)}" alt="" loading="lazy">
 			              	</div>
 			              	<div class="card-box p-3 pr-5 home-news-updates-content">
-			               		<strong><fmt:formatDate value="${currentComponent.newsDate}" type="both" dateStyle="long" timeStyle="long" pattern="d MMMM yyyy" /></strong>
+			               		<span><fmt:formatDate value="${currentComponent.newsDate}" type="both" dateStyle="long" timeStyle="long" pattern="d MMMM yyyy" /></span>
 			                  	<h2>${currentComponent.newsTitle}</h2>
 			                  	<p class="home-news-updates-content-p">${currentComponent.newsShortInformation}</p>
 	                      	</div>

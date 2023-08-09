@@ -13517,7 +13517,70 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .opportunity-card.total-results {
     margin-top: 7px;
     text-align: right;
+    color: #00714D;
 }
+
+.custom-button{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+    color: #5F6D7E;
+    align-items: center;
+    background: rgba(0, 113, 77, 0.05);
+     border: 0px solid;
+}
+.custom-badge{
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px 6px;
+gap: 4px;
+
+width: 30px;
+height: 20px;
+background: #BF9B2E;
+border-radius: 20px;
+flex: none;
+order: 1;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+display: flex;
+align-items: center;
+letter-spacing: -0.001em;
+
+color: #F8F9FB;
+
+}
+.custom-button:hover {
+    background-color: #BF9B2E;
+.all-opportunity .pagination .page-item .page-link {
+	font-size: 20px;
+	color: #FFFFFF;
+}}
+
+.parentCategory-button{
+   font-family: '72';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 12px;
+     line-height: 18px;
+     display: flex;
+     align-items: flex-end;
+     color: #BF9B2E;
+     background: rgba(191, 155, 46, 0.3);
+     border-radius: 10px;
+}
+
 
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;

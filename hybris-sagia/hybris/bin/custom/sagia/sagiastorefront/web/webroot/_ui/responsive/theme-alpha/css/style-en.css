@@ -13554,29 +13554,30 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .custom-button{
-    font-family: '7';
+    font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 12px;
     line-height: 18px;
     display: flex;
     align-items: flex-end;
+    border-radius: 10px;
     color: #5F6D7E;
-    background: #D7DEE6;
+    align-items: center;
+    background: rgba(0, 113, 77, 0.05);
      border: 0px solid;
 }
 .parentCategory-button{
-   font-family: 'Arial';
+   font-family: '72';
      font-style: normal;
      font-weight: 400;
      font-size: 12px;
      line-height: 18px;
      display: flex;
      align-items: flex-end;
-     color: #5F6D7E;
-     background: #E6E9EC;
-     border: 1.33px solid #FFFFFF;
-     border-radius: 2px;
+     color: #BF9B2E;
+     background: rgba(191, 155, 46, 0.3);
+     border-radius: 10px;
 }
 
 .custom-badge{
@@ -13611,7 +13612,7 @@ color: #F8F9FB;
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
 	color: #FFFFFF;
-}
+}}
 
 .all-opportunity .pagination .page-item.active .page-link,
 .all-opportunity .pagination .page-link:hover {

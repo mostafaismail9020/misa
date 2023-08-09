@@ -7595,15 +7595,11 @@ figure h2 {
 }
 
 .banner-section h1 {
-    font-family: 'Arial';
-    font-style: normal;
-    margin-right: 45vw;
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 37px;
-    display: flex;
-    align-items: flex-end;
-    color: #5F6D7E;
+	margin: 0 0 10px 0;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 56px;
+	color: #fff;
 }
 
 .banner-section h2 {
@@ -7611,6 +7607,7 @@ figure h2 {
 	margin-bottom: 20px;
 	font-size: 32px;
 }
+
 .aboutusContainer {
 	padding-bottom: 0px;
 }

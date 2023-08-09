@@ -17,7 +17,7 @@
         margin-bottom: 2%;
     }
     .col-md-12.card-wrapper.alternate {
-        background-color: rgba(191, 155, 46, 0.05);
+        background-color: rgba(191, 155, 46, 0.07);
     }
 </style>
     <div class="flip-card flip-card-custom row">

@@ -19,7 +19,7 @@
                         <input type="text" id="js-site-search-input" class=" js-site-search-input custom-search-input" name="q" value=""
                             maxlength="100" placeholder="${searchPlaceholder}"
                              style="display: flex; flex-direction: row; align-items: center; padding: 8px 18px; gap: 6px; width: 85%; background: #F5F6F7;  border-radius: 80px; order: 1; color: #5B738B; align-self: stretch; border: none;">
-                        <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
+                        <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results" style="white-space: nowrap;">
                             <spring:message code="portal.opportunity.search.opportunities.totalResults"
                                           arguments="${searchPageData.pagination.totalNumberOfResults}"/>
                                              </div>

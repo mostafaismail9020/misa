@@ -8,6 +8,18 @@
 
 
 <div class="col-md-12 card-wrapper" data-aos="fade-up" data-aos-delay="${loopCount}">
+<style>
+    .col-md-12.card-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    .col-md-12.card-wrapper.alternate {
+        background-color: rgba(191, 155, 46, 0.05);
+    }
+</style>
     <div class="flip-card flip-card-custom row">
         <div class="col-md-3">
             <a class="know-more-link" href="${newsUrl}/${currentComponent.uid}">
@@ -34,5 +46,12 @@
         </div>
     </div>
 </div>
-<hr style="width: 90%">
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var cardWrappers = document.querySelectorAll('.col-md-12.card-wrapper');
+        for (var i = 0; i < cardWrappers.length; i += 2) {
+            cardWrappers[i].classList.add('alternate');
+        }
+    });
+</script>

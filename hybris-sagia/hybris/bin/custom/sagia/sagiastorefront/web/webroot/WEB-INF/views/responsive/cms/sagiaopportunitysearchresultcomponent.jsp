@@ -54,6 +54,16 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="pt-3" >
+                                        <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}" >
+                                                                                                	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
+                                                                                                    <input type="text" id="js-site-search-input" class=" js-site-search-input custom-search-input" name="q" value=""
+                                                                                                        maxlength="100" placeholder="${searchPlaceholder}"
+                                                                                                         style="display: flex; flex-direction: row; align-items: center; padding: 8px 18px; gap: 6px; width: 80%; background: #F5F6F7;  border-radius: 80px; order: 1; color: #5B738B; align-self: stretch; border: none;">
+                                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results" style="white-space: nowrap; align-items: center;">
+                                                                                                        <spring:message code="portal.opportunity.search.opportunities.totalResults"
+                                                                                                                      arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+                                                                                                                         </div>
+                                                                                                </form>
                                             <div class="opp-filter-container" style="padding: 20px;">
                                                 <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
                                             </div>

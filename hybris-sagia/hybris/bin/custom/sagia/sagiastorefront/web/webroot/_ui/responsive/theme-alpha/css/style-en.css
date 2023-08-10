@@ -7513,6 +7513,9 @@ figure h2 {
 		margin-right: 35px;
 	}
 }
+.pageLabel--sectors-opportunities-opportunities .banner-section{
+	height: 50vh;
+}
 .banner-section {
 	width: 100%;
 	height: 95vh;

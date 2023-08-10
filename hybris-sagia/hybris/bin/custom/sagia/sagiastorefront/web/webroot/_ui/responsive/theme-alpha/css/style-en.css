@@ -309,11 +309,10 @@ ul.sagiaNavigation-subNav li svg {
 }
 
 .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after {
-	content: "";
 	position: absolute;
-	top: 17px;
-	right: 8px;
-	background-image: url("../img/arrow-down.png");
+	top: 14px;
+	right: 13px;
+	content: "\25bc";
 	display: inline-block;
 	width: 10px;
 	height: 6px;

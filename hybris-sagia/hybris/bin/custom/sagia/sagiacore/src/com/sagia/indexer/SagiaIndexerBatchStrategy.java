@@ -31,6 +31,7 @@ import java.util.Base64;
 
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
+import de.hybris.platform.servicelayer.config.ConfigurationService;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 
 
@@ -38,6 +39,8 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 	
 	@Autowired
 	private FlexibleSearchService flexibleSearchService;
+	@Autowired
+    private ConfigurationService configurationService;
 
 	private static final Logger LOG = Logger.getLogger(SagiaIndexerBatchStrategy.class);
 	private static final String GRANT_TYPE = "client_credentials"; // assuming client credential grant type
@@ -77,7 +80,7 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 	public void postOpportunityUpdate(Set<String> codes) throws Exception {
 		String accessToken = getAccessToken();
 
-		URL url = new URL("https://e650024-iflmap.hcisbt.sa1.hana.ondemand.com/http/Commerce/C4C/OpportunityUpdate");
+		URL url = getEndpointUrl();
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("POST");
 		conn.setRequestProperty("Content-Type", "application/json");
@@ -107,7 +110,10 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 	}
 
 	
-
+	public URL getEndpointUrl() throws Exception {
+        String endpointUrl = configurationService.getConfiguration().getString("sagia.scpi.oppotunity.update.endpoint");
+        return new URL(endpointUrl);
+    }
 
 
 

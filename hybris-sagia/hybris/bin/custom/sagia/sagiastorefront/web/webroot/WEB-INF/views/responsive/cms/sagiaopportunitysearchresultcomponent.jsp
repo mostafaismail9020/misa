@@ -31,21 +31,10 @@
             </div>
         </c:if>
         <div class="col-md-9 col-sm-12 page-main-content">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card  opp-mobile-show" style="display: flex; align-items: center;">
-                                            <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}" >
-                                                                	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-                                                                    <input type="text" id="js-site-search-input" class=" js-site-search-input custom-search-input" name="q" value=""
-                                                                        maxlength="100" placeholder="${searchPlaceholder}"
-                                                                         style="display: flex; flex-direction: row; align-items: center; padding: 8px 18px; gap: 6px; width: 120%; background: #F5F6F7;  border-radius: 80px; order: 1; color: #5B738B; align-self: stretch; border: none;">
-                                                                    <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results" style="white-space: nowrap;">
-                                                                        <spring:message code="portal.opportunity.search.opportunities.totalResults"
-                                                                                      arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-                                                                                         </div>
-                                                                </form>
-                                            </div>
-                        <div class="row opp-sort-filter-total">
             <c:if test="${not empty searchPageData.results}">
                 <hr class="opp-mobile-hidde"/>
+                <div class="row opp-sort-filter-total">
+
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
                         <div>
                             <label for="opportunity-search" class="full"><spring:theme code="portal.opportunity.search.filter.title"/></label>

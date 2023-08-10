@@ -14,27 +14,33 @@
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                    <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
-                    	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-                        <input type="text" id="js-site-search-input" class=" js-site-search-input custom-search-input" name="q" value=""
-                            maxlength="100" placeholder="${searchPlaceholder}"
-                             style="display: flex; flex-direction: row; align-items: center; padding: 8px 18px; gap: 6px; width: 85%; background: #F5F6F7;  border-radius: 80px; order: 1; color: #5B738B; align-self: stretch; border: none;">
-                        <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results" style="white-space: nowrap;">
-                            <spring:message code="portal.opportunity.search.opportunities.totalResults"
-                                          arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-                                             </div>
-                    </form>
-                <div id="product-facet" style="height: inherit" class=" hidden-sm hidden-xs product__facet js-product-facet">
+                <div>
+                    <h1 class='section-headline my-5 all-opportunity-filter'>
+                        <spring:theme code="portal.opportunity.search.filter"/>
+                    </h1>
+                </div>
+                <div id="product-facet" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
                     <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> --!>
                     <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
                 </div>
             </div>
         </c:if>
         <div class="col-md-9 col-sm-12 page-main-content">
+            <div>
+                <h1 class='section-headline my-5 all-opportunity-description'>
+                    <spring:theme code="portal.opportunity.search.all.label"/>&nbsp;
+                    <pan class="clr_gld"><spring:theme code="portal.opportunity.search.opportunities.label"/></pan>
+                </h1>
+            </div>
             <c:if test="${not empty searchPageData.results}">
+                <hr class="opp-mobile-hidde"/>
                 <div class="row opp-sort-filter-total">
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
+                        <div>
+                            <label for="opportunity-search" class="full"><spring:theme code="portal.opportunity.search.filter.title"/></label>
+                            <span id="opp-open-modal-filter"><spring:theme code="portal.opportunity.search.filter.span"/></span>
+                        </div>
                         <!-- Modal -->
                         <div class="modal fade" id="facetFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog opportunity-modal-dialog" role="document">
@@ -101,6 +107,11 @@
                                 </c:if>
                             </form>
                         </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
+                        <spring:message code="portal.opportunity.search.opportunities.totalResults"
+                            arguments="${searchPageData.pagination.totalNumberOfResults}"/>
                     </div>
                 </div>
             </c:if>

@@ -11,7 +11,6 @@ import java.util.Set;
 
 import java.util.HashSet;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.investsaudi.portal.core.model.OpportunityProductModel;
@@ -29,6 +28,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.util.Base64;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
 import de.hybris.platform.servicelayer.config.ConfigurationService;
@@ -42,8 +44,10 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 	@Autowired
     private ConfigurationService configurationService;
 
-	private static final Logger LOG = Logger.getLogger(SagiaIndexerBatchStrategy.class);
+	private static final Logger LOG = LoggerFactory.getLogger(SagiaIndexerBatchStrategy.class);
 	private static final String GRANT_TYPE = "client_credentials"; // assuming client credential grant type
+	private static final String OPPORTUNITY_UPDATE_ENDPOINT = "sagia.scpi.oppotunity.update.endpoint";
+	
 
 	@Override
 	protected void executeIndexerOperation(IndexerBatchContext batchContext)
@@ -65,16 +69,16 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 			String productCodesStr = String.join(",", uniqueProductCodes);
 			LOG.info("Unique opportunity codes are --> " + productCodesStr);
 
-			// postToCPIEndpoint(productCodesStr);
 			try {
 				postOpportunityUpdate(uniqueProductCodes);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
+	            LOG.error("Opportunity Update to SCPI failed with error: " , e);
 			}
-
 		}
 
+		// Continue with the normal operation
+        super.executeIndexerOperation(batchContext);
 	}
 
 	public void postOpportunityUpdate(Set<String> codes) throws Exception {
@@ -111,7 +115,7 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 
 	
 	public URL getEndpointUrl() throws Exception {
-        String endpointUrl = configurationService.getConfiguration().getString("sagia.scpi.oppotunity.update.endpoint");
+        String endpointUrl = configurationService.getConfiguration().getString(OPPORTUNITY_UPDATE_ENDPOINT);
         return new URL(endpointUrl);
     }
 
@@ -159,8 +163,6 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 	    return result.getResult().stream().findFirst().orElse(null);
 	}
 
-	
-	
 
 	public String getCurrentDateTime() {
 		LocalDateTime now = LocalDateTime.now();

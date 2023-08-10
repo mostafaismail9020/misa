@@ -1,7 +1,7 @@
 $searchIndexNamePrefix=sagia
 $solrIndexedType=sagiaProductType
 $contentCatalog=sagiaContentCatalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online, unique=true]
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged, unique=true]
 
 INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible ; fieldValueProvider       ;
                                   ; $solrIndexedType                         ; resource          ; string     ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true   ; sagiaProductTypeProvider ;
@@ -32,6 +32,6 @@ INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; iden
 
 INSERT_UPDATE SagiaGlobalSearchBarComponent; uid[unique = true]                     ; name                            ; $contentCV[unique = true] ; &componentRef                          ;
                                            ; SagiaGlobalSearchBarComponent-homepage ; Sagia Global SearchBar Component;                           ; SagiaGlobalSearchBarComponent-homepage ;
-										   
-UPDATE ContentSlot; uid[unique = true]             ; cmsComponents(&componentRef)[mode=append]; $contentCV ;
-                  ; PortalPageMain-portal-homepage ; SagiaGlobalSearchBarComponent-homepage   ;            ;
+										                     
+UPDATE ContentSlot; uid[unique = true]                ; cmsComponents(uid, $contentCV)      											                                                        ; $contentCV[unique = true] ;
+                  ; PortalPageTopSlot-portal-homepage ; SagiaGlobalSearchBarComponent-homepage, home-page-icons, explore7KeyReasonsCarouselComponent, numbertalk-container, last-news-component ;                           ;

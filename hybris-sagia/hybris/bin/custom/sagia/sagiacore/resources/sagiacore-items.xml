@@ -5550,7 +5550,7 @@
             </itemtype>
             
             <itemtype code="SagiaGlobalSearchBarComponent" generate="true"
-                      extends="SimpleCMSComponent" autocreate="true"
+                      extends="SearchBoxComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.SagiaGlobalSearchBarComponent">
                 <description>Sagia Global SearchBar Component</description>
             </itemtype>

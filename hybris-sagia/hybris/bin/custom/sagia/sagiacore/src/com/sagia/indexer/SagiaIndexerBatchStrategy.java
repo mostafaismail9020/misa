@@ -40,9 +40,6 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 	private FlexibleSearchService flexibleSearchService;
 
 	private static final Logger LOG = Logger.getLogger(SagiaIndexerBatchStrategy.class);
-	private static final String TOKEN_URL = "https://oauthasservices-lepnnvzpc6.sa1.hana.ondemand.com/oauth2/api/v1/token";
-	private static final String CLIENT_ID = "af0abb4b-5c32-320d-8766-6cad1c618eaf";
-	private static final String CLIENT_SECRET = "MISA2020Test";
 	private static final String GRANT_TYPE = "client_credentials"; // assuming client credential grant type
 
 	@Override

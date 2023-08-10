@@ -26,7 +26,6 @@
             </a>
         </div>
         <div class="col-md-3">
-            <a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
                 <button type="button" class="btn btn-primary parentCategory-button" onclick="redirectToLink('${result.parentCategory.url}')" style="border: none;">
                     ${fn:toLowerCase(result.parentCategory.name)}
                 </button>

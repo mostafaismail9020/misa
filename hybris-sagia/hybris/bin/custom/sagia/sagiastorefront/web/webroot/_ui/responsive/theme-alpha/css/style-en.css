@@ -13651,10 +13651,11 @@ color: #F8F9FB;
 }
 .custom-button:hover {
     background-color: #BF9B2E;
+    }
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
-	color: #FFFFFF;
-}}
+	color: #BF9B2E;
+}
 
 .pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-item.active .page-link,
 .pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-link:hover{

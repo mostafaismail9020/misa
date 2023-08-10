@@ -8,18 +8,6 @@
 
 
 <div class="col-md-12 card-wrapper" data-aos="fade-up" data-aos-delay="${loopCount}">
-<style>
-    .col-md-12.card-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin-top: 2%;
-        margin-bottom: 2%;
-    }
-    .col-md-12.card-wrapper.alternate {
-        background-color: rgba(191, 155, 46, 0.07);
-    }
-</style>
     <div class="flip-card flip-card-custom row">
         <div class="col-md-3">
             <a class="know-more-link" href="${newsUrl}/${currentComponent.uid}">

@@ -13628,6 +13628,12 @@ color: #F8F9FB;
 	color: #BF9B2E;
 }
 
+.pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-item.active .page-link,
+.pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-link:hover{
+background: #BF9B2E !important;
+border-color: #BF9B2E;
+}
+
 .all-opportunity .pagination .page-item.active .page-link,
 .all-opportunity .pagination .page-link:hover {
 	background: #00A6BE !important;

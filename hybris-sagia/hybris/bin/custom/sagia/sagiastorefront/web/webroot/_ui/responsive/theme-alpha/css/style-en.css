@@ -13656,6 +13656,12 @@ color: #F8F9FB;
 	color: #FFFFFF;
 }}
 
+.pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-item.active .page-link,
+.pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-link:hover{
+background: #BF9B2E !important;
+border-color: #BF9B2E;
+}
+
 .all-opportunity .pagination .page-item.active .page-link,
 .all-opportunity .pagination .page-link:hover {
 	background: #00a6be !important;
@@ -13663,6 +13669,7 @@ color: #F8F9FB;
 	color: #fff;
 	border-radius: 30px !important;
 }
+
 
 .sectors-opportunity .sectors-list .sector-btn {
 	display: inline-flex;

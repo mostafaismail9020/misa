@@ -32,7 +32,6 @@
         </c:if>
         <div class="col-md-9 col-sm-12 page-main-content">
             <c:if test="${not empty searchPageData.results}">
-                <hr class="opp-mobile-hidde"/>
                 <div class="row opp-sort-filter-total">
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">

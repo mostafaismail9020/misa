@@ -31,12 +31,6 @@
             </div>
         </c:if>
         <div class="col-md-9 col-sm-12 page-main-content">
-            <div>
-                <h1 class='section-headline my-5 all-opportunity-description'>
-                    <spring:theme code="portal.opportunity.search.all.label"/>&nbsp;
-                    <pan class="clr_gld"><spring:theme code="portal.opportunity.search.opportunities.label"/></pan>
-                </h1>
-            </div>
             <c:if test="${not empty searchPageData.results}">
                 <hr class="opp-mobile-hidde"/>
                 <div class="row opp-sort-filter-total">
@@ -112,11 +106,6 @@
                                 </c:if>
                             </form>
                         </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
-                        <spring:message code="portal.opportunity.search.opportunities.totalResults"
-                            arguments="${searchPageData.pagination.totalNumberOfResults}"/>
                     </div>
                 </div>
             </c:if>

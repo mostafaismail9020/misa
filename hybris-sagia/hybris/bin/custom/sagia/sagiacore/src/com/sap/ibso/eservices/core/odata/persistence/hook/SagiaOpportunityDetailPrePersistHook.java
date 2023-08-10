@@ -62,7 +62,7 @@ public class SagiaOpportunityDetailPrePersistHook implements PrePersistHook {
 			
 			
 			if ( Objects.nonNull(opportunity) && Objects.nonNull(opportunity.getTransientEncodendPdf())) {
-				LOG.info(" Before saving pdf to opportunity ");
+				LOG.info("Before saving pdf to opportunity ");
 				savePdfToProduct( opportunity);
 			}
 

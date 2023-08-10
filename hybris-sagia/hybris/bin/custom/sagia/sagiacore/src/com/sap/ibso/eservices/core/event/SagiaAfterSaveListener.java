@@ -106,12 +106,12 @@ public class SagiaAfterSaveListener implements AfterSaveListener {
                             getModelService().save(opportunityProductModel);
                         }
                     }
-                    if(opportunityProductModel.getCatalogVersion().getVersion().equals("ONLINE"));
-                    {
-                        LOG.debug("Starting SOLR Indexing for Opportunity Product "+opportunityProductModel.getCode());
-                        setupSolrIndexerService.executeSolrIndexerCronJob("sagiaIndex",true);
-                        LOG.debug("Completed SOLR Indexing for Opportunity Product "+opportunityProductModel.getCode());
-                    }
+//                    if(opportunityProductModel.getCatalogVersion().getVersion().equals("ONLINE"));
+//                    {
+//                        LOG.debug("Starting SOLR Indexing for Opportunity Product "+opportunityProductModel.getCode());
+//                        setupSolrIndexerService.executeSolrIndexerCronJob("sagiaIndex",true);
+//                        LOG.debug("Completed SOLR Indexing for Opportunity Product "+opportunityProductModel.getCode());
+//                    }
                 }
             }
     }

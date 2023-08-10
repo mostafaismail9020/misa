@@ -1,5 +1,6 @@
 package com.sagia.indexer;
 
+import de.hybris.platform.apiregistryservices.model.ConsumedOAuthCredentialModel;
 import de.hybris.platform.core.model.ItemModel;
 
 import de.hybris.platform.solrfacetsearch.config.IndexOperation;
@@ -11,6 +12,8 @@ import java.util.Set;
 import java.util.HashSet;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.investsaudi.portal.core.model.OpportunityProductModel;
 
 import java.io.OutputStream;
@@ -26,7 +29,15 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.util.Base64;
 
+import de.hybris.platform.servicelayer.search.FlexibleSearchService;
+import de.hybris.platform.servicelayer.search.SearchResult;
+import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
+
+
 public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
+	
+	@Autowired
+	private FlexibleSearchService flexibleSearchService;
 
 	private static final Logger LOG = Logger.getLogger(SagiaIndexerBatchStrategy.class);
 	private static final String TOKEN_URL = "https://oauthasservices-lepnnvzpc6.sa1.hana.ondemand.com/oauth2/api/v1/token";
@@ -98,28 +109,55 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 		LOG.info("POST Response Code :: " + responseCode);
 	}
 
+	
+
+
+
+
 	private String getAccessToken() throws Exception {
-		URL url = new URL(TOKEN_URL + "?grant_type=" + GRANT_TYPE);
-		HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-		conn.setRequestMethod("POST");
-		conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+	    ConsumedOAuthCredentialModel consumedOAuthCredential = getOAuthCredentialById("scpiOauthCredential");
+	    
+	    if (consumedOAuthCredential == null) {
+	        throw new RuntimeException("Unable to find ConsumedOAuthCredential with id scpiOauthCredential");
+	    }
+	    
+	    String tokenUrl = consumedOAuthCredential.getOAuthUrl();
+	    String clientId = consumedOAuthCredential.getClientId();
+	    String clientSecret = consumedOAuthCredential.getClientSecret();  // Assuming you have getter for this too
 
-		// Encode CLIENT_ID and CLIENT_SECRET in Base64 as per the Basic Authentication scheme
-		String auth = CLIENT_ID + ":" + CLIENT_SECRET;
-		String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
-		conn.setRequestProperty("Authorization", "Basic " + encodedAuth);
+	    URL url = new URL(tokenUrl + "?grant_type=" + GRANT_TYPE);
+	    HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+	    conn.setRequestMethod("POST");
+	    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 
-		conn.setDoOutput(true);
+	    String auth = clientId + ":" + clientSecret;
+	    String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
+	    conn.setRequestProperty("Authorization", "Basic " + encodedAuth);
 
-		int responseCode = conn.getResponseCode();
-		if (responseCode == HttpURLConnection.HTTP_OK) {
-			String responseBody = new String(conn.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-			JsonObject jsonObject = new JsonParser().parse(responseBody).getAsJsonObject();
-			return jsonObject.get("access_token").getAsString();
-		} else {
-			throw new RuntimeException("Failed to get OAuth2 token. Response code: " + responseCode);
-		}
+	    conn.setDoOutput(true);
+
+	    int responseCode = conn.getResponseCode();
+	    if (responseCode == HttpURLConnection.HTTP_OK) {
+	        String responseBody = new String(conn.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+	        JsonObject jsonObject = new JsonParser().parse(responseBody).getAsJsonObject();
+	        return jsonObject.get("access_token").getAsString();
+	    } else {
+	        throw new RuntimeException("Failed to get OAuth2 token. Response code: " + responseCode);
+	    }
 	}
+
+	private ConsumedOAuthCredentialModel getOAuthCredentialById(String id) {
+	    String queryStr = "SELECT {c:pk} FROM {ConsumedOAuthCredential AS c} WHERE {c:id} = ?id";
+	    FlexibleSearchQuery query = new FlexibleSearchQuery(queryStr);
+	    query.addQueryParameter("id", id);
+	    
+	    SearchResult<ConsumedOAuthCredentialModel> result = flexibleSearchService.search(query);
+	    
+	    return result.getResult().stream().findFirst().orElse(null);
+	}
+
+	
+	
 
 	public String getCurrentDateTime() {
 		LocalDateTime now = LocalDateTime.now();

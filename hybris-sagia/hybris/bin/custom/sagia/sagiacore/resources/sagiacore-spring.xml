@@ -1677,5 +1677,12 @@
     <bean id="sagiaOpportunityDetailPrePersistHook" class="com.sap.ibso.eservices.core.odata.persistence.hook.SagiaOpportunityDetailPrePersistHook">
     </bean>
 
+    <!-- Custom Bean Definition to intercept update indexing and post the status to SCPI -->
+      <bean id="defaultIndexerBatchStrategy" class="com.sagia.indexer.SagiaIndexerBatchStrategy">
+          <property name="indexer" ref="indexer"/>
+          <property name="indexerBatchContextFactory" ref="indexerBatchContextFactory"/>
+          <property name="indexerQueriesExecutor" ref="indexerQueriesExecutor"/>
+      </bean>
+    
 
 </beans>

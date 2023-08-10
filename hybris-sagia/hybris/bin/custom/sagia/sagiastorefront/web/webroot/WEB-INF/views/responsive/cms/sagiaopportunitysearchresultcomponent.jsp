@@ -14,12 +14,17 @@
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                <div>
-                    <h1 class='section-headline my-5 all-opportunity-filter'>
-                        <spring:theme code="portal.opportunity.search.filter"/>
-                    </h1>
-                </div>
-                <div id="product-facet" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
+                    <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
+                    	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
+                        <input type="text" id="js-site-search-input" class=" js-site-search-input custom-search-input" name="q" value=""
+                            maxlength="100" placeholder="${searchPlaceholder}"
+                             style="display: flex; flex-direction: row; align-items: center; padding: 8px 18px; gap: 6px; width: 85%; background: #F5F6F7;  border-radius: 80px; order: 1; color: #5B738B; align-self: stretch; border: none;">
+                        <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results" style="white-space: nowrap;">
+                            <spring:message code="portal.opportunity.search.opportunities.totalResults"
+                                          arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+                                             </div>
+                    </form>
+                <div id="product-facet" style="height: inherit" class=" hidden-sm hidden-xs product__facet js-product-facet">
                     <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> --!>
                     <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
                 </div>

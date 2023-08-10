@@ -34,4 +34,4 @@ INSERT_UPDATE SagiaGlobalSearchBarComponent; uid[unique = true]                 
                                            ; SagiaGlobalSearchBarComponent-homepage ; Sagia Global SearchBar Component;                           ; SagiaGlobalSearchBarComponent-homepage ;
 										   
 UPDATE ContentSlot; uid[unique = true]             ; cmsComponents(&componentRef)[mode=append]; $contentCV ;
-                  ; PortalPageMain-portal-homepage ; SagiaGlobalSearchBarComponent-homepage   ;            ;
+                  ; PortalPageTopSlot-portal-homepage ; SagiaGlobalSearchBarComponent-homepage   ;            ;

@@ -1,33 +1,36 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page trimDirectiveWhitespaces="true"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<section id="search-results" class="sectors-opp sectors-investment pb-5 sectors-opportunity opp-search-container">
+<spring:htmlEscape defaultHtmlEscape="true" />
+
+<c:url value="/globalSearch" var="searchUrl" />
+<spring:url value="/search/autocomplete/global/{/componentuid}" var="autocompleteUrl" htmlEscape="false">
+	<spring:param name="componentuid"  value="${component.uid}"/>
+</spring:url>
+<section id="home-page-global-search">
     <div class="container">
-        <div class="row justify-content-center pos-rel mt-4">
+        <div class="row justify-content-center pos-rel">
             <div class="col-lg-6 col-md-6">
-                <spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-                <input type="search" placeholder="${searchPlaceholder}">
-                <a class="a-search">
-                    <img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
-                </a>
-                <button type="button" class="button btn opp-search-btn search-btn"><spring:theme code="portal.opportunity.search.label"/></button>
-                <a class="reset-search small-font"><spring:theme code="portal.opportunity.search.clear.label"/></a>
-            </div>
-            <div class="col-lg-6 col-md-6 text-right">
-                <button id="open-filter" type="button" class="button btn opp-filter-btn filter-btn">
-                	<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/filter_icon.png" alt=""/>
-                	<spring:theme code="portal.opportunity.search.filter.label"/>
-                </button>
-                <button id="close-filter" style="display: none;" type="button" class="button btn opp-filter-btn filter-btn">
-                	<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/filter_icon.png" alt=""/>
-                	<spring:theme code="portal.opportunity.search.close.filter.label"/>
-                </button>
+                <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
+					<spring:theme code="text.home.globalsearch.placeholder" var="searchPlaceholder"/>
+
+					<ycommerce:testId code="header_search_input">
+						<input type="text" id="js-site-search-input"
+						       data-test="asdfg"
+							   class="js-site-search-input home-page-global-search-input" name="q" value=""
+							   maxlength="100" placeholder="${searchPlaceholder}"
+							   data-options='{"autocompleteUrl" : "${autocompleteUrl}"}'>
+					</ycommerce:testId>
+				</form>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row">
             <div class="sectors-list text-left" style="display: none;">
-                <h1 class='section-headline my-5'>
+                <h1 class="section-headline my-5">
                 	<spring:theme code="portal.opportunity.search.choose.label"/>&nbsp;
                 	<span class="clr_gld"><spring:theme code="portal.opportunity.search.sector.label"/></span>
                 </h1>
@@ -52,22 +55,7 @@
                         </div>
                     </c:forEach>
                 </div>
-                <div class="filter-buttons text-center mt-3">
-                    <button type="button" class="button btn opp-reset-search-btn filter-reset-search">
-                    	<spring:theme code="portal.opportunity.search.clear.search.label"/>
-                    </button>
-                    <button type="button" class="button btn opp-filter-search-btn search-btn">
-                    	<spring:theme code="portal.opportunity.search.apply.search.label"/>
-                    </button>
-                </div>
             </div>
         </div>
     </div>
 </section>
- 
-<div>
-    <h1 class='section-headline my-5 all-opportunity-description'>
-    	<spring:theme code="portal.opportunity.search.all.label"/>&nbsp;
-    	<pan class="clr_gld"><spring:theme code="portal.opportunity.search.opportunities.label"/></pan>
-    </h1>
-</div>

@@ -30,8 +30,8 @@ INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; iden
   }}
 ) tbl"
 
-INSERT_UPDATE SagiaGlobalSearchBarComponent; uid[unique = true]                     ; name                            ; $contentCV[unique = true] ; &componentRef                          ;
-                                           ; SagiaGlobalSearchBarComponent-homepage ; Sagia Global SearchBar Component;                           ; SagiaGlobalSearchBarComponent-homepage ;
+INSERT_UPDATE SagiaGlobalSearchBarComponent; uid[unique = true]                     ; name                            ; maxProducts ; maxSuggestions ; displayProducts ; displaySuggestions ; displayProductImages ; $contentCV[unique = true] ; &componentRef                          ;
+                                           ; SagiaGlobalSearchBarComponent-homepage ; Sagia Global SearchBar Component; 5           ; 5              ; true            ; true               ; false                ;                           ; SagiaGlobalSearchBarComponent-homepage ;
 										                     
 UPDATE ContentSlot; uid[unique = true]                ; cmsComponents(uid, $contentCV)      											                                                        ; $contentCV[unique = true] ;
                   ; PortalPageTopSlot-portal-homepage ; SagiaGlobalSearchBarComponent-homepage, home-page-icons, explore7KeyReasonsCarouselComponent, numbertalk-container, last-news-component ;                           ;

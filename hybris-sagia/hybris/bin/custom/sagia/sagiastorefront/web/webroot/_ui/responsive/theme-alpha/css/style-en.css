@@ -7567,6 +7567,15 @@ figure h2 {
             padding-top: 5vh;
             padding-bottom: 10vh;
         }
+        .pageLabel--sectors-opportunities-opportunities .flip-card strong {
+            font-family: '72';
+            color: #BF9B2E;
+        }
+
+       .pageLabel--sectors-opportunities-opportunities .flip-card p {
+         font-family: '72';
+         color: #BF9B2E;
+        }
 
 .banner-section h1 {
 	margin: 0 0 10px 0;

@@ -13612,6 +13612,15 @@ color: #F8F9FB;
             padding-top: 5vh;
             padding-bottom: 10vh;
         }
+         .pageLabel--sectors-opportunities-opportunities .flip-card strong {
+                    font-family: 'Arial';
+                    color: #BF9B2E;
+                }
+
+               .pageLabel--sectors-opportunities-opportunities .flip-card p {
+                 font-family: 'Arial';
+                 color: #BF9B2E;
+                }
 
 
 .all-opportunity .pagination .page-item .page-link {

@@ -7482,6 +7482,10 @@ figure h2 {
 	font-weight: 700;
 	font-size: 3.5vh;
 	color: #00714D;
+    margin-top: 30vh;
+    position: absolute;
+      top: 0;
+      right: 0;
 }
 
 .banner-section {

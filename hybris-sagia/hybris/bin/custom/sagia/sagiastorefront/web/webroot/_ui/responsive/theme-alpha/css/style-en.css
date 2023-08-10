@@ -395,7 +395,9 @@ ul.sagiaNavigation-subNav li svg {
 	display: block;
 	padding: 0;
 }
-
+.pageLabel--sectors-opportunities-opportunities .nav-menu a {
+	color: #00714D;
+}
 .nav-menu a {
 	display: block;
 	position: relative;

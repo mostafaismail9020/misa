@@ -338,6 +338,11 @@ ul.sagiaNavigation-subNav li svg {
 	height: 6px;
 	border: none;
 }
+.pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after{
+    color: #00714D;
+    filter: none;
+    opacity: 1;
+}
 
 #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after {
 	filter: grayscale(0.9) brightness(0.4);

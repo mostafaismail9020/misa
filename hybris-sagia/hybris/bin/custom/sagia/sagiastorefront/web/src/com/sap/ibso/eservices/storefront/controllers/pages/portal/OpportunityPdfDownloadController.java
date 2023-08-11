@@ -19,6 +19,12 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+
 import org.apache.commons.io.FileUtils;
 import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
@@ -34,6 +40,9 @@ import org.slf4j.LoggerFactory;
 @Controller
 public class OpportunityPdfDownloadController extends AbstractPageController {
 	
+	private static final Logger LOG = LoggerFactory.getLogger(OpportunityPdfDownloadController.class);
+
+	
 	@Resource(name = "productService")
 	private ProductService productService;
 	
@@ -45,23 +54,22 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	@RequestMapping(value = "/merged-pdf-download/{productCode}", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> downloadPDF(@PathVariable String productCode, final HttpServletRequest request,
 	                                          final HttpServletResponse response) throws IOException {
-
+		Collection<MediaModel> mediaModels;
 	    final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	    ProductModel productModel;
-	    MediaModel mediaModel;
-
 	    LOG.info("Processing request for opportunityCode: {}", productCode);
 
 	    try {
 	        productModel = productService.getProductForCode(productCode);
-	        mediaModel = productModel.getDetail().iterator().next();
+	        mediaModels = productModel.getDetail();
 	    } catch (Exception e) {
 	        LOG.error("Opportunity retrieval failed for opportunity code: {}", productCode, e);
 	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
 
-	    File secFile = convertMediaToFile(mediaModel);
-	    File file = SagiaPDFChartGenerator.generatePdfFile(productModel, secFile);
+	   
+		List<File> secFiles = convertMediaListToFileList(mediaModels);
+	    File file = SagiaPDFChartGenerator.generatePdfFile(productModel, secFiles);
 
 	    if (file.exists()) {
 	        try {
@@ -83,13 +91,28 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	    }
 	}
+	
+	public File concatenateFiles(List<File> files, File outputFile) throws IOException {
+        try (OutputStream outputStream = new FileOutputStream(outputFile)) {
+            for (File file : files) {
+                FileUtils.copyFile(file, outputStream);
+            }
+        }
+        return outputFile;
+    }
+	
 
-    
+	public List<File> convertMediaListToFileList(Collection<MediaModel> mediaModels) throws IOException {
+        List<File> fileList = new ArrayList<>();
+        for (MediaModel mediaModel : mediaModels) {
+            File file = convertMediaToFile(mediaModel);
+            fileList.add(file);
+        }
+        return fileList;
+    }
 	
 
 	public File convertMediaToFile(MediaModel mediaModel) throws IOException {
-
-	    final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
 	    // Get the file data from the MediaModel
 	    InputStream inputStream = mediaService.getStreamFromMedia(mediaModel);

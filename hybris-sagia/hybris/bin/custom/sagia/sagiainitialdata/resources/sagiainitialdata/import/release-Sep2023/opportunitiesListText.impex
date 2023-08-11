@@ -1,0 +1,7 @@
+$contentCatalog=sagiaContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online, unique=true]
+
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]        ; descriptionText[lang = en]; $contentCV[unique = true];
+; all-opportunity-banner-1  ; Opportunities                ;

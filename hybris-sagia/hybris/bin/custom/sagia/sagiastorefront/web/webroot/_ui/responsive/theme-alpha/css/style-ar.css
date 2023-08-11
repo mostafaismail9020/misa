@@ -246,7 +246,9 @@ ul.sagiaNavigation-subNav li svg {
 #header.header-scrolled .hd-scroll {
 	display: block;
 }
-
+.pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu a {
+    color: #00714D;
+}
 #header.header-scrolled .nav-menu a {
 	color: #787878;
 }

@@ -11,7 +11,7 @@
 <c:if test="${not empty facetData.values}">
     <ycommerce:testId code="facetNav_title_${facetData.name}">
         <div class="facet js-facet">
-            <div class="facet__name js-facet-name text-center clr_gld text-uppercase" style="margin-top: 10px;">
+            <div class="facet__name js-facet-name text-center clr_gld text-uppercase " style="margin-top: 10px; color: #00714D;">
                 <span class="glyphicon facet__arrow"></span>
                 ${facetData.name}
                 <i class="fa fa-plus plus-minus-facet open-facet" data-facet="${facetData.code}" style="display: none"></i>

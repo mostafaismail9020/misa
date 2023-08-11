@@ -7570,6 +7570,11 @@ figure h2 {
 	text-align: center;
 }
 
+ .facet__name.js-facet-name.clr_gld.text-uppercase {
+        margin-top: 10px;
+        color: #00714D;
+    }
+
  .col-md-12.card-wrapper {
         display: flex;
         flex-wrap: wrap;

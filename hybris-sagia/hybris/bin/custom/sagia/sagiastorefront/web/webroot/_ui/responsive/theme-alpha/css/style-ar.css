@@ -52,7 +52,10 @@ a:hover {
 	font-size: 16px;
 	font-weight: 600;
 }
-
+ .facet__name.js-facet-name.clr_gld.text-uppercase {
+        margin-top: 10px;
+        color: #00714D;
+    }
 .btn-video {
 	padding: 5px 15px 5px 15px;
 	color: #fff;

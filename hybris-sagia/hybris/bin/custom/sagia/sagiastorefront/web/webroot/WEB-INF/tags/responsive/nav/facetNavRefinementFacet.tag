@@ -13,6 +13,7 @@
         <div class="facet js-facet">
             <div class="facet__name js-facet-name text-center clr_gld text-uppercase" style="margin-top: 10px;">
                 <span class="glyphicon facet__arrow"></span>
+                ${facetData.name}
                 <i class="fa fa-plus plus-minus-facet open-facet" data-facet="${facetData.code}" style="display: none"></i>
                 <i class="fa fa-minus plus-minus-facet close-facet" data-facet="${facetData.code}" style="display: none"></i>
             </div>

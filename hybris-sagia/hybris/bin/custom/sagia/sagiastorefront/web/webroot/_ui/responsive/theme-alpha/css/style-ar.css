@@ -714,6 +714,9 @@ ul.dropdown-list li a {
 	border-radius: 8px;
 	padding: 6px 10px;
 }
+.pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn {
+    color: #00714D;
+}
 
 .btn-trans label.lang-btn {
 	padding: 0;
@@ -729,7 +732,9 @@ ul.dropdown-list li a {
 	text-decoration-color: #00A6BE;
 	text-decoration-thickness:3px;
 }
-
+.pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn.active{
+    color: #00714D;
+}
 .btn-trans label.lang-btn.active {
 	color: #fff;
 }

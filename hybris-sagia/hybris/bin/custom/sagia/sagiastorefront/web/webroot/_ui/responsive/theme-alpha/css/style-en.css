@@ -228,7 +228,9 @@ ul.sagiaNavigation-subNav li svg {
 #header .hd-scroll {
 	display: none;
 }
-
+.pageLabel--sectors-opportunities-opportunities #header.header-scrolled {
+box-shadow: 0px 2px #00714D;
+}
 #header.header-scrolled {
 	top: 0;
 	background: #f7f7f7;

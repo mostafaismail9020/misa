@@ -197,7 +197,9 @@ ul.sagiaNavigation-subNav li svg {
 #topbar .contact-info i.icofont-phone {
 	margin-left: 15px;
 }
-
+.pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
+color: #00714D;
+}
 #topbar .social-links a {
 	color: #fff;
 	margin-left: 15px;

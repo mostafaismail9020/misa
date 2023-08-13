@@ -76,7 +76,7 @@
                                              <!-- population is making in sagia.profile.js - reason for which I cut itemValue="description" itemLabel="description" -->
                                             <form:options items="${complaintFormData.branches}" htmlEscape="true"/>
                                         </form:select>
-                                        <label class="control-label"><spring:theme code="general.branch"/></label>
+                                        <label class="control-label control-label_mandatory"><spring:theme code="general.branch"/></label>
                                     </div>
                                 </div>
                             </div>

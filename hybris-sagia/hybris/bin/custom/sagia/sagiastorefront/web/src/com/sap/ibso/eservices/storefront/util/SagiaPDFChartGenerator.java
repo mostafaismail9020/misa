@@ -17,6 +17,9 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.investsaudi.portal.core.model.OpportunityProductModel;
+
+import org.apache.commons.text.StringEscapeUtils;
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
 import java.awt.*;
 import java.io.File;
@@ -28,6 +31,7 @@ import java.util.List;
 import java.util.TimeZone;
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
+import com.investsaudi.portal.core.model.MarketModel;
 
 public class SagiaPDFChartGenerator {
 
@@ -42,38 +46,40 @@ public class SagiaPDFChartGenerator {
 		File outputFile;
 		outputFile = File.createTempFile("output_file", ".pdf");
 
-		try {
-			ByteArrayOutputStream testPdfStream = new ByteArrayOutputStream();
-			try (PDDocument document = new PDDocument()) {
-				PDPage page = new PDPage(new PDRectangle(960, 540));
-				document.addPage(page);
-				document.save(testPdfStream);
+		if (productModel instanceof OpportunityProductModel) {
+			OpportunityProductModel opportunity = (OpportunityProductModel) productModel;
+			try {
+				ByteArrayOutputStream testPdfStream = new ByteArrayOutputStream();
+				try (PDDocument document = new PDDocument()) {
+					PDPage page = new PDPage(new PDRectangle(960, 540));
+					document.addPage(page);
+					document.save(testPdfStream);
 
-				try (PDDocument loadDoc = PDDocument.load(testPdfStream.toByteArray())) {
-					page = loadDoc.getPage(0);
-					createBarChart(loadDoc, productModel, null, page);
-					createPieChart(loadDoc, productModel, null, page);
-					testPdfStream.reset(); // clear the stream for reuse
-					loadDoc.save(testPdfStream);
+					try (PDDocument loadDoc = PDDocument.load(testPdfStream.toByteArray())) {
+						page = loadDoc.getPage(0);
+						createBarChart(loadDoc, opportunity, null, page);
+						createPieChart(loadDoc, opportunity, null, page);
+						testPdfStream.reset(); // clear the stream for reuse
+						loadDoc.save(testPdfStream);
+					}
 				}
-			}
 
-			File secondaryConcatenatedFile = concatenatePDFs(secFiles, outputFile);
-			// Convert the stream back to a File object for further use
-			File primaryPdfFile = File.createTempFile("intermediate_file", ".pdf");
-			try (FileOutputStream fos = new FileOutputStream(primaryPdfFile)) {
-				testPdfStream.writeTo(fos);
-			}
+				File secondaryConcatenatedFile = concatenatePDFs(secFiles, outputFile);
+				// Convert the stream back to a File object for further use
+				File primaryPdfFile = File.createTempFile("intermediate_file", ".pdf");
+				try (FileOutputStream fos = new FileOutputStream(primaryPdfFile)) {
+					testPdfStream.writeTo(fos);
+				}
 
-			fileMerged = mergeFiles(primaryPdfFile, secondaryConcatenatedFile);
-			addContentsToPdf(fileMerged, productModel);
+				fileMerged = mergeFiles(primaryPdfFile, secondaryConcatenatedFile);
+				addContentsToPdf(fileMerged, opportunity);
 
-		} catch (IOException e) {
-			LOG.error("Exception occurred during PDF file generation: " + e.getMessage());
-		} finally {
-			LOG.info("In finally block");
+			} catch (IOException e) {
+				LOG.error("Exception occurred during PDF file generation: " + e.getMessage());
+			} finally {
+				LOG.info("In finally block");
+			} 
 		}
-
 		return fileMerged;
 	}
 
@@ -90,49 +96,76 @@ public class SagiaPDFChartGenerator {
 		return outputFile;
 	}
 
-	private static void createBarChart(PDDocument document, ProductModel productModel, Path tempDir, PDPage page)
-			throws IOException {
-		DefaultCategoryDataset barDataset = new DefaultCategoryDataset();
-		barDataset.addValue(productModel.getMaxOrderQuantity(), "Series 1", "Category 1");// 50
-		barDataset.addValue(productModel.getMinOrderQuantity(), "Series 1", "Category 2");// 70
-		barDataset.addValue(productModel.getOrderQuantityInterval(), "Series 2", "Category 1");// 30
-		barDataset.addValue(productModel.getStartLineNumber(), "Series 2", "Category 2");// 90
+	private static void createBarChart(PDDocument document, OpportunityProductModel opportunity, Path tempDir, PDPage page)
+	        throws IOException {
+	    DefaultCategoryDataset barDataset = new DefaultCategoryDataset();
 
-		JFreeChart barChart = ChartFactory.createBarChart("Bar Chart", "Category", "Value", barDataset,
-				PlotOrientation.HORIZONTAL, true, true, false);
-		barChart.setBackgroundPaint(java.awt.Color.getHSBColor(0.25f, 0.51f, 0.84f));
+	    // Assuming you have a method to fetch the MarketModel List from the opportunity
+	    List<MarketModel> marketList = opportunity.getDemand().getMarkets();
 
-		ByteArrayOutputStream chartOutputStream = new ByteArrayOutputStream();
-		ChartUtilities.writeChartAsPNG(chartOutputStream, barChart, 400, 300);
+	    for (MarketModel market : marketList) {
+	        // Assuming market codes are unique, we can use them as series identifiers
+	        String marketCodeSeries = market.getCode(); // Replace getMarketCode() with your actual getter method
 
-		PDImageXObject pdImage = PDImageXObject.createFromByteArray(document, chartOutputStream.toByteArray(),
-				"bar_chart.png");
-		PDPageContentStream contentStream = new PDPageContentStream(document, page,
-				PDPageContentStream.AppendMode.APPEND, true, true);
-		contentStream.drawImage(pdImage, 50, 140);
-		contentStream.close();
+	        // Split the years and market sizes
+	        String[] years = market.getYears().split(",");
+	        String[] marketSizes = market.getMarketSizes().split(",");
+
+	        for (int i = 0; i < years.length; i++) {
+	            String yearCategory = years[i].trim();
+	            double marketSizeValue = Double.parseDouble(marketSizes[i].trim());
+	            barDataset.addValue(marketSizeValue, marketCodeSeries, yearCategory);
+	        }
+	    }
+
+	    JFreeChart barChart = ChartFactory.createBarChart("Bar Chart", "Year", "Market Size", barDataset,
+	            PlotOrientation.HORIZONTAL, true, true, false);
+	    barChart.setBackgroundPaint(java.awt.Color.getHSBColor(0.25f, 0.51f, 0.84f));
+
+	    ByteArrayOutputStream chartOutputStream = new ByteArrayOutputStream();
+	    ChartUtilities.writeChartAsPNG(chartOutputStream, barChart, 400, 300);
+
+	    PDImageXObject pdImage = PDImageXObject.createFromByteArray(document, chartOutputStream.toByteArray(),
+	            "bar_chart.png");
+	    PDPageContentStream contentStream = new PDPageContentStream(document, page,
+	            PDPageContentStream.AppendMode.APPEND, true, true);
+	    contentStream.drawImage(pdImage, 50, 140);
+	    contentStream.close();
 	}
 
-	private static void createPieChart(PDDocument document, ProductModel productModel, Path tempDir, PDPage page)
-			throws IOException {
-		DefaultPieDataset pieDataset = new DefaultPieDataset();
-		pieDataset.setValue("Category 1", productModel.getEndLineNumber());// 40
-		pieDataset.setValue("Category 2", productModel.getPriceQuantity());// 60
-		pieDataset.setValue("Category 3", productModel.getNumberContentUnits());// 20 - Package quantity
 
-		JFreeChart pieChart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, false);
-		pieChart.setBackgroundPaint(java.awt.Color.getHSBColor(0.25f, 0.51f, 0.84f));
+	private static void createPieChart(PDDocument document, OpportunityProductModel opportunity, Path tempDir, PDPage page)
+	        throws IOException {
+	    DefaultPieDataset pieDataset = new DefaultPieDataset();
 
-		ByteArrayOutputStream chartOutputStream = new ByteArrayOutputStream();
-		ChartUtilities.writeChartAsPNG(chartOutputStream, pieChart, 400, 300);
+	    List<MarketModel> marketList = opportunity.getDemand().getMarkets();
 
-		PDImageXObject pdImage = PDImageXObject.createFromByteArray(document, chartOutputStream.toByteArray(),
-				"pie_chart.png");
-		PDPageContentStream contentStream = new PDPageContentStream(document, page,
-				PDPageContentStream.AppendMode.APPEND, true, true);
-		contentStream.drawImage(pdImage, 500, 140);
-		contentStream.close();
+	    for (MarketModel market : marketList) {
+	        String marketCodeCategory = market.getCode(); // Assuming getMarketCode() is the getter for market code
+
+	        // Split the market sizes and sum them up for each market code
+	        String[] marketSizes = market.getMarketSizes().split(",");
+	        double totalMarketSize = 0;
+	        for (String size : marketSizes) {
+	            totalMarketSize += Double.parseDouble(size.trim());
+	        }
+	        pieDataset.setValue(marketCodeCategory, totalMarketSize);
+	    }
+
+	    JFreeChart pieChart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, false);
+	    pieChart.setBackgroundPaint(java.awt.Color.getHSBColor(0.25f, 0.51f, 0.84f));
+
+	    ByteArrayOutputStream chartOutputStream = new ByteArrayOutputStream();
+	    ChartUtilities.writeChartAsPNG(chartOutputStream, pieChart, 400, 300);
+
+	    PDImageXObject pdImage = PDImageXObject.createFromByteArray(document, chartOutputStream.toByteArray(),
+	            "pie_chart.png");
+	    PDPageContentStream contentStream = new PDPageContentStream(document, page,
+	            PDPageContentStream.AppendMode.APPEND, true, true);
+	    contentStream.drawImage(pdImage, 500, 140);
+	    contentStream.close();
 	}
+
 
 	private static File mergeFiles(File testPdfFile, File secFile) throws IOException {
 		PDDocument testDocument = PDDocument.load(testPdfFile);
@@ -155,16 +188,16 @@ public class SagiaPDFChartGenerator {
 		return mergedTempFile; // Return the temporary file with the merged content
 	}
 
-	private static void addContentsToPdf(File fileMerged, ProductModel productModel) throws IOException {
+	private static void addContentsToPdf(File fileMerged, OpportunityProductModel opportunity) throws IOException {
 		addBorder(fileMerged);
-		addHeaderTextContent(435, 520, fileMerged, productModel);
-		addSampleTextContent(220, 125, "Sample Text 1", fileMerged, productModel);
-		addSampleTextContent(660, 125, "Sample Text 2", fileMerged, productModel);
+		addHeaderTextContent(435, 520, fileMerged, opportunity);
+		addSampleTextContent(220, 125, "Sample Text 1", fileMerged, opportunity);
+		addSampleTextContent(660, 125, "Sample Text 2", fileMerged, opportunity);
 		addTDateAndTime(fileMerged);
-		addDescriptiveTextContent(52, 80, DESCRIPTION, fileMerged, productModel);
+		addDescriptiveTextContent(52, 80, DESCRIPTION, fileMerged, opportunity);
 	}
 
-	private static void addHeaderTextContent(float x, float y, File fileMrged, ProductModel productModel)
+	private static void addHeaderTextContent(float x, float y, File fileMrged, OpportunityProductModel opportunity)
 			throws IOException {
 		PDDocument docMerged = PDDocument.load(fileMrged);
 		PDPage pageFirst = docMerged.getPage(0);
@@ -176,7 +209,7 @@ public class SagiaPDFChartGenerator {
 		contentStreamMergedDoc.setLeading(14.5f);
 		contentStreamMergedDoc.newLineAtOffset(x, y);
 		contentStreamMergedDoc.setNonStrokingColor(java.awt.Color.BLACK);
-		contentStreamMergedDoc.showText(productModel.getSupplierAlternativeAID());
+		contentStreamMergedDoc.showText(opportunity.getDemand().getMarketSizeText());
 		contentStreamMergedDoc.endText();
 		contentStreamMergedDoc.close();
 		docMerged.save(fileMrged);
@@ -209,7 +242,7 @@ public class SagiaPDFChartGenerator {
 
 	}
 
-	private static void addSampleTextContent(float x, float y, String text, File fileMrged, ProductModel productModel)
+	private static void addSampleTextContent(float x, float y, String text, File fileMrged, OpportunityProductModel opportunity)
 			throws IOException {
 		PDDocument docMerged = PDDocument.load(fileMrged);
 		PDPage pageFirst = docMerged.getPage(0);
@@ -221,7 +254,9 @@ public class SagiaPDFChartGenerator {
 		contentStreamMergedDoc.setLeading(14.5f);
 		contentStreamMergedDoc.newLineAtOffset(x, y);
 		contentStreamMergedDoc.setNonStrokingColor(java.awt.Color.BLACK);
-		contentStreamMergedDoc.showText(productModel.getErpGroupSupplier());
+		double cagrValue = opportunity.getDemand().getCagr();
+		String cagrString = String.format("CAGR value: %.2f%%", cagrValue);
+		contentStreamMergedDoc.showText(cagrString);
 		contentStreamMergedDoc.endText();
 		contentStreamMergedDoc.close();
 		docMerged.save(fileMrged);
@@ -230,7 +265,7 @@ public class SagiaPDFChartGenerator {
 	}
 
 	private static void addDescriptiveTextContent(float x, float y, String text, File fileMrged,
-			ProductModel productModel) throws IOException {
+			OpportunityProductModel opportunity) throws IOException {
 		PDDocument docMerged = PDDocument.load(fileMrged);
 		PDPage pageFirst = docMerged.getPage(0);
 		PDPageContentStream contentStreamMergedDoc = new PDPageContentStream(docMerged, pageFirst, AppendMode.APPEND,
@@ -241,10 +276,7 @@ public class SagiaPDFChartGenerator {
 		contentStreamMergedDoc.setLeading(14.5f);
 		contentStreamMergedDoc.newLineAtOffset(x, y);
 		contentStreamMergedDoc.setNonStrokingColor(java.awt.Color.BLACK);
-		contentStreamMergedDoc.showText(productModel.getManufacturerTypeDescription());
-		contentStreamMergedDoc.newLine();
-		contentStreamMergedDoc.showText(productModel.getManufacturerTypeDescription());
-
+		contentStreamMergedDoc.showText(opportunity.getDemand().getKeyDemandDrivers());
 		contentStreamMergedDoc.endText();
 		contentStreamMergedDoc.close();
 		docMerged.save(fileMrged);

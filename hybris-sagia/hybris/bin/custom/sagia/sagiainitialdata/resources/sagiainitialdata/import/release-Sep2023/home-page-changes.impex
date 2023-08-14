@@ -1,0 +1,23 @@
+# Macros / Replacement Parameter definitions
+
+$catalogVersionStaged = catalogVersion(catalog(id[default=$contentCatalog]), version[default='Staged'])[unique=true, default=$contentCatalog:Staged]
+$catalogVersionOnline = catalogVersion(catalog(id[default=$contentCatalog]), version[default='Online'])[unique=true, default=$contentCatalog:Online]
+
+$contentCatalog = sagiaContentCatalog
+
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+$contentCVOnline = catalogVersion(catalogVersion.catalog(Catalog.id[default=$contentCatalog]), catalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+
+
+INSERT_UPDATE CMSLinkComponent ; $contentCV[unique = true]; uid[unique = true] 		; name						  	  ; linkName  [lang = en]     ; linkName [lang = ar] 	;url										;
+							   ;						  ; carousel-youtube-video	; carousel-youtube-video 	      ;			                  ;                         ;https://www.youtube.com/embed/u3sQ7TDFUWs 	;
+
+INSERT_UPDATE CMSLinkComponent ; $contentCVOnline[unique = true]; uid[unique = true] 		; name					  ; linkName  [lang = en]     ; linkName [lang = ar] 	;url										;
+							   ;						  		; carousel-youtube-video	; carousel-youtube-video  ;			                  ;                         ;https://www.youtube.com/embed/u3sQ7TDFUWs 	;
+
+
+UPDATE ExploreSaudiCarouselComponent; uid[unique = true]   					; videoLink(uid, $catalogVersionStaged)     ; $contentCV[unique = true]
+									; explore7KeyReasonsCarouselComponent 	; carousel-youtube-video  ;
+
+UPDATE ExploreSaudiCarouselComponent; uid[unique = true]   					; videoLink(uid, $catalogVersionOnline)     ; $contentCVOnline[unique = true]
+									; explore7KeyReasonsCarouselComponent 	; carousel-youtube-video  ;

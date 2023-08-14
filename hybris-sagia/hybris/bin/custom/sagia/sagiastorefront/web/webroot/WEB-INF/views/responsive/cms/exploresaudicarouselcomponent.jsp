@@ -14,7 +14,28 @@
 			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 order-lg-1 order-md-1 order-2">
-						<div id="accordion-explore">
+						<div id="accordion-explore" class="contact-accordion">
+							<c:forEach var="currentComponent1" items="${ExploreSaudi}" varStatus="loop">
+		                        <div class="card">
+		                          <div class="card-header" id="heading${loop.index}">
+		                            <h5 class="mb-0">
+		                              <button class="btn btn-link collapsed" data-toggle="collapse"
+		                                data-target="#collapse${loop.index}" aria-expanded="true" aria-controls="collapse${loop.index}">
+		                                <span>${loop.index + 1}</span>&nbsp;&nbsp;${currentComponent1.reasonTitle}
+		                              </button>
+		                            </h5>
+		                          </div>
+		
+		                          <div id="collapse${loop.index}" class="collapse" aria-labelledby="heading${loop.index}"
+		                            data-parent="#accordion-explore">
+		                            <div class="card-body">
+		                              ${currentComponent1.reasonFullDescription}
+		                            </div>
+		                          </div>
+		                        </div>
+	                        </c:forEach>
+	                      </div>
+						<!-- <div id="accordion-explore">
 							<c:forEach var="currentComponent1" items="${ExploreSaudi}" varStatus="loop">
 								<div class="card">
 									<div class="card-header">
@@ -30,7 +51,7 @@
 									</div>
 								</div>
 							</c:forEach>
-						</div>
+						</div> -->
 					</div>
 					<div class="col-md-6 order-lg-2 order-md-2 order-1">
 						<div class="embed-responsive embed-responsive-16by9">

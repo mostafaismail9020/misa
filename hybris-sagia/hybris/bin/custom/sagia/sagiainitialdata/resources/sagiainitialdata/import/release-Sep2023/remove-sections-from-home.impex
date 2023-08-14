@@ -23,5 +23,5 @@ INSERT_UPDATE ContentSlot; uid[unique = true]             ; name                
                          ; PortalPageTopSlot-$page        ; PortalPageTop        ; true  ; home-page-icons, explore7KeyReasonsCarouselComponent, numbertalk-container, last-news-component  ;   
 
 INSERT_UPDATE ContentSlot; uid[unique = true]             ; name                 ; active; cmsComponents(uid, $catalogVersionOnline)														; $contentCVOnline[unique = true] ;
-                         ; PortalPageTopSlot-$page        ; PortalPageTop        ; true  ; home-page-icons, explore7KeyReasonsCarouselComponent, numbertalk-container, last-news-component  ;   
+                         ; PortalPageTopSlot-$page        ; PortalPageTop        ; true  ; SagiaGlobalSearchBarComponent-homepage, home-page-icons, explore7KeyReasonsCarouselComponent, numbertalk-container, last-news-component  ;   
                          

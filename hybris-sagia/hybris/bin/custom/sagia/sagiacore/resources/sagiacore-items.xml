@@ -56,6 +56,8 @@
        <collectiontype code="TargetedInvestorsSectionList" elementtype="TargetedInvestorsSection" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
+       <collectiontype code="MarketList" elementtype="Market" type="list"/>
+       
 
 	   <collectiontype code="InvestSaudiMediaList" elementtype="InvestSaudiMedia" autocreate="true" generate="true" type="list"/>
    </collectiontypes>
@@ -644,7 +646,7 @@
 				<modifiers />
 			</targetElement>
 		</relation>
-        
+						
         <!-- Invest Saudi Changes Ends  -->
     </relations>
 
@@ -3962,6 +3964,11 @@
                             </property>
                         </custom-properties>
                     </attribute>
+                    <attribute qualifier="demand" type="Demand">
+                       <modifiers optional="true"/>
+                       <persistence type="property"/>
+                       <description>Link to the associated Demand</description>
+                    </attribute>
                     
                 </attributes>
             </itemtype>
@@ -5185,10 +5192,6 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute qualifier="videoLink" type="CMSLinkComponent">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
                 </attributes>
             </itemtype>
             
@@ -5550,7 +5553,7 @@
             </itemtype>
             
             <itemtype code="SagiaGlobalSearchBarComponent" generate="true"
-                      extends="SimpleCMSComponent" autocreate="true"
+                      extends="SearchBoxComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.SagiaGlobalSearchBarComponent">
                 <description>Sagia Global SearchBar Component</description>
             </itemtype>
@@ -6221,6 +6224,10 @@
                         <description>Reason title</description>
                     </attribute>
                     <attribute qualifier="capacity" type="int">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="videoLink" type="CMSLinkComponent">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
@@ -11620,6 +11627,92 @@
                     </attribute>
                 </attributes>
             </itemtype>
+            
+            <!-- Start of opportunity pdf generation items -->
+            
+            <itemtype code="Demand" extends="GenericItem" autocreate="true" generate="true"
+            jaloclass="com.investsaudi.portal.core.jalo.Demand">
+            <description>Demand Section for an Opportunity</description>
+            <deployment table="Demand" typecode="32087"/>
+    <attributes>
+        <attribute qualifier="uid" type="java.lang.String">
+            <modifiers optional="false" unique="true"/>
+            <persistence type="property"/>
+        </attribute>
+        <attribute qualifier="opportunityProduct" type="OpportunityProduct">
+            <modifiers optional="true"/>
+            <persistence type="property"/>
+            <description>Link to the associated OpportunityProduct</description>
+        </attribute>
+        <attribute qualifier="markets" type="MarketList">
+            <modifiers optional="true" />
+            <persistence type="property"/>
+            <description>List of markets associated with the Demand</description>
+       </attribute>
+
+        <attribute qualifier="cagr" type="java.lang.Double">
+            <modifiers optional="true"/>
+            <persistence type="property"/>
+        </attribute>
+        <attribute qualifier="marketSizeText" type="localized:java.lang.String">
+            <modifiers read="true" write="true" search="true"
+                       optional="true"/>
+            <persistence type="property">
+                <columntype database="oracle">
+                    <value>CLOB</value>
+                </columntype>
+                <columntype database="mysql">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sqlserver">
+                    <value>TEXT</value>
+                </columntype>
+                <columntype database="sap">
+                    <value>NCLOB</value>
+                </columntype>
+                <columntype>
+                    <value>HYBRIS.LONG_STRING</value>
+                </columntype>
+            </persistence>
+        </attribute>
+
+        <attribute qualifier="keyDemandDrivers" type="java.lang.String">
+            <modifiers optional="true"/>
+            <persistence type="property"/>
+            <description>HTML formatted long text for key demand drivers</description>
+        </attribute>
+    </attributes>
+</itemtype>
+
+         <itemtype code="Market" extends="GenericItem" autocreate="true" generate="true"
+          jaloclass="com.investsaudi.portal.core.jalo.Market">
+            <description>Market Section for Demand</description>
+            <deployment table="Markets" typecode="32088"/>>
+    <attributes>
+        <attribute qualifier="code" type="java.lang.String">
+            <modifiers optional="false" unique="true"/>
+            <persistence type="property"/>
+        </attribute>
+        <attribute qualifier="name" type="java.lang.String">
+            <modifiers optional="false"/>
+            <persistence type="property"/>
+        </attribute>
+        <attribute qualifier="years" type="java.lang.String">
+            <modifiers optional="true"/>
+            <persistence type="property"/>
+            <description>Comma-separated integers representing years</description>
+        </attribute>
+        <attribute qualifier="marketSizes" type="java.lang.String">
+            <modifiers optional="true"/>
+            <persistence type="property"/>
+            <description>Comma-separated integers representing market sizes, in sync with years</description>
+        </attribute>
+    </attributes>
+</itemtype>
+            
+            
+            <!-- End of pdf opportunity generation items -->
+            
         </typegroup>
     </itemtypes>
 </items>

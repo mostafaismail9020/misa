@@ -1,0 +1,20 @@
+
+#Catalog Version Synchronization with Trigger
+INSERT_UPDATE CatalogVersionSyncJob; code[unique=true]; sourceVersion(catalog(id), version)[unique=true]; targetVersion(catalog(id), version)[unique=true];sessionLanguage(isocode)
+;sagiaProductCatalogVersionSyncJob;sagiaProductCatalog:Staged;sagiaProductCatalog:Online;en
+
+INSERT_UPDATE CatalogVersionSyncCronJob; code[unique=true]; job(code);sessionLanguage(isocode)
+;sagiaProductCatalogSyncCronJob;sagiaProductCatalogVersionSyncJob;en
+
+INSERT_UPDATE Trigger; cronJob(code)[unique=true]; cronExpression
+; sagiaProductCatalogSyncCronJob ; 0 0/2 * 1/1 * ? *
+
+
+
+#Update Solr Indexing with Trigger
+INSERT_UPDATE SolrIndexerCronJob; code[unique=true]; job(code); facetSearchConfig(name);indexerOperation(code);sessionLanguage(isocode)
+;sagiaSolrIndexerUpdateCronJob;solrIndexerJob;sagiaIndex;update;en
+
+
+INSERT_UPDATE Trigger; cronJob(code)[unique=true]; cronExpression
+; sagiaSolrIndexerUpdateCronJob ; 0 0/2 * 1/1 * ? *

@@ -5185,10 +5185,6 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute qualifier="videoLink" type="CMSLinkComponent">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
                 </attributes>
             </itemtype>
             
@@ -6221,6 +6217,10 @@
                         <description>Reason title</description>
                     </attribute>
                     <attribute qualifier="capacity" type="int">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="videoLink" type="CMSLinkComponent">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>

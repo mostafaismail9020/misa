@@ -90,6 +90,66 @@ ACC.autocomplete = {
 							});
 						});
 					}*/
+					if(data.articles != null){
+						$.each(data.articles, function (i, obj)
+						{
+							autoSearchData.push({
+								value: ACC.sanitizer.sanitize(obj.name),
+								code: obj.code,
+								desc: ACC.sanitizer.sanitize(obj.description),
+								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
+								url:  ACC.config.encodedContextPath + obj.url,
+								// price: obj.price.formattedValue,
+								type: "productResult",
+								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
+							});
+						});
+					}
+					if(data.events != null){
+						$.each(data.events, function (i, obj)
+						{
+							autoSearchData.push({
+								value: ACC.sanitizer.sanitize(obj.name),
+								code: obj.code,
+								desc: ACC.sanitizer.sanitize(obj.description),
+								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
+								url:  ACC.config.encodedContextPath + obj.url,
+								// price: obj.price.formattedValue,
+								type: "productResult",
+								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
+							});
+						});
+					}
+					if(data.news != null){
+						$.each(data.news, function (i, obj)
+						{
+							autoSearchData.push({
+								value: ACC.sanitizer.sanitize(obj.name),
+								code: obj.code,
+								desc: ACC.sanitizer.sanitize(obj.description),
+								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
+								url:  ACC.config.encodedContextPath + obj.url,
+								// price: obj.price.formattedValue,
+								type: "productResult",
+								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
+							});
+						});
+					}
+					if(data.opportunities != null){
+						$.each(data.opportunities, function (i, obj)
+						{
+							autoSearchData.push({
+								value: ACC.sanitizer.sanitize(obj.name),
+								code: obj.code,
+								desc: ACC.sanitizer.sanitize(obj.description),
+								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
+								url:  ACC.config.encodedContextPath + obj.url,
+								// price: obj.price.formattedValue,
+								type: "productResult",
+								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
+							});
+						});
+					}
 					if(data.products != null){
 						$.each(data.products, function (i, obj)
 						{

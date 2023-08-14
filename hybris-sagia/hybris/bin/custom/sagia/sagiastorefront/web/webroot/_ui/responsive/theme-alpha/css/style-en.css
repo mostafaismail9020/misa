@@ -7574,6 +7574,13 @@ figure h2 {
         margin-top: 10px;
         color: #00714D;
     }
+.container.banner.homeLink {
+    font-family: '72';
+     z-index: 9999;
+    font-weight: 400;
+    color: #00714D;
+
+}
 
  .col-md-12.card-wrapper {
         display: flex;

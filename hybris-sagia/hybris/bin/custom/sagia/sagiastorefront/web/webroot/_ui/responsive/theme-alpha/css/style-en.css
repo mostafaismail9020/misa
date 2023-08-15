@@ -197,6 +197,9 @@ ul.sagiaNavigation-subNav li svg {
 #topbar .contact-info i.icofont-phone {
 	margin-left: 15px;
 }
+.pageLabel--mediaCenter-events #topbar .social-links a{
+color: #BF9B2E;
+}
 .pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
 color: #00714D;
 }
@@ -710,6 +713,9 @@ ul.dropdown-list li a {
 	background: #0000002e;
 	border-radius: 8px;
 	padding: 6px 10px;
+}
+.pageLabel--mediaCenter-events .btn-trans label.lang-btn {
+    color: #BF9B2E;
 }
 .pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn {
     color: #00714D;

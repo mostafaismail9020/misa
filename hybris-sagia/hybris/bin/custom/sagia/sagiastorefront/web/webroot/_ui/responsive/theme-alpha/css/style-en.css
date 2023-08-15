@@ -8785,14 +8785,12 @@ select {
 }
 
 #News_press .News_press_bgwhite {
-	background-color: #ffffffdb;
+	background-color: #BF9B2E;
 	position: absolute;
 	top: 20%;
 	right: 0px;
 	height: auto;
 	width: 100%;
-	box-shadow: 0px 4px 30px #333;
-	border-radius: 5px;
 }
 
 #News_press h4.date {

@@ -1,0 +1,17 @@
+$contentCatalog=sagiaContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online, unique=true]
+
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]           ; name                ; url    ; styleAttributes ; visible[default= true] ; linkName[lang = en]; $contentCV[unique = true];
+; sagiaHomepageLinkComponent ; Sagia Homepage Link ; "/"    ; class="container banner homeLink" ;                           ; "> Home"             ;
+
+
+
+
+
+UPDATE ContentSlot; uid[unique=true]                           ; cmsComponents(uid, $contentCV); $contentCV
+; PortalPageMainSlot-opportunity-search-page ; sagiaHomepageLinkComponent , all-opportunity-banner-container, sagia-search-box-component, generic-paragraph-opportunities, sagia-search-result-component ;
+
+
+

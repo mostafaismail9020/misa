@@ -735,6 +735,9 @@ ul.dropdown-list li a {
 	text-decoration-color: #00A6BE;
 	text-decoration-thickness:3px;
 }
+.pageLabel--mediaCenter-events .btn-trans label.lang-btn.active{
+    color: #BF9B2E;
+}
 .pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn.active{
     color: #00714D;
 }

@@ -27,6 +27,8 @@
 	                                 		</div>
 	                                 		<div class="col-md-5 col-sm-12 content-slider-part">
 	                                    		<div class="News_press_bgwhite">
+	                                    		   <c:url value="${mediaCenter.mediaCenterUrl}/${mediaCenter.mediaCenterCode}" var="mediaCenterUrl"/>
+                                                   <a href="${mediaCenterUrl}">
 		                                       		<div class="top_date position-absolute">
 		                                       			<c:if test="${!mediaCenter.isVideoComponent}">
 		                                                	<h4 class="date"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="d" /></h4>
@@ -53,24 +55,11 @@
 				                                                          	<input type="hidden" id="" value="${fn:escapeXml(mediaCenter.embedURL)}">
 				                                                        </div>
 				                                                 	</c:when>
-		                                                 			<c:otherwise>                                                                                             
-			                                                        	<div class="row ">
-			                                                           		<div class="col pull-left p-0">
-			                                                           			<c:url value="${mediaCenter.mediaCenterUrl}/${mediaCenter.mediaCenterCode}" var="mediaCenterUrl"/>       
-				                                                             	<a href="${mediaCenterUrl}">
-					                                                              	<div class="know_more"><spring:theme code="portal.media.know.more" text="Know more"/>&nbsp;
-					                                                                	<svg xmlns="http://www.w3.org/2000/svg" width="15.804" height="12.058" viewBox="0 0 15.804 12.058">
-					                                                                   		<path id="Path" d="M12.058,6.045l-.87.87L6.651,2.393V15.8H5.408V2.393L.87,6.915,0,6.045,6.029,0Z" transform="translate(15.804) rotate(90)" fill="#00a6be"/>
-					                                                                   	</svg>
-					                                                              	</div>
-				                                                            	</a>
-			                                                           		</div>
-			                                                         	</div>
-		                                                 			</c:otherwise>
 	                                             				</c:choose>                                                
 															</div>
 				                                        </div>
 													</div>
+													</a>
 												</div>
 				     						</div>
 			                            </div>

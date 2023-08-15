@@ -8794,7 +8794,7 @@ select {
 }
 
 #News_press h4.date {
-	color: #bf9b2e;
+	color: #fff;
 	font-size: 37px;
 	font-weight: 600;
 	letter-spacing: 2.72px;
@@ -8813,7 +8813,7 @@ select {
 }
 
 #News_press .top_date {
-	background-color: #ffffff;
+	background-color: #00714D;
 	position: absolute;
 	top: -41px;
 	box-shadow: 0px 4px 30px #333;

@@ -197,7 +197,7 @@ ul.sagiaNavigation-subNav li svg {
 #topbar .contact-info i.icofont-phone {
 	margin-left: 15px;
 }
-.pageLabel--mediaCenter-events #topbar .social-links a{
+.pageLabel--mediaCenter #topbar .social-links a{
 color: #BF9B2E;
 }
 .pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
@@ -249,7 +249,7 @@ box-shadow: 0px 2px #00714D;
 #header.header-scrolled .hd-scroll {
 	display: block;
 }
-.pageLabel--mediaCenter-events #header.header-scrolled .nav-menu a {
+.pageLabel--mediaCenter #header.header-scrolled .nav-menu a {
     color: #BF9B2E;
 }
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu a {
@@ -342,7 +342,7 @@ box-shadow: 0px 2px #00714D;
 	height: 6px;
 	border: none;
 }
-.pageLabel--mediaCenter-events #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after{
+.pageLabel--mediaCenter #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after{
     color: #BF9B2E;
     filter: none;
     opacity: 1;
@@ -415,7 +415,7 @@ box-shadow: 0px 2px #00714D;
 	display: block;
 	padding: 0;
 }
-.pageLabel--mediaCenter-events .nav-menu a {
+.pageLabel--mediaCenter .nav-menu a {
 	color: #BF9B2E;
 }
 .pageLabel--sectors-opportunities-opportunities .nav-menu a
@@ -714,7 +714,7 @@ ul.dropdown-list li a {
 	border-radius: 8px;
 	padding: 6px 10px;
 }
-.pageLabel--mediaCenter-events .btn-trans label.lang-btn {
+.pageLabel--mediaCenter .btn-trans label.lang-btn {
     color: #BF9B2E;
 }
 .pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn {
@@ -735,7 +735,7 @@ ul.dropdown-list li a {
 	text-decoration-color: #00A6BE;
 	text-decoration-thickness:3px;
 }
-.pageLabel--mediaCenter-events .btn-trans label.lang-btn.active{
+.pageLabel--mediaCenter .btn-trans label.lang-btn.active{
     color: #BF9B2E;
 }
 .pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn.active{

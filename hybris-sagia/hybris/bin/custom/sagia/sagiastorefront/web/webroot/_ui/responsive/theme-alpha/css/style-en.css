@@ -8824,7 +8824,7 @@ select {
 }
 
 #News_press .highlight_title {
-	color: #025635;
+	color: #fff;
 	font-size: 45px;
 	letter-spacing: 2.72px;
 	overflow: hidden;
@@ -8842,7 +8842,7 @@ select {
 }
 
 #News_press .para_title {
-	color: #484848;
+	color: #fff;
 	font-size: 20px;
 	letter-spacing: 2.12px;
 	overflow: hidden;

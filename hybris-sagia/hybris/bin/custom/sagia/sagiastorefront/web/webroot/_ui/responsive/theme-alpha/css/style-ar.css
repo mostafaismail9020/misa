@@ -8723,9 +8723,8 @@ select {
 }
 
 #News_press .highlight_title {
-	color: #025635;
+	color: #fff;
 	font-size: 45px;
-
 	overflow: hidden;
 	max-height: 14rem;
 	-webkit-box-orient: vertical;
@@ -8741,9 +8740,8 @@ select {
 }
 
 #News_press .para_title {
-	color: #484848;
+	color: #fff;
 	font-size: 20px;
-
 	overflow: hidden;
 	max-height: 14rem;
 	-webkit-box-orient: vertical;

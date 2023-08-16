@@ -13736,6 +13736,7 @@ color: #F8F9FB;
     }
     .col-md-12.card-wrapper.alternate {
         background-color: rgba(191, 155, 46, 0.07);
+        border-radius: 10px;
     }
      .flip-card {
             padding-top: 5vh;

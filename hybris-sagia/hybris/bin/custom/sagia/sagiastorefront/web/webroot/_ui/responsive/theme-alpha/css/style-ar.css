@@ -8669,6 +8669,15 @@ select {
 	transform: translateX(-50%) translateY(-50%);
 }
 
+.pageLabel--mediaCenter #News_press .News_Press_Releases{
+    color: #BF9B2E;
+    font-family: 'Arial';
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
 #News_press .News_Press_Releases {
 	font-size: 60px;
 	color: #ffffff;

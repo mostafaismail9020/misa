@@ -4,7 +4,7 @@ $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCata
 
 
 INSERT_UPDATE CMSLinkComponent; uid[unique = true]           ; name                ; url    ; styleAttributes ; visible[default= true] ; linkName[lang = en]; $contentCV[unique = true];
-; sagiaHomepageLinkComponent ; Sagia Homepage Link ; "/"    ; class="container banner homeLink" ;                           ; "> Home"             ;
+; sagiaHomepageLinkComponent ; Sagia Homepage Link ; "/"    ; class="container banner homeLink" ;                           ; "< Home"             ;
 
 
 

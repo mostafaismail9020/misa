@@ -1535,7 +1535,7 @@ svg #wheel {
 	font-weight: 600;
 	line-height: 37px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -1567,7 +1567,7 @@ svg #wheel {
 #when-number-talk:before {
 	content: '';
 	position: absolute;
-	background-image: url(../img/WhenNumberTalk.png);
+	background-color: rgba(0, 113, 77, 0.2);
 	background-size: cover;
 	width: 100%;
 	height: 100%;
@@ -1580,7 +1580,7 @@ svg #wheel {
 	font-weight: 400;
 	line-height: 28px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -1589,7 +1589,7 @@ svg #wheel {
 	font-weight: 400;
 	line-height: 16px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -6191,7 +6191,7 @@ img.accountLogin-headline-logo {
 		font-weight: 400;
 		line-height: 28px;
 		letter-spacing: 0em;
-		color: var(--misaFirstColor);
+		color: var(--misaSecondColor);
 	}
 
 	.when-number-talk-container .talk_item-text {
@@ -6199,7 +6199,7 @@ img.accountLogin-headline-logo {
 		font-weight: 400;
 		line-height: 16px;
 		letter-spacing: 0em;
-		color: var(--misaFirstColor);
+		color: var(--misaSecondColor);
 	}
 
 	.header-home-container p {
@@ -14205,8 +14205,6 @@ border-color: #BF9B2E;
 		word-break: break-all;
 	}
 	.opportunity-card .opp-type {
-		//font-size: 20px;
-		//height: 85px;
 		word-break: break-all;
 	}
 	.opportunity-card .content-box {
@@ -14262,7 +14260,6 @@ border-color: #BF9B2E;
         margin: 0;
         border: 0;
         -webkit-appearance: none;
-        //background: none;
         font-size: 14px;
         color: #5f6470;
         width: 100%;

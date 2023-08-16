@@ -9042,6 +9042,10 @@ background: #00714D ;
 .content-slider-part {
 	margin-left: auto;
 }
+.content-slider-part {
+	margin-left: 0;
+	margin-right: auto;
+}
 
 #News_press .carousel-item {
 	height: 100vh;

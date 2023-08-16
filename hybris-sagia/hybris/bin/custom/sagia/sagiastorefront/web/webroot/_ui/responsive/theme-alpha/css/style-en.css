@@ -8911,7 +8911,9 @@ background: #00714D ;
 	outline: 0;
 	opacity: 1;
 }
-
+.pageLabel--mediaCenter  #News_press .carousel-indicators li  {
+    border: 3px solid #00714D;
+}
 #News_press .carousel-indicators li {
 	width: 20px;
 	height: 20px;
@@ -8919,7 +8921,10 @@ background: #00714D ;
 	border: 3px solid #00a6be;
 	background-color: #ffffff00;
 }
-
+.pageLabel--mediaCenter #News_press .carousel-indicators li.active {
+    border: 3px solid #00714D;
+	background-color: #00714D;
+}
 #News_press .carousel-indicators li.active {
 	border: 3px solid #00a6be;
 	background-color: #00a6be;

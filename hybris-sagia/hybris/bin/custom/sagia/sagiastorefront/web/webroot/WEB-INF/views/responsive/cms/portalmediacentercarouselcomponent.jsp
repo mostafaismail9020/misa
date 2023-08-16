@@ -29,18 +29,14 @@
 	                                    		<div class="News_press_bgwhite">
 	                                    		   <c:url value="${mediaCenter.mediaCenterUrl}/${mediaCenter.mediaCenterCode}" var="mediaCenterUrl"/>
                                                    <a href="${mediaCenterUrl}">
-		                                       		<div class="top_date position-absolute">
-		                                       			<c:if test="${!mediaCenter.isVideoComponent}">
-		                                                	<h4 class="date"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="d" /></h4>
-		                                          			<h6 class="date_name"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="MMMM" /></h6>
-		                                          		</c:if>
-		                                          		<%--                                         
-			                                          	<c:if test="${mediaCenter.isVideoComponent}">
-			                                                <h4 class="date">09</h4>
-			                                                <h6 class="date_name">AUG 2021</h6>
-			                                          	</c:if>
-			                                          	--%>
-	                                       			</div>
+		                                       		<c:if test="${not mediaCenter.isVideoComponent}">
+                                                        <c:if test="${not empty mediaCenter.mediaCenterStartDate}">
+                                                            <div class="top_date position-absolute">
+                                                                <h4 class="date"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="d" /></h4>
+                                                                <h6 class="date_name"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="MMMM" /></h6>
+                                                            </div>
+                                                        </c:if>
+                                                    </c:if>
 	                                       			<div class="p-5 paddding_align">
 			                                        	<div>
 			                                        		<h3 class="highlight_title">${mediaCenter.mediaCenterTitle}</h3>

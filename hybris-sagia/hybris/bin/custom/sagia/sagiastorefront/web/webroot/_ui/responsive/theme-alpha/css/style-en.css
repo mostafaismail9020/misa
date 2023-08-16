@@ -8883,6 +8883,10 @@ select {
 	background-image: url(../img/news_page/Icon_feather-arrow-right.png);
 }
 
+.pageLabel--mediaCenter #News_press .control_arrow  {
+background: #00714D ;
+}
+
 #News_press .control_arrow {
 	background: #00a6be;
 	width: 50px;

@@ -8731,6 +8731,13 @@ select {
 	text-align: center;
 }
 
+.pageLabel--mediaCenter #News_press .highlight_title {
+font-size: 1vw;
+}
+.pageLabel--mediaCenter #News_press .para_title {
+font-size: 0.8vw;
+}
+
 #News_press .highlight_title {
 	color: #fff;
 	font-size: 45px;

@@ -22,33 +22,38 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <c:forEach items="${eventsPageData.results}" var="eventComponent">
-                    <div class="col-sm-12 col-md-4 mb-5">
-                        <div class="news-card">
-                            <div class="news-date text-center">
-                                <div class="day">
-                                    <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" />
+                <div class="row">
+                    <c:forEach items="${eventsPageData.results}" var="eventComponent">
+                        <div class="col-sm-12 col-md-4 mb-5">
+                            <div class="flip-card">
+                                <div class="flip-card-front">
+                                    <div class="news-date text-center">
+                                        <div class="day">
+                                            <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" />
+                                        </div>
+                                        <div class="month">
+                                            <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMMM" />
+                                        </div>
+                                    </div>
+                                    <div class="card-img">
+                                    	<img class="img-fluid w-100 events-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}"  alt="${eventComponent.eventName}" loading="lazy">
+
+                                    	</div>
+                                    <div class="flip-card-text">
+                                    	<p>${eventComponent.eventLocation}</p>
+                                        <h2>${eventComponent.eventName}</h2>
+                                        <p>${eventComponent.eventShortInformation}</p>
+                                        <a class="btn btn-primary-fill btn-knowmore" href="${eventsUrl}/${eventComponent.uid}"><spring:theme code="portal.media.know.more" text="Know More" />&nbsp;
+                                            <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt="" /></span>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="month">
-                                    <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMMM" />
-                                </div>
-                            </div>
-                            <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}"
-                                    alt="${eventComponent.eventName}" loading="lazy">
-                            <div class="news-card-inner">
-                                <h3>${eventComponent.eventName}</h3>
-                                <p>${eventComponent.eventShortInformation}</p>
-                                <a class="btn btn-primary-fill btn-knowmore" href="${eventsUrl}/${eventComponent.uid}"><spring:theme code="portal.media.know.more" text= "Know More"/>&nbsp;
-                                    <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
-                                </a>
                             </div>
                         </div>
-                    </div>
-                </c:forEach>
+                    </c:forEach>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <section class="Inc-mediaCenter-sectionwrapper">
         <c:url value="/mediaCenter/news" var="newsUrl" />

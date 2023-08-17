@@ -10692,6 +10692,11 @@ body.page-living-in-saudi .content {
 .region-map a.active path.outer {
 	fill: #bf9b2e99;
 }
+.pageLabel--mediaCenter .Inc-mediaCenter-sectionwrapper h1.service-title {
+    color: #00714D;
+    font: 'Arial';
+    font-size: 2.5vw;
+}
 .Inc-mediaCenter-sectionwrapper h1.service-title {
 	position: relative;
 	color: #BF9B2E;

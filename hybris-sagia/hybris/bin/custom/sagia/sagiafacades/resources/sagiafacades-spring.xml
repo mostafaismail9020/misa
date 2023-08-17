@@ -2237,6 +2237,9 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 	</bean>
 
+	<bean id="sagiaProductImageUrlValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaProductImageUrlValueProvider" parent="productUrlValueProvider">
+	</bean>
+	
 	<bean id="sagiaResourceComponentYearValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentYearValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 		<property name="i18nService" ref="i18nService"/>

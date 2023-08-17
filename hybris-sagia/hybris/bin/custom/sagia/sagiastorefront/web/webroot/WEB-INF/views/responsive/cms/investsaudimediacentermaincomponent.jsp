@@ -7,13 +7,45 @@
 
 <! -- Start InvestSaudiMediaCenterMainComponent -->
 <main>
-    <section class="Inc-mediaCenter-wrapper-header text-center">
+<section class="tab-section Inc-mediaCenter-sectionwrapper">
+        <c:url value="/mediaCenter/events" var="eventsUrl" />
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="w-100 title service-title">
+                    ${eventsSectionTitle}
+                    <a href="${eventsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
+                            <path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward" d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z" transform="translate(-7.875 -11.252)" fill="#fff"></path>
+                        </svg>
+                    </a>
+                </h1>
+            </div>
+        </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-10 m-auto">
-                    <h1><spring:theme code="portal.media.homepage.mediacenter.overview" text="MEDIA CENTER OVERVIEW" /></h1>
-                    <p><spring:theme code="portal.media.homepage.mediacenter.description" text="" /></p>
-                </div>
+                <c:forEach items="${eventsPageData.results}" var="eventComponent">
+                    <div class="col-sm-12 col-md-4 mb-5">
+                        <div class="news-card">
+                            <div class="news-date text-center">
+                                <div class="day">
+                                    <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" />
+                                </div>
+                                <div class="month">
+                                    <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMMM" />
+                                </div>
+                            </div>
+                            <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}"
+                                    alt="${eventComponent.eventName}" loading="lazy">
+                            <div class="news-card-inner">
+                                <h3>${eventComponent.eventName}</h3>
+                                <p>${eventComponent.eventShortInformation}</p>
+                                <a class="btn btn-primary-fill btn-knowmore" href="${eventsUrl}/${eventComponent.uid}"><spring:theme code="portal.media.know.more" text= "Know More"/>&nbsp;
+                                    <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
             </div>
         </div>
     </section>
@@ -61,51 +93,6 @@
             </div>
         </div>
     </section>
-
-    <section class="tab-section Inc-mediaCenter-sectionwrapper">
-        <c:url value="/mediaCenter/events" var="eventsUrl" />
-        <div class="container">
-            <div class="row text-center">
-                <img class="img-fluid title-icon" src="${commonResourcePath}/images/events_icon.png" alt="" loading="lazy"/>
-                <h1 class="w-100 title service-title">
-                    ${eventsSectionTitle}
-                    <a href="${eventsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
-                            <path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward" d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z" transform="translate(-7.875 -11.252)" fill="#fff"></path>
-                        </svg>
-                    </a>
-                </h1>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <c:forEach items="${eventsPageData.results}" var="eventComponent">
-                    <div class="col-sm-12 col-md-4 mb-5">
-                        <div class="news-card">
-                            <div class="news-date text-center">
-                                <div class="day">
-                                    <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" />
-                                </div>
-                                <div class="month">
-                                    <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMMM" />
-                                </div>
-                            </div>
-                            <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}"
-                                    alt="${eventComponent.eventName}" loading="lazy">
-                            <div class="news-card-inner">
-                                <h3>${eventComponent.eventName}</h3>
-                                <p>${eventComponent.eventShortInformation}</p>
-                                <a class="btn btn-primary-fill btn-knowmore" href="${eventsUrl}/${eventComponent.uid}"><spring:theme code="portal.media.know.more" text= "Know More"/>&nbsp;
-                                    <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </div>
-    </section>
-
     <section class="Inc-mediaCenter-sectionwrapper pb-0">
         <c:url value="/mediaCenter/resources" var="resourcesUrl" />
         <div class="container">

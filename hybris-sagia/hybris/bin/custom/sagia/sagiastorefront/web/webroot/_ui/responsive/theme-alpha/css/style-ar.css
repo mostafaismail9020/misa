@@ -9171,7 +9171,10 @@ background: #00714D ;
 .news-header {
 	font-size: 32px;
 }
-
+.pageLabel--mediaCenter .tab-section {
+background-image: none;
+background-color: fff;
+}
 .tab-section {
 	background-image: url('../img/news-tab-banner.png');
 	width: 100%;

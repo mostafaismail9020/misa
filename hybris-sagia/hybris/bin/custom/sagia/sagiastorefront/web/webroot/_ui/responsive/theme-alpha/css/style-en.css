@@ -2834,6 +2834,10 @@ p.contowl {
 	padding-top: 69px;
 	padding-bottom: 84px;
 }
+.pageLabel--mediaCenter .explore-btn{
+    background-color: #00714D;
+    text-transform: none;
+}
 
 .explore-btn {
 	position: absolute;

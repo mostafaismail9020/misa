@@ -48,14 +48,20 @@
 					</a>
 				</button>
 				<c:if test="${not empty productData.pdfUrl}">
-					<!--<p class="text-center" style="width: 100%">-->
-					<a rel="noopener" id="pdfDownloadTrigerrer" href="${productData.pdfUrl}" target="_blank" download></a>
+					<button id="pdfDownloadTrigerrer" class="download-opportunity" onclick="callController()">
+						<img class="img-fluid download-icon" src="${commonResourcePath}/images/Icon awesome-download.png" alt="" />
+					</button>
+  					<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
+					
+
+					<!-- <a rel="noopener" id="pdfDownloadTrigerrer" href="${productData.pdfUrl}" target="_blank" download></a>
 						<a rel="noopener"  id="download" 
 								data-toggle="modal" data-target="#downloadModal" target="_blank" class="download-opportunity" download="">									
-							<!-- <spring:theme code="portal.opportunity.download.here.label"/> -->
+					--><!-- <spring:theme code="portal.opportunity.download.here.label"/> -->
+					<!--
 							<img class="img-fluid download-icon" src="${commonResourcePath}/images/Icon awesome-download.png" alt="" />
 						</a>
-					</p>							
+					</p>							 -->
 				</c:if>
 			</div>
 		</div>    
@@ -64,7 +70,7 @@
 	<!-- <div class="container"> -->
 	<div class="row opportunity-article-row">
 		
-		<c:if test="${not empty productData.description}">
+		<!-- <c:if test="${not empty productData.description}"> -->
 			<section class="container sectors-content">
 				<div class="row">
 					<div class="col-md-12">				
@@ -81,13 +87,14 @@
 									</p>
 									<p>&nbsp;</p>
 								</c:if>					 -->
-								${productData.description}					
+								${productData.description}		
+								<a>Text to be displayed. This is an example Opportunity description</a>			
 							</div>
 						
 					</div>
 				</div>
 			</section>
-		</c:if>
+		<!-- </c:if> -->
 		<div class="sectors-content data-contact-field">
 			<c:if test="${true}"><!-- test, if meta data is available-->
 				<section class="sectors-content opp-metadata">
@@ -105,7 +112,7 @@
 					</c:if>
 				</div>
 				<div class="Inc-baner-btnwraper">
-					<button class="btn btn-sector-primary">
+					<button class="btn contact-button">
 						<a href="/en/investsaudi-login">
 							<spring:theme code="portal.sector.investnow.label"/>
 							<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>

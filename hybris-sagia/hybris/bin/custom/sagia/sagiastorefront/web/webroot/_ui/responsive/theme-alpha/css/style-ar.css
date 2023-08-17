@@ -203,7 +203,7 @@ ul.sagiaNavigation-subNav li svg {
 }
 
 #topbar .social-links a {
-	color: #fff;
+	color: #00714d;
 	margin-right: 15px;
 	display: inline-block;
 	line-height: 1px;
@@ -409,7 +409,7 @@ ul.sagiaNavigation-subNav li svg {
 .nav-menu a {
 	display: block;
 	position: relative;
-	color: #fff;
+	color: #00714d;
 	transition: 0.3s;
 	font-size: 13px;
 	padding: 12px 12px 12px 28px;
@@ -8174,16 +8174,16 @@ figure h2 {
 	color: #fff;
 	padding: 10px 0px;
 	border-radius: 30px;
-	background-color: #00A6BE;
+	background-color: #00714d;
 }
 
 .btn-form-outline {
 	font-size: 18px;
-	color: #707070;
-	background-color: #fff;
+	color: #00714d;
+	background-color: #eeefeb;
 	padding: 10px 0px;
 	border-radius: 30px;
-	border: 1px solid #00A6BE;
+	border: 1px solid #00714d;
 }.btn-form-outline:hover{
 	color: #707070;
 }
@@ -9589,26 +9589,27 @@ body.page-living-in-saudi .content {
 }
 .Inc-sector-banner .Inc-sector-banner-container {
 	position: absolute;
+	background-color: #f2f7f5;
 	bottom: 0;
 	top: 0;
 	left: 0;
 	right: 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: right;
 	flex-direction: column;
-	text-align: center;
+	text-align: right;
 	z-index: 9;
 }
 
 .Inc-sector-banner-container h1 {
-	margin: 0 0 10px 0;
+	margin: 0 10px 15px 0;
 	font-size: 60px;
 	font-weight: 700;
 	line-height: 56px;
-	color: #fff;
-	text-transform: uppercase;
-	text-shadow: 0px 8px 15px #00000061;
+	color: #00714d;
+	/* text-transform: uppercase; */
+	/* text-shadow: 0px 8px 15px #00000061; */
 	margin-bottom: 30px;
 }
 
@@ -9619,7 +9620,7 @@ body.page-living-in-saudi .content {
 .Inc-baner-btnwraper {
 	display: inline-block;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: right;
 	flex-direction: column;
 }
 
@@ -9634,9 +9635,18 @@ body.page-living-in-saudi .content {
 }
 
 .btn-sector-primary {
+	color: #fff;	
+	background-color: #00714d;
+	border-radius: 4px;
+	font-size: 16px;
+	padding: 15px 20px;
+	text-transform: uppercase;
+	min-width: 300px;
+}
+
+.contact-button {
+	background-color: #b29534;
 	color: #fff;
-	background-color: #00A6BE;
-	border: 1px solid #00A6BE;
 	border-radius: 27px;
 	font-size: 16px;
 	padding: 10px 20px;
@@ -9922,6 +9932,39 @@ body.page-living-in-saudi .content {
 
 .val-item-buttons {
 	text-align: center;
+}
+
+.row.kpi-row{
+	margin-right: 15px;
+	margin-bottom: 15px;
+	color: #00714d;
+}
+
+.kpi{
+	margin-right: 15px;
+}
+
+.kpi-value{
+	font-size: 1.5rem;
+}
+
+.kpi-postfix{
+	font-size: 1.2rem;
+}
+
+.contact-name{
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+.contact-role{
+	color: #fff;
+}
+
+.contact-row{
+	margin-right: 0px;
+	margin-bottom: 15px;
+	font-size: 1.2rem;
 }
 
 .Inc-secdetil-enop-header {
@@ -13461,8 +13504,21 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .opportunity-contact {
-	background: url("../img/opp_contact.png");
-	background-size: cover;
+	background-color: #f1f7f5;
+}
+
+.opp-metadata {
+	background: #fcfaf4;
+	color: #b29534;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.opp-contact-card {
+	background: #00714d;
+	max-width: 500px;
+	justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .opp_description {
@@ -13721,11 +13777,11 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .download-opportunity {
-	background: #f8f8f8;
-	border-radius: 27px;
-	color: #00A6BE;
+	background-color: #e4eeeb;
+	border-radius: 4px;
+	color: #00714d;
 	padding: 10px 25px;
-	border: 1px solid #fff;
+	border: 2px solid #00714d;
 	font-size: 20px;
 	cursor: pointer;
 }

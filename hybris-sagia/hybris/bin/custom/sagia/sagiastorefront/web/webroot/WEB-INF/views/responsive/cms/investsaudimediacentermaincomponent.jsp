@@ -40,9 +40,9 @@
 
                                     	</div>
                                     <div class="flip-card-text">
-                                    	<p>${eventComponent.eventLocation}</p>
-                                        <h2>${eventComponent.eventName}</h2>
-                                        <p>${eventComponent.eventShortInformation}</p>
+                                        <h2 class="eventName">${eventComponent.eventName}</h2>
+                                         <p class="eventShortInformation">${eventComponent.eventLocation}</p>
+                                        <p class="eventShortInformation">${eventComponent.eventShortInformation}</p>
                                         <a class="btn btn-primary-fill btn-knowmore" href="${eventsUrl}/${eventComponent.uid}"><spring:theme code="portal.media.know.more" text="Know More" />&nbsp;
                                             <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt="" /></span>
                                         </a>

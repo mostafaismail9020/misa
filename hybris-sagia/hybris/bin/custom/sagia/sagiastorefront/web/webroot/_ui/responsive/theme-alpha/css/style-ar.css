@@ -71,7 +71,11 @@ a:hover {
 	top: 13px;
 	right: 0;
 }
-
+.pageLabel--mediaCenter .btn-knowmore {
+    background-color: #00714D;
+	border: 1px solid #00714D;
+	text-transform: none;
+}
 .btn-knowmore {
 	padding: 10px 30px;
 	background-color: #00A6BE;
@@ -16385,6 +16389,22 @@ ul.INS_list_font li,
 }
 
 
+.eventName{
+    color: #00714D;
+    font-family: 'Arial';
+    font-size: 2vw;
+    font-weight: 700;
+    padding: 5px 0 5px 0;
+}
+.eventShortInformation{
+    color: #00714D;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2vw;
+    line-height: 1.3vw;
+    padding: 5px 0 5px 0;
+}
 /*Sector Opportunities - Opprtunities landing page END*/
 
 .news-date {

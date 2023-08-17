@@ -9237,7 +9237,25 @@ background: #00714D ;
 		padding: 25px 40px !important;
 	}
 }
+.pageLabel--mediaCenter .news-date {
+    top: -1px;
+    background-color: #00714D;
+    height: 60px;
+    font-family: '72';
+}
+.pageLabel--mediaCenter .news-date .day {
+    font-size: 20px;
+    font-family: '72';
+	color: #fff;
+	line-height: 16px;
+	margin-bottom: 0px;
+}
 
+.pageLabel--mediaCenter .news-date .month {
+    color: #fff;
+    font-size: 18px;
+
+}
 .news-date {
 	position: absolute;
 	left: 30px;

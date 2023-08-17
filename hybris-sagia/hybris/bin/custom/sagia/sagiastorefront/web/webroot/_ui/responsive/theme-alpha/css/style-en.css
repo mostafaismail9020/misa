@@ -1256,6 +1256,7 @@ button:focus {
     background-color: var(--misaFirstColor);
     padding: 10px;
     z-index: 1;
+    border-radius: 10px;
 }
 
 .header-home-container p {
@@ -12818,6 +12819,10 @@ ul.INS_li_ul_under li {
 
 .page-portal-homepage .ui-widget-content .ui-menu-item a {
     color: #7B838C;
+}
+
+.page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .price {
+	display: none;
 }
 
 @media (min-width: 992px) {

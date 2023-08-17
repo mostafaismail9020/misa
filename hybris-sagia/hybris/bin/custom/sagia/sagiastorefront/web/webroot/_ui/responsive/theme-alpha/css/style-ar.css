@@ -438,6 +438,9 @@ box-shadow: 0px 2px #00714D;
 .pageLabel--sectors-opportunities-opportunities .nav-menu a {
 	color: #00714D;
 }
+.pageLabel--mediaCenter .nav-menu a {
+	color: #BF9B2E;
+}
 .nav-menu a {
 	display: block;
 	position: relative;
@@ -16385,12 +16388,12 @@ ul.INS_list_font li,
 /*Sector Opportunities - Opprtunities landing page END*/
 
 .news-date {
-	right: 28px !important;
-	left: auto !important;
-	top: -3% !important;
-	height: auto !important;
-	width: 75px !important;
-	background-color: #fff !important;
+	right: 28px ;
+	left: auto ;
+	top: -3% ;
+	height: auto;
+	width: 75px ;
+	background-color: #fff ;
 }
 
 

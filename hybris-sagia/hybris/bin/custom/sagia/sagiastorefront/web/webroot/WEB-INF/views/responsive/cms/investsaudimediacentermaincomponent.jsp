@@ -33,7 +33,7 @@
                                             <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" />
                                         </div>
                                         <div class="month">
-                                            <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMMM" />
+                                            <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMM" />
                                         </div>
                                     </div>
                                     <div class="card-img">
@@ -78,7 +78,7 @@
                                     <fmt:formatDate value="${newsComponent.newsDate}" pattern="d" />
                                 </div>
                                 <div class="month">
-                                    <fmt:formatDate value="${newsComponent.newsDate}" pattern="MMMM" />
+                                    <fmt:formatDate value="${newsComponent.newsDate}" pattern="MMM" />
                                 </div>
                             </div>
                             <img class="img-fluid w-100 news-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}"
@@ -121,7 +121,7 @@
                                     <fmt:formatDate value="${resourceComponent.resourceDate}" pattern="d" />
                                 </div>
                                 <div class="month">
-                                    <fmt:formatDate value="${resourceComponent.resourceDate}" pattern="MMMM" />
+                                    <fmt:formatDate value="${resourceComponent.resourceDate}" pattern="MMM" />
                                 </div>
                             </div>
                             <img class="img-fluid w-100 service-card-img news-card-img" src="${fn:escapeXml(resourceComponent.resourceThumbnailImage.url)}"

@@ -58,7 +58,6 @@
         <c:url value="/mediaCenter/news" var="newsUrl" />
         <div class="container">
             <div class="row text-center">
-                <img class="img-fluid title-icon" src="${commonResourcePath}/images/news_icon.png" alt="" loading="lazy"/>
                 <h1 class="w-100 title service-title">
                     ${newsSectionTitle}
                     <a href="${newsUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;

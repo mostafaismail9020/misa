@@ -6,7 +6,6 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
 <div class="col-md-12 card-wrapper" data-aos="fade-up" data-aos-delay="${loopCount}">
     <div class="flip-card flip-card-custom row">
         <div class="col-md-3">
@@ -17,7 +16,15 @@
         <div class="col-md-3">
             <a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
                 <strong>${fn:toLowerCase(result.opportunity.name)}</strong>
-                 <p>${result.opportunity.description}</p>
+                 <p>
+                 <c:choose>
+	                 <c:when test="${fn:length(result.opportunity.description) gt 50}">
+	                 	${fn:substring({result.opportunity.description}, 1, 50)}...</c:when>
+	                 <c:otherwise>
+	                 	${result.opportunity.description}
+	                 </c:otherwise>
+                 </c:choose>
+                 </p>
             </a>
         </div>
         <div class="col-md-3">

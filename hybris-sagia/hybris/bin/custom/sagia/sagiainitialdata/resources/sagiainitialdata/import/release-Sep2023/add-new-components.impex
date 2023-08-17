@@ -1,32 +1,23 @@
 # Macros / Replacement Parameter definitions
 
- 
-
 $productCatalog = sagiaProductCatalog
 $catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
 
- 
-
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
-$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+$siteResource = jar:com.sap.ibso.eservices.initialdata.setup.InitialDataSystemSetup&/sagiainitialdata/import/sampledata/contentCatalogs/$contentCatalog/images
 
- 
+INSERT_UPDATE CMSLinkComponent ;uid[unique = true] ; linkname[lang=en] ; linkname[lang=ar]  ;name      ; url                          ;&componentRef        ;$contentCV[unique = true] ;
+                               ;sectors-icon-link  ; Sectors           ; القطاعات           ;Sectors   ; /sectors-opportunities       ;sectors-icon-link    ;
+                               ;news-icon-link     ;News               ; الأخبار             ;News      ; /mediaCenter/news            ;news-icon-link        ;
+                               ;events-icon-link   ;Events             ; الأنشطة والفعاليات  ;Events    ; /mediaCenter/events          ;events-icon-link        ;
+                               ;reports-icon-link  ;Reports            ; التقارير           ;Reports   ; /economic/investmentReports  ;reports-icon-link    ;
+                               ;services-icon-link ;Services           ; خدمات              ;Services  ; /aboutSaudi                  ;services-icon-link    ;
+                               ;incentives-icon-link;Incentives        ; الحوافز            ;Incentives; /investor/incentives         ;incentives-icon-link ;    
+                               ;guide-icon-link    ;Guide              ; دليل               ;Guide     ; /investor/guide              ;guide-icon-link        ;
+                               ;viewopp-link       ;View Opportunities ; الفرص عرض          ;View Opportunities     ; /sectors-opportunities/opportunities ;viewopp-link        ;
+                               ;login-link         ;Login              ; تسجيل الدخول       ;Login     ; /login                       ;login-link        ;
 
- 
-
-INSERT_UPDATE CMSLinkComponent ;uid[unique = true] ; linkname[lang=en]    ;name       ; url                          ;&componentRef        ;$contentCV[unique = true] ;
-                                  ;sectors-icon-link  ; Sectors            ;Sectors   ; /sectors-opportunities       ;sectors-icon-link    ;
-                               ;news-icon-link       ;News                ;News      ; /mediaCenter/news            ;news-icon-link        ;
-                               ;events-icon-link   ;Events              ;Events       ; /mediaCenter/events          ;events-icon-link        ;
-                               ;reports-icon-link  ;Reports             ;Reports   ; /economic/investmentReports  ;reports-icon-link    ;
-                               ;services-icon-link ;Services            ;Services  ; /aboutSaudi                  ;services-icon-link    ;
-                               ;incentives-icon-link;Incentives         ;Incentives; /investor/incentives         ;incentives-icon-link ;    
-                               ;guide-icon-link       ;Guide               ;Guide       ; /investor/guide              ;guide-icon-link        ;
-
- 
-
- 
 
 INSERT_UPDATE InvestSaudiMedia ;code[unique = true];mime        ;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];link(&componentRef)   ;&componentRef   ; $contentCV[unique = true];                                
                                ; sectors-icon        ;text/png    ;$siteResource/sectors.png                                                                  ; sectors-icon-link    ; sectors-icon     ;                                    
@@ -38,8 +29,9 @@ INSERT_UPDATE InvestSaudiMedia ;code[unique = true];mime        ;@media[translat
                                ; guide-icon        ;text/png    ;$siteResource/guide.png                                                                    ; guide-icon-link       ; guide-icon     ;    
 
  
-
- 
-
 INSERT_UPDATE InvestSaudiHomePageIconsComponent    ; uid[unique = true] ; name()                ; title()       ; description[lang = en]; clickableIcons(&componentRef)                                                                   ;  $contentCV[unique = true]    ;  
                                                    ; home-page-icons     ; Home Page Icons         ; Invest Saudi     ;                         ; sectors-icon, news-icon, events-icon, reports-icon, services-icon, incentives-icon, guide-icon  ;                             ;
+                                                   
+         
+UPDATE InvestSaudiVideoBannerComponent ; uid[unique = true] ; viewOpportunities(&componentRef) ; login(&componentRef) ; $contentCV[unique = true] ;
+									   ; banner-video      	; viewopp-link                     ; login-link           ;                           ;

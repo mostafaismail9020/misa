@@ -11,13 +11,13 @@
     <div class="flip-card flip-card-custom row">
         <div class="col-md-3">
             <a class="know-more-link" href="${newsUrl}/${currentComponent.uid}">
-                <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/1200px-SAP_2011_logo.svg.png" alt="" loading="lazy">
+                <img class="img-fluid" src="${result.opportunity.imageUrl}" alt="" loading="lazy">
             </a>
         </div>
         <div class="col-md-3">
             <a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
                 <strong>${fn:toLowerCase(result.opportunity.name)}</strong>
-                 <p>This opportunity entails building and operating zoos of various sizes across the Kingdom</p>
+                 <p>${result.opportunity.description}</p>
             </a>
         </div>
         <div class="col-md-3">

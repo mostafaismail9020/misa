@@ -9152,7 +9152,7 @@ background: #00714D ;
 	padding: 14px 5px;
 }
 .pageLabel--mediaCenter .news-date {
-    top: -1px;
+    top: -20px;
     background-color: #00714D;
     height: 60px;
     font-family: '72';
@@ -9253,6 +9253,7 @@ background-color: fff;
     height: 200px;
     transition: all 0.5s;
     width: 100%;
+    border-radius: 10px;
 }
 .news-card-img {
 	min-height: 500px;

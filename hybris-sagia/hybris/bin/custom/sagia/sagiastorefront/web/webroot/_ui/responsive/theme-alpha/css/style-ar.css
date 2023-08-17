@@ -8703,6 +8703,7 @@ height: 80vh;
 	right: 0px;
 	height: auto;
 	width: 100%;
+	border-radius: 10px;
 }
 
 #News_press h4.date {

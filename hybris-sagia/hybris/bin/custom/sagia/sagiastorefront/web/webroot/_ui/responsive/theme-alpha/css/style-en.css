@@ -8965,7 +8965,7 @@ background: #00714D ;
 	bottom: 0px;
 }
 .pageLabel--mediaCenter #News_press .carousel-indicators {
-    bottom: 15vw;
+    bottom: 20vw;
 }
 
 #News_press .carousel-indicators {
@@ -9070,7 +9070,7 @@ background: #00714D ;
 }
 .pageLabel--mediaCenter #News_press .carousel-control-next,
  .pageLabel--mediaCenter #News_press .carousel-control-prev {
-  	transform: translateY(calc(-50% - 16vw));
+  	transform: translateY(calc(-50% - 21vw));
   }
 #News_press .carousel-control-next,
 #News_press .carousel-control-prev {

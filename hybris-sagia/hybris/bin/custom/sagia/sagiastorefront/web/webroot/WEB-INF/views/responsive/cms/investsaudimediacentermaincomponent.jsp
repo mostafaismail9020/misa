@@ -79,7 +79,9 @@
                                      </div>
                                      <div class="card-text">
                                          <h3 class= "newsTitle">${newsComponent.newsTitle}</h3>
-                                          <span class="d-news-update-date"><fmt:formatDate value="${newsComponent.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${newsComponent.newsDate}" pattern="MMMM" /></span>
+                                         <span class="d-news-update-date">
+                                             <fmt:formatDate value="${newsComponent.newsDate}" pattern="d MMM yyyy" />
+                                         </span>
                                      </div>
                                </a>
                              </div>

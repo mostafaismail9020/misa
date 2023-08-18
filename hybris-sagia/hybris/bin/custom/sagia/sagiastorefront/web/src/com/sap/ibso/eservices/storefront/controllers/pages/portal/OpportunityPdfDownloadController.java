@@ -58,6 +58,8 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	    final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	    ProductModel productModel;
 	    LOG.info("Processing request for opportunityCode: {}", productCode);
+	    // Measure execution time
+	    long startTime = System.currentTimeMillis();
 
 	    try {
 	        productModel = productService.getProductForCode(productCode);
@@ -80,6 +82,11 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	                    .filename("Final_File_Name.pdf")
 	                    .build();
 	            headers.setContentDisposition(contentDisposition);
+	            
+	            // Calculate execution time
+	            long endTime = System.currentTimeMillis();
+	            long executionTime = endTime - startTime;
+	            LOG.info("Method execution time: {} ms", executionTime);
 
 	            return new ResponseEntity<>(fileContent, headers, HttpStatus.OK);
 	        } catch (IOException e) {

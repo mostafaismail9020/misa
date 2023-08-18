@@ -9259,11 +9259,32 @@ background-color: fff;
 	box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 	background: #fff;
 }
+.media-card {
+	position: relative;
+	margin-bottom: 20px;
+
+}
 .events-card-img {
     height: 200px;
     transition: all 0.5s;
     width: 100%;
     border-radius: 10px;
+}
+.media-card-img{
+    height: 90px;
+    width: 123px;
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+.newsTitle{
+    font-size: 1.3vw;
+    font-weight: 600;
+    letter-spacing: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 0 5px 0;
+    color: #00714D;
 }
 .news-card-img {
 	min-height: 500px;

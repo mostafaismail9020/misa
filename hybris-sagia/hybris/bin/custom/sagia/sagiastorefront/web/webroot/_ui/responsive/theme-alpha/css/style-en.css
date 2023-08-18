@@ -9356,7 +9356,10 @@ background-color: fff;
 	right: -30px;
 	top: 0;
 }
-
+.events-card a,
+.events-card a:hover {
+        color: #00714D;
+    }
 .news-card {
 	position: relative;
 	margin-bottom: 20px;
@@ -9382,12 +9385,13 @@ background-color: fff;
     border-radius: 10px;
 }
 .newsTitle{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
     font-size: 1.3vw;
-    font-weight: 600;
     letter-spacing: 0px;
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     padding: 5px 0 5px 0;
     color: #00714D;
 }

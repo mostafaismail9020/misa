@@ -73,18 +73,15 @@
                      <c:forEach items="${newsPageData.results}" var="newsComponent">
                          <div class="col-sm-12 col-md-12 col-lg-4 mb-5">
                              <div class="events-card">
+                                <a href="${newsUrl}/${newsComponent.uid}">
                                      <div class="card-image">
                                          <img class="img-fluid media-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" alt="${newsComponent.newsTitle}" loading="lazy">
                                      </div>
                                      <div class="card-text">
                                          <h3 class= "newsTitle">${newsComponent.newsTitle}</h3>
                                           <span class="d-news-update-date"><fmt:formatDate value="${newsComponent.newsDate}" pattern="d" />&nbsp;<fmt:formatDate value="${newsComponent.newsDate}" pattern="MMMM" /></span>
-                                         <p>${newsComponent.newsShortInformation}</p>
-                                         <a class="btn btn-primary-fill btn-knowmore" href="${newsUrl}/${newsComponent.uid}">
-                                             <spring:theme code="portal.media.know.more" text="Know More" />&nbsp;
-                                             <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt="" /></span>
-                                         </a>
                                      </div>
+                               </a>
                              </div>
                          </div>
                      </c:forEach>

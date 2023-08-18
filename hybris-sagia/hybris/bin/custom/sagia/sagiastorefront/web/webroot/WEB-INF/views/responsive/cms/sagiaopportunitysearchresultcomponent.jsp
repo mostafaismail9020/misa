@@ -79,7 +79,7 @@
                 <c:when test="${ not empty searchPageData.results}">
                     <div class="row">
                         <c:forEach var="result" items="${searchPageData.results}" varStatus="status">
-                            <tags:opportunity-card result="${result}"/>
+                            <tags:opportunity-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
                     </div>
                 </c:when>

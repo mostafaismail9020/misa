@@ -112,6 +112,10 @@ section {
 		font-size: 30px;
 		margin-bottom: 15px;
 	}
+	
+	.col-md-12.card-wrapper .flip-card .col-md-3 a.know-more-link img {
+		height: 50%!important;
+	}
 }
 @media screen and (max-width: 768px) {
 	[data-aos-delay] {
@@ -2953,6 +2957,11 @@ p.contowl {
 }
 
 @media (min-width: 768px) {
+	.page-opportunity-search-page .page-main-content {
+	    margin-top: 60px !important;
+	    margin-bottom: 25px !important;
+	}
+	
 	#incentiveforinvestors .title-heading {
 		padding-bottom: 10px;
 	}
@@ -6173,10 +6182,6 @@ img.accountLogin-headline-logo {
 		width: 95% !important;
 	}
 	
-	.flip-card-custom {
-		margin-bottom: 30px;
-	}
-	
 	#newsandupdates .contentWrapper .card-wrapper .flip-card {
 		margin-bottom: 30px;
 	}
@@ -7645,21 +7650,15 @@ figure h2 {
 	text-align: center;
 }
 
- .facet__name.js-facet-name.clr_gld.text-uppercase {
-        margin-top: 10px;
-        color: #00714D;
-    }
-.container.banner.homeLink {
-     z-index: 9999;
-    font-weight: 400;
-    color: #00714D;
-
+.facet__name.js-facet-name.clr_gld.text-uppercase {
+	margin-top: 10px;
+	color: #00714D;
 }
 
- .col-md-12.card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+.container.banner.homeLink {
+	z-index: 9999;
+	font-weight: 400;
+	color: #00714D;
 }
 
 .col-md-12.card-wrapper.alternate {
@@ -7667,21 +7666,28 @@ figure h2 {
     border-radius: 10px;
 }
 
-.col-md-12.card-wrapper.fixed-height {
-    height: 200px;
+.col-md-12.card-wrapper .flip-card .col-md-3.img-opp-container {
+    height: 30vh;
+    display: flex;
 }
 
-     .flip-card {
-            padding-top: 5vh;
-            padding-bottom: 10vh;
-        }
-        .pageLabel--sectors-opportunities-opportunities .flip-card strong {
-            color: #BF9B2E;
-        }
+.col-md-12.card-wrapper .flip-card .col-md-3 a.know-more-link img {
+    display: block;
+    height: 100%;
+}
 
-       .pageLabel--sectors-opportunities-opportunities .flip-card p {
-         color: #BF9B2E;
-        }
+#newsandupdates .flip-card {
+	padding-top: 5vh;
+	padding-bottom: 10vh;
+}
+
+.pageLabel--sectors-opportunities-opportunities .flip-card strong {
+	color: #BF9B2E;
+}
+
+.pageLabel--sectors-opportunities-opportunities .flip-card p {
+color: #BF9B2E;
+}
 
 .banner-section h1 {
 	margin: 0 0 10px 0;
@@ -13731,7 +13737,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     color: #00714D;
 }
 
-.custom-button{
+.custom-button {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -13745,7 +13751,8 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     background: rgba(0, 113, 77, 0.05);
      border: 0px solid;
 }
-.parentCategory-button{
+
+.parentCategory-button {
      font-style: normal;
      font-weight: 400;
      font-size: 12px;
@@ -13754,7 +13761,8 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
      align-items: flex-end;
      color: #BF9B2E;
      background: rgba(191, 155, 46, 0.3);
-     border-radius: 10px;
+     border-radius: 15px;
+     padding: 5px;
 }
 
 .custom-badge{
@@ -14016,11 +14024,6 @@ border-color: #BF9B2E;
 	font-size: 20px !important;
 	color: #646464 !important;
 	text-align: center;
-}
-
-.page-opportunity-search-page .page-main-content {
-    margin-top: 25px !important;
-    margin-bottom: 25px !important;
 }
 
 .search-reports-container form a.a-search,

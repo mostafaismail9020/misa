@@ -9455,7 +9455,11 @@ background-color: fff;
 .news-card:hover .news-card-inner p {
 	display: block;
 }
+.pageLabel--mediaCenter .vedio_outer .video-player-container {
+    background-color: none !important;
+    border: none ;
 
+}
 .vedio_outer .video-player-container {
 	background-color: #fff;
 	border: 1px solid #eeeef6;

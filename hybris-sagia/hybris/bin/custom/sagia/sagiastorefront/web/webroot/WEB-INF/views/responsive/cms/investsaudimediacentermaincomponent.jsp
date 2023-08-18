@@ -147,16 +147,6 @@
         </div>
         <div class="container">
             <div class="row">
-                <ul class="nav nav-tabs justify-content-center border-0 w-100 mb-5" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                                aria-selected="true"><spring:theme code="portal.media.webinar" text= "Webinar"/></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                                aria-selected="false"><spring:theme code="portal.media.success.stories" text= "Success Stories"/></a>
-                    </li>
-                  </ul>
                   <div class="tab-content w-100" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="container">

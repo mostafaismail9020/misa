@@ -8946,7 +8946,10 @@ background: #00714D ;
 	-webkit-animation-name: fadeInUp;
 	animation-name: fadeInUp;
 }
-
+.pageLabel--mediaCenter #News_press .carousel-item .mask .News_press_bgwhite {
+    max-height:  150px;
+    max-width: 100%;
+}
 #News_press .carousel-item .mask .News_press_bgwhite {
 	-webkit-animation-name: slideInRight;
 	animation-name: slideInRight;

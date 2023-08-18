@@ -10848,7 +10848,11 @@ body.page-living-in-saudi .content {
 	line-height: 40px;
 	text-transform: uppercase;
 }
-
+.pageLabel--mediaCenter .video-inner-div{
+    background-color: none;
+    box-shadow: none;
+    border: none;
+}
 .video-inner-div {
 	min-height: 300px;
 	background-color: #bf9b2e;

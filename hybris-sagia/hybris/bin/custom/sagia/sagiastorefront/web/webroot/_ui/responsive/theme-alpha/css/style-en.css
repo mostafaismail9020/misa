@@ -10822,11 +10822,11 @@ body.page-living-in-saudi .content {
 }
 .pageLabel--mediaCenter .Inc-mediaCenter-sectionwrapper h1.service-title {
     color: #00714D;
-    font-family: '72';
+    font-family: '72' !important;
     font-size: 2.5vw;
-    font-family: '72';
     font-style: normal;
     font-weight: 700;
+    text-align: left;
 }
 .Inc-mediaCenter-sectionwrapper h1.service-title {
 	position: relative;

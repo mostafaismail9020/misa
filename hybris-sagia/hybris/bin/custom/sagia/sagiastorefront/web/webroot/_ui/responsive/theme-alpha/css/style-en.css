@@ -7667,7 +7667,7 @@ figure h2 {
 }
 
 .col-md-12.card-wrapper .flip-card .col-md-3.img-opp-container {
-    height: 30vh;
+    height: 35vh;
     display: flex;
 }
 
@@ -13765,45 +13765,52 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
      padding: 5px;
 }
 
-.custom-badge{
-
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 0px 6px;
-gap: 4px;
-
-width: 30px;
-height: 20px;
-background: #BF9B2E;
-border-radius: 20px;
-flex: none;
-order: 1;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 20px;
-display: flex;
-align-items: center;
-letter-spacing: -0.001em;
-
-color: #F8F9FB;
-
+.custom-badge {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 6px;
+	gap: 4px;
+	width: 30px;
+	height: 20px;
+	background: #BF9B2E;
+	border-radius: 20px;
+	flex: none;
+	order: 1;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.001em;
+	color: #F8F9FB;
 }
+
+.page-opportunity-search-page .facet.js-facet .text-capitalize.selected {
+	background-color: var(--misaPrimaryBtnColor);
+	border-radius: 10px;
+}
+
+.page-opportunity-search-page .facet.js-facet .text-capitalize.selected * {
+	color: #fff;
+}
+
 .custom-button:hover {
-    background-color: #BF9B2E;
-    }
+	background-color: var(--misaPrimaryBtnColor);
+}
+
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
-	color: #BF9B2E;
+	color: var(--misaPrimaryBtnColor);
 }
 
 .pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-item.active .page-link,
 .pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-link:hover{
-background: #BF9B2E !important;
-border-color: #BF9B2E;
+background: var(--misaPrimaryBtnColor)!important;
+border-color: var(--misaPrimaryBtnColor);
 }
 
 .all-opportunity .pagination .page-item.active .page-link,

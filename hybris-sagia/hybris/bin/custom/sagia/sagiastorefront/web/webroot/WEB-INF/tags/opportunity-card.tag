@@ -15,7 +15,7 @@
             </a>
         </div>
         <div class="col-md-9 col-8" style="position: relative;">
-        	<div class="row" style="margin: 0; position: absolute; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%); width:100%">
+        	<div class="row" style="margin: 0; position: absolute; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%); width:85%">
         		<div class="col-md-6 col-12">
 		            <a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
 		                <strong>${fn:toLowerCase(result.opportunity.name)}</strong>

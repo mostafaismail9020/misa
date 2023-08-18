@@ -73,17 +73,23 @@
                      <c:forEach items="${newsPageData.results}" var="newsComponent">
                          <div class="col-sm-12 col-md-12 col-lg-4 mb-5">
                              <div class="events-card">
-                                <a href="${newsUrl}/${newsComponent.uid}">
-                                     <div class="card-image">
-                                         <img class="img-fluid media-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" alt="${newsComponent.newsTitle}" loading="lazy">
+                                 <a href="${newsUrl}/${newsComponent.uid}">
+                                     <div class="row">
+                                         <div class="col-sm-4">
+                                             <div class="card-image">
+                                                 <img class="img-fluid media-card-img" src="${fn:escapeXml(newsComponent.newsThumbnailImage.url)}" alt="${newsComponent.newsTitle}" loading="lazy">
+                                             </div>
+                                         </div>
+                                         <div class="col-sm-8">
+                                             <div class="card-text">
+                                                 <h3 class="newsTitle">${newsComponent.newsTitle}</h3>
+                                                 <span class="d-news-update-date">
+                                                     <fmt:formatDate value="${newsComponent.newsDate}" pattern="d MMM yyyy" />
+                                                 </span>
+                                             </div>
+                                         </div>
                                      </div>
-                                     <div class="card-text">
-                                         <h3 class= "newsTitle">${newsComponent.newsTitle}</h3>
-                                         <span class="d-news-update-date">
-                                             <fmt:formatDate value="${newsComponent.newsDate}" pattern="d MMM yyyy" />
-                                         </span>
-                                     </div>
-                               </a>
+                                 </a>
                              </div>
                          </div>
                      </c:forEach>

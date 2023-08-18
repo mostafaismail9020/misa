@@ -9372,6 +9372,11 @@ background-color: fff;
 
 }
 
+.events-card {
+    display: flex;
+    align-items: center; /* Vertically align items in the middle */
+}
+
 .events-card-img {
     height: 200px;
     transition: all 0.5s;
@@ -9395,6 +9400,13 @@ background-color: fff;
     padding: 5px 0 5px 0;
     color: #00714D;
 }
+.d-news-update-date{
+    font-family: '72';
+    color: #BF9B2E;
+    font-style: normal;
+    font-weight: 400;
+}
+
 .news-card-img {
 	min-height: 500px;
 }

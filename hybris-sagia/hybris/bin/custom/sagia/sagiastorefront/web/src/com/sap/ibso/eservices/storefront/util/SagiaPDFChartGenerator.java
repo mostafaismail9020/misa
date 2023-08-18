@@ -189,17 +189,20 @@ public class SagiaPDFChartGenerator {
 	}
 
 	private static void addContentsToPdf(File fileMerged, OpportunityProductModel opportunity) throws IOException {
+		PDDocument docMerged = PDDocument.load(fileMerged);
 		addBorder(fileMerged);
-		addHeaderTextContent(435, 520, fileMerged, opportunity);
-		addSampleTextContent(220, 125, "Sample Text 1", fileMerged, opportunity);
-		addSampleTextContent(660, 125, "Sample Text 2", fileMerged, opportunity);
+		addHeaderTextContent(435, 520, fileMerged, opportunity,docMerged);
+		addSampleTextContent(220, 125, "Sample Text 1", fileMerged, opportunity,docMerged);
+		addSampleTextContent(660, 125, "Sample Text 2", fileMerged, opportunity,docMerged);
 		addTDateAndTime(fileMerged);
-		addDescriptiveTextContent(52, 80, DESCRIPTION, fileMerged, opportunity);
+		addDescriptiveTextContent(52, 80, DESCRIPTION, fileMerged, opportunity,docMerged);
+		docMerged.save(fileMerged);
+		docMerged.close();
 	}
 
-	private static void addHeaderTextContent(float x, float y, File fileMrged, OpportunityProductModel opportunity)
+	private static void addHeaderTextContent(float x, float y, File fileMerged, OpportunityProductModel opportunity, PDDocument docMerged)
 			throws IOException {
-		PDDocument docMerged = PDDocument.load(fileMrged);
+		//PDDocument docMerged = PDDocument.load(fileMerged);
 		PDPage pageFirst = docMerged.getPage(0);
 		PDPageContentStream contentStreamMergedDoc = new PDPageContentStream(docMerged, pageFirst, AppendMode.APPEND,
 				true, true);
@@ -212,8 +215,8 @@ public class SagiaPDFChartGenerator {
 		contentStreamMergedDoc.showText(opportunity.getDemand().getMarketSizeText());
 		contentStreamMergedDoc.endText();
 		contentStreamMergedDoc.close();
-		docMerged.save(fileMrged);
-		docMerged.close();
+		//docMerged.save(fileMerged);
+		//docMerged.close();
 
 	}
 
@@ -237,12 +240,12 @@ public class SagiaPDFChartGenerator {
 			contentStreamForDate.close();
 		}
 
-		docMerged.save(fileMrged);
-		docMerged.close();
+		//docMerged.save(fileMrged);
+		//docMerged.close();
 
 	}
 
-	private static void addSampleTextContent(float x, float y, String text, File fileMrged, OpportunityProductModel opportunity)
+	private static void addSampleTextContent(float x, float y, String text, File fileMrged, OpportunityProductModel opportunity, PDDocument docMerged2)
 			throws IOException {
 		PDDocument docMerged = PDDocument.load(fileMrged);
 		PDPage pageFirst = docMerged.getPage(0);
@@ -259,13 +262,13 @@ public class SagiaPDFChartGenerator {
 		contentStreamMergedDoc.showText(cagrString);
 		contentStreamMergedDoc.endText();
 		contentStreamMergedDoc.close();
-		docMerged.save(fileMrged);
-		docMerged.close();
+		//docMerged.save(fileMrged);
+		//docMerged.close();
 
 	}
 
 	private static void addDescriptiveTextContent(float x, float y, String text, File fileMrged,
-			OpportunityProductModel opportunity) throws IOException {
+			OpportunityProductModel opportunity, PDDocument docMerged2) throws IOException {
 		PDDocument docMerged = PDDocument.load(fileMrged);
 		PDPage pageFirst = docMerged.getPage(0);
 		PDPageContentStream contentStreamMergedDoc = new PDPageContentStream(docMerged, pageFirst, AppendMode.APPEND,
@@ -279,8 +282,8 @@ public class SagiaPDFChartGenerator {
 		contentStreamMergedDoc.showText(opportunity.getDemand().getKeyDemandDrivers());
 		contentStreamMergedDoc.endText();
 		contentStreamMergedDoc.close();
-		docMerged.save(fileMrged);
-		docMerged.close();
+		//docMerged.save(fileMrged);
+		//docMerged.close();
 
 	}
 

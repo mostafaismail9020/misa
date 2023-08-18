@@ -571,3 +571,17 @@
 		}
 	});
 </script>
+<script type="text/javascript" src="${commonResourcePath}/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function () {
+
+		if ($('body').hasClass('pageLabel--sectors-opportunities-opportunities')) {
+			var visionImageUrl = "${fn:escapeXml(component.visionImage.url)}";
+
+			var allImages = $("img.hd-static, img.hd-scroll");
+
+			allImages.attr("src", visionImageUrl);
+		}
+
+	});
+</script>

@@ -33,6 +33,11 @@ a:hover {
 	color: #fff;
 }
 
+.btn-secondary-fill {
+	background-color: var(--misaSecondColor);
+	color: #fff;
+}
+
 .btn-primary-fill:hover {
 	color: #fff;
 }
@@ -52,7 +57,10 @@ a:hover {
 	font-size: 16px;
 	font-weight: 600;
 }
-
+ .facet__name.js-facet-name.clr_gld.text-uppercase {
+        margin-top: 10px;
+        color: #00714D;
+    }
 .btn-video {
 	padding: 5px 15px 5px 15px;
 	color: #fff;
@@ -111,7 +119,12 @@ section {
 		font-size: 30px;
 		margin-bottom: 15px;
 	}
+	
+	.col-md-12.card-wrapper .flip-card .col-md-3 a.know-more-link img {
+		height: 50%!important;
+	}
 }
+
 @media screen and (max-width: 768px) {
 	[data-aos-delay] {
 		transition-delay: 0 !important;
@@ -201,6 +214,9 @@ ul.sagiaNavigation-subNav li svg {
 #topbar .contact-info i.icofont-phone {
 	margin-left: 15px;
 }
+.pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
+color: #00714D;
+}
 
 #topbar .social-links a {
 	color: #00714d;
@@ -232,6 +248,9 @@ ul.sagiaNavigation-subNav li svg {
 #header .hd-scroll {
 	display: none;
 }
+.pageLabel--sectors-opportunities-opportunities #header.header-scrolled {
+box-shadow: 0px 2px #00714D;
+}
 
 #header.header-scrolled {
 	top: 0;
@@ -246,7 +265,9 @@ ul.sagiaNavigation-subNav li svg {
 #header.header-scrolled .hd-scroll {
 	display: block;
 }
-
+.pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu a {
+    color: #00714D;
+}
 #header.header-scrolled .nav-menu a {
 	color: #787878;
 }
@@ -314,16 +335,16 @@ ul.sagiaNavigation-subNav li svg {
 }
 
 .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after {
-	content: '';
 	position: absolute;
-	top: 17px;
-	left: 8px;
-	background-image: url('../img/arrow-down.png');
+	top: 10px;
+	right: 1px;
+	content: "\25bc";
 	display: inline-block;
 	width: 10px;
 	height: 6px;
 	border: none;
 }
+
 
 .nav-menu>ul>li.nav-item.dropdown.show a.nav-link.dropdown-toggle::after {
 	content: '';
@@ -335,6 +356,11 @@ ul.sagiaNavigation-subNav li svg {
 	width: 10px;
 	height: 6px;
 	border: none;
+}
+.pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after{
+    color: #00714D;
+    filter: none;
+    opacity: 1;
 }
 
 #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after {
@@ -405,7 +431,9 @@ ul.sagiaNavigation-subNav li svg {
 	display: block;
 	padding: 0;
 }
-
+.pageLabel--sectors-opportunities-opportunities .nav-menu a {
+	color: #00714D;
+}
 .nav-menu a {
 	display: block;
 	position: relative;
@@ -510,6 +538,9 @@ ul.dropdown-list li a {
 	.nav-menu .drop-down .drop-down>a:after {
 		content: "\ea9d";
 	}
+}
+.pageLabel--sectors-opportunities-opportunities  .mobile-nav-toggle {
+	z-index: 5;
 }
 .mobile-nav-toggle {
 	position: fixed;
@@ -696,6 +727,9 @@ ul.dropdown-list li a {
 	border-radius: 8px;
 	padding: 6px 10px;
 }
+.pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn {
+    color: #00714D;
+}
 
 .btn-trans label.lang-btn {
 	padding: 0;
@@ -711,7 +745,9 @@ ul.dropdown-list li a {
 	text-decoration-color: #00A6BE;
 	text-decoration-thickness:3px;
 }
-
+.pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn.active{
+    color: #00714D;
+}
 .btn-trans label.lang-btn.active {
 	color: #fff;
 }
@@ -1504,7 +1540,7 @@ svg #wheel {
 	font-weight: 600;
 	line-height: 37px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -1536,7 +1572,7 @@ svg #wheel {
 #when-number-talk:before {
 	content: '';
 	position: absolute;
-	background-image: url(../img/WhenNumberTalk.png);
+	background-color: rgba(0, 113, 77, 0.2);
 	background-size: cover;
 	width: 100%;
 	height: 100%;
@@ -1549,7 +1585,7 @@ svg #wheel {
 	font-weight: 400;
 	line-height: 28px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -1558,7 +1594,7 @@ svg #wheel {
 	font-weight: 400;
 	line-height: 16px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -1967,7 +2003,7 @@ p.contowl {
 	width: 175px;
 	height: 45px;
 	line-height: 19px;
-	
+
 	text-transform: uppercase;
 	border-radius: 27px;
 	padding: 12px 10px 15px 20px;
@@ -6060,11 +6096,7 @@ img.accountLogin-headline-logo {
 	.key-reason-invest .count-block {
 		width: 95% !important;
 	}
-	
-	.flip-card-custom {
-		margin-bottom: 30px;
-	}
-	
+
 	#newsandupdates .contentWrapper .card-wrapper .flip-card {
 		margin-bottom: 30px;
 	}
@@ -6133,7 +6165,7 @@ img.accountLogin-headline-logo {
 	.Inc-tab-banner-content {
 		padding-top: 40px;
 	}
-	
+
 	.when-number-talk-container h2 {
 		font-size: 24px;
 		font-weight: 600;
@@ -6150,7 +6182,7 @@ img.accountLogin-headline-logo {
 		letter-spacing: 0em;
 		text-align: center;
 	}
-	
+
 	.number-talk-items-container .talk_item {
 		margin-bottom: 20px;
 	}
@@ -6160,15 +6192,15 @@ img.accountLogin-headline-logo {
 		font-weight: 400;
 		line-height: 28px;
 		letter-spacing: 0em;
-		color: var(--misaFirstColor);
+		color: var(--misaSecondColor);
 	}
-	
+
 	.when-number-talk-container .talk_item-text {
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 16px;
 		letter-spacing: 0em;
-		color: var(--misaFirstColor);
+		color: var(--misaSecondColor);
 	}
 
 	.header-home-container p {
@@ -6177,7 +6209,7 @@ img.accountLogin-headline-logo {
 		line-height: 16px;
 		letter-spacing: 0em;
 	}
-	
+
 	.header-home-container h5 {
 		font-size: 16px;
 		font-weight: 700;
@@ -6192,12 +6224,12 @@ img.accountLogin-headline-logo {
 	#hero .container-home-hero {
 		padding-top: 450px;
 	}
-	
+
 	#hero {
 		overflow: unset;
 		height: 75vh
 	}
-	
+
 	#hero img.home-banner {
 		width: 100%;
 	}
@@ -6205,7 +6237,7 @@ img.accountLogin-headline-logo {
 	#homepage-icons {
 		padding: 100px 0;
 	}
-	
+
 	.newsAndUpdateContainer .titleContainer .section-title {
 		font-size: 24px;
 		line-height: 28px;
@@ -6437,6 +6469,42 @@ img.accountLogin-headline-logo {
 	.notfound-text {
 		font-size: 16px;
 	}
+}
+
+.page-opportunity-search-page .js-site-search-input {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 8px 18px;
+	gap: 6px;
+	width: 85%;
+	background: #F5F6F7;
+	border-radius: 80px;
+	order: 1;
+	color: #5B738B;
+	align-self: stretch;
+	border: none;
+}
+
+.page-opportunity-search-page .a-search {
+	position: absolute;
+    top: 5px;
+    right: 74%;
+    color: #7B838C;
+}
+
+.page-opportunity-search-page .general-info a.enquiry-btn {
+	margin-top: 25vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #00714D;
+    background-color: transparent;
+    padding: 0 15px;
+}
+
+.page-opportunity-search-page .general-info svg {
+	display: none;
 }
 
 .page-opportunity-search .opportunity-card .opp-type {
@@ -7456,17 +7524,33 @@ figure h2 {
 		border-radius: 15px 15px 0px 0px;
 		color: #00A6BE;
 	}
-	
+
 	.footer .footer-menu {
 		margin-top: 40px;
 		margin-right: -40px;
 	}
-	
+
 	.footer .footer-menu li {
 	    float: right;
     	margin-left: 35px;
 	}
 }
+.pageLabel--sectors-opportunities-opportunities .banner-section{
+	height: 45vh;
+	background: rgba(0, 113, 77, 0.05);
+}
+.pageLabel--sectors-opportunities-opportunities .banner-section h1{
+	font-weight: 700;
+	font-size: 5vh;
+	color: #00714D;
+	margin-top: 30vh;
+	position: absolute;
+	top: 0;
+    right: 0;
+    transform: translate(0vh, 0);
+    padding: 0 15px!important;
+}
+
 .banner-section {
 	width: 100%;
 	height: 95vh;
@@ -10338,6 +10422,7 @@ body.page-living-in-saudi .content {
     background-color: var(--misaFirstColor);
     padding: 10px;
     z-index: 1;
+    border-radius: 10px;
 }
 
 .header-home-container p {
@@ -10393,7 +10478,7 @@ body.page-living-in-saudi .content {
 }
 
 #accordion-explore .card {
-	border: 1px solid #fff;	
+	border: 1px solid #fff;
 }
 
 #accordion-explore .card-header {
@@ -12692,7 +12777,7 @@ ul.INS_li_ul_under li {
 	.ft-logo {
 		left: 0;
 	}
-	
+
 	#hero h1 {
 		text-align: center;
 	}
@@ -12748,6 +12833,10 @@ ul.INS_li_ul_under li {
 
 .page-portal-homepage .ui-widget-content .ui-menu-item a {
     color: #7B838C;
+}
+
+.page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .price {
+	display: none;
 }
 
 @media (min-width: 992px) {
@@ -13491,7 +13580,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	flex-direction: column;
 	justify-content: center;
 	font-size: 18px;
-	padding: 50px 60px !important;	
+	padding: 50px 60px !important;
 	width: 360px;
 	height: 242px;
 	background: #fff;
@@ -13569,7 +13658,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .opportunity-card .content-box {
 	background: #ffffff;
-	box-shadow: 0px 30px 75px #00000029;	
+	box-shadow: 0px 30px 75px #00000029;
 	transition: all ease .5s;
 	-webkit-transition: all ease .5s;
 	-moz-transition: all ease 0.5s;
@@ -13629,13 +13718,125 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .opportunity-card.total-results {
-    margin-top: 7px;
+    white-space: nowrap;
+    margin: 10px 5px 20px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #00714D;
     text-align: right;
 }
+
+.custom-button {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+    color: #5F6D7E;
+    align-items: center;
+    background: rgba(0, 113, 77, 0.05);
+     border: 0px solid;
+}
+
+.custom-badge {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 6px;
+	gap: 4px;
+	width: 30px;
+	height: 20px;
+	background: #BF9B2E;
+	border-radius: 20px;
+	flex: none;
+	order: 1;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	display: flex;
+	align-items: center;
+	letter-spacing: -0.001em;
+	color: #F8F9FB;
+}
+
+.page-opportunity-search-page .facet.js-facet .text-capitalize.selected {
+	background-color: var(--misaPrimaryBtnColor);
+	border-radius: 10px;
+}
+
+.page-opportunity-search-page .facet.js-facet .text-capitalize.selected * {
+	color: #fff;
+}
+
+.custom-button:hover {
+    background-color: #BF9B2E;
+}
+.all-opportunity .pagination .page-item .page-link {
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.parentCategory-button {
+     font-style: normal;
+     font-weight: 400;
+     font-size: 12px;
+     line-height: 18px;
+     display: flex;
+     align-items: flex-end;
+     color: #BF9B2E;
+     background: rgba(191, 155, 46, 0.3);
+     border-radius: 15px;
+     padding: 5px;
+}
+
+.col-md-12.card-wrapper.alternate {
+    background-color: rgba(191, 155, 46, 0.07);
+    border-radius: 10px;
+}
+
+.col-md-12.card-wrapper .flip-card .col-md-3.img-opp-container {
+    height: 35vh;
+    display: flex;
+}
+
+.col-md-12.card-wrapper .flip-card .col-md-3 a.know-more-link img {
+    display: block;
+    height: 100%;
+}
+
+#newsandupdates .flip-card {
+	padding-top: 5vh;
+	padding-bottom: 10vh;
+}
+
+.pageLabel--sectors-opportunities-opportunities .flip-card strong {
+	font-family: 'Arial';
+	color: #BF9B2E;
+}
+
+.pageLabel--sectors-opportunities-opportunities .flip-card p {
+	font-family: 'Arial';
+	color: #BF9B2E;
+}
+
 
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
 	color: #BF9B2E;
+}
+
+.pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-item.active .page-link,
+.pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-link:hover{
+background: #BF9B2E !important;
+border-color: #BF9B2E;
 }
 
 .all-opportunity .pagination .page-item.active .page-link,
@@ -13825,11 +14026,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	font-size: 20px !important;
 	color: #646464 !important;
 	text-align: center;
-}
-
-.page-opportunity-search-page .page-main-content {
-    margin-top: 25px !important;
-    margin-bottom: 25px !important;
 }
 
 .search-reports-container form a.a-search,
@@ -14079,8 +14275,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 		word-break: break-all;
 	}
 	.opportunity-card .opp-type {
-		//font-size: 20px;
-		//height: 85px;
 		word-break: break-all;
 	}
 	.opportunity-card .content-box {
@@ -14136,7 +14330,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
         margin: 0;
         border: 0;
         -webkit-appearance: none;
-        //background: none;
         font-size: 14px;
         color: #5f6470;
         width: 100%;
@@ -16500,6 +16693,11 @@ ul.INS_list_font li,
 }
 
 @media (min-width: 768px) {
+	.page-opportunity-search-page .page-main-content {
+	    margin-top: 60px !important;
+	    margin-bottom: 25px !important;
+	}
+
 	.aboutusContainer .what-do-section .what-we-do .panel p {
 		padding-right: 15px;
 		padding-left: initial;

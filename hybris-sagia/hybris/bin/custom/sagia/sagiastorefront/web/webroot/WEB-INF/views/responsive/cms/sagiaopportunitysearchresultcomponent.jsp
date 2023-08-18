@@ -6,7 +6,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav" %>
 
+<spring:htmlEscape defaultHtmlEscape="true" />
 
+<spring:url value="/search/autocomplete/sagia-search-box-component" var="autocompleteUrl" htmlEscape="false">
+	<spring:param name="componentuid"  value="${component.uid}"/>
+</spring:url>
 <c:set var="hasPreviousPage" value="${searchPageData.pagination.currentPage > 0}"/>
 <c:set var="hasNextPage"
        value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
@@ -14,33 +18,38 @@
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                <div>
-                    <h1 class='section-headline my-5 all-opportunity-filter'>
-                        <spring:theme code="portal.opportunity.search.filter"/>
-                    </h1>
-                </div>
-                <div id="product-facet" style="height: inherit" class="content-box hidden-sm hidden-xs product__facet js-product-facet">
-                    <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> --!>
+				<form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
+					<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
+					<ycommerce:testId code="header_search_input">
+						<input type="text" id="js-site-search-input"
+						       data-test="asdfg"
+							   class="js-site-search-input" name="q" value="${fn:containsIgnoreCase(request.getParameter("q"), ':') ? '' : request.getParameter("q")}"
+							   maxlength="100" placeholder="${searchPlaceholder}"
+							   data-options='{"autocompleteUrl" : "${autocompleteUrl}","minCharactersBeforeRequest" : "3","waitTimeBeforeRequest" : "500","displayProductImages" : true}'>
+						<a class="a-search">
+							<img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
+						</a>
+					</ycommerce:testId>
+					<div class="opportunity-card total-results">
+						<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+					</div>
+				</form>
+                <div id="product-facet" style="height: inherit" class="hidden-sm hidden-xs product__facet js-product-facet">
+                    <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> -->
                     <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-                </div>
+				</div>
             </div>
         </c:if>
         <div class="col-md-9 col-sm-12 page-main-content">
-            <div>
-                <h1 class='section-headline my-5 all-opportunity-description'>
-                    <spring:theme code="portal.opportunity.search.all.label"/>&nbsp;
-                    <pan class="clr_gld"><spring:theme code="portal.opportunity.search.opportunities.label"/></pan>
-                </h1>
-            </div>
             <c:if test="${not empty searchPageData.results}">
-                <hr class="opp-mobile-hidde"/>
-                <div class="row opp-sort-filter-total">
-
+            <div class="opp-mobile-show text-center">
+            	<spring:theme code="portal.opportunity.search.modal.btn" var="btnModalTxt"/>
+				<button id="opp-open-modal-filter" class="btn btn-secondary-fill">${btnModalTxt}</button>
+				<div class="opportunity-card total-results" style="text-align: center; margin: 10px 0 5px 0px;">
+					<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+				</div>
+            </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
-                        <div>
-                            <label for="opportunity-search" class="full"><spring:theme code="portal.opportunity.search.filter.title"/></label>
-                            <span id="opp-open-modal-filter"><spring:theme code="portal.opportunity.search.filter.span"/></span>
-                        </div>
                         <!-- Modal -->
                         <div class="modal fade" id="facetFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog opportunity-modal-dialog" role="document">
@@ -54,72 +63,23 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="pt-3" >
-                                            <div class="opp-filter-container" style="padding: 20px;">
-                                                <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-                                            </div>
-                                       </div>
+                                        <div class="opp-filter-container" style="padding: 20px;">
+                                        	<nav:facetNavRefinements pageData="${solrSearchPageData}"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Modal End -->
-                    </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-sort">
-                        <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                            <form id="sortForm1" name="sortForm1" method="get" action="#" class="form-group form-inline">
-                                <label for="opportunity-search" class="full"><spring:theme code="sagia.sort.sort.by"/>:&nbsp;</label>
-                                <select id="sortOptions1" name="sort" class="form-control--plp-sorting browser-default custom-select form-control" style=";padding: 6px 20px;">
-                                    <c:forEach items="${solrSearchPageData.sorts}" var="sort">
-                                        <option value="${fn:escapeXml(sort.code)}" ${sort.selected? 'selected="selected"' : ''}>
-                                            <c:choose>
-                                                <c:when test="${not empty sort.name}">
-                                                    ${fn:escapeXml(sort.name)}
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <spring:theme code="${themeMsgKey}.sort.${sort.code}"/>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </option>
-                                    </c:forEach>
-                                </select>
-                                <c:catch var="errorException">
-                                    <spring:eval expression="solrSearchPageData.currentQuery.query"
-                                                 var="dummyVar"/><%-- This will throw an exception is it is not supported --%>
-                                    <input type="hidden" name="q" value="${solrSearchPageData.currentQuery.query.value}"/>
-                                </c:catch>
 
-                                <c:if test="${supportShowAll}">
-                                    <ycommerce:testId code="searchResults_showAll_link">
-                                        <input type="hidden" name="show" value="Page"/>
-                                    </ycommerce:testId>
-                                </c:if>
-                                <c:if test="${supportShowPaged}">
-                                    <ycommerce:testId code="searchResults_showPage_link">
-                                        <input type="hidden" name="show" value="All"/>
-                                    </ycommerce:testId>
-                                </c:if>
-                                <c:if test="${not empty additionalParams}">
-                                    <c:forEach items="${additionalParams}" var="entry">
-                                        <input type="hidden" name="${fn:escapeXml(entry.key)}" value="${fn:escapeXml(entry.value)}"/>
-                                    </c:forEach>
-                                </c:if>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results">
-                        <spring:message code="portal.opportunity.search.opportunities.totalResults"
-                            arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-                    </div>
                 </div>
             </c:if>
             <c:choose>
                 <c:when test="${ not empty searchPageData.results}">
                     <div class="row">
                         <c:forEach var="result" items="${searchPageData.results}" varStatus="status">
-                            <tags:opportunity-card result="${result}"/>
+                            <tags:opportunity-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
                     </div>
                 </c:when>
@@ -209,7 +169,7 @@
                                 <spring:param name="page" value="${solrSearchPageData.pagination.currentPage + 1}"/>
                             </spring:url>
                             <li class="page-item next-page">
-                                <a class="page-link waves-effect waves-light" href="${nextPageUrl}"  style="padding-top: 5px;">
+                                <a class="page-link waves-effect waves-light" href="${nextPageUrl}"  style="padding-top: 10px;">
                                     <img class="img-fluid arrow-left-blue-icon" width="20" src="${commonResourcePath}/images/Icon-feather-arrow-left.png" alt=""/>
                                     <img class="img-fluid arrow-left-white-icon" style="display: none;" width="20"
                                          src="${commonResourcePath}/images/Icon-white-arrow-left.png" alt=""/>
@@ -222,4 +182,3 @@
         </div>
     </div>
 </div>
-

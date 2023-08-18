@@ -2,49 +2,50 @@ INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code)
 ; InboundOpportunityProduct; INBOUND 
  
 INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
-; InboundOpportunityProduct	; CatalogVersion       	; CatalogVersion       	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; ArticleApprovalStatus	; ArticleApprovalStatus	; 	; ALL_SUBTYPES           	;  
-; InboundOpportunityProduct	; Catalog              	; Catalog              	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Media                	; Media                	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Category             	; Category             	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Market               	; Market               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Demand               	; Demand               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Unit                 	; Unit                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; TransientEncodedPdf  	; TransientEncodedPdf  	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityProduct	; OpportunityProduct   	; OpportunityProduct   	; true	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; ArticleApprovalStatus	; ArticleApprovalStatus	; 	; ALL_SUBTYPES           	;  
+; InboundOpportunityProduct	; CatalogVersion       	; CatalogVersion       	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; TransientEncodedPdf  	; TransientEncodedPdf  	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Category             	; Category             	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Catalog              	; Catalog              	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Demand               	; Demand               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Media                	; Media                	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Unit                 	; Unit                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Market               	; Market               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
  
 INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
-; InboundOpportunityProduct:CatalogVersion       	; catalog             	; CatalogVersion:catalog                 	; InboundOpportunityProduct:Catalog              	; true	;  
-; InboundOpportunityProduct:CatalogVersion       	; version             	; CatalogVersion:version                 	;                                                	; true	;  
+; InboundOpportunityProduct:OpportunityProduct   	; detail              	; OpportunityProduct:detail              	; InboundOpportunityProduct:Media                	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; downloadUrl         	; OpportunityProduct:downloadUrl         	;                                                	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; demand              	; OpportunityProduct:demand              	; InboundOpportunityProduct:Demand               	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct   	; isWithdrawn         	; OpportunityProduct:isWithdrawn         	;                                                	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; catalogVersion      	; OpportunityProduct:catalogVersion      	; InboundOpportunityProduct:CatalogVersion       	; true	;  
+; InboundOpportunityProduct:OpportunityProduct   	; unit                	; OpportunityProduct:unit                	; InboundOpportunityProduct:Unit                 	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; code                	; OpportunityProduct:code                	;                                                	; true	;  
+; InboundOpportunityProduct:OpportunityProduct   	; highlights          	; OpportunityProduct:highlights          	;                                                	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; name                	; OpportunityProduct:name                	;                                                	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; systemOrigin        	; OpportunityProduct:systemOrigin        	;                                                	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; description         	; OpportunityProduct:description         	;                                                	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; c4cOpportunityId    	; OpportunityProduct:c4cOpportunityId    	;                                                	; 	;  
+; InboundOpportunityProduct:OpportunityProduct   	; transientEncodendPdf	; OpportunityProduct:transientEncodendPdf	; InboundOpportunityProduct:TransientEncodedPdf  	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct   	; supercategories     	; OpportunityProduct:supercategories     	; InboundOpportunityProduct:Category             	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct   	; approvalStatus      	; OpportunityProduct:approvalStatus      	; InboundOpportunityProduct:ArticleApprovalStatus	; 	;  
 ; InboundOpportunityProduct:ArticleApprovalStatus	; code                	; ArticleApprovalStatus:code             	;                                                	; true	;  
-; InboundOpportunityProduct:Catalog              	; id                  	; Catalog:id                             	;                                                	; true	;  
-; InboundOpportunityProduct:Media                	; catalogVersion      	; Media:catalogVersion                   	; InboundOpportunityProduct:CatalogVersion       	; true	;  
-; InboundOpportunityProduct:Media                	; code                	; Media:code                             	;                                                	; true	;  
+; InboundOpportunityProduct:CatalogVersion       	; version             	; CatalogVersion:version                 	;                                                	; true	;  
+; InboundOpportunityProduct:CatalogVersion       	; catalog             	; CatalogVersion:catalog                 	; InboundOpportunityProduct:Catalog              	; true	;  
+; InboundOpportunityProduct:TransientEncodedPdf  	; code                	; TransientEncodedPdf:code               	;                                                	; true	;  
+; InboundOpportunityProduct:TransientEncodedPdf  	; encodedString       	; TransientEncodedPdf:encodedString      	;                                                	; 	;  
 ; InboundOpportunityProduct:Category             	; catalogVersion      	; Category:catalogVersion                	; InboundOpportunityProduct:CatalogVersion       	; true	;  
 ; InboundOpportunityProduct:Category             	; code                	; Category:code                          	;                                                	; true	;  
-; InboundOpportunityProduct:Market               	; code                	; Market:code                            	;                                                	; true	;  
-; InboundOpportunityProduct:Market               	; years               	; Market:years                           	;                                                	; 	;  
-; InboundOpportunityProduct:Market               	; marketSizes         	; Market:marketSizes                     	;                                                	; 	;  
-; InboundOpportunityProduct:Market               	; name                	; Market:name                            	;                                                	; 	;  
-; InboundOpportunityProduct:Demand               	; cagr                	; Demand:cagr                            	;                                                	; 	;  
+; InboundOpportunityProduct:Catalog              	; id                  	; Catalog:id                             	;                                                	; true	;  
 ; InboundOpportunityProduct:Demand               	; uid                 	; Demand:uid                             	;                                                	; true	;  
-; InboundOpportunityProduct:Demand               	; keyDemandDrivers    	; Demand:keyDemandDrivers                	;                                                	; 	;  
-; InboundOpportunityProduct:Demand               	; markets             	; Demand:markets                         	; InboundOpportunityProduct:Market               	; 	; true 
 ; InboundOpportunityProduct:Demand               	; marketSizeText      	; Demand:marketSizeText                  	;                                                	; 	;  
+; InboundOpportunityProduct:Demand               	; cagr                	; Demand:cagr                            	;                                                	; 	;  
+; InboundOpportunityProduct:Demand               	; markets             	; Demand:markets                         	; InboundOpportunityProduct:Market               	; 	; true 
+; InboundOpportunityProduct:Demand               	; keyDemandDrivers    	; Demand:keyDemandDrivers                	;                                                	; 	;  
+; InboundOpportunityProduct:Media                	; code                	; Media:code                             	;                                                	; true	;  
+; InboundOpportunityProduct:Media                	; catalogVersion      	; Media:catalogVersion                   	; InboundOpportunityProduct:CatalogVersion       	; true	;  
 ; InboundOpportunityProduct:Unit                 	; code                	; Unit:code                              	;                                                	; true	;  
-; InboundOpportunityProduct:TransientEncodedPdf  	; encodedString       	; TransientEncodedPdf:encodedString      	;                                                	; 	;  
-; InboundOpportunityProduct:TransientEncodedPdf  	; code                	; TransientEncodedPdf:code               	;                                                	; true	;  
-; InboundOpportunityProduct:OpportunityProduct   	; name                	; OpportunityProduct:name                	;                                                	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; description         	; OpportunityProduct:description         	;                                                	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; highlights          	; OpportunityProduct:highlights          	;                                                	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; unit                	; OpportunityProduct:unit                	; InboundOpportunityProduct:Unit                 	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; c4cOpportunityId    	; OpportunityProduct:c4cOpportunityId    	;                                                	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; supercategories     	; OpportunityProduct:supercategories     	; InboundOpportunityProduct:Category             	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; approvalStatus      	; OpportunityProduct:approvalStatus      	; InboundOpportunityProduct:ArticleApprovalStatus	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; systemOrigin        	; OpportunityProduct:systemOrigin        	;                                                	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; catalogVersion      	; OpportunityProduct:catalogVersion      	; InboundOpportunityProduct:CatalogVersion       	; true	;  
-; InboundOpportunityProduct:OpportunityProduct   	; demand              	; OpportunityProduct:demand              	; InboundOpportunityProduct:Demand               	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct   	; downloadUrl         	; OpportunityProduct:downloadUrl         	;                                                	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; detail              	; OpportunityProduct:detail              	; InboundOpportunityProduct:Media                	; 	;  
-; InboundOpportunityProduct:OpportunityProduct   	; transientEncodendPdf	; OpportunityProduct:transientEncodendPdf	; InboundOpportunityProduct:TransientEncodedPdf  	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct   	; code                	; OpportunityProduct:code                	;                                                	; true	;  
+; InboundOpportunityProduct:Market               	; code                	; Market:code                            	;                                                	; true	;  
+; InboundOpportunityProduct:Market               	; name                	; Market:name                            	;                                                	; 	;  
+; InboundOpportunityProduct:Market               	; marketSizes         	; Market:marketSizes                     	;                                                	; 	;  
+; InboundOpportunityProduct:Market               	; years               	; Market:years                           	;                                                	; 	;  

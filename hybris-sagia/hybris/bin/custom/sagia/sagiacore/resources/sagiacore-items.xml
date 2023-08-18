@@ -3969,6 +3969,11 @@
                        <persistence type="property"/>
                        <description>Link to the associated Demand</description>
                     </attribute>
+                    <attribute qualifier="isWithdrawn" type="java.lang.Boolean">
+                        <defaultvalue>Boolean.FALSE</defaultvalue>
+                        <modifiers read="true" write="true" search="true" optional="true"/>
+                        <persistence type="property"/>
+                    </attribute>
                     
                 </attributes>
             </itemtype>

@@ -5,14 +5,14 @@ $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCata
 
 INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible ; fieldValueProvider       ;
                                   ; $solrIndexedType                         ; resource          ; string     ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true   ; sagiaProductTypeProvider ;
-
+                                  ; $solrIndexedType                         ; picture           ; string     ; false               ;                 ;                 ;           ; true   ; sagiaProductImageUrlValueProvider ;
 
 INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider ; facetSortProvider              ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType]
                                       ; resource:$solrIndexedType                                       ;                      ; MultiSelectOr  ; 1001     ; solrFieldNameProvider    ; facetNameSortProviderAscending ; defaultTopValuesProvider ;                                 ;
 
 
-INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; query ;
-                               ; $solrIndexedType                         ; $searchIndexNamePrefix-fullQuery   ; full       ; "SELECT DISTINCT tbl.pk FROM (
+UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; query ;
+                        ; $solrIndexedType                         ; $searchIndexNamePrefix-fullQuery   ; full       ; "SELECT DISTINCT tbl.pk FROM (
   {{
   SELECT {PK} FROM {OpportunityProduct}
   }}
@@ -29,6 +29,24 @@ INSERT_UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; iden
   SELECT {PK} FROM {EventProduct}
   }}
 ) tbl"
+                        ; $solrIndexedType                         ; $searchIndexNamePrefix-updateQuery ; update     ;"SELECT DISTINCT tbl.pk FROM (
+  {{
+  SELECT {PK} FROM {OpportunityProduct} WHERE {modifiedtime} >= ?lastIndexTime
+  }}
+  UNION
+  {{
+  SELECT {PK} FROM {NewsProduct} WHERE {modifiedtime} >= ?lastIndexTime
+  }}
+  UNION
+  {{
+  SELECT {PK} FROM {ArticleProduct} WHERE {modifiedtime} >= ?lastIndexTime
+  }}
+  UNION
+  {{
+  SELECT {PK} FROM {EventProduct} WHERE {modifiedtime} >= ?lastIndexTime
+  }}
+) tbl"
+
 
 INSERT_UPDATE SagiaGlobalSearchBarComponent; uid[unique = true]                     ; name                            ; maxProducts ; maxSuggestions ; displayProducts ; displaySuggestions ; displayProductImages ; $contentCV[unique = true] ; &componentRef                          ;
                                            ; SagiaGlobalSearchBarComponent-homepage ; Sagia Global SearchBar Component; 5           ; 5              ; true            ; true               ; false                ;                           ; SagiaGlobalSearchBarComponent-homepage ;

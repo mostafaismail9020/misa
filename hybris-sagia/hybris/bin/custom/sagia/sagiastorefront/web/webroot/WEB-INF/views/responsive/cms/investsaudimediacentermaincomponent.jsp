@@ -135,7 +135,6 @@
         <c:url value="/mediaCenter/videos" var="videosUrl" />
         <div class="container">
             <div class="row text-center">
-                <img class="img-fluid title-icon" src="${commonResourcePath}/images/video_icon.png" alt="" loading="lazy"/>
                 <h1 class="w-100 title service-title">
                     ${videosSectionTitle}
                     <a href="${videosUrl}" class="btn-primary explore-btn webinar-service-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;

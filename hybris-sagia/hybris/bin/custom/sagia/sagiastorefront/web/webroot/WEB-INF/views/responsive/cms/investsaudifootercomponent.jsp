@@ -76,6 +76,9 @@
                 <div class="row no-gutters">
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-5 mb-lg-0 footer-column-text ft-logo">
                         <img src="${commonResourcePath}/images/footer_logo.png" alt="" class="footer_logo" loading="lazy"/>
+						<a href='http://raqmi.dga.gov.sa/platforms/DigitalStamp/ShowCertificate/381'>
+						<img src='http://raqmi.dga.gov.sa/platforms/DigitalStamp/GetStampFile/2083'>
+						</a>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 footer-column-text first-list text-right-ar">
                         <ul class="footer-menu">

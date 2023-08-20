@@ -57,7 +57,12 @@ public class SagiaOpportunityUpdateNotifier {
 			JsonObject opportunity = new JsonObject();
 			opportunity.addProperty("code", code);
 			opportunity.addProperty("operationType",
-					opportunityProductModel.getIsWithdrawn() ? OPERATION_TYPE_WITHDRAWN : operationType);
+				    opportunityProductModel.getIsWithdrawn() == null
+				        ? operationType // When isWithdrawn is null, use the provided operationType
+				        : opportunityProductModel.getIsWithdrawn()
+				            ? OPERATION_TYPE_WITHDRAWN // When isWithdrawn is true
+				            : operationType // When isWithdrawn is false
+				);
 			opportunity.addProperty("timestamp", getCurrentDateTime());
 			opportunityUpdate.add(opportunity);
 

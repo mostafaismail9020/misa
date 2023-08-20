@@ -1684,11 +1684,5 @@
           <property name="indexerQueriesExecutor" ref="indexerQueriesExecutor"/>
       </bean>
   
-      <bean id="sagiaOpportunityProductPrepareInterceptor" class="com.sap.ibso.eservices.core.interceptors.SagiaOpportunityProductPrepareInterceptor"/>
-
-      <bean id="sagiaOpportunityProductPrepareInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
-         <property name="interceptor" ref="sagiaOpportunityProductPrepareInterceptor"/>
-         <property name="typeCode" value="OpportunityProduct"/>
-      </bean>
 
 </beans>

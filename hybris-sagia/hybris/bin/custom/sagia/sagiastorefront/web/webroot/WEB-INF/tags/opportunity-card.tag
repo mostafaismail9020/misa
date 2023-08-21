@@ -11,7 +11,14 @@
     <div class="flip-card flip-card-custom row">
         <div class="col-md-3 col-4 img-opp-container">
             <a class="know-more-link" href="${newsUrl}/${currentComponent.uid}">
-                <img class="img-fluid" src="${result.opportunity.imageUrl}" alt="" loading="lazy">
+            	<c:choose>
+                   <c:when test="${fn:length(result.opportunity.imageUrl) gt 0}">
+                 	  <img class="img-fluid" src="${result.opportunity.imageUrl}" alt="" loading="lazy">
+                   </c:when>
+                   <c:otherwise>
+                 	  <img class="img-fluid" src="${commonResourcePath}/images/default-product-image.png" alt="" loading="lazy">
+                   </c:otherwise>
+                </c:choose>
             </a>
         </div>
         <div class="col-md-9 col-8" style="position: relative;">

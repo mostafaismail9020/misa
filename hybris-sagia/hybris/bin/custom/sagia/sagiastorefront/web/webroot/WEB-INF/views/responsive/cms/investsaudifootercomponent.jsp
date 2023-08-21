@@ -6,6 +6,49 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<style>
+.footerTwoLogoLg a {
+    display: inline-block;
+    margin-top: 20px;
+}
+.footerTwoLogoLg a img{
+    width: auto;
+height : 55px
+}
+@media(max-width:991px){
+.footerTwoLogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.footerTwoLogo a {
+    margin-left: 15px;
+}
+.footerTwoLogo .footer_logo{
+position:unset !important;
+}
+.footerTwoLogo a img {
+    height: 55px;
+}
+.footer-menu-links .ft-social-logo .follow-us{
+    padding: 0;
+    white-space: nowrap;
+}
+.footer-menu-links .social-links{
+padding-left: 0 !important;
+padding-right:0 !important;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.footer-menu-links .row.no-gutters{
+justify-content: center;
+}
+.copyright.py-2.text-center.text-white .row{
+    justify-content: center;
+}
+}
+</style>
 
 <c:if test="${component.visible}">
 	<footer class="footer text-center" id="footer">
@@ -74,7 +117,8 @@
         <section class="footer-menu-links">
             <div class="container my-3">
                 <div class="row no-gutters">
-                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-5 mb-lg-0 footer-column-text ft-logo">
+					<div class="footerTwoLogoLg d-none d-lg-block col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-5 mb-lg-0 footer-column-text ft-logo">
+                    <!-- <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mb-5 mb-lg-0 footer-column-text ft-logo"> -->
                         <img src="${commonResourcePath}/images/footer_logo.png" alt="" class="footer_logo" loading="lazy"/>
 						<a href='http://raqmi.dga.gov.sa/platforms/DigitalStamp/ShowCertificate/381'>
 						<img src='http://raqmi.dga.gov.sa/platforms/DigitalStamp/GetStampFile/2083'>
@@ -107,6 +151,13 @@
                             </div>
                         </div>
                     </c:forEach>
+					
+					<div class=" d-lg-none col-12  footerTwoLogo">
+					    <img src="${commonResourcePath}/images/footer_logo.png" alt="" class="footer_logo" loading="lazy">
+						<a href="http://raqmi.dga.gov.sa/platforms/DigitalStamp/ShowCertificate/381">
+						<img src="http://raqmi.dga.gov.sa/platforms/DigitalStamp/GetStampFile/2083">
+						</a>
+					</div>
 
                     <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 ft-social-logo">
                         <div class="follow-us">${component.navigationFollowUs.title}</div>

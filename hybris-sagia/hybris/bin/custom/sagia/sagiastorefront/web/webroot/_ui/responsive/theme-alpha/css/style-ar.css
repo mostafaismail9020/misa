@@ -12830,7 +12830,7 @@ ul.INS_li_ul_under li {
     padding: 0.375rem 0.75rem;
     z-index: 1;
     overflow-x: hidden;
-    width: 420px!important;
+    width: 420px;
 }
 
 .page-portal-homepage .ui-widget-content .ui-menu-item a {

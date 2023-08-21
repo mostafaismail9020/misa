@@ -1,16 +1,11 @@
 package com.sagia.indexer;
 
 import de.hybris.platform.core.model.ItemModel;
-import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.solrfacetsearch.config.IndexOperation;
 import de.hybris.platform.solrfacetsearch.indexer.IndexerBatchContext;
 import de.hybris.platform.solrfacetsearch.indexer.exceptions.IndexerException;
 import de.hybris.platform.solrfacetsearch.indexer.strategies.impl.DefaultIndexerBatchStrategy;
 import java.util.Set;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-
 import com.investsaudi.portal.core.model.OpportunityProductModel;
 import com.sap.ibso.eservices.core.util.SagiaOpportunityUpdateNotifier;
 
@@ -38,8 +33,11 @@ public class SagiaIndexerBatchStrategy extends DefaultIndexerBatchStrategy {
 		    for (ItemModel item : batchContext.getItems()) {
 		        if (item instanceof OpportunityProductModel) {
 		            OpportunityProductModel product = (OpportunityProductModel) item;
-		            LOG.info("isWithdrawn value is: "+product.getIsWithdrawn());
-		            opportunityMap.put(product.getCode(), product);
+		            
+		            if (product.getSystemOrigin().equalsIgnoreCase("C4C")) {
+						LOG.info("isWithdrawn value is: " + product.getIsWithdrawn());
+						opportunityMap.put(product.getCode(), product);
+					}
 		        }
 		    }
 

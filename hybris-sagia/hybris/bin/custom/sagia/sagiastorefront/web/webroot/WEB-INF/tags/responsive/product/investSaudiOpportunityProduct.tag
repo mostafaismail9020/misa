@@ -6,22 +6,18 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <main>
-	<!-- <div class="Inc-sector-banner" style="background-image: url(${productData.banner.url});"> -->
-	
-	<div class="Inc-sector-banner">
-		<div class="Inc-sector-banner-container" data-aos="fade-up">
-			<!-- <div class="Inc-section-baner-logo">
-				<img src="${productData.logo.url}" alt="${fn:escapeXml(productData.name)}" title="${fn:escapeXml(productData.name)}"/>
-			</div> -->
+	<section class="Inc-sector-banner">
+		<div class="Inc-sector-banner-container container aos-init aos-animate" data-aos="fade-up">
 			<h1>${fn:escapeXml(productData.name)}</h1>
 
 			<c:if test="${true}"><!-- test, if kpis are available-->
 				<div class="row kpi-row">
-					<div class="kpi">
+					<div class="col-md-5 col-5 kpi">
 						<div class="kpi-value">XX%</div>
 						<div class="kpi-postfix">TODO actual data</div>
 					</div>
-					<div class="kpi">
+					<div class="col-md-2 col-2"></div>
+					<div class="col-md-5 col-5 kpi">
 						<div class="kpi-value">$X</div>
 						<div class="kpi-postfix">TODO actual data</div>
 					</div>
@@ -65,7 +61,7 @@
 				</c:if>
 			</div>
 		</div>    
-	</div>
+	</section>
 
 	<!-- <div class="container"> -->
 	<div class="row opportunity-article-row">

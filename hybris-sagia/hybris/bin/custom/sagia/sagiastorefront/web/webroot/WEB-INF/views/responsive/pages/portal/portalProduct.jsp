@@ -92,16 +92,13 @@
   }
 </script>
 
-<!-- 
 <div class="center">
   <button id="controllerButton" class="button" onclick="callController()">Download Opportunity PDF</button>
   <form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
-</div> -->
+</div>
 
                 
 <!-- End button for merged pdf download -->
-            
-            
             
                 <product:investSaudiOpportunityProduct />
             </c:when>

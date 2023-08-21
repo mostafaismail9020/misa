@@ -193,7 +193,7 @@ ACC.autocomplete = {
 					if(data.products != null){
 						if (data.products.length > 0)
 							autoSearchData.push({
-								value: "<strong style='font-size: 20px;'>Products:</strong>",
+								value: "<strong style='font-size: 20px;'>Opportunities:</strong>",
 								code: null,
 								desc: null,
 								manufacturer: null,

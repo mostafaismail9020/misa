@@ -72,8 +72,8 @@ a:hover {
 
 .btn-knowmore {
 	padding: 10px 30px;
-	background-color: #00a6be;
-	border: 1px solid #00a6be;
+	background-color: var(--misaSecondColor);
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 27px;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -105,6 +105,22 @@ section {
 	margin-bottom: 0;
 	position: relative;
 	z-index: 2;
+}
+
+.page-portal-homepage .nav-menu a {
+	color: #fff;
+}
+
+.page-portal-homepage #topbar .social-links a {
+	color: #fff;
+}
+
+.page-portal-homepage .btn-trans label.lang-btn {
+	color: #fff!important;
+}
+
+.page-portal-homepage .btn-trans .btn-trans label.lang-btn.active {
+	color: #fff;
 }
 
 @media (max-width: 575px) {
@@ -211,9 +227,11 @@ ul.sagiaNavigation-subNav li svg {
 #topbar .contact-info i.icofont-phone {
 	margin-left: 15px;
 }
+
 .pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
 color: #00714D;
 }
+
 #topbar .social-links a {
 	color: #00714d;
 	margin-left: 15px;
@@ -385,12 +403,12 @@ box-shadow: 0px 2px #00714D;
 
 .nav-menu>ul>li.nav-item.dropdown .sub-items li .dropdown-item:hover,
 .nav-menu>ul>li.nav-item.dropdown .sub-items li span.dropdown-item:hover {
-	border-bottom: 1px solid #00a6be;
+	border-bottom: 1px solid var(--misaSecondColor);
 }
 
 .nav-menu>ul>li.nav-item.dropdown .sub-items li:hover>a,
 .nav-menu>ul>li.nav-item.dropdown .sub-items li:hover span>a {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .nav-menu>ul>li.nav-item.dropdown .sub-items .dropdown-item.active,
@@ -414,23 +432,27 @@ box-shadow: 0px 2px #00714D;
 	width: 200px;
 	white-space: normal;
 }
+
 .nav-menu>ul>li span.nav-link {
 	display: block;
 	padding: 0;
 }
+
 .pageLabel--sectors-opportunities-opportunities .nav-menu a {
-	color: #00714D;
+	color: var(--misaSecondColor);
 }
+
 .nav-menu a {
 	display: block;
 	position: relative;
-	color: #00714d;
+	color: var(--misaSecondColor);
 	transition: 0.3s;
 	font-size: 13px;
 	padding: 12px 28px 12px 12px;
 	text-transform: uppercase;
 	font-weight: 600;
 }
+
 .nav-menu .drop-down ul {
 	display: block;
 	position: absolute;
@@ -709,12 +731,15 @@ ul.dropdown-list li a {
 }
 
 .btn-trans {
+	background: #0000002e;
 	border-radius: 8px;
 	padding: 6px 10px;
 }
+
 .pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn {
     color: #00714D;
 }
+
 .btn-trans label.lang-btn {
 	padding: 0;
 	color: #00714d;
@@ -725,20 +750,21 @@ ul.dropdown-list li a {
 	cursor: pointer;
 }
 
-.btn-trans label.lang-btn:hover{
+.btn-trans label.lang-btn:hover {
 	text-decoration: underline;
-	text-decoration-color: #00A6BE;
+	text-decoration-color: var(--misaSecondColor);
 	text-decoration-thickness:3px;
 }
+
 .pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn.active{
     color: #00714D;
 }
+
 .btn-trans label.lang-btn.active {
 	color: #00714d;
 }
 
 .lang-en {
-	top: 2px;
 	position: relative;
 }
 
@@ -791,7 +817,7 @@ ul.dropdown-list li a {
 
 .page-breadcrums ol.breadcrumb li.active {
 	font-size: 14px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-decoration: underline;
 }
 
@@ -833,7 +859,7 @@ ul.dropdown-list li a {
 }
 
 .footer-menu-links .no-gutters :nth-child(3) ul li:nth-child(5) a {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .footerContent .f-coll .display-7 {
@@ -989,7 +1015,7 @@ ul.dropdown-list li a {
 	font-size: 19px;
 	margin-top: 0.6rem;
 	margin-bottom: 15px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .copyright {
@@ -1499,12 +1525,12 @@ button:focus {
 	height: 61px;
 	opacity: 1;
 	border-radius: 50%;
-	border: 2px solid #00a6be;
-	background: #00a6be;
+	border: 2px solid var(--misaSecondColor);
+	background: var(--misaSecondColor);
 }
 
 .play-btn:hover::after {
-	border-left: 15px solid #00a6be;
+	border-left: 15px solid var(--misaSecondColor);
 	transform: scale(20);
 }
 
@@ -1745,7 +1771,7 @@ svg #wheel {
 	-ms-transition: all 500ms ease;
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
-	background: #00a6beab 0% 0% no-repeat padding-box;
+	background: var(--misaSecondColor)ab 0% 0% no-repeat padding-box;
 }
 
 .mobile_viewonly {
@@ -2055,7 +2081,7 @@ p.contowl {
 	transition: 0.3s;
 	text-decoration: none;
 	text-transform: uppercase;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .reasons #headingOne .button_reasons {
@@ -2188,7 +2214,7 @@ p.contowl {
 
 .feature .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	border-bottom: 2px solid #bf9b2e !important;
 	border-top: 0px solid #bf9b2e !important;
 	border-left: 0px solid #bf9b2e !important;
@@ -2245,7 +2271,7 @@ p.contowl {
 }
 
 .feature .card-title span.more {
-	color: #00a6be !important;
+	color: var(--misaSecondColor) !important;
 	text-align: left;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -2275,7 +2301,7 @@ p.contowl {
 	-ms-transition: all 500ms ease;
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
-	background: #00a6be00 0% 0% no-repeat padding-box;
+	background: var(--misaSecondColor)00 0% 0% no-repeat padding-box;
 }
 
 .feature h5.features_head {
@@ -2325,7 +2351,7 @@ p.contowl {
 	transition: 0.3s;
 	text-decoration: none;
 	text-transform: uppercase;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 	z-index: 1;
 }
 
@@ -2430,7 +2456,7 @@ p.contowl {
 .circle_sliders {
 	width: 60px;
 	height: 60px;
-	background: #00a6be 0% 0% no-repeat padding-box;
+	background: var(--misaSecondColor) 0% 0% no-repeat padding-box;
 	box-shadow: 0px 10px 12px #00000029;
 	opacity: 1;
 	border-radius: 50px;
@@ -2524,7 +2550,7 @@ p.contowl {
 
 .where-to-invest .sector {
 	font-size: 24px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-align: center;
 	letter-spacing: 0px;
 	line-height: 45px;
@@ -2633,7 +2659,7 @@ p.contowl {
 	height: 45px;
 	padding: 10px 20px;
 	text-align: center;
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	border-radius: 27px;
 	text-transform: uppercase;
 	float: left;
@@ -2820,7 +2846,7 @@ p.contowl {
 	padding: 13px 30px;
 	border-radius: 27px;
 	text-transform: uppercase;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .explore-btn svg {
@@ -2832,7 +2858,7 @@ p.contowl {
 	border: none;
 	color: #fff;
 	text-decoration: none;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .inc-card {
@@ -3169,7 +3195,7 @@ p.contowl {
 	transition: 0.3s;
 	text-decoration: none;
 	text-transform: uppercase;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 #mg .get-explore-btn svg {
@@ -3422,7 +3448,7 @@ p.contowl {
 	color: #fff;
 	padding: 13px 20px;
 	border-radius: 27px;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .successstory-container .section-title .explore-btn img {
@@ -4075,7 +4101,7 @@ p.contowl {
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 30px;
-	background: #00a6be;
+	background: var(--misaSecondColor);
 }
 
 .contactus-content a.txt-link img {
@@ -4517,7 +4543,7 @@ p.contowl {
 	color: #fff;
 	border: none;
 	border-radius: 0;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 	height: 100%;
 }
 
@@ -4576,7 +4602,7 @@ p.contowl {
 	padding: 20px;
 	background-size: 50% 50%;
 	border-radius: 50px;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .international-ranking-container .title-area .title-heading {
@@ -5000,7 +5026,7 @@ p.contowl {
 }
 
 .investment-hub-container .what-we-do .panle-box p a {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-decoration: underline;
 }
 
@@ -5412,7 +5438,7 @@ p.contowl {
 	padding: 10px;
 	text-transform: uppercase;
 	box-shadow: 0px 0px 10px #00000033;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .rhq-glance .economy-section,
@@ -5446,7 +5472,7 @@ p.contowl {
 	letter-spacing: 0.65px;
 	border-radius: 27px;
 	height: 48px;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .regional-panel {
@@ -5744,7 +5770,7 @@ p.contowl {
 }
 
 .regions-container .region-map .know-more-btn {
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	border-radius: 27px;
 	padding: 10px 20px;
 	height: 45px;
@@ -5760,7 +5786,7 @@ p.contowl {
 	color: #fff !important;
 	border-color: #1e5066;
 	box-shadow: 0px 18px 25px #0000008c;
-	background: transparent linear-gradient(90deg, #00a6be 0%, #00a6be00 100%);
+	background: transparent linear-gradient(90deg, var(--misaSecondColor) 0%, var(--misaSecondColor)00 100%);
 }
 
 .economic-zone-section a:hover {
@@ -5859,9 +5885,9 @@ p.contowl {
 	padding: 200px;
 }
 .RHQ_contactpage-form-tab .nav-link.active {
-	border-bottom: 4px solid #00a6be;
+	border-bottom: 4px solid var(--misaSecondColor);
 	background-color: transparent;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .RHQ_contactpage-form-tab .nav-link {
@@ -5875,12 +5901,12 @@ p.contowl {
 	text-align: center;
 	font-size: 31px;
 	letter-spacing: 0px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .RHQ_Nav_bar .nav-pills .nav-link.active,
 .RHQ_Nav_bar.nav-pills .show>.nav-link {
-	background: transparent linear-gradient(90deg, #00a6be 0%, #00a6be00 100%) 0% 0% no-repeat padding-box;
+	background: transparent linear-gradient(90deg, var(--misaSecondColor) 0%, var(--misaSecondColor)00 100%) 0% 0% no-repeat padding-box;
 	box-shadow: 0px 18px 25px #0000008c;
 	text-align: left;
 	font-size: 25px;
@@ -5920,7 +5946,7 @@ p.contowl {
 }
 
 .RHQ_bg_less_color {
-	background: #00a6be7a 0% 0% no-repeat padding-box;
+	background: var(--misaSecondColor)7a 0% 0% no-repeat padding-box;
 }
 
 .RHQ_bg_images_on_resgions {
@@ -6004,7 +6030,7 @@ p.contowl {
 
 .rhq-contant h3.cntct-number,
 .rhq-contant h3.cntct-number a {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-decoration: underline;
 }
 
@@ -6075,7 +6101,7 @@ p.contowl {
 	}
 	.RHQ_Nav_bar .nav-pills .nav-link.active,
 	.RHQ_Nav_bar.nav-pills .show>.nav-link {
-		background: transparent linear-gradient(90deg, #00a6be 0%, #00a6be00 100%) 0% 0% no-repeat padding-box;
+		background: transparent linear-gradient(90deg, var(--misaSecondColor) 0%, var(--misaSecondColor)00 100%) 0% 0% no-repeat padding-box;
 		box-shadow: 0px 18px 25px #0000008c;
 		text-align: left;
 		font-size: 16px;
@@ -6346,11 +6372,11 @@ img.accountLogin-headline-logo {
 
 .key-reason-card .card .count-outer .owl-prev i,
 .key-reason-card .card .count-outer .owl-next i {
-	color: #00a6be !important;
+	color: var(--misaSecondColor) !important;
 }
 
 .key-reason-header-color {
-	background-color: #00a6be !important;
+	background-color: var(--misaSecondColor) !important;
 }
 
 .key-reason-header-color a {
@@ -6621,7 +6647,7 @@ img.accountLogin-headline-logo {
 		font-size: 22px;
 	}
 	.sector-opp-card .card-header a {
-		color: #00a6be;
+		color: var(--misaSecondColor);
 	}
 	#fact-tab-content {
 		padding: 40px 0px 0px !important;
@@ -6658,7 +6684,7 @@ img.accountLogin-headline-logo {
 	}
 	.sector-link-header::after {
 		content: "\f107";
-		color: #00a6be;
+		color: var(--misaSecondColor);
 		right: 20px;
 		position: absolute;
 		font-family: "FontAwesome";
@@ -6689,7 +6715,7 @@ img.accountLogin-headline-logo {
 	}
 	.contactus-content a.txt-link {
 		border-radius: 30px !important;
-		background: #00a6be !important;
+		background: var(--misaSecondColor) !important;
 		bottom: 13vh !important;
 		width: 50% !important;
 		position: relative !important;
@@ -6759,7 +6785,7 @@ ul#arabic-list li {
 	transition: 0.3s;
 	text-decoration: none;
 	text-transform: uppercase;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 	margin-right: 5px;
 }
 
@@ -6879,7 +6905,7 @@ ul#arabic-list li {
 	padding: 10px;
 	text-transform: uppercase;
 	box-shadow: 0px 0px 10px #00000033;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .the_kingdom_culture_component iframe {
@@ -7203,7 +7229,7 @@ body.page-province-region-homepage .regions-title-container .region-title-data {
 		z-index: 9;
 	}
 	.rhq-link-header {
-		background: transparent linear-gradient(90deg, #00a6be 0%, #00a6be00 100%) 0% 0% no-repeat padding-box;
+		background: transparent linear-gradient(90deg, var(--misaSecondColor) 0%, var(--misaSecondColor)00 100%) 0% 0% no-repeat padding-box;
 		box-shadow: 0px 18px 25px #0000008c;
 		text-align: left;
 		letter-spacing: 0px;
@@ -7602,7 +7628,7 @@ figure h2 {
 	.nav-menu .nav-item.dropdown.show>a {
 		background-color: #fff;
 		border-radius: 15px 15px 0px 0px;
-		color: #00a6be;
+		color: var(--misaSecondColor);
 	}
 	
 	.footer .footer-menu {
@@ -8261,7 +8287,7 @@ color: #BF9B2E;
 }
 
 .contact-map-tab li.nav-item a.nav-link.active {
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 	color: #fff;
 }
 
@@ -8311,12 +8337,12 @@ color: #BF9B2E;
 }
 
 .contactpage-form-tab li.nav-item a.nav-link.active {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	border-radius: 0;
 }
 
 .contactpage-form-tab li.nav-item a.nav-link.active svg path {
-	stroke: #00a6be;
+	stroke: var(--misaSecondColor);
 }
 
 .contactpage-form .tab-content {
@@ -8338,7 +8364,7 @@ color: #BF9B2E;
 }
 
 .contactpage-form .tab-content h3.cntct-number {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .select-option .input-select {
@@ -8407,8 +8433,8 @@ color: #BF9B2E;
 
 .contact-tab ul.nav-pills .nav-link.active {
 	background-color: transparent;
-	color: #00a6be;
-	border-bottom: 3px solid #00a6be;
+	color: var(--misaSecondColor);
+	border-bottom: 3px solid var(--misaSecondColor);
 	border-radius: 0;
 }
 
@@ -8489,12 +8515,12 @@ color: #BF9B2E;
 }
 
 .pvcy-policy {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 a.pvcy-policy:hover,
 a.pvcy-policy:focus {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-decoration: underline;
 }
 
@@ -8545,7 +8571,7 @@ a.pvcy-policy:focus {
 }
 
 .form-btn-toggle .btn-secondary.active {
-	background-color: #00a6be !important;
+	background-color: var(--misaSecondColor) !important;
 	color: #fff !important;
 }
 
@@ -8609,7 +8635,7 @@ a.pvcy-policy:focus {
 .custom-file-label::after {
 	width: 84px;
 	height: 84px;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 	border-radius: 50px;
 	top: -13px;
 	right: -1px;
@@ -8773,7 +8799,7 @@ select {
 	font-size: 14px;
 	font-weight: 600;
 	letter-spacing: 0.78px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .box_telephone_word {
@@ -8895,7 +8921,7 @@ select {
 	letter-spacing: 0.5px;
 	padding: 14px 15px;
 	border-radius: 50px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	font-weight: 600;
 	text-transform: uppercase;
 }
@@ -8919,7 +8945,7 @@ select {
 }
 
 #News_press .control_arrow {
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	width: 50px;
 	height: 50px;
 	border-radius: 50px;
@@ -8947,13 +8973,13 @@ select {
 	width: 20px;
 	height: 20px;
 	border-radius: 100%;
-	border: 3px solid #00a6be;
+	border: 3px solid var(--misaSecondColor);
 	background-color: #ffffff00;
 }
 
 #News_press .carousel-indicators li.active {
-	border: 3px solid #00a6be;
-	background-color: #00a6be;
+	border: 3px solid var(--misaSecondColor);
+	background-color: var(--misaSecondColor);
 }
 
 #News_press .carousel-indicators [data-bs-target] {
@@ -9001,7 +9027,7 @@ select {
 	letter-spacing: 0.5px;
 	/*padding: 14px 15px;*/
 	border-radius: 50px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	font-weight: 600;
 	text-transform: uppercase;
 	display: inline-block;
@@ -9289,7 +9315,7 @@ select {
 }
 
 .tabs-normal li a.nav-link.active {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	background-color: transparent;
 	border-bottom: 3px solid #bf9b2e;
 	border-radius: 0;
@@ -9612,9 +9638,9 @@ body.page-living-in-saudi .content {
 	border-radius: 50px;
 	transition: 0.5s;
 	margin: 10px 0px;
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 	color: #fff;
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 	justify-content: center;
 	align-items: center;
 	display: inline-flex;
@@ -9658,11 +9684,11 @@ body.page-living-in-saudi .content {
 }
 
 .page-details-banner-item .btn-get-started:hover {
-	background: #00a6be;
+	background: var(--misaSecondColor);
 }
 
 .page-details-banner-item .btn-outline {
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 47px;
 	font-size: 18px;
 	padding: 8px 18px;
@@ -9937,7 +9963,7 @@ body.page-living-in-saudi .content {
 }
 
 .Inc-sectordetails-tab ul li.active {
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 	box-shadow: 9px 17px 40px #000000b3;
 	z-index: 2;
 }
@@ -10214,9 +10240,9 @@ body.page-living-in-saudi .content {
 }
 
 .btn-sector-outline {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	background-color: transparent;
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 27px;
 	font-size: 16px;
 	padding: 10px 20px;
@@ -10494,7 +10520,7 @@ body.page-living-in-saudi .content {
 }
 
 .eventsDetail-linkwebsite .invest-forum-content .invest-forum-content-link {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	font-size: 32px;
 	text-decoration: underline;
 }
@@ -10574,7 +10600,7 @@ body.page-living-in-saudi .content {
 .newsDetails-carosel .controls .carousel-control-prev,
 .newsDetails-carosel .controls .carousel-control-next {
 	width: 60px;
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	height: 60px;
 	border-radius: 100px;
 	transform: translate(-50%, -50%);
@@ -10606,12 +10632,12 @@ body.page-living-in-saudi .content {
 	border-radius: 100px;
 	width: 17px;
 	height: 17px;
-	border: 2px solid #00a6be;
+	border: 2px solid var(--misaSecondColor);
 	background-color: transparent;
 }
 
 .carousel-dots .carousel-indicators li.active {
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 .province_region_container {
 	margin-top: 60px;
@@ -10712,7 +10738,7 @@ body.page-living-in-saudi .content {
 }
 
 .region-wrapper-right .know-more-btn {
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	border-radius: 27px;
 	padding: 10px 20px;
 	height: 45px;
@@ -10899,7 +10925,7 @@ body.page-living-in-saudi .content {
 
 .bussiness_lic_invest_inner button {
 	background: var(--unnamed-color-00a6be) 0% 0% no-repeat padding-box;
-	background: #00a6be 0% 0% no-repeat padding-box;
+	background: var(--misaSecondColor) 0% 0% no-repeat padding-box;
 	border-radius: 27px;
 	outline: none;
 	border: none;
@@ -10911,7 +10937,7 @@ body.page-living-in-saudi .content {
 	font-weight: normal;
 	letter-spacing: 0px;
 	color: #ffffff;
-	background: #00a6be 0% 0% no-repeat padding-box;
+	background: var(--misaSecondColor) 0% 0% no-repeat padding-box;
 	border-radius: 27px;
 	outline: none;
 	border: none;
@@ -11034,7 +11060,7 @@ body.page-living-in-saudi .content {
 
 .inner_box:hover {
 	color: #fff !important;
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	transition: 3ms ease;
 	width: 100%;
 }
@@ -11254,7 +11280,7 @@ body.page-living-in-saudi .content {
 	font-size: 16px;
 	font-weight: bold;
 	letter-spacing: 0.58px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-transform: uppercase;
 }
 
@@ -11565,7 +11591,7 @@ ul.INS_list_font {
 	width: 50px;
 	height: 50px;
 	border-radius: 100px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	font-size: 42px;
 	font-weight: bold;
 	justify-content: center;
@@ -11579,7 +11605,7 @@ ul.INS_list_font {
 .INS_EPM_nav .nav-pills .nav-link.active:after {
 	content: "-";
 	position: absolute;
-	background: #00a6be 0% 0% no-repeat padding-box;
+	background: var(--misaSecondColor) 0% 0% no-repeat padding-box;
 	box-shadow: 0px 0px 10px #0000007d;
 	color: #ffffff;
 	left: 45%;
@@ -11588,7 +11614,7 @@ ul.INS_list_font {
 .nav-link.active .INS_EPM_border_set {
 	background: #ffffff 0% 0% no-repeat padding-box;
 	box-shadow: 0px 0px 25px #00000029;
-	border: 2px solid #00a6be;
+	border: 2px solid var(--misaSecondColor);
 	border-radius: 25px;
 }
 
@@ -11609,7 +11635,7 @@ ul.INS_list_font {
 	font-size: 16px;
 	font-weight: 600;
 	letter-spacing: 0px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .popover {
@@ -11623,7 +11649,7 @@ ul.INS_list_font {
 }
 
 .INDS_Border_blue {
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 }
 
 .INDS_margin_leftn40 {
@@ -12414,7 +12440,7 @@ ul.INS_li_ul_under li {
 }
 
 .nav-item.dropdown .dropdown-toggle[aria-expanded="true"] {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 
@@ -12463,7 +12489,7 @@ ul.INS_li_ul_under li {
 		border-bottom: 1px solid #afaaaa;
 	}
 	.nav-item.dropdown .dropdown-toggle[aria-expanded="true"] {
-		color: #00a6be;
+		color: var(--misaSecondColor);
 	}
 	.nav-item.dropdown {
 		/* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
@@ -12610,7 +12636,7 @@ ul.INS_li_ul_under li {
 	font-weight: bold;
 	text-align: right;
 	letter-spacing: 0.58px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-decoration: underline;
 }
 
@@ -12863,7 +12889,7 @@ ul.INS_li_ul_under li {
 	visibility: hidden;
 }
 .nav-item.dropdown .dropdown-toggle[aria-expanded="true"] {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 @media (max-width: 1000px) and (min-width: 641px) {
 	.footerContent .f-coll .display-7 {
@@ -12912,7 +12938,7 @@ ul.INS_li_ul_under li {
 		border-bottom: 1px solid #afaaaa;
 	}
 	.nav-item.dropdown .dropdown-toggle[aria-expanded="true"] {
-		color: #00a6be;
+		color: var(--misaSecondColor);
 	}
 	.nav-item.dropdown {
 		border-bottom: 1px solid #868686;
@@ -13051,7 +13077,7 @@ ul.INS_li_ul_under li {
 	font-weight: bold;
 	text-align: right;
 	letter-spacing: 0.58px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-decoration: underline;
 }
 
@@ -13294,19 +13320,19 @@ ul.INS_li_ul_under li {
 
 .nav-menu li.nav-item.dropdown .nav-link.active {
 	background-color: #ffffff6b;
-	border-bottom: 3px solid #00a6be;
+	border-bottom: 3px solid var(--misaSecondColor);
 	border-radius: 15px 15px 0px 0px;
 }
 
 .nav-menu>ul>li.nav-item.dropdown .sub-items li:hover>a,
 .nav-menu>ul>li.nav-item.dropdown .sub-items li:hover span>a {
 	font-weight: bold;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown .sub-items li:hover>a,
 #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown .sub-items li:hover span>a {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 .numbers_golden_set {
@@ -13654,8 +13680,8 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .btn-contact-apply {
 	padding: 10px 80px;
-	background-color: #00a6be;
-	border: 1px solid #00a6be;
+	background-color: var(--misaSecondColor);
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 27px;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -13714,7 +13740,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .opportunity-card .know-more-btn {
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	border-radius: 27px;
 	padding: 10px 20px;
 	color: #fff;
@@ -13725,8 +13751,8 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	background: #fff;
 	border-radius: 27px;
 	padding: 10px 20px;
-	color: #00a6be;
-	border: 1px solid #00a6be;
+	color: var(--misaSecondColor);
+	border: 1px solid var(--misaSecondColor);
 }
 
 .opportunities-cart-button {
@@ -13822,8 +13848,8 @@ border-color: var(--misaPrimaryBtnColor);
 
 .all-opportunity .pagination .page-item.active .page-link,
 .all-opportunity .pagination .page-link:hover {
-	background: #00a6be !important;
-	border-color: #00a6be;
+	background: var(--misaSecondColor) !important;
+	border-color: var(--misaSecondColor);
 	color: #fff;
 	border-radius: 30px !important;
 }
@@ -13845,7 +13871,7 @@ border-color: var(--misaPrimaryBtnColor);
 }
 
 .sectors-opportunity .sectors-list .sector-btn.selected {
-	background: #00a6be 0% 0% no-repeat padding-box;
+	background: var(--misaSecondColor) 0% 0% no-repeat padding-box;
 	box-shadow: 0px 20px 32px #37373724;
 	color: #ffffff;
 	position: relative;
@@ -13907,8 +13933,8 @@ border-color: var(--misaPrimaryBtnColor);
 	color: #fff;
 	margin-right:  35vw;
 	padding: 9px 20px;
-	background: #00a6be;
-	border: 1px solid #00a6be;
+	background: var(--misaSecondColor);
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 30px;
 	position: absolute;
 	right: 19px;
@@ -13923,8 +13949,8 @@ border-color: var(--misaPrimaryBtnColor);
 .opp-filter-btn {
 	color: #fff;
 	padding: 9px 20px;
-	background: #00a6be;
-	border: 1px solid #00a6be;
+	background: var(--misaSecondColor);
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 30px;
 	position: absolute;
 	right: 19px;
@@ -13938,10 +13964,10 @@ border-color: var(--misaPrimaryBtnColor);
 }
 
 .opp-reset-search-btn {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	padding: 9px 60px;
 	background: transparent;
-	border: 2px solid #00a6be;
+	border: 2px solid var(--misaSecondColor);
 	border-radius: 30px;
 	height: 55px;
 	text-transform: uppercase;
@@ -13951,8 +13977,8 @@ border-color: var(--misaPrimaryBtnColor);
 .opp-filter-search-btn {
 	color: #fff;
 	padding: 9px 60px;
-	background: #00a6be;
-	border: 1px solid #00a6be;
+	background: var(--misaSecondColor);
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 30px;
 	height: 55px;
 	text-transform: uppercase;
@@ -14250,7 +14276,7 @@ border-color: var(--misaPrimaryBtnColor);
 }
 
 .content-area .know-more-btn {
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	border-radius: 27px;
 	padding: 10px 20px;
 	height: 45px;
@@ -14491,14 +14517,14 @@ border-color: var(--misaPrimaryBtnColor);
 	height: 25px;
 	width: 25px;
 	background-color: #fff;
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 5px;
 }
 .checkbox-container:hover input~.checkmark {
 	background-color: #fff;
 }
 .checkbox-container input:checked~.checkmark {
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 .checkmark:after {
 	content: "";
@@ -14572,7 +14598,7 @@ border-color: var(--misaPrimaryBtnColor);
 	height: 24px;
 	width: 24px;
 	background-color: #fff;
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 50%;
 }
 
@@ -14581,7 +14607,7 @@ border-color: var(--misaPrimaryBtnColor);
 }
 
 .select-indicator .container input:checked~.check {
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .select-indicator .check:after {
@@ -14616,9 +14642,9 @@ border-color: var(--misaPrimaryBtnColor);
 .apply-filter-buttons .secondary {
 	height: 45px;
 	background: #ffffff;
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 23px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	width: 100%;
 	font-size: 16px;
 	font-weight: 600;
@@ -14627,8 +14653,8 @@ border-color: var(--misaPrimaryBtnColor);
 
 .apply-filter-buttons .primary {
 	height: 45px;
-	background: #00a6be;
-	border: 1px solid #00a6be;
+	background: var(--misaSecondColor);
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 23px;
 	color: #ffff;
 	width: 100%;
@@ -14950,7 +14976,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 
 .page-breadcrums ol.breadcrumb li.breadcrumb-item.active {
 	font-size: 14px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-decoration: underline;
 }
 
@@ -15038,7 +15064,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 }
 
 .tabs_bg_gray_color.active {
-	background: #00a6be !important;
+	background: var(--misaSecondColor) !important;
 	color: #ffffff !important;
 }
 
@@ -15135,7 +15161,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	font-size: 16px;
 	font-weight: 600;
 	letter-spacing: 0px;
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	text-transform: uppercase;
 }
 
@@ -15476,7 +15502,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 }
 
 .INDS_HL_Checkbox .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-	background: #00a6be !important;
+	background: var(--misaSecondColor) !important;
 	box-shadow: 0px 3px 6px #00000029;
 	border-radius: 5px;
 	width: 24px;
@@ -15516,7 +15542,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 }
 
 .INDS_select_tab .nav.nav-tabs {
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	border-radius: 25px;
 }
 
@@ -15539,7 +15565,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 }
 
 .INDS_select_tab .nav.nav-tabs .nav-link.active {
-	background: #00a6be;
+	background: var(--misaSecondColor);
 	color: #fff !important;
 }
 
@@ -15631,7 +15657,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 }
 
 .INDS_Filter_by_Close {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	position: absolute;
 	top: 10px;
 	right: 15px;
@@ -15707,8 +15733,8 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	letter-spacing: 0.58px;
 	border-radius: 27px;
 	text-transform: uppercase;
-	border: 1px solid #00a6be;
-	background-color: #00a6be;
+	border: 1px solid var(--misaSecondColor);
+	background-color: var(--misaSecondColor);
 }
 
 .fund-assets-period label {
@@ -15718,7 +15744,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 .fund-assets-period label.active {
 	color: #fff;
 	border: none;
-	background-color: #00a6be !important;
+	background-color: var(--misaSecondColor) !important;
 }
 
 .content-header .input-group label {
@@ -15785,22 +15811,22 @@ padding-left: 40px;
 }
 
 .content-header .button-group .reset {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	background-color: #fff;
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 	border-top-right-radius: 23px !important;
 	border-bottom-right-radius: 23px !important;
 }
 
 .content-header .button-group .reset:active {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	background-color: #fff;
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 	box-shadow: none !important;
 }
 
 .content-header .button-group .apply {
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
 }
 
 .content-header .indicator {
@@ -15808,19 +15834,19 @@ padding-left: 40px;
 }
 
 .content-header .indicator a {
-	color: #00a6be;
+	color: var(--misaSecondColor);
 	width: 40%;
 	background: #fff;
 	padding: 10px 30px;
 	border-radius: 27px;
 	margin-right: 10px;
 	margin-bottom: 15px;
-	border: 1px solid #00a6be;
+	border: 1px solid var(--misaSecondColor);
 }
 
 .content-wrapper .content-header .indicator a.active {
-	background: #00a6be;
-	border: 1px solid #00a6be;
+	background: var(--misaSecondColor);
+	border: 1px solid var(--misaSecondColor);
 	border-radius: 27px;
 }
 
@@ -16088,7 +16114,7 @@ padding-left: 40px;
 		-ms-transition: all 500ms ease;
 		-o-transition: all 500ms ease;
 		transition: all 500ms ease;
-		background: #00a6beab 0% 0% no-repeat padding-box;
+		background: var(--misaSecondColor)ab 0% 0% no-repeat padding-box;
 	}
 	.swiper-about p {
 		color: #ffffff !important;
@@ -18175,7 +18201,7 @@ padding-left: 40px;
 		margin-right: auto;
 		bottom: 25%;
 		display: flex;
-		background-color: #00a6be;
+		background-color: var(--misaSecondColor);
 		width: fit-content;
 		border-radius: 50px;
 	}
@@ -18458,8 +18484,8 @@ padding-left: 40px;
 	}
 	.responsive-btn-sector {
 		color: #fff;
-		background-color: #00a6be;
-		border: 1px solid #00a6be;
+		background-color: var(--misaSecondColor);
+		border: 1px solid var(--misaSecondColor);
 		border-radius: 27px;
 		font-size: 16px;
 		padding: 10px 10px;
@@ -21444,7 +21470,7 @@ table,th,tr,td{
 }
 
 #errorResponseModal .modal-footer button {
-	background: #00A6BE 0% 0% no-repeat padding-box !important;
+	background: var(--misaSecondColor) 0% 0% no-repeat padding-box !important;
 	border: none !important;
 	color: #fff;
 	width: 120px !important; 
@@ -21460,7 +21486,7 @@ table,th,tr,td{
 	font-size: 25px;
 }
 .contact-us-form-ticket{
-	color: #00a6be;
+	color: var(--misaSecondColor);
 }
 
 @media (max-width:400px) {
@@ -21501,7 +21527,7 @@ table,th,tr,td{
     text-decoration: underline;
     font-size: 16px;
     font-weight: bold;
-    color: #00a6be;
+    color: var(--misaSecondColor);
     text-transform: uppercase;
 	margin-top: 10px;
 }
@@ -21535,7 +21561,7 @@ div#contactusformModal .modal-body{
 }
 
 #btnContactModalClose{
-	background-color: #00a6be;
+	background-color: var(--misaSecondColor);
     color: #fff;
     width: 200px;
     border-radius: 113px;
@@ -21560,7 +21586,7 @@ label.lang-btn{
 }
 #logoutModal .js-formInputFileBox .modal-close.bttn_close{
 	border-radius: 25px!important;
-	border: 0px solid #00a6be!important;
+	border: 0px solid var(--misaSecondColor)!important;
 	top: 5px;
 	right: 10px;
 }
@@ -21620,7 +21646,7 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
     margin: 50px 0;
 }
 .page-economic-investments-terms .tableModule-headline {
-    color: #00a6be;
+    color: var(--misaSecondColor);
     font-weight: 500;
 }
 
@@ -21658,7 +21684,7 @@ body.page-notFound #globalMessageModal, body.page-notFound #globalModalBackDrop{
 .tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus,
 .tableModule .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     border-color: transparent;
-    color: #00a6be !important;
+    color: var(--misaSecondColor) !important;
     background: none;
 }
 .tableModule .dataTables_wrapper .dataTables_paginate .paginate_button:focus,

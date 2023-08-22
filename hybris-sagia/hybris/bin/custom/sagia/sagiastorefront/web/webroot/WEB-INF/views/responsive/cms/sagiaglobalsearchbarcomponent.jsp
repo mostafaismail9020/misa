@@ -7,7 +7,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<c:url value="/globalSearch" var="searchUrl" />
+<c:url value="/sectors-opportunities/opportunities" var="searchUrl" />
 <spring:url value="/search/autocomplete/global/{/componentuid}" var="autocompleteUrl" htmlEscape="false">
 	<spring:param name="componentuid"  value="${component.uid}"/>
 </spring:url>

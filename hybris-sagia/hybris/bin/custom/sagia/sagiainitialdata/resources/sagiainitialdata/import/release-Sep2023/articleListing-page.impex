@@ -1,9 +1,9 @@
 $template = portalProductSearchTemplate
-$page = global-search-page
-$pageName = Global Search
+$page = article-list-page
+$pageName = Article Search
 $pageTitleEn = $pageName
 $pageTitleAr = $pageName
-$pageLabel = /globalSearch
+$pageLabel = /articlesList
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
@@ -14,26 +14,22 @@ INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; tit
 
 
 INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]  ; name              ; descriptionText[lang = ar]	; descriptionText[lang = en]; buttonText[lang = en] ; buttonText[lang = ar] ; image(code, $contentCV) ; buttonURL(&linkRef)	; link  ; &componentRef       ; $contentCV[unique = true]
-                                        ; all-global-banner-1 ; All Global Banner ;								; GLOBAL SEARCH				;         				;           		    ; all-opportunity.jpg  	  ;  	  				; true  ; all-global-banner-1 ;
+                                        ; all-article-banner-1 ; All Article Banner ;								; Listing 				;         				;           		    ;                    	  ;  	  				; true  ; all-article-banner-1 ;
 
 
 INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      		; name                    		; simpleCMSComponents(&componentRef); &componentRef          		; $contentCV[unique = true]
-                                        ; all-global-banner-container 	; All Global Banner Container	; all-global-banner-1 				; all-global-banner-container 	;
-
-
-INSERT_UPDATE SagiaSearchBoxComponent; uid[unique = true]                ; name                       ; &componentRef              ; $contentCV[unique = true]
-                                     ; sagia-global-search-box-component ; Sagia Search Box Component ; sagia-global-search-box-component ;
+                                        ; all-article-banner-container 	; All Article Banner Container	; all-article-banner-1 				; all-article-banner-container 	;
 
 
 INSERT_UPDATE SagiaOpportunitySearchResultComponent; uid[unique = true]                   ; name                          ; &componentRef                        ; $contentCV[unique = true]
-                                                   ; sagia-global-search-result-component ; Sagia Search Result Component ; sagia-global-search-result-component ;
+                                                   ; sagia-article-list-result-component ; Sagia Search Result Component ; sagia-article-list-result-component ;
 
 
 INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]      ;visible; $contentCV[unique = true]
-                                                  ;generic-paragraph-global ;false  ;
+                                                  ;generic-paragraph-article;true  ;
 
 INSERT_UPDATE ContentSlot; uid[unique = true]                    ; name           ; active; cmsComponents($contentCV,uid); $contentCV[unique = true]
-                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; all-global-banner-container, generic-paragraph-global, sagia-global-search-box-component, sagia-global-search-result-component
+                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; all-article-banner-container, generic-paragraph-article, sagia-article-list-result-component
 
 
 INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
@@ -41,4 +37,4 @@ INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = t
 
 
 INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]       ; name                       ; &componentRef            ; description[lang = en]                                                                                                                                                                                                                                                                                       ; $contentCV[unique = true]
-                                                  ; generic-paragraph-global ; Global Paragraph Component ; generic-paragraph-global ; <div class="container"><p class="sectors-content">We've assembled a variety of investment global for potential investors who are keen to invest in Saudi Arabia. These global are of different types such as public tenders, PPP, identified global by our advisors, etc. Search for the global after selecting the industry below</p></div><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p> ;
+                                                  ; generic-paragraph-article ; Article Paragraph Component ; generic-paragraph-article ; <div class="container"><p class="sectors-content">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu</p></div><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p> ;

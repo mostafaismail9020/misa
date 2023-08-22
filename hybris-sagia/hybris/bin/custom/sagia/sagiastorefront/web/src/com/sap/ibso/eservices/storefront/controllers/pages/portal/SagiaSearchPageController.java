@@ -85,9 +85,8 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 
 		final SearchStateData searchState = new SearchStateData();
 		final SearchQueryData searchQueryData = new SearchQueryData();
-		if (getPageId().equals(SEARCH_CMS_PAGE_ID)) {
-			searchText = searchText + ":resource:Opportunity";
-		}
+		searchText = searchText + getFilterParam();
+
 		searchQueryData.setValue(searchText);
 		searchState.setQuery(searchQueryData);
 
@@ -166,10 +165,6 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 		setUpMetaData(model, metaKeywords, metaDescription);
 
 		return getViewForPage(model);
-	}
-
-	protected String getPageId() {
-		return SEARCH_CMS_PAGE_ID;
 	}
 
 	private OpportunityData createOpportunityData(ProductData productData) {
@@ -251,13 +246,11 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 
 		final SearchStateData searchState = new SearchStateData();
 		final SearchQueryData searchQueryData = new SearchQueryData();
-		if (getPageId().equals(SEARCH_CMS_PAGE_ID)) {
-			if (searchQuery.contains(":")) {
-				searchQuery = searchQuery + ":resource:Opportunity";
-			}
-			else {
-				searchQuery = searchQuery + ":relevance:resource:Opportunity";
-			}
+		if (searchQuery.contains(":")) {
+			searchQuery = searchQuery + getFilterParam();
+		}
+		else {
+			searchQuery = searchQuery + ":relevance" + getFilterParam();
 		}
 		searchQueryData.setValue(searchQuery);
 		searchState.setQuery(searchQueryData);
@@ -293,9 +286,7 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 	{
 		final SearchStateData searchState = new SearchStateData();
 		final SearchQueryData searchQueryData = new SearchQueryData();
-		if (getPageId().equals(SEARCH_CMS_PAGE_ID)) {
-			searchQuery = searchQuery + ":resource:Opportunity";
-		}
+		searchQuery = searchQuery + getFilterParam();
 		searchQueryData.setValue(searchQuery);
 		searchState.setQuery(searchQueryData);
 
@@ -357,5 +348,13 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 		storeContentPageTitleInModel(model, getPageTitleResolver().resolveContentPageTitle(
 				getMessageSource().getMessage("search.meta.title", null, "search.meta.title", getI18nService().getCurrentLocale())
 						+ " " + searchText));
+	}
+	
+	protected String getFilterParam() {
+		return ":resource:Opportunity";
+	}
+
+	protected String getPageId() {
+		return SEARCH_CMS_PAGE_ID;
 	}
 }

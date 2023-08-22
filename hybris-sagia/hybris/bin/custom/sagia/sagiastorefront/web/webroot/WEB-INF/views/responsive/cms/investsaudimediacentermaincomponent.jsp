@@ -91,14 +91,8 @@
         <c:url value="/mediaCenter/resources" var="resourcesUrl" />
         <div class="container">
             <div class="row text-center">
-                <img class="img-fluid title-icon" src="${commonResourcePath}/images/resource_icon.png" alt="" loading="lazy"/>
                 <h1 class="w-100 title service-title">
                     ${resourcesSectionTitle}
-                    <a href="${resourcesUrl}" class="btn-primary explore-btn"><spring:theme code="portal.media.explore.all" text= "Explore All"/>&nbsp;
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561">
-                            <path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward" d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z" transform="translate(-7.875 -11.252)" fill="#fff"></path>
-                        </svg>
-                    </a>
                 </h1>
             </div>
         </div>

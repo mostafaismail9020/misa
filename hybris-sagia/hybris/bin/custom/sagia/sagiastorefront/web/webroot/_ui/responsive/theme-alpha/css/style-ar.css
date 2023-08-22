@@ -9301,8 +9301,9 @@ background-color: fff;
     font-weight: 400;
 }
 .resources-card-img{
-    height: 151px;
-    width: 136px;
+    width: 151px;
+    height: 136px;
+    border-radius: 10px;
 }
 .news-card-img {
 	min-height: 500px;
@@ -13857,6 +13858,7 @@ color: #F8F9FB;
     align-items: center;
     margin-bottom: 1%;
     background-color: rgba(0, 113, 77, 0.05); /* #00714D with 5% opacity */
+     border-radius: 10px;
 }
 .col-md-12.card-wrapper {
         display: flex;

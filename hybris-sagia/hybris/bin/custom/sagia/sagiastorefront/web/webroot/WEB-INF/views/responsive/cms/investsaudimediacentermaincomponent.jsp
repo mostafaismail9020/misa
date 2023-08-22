@@ -108,14 +108,14 @@
                         </div>
                         <div class="col-md-9">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <fmt:formatDate value="${resourceComponent.resourceDate}" pattern="d MMM yyyy" />
+                                <div class="col-md-6 resourceDate">
+                                    <fmt:formatDate  value="${resourceComponent.resourceDate}" pattern="d MMM yyyy" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3 title="${resourceComponent.resourceTitle}">${resourceComponent.resourceTitle}</h3>
-                                    <p>${resourceComponent.resourceShortInformation}</p>
+                                    <h3 class="resourceTitle" title="${resourceComponent.resourceTitle}">${resourceComponent.resourceTitle}</h3>
+                                    <p class="resourceInfo">${resourceComponent.resourceShortInformation}</p>
                                 </div>
                             </div>
                         </div>

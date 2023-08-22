@@ -13835,6 +13835,22 @@ color: #F8F9FB;
      background: rgba(191, 155, 46, 0.3);
      border-radius: 10px;
 }
+.resourceTitle{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.3vw;
+    color: #00714D;
+}
+.resourceDate,
+.resourceInfo {
+    font-family: 'Arial';
+    font-style: normal;
+    font-size: 1vw;
+    font-weight: 400;
+    color: #00714D;
+}
+
 .resources-wrapper {
     display: flex;
     flex-wrap: wrap;

@@ -7667,7 +7667,21 @@ figure h2 {
     margin-bottom: 1%;
     background-color: rgba(0, 113, 77, 0.05); /* #00714D with 5% opacity */
 }
-
+.resourceTitle{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.3vw;
+    color: #00714D;
+}
+.resourceDate,
+.resourceInfo {
+    font-family: '72';
+    font-style: normal;
+    font-size: 1vw;
+    font-weight: 400;
+    color: #00714D;
+}
  .col-md-12.card-wrapper {
         display: flex;
         flex-wrap: wrap;

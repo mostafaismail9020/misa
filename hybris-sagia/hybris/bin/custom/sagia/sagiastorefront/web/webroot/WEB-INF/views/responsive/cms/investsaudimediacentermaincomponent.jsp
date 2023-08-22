@@ -100,7 +100,6 @@
             <div class="row">
                 <c:forEach items="${resourcePageData.results}" var="resourceComponent">
                     <div class="col-sm-12 col-md-4 mb-5">
-                        <div class="news-card news-service-card">
                             <div class="news-date service-date text-center">
                                 <div class="day">
                                     <fmt:formatDate value="${resourceComponent.resourceDate}" pattern="d" />
@@ -118,7 +117,6 @@
                                     <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
                                 </a>
                             </div>
-                        </div>
                     </div>
                 </c:forEach>
             </div>

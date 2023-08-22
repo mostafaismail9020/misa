@@ -273,6 +273,11 @@
                returntype="LivingInSaudiAchievement"
                autocreate="true"
                generate="true"/>
+		
+		<maptype code="localized:StringMap" argumenttype="Language"
+			returntype="KeyValueCollection" autocreate="true" generate="false" />
+		<maptype code="localized:InvestSaudiMedia" argumenttype="Language"
+			returntype="InvestSaudiMedia" autocreate="true" generate="false" />
     </maptypes>
 
 
@@ -3875,6 +3880,15 @@
 
 		<!-- Start Invest Saudi Portal Changes -->
         <typegroup name="investsaudi">
+        	<itemtype code="Product" autocreate="false" generate="false">
+                <attributes>
+        	        <attribute qualifier="paraWithMedia" type="localized:InvestSaudiMedia">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        
             <itemtype code="OpportunityProduct" extends="Product"
                       autocreate="true" generate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.OpportunityProduct">
@@ -4053,18 +4067,98 @@
                       autocreate="true" generate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.ArticleProduct">
                 <description>Article product</description>
+                <attributes>
+                    <attribute qualifier="articleTitle" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="videoUrl" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="articleTiles" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute autocreate="true" qualifier="articleThirdPara" type="localized:java.lang.String">
+                    <persistence type="property">
+                        <columntype database="oracle">
+                            <value>CLOB</value>
+                        </columntype>
+                        <columntype database="sap">
+                            <value>NCLOB</value>
+                        </columntype>
+                        <columntype>
+                            <value>HYBRIS.LONG_STRING</value>
+                        </columntype>
+                    </persistence>
+                    </attribute>
+                    <attribute qualifier="subheadingWithMedia" type="localized:InvestSaudiMedia">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="articleSubHeadings" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="articleSubDetails4Boxes" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="articleSubDetails5" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+				</attributes>
             </itemtype>
             
             <itemtype code="EventProduct" extends="Product"
                       autocreate="true" generate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.EventProduct">
                 <description>Event product</description>
+                <attributes>
+                    <attribute qualifier="subjects" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="speakers" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>           
+                    <attribute qualifier="eventDetailGrid" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="eventTiming" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="eventLocation" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+					<attribute qualifier="eventDate" type="localized:java.lang.String">
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
             </itemtype>
             
             <itemtype code="NewsProduct" extends="Product"
                       autocreate="true" generate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.NewsProduct">
                 <description>News product</description>
+                <attributes>
+                    <attribute qualifier="newsSubHeadings" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="videoUrl" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="newsDate" type="java.util.Date">
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
             </itemtype>
              
             <itemtype code="Category" generate="false" autocreate="false">
@@ -5200,12 +5294,28 @@
                 </attributes>
             </itemtype>
             
-            <itemtype code="InvestSaudiMedia" extends="Media" autocreate="true" generate="true">
+            <itemtype code="InvestSaudiMedia" extends="Media" autocreate="true" generate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiMedia">
+             <deployment table="InvestSaudiMedia" typecode="12223"/>
             	<attributes>
             		<attribute type="CMSLinkComponent" qualifier="link">
             			<persistence type="property"/>
                         <modifiers/>
             		</attribute>
+            		<attribute autocreate="true" qualifier="descriptionText" type="java.lang.String">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property">
+                        <columntype database="oracle">
+                            <value>CLOB</value>
+                        </columntype>
+                        <columntype database="sap">
+                            <value>NCLOB</value>
+                        </columntype>
+                        <columntype>
+                            <value>HYBRIS.LONG_STRING</value>
+                        </columntype>
+                    </persistence>
+                    </attribute>
             	</attributes>
             </itemtype>
 

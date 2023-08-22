@@ -2654,7 +2654,9 @@ li a.about-us-nav {
 .navbar-dark .navbar-nav .nav-link a {
   color: #fff;
 }
-
+.pageLabel--mediaCenter a {
+    color: #00714D !important;
+}
 .navbar-dark .navbar-nav .active > .nav-link a, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
   color: #5CC83B; }
 

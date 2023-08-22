@@ -87,41 +87,45 @@
              </div>
          </section>
 
-    <section class="Inc-mediaCenter-sectionwrapper pb-0">
-        <c:url value="/mediaCenter/resources" var="resourcesUrl" />
-        <div class="container">
-            <div class="row text-center">
-                <h1 class="w-100 title service-title">
-                    ${resourcesSectionTitle}
-                </h1>
-            </div>
+<section class="Inc-mediaCenter-sectionwrapper pb-0">
+    <c:url value="/mediaCenter/resources" var="resourcesUrl" />
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="w-100 title service-title">
+                ${resourcesSectionTitle}
+            </h1>
         </div>
-        <div class="container">
-            <div class="row">
-                <c:forEach items="${resourcePageData.results}" var="resourceComponent">
-                    <div class="col-sm-12 col-md-4 mb-5">
-                            <div class="news-date service-date text-center">
-                                <div class="day">
-                                    <fmt:formatDate value="${resourceComponent.resourceDate}" pattern="d" />
-                                </div>
-                                <div class="month">
-                                    <fmt:formatDate value="${resourceComponent.resourceDate}" pattern="MMM" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <c:forEach items="${resourcePageData.results}" var="resourceComponent">
+                <a href="${resourcesUrl}/${resourceComponent.uid}" class="col-md-12 resources-wrapper">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img-fluid w-100 service-card-img news-card-img"
+                                 src="${fn:escapeXml(resourceComponent.resourceThumbnailImage.url)}"
+                                 alt="${resourceComponent.resourceTitle}" loading="lazy">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <fmt:formatDate value="${resourceComponent.resourceDate}" pattern="d MMM yyyy" />
                                 </div>
                             </div>
-                            <img class="img-fluid w-100 service-card-img news-card-img" src="${fn:escapeXml(resourceComponent.resourceThumbnailImage.url)}"
-                                    alt="${resourceComponent.resourceTitle}" loading="lazy">
-                            <div class="service-card">
-                                <h3 title="${resourceComponent.resourceTitle}">${resourceComponent.resourceTitle}</h3>
-                                <p>${resourceComponent.resourceShortInformation}</p>
-                                <a class="btn btn-primary-fill btn-knowmore" href="${resourcesUrl}/${resourceComponent.uid}"><spring:theme code="portal.media.know.more" text= "Know More"/>&nbsp;
-                                    <span class="arow-icon"><img class="img-fluid" src="${commonResourcePath}/images/know-more.png" alt=""/></span>
-                                </a>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 title="${resourceComponent.resourceTitle}">${resourceComponent.resourceTitle}</h3>
+                                    <p>${resourceComponent.resourceShortInformation}</p>
+                                </div>
                             </div>
+                        </div>
                     </div>
-                </c:forEach>
-            </div>
+                </a>
+            </c:forEach>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section class="Inc-mediaCenter-sectionwrapper pb-3">
         <c:url value="/mediaCenter/videos" var="videosUrl" />

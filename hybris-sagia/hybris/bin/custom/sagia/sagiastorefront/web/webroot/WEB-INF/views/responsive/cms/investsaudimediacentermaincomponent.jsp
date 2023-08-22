@@ -102,7 +102,7 @@
                 <a href="${resourcesUrl}/${resourceComponent.uid}" class="col-md-12 resources-wrapper">
                     <div class="row">
                         <div class="col-md-3">
-                            <img class="img-fluid w-100 service-card-img news-card-img"
+                            <img class="img-fluid w-100 service-card-img resources-card-img"
                                  src="${fn:escapeXml(resourceComponent.resourceThumbnailImage.url)}"
                                  alt="${resourceComponent.resourceTitle}" loading="lazy">
                         </div>

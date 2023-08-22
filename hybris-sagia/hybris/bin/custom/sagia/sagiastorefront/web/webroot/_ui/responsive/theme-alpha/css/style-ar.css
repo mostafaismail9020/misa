@@ -9300,7 +9300,10 @@ background-color: fff;
     font-style: normal;
     font-weight: 400;
 }
-
+.resources-card-img{
+    height: 151px;
+    width: 136px;
+}
 .news-card-img {
 	min-height: 500px;
 }
@@ -13832,7 +13835,13 @@ color: #F8F9FB;
      background: rgba(191, 155, 46, 0.3);
      border-radius: 10px;
 }
-
+.resources-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1%;
+    background-color: rgba(0, 113, 77, 0.05); /* #00714D with 5% opacity */
+}
 .col-md-12.card-wrapper {
         display: flex;
         flex-wrap: wrap;

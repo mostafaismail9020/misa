@@ -301,7 +301,7 @@
 					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 					</c:when>
 					<c:otherwise>
-					    <a href="${encodedContextPath}/investsaudi-login" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
+					    <a href="${encodedContextPath}/login" class="linkedin login-text d-none d-lg-inline" rel="nofollow noreferrer noopener">
 					      	<span><spring:theme code="portal.header.login.label"/></span>
 						</a>
 					    <!-- <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
@@ -481,8 +481,8 @@
 									<spring:theme code="portal.header.feedback.label" />
 								</span>
 							</a>
-							<a href="/en/investsaudi-login" class="btn-dashboard linkedin login-text"
-								target="_blank" rel="nofollow noreferrer noopener">
+							<a href="/en/login" class="btn-dashboard linkedin login-text"
+								rel="nofollow noreferrer noopener">
 								<span>
 									<spring:theme code="portal.header.login.label" />
 								</span>

@@ -254,13 +254,13 @@ box-shadow: 0px 2px #00714D;
 	display: block;
 }
 .pageLabel--mediaCenter #header.header-scrolled .nav-menu a {
-    color: #BF9B2E;
+    color: #BF9B2E !important;
 }
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu a {
-    color: #00714D;
+    color: #00714D !important;
 }
 #header.header-scrolled .nav-menu a {
-	color: #787878;
+	color: #787878 !important;
 }
 
 #header .logo {
@@ -420,11 +420,11 @@ box-shadow: 0px 2px #00714D;
 	padding: 0;
 }
 .pageLabel--mediaCenter .nav-menu a {
-	color: #BF9B2E;
+	color: #BF9B2E !important;
 }
 .pageLabel--sectors-opportunities-opportunities .nav-menu a
 {
-	color: #00714D;
+	color: #00714D !important;
 }
 
 .eventName{

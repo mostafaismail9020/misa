@@ -140,8 +140,8 @@
            <div class="row">
                <div class="col-md-7">
                    <div class="video-player-container video-inner-div border-0 p-0">
-                       <div class="embed-responsive embed-responsive-16by9">
-                           <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="100%"
+                       <div class="embed-responsive embed-responsive-16by9 video-events" >
+                           <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
                                    src="${fn:escapeXml(webinarPageData.results[0].embedURL.url)}" frameborder="0"
                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                            </iframe>
@@ -153,8 +153,8 @@
                    <div class="row">
                        <div class="col-md-12 news vedio_outer">
                            <div class="video-player-container video-inner-div border-0 p-0">
-                               <div class="embed-responsive embed-responsive-16by9">
-                                   <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="100%"
+                               <div class="embed-responsive embed-responsive-16by9 video-events">
+                                   <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
                                            src="${fn:escapeXml(successStoryPageData.results[0].embedURL.url)}" frameborder="0"
                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                    </iframe>
@@ -164,8 +164,8 @@
                        </div>
                        <div class="col-md-12 news vedio_outer">
                            <div class="video-player-container video-inner-div border-0 p-0">
-                               <div class="embed-responsive embed-responsive-16by9">
-                                   <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="100%"
+                               <div class="embed-responsive embed-responsive-16by9 video-events">
+                                   <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
                                            src="${fn:escapeXml(successStoryPageData.results[1].embedURL.url)}" frameborder="0"
                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                    </iframe>

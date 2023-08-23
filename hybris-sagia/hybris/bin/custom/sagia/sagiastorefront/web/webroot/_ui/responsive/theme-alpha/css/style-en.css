@@ -10893,6 +10893,10 @@ body.page-living-in-saudi .content {
     color: #00714D;
     text-transform: none;
 }
+.video-events{
+    border-radius: 10px;
+    width: 80% !important;
+}
 .video-inner-div h4 {
 	font-size: 28px;
 	font-weight: 600;

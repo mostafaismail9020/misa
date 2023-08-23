@@ -1082,10 +1082,6 @@ thead {
   border-radius: 0 37px;
   background-color: #FBFBFB; }
 
-.company-mgr-quote {
-  border: 1px solid #F0F0F0;
-  padding: 1rem;
-  margin-top: 2rem; }
   .company-mgr-quote .quote {
     font-size: 40px;
     line-height: 1em; }
@@ -2467,9 +2463,6 @@ p {
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
     transform: translateX(0); } }
-
-.company-mgr-quote .heading {
-  margin: 1rem 0; }
 
 /* ul.dropdown-list, .second-dropdown-list {
   display: none;

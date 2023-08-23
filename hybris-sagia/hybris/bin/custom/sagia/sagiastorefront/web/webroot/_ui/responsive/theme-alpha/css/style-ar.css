@@ -59,7 +59,7 @@ a:hover {
 }
  .facet__name.js-facet-name.clr_gld.text-uppercase {
         margin-top: 10px;
-        color: #00714D;
+        color: var(--misaSecondColor);
     }
 .btn-video {
 	padding: 5px 15px 5px 15px;
@@ -236,11 +236,11 @@ ul.sagiaNavigation-subNav li svg {
 	margin-left: 15px;
 }
 .pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
-color: #00714D;
+color: var(--misaSecondColor);
 }
 
 #topbar .social-links a {
-	color: #00714d;
+	color: var(--misaSecondColor);
 	margin-right: 15px;
 	display: inline-block;
 	line-height: 1px;
@@ -270,7 +270,7 @@ color: #00714D;
 	display: none;
 }
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled {
-box-shadow: 0px 2px #00714D;
+box-shadow: 0px 2px var(--misaSecondColor);
 }
 
 #header.header-scrolled {
@@ -287,7 +287,7 @@ box-shadow: 0px 2px #00714D;
 	display: block;
 }
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu a {
-    color: #00714D;
+    color: var(--misaSecondColor);
 }
 #header.header-scrolled .nav-menu a {
 	color: #787878;
@@ -379,7 +379,7 @@ box-shadow: 0px 2px #00714D;
 	border: none;
 }
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after{
-    color: #00714D;
+    color: var(--misaSecondColor);
     filter: none;
     opacity: 1;
 }
@@ -754,7 +754,7 @@ ul.dropdown-list li a {
 }
 
 .pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn {
-    color: #00714D;
+    color: var(--misaSecondColor);
 }
 
 .btn-trans label.lang-btn {
@@ -774,7 +774,7 @@ ul.dropdown-list li a {
 }
 
 .pageLabel--sectors-opportunities-opportunities .btn-trans label.lang-btn.active{
-    color: #00714D;
+    color: var(--misaSecondColor);
 }
 
 .btn-trans label.lang-btn.active {
@@ -1262,7 +1262,7 @@ button:focus {
 
 .sucess-slider-count {
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 20px;
 	margin: 0px 15px;
 }
@@ -1886,7 +1886,7 @@ img.arrow-img {
 
 .reasons .pagination .page-item a {
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	font-size: 20px;
 	padding: 0 8px;
@@ -1918,7 +1918,7 @@ img.arrow-img {
 
 .countss {
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	font-size: 20px;
 	padding: 0 8px;
@@ -2135,7 +2135,7 @@ p.contowl {
 
 .feature .pagination .page-item a#numberss {
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	font-size: 20px;
 	padding: 10px 6px;
@@ -2144,10 +2144,10 @@ p.contowl {
 .feature .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
 	color: var(--misaSecondColor);
-	border-bottom: 2px solid #BF9B2E !important;
-	border-top: 0px solid #BF9B2E !important;
-	border-left: 0px solid #BF9B2E !important;
-	border-right: 0px solid #BF9B2E !important;
+	border-bottom: 2px solid var(--misaFirstColor) !important;
+	border-top: 0px solid var(--misaFirstColor) !important;
+	border-left: 0px solid var(--misaFirstColor) !important;
+	border-right: 0px solid var(--misaFirstColor) !important;
 	background-color: #fff;
 	text-align: left;
 	font-size: 20px;
@@ -2157,10 +2157,10 @@ p.contowl {
 .feature .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link {
 	color: #707070 !important;
-	border-bottom: 0px solid #BF9B2E !important;
-	border-top: 0px solid #BF9B2E !important;
-	border-left: 0px solid #BF9B2E !important;
-	border-right: 0px solid #BF9B2E !important;
+	border-bottom: 0px solid var(--misaFirstColor) !important;
+	border-top: 0px solid var(--misaFirstColor) !important;
+	border-left: 0px solid var(--misaFirstColor) !important;
+	border-right: 0px solid var(--misaFirstColor) !important;
 	background-color: #fff;
 	text-align: left;
 	font-size: 20px;
@@ -2252,7 +2252,7 @@ p.contowl {
 	text-align: left;
 	font-size: 30px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-shadow: 0px 2px 4px black;
 	margin-bottom: 0.2rem;
 }
@@ -2467,7 +2467,7 @@ p.contowl {
 	font-weight: 600;
 	text-align: center;
 	line-height: 50px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	padding-top: 64px;
 	padding-bottom: 24px;
@@ -2522,7 +2522,7 @@ p.contowl {
 }
 
 .hexagen-grid-wrapper svg .active #icon {
-	stroke: #BF9B2E;
+	stroke: var(--misaFirstColor);
 }
 
 .sector-box {
@@ -2563,7 +2563,7 @@ p.contowl {
 
 .sector-box .section-title h4 {
 	font-size: 45px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 50px;
 	text-transform: uppercase;
 	padding-bottom: 53px;
@@ -2620,7 +2620,7 @@ p.contowl {
 
 .section-counts h5 {
 	font-size: 43px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 48px;
 	text-transform: uppercase;
 	padding-bottom: 13px;
@@ -2642,7 +2642,7 @@ p.contowl {
 	color: #fff;
 	line-height: 34px;
 	margin: 0;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	padding-bottom: 31px;
 }
 
@@ -2764,7 +2764,7 @@ p.contowl {
 	font-weight: 600;
 	text-align: center;
 	line-height: 50px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	padding-top: 69px;
 	padding-bottom: 84px;
@@ -2949,7 +2949,7 @@ p.contowl {
 .mg-container .section-title h2 {
 	font-size: 45px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	line-height: 50px;
 	text-transform: uppercase;
@@ -3040,7 +3040,7 @@ p.contowl {
 #mg .project-info ul li a {
 	font-size: 30px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 #mg #slider-1 .project-info {
@@ -3712,7 +3712,7 @@ p.contowl {
 	position: relative;
 	font-size: 45px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 50px;
 	padding-bottom: 33px;
 	text-transform: uppercase;
@@ -3737,7 +3737,7 @@ p.contowl {
 	font-size: 20px;
 	padding: 0 8px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 }
 
@@ -4103,7 +4103,7 @@ p.contowl {
 	font-weight: 600;
 	text-align: center;
 	line-height: 50px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	padding-top: 69px;
 	padding-bottom: 0;
@@ -4465,7 +4465,7 @@ p.contowl {
 .key-reason-invest .tab-content h1,
 .key-reason-invest .tab-content h2 {
 	font-size: 35px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 43px;
 }
 
@@ -4484,7 +4484,7 @@ p.contowl {
 	vertical-align: top;
 	width: 14%;
 	margin-bottom: 30px;
-	border-left: 2px solid #BF9B2E;
+	border-left: 2px solid var(--misaFirstColor);
 }
 
 .key-reason-invest .count-block h5 {
@@ -4521,7 +4521,7 @@ p.contowl {
 	font-weight: 600;
 	text-align: center;
 	line-height: 50px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	padding-top: 69px;
 	padding-bottom: 66px;
@@ -4911,7 +4911,7 @@ p.contowl {
 
 .investment-hub-container .what-do-section h2 {
 	font-size: 45px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-weight: 600;
 	line-height: 50px;
 	text-transform: uppercase;
@@ -5131,7 +5131,7 @@ p.contowl {
 .investment-opportunities .panel-box-block .box-img-right h3 {
 	font-size: 42px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: left;
 	line-height: 38px;
 	padding-bottom: 10px;
@@ -5178,7 +5178,7 @@ p.contowl {
 .content-area .sec-area strong {
 	font-size: 27px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .content-area .sec-area span {
@@ -5325,7 +5325,7 @@ p.contowl {
 	font-size: 42px;
 	line-height: 47px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	padding-bottom: 30px;
 	margin-bottom: 0;
 	text-transform: uppercase;
@@ -5419,7 +5419,7 @@ p.contowl {
 	font-size: 42px;
 	line-height: normal;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	margin-bottom: 0;
 	padding-bottom: 40px;
@@ -5494,7 +5494,7 @@ p.contowl {
 	font-weight: 600;
 	text-align: center;
 	line-height: 50px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	padding-top: 69px;
 	padding-bottom: 5px;
@@ -5583,7 +5583,7 @@ p.contowl {
 	padding-top: 0;
 	padding-bottom: 15px;
 	border-radius: 0;
-	border-bottom: 5px solid #BF9B2E !important;
+	border-bottom: 5px solid var(--misaFirstColor) !important;
 	background: #FFFFFF;
 	border: 1px solid #F0F0EF;
 	box-shadow: 0px 26px 33px #00000029;
@@ -5627,7 +5627,7 @@ p.contowl {
 	font-weight: 600;
 	text-align: center;
 	line-height: 22px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	position: relative;
 	left: -20px;
 	padding-top: 60px;
@@ -5658,7 +5658,7 @@ p.contowl {
 .regions-container .region-map h4 {
 	font-size: 35px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 57px;
 	margin-bottom: 0;
 }
@@ -5738,7 +5738,7 @@ p.contowl {
 	font-size: 25px;
 	font-weight: normal;
 	line-height: 39px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 0;
 }
 
@@ -5777,7 +5777,7 @@ p.contowl {
 	width: 50%;
 	font-size: 42px;
 	font-weight: normal;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 0;
 	text-transform: uppercase;
 }
@@ -5904,7 +5904,7 @@ p.contowl {
 
 .map-info-header {
 	font-size: 42px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .map-info-text {
@@ -5931,7 +5931,7 @@ p.contowl {
 
 .rhq-contant h2 {
 	font-size: 42px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -6112,12 +6112,12 @@ img.accountLogin-headline-logo {
 	top: 0;
 	left: 4px;
 	font-size: 37px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .resourceDetailTop p:first-child {
 	font-size: 45px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 1.2;
 }
 @media (max-width: 991px) {
@@ -6526,7 +6526,7 @@ img.accountLogin-headline-logo {
     position: absolute;
     top: 0;
     right: 0;
-    color: #00714D;
+    color: var(--misaSecondColor);
     background-color: transparent;
     padding: 0 15px;
 }
@@ -6802,7 +6802,7 @@ ul#arabic-list li {
 .rhq-glance-heading p:nth-child(1),
 .investor-journey-container-heading p:nth-child(1),
 .regions-title-container h1 p:nth-child(1) {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .rhq-glance-heading p:nth-child(2),
@@ -6910,7 +6910,7 @@ ul#arabic-list li {
 	text-align: center;
 	line-height: 22px;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	position: relative;
 	left: -20px;
 	padding-top: 60px;
@@ -6955,7 +6955,7 @@ ul#arabic-list li {
 	line-height: 47px !important;
 	font-weight: 600 !important;
 
-	color: #BF9B2E !important;
+	color: var(--misaFirstColor) !important;
 	text-align: center !important;
 	padding-bottom: 30px !important;
 	margin-bottom: 0 !important;
@@ -6974,7 +6974,7 @@ ul#arabic-list li {
 	font-size: 25px;
 	font-weight: normal;
 	line-height: 39px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 0;
 }
 
@@ -7455,7 +7455,7 @@ figure h2 {
 .Inc-sector-panel-header {
 	font-size: 45px;
 	text-transform: uppercase;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	width: 100%;
 	text-align: center;
 	padding-top: 80px;
@@ -7563,20 +7563,38 @@ figure h2 {
     	margin-left: 35px;
 	}
 }
-.pageLabel--sectors-opportunities-opportunities .banner-section{
+
+.pageLabel--sectors-opportunities-opportunities .banner-section {
 	height: 45vh;
 	background: rgba(0, 113, 77, 0.05);
 }
-.pageLabel--sectors-opportunities-opportunities .banner-section h1{
+
+.pageLabel--sectors-opportunities-opportunities .banner-section h1 {
 	font-weight: 700;
 	font-size: 5vh;
-	color: #00714D;
+	color: var(--misaSecondColor);
 	margin-top: 30vh;
 	position: absolute;
 	top: 0;
     right: 0;
     transform: translate(0vh, 0);
     padding: 0 15px!important;
+}
+
+.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .banner-section {
+	height: 70vh;
+    background: rgba(0, 113, 77, 0.05);
+}
+
+.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .banner-section h1 {
+	font-weight: 700;
+	font-size: 5vh;
+	color: var(--misaSecondColor);
+	margin-top: 30vh;
+	position: absolute;
+	top: 0;
+    right: 0;
+    transform: translate(0vh, 0);
 }
 
 .banner-section {
@@ -7620,7 +7638,7 @@ figure h2 {
 
 .aboutusContainer h2 {
 	font-size: 45px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-weight: normal;
 	text-align: center;
 	line-height: 60px;
@@ -7902,7 +7920,7 @@ figure h2 {
 	}
 	.aboutusContainer h2 {
 		font-size: 22px;
-		color: #BF9B2E;
+		color: var(--misaFirstColor);
 		font-weight: normal;
 		text-align: center;
 		line-height: 24px;
@@ -8239,7 +8257,7 @@ figure h2 {
 
 .contactpage-form .tab-content h2 {
 	font-size: 42px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -8285,17 +8303,17 @@ figure h2 {
 	font-size: 18px;
 	color: #fff;
 	padding: 10px 0px;
-	border-radius: 30px;
-	background-color: #00714d;
+	border-radius: 15px;
+	background-color: var(--misaSecondColor);
 }
 
 .btn-form-outline {
 	font-size: 18px;
-	color: #00714d;
+	color: var(--misaSecondColor);
 	background-color: #eeefeb;
 	padding: 10px 0px;
 	border-radius: 30px;
-	border: 1px solid #00714d;
+	border: 1px solid var(--misaSecondColor);
 }.btn-form-outline:hover{
 	color: #707070;
 }
@@ -8432,7 +8450,7 @@ a.pvcy-policy:focus {
 	opacity: .65;
 	transform: scale(0.95) translateY(-0.75rem) translateX(0.5rem);
 	font-size: 14px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	padding-left: 4px;
 }
 
@@ -8541,50 +8559,31 @@ a.pvcy-policy:focus {
 	padding-right: 15px;
 }
 
-.form-normal-item,
-.form-normal-item-select {
-	margin-bottom: 35px;
-}
-
 .form-normal-item input {
 	box-shadow: 0 0 5pt 0.5pt #d3d3d3;
 	height: 65px;
-	border-radius: 100px;
-	padding: 28px 34px 14px;
+	border-radius: 10px;
+	padding: 15px 34px 14px;
 	font-size: 19px;
 }
 
 .form-normal-item-select select {
 	box-shadow: 0 0 5pt 0.5pt #d3d3d3;
 	height: 65px !important;
-	border-radius: 100px;
-	padding: 20px 34px 14px;
-	color: transparent !important;
+	border-radius: 10px;
+	padding: 15px 34px 14px;
+	color: #495057;
 	font-size: 19px;
 }
 
 .form-normal-item-select.focused select {
 	color: #707070 !important;
-	padding: 20px 34px 14px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+	padding: 15px 34px 14px;
 	line-height: 30px;
 }
 
 .form-normal-item-select select option {
 	color: #707070;
-}
-
-select {
-	-webkit-appearance: none;
-	appearance: none;
-}
-
-.form-normal-item-select label {
-	top: 1px;
-	margin-left: 4px;
-	font-size: 19px;
 }
 
 .form-normal-item-select .caret {
@@ -8645,7 +8644,7 @@ select {
 .form-group.focused .control-label {
 	opacity: 1;
 	transform: scale(0.75);
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin: 0;
 	top: 12px;
 }
@@ -8744,7 +8743,7 @@ select {
 }
 
 #News_press h4.date {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 37px;
 	font-weight: 600;
 
@@ -8788,7 +8787,7 @@ select {
 }
 
 .content-info h3.highlight_title {
-	color: #BF9B2E !important;
+	color: var(--misaFirstColor) !important;
 }
 
 #News_press .para_title {
@@ -9178,7 +9177,7 @@ select {
 
 .news-date .day {
 	font-size: 45px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 35px;
 	margin-bottom: 5px;
 }
@@ -9212,7 +9211,7 @@ select {
 .tabs-normal li a.nav-link.active {
 	color: var(--misaSecondColor);
 	background-color: transparent;
-	border-bottom: 3px solid #BF9B2E;
+	border-bottom: 3px solid var(--misaFirstColor);
 	border-radius: 0;
 }
 
@@ -9295,7 +9294,7 @@ select {
 
 .videos-card-inner h3 {
 	font-size: 32px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-top: 20px;
 	margin-bottom: 0;
 	overflow: hidden;
@@ -9335,7 +9334,7 @@ body.page-living-in-saudi .content {
 
 .achievement_header h1 {
 	font-size: 45px;
-	color: #BF9B2E
+	color: var(--misaFirstColor)
 }
 
 .achievement_header .achievement_header_icon {
@@ -9412,7 +9411,7 @@ body.page-living-in-saudi .content {
 
 .achievements_points h1 {
 	font-size: 65px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .achievements_points p {
@@ -9514,7 +9513,7 @@ body.page-living-in-saudi .content {
 
 .page-details-banner-item .event-date .event-num {
 	font-size: 37px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 1;
 }
 
@@ -9628,7 +9627,7 @@ body.page-living-in-saudi .content {
 }
 
 .pagination-bottom li.page-item .page-link {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 20px;
 }
 
@@ -9680,7 +9679,7 @@ body.page-living-in-saudi .content {
 
 .Inc-mediaCenter-Date .day {
 	font-size: 45px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 35px;
 	margin-bottom: 5px;
 }
@@ -9691,34 +9690,22 @@ body.page-living-in-saudi .content {
 	font-weight: 300;
 	line-height: 20px;
 }
+
 .Inc-sector-banner {
-	width: 100%;
 	height: 70vh;
-	background-position: top center;
-	background-size: cover;
 	background-color: rgba(0, 113, 77, 0.05);
-	position: relative;
-	z-index: 1;
 }
+
 .Inc-sector-banner .Inc-sector-banner-container {
-	position: absolute;
-	background-color: #f2f7f5;
-	bottom: 0;
-	top: 0;
-	left: 0;
-	right: 0;
-	display: flex;
-	justify-content: center;
 	align-items: right;
-	flex-direction: column;
-	text-align: right;
-	z-index: 9;
 }
 
 .Inc-sector-banner-container h1 {
+	font-size: 32px;
 	font-weight: 700;
-	font-size: 5vh;
-	color: #00714D;
+	line-height: 37px;
+	letter-spacing: 0em;
+	color: var(--misaSecondColor);
 	margin-top: 30vh;
 	position: absolute;
 	top: 0;
@@ -9749,7 +9736,7 @@ body.page-living-in-saudi .content {
 
 .btn-sector-primary {
 	color: #fff;	
-	background-color: #00714d;
+	background-color: var(--misaSecondColor);
 	border-radius: 4px;
 	font-size: 16px;
 	padding: 15px 20px;
@@ -9795,7 +9782,7 @@ body.page-living-in-saudi .content {
 .Inc-sectordetail-overview h1,
 .Inc-sectordetail-overview h3 {
 	font-size: 45px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	margin-bottom: 25px;
 	width: 100%;
@@ -9830,7 +9817,7 @@ body.page-living-in-saudi .content {
 }
 
 .Inc-sector-explorer h1.exp-title {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .Inc-sector-explorer h1.sub-title {
@@ -9899,7 +9886,7 @@ body.page-living-in-saudi .content {
 }
 
 .Inc-sectoritem-overview h3 {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 45px;
 }
 
@@ -9933,7 +9920,7 @@ body.page-living-in-saudi .content {
 .Inc-sector-keyDetails h3 {
 	position: relative;
 	font-size: 29px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 30px;
 	text-align: right;
 }
@@ -9966,7 +9953,7 @@ body.page-living-in-saudi .content {
 	right: 0;
 	width: 9px;
 	height: 9px;
-	background-color: #BF9B2E;
+	background-color: var(--misaFirstColor);
 	border-radius: 100px;
 }
 
@@ -9990,7 +9977,7 @@ body.page-living-in-saudi .content {
 }
 
 .Inc-sector-keyFacts ul.keyFacts li span.unit {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 55px;
 	word-break: break-word;
 }
@@ -10031,7 +10018,7 @@ body.page-living-in-saudi .content {
 }
 
 .val-header {
-	background-color: #BF9B2E;
+	background-color: var(--misaFirstColor);
 	text-align: center;
 	color: #fff;
 	margin-top: -53px;
@@ -10130,7 +10117,7 @@ body.page-living-in-saudi .content {
 
 .Inc-fearured-opp-type {
 	font-size: 25px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	margin-bottom: 12px;
 }
@@ -10252,7 +10239,7 @@ body.page-living-in-saudi .content {
 
 .Inc-exploreMore-itemLeft h1 {
 	font-size: 41px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 60px;
 }
 
@@ -10269,7 +10256,7 @@ body.page-living-in-saudi .content {
 .eventsDetail-keys h1 {
 	font-size: 45px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	line-height: 50px;
 	margin-bottom: 0;
@@ -10297,7 +10284,7 @@ body.page-living-in-saudi .content {
 .eventsDetail-keys-wrapper .box h4 {
 	font-size: 22px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	line-height: 30px;
 	padding-bottom: 8px;
@@ -10333,7 +10320,7 @@ body.page-living-in-saudi .content {
 .eventsDetail-agenda h1 {
 	font-size: 45px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	line-height: 50px;
 	margin-bottom: 0;
@@ -10353,7 +10340,7 @@ body.page-living-in-saudi .content {
 .eventsDetail-agenda .agenda-event-date {
 	font-size: 20px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	width: 166px;
 	height: 84px;
 	text-align: center;
@@ -10686,7 +10673,7 @@ body.page-living-in-saudi .content {
 }
 
 .region-wrapper-right h1 {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 35px;
 	margin-bottom: 25px;
 }
@@ -10724,7 +10711,7 @@ body.page-living-in-saudi .content {
 	line-height: 30px;
 	font-weight: 600;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	padding-top: 0;
 }
@@ -10754,15 +10741,15 @@ body.page-living-in-saudi .content {
 }
 
 .region-map a:hover path.outer {
-	fill: #bf9b2e33;
+	fill: var(--misaFirstColor)33;
 }
 
 .region-map a.active path.outer {
-	fill: #bf9b2e99;
+	fill: var(--misaFirstColor)99;
 }
 .Inc-mediaCenter-sectionwrapper h1.service-title {
 	position: relative;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 50px;
 	padding-bottom: 25px;
 }
@@ -10779,14 +10766,14 @@ body.page-living-in-saudi .content {
 .successstory-container .sucess_content h6.success-content-title {
 	font-size: 28px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 40px;
 	text-transform: uppercase;
 }
 
 .video-inner-div {
 	min-height: 300px;
-	background-color: #BF9B2E;
+	background-color: var(--misaFirstColor);
 	box-shadow: 0px 3px 6px #00000029;
 	border: 1px solid #EEEEF6;
 }
@@ -10794,7 +10781,7 @@ body.page-living-in-saudi .content {
 .video-inner-div h4 {
 	font-size: 28px;
 	font-weight: 600;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	line-height: 40px;
 	padding: 15px;
 	text-transform: uppercase;
@@ -10809,7 +10796,7 @@ body.page-living-in-saudi .content {
 }
 
 .news-service-card .service-card h3 {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 0;
 }
 
@@ -10848,7 +10835,7 @@ body.page-living-in-saudi .content {
 }
 
 .invest_lic_outer .invest_lic_first_text {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .invest_lic_outer p {
@@ -10860,7 +10847,7 @@ body.page-living-in-saudi .content {
 }
 
 .invest_lic_outer p span {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .yCmsComponent.col.invest_lic_inner p>span {
@@ -10952,7 +10939,7 @@ body.page-living-in-saudi .content {
 }
 
 .bussiness_lic_invest_outer h2 strong {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 90px;
 }
 
@@ -11016,7 +11003,7 @@ body.page-living-in-saudi .content {
 	line-height: 47px;
 	font-weight: normal;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: right;
 }
 
@@ -11087,7 +11074,7 @@ body.page-living-in-saudi .content {
 	line-height: 40px;
 	font-weight: 600;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	padding: 1em 0;
 	width: 80%;
 	margin: auto;
@@ -11124,7 +11111,7 @@ body.page-living-in-saudi .content {
 	line-height: 47px;
 	font-weight: normal;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: right;
 }
 
@@ -11155,7 +11142,7 @@ body.page-living-in-saudi .content {
 	line-height: 36px;
 	font-weight: 600;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: capitalize;
 	display: block;
 	margin-bottom: 10px;
@@ -11239,7 +11226,7 @@ body.page-living-in-saudi .content {
 	font-size: 34px;
 	font-weight: 600;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 }
 
@@ -11260,7 +11247,7 @@ body.page-living-in-saudi .content {
 	font-size: 25px;
 	font-weight: 600;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .INS_loanpbm_para {
@@ -11666,7 +11653,7 @@ ul.INS_list_font {
 }
 
 .logis_show:active path {
-	fill: #BF9B2E;
+	fill: var(--misaFirstColor);
 }
 
 .INL_table .table td,
@@ -12230,11 +12217,6 @@ ul.INS_li_ul_under li {
 		margin: auto;
 		width: 100%;
 	}
-	.Inc-sector-banner-container h1 {
-		font-size: 30px;
-		font-weight: 400;
-		line-height: 40px;
-	}
 	.Inc-baner-btnwraper {
 		flex-direction: unset;
 		display: flex !important;
@@ -12242,7 +12224,7 @@ ul.INS_li_ul_under li {
 	.sectors-content h1.clr_gld.section-headline.my-2 {
 		font-size: 30px;
 		line-height: 40px;
-		color: #BF9B2E;
+		color: var(--misaFirstColor);
 	}
 	.sectors-content .opportunity-productData-description p {
 		font-size: 15px !important;
@@ -12277,20 +12259,11 @@ ul.INS_li_ul_under li {
 		height: 48px !important;
 		font-size: 14px;
 	}
-	#corForm .form-normal-item-select label {
-		font-size: 15px;
-		transform: translate3d(0, 11px, 0) scale(1);
-	}
-	#corForm .form-group.focused .form-normal-item-select label {
-		transform: scale(0.75) !important;
-		top: -1px;
-	}
+	
 	#corForm .control-label {
 		font-size: 15px;
 	}
-	#corForm .btn {
-		font-size: 15px;
-	}
+
 	#corForm .form-group.form-floating.col-md-6.form-normal-item input {
 		padding: 15px 34px 15px;
 		height: 48px;
@@ -12758,11 +12731,6 @@ ul.INS_li_ul_under li {
 	}
 }
 
-@media (min-width: 641px) and (max-width: 767px) {
-	.responsive-contact-btn {
-		margin-top: 20px;
-	}
-}
 .opportunity-productData-description li {
 	padding: 20px 10px !important;
 }
@@ -13178,11 +13146,6 @@ ul.INS_li_ul_under li {
 	}
 }
 
-@media (min-width: 641px) and (max-width: 767px) {
-	.responsive-contact-btn {
-		margin-top: 20px;
-	}
-}
 .opportunity-productData-description li {
 	padding: 20px 10px !important;
 }
@@ -13329,7 +13292,7 @@ ul.INS_li_ul_under li {
 .numbers_golden_set {
 	font-weight: 600;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	font-size: 20px;
 	padding: 0px 6px;
@@ -13594,9 +13557,12 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .opportunity-productData-description h3,
 .opportunity-contact .heading {
-	font-size: 45px;
-	color: #BF9B2E;
-	text-align: center;
+	color: var(--misaSecondColor);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+	letter-spacing: 0em;
+	text-align: right;
 }
 
 .opportunity-productData-description ul {
@@ -13635,7 +13601,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     margin-right: 15px;
 }
 .opp-contact-card {
-	background: #00714d;
+	background: var(--misaSecondColor);
 	max-width: 500px;
 	justify-content: center;
     margin-left: 15px;
@@ -13648,9 +13614,8 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 .opportunity-contact textarea {
 	box-shadow: 0px 19px 47px rgb(0 0 0 / 16%);
-	border-radius: 25px !important;
+	border-radius: 10px !important;
 	border: none;
-	margin-top: 20px;
 }
 
 .opportunity-contact .my-mobile {
@@ -13723,7 +13688,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .opportunity-card .opp-type {
 	font-size: 18px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 15px;
 	//height: 80px;
 }
@@ -13756,7 +13721,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: #00714D;
+    color: var(--misaSecondColor);
     text-align: right;
 }
 
@@ -13784,7 +13749,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	gap: 4px;
 	width: 30px;
 	height: 20px;
-	background: #BF9B2E;
+	background: var(--misaFirstColor);
 	border-radius: 20px;
 	flex: none;
 	order: 1;
@@ -13809,7 +13774,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .custom-button:hover {
-    background-color: #BF9B2E;
+    background-color: var(--misaFirstColor);
 }
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
@@ -13823,7 +13788,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
      line-height: 18px;
      display: flex;
      align-items: flex-end;
-     color: #BF9B2E;
+     color: var(--misaFirstColor);
      background: rgba(191, 155, 46, 0.3);
      border-radius: 15px;
      padding: 5px;
@@ -13851,24 +13816,24 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .pageLabel--sectors-opportunities-opportunities .flip-card strong {
 	font-family: 'Arial';
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .pageLabel--sectors-opportunities-opportunities .flip-card p {
 	font-family: 'Arial';
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-item.active .page-link,
 .pageLabel--sectors-opportunities-opportunities .all-opportunity .pagination .page-link:hover{
-background: #BF9B2E !important;
-border-color: #BF9B2E;
+background: var(--misaFirstColor) !important;
+border-color: var(--misaFirstColor);
 }
 
 .all-opportunity .pagination .page-item.active .page-link,
@@ -14012,9 +13977,9 @@ border-color: #BF9B2E;
 .download-opportunity {
 	background-color: #e4eeeb;
 	border-radius: 4px;
-	color: #00714d;
+	color: var(--misaSecondColor);
 	padding: 10px 25px;
-	border: 2px solid #00714d;
+	border: 2px solid var(--misaSecondColor);
 	font-size: 20px;
 	cursor: pointer;
 }
@@ -14264,7 +14229,7 @@ border-color: #BF9B2E;
 
 .mega-giga-container .content-area h2 {
 	font-size: 35px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .mega-giga-container .content-area p {
@@ -14290,7 +14255,7 @@ border-color: #BF9B2E;
 }
 
 .mega-jiamap a.active path {
-	fill: #bf9b2e;
+	fill: var(--misaFirstColor);
 }
 
 @media (max-width:768px) {
@@ -14456,7 +14421,7 @@ border-color: #BF9B2E;
 }
 
 .eh-card .count {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 35px;
 	margin-bottom: 0px;
 	line-height: 39px;
@@ -14747,7 +14712,7 @@ border-color: #BF9B2E;
 }
 
 .chart-header {
-	background-color: #BF9B2E;
+	background-color: var(--misaFirstColor);
 	width: 600px;
 	padding: 15px 40px;
 	color: #fff;
@@ -15014,7 +14979,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 }
 
 .INL_bg_gold_header {
-	background: #BF9B2E 0% 0% no-repeat padding-box;
+	background: var(--misaFirstColor) 0% 0% no-repeat padding-box;
 	width: 60%;
 	margin: 0px auto;
 	padding: 10px 1px;
@@ -15107,7 +15072,7 @@ body.page-economic-highlights .eh-page-breadcrums .toggle-div.container .eh-page
 	text-align: center;
 	font-size: 30px;
 	font-weight: bold;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .INL_total_number {
@@ -15159,7 +15124,7 @@ max-width: 25%; */
 	font-weight: 600;
 	font-size: 16px;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .INL_table .table td,
@@ -15248,7 +15213,7 @@ max-width: 25%; */
 
 .filter-panel h1 {
 	font-size: 20px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-align: center;
 	padding: 24px 0px 17px;
 }
@@ -15299,7 +15264,7 @@ body.page-saudi-economic-sectors .INL_SD_Real_Sector {
 	font-size: 35px;
 	font-weight: 600;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .INL_SD_Real_Sector_paper {
@@ -15385,7 +15350,7 @@ margin-top: 20px;
 	text-align: right;
 	font-size: 20px;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-weight: 600;
 }
 
@@ -15449,7 +15414,7 @@ margin-top: 20px;
 	text-align: center;
 	font-size: 20px;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 
@@ -15491,7 +15456,7 @@ margin-top: 20px;
 	font-weight: 600;
 	font-size: 20px;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .INDS_select_sector_input {
@@ -15661,7 +15626,7 @@ padding: 0px 0px 0px 35px;*/
 	font-size: 35px;
 	font-weight: 600;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .INID_SD_Data_IN_sho {
@@ -15676,7 +15641,7 @@ padding: 0px 0px 0px 35px;*/
 	text-align: center;
 	font-size: 20px;
 
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-weight: 600;
 }
 
@@ -15738,7 +15703,7 @@ padding: 0px 0px 0px 35px;*/
 	font-weight: 600;
 	text-align: center;
 	line-height: 50px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	text-transform: uppercase;
 	padding-top: 69px;
 	padding-bottom: 5px;
@@ -15765,7 +15730,7 @@ padding: 0px 0px 0px 35px;*/
 	margin: 0 auto;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	background-color: #BF9B2E;
+	background-color: var(--misaFirstColor);
 }
 
 .content-header h5 {
@@ -17013,7 +16978,7 @@ ul.INS_list_font li,
     font-weight: 600;
     text-align: center;
     line-height: 50px;
-    color: #BF9B2E;
+    color: var(--misaFirstColor);
     text-transform: uppercase;
     padding-top: 69px;
     padding-bottom: 5px;
@@ -17025,7 +16990,7 @@ ul.INS_list_font li,
     font-weight: 600;
     text-align: center;
     line-height: 50px;
-    color: #BF9B2E;
+    color: var(--misaFirstColor);
     text-transform: uppercase;
     padding-top: 69px;
     padding-bottom: 5px;
@@ -17417,7 +17382,7 @@ ul.INS_list_font li,
 
 .media-explore-more-left h1 {
 	font-size: 41px;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 60px;
 }
 
@@ -17543,9 +17508,6 @@ ul.INS_list_font li,
 	}
 	.page-sector-details .container.sector-opportunities-title {
 		display: none;
-	}
-	.page-sector-details .Inc-sector-banner-container h1 {
-		padding: 0 15px;
 	}
 	.page-sector-details .Inc-section-baner-logo img {
 		width: 65px;
@@ -17914,7 +17876,7 @@ ul.INS_list_font li,
 	.sectors-content h1.clr_gld.section-headline.my-2 {
 		font-size: 30px;
 		line-height: 40px;
-		color: #BF9B2E;
+		color: var(--misaFirstColor);
 	}
 	.sectors-content .opportunity-productData-description p {
 		font-size: 15px !important;
@@ -17957,28 +17919,16 @@ ul.INS_list_font li,
 		height: 48px !important;
 		font-size: 14px;
 	}
-	#corForm .form-normal-item-select label {
-		font-size: 15px;
-		transform: translate3d(0, 11px, 0) scale(1);
-	}
+	
 	.contact-form .form-row>.col,
 	.form-row>[class*=col-] {
 		padding: 0;
 	}
-	.form-normal-item,
-	.form-normal-item-select {
-		padding: 0;
-	}
-	#corForm .form-group.focused .form-normal-item-select label {
-		transform: scale(0.75) !important;
-		top: -1px;
-	}
+	
 	#corForm .control-label {
 		font-size: 15px;
 	}
-	#corForm .btn {
-		font-size: 15px;
-	}
+
 	#corForm .form-group.form-floating.col-md-6.form-normal-item input {
 		padding: 15px 34px 15px;
 		height: 48px;
@@ -19589,7 +19539,7 @@ ul.INS_list_font li,
 		font-weight: 600;
 		text-align: center;
 		line-height: 32px;
-		color: #BF9B2E;
+		color: var(--misaFirstColor);
 		text-transform: uppercase;
 		padding-top: 25px;
 		padding-bottom: 10px;
@@ -19663,7 +19613,7 @@ ul.INS_list_font li,
 	.Inc-sectordetail-overview h1,
 	.Inc-sectordetail-overview h3 {
 		font-size: 29px;
-		color: #BF9B2E;
+		color: var(--misaFirstColor);
 		text-transform: uppercase;
 		margin-bottom: 25px;
 		width: 100%;
@@ -19771,9 +19721,7 @@ ul.INS_list_font li,
 		text-align: center;
 		padding-bottom: 25px;
 	}
-	.responsive-contact-btn {
-		margin-top: 20px;
-	}
+
 	.Inc-sector-panel-header {
 		font-size: 30px;
 		line-height: 40px;
@@ -19788,11 +19736,6 @@ ul.INS_list_font li,
 	}
 	#header .logo img {
 		top: 0;
-	}
-	.Inc-sector-banner-container h1 {
-		font-size: 25px;
-		font-weight: 400;
-		line-height: 30px;
 	}
 	figure h2 {
 		font-size: 11px;
@@ -20702,11 +20645,6 @@ ul.INS_list_font li,
 		height: auto;
 		min-height: 245px;
 	}
-	.Inc-sector-banner-container h1 {
-		font-size: 30px !important;
-		font-weight: 400;
-		line-height: 40px !important;
-	}
 	.Inc-sector-banner {
 		height: 600px;
 	}
@@ -20726,7 +20664,7 @@ ul.INS_list_font li,
 	.sectors-content h1.clr_gld.section-headline.my-2 {
 		font-size: 30px;
 		line-height: 40px;
-		color: #BF9B2E;
+		color: var(--misaFirstColor);
 	}
 	.sectors-content .opportunity-productData-description p {
 		font-size: 15px !important;
@@ -20763,25 +20701,11 @@ ul.INS_list_font li,
 		transform: scale(0.75) !important;
 		top: -1px;
 	}
-	#corForm .form-normal-item-select select {
-		padding: 0px 34px 0;
-		height: 48px !important;
-		font-size: 14px;
-	}
-	#corForm .form-normal-item-select label {
-		font-size: 15px;
-		transform: translate3d(0, 11px, 0) scale(1);
-	}
-	#corForm .form-group.focused .form-normal-item-select label {
-		transform: scale(0.75) !important;
-		top: -1px;
-	}
+	
 	#corForm .control-label {
 		font-size: 15px;
 	}
-	#corForm .btn {
-		font-size: 15px;
-	}
+
 	#corForm .form-group.form-floating.col-md-6.form-normal-item input {
 		padding: 15px 34px 15px;
 		height: 48px;
@@ -22110,7 +22034,7 @@ ul.INS_list_font li,
 	.Inc-sectordetail-overview h1,
 	.Inc-sectordetail-overview h3 {
 		font-size: 35px;
-		color: #BF9B2E;
+		color: var(--misaFirstColor);
 		text-transform: uppercase;
 		margin-bottom: 25px;
 		width: 100%;
@@ -22204,11 +22128,6 @@ ul.INS_list_font li,
 	.Inc-sector-keyDetails h3 {
 		font-size: 28px;
 		margin-bottom: 25px;
-	}
-	.Inc-sector-banner-container h1 {
-		font-size: 47px;
-		font-weight: 400;
-		line-height: 55px;
 	}
 	.banner-section h1 {
 		font-size: 25px;
@@ -22713,7 +22632,7 @@ font-weight : 400;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 2px;
-    color: #bf9b2e;    
+    color: var(--misaFirstColor);    
 }
 .sitemap-section{
 	width: 100%;
@@ -22731,7 +22650,7 @@ font-weight : 400;
     font-weight: 600;
     line-height: 50px;
     letter-spacing: 2px;
-    color: #bf9b2e;    
+    color: var(--misaFirstColor);    
 	display: block;
 }
 .sitemap-content-level2 a{
@@ -22868,7 +22787,7 @@ table,th,tr,td{
     border-radius: 30px;
 }
 .page-portal .product-header{
-	background: #BF9B2E 0% 0% no-repeat padding-box;
+	background: var(--misaFirstColor) 0% 0% no-repeat padding-box;
 	opacity: 1;
 	padding: 10px 17px;
 	color: #fff;

@@ -6,20 +6,22 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <main>
-	<section class="Inc-sector-banner">
-		<div class="Inc-sector-banner-container container aos-init aos-animate" data-aos="fade-up">
-			<div class="row">
-				<h1>${fn:escapeXml(productData.name)}</h1>
+	<section class="mb-5 general-info mt-0 pt-0">
+        <div style="background-image: url('')" class="yCmsComponent banner-section rhq-banner-content">
+            <div class="banner-container container aos-init aos-animate" data-aos="fade-up">
+            	<h1>${fn:escapeXml(productData.name)}</h1>
 				<c:if test="${true}"><!-- test, if kpis are available-->
-					<div class="row kpi-row">
-						<div class="col-md-5 col-5 kpi">
-							<div class="kpi-value">XX%</div>
-							<div class="kpi-postfix">TODO actual data</div>
-						</div>
-						<div class="col-md-2 col-2"></div>
-						<div class="col-md-5 col-5 kpi">
-							<div class="kpi-value">$X</div>
-							<div class="kpi-postfix">TODO actual data</div>
+					<div class="col-md-12">
+						<div class="row kpi-row">
+							<div class="col-md-5 col-5 kpi">
+								<div class="kpi-value">XX%</div>
+								<div class="kpi-postfix">TODO actual data</div>
+							</div>
+							<div class="col-md-2 col-2"></div>
+							<div class="col-md-5 col-5 kpi">
+								<div class="kpi-value">$X</div>
+								<div class="kpi-postfix">TODO actual data</div>
+							</div>
 						</div>
 					</div>
 				</c:if>
@@ -36,54 +38,47 @@
 	  					</form>
 					</c:if>
 				</div>
-			</div>
-		</div>    
-	</section>
+            </div>
+        </div>
+    </section>
 
-	<div class="container">
-		<div class="row opportunity-article-row">
-		
-			<!-- <c:if test="${not empty productData.description}"> -->
-				<section class="container sectors-content">
-					<div class="row">
-						<div class="col-md-12">
-								<div class="opportunity-productData-description">
-									${productData.description}		
-									<a>Text to be displayed. This is an example Opportunity description</a>			
-								</div>
-							
-						</div>
-					</div>
-				</section>
-			<!-- </c:if> -->
-			<div class="sectors-content data-contact-field">
-				<c:if test="${true}"><!-- test, if meta data is available-->
-					<section class="sectors-content opp-metadata">
-						
-					</section>
-				</c:if>
-				
-				<section class="sectors-content opp-contact-card">
-					<div class="opportunity-contact-name">
-						<c:if test="${true}"><!-- test, if contact data is available-->
-							<div class="row contact-row">
-								<div class="contact-name col-md-12">Firstname Lastname</div>
-								<div class="contact-role col-md-12">Role description</div>
-							</div>
-						</c:if>
-					</div>
-					<div class="Inc-baner-btnwraper">
-						<button class="btn contact-button">
-							<a href="/en/investsaudi-login">
-								<spring:theme code="portal.sector.investnow.label"/>
-								<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
-							</a>
-						</button>
-					</div>
-				</section>
+	<!-- <c:if test="${not empty productData.description}"> -->
+	<section class="container sectors-content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="opportunity-productData-description">
+					${productData.description}		
+					<a>Text to be displayed. This is an example Opportunity description</a>			
+				</div>
 			</div>
-				
 		</div>
+	</section>
+	<!-- </c:if> -->
+	<div class="sectors-content data-contact-field">
+		<c:if test="${true}"><!-- test, if meta data is available-->
+			<section class="sectors-content opp-metadata">
+				
+			</section>
+		</c:if>
+		
+		<section class="sectors-content opp-contact-card">
+			<div class="opportunity-contact-name">
+				<c:if test="${true}"><!-- test, if contact data is available-->
+					<div class="row contact-row">
+						<div class="contact-name col-md-12">Firstname Lastname</div>
+						<div class="contact-role col-md-12">Role description</div>
+					</div>
+				</c:if>
+			</div>
+			<div class="Inc-baner-btnwraper">
+				<button class="btn contact-button">
+					<a href="/en/investsaudi-login">
+						<spring:theme code="portal.sector.investnow.label"/>
+						<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
+					</a>
+				</button>
+			</div>
+		</section>
 	</div>
 
 	<cms:pageSlot position="PortalPageMain" var="slotComponent">

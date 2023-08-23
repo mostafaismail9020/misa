@@ -8,46 +8,43 @@
 <! -- Start InvestSaudiMediaCenterMainComponent -->
 <main>
 <section class="tab-section Inc-mediaCenter-sectionwrapper">
-        <c:url value="/mediaCenter/events" var="eventsUrl" />
-        <div class="container">
-            <div class="row text-center">
-                <h1 class="w-100 title service-title">
-                    ${eventsSectionTitle}
-                </h1>
-            </div>
+    <c:url value="/mediaCenter/events" var="eventsUrl" />
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="w-100 title service-title">
+                ${eventsSectionTitle}
+            </h1>
         </div>
-        <div class="container">
-                <div class="row">
-                    <c:forEach items="${eventsPageData.results}" var="eventComponent">
-                        <div class="col-sm-12 col-md-4 mb-5">
-                            <div class="flip-card">
-                                <a href="${eventsUrl}/${eventComponent.uid}">
-                                <div class="flip-card-front">
-                                    <div class="news-date text-center">
-                                        <div class="day">
-                                            <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" />
-                                        </div>
-                                        <div class="month">
-                                            <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMM" />
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                    	<img class="img-fluid w-100 events-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}"  alt="${eventComponent.eventName}" loading="lazy">
-
-                                    	</div>
-                                    <div class="flip-card-text">
-                                        <h2 class="eventName">${eventComponent.eventName}</h2>
-                                         <p class="eventShortInformation">${eventComponent.eventLocation}</p>
-                                        <p class="eventShortInformation">${eventComponent.eventShortInformation}</p>
-                                        </a>
-                                    </div>
+    </div>
+    <div class="row">
+        <c:forEach items="${eventsPageData.results}" var="eventComponent">
+            <div class="col-sm-12 col-md-3 mb-5">
+                <div class="flip-card">
+                    <a href="${eventsUrl}/${eventComponent.uid}">
+                        <div class="flip-card-front">
+                            <div class="news-date text-center">
+                                <div class="day">
+                                    <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="d" />
+                                </div>
+                                <div class="month">
+                                    <fmt:formatDate value="${eventComponent.eventStartDate}" pattern="MMM" />
                                 </div>
                             </div>
+                            <div class="card-img">
+                                <img class="img-fluid w-100 events-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}"  alt="${eventComponent.eventName}" loading="lazy">
+                            </div>
+                            <div class="flip-card-text">
+                                <h2 class="eventName">${eventComponent.eventName}</h2>
+                                <p class="eventShortInformation">${eventComponent.eventLocation}</p>
+                                <p class="eventShortInformation">${eventComponent.eventShortInformation}</p>
+                            </div>
                         </div>
-                    </c:forEach>
+                    </a>
                 </div>
             </div>
-        </section>
+        </c:forEach>
+    </div>
+</section>
 
     <section class="Inc-mediaCenter-sectionwrapper">
         <c:url value="/mediaCenter/news" var="newsUrl" />

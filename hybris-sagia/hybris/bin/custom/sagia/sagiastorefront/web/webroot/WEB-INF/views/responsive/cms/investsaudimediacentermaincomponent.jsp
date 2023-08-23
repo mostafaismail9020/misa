@@ -159,7 +159,7 @@
                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                    </iframe>
                                </div>
-                               <h4 class="media-center-webinar" title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
+                               <h4 title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
                            </div>
                        </div>
                        <div class="col-md-12 news vedio_outer">
@@ -170,7 +170,7 @@
                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                    </iframe>
                                </div>
-                               <h4 class="media-center-webinar" title="${webinarPageData.results[2].title}">${webinarPageData.results[2].title}</h4>
+                               <h4  title="${webinarPageData.results[2].title}">${webinarPageData.results[2].title}</h4>
                            </div>
                        </div>
                    </div>

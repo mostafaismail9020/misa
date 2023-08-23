@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                             <div class="card-img">
-                                <img class="img-fluid w-100 events-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}"  alt="${eventComponent.eventName}" loading="lazy">
+                                <img class="img-fluid  events-card-img" src="${fn:escapeXml(eventComponent.eventThumbnailImage.url)}"  alt="${eventComponent.eventName}" loading="lazy">
                             </div>
                             <div class="flip-card-text">
                                 <h2 class="eventName">${eventComponent.eventName}</h2>

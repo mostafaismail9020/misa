@@ -10811,10 +10811,7 @@ body.page-living-in-saudi .content {
     box-shadow: none;
     border: none;
 }
-.video-events{
-    border-radius: 10px;
-    width: 80% !important;
-}
+
 .video-inner-div {
 	min-height: 300px;
 	box-shadow: 0px 3px 6px #00000029;
@@ -10822,13 +10819,35 @@ body.page-living-in-saudi .content {
 }
 .pageLabel--mediaCenter .video-inner-div h4 {
     font-family: 'Arial';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.3vw;
-    line-height: 18px;
-    color: #00714D;
-    text-transform: none;
+   font-style: normal;
+       font-weight: 700;
+       font-size: 1.3vw;
+       color: #00714D;
+       text-transform: none;
+        line-height: 0px;
+        padding: 15px;
+        flex: none;
+        align-self: stretch;
+        flex-grow: 0;
 }
+.videoDate{
+    font-family: 'Arial';
+      font-style: normal;
+        font-weight: 400;
+        font-size: 1vw;
+         color: #00714D;
+            text-transform: none;
+             line-height: 0px;
+             padding: 15px;
+             flex: none;
+             align-self: stretch;
+             flex-grow: 0;
+}
+.video-events{
+    border-radius: 10px;
+    width: 80% !important;
+}
+
 .video-inner-div h4 {
 	font-size: 28px;
 	font-weight: 600;

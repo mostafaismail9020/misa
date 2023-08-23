@@ -10889,9 +10889,26 @@ body.page-living-in-saudi .content {
     font-style: normal;
     font-weight: 700;
     font-size: 1.3vw;
-    line-height: 18px;
     color: #00714D;
     text-transform: none;
+     line-height: 0px;
+     padding: 15px;
+     flex: none;
+     align-self: stretch;
+     flex-grow: 0;
+}
+.videoDate{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+     color: #00714D;
+        text-transform: none;
+         line-height: 0px;
+         padding: 15px;
+         flex: none;
+         align-self: stretch;
+         flex-grow: 0;
 }
 .video-events{
     border-radius: 10px;

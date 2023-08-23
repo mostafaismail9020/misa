@@ -143,7 +143,7 @@
                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                            </iframe>
                        </div>
-                       <h4 class="media-center-webinar" title="${webinarPageData.results[0].title}">${webinarPageData.results[0].title}</h4>
+                               <h4  title="${webinarPageData.results[0].title}">${webinarPageData.results[0].title}</h4>
                       <span class="videoDate">23.Aug.2023</span>
                    </div>
                </div>

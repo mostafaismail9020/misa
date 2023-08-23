@@ -127,59 +127,58 @@
 </section>
 
 
-    <section class="Inc-mediaCenter-sectionwrapper pb-3">
-        <c:url value="/mediaCenter/videos" var="videosUrl" />
-        <div class="container">
-            <div class="row text-center">
-                <h1 class="w-100 title service-title">
-                    ${videosSectionTitle}
-                </h1>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                  <div class="tab-content w-100" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="container">
-                            <div class="row">
-                                <c:forEach items="${webinarPageData.results}" var="videoComponent">
-                                    <div class="col-md-4 news vedio_outer mb-3">
-                                        <div class="video-player-container video-inner-div border-0 p-0">
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471"
-                                                        src="${fn:escapeXml(videoComponent.embedURL.url)}" frameborder="0"
-                                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
-                                                </iframe>
-                                            </div>
-                                            <h4 class="media-center-webinar" title="${videoComponent.title}">${videoComponent.title}</h4>
-                                        </div>
-                                    </div>
-                                </c:forEach>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <div class="container">
-                            <div class="row">
-                                <c:forEach items="${successStoryPageData.results}" var="successStoryComponent">
-                                    <div class="col-md-4 news vedio_outer">
-                                        <div class="video-player-container video-inner-div border-0 p-0">
-                                            <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="471"
-                                                    src="${fn:escapeXml(successStoryComponent.embedURL.url)}" frameborder="0"
-                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
-                                                </iframe>
-                                            </div>
-                                            <h4>${videoComponent.title}</h4>
-                                        </div>
-                                    </div>
-                                </c:forEach>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </section>
-<main>
+   <section class="Inc-mediaCenter-sectionwrapper pb-3">
+       <c:url value="/mediaCenter/videos" var="videosUrl" />
+       <div class="container">
+           <div class="row text-center">
+               <h1 class="w-100 title service-title">
+                   ${videosSectionTitle}
+               </h1>
+           </div>
+       </div>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-7">
+                   <div class="video-player-container video-inner-div border-0 p-0">
+                       <div class="embed-responsive embed-responsive-16by9">
+                           <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="100%"
+                                   src="${fn:escapeXml(webinarPageData.results[0].embedURL.url)}" frameborder="0"
+                                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
+                           </iframe>
+                       </div>
+                       <h4 class="media-center-webinar" title="${webinarPageData.results[0].title}">${webinarPageData.results[0].title}</h4>
+                   </div>
+               </div>
+               <div class="col-md-5">
+                   <div class="row">
+                       <div class="col-md-12 news vedio_outer">
+                           <div class="video-player-container video-inner-div border-0 p-0">
+                               <div class="embed-responsive embed-responsive-16by9">
+                                   <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="100%"
+                                           src="${fn:escapeXml(successStoryPageData.results[0].embedURL.url)}" frameborder="0"
+                                           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
+                                   </iframe>
+                               </div>
+                               <h4 class="media-center-webinar" title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
+                           </div>
+                       </div>
+                       <div class="col-md-12 news vedio_outer">
+                           <div class="video-player-container video-inner-div border-0 p-0">
+                               <div class="embed-responsive embed-responsive-16by9">
+                                   <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="100%"
+                                           src="${fn:escapeXml(successStoryPageData.results[1].embedURL.url)}" frameborder="0"
+                                           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
+                                   </iframe>
+                               </div>
+                               <h4 class="media-center-webinar" title="${webinarPageData.results[2].title}">${webinarPageData.results[2].title}</h4>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+   <main>
+
+
 <! -- Finish InvestSaudiMediaCenterMainComponent -->

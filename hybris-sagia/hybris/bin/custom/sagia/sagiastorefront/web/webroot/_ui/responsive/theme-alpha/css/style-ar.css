@@ -9272,6 +9272,7 @@ background-color: fff;
         color: #00714D;
     }
 .events-card-img {
+    margin-right: 5px;
     height: 170px;
     transition: all 0.5s;
     width: 80%;

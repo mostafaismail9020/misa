@@ -9404,6 +9404,7 @@ background-color: fff;
 }
 
 .events-card-img {
+    margin-left: 5px;
     height: 170px;
     transition: all 0.5s;
     width: 80%;

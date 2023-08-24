@@ -66,23 +66,6 @@
                 	</c:if>
             	</c:forEach>
 			</div>
-            <div class="arrow_set">
-            	<ol class="carousel-indicators">
-              		<c:forEach items="${mediaCenterComponents}" var="mediaCenterComp" varStatus="status">
-              			<c:if test="${null != mediaCenterComp.mediaCenterTitle}">
-               				<li data-target="#carouselExampleIndicators" data-slide-to="${status.index}" class="<c:if test="${status.index} = 0">active</c:if>"></li>
-               			</c:if>
-              		</c:forEach>
-               	</ol>
-         		<a class="carousel-control-prev control_arrow" href="#carouselExampleIndicators" role="button" data-slide="prev">
-	             	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	             	<span class="sr-only">Previous</span>
-	           	</a>
-           		<a class="carousel-control-next control_arrow" href="#carouselExampleIndicators" role="button" data-slide="next">
-             		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-             		<span class="sr-only">Next</span>
-           		</a>
-			</div>           
  		</div>
     </div>
 </section>

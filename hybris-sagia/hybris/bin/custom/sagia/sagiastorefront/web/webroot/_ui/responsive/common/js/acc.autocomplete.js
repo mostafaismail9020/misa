@@ -93,7 +93,7 @@ ACC.autocomplete = {
 					if(data.articles != null){
 						if (data.articles.length > 0)
 							autoSearchData.push({
-								value: "<strong style='font-size: 20px;'>Articles:</strong>",
+								value: "<strong class='title'>Articles</strong>",
 								code: null,
 								desc: null,
 								manufacturer: null,
@@ -118,7 +118,7 @@ ACC.autocomplete = {
 					if(data.events != null){
 						if (data.events.length > 0)
 							autoSearchData.push({
-								value: "<strong style='font-size: 20px;'>Events:</strong>",
+								value: "<strong class='title'>Events</strong>",
 								code: null,
 								desc: null,
 								manufacturer: null,
@@ -143,7 +143,7 @@ ACC.autocomplete = {
 					if(data.news != null){
 						if (data.news.length > 0)
 							autoSearchData.push({
-								value: "<strong style='font-size: 20px;'>News:</strong>",
+								value: "<strong class='title'>News</strong>",
 								code: null,
 								desc: null,
 								manufacturer: null,
@@ -168,7 +168,7 @@ ACC.autocomplete = {
 					if(data.opportunities != null){
 						if (data.opportunities.length > 0)
 							autoSearchData.push({
-								value: "<strong style='font-size: 20px;'>Opportunities:</strong>",
+								value: "<strong class='title'>Opportunities</strong>",
 								code: null,
 								desc: null,
 								manufacturer: null,
@@ -193,7 +193,7 @@ ACC.autocomplete = {
 					if(data.products != null){
 						if (data.products.length > 0)
 							autoSearchData.push({
-								value: "<strong style='font-size: 20px;'>Opportunities:</strong>",
+								value: "<strong class='title'>Opportunities</strong>",
 								code: null,
 								desc: null,
 								manufacturer: null,

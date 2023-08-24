@@ -149,7 +149,7 @@
                </div>
                <div class="col-md-5">
                    <div class="row">
-                       <div class="col-md-12 news vedio_outer">
+                       <div class="col-md-10 news vedio_outer">
                            <div class="video-player-container video-inner-div border-0 p-0">
                                <div class="embed-responsive embed-responsive-16by9 video-events">
                                    <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
@@ -157,11 +157,13 @@
                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                    </iframe>
                                </div>
-                               <h4 title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
-                             <span class="videoDate">23.Aug.2023</span>
                            </div>
                        </div>
-                       <div class="col-md-12 news vedio_outer">
+                       <div class="col-md-2 news vedio_outer">
+                        <h4 title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
+                        <span class="videoDate">23.Aug.2023</span>
+                         </div>
+                         <div class="col-md-10 news vedio_outer">
                            <div class="video-player-container video-inner-div border-0 p-0">
                                <div class="embed-responsive embed-responsive-16by9 video-events">
                                    <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
@@ -169,10 +171,12 @@
                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                    </iframe>
                                </div>
-                               <h4  title="${webinarPageData.results[2].title}">${webinarPageData.results[2].title}</h4>
-                               <span class="videoDate">23.Aug.2023</span>
                            </div>
                        </div>
+                       <div class="col-md-2 news vedio_outer">
+                                               <h4 title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
+                                               <span class="videoDate">23.Aug.2023</span>
+                                                </div>
                    </div>
                </div>
            </div>

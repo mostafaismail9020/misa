@@ -10877,6 +10877,7 @@ body.page-living-in-saudi .content {
 .pageLabel--mediaCenter .video-inner-div{
     background-color: none;
     box-shadow: none;
+    min-height: 200px;
     border: none;
 }
 .video-inner-div {

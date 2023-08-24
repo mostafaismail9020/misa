@@ -10909,6 +10909,15 @@ body.page-living-in-saudi .content {
 .video-events{
     border-radius: 10px;
     width: 100% !important;
+    margin: 10px;
+}
+.pageLabel--mediaCenter .video-inner-div h4 {
+    font-family: '72';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.3vw;
+    color: #00714D;
+    line-height: 15px;
 }
 .video-inner-div h4 {
 	font-size: 28px;

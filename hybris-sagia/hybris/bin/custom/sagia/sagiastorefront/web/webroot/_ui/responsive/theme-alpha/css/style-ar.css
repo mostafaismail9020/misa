@@ -210,7 +210,7 @@ ul.sagiaNavigation-subNav li svg {
 }
 
 .pageLabel--mediaCenter #topbar .social-links a{
-color: #BF9B2E;
+color: #BF9B2E !important;
 }
 
 .pageLabel--sectors-opportunities-opportunities #topbar .social-links a{

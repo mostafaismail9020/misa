@@ -143,7 +143,7 @@
                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                            </iframe>
                        </div>
-                               <h4  title="${webinarPageData.results[0].title}">${webinarPageData.results[0].title}</h4>
+                               <h4 class= "videoTitle"  title="${webinarPageData.results[0].title}">${webinarPageData.results[0].title}</h4>
                       <span class="videoDate">23.Aug.2023</span>
                    </div>
                </div>
@@ -160,7 +160,7 @@
                            </div>
                        </div>
                        <div class="col-md-2 news vedio_outer">
-                        <h4 title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
+                        <h4 class= "videoTitle" title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
                         <span class="videoDate">23.Aug.2023</span>
                          </div>
                          <div class="col-md-10 news vedio_outer">
@@ -174,7 +174,7 @@
                            </div>
                        </div>
                        <div class="col-md-2 news vedio_outer">
-                                               <h4 title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
+                                               <h4 class= "videoTitle"  title="${webinarPageData.results[1].title}">${webinarPageData.results[1].title}</h4>
                                                <span class="videoDate">23.Aug.2023</span>
                                                 </div>
                    </div>

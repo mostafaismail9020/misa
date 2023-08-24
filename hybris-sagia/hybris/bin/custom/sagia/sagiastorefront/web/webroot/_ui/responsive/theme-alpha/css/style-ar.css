@@ -10851,6 +10851,7 @@ body.page-living-in-saudi .content {
     font-size: 1.3vw;
     color: #00714D;
     line-height: 15px;
+    text-transform: none;
 }
 .video-inner-div h4 {
 	font-size: 28px;

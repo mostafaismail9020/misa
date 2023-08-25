@@ -1325,7 +1325,7 @@ button:focus {
     color: #7B838C;
     outline: none;
     border: 1px solid var(--misaGrayText);
-    border-radius: 1.5rem;
+    border-radius: 10px;
     padding: 0.5rem 1rem;
 	font-size: 14px;
 	font-style: italic;
@@ -12828,9 +12828,25 @@ ul.INS_li_ul_under li {
     color: #7B838C;
 }
 
+.page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .name {
+    text-transform: lowercase;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .name .title {
+    font-size: 15px;
+    margin-left: -15px;
+}
+
+.page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .name::first-letter {
+	text-transform: uppercase;
+}
+
 .page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .price {
 	display: none;
 }
+
 
 @media (min-width: 992px) {
 	.page-portal-homepage #mg .explore-btn {

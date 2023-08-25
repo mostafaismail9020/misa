@@ -8,38 +8,11 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<spring:url value="/search/autocomplete/sagia-search-box-component" var="autocompleteUrl" htmlEscape="false">
-	<spring:param name="componentuid"  value="${component.uid}"/>
-</spring:url>
 <c:set var="hasPreviousPage" value="${searchPageData.pagination.currentPage > 0}"/>
 <c:set var="hasNextPage"
        value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
 <div class="container-fluid">
     <div class="row p-2">
-        <c:if test="${not empty searchPageData.results}">
-            <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-				<form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
-					<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-					<ycommerce:testId code="header_search_input">
-						<input type="text" id="js-site-search-input"
-						       data-test="asdfg"
-							   class="js-site-search-input" name="q" value="${fn:containsIgnoreCase(request.getParameter("q"), ':') ? '' : request.getParameter("q")}"
-							   maxlength="100" placeholder="${searchPlaceholder}"
-							   data-options='{"autocompleteUrl" : "${autocompleteUrl}","minCharactersBeforeRequest" : "3","waitTimeBeforeRequest" : "500","displayProductImages" : true}'>
-						<a class="a-search">
-							<img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
-						</a>
-					</ycommerce:testId>
-					<div class="opportunity-card total-results">
-						<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-					</div>
-				</form>
-                <div id="product-facet" style="height: inherit" class="hidden-sm hidden-xs product__facet js-product-facet">
-                    <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> -->
-                    <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-				</div>
-            </div>
-        </c:if>
         <div class="col-md-9 col-sm-12 page-main-content">
             <c:if test="${not empty searchPageData.results}">
             <div class="opp-mobile-show text-center">
@@ -63,9 +36,6 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="opp-filter-container" style="padding: 20px;">
-                                        	<nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +49,14 @@
                 <c:when test="${ not empty searchPageData.results}">
                     <div class="row">
                         <c:forEach var="result" items="${searchPageData.results}" varStatus="status">
-                            <tags:opportunity-card result="${result}" loopCount="${status.index}"/>
+                        <c:choose>
+	                        <c:when test="${result.opportunity.resource eq 'Event'}">
+	                            <tags:events-card result="${result}" loopCount="${status.index}"/>
+	                        </c:when>
+	                        <c:otherwise>
+	                        	<tags:news-card result="${result}" loopCount="${status.index}"/>
+	                        </c:otherwise>
+                        </c:choose>
                         </c:forEach>
                     </div>
                 </c:when>
@@ -96,7 +73,7 @@
                     <ul class="pagination pg-darkgrey justify-content-center mt-4">
 
                         <c:if test="${hasPreviousPage}">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="previousPageUrl" htmlEscape="true">
+                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','newseventslist')}" var="previousPageUrl" htmlEscape="true">
                                 <spring:param name="page" value="${solrSearchPageData.pagination.currentPage - 1}"/>
                             </spring:url>
                             <li class="page-item previous-page">
@@ -149,7 +126,7 @@
                         <c:set var="startPagination" value="${beginPage}"/>
                         <c:set var="endPagination" value="${endPage}"/>
                         <c:forEach begin="${startPagination}" end="${endPagination}" var="currentPage">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="pageNumberUrl" htmlEscape="true">
+                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','newseventslist')}" var="pageNumberUrl" htmlEscape="true">
                                 <spring:param name="page" value="${currentPage - 1}"/>
                             </spring:url>
 
@@ -165,7 +142,7 @@
                             </c:choose>
                         </c:forEach>
                         <c:if test="${hasNextPage}">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="nextPageUrl" htmlEscape="true">
+                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','newseventslist')}" var="nextPageUrl" htmlEscape="true">
                                 <spring:param name="page" value="${solrSearchPageData.pagination.currentPage + 1}"/>
                             </spring:url>
                             <li class="page-item next-page">

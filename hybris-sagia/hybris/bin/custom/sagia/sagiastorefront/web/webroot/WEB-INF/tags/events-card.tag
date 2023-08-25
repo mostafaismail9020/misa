@@ -28,28 +28,25 @@
 		                <strong>${fn:toLowerCase(result.opportunity.name)}</strong>
 		                 <p>
 		                 <c:choose>
-
 			                 <c:when test="${fn:length(result.opportunity.description) gt 50}">
-			                 	${fn:substring({result.opportunity.description}, 1, 50)}...</c:when>
+			                 	${fn:substring({result.opportunity.description}, 1, 50)}...
+			                 </c:when>
 			                 <c:otherwise>
 			                 	${result.opportunity.description}
-
 			                 </c:otherwise>
 		                 </c:choose>
-		                 ${result.opportunity.eventTiming}
-		                 ${result.opportunity.eventDate}
-		                 ${result.opportunity.eventLocation}
 		                 </p>
+		                 <p>${result.opportunity.eventTiming}</p>
 		            </a>
-		        </div>
+		        </div>		                            
 		        <div class="col-md-3 col-12">
 		            <a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
-		                <p>Expected IRR: ~16%</p>
+		                <p>${result.opportunity.eventDate}</p>
 		            </a>
 		        </div>
 		        <div class="col-md-3 col-12">
 		                <button type="button" class="btn btn-primary parentCategory-button" onclick="redirectToLink('${result.parentCategory.url}')" style="border: none;">
-		                    ${fn:toLowerCase(result.parentCategory.name)}
+		                    ${result.opportunity.eventLocation}
 		                </button>
 		            </a>
 		        </div>

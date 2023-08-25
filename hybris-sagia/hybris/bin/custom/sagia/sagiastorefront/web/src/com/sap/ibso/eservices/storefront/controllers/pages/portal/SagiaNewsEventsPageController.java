@@ -21,7 +21,3 @@ public class SagiaNewsEventsPageController extends SagiaSearchPageController
         return ":resource:News:resource:Event";
     }
 }
-
-
-
-

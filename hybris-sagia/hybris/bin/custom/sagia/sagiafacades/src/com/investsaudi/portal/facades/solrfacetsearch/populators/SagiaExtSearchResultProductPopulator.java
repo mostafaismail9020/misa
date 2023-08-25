@@ -30,5 +30,9 @@ public class SagiaExtSearchResultProductPopulator extends SearchResultProductPop
         }
         target.setResource(this.getValue(source, "resource"));
         target.setImageUrl(this.getValue(source, "picture"));
+        target.setEventDate(this.getValue(source, "eventDate"));
+        target.setEventLocation(this.getValue(source, "eventLocation"));
+        target.setEventTiming(this.getValue(source, "eventTiming"));
+        target.setNewsDate(this.getValue(source, "newsDate"));
     }
 }

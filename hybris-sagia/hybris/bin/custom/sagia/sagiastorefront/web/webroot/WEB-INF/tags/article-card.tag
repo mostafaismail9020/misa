@@ -20,8 +20,8 @@
 		                <strong>${result.opportunity.name}</strong>
 		                 <p>
 		                 <c:choose>
-			                 <c:when test="${fn:length(result.opportunity.description) gt 100}">
-			                 	${fn:substring(result.opportunity.description, 0, 100)}...
+			                 <c:when test="${fn:length(result.opportunity.description) gt 150}">
+			                 	${fn:substring(result.opportunity.description, 0, 150)}...
 			                 </c:when>
 			                 <c:otherwise>
 			                 	${result.opportunity.description}

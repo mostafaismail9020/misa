@@ -18,7 +18,7 @@
 
             <div class="panelModule panelModule_halfRadius accountLogin-content accountLogin-content_small forgotPassword-wrapper">
                 <div class="login-section">
-                    <h1 class="accountLogin-title headline login-page__headline text-center text-uppercase headline-golden"><spring:theme code="password.forgottenpassword"/></h1>
+                    <div class="login-register-text pt-4 mb-5"><spring:theme code="password.forgottenpassword"/></div>
 
                     <form:form method="post" modelAttribute="forgottenPwdForm">
                         <ycommerce:testId code="login_forgotPasswordEmail_input">
@@ -33,6 +33,10 @@
                             <ycommerce:testId code="login_forgotPasswordSubmit_button">
                                 <button class="login-btn login-btn-next active" type="submit">
                                     <spring:theme code="forgottenPwd.title"/>
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.58331 11H16.5M11.9166 5.5L16.7685 10.3518C17.1264 10.7098 17.1264 11.2902 16.7685 11.6482L11.9166 16.5" stroke="#F8F9FB" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+</button>
                                 </button>
                             </ycommerce:testId>
                         </div>

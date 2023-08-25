@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 
-<section class="figures feature fo-container">
+<%-- <section class="figures feature fo-container">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -114,5 +114,5 @@
              </div> -->
         </div>
     </div>
-</section>
+</section> --%>
                                

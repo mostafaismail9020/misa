@@ -6,7 +6,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <main>
-	<section class="mb-5 general-info mt-0 pt-0">
+	<section class="mb-5 mt-0 pt-0">
         <div style="background-image: url('')" class="yCmsComponent banner-section rhq-banner-content">
             <div class="banner-container container aos-init aos-animate" data-aos="fade-up">
             	<h1>${fn:escapeXml(productData.name)}</h1>

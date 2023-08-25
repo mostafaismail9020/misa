@@ -12835,6 +12835,21 @@ ul.INS_li_ul_under li {
     color: #7B838C;
 }
 
+.page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .name {
+    text-transform: lowercase;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .name .title {
+    font-size: 15px;
+    margin-right: -15px;
+}
+
+.page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .name::first-letter {
+	text-transform: uppercase;
+}
+
 .page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .price {
 	display: none;
 }

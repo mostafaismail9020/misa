@@ -3988,7 +3988,30 @@
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                    
+                    <attribute qualifier="opportunityHighlightsGrid" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="opportunityDetailGrid" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="opportunitySubHeadings" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="opportunityHeadingsWithMedia" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="opportunityBottomSubHeadings" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="opportunityLead" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
                 </attributes>
             </itemtype>
             

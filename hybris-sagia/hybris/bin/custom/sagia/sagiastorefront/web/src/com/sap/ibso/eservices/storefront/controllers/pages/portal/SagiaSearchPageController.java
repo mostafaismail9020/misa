@@ -48,6 +48,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/sectors-opportunities/opportunities")
 public class SagiaSearchPageController extends AbstractSearchPageController
 {
+	private static final String DEFAULT_SORT_TYPE = ":relevance";
 	private static final String SEARCH_META_DESCRIPTION_ON = "search.meta.description.on";
 	private static final String SEARCH_META_DESCRIPTION_RESULTS = "search.meta.description.results";
 
@@ -56,7 +57,6 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 
 	private static final String COMPONENT_UID_PATH_VARIABLE_PATTERN = "{componentUid:.*}";
 	private static final String FACET_SEPARATOR = ":";
-
 	private static final String SEARCH_CMS_PAGE_ID = "opportunity-search-page";
 	private static final int NUM_OF_RECORD_PER_PAGE = 9;
 
@@ -80,26 +80,13 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 			final HttpServletRequest request, final Model model) throws CMSItemNotFoundException
 	{
 		final ContentPageModel noResultPage = getContentPageForLabelOrId(getPageId());
-
-		final PageableData pageableData = createPageableData(0,NUM_OF_RECORD_PER_PAGE, null, ShowMode.Page);
-
-		final SearchStateData searchState = new SearchStateData();
-		final SearchQueryData searchQueryData = new SearchQueryData();
-		searchText = searchText + getFilterParam();
-
-		searchQueryData.setValue(searchText);
-		searchState.setQuery(searchQueryData);
-
 		ProductSearchPageData<SearchStateData, ProductData> searchPageData = null;
 		ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
-
 		try
 		{
-			searchPageData = encodeSearchPageData(productSearchFacade.textSearch(searchState, pageableData));
-			if (getPageId().equals(SEARCH_CMS_PAGE_ID) && CollectionUtils.isNotEmpty(searchPageData.getFacets())) {
-				searchPageData.setFacets(searchPageData.getFacets().stream()
+			searchPageData = performSearch(searchText, 0, ShowMode.Page, "", NUM_OF_RECORD_PER_PAGE);
+			searchPageData.setFacets(searchPageData.getFacets().stream()
 						.filter(facet -> !facet.getCode().equals("resource")).collect(Collectors.toList()));
-			}
 		}
 		catch (final ConversionException e) // NOSONAR
 		{
@@ -188,10 +175,8 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 	{
 		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
 				sortCode, NUM_OF_RECORD_PER_PAGE);
-		if (getPageId().equals(SEARCH_CMS_PAGE_ID) && CollectionUtils.isNotEmpty(searchPageData.getFacets())) {
-			searchPageData.setFacets(searchPageData.getFacets().stream()
+		searchPageData.setFacets(searchPageData.getFacets().stream()
 					.filter(facet -> !facet.getCode().equals("resource")).collect(Collectors.toList()));
-		}
 		ProductSearchPageData<SearchStateData, ProductData> solrSearchPageData = null;
 
 		populateModel(model, searchPageData, showMode);
@@ -246,11 +231,13 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 
 		final SearchStateData searchState = new SearchStateData();
 		final SearchQueryData searchQueryData = new SearchQueryData();
-		if (searchQuery.contains(":")) {
-			searchQuery = searchQuery + getFilterParam();
-		}
-		else {
-			searchQuery = searchQuery + ":relevance" + getFilterParam();
+		if (!searchQuery.contains(DEFAULT_SORT_TYPE)) {
+			if(!searchQuery.contains(":")) {
+				searchQuery = searchQuery + DEFAULT_SORT_TYPE + getFilterParam();
+			}
+			else {
+				searchQuery = searchQuery + getFilterParam();
+			}
 		}
 		searchQueryData.setValue(searchQuery);
 		searchState.setQuery(searchQueryData);
@@ -267,10 +254,8 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 	{
 		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = performSearch(searchQuery, page, showMode,
 				sortCode, getSearchPageSize());
-		if (getPageId().equals(SEARCH_CMS_PAGE_ID) && CollectionUtils.isNotEmpty(searchPageData.getFacets())) {
-			searchPageData.setFacets(searchPageData.getFacets().stream()
+		searchPageData.setFacets(searchPageData.getFacets().stream()
 					.filter(facet -> !facet.getCode().equals("resource")).collect(Collectors.toList()));
-		}
 		final SearchResultsData<ProductData> searchResultsData = new SearchResultsData<>();
 		searchResultsData.setResults(searchPageData.getResults());
 		searchResultsData.setPagination(searchPageData.getPagination());
@@ -292,10 +277,8 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 
 		final ProductSearchPageData<SearchStateData, ProductData> searchPageData = productSearchFacade.textSearch(searchState,
 				createPageableData(page, getSearchPageSize(), sortCode, showMode));
-		if (getPageId().equals(SEARCH_CMS_PAGE_ID) && CollectionUtils.isNotEmpty(searchPageData.getFacets())) {
-			searchPageData.setFacets(searchPageData.getFacets().stream()
+		searchPageData.setFacets(searchPageData.getFacets().stream()
 					.filter(facet -> !facet.getCode().equals("resource")).collect(Collectors.toList()));
-		}
 		final List<FacetData<SearchStateData>> facets = refineFacets(searchPageData.getFacets(),
 				convertBreadcrumbsToFacets(searchPageData.getBreadcrumbs()));
 		final FacetRefinement<SearchStateData> refinement = new FacetRefinement<>();

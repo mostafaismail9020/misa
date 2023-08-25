@@ -47,9 +47,8 @@
 				<section class="container sectors-content">
 					<div class="row">
 						<div class="col-md-12">
-								<div class="opportunity-productData-description">
-									${productData.description}		
-									<a>Text to be displayed. This is an example Opportunity description</a>			
+								<div class="opportunity-productData-description">	
+									<a>${productData.description}</a>			
 								</div>
 							
 						</div>

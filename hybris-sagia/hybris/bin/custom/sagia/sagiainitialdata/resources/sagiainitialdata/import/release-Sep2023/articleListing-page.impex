@@ -21,14 +21,14 @@ INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      		; name      
                                         ; all-article-banner-container 	; All Article Banner Container	; all-article-banner-1 				; all-article-banner-container 	;
 
 
-INSERT_UPDATE SagiaOpportunitySearchResultComponent; uid[unique = true]                   ; name                          ; &componentRef                        ; $contentCV[unique = true]
-                                                   ; sagia-article-list-result-component ; Sagia Search Result Component ; sagia-article-list-result-component ;
+INSERT_UPDATE SagiaArticleListingResultComponent; uid[unique = true]                  ; name                          ; &componentRef                        ; $contentCV[unique = true]
+                                               ; sagia-article-list-result-component ; Sagia Search Result Component ; sagia-article-list-result-component ;
 
 
 INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]      ;visible; $contentCV[unique = true]
                                                   ;generic-paragraph-article;true  ;
 
-INSERT_UPDATE ContentSlot; uid[unique = true]                    ; name           ; active; cmsComponents($contentCV,uid); $contentCV[unique = true]
+INSERT_UPDATE ContentSlot; uid[unique = true]       ; name           ; active; cmsComponents($contentCV,uid); $contentCV[unique = true]
                          ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; all-article-banner-container, generic-paragraph-article, sagia-article-list-result-component
 
 
@@ -36,5 +36,5 @@ INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = t
 								; PortalPageMainSlot-$page ; PortalPageMain 		; PortalPageMainSlot-$page 					;$page													;
 
 
-INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]       ; name                       ; &componentRef            ; description[lang = en]                                                                                                                                                                                                                                                                                       ; $contentCV[unique = true]
+INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]        ; name                        ; &componentRef             ; description[lang = en]                                                                                                                                                                                                                                                                                       ; $contentCV[unique = true]
                                                   ; generic-paragraph-article ; Article Paragraph Component ; generic-paragraph-article ; <div class="container"><p class="sectors-content">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu</p></div><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p> ;

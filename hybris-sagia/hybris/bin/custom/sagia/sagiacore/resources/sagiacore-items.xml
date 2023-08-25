@@ -10962,8 +10962,13 @@
                       jaloclass="com.investsaudi.portal.core.jalo.SearchBoxComponent">
                 <description>Sagia SearchBox Component</description>
             </itemtype>
+            <itemtype code="SagiaArticleListingResultComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaArticleListingResultComponent">
+                <description>Sagia Opportunity Search Result Component</description>
+            </itemtype>
         </typegroup>
-
+        
         <!-- InvestmentReports Starts-->
         <typegroup name="InvestmentReports">
             <itemtype code="InvestmentSaudiLastReportCategoryComponent" generate="true"

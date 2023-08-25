@@ -4211,7 +4211,7 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute qualifier="newsDate" type="java.util.Date">
+                    <attribute qualifier="newsDate" type="java.lang.String">
 						<persistence type="property"/>
 					</attribute>
 				</attributes>
@@ -11022,6 +11022,11 @@
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.SagiaArticleListingResultComponent">
                 <description>Sagia Opportunity Search Result Component</description>
+            </itemtype>
+            <itemtype code="SagiaNewsEventsListComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaNewsEventsListComponent">
+                <description>Sagia News and Events Component</description>
             </itemtype>
         </typegroup>
         

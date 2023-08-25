@@ -27,22 +27,35 @@
 
 <c:url value="/register/ajax" var="registerAction" />
 <c:url value="/register/apply" var="applyAction" />
-<div class="row register_tab_container">
-	<div class="col-md-5 register_tab_view">
-		<div class="login-logo">
-			<a href="/${language}">
-				<img src="${commonResourcePath}/images/B2C/Login-logo.svg" alt="logo" class="img-fluid w-100" />
-			</a>
-		</div>
-		<div id="sagia-cms-help-quick-registration-helper"></div>
-	</div>
-	
-	<div class="col-md-7 register_tab_view">
+
+<div class="container-fluid login-container">
+    <div class="row">
+        <div class="col-6">
+            <div class="logo">
+                <a href="/${language}">
+                    <img src="${commonResourcePath}/images/B2C/Login-logo.svg" alt="logo" class="img-fluid w-100" />
+                </a>
+            </div>
+        </div>
+            <div class="col-6 register-form form-floating country-code-mobile justify-content-end">		
+                <div class="register-language" id="registerQuickSelectLanguageDiv">
+                    <span ><spring:theme code="general.language"/></span>
+                    <label class="switch">
+                        <input type="checkbox" id="registerQuickSelectLanguageSelect">
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>        
+    </div> 
+</div>
+
+<div class="row register_tab_container">	
+	<div class="col-sm-12 register_tab_view">
 		<form:form method="post" id="sagiaRegisterFormQuickRegistration" name="sagiaRegisterFormQuickRegistration"  modelAttribute="sagiaRegisterForm" action="${registerAction}#register-quick" onsubmit="return validateRegisterForm()">
 			<div class=" register-account-screen r-sn ">
 				
 				<div class="login-right-wrapper">
-					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="login-register-text pt-4 mb-4"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-role-selection">
 						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
 						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
@@ -66,8 +79,7 @@
 							<p class="role-text"><spring:theme code="investor.select.role.label"/></p>							
 						</div>
 						<div class="login-role-selection-box role-partner">
-							<img src="${commonResourcePath}/images/B2C/Partner.png" alt="Partner" class="img-fluid img-partner-inactive" />
-							<img src="${commonResourcePath}/images/B2C/Partner-icon.png" alt="Investor" class="img-fluid img-partner-active d-none" />
+							<img src="${commonResourcePath}/images/B2C/Partner-icon.png" alt="Investor" class="img-fluid img-partner-active" />
 							<p class="role-text"><spring:theme code="partner.select.role.label"/></p>
 						</div>
 					</div>
@@ -91,7 +103,7 @@
 						</div>
 						<div class="col-lg-6 col-6">
 						    	<div class="w-100">
-									<a class="login-btn login-btn-cancel"><spring:theme code="investor.registration.cancel.button"/></a>
+									<a class="button login-btn login-btn-cancel"><spring:theme code="investor.registration.cancel.button"/></a>
 								</div>
 							</div>
 					</div>
@@ -152,7 +164,7 @@
 
 			<div class="row col-lg-12 col-xl-12 col-12 register-account-investor-screen3 r-sn next-hide">
 				<div class="login-right-wrapper">
-					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="login-register-text pt-4 mb-4"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-role-selection">
 						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
 						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
@@ -169,7 +181,7 @@
 						--%>
 					</div>
 					<div class="login-register-role"><spring:theme code="investor.registration.enter.details.label"/></div>
-					<div class="row register-user-info">
+					<div class="row register-user-info pt-4">
 						<%--
 						<div class="col-md-12 register-form focus-on-change register-forms-select">
 							<formElement:formSelectBox idKey="quickregistration.register.title"
@@ -178,14 +190,20 @@
 									skipBlankMessageKey="form.select.empty" items="${titles}"/>						
 						</div>
 						--%>
+					</div>
+					<div class="row register-user-info pt-2">
 						<div class="col-md-12 register-form register-form-names ">
-							<div class="col-12 col-xl-2 register-form focus-on-change register-forms-select px-0 right_arrowdd">
+							<div class="register-form focus-on-change register-forms-select px-0 right_arrowdd">
 								<formElement:formSelectBox idKey="quickregistration.register.title"
 										labelKey="register.title" selectCSSClass="form-control jqTitle js-select-required register-user-details"
 										path="titleCode" mandatory="true" skipBlank="false" labelCSS="register-user-info-label select-label-mandatory"
 										skipBlankMessageKey="form.select.empty" items="${titles}"/>	
 							</div>
-							<div class="col-12 col-xl-5 focus-on-change ">
+						</div>
+					</div>
+
+						<div class="row register-user-info pt-2">
+							<div class="col-12 col-xl-6 focus-on-change ">
 								<%--
 								<label class="register-user-info-label" for="reg-fName">First Name<span class="mandatory">*</span></label>
 								<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-fName" name="FName" />
@@ -194,7 +212,10 @@
 										labelKey="register.firstName" path="firstName" inputCSS="js-quickregister-firstname register-user-details" labelCSS="control-label_mandatory register-user-info-label"
 										mandatory="true"/>
 							</div>
-							<div class="col-12 col-xl-5 focus-on-change">
+							</div>
+
+							<div class="row register-user-info pt-2">
+							<div class="col-12 col-xl-6 focus-on-change">
 								<%--
 								<label class="register-user-info-label" for="reg-lName">Last Name<span class="mandatory">*</span></label>
 								<input type="text" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-lName" name="LName" />
@@ -204,7 +225,9 @@
 										mandatory="true"/>
 							</div>
 							<div class="error-msg"></div>
-						</div>
+							</div>
+
+		<div class="row register-user-info pt-2">
 						<div class="col-md-6 register-form focus-on-change">
 							<%--
 							<label class="register-user-info-label" for="reg-Company">Company<span class="mandatory">*</span></label>
@@ -215,12 +238,17 @@
 										mandatory="true" />
 							<div class="error-msg"></div>
 						</div>
-						<div class="col-md-6 register-form focus-on-change register-forms-select">
+						</div>
+						<div class="row register-user-info pt-2">
+						<div class="col-12 col-md-6 register-form focus-on-change register-forms-select">
 							<formElement:formSelectBox idKey="quickregistration.register.sector" 
 										labelKey="register.sector" selectCSSClass="form-control jqSector js-select-required register-user-details" path="sector"
 									   	items="${sectors}" itemLabel="name"  labelCSS="register-user-info-label select-label-mandatory"/>	
 						</div>
-						<div class="col-md-6 register-form focus-on-change">
+						</div>
+
+						<div class="row register-user-info pt-2">
+						<div class="col-12 col-md-6 register-form focus-on-change">
 							<%--
 							<label class="register-user-info-label" for="reg-EmailId">Email Id<span class="mandatory">*</span></label>
 							<input type="text" class="register-user-details js-register-quick-email" data-val="true" data-val-required="Required"	id="reg-EmailId" name="EmailId" />
@@ -231,6 +259,9 @@
 										mandatory="true" />
 							<div class="error-msg"></div>
 						</div>
+						</div>
+
+						<div class="row register-user-info pt-2">
 						<div class="col-md-6 register-form focus-on-change register-forms-select">
 							<formElement:formSelectBox idKey="quickregistration.register.country"
 									   labelKey="register.country" selectCSSClass="form-control countriesselect jqCountry js-select2-searchBegining js-select2-sortAlphabetically register-user-details" 
@@ -238,8 +269,11 @@
 									   path="countryCode" mandatory="true" skipBlank="false"
 									   skipBlankMessageKey="form.select.empty" items="${countries}" itemValue="code"/>	
 						</div>
-						<div class="col-12 col-md-12 reg-country-code-div register-form form-floating country-code-mobile">
-							<div class="col-12 col-md-8  ml-0 pl-0 d-flex">
+						</div>
+
+						<div class="row register-user-info pt-2">
+						<div class="col-12 col-md-6 reg-country-code-div register-form form-floating country-code-mobile">
+							<div class="d-flex country-code">
 								<%--
 								<input type="text" class="ddl-countryCode register-user-details register-contry-info" placeholder=" " autocomplete="off" id="reg-country">
 								<div class="input-wrapper focus-on-change">
@@ -259,29 +293,22 @@
 												mandatory="true"/>
 								</div>								
 							</div>
-							<div class="col-4 col-md-4 mx-0 px-0 register-language" id="registerQuickSelectLanguageDiv">
-								<span><spring:theme code="general.language"/></span>
-								<label class="switch">
-									<input type="checkbox" id="registerQuickSelectLanguageSelect">
-									<div class="slider round"></div>
-								</label>
-							</div>
+							
 						</div>
 					</div>
+	
 
 					<div class="login-buttons user-info-buttons mt-4">
 						<div class="row">
 							<div class="col-lg-6 col-6">
-								<a class="login-btn register-investor-screen3-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
+								<a class="button login-btn register-investor-screen3-btn-back padding-top-10"><spring:theme code="investor.registration.back.button"/></a>
 							</div>
 							<div class="col-lg-6 col-6">
-							<a class="login-btn register-investor-screen3-btn-next padding-top-10"><spring:theme code="investor.registration.next.button"/>&nbsp;
-								<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
-									<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
-										d="M17.973,11.454a.719.719,0,0,0-.005,1.012l3.344,3.35H8.585a.715.715,0,0,0,0,1.43H21.306L17.962,20.6a.724.724,0,0,0,.005,1.012.712.712,0,0,0,1.007-.006l4.532-4.565h0a.8.8,0,0,0,.149-.226.682.682,0,0,0,.055-.275.717.717,0,0,0-.2-.5L18.974,11.47A.7.7,0,0,0,17.973,11.454Z"
-										transform="translate(-7.875 -11.252)" fill="#fff">
-									</path>
-								</svg>
+							<a class="button login-btn register-investor-screen3-btn-next padding-top-10"><spring:theme code="investor.registration.next.button"/>&nbsp;
+								<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.58331 11H16.5M11.9166 5.5L16.7685 10.3518C17.1264 10.7098 17.1264 11.2902 16.7685 11.6482L11.9166 16.5" stroke="#F8F9FB" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+</button>
 							</a>
 						</div>
 						</div>
@@ -292,7 +319,7 @@
 
 			<div class="row col-lg-12 col-xl-12 col-12 register-account-investor-screen4 r-sn next-hide">
 				<div class="login-right-wrapper">
-					<div class="login-register-text"><spring:theme code="investor.registration.your.account.label"/></div>
+					<div class="login-register-text pt-4 mb-4"><spring:theme code="investor.registration.your.account.label"/></div>
 					<div class="register-role-selection">
 						<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid" />
 						<img src="" class="img-fluid bussiness-sector-selected" alt=""/>
@@ -321,7 +348,10 @@
 										mandatory="true"
 										helpBlockSuccessCSS="js-help-block-success"/>
 						</div>
+						</div>
+						<div class="row register-user-info">
 						<div class="col-md-12 register-form focus-on-change password-field-height">
+													<div class="error-msg"></div>
 							<%--
 							<label class="register-user-info-label" for="reg-password">Password<span class="mandatory">*</span></label>
 							<input type="password" class="register-user-details" data-val="true" data-val-required="Required"	id="reg-password" name="password" maxlength="30" />
@@ -334,8 +364,9 @@
 										mandatory="true"/>
 							<i toggle="#password-field" class="fa fa-eye-slash toggle-password1" aria-hidden="true"  id="togglePassword"></i>
 							<meter max="4" id="password-strength-meter" value="0" class=""></meter>
-							<div class="error-msg"></div>
 						</div>
+					</div>
+					<div class="row register-user-info">
 						<div class="col-md-12 register-form focus-on-change">
 							<%--
 							<label class="register-user-info-label" for="reg-cpassword">Confirm Password<span class="mandatory">*</span></label>
@@ -348,6 +379,8 @@
 							<i toggle="#password-field" class="fa fa-eye-slash toggle-password2" aria-hidden="true"  id="toggleCPassword"></i>
 							<div class="error-msg"></div>
 						</div>
+					</div>
+					<div class="row register-user-info">
 						<div class="col-md-12 register-form focus-on-change d-flex">
 							<div class="form-item register-form-terms-condition">
 								<input id="termsAndConditionsRegister" name="termsAndConditionsChecked" placeholder="." class="reg-terms-checkbox " type="checkbox" value="true">
@@ -369,6 +402,8 @@
 								<div class="help-block"></div>
 							</div>
 						</div>
+					</div>
+					<div class="row register-user-info">
 						<div class="col-md-12 captcha-pos">
 							<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
 							<div class="form_field-elements control-group js-recaptcha-captchaaddon" style=""></div>

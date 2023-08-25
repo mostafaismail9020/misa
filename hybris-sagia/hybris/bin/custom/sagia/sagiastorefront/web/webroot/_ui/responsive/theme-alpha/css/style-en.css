@@ -21748,3 +21748,148 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 .more-less {
     float: right;
 }
+
+/* sectors main page */
+
+.pageLabel--sectors-opportunities .banner-section h1 {
+	margin-top: 28vh;
+}
+
+.sectors {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 40px;
+	margin-bottom: 55px;
+	gap: 25px;
+}
+
+.sector {
+	display: flex;
+	text-align: center;
+	padding: 25px 15px;
+	border-radius: 10px;
+	background: #f6f6f6;
+	color: #fff;
+	width: 100%;
+}
+
+.sector a {
+	display: block;
+	flex: 1;
+}
+
+.sector .icon {
+	margin-bottom: 20px;
+	border:2px solid #bf9b2e;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 100%;
+}
+
+.sector img {
+	height: 60px;
+	width:60px;
+}
+
+.sector h2 {
+	font-size: 15px;
+	color: #025635;
+	text-align: center;
+}
+
+@media (min-width: 576px) {
+	.sector {
+		flex: 1 1 calc(50% - 25px);
+		max-width: 50%;
+	}
+}
+
+@media (min-width: 768px) {
+	.sector {
+		flex: 1 1 calc(33.33% - 25px);
+		max-width: 33.33%;
+	}
+}
+
+@media (min-width: 992px) {
+	.sector {
+		flex: 1 1 calc(20% - 25px);
+		max-width: 20%;		
+	}
+}
+
+.sector-search {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 60px;
+}
+
+.sector-search form {
+	flex:1;
+}
+
+.sector-search input {
+    background-color: #F5F6F7;
+    color: #7B838C;
+    outline: none;
+    border: 1px solid var(--misaGrayText);
+    border-radius: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;	
+}
+
+.sector-search .sort {
+	width: 41px;
+	height: 41px;
+	line-height: 41px;
+	background-color: #bf9b2e;
+	border:0;
+	border-radius: 100%;
+}
+
+.sector-search .sort::after {
+	display: none;
+}
+
+.sector-search .dropdown-menu {
+	position: relative;
+	margin-left: 10px;
+	border-color: #f6f6f6;
+	background-color: #f6f6f6;
+}
+
+.sector-search .dropdown-menu::before {
+	position: absolute;
+	content: '';
+	top: 10px;
+	left: -10px;
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-right:10px solid #f6f6f6; 	
+}
+
+.sector-search .dropdown-item {
+	font-size: 15px;
+	color: #5F6D7E;
+}
+
+.sector-search .dropdown-item:hover,
+.sector-search .dropdown-item.active,
+.sector-search .dropdown-item:active {
+	background-color: #BF9B2E;
+	color: #fff;
+}
+
+.sector-search .a-search {
+	position: absolute;
+    top: 3px;
+    left: 88%;
+    color: #7B838C;
+}

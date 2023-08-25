@@ -3280,37 +3280,43 @@ li a.about-us-nav {
     opacity: 1;
   }
   .login-right-wrapper{
+    padding: 0 40px 40px 40px;
     border: 1px solid var(--unnamed-color-00a6be);
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 26px 35px #0000007A;
     border: 1px solid #00A6BE;
     border-radius: 30px;
     opacity: 1;
-    height: 630px;
-    width: 520px;
     margin: auto;
   }
+
+  .page-investsaudi-login .login-right-wrapper {
+	background-color: rgba(191, 155, 46, 0.75) !important;
+	border: none !important;
+	border-radius: 0 !important;
+	margin: auto;
+}
   
   
-  .login-register-text{
-    top:50px;
-    text-align: center;
-    color: #BF9B2E;
+.login-register-text{
+    padding: 1.5rem 0 25px 0 !important;
+      color: #fff;
+      text-transform: unset;
+      text-align: left;
+      margin-left: 10px;
+      text-transform: uppercase;
+      margin-top: 0 !important;
     text-transform: uppercase;
     font-size: 30px;
-    font-weight: 500;
-    position: relative;
   }
   
   .login-register-role{
-    top:36%;
+    margin-top: 20px;
     text-align: center;
-    color: #BF9B2E;
+    color: #fff;
     text-transform: uppercase;
     font-size: 20px;
-    font-weight: 500;
-    position: sticky;
-  }
+  }  
   
   .login-role-selection{
     position: sticky;
@@ -3319,12 +3325,22 @@ li a.about-us-nav {
     justify-content: center;
   }
   .login-role-selection-box{
-    background: #F2F2F2 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: transparent;
+      border: 2px solid #fff;
     border-radius: 15px;
     width:150px;
     height: 140px;
     margin: 0 4%;
     cursor: pointer;
+  }
+  
+  .page-login .login-role-selection-box.active {
+      background: #00714D !important;
   }
   
   .login-role-selection-box img{
@@ -3337,16 +3353,13 @@ li a.about-us-nav {
   }
   .role-text{
     font-size: 20px;
-    font-weight: 700;
-    color: #00A6BE;
     text-align: center;
-    position: relative;
-    top: 35px;
+    color: #fff;
+    font-weight: 400;
   }
   .login-buttons{
-    position: sticky;
-    top:70%;
     display: flex;
+    gap: 25px;
     text-align: center;
     justify-content: space-evenly;
     text-transform: uppercase;
@@ -3360,20 +3373,25 @@ li a.about-us-nav {
     display: flex;
   }
   .login-btn{
-    font-size: 16px;
-    font-weight: 600;
-    width:34%;
-    height: 50px;;
-  }
-  
-  .login-cancel{ 
-    background-color: #fff; 
-    border: 1px solid #00A6BE;
-    border-radius: 27px;
-    color: #00A6BE;  
-    width: 195px;
-    cursor: pointer;
-  }
+	display: flex;
+	gap: 10px;
+  flex:1;
+  height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-color: transparent;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px !important;
+	background: #00714D !important;
+}
+
+.login-cancel{ 
+  flex:1;
+	background: transparent !important;
+	border: 2px solid #fff !important;
+	color: #fff !important;
+}
   .login-btn-next{  
     background: #BAC4C5 0% 0% no-repeat padding-box;
     border: 1px solid #F2F2F2;
@@ -3383,13 +3401,14 @@ li a.about-us-nav {
     cursor: pointer;
   }
   .login-btn-next.active,.login-role-selection-box.active{
-    background: #00A6BE 0% 0% no-repeat padding-box;
+    background: #00714D 0% 0% no-repeat padding-box;
   }
   
   .login-role-selection-box.active .role-text{
     color: #FFF;
   }
   .register-role-selection{
+    display: none;
     text-align: center;
     top: 10%;
     position: relative;
@@ -3440,7 +3459,6 @@ li a.about-us-nav {
   @media (min-width:1201px) and (max-width:1919px) and (max-height:900px){
     .login-right-wrapper{
       height: 600px;
-      width: 470px;
     }
   }
   @media (min-width:1500px) and (max-width:1919px) and (max-height:900px) {/*110% - 125%*/
@@ -3478,7 +3496,6 @@ li a.about-us-nav {
   
   @media (max-width:599px) {
    .login-right-wrapper{
-      width: 346px;
       min-height: 540px;
       max-height: 893px;
       height: auto;

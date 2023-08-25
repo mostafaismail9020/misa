@@ -31,25 +31,21 @@
 						<div class="login-register-text"><spring:theme code="investor.registration.login.button"/></div>	
 						<div class="register-role-selection">
 							<img src="" alt="Investor" class="img-fluid login-role" />
-						</div>											
-						<div class="login-register-role"><spring:theme code="choose.your.role.label"/></div>
-						<div class="login-role-selection">
+						</div>												
+						<div class="login-register-role mb-5"><spring:theme code="choose.your.role.label"/></div>
+						<div class="login-role-selection mt-4 mb-5">
 							<div class="login-role-selection-box role-investor">
-									<img src="${commonResourcePath}/images/B2C/Investor-icon.png" alt="Investor" class="img-fluid img-ivestor-inactive" />
-									<img src="${commonResourcePath}/images/B2C/Investor-icons.png" alt="Investor" class="img-fluid img-ivestor-active d-none" />
+									<img src="${commonResourcePath}/images/B2C/Investor-icons.png" alt="Investor" class="img-fluid img-ivestor-active" />
 									<p class="role-text"><spring:theme code="investor.select.role.label"/></p>
 							</div>
 							<div class="login-role-selection-box role-partner">
-								<img src="${commonResourcePath}/images/B2C/Partner.png" alt="Partner" class="img-fluid img-partner-inactive" />
-								<img src="${commonResourcePath}/images/B2C/Partner-icon.png" alt="Investor" class="img-fluid img-partner-active d-none" />
+								<img src="${commonResourcePath}/images/B2C/Partner-icon.png" alt="Investor" class="img-fluid img-partner-active" />
 								<p class="role-text"><spring:theme code="partner.select.role.label"/></p>
 							</div>
 						</div>
 						<div class="login-buttons">
-							<div class="col-md-6 col-12">
 								<button class="login-btn login-cancel"><spring:theme code="investor.registration.cancel.button"/></button>
-							</div>
-							<div class="col-md-6 col-12">													
+												
 								<button class="login-btn login-btn-next" ><spring:theme code="investor.registration.next.button"/>&nbsp;
 									<svg xmlns="http://www.w3.org/2000/svg" width="15.835" height="10.561" viewBox="0 0 15.835 10.561" class="next-hide">
 										<path id="Icon_ionic-ios-arrow-round-forward" data-name="Icon ionic-ios-arrow-round-forward"
@@ -58,7 +54,7 @@
 										</path>
 									</svg>
 								</button>
-							</div>
+	
 						</div>
 					</div>
 				</div>

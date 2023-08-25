@@ -57,7 +57,18 @@
        <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
        <collectiontype code="MarketList" elementtype="Market" type="list"/>
+       <collectiontype code="CapacityList" elementtype="Capacity" type="list"/>
+       <collectiontype code="CostOfDoingBusinessTextList" elementtype="CostOfDoingBusinessText" type="list"/>
+       <collectiontype code="OtherInvestmentOverviewList" elementtype="OtherInvestmentOverview" type="list"/>
+       <collectiontype code="SegmentList" elementtype="SagiaSegment" type="list"/>
+       <collectiontype code="LocationList" elementtype="Location" type="list"/>
+       <collectiontype code="OtherGeneralTextList" elementtype="OtherGeneralText" type="list"/>
+       <collectiontype code="OtherMarketOverviewList" elementtype="OtherMarketOverview" type="list"/>
+       <collectiontype code="ValueChainList" elementtype="Valuechain" type="list"/>
+       <collectiontype code="OtherSupplyList" elementtype="OtherSupply" type="list"/>
+       <collectiontype code="MediaList" elementtype="Media" type="list"/>
        
+
 
 	   <collectiontype code="InvestSaudiMediaList" elementtype="InvestSaudiMedia" autocreate="true" generate="true" type="list"/>
    </collectiontypes>
@@ -261,6 +272,12 @@
         <enumtype code="FinancialSurveyShareholderType" dynamic="true">
             <value code="INDIVIDUAL"/>
             <value code="ENTITY"/>
+        </enumtype>
+        
+        <enumtype generate="true" code="PotentialEnum" autocreate="true" dynamic="true">
+            <value code="High"/>
+            <value code="Moderate"/>
+             <value code="Low"/>
         </enumtype>
 
     </enumtypes>
@@ -3987,6 +4004,46 @@
                         <defaultvalue>Boolean.FALSE</defaultvalue>
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="sagiaSegment" type="SegmentList">
+                       <modifiers optional="true"/>
+                       <persistence type="property"/>
+                       <description>List of Segments for opportunity</description>
+                    </attribute>
+                    <attribute qualifier="potential" type="PotentialEnum">
+                       <modifiers read="true" write="true"/>
+                       <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="location" type="LocationList">
+                       <modifiers read="true" write="true"/>
+                       <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="otherText" type="OtherGeneralTextList">
+                       <modifiers read="true" write="true"/>
+                       <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="opportunityVersionId" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="investmentOverview" type="InvestmentOverview">
+                       <modifiers optional="true"/>
+                       <persistence type="property"/>
+                       <description>Link to the associated Investment Overview Object</description>
+                    </attribute>
+                    <attribute qualifier="marketOverview" type="MarketOverview">
+                       <modifiers optional="true"/>
+                       <persistence type="property"/>
+                       <description>Link to the associated Demand</description>
+                    </attribute>
+                    <attribute qualifier="supply" type="Supply">
+                       <modifiers optional="true"/>
+                       <persistence type="property"/>
+                       <description>Link to the associated Supply</description>
+                    </attribute>
+                    <attribute qualifier="keyStakeholders" type="MediaList">
+                       <modifiers read="true" write="true"/>
+                       <persistence type="property"/>
                     </attribute>
                 </attributes>
             </itemtype>
@@ -11731,104 +11788,828 @@
 
                 </attributes>
             </itemtype>
-            <itemtype code="StrategicInvestorServiceType" generate="true" autocreate="true"
-                      jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorServiceType">
-                <description>Miza Service Type For Form</description>
-                <deployment table="StrategicInvestorService" typecode="32086"/>
-                <attributes>
-                    <attribute qualifier="code" type="java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
-                    </attribute>
-                    <attribute qualifier="label" type="localized:java.lang.String">
-                        <persistence type="property"/>
-                        <modifiers/>
-                    </attribute>
-                </attributes>
-            </itemtype>
-            
-            <!-- Start of opportunity pdf generation items -->
-            
-            <itemtype code="Demand" extends="GenericItem" autocreate="true" generate="true"
-            jaloclass="com.investsaudi.portal.core.jalo.Demand">
-            <description>Demand Section for an Opportunity</description>
-            <deployment table="Demand" typecode="32087"/>
-    <attributes>
-        <attribute qualifier="uid" type="java.lang.String">
-            <modifiers optional="false" unique="true"/>
-            <persistence type="property"/>
-        </attribute>
-        <attribute qualifier="opportunityProduct" type="OpportunityProduct">
-            <modifiers optional="true"/>
-            <persistence type="property"/>
-            <description>Link to the associated OpportunityProduct</description>
-        </attribute>
-        <attribute qualifier="markets" type="MarketList">
-            <modifiers optional="true" />
-            <persistence type="property"/>
-            <description>List of markets associated with the Demand</description>
-       </attribute>
-
-        <attribute qualifier="cagr" type="java.lang.Double">
-            <modifiers optional="true"/>
-            <persistence type="property"/>
-        </attribute>
-        <attribute qualifier="marketSizeText" type="localized:java.lang.String">
-            <modifiers read="true" write="true" search="true"
-                       optional="true"/>
-            <persistence type="property">
-                <columntype database="oracle">
-                    <value>CLOB</value>
-                </columntype>
-                <columntype database="mysql">
-                    <value>TEXT</value>
-                </columntype>
-                <columntype database="sqlserver">
-                    <value>TEXT</value>
-                </columntype>
-                <columntype database="sap">
-                    <value>NCLOB</value>
-                </columntype>
-                <columntype>
-                    <value>HYBRIS.LONG_STRING</value>
-                </columntype>
-            </persistence>
-        </attribute>
-
-        <attribute qualifier="keyDemandDrivers" type="java.lang.String">
-            <modifiers optional="true"/>
-            <persistence type="property"/>
-            <description>HTML formatted long text for key demand drivers</description>
-        </attribute>
-    </attributes>
+            <itemtype code="StrategicInvestorServiceType"
+	generate="true" autocreate="true"
+	jaloclass="com.investsaudi.portal.core.jalo.StrategicInvestorServiceType">
+	<description>Miza Service Type For Form</description>
+	<deployment table="StrategicInvestorService"
+		typecode="32086" />
+	<attributes>
+		<attribute qualifier="code" type="java.lang.String">
+			<persistence type="property" />
+			<modifiers read="true" write="true" search="true"
+				optional="false" unique="true" />
+		</attribute>
+		<attribute qualifier="label"
+			type="localized:java.lang.String">
+			<persistence type="property" />
+			<modifiers />
+		</attribute>
+	</attributes>
 </itemtype>
 
-         <itemtype code="Market" extends="GenericItem" autocreate="true" generate="true"
-          jaloclass="com.investsaudi.portal.core.jalo.Market">
-            <description>Market Section for Demand</description>
-            <deployment table="Markets" typecode="32088"/>>
-    <attributes>
-        <attribute qualifier="code" type="java.lang.String">
-            <modifiers optional="false" unique="true"/>
-            <persistence type="property"/>
-        </attribute>
-        <attribute qualifier="name" type="java.lang.String">
-            <modifiers optional="false"/>
-            <persistence type="property"/>
-        </attribute>
-        <attribute qualifier="years" type="java.lang.String">
-            <modifiers optional="true"/>
-            <persistence type="property"/>
-            <description>Comma-separated integers representing years</description>
-        </attribute>
-        <attribute qualifier="marketSizes" type="java.lang.String">
-            <modifiers optional="true"/>
-            <persistence type="property"/>
-            <description>Comma-separated integers representing market sizes, in sync with years</description>
-        </attribute>
-    </attributes>
-</itemtype>
+	<!-- Start of opportunity pdf generation items -->
+
+	<itemtype code="Demand" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.Demand">
+		<description>Demand Section for an Opportunity</description>
+		<deployment table="Demand" typecode="32087" />
+		<attributes>
+			<attribute qualifier="uid" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="opportunityProduct"
+				type="OpportunityProduct">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Link to the associated OpportunityProduct</description>
+			</attribute>
+			<attribute qualifier="markets" type="MarketList">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>List of markets associated with the Demand</description>
+			</attribute>
+
+			<attribute qualifier="cagr" type="java.lang.Double">
+				<modifiers optional="true" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="marketSizeText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="mysql">
+						<value>TEXT</value>
+					</columntype>
+					<columntype database="sqlserver">
+						<value>TEXT</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+			</attribute>
+
+			<attribute qualifier="keyDemandDrivers"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>HTML formatted long text for key demand drivers</description>
+			</attribute>
+		</attributes>
+	</itemtype>
+
+	<itemtype code="Market" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.Market">
+		<description>Market Section for Demand</description>
+		<deployment table="Markets" typecode="32088" />
+		
+		<attributes>
+			<attribute qualifier="code" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="name" type="java.lang.String">
+				<modifiers optional="false" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="years" type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Comma-separated integers representing years</description>
+			</attribute>
+			<attribute qualifier="marketSizes" type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Comma-separated integers representing market sizes, in sync with years</description>
+			</attribute>
+		</attributes>
+	</itemtype>
+
+	<itemtype code="InvestmentOverview" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.InvestmentOverview">
+		<description>Investment Overview Section for an Opportunity</description>
+		<deployment table="InvestmentOverview" typecode="32089" />
+		<attributes>
+			<attribute qualifier="uid" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="valueProposition"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			<attribute qualifier="incentivesAndEnablers"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+
+			<attribute qualifier="investmentHighlights"
+				type="InvestmentHighlight">
+				<modifiers optional="true" partof="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="costOfDoingBusiness"
+				type="CostOfDoingBusiness">
+				<modifiers optional="true" partof="true" />
+				<persistence type="property" />
+				<description>Link to cost of doing business</description>
+			</attribute>
+
+			<attribute qualifier="other" type="OtherInvestmentOverviewList">
+				<modifiers optional="true" partof="true" />
+				<persistence type="property" />
+				<description>Other Investment Overview Details</description>
+			</attribute>
+		</attributes>
+	</itemtype>
+
+	<itemtype code="InvestmentHighlight" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.InvestmentHighlight">
+		<description>Investment Highlights Section for an Opportunity</description>
+		<deployment table="InvestmentHighlight" typecode="32090" />
+		<attributes>
+			<attribute qualifier="uid" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="expectedInvestmentSize"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Expected Investment Size (SAR)</description>
+			</attribute>
+
+			<attribute qualifier="expectedIRR" type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Expected IRR (%)</description>
+			</attribute>
+
+			<attribute qualifier="paybackPeriod"
+				type="java.lang.Integer">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Payback period (years)</description>
+			</attribute>
+
+			<attribute qualifier="gdpContribution"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>GDP Contribution</description>
+			</attribute>
+
+			<attribute qualifier="jobscreated" type="java.lang.Integer">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Jobs Created (Job)</description>
+			</attribute>
+
+			<attribute qualifier="investmentType"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Investment (Contracting) Type</description>
+			</attribute>
+
+			<attribute qualifier="capacity" type="CapacityList">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>List of capacities associated with the investment highlights</description>
+			</attribute>
+			
+			<attribute qualifier="investmentOverview" type="InvestmentOverview">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Link to Investment Overview</description>
+			</attribute>
+			
+
+			<attribute qualifier="investmentHighlightText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+
+		</attributes>
+	</itemtype>
+
+
+	<itemtype code="CostOfDoingBusiness" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.CostOfDoingBusiness">
+		<description>Investment Overview Section for an Opportunity</description>
+		<deployment table="CostOfDoingBusiness" typecode="32091" />
+		<attributes>
+			<attribute qualifier="uid" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="electricityTariffs"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Electricity tariffs for  industrial players (SAR/ MWh)</description>
+			</attribute>
+
+			<attribute qualifier="productivityAdjustedWages"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Productivity adjusted wages (SAR/h)</description>
+			</attribute>
+
+			<attribute qualifier="logisticsPerformanceIndex"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Logistics Performance Index (1-5)</description>
+			</attribute>
+
+			<attribute qualifier="constructionCosts"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Construction Costs (Indexed to US, % 0 is cheapest)</description>
+			</attribute>
+
+			<attribute qualifier="easeOfGettingCredit"
+				type="java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Ease of getting credit (0-100)</description>
+			</attribute>
+
+			<attribute qualifier="costOfDoingBusinessTexts" type="CostOfDoingBusinessTextList">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>List of capacities associated with the investment highlights</description>
+			</attribute>
+			
+			<attribute qualifier="investmentOverview" type="InvestmentOverview">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Link to Investment Overview</description>
+			</attribute>
+
+		</attributes>
+	</itemtype>
+
+	<itemtype code="OtherInvestmentOverview" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.OtherInvestmentOverview">
+		<description>Other Investment Overview Text Fields and attachment</description>
+		<deployment table="OtherInvestmentOverview" typecode="32092" />
+		<attributes>
+			<attribute qualifier="name" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="isVisible" type="java.lang.Boolean">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Boolean value for visibility</description>
+			</attribute>
+
+			<attribute qualifier="sequenceNumber"
+				type="java.lang.Integer">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Sequence Number</description>
+			</attribute>
+
+			<attribute qualifier="formattedText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			<attribute qualifier="attachment" type="MediaList">
+				<persistence type="property" />
+				<modifiers read="true" write="true" optional="true"
+					partof="true" />
+			</attribute>
+
+		</attributes>
+	</itemtype>
+	
+	<itemtype code="Capacity" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.Capacity">
+		<description>Capacity for Investment Highlights. The combination of measure,unit and value should always be unique.</description>
+		<deployment table="Capacity" typecode="32093" />
+		
+		<attributes>
+			<attribute qualifier="measure" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="unit" type="java.lang.String">
+				<modifiers optional="false"  unique="true"/>
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="value" type="java.lang.String">
+				<modifiers optional="false"  unique="true"/>
+				<persistence type="property" />
+				<description>Capacity Value</description>
+			</attribute>
+		</attributes>
+	</itemtype>
             
+    <itemtype code="CostOfDoingBusinessText" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.CostOfDoingBusinessText">
+		<description>Cost Of Doing Business Text. This may serve as an alternative if the other fields are not present in Cost Of Doing Business table</description>
+		<deployment table="CostOfDoingBusinessText" typecode="32094" />
+		
+		<attributes>
+			<attribute qualifier="identifier" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="value" type="java.lang.String">
+				<modifiers optional="false"  unique="false"/>
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="unit" type="java.lang.String">
+				<modifiers optional="false"  unique="false"/>
+				<persistence type="property" />
+				<description>Capacity Value</description>
+			</attribute>
+		</attributes>
+	</itemtype>
+	
+	<itemtype code="SagiaSegment" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.Segment">
+		<description>Segment</description>
+		<deployment table="Segment" typecode="32095" />
+		
+		<attributes>
+			<attribute qualifier="segmentID" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="segmentName" type="java.lang.String">
+				<modifiers optional="false"  unique="false"/>
+				<persistence type="property" />
+			</attribute>
+		</attributes>
+	</itemtype>  
+	
+	<itemtype code="Location" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.Location">
+		<description>Location</description>
+		<deployment table="Location" typecode="32096" />
+		
+		<attributes>
+			<attribute qualifier="region" type="SagiaRegion">
+				<modifiers optional="true" unique="true" />
+				<persistence type="property" />
+			</attribute>
+			<attribute qualifier="city" type="SagiaCity">
+				<modifiers optional="true"  unique="true"/>
+				<persistence type="property" />
+			</attribute>
+		</attributes>
+	</itemtype>
+	
+	<itemtype code="OtherGeneralText" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.OtherGeneralText">
+		<description>Other text in general section</description>
+		<deployment table="OtherGeneralText" typecode="32097" />
+		<attributes>
+			<attribute qualifier="name" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="isVisible" type="java.lang.Boolean">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Boolean value for visibility</description>
+			</attribute>
+
+			<attribute qualifier="sequenceNumber"
+				type="java.lang.Integer">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Sequence Number</description>
+			</attribute>
+
+			<attribute qualifier="formattedText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			<attribute qualifier="attachment" type="MediaList">
+				<persistence type="property" />
+				<modifiers read="true" write="true" optional="true"
+					partof="true" />
+			</attribute>
+		</attributes>
+	</itemtype>
+	
+	<itemtype code="MarketOverview" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.MarketOverview">
+		<description>Market Overview Section for an Opportunity</description>
+		<deployment table="MarketOverview" typecode="32098" />
+		<attributes>
+			<attribute qualifier="uid" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+			
+		    <attribute qualifier="rawMaterialsText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			
+			<attribute qualifier="globalTrendsText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			
+			<attribute qualifier="other" type="OtherMarketOverviewList">
+				<modifiers optional="true" partof="true" />
+				<persistence type="property" />
+				<description>Other Market Overview Details</description>
+			</attribute>	 
+			
+			
+			
+			
+		</attributes>
+	</itemtype>
+	
+	<itemtype code="Supply" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.Supply">
+		<description>Supply Section for an Opportunity</description>
+		<deployment table="Supply" typecode="32099" />
+		<attributes>
+			<attribute qualifier="uid" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute> 
+			
+			<attribute qualifier="scalabilityAndLocalizationText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			
+			<attribute qualifier="valueChainTexts" type="ValueChainList">
+				<modifiers optional="true" partof="true" />
+				<persistence type="property" />
+				<description>Value Chain Details</description>
+			</attribute>
+			
+			<attribute qualifier="importDependencyText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			
+			<attribute qualifier="other" type="OtherSupplyList">
+				<modifiers optional="true" partof="true" />
+				<persistence type="property" />
+				<description>Other Market Overview Details</description>
+			</attribute>
+			
+			
+		</attributes>
+	</itemtype>	
+	
+	
+	<itemtype code="OtherMarketOverview" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.OtherInvestmentOverview">
+		<description>Other Investment Overview Text Fields and attachment</description>
+		<deployment table="OtherMarketOverview" typecode="32100" />
+		<attributes>
+			<attribute qualifier="name" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="isVisible" type="java.lang.Boolean">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Boolean value for visibility</description>
+			</attribute>
+
+			<attribute qualifier="sequenceNumber"
+				type="java.lang.Integer">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Sequence Number</description>
+			</attribute>
+
+			<attribute qualifier="formattedText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			<attribute qualifier="attachments" type="MediaList">
+                    <modifiers optional="true"/>
+                    <persistence type="property"/>
+           </attribute>
+
+		</attributes>
+	</itemtype>	
+	
+	<itemtype code="ValueChain" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.ValueChain">
+		<description>Other Investment Overview Text Fields and attachment</description>
+		<deployment table="ValueChain" typecode="32101" />
+		<attributes>
+			<attribute qualifier="name" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="isVisible" type="java.lang.Boolean">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Boolean value for visibility</description>
+			</attribute>
+
+			<attribute qualifier="sequenceNumber"
+				type="java.lang.Integer">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Sequence Number</description>
+			</attribute>
+
+			<attribute qualifier="formattedText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			<attribute qualifier="attachment" type="MediaList">
+				<persistence type="property" />
+				<modifiers read="true" write="true" optional="true"
+					partof="true" />
+			</attribute>
+
+		</attributes>
+	</itemtype>    
+	
+	<itemtype code="OtherSupply" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.OtherSupply">
+		<description>Other Supply Text Fields and attachment</description>
+		<deployment table="OtherSupply" typecode="32102" />
+		<attributes>
+			<attribute qualifier="name" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="isVisible" type="java.lang.Boolean">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Boolean value for visibility</description>
+			</attribute>
+
+			<attribute qualifier="sequenceNumber"
+				type="java.lang.Integer">
+				<modifiers optional="true" />
+				<persistence type="property" />
+				<description>Sequence Number</description>
+			</attribute>
+
+			<attribute qualifier="formattedText"
+				type="localized:java.lang.String">
+				<modifiers read="true" write="true" search="true"
+					optional="true" />
+				<persistence type="property">
+					<columntype database="oracle">
+						<value>CLOB</value>
+					</columntype>
+					<columntype database="sap">
+						<value>NCLOB</value>
+					</columntype>
+					<columntype>
+						<value>HYBRIS.LONG_STRING</value>
+					</columntype>
+				</persistence>
+				<custom-properties>
+                        <property name="hmcIndexField">
+                            <value>"thefield"</value>
+                        </property>
+               </custom-properties>
+			</attribute>
+			<attribute qualifier="attachment" type="MediaList">
+				<persistence type="property" />
+				<modifiers read="true" write="true" optional="true"
+					partof="true" />
+			</attribute>
+
+		</attributes>
+	</itemtype>  
+
             
             <!-- End of pdf opportunity generation items -->
             

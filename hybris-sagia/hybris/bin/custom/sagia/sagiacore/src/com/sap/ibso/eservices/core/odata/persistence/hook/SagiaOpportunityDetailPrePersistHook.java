@@ -108,7 +108,7 @@ public class SagiaOpportunityDetailPrePersistHook implements PrePersistHook {
 
 				for (CategoryModel category : existingSupercategories) {
 
-							category.setName(category.getCode());
+							//category.setName(category.getCode());
 							category.setSupercategories(rootSupercategoriesList);
 
 				}

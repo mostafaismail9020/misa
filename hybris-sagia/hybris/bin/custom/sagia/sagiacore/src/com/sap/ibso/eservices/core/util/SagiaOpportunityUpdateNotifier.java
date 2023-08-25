@@ -52,10 +52,12 @@ public class SagiaOpportunityUpdateNotifier {
 
 		for (Map.Entry<String, OpportunityProductModel> entry : opportunityMap.entrySet()) {
 			String code = entry.getKey();
+			String opportunityVersionID = entry.getValue().getOpportunityVersionId();
 			OpportunityProductModel opportunityProductModel = entry.getValue();
 
 			JsonObject opportunity = new JsonObject();
 			opportunity.addProperty("code", code);
+			opportunity.addProperty("opportunityVersionID", opportunityVersionID);
 			opportunity.addProperty("operationType",
 				    opportunityProductModel.getIsWithdrawn() == null
 				        ? operationType // When isWithdrawn is null, use the provided operationType

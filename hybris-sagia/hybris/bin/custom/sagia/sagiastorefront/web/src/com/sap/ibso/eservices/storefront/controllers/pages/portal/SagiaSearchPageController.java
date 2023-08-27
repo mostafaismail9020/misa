@@ -231,9 +231,9 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 
 		final SearchStateData searchState = new SearchStateData();
 		final SearchQueryData searchQueryData = new SearchQueryData();
-		if (!searchQuery.contains(DEFAULT_SORT_TYPE)) {
+		if (!searchQuery.contains(getDefaultSort())) {
 			if(!searchQuery.contains(":")) {
-				searchQuery = searchQuery + DEFAULT_SORT_TYPE + getFilterParam();
+				searchQuery = searchQuery + getDefaultSort() + getFilterParam();
 			}
 			else {
 				searchQuery = searchQuery + getFilterParam();
@@ -243,6 +243,10 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 		searchState.setQuery(searchQueryData);
 
 		return encodeSearchPageData(productSearchFacade.textSearch(searchState, pageableData));
+	}
+
+	protected String getDefaultSort() {
+		return DEFAULT_SORT_TYPE;
 	}
 
 	@ResponseBody

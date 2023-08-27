@@ -9,8 +9,8 @@ $siteResource = jar:com.sap.ibso.eservices.initialdata.setup.InitialDataSystemSe
 
 INSERT_UPDATE CMSLinkComponent ;uid[unique = true] ; linkname[lang=en] ; linkname[lang=ar]  ;name      ; url                          ;&componentRef        ;$contentCV[unique = true] ;
                                ;sectors-icon-link  ; Sectors           ; القطاعات           ;Sectors   ; /sectors-opportunities       ;sectors-icon-link    ;
-                               ;news-icon-link     ;News               ; الأخبار             ;News      ; /mediaCenter/news            ;news-icon-link        ;
-                               ;events-icon-link   ;Events             ; الأنشطة والفعاليات  ;Events    ; /mediaCenter/events          ;events-icon-link        ;
+                               ;news-icon-link     ;News               ; الأخبار             ;News      ; /newseventslist              ;news-icon-link        ;
+                               ;events-icon-link   ;Events             ; الأنشطة والفعاليات  ;Events    ; /newseventslist              ;events-icon-link        ;
                                ;reports-icon-link  ;Reports            ; التقارير           ;Reports   ; /economic/investmentReports  ;reports-icon-link    ;
                                ;services-icon-link ;Services           ; خدمات              ;Services  ; /aboutSaudi                  ;services-icon-link    ;
                                ;incentives-icon-link;Incentives        ; الحوافز            ;Incentives; /investor/incentives         ;incentives-icon-link ;    

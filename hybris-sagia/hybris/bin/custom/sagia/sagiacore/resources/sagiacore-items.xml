@@ -4192,7 +4192,7 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-					<attribute qualifier="eventDate" type="localized:java.lang.String">
+					<attribute qualifier="eventDate" type="java.util.Date">
 						<persistence type="property"/>
 					</attribute>
 				</attributes>
@@ -4211,7 +4211,7 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute qualifier="newsDate" type="java.lang.String">
+                    <attribute qualifier="newsDate" type="java.util.Date">
 						<persistence type="property"/>
 					</attribute>
 				</attributes>

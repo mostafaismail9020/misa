@@ -1,6 +1,10 @@
 package com.investsaudi.portal.facades.solrfacetsearch.providers;
 
+import com.investsaudi.portal.core.jalo.NewsProduct;
+import com.investsaudi.portal.core.model.EventProductModel;
 import com.investsaudi.portal.core.model.InvestSaudiResourceComponentModel;
+import com.investsaudi.portal.core.model.NewsProductModel;
+
 import de.hybris.platform.core.model.c2l.LanguageModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.solrfacetsearch.config.IndexConfig;
@@ -72,8 +76,7 @@ public class SagiaProductCreationDateValueProvider extends AbstractPropertyField
                                                 final IndexedProperty indexedProperty)
     {
         final List<FieldValue> fieldValues = new ArrayList<FieldValue>();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        final String formatedDate = dateFormat.format(product.getCreationtime());
+        final String formatedDate = formatDate(product);
 
 
         if (formatedDate != null)
@@ -84,7 +87,18 @@ public class SagiaProductCreationDateValueProvider extends AbstractPropertyField
         return fieldValues;
     }
 
-    protected void addFieldValues(final List<FieldValue> fieldValues, final IndexedProperty indexedProperty,
+    private String formatDate(ProductModel product) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        if (product instanceof NewsProductModel) {
+        	return dateFormat.format(((NewsProductModel) product).getNewsDate());
+		}
+        else if (product instanceof EventProductModel) {
+        	return dateFormat.format(((EventProductModel) product).getEventDate());
+		}
+		return dateFormat.format(product.getCreationtime());
+	}
+
+	protected void addFieldValues(final List<FieldValue> fieldValues, final IndexedProperty indexedProperty,
                                   final LanguageModel language, final Object value)
     {
         final Collection<String> fieldNames = getFieldNameProvider().getFieldNames(indexedProperty,
@@ -94,7 +108,5 @@ public class SagiaProductCreationDateValueProvider extends AbstractPropertyField
             fieldValues.add(new FieldValue(fieldName, value));
         }
     }
-
-
 
 }

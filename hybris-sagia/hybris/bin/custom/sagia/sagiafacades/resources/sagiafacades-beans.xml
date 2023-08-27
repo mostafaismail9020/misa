@@ -3518,10 +3518,10 @@
         <property name="partnerMap" type="java.util.Map&lt;String, java.util.List&lt;com.sap.ibso.eservices.facades.data.OpportunityPartnerData&gt;>"/>
 		<property name="sagiaRegion" type="java.lang.String"/>
 		<property name="resource" type="java.lang.String"/>
-		<property name="eventDate" type="java.lang.String"/>
+		<property name="eventDate" type="java.util.Date"/>
 		<property name="eventLocation" type="java.lang.String"/>
 		<property name="eventTiming" type="java.lang.String"/>
-		<property name="newsDate" type="java.lang.String"/>
+		<property name="newsDate" type="java.util.Date"/>
     </bean>
 
 	<bean class="de.hybris.platform.commercefacades.product.data.SectorFactsFiguresData">

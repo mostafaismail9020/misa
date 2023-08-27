@@ -1,15 +1,20 @@
 package com.investsaudi.portal.facades.solrfacetsearch.populators;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.search.converters.populator.SearchResultProductPopulator;
 import de.hybris.platform.commerceservices.search.resultdata.SearchResultValueData;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang.StringUtils;
-
-import java.util.List;
 
 public class SagiaExtSearchResultProductPopulator extends SearchResultProductPopulator {
 
+    private static final Logger LOG = Logger.getLogger(SagiaExtSearchResultProductPopulator.class);
     private static final String FORMAT_TO_REMOVE = "<em class=\"search-results-highlight\">";
     private static final String FORMAT_TO_REMOVE_2 = "</em>";
 
@@ -30,9 +35,23 @@ public class SagiaExtSearchResultProductPopulator extends SearchResultProductPop
         }
         target.setResource(this.getValue(source, "resource"));
         target.setImageUrl(this.getValue(source, "picture"));
-        target.setEventDate(this.getValue(source, "eventDate"));
-        target.setEventLocation(this.getValue(source, "eventLocation"));
-        target.setEventTiming(this.getValue(source, "eventTiming"));
-        target.setNewsDate(this.getValue(source, "newsDate"));
+        if (target.getResource().equals("Event")) {
+        	SimpleDateFormat eventDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            target.setEventLocation(this.getValue(source, "eventLocation"));
+            target.setEventTiming(this.getValue(source, "eventTiming"));	
+            try {
+				target.setEventDate(eventDateFormat.parse(this.getValue(source, "creationTime")));
+			} catch (ParseException e) {
+				LOG.error("Error while parsing event date for " + target.getCode() ,e);
+			}
+		}
+        else if (target.getResource().equals("News")) {
+        	SimpleDateFormat newsDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            try {
+				target.setNewsDate(newsDateFormat.parse(this.getValue(source, "creationTime")));
+			} catch (ParseException e) {
+				LOG.error("Error while parsing news date for " + target.getCode() ,e);
+			}	
+		}
     }
 }

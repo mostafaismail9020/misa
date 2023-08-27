@@ -6,84 +6,96 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <main>
-	<section class="mb-5 mt-0 pt-0">
-        <div style="background-image: url('')" class="yCmsComponent banner-section rhq-banner-content">
-            <div class="banner-container container aos-init aos-animate" data-aos="fade-up">
-            	<h1>${fn:escapeXml(productData.name)}</h1>
-				<c:if test="${true}"><!-- test, if kpis are available-->
-					<div class="col-md-12">
-						<div class="row kpi-row">
-							<div class="col-md-5 col-5 kpi">
-								<div class="kpi-value">XX%</div>
-								<div class="kpi-postfix">TODO actual data</div>
-							</div>
-							<div class="col-md-2 col-2"></div>
-							<div class="col-md-5 col-5 kpi">
-								<div class="kpi-value">$X</div>
-								<div class="kpi-postfix">TODO actual data</div>
-							</div>
-						</div>
-					</div>
-				</c:if>
-				<div class="Inc-baner-btnwraper">
-					<a href="/en/investsaudi-login" class="btn btn-sector-primary">
-						<spring:theme code="portal.sector.investnow.label"/>
-						<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
-					</a>
-					<c:if test="${not empty productData.pdfUrl}">
-						<button id="controllerButton" class="download-opportunity" onclick="callController()">
-							<img class="img-fluid download-icon" src="${commonResourcePath}/images/Icon awesome-download.png" alt="" />
-						</button>
-	  					<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;">
-	  					</form>
-					</c:if>
+	<section class="opportunity-article-section-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-title">${fn:escapeXml(productData.name)}</h1>
 				</div>
-            </div>
-        </div>
-    </section>
-
-	<!-- <c:if test="${not empty productData.description}"> -->
-	<section class="container sectors-content">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="opportunity-productData-description">
-					${productData.description}		
-					<a>Text to be displayed. This is an example Opportunity description</a>			
+			</div>
+			<div class="row opportunity-tags">
+				<div class="col-md-2 col-5">
+					<span class="badge badge-pill badge-light">Promoting Tag 1</span>
+				</div>
+				<div class="col-md-2 col-5">
+					<span class="badge badge-pill badge-light">Promoting Tag 2</span>
+				</div>
+				<div class="col-md-2 col-5">
+					<span class="badge badge-pill badge-light">Promoting Tag 3</span>
 				</div>
 			</div>
 		</div>
-	</section>
+    </section>
+    
+    <!-- <c:if test="${not empty productData.description}"> -->
+    <section class="opportunity-article-section-body">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-7 col-12">
+    				<h3 class="sub-title">${productData.description}</h3>
+    				<p class="desc">
+    					In ut lacinia dui. Integer orci lacus, malesuada sit amet viverra et, consequat vitae massa.
+    					Vestibulum sit amet auctor lacus. Sed rhoncus sed metus eu euismod.
+						Maecenas et velit eget magna lobortis auctor a a odio.
+						Nulla lorem sem, fringilla vitae lacinia in, semper a libero.
+						Nunc et sollicitudin augue, vitae faucibus justo. Ut vehicula nisi vel ultrices ullamcorper.
+    				</p>
+    				<h3 class="second-sub-title">Sector and market opportunity</h3>
+    				<p class="desc">
+    					In ut lacinia dui. Integer orci lacus, malesuada sit amet viverra et, consequat vitae massa.
+    					Vestibulum sit amet auctor lacus. Sed rhoncus sed metus eu euismod.
+						Maecenas et velit eget magna lobortis auctor a a odio.
+						Nulla lorem sem, fringilla vitae lacinia in, semper a libero.
+						Nunc et sollicitudin augue, vitae faucibus justo. Ut vehicula nisi vel ultrices ullamcorper.
+    				</p>
+    			</div>
+    			<div class="col-md-5 col-12">
+    				<div class="jumbotron jumbotron-main">
+    					<div class="row justify-content-center">
+    						<div class="col-md-4 col-5 text-center irr-box">
+    							<p class="irr-title">~30%</p>
+    							<p class="irr-desc">Expected IRR</p>
+    						</div>
+    						<div class="col-md-2 col-2"></div>
+    						<div class="col-md-4 col-5 text-center irr-box">
+    							<p class="irr-title">$2 BN</p>
+    							<p class="irr-desc">Investment size</p>
+    						</div>
+    					</div>
+    					<div class="row">
+    						<div class="col-md-6 col-6">
+    							<p class="irr-location-title">Location</p>
+    							<p class="irr-location-desc">Saudi Arabia Riyadh</p>
+    						</div>
+    						<div class="col-md-6 col-6">
+    							<p class="irr-location-title">Investment type</p>
+    							<p class="irr-location-desc">Foreign direct investment</p>
+    						</div>
+    					</div>
+    					<div class="row">
+    						<div class="cold-md-12 col-12">
+    							<p class="irr-location-title">Sector</p>
+    							<div class="row">
+    								<div class="col-md-3 col-4 irr-sector-div text-center">
+    									<p>
+    										<span class="title">ICT</span> <span class="badge badge-pill badge-irr-sector">37</span>
+    									</p>
+    								</div>
+    								<div class="col-md-6 col-6"></div>
+    								<div class="col-md-3 col-2">
+    									<button class="btn btn-download-pdf-opportunity" id="download" data-toggle="modal" data-target="#downloadModal">
+											<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/> 
+										</button>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
 	<!-- </c:if> -->
-	<div class="sectors-content data-contact-field">
-		<c:if test="${true}"><!-- test, if meta data is available-->
-			<section class="sectors-content opp-metadata">
-				
-			</section>
-		</c:if>
-		
-		<section class="sectors-content opp-contact-card">
-			<div class="opportunity-contact-name">
-				<c:if test="${true}"><!-- test, if contact data is available-->
-					<div class="row contact-row">
-						<div class="contact-name col-md-12">Firstname Lastname</div>
-						<div class="contact-role col-md-12">Role description</div>
-					</div>
-				</c:if>
-			</div>
-			<div class="Inc-baner-btnwraper">
-				<button class="btn contact-button">
-					<a href="/en/investsaudi-login">
-						<spring:theme code="portal.sector.investnow.label"/>
-						<img class="img-fluid arrow-icon" src="${commonResourcePath}/images/know-more.png" alt=""/>
-					</a>
-				</button>
-			</div>
-		</section>
-	</div>
-
-	<cms:pageSlot position="PortalPageMain" var="slotComponent">
-		<cms:component component="${slotComponent}"/>
-	</cms:pageSlot>
 </main>
 
 <cms:pageSlot position="PortalPageBottom" var="slotComponent">

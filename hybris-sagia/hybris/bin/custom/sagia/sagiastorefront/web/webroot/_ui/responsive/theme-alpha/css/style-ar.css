@@ -23264,3 +23264,133 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     left: 88%;
     color: #7B838C;
 }
+
+.opportunity-article-section-header {
+    background: rgba(0, 113, 77, 0.05);
+}
+
+.opportunity-article-section-header div.container:nth-of-type(1) {
+	margin-top: 25vh;
+}
+
+.opportunity-article-section-header .opportunity-tags {
+	text-align: right;
+}
+
+.opportunity-article-section-header .badge.badge-pill {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0px;
+	text-align: center;
+	background-color: rgba(0, 113, 77, 0.25);
+	color: var(--misaSecondColor);
+}
+
+.opportunity-article-section-header h1.page-title {
+	font-weight: 700;
+    font-size: 5vh;
+    color: var(--misaSecondColor);
+    text-align: right;
+}
+
+.opportunity-article-section-body h3.sub-title {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+	letter-spacing: 0em;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-article-section-body p.desc {
+    margin-top: 20px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0em;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-article-section-body h3.second-sub-title {
+	margin-top: 50px;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+	letter-spacing: 0em;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main {
+	background-color: rgba(0, 113, 77, 0.25);
+    border-radius: 20px;
+    color: var(--misaSecondColor);
+    padding: 2rem 2rem;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-title {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 28px;
+	letter-spacing: 0em;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-desc {
+    margin-top: 5px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0em;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-box {
+	padding: 10px;
+    border-radius: 10px;
+   	border: 1px solid var(--misaSecondColor);
+   	background-color: rgba(0, 113, 77, 0.2);
+   	margin-bottom: 20px;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-location-title {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0em;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-location-desc {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 23px;
+	letter-spacing: 0em;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-sector-div {
+   	background-color: rgba(0, 113, 77, 0.2);
+   	border-radius: 10px;
+ 	padding: 10px;
+ 	margin-top: 5px;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-sector-div .title {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+	letter-spacing: 0em;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-sector-div .badge-irr-sector {
+	background-color: var(--misaFirstColor);
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.001em;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .btn-download-pdf-opportunity {
+	color: #fff;
+    background-color: rgba(0, 113, 77, 0.05);
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+}

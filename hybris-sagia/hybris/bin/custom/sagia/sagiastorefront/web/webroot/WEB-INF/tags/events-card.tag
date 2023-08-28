@@ -15,12 +15,7 @@
                 <a href="${newsUrl}/${currentComponent.uid}">
                     <div class="flip-card-front">
                         <div class="news-date text-center">
-                            <div class="day">
-                                <fmt:formatDate value="${result.eventDate}" pattern="d" />
-                            </div>
-                            <div class="month">
-                                <fmt:formatDate value="${result.eventDate}" pattern="MMM" />
-                            </div>
+                                <p>${result.eventDate}</p>
                         </div>
                         <div class="card-img">
                             <img class="img-fluid events-card-img" src="${result.imageUrl}" alt="${result.name}" loading="lazy">

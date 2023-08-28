@@ -1,21 +1,27 @@
 package com.investsaudi.portal.facades.product.impl;
 
+import com.investsaudi.portal.core.model.ArticleProductModel;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
 import com.investsaudi.portal.core.model.SuccessStoryProductModel;
 import com.investsaudi.portal.core.service.InvestSaudiProductService;
 import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
 import com.investsaudi.portal.facades.product.InvestSaudiProductFacade;
+import com.investsaudi.portal.facades.product.populator.InvestSaudiArticlePopulator;
 import com.investsaudi.portal.facades.product.populator.InvestSaudiOpportunityPopulator;
 import com.investsaudi.portal.facades.product.populator.InvestSaudiSuccessStoryPopulator;
 import de.hybris.platform.commercefacades.product.data.OpportunityData;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.product.data.SuccessStoryData;
+import de.hybris.platform.converters.Populator;
 import de.hybris.platform.core.servicelayer.data.SearchPageData;
+import de.hybris.platform.product.ProductService;
 import de.hybris.platform.core.model.media.MediaModel;
+import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.model.ModelService;
 import org.apache.log4j.Logger;
 import de.hybris.platform.catalog.CatalogVersionService;
 import de.hybris.platform.catalog.model.CatalogVersionModel;
+import de.hybris.platform.cmsfacades.products.populator.ProductDataPopulator;
 
 import com.investsaudi.portal.core.service.OpportunityProductMediaRestApiService;
 
@@ -41,7 +47,13 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
 
     @Resource
     private InvestSaudiOpportunityPopulator investSaudiOpportunityPopulator;
+    
+    @Resource
+    private InvestSaudiArticlePopulator investSaudiArticlePopulator;
 
+    @Resource
+    private Populator<ProductModel, ProductData> productPopulator;
+    
     @Resource
     private InvestSaudiSuccessStoryPopulator investSaudiSuccessStoryPopulator;
 
@@ -53,8 +65,10 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
     private OpportunityProductMediaRestApiService opportunityProductMediaRestApiService;
     
     private ModelService modelService;
+    
+    private ProductService productService;
 
-    @Override
+	@Override
     public ProductData getProductForCode(String code) {
 
         ProductData productData = new ProductData();
@@ -68,13 +82,25 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
                     investSaudiOpportunityPopulator.populate(productData, opportunityProductModel);
                     return productData;
                 }
-            } else {
+            }
+            else if (productType.equals(ArticleProductModel._TYPECODE)) {
+            	ArticleProductModel articleProductModel = (ArticleProductModel) productService.getProductForCode(code);
+                if (articleProductModel != null) {
+                    investSaudiArticlePopulator.populate(productData, articleProductModel);
+                    return productData;
+                }
+            }
+            else if (productType.equals(SuccessStoryProductModel._TYPECODE)){
                 SuccessStoryProductModel successStoryProductModel =
                     investSaudiProductService.getSuccessStoryForCode(code);
                 if (successStoryProductModel != null) {
                     investSaudiSuccessStoryPopulator.populate(productData, successStoryProductModel);
                     return productData;
                 }
+            }
+            else {
+            	productPopulator.populate(productService.getProductForCode(code), productData);
+            	return productData;
             }
         }
         
@@ -315,5 +341,12 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
 		this.catalogVersionService = catalogVersionService;
 	}
 
+    public ProductService getProductService() {
+		return productService;
+	}
+
+	public void setProductService(ProductService productService) {
+		this.productService = productService;
+	}
 
 }

@@ -36,6 +36,8 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
     private static final String SECTOR_URL = "/sectors-opportunities/";
     private static final String EVENT_URL = "/mediaCenter/events/";
     private static final String NEWS_URL = "/mediaCenter/news/";
+    private static final String ARTICLES_URL = "articles/";
+
 
     protected FieldNameProvider getFieldNameProvider()
     {
@@ -134,7 +136,7 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
         }
     	}
     	else if (model instanceof ArticleProductModel) {
-			return "/aboutSaudi";			
+			return SECTOR_URL + ARTICLES_URL + ((ArticleProductModel) model).getCode();
 		}
     	else if (model instanceof EventProductModel) {
 			return EVENT_URL + ((EventProductModel) model).getCode();

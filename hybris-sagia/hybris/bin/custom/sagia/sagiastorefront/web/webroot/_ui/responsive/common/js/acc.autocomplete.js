@@ -91,6 +91,16 @@ ACC.autocomplete = {
 						});
 					}*/
 					if(data.articles != null){
+						if (data.articles.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>Articles</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  "#",
+								type: "productResult",
+								image: null
+							});
 						$.each(data.articles, function (i, obj)
 						{
 							autoSearchData.push({
@@ -106,6 +116,16 @@ ACC.autocomplete = {
 						});
 					}
 					if(data.events != null){
+						if (data.events.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>Events</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  "#",
+								type: "productResult",
+								image: null
+							});
 						$.each(data.events, function (i, obj)
 						{
 							autoSearchData.push({
@@ -121,6 +141,16 @@ ACC.autocomplete = {
 						});
 					}
 					if(data.news != null){
+						if (data.news.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>News</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  "#",
+								type: "productResult",
+								image: null
+							});
 						$.each(data.news, function (i, obj)
 						{
 							autoSearchData.push({
@@ -136,6 +166,16 @@ ACC.autocomplete = {
 						});
 					}
 					if(data.opportunities != null){
+						if (data.opportunities.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>Opportunities</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  "#",
+								type: "productResult",
+								image: null
+							});
 						$.each(data.opportunities, function (i, obj)
 						{
 							autoSearchData.push({
@@ -151,6 +191,16 @@ ACC.autocomplete = {
 						});
 					}
 					if(data.products != null){
+						if (data.products.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>Opportunities</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  "#",
+								type: "productResult",
+								image: null
+							});
 						$.each(data.products, function (i, obj)
 						{
 							autoSearchData.push({

@@ -320,7 +320,8 @@
 		<div class="container d-flex align-items-center">
 			<div class="logo mr-auto">
 				<a href="/${language}/">
-					<img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" />
+					<!-- <img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" /> -->
+					<img class="hd-static" src="${fn:escapeXml(component.visionImage.url)}" />
 					<img class="hd-scroll" src="${fn:escapeXml(component.visionImage.url)}" />
 				</a>
 			</div>

@@ -1,5 +1,5 @@
 <%@ tag body-content="empty" trimDirectiveWhitespaces="true" %>
-<%@ attribute name="result" required="true" type="de.hybris.platform.commercefacades.product.data.OpportunityData" %>
+<%@ attribute name="result" required="true" type="de.hybris.platform.commercefacades.product.data.ProductData" %>
 <%@ attribute name="loopCount" required="true" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -12,8 +12,8 @@
         <div class="col-md-3 col-4 img-opp-container">
             <a class="know-more-link" href="${newsUrl}/${currentComponent.uid}">
             	<c:choose>
-                   <c:when test="${fn:length(result.opportunity.imageUrl) gt 0}">
-                 	  <img class="img-fluid" src="${result.opportunity.imageUrl}" alt="" loading="lazy">
+                   <c:when test="${fn:length(result.imageUrl) gt 0}">
+                 	  <img class="img-fluid" src="${result.imageUrl}" alt="" loading="lazy">
                    </c:when>
                    <c:otherwise>
                  	  <img class="img-fluid" src="${commonResourcePath}/images/default-product-image.png" alt="" loading="lazy">
@@ -24,22 +24,22 @@
         <div class="col-md-9 col-8" style="position: relative;">
         	<div class="row" style="margin: 0; position: absolute; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%); width:85%">
         		<div class="col-md-6 col-12">
-		            <a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
-		                <strong>${fn:toLowerCase(result.opportunity.name)}</strong>
+		            <a href="${encodedContextPath}${result.url}" class="know-more-link">
+		                <strong>${fn:toLowerCase(result.name)}</strong>
 		                 <p>
 		                 <c:choose>
-			                 <c:when test="${fn:length(result.opportunity.description) gt 50}">
-			                 	${fn:substring({result.opportunity.description}, 1, 50)}...</c:when>
+			                 <c:when test="${fn:length(result.description) gt 50}">
+			                 	${fn:substring({result.description}, 1, 50)}...</c:when>
 			                 <c:otherwise>
-			                 	${result.opportunity.description}
+			                 	${result.description}
 			                 </c:otherwise>
 		                 </c:choose>
 		                 </p>
 		            </a>
 		        </div>
 		        <div class="col-md-3 col-12">
-		            <a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
-		                <p>Expected IRR: ~16%</p>
+		            <a href="${encodedContextPath}${result.url}" class="know-more-link">
+		                <p>${result.newsDate}</p>
 		            </a>
 		        </div>
 		        <div class="col-md-3 col-12">

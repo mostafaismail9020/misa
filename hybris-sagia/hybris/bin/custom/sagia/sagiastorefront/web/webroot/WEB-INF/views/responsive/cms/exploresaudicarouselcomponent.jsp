@@ -55,7 +55,7 @@
 					</div>
 					<div class="col-md-6 order-lg-2 order-md-2 order-1">
 						<div class="embed-responsive embed-responsive-16by9">
-						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cLsS998ORpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+						  <iframe class="embed-responsive-item" src="${component.videoLink.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 						</div>
 						<!-- <div id="videoModal" class="modal fade">
 						    <button type="button" class="btn-dismiss close" data-dismiss="modal" aria-label="Close">

@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-3 mb-5">
             <div class="flip-card">
-                <a href="${newsUrl}/${currentComponent.uid}">
+               <a href="${encodedContextPath}${result.url}" class="know-more-link">
                     <div class="flip-card-front">
                         <div class="news-date text-center">
                                 <p>${result.eventDate}</p>

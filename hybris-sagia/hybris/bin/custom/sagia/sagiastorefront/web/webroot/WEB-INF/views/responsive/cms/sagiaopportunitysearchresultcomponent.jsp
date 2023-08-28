@@ -6,7 +6,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav" %>
 
+<spring:htmlEscape defaultHtmlEscape="true" />
 
+<spring:url value="/search/autocomplete/sagia-search-box-component" var="autocompleteUrl" htmlEscape="false">
+	<spring:param name="componentuid"  value="${component.uid}"/>
+</spring:url>
 <c:set var="hasPreviousPage" value="${searchPageData.pagination.currentPage > 0}"/>
 <c:set var="hasNextPage"
        value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
@@ -14,35 +18,37 @@
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                    <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
-                    	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-                        <input type="text" id="js-site-search-input" class=" js-site-search-input custom-search-input" name="q" value=""
-                            maxlength="100" placeholder="${searchPlaceholder}"
-                             style="display: flex; flex-direction: row; align-items: center; padding: 8px 18px; gap: 6px; width: 85%; background: #F5F6F7;  border-radius: 80px; order: 1; color: #5B738B; align-self: stretch; border: none;">
-                        <div class="col-lg-6 col-md-6 col-sm-12 opportunity-card total-results" style="white-space: nowrap;">
-                            <spring:message code="portal.opportunity.search.opportunities.totalResults"
-                                          arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-                                             </div>
-                    </form>
-                <div id="product-facet" style="height: inherit" class=" hidden-sm hidden-xs product__facet js-product-facet">
-                    <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> --!>
+				<form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
+					<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
+					<ycommerce:testId code="header_search_input">
+						<input type="text" id="js-site-search-input"
+						       data-test="asdfg"
+							   class="js-site-search-input" name="q" value=""
+							   maxlength="100" placeholder="${searchPlaceholder}"
+							   data-options='{"autocompleteUrl" : "${autocompleteUrl}","minCharactersBeforeRequest" : "3","waitTimeBeforeRequest" : "500","displayProductImages" : true}'>
+						<a class="a-search">
+							<img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
+						</a>
+					</ycommerce:testId>
+					<div class="opportunity-card total-results">
+						<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+					</div>
+				</form>
+                <div id="product-facet" style="height: inherit" class="hidden-sm hidden-xs product__facet js-product-facet">
+                    <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> -->
                     <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-                </div>
+				</div>
             </div>
         </c:if>
         <div class="col-md-9 col-sm-12 page-main-content">
             <c:if test="${not empty searchPageData.results}">
-            <div class=" opp-mobile-show">
-
-                 <span id="opp-open-modal-filter">
-                                           <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}"  style="display: flex; justify-content: center;">
-                                                                                                                                           	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-                                                                                                                                               <input type="text" id="js-site-search-input" class=" js-site-search-input custom-search-input" name="q" value=""
-                                                                                                                                                   maxlength="100" placeholder="${searchPlaceholder}"
-                                                                                                                                                    style="display: flex; flex-direction: row; align-items: center; padding: 8px 18px; gap: 6px; width: 80%; background: #F5F6F7;  border-radius: 80px; order: 1; color: #5B738B; align-self: stretch; border: none;">
-                                                                                                                                           </form>
-                                            </span>
-                                            </div>
+            <div class="opp-mobile-show text-center">
+            	<spring:theme code="portal.opportunity.search.modal.btn" var="btnModalTxt"/>
+				<button id="opp-open-modal-filter" class="btn btn-secondary-fill">${btnModalTxt}</button>
+				<div class="opportunity-card total-results" style="text-align: center; margin: 10px 0 5px 0px;">
+					<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+				</div>
+            </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
                         <!-- Modal -->
                         <div class="modal fade" id="facetFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -57,17 +63,9 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="pt-3" >
-                                        <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}"  style="display: flex; justify-content: center;">
-                                                                                                	<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-                                                                                                    <input type="text" id="js-site-search-input" class=" js-site-search-input custom-search-input" name="q" value=""
-                                                                                                        maxlength="100" placeholder="${searchPlaceholder}"
-                                                                                                         style="display: flex; flex-direction: row; align-items: center; padding: 8px 18px; gap: 6px; width: 80%; background: #F5F6F7;  border-radius: 80px; order: 1; color: #5B738B; align-self: stretch; border: none;">
-                                                                                                </form>
-                                            <div class="opp-filter-container" style="padding: 20px;">
-                                                <nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-                                            </div>
-                                       </div>
+                                        <div class="opp-filter-container" style="padding: 20px;">
+                                        	<nav:facetNavRefinements pageData="${solrSearchPageData}"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +169,7 @@
                                 <spring:param name="page" value="${solrSearchPageData.pagination.currentPage + 1}"/>
                             </spring:url>
                             <li class="page-item next-page">
-                                <a class="page-link waves-effect waves-light" href="${nextPageUrl}"  style="padding-top: 5px;">
+                                <a class="page-link waves-effect waves-light" href="${nextPageUrl}"  style="padding-top: 10px;">
                                     <img class="img-fluid arrow-left-blue-icon" width="20" src="${commonResourcePath}/images/Icon-feather-arrow-left.png" alt=""/>
                                     <img class="img-fluid arrow-left-white-icon" style="display: none;" width="20"
                                          src="${commonResourcePath}/images/Icon-white-arrow-left.png" alt=""/>
@@ -184,4 +182,3 @@
         </div>
     </div>
 </div>
-

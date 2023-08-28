@@ -33,6 +33,11 @@ a:hover {
 	color: #fff;
 }
 
+.btn-secondary-fill {
+	background-color: var(--misaSecondColor);
+	color: #fff;
+}
+
 .btn-primary-fill:hover {
 	color: #fff;
 }
@@ -1559,7 +1564,7 @@ svg #wheel {
 	font-weight: 600;
 	line-height: 37px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -1591,7 +1596,7 @@ svg #wheel {
 #when-number-talk:before {
 	content: '';
 	position: absolute;
-	background-image: url(../img/WhenNumberTalk.png);
+	background-color: rgba(0, 113, 77, 0.2);
 	background-size: cover;
 	width: 100%;
 	height: 100%;
@@ -1604,7 +1609,7 @@ svg #wheel {
 	font-weight: 400;
 	line-height: 28px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -1613,7 +1618,7 @@ svg #wheel {
 	font-weight: 400;
 	line-height: 16px;
 	letter-spacing: 0em;
-	color: var(--misaFirstColor);
+	color: var(--misaSecondColor);
 	text-align: right;
 }
 
@@ -6218,7 +6223,7 @@ img.accountLogin-headline-logo {
 		font-weight: 400;
 		line-height: 28px;
 		letter-spacing: 0em;
-		color: var(--misaFirstColor);
+		color: var(--misaSecondColor);
 	}
 
 	.when-number-talk-container .talk_item-text {
@@ -6226,7 +6231,7 @@ img.accountLogin-headline-logo {
 		font-weight: 400;
 		line-height: 16px;
 		letter-spacing: 0em;
-		color: var(--misaFirstColor);
+		color: var(--misaSecondColor);
 	}
 
 	.header-home-container p {
@@ -6495,6 +6500,42 @@ img.accountLogin-headline-logo {
 	.notfound-text {
 		font-size: 16px;
 	}
+}
+
+.page-opportunity-search-page .js-site-search-input {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 8px 18px;
+	gap: 6px;
+	width: 85%;
+	background: #F5F6F7;
+	border-radius: 80px;
+	order: 1;
+	color: #5B738B;
+	align-self: stretch;
+	border: none;
+}
+
+.page-opportunity-search-page .a-search {
+	position: absolute;
+    top: 5px;
+    right: 74%;
+    color: #7B838C;
+}
+
+.page-opportunity-search-page .general-info a.enquiry-btn {
+	margin-top: 25vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #00714D;
+    background-color: transparent;
+    padding: 0 15px;
+}
+
+.page-opportunity-search-page .general-info svg {
+	display: none;
 }
 
 .page-opportunity-search .opportunity-card .opp-type {
@@ -7530,14 +7571,15 @@ figure h2 {
 	background: rgba(0, 113, 77, 0.05);
 }
 .pageLabel--sectors-opportunities-opportunities .banner-section h1{
-	font-family: 'Arial';
 	font-weight: 700;
 	font-size: 5vh;
 	color: #00714D;
-    margin-top: 30vh;
-    position: absolute;
-      top: 0;
-      right: 0;
+	margin-top: 30vh;
+	position: absolute;
+	top: 0;
+    left: 0;
+    transform: translate(0vh, 0);
+    padding: 0 15px!important;
 }
 
 .banner-section {
@@ -13799,9 +13841,14 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .opportunity-card.total-results {
-    margin-top: 7px;
-    text-align: right;
+    white-space: nowrap;
+    margin: 10px 5px 20px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
     color: #00714D;
+    text-align: right;
 }
 
 .custom-button{
@@ -13847,13 +13894,13 @@ color: #F8F9FB;
 }
 .custom-button:hover {
     background-color: #BF9B2E;
+}
 .all-opportunity .pagination .page-item .page-link {
 	font-size: 20px;
 	color: #FFFFFF;
-}}
+}
 
 .parentCategory-button{
-   font-family: '72';
      font-style: normal;
      font-weight: 400;
      font-size: 12px;
@@ -13897,6 +13944,7 @@ color: #F8F9FB;
     }
     .col-md-12.card-wrapper.alternate {
         background-color: rgba(191, 155, 46, 0.07);
+        border-radius: 10px;
     }
      .flip-card {
             padding-top: 5vh;
@@ -14365,8 +14413,6 @@ border-color: #BF9B2E;
 		word-break: break-all;
 	}
 	.opportunity-card .opp-type {
-		//font-size: 20px;
-		//height: 85px;
 		word-break: break-all;
 	}
 	.opportunity-card .content-box {
@@ -14422,7 +14468,6 @@ border-color: #BF9B2E;
         margin: 0;
         border: 0;
         -webkit-appearance: none;
-        //background: none;
         font-size: 14px;
         color: #5f6470;
         width: 100%;

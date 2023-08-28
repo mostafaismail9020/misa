@@ -56,7 +56,7 @@
 					</div>
 				</c:forEach>
         	</div> -->
-			<div class="row explore-keys-btn">
+			<div class="row explore-keys-btn" style="margin-top: 0;">
 				<a href="${portal.cmsLinkUrl(component.exploreAllUrl)}" class="btn btn-primary-fill btn-video">
 					<spring:theme code="portal.seemoreupdates.button.text"/>&nbsp;
 				</a>

@@ -4,14 +4,15 @@ $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCata
 
 
 INSERT_UPDATE CMSLinkComponent; uid[unique = true]           ; name                ; url    ; styleAttributes ; visible[default= true] ; linkName[lang = en]; $contentCV[unique = true];
-; sagiaHomepageLinkComponent ; Sagia Homepage Link ; "/"    ; class="container banner homeLink" ;                           ; "> Home"             ;
+; sagiaHomepageLinkComponent ; Sagia Homepage Link ; "/"    ; class="container banner homeLink" ;                           ; "< Home"             ;
 
 
 
 
 
 UPDATE ContentSlot; uid[unique=true]                           ; cmsComponents(uid, $contentCV); $contentCV
-; PortalPageMainSlot-opportunity-search-page ; sagiaHomepageLinkComponent , all-opportunity-banner-container, sagia-search-box-component, generic-paragraph-opportunities, sagia-search-result-component ;
+; PortalPageMainSlot-opportunity-search-page ; all-opportunity-banner-container, generic-paragraph-opportunities, sagia-search-result-component ;
 
 
-
+UPDATE InvestSaudiBannerComponent	;uid[unique=true]			;$contentCV;image(code, $contentCV)	;buttonUrl(uid, $contentCV)
+									;all-opportunity-banner-1	;			;						;sagiaHomepageLinkComponent

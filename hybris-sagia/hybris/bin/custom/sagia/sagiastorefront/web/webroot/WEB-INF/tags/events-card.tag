@@ -22,6 +22,7 @@
                         </div>
                         <div class="flip-card-text">
                             <h2 class="eventName">${fn:toLowerCase(result.name)}</h2>
+                             <p class="eventShortInformation">${result.eventTiming}</p>
                             <p class="eventShortInformation">${result.eventLocation}</p>
                             <p class="eventShortInformation">${result.description}</p>
                         </div>

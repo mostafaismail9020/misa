@@ -9305,10 +9305,8 @@ a.pvcy-policy:focus {
 }
 
 .tab-section {
-	background-image: url("../img/news-tab-banner.png");
 	width: 100%;
 	height: auto;
-	background-size: cover;
 }
 
 .tabs-normal li a.nav-link {

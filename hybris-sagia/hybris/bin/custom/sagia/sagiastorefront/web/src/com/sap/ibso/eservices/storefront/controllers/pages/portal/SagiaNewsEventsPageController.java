@@ -25,8 +25,7 @@ public class SagiaNewsEventsPageController extends SagiaSearchPageController
     private static final Logger LOG = Logger.getLogger(SagiaNewsEventsPageController.class);
     private static final String NEWS_EVENTS_LIST_PAGE = "newsevents-list-page";
 	private static final int NUM_OF_RECORD_PER_PAGE = 9;
-	private static final String DEFAULT_NEWS_SORT_TYPE = ":creationTime-desc";
-	private static final String DEFAULT_SORT_TYPE = ":creationTime-asc";
+	private static final String DEFAULT_SORT = ":creationTime";
 
     @Override
 	@RequestMapping(method = RequestMethod.GET, params = "!q")
@@ -36,13 +35,13 @@ public class SagiaNewsEventsPageController extends SagiaSearchPageController
 		ProductSearchPageData<SearchStateData, ProductData> newsSearchPageData = null;
 		ProductSearchPageData<SearchStateData, ProductData> eventsSearchPageData = null;
 
-		newsSearchPageData = performSearch(searchText + DEFAULT_NEWS_SORT_TYPE + ":resource:News", 0, ShowMode.Page, "", NUM_OF_RECORD_PER_PAGE);
-		eventsSearchPageData = performSearch(searchText + DEFAULT_SORT_TYPE + ":resource:Event", 0, ShowMode.Page, "", NUM_OF_RECORD_PER_PAGE);
+		newsSearchPageData = performSearch(searchText + DEFAULT_SORT + "-desc:resource:News", 0, ShowMode.Page, "", NUM_OF_RECORD_PER_PAGE);
+		eventsSearchPageData = performSearch(searchText + DEFAULT_SORT + "-asc:resource:Event", 0, ShowMode.Page, "", NUM_OF_RECORD_PER_PAGE);
 
 		storeContinueUrl(request);
 		populateModel(model, newsSearchPageData, ShowMode.Page);
 
-		model.addAttribute("searchPageData", newsSearchPageData);
+		model.addAttribute("newsSearchPageData", newsSearchPageData);
 		model.addAttribute("eventSearchPageData", eventsSearchPageData);
 
 		model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
@@ -66,6 +65,6 @@ public class SagiaNewsEventsPageController extends SagiaSearchPageController
     
     @Override
 	protected String getDefaultSort() {
-		return DEFAULT_SORT_TYPE;
+		return DEFAULT_SORT;
 	}
 }

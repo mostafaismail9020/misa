@@ -8,9 +8,6 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<c:set var="hasPreviousPage" value="${searchPageData.pagination.currentPage > 0}"/>
-<c:set var="hasNextPage"
-       value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
 <div class="container-fluid">
     <div class="row p-2">
     
@@ -19,7 +16,7 @@
                 <c:when test="${not empty searchPageData.results}">
                 <h2>Latest News</h2>
                     <div class="row">
-                        <c:forEach var="result" items="${searchPageData.results}" varStatus="status">
+                        <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
 	                        <tags:news-card result="${result}" loopCount="${status.index}"/>
 	                    </c:forEach>
                     </div>
@@ -32,7 +29,7 @@
             </c:choose>
         </div>
         
-            <div class="col-md-9 col-sm-12 page-main-content">
+        <div class="col-md-9 col-sm-12 page-main-content">
             <c:choose>
                 <c:when test="${not empty eventSearchPageData.results}">
                 <h2>Upcoming Events</h2>

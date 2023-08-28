@@ -13816,7 +13816,13 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	font-weight: 400;
 	color: var(--misaSecondColor);
 }
-
+.newsTitle{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #00714D;
+}
 
 .col-md-12.card-wrapper.alternate {
     background-color: rgba(191, 155, 46, 0.07);

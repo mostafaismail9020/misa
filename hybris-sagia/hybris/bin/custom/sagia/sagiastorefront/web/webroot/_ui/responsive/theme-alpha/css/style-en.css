@@ -7709,7 +7709,13 @@ figure h2 {
 	font-weight: 400;
 	color: var(--misaSecondColor);
 }
-
+.newsTitle{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #00714D;
+}
 .col-md-12.card-wrapper.alternate {
     background-color: rgba(191, 155, 46, 0.07);
     border-radius: 10px;

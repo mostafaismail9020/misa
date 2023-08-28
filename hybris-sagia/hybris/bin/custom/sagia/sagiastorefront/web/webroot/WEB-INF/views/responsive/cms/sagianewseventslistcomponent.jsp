@@ -14,7 +14,7 @@
          <div class="col-md-9 col-sm-12 page-main-content">
                     <c:choose>
                         <c:when test="${not empty eventSearchPageData.results}">
-                        <h2>Upcoming Events</h2>
+                        <h2 class="newsTitle">Upcoming Events</h2>
                             <div class="row">
                                 <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
         	                        <tags:events-card result="${result}" loopCount="${status.index}"/>
@@ -31,7 +31,7 @@
          <div class="col-md-9 col-sm-12 page-main-content">
             <c:choose>
                 <c:when test="${not empty searchPageData.results}">
-                <h2>Latest News</h2>
+                <h2 class="newsTitle">Latest News</h2>
                     <div class="row">
                         <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
 	                        <tags:news-card result="${result}" loopCount="${status.index}"/>

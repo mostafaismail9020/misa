@@ -9196,6 +9196,19 @@ a.pvcy-policy:focus {
 	width: 100%;
 	height: auto;
 }
+.eventName{
+    font-family: 'Arial';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2vw;
+    color: #00714D;
+}
+.pageLabel--newseventslist .eventShortInformation{
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 0.9vw;
+    color: #00714D;
+}
 
 .tabs-normal li a.nav-link {
 	font-size: 20px;

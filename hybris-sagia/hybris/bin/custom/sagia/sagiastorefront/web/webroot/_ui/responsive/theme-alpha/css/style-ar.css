@@ -13808,6 +13808,15 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
      border-radius: 15px;
      padding: 5px;
 }
+.pageLabel--newseventslist .container.banner.homeLink {
+    color: #BF9B2E !important;
+}
+.container.banner.homeLink {
+	z-index: 9999;
+	font-weight: 400;
+	color: var(--misaSecondColor);
+}
+
 
 .col-md-12.card-wrapper.alternate {
     background-color: rgba(191, 155, 46, 0.07);

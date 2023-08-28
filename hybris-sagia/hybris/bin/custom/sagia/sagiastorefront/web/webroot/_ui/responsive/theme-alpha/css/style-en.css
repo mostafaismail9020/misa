@@ -7701,7 +7701,9 @@ figure h2 {
 	margin-top: 10px;
 	color: var(--misaSecondColor);
 }
-
+.pageLabel--newseventslist .container.banner.homeLink {
+    color: #BF9B2E !important;
+}
 .container.banner.homeLink {
 	z-index: 9999;
 	font-weight: 400;

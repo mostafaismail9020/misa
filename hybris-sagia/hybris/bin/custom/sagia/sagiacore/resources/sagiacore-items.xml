@@ -4271,6 +4271,18 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
+                    <attribute qualifier="subHeadings1" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="subHeadings2" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="paraWithMedia" type="localized:InvestSaudiMedia">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
                 </attributes>
             </itemtype>
 

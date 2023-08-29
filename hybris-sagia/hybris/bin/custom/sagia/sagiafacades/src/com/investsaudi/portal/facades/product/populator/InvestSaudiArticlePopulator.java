@@ -40,11 +40,7 @@ import de.hybris.platform.servicelayer.i18n.I18NService;
 public class InvestSaudiArticlePopulator implements Populator<ProductData, ArticleProductModel> {
 
     private static final String SECTOR_URL = "/sectors-opportunities/";
-    private static final String TYPE = "OpportunityProduct";
-
-    private static final String PARTNER_ENABLER = "Enabler";
-    private static final String PARTNER_ACCELERATOR = "Accelerator";
-    private static final String PARTNER_INCUBATOR = "Incubator";
+	private static final String ARTICLE_TYPE = "ArticleProduct";
     
     
     private Converter<MediaModel, ImageData> imageConverter;
@@ -68,7 +64,7 @@ public class InvestSaudiArticlePopulator implements Populator<ProductData, Artic
         productData.setOpportunityDetailsTitle(extractTitle(productModel));
         productData.setFeatureMap(extractProductFeatures(productModel.getFeatures()));
         productData.setSummary(productModel.getSummary());
-        productData.setProductType(TYPE);
+        productData.setProductType(ARTICLE_TYPE);
         productData.setProductReferences(populateProductReference(productModel.getProductReferences()));
 
         
@@ -81,7 +77,7 @@ public class InvestSaudiArticlePopulator implements Populator<ProductData, Artic
         final Optional<CategoryModel> parentCategory = emptyIfNull(productModel.getSupercategories()).stream().findFirst();
         if (parentCategory.isPresent()) {
             productData.setParentCategory(parentCategory.get().getCode());
-            productData.setUrl(SECTOR_URL + parentCategory.get().getCode() + "/" + productModel.getCode());
+            productData.setUrl(SECTOR_URL + "article" + "/" + productModel.getCode());
             
             final MediaModel logoImage = parentCategory.get().getPicture();
             if (logoImage != null)
@@ -116,7 +112,7 @@ public class InvestSaudiArticlePopulator implements Populator<ProductData, Artic
         if (null != productModel.getSubheadingWithMedia(currentLocale)) {
             productData.setSubheadingWithMedia(extractParaWithMedia(productModel.getSubheadingWithMedia(currentLocale)));	
 		}
-        productData.setArticleSubHeadings(productModel.getArticleSubHeadings(currentLocale));
+        productData.setSubHeadings(productModel.getArticleSubHeadings(currentLocale));
         productData.setArticleSubDetails4Boxes(productModel.getArticleSubDetails4Boxes(currentLocale));
         productData.setArticleSubDetails5(productModel.getArticleSubDetails5(currentLocale));
         if (null != productModel.getParaWithMedia(currentLocale)) {

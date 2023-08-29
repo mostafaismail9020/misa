@@ -105,6 +105,9 @@
             
                 <product:investSaudiOpportunityProduct />
             </c:when>
+            <c:when test="${productData.productType eq 'ArticleProduct'}">
+                <product:investSaudiArticleProduct />
+            </c:when>
             <c:otherwise>
                 <product:investSaudiSuccessStoryProduct />
             </c:otherwise>

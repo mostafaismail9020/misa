@@ -8,6 +8,8 @@ import com.investsaudi.portal.core.model.InvestSaudiOfficesContainerModel;
 import com.sap.ibso.eservices.facades.sagia.SagiaComplaintFacade;
 import com.sap.ibso.eservices.sagiaservices.services.complaints.dto.ContactUsFormData;
 
+import de.hybris.platform.util.Config;
+
 import org.apache.log4j.Logger;
 
 import org.springframework.stereotype.Controller;
@@ -35,8 +37,21 @@ public class InvestSaudiOfficesContainerController extends AbstractAcceleratorCM
 		
 		LOG.info("Inside InvestSaudiOfficesContainerController");
         model.addAttribute("components", component.getSimpleCMSComponents());
-        
-        ContactUsFormData contactUsFormData = sagiaComplaintFacade.getContactUsFormData();
+        if (Config.getBoolean("supress.contactus.api.error", false)) {
+            try {
+                retrieveContactUsFormData(model);
+            }
+            catch(Exception e) {
+            	LOG.error("Error occurred while getting contactUsFormData for InvestSaudi offices container : " + e.getMessage());
+            }
+		}
+        else {
+        	retrieveContactUsFormData(model);
+        }
+    }
+
+	private void retrieveContactUsFormData(final Model model) {
+		ContactUsFormData contactUsFormData = sagiaComplaintFacade.getContactUsFormData();
         /*if(contactUsFormData != null) {
         Collection<CategorizationSchemaGetListData> categoryOne = contactUsFormData.getCategoryOne();
         if(categoryOne != null) {
@@ -46,5 +61,5 @@ public class InvestSaudiOfficesContainerController extends AbstractAcceleratorCM
 		}        
         }*/
 	   model.addAttribute("contactUsFormData", contactUsFormData);
-    }
+	}
 }

@@ -4229,7 +4229,7 @@
                     <attribute qualifier="newsDate" type="java.util.Date">
 						<persistence type="property"/>
 					</attribute>
-				</attributes>
+                </attributes>
             </itemtype>
              
             <itemtype code="Category" generate="false" autocreate="false">

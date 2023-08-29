@@ -27,6 +27,7 @@ import org.jfree.chart.renderer.category.StandardBarPainter;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.awt.*;
@@ -37,7 +38,7 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.*;
-
+@Component("sagiaPDFChartGenerator")
 public class SagiaPDFChartGenerator {
 
 	private static final Logger LOG = LoggerFactory.getLogger(SagiaPDFChartGenerator.class);

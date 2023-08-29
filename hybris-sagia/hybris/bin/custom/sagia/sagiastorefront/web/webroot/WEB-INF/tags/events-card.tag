@@ -15,7 +15,8 @@
                         <a href="${encodedContextPath}${result.url}" class="know-more-link">
                              <div class="flip-card-front">
                                  <div class="news-date text-center">
-                                       <p> <fmt:formatDate value="${result.eventDate}" type="both" dateStyle="long" timeStyle="long" pattern="d MMM" />  <p/>
+                                       <p> <fmt:formatDate value="${result.eventDate}" type="both" dateStyle="long" timeStyle="long" pattern="d" />  <p/>
+                                       <p> <fmt:formatDate value="${result.eventDate}" type="both" dateStyle="long" timeStyle="long" pattern="MMM" />  <p/>
                                  </div>
                                  <div class="card-img">
                                      <img class="img-fluid events-card-img" src="${result.imageUrl}" alt="${result.name}" loading="lazy">

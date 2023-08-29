@@ -7709,6 +7709,15 @@ figure h2 {
 	font-weight: 400;
 	color: var(--misaSecondColor);
 }
+.pageLabel--newseventslist .newsTitle {
+    font-family: '72';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #00714D;
+    margin-bottom: 0px;
+}
 .newsTitle{
     font-family: '72';
     font-style: normal;

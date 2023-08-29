@@ -179,7 +179,7 @@ ACC.autocomplete = {
 						$.each(data.opportunities, function (i, obj)
 						{
 							autoSearchData.push({
-								value: ACC.sanitizer.sanitize(obj.name),
+								value: "<span style='margin-top: -7px;'>" + ACC.sanitizer.sanitize(obj.name) + "</span>",
 								code: obj.code,
 								desc: ACC.sanitizer.sanitize(obj.description),
 								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),

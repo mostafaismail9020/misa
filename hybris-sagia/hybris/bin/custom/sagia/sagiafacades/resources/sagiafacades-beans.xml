@@ -3522,8 +3522,25 @@
 		<property name="eventLocation" type="java.lang.String"/>
 		<property name="eventTiming" type="java.lang.String"/>
 		<property name="newsDate" type="java.util.Date"/>
+
+
+
+		<property name="articleTitle" type="java.lang.String"/>
+		<property name="videoUrl" type="java.lang.String"/>
+		<property name="articleTiles" type="java.util.Map&lt;String, String>"/>
+		<property name="articleThirdPara" type="java.lang.String"/>
+		<property name="subheadingWithMedia" type="java.util.Map&lt;String, de.hybris.platform.commercefacades.product.data.ImageData>"/>										
+		<property name="subHeadings" type="java.util.Map&lt;String, String>"/>
+		<property name="articleSubDetails4Boxes" type="java.util.Map&lt;String, String>"/>
+		<property name="articleSubDetails5" type="java.lang.String"/>
+		<property name="paraWithMedia" type="java.util.Map&lt;String, de.hybris.platform.commercefacades.product.data.ImageData>"/>
     </bean>
 
+	<bean class="de.hybris.platform.commercefacades.product.data.ImageData">
+		<property name="description" type="java.lang.String"/>
+		<property name="descriptionText" type="java.lang.String"/>
+	</bean>
+	
 	<bean class="de.hybris.platform.commercefacades.product.data.SectorFactsFiguresData">
         <property name="figures" type="java.lang.String"/>
         <property name="unit" type="java.lang.String"/>

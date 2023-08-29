@@ -6,10 +6,8 @@ $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCata
 INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible ; localized ; fieldValueProvider       ;
                                   ; $solrIndexedType                         ; resource          ; string     ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true   ; false     ; sagiaProductTypeProvider ;
                                   ; $solrIndexedType                         ; picture           ; string     ; false               ;                 ;                 ;           ; true   ; false     ; sagiaProductImageUrlValueProvider ;
-                                  ; $solrIndexedType                         ; eventDate         ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
                                   ; $solrIndexedType                         ; eventLocation     ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
                                   ; $solrIndexedType                         ; eventTiming       ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
-                                  ; $solrIndexedType                         ; newsDate          ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
 
 
 INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider ; facetSortProvider              ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType]

@@ -345,6 +345,22 @@ public class MediaCenterPageController extends AbstractPageController {
     		throw new RuntimeException("IOError writing file to output stream");
     	}
     }
+    
+    @RequestMapping(value = "/articleDetails", method = {RequestMethod.GET})
+	public String articleDetails(final Model model,
+									   final HttpServletRequest request, final HttpServletResponse response)
+			throws CMSItemNotFoundException
+	{
+
+		ContentPageModel contentPageModel = getContentPageForLabelOrId("/article/article-details");
+		model.addAttribute(WebConstants.BREADCRUMBS_KEY, contentPageBreadcrumbBuilder.getBreadcrumbs(contentPageModel));
+		storeCmsPageInModel(model, contentPageModel);
+		setUpMetaDataForContentPage(model, contentPageModel);
+		//updatePageTitle(model, contentPage);
+		storeContentPageTitleInModel(model, contentPageModel.getTitle());
+
+		return getViewForPage(model);
+	}
 
 	private void setMediaToDownload(HttpServletResponse response, InputStream is, String fileName, Collection<MediaModel> mediaModels) throws IOException {
 		if (CollectionUtils.isNotEmpty(mediaModels))

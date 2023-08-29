@@ -278,10 +278,15 @@
 				 </c:if> -->
 				<a href="#" class="skype text-decoration-none">
 					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
-						<!-- <label class="btn lang-btn lang-en active"><input type="radio" name="options" id="option1" autocomplete="off" checked >EN</label> -->
-						<label class="lang-btn lang-en active cursor-pointer" onclick="LanguageToggle('en')">EN</label>
-						<label class="lang-btn cursor-pointer lang-ar" onclick="LanguageToggle('ar')"><spring:theme code="header.arabic"/></label>
-						<!-- <label class="lang-btn cursor-pointer" onclick="LanguageToggle('ar')"><img src="${commonResourcePath}/images/ar_text.png"/></label> -->
+						<c:if test="${currentLanguage.isocode eq 'ar'}">
+							<label class="lang-btn lang-en cursor-pointer" onclick="LanguageToggle('en')">EN</label>
+						</c:if>
+						<c:if test="${currentLanguage.isocode eq 'en'}">
+							<label class="lang-btn lang-en cursor-pointer" onclick="LanguageToggle('ar')">
+								<spring:theme code="header.arabic"/>
+							</label>
+						</c:if>
+						<label class="lang-btn cursor-pointer" onclick="navigateToLink('${encodedContextPath}/investsaudi-login')"><spring:theme code="portal.header.login.label"/></label>
 					</span>
 				</a>
 				<c:choose>
@@ -292,24 +297,9 @@
 	                    <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer d-none d-lg-inline">
 	                    	<span><spring:theme code="dashboard.logout.label"/></span>
 	                    </a>
-					    <!-- <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="login-details linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener ">
-					    	<span><spring:theme code="portal.header.feedback.label"/></span>
-					    </a> -->
-					    <a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A" class="login-details linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener ">
-					    	<span><spring:theme code="portal.header.feedback.label"/></span>
-					    </a>
 					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 					</c:when>
 					<c:otherwise>
-					    <a href="${encodedContextPath}/investsaudi-login" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
-					      	<span><spring:theme code="portal.header.login.label"/></span>
-						</a>
-					    <!-- <a href="https://eservices.sagia.gov.sa:2443/gensurvey" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
-					    	<span><spring:theme code="portal.header.feedback.label"/></span>
-					    </a> -->
-					    <a href="https://dgasurvey.dga.gov.sa/efm/se/5D9518B74A63EA1A" class="linkedin login-text d-none d-lg-inline" target="_blank" rel="nofollow noreferrer noopener">
-					    	<span><spring:theme code="portal.header.feedback.label"/></span>
-					    </a>
 					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 				    </c:otherwise>
 				</c:choose>
@@ -320,8 +310,12 @@
 		<div class="container d-flex align-items-center">
 			<div class="logo mr-auto">
 				<a href="/${language}/">
-					<!-- <img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" /> -->
-					<img class="hd-static" src="${fn:escapeXml(component.visionImage.url)}" />
+					<c:if test="${fn:containsIgnoreCase(request.getServletPath(), 'homepage')}" var="originalLogo">
+						<img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" />
+					</c:if>
+					<c:if test="${!originalLogo}">
+						<img class="hd-static" src="${fn:escapeXml(component.visionImage.url)}" />
+					</c:if>
 					<img class="hd-scroll" src="${fn:escapeXml(component.visionImage.url)}" />
 				</a>
 			</div>

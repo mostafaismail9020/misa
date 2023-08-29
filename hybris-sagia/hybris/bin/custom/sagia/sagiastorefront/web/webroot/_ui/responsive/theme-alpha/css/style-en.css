@@ -294,6 +294,7 @@ box-shadow: 0px 2px var(--misaSecondColor);
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	z-index: 9999;
+    margin-top: -20px;
 }
 
 #header .logo a {

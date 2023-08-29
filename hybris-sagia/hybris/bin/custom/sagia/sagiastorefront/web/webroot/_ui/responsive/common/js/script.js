@@ -4635,6 +4635,14 @@ $(document).ready(function () {
 
 })
 
+/* Menu navigate to link */
+
+function navigateToLink(url) {
+	window.open(url, '_blank').focus();
+}
+
+/* Menu navigate to link - END */
+
 /*Menu Toggle between English & Arabic - START */
 function LanguageToggle(lang){
     if(lang === "en"){

@@ -9352,10 +9352,15 @@ a.pvcy-policy:focus {
     font-size: 14px;
     color: #00714D;
 }
+@media (max-width: 767px) {
+    .pageLabel--newseventslist .row  {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
 .pageLabel--newseventslist .flip-card{
     padding-right: 30px;
 }
-
 .tabs-normal li a.nav-link {
 	font-size: 20px;
 	color: #707070;

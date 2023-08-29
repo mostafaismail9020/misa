@@ -13867,7 +13867,12 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     background-color: rgba(191, 155, 46, 0.07);
     border-radius: 10px;
 }
-
+@media (max-width: 767px) {
+    .pageLabel--newseventslist .row  {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
 .col-md-12.card-wrapper .flip-card .col-md-3.img-opp-container {
     height: 35vh;
     display: flex;

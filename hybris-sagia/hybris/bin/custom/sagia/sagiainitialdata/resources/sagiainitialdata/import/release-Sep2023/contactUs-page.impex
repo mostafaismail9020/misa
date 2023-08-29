@@ -1,0 +1,18 @@
+$page = contact-us
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+$lang=en
+
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true]  ;name                 ;content[lang=$lang]
+                                   ;                       ;ContactUsAboutPara;Contact Us about Para;"<span class=""text"">Assistance available 24/7 in English, German, Japanese, French, Spanish, Korean and Chinese.</span>"
+                  
+                  
+INSERT_UPDATE ContentSlot; uid[unique = true]               ; name                  ; active; cmsComponents(uid, $contentCV) ; $contentCV[unique = true];
+                         ; PortalPageContactAboutSlot-$page ; PortalPageMap         ; true  ; ContactUsAboutPara             ;                          ;
+                         ; PortalPageHomeLinkSlot-$page     ; Portal page home link ; true  ; sagiaHomepageLinkComponent     ;                          ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]               ; position               ; contentSlot(uid, $contentCV)                ; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; PortalPageContactAboutSlot-$page ; PortalPageContactAbout ; PortalPageContactAboutSlot-$page            ;
+                                ; PortalPageHomeLinkSlot-$page     ; PortalPageHomeLink     ; PortalPageHomeLinkSlot-$page                ;

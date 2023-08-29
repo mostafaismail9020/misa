@@ -2,173 +2,173 @@ INSERT_UPDATE IntegrationObject; code[unique = true]; integrationType(code)
 ; InboundOpportunityProduct; INBOUND 
  
 INSERT_UPDATE IntegrationObjectItem; integrationObject(code)[unique = true]; code[unique = true]; type(code); root[default = false]; itemTypeMatch(code) 
-; InboundOpportunityProduct	; CatalogVersion         	; CatalogVersion         	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; PotentialEnum          	; PotentialEnum          	; 	; ALL_SUBTYPES           	;  
-; InboundOpportunityProduct	; Catalog                	; Catalog                	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityProduct	; OtherGeneralText       	; OtherGeneralText       	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; OpportunityProduct     	; OpportunityProduct     	; true	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; CostOfDoingBusiness    	; CostOfDoingBusiness    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Location               	; Location               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; OtherMarketOverview    	; OtherMarketOverview    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Capacity               	; Capacity               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; MarketOverview         	; MarketOverview         	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; OtherSupply            	; OtherSupply            	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Principal              	; Principal              	; 	; ALL_SUBTYPES           	;  
-; InboundOpportunityProduct	; InvestmentOverview     	; InvestmentOverview     	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Supply                 	; Supply                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Demand                 	; Demand                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; InvestmentHighlight    	; InvestmentHighlight    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; SagiaSegment           	; SagiaSegment           	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; ValueChain             	; ValueChain             	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; OtherInvestmentOverview	; OtherInvestmentOverview	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Media                  	; Media                  	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Category               	; Category               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; ArticleApprovalStatus  	; ArticleApprovalStatus  	; 	; ALL_SUBTYPES           	;  
-; InboundOpportunityProduct	; Market                 	; Market                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; SagiaCountry           	; SagiaCountry           	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; TransientEncodedPdf    	; TransientEncodedPdf    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; Unit                   	; Unit                   	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; SagiaCity              	; SagiaCity              	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; ProvinceComponent      	; ProvinceComponent      	; 	; ALL_SUB_AND_SUPER_TYPES	;  
-; InboundOpportunityProduct	; SagiaRegion            	; SagiaRegion            	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityProduct	; OtherDemandText        	; OtherDemandText        	; 	; ALL_SUB_AND_SUPER_TYPES	;  
 ; InboundOpportunityProduct	; CostOfDoingBusinessText	; CostOfDoingBusinessText	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; SagiaRegion            	; SagiaRegion            	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; OtherInvestmentOverview	; OtherInvestmentOverview	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; ProvinceComponent      	; ProvinceComponent      	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; ValueChain             	; ValueChain             	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; SagiaCountry           	; SagiaCountry           	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; InvestmentHighlight    	; InvestmentHighlight    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; ArticleApprovalStatus  	; ArticleApprovalStatus  	; 	; ALL_SUBTYPES           	;  
+; InboundOpportunityProduct	; PotentialEnum          	; PotentialEnum          	; 	; ALL_SUBTYPES           	;  
+; InboundOpportunityProduct	; Media                  	; Media                  	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Category               	; Category               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; MarketOverview         	; MarketOverview         	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; CostOfDoingBusiness    	; CostOfDoingBusiness    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Principal              	; Principal              	; 	; ALL_SUBTYPES           	;  
+; InboundOpportunityProduct	; Location               	; Location               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Market                 	; Market                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Catalog                	; Catalog                	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Unit                   	; Unit                   	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; OtherMarketOverview    	; OtherMarketOverview    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Supply                 	; Supply                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; CatalogVersion         	; CatalogVersion         	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; TransientEncodedPdf    	; TransientEncodedPdf    	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Capacity               	; Capacity               	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; Demand                 	; Demand                 	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; SagiaCity              	; SagiaCity              	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; SagiaSegment           	; SagiaSegment           	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; OtherSupply            	; OtherSupply            	; 	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; OpportunityProduct     	; OpportunityProduct     	; true	; ALL_SUB_AND_SUPER_TYPES	;  
+; InboundOpportunityProduct	; InvestmentOverview     	; InvestmentOverview     	; 	; ALL_SUB_AND_SUPER_TYPES	;  
  
 INSERT_UPDATE IntegrationObjectItemAttribute; integrationObjectItem(integrationObject(code), code)[unique = true]; attributeName[unique = true]; attributeDescriptor(enclosingType(code), qualifier); returnIntegrationObjectItem(integrationObject(code), code); unique[default = false]; autoCreate[default = false] 
-; InboundOpportunityProduct:CatalogVersion         	; catalog                       	; CatalogVersion:catalog                       	; InboundOpportunityProduct:Catalog                	; true	;  
-; InboundOpportunityProduct:CatalogVersion         	; version                       	; CatalogVersion:version                       	;                                                  	; true	;  
-; InboundOpportunityProduct:PotentialEnum          	; code                          	; PotentialEnum:code                           	;                                                  	; true	;  
-; InboundOpportunityProduct:PotentialEnum          	; name                          	; PotentialEnum:name                           	;                                                  	; 	;  
-; InboundOpportunityProduct:Catalog                	; id                            	; Catalog:id                                   	;                                                  	; true	;  
+; InboundOpportunityProduct:OtherGeneralText       	; attachment                    	; OtherGeneralText:attachment                  	; InboundOpportunityProduct:Media                  	; 	; true 
+; InboundOpportunityProduct:OtherGeneralText       	; sequenceNumber                	; OtherGeneralText:sequenceNumber              	;                                                  	; true	;  
 ; InboundOpportunityProduct:OtherGeneralText       	; isVisible                     	; OtherGeneralText:isVisible                   	;                                                  	; 	;  
 ; InboundOpportunityProduct:OtherGeneralText       	; name                          	; OtherGeneralText:name                        	;                                                  	; true	;  
-; InboundOpportunityProduct:OtherGeneralText       	; sequenceNumber                	; OtherGeneralText:sequenceNumber              	;                                                  	; true	;  
 ; InboundOpportunityProduct:OtherGeneralText       	; formattedText                 	; OtherGeneralText:formattedText               	;                                                  	; 	;  
-; InboundOpportunityProduct:OtherGeneralText       	; attachment                    	; OtherGeneralText:attachment                  	; InboundOpportunityProduct:Media                  	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; location                      	; OpportunityProduct:location                  	; InboundOpportunityProduct:Location               	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; unit                          	; OpportunityProduct:unit                      	; InboundOpportunityProduct:Unit                   	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; region                        	; OpportunityProduct:region                    	; InboundOpportunityProduct:ProvinceComponent      	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; transientEncodendPdf          	; OpportunityProduct:transientEncodendPdf      	; InboundOpportunityProduct:TransientEncodedPdf    	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; marketOverview                	; OpportunityProduct:marketOverview            	; InboundOpportunityProduct:MarketOverview         	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; segment                       	; OpportunityProduct:segment                   	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; detail                        	; OpportunityProduct:detail                    	; InboundOpportunityProduct:Media                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; isWithdrawn                   	; OpportunityProduct:isWithdrawn               	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; downloadUrl                   	; OpportunityProduct:downloadUrl               	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; catalogVersion                	; OpportunityProduct:catalogVersion            	; InboundOpportunityProduct:CatalogVersion         	; true	;  
-; InboundOpportunityProduct:OpportunityProduct     	; code                          	; OpportunityProduct:code                      	;                                                  	; true	;  
-; InboundOpportunityProduct:OpportunityProduct     	; c4cOpportunityId              	; OpportunityProduct:c4cOpportunityId          	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; highlights                    	; OpportunityProduct:highlights                	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; name                          	; OpportunityProduct:name                      	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; supercategories               	; OpportunityProduct:supercategories           	; InboundOpportunityProduct:Category               	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; potential                     	; OpportunityProduct:potential                 	; InboundOpportunityProduct:PotentialEnum          	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; approvalStatus                	; OpportunityProduct:approvalStatus            	; InboundOpportunityProduct:ArticleApprovalStatus  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; others                        	; OpportunityProduct:others                    	; InboundOpportunityProduct:Media                  	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; otherText                     	; OpportunityProduct:otherText                 	; InboundOpportunityProduct:OtherGeneralText       	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; sagiaSegment                  	; OpportunityProduct:sagiaSegment              	; InboundOpportunityProduct:SagiaSegment           	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; supply                        	; OpportunityProduct:supply                    	; InboundOpportunityProduct:Supply                 	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; description                   	; OpportunityProduct:description               	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; systemOrigin                  	; OpportunityProduct:systemOrigin              	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; demand                        	; OpportunityProduct:demand                    	; InboundOpportunityProduct:Demand                 	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; investmentOverview            	; OpportunityProduct:investmentOverview        	; InboundOpportunityProduct:InvestmentOverview     	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; keyStakeholders               	; OpportunityProduct:keyStakeholders           	; InboundOpportunityProduct:Media                  	; 	; true 
-; InboundOpportunityProduct:OpportunityProduct     	; sagiaKeywords                 	; OpportunityProduct:sagiaKeywords             	;                                                  	; 	;  
-; InboundOpportunityProduct:OpportunityProduct     	; opportunityVersionId          	; OpportunityProduct:opportunityVersionId      	;                                                  	; 	;  
-; InboundOpportunityProduct:CostOfDoingBusiness    	; costOfDoingBusinessTexts      	; CostOfDoingBusiness:costOfDoingBusinessTexts 	; InboundOpportunityProduct:CostOfDoingBusinessText	; 	; true 
-; InboundOpportunityProduct:CostOfDoingBusiness    	; logisticsPerformanceIndex     	; CostOfDoingBusiness:logisticsPerformanceIndex	;                                                  	; 	;  
-; InboundOpportunityProduct:CostOfDoingBusiness    	; investmentOverview            	; CostOfDoingBusiness:investmentOverview       	; InboundOpportunityProduct:InvestmentOverview     	; true	;  
-; InboundOpportunityProduct:CostOfDoingBusiness    	; electricityTariffs            	; CostOfDoingBusiness:electricityTariffs       	;                                                  	; 	;  
-; InboundOpportunityProduct:CostOfDoingBusiness    	; productivityAdjustedWages     	; CostOfDoingBusiness:productivityAdjustedWages	;                                                  	; 	;  
-; InboundOpportunityProduct:CostOfDoingBusiness    	; easeOfGettingCredit           	; CostOfDoingBusiness:easeOfGettingCredit      	;                                                  	; 	;  
-; InboundOpportunityProduct:CostOfDoingBusiness    	; constructionCosts             	; CostOfDoingBusiness:constructionCosts        	;                                                  	; 	;  
-; InboundOpportunityProduct:CostOfDoingBusiness    	; uid                           	; CostOfDoingBusiness:uid                      	;                                                  	; true	;  
-; InboundOpportunityProduct:Location               	; city                          	; Location:city                                	; InboundOpportunityProduct:SagiaCity              	; true	;  
-; InboundOpportunityProduct:Location               	; region                        	; Location:region                              	; InboundOpportunityProduct:SagiaRegion            	; true	;  
-; InboundOpportunityProduct:OtherMarketOverview    	; isVisible                     	; OtherMarketOverview:isVisible                	;                                                  	; 	;  
-; InboundOpportunityProduct:OtherMarketOverview    	; formattedText                 	; OtherMarketOverview:formattedText            	;                                                  	; 	;  
-; InboundOpportunityProduct:OtherMarketOverview    	; name                          	; OtherMarketOverview:name                     	;                                                  	; true	;  
-; InboundOpportunityProduct:OtherMarketOverview    	; sequenceNumber                	; OtherMarketOverview:sequenceNumber           	;                                                  	; 	;  
-; InboundOpportunityProduct:OtherMarketOverview    	; attachments                   	; OtherMarketOverview:attachments              	; InboundOpportunityProduct:Media                  	; 	; true 
-; InboundOpportunityProduct:Capacity               	; value                         	; Capacity:value                               	;                                                  	; true	;  
-; InboundOpportunityProduct:Capacity               	; measure                       	; Capacity:measure                             	;                                                  	; true	;  
-; InboundOpportunityProduct:Capacity               	; unit                          	; Capacity:unit                                	;                                                  	; true	;  
-; InboundOpportunityProduct:MarketOverview         	; other                         	; MarketOverview:other                         	; InboundOpportunityProduct:OtherMarketOverview    	; 	; true 
-; InboundOpportunityProduct:MarketOverview         	; globalTrendsText              	; MarketOverview:globalTrendsText              	;                                                  	; 	;  
-; InboundOpportunityProduct:MarketOverview         	; uid                           	; MarketOverview:uid                           	;                                                  	; true	;  
-; InboundOpportunityProduct:MarketOverview         	; rawMaterialsText              	; MarketOverview:rawMaterialsText              	;                                                  	; 	;  
-; InboundOpportunityProduct:OtherSupply            	; sequenceNumber                	; OtherSupply:sequenceNumber                   	;                                                  	; true	;  
-; InboundOpportunityProduct:OtherSupply            	; name                          	; OtherSupply:name                             	;                                                  	; true	;  
-; InboundOpportunityProduct:OtherSupply            	; attachment                    	; OtherSupply:attachment                       	; InboundOpportunityProduct:Media                  	; 	; true 
-; InboundOpportunityProduct:OtherSupply            	; isVisible                     	; OtherSupply:isVisible                        	;                                                  	; true	;  
-; InboundOpportunityProduct:Principal              	; uid                           	; Principal:uid                                	;                                                  	; true	;  
-; InboundOpportunityProduct:InvestmentOverview     	; incentivesAndEnablers         	; InvestmentOverview:incentivesAndEnablers     	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentOverview     	; uid                           	; InvestmentOverview:uid                       	;                                                  	; true	;  
-; InboundOpportunityProduct:InvestmentOverview     	; investmentHighlights          	; InvestmentOverview:investmentHighlights      	; InboundOpportunityProduct:InvestmentHighlight    	; 	; true 
-; InboundOpportunityProduct:InvestmentOverview     	; valueProposition              	; InvestmentOverview:valueProposition          	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentOverview     	; other                         	; InvestmentOverview:other                     	; InboundOpportunityProduct:OtherInvestmentOverview	; 	; true 
-; InboundOpportunityProduct:InvestmentOverview     	; costOfDoingBusiness           	; InvestmentOverview:costOfDoingBusiness       	; InboundOpportunityProduct:CostOfDoingBusiness    	; 	; true 
-; InboundOpportunityProduct:Supply                 	; scalabilityAndLocalizationText	; Supply:scalabilityAndLocalizationText        	;                                                  	; 	;  
-; InboundOpportunityProduct:Supply                 	; importDependencyText          	; Supply:importDependencyText                  	;                                                  	; 	;  
-; InboundOpportunityProduct:Supply                 	; other                         	; Supply:other                                 	; InboundOpportunityProduct:OtherSupply            	; 	; true 
-; InboundOpportunityProduct:Supply                 	; uid                           	; Supply:uid                                   	;                                                  	; true	;  
-; InboundOpportunityProduct:Supply                 	; valueChainTexts               	; Supply:valueChainTexts                       	; InboundOpportunityProduct:ValueChain             	; 	; true 
-; InboundOpportunityProduct:Demand                 	; keyDemandDrivers              	; Demand:keyDemandDrivers                      	;                                                  	; 	;  
-; InboundOpportunityProduct:Demand                 	; uid                           	; Demand:uid                                   	;                                                  	; true	;  
-; InboundOpportunityProduct:Demand                 	; cagr                          	; Demand:cagr                                  	;                                                  	; 	;  
-; InboundOpportunityProduct:Demand                 	; markets                       	; Demand:markets                               	; InboundOpportunityProduct:Market                 	; 	; true 
-; InboundOpportunityProduct:Demand                 	; otherDemandText               	; Demand:otherDemandText                       	; InboundOpportunityProduct:OtherDemandText        	; 	;  
-; InboundOpportunityProduct:Demand                 	; marketSizeText                	; Demand:marketSizeText                        	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; investmentHighlightText       	; InvestmentHighlight:investmentHighlightText  	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; jobscreated                   	; InvestmentHighlight:jobscreated              	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; investmentOverview            	; InvestmentHighlight:investmentOverview       	; InboundOpportunityProduct:InvestmentOverview     	; true	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; uid                           	; InvestmentHighlight:uid                      	;                                                  	; true	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; gdpContribution               	; InvestmentHighlight:gdpContribution          	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; paybackPeriod                 	; InvestmentHighlight:paybackPeriod            	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; expectedIRR                   	; InvestmentHighlight:expectedIRR              	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; investmentType                	; InvestmentHighlight:investmentType           	;                                                  	; 	;  
-; InboundOpportunityProduct:InvestmentHighlight    	; capacity                      	; InvestmentHighlight:capacity                 	; InboundOpportunityProduct:Capacity               	; 	; true 
-; InboundOpportunityProduct:InvestmentHighlight    	; expectedInvestmentSize        	; InvestmentHighlight:expectedInvestmentSize   	;                                                  	; 	;  
-; InboundOpportunityProduct:SagiaSegment           	; segmentID                     	; SagiaSegment:segmentID                       	;                                                  	; true	;  
-; InboundOpportunityProduct:SagiaSegment           	; segmentName                   	; SagiaSegment:segmentName                     	;                                                  	; true	;  
-; InboundOpportunityProduct:ValueChain             	; name                          	; ValueChain:name                              	;                                                  	; true	;  
-; InboundOpportunityProduct:ValueChain             	; formattedText                 	; ValueChain:formattedText                     	;                                                  	; 	;  
-; InboundOpportunityProduct:ValueChain             	; creationtime                  	; ValueChain:creationtime                      	;                                                  	; 	;  
-; InboundOpportunityProduct:ValueChain             	; attachment                    	; ValueChain:attachment                        	; InboundOpportunityProduct:Media                  	; 	; true 
-; InboundOpportunityProduct:ValueChain             	; sequenceNumber                	; ValueChain:sequenceNumber                    	;                                                  	; 	;  
-; InboundOpportunityProduct:ValueChain             	; isVisible                     	; ValueChain:isVisible                         	;                                                  	; 	;  
-; InboundOpportunityProduct:OtherInvestmentOverview	; formattedText                 	; OtherInvestmentOverview:formattedText        	;                                                  	; 	;  
-; InboundOpportunityProduct:OtherInvestmentOverview	; isVisible                     	; OtherInvestmentOverview:isVisible            	;                                                  	; 	;  
-; InboundOpportunityProduct:OtherInvestmentOverview	; sequenceNumber                	; OtherInvestmentOverview:sequenceNumber       	;                                                  	; 	;  
+; InboundOpportunityProduct:OtherDemandText        	; name                          	; OtherDemandText:name                         	;                                                  	; true	;  
+; InboundOpportunityProduct:CostOfDoingBusinessText	; unit                          	; CostOfDoingBusinessText:unit                 	;                                                  	; 	;  
+; InboundOpportunityProduct:CostOfDoingBusinessText	; identifier                    	; CostOfDoingBusinessText:identifier           	;                                                  	; true	;  
+; InboundOpportunityProduct:CostOfDoingBusinessText	; value                         	; CostOfDoingBusinessText:value                	;                                                  	; 	;  
+; InboundOpportunityProduct:SagiaRegion            	; cities                        	; SagiaRegion:cities                           	; InboundOpportunityProduct:SagiaCity              	; 	; true 
+; InboundOpportunityProduct:SagiaRegion            	; code                          	; SagiaRegion:code                             	;                                                  	; true	;  
+; InboundOpportunityProduct:SagiaRegion            	; country                       	; SagiaRegion:country                          	; InboundOpportunityProduct:SagiaCountry           	; 	; true 
+; InboundOpportunityProduct:SagiaRegion            	; name                          	; SagiaRegion:name                             	;                                                  	; 	;  
 ; InboundOpportunityProduct:OtherInvestmentOverview	; name                          	; OtherInvestmentOverview:name                 	;                                                  	; true	;  
 ; InboundOpportunityProduct:OtherInvestmentOverview	; attachment                    	; OtherInvestmentOverview:attachment           	; InboundOpportunityProduct:Media                  	; 	; true 
+; InboundOpportunityProduct:OtherInvestmentOverview	; isVisible                     	; OtherInvestmentOverview:isVisible            	;                                                  	; 	;  
+; InboundOpportunityProduct:OtherInvestmentOverview	; sequenceNumber                	; OtherInvestmentOverview:sequenceNumber       	;                                                  	; 	;  
+; InboundOpportunityProduct:OtherInvestmentOverview	; formattedText                 	; OtherInvestmentOverview:formattedText        	;                                                  	; 	;  
+; InboundOpportunityProduct:ProvinceComponent      	; uid                           	; ProvinceComponent:uid                        	;                                                  	; true	;  
+; InboundOpportunityProduct:ProvinceComponent      	; name                          	; ProvinceComponent:name                       	;                                                  	; 	;  
+; InboundOpportunityProduct:ProvinceComponent      	; catalogVersion                	; ProvinceComponent:catalogVersion             	; InboundOpportunityProduct:CatalogVersion         	; true	;  
+; InboundOpportunityProduct:ValueChain             	; sequenceNumber                	; ValueChain:sequenceNumber                    	;                                                  	; 	;  
+; InboundOpportunityProduct:ValueChain             	; attachment                    	; ValueChain:attachment                        	; InboundOpportunityProduct:Media                  	; 	; true 
+; InboundOpportunityProduct:ValueChain             	; creationtime                  	; ValueChain:creationtime                      	;                                                  	; 	;  
+; InboundOpportunityProduct:ValueChain             	; isVisible                     	; ValueChain:isVisible                         	;                                                  	; 	;  
+; InboundOpportunityProduct:ValueChain             	; formattedText                 	; ValueChain:formattedText                     	;                                                  	; 	;  
+; InboundOpportunityProduct:ValueChain             	; name                          	; ValueChain:name                              	;                                                  	; true	;  
+; InboundOpportunityProduct:SagiaCountry           	; code                          	; SagiaCountry:code                            	;                                                  	; true	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; paybackPeriod                 	; InvestmentHighlight:paybackPeriod            	;                                                  	; 	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; investmentHighlightText       	; InvestmentHighlight:investmentHighlightText  	;                                                  	; 	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; uid                           	; InvestmentHighlight:uid                      	;                                                  	; true	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; investmentOverview            	; InvestmentHighlight:investmentOverview       	; InboundOpportunityProduct:InvestmentOverview     	; true	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; expectedIRR                   	; InvestmentHighlight:expectedIRR              	;                                                  	; 	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; expectedInvestmentSize        	; InvestmentHighlight:expectedInvestmentSize   	;                                                  	; 	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; investmentType                	; InvestmentHighlight:investmentType           	;                                                  	; 	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; capacity                      	; InvestmentHighlight:capacity                 	; InboundOpportunityProduct:Capacity               	; 	; true 
+; InboundOpportunityProduct:InvestmentHighlight    	; gdpContribution               	; InvestmentHighlight:gdpContribution          	;                                                  	; 	;  
+; InboundOpportunityProduct:InvestmentHighlight    	; jobscreated                   	; InvestmentHighlight:jobscreated              	;                                                  	; 	;  
+; InboundOpportunityProduct:ArticleApprovalStatus  	; code                          	; ArticleApprovalStatus:code                   	;                                                  	; true	;  
+; InboundOpportunityProduct:PotentialEnum          	; name                          	; PotentialEnum:name                           	;                                                  	; 	;  
+; InboundOpportunityProduct:PotentialEnum          	; code                          	; PotentialEnum:code                           	;                                                  	; true	;  
+; InboundOpportunityProduct:Media                  	; realFileName                  	; Media:realFileName                           	;                                                  	; 	;  
 ; InboundOpportunityProduct:Media                  	; catalogVersion                	; Media:catalogVersion                         	; InboundOpportunityProduct:CatalogVersion         	; true	;  
 ; InboundOpportunityProduct:Media                  	; locationHash                  	; Media:locationHash                           	;                                                  	; 	;  
-; InboundOpportunityProduct:Media                  	; realFileName                  	; Media:realFileName                           	;                                                  	; 	;  
 ; InboundOpportunityProduct:Media                  	; mime                          	; Media:mime                                   	;                                                  	; 	;  
 ; InboundOpportunityProduct:Media                  	; code                          	; Media:code                                   	;                                                  	; true	;  
-; InboundOpportunityProduct:Category               	; allowedPrincipals             	; Category:allowedPrincipals                   	; InboundOpportunityProduct:Principal              	; 	;  
 ; InboundOpportunityProduct:Category               	; name                          	; Category:name                                	;                                                  	; 	;  
-; InboundOpportunityProduct:Category               	; catalogVersion                	; Category:catalogVersion                      	; InboundOpportunityProduct:CatalogVersion         	; true	;  
 ; InboundOpportunityProduct:Category               	; code                          	; Category:code                                	;                                                  	; true	;  
-; InboundOpportunityProduct:ArticleApprovalStatus  	; code                          	; ArticleApprovalStatus:code                   	;                                                  	; true	;  
-; InboundOpportunityProduct:Market                 	; name                          	; Market:name                                  	;                                                  	; 	;  
+; InboundOpportunityProduct:Category               	; allowedPrincipals             	; Category:allowedPrincipals                   	; InboundOpportunityProduct:Principal              	; 	;  
+; InboundOpportunityProduct:Category               	; catalogVersion                	; Category:catalogVersion                      	; InboundOpportunityProduct:CatalogVersion         	; true	;  
+; InboundOpportunityProduct:MarketOverview         	; rawMaterialsText              	; MarketOverview:rawMaterialsText              	;                                                  	; 	;  
+; InboundOpportunityProduct:MarketOverview         	; other                         	; MarketOverview:other                         	; InboundOpportunityProduct:OtherMarketOverview    	; 	; true 
+; InboundOpportunityProduct:MarketOverview         	; uid                           	; MarketOverview:uid                           	;                                                  	; true	;  
+; InboundOpportunityProduct:MarketOverview         	; globalTrendsText              	; MarketOverview:globalTrendsText              	;                                                  	; 	;  
+; InboundOpportunityProduct:CostOfDoingBusiness    	; productivityAdjustedWages     	; CostOfDoingBusiness:productivityAdjustedWages	;                                                  	; 	;  
+; InboundOpportunityProduct:CostOfDoingBusiness    	; easeOfGettingCredit           	; CostOfDoingBusiness:easeOfGettingCredit      	;                                                  	; 	;  
+; InboundOpportunityProduct:CostOfDoingBusiness    	; investmentOverview            	; CostOfDoingBusiness:investmentOverview       	; InboundOpportunityProduct:InvestmentOverview     	; true	;  
+; InboundOpportunityProduct:CostOfDoingBusiness    	; constructionCosts             	; CostOfDoingBusiness:constructionCosts        	;                                                  	; 	;  
+; InboundOpportunityProduct:CostOfDoingBusiness    	; electricityTariffs            	; CostOfDoingBusiness:electricityTariffs       	;                                                  	; 	;  
+; InboundOpportunityProduct:CostOfDoingBusiness    	; logisticsPerformanceIndex     	; CostOfDoingBusiness:logisticsPerformanceIndex	;                                                  	; 	;  
+; InboundOpportunityProduct:CostOfDoingBusiness    	; costOfDoingBusinessTexts      	; CostOfDoingBusiness:costOfDoingBusinessTexts 	; InboundOpportunityProduct:CostOfDoingBusinessText	; 	; true 
+; InboundOpportunityProduct:CostOfDoingBusiness    	; uid                           	; CostOfDoingBusiness:uid                      	;                                                  	; true	;  
+; InboundOpportunityProduct:Principal              	; uid                           	; Principal:uid                                	;                                                  	; true	;  
+; InboundOpportunityProduct:Location               	; region                        	; Location:region                              	; InboundOpportunityProduct:SagiaRegion            	; true	;  
+; InboundOpportunityProduct:Location               	; city                          	; Location:city                                	; InboundOpportunityProduct:SagiaCity              	; true	;  
+; InboundOpportunityProduct:Market                 	; marketSizes                   	; Market:marketSizes                           	;                                                  	; 	;  
 ; InboundOpportunityProduct:Market                 	; years                         	; Market:years                                 	;                                                  	; 	;  
 ; InboundOpportunityProduct:Market                 	; code                          	; Market:code                                  	;                                                  	; true	;  
-; InboundOpportunityProduct:Market                 	; marketSizes                   	; Market:marketSizes                           	;                                                  	; 	;  
-; InboundOpportunityProduct:SagiaCountry           	; code                          	; SagiaCountry:code                            	;                                                  	; true	;  
-; InboundOpportunityProduct:TransientEncodedPdf    	; code                          	; TransientEncodedPdf:code                     	;                                                  	; true	;  
-; InboundOpportunityProduct:TransientEncodedPdf    	; encodedString                 	; TransientEncodedPdf:encodedString            	;                                                  	; 	;  
+; InboundOpportunityProduct:Market                 	; name                          	; Market:name                                  	;                                                  	; 	;  
+; InboundOpportunityProduct:Catalog                	; id                            	; Catalog:id                                   	;                                                  	; true	;  
 ; InboundOpportunityProduct:Unit                   	; code                          	; Unit:code                                    	;                                                  	; true	;  
+; InboundOpportunityProduct:OtherMarketOverview    	; formattedText                 	; OtherMarketOverview:formattedText            	;                                                  	; 	;  
+; InboundOpportunityProduct:OtherMarketOverview    	; attachments                   	; OtherMarketOverview:attachments              	; InboundOpportunityProduct:Media                  	; 	; true 
+; InboundOpportunityProduct:OtherMarketOverview    	; sequenceNumber                	; OtherMarketOverview:sequenceNumber           	;                                                  	; 	;  
+; InboundOpportunityProduct:OtherMarketOverview    	; isVisible                     	; OtherMarketOverview:isVisible                	;                                                  	; 	;  
+; InboundOpportunityProduct:OtherMarketOverview    	; name                          	; OtherMarketOverview:name                     	;                                                  	; true	;  
+; InboundOpportunityProduct:Supply                 	; valueChainTexts               	; Supply:valueChainTexts                       	; InboundOpportunityProduct:ValueChain             	; 	; true 
+; InboundOpportunityProduct:Supply                 	; other                         	; Supply:other                                 	; InboundOpportunityProduct:OtherSupply            	; 	; true 
+; InboundOpportunityProduct:Supply                 	; uid                           	; Supply:uid                                   	;                                                  	; true	;  
+; InboundOpportunityProduct:Supply                 	; scalabilityAndLocalizationText	; Supply:scalabilityAndLocalizationText        	;                                                  	; 	;  
+; InboundOpportunityProduct:Supply                 	; importDependencyText          	; Supply:importDependencyText                  	;                                                  	; 	;  
+; InboundOpportunityProduct:CatalogVersion         	; catalog                       	; CatalogVersion:catalog                       	; InboundOpportunityProduct:Catalog                	; true	;  
+; InboundOpportunityProduct:CatalogVersion         	; version                       	; CatalogVersion:version                       	;                                                  	; true	;  
+; InboundOpportunityProduct:TransientEncodedPdf    	; encodedString                 	; TransientEncodedPdf:encodedString            	;                                                  	; 	;  
+; InboundOpportunityProduct:TransientEncodedPdf    	; code                          	; TransientEncodedPdf:code                     	;                                                  	; true	;  
+; InboundOpportunityProduct:Capacity               	; value                         	; Capacity:value                               	;                                                  	; true	;  
+; InboundOpportunityProduct:Capacity               	; unit                          	; Capacity:unit                                	;                                                  	; true	;  
+; InboundOpportunityProduct:Capacity               	; measure                       	; Capacity:measure                             	;                                                  	; true	;  
+; InboundOpportunityProduct:Demand                 	; keyDemandDrivers              	; Demand:keyDemandDrivers                      	;                                                  	; 	;  
+; InboundOpportunityProduct:Demand                 	; cagr                          	; Demand:cagr                                  	;                                                  	; 	;  
+; InboundOpportunityProduct:Demand                 	; markets                       	; Demand:markets                               	; InboundOpportunityProduct:Market                 	; 	; true 
+; InboundOpportunityProduct:Demand                 	; uid                           	; Demand:uid                                   	;                                                  	; true	;  
+; InboundOpportunityProduct:Demand                 	; marketSizeText                	; Demand:marketSizeText                        	;                                                  	; 	;  
+; InboundOpportunityProduct:Demand                 	; otherDemandText               	; Demand:otherDemandText                       	; InboundOpportunityProduct:OtherDemandText        	; 	; true 
 ; InboundOpportunityProduct:SagiaCity              	; region                        	; SagiaCity:region                             	; InboundOpportunityProduct:SagiaRegion            	; 	; true 
 ; InboundOpportunityProduct:SagiaCity              	; code                          	; SagiaCity:code                               	;                                                  	; true	;  
 ; InboundOpportunityProduct:SagiaCity              	; name                          	; SagiaCity:name                               	;                                                  	; 	;  
-; InboundOpportunityProduct:ProvinceComponent      	; name                          	; ProvinceComponent:name                       	;                                                  	; 	;  
-; InboundOpportunityProduct:ProvinceComponent      	; catalogVersion                	; ProvinceComponent:catalogVersion             	; InboundOpportunityProduct:CatalogVersion         	; true	;  
-; InboundOpportunityProduct:ProvinceComponent      	; uid                           	; ProvinceComponent:uid                        	;                                                  	; true	;  
-; InboundOpportunityProduct:SagiaRegion            	; country                       	; SagiaRegion:country                          	; InboundOpportunityProduct:SagiaCountry           	; 	; true 
-; InboundOpportunityProduct:SagiaRegion            	; name                          	; SagiaRegion:name                             	;                                                  	; 	;  
-; InboundOpportunityProduct:SagiaRegion            	; code                          	; SagiaRegion:code                             	;                                                  	; true	;  
-; InboundOpportunityProduct:SagiaRegion            	; cities                        	; SagiaRegion:cities                           	; InboundOpportunityProduct:SagiaCity              	; 	; true 
-; InboundOpportunityProduct:OtherDemandText        	; name                          	; OtherDemandText:name                         	;                                                  	; true	;  
-; InboundOpportunityProduct:CostOfDoingBusinessText	; value                         	; CostOfDoingBusinessText:value                	;                                                  	; 	;  
-; InboundOpportunityProduct:CostOfDoingBusinessText	; identifier                    	; CostOfDoingBusinessText:identifier           	;                                                  	; true	;  
-; InboundOpportunityProduct:CostOfDoingBusinessText	; unit                          	; CostOfDoingBusinessText:unit                 	;                                                  	; 	;  
+; InboundOpportunityProduct:SagiaSegment           	; segmentID                     	; SagiaSegment:segmentID                       	;                                                  	; true	;  
+; InboundOpportunityProduct:SagiaSegment           	; segmentName                   	; SagiaSegment:segmentName                     	;                                                  	; true	;  
+; InboundOpportunityProduct:OtherSupply            	; isVisible                     	; OtherSupply:isVisible                        	;                                                  	; true	;  
+; InboundOpportunityProduct:OtherSupply            	; sequenceNumber                	; OtherSupply:sequenceNumber                   	;                                                  	; true	;  
+; InboundOpportunityProduct:OtherSupply            	; attachment                    	; OtherSupply:attachment                       	; InboundOpportunityProduct:Media                  	; 	; true 
+; InboundOpportunityProduct:OtherSupply            	; name                          	; OtherSupply:name                             	;                                                  	; true	;  
+; InboundOpportunityProduct:OpportunityProduct     	; potential                     	; OpportunityProduct:potential                 	; InboundOpportunityProduct:PotentialEnum          	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; region                        	; OpportunityProduct:region                    	; InboundOpportunityProduct:ProvinceComponent      	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; investmentOverview            	; OpportunityProduct:investmentOverview        	; InboundOpportunityProduct:InvestmentOverview     	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; segment                       	; OpportunityProduct:segment                   	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; c4cOpportunityId              	; OpportunityProduct:c4cOpportunityId          	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; supercategories               	; OpportunityProduct:supercategories           	; InboundOpportunityProduct:Category               	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; systemOrigin                  	; OpportunityProduct:systemOrigin              	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; supply                        	; OpportunityProduct:supply                    	; InboundOpportunityProduct:Supply                 	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; opportunityVersionId          	; OpportunityProduct:opportunityVersionId      	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; description                   	; OpportunityProduct:description               	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; location                      	; OpportunityProduct:location                  	; InboundOpportunityProduct:Location               	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; code                          	; OpportunityProduct:code                      	;                                                  	; true	;  
+; InboundOpportunityProduct:OpportunityProduct     	; transientEncodendPdf          	; OpportunityProduct:transientEncodendPdf      	; InboundOpportunityProduct:TransientEncodedPdf    	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; unit                          	; OpportunityProduct:unit                      	; InboundOpportunityProduct:Unit                   	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; sagiaSegment                  	; OpportunityProduct:sagiaSegment              	; InboundOpportunityProduct:SagiaSegment           	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; name                          	; OpportunityProduct:name                      	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; keyStakeholders               	; OpportunityProduct:keyStakeholders           	; InboundOpportunityProduct:Media                  	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; catalogVersion                	; OpportunityProduct:catalogVersion            	; InboundOpportunityProduct:CatalogVersion         	; true	;  
+; InboundOpportunityProduct:OpportunityProduct     	; downloadUrl                   	; OpportunityProduct:downloadUrl               	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; highlights                    	; OpportunityProduct:highlights                	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; demand                        	; OpportunityProduct:demand                    	; InboundOpportunityProduct:Demand                 	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; detail                        	; OpportunityProduct:detail                    	; InboundOpportunityProduct:Media                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; approvalStatus                	; OpportunityProduct:approvalStatus            	; InboundOpportunityProduct:ArticleApprovalStatus  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; otherText                     	; OpportunityProduct:otherText                 	; InboundOpportunityProduct:OtherGeneralText       	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; marketOverview                	; OpportunityProduct:marketOverview            	; InboundOpportunityProduct:MarketOverview         	; 	; true 
+; InboundOpportunityProduct:OpportunityProduct     	; isWithdrawn                   	; OpportunityProduct:isWithdrawn               	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; sagiaKeywords                 	; OpportunityProduct:sagiaKeywords             	;                                                  	; 	;  
+; InboundOpportunityProduct:OpportunityProduct     	; others                        	; OpportunityProduct:others                    	; InboundOpportunityProduct:Media                  	; 	; true 
+; InboundOpportunityProduct:InvestmentOverview     	; investmentHighlights          	; InvestmentOverview:investmentHighlights      	; InboundOpportunityProduct:InvestmentHighlight    	; 	; true 
+; InboundOpportunityProduct:InvestmentOverview     	; uid                           	; InvestmentOverview:uid                       	;                                                  	; true	;  
+; InboundOpportunityProduct:InvestmentOverview     	; other                         	; InvestmentOverview:other                     	; InboundOpportunityProduct:OtherInvestmentOverview	; 	; true 
+; InboundOpportunityProduct:InvestmentOverview     	; costOfDoingBusiness           	; InvestmentOverview:costOfDoingBusiness       	; InboundOpportunityProduct:CostOfDoingBusiness    	; 	; true 
+; InboundOpportunityProduct:InvestmentOverview     	; valueProposition              	; InvestmentOverview:valueProposition          	;                                                  	; 	;  
+; InboundOpportunityProduct:InvestmentOverview     	; incentivesAndEnablers         	; InvestmentOverview:incentivesAndEnablers     	;                                                  	; 	;  

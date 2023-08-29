@@ -265,6 +265,35 @@
 											</div>
 										</div>
 									</c:forEach>
+									<c:forEach items="${category.subHeadings1}" var="subHeadings1">
+										<div class="row">
+											${subHeadings1.key}
+										</div>
+						    			<div class="row">
+						    			${subHeadings1.descriptionText}	
+						    			</div>
+						    		</c:forEach>
+									<c:forEach items="${category.subHeadings2}" var="subHeadings2">
+										<div class="row">
+											${subHeadings2.key}
+										</div>
+						    			<div class="row">
+						    			${subHeadings2.descriptionText}	
+						    			</div>
+						    		</c:forEach>
+						   			<c:forEach items="${category.paraWithMedia}" var="paraWithMedia">
+										<div class="row">
+											${category.paraWithMedia.key}
+										</div>
+						    			<div class="row">
+						    			<div class="col-md-4 col-12">
+						    				<iframe src="${paraWithMedia.value.url}"></iframe>
+						    			</div>
+						    			<div class="col-md-8 col-12">
+						    			${paraWithMedia.value.descriptionText}	
+						    			</div>
+						    	    </div>
+						   			</c:forEach>
 								</div>	
 							</div>										
 						</div>

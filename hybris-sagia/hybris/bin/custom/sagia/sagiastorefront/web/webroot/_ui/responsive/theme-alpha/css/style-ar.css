@@ -13871,6 +13871,11 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     line-height: 16px;
     color: #BF9B2E;
 }
+.media-card-img{
+    width: 123px;
+    height: 87px;
+    border-radius: 10px;
+}
 .newsTitle{
     font-family: 'Arial';
     font-style: normal;

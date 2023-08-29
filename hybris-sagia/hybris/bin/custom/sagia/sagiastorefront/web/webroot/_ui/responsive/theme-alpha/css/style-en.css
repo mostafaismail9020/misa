@@ -9293,6 +9293,11 @@ a.pvcy-policy:focus {
     line-height: 16px !important;
     color: #FFFFFF !important;
 }
+.media-card-img{
+    width: 123px;
+    height: 87px;
+    border-radius: 10px;
+}
 .pageLabel--newseventslist .events-card-img{
     width: 259px;
     height: 172px;

@@ -9208,6 +9208,7 @@ a.pvcy-policy:focus {
     font-weight: 400;
     font-size: 12px;
     color: #00714D;
+    white-space: nowrap;
 }
 .pageLabel--newseventslist .eventsName{
     font-family: 'Arial';
@@ -16453,14 +16454,19 @@ ul.INS_list_font li,
 
 
 /*Sector Opportunities - Opprtunities landing page END*/
+.pageLabel--newseventslist .news-date {
+    height: 60px !important;
+    width: 81px !important;
+    background-color: #00714D;
+}
 
 .news-date {
 	right: 28px !important;
 	left: auto !important;
 	top: -3% !important;
-	height: auto !important;
-	width: 75px !important;
-	background-color: #fff !important;
+	height: auto;
+	width: 75px;
+	background-color: #fff;
 }
 
 

@@ -1,12 +1,14 @@
 package com.investsaudi.portal.facades.product.impl;
 
 import com.investsaudi.portal.core.model.ArticleProductModel;
+import com.investsaudi.portal.core.model.NewsProductModel;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
 import com.investsaudi.portal.core.model.SuccessStoryProductModel;
 import com.investsaudi.portal.core.service.InvestSaudiProductService;
 import com.investsaudi.portal.facades.category.InvestSaudiCategoryFacade;
 import com.investsaudi.portal.facades.product.InvestSaudiProductFacade;
 import com.investsaudi.portal.facades.product.populator.InvestSaudiArticlePopulator;
+import com.investsaudi.portal.facades.product.populator.InvestSaudiNewsPopulator;
 import com.investsaudi.portal.facades.product.populator.InvestSaudiOpportunityPopulator;
 import com.investsaudi.portal.facades.product.populator.InvestSaudiSuccessStoryPopulator;
 import de.hybris.platform.commercefacades.product.data.OpportunityData;
@@ -52,6 +54,9 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
     private InvestSaudiArticlePopulator investSaudiArticlePopulator;
 
     @Resource
+    private InvestSaudiNewsPopulator investSaudiNewsPopulator;
+
+    @Resource
     private Populator<ProductModel, ProductData> productPopulator;
     
     @Resource
@@ -87,6 +92,13 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
             	ArticleProductModel articleProductModel = (ArticleProductModel) productService.getProductForCode(code);
                 if (articleProductModel != null) {
                     investSaudiArticlePopulator.populate(productData, articleProductModel);
+                    return productData;
+                }
+            }
+            else if (productType.equals(NewsProductModel._TYPECODE)) {
+                NewsProductModel newsProductModel = (NewsProductModel) productService.getProductForCode(code);
+                if (newsProductModel != null) {
+                    investSaudiNewsPopulator.populate(productData, newsProductModel);
                     return productData;
                 }
             }

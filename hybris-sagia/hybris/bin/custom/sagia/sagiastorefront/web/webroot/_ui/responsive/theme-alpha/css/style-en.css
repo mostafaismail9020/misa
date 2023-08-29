@@ -9284,6 +9284,11 @@ a.pvcy-policy:focus {
     line-height: 16px !important;
     color: #FFFFFF !important;
 }
+.pageLabel--newseventslist .img-fluid{
+    width: 259px;
+    height: 172px;
+    border-radius: 10px;
+}
 .eventMonth{
     font-family: '72';
     font-weight: 700  !important;;

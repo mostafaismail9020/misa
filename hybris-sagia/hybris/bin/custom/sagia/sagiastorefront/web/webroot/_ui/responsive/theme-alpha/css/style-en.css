@@ -7709,14 +7709,14 @@ figure h2 {
 	font-weight: 400;
 	color: var(--misaSecondColor);
 }
-.pageLabel--newseventslist .newsTitle {
+.pageLabel--newseventslist .newsName {
     font-family: '72';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
     color: #00714D;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 .newsTitle{
     font-family: '72';
@@ -9293,7 +9293,7 @@ a.pvcy-policy:focus {
     line-height: 16px !important;
     color: #FFFFFF !important;
 }
-.pageLabel--newseventslist .img-fluid{
+.pageLabel--newseventslist .events-card-img{
     width: 259px;
     height: 172px;
     border-radius: 10px;
@@ -10642,7 +10642,14 @@ body.page-living-in-saudi .content {
 	position: relative;
 	padding: 65px 0px 100px;
 }
-
+.pageLabel--newseventslist .newsDate{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #BF9B2E;
+}
 .newsDetails-carosel .controls {
 	position: relative;
 }

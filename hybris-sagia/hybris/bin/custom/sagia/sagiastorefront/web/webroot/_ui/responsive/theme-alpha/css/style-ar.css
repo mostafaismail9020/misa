@@ -9170,7 +9170,7 @@ a.pvcy-policy:focus {
 	box-shadow: 0px 6px 10px #00000070;
 	padding: 14px 5px;
 }
-.pageLabel--newseventslist .img-fluid{
+.pageLabel--newseventslist .events-card-img{
     width: 259px;
     height: 172px;
     border-radius: 10px;
@@ -13854,14 +13854,22 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 	font-weight: 400;
 	color: var(--misaSecondColor);
 }
-.pageLabel--newseventslist .newsTitle {
+.pageLabel--newseventslist .newsName {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
     color: #00714D;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+}
+.pageLabel--newseventslist .newsDate{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #BF9B2E;
 }
 .newsTitle{
     font-family: 'Arial';

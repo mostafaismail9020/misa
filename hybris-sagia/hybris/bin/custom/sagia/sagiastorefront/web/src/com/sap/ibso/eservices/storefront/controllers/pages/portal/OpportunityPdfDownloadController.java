@@ -48,8 +48,10 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	
 	@Resource(name = "mediaService")
 	private MediaService mediaService;
-	
-	
+
+	@Resource(name = "sagiaPDFChartGenerator")
+	private SagiaPDFChartGenerator sagiaPDFChartGenerator;
+
 
 	@RequestMapping(value = "/merged-pdf-download/{productCode}", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> downloadPDF(@PathVariable String productCode, final HttpServletRequest request,
@@ -71,7 +73,7 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 
 	   
 		List<File> secFiles = convertMediaListToFileList(mediaModels);
-	    File file = SagiaPDFChartGenerator.generatePdfFile(productModel, secFiles);
+	    File file = sagiaPDFChartGenerator.generatePdfFile(productModel, secFiles);
 
 	    if (file.exists()) {
 	        try {
@@ -112,7 +114,7 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	public List<File> convertMediaListToFileList(Collection<MediaModel> mediaModels) throws IOException {
         List<File> fileList = new ArrayList<>();
         for (MediaModel mediaModel : mediaModels) {
-            File file = convertMediaToFile(mediaModel);
+			File file = convertMediaToFile(mediaModel);
             fileList.add(file);
         }
         return fileList;

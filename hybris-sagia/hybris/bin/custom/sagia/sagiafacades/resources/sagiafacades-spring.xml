@@ -686,6 +686,18 @@
 			</list>
 		</property>
 	</bean>
+	
+	<alias name="sagiaImageConverter" alias="sagiaImageConverter"/>
+    <bean id="sagiaImageConverter" parent="defaultImageConverter">
+        <property name="populators">
+            <list merge="true">
+                <ref bean="sagiaImagePopulator"/>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="sagiaImagePopulator" class="com.sap.ibso.eservices.facades.populators.SagiaImagePopulator" >
+	</bean>
 
 	<bean id="basicCompanyInfoPopulator" class="com.sap.ibso.eservices.facades.populators.SagiaBasicCompanyInfoPopulator" >
 		<property name="priceDataFactory" ref="priceDataFactory"/>
@@ -1797,9 +1809,15 @@
 	    <property name="modelService" ref="modelService"/>
 		<property name="opportunityProductMediaRestApiService" ref="opportunityProductMediaRestApiService"/>
 		<property name="catalogVersionService" ref="catalogVersionService" />
+		<property name="productService" ref="productService" />
 	</bean>
 
 	<bean id="investSaudiOpportunityPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiOpportunityPopulator">
+		<property name="imageConverter" ref="imageConverter"/>
+		<property name="productReferenceConverter" ref="productReferenceConverter"/>
+	</bean>
+	
+	<bean id="investSaudiArticlePopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiArticlePopulator">
 		<property name="imageConverter" ref="imageConverter"/>
 		<property name="productReferenceConverter" ref="productReferenceConverter"/>
 	</bean>

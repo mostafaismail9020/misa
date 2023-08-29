@@ -4167,7 +4167,17 @@
                         <modifiers/>
                     </attribute>
                     <attribute qualifier="articleSubDetails5" type="localized:java.lang.String">
-                        <persistence type="property"/>
+	                    <persistence type="property">
+	                        <columntype database="oracle">
+	                            <value>CLOB</value>
+	                        </columntype>
+	                        <columntype database="sap">
+	                            <value>NCLOB</value>
+	                        </columntype>
+	                        <columntype>
+	                            <value>HYBRIS.LONG_STRING</value>
+	                        </columntype>
+	                    </persistence>
                         <modifiers/>
                     </attribute>
 				</attributes>

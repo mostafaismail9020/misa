@@ -1,12 +1,13 @@
 package com.sap.ibso.eservices.storefront.util;
 
 import com.investsaudi.portal.core.model.OpportunityProductModel;
+import com.investsaudi.portal.core.model.SagiaSegmentModel;
 import de.hybris.platform.catalog.CatalogVersionService;
 import de.hybris.platform.category.CategoryService;
+import de.hybris.platform.category.model.CategoryModel;
 import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.media.MediaService;
-import de.hybris.platform.util.Config;
 import org.apache.commons.io.FileUtils;
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -33,20 +34,27 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class SagiaPDFChartGenerator {
 
 	private static final Logger LOG = LoggerFactory.getLogger(SagiaPDFChartGenerator.class);
 
 	private static final String SAGIA_PRODUCT_CATALOG = "sagiaProductCatalog";
+
 	private static final String CATALOG_VERSION_STAGED = "Staged";
 
 	private static final String ROOT_CATEGORY_ID = "sector-opportunities";
 
 	private static final String MEDIA_PDF_FILE_NAME = "opportunity-pdf";
+
+	private static final String CODB_IMAGE = "CODB_image";
+
+	private static final String DATE_TIME_PATTERN = "E, dd MMM yyyy HH:mm:ss z";
+
+	private static final String KSA_TIME_ZONE = "Asia/Riyadh";
 
 	@Resource
 	private CatalogVersionService catalogVersionService;
@@ -68,26 +76,31 @@ public class SagiaPDFChartGenerator {
 			File secondaryConcatenatedFile = concatenatePDFs(secFiles, outputFile);
 
 			// loading the primary pdf template
-
-			List<MediaModel> medias = categoryService.getCategoryForCode("sector-opportunities").getMedias();
-			File primaryPdfFileTemplate = null;
-
-			if(Objects.nonNull(medias)) {
-				for(MediaModel media: medias) {
-					if(Objects.nonNull(media.getCode()) && media.getCode().equals(MEDIA_PDF_FILE_NAME)) {
-						primaryPdfFileTemplate = convertMediaToFile(media);
-						break;
-					}
-				}
+			File primaryPdf = getMedia(MEDIA_PDF_FILE_NAME, "pdf");
+			if(Objects.nonNull(primaryPdf)) {
+				fileMerged = mergeFiles(primaryPdf, secondaryConcatenatedFile);
+				addContentsToPdf(fileMerged, opportunity);
 			}
-
-			fileMerged = mergeFiles(primaryPdfFileTemplate, secondaryConcatenatedFile);
-			addContentsToPdf(fileMerged, opportunity);
 		}
 		return fileMerged;
 	}
 
-	public File convertMediaToFile(MediaModel mediaModel) throws IOException {
+	private File getMedia(String mediaText, String mediaFormat) throws IOException {
+		List<MediaModel> medias = categoryService.getCategoryForCode("sector-opportunities").getMedias();
+		File primaryPdfFileTemplate = null;
+
+		if(Objects.nonNull(medias)) {
+			for(MediaModel media: medias) {
+				if(Objects.nonNull(media.getCode()) && media.getCode().equals(mediaText)) {
+					primaryPdfFileTemplate = convertMediaToFile(media , mediaFormat);
+					break;
+				}
+			}
+		}
+		return primaryPdfFileTemplate;
+	}
+
+	public File convertMediaToFile(MediaModel mediaModel, String mediaFormat) throws IOException {
 
 		// Get the file data from the MediaModel
 		InputStream inputStream = mediaService.getStreamFromMedia(mediaModel);
@@ -96,7 +109,7 @@ public class SagiaPDFChartGenerator {
 		File tempFile;
 
 		try {
-			tempFile = File.createTempFile("temp_file", ".pdf");
+			tempFile = File.createTempFile("temp_file", "." + mediaFormat);
 
 			// Copy the data from the InputStream to the File
 			FileUtils.copyInputStreamToFile(inputStream, tempFile);
@@ -146,7 +159,7 @@ public class SagiaPDFChartGenerator {
 	private void addContentsToPdf(File fileMerged, OpportunityProductModel opportunity) throws IOException {
 		String title = "Neom";
 		String desc = "Opportunity brief description";
-		String sector = "Construction";
+//		String sector = "Construction";
 		String segment = "Not sure";
 		String tags = "List of key words linked to the investment opportunity";
 		String investmentHighlights = "Expected Investment size, Plant capacity, Expected IRR, Payback period, Job Creation, GDP Impact, Location (Region):";
@@ -162,19 +175,30 @@ public class SagiaPDFChartGenerator {
 		String importDependency = "An overview of the countries from which Saudi Arabia is importing the product and their value/volume and share in total import";
 
 		try (PDDocument document = PDDocument.load(fileMerged)) {
-//			Objects.nonNull()
 			// Page - 1
+			Collection<CategoryModel> supercategories = opportunity.getSupercategories();
+			// Get the first item from the collection
+			CategoryModel firstCategory = supercategories.stream().findFirst().orElse(null);
+			String sector = "";
+			if (firstCategory != null) {
+				sector = firstCategory.getName();
+			}
 
-			fillText("NEOM", document, 0, 58, 450, 16, "0");
-			fillText("Sector", document, 0, 58, 400, 16, "0");
+			fillText(opportunity.getName(), document, 0, 58, 450, 16, "0");
+			fillText(sector, document, 0, 58, 400, 16, "0");
 
 			// Title
-			fillText(title, document, 1, 152, 462, 12, null);
+			fillText(opportunity.getName(), document, 1, 152, 462, 12, null);
 			// Description
-			fillText(desc, document, 1, 152, 428, 12, null);
+			fillText(opportunity.getDescription(), document, 1, 152, 428, 12, null);
 			// Sector
 			fillText(sector, document, 1, 550, 462, 12, null);
 			// Segment
+			List<SagiaSegmentModel> sagiaSegment = opportunity.getSagiaSegment();
+			if(Objects.nonNull(sagiaSegment) && !sagiaSegment.isEmpty()) {
+				segment = sagiaSegment.get(0).getSegmentName();
+			}
+
 			fillText(segment, document, 1, 550, 428, 12, null);
 			// Tags
 			fillText(tags, document, 1, 152, 395, 12, null);
@@ -206,53 +230,63 @@ public class SagiaPDFChartGenerator {
 
 			fillText("CAGR 3.6%", document, 2, 560 , 425 , 9, null);
 
+			int totalPages = document.getNumberOfPages();
+			for(int pageIndex = 0; pageIndex < totalPages; pageIndex++) {
+				fillText(getCurrentDate(), document, pageIndex, 730, 20, 10, null);
+			}
+
 			document.save(fileMerged);
 		}
 	}
 
 	private void createCDB(PDDocument document) throws IOException {
-		PDPage page = document.getPage(1);
-		PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
+		File media = getMedia(CODB_IMAGE, "png");
+		if(Objects.nonNull(media)) {
+			PDPage page = document.getPage(1);
+			PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
+			PDImageXObject pdImage = PDImageXObject.createFromFile(media.getPath(), document);
+			contentStream.drawImage(pdImage, 620, 55, 260, 200);
+			contentStream.close();
+		}
 
-		PDImageXObject pdImage = PDImageXObject.createFromFile(Config.getString("opportunity.image.CODB", ""), document);
-		contentStream.drawImage(pdImage, 620, 55, 260, 200);
-		contentStream.close();
 	}
 
 	public void fillText(String text, PDDocument document, int pageIndex, float posX, float posY, int fontSize, String field) throws IOException {
-		PDPage page = document.getPage(pageIndex);
-		PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
-		contentStream.beginText();
-		contentStream.setFont(PDType1Font.TIMES_ROMAN, fontSize);
-		if(field != null && field.equals("0")) {
-			contentStream.setNonStrokingColor(48, 135, 42);
-		} else {
-			contentStream.setNonStrokingColor(111, 115, 115);
-		}
-		contentStream.newLineAtOffset(posX, posY);
-		int maxLength = -1;
-
-		if(field != null && field.equals("CODB")){
-			maxLength = 25;
-		}else if(posX == 720 && text.length() >= 40) {
-			maxLength = 40;
-		} else if(text.length() >= 82){
-			maxLength = 82;
-		}
-
-		if (maxLength != -1) {
-			contentStream.setLeading(14.5f);
-			String[] lines = splitLongString(text, maxLength);
-			for (String line : lines) {
-				contentStream.showText(line);
-				contentStream.newLine();
+		if(text != null) {
+			PDPage page = document.getPage(pageIndex);
+			PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
+			contentStream.beginText();
+			contentStream.setFont(PDType1Font.TIMES_ROMAN, fontSize);
+			if(field != null && field.equals("0")) {
+				contentStream.setNonStrokingColor(48, 135, 42);
+			} else {
+				contentStream.setNonStrokingColor(111, 115, 115);
 			}
-		} else {
-			contentStream.showText(text);
-		}
-		contentStream.endText();
+			contentStream.newLineAtOffset(posX, posY);
+			int maxLength = -1;
 
-		contentStream.close();
+			if(field != null && field.equals("CODB")){
+				maxLength = 25;
+			}else if(posX == 720 && text.length() >= 40) {
+				maxLength = 40;
+			} else if(text.length() >= 82){
+				maxLength = 82;
+			}
+
+			if (maxLength != -1) {
+				contentStream.setLeading(14.5f);
+				String[] lines = splitLongString(text, maxLength);
+				for (String line : lines) {
+					contentStream.showText(line);
+					contentStream.newLine();
+				}
+			} else {
+				contentStream.showText(text);
+			}
+			contentStream.endText();
+
+			contentStream.close();
+		}
 	}
 
 	public String[] splitLongString(String input, int maxLineLength) {
@@ -348,5 +382,12 @@ public class SagiaPDFChartGenerator {
 		contentStream.close();
 	}
 
+	private String getCurrentDate() {
+		String pattern = DATE_TIME_PATTERN;
+		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+		sdf.setTimeZone(TimeZone.getTimeZone(KSA_TIME_ZONE));
+		String dateInString = sdf.format(new Date());
+		return dateInString;
+	}
 
 }

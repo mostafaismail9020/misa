@@ -25,7 +25,7 @@
                                              <p class="eventShortInformation col-md-6 col-6">${result.eventTiming}</p>
                                               <p class="eventShortInformation col-md-6 col-6">${result.eventLocation}</p>
                                     </div>
-                                     <p class="eventShortInformation">${result.name}</p>
+                                     <p class="eventsName">${result.name}</p>
                                  </div>
                              </div>
                         </a>

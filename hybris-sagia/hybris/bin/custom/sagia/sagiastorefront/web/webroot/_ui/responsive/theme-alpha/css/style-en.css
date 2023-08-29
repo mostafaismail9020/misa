@@ -9319,8 +9319,14 @@ a.pvcy-policy:focus {
 .pageLabel--newseventslist .eventShortInformation{
     font-family: '72';
     font-weight: 400;
-    font-size: 0.9vw;
+    font-size: 12px;
     color: #00714D;
+}
+.eventsName{
+        font-family: '72';
+        font-weight: 400;
+        font-size: 14px;
+        color: #00714D;
 }
 
 .tabs-normal li a.nav-link {

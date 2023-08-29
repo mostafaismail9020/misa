@@ -18,8 +18,8 @@
                                          </div>
                                          <div class="col-sm-8">
                                              <div class="card-text">
-                                                 <h3 class="newsTitle">${fn:toLowerCase(result.name)}</h3>
-                                                 <p class="d-news-update-date">
+                                                 <h3 class="newsName">${fn:toLowerCase(result.name)}</h3>
+                                                 <p class="newsDate d-news-update-date">
                                                      <fmt:formatDate value="${result.newsDate}" pattern="d MMM yyyy" />
                                                  </p>
                                              </div>

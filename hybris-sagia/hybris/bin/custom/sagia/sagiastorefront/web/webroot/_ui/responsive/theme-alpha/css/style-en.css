@@ -262,9 +262,11 @@ color: var(--misaSecondColor);
 #header .hd-scroll {
 	display: none;
 }
+
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled {
 box-shadow: 0px 2px var(--misaSecondColor);
 }
+
 #header.header-scrolled {
 	top: 0;
 	background: #f7f7f7;
@@ -278,11 +280,17 @@ box-shadow: 0px 2px var(--misaSecondColor);
 #header.header-scrolled .hd-scroll {
 	display: block;
 }
+
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu a {
     color: var(--misaSecondColor);
 }
+
 #header.header-scrolled .nav-menu a {
 	color: #787878;
+}
+
+#header .nav-menu {
+	margin-right: -25px;
 }
 
 #header .logo {
@@ -295,6 +303,7 @@ box-shadow: 0px 2px var(--misaSecondColor);
 	text-transform: uppercase;
 	z-index: 9999;
     margin-top: -20px;
+    margin-left: -20px;
 }
 
 #header .logo a {
@@ -15986,7 +15995,7 @@ padding-left: 40px;
 	}
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+/*@media (min-width: 992px) and (max-width: 1199px) {
 	.content-wrapper {
 		margin-top: 60px;
 	}
@@ -16016,7 +16025,7 @@ padding-left: 40px;
 		width: auto;
 		margin-top: 20px;
 	}
-}
+}*/
 
 @media (min-width: 1200px) {
 	.economic-heightlight-container {

@@ -235,8 +235,9 @@ ul.sagiaNavigation-subNav li svg {
 #topbar .contact-info i.icofont-phone {
 	margin-left: 15px;
 }
+
 .pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
-color: var(--misaSecondColor);
+	color: var(--misaSecondColor);
 }
 
 #topbar .social-links a {
@@ -269,8 +270,9 @@ color: var(--misaSecondColor);
 #header .hd-scroll {
 	display: none;
 }
+
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled {
-box-shadow: 0px 2px var(--misaSecondColor);
+	box-shadow: 0px 2px var(--misaSecondColor);
 }
 
 #header.header-scrolled {
@@ -286,24 +288,30 @@ box-shadow: 0px 2px var(--misaSecondColor);
 #header.header-scrolled .hd-scroll {
 	display: block;
 }
+
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu a {
     color: var(--misaSecondColor);
 }
+
 #header.header-scrolled .nav-menu a {
 	color: #787878;
 }
 
+#header .nav-menu {
+	margin-right: 135px;
+}
+
 #header .logo {
 	font-size: 32px;
-	margin: 0;
-	padding: 0;
-	line-height: 1;
-	font-weight: 700;
-	text-transform: uppercase;
-	z-index: 9999;
-	margin-left: auto;
-	margin-right: unset !important;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 9999;
     margin-top: -20px;
+    margin-right: -20px!important;
 }
 
 #header .logo a {
@@ -16044,7 +16052,7 @@ padding-left: 40px;
 	}
 }
 
-@media (min-width: 992px) and (max-width:1199px) {
+/*@media (min-width: 992px) and (max-width:1199px) {
 	.content-wrapper {
 		margin-top: 60px;
 	}
@@ -16074,7 +16082,7 @@ padding-left: 40px;
 		width: auto;
 		margin-top: 20px;
 	}
-}
+}*/
 
 @media (min-width: 1200px) {
 	.economic-heightlight-container {

@@ -30,7 +30,7 @@
     <!-- <c:if test="${not empty productData.description}"> -->
     <section class="opportunity-article-section-body">
     	<div class="container">
-    		<div class="row">
+    		<div class="row justify-content-between">
     			<div class="col-md-7 col-12">
     				<div class="order-lg-1 order-md-1 order-1">
 	    				<h3 class="sub-title">${productData.description}</h3>
@@ -129,8 +129,8 @@
 	
 	<section class="opportunity-article-section-statistics">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-5 col-12">
+			<div class="row justify-content-between">
+				<div class="col-md-6 col-12">
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
@@ -148,8 +148,7 @@
     					</div>
     				</div>
 				</div>
-				<div class="col-md-1 col-12"></div>
-				<div class="col-md-5 col-12">
+				<div class="col-md-6 col-12">
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
@@ -162,8 +161,8 @@
     				</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-5 col-12">
+			<div class="row justify-content-between">
+				<div class="col-md-6 col-12">
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
@@ -175,8 +174,7 @@
     					</div>
     				</div>
 				</div>
-				<div class="col-md-1 col-12"></div>
-				<div class="col-md-5 col-12">
+				<div class="col-md-6 col-12">
 					<div class="jumbotron jumbotron-statistics-box special-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
@@ -316,8 +314,8 @@
     				</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-5 col-12">
+			<div class="row justify-content-between">
+				<div class="col-md-6 col-12">
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
@@ -329,8 +327,7 @@
     					</div>
     				</div>
 				</div>
-				<div class="col-md-1 col-12"></div>
-				<div class="col-md-5 col-12">
+				<div class="col-md-6 col-12">
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">

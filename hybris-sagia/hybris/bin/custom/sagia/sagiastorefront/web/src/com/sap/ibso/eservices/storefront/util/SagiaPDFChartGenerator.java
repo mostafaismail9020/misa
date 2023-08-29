@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class SagiaPDFChartGenerator {
 
@@ -70,12 +71,15 @@ public class SagiaPDFChartGenerator {
 
 			List<MediaModel> medias = categoryService.getCategoryForCode("sector-opportunities").getMedias();
 			File primaryPdfFileTemplate = null;
-			for(MediaModel media: medias) {
-				if(media.getCode().equals(MEDIA_PDF_FILE_NAME)) {
-					primaryPdfFileTemplate = convertMediaToFile(media);
+
+			if(Objects.nonNull(medias)) {
+				for(MediaModel media: medias) {
+					if(Objects.nonNull(media.getCode()) && media.getCode().equals(MEDIA_PDF_FILE_NAME)) {
+						primaryPdfFileTemplate = convertMediaToFile(media);
+						break;
+					}
 				}
 			}
-//			primaryPdfFileTemplate = new File(Config.getString("opportunity.pdf.template.path", ""));
 
 			fileMerged = mergeFiles(primaryPdfFileTemplate, secondaryConcatenatedFile);
 			addContentsToPdf(fileMerged, opportunity);

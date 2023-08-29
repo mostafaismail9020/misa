@@ -4404,7 +4404,7 @@
                     </attribute>
                     <attribute qualifier="message" type="java.lang.String">
                         <persistence type="property"/>
-                        <modifiers/>s
+                        <modifiers/>
                     </attribute>
                     <attribute qualifier="sectorCategory" type="java.lang.String">
                         <persistence type="property"/>

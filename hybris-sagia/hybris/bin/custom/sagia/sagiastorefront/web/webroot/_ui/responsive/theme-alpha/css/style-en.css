@@ -7713,8 +7713,9 @@ figure h2 {
     font-family: '72';
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5vw;
+    font-size: 24px;
     color: #00714D;
+    margin-bottom: 50px;
 }
 .col-md-12.card-wrapper.alternate {
     background-color: rgba(191, 155, 46, 0.07);

@@ -13831,8 +13831,9 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5vw;
+    font-size: 24px;
     color: #00714D;
+    margin-bottom: 50px;
 }
 
 .col-md-12.card-wrapper.alternate {

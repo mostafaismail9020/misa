@@ -542,13 +542,13 @@
 
                   <div class="visaType1 investorVisaTypeContent" style="">
                      <h3 class="instendVisaStatus"><spring:theme code="sagia.license.dashboard.visa.txt"/></h3>
-                     <a href="https://visa.mofa.gov.sa/" target="_blank" class="visaTypeApplyBtn">Apply now</a>
+                     <a href="https://visa.mofa.gov.sa/" target="_blank" class="visaTypeApplyBtn"><spring:theme code="dashboard.investor.visa.apply.now"/></a>
                   </div>
                 </c:if>
                 <c:if test="${language eq 'ar'}">
                   <div class="visaType1 investorVisaTypeContent" style="">
-                    <h3 class="instendVisaStatus"><spring:theme code="instend.dashboard.visa.txt"/></h3>
-                    <a href="https://visa.mofa.gov.sa/" target="_blank" class="visaTypeApplyBtn"><spring:theme code="sagia.license.dashboard.visa.txt"/></a>
+                    <h3 class="instendVisaStatus"><spring:theme code="sagia.license.dashboard.visa.txt"/></h3>
+                    <a href="https://visa.mofa.gov.sa/" target="_blank" class="visaTypeApplyBtn"><spring:theme code="dashboard.investor.visa.apply.now"/></a>
                  </div>
 
                 </c:if>

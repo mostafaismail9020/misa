@@ -5,12 +5,15 @@
 
 # Macros / Replacement Parameter definitions
 $template = portalMediaCenterLandingPageTemplate
-$page = visiting-visa-program
-$pageName = Visiting Visa Program
+$page = visiting-investor-program
+$pageName = Visiting Investor Program
 $pageTitleEn = $pageName
 $pageTitleAr = $pageName
-$pageLabel = /visiting-visa
+$pageLabel = /visiting-investor
+$sagiaCategory = category(code)
 
+$langen = en
+$langar= ar
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
@@ -37,7 +40,7 @@ INSERT_UPDATE Media; code[unique = true]         ; realFileName                ;
                    ; spl-card.png                ; spl-card.png                ; $siteResource/spl-card.png                                                  ; image/png                   ;                                          ; ""     ;                          ;
                    ; host.png                    ; host.png                    ; $siteResource/host.png                                                      ; image/png                   ;                                          ; ""     ;                          ;
                    ; visaVideo.png               ; visaVideo.png               ; $siteResource/visaVideo.png                                                 ; image/png                   ;                                          ; ""     ;                          ;
-                   ; poster.jpg                  ; poster.jpg                  ; $siteResource/poster.jpg                                                    ; image/jpg                   ;                                          ; ""     ;                          ;
+                   ; poster-en.jpg                  ; poster-en.jpg                  ; $siteResource/poster-en.jpg                                                    ; image/jpg                   ;                                          ; ""     ;                          ;
                    ; poster-ar.jpg               ; poster-ar.jpg               ; $siteResource/poster-ar.jpg                                                 ; image/jpg                   ;                                          ; ""     ;                          ;
                    ; applyBg3.png                ; applyBg3.png                ; $siteResource/applyBg3.png                                                  ; image/png                   ;                                          ; ""     ;                          ;
                    ; plane-animation.png         ; plane-animation.png         ; $siteResource/plane-animation.png                                           ; image/png                   ;                                          ; ""     ;                          ;
@@ -118,7 +121,7 @@ INSERT_UPDATE InvestorVisaTermsFollowing; uid[unique = true]           ; name   
 ################################################### Investor Visa Following Component  ################################################################
 
 INSERT_UPDATE InvestorVisaApplyNowComponent; uid[unique = true]      ; name                    ; planeAnimation(code, $contentCV); insideVideoEn(code, $contentCV); insideVideoAr(code, $contentCV); defaultImageEn(code, $contentCV); defaultImageAr(code, $contentCV); $contentCV[unique = true];
-                                           ; investor-visa-apply-now ; Investor Visa Apply Now ; plane-animation.png             ; visiting-investor-en.mp4    ; visiting-investor-ar.mp4    ; poster.jpg                      ; poster-ar.jpg                   ;
+                                           ; investor-visa-apply-now ; Investor Visa Apply Now ; plane-animation.png             ; visiting-investor-en.mp4    ; visiting-investor-ar.mp4    ; poster-en.jpg                      ; poster-ar.jpg                   ;
 
 INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; $contentCV[unique = true]
                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pageLabel ; false   ;                              ;                                           ;
@@ -151,3 +154,31 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]       ; name             ; n
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]       ; name             ; cmsLink(uid, $contentCV); &nodeRef                 ; parent(uid, $contentCV); children(uid, $contentCV)[mode = append]; links(uid, $contentCV)[mode = replace]; $contentCV[unique = true];
                                ; investor-visa-navnode    ; Investment Visa  ; investor-visa-link      ; investor-visa-navnode    ; investor-guide-navnode ;                                         ;                                       ;                          ;
                                ; investor-journey-navnode ; Investment Guide ; investor-journey-link   ; investor-journey-navnode ; investor-guide-navnode ;                                         ;                                       ;                          ;
+
+################################## Navigation Link ###########################################
+INSERT_UPDATE CMSLinkComponent; uid[unique = true] 				; name 							; linkName[lang = en] 		; linkName[lang = ar] 					; url									; $contentCV[unique = true]	;
+                              ; visiting-visa-link              ; Visiting Visa Link		    ; Visiting Visa  	        ; Visiting Visa  		                ; /en/visiting-investor						;							;
+
+
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]			; name							; title[lang = en] 		; title[lang = ar] 				; cmsLink(uid, $contentCV) 	 	; &nodeRef 							; parent(uid, $contentCV) 	; children(uid, $contentCV)[mode = append]	; links(uid, $contentCV)[mode = replace]; $contentCV[unique = true]	;
+                                   ; visiting-visa-navnode 		; Visitinf Visa Nav Node		; Visiting Visa	; Visiting Visa			;visiting-visa-link				; visiting-visa-navnode 			; invest-in-saud-arabia-navnode ;  										; 									 	; 							;
+
+
+################################## Government Service ###########################################
+
+INSERT_UPDATE SagiaCategory       ; code[unique = true]  ; name[lang = $langen]              ; categoryUrl ; description[lang = $langen]	;
+                                  ; visting-visa               ; Ministry of Foreign Affairs 		 ; ZVIT        ;								;
+
+INSERT_UPDATE SagiaCategory       ; code[unique = true]  ; name[lang = $langar]              ; categoryUrl ; description[lang = $langen]	;
+                                  ; visting-visa               ; وزارة الخارجية 					 ; ZVIT        ;							;
+
+
+INSERT_UPDATE SagiaService        ; code[unique = true]          ;$sagiaCategory; name[lang = $langen]               			; description[lang = $langen]
+                                  ; ZVIT_01						 ;visting-visa; "Business Visit Visa “Visiting Investor”"	; "Online service that allows foreign investors to apply for a digital visit visa for the purpose of exploring the investment opportunities in the Kingdom of Saudi Arabia."
+
+INSERT_UPDATE SagiaService        ; code[unique = true]          ; name[lang = $langar]               	; description[lang = $langar]
+                                  ; ZVIT_01						 ; تأشيرة زيارة الأعمال "مستثمر زائر"	; "خدمة إلكترونية تتيح للمستثمرين الأجانب التقدم بطلب الحصول على تأشيرة زيارة رقمية لغرض الاطلاع على الفرص الاستثمارية في المملكة العربية السعودية."
+
+
+INSERT_UPDATE SagiaCategory	; code[unique = true]	; label 				; services(code)		;
+                               ; visting-visa				; GOVERNMENTAL SERVICES	; ZVIT_01;

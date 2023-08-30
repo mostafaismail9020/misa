@@ -667,7 +667,7 @@ max-width :100% ;
 /* Investor instend visa Css start */
 .investorVisaTypeItemDb{
 width: 100%;
-background: red;
+background: #4f8e85;
 padding: 15px;
 min-height: 250px;
 display: flex;
@@ -702,22 +702,22 @@ color:#fff;
 font-size:35px;
  }
 
- .investorVisaTypeItemDb a{
-background: #00a6be;
-text-decoration: none;
-min-height: 50px;
-width: 180px;
-display: inline-block;
-border-radius: 50px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin: auto;
-margin-top: 30px;
-color: #fff !important;
-text-transform: uppercase;
-font-weight: bold;
- }
+.investorVisaTypeItemDb a {
+    background: #00a6be;
+    text-decoration: none;
+    min-height: auto;
+    width: auto;
+    display: inline-block;
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 30px;
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 50px;
+}
+
  @media(max-width:992px){
 .eligibleStatusInfo h3{
 
@@ -725,3 +725,15 @@ font-size:25px;
 }
  }
 /* Investor instend visa Css start End*/
+
+.page-service-search .serviceModule-detail.service-search-module .w-25.serviceModule-request{
+width:26% !important
+
+}
+
+.page-service-search .services-container-tabcontent .accordion-item .collapse .accordion-body{
+width:95%;
+}
+.page-service-search .serviceModule .serviceModule-request a.request-service {
+    text-align: center;
+}

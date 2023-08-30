@@ -11319,7 +11319,7 @@ height: auto !important;
 
 /* Investor-visa-program  start*/
 
-body.page-visiting-visa-program {
+body.page-visiting-investor-program {
     overflow-x: hidden;
     scroll-behavior: smooth;
     background-image: linear-gradient(42deg, #69d48c, #59c97d, #03a8a2, #05547b, #05547b);
@@ -11328,17 +11328,17 @@ body.page-visiting-visa-program {
     background-position: top;
 }
 
-.page-visiting-visa-program .container {
+.page-visiting-investor-program .container {
     max-width: 1320px;
 }
 
-.page-visiting-visa-program .invVisa-ptb {
+.page-visiting-investor-program .invVisa-ptb {
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
 
-.page-visiting-visa-program .investorBanner {
+.page-visiting-investor-program .investorBanner {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
@@ -11347,28 +11347,28 @@ body.page-visiting-visa-program {
     align-items: center;
 }
 
-.page-visiting-visa-program .investorBanner .shape-1 {
+.page-visiting-investor-program .investorBanner .shape-1 {
     position: absolute;
     top: -621px;
     left: -74px;
     z-index: 1;
 }
 
-.page-visiting-visa-program .investorBanner .shape-2 {
+.page-visiting-investor-program .investorBanner .shape-2 {
     position: absolute;
     left: 136px;
     top: -460px;
     z-index: 1;
 }
 
-.page-visiting-visa-program .investorBanner .shape-3 {
+.page-visiting-investor-program .investorBanner .shape-3 {
     position: absolute;
     right: -77px;
     bottom: -323px;
     z-index: 1;
 }
 
-.page-visiting-visa-program .investorBanner .shape-4 {
+.page-visiting-investor-program .investorBanner .shape-4 {
     position: absolute;
     bottom: -780px;
     right: -174px;
@@ -11376,7 +11376,7 @@ body.page-visiting-visa-program {
     opacity: 0.2 !important;
 }
 
-.page-visiting-visa-program .investorBanner::after {
+.page-visiting-investor-program .investorBanner::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -11388,7 +11388,7 @@ body.page-visiting-visa-program {
     opacity: 0.7;
 }
 
-.page-visiting-visa-program .investorBannerContent {
+.page-visiting-investor-program .investorBannerContent {
     width: 70%;
     margin: auto;
     margin-top: 200px;
@@ -11397,20 +11397,20 @@ body.page-visiting-visa-program {
     z-index: 1;
 }
 
-.page-visiting-visa-program .investorBannerContent h2 span {
+.page-visiting-investor-program .investorBannerContent h2 span {
     display: inline-block;
     font-size: 60px;
     margin-bottom: 20px;
 }
 
-.page-visiting-visa-program .investorBannerContent h2 {
+.page-visiting-investor-program .investorBannerContent h2 {
     color: #fff;
     font-size: 35px;
     line-height: 59px;
     text-align: center;
 }
 
-.page-visiting-visa-program .investorBannerContent .descriptionBanner p {
+.page-visiting-investor-program .investorBannerContent .descriptionBanner p {
     font-size: 20px;
     margin-top: 0px;
     color: #fff;
@@ -11421,7 +11421,7 @@ body.page-visiting-visa-program {
     opacity: 0;
 }
 
-.page-visiting-visa-program .investorBannerContent.active p {
+.page-visiting-investor-program .investorBannerContent.active p {
     height: auto;
     overflow: hidden;
     opacity: 1;
@@ -11430,13 +11430,13 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .abtOverImg .bannerVideo {
+.page-visiting-investor-program .abtOverImg .bannerVideo {
     width: 100%;
     object-fit: cover;
     opacity: 1;
 }
 
-.page-visiting-visa-program .visaBannerLoadMore {
+.page-visiting-investor-program .visaBannerLoadMore {
     background: #fff;
     padding: 15px;
     border-radius: 50px;
@@ -11457,23 +11457,23 @@ body.page-visiting-visa-program {
     margin-top: 40px;
 }
 
-.page-visiting-visa-program .visaBannerLoadMore span {
+.page-visiting-investor-program .visaBannerLoadMore span {
     position: relative;
     z-index: 1;
 }
 
-.page-visiting-visa-program .visaBannerLoadMore:hover {
+.page-visiting-investor-program .visaBannerLoadMore:hover {
     color: #fff;
     transition: all .3s ease-in-out;
     background-color: transparent;
 }
 
-.page-visiting-visa-program .visaBannerLoadMore:hover:after {
+.page-visiting-investor-program .visaBannerLoadMore:hover:after {
     height: 100%;
     transition: all .3s ease-in-out;
 }
 
-.page-visiting-visa-program .visaBannerLoadMore::after {
+.page-visiting-investor-program .visaBannerLoadMore::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -11484,7 +11484,7 @@ body.page-visiting-visa-program {
     transition: all .3s ease-in-out;
 }
 
-.page-visiting-visa-program .investorVisaApply {
+.page-visiting-investor-program .investorVisaApply {
     width: 100%;
     min-height: 100vh;
     background-color: transparent;
@@ -11494,7 +11494,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .investorVisaVideoSec {
+.page-visiting-investor-program .investorVisaVideoSec {
     width: 530px;
     margin: auto;
     position: relative;
@@ -11506,7 +11506,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program #investorVisaApplySec::after {
+.page-visiting-investor-program #investorVisaApplySec::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -11521,19 +11521,19 @@ body.page-visiting-visa-program {
     opacity: 0.3;
 }
 
-.page-visiting-visa-program .investorVisaVideoImg img {
+.page-visiting-investor-program .investorVisaVideoImg img {
     width: 100%;
     min-height: 100%;
     position: relative;
     z-index: 1;
 }
 
-.page-visiting-visa-program .investorVisaVideo {
+.page-visiting-investor-program .investorVisaVideo {
     width: 100%;
     height: 100%;
 }
 
-.page-visiting-visa-program .investorVisaVideoLoad {
+.page-visiting-investor-program .investorVisaVideoLoad {
     /* position: absolute; */
     bottom: 0;
     margin: auto;
@@ -11548,7 +11548,7 @@ body.page-visiting-visa-program {
     padding-bottom: 41px;
 }
 
-.page-visiting-visa-program .invVisaFrame {
+.page-visiting-investor-program .invVisaFrame {
     width: 100%;
     height: 100%;
     position: relative;
@@ -11556,16 +11556,16 @@ body.page-visiting-visa-program {
     display: none;
 }
 
-.page-visiting-visa-program .investorVisaApplyRel {
+.page-visiting-investor-program .investorVisaApplyRel {
     position: relative;
     z-index: 1;
 }
 
-.page-visiting-visa-program .investorVisaVideo video {
+.page-visiting-investor-program .investorVisaVideo video {
     border-radius: 15px;
 }
 
-.page-visiting-visa-program .investorVisaApplyBtnWrap {
+.page-visiting-investor-program .investorVisaApplyBtnWrap {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11573,7 +11573,7 @@ body.page-visiting-visa-program {
     height: 100%;
 }
 
-.page-visiting-visa-program .investorVisaApplyBtn {
+.page-visiting-investor-program .investorVisaApplyBtn {
     width: 80%;
     max-width: 380px;
     background: #fff;
@@ -11593,7 +11593,7 @@ body.page-visiting-visa-program {
     overflow: hidden;
 }
 
-.page-visiting-visa-program .investorVisaApplyBtn::after {
+.page-visiting-investor-program .investorVisaApplyBtn::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -11604,18 +11604,18 @@ body.page-visiting-visa-program {
     transition: all .3s ease-in-out;
 }
 
-.page-visiting-visa-program .investorVisaApplyBtn:hover {
+.page-visiting-investor-program .investorVisaApplyBtn:hover {
     background-color: transparent;
     transition: all .3s ease-in-out;
 
 }
 
-.page-visiting-visa-program .investorVisaApplyBtn:hover:after {
+.page-visiting-investor-program .investorVisaApplyBtn:hover:after {
     height: 100%;
     transition: all .3s ease-in-out;
 }
 
-.page-visiting-visa-program .investorVisaApplyBtn a {
+.page-visiting-investor-program .investorVisaApplyBtn a {
     display: inline-block;
     text-decoration: none;
     font-size: 22px;
@@ -11627,13 +11627,13 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .investorVisaApplyBtn:hover a {
+.page-visiting-investor-program .investorVisaApplyBtn:hover a {
     color: #fff;
     transition: all .3s ease-in-out;
 
 }
 
-.page-visiting-visa-program .investorVisaAbout {
+.page-visiting-investor-program .investorVisaAbout {
     width: 100%;
     background-color: transparent;
     display: flex;
@@ -11643,7 +11643,7 @@ body.page-visiting-visa-program {
     overflow: hidden;
 }
 
-.page-visiting-visa-program .investorVisaAbout::after {
+.page-visiting-investor-program .investorVisaAbout::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -11701,7 +11701,7 @@ body.page-visiting-visa-program {
 }
 
 
-.page-visiting-visa-program .abtOverImg {
+.page-visiting-investor-program .abtOverImg {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -11709,23 +11709,23 @@ body.page-visiting-visa-program {
     left: 0;
 }
 
-.page-visiting-visa-program .imageInnerBox img {
+.page-visiting-investor-program .imageInnerBox img {
     width: 100%;
     height: 100%;
 }
 
-.page-visiting-visa-program .invVisaAboutLgImg {
+.page-visiting-investor-program .invVisaAboutLgImg {
     overflow: hidden;
     height: 720px;
 }
 
-.page-visiting-visa-program .invVisaAboutLgImg img {
+.page-visiting-investor-program .invVisaAboutLgImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.page-visiting-visa-program .InvistorVisaZoom {
+.page-visiting-investor-program .InvistorVisaZoom {
     animation: InvistorVisScale 30s linear infinite;
 }
 
@@ -11739,7 +11739,7 @@ body.page-visiting-visa-program {
     }
 }
 
-.page-visiting-visa-program .invVisaAboutLeft {
+.page-visiting-investor-program .invVisaAboutLeft {
     width: 50%;
     margin-right: auto;
     padding: 50px 100px 50px 100px;
@@ -11751,12 +11751,12 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .invVisaAboutRightImg {
+.page-visiting-investor-program .invVisaAboutRightImg {
     width: 500px;
     position: relative;
 }
 
-.page-visiting-visa-program .invVisaAboutRightImg::after {
+.page-visiting-investor-program .invVisaAboutRightImg::after {
     position: absolute;
     content: '';
     bottom: 0;
@@ -11767,7 +11767,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .imageInnerBox {
+.page-visiting-investor-program .imageInnerBox {
     width: 250px;
     height: 150px;
     background-color: #206372;
@@ -11777,7 +11777,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .imageInnerBox::after {
+.page-visiting-investor-program .imageInnerBox::after {
     content: "";
     position: absolute;
     top: -32px;
@@ -11787,36 +11787,36 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .invVisaAboutLeftImg img {
+.page-visiting-investor-program .invVisaAboutLeftImg img {
     width: 100%;
 }
 
-.page-visiting-visa-program .investorVisaTitle {
+.page-visiting-investor-program .investorVisaTitle {
     text-align: center;
 }
 
-.page-visiting-visa-program .invVisaAboutWrap {
+.page-visiting-investor-program .invVisaAboutWrap {
     display: flex;
     position: relative;
     z-index: 1;
     direction: ltr;
 }
 
-.page-visiting-visa-program .invVisaAboutLeft .investorVisaTitle h1 {
+.page-visiting-investor-program .invVisaAboutLeft .investorVisaTitle h1 {
     font-size: 45px;
     line-height: 59px;
     text-align: right;
     color: #000;
 }
 
-.page-visiting-visa-program .invVisaAboutRight {
+.page-visiting-investor-program .invVisaAboutRight {
     width: 50%;
     background-image: url(../img/wave-bg.png);
     min-height: 720px;
 
 }
 
-.page-visiting-visa-program .invVisaAboutBtmSection {
+.page-visiting-investor-program .invVisaAboutBtmSection {
     width: 100%;
     min-height: 150px;
     display: flex;
@@ -11824,7 +11824,7 @@ body.page-visiting-visa-program {
     justify-content: center;
 }
 
-.page-visiting-visa-program .invVisaAboutBtmSection ul {
+.page-visiting-investor-program .invVisaAboutBtmSection ul {
     display: flex;
     align-items: center;
     list-style-type: none;
@@ -11833,16 +11833,16 @@ body.page-visiting-visa-program {
     width: 90%;
 }
 
-.page-visiting-visa-program .invVisaAboutBtmSection ul li img {
+.page-visiting-investor-program .invVisaAboutBtmSection ul li img {
     height: 80px;
     object-fit: contain;
 }
 
-.page-visiting-visa-program .invVisaAboutBtmSection ul li {
+.page-visiting-investor-program .invVisaAboutBtmSection ul li {
     margin: 0 50px;
 }
 
-.page-visiting-visa-program .investorVisaTitle h1 {
+.page-visiting-investor-program .investorVisaTitle h1 {
     font-size: 45px;
     line-height: 59px;
     color: #fff;
@@ -11851,14 +11851,14 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .investorVisaAbtContent p {
+.page-visiting-investor-program .investorVisaAbtContent p {
     font-size: 20px;
     line-height: 33px;
     direction: rtl;
     text-align: justify;
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems {
+.page-visiting-investor-program .investorVisaApplyTrems {
     width: 100%;
     min-height: 100vh;
     background-position: center;
@@ -11874,7 +11874,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems::after {
+.page-visiting-investor-program .investorVisaApplyTrems::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -11887,7 +11887,7 @@ body.page-visiting-visa-program {
     background-attachment: fixed;
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems::before {
+.page-visiting-investor-program .investorVisaApplyTrems::before {
     position: absolute;
     content: '';
     width: 100%;
@@ -11902,7 +11902,7 @@ body.page-visiting-visa-program {
     z-index: 2;
 }
 
-.page-visiting-visa-program .investorVisaApplyTremsLeft {
+.page-visiting-investor-program .investorVisaApplyTremsLeft {
     z-index: 1;
     position: absolute;
     right: -57px;
@@ -11918,13 +11918,13 @@ body.page-visiting-visa-program {
     justify-content: end;
 }
 
-.page-visiting-visa-program .investorVisaApplyTremsLeft img {
+.page-visiting-investor-program .investorVisaApplyTremsLeft img {
     width: 100%;
 
     object-fit: cover;
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems .investorVisaTitle {
+.page-visiting-investor-program .investorVisaApplyTrems .investorVisaTitle {
 
     text-align: center;
     margin: auto;
@@ -11935,7 +11935,7 @@ body.page-visiting-visa-program {
     padding-left: 40px;
 }
 
-.page-visiting-visa-program .investorAniBg {
+.page-visiting-investor-program .investorAniBg {
     max-width: 543px;
     margin: auto;
     width: 100%;
@@ -11944,7 +11944,7 @@ body.page-visiting-visa-program {
     display: none;
 }
 
-.page-visiting-visa-program .circleSrcImg {
+.page-visiting-investor-program .circleSrcImg {
     position: absolute;
     width: 350px;
     height: 350px;
@@ -11959,7 +11959,7 @@ body.page-visiting-visa-program {
     z-index: 1;
 }
 
-.page-visiting-visa-program .shapAniImage {
+.page-visiting-investor-program .shapAniImage {
     animation: round-01 7s linear infinite;
 }
 
@@ -11991,16 +11991,16 @@ body.page-visiting-visa-program {
     }
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems .tremsItemPoints {
+.page-visiting-investor-program .investorVisaApplyTrems .tremsItemPoints {
     background-color: transparent;
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems .tremsItemPoints p {
+.page-visiting-investor-program .investorVisaApplyTrems .tremsItemPoints p {
     color: #fff;
 
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems .tremsItemPoints img {
+.page-visiting-investor-program .investorVisaApplyTrems .tremsItemPoints img {
 
     width: 70px;
     height: 70px;
@@ -12018,40 +12018,40 @@ body.page-visiting-visa-program {
     transform: scale(1) rotateY(0deg);
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems .tremsItemPoints:hover img {
+.page-visiting-investor-program .investorVisaApplyTrems .tremsItemPoints:hover img {
     webkit-transform: scale(1) rotateY(360deg);
     transform: scale(1) rotateY(360deg);
 
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems ul {
+.page-visiting-investor-program .investorVisaApplyTrems ul {
     list-style: none;
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems ul li {
+.page-visiting-investor-program .investorVisaApplyTrems ul li {
     font-size: 20px;
     margin-bottom: 30px;
     line-height: 29px;
 }
 
-.page-visiting-visa-program .investorVisaApplyTrems h4 {
+.page-visiting-investor-program .investorVisaApplyTrems h4 {
     font-size: 24px;
     color: #000;
     margin-bottom: 40px;
 }
 
-.page-visiting-visa-program .tremsWrapper {
+.page-visiting-investor-program .tremsWrapper {
     padding: 0 40px;
     position: relative;
     z-index: 2;
 }
 
-.page-visiting-visa-program .tremsWrapperItemRow {
+.page-visiting-investor-program .tremsWrapperItemRow {
 
     justify-content: space-evenly;
 }
 
-.page-visiting-visa-program .tremsWrapperItem p {
+.page-visiting-investor-program .tremsWrapperItem p {
     font-size: 20px;
     margin-bottom: 0;
     display: flex;
@@ -12063,7 +12063,7 @@ body.page-visiting-visa-program {
 }
 
 
-.page-visiting-visa-program .tremsItemPoints {
+.page-visiting-investor-program .tremsItemPoints {
     border-radius: 5px;
     height: 100%;
     min-height: auto;
@@ -12075,7 +12075,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .tremsItemPoints::after {
+.page-visiting-investor-program .tremsItemPoints::after {
     position: absolute;
     bottom: 10px;
     width: 84%;
@@ -12085,7 +12085,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .conditionCenterImg {
+.page-visiting-investor-program .conditionCenterImg {
     max-width: 575px;
     width: 100%;
     margin: auto;
@@ -12097,17 +12097,17 @@ body.page-visiting-visa-program {
     margin-top: 24px;
 }
 
-.page-visiting-visa-program .tremsItemPoints img {
+.page-visiting-investor-program .tremsItemPoints img {
     width: auto;
     height: 35px;
     margin-left: 35px;
 }
 
-.page-visiting-visa-program .terms-mb {
+.page-visiting-investor-program .terms-mb {
     margin-bottom: 0px;
 }
 
-.page-visiting-visa-program .TermsFollowing {
+.page-visiting-investor-program .TermsFollowing {
     position: relative;
     overflow: hidden;
     background-image: url(../img/follow-bg2.jpg);
@@ -12116,7 +12116,7 @@ body.page-visiting-visa-program {
     background-attachment: fixed;
 }
 
-.page-visiting-visa-program .TermsFollowing::after {
+.page-visiting-investor-program .TermsFollowing::after {
     background-color: #000;
     content: '';
     width: 100%;
@@ -12130,7 +12130,7 @@ body.page-visiting-visa-program {
     background-position: center;
 }
 
-.page-visiting-visa-program .TermsFollowing .investorVisaTitle {
+.page-visiting-investor-program .TermsFollowing .investorVisaTitle {
     text-align: center;
     width: 100%;
     margin: auto;
@@ -12138,11 +12138,11 @@ body.page-visiting-visa-program {
     z-index: 1;
 }
 
-.page-visiting-visa-program .TermsFollowing .investorVisaTitle h2 {
+.page-visiting-investor-program .TermsFollowing .investorVisaTitle h2 {
     color: #fff;
 }
 
-.page-visiting-visa-program .TermsFollowing .tremsItemPoints {
+.page-visiting-investor-program .TermsFollowing .tremsItemPoints {
     min-height: 250px;
     background-color: #fff;
     text-align: right;
@@ -12154,12 +12154,12 @@ body.page-visiting-visa-program {
     transition: 0.2s all linear;
 }
 
-.page-visiting-visa-program .TermsFollowing .tremsWrapperItem p {
+.page-visiting-investor-program .TermsFollowing .tremsWrapperItem p {
     min-height: 60px;
     margin-top: 10px;
 }
 
-.page-visiting-visa-program .TermsFollowing .tremsWrapperItem img {
+.page-visiting-investor-program .TermsFollowing .tremsWrapperItem img {
     height: 60px;
     width: 60px;
     background: #eff0f2;
@@ -12169,7 +12169,7 @@ body.page-visiting-visa-program {
     transition: 0.2s all linear;
 }
 
-.page-visiting-visa-program .followTremsBg {
+.page-visiting-investor-program .followTremsBg {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -12191,27 +12191,27 @@ body.page-visiting-visa-program {
     z-index: -1;
 }
 
-.page-visiting-visa-program .TermsFollowing .tremsItemPoints:hover .followTremsBg {
+.page-visiting-investor-program .TermsFollowing .tremsItemPoints:hover .followTremsBg {
     transform: scaleY(1);
 }
 
-.page-visiting-visa-program .TermsFollowing .tremsItemPoints:hover {
+.page-visiting-investor-program .TermsFollowing .tremsItemPoints:hover {
     background-color: #216674;
     transition: 0.2s all linear;
 }
 
-.page-visiting-visa-program .TermsFollowing .tremsItemPoints:hover .tremsWrapperItem img {
+.page-visiting-investor-program .TermsFollowing .tremsItemPoints:hover .tremsWrapperItem img {
     background-color: #fff;
     transition: 0.2s all linear;
 }
 
-.page-visiting-visa-program .TermsFollowing .tremsItemPoints:hover p {
+.page-visiting-investor-program .TermsFollowing .tremsItemPoints:hover p {
     color: #fff;
     transition: 0.2s all linear;
 }
 
 
-.page-visiting-visa-program .runningAnimation img {
+.page-visiting-investor-program .runningAnimation img {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -12297,18 +12297,18 @@ body.page-visiting-visa-program {
     }
 }
 
-.page-visiting-visa-program .investorVisaApply.animate-active .runningAnimation img {
+.page-visiting-investor-program .investorVisaApply.animate-active .runningAnimation img {
     transform: translateX(904px);
     transition: 3s all linear;
     transition-delay: 0.2s;
 }
 
 
-.page-visiting-visa-program .broadcast {
+.page-visiting-investor-program .broadcast {
     position: relative;
 }
 
-.page-visiting-visa-program .InvVisaProSection {
+.page-visiting-investor-program .InvVisaProSection {
     padding: 100px 0;
     position: relative;
     z-index: 1;
@@ -12319,7 +12319,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .InvVisaProSection::after {
+.page-visiting-investor-program .InvVisaProSection::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -12329,13 +12329,13 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .InvVisaProSection .investorVisaTitle {
+.page-visiting-investor-program .InvVisaProSection .investorVisaTitle {
     width: 100%;
     margin: auto;
     position: relative;
     z-index: 1;
 }
-.page-visiting-visa-program .investorVisaTitle h2 {
+.page-visiting-investor-program .investorVisaTitle h2 {
     font-size: 45px;
     line-height: 59px;
     color: #fff;
@@ -12343,22 +12343,22 @@ body.page-visiting-visa-program {
     text-transform: uppercase;
 }
 
-.page-visiting-visa-program .InvVisaProSection .investorVisaTitle h2 {
+.page-visiting-investor-program .InvVisaProSection .investorVisaTitle h2 {
     color: #fff;
 }
 
-.page-visiting-visa-program .fix-scroll {
+.page-visiting-investor-program .fix-scroll {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
 }
 
-.page-visiting-visa-program .broadcast .broadcast__inner::-webkit-scrollbar {
+.page-visiting-investor-program .broadcast .broadcast__inner::-webkit-scrollbar {
     width: 0 !important;
     display: none;
 }
 
-.page-visiting-visa-program .broadcast .broadcast__inner {
+.page-visiting-investor-program .broadcast .broadcast__inner {
     padding: 30px 80px;
     background: linear-gradient(to left bottom, #064774, #006f95, #0096a1, #16bc98, #90dd86);
     background-repeat: no-repeat;
@@ -12381,41 +12381,41 @@ body.page-visiting-visa-program {
     margin: auto;
 }
 
-.page-visiting-visa-program .broadcast .broadcast__inner .row:first-child {
+.page-visiting-investor-program .broadcast .broadcast__inner .row:first-child {
     width: 100%;
 }
 
-.page-visiting-visa-program .items-gap-two {
+.page-visiting-investor-program .items-gap-two {
     row-gap: 60px;
 }
 
-.page-visiting-visa-program .section__content {
+.page-visiting-investor-program .section__content {
     margin-top: 0px;
     display: flex;
     align-items: center;
 
 }
 
-.page-visiting-visa-program .home-dark .h2,
-.page-visiting-visa-program .home-dark p {
+.page-visiting-investor-program .home-dark .h2,
+.page-visiting-investor-program .home-dark p {
     color: #fff;
 }
 
-.page-visiting-visa-program .section__content .paragraph {
+.page-visiting-investor-program .section__content .paragraph {
     margin-top: 30px;
 }
 
-.page-visiting-visa-program .broadcast .broadcast__inner .paragraph {
+.page-visiting-investor-program .broadcast .broadcast__inner .paragraph {
     margin-top: 0px;
     width: 80%;
 }
 
-.page-visiting-visa-program .paragraph p:last-of-type {
+.page-visiting-investor-program .paragraph p:last-of-type {
     margin-bottom: 0;
 }
 
-.page-visiting-visa-program .breadcrumb,
-.page-visiting-visa-program .section__content .paragraph p {
+.page-visiting-investor-program .breadcrumb,
+.page-visiting-investor-program .section__content .paragraph p {
     margin-bottom: 0;
     font-size: 20px;
     width: 100%;
@@ -12423,22 +12423,22 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .broadcast__thumb img {
+.page-visiting-investor-program .broadcast__thumb img {
     width: 320px;
     height: 250px;
     object-fit: contain;
 }
 
-.page-visiting-visa-program .section__content-cta,
-.page-visiting-visa-program .section__cta {
+.page-visiting-investor-program .section__content-cta,
+.page-visiting-investor-program .section__cta {
     margin-top: 65px;
 }
 
-.page-visiting-visa-program .broadcast .broadcast__inner .section__content-cta {
+.page-visiting-investor-program .broadcast .broadcast__inner .section__content-cta {
     margin-top: 55px;
 }
 
-.page-visiting-visa-program .InvVisaProSectionIcon {
+.page-visiting-investor-program .InvVisaProSectionIcon {
     background: #fff;
     border-radius: 100%;
     width: 80px;
@@ -12447,7 +12447,7 @@ body.page-visiting-visa-program {
     overflow: unset;
 }
 
-.page-visiting-visa-program .broadcast .anime img {
+.page-visiting-investor-program .broadcast .anime img {
     position: absolute;
     z-index: -1;
     animation: anime 5s linear infinite;
@@ -12481,18 +12481,18 @@ body.page-visiting-visa-program {
     }
 }
 
-.page-visiting-visa-program .broadcast .anime .anime-one {
+.page-visiting-investor-program .broadcast .anime .anime-one {
     top: 24px;
     left: 24px;
 }
 
-.page-visiting-visa-program .broadcast .anime .anime-two {
+.page-visiting-investor-program .broadcast .anime .anime-two {
     bottom: 24px;
     right: 24px;
     animation-delay: .6s
 }
 
-.page-visiting-visa-program .invFollowCount {
+.page-visiting-investor-program .invFollowCount {
     font-weight: bold;
     color: #1c5b8f;
     font-size: 25px;
@@ -12508,7 +12508,7 @@ body.page-visiting-visa-program {
 }
 
 /*Following terms*/
-.page-visiting-visa-program .trmsFollowingSection {
+.page-visiting-investor-program .trmsFollowingSection {
     width: 100%;
     min-height: auto;
     background-image: url(../img/sectionBg6.jpg);
@@ -12518,7 +12518,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .trmsFollowingSection::after {
+.page-visiting-investor-program .trmsFollowingSection::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -12533,12 +12533,12 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .trmsFollowingSectionWrap {
+.page-visiting-investor-program .trmsFollowingSectionWrap {
     position: relative;
     z-index: 2;
 }
 
-.page-visiting-visa-program .trmsFollowingSection .investorVisaTitle {
+.page-visiting-investor-program .trmsFollowingSection .investorVisaTitle {
     text-align: center;
     padding-left: 40px;
     display: flex;
@@ -12547,19 +12547,19 @@ body.page-visiting-visa-program {
     height: 100%;
 }
 
-.page-visiting-visa-program .followTermsList {
+.page-visiting-investor-program .followTermsList {
     width: 70%;
     margin: auto;
     margin-top: 40px;
 }
 
-.page-visiting-visa-program .followTermsList ul {
+.page-visiting-investor-program .followTermsList ul {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.page-visiting-visa-program .followTermsList ul li span {
+.page-visiting-investor-program .followTermsList ul li span {
     -webkit-text-stroke: 1px #fff !important;
     display: inline-block;
     margin-left: 20px;
@@ -12568,7 +12568,7 @@ body.page-visiting-visa-program {
     color: transparent;
 }
 
-.page-visiting-visa-program .followTermsList ul li {
+.page-visiting-investor-program .followTermsList ul li {
     font-size: 20px;
     line-height: 29px;
     color: #fff;
@@ -12589,7 +12589,7 @@ body.page-visiting-visa-program {
     text-align: right;
 }
 
-.page-visiting-visa-program .followTermsList ul li:hover {
+.page-visiting-investor-program .followTermsList ul li:hover {
     transition: 0.2s all linear;
     top: -10px;
     box-shadow: unset;
@@ -12599,7 +12599,7 @@ body.page-visiting-visa-program {
 
 
 /*Enquiry form*/
-.page-visiting-visa-program .invVisaApplyEnquiry {
+.page-visiting-investor-program .invVisaApplyEnquiry {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12612,7 +12612,7 @@ body.page-visiting-visa-program {
     overflow: hidden;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiry::after {
+.page-visiting-investor-program .invVisaApplyEnquiry::after {
     content: '';
     position: absolute;
     left: 0;
@@ -12634,12 +12634,12 @@ body.page-visiting-visa-program {
     }
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiry .container-fluid {
+.page-visiting-investor-program .invVisaApplyEnquiry .container-fluid {
     position: relative;
     z-index: 1;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
     background-color: #fff;
     box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 1%);
     padding: 30px 15px;
@@ -12649,11 +12649,11 @@ body.page-visiting-visa-program {
     margin: auto;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea {
     min-height: 120px;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryTitle {
+.page-visiting-investor-program .invVisaApplyEnquiryTitle {
     font-size: 45px;
     font-weight: 600;
     letter-spacing: 2.52px;
@@ -12666,12 +12666,12 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap .form-group {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap .form-group {
     position: relative;
     margin-bottom: 0px;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap label {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap label {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -12688,32 +12688,32 @@ body.page-visiting-visa-program {
 }
 
 .invVisaApplyEnquiryFromWrap input.form-control:focus+label,
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap input.form-control.has-value+label {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap input.form-control.has-value+label {
     top: -5px;
     font-size: 14px;
     color: #074775;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control+label {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control+label {
     top: 25px
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label {
     top: 15px;
     font-size: 14px;
     color: #074775;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label {
     top: 15px;
     color: #074775;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap input.form-control:focus::-webkit-input-placeholder {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap input.form-control:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap input.form-control:focus {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap input.form-control:focus {
     outline: none;
     box-shadow: unset;
     border: unset;
@@ -12721,14 +12721,14 @@ body.page-visiting-visa-program {
     transition: all 500ms ease;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus {
     outline: none;
     box-shadow: unset;
     border: 1px solid #074775;
     transition: all 500ms ease;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap input.form-control {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap input.form-control {
     border: unset;
     border-radius: unset;
     height: 47px;
@@ -12738,7 +12738,7 @@ body.page-visiting-visa-program {
     transition: all 500ms ease;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control {
     border: 1px solid #c7c7c794;
     border-radius: unset;
     padding-top: 30px;
@@ -12747,14 +12747,14 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap .form-check {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap .form-check {
     padding: 15px 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap .form-check input {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap .form-check input {
     position: relative;
     left: -11px;
     width: 22px;
@@ -12763,7 +12763,7 @@ body.page-visiting-visa-program {
     display: none;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap .form-check label {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap .form-check label {
 
     font-weight: normal;
     font-size: 17px;
@@ -12777,7 +12777,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap .form-check label:before {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap .form-check label:before {
     content: '';
     -webkit-appearance: none;
     background-color: transparent;
@@ -12791,7 +12791,7 @@ body.page-visiting-visa-program {
     margin-right: 5px;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap .form-check input:checked+label:after {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap .form-check input:checked+label:after {
     content: '';
     display: block;
     position: absolute;
@@ -12804,7 +12804,7 @@ body.page-visiting-visa-program {
     transform: rotate(45deg);
 }
 
-.page-visiting-visa-program .enquiryFormBtn {
+.page-visiting-investor-program .enquiryFormBtn {
     height: 50px;
     width: 195px;
     display: flex;
@@ -12817,25 +12817,25 @@ body.page-visiting-visa-program {
     margin: auto;
 }
 
-.page-visiting-visa-program .enquiryFormBtn:focus {
+.page-visiting-investor-program .enquiryFormBtn:focus {
     box-shadow: none;
     outline: none;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromTitle {
+.page-visiting-investor-program .invVisaApplyEnquiryFromTitle {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquirySecTitle {
+.page-visiting-investor-program .invVisaApplyEnquirySecTitle {
     width: 90%;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquirySecTitle .investorVisaTitle {
+.page-visiting-investor-program .invVisaApplyEnquirySecTitle .investorVisaTitle {
     text-align: right;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromTitle h4 {
+.page-visiting-investor-program .invVisaApplyEnquiryFromTitle h4 {
     color: #282828;
     font-weight: bold;
     font-size: 29px;
@@ -12843,14 +12843,14 @@ body.page-visiting-visa-program {
     margin-bottom: 20px;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromTitle p {
+.page-visiting-investor-program .invVisaApplyEnquiryFromTitle p {
     font-weight: normal;
     font-size: 17px;
     line-height: 30px;
     color: #707070;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquirySecTitle h2 {
+.page-visiting-investor-program .invVisaApplyEnquirySecTitle h2 {
     color: #fff;
     font-size: 45px;
     line-height: 59px;
@@ -12858,7 +12858,7 @@ body.page-visiting-visa-program {
     text-transform: uppercase;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquirySecTitle h3 {
+.page-visiting-investor-program .invVisaApplyEnquirySecTitle h3 {
     margin-bottom: 15px;
     font-size: 29px;
     font-weight: bold;
@@ -12866,7 +12866,7 @@ body.page-visiting-visa-program {
     color: #fff;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquirySecTitle p {
+.page-visiting-investor-program .invVisaApplyEnquirySecTitle p {
     font-weight: normal;
     font-size: 20px;
     line-height: 30px;
@@ -12874,7 +12874,7 @@ body.page-visiting-visa-program {
     text-align: justify;
 }
 
-.page-visiting-visa-program .captchaImg {
+.page-visiting-investor-program .captchaImg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12889,8 +12889,8 @@ body.page-visiting-visa-program {
 /*Visa type*/
 
 /**********************************************************************************/
-.page-visiting-visa-program .select2-container--default .select2-selection--single,
-.page-visiting-visa-program .select2-container--default.select2-container--disabled .select2-selection--single {
+.page-visiting-investor-program .select2-container--default .select2-selection--single,
+.page-visiting-investor-program .select2-container--default.select2-container--disabled .select2-selection--single {
     min-height: 55px;
     width: 100%;
     margin: auto;
@@ -12907,7 +12907,7 @@ body.page-visiting-visa-program {
     border: unset !important;
 }
 
-.page-visiting-visa-program .select2-container--default .select2-selection--single .select2-selection__arrow {
+.page-visiting-investor-program .select2-container--default .select2-selection--single .select2-selection__arrow {
     top: 8px !important;
     right: unset !important;
     left: 20px !important;
@@ -12919,52 +12919,52 @@ body.page-visiting-visa-program {
     background-repeat: no-repeat;
 }
 
-.page-visiting-visa-program .select2-container--default .select2-selection--single .select2-selection__arrow b {
+.page-visiting-investor-program .select2-container--default .select2-selection--single .select2-selection__arrow b {
     border-color: unset !important;
     border-width: 0 !important;
     left: -24% !important;
 }
 
-.page-visiting-visa-program .select2-container--default.select2-container--disabled {
+.page-visiting-investor-program .select2-container--default.select2-container--disabled {
     opacity: 0.5;
 }
 
-.page-visiting-visa-program .select2-search--dropdown .select2-search__field {
+.page-visiting-investor-program .select2-search--dropdown .select2-search__field {
     outline: none;
     border-radius: 15px;
     padding-right: 15px !important;
 }
 
-.page-visiting-visa-program .select2-dropdown {
+.page-visiting-investor-program .select2-dropdown {
     border-radius: 15px !important;
     margin-top: 9px;
     padding: 5px;
     border: unset;
 }
 
-.page-visiting-visa-program .select2-container--default .select2-results__option--highlighted[aria-selected],
-.page-visiting-visa-program .select2-container--default .select2-results__option[aria-selected=true] {
+.page-visiting-investor-program .select2-container--default .select2-results__option--highlighted[aria-selected],
+.page-visiting-investor-program .select2-container--default .select2-results__option[aria-selected=true] {
     background-color: #E3F2FD !important;
     color: #000 !important;
     font-weight: 500 !important;
 }
 
-.page-visiting-visa-program .select2-container {
+.page-visiting-investor-program .select2-container {
     width: 100% !important;
 }
 
-.page-visiting-visa-program .select2-results__options {
+.page-visiting-investor-program .select2-results__options {
     text-align: right;
 }
 
 /**********************************************************************************/
 
-.page-visiting-visa-program .investorVisaTypeContent {
+.page-visiting-investor-program .investorVisaTypeContent {
     width: 80%;
     margin: auto;
 }
 
-.page-visiting-visa-program .dd .ddTitle .ddTitleText {
+.page-visiting-investor-program .dd .ddTitle .ddTitleText {
     padding: 5px 5px 5px 20px;
     text-align: right;
     white-space: nowrap;
@@ -12972,21 +12972,21 @@ body.page-visiting-visa-program {
     text-overflow: ellipsis;
 }
 
-.page-visiting-visa-program .dd .ddTitle .ddTitleText img {
+.page-visiting-investor-program .dd .ddTitle .ddTitleText img {
     padding-left: 5px;
     height: 20px;
     width: 40px;
     object-fit: contain;
 }
 
-.page-visiting-visa-program .dd .ddChild li img {
+.page-visiting-investor-program .dd .ddChild li img {
     padding: 0 0px 0 6px;
     height: 20px;
     width: 40px;
     object-fit: contain;
 }
 
-.page-visiting-visa-program .dd .ddChild {
+.page-visiting-investor-program .dd .ddChild {
     top: 60px !important;
     border: 1px solid #fff;
     background-color: #fff;
@@ -12996,7 +12996,7 @@ body.page-visiting-visa-program {
     padding: 15px;
 }
 
-.page-visiting-visa-program .ddcommon .ddArrow {
+.page-visiting-investor-program .ddcommon .ddArrow {
     position: absolute;
     top: 0;
     left: 11px;
@@ -13005,7 +13005,7 @@ body.page-visiting-visa-program {
     display: inline-block;
 }
 
-.page-visiting-visa-program #investorVisaTypeSec {
+.page-visiting-investor-program #investorVisaTypeSec {
     min-height: 400px;
     display: flex;
     align-items: center;
@@ -13013,7 +13013,7 @@ body.page-visiting-visa-program {
     background-image: url(../img/wave-bg.png);
 }
 
-.page-visiting-visa-program .visatypeLabel {
+.page-visiting-investor-program .visatypeLabel {
     font-size: 18px;
     color: #fff;
     margin: 20px 0;
@@ -13022,15 +13022,15 @@ body.page-visiting-visa-program {
     text-align: right;
 }
 
-.page-visiting-visa-program .investorVisaTypeItem {
+.page-visiting-investor-program .investorVisaTypeItem {
     margin-bottom: 30px;
 }
 
-.page-visiting-visa-program select#visaCountry:focus-visible {
+.page-visiting-investor-program select#visaCountry:focus-visible {
     outline: none;
 }
 
-.page-visiting-visa-program .visatypeLabelSelect {
+.page-visiting-investor-program .visatypeLabelSelect {
     min-height: 55px;
     width: 100%;
     margin: auto;
@@ -13045,7 +13045,7 @@ body.page-visiting-visa-program {
     background-color: #fff;
 }
 
-.page-visiting-visa-program .visatypeLabelSelect {
+.page-visiting-investor-program .visatypeLabelSelect {
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;
@@ -13054,37 +13054,37 @@ body.page-visiting-visa-program {
 }
 
 
-.page-visiting-visa-program .visatypeLabelSelect::focus,
-.page-visiting-visa-program .visatypeLabelSelect::focus-visible {
+.page-visiting-investor-program .visatypeLabelSelect::focus,
+.page-visiting-investor-program .visatypeLabelSelect::focus-visible {
     outline: unset !important;
     border: unset !important;
 
 }
 
-.page-visiting-visa-program .visatypeLabelSelect::target {
+.page-visiting-investor-program .visatypeLabelSelect::target {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-.page-visiting-visa-program select#visaCountry option {
+.page-visiting-investor-program select#visaCountry option {
     color: black;
     background-color: #f9f9f9
 }
 
-.page-visiting-visa-program select#visaCountry option:first-child {
+.page-visiting-investor-program select#visaCountry option:first-child {
     color: #868686;
 }
 
-.page-visiting-visa-program select.decorated option:hover {
+.page-visiting-investor-program select.decorated option:hover {
     box-shadow: 0 0 10px 100px #1882A8 inset;
 }
 
-.page-visiting-visa-program .visaTypeSubmit:focus {
+.page-visiting-investor-program .visaTypeSubmit:focus {
     outline: none;
     box-shadow: unset;
 }
 
-.page-visiting-visa-program .investorVisaStatus {
+.page-visiting-investor-program .investorVisaStatus {
 
     padding: 30px 15px;
     margin-top: 80px;
@@ -13104,7 +13104,7 @@ body.page-visiting-visa-program {
     justify-content: center;
 }
 
-.page-visiting-visa-program .investorVisaStatus::after {
+.page-visiting-investor-program .investorVisaStatus::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -13115,12 +13115,12 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .eligibleStatusInfo {
+.page-visiting-investor-program .eligibleStatusInfo {
     position: relative;
     z-index: 1;
 }
 
-.page-visiting-visa-program .investorVisaStatus h3 {
+.page-visiting-investor-program .investorVisaStatus h3 {
     font-size: 30px;
     font-weight: 500;
     text-transform: inherit;
@@ -13128,7 +13128,7 @@ body.page-visiting-visa-program {
     color: #fff;
 }
 
-.page-visiting-visa-program .investorVisaStatus h3 span {
+.page-visiting-investor-program .investorVisaStatus h3 span {
     font-weight: bold;
     display: inline-block;
     position: relative;
@@ -13138,7 +13138,7 @@ body.page-visiting-visa-program {
 
 }
 
-.page-visiting-visa-program .visaTypeApplyBtn {
+.page-visiting-investor-program .visaTypeApplyBtn {
       width: 184px;
     padding: 10px 15px;
     border-radius: 50px;
@@ -13157,11 +13157,11 @@ body.page-visiting-visa-program {
     position: relative;
     overflow: hidden;
   }
-  .page-visiting-visa-program .visaTypeApplyBtn span{
+  .page-visiting-investor-program .visaTypeApplyBtn span{
     position: relative;
     z-index: 1;
   }
-  .page-visiting-visa-program .visaTypeApplyBtn::after {
+  .page-visiting-investor-program .visaTypeApplyBtn::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -13172,19 +13172,19 @@ body.page-visiting-visa-program {
     transition: all .3s ease-in-out;
 
   }
-  .page-visiting-visa-program .visaTypeApplyBtn:hover {
+  .page-visiting-investor-program .visaTypeApplyBtn:hover {
     background-color: transparent;
     transition: all .3s ease-in-out;
     color: #fff !important;
 
   }
 
-  .page-visiting-visa-program .visaTypeApplyBtn:hover:after {
+  .page-visiting-investor-program .visaTypeApplyBtn:hover:after {
     height: 100%;
     transition: all .3s ease-in-out;
   }
 
-.page-visiting-visa-program .invVisaThemeBtn {
+.page-visiting-investor-program .invVisaThemeBtn {
     width: 150px;
     padding: 15px;
     border-radius: 50px;
@@ -13199,7 +13199,7 @@ body.page-visiting-visa-program {
     text-align: center;
 }
 
-.page-visiting-visa-program .visaTypeApplyBtn:hover {
+.page-visiting-investor-program .visaTypeApplyBtn:hover {
     box-shadow: unset;
     transition: 0.3s all linear;
 }
@@ -13208,260 +13208,260 @@ body.page-visiting-visa-program {
 
 
 @media(min-width:1401px) and (max-width:1600px) {
-    .page-visiting-visa-program .investorBannerContent {
+    .page-visiting-investor-program .investorBannerContent {
         width: 80%;
         margin-top: 150px;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft .investorVisaTitle h1 {
+    .page-visiting-investor-program .invVisaAboutLeft .investorVisaTitle h1 {
         font-size: 45px;
         line-height: 59px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-1 {
+    .page-visiting-investor-program .investorBanner .shape-1 {
         top: -680px;
         left: -210px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-2 {
+    .page-visiting-investor-program .investorBanner .shape-2 {
         top: -500px;
         left: -56px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-3 {
+    .page-visiting-investor-program .investorBanner .shape-3 {
         bottom: -360px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-4 {
+    .page-visiting-investor-program .investorBanner .shape-4 {
         bottom: -817px;
         right: -209px;
     }
 
-    .page-visiting-visa-program .broadcast .broadcast__inner {
+    .page-visiting-investor-program .broadcast .broadcast__inner {
         width: 60%;
         margin: auto;
     }
 }
 
 @media(min-width:1401px) and (max-width:1600px) {
-    .page-visiting-visa-program .followTermsList {
+    .page-visiting-investor-program .followTermsList {
         width: 85%;
     }
 
-    .page-visiting-visa-program .investorVisaVideoSec {
+    .page-visiting-investor-program .investorVisaVideoSec {
         width: 415px;
         height: 580px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry::after {
+    .page-visiting-investor-program .invVisaApplyEnquiry::after {
         animation: scroll-anim 150s linear infinite;
     }
 
-    .page-visiting-visa-program .tremsWrapper {
+    .page-visiting-investor-program .tremsWrapper {
         padding: 0 20px;
     }
 }
 
 @media(min-width:1200px) and (max-width:1400px) {
-    .page-visiting-visa-program .followTermsList {
+    .page-visiting-investor-program .followTermsList {
         width: 85%;
     }
 
-    .page-visiting-visa-program .followTermsList ul li {
+    .page-visiting-investor-program .followTermsList ul li {
         font-size: 16px;
     }
 
-    .page-visiting-visa-program .investorBanner.invVisa-ptb {
+    .page-visiting-investor-program .investorBanner.invVisa-ptb {
         padding-bottom: 40px;
     }
 
-    .page-visiting-visa-program .investorBannerContent {
+    .page-visiting-investor-program .investorBannerContent {
         width: 72%;
         margin-top: 118px;
     }
 
-    .page-visiting-visa-program .investorBannerContent h2 {
+    .page-visiting-investor-program .investorBannerContent h2 {
         font-size: 30px;
         line-height: 43px;
     }
 
-    .page-visiting-visa-program .investorBannerContent .descriptionBanner p {
+    .page-visiting-investor-program .investorBannerContent .descriptionBanner p {
         margin-top: 29px;
         font-size: 16px;
         margin-top: 25px;
         line-height: 23px;
     }
 
-    .page-visiting-visa-program .tremsWrapperItem p {
+    .page-visiting-investor-program .tremsWrapperItem p {
         font-size: 16px;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft {
+    .page-visiting-investor-program .invVisaAboutLeft {
         padding: 50px 65px 50px 40px;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft .investorVisaTitle h1 {
+    .page-visiting-investor-program .invVisaAboutLeft .investorVisaTitle h1 {
         font-size: 35px;
         line-height: 49px;
     }
 
-    .page-visiting-visa-program .invVisaAboutRightImg {
+    .page-visiting-investor-program .invVisaAboutRightImg {
         width: 450px;
     }
 
-    .page-visiting-visa-program .invVisaAboutLgImg {
+    .page-visiting-investor-program .invVisaAboutLgImg {
         height: 650px;
     }
 
-    .page-visiting-visa-program .invVisaAboutRight {
+    .page-visiting-investor-program .invVisaAboutRight {
         min-height: 650px;
     }
 
 
-    .page-visiting-visa-program .shapAniImage {
+    .page-visiting-investor-program .shapAniImage {
         width: 100%;
     }
 
-    .page-visiting-visa-program .investorVisaTitle h1 {
+    .page-visiting-investor-program .investorVisaTitle h1 {
         font-size: 35px;
         line-height: 49px;
     }
 
-    .page-visiting-visa-program .broadcast .broadcast__inner {
+    .page-visiting-investor-program .broadcast .broadcast__inner {
         width: 60%;
         margin: auto;
         min-height: 150px;
     }
 
-    .page-visiting-visa-program .breadcrumb,
-    .page-visiting-visa-program .section__content .paragraph p {
+    .page-visiting-investor-program .breadcrumb,
+    .page-visiting-investor-program .section__content .paragraph p {
         font-size: 18px;
         line-height: 29px;
     }
 
-    .page-visiting-visa-program .broadcast .anime img {
+    .page-visiting-investor-program .broadcast .anime img {
         height: 20px;
         width: 100px;
     }
 
-    .page-visiting-visa-program .broadcast .broadcast__inner:nth-child(odd) .section__content {
+    .page-visiting-investor-program .broadcast .broadcast__inner:nth-child(odd) .section__content {
         padding-left: 0;
     }
 
-    .page-visiting-visa-program .broadcast__thumb img {
+    .page-visiting-investor-program .broadcast__thumb img {
         width: 100%;
     }
 
-    .page-visiting-visa-program .invFollowCount {
+    .page-visiting-investor-program .invFollowCount {
         width: 50px;
         height: 50px;
         margin-right: 15px;
         font-size: 25px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-1 {
+    .page-visiting-investor-program .investorBanner .shape-1 {
         top: -680px;
         left: -210px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-2 {
+    .page-visiting-investor-program .investorBanner .shape-2 {
         top: -500px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-3 {
+    .page-visiting-investor-program .investorBanner .shape-3 {
         bottom: -360px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-4 {
+    .page-visiting-investor-program .investorBanner .shape-4 {
         bottom: -810px;
         right: -209px;
     }
 
-    .page-visiting-visa-program .investorAniBg {
+    .page-visiting-investor-program .investorAniBg {
         max-width: 440px;
     }
 
-    .page-visiting-visa-program .circleSrcImg {
+    .page-visiting-investor-program .circleSrcImg {
         width: 320px;
         height: 320px;
     }
 
-    .page-visiting-visa-program .tremsWrapper {
+    .page-visiting-investor-program .tremsWrapper {
         padding: 0 0px;
     }
 
-    .page-visiting-visa-program .investorVisaAbtContent p {
+    .page-visiting-investor-program .investorVisaAbtContent p {
         font-size: 16px;
         line-height: 25px;
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection ul li img {
+    .page-visiting-investor-program .invVisaAboutBtmSection ul li img {
         height: 80px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry {
+    .page-visiting-investor-program .invVisaApplyEnquiry {
         padding-right: 40px;
         padding-left: 40px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap .form-check label {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap .form-check label {
         font-size: 16px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromTitle h4 {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromTitle h4 {
         font-size: 24px;
     }
 
-    .page-visiting-visa-program .investorVisaVideoSec {
+    .page-visiting-investor-program .investorVisaVideoSec {
         width: 415px;
         height: 580px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry::after {
+    .page-visiting-investor-program .invVisaApplyEnquiry::after {
         animation: scroll-anim 150s linear infinite;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
         width: 100%;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
         padding-top: 25px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquirySecTitle p {
+    .page-visiting-investor-program .invVisaApplyEnquirySecTitle p {
         font-size: 16px;
     }
 
-    .page-visiting-visa-program .tremsItemPoints {
+    .page-visiting-investor-program .tremsItemPoints {
         padding: 0;
         padding-bottom: 15px;
     }
 
-    .page-visiting-visa-program .conditionCenterImg {
+    .page-visiting-investor-program .conditionCenterImg {
         margin-top: 0;
         height: 500px;
 
     }
 
-    .page-visiting-visa-program .tremsItemPoints::after {
+    .page-visiting-investor-program .tremsItemPoints::after {
         width: 75%;
     }
 
-    .page-visiting-visa-program .investorVisaApplyTrems .tremsItemPoints img {
+    .page-visiting-investor-program .investorVisaApplyTrems .tremsItemPoints img {
         width: 65px;
         height: 65px;
     }
 }
 
 @media(min-width:1200px) and (max-width:1330px) {
-    .page-visiting-visa-program .investorVisaApplyBtn {
+    .page-visiting-investor-program .investorVisaApplyBtn {
         max-width: 280px;
         min-height: 54px;
     }
 
-    .page-visiting-visa-program .investorVisaApplyBtn a,
-    .page-visiting-visa-program .visaBannerLoadMore {
+    .page-visiting-investor-program .investorVisaApplyBtn a,
+    .page-visiting-investor-program .visaBannerLoadMore {
         font-size: 16px;
     }
 
@@ -13471,139 +13471,139 @@ body.page-visiting-visa-program {
 @media(min-width:992px) and (max-width:1199px) {
 
 
-    .page-visiting-visa-program .investorBannerContent h2 {
+    .page-visiting-investor-program .investorBannerContent h2 {
         font-size: 30px;
         line-height: 43px;
     }
 
-    .page-visiting-visa-program .investorBannerContent .descriptionBanner p {
+    .page-visiting-investor-program .investorBannerContent .descriptionBanner p {
         line-height: 31px;
     }
 
-    .page-visiting-visa-program .visaBannerLoadMore {
+    .page-visiting-investor-program .visaBannerLoadMore {
         padding: 10px;
         margin-top: 20px;
         font-size: 20px;
     }
 
-    .page-visiting-visa-program .investorBannerContent.active p {
+    .page-visiting-investor-program .investorBannerContent.active p {
         margin-top: 25px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-1 {
+    .page-visiting-investor-program .investorBanner .shape-1 {
         top: -669px;
         left: -256px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-2 {
+    .page-visiting-investor-program .investorBanner .shape-2 {
         left: 33px;
         top: -490px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-4 {
+    .page-visiting-investor-program .investorBanner .shape-4 {
         bottom: -853px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-3 {
+    .page-visiting-investor-program .investorBanner .shape-3 {
         right: -104px;
         bottom: -387px;
     }
 
-    .page-visiting-visa-program .investorBannerContent {
+    .page-visiting-investor-program .investorBannerContent {
         width: 85%;
         margin-top: 140px;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft {
+    .page-visiting-investor-program .invVisaAboutLeft {
         padding: 50px 80px 50px 50px;
     }
 
-    .page-visiting-visa-program .investorVisaAbtContent p {
+    .page-visiting-investor-program .investorVisaAbtContent p {
         line-height: 31px;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft .investorVisaTitle h1 {
+    .page-visiting-investor-program .invVisaAboutLeft .investorVisaTitle h1 {
         font-size: 35px;
         line-height: 49px;
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection ul li img {
+    .page-visiting-investor-program .invVisaAboutBtmSection ul li img {
         height: 65px;
     }
 
-    .page-visiting-visa-program .investorVisaApplyBtn {
+    .page-visiting-investor-program .investorVisaApplyBtn {
         min-height: auto;
     }
 
-    .page-visiting-visa-program .investorVisaApplyBtn a {
+    .page-visiting-investor-program .investorVisaApplyBtn a {
         font-size: 20px;
     }
 
-    .page-visiting-visa-program .investorVisaVideoSec {
+    .page-visiting-investor-program .investorVisaVideoSec {
         width: 400px;
         height: 550px;
     }
 
-    .page-visiting-visa-program .tremsItemPoints {
+    .page-visiting-investor-program .tremsItemPoints {
         padding: 15px 0;
     }
 
-    .page-visiting-visa-program .tremsWrapper {
+    .page-visiting-investor-program .tremsWrapper {
         padding: 0 20px;
     }
 
-    .page-visiting-visa-program .tremsWrapCol:first-child .tremsItemPoints::after {
+    .page-visiting-investor-program .tremsWrapCol:first-child .tremsItemPoints::after {
         left: 0;
         right: unset;
     }
 
-    .page-visiting-visa-program .followTermsList {
+    .page-visiting-investor-program .followTermsList {
         width: 95%;
         margin-top: 0;
     }
 
-    .page-visiting-visa-program .investorVisaTitle h1 {
+    .page-visiting-investor-program .investorVisaTitle h1 {
         font-size: 35px;
         line-height: 49px;
     }
 
-    .page-visiting-visa-program .followTermsList ul li {
+    .page-visiting-investor-program .followTermsList ul li {
         margin-bottom: 40px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry {
+    .page-visiting-investor-program .invVisaApplyEnquiry {
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
         width: 100%;
         padding-top: 25px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry::after {
+    .page-visiting-investor-program .invVisaApplyEnquiry::after {
         animation: scroll-anim 200s linear infinite;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromTitle h4 {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromTitle h4 {
         font-size: 24px;
     }
 }
 
 
 @media(min-width:768px) and (max-width:991px) {
-    .page-visiting-visa-program .investorBannerContent h2 span {
+    .page-visiting-investor-program .investorBannerContent h2 span {
         font-size: 40px;
     }
 
-    .page-visiting-visa-program .invVisa-ptb {
+    .page-visiting-investor-program .invVisa-ptb {
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .page-visiting-visa-program .visaBannerLoadMore {
+    .page-visiting-investor-program .visaBannerLoadMore {
         font-size: 18px;
         font-weight: bold;
         margin-top: 25px;
@@ -13611,46 +13611,46 @@ body.page-visiting-visa-program {
         width: 150px;
     }
 
-    .page-visiting-visa-program .investorBannerContent.active p {
+    .page-visiting-investor-program .investorBannerContent.active p {
         margin-top: 20px;
     }
 
-    .page-visiting-visa-program .investorBannerContent .descriptionBanner p {
+    .page-visiting-investor-program .investorBannerContent .descriptionBanner p {
         font-size: 18px;
         line-height: 29px;
     }
 
-    .page-visiting-visa-program .investorBannerContent h2 {
+    .page-visiting-investor-program .investorBannerContent h2 {
         font-size: 28px;
         line-height: 41px;
         font-weight: bold;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-3 {
+    .page-visiting-investor-program .investorBanner .shape-3 {
         right: -244px;
         bottom: -380px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-1 {
+    .page-visiting-investor-program .investorBanner .shape-1 {
         top: -730px;
         left: -413px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-2,
+    .page-visiting-investor-program .investorBanner .shape-2,
     .investorBanner .shape-4 {
         display: none;
     }
 
-    .page-visiting-visa-program .investorBannerContent {
+    .page-visiting-investor-program .investorBannerContent {
         width: 85%;
         margin-top: 110px;
     }
 
-    .page-visiting-visa-program .invVisaAboutWrap {
+    .page-visiting-investor-program .invVisaAboutWrap {
         display: block;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft {
+    .page-visiting-investor-program .invVisaAboutLeft {
         width: 100%;
         padding: 50px 20px;
         position: relative;
@@ -13659,12 +13659,12 @@ body.page-visiting-visa-program {
 
     }
 
-    .page-visiting-visa-program .investorVisaAbtContent {
+    .page-visiting-investor-program .investorVisaAbtContent {
         width: 80%;
         margin: auto;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft::after {
+    .page-visiting-investor-program .invVisaAboutLeft::after {
         content: '';
         position: absolute;
         top: 0;
@@ -13679,7 +13679,7 @@ body.page-visiting-visa-program {
         opacity: 0.1;
     }
 
-    .page-visiting-visa-program .invVisaAboutRight {
+    .page-visiting-investor-program .invVisaAboutRight {
         width: 100%;
         min-height: auto;
         position: absolute;
@@ -13689,36 +13689,36 @@ body.page-visiting-visa-program {
         display: none;
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection {
+    .page-visiting-investor-program .invVisaAboutBtmSection {
         display: block;
     }
 
-    .page-visiting-visa-program .investorVisaAbout {
+    .page-visiting-investor-program .investorVisaAbout {
         display: block;
 
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft .investorVisaTitle h1 {
+    .page-visiting-investor-program .invVisaAboutLeft .investorVisaTitle h1 {
         font-size: 28px;
         text-align: center;
         margin-bottom: 20px;
         line-height: 41px;
     }
 
-    .page-visiting-visa-program .investorVisaAbtContent p {
+    .page-visiting-investor-program .investorVisaAbtContent p {
         font-size: 18px;
         line-height: 27px;
     }
 
-    .page-visiting-visa-program .invVisaAboutRightImg::after {
+    .page-visiting-investor-program .invVisaAboutRightImg::after {
         display: none;
     }
 
-    .page-visiting-visa-program .invVisaAboutRightImg {
+    .page-visiting-investor-program .invVisaAboutRightImg {
         width: 100%;
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection ul {
+    .page-visiting-investor-program .invVisaAboutBtmSection ul {
         width: 100%;
         padding: 30px 10px;
         justify-content: space-evenly;
@@ -13726,70 +13726,70 @@ body.page-visiting-visa-program {
 
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection ul li img {
+    .page-visiting-investor-program .invVisaAboutBtmSection ul li img {
         height: 56px;
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection ul li {
+    .page-visiting-investor-program .invVisaAboutBtmSection ul li {
         margin: 0;
         margin-right: 10px;
         margin-bottom: 20px;
     }
 
-    .page-visiting-visa-program .investorVisaApply.invVisa-ptb {
+    .page-visiting-investor-program .investorVisaApply.invVisa-ptb {
         padding-top: 0;
     }
 
-    .page-visiting-visa-program .investorVisaApplyBtn a {
+    .page-visiting-investor-program .investorVisaApplyBtn a {
         font-size: 18px;
     }
 
-    .page-visiting-visa-program .investorVisaApplyBtn {
+    .page-visiting-investor-program .investorVisaApplyBtn {
         min-height: auto;
         line-height: 29px;
         padding: 10px 15px;
     }
 
-    .page-visiting-visa-program .investorVisaVideoSec {
+    .page-visiting-investor-program .investorVisaVideoSec {
         width: 330px;
         height: 450px;
     }
 
-    .page-visiting-visa-program .investorVisaApply {
+    .page-visiting-investor-program .investorVisaApply {
         min-height: auto;
     }
 
-    .page-visiting-visa-program .investorVisaApplyTrems .investorVisaTitle {
+    .page-visiting-investor-program .investorVisaApplyTrems .investorVisaTitle {
         padding-left: 0;
     }
 
-    .page-visiting-visa-program .investorVisaTitle h1 {
+    .page-visiting-investor-program .investorVisaTitle h1 {
         font-size: 28px;
         font-weight: bold;
         line-height: 41px;
 
     }
 
-    .page-visiting-visa-program .investorVisaApplyTrems .investorVisaTitle {
+    .page-visiting-investor-program .investorVisaApplyTrems .investorVisaTitle {
         margin-bottom: 20px;
     }
 
-    .page-visiting-visa-program .tremsWrapCol:nth-child(2) {
+    .page-visiting-investor-program .tremsWrapCol:nth-child(2) {
         display: none;
     }
 
-    .page-visiting-visa-program .tremsWrapper {
+    .page-visiting-investor-program .tremsWrapper {
         padding: 0;
     }
 
-    .page-visiting-visa-program .conditionCenterImg {
+    .page-visiting-investor-program .conditionCenterImg {
         height: 200px;
         margin: 0;
         margin: auto;
         margin-bottom: 40px;
     }
 
-    .page-visiting-visa-program .tremsWrapperItem p {
+    .page-visiting-investor-program .tremsWrapperItem p {
         flex-direction: column;
         font-size: 18px;
         line-height: 27px;
@@ -13797,32 +13797,32 @@ body.page-visiting-visa-program {
         text-align: center;
     }
 
-    .page-visiting-visa-program .tremsWrapperItem p img {
+    .page-visiting-investor-program .tremsWrapperItem p img {
         margin-right: 0 !important;
         margin-left: 0 !important;
         margin-bottom: 15px;
     }
 
-    .page-visiting-visa-program .tremsItemPoints {
+    .page-visiting-investor-program .tremsItemPoints {
         padding: 0;
         border-radius: 0;
         flex-direction: column;
     }
 
-    .page-visiting-visa-program .tremsItemPoints::after {
+    .page-visiting-investor-program .tremsItemPoints::after {
         display: none;
     }
 
-    .page-visiting-visa-program .trmsFollowingSection .investorVisaTitle {
+    .page-visiting-investor-program .trmsFollowingSection .investorVisaTitle {
         padding-left: 0;
     }
 
-    .page-visiting-visa-program .followTermsList {
+    .page-visiting-investor-program .followTermsList {
         width: 75%;
         margin-top: 0;
     }
 
-    .page-visiting-visa-program .followTermsList ul li {
+    .page-visiting-investor-program .followTermsList ul li {
         font-size: 18px;
         padding: 15px;
         line-height: 29px;
@@ -13830,121 +13830,121 @@ body.page-visiting-visa-program {
         min-height: 95px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry {
+    .page-visiting-investor-program .invVisaApplyEnquiry {
         padding-left: 5px;
         padding-right: 5px;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquirySecTitle {
+    .page-visiting-investor-program .invVisaApplyEnquirySecTitle {
         text-align: center;
         width: 100%;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquirySecTitle .investorVisaTitle {
+    .page-visiting-investor-program .invVisaApplyEnquirySecTitle .investorVisaTitle {
         text-align: center;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquirySecTitle p {
+    .page-visiting-investor-program .invVisaApplyEnquirySecTitle p {
         font-size: 18px;
         line-height: 29px;
         text-align: center;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
         width: 100%;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromTitle h4 {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromTitle h4 {
         font-size: 28px;
         line-height: 41px;
         font-weight: bold;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
         padding-top: 25px;
     }
 
-    .page-visiting-visa-program .captchaImg {
+    .page-visiting-investor-program .captchaImg {
         width: 250px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry::after {
+    .page-visiting-investor-program .invVisaApplyEnquiry::after {
         animation: scroll-anim 400s linear infinite;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromTitle {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromTitle {
         margin-bottom: 0;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
         margin-top: 40px;
     }
 }
 
 @media(max-width:767px) {
-    .page-visiting-visa-program .investorVisaTypeContent {
+    .page-visiting-investor-program .investorVisaTypeContent {
         width: 100%;
     }
 
-    .page-visiting-visa-program .visatypeLabel {
+    .page-visiting-investor-program .visatypeLabel {
         margin: 10px 0;
         padding-right: 10px;
     }
 
-    .page-visiting-visa-program .investorVisaTypeItem {
+    .page-visiting-investor-program .investorVisaTypeItem {
         margin-bottom: 15px;
     }
 
-    .page-visiting-visa-program .investorVisaStatus {
+    .page-visiting-investor-program .investorVisaStatus {
         background-position: right;
     }
 
-    .page-visiting-visa-program #investorVisaApplySec .col-md-6:nth-child(1) {
+    .page-visiting-investor-program #investorVisaApplySec .col-md-6:nth-child(1) {
         order: 2;
     }
 
-    .page-visiting-visa-program #investorVisaApplySec .col-md-6:nth-child(2) {
+    .page-visiting-investor-program #investorVisaApplySec .col-md-6:nth-child(2) {
         order: 1;
     }
 
-    .page-visiting-visa-program .investorBannerContent h2 span {
+    .page-visiting-investor-program .investorBannerContent h2 span {
         font-size: 35px;
     }
 
-    .page-visiting-visa-program .invVisa-ptb {
+    .page-visiting-investor-program .invVisa-ptb {
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .page-visiting-visa-program .investorBannerContent {
+    .page-visiting-investor-program .investorBannerContent {
         width: 95%;
         margin-top: 80px;
     }
 
-    .page-visiting-visa-program .investorBannerContent h2 {
+    .page-visiting-investor-program .investorBannerContent h2 {
         font-size: 24px;
         line-height: 33px;
         font-weight: bold;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-3 {
+    .page-visiting-investor-program .investorBanner .shape-3 {
         right: -244px;
         bottom: -380px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-1 {
+    .page-visiting-investor-program .investorBanner .shape-1 {
         top: -730px;
         left: -413px;
     }
 
-    .page-visiting-visa-program .investorBanner .shape-2,
-    .page-visiting-visa-program .investorBanner .shape-4 {
+    .page-visiting-investor-program .investorBanner .shape-2,
+    .page-visiting-investor-program .investorBanner .shape-4 {
         display: none;
     }
 
-    .page-visiting-visa-program .visaBannerLoadMore {
+    .page-visiting-investor-program .visaBannerLoadMore {
         font-size: 18px;
         font-weight: bold;
         margin-top: 25px;
@@ -13952,20 +13952,20 @@ body.page-visiting-visa-program {
         width: 150px;
     }
 
-    .page-visiting-visa-program .investorBannerContent.active p {
+    .page-visiting-investor-program .investorBannerContent.active p {
         margin-top: 20px;
     }
 
-    .page-visiting-visa-program .investorBannerContent .descriptionBanner p {
+    .page-visiting-investor-program .investorBannerContent .descriptionBanner p {
         font-size: 18px;
         line-height: 29px;
     }
 
-    .page-visiting-visa-program .invVisaAboutWrap {
+    .page-visiting-investor-program .invVisaAboutWrap {
         display: block;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft {
+    .page-visiting-investor-program .invVisaAboutLeft {
         width: 100%;
         padding: 20px;
         position: relative;
@@ -13974,7 +13974,7 @@ body.page-visiting-visa-program {
 
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft::after {
+    .page-visiting-investor-program .invVisaAboutLeft::after {
         content: '';
         position: absolute;
         top: 0;
@@ -13989,7 +13989,7 @@ body.page-visiting-visa-program {
         opacity: 0.1;
     }
 
-    .page-visiting-visa-program .invVisaAboutRight {
+    .page-visiting-investor-program .invVisaAboutRight {
         width: 100%;
         min-height: auto;
         position: absolute;
@@ -13999,35 +13999,35 @@ body.page-visiting-visa-program {
         display: none;
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection {
+    .page-visiting-investor-program .invVisaAboutBtmSection {
         display: block;
     }
 
-    .page-visiting-visa-program .investorVisaAbout {
+    .page-visiting-investor-program .investorVisaAbout {
         display: block;
     }
 
-    .page-visiting-visa-program .invVisaAboutLeft .investorVisaTitle h1 {
+    .page-visiting-investor-program .invVisaAboutLeft .investorVisaTitle h1 {
         font-size: 24px;
         text-align: center;
         margin-bottom: 20px;
         line-height: 37px;
     }
 
-    .page-visiting-visa-program .investorVisaAbtContent p {
+    .page-visiting-investor-program .investorVisaAbtContent p {
         font-size: 18px;
         line-height: 27px;
     }
 
-    .page-visiting-visa-program .invVisaAboutRightImg::after {
+    .page-visiting-investor-program .invVisaAboutRightImg::after {
         display: none;
     }
 
-    .page-visiting-visa-program .invVisaAboutRightImg {
+    .page-visiting-investor-program .invVisaAboutRightImg {
         width: 100%;
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection ul {
+    .page-visiting-investor-program .invVisaAboutBtmSection ul {
         width: 100%;
         padding: 30px 10px;
         justify-content: center;
@@ -14035,26 +14035,26 @@ body.page-visiting-visa-program {
 
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection ul li img {
+    .page-visiting-investor-program .invVisaAboutBtmSection ul li img {
         height: 56px;
     }
 
-    .page-visiting-visa-program .invVisaAboutBtmSection ul li {
+    .page-visiting-investor-program .invVisaAboutBtmSection ul li {
         margin: 0;
         margin-right: 10px;
         margin-bottom: 20px;
     }
 
-    .page-visiting-visa-program .investorVisaApply.invVisa-ptb {
+    .page-visiting-investor-program .investorVisaApply.invVisa-ptb {
         padding-top: 0;
     }
 
-    .page-visiting-visa-program .investorVisaApplyBtn a {
+    .page-visiting-investor-program .investorVisaApplyBtn a {
         font-size: 18px;
         font-weight: bold;
     }
 
-    .page-visiting-visa-program .investorVisaApplyBtn {
+    .page-visiting-investor-program .investorVisaApplyBtn {
         min-height: auto;
         line-height: 29px;
         margin-bottom: 0px;
@@ -14062,42 +14062,42 @@ body.page-visiting-visa-program {
         padding: 10px 15px;
     }
 
-    .page-visiting-visa-program .investorVisaVideoSec {
+    .page-visiting-investor-program .investorVisaVideoSec {
         width: 330px;
         height: 450px;
     }
 
-    .page-visiting-visa-program .investorVisaApply {
+    .page-visiting-investor-program .investorVisaApply {
         min-height: auto;
     }
 
-    .page-visiting-visa-program .investorVisaApplyTrems .investorVisaTitle {
+    .page-visiting-investor-program .investorVisaApplyTrems .investorVisaTitle {
         padding-left: 0;
     }
 
-    .page-visiting-visa-program .investorVisaTitle h1 {
+    .page-visiting-investor-program .investorVisaTitle h1 {
         font-size: 24px;
         line-height: 33px;
         font-weight: bold;
 
     }
 
-    .page-visiting-visa-program .investorVisaApplyTrems .investorVisaTitle {
+    .page-visiting-investor-program .investorVisaApplyTrems .investorVisaTitle {
         margin-bottom: 20px;
     }
 
-    .page-visiting-visa-program .tremsWrapper {
+    .page-visiting-investor-program .tremsWrapper {
         padding: 0;
     }
 
-    .page-visiting-visa-program .conditionCenterImg {
+    .page-visiting-investor-program .conditionCenterImg {
         height: 200px;
         margin: 0;
         margin: auto;
         margin-bottom: 40px;
     }
 
-    .page-visiting-visa-program .tremsWrapperItem p {
+    .page-visiting-investor-program .tremsWrapperItem p {
         flex-direction: column;
         font-size: 18px;
         line-height: 27px;
@@ -14105,32 +14105,32 @@ body.page-visiting-visa-program {
         text-align: center;
     }
 
-    .page-visiting-visa-program .tremsWrapperItem p img {
+    .page-visiting-investor-program .tremsWrapperItem p img {
         margin-right: 0 !important;
         margin-left: 0 !important;
         margin-bottom: 15px;
     }
 
-    .page-visiting-visa-program .tremsItemPoints {
+    .page-visiting-investor-program .tremsItemPoints {
         padding: 0;
         border-radius: 0;
         flex-direction: column;
     }
 
-    .page-visiting-visa-program .tremsItemPoints::after {
+    .page-visiting-investor-program .tremsItemPoints::after {
         display: none;
     }
 
-    .page-visiting-visa-program .trmsFollowingSection .investorVisaTitle {
+    .page-visiting-investor-program .trmsFollowingSection .investorVisaTitle {
         padding-left: 0;
     }
 
-    .page-visiting-visa-program .followTermsList {
+    .page-visiting-investor-program .followTermsList {
         width: 95%;
         margin-top: 0;
     }
 
-    .page-visiting-visa-program .followTermsList ul li {
+    .page-visiting-investor-program .followTermsList ul li {
         font-size: 18px;
         padding: 15px;
         line-height: 29px;
@@ -14138,59 +14138,59 @@ body.page-visiting-visa-program {
         min-height: 95px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry {
+    .page-visiting-investor-program .invVisaApplyEnquiry {
         padding-left: 5px;
         padding-right: 5px;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquirySecTitle {
+    .page-visiting-investor-program .invVisaApplyEnquirySecTitle {
         text-align: center;
         width: 100%;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquirySecTitle .investorVisaTitle {
+    .page-visiting-investor-program .invVisaApplyEnquirySecTitle .investorVisaTitle {
         text-align: center;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquirySecTitle p {
+    .page-visiting-investor-program .invVisaApplyEnquirySecTitle p {
         font-size: 18px;
         line-height: 29px;
         text-align: center;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
         width: 100%;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromTitle h4 {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromTitle h4 {
         font-size: 24px;
         line-height: 37px;
         font-weight: bold;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromWrap {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromWrap {
         padding-top: 25px;
     }
 
-    .page-visiting-visa-program .captchaImg {
+    .page-visiting-investor-program .captchaImg {
         width: 250px;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiry::after {
+    .page-visiting-investor-program .invVisaApplyEnquiry::after {
         animation: scroll-anim 400s linear infinite;
     }
 
-    .page-visiting-visa-program .invVisaApplyEnquiryFromTitle {
+    .page-visiting-investor-program .invVisaApplyEnquiryFromTitle {
         margin-bottom: 0;
     }
 }
 
-.page-visiting-visa-program section {
+.page-visiting-investor-program section {
     padding:  0 0;
 }
-.page-visiting-visa-program  .error-msg{
+.page-visiting-investor-program  .error-msg{
     font-size: 11px;
     color: #ff0000;
     text-transform: capitalize;
@@ -14202,45 +14202,45 @@ body.page-visiting-visa-program {
     width: 100%;
     text-align: right;
   }
-  .page-visiting-visa-program .flag-container {
+  .page-visiting-investor-program .flag-container {
     bottom: 8px !important;
       top: unset !important;
   }
-  .page-visiting-visa-program section.footer-menu-faq, .page-visiting-visa-program section.footer-menu-links{
+  .page-visiting-investor-program section.footer-menu-faq, .page-visiting-investor-program section.footer-menu-links{
     padding: 60px 0;
   }
 
-.page-visiting-visa-program .invVisaApplyEnquiry::after{
+.page-visiting-investor-program .invVisaApplyEnquiry::after{
     background-size: auto 100%;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label{
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label{
     top: -15px;
 
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label {
   top: -15px;
 }
 
 .invVisaApplyEnquiryFromWrap input.form-control:focus+label,
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap input.form-control.has-value+label {
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap input.form-control.has-value+label {
 color: #006f44;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label{
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control.has-value+label{
 color: #006f44;
 }
 
-.page-visiting-visa-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label{
+.page-visiting-investor-program .invVisaApplyEnquiryFromWrap textarea.form-control:focus+label{
 color: #006f44;
 }
 
-.page-visiting-visa-program  .select2-container--open .select2-dropdown--below{
+.page-visiting-investor-program  .select2-container--open .select2-dropdown--below{
 box-shadow: 0 14px 28px rgb(0 0 0 / 45%), 0 10px 10px rgb(0 0 0 / 1%);
 }
 
-.page-visiting-visa-program  .contactSuccess p {
+.page-visiting-investor-program  .contactSuccess p {
     font-size: 18px;
     margin-bottom: 20px;
 }

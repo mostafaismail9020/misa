@@ -195,10 +195,10 @@ public class SagiaPDFChartGenerator {
 			// Sector
 			fillText(sector, document, 1, 550, 462, 12, null);
 			// Segment
-			List<SagiaSegmentModel> sagiaSegment = opportunity.getSagiaSegment();
-			if(Objects.nonNull(sagiaSegment) && !sagiaSegment.isEmpty()) {
-				segment = sagiaSegment.get(0).getSegmentName();
-			}
+//			List<SagiaSegmentModel> sagiaSegment = opportunity.getSagiaSegment();
+//			if(Objects.nonNull(sagiaSegment) && !sagiaSegment.isEmpty()) {
+//				segment = sagiaSegment.get(0).getSegmentName();
+//			}
 
 			fillText(segment, document, 1, 550, 428, 12, null);
 			// Tags

@@ -51,6 +51,76 @@
         </div>
        <div class="investorVisaAbtContent">
         <p class="animated fadeInUp wow" data-wow-delay="0.2s" data-wow-duration="2s">${component.description} </p>
+        <c:if test="${language eq 'en'}">
+
+                <div class="invVisaProgram aboutAdvantageWrapper">
+                  <div class="aboutAdvantage">
+                    <div class="aboutAdvantageItem">
+                      <div class="aboutAdvantageNum">
+                        <span>1</span>
+                      </div>
+                      <div class="aboutAdvantageTxt">
+                        <span class="aboutAdvantageTxtWrap"><spring:theme code="inv.visa.advantage.txt1"/></span>
+                      </div>
+                    </div>
+
+                    <div class="aboutAdvantageItem">
+                      <div class="aboutAdvantageNum">
+                        <span>2</span>
+                      </div>
+                      <div class="aboutAdvantageTxt">
+                        <span class="aboutAdvantageTxtWrap"><spring:theme code="inv.visa.advantage.txt2"/><span class="aboutAdvantageMark">*</span></span>
+                      </div>
+                    </div>
+
+                    <div class="aboutAdvantageItem">
+                      <div class="aboutAdvantageNum">
+                        <span>3</span>
+                      </div>
+                      <div class="aboutAdvantageTxt">
+                        <span class="aboutAdvantageTxtWrap"><spring:theme code="inv.visa.advantage.txt3"/></span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="aboutNotest"><span>*</span><spring:theme code="inv.visa.advantage.notes"/></p>
+                  </div>
+                </c:if>
+
+                <c:if test="${language eq 'ar'}">
+
+                <div class="invVisaProgram aboutAdvantageWrapper">
+                  <div class="aboutAdvantage">
+                    <div class="aboutAdvantageItem">
+                      <div class="aboutAdvantageNum">
+                        <span>1</span>
+                      </div>
+                      <div class="aboutAdvantageTxt">
+                        <span class="aboutAdvantageTxtWrap"><spring:theme code="inv.visa.advantage.txt1"/></span>
+                      </div>
+                    </div>
+
+                    <div class="aboutAdvantageItem">
+                      <div class="aboutAdvantageNum">
+                        <span>2</span>
+                      </div>
+                      <div class="aboutAdvantageTxt">
+                        <span class="aboutAdvantageTxtWrap"><spring:theme code="inv.visa.advantage.txt2"/><span class="aboutAdvantageMark">*</span></span>
+                      </div>
+                    </div>
+
+                    <div class="aboutAdvantageItem">
+                      <div class="aboutAdvantageNum">
+                        <span>3</span>
+                      </div>
+                      <div class="aboutAdvantageTxt">
+                        <span class="aboutAdvantageTxtWrap"><spring:theme code="inv.visa.advantage.txt3"/></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="aboutNotest"><span>*</span><spring:theme code="inv.visa.advantage.notes"/></p>
+                  </div>
+                </c:if>
       </div>
         </div>
       <div class="invVisaAboutRight">

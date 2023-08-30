@@ -5,11 +5,12 @@
 
 # Macros / Replacement Parameter definitions
 $template = portalMediaCenterLandingPageTemplate
-$page = investor-visa-program
-$pageName = Investor Visa Program
+$page = visiting-visa-program
+$pageName = Visiting Visa Program
 $pageTitleEn = $pageName
 $pageTitleAr = $pageName
-$pageLabel = /investor-visa
+$pageLabel = /visiting-visa
+
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique = true, default=$contentCatalog:Staged]
@@ -20,7 +21,6 @@ $media = media(code, $contentCV)
 $medias = medias(code, $contentCV)
 #strategic-media = $config-portalRedesignMediaResources
 $siteResource = jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
-
 
 INSERT_UPDATE Media; code[unique = true]         ; realFileName                ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; folder(qualifier)[default = $mediafolder]; altText; $contentCV[unique = true];
                    ; banner-bg.jpg               ; banner-bg.jpg               ; $siteResource/banner-bg.jpg                                                 ; image/jpg                   ;                                          ; ""     ;                          ;
@@ -45,8 +45,9 @@ INSERT_UPDATE Media; code[unique = true]         ; realFileName                ;
                    ; sectionBg6.jpg              ; sectionBg6.jpg              ; $siteResource/sectionBg6.jpg                                                ; image/jpg                   ;                                          ; ""     ;                          ;
                    ; skyline.png                 ; skyline.png                 ; $siteResource/skyline.png                                                   ; image/png                   ;                                          ; ""     ;                          ;
                    ; banner-video.mp4            ; banner-video.mp4            ; $siteResource/banner-video.mp4                                              ; video/mp4                   ;                                          ; ""     ;                          ;
-                   ; investor-visit-visa-en1.mp4 ; investor-visit-visa-en1.mp4 ; $siteResource/investor-visit-visa-en1.mp4                                   ; video/mp4                   ;                                          ; ""     ;                          ;
-                   ; investor-visit-visa-ar1.mp4 ; investor-visit-visa-ar1.mp4 ; $siteResource/investor-visit-visa-ar1.mp4                                   ; video/mp4                   ;                                          ; ""     ;                          ;
+                   ; visiting-investor-en.mp4 ; visiting-investor-en.mp4 ; $siteResource/visiting-investor-en.mp4                                      ; video/mp4                   ;                                          ; ""     ;                          ;
+                   ; visiting-investor-ar.mp4 ; visiting-investor-ar.mp4 ; $siteResource/visiting-investor-ar.mp4                                      ; video/mp4                   ;                                          ; ""     ;                          ;
+                   ; visa-stamp.gif           ; visa-stamp.gif           ; $siteResource/visa-stamp.gif                                                ; image/gif                   ;                                          ; ""     ;                          ;
 
 ################################################### Investor Visa Banner Component ################################################################
 INSERT_UPDATE InvestorVisaBannerComponent; uid[unique = true]   ; name                 ; descriptionText[lang = en]                                                                           ; bannerText[lang = en]; image(code, $contentCV); bannerVideo(code, $contentCV); &componentRef; $contentCV[unique = true]
@@ -58,10 +59,10 @@ INSERT_UPDATE InvestorVisaBannerComponent; uid[unique = true]   ; descriptionTex
 
 ################################################### Investor Visa Main Para  ################################################################
 INSERT_UPDATE InvestorVisaMainPara; uid[unique = true]      ; name                    ; title [lang = en]                                            ; description [lang = en]                                                                                                                                                               ; primaryImage(code, $contentCV); innerImage(code, $contentCV); &componentRef           ; $contentCV[unique = true]
-                                  ; investor-visa-main-para ; Investor Visa Main Para ; <h1>ABOUT THE BUSINESS VISIT VISA "VISITING INVESTOR"</h1> ; <p>An online service that allows to apply for a digital visit visa for the purpose of exploring the investment opportunities in the Kingdom of Saudi Arabia.</p> ; saudi-about.jpg               ; visa-stamp.png              ; investor-visa-main-para ;
+                                  ; investor-visa-main-para ; Investor Visa Main Para ; <h1>ABOUT THE BUSINESS VISIT VISA "VISITING INVESTOR"</h1> ; <p>An online service that allows foreign investors to apply for a digital visit visa for the purpose of exploring the investment opportunities in the Kingdom of Saudi Arabia.</p> ; saudi-about.jpg               ; visa-stamp.gif              ; investor-visa-main-para ;
 
 INSERT_UPDATE InvestorVisaMainPara; uid[unique = true]      ; title [lang = ar]                                      ; description [lang = ar]                                                                                                                                                                                                                                                          ; &componentRef           ; $contentCV[unique = true]
-                                  ; investor-visa-main-para ; <h1>نبذة عن تأشيرات زيارة الأعمال "مستثمر زائر"</h1> ; <p>ضمن جهود وزارة الاستثمار بالتعاون مع وزارة الخارجية لتعريف المستثمر الأجنبي على الفرص الاستثمارية في المملكة. نُدرك في مملكة الفرص أهمية العمل المشترك والتعاون مع الشركاء الدوليين، وقد رسمت خارطة الطريق الوطنية رؤية المملكة 2030 دورًا أساسيًا لقطاع</p> ; investor-visa-main-para ;
+                                  ; investor-visa-main-para ; <h1>نبذة عن تأشيرات زيارة الأعمال "مستثمر زائر"</h1> ; <p>هي خدمة إلكترونية تتيح للمستثمرين الأجانب التقدم بطلب الحصول على تأشيرة زيارة رقمية لغرض الاطلاع على الفرص الاستثمارية في المملكة العربية السعودية.</p> ; investor-visa-main-para ;
 ################################################### Investor Visa Main Para  ################################################################
 
 ################################################### Investor Visa Images Component  ################################################################
@@ -117,44 +118,10 @@ INSERT_UPDATE InvestorVisaTermsFollowing; uid[unique = true]           ; name   
 ################################################### Investor Visa Following Component  ################################################################
 
 INSERT_UPDATE InvestorVisaApplyNowComponent; uid[unique = true]      ; name                    ; planeAnimation(code, $contentCV); insideVideoEn(code, $contentCV); insideVideoAr(code, $contentCV); defaultImageEn(code, $contentCV); defaultImageAr(code, $contentCV); $contentCV[unique = true];
-                                           ; investor-visa-apply-now ; Investor Visa Apply Now ; plane-animation.png             ; investor-visit-visa-en1.mp4    ; investor-visit-visa-ar1.mp4    ; poster.jpg                      ; poster-ar.jpg                   ;
-
-INSERT_UPDATE InvestorVisaContactUsComponent; uid[unique = true]         ; name                         ; customerName[lang = en]; mobileNumber[lang = en]; email[lang = en]; enquiry[lang = en]; &componentRef              ; $contentCV[unique = true];
-                                            ; investor-visa-contact-form ; Investor Visa Contact Expert ; Name                   ; Mobile                 ; Email           ; Message           ; investor-visa-contact-form ;
-
-INSERT_UPDATE InvestorVisaContactUsComponent; uid[unique = true]         ; customerName[lang = ar]; mobileNumber[lang = ar]; email[lang = ar] ; enquiry[lang = ar]; &componentRef              ; $contentCV[unique = true];
-                                            ; investor-visa-contact-form ; الاسم         ; البريد الالكتروني      ; الغرض من الاتصال ; الرسالة           ; investor-visa-contact-form ;
-
-INSERT_UPDATE InvestorVisaContactUsComponent; uid[unique = true]         ; $contentCV; &componentRef
-                                            ; investor-visa-contact-form ;           ; investor-visa-contact-form
+                                           ; investor-visa-apply-now ; Investor Visa Apply Now ; plane-animation.png             ; visiting-investor-en.mp4    ; visiting-investor-ar.mp4    ; poster.jpg                      ; poster-ar.jpg                   ;
 
 INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; masterTemplate(uid, $contentCV); label      ; homepage; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; $contentCV[unique = true]
                          ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $template                      ; $pageLabel ; false   ;                              ;                                           ;
-
-
-
-UPDATE InvestorVisaContactUsComponent; uid[unique = true]         ; $contentCV[unique = true]; investorvisasuccessMessage[lang = en]
-                                     ; investor-visa-contact-form ;                          ; "
-<div class='formSuccess d-none diff-color'>
-    <p class='font-bold'>Thank you for your interest in the Invest Saudi.</p>
-    <p>We received your inquiry, and we will get back to you shortly.</p>
-</div>
-<div class='formTicketCreationConfirmation d-none' style='display: flex;'>
-  Ticket number &nbsp;<div class='formTicketNumber'></div>.
-</div>
-"
-
-UPDATE InvestorVisaContactUsComponent; uid[unique = true]         ; backgroundImage(code, $contentCV); $contentCV[unique = true]; investorvisasuccessMessage[lang = ar]
-                                     ; investor-visa-contact-form ; skyline.png                      ;                          ; "
-<div class='formSuccess d-none diff-color'>
-  <p class='font-bold'>شكراَ لتواصلك مع الهيئة العامة للاستثمار</p>
-    <p>لقد تم استلام رسالتك، سوف يتم التواصل معك في أقرب وقت
-  </p>
-</div>
-<div class='formTicketCreationConfirmation d-none' style='display: flex;'>
-    <div class='formTicketNumber'></div>&nbsp; رقم التذكرة
-</div>
-"
 
 
 INSERT_UPDATE ContentSlot; uid[unique = true]         ; name             ; active; cmsComponents(uid, $contentCV)                                                                                                                                                      ; $contentCV;

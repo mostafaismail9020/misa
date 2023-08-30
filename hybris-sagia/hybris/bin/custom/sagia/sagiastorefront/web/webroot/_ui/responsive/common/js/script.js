@@ -5503,7 +5503,7 @@ if(invVisaPageLang == 'en'){
 	$('.countrytypeArabic').css({'display' : 'none'})
 
 	}else if(invVisaPageLang == 'ar'){
-        $(".page-investor-visa-program #topbar .Header_vs_logo img").attr("src", "/_ui/responsive/common/images/Header_VS_2030-white.svg");
+        $(".page-visiting-visa-program #topbar .Header_vs_logo img").attr("src", "/_ui/responsive/common/images/Header_VS_2030-white.svg");
 		$('.countrytypeEnglish').css({'display' : 'none'})
 		$('.countrytypeArabic').css({'display' : 'block'})
 
@@ -5681,7 +5681,7 @@ const nationalityChange = () => {
 	});
 	// Text Animation
 $('document').ready(function(){
-	const titleSplit = document.querySelectorAll('.page-investor-visa-program .investorVisaTitle h1, .page-investor-visa-program .investorVisaTitle h2');
+	const titleSplit = document.querySelectorAll('.page-visiting-visa-program .investorVisaTitle h1, .page-visiting-visa-program .investorVisaTitle h2');
 
 	// Each El
 	Array.prototype.forEach.call(titleSplit, function(el, i) {

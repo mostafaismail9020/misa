@@ -300,7 +300,14 @@
                                                                         <p>${service.description}</p>
                                                                     </div>
                                                                     <div class="w-25 serviceModule-request">
-                                                                        <a class="text-uppercase request-service" href=${encodedContextPath}/services/government/${service.category.code}/${service.code}><spring:theme code="sagia.services.request.service"/></a>
+                                                                        <c:choose>
+                                                                            <c:when test="${service.code eq 'ZVIT_01'}">
+                                                                                <a class="text-uppercase request-service" href="https://visa.mofa.gov.sa/Account/Loginindividuals" target="_blank"><spring:theme code="sagia.services.mofa.service"/></a>
+                                                                            </c:when>
+                                                                            <c:otherwise>
+                                                                                <a class="text-uppercase request-service" href=${encodedContextPath}/services/government/${service.category.code}/${service.code}><spring:theme code="sagia.services.request.service"/></a>
+                                                                            </c:otherwise>
+                                                                        </c:choose>
                                                                     </div>
                                                                 </div>
                                                             </div>

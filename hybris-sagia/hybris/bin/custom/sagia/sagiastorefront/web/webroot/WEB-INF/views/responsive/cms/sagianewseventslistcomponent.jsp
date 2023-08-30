@@ -90,4 +90,59 @@
             </c:choose>
         </div>
     </div>
+       <section class="Inc-mediaCenter-sectionwrapper pb-3">
+           <div class="container">
+               <div class="row text-center">
+                   <h2 class="newsTitle">Media Library </h2>
+               </div>
+           </div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-7">
+                       <div class="video-player-container video-inner-div border-0 p-0">
+                           <div class="embed-responsive embed-responsive-16by9 video-events" >
+                               <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
+                                       src="https://www.youtube.com/watch?v=OCJVaEfmWFA" frameborder="0"
+                                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
+                               </iframe>
+                           </div>
+                                   <h4 class= "videoTitle">Saudi investment ministry signs four investment agreements</h4>
+                          <span class="videoDate">25 Oct 2022</span>
+                       </div>
+                   </div>
+                   <div class="col-md-5">
+                       <div class="row">
+                           <div class="col-md-10 news vedio_outer">
+                               <div class="video-player-container video-inner-div border-0 p-0">
+                                   <div class="embed-responsive embed-responsive-16by9 video-events">
+                                       <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
+                                               src="https://www.youtube.com/watch?v=g0aVQd7q_so" frameborder="0"
+                                               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
+                                       </iframe>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-md-2 news vedio_outer">
+                            <h4 class= "videoTitle">Saudi investment ministry signs four investment agreements</h4>
+                            <span class="videoDate">25 Oct 2022</span>
+                             </div>
+                             <div class="col-md-10 news vedio_outer">
+                               <div class="video-player-container video-inner-div border-0 p-0">
+                                   <div class="embed-responsive embed-responsive-16by9 video-events">
+                                       <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
+                                               src="https://youtu.be/Fu-KY6BX5ec" frameborder="0"
+                                               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
+                                       </iframe>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-md-2 news vedio_outer">
+                                                   <h4 class= "videoTitle" >Saudi investment ministry signs four investment agreements</h4>
+                                                   <span class="videoDate">25 Oct 2022</span>
+                                                    </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
 </div>

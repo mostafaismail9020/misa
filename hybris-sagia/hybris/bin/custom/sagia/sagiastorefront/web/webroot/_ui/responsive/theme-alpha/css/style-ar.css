@@ -10909,6 +10909,52 @@ body.page-living-in-saudi .content {
     line-height: 24px;
     color: #00714D;
 }
+
+.newsletterSection{
+     padding-top: 30px;
+     padding-bottom: 30px;
+}
+.get-updates-section{
+     background: rgba(0, 113, 77, 0.05);
+     padding-top: 30px;
+     padding-bottom: 30px;
+}
+.join-newsletter-btn{
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 6px;
+    width: 183px !important;
+    height: 36px !important;
+    background: #BF9B2E;
+    border-radius: 5px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    width: 18px;
+    height: 18px;
+    width: 135px;
+    height: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #F8F9FB;
+    border: 2px solid #BF9B2E;
+}
+.join-newsletter-btn:hover {
+    background: #D0B14E;
+    border-color: #BF9B2E;
+    cursor: pointer;
+}
+.get-updates-title{
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #00714D;
+}
 .resourceInfo{
     font-family: 'Arial' !important;
     font-style: normal;

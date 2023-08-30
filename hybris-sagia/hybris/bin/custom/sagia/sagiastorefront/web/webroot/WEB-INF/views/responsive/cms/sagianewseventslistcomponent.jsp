@@ -164,7 +164,16 @@
             </div>
         </div>
     </section>
-
+        <section class="newsletterSection">
+                <div class="container text-center get-updates-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="get-updates-title">Get the Latest Updates</h2>
+                            <button class="btn btn-primary join-newsletter-btn">Join Our Newsletter</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
        <section class="Inc-mediaCenter-sectionwrapper pb-3">
            <div class="container">
                <div class="row text-center">

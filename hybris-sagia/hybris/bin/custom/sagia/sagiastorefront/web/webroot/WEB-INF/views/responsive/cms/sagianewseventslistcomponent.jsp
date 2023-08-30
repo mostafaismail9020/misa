@@ -23,7 +23,7 @@
                                                <h2 class="pageTitle"><spring:theme code="portal.media.events" text = "Events"/></h2>
                                             </div>
                                       	</div>
-                                      	<div class="col-md-5 col-sm-12 content-slider-part">
+                                      	<div class="col-md-4 col-sm-12">
                                         	<div class="News_press_bgwhite">
                                                 <a href="${encodedContextPath}${eventSearchPageData.results[0].url}">
                                                     <div class="top_date position-absolute">

@@ -8733,6 +8733,14 @@ a.pvcy-policy:focus {
 .page-newsevents-list-page #News_press .News_press_bgwhite {
 	background-color: #BF9B2E;
 	border-radius: 10px;
+        position: absolute;
+        top: 10vw; /* Positioned 50% from the top */
+        right: 20%; /* Aligned to the left edge of the page */
+        transform: translateY(-50%); /* Center vertically */
+        height: auto;
+        width: 100%;
+        box-shadow: 0px 4px 30px #333;
+        border-radius: 5px;
 }
 .page-newsevents-list-page #News_press .highlight_title {
     font-family: '72';
@@ -18281,6 +18289,9 @@ ul.INS_list_font li,
 		height: unset;
 		min-height: 235px;
 	}
+	.page-newsevents-list-page #News_press .carousel-item .mask .News_press_bgwhite {
+        display: initial;
+    }
 	.page-media-center #News_press .carousel-indicators li {
 		display: none;
 	}

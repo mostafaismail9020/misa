@@ -28,7 +28,7 @@
                                                 <a href="${encodedContextPath}${eventSearchPageData.results[0].url}">
                                                     <div class="top_date position-absolute">
                                                         <h4 class="date"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="d" /></h4>
-                                                        <h6 class="date_name"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="MMMM" /></h6>
+                                                        <h6 class="date_name"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="MMM" /></h6>
                                                     </div>
                                                     <div class="p-5 paddding_align">
                                                         <div>

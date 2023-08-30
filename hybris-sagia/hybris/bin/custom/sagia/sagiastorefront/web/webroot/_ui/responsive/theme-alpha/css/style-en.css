@@ -8943,7 +8943,13 @@ a.pvcy-policy:focus {
 	box-shadow: 0px 4px 30px #333;
 	border-radius: 5px;
 }
-
+.page-newsevents-list-page #News_press h4.date {
+    font-family: '72';
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF !important;
+}
 #News_press h4.date {
 	color: var(--misaFirstColor);
 	font-size: 37px;
@@ -8952,7 +8958,13 @@ a.pvcy-policy:focus {
 	padding: 0px 10px;
 	margin: 0px;
 }
-
+.page-newsevents-list-page #News_press h6.date_name {
+     font-size: 18px;
+     font-family: '72';
+     font-style: normal;
+     font-weight: 700;
+     color: #FFFFFF;
+}
 #News_press h6.date_name {
 	color: #025635;
 	font-size: 12px;
@@ -8964,6 +8976,8 @@ a.pvcy-policy:focus {
 }
 .page-newsevents-list-page #News_press .top_date {
     background-color: #00714D;
+    width: 89px;
+    height: 59px;
 }
 #News_press .top_date {
 	background-color: #ffffff;

@@ -8779,6 +8779,20 @@ a.pvcy-policy:focus {
 	padding: 0px 10px;
 	margin: 0px;
 }
+.page-newsevents-list-page #News_press h4.date {
+    font-family: 'Arial';
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF !important;
+}
+.page-newsevents-list-page #News_press h6.date_name {
+     font-size: 18px;
+     font-family: 'Arial';
+     font-style: normal;
+     font-weight: 700;
+     color: #FFFFFF;
+}
 
 #News_press h6.date_name {
 	color: #025635;
@@ -16929,6 +16943,7 @@ ul.INS_list_font li,
 .page-media-center #News_press h4.date {
 	padding: 0 20px;
 }
+
 
 .page-news-details .page-details-banner-item h2,
 .page-resource-details .page-details-banner-item h2,

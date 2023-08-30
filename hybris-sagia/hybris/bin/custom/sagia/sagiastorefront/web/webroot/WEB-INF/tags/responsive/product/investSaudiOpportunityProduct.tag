@@ -91,9 +91,11 @@
     									</div>
     								</div>
     								<div class="col-md-3 col-2">
-    									<button class="btn btn-download-pdf-opportunity" id="download" data-toggle="modal" data-target="#downloadModal">
-											<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/> 
+    									<button class="btn btn-download-pdf-opportunity" id="controllerButton" class="button" onclick="callController()">
+											<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
 										</button>
+										<button class="btn btn-download-pdf-opportunity" id="buttonWithText" class="button" style="display: none;">Processing...</button>
+  										<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
     								</div>
     							</div>
     						</div>

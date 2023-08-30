@@ -59,7 +59,8 @@
 <script>
   function callController() {
     // Disable the button and show "Processing..." text
-    $("#controllerButton").prop("disabled", true).text("Processing...");
+    $("#buttonWithText").prop("disabled", true).css("display", "block");
+    $("#controllerButton").prop("disabled", true).css("display", "none");
 
     $.ajax({
       url: "<c:url value='/merged-pdf-download/${productData.code}' />", // Replace with the actual URL of your controller
@@ -86,7 +87,8 @@
       },
       complete: function() {
         // Enable the button and restore the original text
-        $("#controllerButton").prop("disabled", false).text("Download Opportunity PDF");
+	    $("#buttonWithText").prop("disabled", true).css("display", "none");
+    	$("#controllerButton").prop("disabled", false).css("display", "block");
       }
     });
   }

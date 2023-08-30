@@ -90,6 +90,81 @@
             </c:choose>
         </div>
     </div>
+
+    <section class="Inc-mediaCenter-sectionwrapper pb-0">
+        <div class="container">
+            <div class="row text-center">
+                <h2 class="newsTitle">Latest announcements from the ministry</h2>
+            </div>
+        </div>
+        <div class="container announcementsBox">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="img-fluid service-card-img resources-card-img"
+                         src="${commonResourcePath}/images/default-product-image.png"
+                         alt="" loading="lazy">
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-6 resourceDate">
+                            16 Mar 2023
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="resourceTitle">Quarterly report template update</h3>
+                            <p class="resourceInfo">Cursus purus, diam, aliquet scelerisque dignissim tellus aenean viverra. In risus elit vel id tincidunt vel. Nunc ac ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container announcementsBox">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="img-fluid service-card-img resources-card-img"
+                         src="${commonResourcePath}/images/default-product-image.png"
+                         alt="" loading="lazy">
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-6 resourceDate">
+                            16 Mar 2023
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="resourceTitle">Quarterly report template update</h3>
+                            <p class="resourceInfo">Cursus purus, diam, aliquet scelerisque dignissim tellus aenean viverra. In risus elit vel id tincidunt vel. Nunc ac ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container announcementsBox">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="img-fluid service-card-img resources-card-img"
+                         src="${commonResourcePath}/images/default-product-image.png"
+                         alt="" loading="lazy">
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-6 resourceDate">
+                            16 Mar 2023
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="resourceTitle">Quarterly report template update</h3>
+                            <p class="resourceInfo">Cursus purus, diam, aliquet scelerisque dignissim tellus aenean viverra. In risus elit vel id tincidunt vel. Nunc ac ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
        <section class="Inc-mediaCenter-sectionwrapper pb-3">
            <div class="container">
                <div class="row text-center">

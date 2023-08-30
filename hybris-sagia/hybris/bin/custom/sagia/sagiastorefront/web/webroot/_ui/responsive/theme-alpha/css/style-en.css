@@ -10930,7 +10930,10 @@ body.page-living-in-saudi .content {
 .Inc-mediaCenter-sectionwrapper h1 a.webinar-service-btn {
 	top: auto;
 }
-
+.resources-card-img{
+    width: 151px;
+    height: 136px;
+}
 .successstory-container .sucess_content h6.success-content-title {
 	font-size: 28px;
 	font-weight: 600;
@@ -10940,6 +10943,7 @@ body.page-living-in-saudi .content {
 }
 .announcementsBox{
     border-radius: 10px;
+    padding: 30px;
      background: rgba(0, 113, 77, 0.05);
 }
 .containerPadding{

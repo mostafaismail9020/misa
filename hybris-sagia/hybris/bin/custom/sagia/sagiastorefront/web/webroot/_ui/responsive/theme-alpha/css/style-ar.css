@@ -10895,6 +10895,11 @@ body.page-living-in-saudi .content {
 .announcementsBox{
     border-radius: 10px;
      background: rgba(0, 113, 77, 0.05);
+     padding: 30px;
+}
+.resources-card-img{
+    width: 151px;
+    height: 136px;
 }
 .containerPadding{
     padding: 20px;

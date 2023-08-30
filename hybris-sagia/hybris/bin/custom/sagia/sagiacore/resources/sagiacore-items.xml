@@ -56,18 +56,18 @@
        <collectiontype code="TargetedInvestorsSectionList" elementtype="TargetedInvestorsSection" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
-       <collectiontype code="MarketList" elementtype="Market" type="list"/>
-       <collectiontype code="CapacityList" elementtype="Capacity" type="list"/>
-       <collectiontype code="CostOfDoingBusinessTextList" elementtype="CostOfDoingBusinessText" type="list"/>
-       <collectiontype code="OtherInvestmentOverviewList" elementtype="OtherInvestmentOverview" type="list"/>
-       <collectiontype code="SegmentList" elementtype="SagiaSegment" type="list"/>
-       <collectiontype code="LocationList" elementtype="Location" type="list"/>
-       <collectiontype code="OtherGeneralTextList" elementtype="OtherGeneralText" type="list"/>
-       <collectiontype code="OtherMarketOverviewList" elementtype="OtherMarketOverview" type="list"/>
-       <collectiontype code="ValueChainList" elementtype="Valuechain" type="list"/>
-       <collectiontype code="OtherSupplyList" elementtype="OtherSupply" type="list"/>
-       <collectiontype code="MediaList" elementtype="Media" type="list"/>
-       <collectiontype code="OtherDemandTextList" elementtype="OtherDemandText" type="list"/>
+       <collectiontype code="MarketList" elementtype="Market" type="set"/>
+       <collectiontype code="CapacityList" elementtype="Capacity" type="set"/>
+       <collectiontype code="CostOfDoingBusinessTextList" elementtype="CostOfDoingBusinessText" type="set"/>
+       <collectiontype code="OtherInvestmentOverviewList" elementtype="OtherInvestmentOverview" type="set"/>
+       <collectiontype code="SegmentList" elementtype="SagiaSegment" type="set"/>
+       <collectiontype code="LocationList" elementtype="Location" type="set"/>
+       <collectiontype code="OtherGeneralTextList" elementtype="OtherGeneralText" type="set"/>
+       <collectiontype code="OtherMarketOverviewList" elementtype="OtherMarketOverview" type="set"/>
+       <collectiontype code="ValueChainList" elementtype="Valuechain" type="set"/>
+       <collectiontype code="OtherSupplyList" elementtype="OtherSupply" type="set"/>
+       <collectiontype code="MediaList" elementtype="Media" type="set"/>
+       <collectiontype code="OtherDemandTextList" elementtype="OtherDemandText" type="set"/>
        
 
 

@@ -13876,6 +13876,9 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     height: 87px;
     border-radius: 10px;
 }
+body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
+    display: none;
+}
 .newsTitle{
     font-family: 'Arial';
     font-style: normal;

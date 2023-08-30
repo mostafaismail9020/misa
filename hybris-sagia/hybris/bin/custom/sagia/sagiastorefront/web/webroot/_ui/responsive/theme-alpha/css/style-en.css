@@ -477,7 +477,9 @@ box-shadow: 0px 2px var(--misaSecondColor);
 	min-width: 180px;
 	position: relative;
 }
-
+body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
+    display: none;
+}
 .nav-menu .drop-down ul a {
 	padding: 10px 20px;
 	font-size: 14px;

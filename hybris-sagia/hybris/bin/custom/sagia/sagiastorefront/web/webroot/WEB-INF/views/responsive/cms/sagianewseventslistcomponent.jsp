@@ -7,6 +7,8 @@
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
+<div class="banner-section rhq-banner-content"   style="background-image: url('${fn:escapeXml(eventSearchPageData.results[0].imageUrl)}')"/>
+</div>
 
 <div class="container-fluid">
     <div class="row p-2">

@@ -8962,7 +8962,9 @@ a.pvcy-policy:focus {
 	padding: 0px 5px;
 	margin: 0px;
 }
-
+.page-newsevents-list-page #News_press .top_date {
+    background-color: #00714D;
+}
 #News_press .top_date {
 	background-color: #ffffff;
 	position: absolute;

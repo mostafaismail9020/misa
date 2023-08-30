@@ -16915,7 +16915,9 @@ ul.INS_list_font li,
 .news-detail-content p {
 	text-align: right;
 }
-
+.page-newsevents-list-page #News_press .top_date {
+    background-color: #00714D;
+}
 .page-media-center #News_press .top_date,
 .page-events #News_press .top_date,
 .page-news #News_press .top_date,

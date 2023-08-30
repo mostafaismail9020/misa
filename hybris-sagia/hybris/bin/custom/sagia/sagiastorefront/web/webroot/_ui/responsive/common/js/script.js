@@ -5431,7 +5431,7 @@ $('.form-icon_reset').click(function(){
 
 				$('#visaPopupBodyEn').show();
 				$('.visaBodyPopup').addClass('visaBodyPopupShow');
-				$("#investorPopupVid")[0].play();
+				if ($("#investorPopupVid")[0]) $("#investorPopupVid")[0].play();
 				//localStorage.setItem('popEnState','shown')
 				$('.page-portal-homepage').css({'overflow' : 'hidden'});
 			}

@@ -97,7 +97,7 @@ ACC.autocomplete = {
 								code: null,
 								desc: null,
 								manufacturer: null,
-								url:  "#",
+								url:  window.location.href + "mediaCenter/events",
 								type: "productResult",
 								image: null
 							});
@@ -122,7 +122,7 @@ ACC.autocomplete = {
 								code: null,
 								desc: null,
 								manufacturer: null,
-								url:  "#",
+								url:  window.location.href + "mediaCenter/events",
 								type: "productResult",
 								image: null
 							});
@@ -147,7 +147,7 @@ ACC.autocomplete = {
 								code: null,
 								desc: null,
 								manufacturer: null,
-								url:  "#",
+								url:  window.location.href + "mediaCenter/news",
 								type: "productResult",
 								image: null
 							});
@@ -172,7 +172,7 @@ ACC.autocomplete = {
 								code: null,
 								desc: null,
 								manufacturer: null,
-								url:  "#",
+								url:  window.location.href + "sectors-opportunities/opportunities",
 								type: "productResult",
 								image: null
 							});

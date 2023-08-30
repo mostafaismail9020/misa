@@ -12830,6 +12830,16 @@ ul.INS_li_ul_under li {
 	display: none;
 }
 
+.ui-widget-content .ui-menu-item .name:has(> .title) {
+	margin-bottom: -8px!important;
+}
+
+.ui-widget-content .ui-menu-item .name:not(:has(.title)) {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .page-portal-homepage .ui-widget-content {
 	background-color: #F5F6F7;
     color: #7B838C;
@@ -12850,6 +12860,7 @@ ul.INS_li_ul_under li {
     text-transform: lowercase;
     font-size: 18px;
     margin-left: 15px;
+    margin-bottom: 0px;
 }
 
 .page-portal-homepage .ui-widget-content .ui-menu-item a.ui-menu-item-wrapper .name .title {

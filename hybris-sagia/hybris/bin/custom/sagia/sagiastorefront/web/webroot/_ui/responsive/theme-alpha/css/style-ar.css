@@ -759,7 +759,7 @@ ul.dropdown-list li a {
 
 .btn-trans label.lang-btn {
 	padding: 0;
-	color: #fff;
+	color: var(--misaSecondColor);
 	font-size: 10px;
 	margin: 0 10px;
 	border: 0;
@@ -778,7 +778,7 @@ ul.dropdown-list li a {
 }
 
 .btn-trans label.lang-btn.active {
-	color: #fff;
+	color: var(--misaSecondColor);
 }
 
 .lang-en {

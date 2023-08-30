@@ -489,7 +489,14 @@ box-shadow: 0px 2px var(--misaSecondColor);
     align-items: center; /* Vertically center the text */
     color: #BF9B2E;
 }
-
+.page-newsevents-list-page .eventDescription{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
 /* Adjust the styles for mobile devices */
 @media (max-width: 768px) {
     .page-newsevents-list-page .pageTitle {

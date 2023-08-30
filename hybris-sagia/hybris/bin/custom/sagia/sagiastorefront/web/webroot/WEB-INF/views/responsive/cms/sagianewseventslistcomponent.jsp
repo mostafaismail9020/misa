@@ -33,7 +33,7 @@
                                                     <div class="p-5 paddding_align">
                                                         <div>
                                                             <h3 class="highlight_title">${eventSearchPageData.results[0].name}</h3>
-                                                            <p>Information</p>
+                                                            <p class="eventDescription">${eventSearchPageData.results[0].description}</p>
                                                         </div>
                                                     </div>
                                                </a>

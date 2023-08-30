@@ -13940,6 +13940,15 @@ body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
         font-size: 24px;
         line-height: normal;
     }
+     .page-newsevents-list-page #News_press .News_press_bgwhite {
+            top: 30vw !important;
+            left: 0px !important;
+            transform: translateY(0) !important;
+            border-radius: 10px !important;
+        }
+       .page-newsevents-list-page #News_press .carousel-item .mask .News_press_bgwhite {
+       min-height: 0px !important;
+       }
 }
 .col-md-12.card-wrapper.alternate {
     background-color: rgba(191, 155, 46, 0.07);

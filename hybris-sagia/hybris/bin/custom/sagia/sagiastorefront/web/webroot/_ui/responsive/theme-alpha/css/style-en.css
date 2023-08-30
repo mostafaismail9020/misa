@@ -10938,7 +10938,13 @@ body.page-living-in-saudi .content {
 	line-height: 40px;
 	text-transform: uppercase;
 }
-
+.announcementsBox{
+    border-radius: 10px;
+     background: rgba(0, 113, 77, 0.05);
+}
+.containerPadding{
+    padding: 20px;
+}
 .video-inner-div {
 	min-height: 300px;
 	background-color: var(--misaFirstColor);

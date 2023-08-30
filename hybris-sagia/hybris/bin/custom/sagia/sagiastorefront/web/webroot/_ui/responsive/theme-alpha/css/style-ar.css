@@ -10892,6 +10892,13 @@ body.page-living-in-saudi .content {
         color: #00714D;
        padding: 10px;
 }
+.announcementsBox{
+    border-radius: 10px;
+     background: rgba(0, 113, 77, 0.05);
+}
+.containerPadding{
+    padding: 20px;
+}
 .page-newsevents-list-page .videoDate{
     font-family: 'Arial';
     font-style: normal;

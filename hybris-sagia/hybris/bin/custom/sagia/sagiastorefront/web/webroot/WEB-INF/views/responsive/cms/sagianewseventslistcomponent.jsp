@@ -97,14 +97,14 @@
                 <h2 class="newsTitle">Latest announcements from the ministry</h2>
             </div>
         </div>
-        <div class="container announcementsBox">
-            <div class="row">
+        <div class="container">
+            <div class="row announcementsBox">
                 <div class="col-md-3">
                     <img class="img-fluid service-card-img resources-card-img"
                          src="${commonResourcePath}/images/default-product-image.png"
                          alt="" loading="lazy">
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 containerPadding">
                     <div class="row">
                         <div class="col-md-6 resourceDate">
                             16 Mar 2023
@@ -119,14 +119,14 @@
                 </div>
             </div>
         </div>
-        <div class="container announcementsBox">
-            <div class="row">
+        <div class="container containerPadding ">
+            <div class="row announcementsBox">
                 <div class="col-md-3">
                     <img class="img-fluid service-card-img resources-card-img"
                          src="${commonResourcePath}/images/default-product-image.png"
                          alt="" loading="lazy">
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 containerPadding">
                     <div class="row">
                         <div class="col-md-6 resourceDate">
                             16 Mar 2023
@@ -141,14 +141,14 @@
                 </div>
             </div>
         </div>
-        <div class="container announcementsBox">
-            <div class="row">
+        <div class="container  ">
+            <div class="row announcementsBox">
                 <div class="col-md-3">
                     <img class="img-fluid service-card-img resources-card-img"
                          src="${commonResourcePath}/images/default-product-image.png"
                          alt="" loading="lazy">
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 containerPadding">
                     <div class="row">
                         <div class="col-md-6 resourceDate">
                             16 Mar 2023

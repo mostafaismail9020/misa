@@ -10946,6 +10946,14 @@ body.page-living-in-saudi .content {
     padding: 30px;
      background: rgba(0, 113, 77, 0.05);
 }
+.resourceDate{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #00714D;
+}
 .containerPadding{
     padding: 20px;
 }

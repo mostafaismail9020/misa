@@ -10960,6 +10960,23 @@ body.page-living-in-saudi .content {
     color: #00714D;
    padding: 3px;
 }
+.page-newsevents-list-page .videoTitle{
+        font-family: '72';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: #00714D;
+       padding: 3px;
+}
+.page-newsevents-list-page .videoDate{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #00714D;
+}
 .video-inner-div h4 {
 	font-size: 28px;
 	font-weight: 600;

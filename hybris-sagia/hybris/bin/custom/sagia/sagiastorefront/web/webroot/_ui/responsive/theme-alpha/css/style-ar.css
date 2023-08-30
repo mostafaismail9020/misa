@@ -10874,13 +10874,30 @@ body.page-living-in-saudi .content {
 	text-transform: uppercase;
 }
 .page-newsevents-list-page .video-inner-div h4 {
-    font-family: '72';
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
     color: #00714D;
    padding: 3px;
+}
+.page-newsevents-list-page .videoTitle{
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: #00714D;
+       padding: 3px;
+}
+.page-newsevents-list-page .videoDate{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #00714D;
 }
 .news-service-card .service-card {
 	padding: 20px;

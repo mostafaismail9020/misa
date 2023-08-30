@@ -98,7 +98,7 @@
            </div>
            <div class="container">
                <div class="row">
-                   <div class="col-md-7">
+                   <div class="col-md-6">
                        <div class="video-player-container video-inner-div border-0 p-0">
                            <div class="embed-responsive embed-responsive-16by9 video-events" >
                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
@@ -110,7 +110,7 @@
                           <span class="videoDate">25 Oct 2022</span>
                        </div>
                    </div>
-                   <div class="col-md-5">
+                   <div class="col-md-6">
                        <div class="row">
                            <div class="col-md-10 news vedio_outer">
                                <div class="video-player-container video-inner-div border-0 p-0">

@@ -3941,5 +3941,53 @@
 	<bean class="com.sap.ibso.eservices.facades.data.EconomicAndInvestmentReportsAndStudiesData" extends="InvestSaudiResourceComponentData">
 
 	</bean>
+	
+	<bean class="com.sap.ibso.eservices.facades.nafath.iam.data.SendRequestParametersData">
+		<property name="service" type="String"/>
+		<property name="id" type="String"/>
+	</bean>
+	
+	<bean class="com.sap.ibso.eservices.facades.nafath.iam.data.SendRequestData">
+		<property name="action" type="String"/>
+		<property name="parameters" type="com.sap.ibso.eservices.facades.nafath.iam.data.SendRequestParametersData"/>
+	</bean>
+	
+	<bean class="com.sap.ibso.eservices.facades.nafath.iam.data.SendRequestResponseData">
+		<property name="transId" type="String"/>
+		<property name="id" type="String"/>
+		<property name="random" type="String"/>
+	</bean>
+	
+	<bean class="com.sap.ibso.eservices.facades.nafath.iam.data.CheckRequestStatusData" extends=
+							"com.sap.ibso.eservices.facades.nafath.iam.data.SendRequestResponseData"/>
+	
+	<bean class="com.sap.ibso.eservices.facades.nafath.iam.data.PersonData">
+		<property name="id" type="String"/>
+		<property name="idVersion" type="String"/>
+		<property name="arFirst" type="String"/>
+		<property name="arFather" type="String"/>
+		<property name="arGrand" type="String"/>
+		<property name="arFamily" type="String"/>
+		<property name="enFirst" type="String"/>
+		<property name="enFather" type="String"/>
+		<property name="enGrand" type="String"/>
+		<property name="enFamily" type="String"/>
+		<property name="arTwoNames" type="String"/>
+		<property name="enTwoNames" type="String"/>
+		<property name="arFullName" type="String"/>
+		<property name="enFullName" type="String"/>
+		<property name="gender" type="String"/>
+		<property name="idIssueDateG" type="String"/>
+		<property name="idIssueDateH" type="String"/>
+		<property name="idExpiryDateG" type="String"/>
+		<property name="idExpiryDateH" type="String"/>
+		<property name="nationality" type="String"/>
+		<property name="language" type="String"/>
+	</bean>
+	
+	<bean class="com.sap.ibso.eservices.facades.nafath.iam.data.CheckRequestStatusResponseData">
+		<property name="status" type="String"/>
+		<property name="person" type="com.sap.ibso.eservices.facades.nafath.iam.data.PersonData"/>
+	</bean>
 
 </beans>

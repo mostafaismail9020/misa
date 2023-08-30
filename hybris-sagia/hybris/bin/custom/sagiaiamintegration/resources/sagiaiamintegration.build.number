@@ -1,0 +1,11 @@
+#Ant properties
+#Thu Mar 04 13:26:08 CET 2021
+version.api=2005
+vendor=hybris
+group.id=de.hybris.platform
+name=sagiaiamintegration
+description=sagiaiamintegration
+builddate=20210304 1326
+releasedate=20200513 1957
+version=2005.9
+module.name=platform-module

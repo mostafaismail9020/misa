@@ -1,8 +1,13 @@
 package com.sap.ibso.eservices.storefront.security;
 
-import com.sap.ibso.eservices.sagiaservices.auth.CredentialVerificationService;
-import de.hybris.platform.core.model.user.CustomerModel;
-import de.hybris.platform.core.model.user.UserModel;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Locale;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.avalon.framework.service.ServiceException;
+import org.apache.commons.lang3.BooleanUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
@@ -13,12 +18,14 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.apache.commons.lang3.BooleanUtils;
-import javax.servlet.http.HttpServletRequest;
-import java.lang.Boolean;
 
+import com.sap.ibso.eservices.facades.nafath.iam.data.SendRequestData;
+import com.sap.ibso.eservices.facades.nafath.iam.data.SendRequestResponseData;
+import com.sap.ibso.eservices.facades.sagia.nafath.iam.SagiaNafathIamFacade;
+import com.sap.ibso.eservices.sagiaservices.auth.CredentialVerificationService;
 
-import java.util.Locale;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.core.model.user.UserModel;
 
 /**
  * Supports user name and password verification against an external system for migrated E-Service Fiori application users
@@ -33,6 +40,9 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
 	private static final Logger LOGGER = LogManager.getLogger();
 
     private CredentialVerificationService credentialVerificationService;
+    
+    @Resource
+    private SagiaNafathIamFacade sagiaNafathIamFacade;
 
     /**
      * For a user who is a customers and marked for password migration the provided user name and password are verified
@@ -63,7 +73,18 @@ public class SagiaAuthenticationProvider extends AcceleratorAuthenticationProvid
 
         // Update authentication token by lowercasing the username
         authentication = new UsernamePasswordAuthenticationToken(authentication.getName().toLowerCase(Locale.ENGLISH), authentication.getCredentials());
-
+        try {
+			final SendRequestResponseData response = sagiaNafathIamFacade.callNafathSendRequestApi(null);
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         UserModel user;
         try
         {

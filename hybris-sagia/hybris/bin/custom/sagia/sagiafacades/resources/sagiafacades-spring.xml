@@ -2555,7 +2555,8 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 		<property name="imageFormatMapping" ref="imageFormatMapping"/>
 	</bean>
-
+	
+	<bean id="sagiaNafathIamFacade" class="com.sap.ibso.eservices.facades.sagia.nafath.iam.impl.SagiaNafathIamFacadeImpl"/>
 
 	<!--	EconomicAndInvestmentReportsAndStudies Search Facade END-->
 </beans>

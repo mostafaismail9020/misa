@@ -17,6 +17,7 @@
         <requires-extension name="sagiasoapservices"/>
         <requires-extension name="customerticketingfacades"/>
         <requires-extension name="cmsfacades"/>
+        <requires-extension name="sagiaiamintegration"/>
         <coremodule generated="true" manager="de.hybris.platform.jalo.extension.GenericManager" packageroot="com.sap.ibso.eservices.facades"/>
     </extension>
 </extensioninfo>

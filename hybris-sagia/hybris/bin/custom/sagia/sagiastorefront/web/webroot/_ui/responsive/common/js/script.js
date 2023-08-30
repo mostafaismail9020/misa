@@ -5433,7 +5433,7 @@ $('.form-icon_reset').click(function(){
 				$('.visaBodyPopup').addClass('visaBodyPopupShow');
 				if ($("#investorPopupVid")[0]) $("#investorPopupVid")[0].play();
 				//localStorage.setItem('popEnState','shown')
-				$('.page-portal-homepage').css({'overflow' : 'hidden'});
+				//$('.page-portal-homepage').css({'overflow' : 'hidden'});
 			}
 			}else if(PageLang == 'ar'){
 				if(localStorage.getItem('popArState') != 'shown'){

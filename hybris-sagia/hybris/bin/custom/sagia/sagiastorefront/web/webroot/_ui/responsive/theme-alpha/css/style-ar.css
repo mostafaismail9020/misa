@@ -1340,12 +1340,6 @@ button:focus {
     padding-top: 10px;
 }
 
-@media (min-width: 1024px) {
-	#hero {
-		background-attachment: fixed;
-	}
-}
-
 @media (max-width: 768px) {
 	.where-to-invest-main-wrapper .hexagen-grid-wrapper {
 		width: 100%;
@@ -25089,6 +25083,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     padding: 5px 10px;
     border-radius: 10px;
     margin-top: 10px;
+    float: left!important;
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-second {

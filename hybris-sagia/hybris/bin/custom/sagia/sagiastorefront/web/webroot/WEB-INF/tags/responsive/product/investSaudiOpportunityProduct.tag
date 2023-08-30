@@ -342,6 +342,74 @@
     				</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-12 col-12">
+					<div class="jumbotron jumbotron-statistics-box special-statistics-box">
+    					<div class="row">
+    						<div class="col-md-12 col-12">
+    							<h3 class="opportunity-statics-title text-center">Market Size</h3>
+    						</div>
+    						<div class="col-md-12 col-12">
+    							<p class="opportunity-statics-desc text-center">[TEXT] Summary of key differentiators that position KSA as a strategic choice over other regional/global peers</p>
+    						</div>
+    					</div>
+    				</div>
+				</div>
+			</div>
+			<div class="row justify-content-between">
+				<div class="col-md-6 col-12">
+					<div class="jumbotron jumbotron-statistics-box">
+    					<div class="row">
+    						<div class="col-md-12 col-12">
+    							<h3 class="opportunity-statics-title text-center">Key Demand Drivers</h3>
+    						</div>
+    						<div class="col-md-12 col-12">
+    							<p class="opportunity-statics-desc text-center">[TEXT] Selected number of factors that will influence future demand for the related product/service</p>
+    						</div>
+    					</div>
+    				</div>
+				</div>
+				<div class="col-md-6 col-12">
+					<div class="jumbotron jumbotron-statistics-box">
+    					<div class="row">
+    						<div class="col-md-12 col-12">
+    							<h3 class="opportunity-statics-title text-center">Scalability & Localization</h3>
+    						</div>
+    						<div class="col-md-12 col-12">
+    							<p class="opportunity-statics-desc text-center">[TEXT]  Ease of scaling the business across the value chain or into new adjacent products or geographies that would maximize the opportunity’s investment returns and the ability and potential to locally manufacture the product and its components</p>
+    						</div>
+    					</div>
+    				</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-12">
+					<div class="jumbotron jumbotron-statistics-box">
+    					<div class="row">
+    						<div class="col-md-12 col-12">
+    							<h3 class="opportunity-statics-title text-center">Value Chain [TEXT] [PICTURES]</h3>
+    						</div>
+    						<div class="col-md-12 col-12">
+    							<p class="opportunity-statics-desc text-center">[TEXT] Selected number of factors that will influence future demand for the related product/service</p>
+    						</div>
+    					</div>
+    				</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-12">
+					<div class="jumbotron jumbotron-statistics-box">
+    					<div class="row">
+    						<div class="col-md-12 col-12">
+    							<h3 class="opportunity-statics-title text-center">Import Dependency</h3>
+    						</div>
+    						<div class="col-md-12 col-12">
+    							<p class="opportunity-statics-desc text-center">[TEXT] An overview of the countries from which Saudi Arabia is importing the product and their value/volume and share in total import</p>
+    						</div>
+    					</div>
+    				</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </main>

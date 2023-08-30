@@ -23713,6 +23713,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
     padding: 5px 10px;
     border-radius: 10px;
     margin-top: 10px;
+    float: right!important;
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-second {

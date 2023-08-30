@@ -1827,6 +1827,11 @@
 		<property name="productReferenceConverter" ref="productReferenceConverter"/>
 	</bean>
 
+	<bean id="investSaudiEventPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiEventPopulator">
+	<property name="imageConverter" ref="imageConverter"/>
+	<property name="productReferenceConverter" ref="productReferenceConverter"/>
+</bean>
+
 	<bean id="investSaudiSuccessStoryPopulator" class="com.investsaudi.portal.facades.product.populator.InvestSaudiSuccessStoryPopulator">
 		<property name="imageConverter" ref="imageConverter"/>
 	</bean>

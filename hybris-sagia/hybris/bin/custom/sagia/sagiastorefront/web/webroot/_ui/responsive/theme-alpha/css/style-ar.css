@@ -8210,10 +8210,6 @@ figure h2 {
 
 .contactpage-form {
 	width: 100%;
-	background: url("../img/contactpage-form.png");
-	background-size: cover;
-	padding-top: 130px;
-	padding-bottom: 0px;
 }
 
 .contactpage-form-tab {
@@ -8260,7 +8256,7 @@ figure h2 {
 }
 
 .contactpage-form .tab-content {
-	padding: 48px 0px 50px;
+	margin-top: 60px;
 	height: auto !important;
 }
 
@@ -8519,14 +8515,14 @@ a.pvcy-policy:focus {
 }
 
 .mandatory {
-	color: #FF0000;
-	float: right;
+	color: var(--misaFirstColor);
+	padding-left: 0;
+	padding-right: 5px;
 }
 
 .custom-file {
-	height: 65px;
-	box-shadow: 0 0 5pt 0.5pt #d3d3d3;
-	border-radius: 25px;
+	height: 50px;
+	line-height: 50px;
 }
 
 .custom-file input {
@@ -8534,13 +8530,17 @@ a.pvcy-policy:focus {
 }
 
 .custom-file label {
-	height: 100%;
-	border-radius: 25px;
-	padding: 23px 34px;
-	line-height: 20px;
-	font-size: 19px;
-	color: #707070;
+	height: 50px;
+	border-radius: 8px;
+	border-color: #8396A8 !important;
+	line-height: 35px;
+
+	.pvcy-policy {
+		font-size: 17px;
+		color: #707070;
+	}
 }
+
 
 .custom-file-label {
 	overflow: visible;
@@ -8569,11 +8569,12 @@ a.pvcy-policy:focus {
 }
 
 .form-normal-item input {
-	box-shadow: 0 0 5pt 0.5pt #d3d3d3;
-	height: 65px;
+	height: 50px;
+	line-height: 50px;
 	border-radius: 10px;
-	padding: 15px 34px 14px;
-	font-size: 19px;
+	padding: 10px;
+	font-size: 17px;
+	border-color: #8396A8;
 }
 
 .form-normal-item-select select {
@@ -8630,32 +8631,20 @@ a.pvcy-policy:focus {
 }
 
 .form-normal-item-textarea textarea {
-	border-radius: 25px;
-	padding: 34px;
-	resize: none;
-	box-shadow: 0 0 5pt 0.5pt #d3d3d3;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 17px;
+	border-color: #8396A8;
 }
 
 .control-label {
-	font-size: 19px;
+	font-size: 17px;
 	font-weight: 400;
-	opacity: 1;
-	pointer-events: none;
-	position: absolute;
-	transform: translate3d(0, 22px, 0) scale(1);
-	transform-origin: right top;
-	transition: 240ms;
-	line-height: 24px;
-	right: 50px;
-	color: #707070;
+	color: var(--misaFirstColor);
 }
 
 .form-group.focused .control-label {
 	opacity: 1;
-	transform: scale(0.75);
-	color: var(--misaFirstColor);
-	margin: 0;
-	top: 12px;
 }
 
 .form-control {
@@ -12715,6 +12704,7 @@ ul.INS_li_ul_under li {
 
 .country-code-mobile {
 	display: flex;
+	flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
@@ -14150,8 +14140,7 @@ border-color: var(--misaFirstColor);
 }
 
 .error-msg {
-	margin-left: 35px;
-	font-size: 13px;
+	font-size: 16px;
 	color: #FF0000;
 	text-transform: capitalize;
 	text-align: left;
@@ -14173,6 +14162,59 @@ border-color: var(--misaFirstColor);
 .country-code-mobile .intl-tel-input.allow-dropdown .flag-container,
 .intl-tel-input.separate-dial-code .flag-container {
 	right: 10px;
+}
+
+.country-code-mobile  {
+	background-color: none;
+
+	.iti-flag {
+	display: none;
+	}
+
+	.flag-container {
+		right: 10px !important;
+		left: unset !important;
+
+		.selected-flag {
+			top: 0 !important;
+		}
+
+		.iti-arrow {
+			background-image: url("../img/arrow-down-gold.svg");
+			height: 16px !important;
+			width: 16px !important;
+			border: none !important;
+			top: 18px !important;
+		}
+
+	}
+	
+	.flag-box {
+		width: 0 !important;
+	}
+
+	.ddl-countryCode {
+		padding-top: 7px !important;
+		padding-left: 16px !important;
+		border-right: none !important;
+		border-top-right-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+		border-top-left-radius: 8px !important;
+		border-bottom-left-radius: 8px !important;
+	}
+
+	.intl-tel-input.allow-dropdown .flag-container:hover .selected-flag {
+		background-color: transparent !important;
+	}
+
+	.phonenumber {
+		padding-top: 8px !important;
+		border-left: none;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+		border-top-right-radius: 8px !important;
+		border-bottom-right-radius: 8px !important;
+	}
 }
 
 .country-code-mobile .intl-tel-input.allow-dropdown input,
@@ -25414,5 +25456,36 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 		&.no-background {
 			background: #fff !important;
 		}
+	}
+}
+
+#pills-profile2 {
+	display: none !important;
+}
+
+.contactpage-form {
+	.contact-form-title {
+		color: var(--misaFirstColor);
+		text-transform: unset !important;
+		font-size: 24px !important;
+		text-align: left !important;
+		margin-bottom: 14px;
+	}
+
+	.form-icon_browse {
+		border:1px solid #8396A8 !important;
+		background-color: #fff !important;
+		border-top-right-radius: 8px !important;
+		border-bottom-right-radius: 8px !important;
+	}
+
+	.submit-button {
+		width: 200px !important;
+		margin-top: 25px;
+		background-color: var(--misaFirstColor);
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		justify-content: center;
 	}
 }

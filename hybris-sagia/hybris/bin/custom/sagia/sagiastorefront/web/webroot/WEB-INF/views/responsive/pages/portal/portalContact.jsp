@@ -47,6 +47,8 @@
                     </div>
                 </div>
             </section>
+
+
             <section id="contact-details" class="mb-0 pb-0">
                 <div class="container">
                     <div class="row">
@@ -91,6 +93,11 @@
                     </div>
                 </div>
             </section>
+
+            <cms:pageSlot position="PortalPageOffices" var="slotComponent">
+                <cms:component component="${slotComponent}"/>
+            </cms:pageSlot>
+
             <section id="locations">
                 <div class="container">
                     <div class="row">
@@ -130,9 +137,7 @@
                 <cms:component component="${slotComponent}"/>
             </cms:pageSlot>
 
-            <cms:pageSlot position="PortalPageOffices" var="slotComponent">
-                <cms:component component="${slotComponent}"/>
-            </cms:pageSlot>
+
             
         </main>
 

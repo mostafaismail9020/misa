@@ -36,18 +36,19 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="/" class="link">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.5625 11.1875C10.75 11.375 10.8438 11.6042 10.8438 11.875C10.8438 12.1042 10.75 12.3333 10.5625 12.5625C10.375 12.75 10.1458 12.8438 9.875 12.8438C9.64583 12.8438 9.41667 12.75 9.1875 12.5625L5.3125 8.6875C5.125 8.45833 5.03125 8.22917 5.03125 8C5.03125 7.72917 5.125 7.5 5.3125 7.3125L9.1875 3.4375C9.41667 3.25 9.64583 3.15625 9.875 3.15625C10.1458 3.15625 10.375 3.25 10.5625 3.4375C10.75 3.625 10.8438 3.85417 10.8438 4.125C10.8438 4.35417 10.75 4.58333 10.5625 4.8125L7.34375 8L10.5625 11.1875Z" fill="#00714D"/>
-                                    </svg>
-                                Home                                    
-                            </a>
-                            <h1 class="title">${cmsPage.title}</h1>
-                            <span class="text">Assistance available 24/7 in English, German, Japanese, French, Spanish, Korean and Chinese.</span>
+                            <cms:pageSlot position="ContactUsHomeLink" var="slotComponent">
+					            <cms:component component="${slotComponent}"/>
+					        </cms:pageSlot>
+                            <h1 class="title">${cmsPage.title}</h1>                            
+                            <cms:pageSlot position="ContactUsAbout" var="slotComponent">
+				                <cms:component component="${slotComponent}"/>
+				            </cms:pageSlot>
                         </div>
                     </div>
                 </div>
             </section>
+
+
             <section id="contact-details" class="mb-0 pb-0">
                 <div class="container">
                     <div class="row">
@@ -65,14 +66,9 @@
                                         <div class="contact-type mt-2">Call us</div>
                                     </div>
                                     <div class="telephone-numbers">
-                                        <div class="number">
-                                            <span>Local:</span>
-                                            <span>0800 1231234</span>
-                                        </div>
-                                        <div class="number">
-                                            <span>International:</span>
-                                            <span>0800 1231234</span>
-                                        </div>
+								        <cms:pageSlot position="ContactUsTelephoneNumbers" var="slotComponent">
+								            <cms:component component="${slotComponent}"/>
+								        </cms:pageSlot>
                                     </div>
                                 </div>
                                 <div>
@@ -87,7 +83,9 @@
                                         <div class="contact-type mt-2">Email us</div>
                                     </div>
                                     <div class="email-addresses">
-                                        <div class="email"><a href="mailto:InvestorCare@misa.gov.sa">InvestorCare@misa.gov.sa</a></div>
+                                        <cms:pageSlot position="ContactUsEmail" var="slotComponent">
+								            <cms:component component="${slotComponent}"/>
+								        </cms:pageSlot>
                                     </div>
                                 </div>                                
                             </div>
@@ -95,6 +93,11 @@
                     </div>
                 </div>
             </section>
+
+            <cms:pageSlot position="PortalPageOffices" var="slotComponent">
+                <cms:component component="${slotComponent}"/>
+            </cms:pageSlot>
+
             <section id="locations">
                 <div class="container">
                     <div class="row">
@@ -103,137 +106,20 @@
                             <div class="locations">
                                 <button class="sagia-accordion locations-accordion"><spring:theme code="portal.contact.us.local" text = "Local"/></button>
                                 <div class="sagia-accordion-panel">
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.local.madinah" text="Madinah" />
-                                        </div>
-                                        <address class="address">
-                                            <spring:theme code="portal.contact.us.local.madinah.building.no" text="Building No.7539/2410" /><br>
-                                            <spring:theme code="portal.contact.us.local.madinah.district" text="King Abdul Aziz Road Hathm District" /><br>
-                                            <spring:theme code="portal.contact.us.local.madinah.postal.code" text="Postal Code: 42363" /><br>
-                                        </address>
-                                        <div class="telephone">8002449990</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.local.jeddah" text="Jeddah" />
-                                        </div>
-                                        <address class="address">
-                                            <spring:theme code="portal.contact.us.local.jeddah.building.no" text="Building No.7261/2802" /><br>
-                                            <spring:theme code="portal.contact.us.local.jeddah.district"
-                                                text="Prince Sultan bin Abdulaziz Road, Alnaeem District, Jeddah" /><br>
-                                            <spring:theme code="portal.contact.us.local.jeddah.postal.code" text="Postal Code: 23621" /><br>
-                                        </address>
-                                        <div class="telephone">8002449990</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.local.riyadh" text="Riyadh" />
-                                        </div>
-                                        <address class="address">
-                                            <spring:theme code="portal.contact.us.local.riyadh.building.no" text="Building No.3966/6244" /><br>
-                                            <spring:theme code="portal.contact.us.local.riyadh.district"
-                                                text="Imam Saud bin Abdulaziz bin Mohamed Road Nakheel district" /><br>
-                                            <spring:theme code="portal.contact.us.local.riyadh.postal.code" text="Postal Code: 12382" /><br>
-                                        </address>
-                                        <div class="telephone">8002449990</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.local.dammam" text="Dammam" />
-                                        </div>
-                                        <address class="address">
-                                            <spring:theme code="portal.contact.us.local.dammam.building.no" text="Building No.7296" /><br>
-                                            <spring:theme code="portal.contact.us.local.dammam.street"
-                                                text="Tariq Bin Ziyad St. Al Rakah Al Janubiyah, Al Khobar" /><br>
-                                            <spring:theme code="portal.contact.us.local.dammam.postal.code" text="Postal Code : 34227" /><br>
-                                        </address>
-                                        <div class="telephone">8002449990</div>
-                                    </div>
+                                
+                                    <cms:pageSlot position="ContactUsLocalLocations" var="slotComponent">
+							            <cms:component component="${slotComponent}"/>
+							        </cms:pageSlot>
+ 
                                 </div>
                             </div>
 
                             <div class="locations">
                                 <button class="sagia-accordion locations-accordion"><spring:theme code="portal.contact.us.international" text = "International"/></button>
                                 <div class="sagia-accordion-panel">
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.local.usa" text = "USA"/>
-                                        </div>
-                                        <div class="countries">
-                                            <spring:theme code="portal.contact.us.international.usa.countries" text = "Mexico, Canada, Brazil"/> 
-                                        </div>
-                                        <div class="telephone">+2028666331</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.international.london.united.kingdom" text = "United Kingdom"/>
-                                        </div>
-                                        <div class="countries">
-                                            <spring:theme code="portal.contact.us.international.united.kingdom.countries" text = "Ireland, Norway, Sweden, Denmark, Finland, Estonia, Lithuania, Latvia, Iceland, Greece (temporary)"/> 
-                                        </div>
-                                        <div class="telephone">+44 7387 976667</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.international.paris.france" text = "Paris, France"/>
-                                        </div>
-                                        <div class="countries">
-                                            <spring:theme code="portal.contact.us.international.france.countries" text = "Spain, Portugal, Italy, Belgium, Netherlands, Luxembourg"/> 
-                                        </div>
-                                        <div class="telephone">+44 7387 976667</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.international.berlin.germany" text = "Berlin, Germany"/>
-                                        </div>
-                                        <div class="countries">
-                                            <spring:theme code="portal.contact.us.international.germany.countries" text = "Switzerland, Austria, Hungary, Bulgaria, Poland, Romania, Czech Republic, Croatia, Slovakia, Ukraine, Moldova"/> 
-                                        </div>
-                                        <div class="telephone">+966 115056777</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.international.russia.countries" text = "Moscow, Russia"/> 
-                                        </div>
-                                        <div class="telephone">+8613636664163</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.international.beijing.china" text = "Beijing, China"/>
-                                        </div>
-                                        <div class="countries">
-                                            <spring:theme code="portal.contact.us.international.china.countries" text = "Taiwan, Hong Kong, Macao"/>
-                                        </div>
-                                        <div class="telephone">+8613636664163</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.international.seoul.south.korea" text = "Seoul, South Korea"/>
-                                        </div>
-                                        <div class="countries">
-                                            <spring:theme code="portal.contact.us.international.south.korea.countries" text = "Taiwan, Hong Kong, Macao"/> 
-                                        </div>
-                                        <div class="telephone">+966 1150567777</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.international.tokyo.japan" text = "Tokyo, Japan"/>
-                                        </div>
-                                        <div class="countries">
-                                            <spring:theme code="portal.contact.us.international.japan.countries" text = "Taiwan, Hong Kong, Macao"/>
-                                        </div>
-                                        <div class="telephone">+81 704 566 3033</div>
-                                    </div>
-                                    <div class="location">
-                                        <div class="name">
-                                            <spring:theme code="portal.contact.us.international.singapore" text = "Singapore"/>
-                                        </div>
-                                        <div class="countries">
-                                            <spring:theme code="portal.contact.us.international.singapore.countries" text = "Taiwan, Hong Kong, Macao"/> 
-                                        </div>
-                                        <div class="telephone">+966 115056777</div>
-                                    </div>
+                                    <cms:pageSlot position="ContactUsIntnlLocations" var="slotComponent">
+							            <cms:component component="${slotComponent}"/>
+							        </cms:pageSlot>
                                 </div>
                             </div>
                         </div>
@@ -251,9 +137,7 @@
                 <cms:component component="${slotComponent}"/>
             </cms:pageSlot>
 
-            <cms:pageSlot position="PortalPageOffices" var="slotComponent">
-                <cms:component component="${slotComponent}"/>
-            </cms:pageSlot>
+
             
         </main>
 

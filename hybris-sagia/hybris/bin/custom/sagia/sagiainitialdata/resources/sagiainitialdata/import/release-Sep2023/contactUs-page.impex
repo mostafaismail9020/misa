@@ -1,0 +1,161 @@
+$page = contact-us
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
+$lang=en
+
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true]  ;name                 ;content[lang=$lang]
+                                   ;                       ;ContactUsAboutPara;Contact Us about Para;"<span class=""text"">Assistance available 24/7 in English, German, Japanese, French, Spanish, Korean and Chinese.</span>"
+                                   ;                       ;ContactUsTlephoneNumbers;Contact Us about Para;"                                        <div class=""number"">
+                                            <span>Local:</span>
+                                            <span>0800 1231234</span>
+                                        </div>
+                                        <div class=""number"">
+                                            <span>International:</span>
+                                            <span>0800 1231234</span>
+                                        </div>"
+                                   ;                       ;ContactUsEmail;Contact Us about Para;"<div class=""email""><a href=""mailto:InvestorCare@misa.gov.sa"">InvestorCare@misa.gov.sa</a></div>"
+                                   ;                       ;ContactUsLocalLocations;Contact Us local locations ;"                                   <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.local.madinah"" text=""Madinah"" />
+                                        </div>
+                                        <address class=""address"">
+                                            <spring:theme code=""portal.contact.us.local.madinah.building.no"" text=""Building No.7539/2410"" /><br>
+                                            <spring:theme code=""portal.contact.us.local.madinah.district"" text=""King Abdul Aziz Road Hathm District"" /><br>
+                                            <spring:theme code=""portal.contact.us.local.madinah.postal.code"" text=""Postal Code: 42363"" /><br>
+                                        </address>
+                                        <div class=""telephone"">8002449990</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.local.jeddah"" text=""Jeddah"" />
+                                        </div>
+                                        <address class=""address"">
+                                            <spring:theme code=""portal.contact.us.local.jeddah.building.no"" text=""Building No.7261/2802"" /><br>
+                                            <spring:theme code=""portal.contact.us.local.jeddah.district""
+                                                text=""Prince Sultan bin Abdulaziz Road, Alnaeem District, Jeddah"" /><br>
+                                            <spring:theme code=""portal.contact.us.local.jeddah.postal.code"" text=""Postal Code: 23621"" /><br>
+                                        </address>
+                                        <div class=""telephone"">8002449990</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.local.riyadh"" text=""Riyadh"" />
+                                        </div>
+                                        <address class=""address"">
+                                            <spring:theme code=""portal.contact.us.local.riyadh.building.no"" text=""Building No.3966/6244"" /><br>
+                                            <spring:theme code=""portal.contact.us.local.riyadh.district""
+                                                text=""Imam Saud bin Abdulaziz bin Mohamed Road Nakheel district"" /><br>
+                                            <spring:theme code=""portal.contact.us.local.riyadh.postal.code"" text=""Postal Code: 12382"" /><br>
+                                        </address>
+                                        <div class=""telephone"">8002449990</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.local.dammam"" text=""Dammam"" />
+                                        </div>
+                                        <address class=""address"">
+                                            <spring:theme code=""portal.contact.us.local.dammam.building.no"" text=""Building No.7296"" /><br>
+                                            <spring:theme code=""portal.contact.us.local.dammam.street""
+                                                text=""Tariq Bin Ziyad St. Al Rakah Al Janubiyah, Al Khobar"" /><br>
+                                            <spring:theme code=""portal.contact.us.local.dammam.postal.code"" text=""Postal Code : 34227"" /><br>
+                                        </address>
+                                        <div class=""telephone"">8002449990</div>
+                                    </div>" 
+                                   ;                       ;ContactUsIntnlLocations;Contact Us intnl. locations ;"                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.local.usa"" text = ""USA""/>
+                                        </div>
+                                        <div class=""countries"">
+                                            <spring:theme code=""portal.contact.us.international.usa.countries"" text = ""Mexico, Canada, Brazil""/> 
+                                        </div>
+                                        <div class=""telephone"">+2028666331</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.international.london.united.kingdom"" text = ""United Kingdom""/>
+                                        </div>
+                                        <div class=""countries"">
+                                            <spring:theme code=""portal.contact.us.international.united.kingdom.countries"" text = ""Ireland, Norway, Sweden, Denmark, Finland, Estonia, Lithuania, Latvia, Iceland, Greece (temporary)""/> 
+                                        </div>
+                                        <div class=""telephone"">+44 7387 976667</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.international.paris.france"" text = ""Paris, France""/>
+                                        </div>
+                                        <div class=""countries"">
+                                            <spring:theme code=""portal.contact.us.international.france.countries"" text = ""Spain, Portugal, Italy, Belgium, Netherlands, Luxembourg""/> 
+                                        </div>
+                                        <div class=""telephone"">+44 7387 976667</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.international.berlin.germany"" text = ""Berlin, Germany""/>
+                                        </div>
+                                        <div class=""countries"">
+                                            <spring:theme code=""portal.contact.us.international.germany.countries"" text = ""Switzerland, Austria, Hungary, Bulgaria, Poland, Romania, Czech Republic, Croatia, Slovakia, Ukraine, Moldova""/> 
+                                        </div>
+                                        <div class=""telephone"">+966 115056777</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.international.russia.countries"" text = ""Moscow, Russia""/> 
+                                        </div>
+                                        <div class=""telephone"">+8613636664163</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.international.beijing.china"" text = ""Beijing, China""/>
+                                        </div>
+                                        <div class=""countries"">
+                                            <spring:theme code=""portal.contact.us.international.china.countries"" text = ""Taiwan, Hong Kong, Macao""/>
+                                        </div>
+                                        <div class=""telephone"">+8613636664163</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.international.seoul.south.korea"" text = ""Seoul, South Korea""/>
+                                        </div>
+                                        <div class=""countries"">
+                                            <spring:theme code=""portal.contact.us.international.south.korea.countries"" text = ""Taiwan, Hong Kong, Macao""/> 
+                                        </div>
+                                        <div class=""telephone"">+966 1150567777</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.international.tokyo.japan"" text = ""Tokyo, Japan""/>
+                                        </div>
+                                        <div class=""countries"">
+                                            <spring:theme code=""portal.contact.us.international.japan.countries"" text = ""Taiwan, Hong Kong, Macao""/>
+                                        </div>
+                                        <div class=""telephone"">+81 704 566 3033</div>
+                                    </div>
+                                    <div class=""location"">
+                                        <div class=""name"">
+                                            <spring:theme code=""portal.contact.us.international.singapore"" text = ""Singapore""/>
+                                        </div>
+                                        <div class=""countries"">
+                                            <spring:theme code=""portal.contact.us.international.singapore.countries"" text = ""Taiwan, Hong Kong, Macao""/> 
+                                        </div>
+                                        <div class=""telephone"">+966 115056777</div>
+                                    </div>"
+                                   
+                                   
+INSERT_UPDATE ContentSlot; uid[unique = true]               ; name                  ; active; cmsComponents(uid, $contentCV) ; $contentCV[unique = true];
+                         ; ContactUsAboutSlot-$page ; ContactUsMap         ; true  ; ContactUsAboutPara             ;                          ;
+                         ; ContactUsHomeLinkSlot-$page     ; Portal page home link ; true  ; sagiaHomepageLinkComponent     ;                          ;
+                         ; ContactUsTelephoneNumbersSlot-$page     ; Portal contact us telephone numbers ; true  ; ContactUsTlephoneNumbers     ;                          ;
+                         ; ContactUsEmailSlot-$page     ; Portal contact us email ; true  ; ContactUsEmail     ;                          ;
+                         ; ContactUsLocalLocationsSlot-$page     ; Portal contact local locations ; true  ; ContactUsLocalLocations     ;                          ;
+                         ; ContactUsIntnlLocationsSlot-$page     ; Portal contact intnl. locations ; true  ; ContactUsIntnlLocations     ;                          ;
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]                  ; position                  ; contentSlot(uid, $contentCV)                ; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+                                ; ContactUsAboutSlot-$page            ; ContactUsAbout            ; ContactUsAboutSlot-$page            ;
+                                ; ContactUsHomeLinkSlot-$page         ; ContactUsHomeLink         ; ContactUsHomeLinkSlot-$page                ;
+                                ; ContactUsTelephoneNumbersSlot-$page ; ContactUsTelephoneNumbers ; ContactUsTelephoneNumbersSlot-$page                ;
+                                ; ContactUsEmailSlot-$page            ; ContactUsEmail            ; ContactUsEmailSlot-$page                ;
+                                ; ContactUsLocalLocationsSlot-$page            ; ContactUsLocalLocations            ; ContactUsLocalLocationsSlot-$page                ;
+                                ; ContactUsIntnlLocationsSlot-$page            ; ContactUsIntnlLocations            ; ContactUsIntnlLocationsSlot-$page                ;
+ 

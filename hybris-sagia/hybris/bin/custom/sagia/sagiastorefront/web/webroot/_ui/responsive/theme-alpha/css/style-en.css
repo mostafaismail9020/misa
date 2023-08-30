@@ -472,6 +472,32 @@ box-shadow: 0px 2px var(--misaSecondColor);
 	top: 100%;
 	visibility: visible;
 }
+.page-newsevents-list-page .pageTitle {
+    position: absolute;
+    width: 100%; /* Occupy full width */
+    height: 46px;
+    left: 0; /* Reset left */
+    top: 50%; /* Vertically center the element */
+    transform: translateY(-50%); /* Adjust for centering vertically */
+    font-family: '72';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 46px;
+    display: flex;
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    color: #BF9B2E;
+}
+
+/* Adjust the styles for mobile devices */
+@media (max-width: 768px) {
+    .page-newsevents-list-page .pageTitle {
+        font-size: 24px;
+        line-height: normal;
+    }
+}
+
 
 .nav-menu .drop-down li {
 	min-width: 180px;

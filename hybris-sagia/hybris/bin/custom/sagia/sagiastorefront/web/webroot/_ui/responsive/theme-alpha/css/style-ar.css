@@ -10863,6 +10863,7 @@ body.page-living-in-saudi .content {
      background-color: #FFF !important;
      border-radius: 10px !important;
      box-shadow: none !important;
+     padding: 10px !important;
  }
 
 .video-inner-div h4 {
@@ -10880,7 +10881,7 @@ body.page-living-in-saudi .content {
     font-size: 16px;
     line-height: 18px;
     color: #00714D;
-   padding: 3px;
+   padding: 10px;
 }
 .page-newsevents-list-page .videoTitle{
         font-family: 'Arial';
@@ -10889,7 +10890,7 @@ body.page-living-in-saudi .content {
         font-size: 16px;
         line-height: 18px;
         color: #00714D;
-       padding: 3px;
+       padding: 10px;
 }
 .page-newsevents-list-page .videoDate{
     font-family: 'Arial';

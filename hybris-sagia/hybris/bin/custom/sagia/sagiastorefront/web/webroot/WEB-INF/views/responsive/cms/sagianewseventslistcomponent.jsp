@@ -73,14 +73,16 @@
                 </c:otherwise>
             </c:choose>
         </div>
-        <div class="col-md-9 col-sm-12 page-main-content">
+        <div class="col-md-12 col-sm-12 page-main-content">
             <c:choose>
                 <c:when test="${not empty searchPageData.results}">
                     <h2 class="newsTitle">Latest News</h2>
+                    <div class="col-md-12">
                     <div class="row">
                         <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
                             <tags:news-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
+                    </div>
                     </div>
                 </c:when>
                 <c:otherwise>

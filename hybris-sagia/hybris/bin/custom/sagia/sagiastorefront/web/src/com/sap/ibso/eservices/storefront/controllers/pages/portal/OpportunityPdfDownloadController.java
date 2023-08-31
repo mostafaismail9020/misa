@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.util.Objects;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.http.ContentDisposition;
@@ -70,9 +71,10 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	        LOG.error("Opportunity retrieval failed for opportunity code: {}", productCode, e);
 	        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
-
-	   
-		List<File> secFiles = convertMediaListToFileList(mediaModels);
+		List<File> secFiles = null;
+	   	if(Objects.nonNull(mediaModels)) {
+			secFiles = convertMediaListToFileList(mediaModels);
+		}
 	    File file = sagiaPDFChartGenerator.generatePdfFile(productModel, secFiles);
 
 	    if (file.exists()) {

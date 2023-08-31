@@ -144,6 +144,9 @@ body {
 ul li {
     list-style-type: none; }
 
+.pageLabel--mediaCenter a {
+    color: #00714D !important;
+}
 a {
     color: #fff;
     -webkit-transition: color .2s ease-in;

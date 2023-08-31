@@ -23,7 +23,7 @@
                                 	<div class="row  align-items-center  ">
                                     	<div class="container">
                                         	<div class="col-md-6 col-sm-12">
-                                               <h2 class="News_Press_Releases"><spring:theme code="portal.media.events" text = "Events"/></h2>
+                                               <h2 class="News_Press_Releases"><spring:theme code="portal.media.event" text = "Events"/></h2>
                                             </div> 
                                       	</div>
                                       	<div class="col-md-5 col-sm-12 content-slider-part">

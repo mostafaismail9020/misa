@@ -20,25 +20,23 @@
 	                      		<div class="container-fluid">
 	                        		<div class="mask flex-center">
 	                              		<div class="row  align-items-center  ">
-	                                 		<div class="container">
-			                                  	<div class="col-md-6 col-sm-12">
-			                                     	<h2 class="News_Press_Releases">${mediaCenter.mediaCenterTypeName}</h2>
-			                                  	</div>
-	                                 		</div>
+                                    	    <div class="container">
+                                        	    <div class="col-md-6 col-sm-12">
+                                                <h2 class="News_Press_Releases"><spring:theme code="portal.media.events" text = "Events"/></h2>
+                                                </div>
+                                      	    </div>
 	                                 		<div class="col-md-5 col-sm-12 content-slider-part">
 	                                    		<div class="News_press_bgwhite">
-		                                       		<div class="top_date position-absolute">
-		                                       			<c:if test="${!mediaCenter.isVideoComponent}">
-		                                                	<h4 class="date"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="d" /></h4>
-		                                          			<h6 class="date_name"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="MMMM" /></h6>
-		                                          		</c:if>
-		                                          		<%--                                         
-			                                          	<c:if test="${mediaCenter.isVideoComponent}">
-			                                                <h4 class="date">09</h4>
-			                                                <h6 class="date_name">AUG 2021</h6>
-			                                          	</c:if>
-			                                          	--%>
-	                                       			</div>
+	                                    		   <c:url value="${mediaCenter.mediaCenterUrl}/${mediaCenter.mediaCenterCode}" var="mediaCenterUrl"/>
+                                                   <a href="${mediaCenterUrl}">
+		                                       		<c:if test="${not mediaCenter.isVideoComponent}">
+                                                        <c:if test="${not empty mediaCenter.mediaCenterStartDate}">
+                                                            <div class="top_date position-absolute">
+                                                                <h4 class="date"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="d" /></h4>
+                                                                <h6 class="date_name"><fmt:formatDate value="${mediaCenter.mediaCenterStartDate}" pattern="MMMM" /></h6>
+                                                            </div>
+                                                        </c:if>
+                                                    </c:if>
 	                                       			<div class="p-5 paddding_align">
 			                                        	<div>
 			                                        		<h3 class="highlight_title">${mediaCenter.mediaCenterTitle}</h3>
@@ -53,24 +51,11 @@
 				                                                          	<input type="hidden" id="" value="${fn:escapeXml(mediaCenter.embedURL)}">
 				                                                        </div>
 				                                                 	</c:when>
-		                                                 			<c:otherwise>                                                                                             
-			                                                        	<div class="row ">
-			                                                           		<div class="col pull-left p-0">
-			                                                           			<c:url value="${mediaCenter.mediaCenterUrl}/${mediaCenter.mediaCenterCode}" var="mediaCenterUrl"/>       
-				                                                             	<a href="${mediaCenterUrl}">
-					                                                              	<div class="know_more"><spring:theme code="portal.media.know.more" text="Know more"/>&nbsp;
-					                                                                	<svg xmlns="http://www.w3.org/2000/svg" width="15.804" height="12.058" viewBox="0 0 15.804 12.058">
-					                                                                   		<path id="Path" d="M12.058,6.045l-.87.87L6.651,2.393V15.8H5.408V2.393L.87,6.915,0,6.045,6.029,0Z" transform="translate(15.804) rotate(90)" fill="#00a6be"/>
-					                                                                   	</svg>
-					                                                              	</div>
-				                                                            	</a>
-			                                                           		</div>
-			                                                         	</div>
-		                                                 			</c:otherwise>
 	                                             				</c:choose>                                                
 															</div>
 				                                        </div>
 													</div>
+													</a>
 												</div>
 				     						</div>
 			                            </div>
@@ -81,23 +66,6 @@
                 	</c:if>
             	</c:forEach>
 			</div>
-            <div class="arrow_set">
-            	<ol class="carousel-indicators">
-              		<c:forEach items="${mediaCenterComponents}" var="mediaCenterComp" varStatus="status">
-              			<c:if test="${null != mediaCenterComp.mediaCenterTitle}">
-               				<li data-target="#carouselExampleIndicators" data-slide-to="${status.index}" class="<c:if test="${status.index} = 0">active</c:if>"></li>
-               			</c:if>
-              		</c:forEach>
-               	</ol>
-         		<a class="carousel-control-prev control_arrow" href="#carouselExampleIndicators" role="button" data-slide="prev">
-	             	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	             	<span class="sr-only">Previous</span>
-	           	</a>
-           		<a class="carousel-control-next control_arrow" href="#carouselExampleIndicators" role="button" data-slide="next">
-             		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-             		<span class="sr-only">Next</span>
-           		</a>
-			</div>           
  		</div>
     </div>
 </section>

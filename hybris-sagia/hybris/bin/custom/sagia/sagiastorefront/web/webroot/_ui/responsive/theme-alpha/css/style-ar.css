@@ -14009,10 +14009,13 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 .pageLabel--newseventslist .container.banner.homeLink {
     color: #BF9B2E !important;
+    font-family: '72';
+    font-weight: 400;
+    font-size: 14px;
     position: absolute !important;
     width: 100% !important;
      top:110vh !important;
-     left: -11vh !important;
+     left: 12vh !important;
 }
 .container.banner.homeLink {
 	z-index: 9999;

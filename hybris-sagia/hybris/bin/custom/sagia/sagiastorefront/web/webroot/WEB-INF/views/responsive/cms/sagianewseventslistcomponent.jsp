@@ -15,7 +15,7 @@
                 	<div class="carousel-item">
                     	<img class="d-block w-100" src="${fn:escapeXml(eventSearchPageData.results[0].imageUrl)}" alt=" loading="lazy">
                         <div class="toplist">
-                        	<div class="container-fluid">
+                        	<div class="container">
                             	<div class="mask flex-center">
                                 	<div class="row  align-items-center  ">
                                     	<div class="container">
@@ -52,16 +52,18 @@
 	</div>
 </section>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row p-2">
-        <div class="col-md-9 col-sm-12 page-main-content">
+        <div class="col-md-12 col-sm-12 page-main-content">
             <c:choose>
                 <c:when test="${not empty eventSearchPageData.results}">
                     <h2 class="newsTitle">Upcoming Events</h2>
+                   <div class="col-md-12">
                     <div class="row">
                         <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
                             <tags:events-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
+                    </div>
                     </div>
                 </c:when>
                 <c:otherwise>

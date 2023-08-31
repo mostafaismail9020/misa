@@ -34,7 +34,7 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
     private CommonI18NService commonI18NService;
     private static final String FORWARD_SLASH = "/";
     private static final String SECTOR_URL = "/sectors-opportunities/";
-    private static final String EVENT_URL = "/mediaCenter/events/";
+    private static final String EVENT_URL = "events/";
     private static final String NEWS_URL = "news/";
     private static final String ARTICLES_URL = "articles/";
 
@@ -139,7 +139,7 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
 			return SECTOR_URL + ARTICLES_URL + ((ArticleProductModel) model).getCode();
 		}
     	else if (model instanceof EventProductModel) {
-			return EVENT_URL + ((EventProductModel) model).getCode();
+			return SECTOR_URL + EVENT_URL + ((EventProductModel) model).getCode();
 		}
     	else if (model instanceof NewsProductModel) {
     		return SECTOR_URL + NEWS_URL +  ((NewsProductModel) model).getCode();

@@ -15,7 +15,10 @@ import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
+import com.investsaudi.portal.core.model.EventProductModel;
 import com.investsaudi.portal.core.model.NewsProductModel;
+
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -38,10 +41,10 @@ import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.i18n.I18NService;
 
 
-public class InvestSaudiNewsPopulator implements Populator<ProductData, NewsProductModel> {
+public class InvestSaudiEventPopulator implements Populator<ProductData, EventProductModel> {
 
     private static final String SECTOR_URL = "/sectors-opportunities/";
-    private static final String ARTICLE_TYPE = "NewsProduct";
+    private static final String ARTICLE_TYPE = "EventProduct";
 
 
     private Converter<MediaModel, ImageData> imageConverter;
@@ -55,7 +58,7 @@ public class InvestSaudiNewsPopulator implements Populator<ProductData, NewsProd
     private Converter<InvestSaudiMediaModel, ImageData> sagiaImageConverter;
 
     @Override
-    public void populate(ProductData productData, NewsProductModel productModel) throws ConversionException {
+    public void populate(ProductData productData, EventProductModel productModel) throws ConversionException {
 
         Locale currentLocale = i18NService.getCurrentLocale();
         productData.setCode(productModel.getCode());
@@ -78,7 +81,7 @@ public class InvestSaudiNewsPopulator implements Populator<ProductData, NewsProd
         final Optional<CategoryModel> parentCategory = emptyIfNull(productModel.getSupercategories()).stream().findFirst();
         if (parentCategory.isPresent()) {
             productData.setParentCategory(parentCategory.get().getCode());
-            productData.setUrl(SECTOR_URL + "news" + "/" + productModel.getCode());
+            productData.setUrl(SECTOR_URL + "events" + "/" + productModel.getCode());
 
             final MediaModel logoImage = parentCategory.get().getPicture();
             if (logoImage != null)
@@ -106,11 +109,22 @@ public class InvestSaudiNewsPopulator implements Populator<ProductData, NewsProd
         }
         productData.setKeywords(keywordSet);
 
-        productData.setVideoUrl(productModel.getVideoUrl());
-        productData.setSubHeadings(productModel.getNewsSubHeadings(currentLocale));
+        //productData.setVideoUrl(productModel.getVideoUrl());
+        //productData.setSubHeadings(productModel.getNewsSubHeadings(currentLocale));
+        productData.setSubjects(productModel.getSubjects(currentLocale));
+        productData.setSpeakers(productModel.getSpeakers(currentLocale));
+        productData.setEventDetailGrid(productModel.getEventDetailGrid(currentLocale));
+        productData.setEventTiming(productModel.getEventTiming(currentLocale));
+        productData.setEventLocation(productModel.getEventLocation(currentLocale));
+        productData.setEventDate(productModel.getEventDate());
         if (null != productModel.getParaWithMedia(currentLocale)) {
             productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
         }
+        Optional<Collection<MediaModel>> sponsersAndPartners = CollectionUtils.emptyIfNull(productModel.getGalleryImages())
+        		.stream().filter(mc -> mc.getQualifier().contains("sponsersAndPartners")).map(mc -> mc.getMedias()).findFirst();
+        if (sponsersAndPartners.isPresent() && CollectionUtils.isNotEmpty(sponsersAndPartners.get())) {
+            productData.setSponsersPartners(imageConverter.convertAll(sponsersAndPartners.get()));	
+		}
     }
 
 
@@ -211,4 +225,5 @@ public class InvestSaudiNewsPopulator implements Populator<ProductData, NewsProd
     }
 
 }
+
 

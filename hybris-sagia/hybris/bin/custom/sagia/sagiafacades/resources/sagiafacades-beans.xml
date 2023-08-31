@@ -3523,7 +3523,10 @@
 		<property name="eventTiming" type="java.lang.String"/>
 		<property name="newsDate" type="java.util.Date"/>
 
-
+		<property name="subjects" type="java.util.Map&lt;String, String>"/>
+		<property name="speakers" type="java.util.Map&lt;String, String>"/>
+		<property name="eventDetailGrid" type="java.util.Map&lt;String, String>"/>
+		<property name="sponsersPartners" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ImageData>"/>
 
 		<property name="articleTitle" type="java.lang.String"/>
 		<property name="videoUrl" type="java.lang.String"/>

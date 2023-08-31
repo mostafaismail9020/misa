@@ -11040,6 +11040,11 @@
                       jaloclass="com.investsaudi.portal.core.jalo.SagiaOpportunitySearchResultComponent">
                 <description>Sagia Opportunity Search Result Component</description>
             </itemtype>
+            <itemtype code="SagiaResourceListingComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaResourceListingComponent">
+                <description>Sagia Resource Listing Component</description>
+            </itemtype>
             <itemtype code="SagiaSearchBoxComponent" generate="true"
                       extends="SearchBoxComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.SearchBoxComponent">

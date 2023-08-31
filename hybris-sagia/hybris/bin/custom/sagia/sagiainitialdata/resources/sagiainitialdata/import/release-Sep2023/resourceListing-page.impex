@@ -1,0 +1,33 @@
+$template = portalProductSearchTemplate
+$page = resources-list-page
+$pageName = Resources
+$pageTitleEn = $pageName
+$pageTitleAr = $pageName
+$pageLabel = /resourcesList
+
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+
+INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; title[lang = ar]; description[lang = en]; masterTemplate(uid, $contentCV); label      ; homepage; $contentCV[unique = true]; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']
+                         ; $page             ; $pageName ; $pageTitleEn    ; $pageTitleAr    ; $pageName             ; $template                      ; $pageLabel ; false   ;
+
+
+INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]     ; name                 ; descriptionText[lang = ar] ; descriptionText[lang = en]; buttonText[lang = en] ; buttonText[lang = ar] ; image(code, $contentCV) ; buttonURL(&linkRef); link  ; &componentRef          ; $contentCV[unique = true]
+                                        ; all-resources-banner-1 ; All resources Banner ;							 ; All Resources    		 ;         				 ;           		     ;                         ;  	  				; true  ; all-resources-banner-1 ;
+
+
+INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      		; name                    		; simpleCMSComponents(&componentRef); &componentRef          		; $contentCV[unique = true]
+                                        ; all-resources-banner-container; All resources Banner Container	; all-resources-banner-1 				; all-resources-banner-container 	;
+
+
+INSERT_UPDATE SagiaResourceListingComponent; uid[unique = true]                      ; name                          ; &componentRef                        ; $contentCV[unique = true]
+                                           ; sagia-resources-search-result-component ; Sagia Search Result Component ; sagia-resources-search-result-component ;
+
+
+INSERT_UPDATE ContentSlot; uid[unique = true]       ; name           ; active; cmsComponents($contentCV,uid); $contentCV[unique = true]
+                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; all-resources-banner-container, sagia-search-box-component, sagia-resources-search-result-component
+
+
+INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
+								; PortalPageMainSlot-$page ; PortalPageMain 		; PortalPageMainSlot-$page 					 ;$page													;

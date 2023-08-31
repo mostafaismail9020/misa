@@ -189,7 +189,7 @@
                        <div class="video-player-container video-inner-div border-0 p-0">
                            <div class="embed-responsive embed-responsive-16by9 video-events" >
                                <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
-                                       src="https://www.youtube.com/watch?v=OCJVaEfmWFA" frameborder="0"
+                                       src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0"
                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                </iframe>
                            </div>
@@ -203,7 +203,7 @@
                                <div class="video-player-container video-inner-div border-0 p-0">
                                    <div class="embed-responsive embed-responsive-16by9 video-events">
                                        <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
-                                               src="https://www.youtube.com/watch?v=g0aVQd7q_so" frameborder="0"
+                                               src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0"
                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                        </iframe>
                                    </div>
@@ -217,7 +217,7 @@
                                <div class="video-player-container video-inner-div border-0 p-0">
                                    <div class="embed-responsive embed-responsive-16by9 video-events">
                                        <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
-                                               src="https://youtu.be/Fu-KY6BX5ec" frameborder="0"
+                                               src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0"
                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                        </iframe>
                                    </div>

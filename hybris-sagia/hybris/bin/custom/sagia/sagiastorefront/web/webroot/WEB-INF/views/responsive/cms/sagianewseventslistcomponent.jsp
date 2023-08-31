@@ -33,7 +33,7 @@
                                                     <div class="p-5 paddding_align">
                                                         <div>
                                                             <h3 class="highlight_title">${eventSearchPageData.results[0].name}</h3>
-                                                            <c:set var="description" value="${eventSearchPageData.results[4].description}" />
+                                                            <c:set var="description" value="${eventSearchPageData.results[0].description}" />
                                                              <c:set var="start" value="${fn:indexOf(description, '<p>')}"/>
                                                              <c:set var="end" value="${fn:indexOf(description, '</p>')}"/>
                                                              <p class="eventDescription">${fn:substring(description, start + 3, end)}</p>

@@ -10988,6 +10988,12 @@ body.page-living-in-saudi .content {
     padding: 10px;
     white-space: nowrap;
 }
+@media (max-width: 768px) {
+  .pageLabel--newseventslist .container.banner.homeLink {
+   top:66vh !important;
+   left: 19px!important;
+  }
+}
 .news-service-card .service-card {
 	padding: 20px;
 	padding-top: 25px;
@@ -14018,6 +14024,12 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
     width: 100% !important;
      top:105vh !important;
      left: 8vh !important;
+}
+@media (max-width: 768px) {
+  .pageLabel--newseventslist .container.banner.homeLink {
+   top:66vh !important;
+   right: 19px!important;
+  }
 }
 .container.banner.homeLink {
 	z-index: 9999;

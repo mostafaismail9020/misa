@@ -179,7 +179,7 @@
             </section>
        <section class="Inc-mediaCenter-sectionwrapper pb-3">
            <div class="container">
-               <div class="row text-center">
+               <div class="row text-center col-md-12">
                    <h2 class="newsTitle">Media Library </h2>
                </div>
            </div>

@@ -78,7 +78,7 @@ public class InvestSaudiNewsPopulator implements Populator<ProductData, NewsProd
         final Optional<CategoryModel> parentCategory = emptyIfNull(productModel.getSupercategories()).stream().findFirst();
         if (parentCategory.isPresent()) {
             productData.setParentCategory(parentCategory.get().getCode());
-            productData.setUrl(SECTOR_URL + "article" + "/" + productModel.getCode());
+            productData.setUrl(SECTOR_URL + "news" + "/" + productModel.getCode());
 
             final MediaModel logoImage = parentCategory.get().getPicture();
             if (logoImage != null)

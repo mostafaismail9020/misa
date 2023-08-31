@@ -193,7 +193,7 @@
                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
                                </iframe>
                            </div>
-                                   <h4 class= "videoTitle">Saudi investment ministry signs four investment agreements</h4>
+                          <h4 class= "videoTitle">Saudi investment ministry signs four investment agreements</h4>
                           <span class="videoDate">25 Oct 2022</span>
                        </div>
                    </div>

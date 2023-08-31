@@ -8931,6 +8931,10 @@ a.pvcy-policy:focus {
     font-size: 14px;
     line-height: 16px;
     color: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 416px;
 }
 
 #News_press .News_press_bgwhite {

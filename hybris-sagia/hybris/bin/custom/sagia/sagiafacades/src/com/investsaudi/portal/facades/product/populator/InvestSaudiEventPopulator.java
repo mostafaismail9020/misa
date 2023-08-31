@@ -17,6 +17,8 @@ import javax.annotation.Resource;
 
 import com.investsaudi.portal.core.model.EventProductModel;
 import com.investsaudi.portal.core.model.NewsProductModel;
+
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -118,6 +120,11 @@ public class InvestSaudiEventPopulator implements Populator<ProductData, EventPr
         if (null != productModel.getParaWithMedia(currentLocale)) {
             productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
         }
+        Optional<Collection<MediaModel>> sponsersAndPartners = CollectionUtils.emptyIfNull(productModel.getGalleryImages())
+        		.stream().filter(mc -> mc.getQualifier().contains("sponsersAndPartners")).map(mc -> mc.getMedias()).findFirst();
+        if (sponsersAndPartners.isPresent() && CollectionUtils.isNotEmpty(sponsersAndPartners.get())) {
+            productData.setSponsersPartners(imageConverter.convertAll(sponsersAndPartners.get()));	
+		}
     }
 
 

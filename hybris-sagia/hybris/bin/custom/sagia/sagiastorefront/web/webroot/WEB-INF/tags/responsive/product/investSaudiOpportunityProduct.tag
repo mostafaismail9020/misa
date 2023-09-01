@@ -412,6 +412,74 @@
 			</div>
 		</div>
 	</section>
+	
+	<section id="newsandupdates" class="newsAndUpdateContainer">
+	    <div class="container">
+	        <div class="row titleContainer">
+	            <div class="col-lg-12 pt-4 pt-lg-0 content mx-auto aos-init" data-aos="fade-right" data-aos-delay="100">
+	                <h2 class="section-title">More ICT opportunities</h2>
+				</div>
+			</div>
+			<div class="row">
+		      	<div class="col-lg-4 col-md-6 card-wrapper " data-aos="fade-up" data-aos-delay="100">
+		        	<div class="flip-card flip-card-custom row">
+		        		<div class="col-md-5 col-4">
+		        			<a class="know-more-link" href="#">
+		        				<img class="img-fluid" src="https://investsaudi.sa/medias/Banner-6-.jpg?context=bWFzdGVyfHJvb3R8MTQyNDI0fGltYWdlL2pwZWd8aDlkL2g4MS85MDUyNjg0NjgxMjQ2LmpwZ3w5MjgzZjMwYjViMDYxZTgwYjljODZlMzZiNTg2NDc3NmU4ZDFkMmVlOWUzY2M5NWY1MjY4ZDBhZDcyZjljNTU4" alt="" loading="lazy">
+		        			</a>
+		        		</div>
+		        		<div class="col-md-7 col-8">
+		        			<a class="know-more-link" href="#">
+		        				<p>Title</p>
+							</a>
+							<span class="badge badge-pill badge-pill-custom">
+								30/08/2023
+							</span>
+		        		</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 card-wrapper " data-aos="fade-up" data-aos-delay="100">
+		        	<div class="flip-card flip-card-custom row">
+		        		<div class="col-md-5 col-4">
+		        			<a class="know-more-link" href="#">
+		        				<img class="img-fluid" src="https://investsaudi.sa/medias/Banner-6-.jpg?context=bWFzdGVyfHJvb3R8MTQyNDI0fGltYWdlL2pwZWd8aDlkL2g4MS85MDUyNjg0NjgxMjQ2LmpwZ3w5MjgzZjMwYjViMDYxZTgwYjljODZlMzZiNTg2NDc3NmU4ZDFkMmVlOWUzY2M5NWY1MjY4ZDBhZDcyZjljNTU4" alt="" loading="lazy">
+		        			</a>
+		        		</div>
+		        		<div class="col-md-7 col-8">
+		        			<a class="know-more-link" href="#">
+		        				<p>Title</p>
+							</a>
+							<span class="badge badge-pill badge-pill-custom">
+								30/08/2023
+							</span>
+		        		</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 card-wrapper " data-aos="fade-up" data-aos-delay="100">
+		        	<div class="flip-card flip-card-custom row">
+		        		<div class="col-md-5 col-4">
+		        			<a class="know-more-link" href="#">
+		        				<img class="img-fluid" src="https://investsaudi.sa/medias/Banner-6-.jpg?context=bWFzdGVyfHJvb3R8MTQyNDI0fGltYWdlL2pwZWd8aDlkL2g4MS85MDUyNjg0NjgxMjQ2LmpwZ3w5MjgzZjMwYjViMDYxZTgwYjljODZlMzZiNTg2NDc3NmU4ZDFkMmVlOWUzY2M5NWY1MjY4ZDBhZDcyZjljNTU4" alt="" loading="lazy">
+		        			</a>
+		        		</div>
+		        		<div class="col-md-7 col-8">
+		        			<a class="know-more-link" href="#">
+		        				<p>Title</p>
+							</a>
+							<span class="badge badge-pill badge-pill-custom">
+								30/08/2023
+							</span>
+		        		</div>
+					</div>
+				</div>
+        	</div>
+			<div class="row explore-keys-btn" style="margin-top: 0;">
+				<a href="" class="btn btn-primary-fill btn-video">
+					<spring:theme code="portal.seemoreupdates.button.text"/>&nbsp;
+				</a>
+			</div>
+    	</div>
+	</section>
 </main>
 
 <cms:pageSlot position="PortalPageBottom" var="slotComponent">

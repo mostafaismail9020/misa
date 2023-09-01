@@ -6278,6 +6278,11 @@ img.accountLogin-headline-logo {
 	#newsandupdates .contentWrapper .card-wrapper .flip-card .card-box span {
 		font-size: 14px;
 	}
+
+	.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .explore-keys-btn {
+		display:table;
+		margin:0 auto;
+	}
 }
 
 @media(min-width:320px) and (max-width:430px) {
@@ -7598,6 +7603,36 @@ figure h2 {
 	top: 0;
     right: 0;
     transform: translate(0vh, 0);
+}
+
+.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .know-more-link h5 {
+	color: #32465A;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 0em;
+	text-align: right;
+}
+
+.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .desc {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	letter-spacing: 0em;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: -5px;
+	text-align: right;
+}
+
+.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .irr-value {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	letter-spacing: 0em;
+	margin-top: 8px;
+	text-align: right;
 }
 
 .banner-section {
@@ -25452,6 +25487,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     padding: 2rem 2rem;
 }
 
+.opportunity-article-section-body .div-form-opportunity-lead {
+	display: none;
+}
+
 .opportunity-article-section-body .jumbotron.jumbotron-second .btn-get-in-touch-opportunity {
 	font-size: 24px;
 	font-weight: 500;
@@ -25470,6 +25509,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	line-height: 23px;
 	letter-spacing: 0em;
 	margin-top: 10px;
+	text-align: right;
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-second .opportunity-owner-position {
@@ -25478,6 +25518,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	line-height: 18px;
 	letter-spacing: 0em;
 	margin-top: 10px;
+	text-align: right;
 }
 
 .opportunity-article-section-statistics .jumbotron-statistics-box {

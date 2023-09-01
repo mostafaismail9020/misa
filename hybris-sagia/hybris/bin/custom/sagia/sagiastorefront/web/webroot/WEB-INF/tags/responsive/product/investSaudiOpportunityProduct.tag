@@ -119,8 +119,51 @@
     					</div>
     					<div class="row">
     						<div class="col text-center">
-    							<button type="button" class="btn btn-primary-fill btn-get-in-touch-opportunity">Get in touch</button>
+    							<button type="button" class="btn btn-primary-fill btn-get-in-touch-opportunity" id="toggle-opportunity-contact-form">Get in touch</button>
     						</div>
+    					</div>
+    					<div class="div-form-opportunity-lead">
+    						<div class="row mt-5">
+								<div class="form-group col-md-6 col-12 form-normal-item">
+									<label for="crName">
+										<spring:theme code="portal.sector.contact.expert.name.label"/> *
+									</label>
+									<input type="text" class="form-control required validate-name" data-val="true" 
+	                               		data-val-regex="Numbers and Special Characters are not allowed"
+		                                data-val-regex-pattern="^[A-Za-z\u0600-\u065F\u066A-\u06EF\u06FA-\u06FF\s]*$"
+		                                data-val-required="Required" id="crName" name="Name"/>
+									<small class="error-msg"></small>
+								</div>
+							</div>
+	    					<div class="row">
+								<div class="form-group col-md-6 col-12 form-normal-item">
+									<label for="crEmail">
+										<spring:theme code="portal.sector.contact.expert.email.label"/> *
+									</label>
+									<input type="text" class="form-control validate-email required" data-val="true"
+		                                data-val-regex="Invalid email address"
+		                                data-val-regex-pattern="[A-Za-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?"
+		                                data-val-required="Required" id="crEmail" name="Email"/>
+									<small class="error-msg"></small>
+								</div>
+							</div>
+	    					<div class="row">
+								<div class="form-group col-md-6 col-12 form-normal-item">
+									<label for="crCompany">
+										<spring:theme code="portal.sector.contact.expert.companyName.label"/> *
+									</label>
+									<input type="text" class="form-control required validate-name" data-val="true"
+		                                data-val-regex="Numbers and Special Characters are not allowed"
+		                                data-val-regex-pattern="^[A-Za-z\u0600-\u065F\u066A-\u06EF\u06FA-\u06FF\s]*$"
+		                                id="crCompany" name="Company"/>
+									<small class="error-msg"></small>
+								</div>
+							</div>
+	    					<div class="row">
+	    						<div class="col text-center">
+	    							<button type="button" class="btn btn-primary-fill btn-get-in-touch-opportunity" id="submit-opportunity-contact-form">Submit</button>
+	    						</div>
+	    					</div>
     					</div>
     				</div>
     			</div>
@@ -430,11 +473,10 @@
 		        		</div>
 		        		<div class="col-md-7 col-8">
 		        			<a class="know-more-link" href="#">
-		        				<p>Title</p>
+		        				<h5>Digital Twins For Tourism, Heritage And Events</h5>
 							</a>
-							<span class="badge badge-pill badge-pill-custom">
-								30/08/2023
-							</span>
+							<p class="desc">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
+		        			<p class="irr-value">Market CAGR 19-26 +3%</p>
 		        		</div>
 					</div>
 				</div>
@@ -447,11 +489,10 @@
 		        		</div>
 		        		<div class="col-md-7 col-8">
 		        			<a class="know-more-link" href="#">
-		        				<p>Title</p>
+		        				<h5>Digital Twins For Tourism, Heritage And Events</h5>
 							</a>
-							<span class="badge badge-pill badge-pill-custom">
-								30/08/2023
-							</span>
+							<p class="desc">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
+		        			<p class="irr-value">Market CAGR 19-26 +3%</p>
 		        		</div>
 					</div>
 				</div>
@@ -464,11 +505,10 @@
 		        		</div>
 		        		<div class="col-md-7 col-8">
 		        			<a class="know-more-link" href="#">
-		        				<p>Title</p>
+		        				<h5>Digital Twins For Tourism, Heritage And Events</h5>
 							</a>
-							<span class="badge badge-pill badge-pill-custom">
-								30/08/2023
-							</span>
+							<p class="desc">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
+		        			<p class="irr-value">Market CAGR 19-26 +3%</p>
 		        		</div>
 					</div>
 				</div>

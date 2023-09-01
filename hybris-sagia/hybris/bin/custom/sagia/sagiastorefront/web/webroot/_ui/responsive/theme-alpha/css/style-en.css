@@ -6404,6 +6404,11 @@ img.accountLogin-headline-logo {
 	.opportunity-article-section-body .jumbotron.jumbotron-main {
 	    margin-top: 20px;
 	}
+
+	.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .explore-keys-btn {
+		display:table;
+		margin:0 auto;
+	}
 }
 
 @media (min-width: 320px) and (max-width: 430px) {
@@ -7735,6 +7740,33 @@ figure h2 {
 	top: 0;
     left: 0;
     transform: translate(0vh, 0);
+}
+
+.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .know-more-link h5 {
+	color: #32465A;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 0em;
+}
+
+.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .desc {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	letter-spacing: 0em;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: -5px;
+}
+
+.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .irr-value {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	letter-spacing: 0em;
+	margin-top: 8px;
 }
 
 .banner-section {
@@ -24058,6 +24090,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
     border-radius: 20px;
     color: var(--misaSecondColor);
     padding: 2rem 2rem;
+}
+
+.opportunity-article-section-body .div-form-opportunity-lead {
+	display: none;
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-second .btn-get-in-touch-opportunity {

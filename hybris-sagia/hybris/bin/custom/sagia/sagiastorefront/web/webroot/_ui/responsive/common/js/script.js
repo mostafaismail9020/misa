@@ -824,6 +824,23 @@ $('body').on('click', function (e) {
 });
 
 // End
+
+/* Script for Opportunity page */
+
+$('#toggle-opportunity-contact-form').on('click', function (e) {
+	$('.div-form-opportunity-lead').css('display', 'block');
+	$('#toggle-opportunity-contact-form').hide();
+	$('#submit-opportunity-contact-form').css('display', 'block');
+});
+
+$('#submit-opportunity-contact-form').on('click', function (e) {
+	$('.div-form-opportunity-lead').hide();
+	$('#toggle-opportunity-contact-form').css('display', 'block');
+	$('#submit-opportunity-contact-form').hide();
+});
+
+/* END Script for Opportunity page */
+
 /****sector page - sub sectors are left aligned start***/
 $(document).ready(function() {
 	$('.Inc-sectordetails-tab').addClass(function() {

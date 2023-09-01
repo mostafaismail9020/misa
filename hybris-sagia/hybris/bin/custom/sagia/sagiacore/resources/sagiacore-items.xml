@@ -56,21 +56,6 @@
        <collectiontype code="TargetedInvestorsSectionList" elementtype="TargetedInvestorsSection" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestmentHowToApplyList" elementtype="StrategicInvestmentHowToApplyCard" autocreate="true" type="list"/>
        <collectiontype code="StrategicInvestorAccordionsList" elementtype="StrategicInvestorAccordions" autocreate="true" type="list"/>
-       <collectiontype code="MarketList" elementtype="Market" type="set"/>
-       <collectiontype code="CapacityList" elementtype="Capacity" type="set"/>
-       <collectiontype code="CostOfDoingBusinessTextList" elementtype="CostOfDoingBusinessText" type="set"/>
-       <collectiontype code="OtherInvestmentOverviewList" elementtype="OtherInvestmentOverview" type="set"/>
-       <collectiontype code="SegmentList" elementtype="SagiaSegment" type="set"/>
-       <collectiontype code="LocationList" elementtype="Location" type="set"/>
-       <collectiontype code="OtherGeneralTextList" elementtype="OtherGeneralText" type="set"/>
-       <collectiontype code="OtherMarketOverviewList" elementtype="OtherMarketOverview" type="set"/>
-       <collectiontype code="ValueChainList" elementtype="Valuechain" type="set"/>
-       <collectiontype code="OtherSupplyList" elementtype="OtherSupply" type="set"/>
-       <collectiontype code="MediaList" elementtype="Media" type="set"/>
-       <collectiontype code="OtherDemandTextList" elementtype="OtherDemandText" type="set"/>
-       
-
-
 	   <collectiontype code="InvestSaudiMediaList" elementtype="InvestSaudiMedia" autocreate="true" generate="true" type="list"/>
    </collectiontypes>
 
@@ -278,7 +263,7 @@
         <enumtype generate="true" code="PotentialEnum" autocreate="true" dynamic="true">
             <value code="High"/>
             <value code="Moderate"/>
-             <value code="Low"/>
+            <value code="Low"/>
         </enumtype>
 
     </enumtypes>
@@ -669,6 +654,102 @@
 				<modifiers />
 			</targetElement>
 		</relation>
+		
+		<relation code="DemandToMarket" localized="false">
+            <sourceElement cardinality="one" qualifier="demand" type="Demand"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="markets" type="Market"/>
+        </relation>
+        
+        <relation code="InvestmentHighlightToCapacity" localized="false">
+            <sourceElement cardinality="one" qualifier="investmentHighlight" type="InvestmentHighlight"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="capacity" type="Capacity"/>
+        </relation>
+        
+        <relation code="InvestmentOverviewToOtherInvestmentOverview" localized="false">
+            <sourceElement cardinality="one" qualifier="investmentOverview" type="InvestmentOverview"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="other" type="OtherInvestmentOverview"/>
+        </relation>
+        
+        <relation code="CostOfDoingBusinessToCostOfDoingBusinessText" localized="false">
+            <sourceElement cardinality="one" qualifier="costOfDoingBusiness" type="CostOfDoingBusiness"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="costOfDoingBusinessTexts" type="CostOfDoingBusinessText"/>
+        </relation>
+        
+        <relation code="OpportunityProductToSagiaSegment" localized="false">
+            <sourceElement cardinality="one" qualifier="opportunityProduct" type="OpportunityProduct"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="sagiaSegment" type="SagiaSegment"/>
+        </relation>
+        
+        <relation code="OpportunityProductToLocation" localized="false">
+            <sourceElement cardinality="one" qualifier="opportunityProduct" type="OpportunityProduct"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="location" type="Location"/>
+        </relation>
+        
+        <relation code="OpportunityProductToOtherGeneralText" localized="false">
+            <sourceElement cardinality="one" qualifier="opportunityProduct" type="OpportunityProduct"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="other" type="OtherGeneralText"/>
+        </relation>
+        
+        <relation code="MarketOverviewToOtherMarketOverview" localized="false">
+            <sourceElement cardinality="one" qualifier="marketOverview" type="MarketOverview"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="other" type="OtherMarketOverview"/>
+        </relation>
+        
+        <relation code="SupplyToValueChain" localized="false">
+            <sourceElement cardinality="one" qualifier="supply" type="Supply"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="valueChainTexts" type="ValueChain"/>
+        </relation>
+        
+        <relation code="SupplyToOtherSupply" localized="false">
+            <sourceElement cardinality="one" qualifier="supply" type="Supply"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="other" type="OtherSupply"/>
+        </relation>
+        
+        <relation code="OpportunityProductToMedia" localized="false">
+            <sourceElement cardinality="one" qualifier="opportunityProduct" type="OpportunityProduct"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="keyStakeholders" type="Media"/>
+        </relation>
+        
+        <relation code="DemandToOtherDemandText" localized="false">
+            <sourceElement cardinality="one" qualifier="demand" type="Demand"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="otherDemandText" type="OtherDemandText"/>
+        </relation>
+        
+        <relation code="ValueChainToValueChainText" localized="false">
+            <sourceElement cardinality="one" qualifier="valueChain" type="ValueChain"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="valueChainTexts" type="ValueChainText"/>
+        </relation>
+        
+        <relation code="OtherInvestmentOverviewToMedia" localized="false">
+            <sourceElement cardinality="one" qualifier="otherInvestmentOverview" type="OtherInvestmentOverview"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="attachments" type="Media"/>
+        </relation>
+        
+        <relation code="OtherGeneralTextToMedia" localized="false">
+            <sourceElement cardinality="one" qualifier="otherGeneralText" type="OtherGeneralText"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="attachments" type="Media"/>
+        </relation>
+        
+        <relation code="OtherMarketOverviewToMedia" localized="false">
+            <sourceElement cardinality="one" qualifier="otherMarketOverview" type="OtherMarketOverview"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="attachments" type="Media"/>
+        </relation>
+        
+        <relation code="ValueChainToMedia" localized="false">
+            <sourceElement cardinality="one" qualifier="valueChain" type="ValueChain"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="attachments" type="Media"/>
+        </relation>
+        
+        <relation code="OtherSupplyToMedia" localized="false">
+            <sourceElement cardinality="one" qualifier="otherSupply" type="OtherSupply"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="attachments" type="Media"/>
+        </relation>
+        
+        <relation code="OtherDemandTextToMedia" localized="false">
+            <sourceElement cardinality="one" qualifier="otherDemandText" type="OtherDemandText"/>
+            <targetElement collectiontype="set" cardinality="many" qualifier="attachments" type="Media"/>
+        </relation>
+
 						
         <!-- Invest Saudi Changes Ends  -->
     </relations>
@@ -4006,20 +4087,7 @@
                         <modifiers read="true" write="true" search="true" optional="true"/>
                         <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="sagiaSegment" type="SegmentList">
-                       <modifiers optional="true"/>
-                       <persistence type="property"/>
-                       <description>List of Segments for opportunity</description>
-                    </attribute>
                     <attribute qualifier="potential" type="PotentialEnum">
-                       <modifiers read="true" write="true"/>
-                       <persistence type="property"/>
-                    </attribute>
-                    <attribute qualifier="location" type="LocationList">
-                       <modifiers read="true" write="true"/>
-                       <persistence type="property"/>
-                    </attribute>
-                    <attribute qualifier="otherText" type="OtherGeneralTextList">
                        <modifiers read="true" write="true"/>
                        <persistence type="property"/>
                     </attribute>
@@ -4041,10 +4109,6 @@
                        <modifiers optional="true"/>
                        <persistence type="property"/>
                        <description>Link to the associated Supply</description>
-                    </attribute>
-                    <attribute qualifier="keyStakeholders" type="MediaList">
-                       <modifiers read="true" write="true"/>
-                       <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="sagiaKeywords" type="localized:java.lang.String">
                         <persistence type="property"/>
@@ -11879,11 +11943,6 @@
 				<persistence type="property" />
 				<description>Link to the associated OpportunityProduct</description>
 			</attribute>
-			<attribute qualifier="markets" type="MarketList">
-				<modifiers optional="true" />
-				<persistence type="property" />
-				<description>List of markets associated with the Demand</description>
-			</attribute>
 
 			<attribute qualifier="cagr" type="java.lang.Double">
 				<modifiers optional="true" />
@@ -11917,12 +11976,6 @@
 				<modifiers optional="true" />
 				<persistence type="property" />
 				<description>HTML formatted long text for key demand drivers</description>
-			</attribute>
-			
-			<attribute qualifier="otherDemandText" type="OtherDemandTextList">
-				<modifiers optional="true" partof="true" />
-				<persistence type="property" />
-				<description>Other Demand Text details</description>
 			</attribute>
 		</attributes>
 	</itemtype>
@@ -12021,11 +12074,6 @@
 				<description>Link to cost of doing business</description>
 			</attribute>
 
-			<attribute qualifier="other" type="OtherInvestmentOverviewList">
-				<modifiers optional="true" partof="true" />
-				<persistence type="property" />
-				<description>Other Investment Overview Details</description>
-			</attribute>
 		</attributes>
 	</itemtype>
 
@@ -12078,12 +12126,6 @@
 				<modifiers optional="true" />
 				<persistence type="property" />
 				<description>Investment (Contracting) Type</description>
-			</attribute>
-
-			<attribute qualifier="capacity" type="CapacityList">
-				<modifiers optional="true" />
-				<persistence type="property" />
-				<description>List of capacities associated with the investment highlights</description>
 			</attribute>
 			
 			<attribute qualifier="investmentOverview" type="InvestmentOverview">
@@ -12164,12 +12206,6 @@
 				<persistence type="property" />
 				<description>Ease of getting credit (0-100)</description>
 			</attribute>
-
-			<attribute qualifier="costOfDoingBusinessTexts" type="CostOfDoingBusinessTextList">
-				<modifiers optional="true" />
-				<persistence type="property" />
-				<description>List of capacities associated with the investment highlights</description>
-			</attribute>
 			
 			<attribute qualifier="investmentOverview" type="InvestmentOverview">
 				<modifiers optional="true" />
@@ -12247,11 +12283,6 @@
                         </property>
                </custom-properties>
 			</attribute>
-			<attribute qualifier="attachment" type="MediaList">
-				<persistence type="property" />
-				<modifiers read="true" write="true" optional="true"
-					partof="true" />
-			</attribute>
 
 		</attributes>
 	</itemtype>
@@ -12327,12 +12358,12 @@
 		<deployment table="Location" typecode="32096" />
 		
 		<attributes>
-			<attribute qualifier="region" type="SagiaRegion">
-				<modifiers optional="true" unique="true" />
+			<attribute qualifier="region" type="InvestSaudiRegion">
+				<modifiers optional="true" unique="true" partof="true"/>
 				<persistence type="property" />
 			</attribute>
-			<attribute qualifier="city" type="SagiaCity">
-				<modifiers optional="true"  unique="true"/>
+			<attribute qualifier="city" type="InvestSaudiCity">
+				<modifiers optional="true"  unique="true" partof="true"/>
 				<persistence type="property" />
 			</attribute>
 		</attributes>
@@ -12405,11 +12436,6 @@
                         </property>
                </custom-properties>
 			</attribute>
-			<attribute qualifier="attachment" type="MediaList">
-				<persistence type="property" />
-				<modifiers read="true" write="true" optional="true"
-					partof="true" />
-			</attribute>
 		</attributes>
 	</itemtype>
 	
@@ -12467,16 +12493,6 @@
                         </property>
                </custom-properties>
 			</attribute>
-			
-			<attribute qualifier="other" type="OtherMarketOverviewList">
-				<modifiers optional="true" partof="true" />
-				<persistence type="property" />
-				<description>Other Market Overview Details</description>
-			</attribute>	 
-			
-			
-			
-			
 		</attributes>
 	</itemtype>
 	
@@ -12513,12 +12529,6 @@
                </custom-properties>
 			</attribute>
 			
-			<attribute qualifier="valueChainTexts" type="ValueChainList">
-				<modifiers optional="true" partof="true" />
-				<persistence type="property" />
-				<description>Value Chain Details</description>
-			</attribute>
-			
 			<attribute qualifier="importDependencyText"
 				type="localized:java.lang.String">
 				<modifiers read="true" write="true" search="true"
@@ -12540,14 +12550,6 @@
                         </property>
                </custom-properties>
 			</attribute>
-			
-			<attribute qualifier="other" type="OtherSupplyList">
-				<modifiers optional="true" partof="true" />
-				<persistence type="property" />
-				<description>Other Market Overview Details</description>
-			</attribute>
-			
-			
 		</attributes>
 	</itemtype>	
 	
@@ -12619,10 +12621,6 @@
                         </property>
                </custom-properties>
 			</attribute>
-			<attribute qualifier="attachments" type="MediaList">
-                    <modifiers optional="true"/>
-                    <persistence type="property"/>
-           </attribute>
 
 		</attributes>
 	</itemtype>	
@@ -12693,11 +12691,6 @@
                             <value>"thefield"</value>
                         </property>
                </custom-properties>
-			</attribute>
-			<attribute qualifier="attachment" type="MediaList">
-				<persistence type="property" />
-				<modifiers read="true" write="true" optional="true"
-					partof="true" />
 			</attribute>
 
 		</attributes>
@@ -12770,11 +12763,6 @@
                         </property>
                </custom-properties>
 			</attribute>
-			<attribute qualifier="attachment" type="MediaList">
-				<persistence type="property" />
-				<modifiers read="true" write="true" optional="true"
-					partof="true" />
-			</attribute>
 
 		</attributes>
 	</itemtype>
@@ -12846,46 +12834,101 @@
                         </property>
                </custom-properties>
 			</attribute>
-			<attribute qualifier="attachment" type="MediaList">
-				<persistence type="property" />
-				<modifiers read="true" write="true" optional="true"
-					partof="true" />
-			</attribute>
 
 		</attributes>
 	</itemtype> 
 	
-	<itemtype code="Media"
-				autocreate="false" generate="false">
-		    <attributes>
-		      <attribute qualifier="encodedString" type="java.lang.String">
-                        <modifiers read="true" write="true" search="true" optional="true"/>
-                        <persistence type="property">
-                            <columntype database="oracle">
-                                <value>CLOB</value>
-                            </columntype>
-                            <columntype database="sap">
-                                <value>NCLOB</value>
-                            </columntype>
-                            <columntype database="mysql">
-                                <value>TEXT</value>
-                            </columntype>
-                            <columntype>
-                                <value>HYBRIS.LONG_STRING</value>
-                            </columntype>
-                        </persistence>
-                        <custom-properties>
-                            <property name="hmcIndexField">
-                                <value>"thefield"</value>
-                            </property>
-                        </custom-properties>
-                    </attribute>
-		      
-		    </attributes>
-			
-		</itemtype> 
+	<itemtype code="Media" autocreate="false" generate="false">
+	<attributes>
+		<attribute qualifier="encodedString" type="java.lang.String">
+			<modifiers read="true" write="true" search="true"
+				optional="true" />
+			<persistence type="property">
+				<columntype database="oracle">
+					<value>CLOB</value>
+				</columntype>
+				<columntype database="sap">
+					<value>NCLOB</value>
+				</columntype>
+				<columntype database="mysql">
+					<value>TEXT</value>
+				</columntype>
+				<columntype>
+					<value>HYBRIS.LONG_STRING</value>
+				</columntype>
+			</persistence>
+			<custom-properties>
+				<property name="hmcIndexField">
+					<value>"thefield"</value>
+				</property>
+			</custom-properties>
+		</attribute>
+	</attributes>
+</itemtype>
 
-            
+	<itemtype code="InvestSaudiRegion" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiRegion">
+		<description>Investment Region</description>
+		<deployment table="InvestSaudiRegion" typecode="32104" />
+		<attributes>
+
+			<attribute qualifier="code" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="name"
+				type="localized:java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+			</attribute>
+
+		</attributes>
+	</itemtype>
+
+	<itemtype code="InvestSaudiCity" extends="GenericItem"
+		autocreate="true" generate="true"
+		jaloclass="com.investsaudi.portal.core.jalo.InvestSaudiCity">
+		<description>Investment City</description>
+		<deployment table="InvestSaudiCity" typecode="32105" />
+		<attributes>
+
+			<attribute qualifier="code" type="java.lang.String">
+				<modifiers optional="false" unique="true" />
+				<persistence type="property" />
+			</attribute>
+
+			<attribute qualifier="name"
+				type="localized:java.lang.String">
+				<modifiers optional="true" />
+				<persistence type="property" />
+			</attribute>
+
+		</attributes>
+	</itemtype>
+	
+	<itemtype code="ValueChainText" extends="GenericItem"
+	autocreate="true" generate="true"
+	jaloclass="com.investsaudi.portal.core.jalo.ValueChainText">
+	<description>Investment City</description>
+	<deployment table="ValueChainText" typecode="32106" />
+	<attributes>
+
+		<attribute qualifier="code" type="java.lang.String">
+			<modifiers optional="false" unique="true" />
+			<persistence type="property" />
+		</attribute>
+
+		<attribute qualifier="textValue"
+			type="localized:java.lang.String">
+			<modifiers optional="true" />
+			<persistence type="property" />
+		</attribute>
+
+		</attributes>
+	</itemtype>	
+
             <!-- End of pdf opportunity generation items -->
             
         </typegroup>

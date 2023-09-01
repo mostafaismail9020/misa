@@ -148,9 +148,9 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 				&& null != productModel.getLocation().iterator().next().getRegion()) {
 			image.setDescription(productModel.getLocation().iterator().next().getCity().getName(currentLocale));
 			image.setDescriptionText(productModel.getLocation().iterator().next().getRegion().getName(currentLocale));
-			if (CollectionUtils.isNotEmpty(productModel.getOtherText())) {
-				if (CollectionUtils.isNotEmpty(productModel.getOtherText().iterator().next().getAttachment())) {
-					image.setUrl(productModel.getOtherText().iterator().next().getAttachment().iterator().next().getEncodedString());
+			if (CollectionUtils.isNotEmpty(productModel.getOther())) {
+				if (CollectionUtils.isNotEmpty(productModel.getOther().iterator().next().getAttachments())) {
+					image.setUrl(productModel.getOther().iterator().next().getAttachments().iterator().next().getEncodedString());
 				}
 			}
 			return Maps.of(image.getDescription(), image);

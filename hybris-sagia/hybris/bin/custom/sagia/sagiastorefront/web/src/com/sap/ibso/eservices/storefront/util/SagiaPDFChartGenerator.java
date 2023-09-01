@@ -6,6 +6,7 @@ import de.hybris.platform.category.CategoryService;
 import de.hybris.platform.category.model.CategoryModel;
 import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.core.model.product.ProductModel;
+import de.hybris.platform.servicelayer.config.ConfigurationService;
 import de.hybris.platform.servicelayer.media.MediaService;
 import org.apache.commons.io.FileUtils;
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
@@ -34,7 +35,10 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.awt.*;
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.*;
@@ -45,9 +49,9 @@ public class SagiaPDFChartGenerator {
 
 	private static final String SAGIA_PRODUCT_CATALOG = "sagiaProductCatalog";
 
-	private static final String CATALOG_VERSION_STAGED = "Staged";
+	private static final String CATALOG_VERSION_ONLINE = "Online";
 
-	private static final String ROOT_CATEGORY_ID = "sector-opportunities";
+	private static final String CATEGORY_SECTOR_OPPORTUNITY = "sector-opportunities";
 
 	private static final String MEDIA_PDF_FILE_NAME = "opportunity-pdf";
 
@@ -61,6 +65,10 @@ public class SagiaPDFChartGenerator {
 	private String desc = "Opportunity brief description";
 	private String sector = "Opportunity Sector";
 	private String segment = "Opportunity segment";
+	private String electricityTariffs = "48";
+	private String productivityAdjustedWages = "3.3";
+	private String logisticsPerformanceIndex = "3.2";
+	private String constructionCosts = "74";
 	private String tags = "List of key words linked to the investment opportunity";
 	private String investmentHighlights = "Expected Investment size, Plant capacity, Expected IRR, Payback period, Job Creation, GDP Impact, Location (Region):";
 	private String incentivesAndEnablers = "Factors that enable investment in the underlying opportunity such as General Incentive and financing";
@@ -81,6 +89,9 @@ public class SagiaPDFChartGenerator {
 	@Resource(name = "mediaService")
 	private MediaService mediaService;
 
+	@Resource(name = "configurationService")
+	private ConfigurationService configurationService;
+
 	public File generatePdfFile(ProductModel productModel, List<File> secFiles) throws IOException {
 		File fileMerged;
 		fileMerged = File.createTempFile("merged_file", ".pdf");
@@ -92,8 +103,6 @@ public class SagiaPDFChartGenerator {
 			File secondaryConcatenatedFile = null;
 			if(Objects.nonNull(secFiles) && !secFiles.isEmpty()) {
 				secondaryConcatenatedFile = concatenatePDFs(secFiles, outputFile);
-			} else {
-				LOG.info("There are No Secondary PDF's retrieved");
 			}
 
 			// loading the primary pdf template
@@ -112,12 +121,16 @@ public class SagiaPDFChartGenerator {
 	}
 
 	private File getMedia(String mediaText, String mediaFormat) throws IOException {
-		List<MediaModel> medias = categoryService.getCategoryForCode("sector-opportunities").getMedias();
 		File primaryPdfFileTemplate = null;
+		LOG.info("Fetching medias from Category " + CATEGORY_SECTOR_OPPORTUNITY);
+		List<MediaModel> medias = categoryService.getCategoryForCode(catalogVersionService
+				.getCatalogVersion(SAGIA_PRODUCT_CATALOG, CATALOG_VERSION_ONLINE), CATEGORY_SECTOR_OPPORTUNITY)
+				.getMedias();
 
 		if(Objects.nonNull(medias)) {
 			for(MediaModel media: medias) {
 				if(Objects.nonNull(media.getCode()) && media.getCode().equals(mediaText)) {
+					LOG.info("Primary PDF found ....");
 					primaryPdfFileTemplate = convertMediaToFile(media , mediaFormat);
 					break;
 				}
@@ -149,6 +162,7 @@ public class SagiaPDFChartGenerator {
 	}
 
 	public File concatenatePDFs(List<File> files, File outputFile) throws IOException {
+		LOG.info("Merging Secondary PDF(s)");
 		PDFMergerUtility pdfMerger = new PDFMergerUtility();
 
 		for (File file : files) {
@@ -162,33 +176,35 @@ public class SagiaPDFChartGenerator {
 	}
 
 	private File mergeFiles(File primaryPDF, File secondaryPDF) throws IOException {
-		File mergedTempFile = null;
+		// Create a temporary file for the merged document
+		File mergedTempFile = File.createTempFile("merged_pdf_", ".pdf");
+		;
 		if(primaryPDF != null && secondaryPDF == null) {
+			LOG.info("There is no Secondary PDF");
 			PDDocument primaryDocument = PDDocument.load(primaryPDF);
-			// Create a temporary file for the merged document
-			mergedTempFile = File.createTempFile("merged_pdf_", ".pdf");
 
 			// Save the merged content to this temporary file
 			primaryDocument.save(mergedTempFile);
 			primaryDocument.close();
+
 			return mergedTempFile;
 		} else if (primaryPDF == null && secondaryPDF != null) {
+			LOG.info("There is no Primary PDF");
 			PDDocument secDocument = PDDocument.load(secondaryPDF);
-			mergedTempFile = File.createTempFile("merged_pdf_", ".pdf");
 			secDocument.save(mergedTempFile);
 			secDocument.close();
+
 			return mergedTempFile;
 		} else if (primaryPDF != null){
+			LOG.info("Primary & Secondary PDF's loaded");
 			PDDocument testDocument = PDDocument.load(primaryPDF);
 			PDDocument secDocument = PDDocument.load(secondaryPDF);
 
 			for (PDPage page : secDocument.getPages()) {
 				testDocument.addPage(page);
 			}
-
-			mergedTempFile = File.createTempFile("merged_pdf_", ".pdf");
-			// Save the merged content to this temporary file
 			testDocument.save(mergedTempFile);
+			LOG.info("Primary & Secondary PDF's merged");
 
 			// Close both documents
 			testDocument.close();
@@ -200,32 +216,58 @@ public class SagiaPDFChartGenerator {
 		return mergedTempFile;
 	}
 
+	private float getValue(String prop, float defaultValue) {
+		return this.configurationService.getConfiguration().getFloat(prop, defaultValue);
+	}
+
 	private void addContentsToPdf(File fileMerged, OpportunityProductModel opportunity) throws IOException {
+		LOG.info("Adding contents to PDF started");
 		if(opportunity == null) {
 			opportunity = new OpportunityProductModel();
 		}
 
 		try (PDDocument document = PDDocument.load(fileMerged)) {
+
 			// Page - 1
 			// Opportunity Title
-			fillText(isNullOrBlank(opportunity.getName()) ? title : opportunity.getName(), document, 0, 58, 450, 16, null);
+			fillText(isNullOrBlank(opportunity.getName()) ? title : opportunity
+					.getName(), document, 0,
+						getValue("opportunity.page1.title.posX", 58),
+						getValue("opportunity.page1.title.posY", 450),
+						getValue("opportunity.page1.title.font.size", 16),
+					"Opportunity Title");
 			// Sector
 			Collection<CategoryModel> supercategories = opportunity.getSupercategories();
 			// Get the first item from the collection
-			CategoryModel firstCategory = supercategories.stream().findFirst().orElse(null);
-			if (firstCategory != null && !firstCategory.getName().isBlank()) {
-				sector = firstCategory.getName();
+			if(Objects.nonNull(supercategories)) {
+				CategoryModel firstCategory = supercategories.stream().findFirst().orElse(null);
+				if(Objects.nonNull(firstCategory) && !isNullOrBlank(firstCategory.getName())) {
+					sector = firstCategory.getName();
+				}
 			}
-			fillText(sector, document, 0, 58, 400, 16, null);
+			fillText(sector, document, 0,
+					getValue("opportunity.page1.sector.posX", 58),
+					getValue("opportunity.page1.sector.posY", 400),
+					getValue("opportunity.page1.sector.font.size", 16), "Opportunity Sector");
 
 			// Page - 2
 			// Opportunity Title
-			fillText(isNullOrBlank(opportunity.getName()) ? title : opportunity.getName(), document, 1, 152, 462, 12, null);
+			fillText(isNullOrBlank(opportunity.getName()) ? title : opportunity
+					.getName(), document, 1,
+					getValue("opportunity.page2.title.posX", 152),
+					getValue("opportunity.page2.title.posY", 462),
+					getValue("opportunity.page2.title.font.size", 12), "Opportunity Title");
 			// Description
 			fillText(isNullOrBlank(opportunity.getDescription()) ? desc : opportunity
-					.getDescription(), document, 1, 152, 428, 12, null);
+					.getDescription(), document, 1,
+					getValue("opportunity.page2.description.posX", 152),
+					getValue("opportunity.page2.description.posY", 428),
+					getValue("opportunity.page2.description.font.size", 12), "Description");
 			// Sector
-			fillText(sector, document, 1, 550, 462, 12, null);
+			fillText(sector, document, 1,
+					getValue("opportunity.page2.sector.posX", 550),
+					getValue("opportunity.page2.sector.posY", 462),
+					getValue("opportunity.page2.sector.font.size", 12), "Opportunity Sector");
 			// Segment
 			Set<SagiaSegmentModel> sagiaSegments = opportunity.getSagiaSegment();
 			if(Objects.nonNull(sagiaSegments)) {
@@ -234,16 +276,22 @@ public class SagiaPDFChartGenerator {
 					segment = sagiaSegment.getSegmentName();
 				}
 			}
-			fillText(segment, document, 1, 550, 428, 12, null);
+			fillText(segment, document, 1,
+					getValue("opportunity.page2.segment.posX", 550),
+					getValue("opportunity.page2.segment.posY", 428),
+					getValue("opportunity.page2.segment.font.size", 12), "Opportunity Segment");
 			// Tags
 			fillText(isNullOrBlank(opportunity.getSagiaKeywords()) ? tags : opportunity
-					.getSagiaKeywords(), document, 1, 152, 395, 12, null);
+					.getSagiaKeywords(), document, 1,
+					getValue("opportunity.page2.tags.posX", 152),
+					getValue("opportunity.page2.tags.posY", 395),
+					getValue("opportunity.page2.tags.font.size", 12), "Tags");
 			// Investment Highlights
 			if(!isNullOrBlank(opportunity.getHighlights())) {
 				try {
 					fillInvestmentHighlight(opportunity.getHighlights(), document);
 				} catch (OutOfMemoryError e) {
-					LOG.error("Could not fill in Investment Highlights", e);
+					LOG.info("Could not fill in Investment Highlights", e);
 				}
 			}
 
@@ -259,9 +307,15 @@ public class SagiaPDFChartGenerator {
 
 			}
 			// Incentives & Enablers
-			fillText(incentivesAndEnablers, document, 1, 490, 280, 12, null);
+			fillText(incentivesAndEnablers, document, 1,
+					getValue("opportunity.page2.incentives.posX", 490),
+					getValue("opportunity.page2.incentives.posY", 280),
+					getValue("opportunity.page2.incentives.font.size", 12), "Incentives & Enablers");
 			// Value Proposition
-			fillText(valueProposition, document, 1, 70, 190, 12, null);
+			fillText(valueProposition, document, 1,
+					getValue("opportunity.page2.valueProposition.posX", 70),
+					getValue("opportunity.page2.valueProposition.posY", 190),
+					getValue("opportunity.page2.valueProposition.font.size", 12), "Value Proposition");
 			// Key Stakeholders
 			Set<MediaModel> keyStakeholdersList = opportunity.getKeyStakeholders();
 			if(Objects.nonNull(keyStakeholdersList)) {
@@ -270,7 +324,10 @@ public class SagiaPDFChartGenerator {
 					keyStakeholders = mediaModel.getRealFileName();
 				}
 			}
-			fillText(keyStakeholders, document, 1, 70, 100, 12, null);
+			fillText(keyStakeholders, document, 1,
+					getValue("opportunity.page2.keyStakeholders.posX", 70),
+					getValue("opportunity.page2.keyStakeholders.posY", 100),
+					getValue("opportunity.page2.keyStakeholders.font.size", 12), "Key Stakeholders");
 			// Cost of doing business
 			createCDB(document, opportunity);
 
@@ -288,15 +345,24 @@ public class SagiaPDFChartGenerator {
 			}
 
 			// Raw Material
-			fillText(rawMaterials, document, 2, 70, 420, 12, null);
+			fillText(rawMaterials, document, 2,
+					getValue("opportunity.page3.rawMaterials.posX", 70),
+					getValue("opportunity.page3.rawMaterials.posY", 420),
+					getValue("opportunity.page3.rawMaterials.font.size", 12), "Raw Material");
 			// Global Trends
-			fillText(globalTrends, document, 2, 70, 345, 12, null);
+			fillText(globalTrends, document, 2,
+					getValue("opportunity.page3.globalTrends.posX", 70),
+					getValue("opportunity.page3.globalTrends.posY", 345),
+					getValue("opportunity.page3.globalTrends.font.size", 12), "Global Trends");
 			// Key Demand Drivers
 			DemandModel demand = opportunity.getDemand();
 			if(Objects.nonNull(demand) && !isNullOrBlank(demand.getKeyDemandDrivers())) {
 				keyDemandDrivers = demand.getKeyDemandDrivers();
 			}
-			fillText(keyDemandDrivers, document, 2, 720, 430, 12, "Demand");
+			fillText(keyDemandDrivers, document, 2,
+					getValue("opportunity.page3.demandDrivers.posX", 720),
+					getValue("opportunity.page3.demandDrivers.posY", 430),
+					getValue("opportunity.page3.demandDrivers.font.size", 12), "Demand");
 
 			SupplyModel supply = opportunity.getSupply();
 			if(Objects.nonNull(supply)) {
@@ -309,15 +375,24 @@ public class SagiaPDFChartGenerator {
 				}
 			}
 			// Scalability & Localization
-			fillText(scalabilityAndLocalization, document, 2, 70, 210, 12, null);
+			fillText(scalabilityAndLocalization, document, 2,
+					getValue("opportunity.page3.scalability.posX", 70),
+					getValue("opportunity.page3.scalability.posY", 210),
+					getValue("opportunity.page3.scalability.font.size", 12), "Scalability & Localization");
 			// Import Dependency
-			fillText(importDependency, document, 2, 490, 210, 12, null);
+			fillText(importDependency, document, 2,
+					getValue("opportunity.page3.importDependency.posX", 490),
+					getValue("opportunity.page3.importDependency.posY", 210),
+					getValue("opportunity.page3.importDependency.font.size", 12), "Import Dependency");
 			// Demand Bar Chart
 			createStackedBarChart(document, opportunity);
 
 			int totalPages = document.getNumberOfPages();
 			for(int pageIndex = 0; pageIndex < totalPages; pageIndex++) {
-				fillText(getCurrentDate(), document, pageIndex, 730, 20, 10, null);
+				fillText(getCurrentDate(), document, pageIndex,
+						getValue("opportunity.timestamp.posX", 730),
+						getValue("opportunity.timestamp.posY", 20),
+						getValue("opportunity.timestamp.font.size", 10), null);
 			}
 
 			document.save(fileMerged);
@@ -332,11 +407,14 @@ public class SagiaPDFChartGenerator {
 		PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
 		contentStream.beginText();
 		contentStream.setFont(PDType1Font.TIMES_ROMAN, 10);
-		contentStream.newLineAtOffset(65, 288 );
+
+		contentStream.newLineAtOffset(getValue("opportunity.page2.highlights.posX", 65),
+				getValue("opportunity.page2.highlights.posY", 288));
+
 		for (String highlight : highlights) {
 			contentStream.setLeading(8f);
 			if(highlight.length() > 100) {
-				contentStream.setFont(PDType1Font.TIMES_ROMAN, 8);
+				contentStream.setFont(PDType1Font.TIMES_ROMAN, getValue("opportunity.page2.highlights.font.size", 8));
 				String[] lines = splitLongString(highlight, 125);
 				for (String line : lines) {
 					contentStream.showText(line);
@@ -351,22 +429,23 @@ public class SagiaPDFChartGenerator {
 			contentStream.newLineAtOffset(0, -10);
 		}
 		contentStream.endText();
-
+		LOG.info("Investment Highlights field is filled in page 2");
 		contentStream.close();
 	}
 
 	private void createCDB(PDDocument document, OpportunityProductModel opportunity) throws IOException {
-		String electricityTariffs = "$48 /MWh";
-		String productivityAdjustedWages = "$3.3 /hour";
-		String logisticsPerformanceIndex = "3.2";
-		String constructionCosts = "74";
 		File media = getMedia(CODB_IMAGE, "png");
 		if(Objects.nonNull(media)) {
 			PDPage page = document.getPage(1);
 			PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
 			PDImageXObject pdImage = PDImageXObject.createFromFile(media.getPath(), document);
-			contentStream.drawImage(pdImage, 620, 55, 260, 200);
+
+			contentStream.drawImage(pdImage,getValue("opportunity.page2.CODB.image.posX", 620),
+					getValue("opportunity.page2.CODB.image.posY", 55),
+					getValue("opportunity.page2.CODB.image.width", 260),
+					getValue("opportunity.page2.CODB.image.height", 200));
 			contentStream.close();
+			LOG.info("Cost of doing business field is filled in page 2");
 
 			InvestmentOverviewModel investmentOverview = opportunity.getInvestmentOverview();
 			if(Objects.nonNull(investmentOverview)) {
@@ -393,16 +472,30 @@ public class SagiaPDFChartGenerator {
 			}
 		}
 		// Electricity Tariffs
-		fillText(electricityTariffs, document, 1, 805, 218, 10, "CODB");
+		fillText("$" + electricityTariffs + " /MWh", document, 1,
+				getValue("opportunity.page2.electricityTariffs.posX", 805),
+				getValue("opportunity.page2.electricityTariffs.posY", 218),
+				getValue("opportunity.page2.electricityTariffs.font.size", 10), "CODB");
 
 		// Productivity Adjusted Wages
-		fillText(productivityAdjustedWages, document, 1, 845, 170, 10, "CODB");
+		fillText("$" + productivityAdjustedWages + " /hour", document, 1,
+				getValue("opportunity.page2.productivityWages.posX", 845),
+				getValue("opportunity.page2.productivityWages.posY", 170),
+				getValue("opportunity.page2.productivityWages.font.size", 10), "CODB");
 
 		// Logistics Performance Index
-		fillText(logisticsPerformanceIndex, document, 1, 808, 122, 10, "CODB");
+		fillText(logisticsPerformanceIndex, document, 1,
+				getValue("opportunity.page2.logisticsPerformance.posX", 808),
+				getValue("opportunity.page2.logisticsPerformance.posY", 122),
+				getValue("opportunity.page2.logisticsPerformance.font.size", 10), "CODB");
 
 		// Construction Costs
-		fillText(constructionCosts, document, 1, 810, 74, 10, "CODB");
+		fillText(constructionCosts, document, 1,
+				getValue("opportunity.page2.constructionCosts.posX", 810),
+				getValue("opportunity.page2.constructionCosts.posY", 74),
+				getValue("opportunity.page2.constructionCosts.font.size", 10), "CODB");
+
+		LOG.info("Cost of doing business Stats are filled in page 2");
 
 	}
 
@@ -417,7 +510,7 @@ public class SagiaPDFChartGenerator {
 	 * @param fieldName - Field Name to add specific customizations
 	 * @throws IOException
 	 */
-	public void fillText(String text, PDDocument document, int pageIndex, float posX, float posY, int fontSize, String fieldName) throws IOException {
+	public void fillText(String text, PDDocument document, int pageIndex, float posX, float posY, float fontSize, String fieldName) throws IOException {
 		if(text != null) {
 			PDPage page = document.getPage(pageIndex);
 			PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
@@ -464,7 +557,6 @@ public class SagiaPDFChartGenerator {
 						contentStream.showText(line);
 						contentStream.newLineAtOffset(0, -10);
 					}
-
 				} else {
 					contentStream.showText(text);
 				}
@@ -473,33 +565,10 @@ public class SagiaPDFChartGenerator {
 
 			contentStream.close();
 		}
-	}
 
-	/**
-	 * Split the long text to multiple lines without breaking the word
-	 * @param input - Long Text to be split
-	 * @param maxLength -  Pass the Max Length of the line
-	 * @return Array of Strings, which represent Text split into multiple lines
-	 */
-//	public static List<String> splitLongString(String input, int maxLength) {
-//		List<String> substrings = new ArrayList<>();
-//
-//		int startIndex = 0;
-//		while (startIndex < input.length()) {
-//			int endIndex = startIndex + maxLength;
-//			if (endIndex >= input.length()) {
-//				endIndex = input.length();
-//			} else {
-//				while (endIndex > startIndex && !Character.isWhitespace(input.charAt(endIndex - 1))) {
-//					endIndex--;
-//				}
-//			}
-//			substrings.add(input.substring(startIndex, endIndex).trim());
-//			startIndex = endIndex;
-//		}
-//
-//		return substrings;
-//	}
+		if(fieldName != null)
+			LOG.info(fieldName + " field is filled in page: " + (pageIndex + 1));
+	}
 
 	public static String[] splitLongString(String input, int maxLineLength) {
 		List<String> lines = new ArrayList<>();
@@ -552,7 +621,10 @@ public class SagiaPDFChartGenerator {
 						double marketSizeValue = Double.parseDouble(marketSizes[i].trim());
 						dataset.addValue(marketSizeValue, marketCodeSeries, yearCategory);
 					}
+					LOG.info("Market Data found to generate graph.");
 				}
+			} else {
+				LOG.info("No Market Data found in Opportunity Demand object, using stock data to generate graph.");
 			}
 		}
 
@@ -607,18 +679,26 @@ public class SagiaPDFChartGenerator {
 		PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
 
 		ByteArrayOutputStream chartImageStream = new ByteArrayOutputStream();
-		ChartUtilities.writeChartAsPNG(chartImageStream, chart, 220, 200 );
+		ChartUtilities.writeChartAsPNG(chartImageStream, chart,
+				(int) getValue("opportunity.page3.marketSize.graph.width", 220),
+				(int) getValue("opportunity.page3.marketSize.graph.height", 200));
 
 		PDImageXObject chartImage = PDImageXObject.createFromByteArray(document, chartImageStream.toByteArray(), "Chart Image");
 
-		contentStream.drawImage(chartImage, 493 , 275 );
+		contentStream.drawImage(chartImage,
+				getValue("opportunity.page3.marketSize.graph.posX", 493),
+				getValue("opportunity.page3.marketSize.graph.posY", 275));
 
+		LOG.info("Graph created with data set");
 		// Demand CAGR
 		String demandCagr = "CAGR 3.6%";
 		if(Objects.nonNull(opportunity.getDemand()) && Objects.nonNull(opportunity.getDemand().getCagr())) {
 			String cagr = String.valueOf(opportunity.getDemand().getCagr());
 
-			fillText(isNullOrBlank(cagr) ? demandCagr: cagr, document, 2, 560 , 425 , 9, null);
+			fillText(isNullOrBlank(cagr) ? demandCagr: cagr, document, 2,
+					getValue("opportunity.page3.cagr.posX", 560),
+					getValue("opportunity.page3.cagr.posY", 425),
+					getValue("opportunity.page3.cagr.font.size", 9), "CAGR");
 		}
 
 		contentStream.close();

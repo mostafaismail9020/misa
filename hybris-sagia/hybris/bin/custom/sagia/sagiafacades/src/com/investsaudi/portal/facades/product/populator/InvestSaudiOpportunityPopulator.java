@@ -1,5 +1,9 @@
 package com.investsaudi.portal.facades.product.populator;
 
+import com.google.common.collect.Lists;
+import com.investsaudi.portal.core.model.InvestSaudiMediaModel;
+import com.investsaudi.portal.core.model.InvestmentOverviewModel;
+import com.investsaudi.portal.core.model.LocationModel;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
 import com.sap.ibso.eservices.core.model.OpportunityPartnerModel;
 
@@ -22,13 +26,14 @@ import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.i18n.I18NService;
 import com.sap.ibso.eservices.facades.data.OpportunityPartnerData;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.groovy.util.Maps;
 import org.springframework.beans.factory.annotation.Required;
 
 import javax.annotation.Resource;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.Optional;
 
 import static org.apache.commons.collections4.CollectionUtils.emptyIfNull;
 
@@ -50,6 +55,9 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
     @Resource
     private I18NService i18NService;
 
+    @Resource
+    private Converter<InvestSaudiMediaModel, ImageData> sagiaImageConverter;
+    
     @Override
     public void populate(ProductData productData, OpportunityProductModel productModel) throws ConversionException {
 
@@ -110,7 +118,59 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         }
 
         productData.setKeywords(keywordSet);
+        
+        productData.setOpportunityHighlights(getOpportunityHighlights(productModel));
+        productData.setOpportunitySubHeadings(productModel.getOpportunitySubHeadings(currentLocale));
+        productData.setOpportunityHeadingsWithMedia(getSubHeadingWithMedia(productModel, currentLocale));
+        productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
+        productData.setOpportunityDetailGrid(getOpportunityDetailGrid(productModel, currentLocale));
+        productData.setOpportunityLead(sagiaImageConverter.convert(productModel.getOpportunityLead(currentLocale)));
     }
+
+
+	private List<String> getOpportunityDetailGrid(OpportunityProductModel productModel, Locale currentLocale) {
+		if(null != productModel.getInvestmentOverview() && null != productModel.getInvestmentOverview().getInvestmentHighlights()
+				&& CollectionUtils.isNotEmpty(productModel.getLocation()) && null != productModel.getLocation().iterator().next().getCity() 
+				&& null != productModel.getLocation().iterator().next().getRegion()) {
+			return Arrays.asList(productModel.getLocation().iterator().next().getCity().getName(currentLocale), 
+					emptyIfNull(productModel.getSupercategories()).stream().map(c -> c.getName(currentLocale)).findFirst().orElse(""),
+					productModel.getInvestmentOverview().getInvestmentHighlights().getExpectedIRR(), 
+					productModel.getInvestmentOverview().getInvestmentHighlights().getExpectedInvestmentSize());
+		}
+		return Collections.emptyList();
+	}
+
+
+	private Map<String, ImageData> getSubHeadingWithMedia(OpportunityProductModel productModel, Locale currentLocale) {
+		ImageData image = new ImageData();
+		Set<LocationModel> locations = productModel.getLocation();
+		if (CollectionUtils.isNotEmpty(locations) && null != productModel.getLocation().iterator().next().getCity() 
+				&& null != productModel.getLocation().iterator().next().getRegion()) {
+			image.setDescription(productModel.getLocation().iterator().next().getCity().getName(currentLocale));
+			image.setDescriptionText(productModel.getLocation().iterator().next().getRegion().getName(currentLocale));
+			if (CollectionUtils.isNotEmpty(productModel.getOtherText())) {
+				if (CollectionUtils.isNotEmpty(productModel.getOtherText().iterator().next().getAttachment())) {
+					image.setUrl(productModel.getOtherText().iterator().next().getAttachment().iterator().next().getEncodedString());
+				}
+			}
+			return Maps.of(image.getDescription(), image);
+		}
+		return Collections.emptyMap();
+	}
+
+
+    private Map<String, ImageData> extractParaWithMedia(InvestSaudiMediaModel paraWithMedia) {
+		ImageData media = sagiaImageConverter.convert(paraWithMedia);
+		return Map.of(media.getDescription(), media);
+	}
+	
+	protected List<String> getOpportunityHighlights(OpportunityProductModel productModel) {
+		if(null != productModel.getInvestmentOverview() && null != productModel.getInvestmentOverview().getInvestmentHighlights()) {
+			return Arrays.asList(productModel.getInvestmentOverview().getInvestmentHighlights().getExpectedIRR(), 
+					productModel.getInvestmentOverview().getInvestmentHighlights().getExpectedInvestmentSize());
+		}
+		return Collections.emptyList();
+	}
 
 
     private String extractMediaUrl(Collection<MediaModel> mediaModels) {
@@ -124,7 +184,6 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         for (ProductFeatureModel featureModel : emptyIfNull(getProductFeaturesForCurrentLanguage(featureModels))) {
             map.put(extractClassAttributeName(featureModel), featureModel.getValue().toString());
         }
-
         return map;
     }
 

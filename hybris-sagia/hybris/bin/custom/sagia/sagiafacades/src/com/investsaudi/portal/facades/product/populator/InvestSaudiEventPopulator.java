@@ -109,8 +109,6 @@ public class InvestSaudiEventPopulator implements Populator<ProductData, EventPr
         }
         productData.setKeywords(keywordSet);
 
-        //productData.setVideoUrl(productModel.getVideoUrl());
-        //productData.setSubHeadings(productModel.getNewsSubHeadings(currentLocale));
         productData.setSubjects(productModel.getSubjects(currentLocale));
         productData.setSpeakers(productModel.getSpeakers(currentLocale));
         productData.setEventDetailGrid(productModel.getEventDetailGrid(currentLocale));
@@ -120,10 +118,8 @@ public class InvestSaudiEventPopulator implements Populator<ProductData, EventPr
         if (null != productModel.getParaWithMedia(currentLocale)) {
             productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
         }
-        Optional<Collection<MediaModel>> sponsersAndPartners = CollectionUtils.emptyIfNull(productModel.getGalleryImages())
-        		.stream().filter(mc -> mc.getQualifier().contains("sponsersAndPartners")).map(mc -> mc.getMedias()).findFirst();
-        if (sponsersAndPartners.isPresent() && CollectionUtils.isNotEmpty(sponsersAndPartners.get())) {
-            productData.setSponsersPartners(imageConverter.convertAll(sponsersAndPartners.get()));	
+        if (CollectionUtils.isNotEmpty(productModel.getOthers())) {
+            productData.setSponsersPartners(imageConverter.convertAll(productModel.getOthers()));	
 		}
     }
 

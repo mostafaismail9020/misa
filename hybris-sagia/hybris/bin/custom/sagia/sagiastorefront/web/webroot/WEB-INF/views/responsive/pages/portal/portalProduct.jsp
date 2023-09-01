@@ -111,7 +111,7 @@
                 <product:investSaudiArticleProduct />
             </c:when>
             <c:when test="${productData.productType eq 'NewsProduct'}">
-                            <product:investSaudiNewsProduct />
+                <product:investSaudiNewsProduct />
             </c:when>
             <c:when test="${productData.productType eq 'EventProduct'}">
                 <product:investSaudiEventProduct />

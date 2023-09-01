@@ -3537,6 +3537,12 @@
 		<property name="articleSubDetails4Boxes" type="java.util.Map&lt;String, String>"/>
 		<property name="articleSubDetails5" type="java.lang.String"/>
 		<property name="paraWithMedia" type="java.util.Map&lt;String, de.hybris.platform.commercefacades.product.data.ImageData>"/>
+
+		<property name="opportunityHighlights" type="java.util.List&lt;String>"/>
+		<property name="opportunityDetailGrid" type="java.util.List&lt;String>"/>
+		<property name="opportunitySubHeadings" type="java.util.Map&lt;String, String>"/>
+		<property name="opportunityHeadingsWithMedia" type="java.util.Map&lt;String, de.hybris.platform.commercefacades.product.data.ImageData>"/>
+		<property name="opportunityLead" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
     </bean>
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ImageData">

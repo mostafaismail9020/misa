@@ -4050,6 +4050,22 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
+                    <attribute qualifier="opportunitySubHeadings" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="video" type="localized:Media">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="opportunityLead" type="localized:InvestSaudiMedia">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="opportunityBottomSubHeadings" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
                 </attributes>
             </itemtype>
             

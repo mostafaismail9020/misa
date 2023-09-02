@@ -14206,9 +14206,9 @@ body.page-visiting-investor-program {
     bottom: 8px !important;
       top: unset !important;
   }
-  .page-visiting-investor-program section.footer-menu-faq, .page-visiting-investor-program section.footer-menu-links{
-    padding: 60px 0;
-  }
+ .page-visiting-investor-program section.footer-menu-faq, .page-visiting-investor-program section.footer-menu-links{
+   padding: 30px 0 0 0;
+ }
 
 .page-visiting-investor-program .invVisaApplyEnquiry::after{
     background-size: auto 100%;

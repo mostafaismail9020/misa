@@ -26,16 +26,21 @@
                 <div class="investorVisaVideoSec animated slideInRight wow" data-wow-delay="0.5s" data-wow-duration="2s">
 
             <div class="investorVisaVideoLoad" >
-                   <div class="investorVisaVideo" style="<c:if test="${currentLanguage.isocode eq 'en'}">display:none</c:if>" >
-                      <video style="object-fit: cover; background-size: cover; width: 100%; height: 100%; "  loop="" muted="" preload="auto" playsinline="" autoplay="" poster="${fn:escapeXml(component.defaultImageAr.url)}">
-                          <source src="${fn:escapeXml(component.insideVideoAr.url)}" type="${fn:escapeXml(component.insideVideoAr.mime)}">
-                          </video>
-                    </div>
-                  <div class="investorVisaVideo" style="<c:if test="${currentLanguage.isocode eq 'ar'}">display:none</c:if>">
-                  <video style="object-fit: cover; background-size: cover; width: 100%; height: 100%; "  loop="" muted="" preload="auto" playsinline="" autoplay="" poster="${fn:escapeXml(component.defaultImageEn.url)}">
-                      <source src="${fn:escapeXml(component.insideVideoEn.url)}" type="${fn:escapeXml(component.insideVideoEn.mime)}">
-                      </video>
-                </div>
+                  <c:if test="${language eq 'ar'}">
+                    <div class="investorVisaVideo" >
+                       <video style="object-fit: cover; background-size: cover; width: 100%; height: 100%; "  loop="" muted="" preload="auto" playsinline="" autoplay="" poster="${fn:escapeXml(component.defaultImageAr.url)}">
+                           <source src="${fn:escapeXml(component.insideVideoAr.url)}" type="${fn:escapeXml(component.insideVideoAr.mime)}">
+                           </video>
+                     </div>
+                   </c:if>
+
+                   <c:if test="${language eq 'en'}">
+                   <div class="investorVisaVideo">
+                   <video style="object-fit: cover; background-size: cover; width: 100%; height: 100%; "  loop="" muted="" preload="auto" playsinline="" autoplay="" poster="${fn:escapeXml(component.defaultImageEn.url)}">
+                       <source src="${fn:escapeXml(component.insideVideoEn.url)}" type="${fn:escapeXml(component.insideVideoEn.mime)}">
+                       </video>
+                 </div>
+               </c:if>
             </div>
 
         </div>

@@ -14496,3 +14496,43 @@ box-shadow: 0 14px 28px rgb(0 0 0 / 45%), 0 10px 10px rgb(0 0 0 / 1%);
 .invVisaApplyEnquirySecTitle p {
     text-align: center !important;
 }
+.page-visiting-investor-program .investorBannerContent h2 .bannerLgTitle p span{
+  font-size:35px;
+}
+.page-visiting-investor-program .investorBannerContent h2{
+
+  text-align:center
+}
+@media (min-width: 768px) and (max-width : 991px){
+.page-visiting-investor-program .invVisaApplyEnquirySecTitle h2{
+    font-size: 35px;
+    line-height: 49px;
+
+}
+}
+@media (min-width: 768px) and (max-width : 991px){
+
+.page-visiting-investor-program .invVisaApplyEnquirySecTitle h2{
+    font-size: 28px;
+    line-height: 41px;
+}
+
+}
+@media (max-width: 767px){
+.page-visiting-investor-program .invVisaApplyEnquirySecTitle h2{
+
+    font-size: 24px;
+    line-height: 39px;
+}
+.page-visiting-investor-program .investorBannerContent h2 .bannerLgTitle p span {
+    font-size: 20px;
+    line-height: 37px;
+    display: inline-block;
+}
+}
+@media (min-width: 1200px) and (max-width: 1399px){
+
+.invVisaProgram.aboutAdvantageWrapper{
+width:97%
+}
+}

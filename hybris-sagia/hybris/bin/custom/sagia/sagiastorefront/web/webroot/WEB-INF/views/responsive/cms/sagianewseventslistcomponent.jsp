@@ -59,10 +59,12 @@
                 <c:when test="${not empty eventSearchPageData.results}">
                     <h2 class="newsTitle">Upcoming Events</h2>
                    <div class="col-md-12">
-                    <div class="row">
+                    <div class="row events-container">
                         <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
                             <tags:events-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
+                        <button id="loadEventMore">Show More</button>
+                        <button id="showEventLess">Show Less</button>
                     </div>
                     </div>
                 </c:when>
@@ -78,10 +80,12 @@
                 <c:when test="${not empty searchPageData.results}">
                     <h2 class="newsTitle">Latest News</h2>
                     <div class="col-md-12">
-                    <div class="row">
+                    <div class="row news-container">
                         <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
                             <tags:news-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
+                          <button id="loadNewsMore">Show More</button>
+                          <button id="showNewsLess">Show Less</button>
                     </div>
                     </div>
                 </c:when>

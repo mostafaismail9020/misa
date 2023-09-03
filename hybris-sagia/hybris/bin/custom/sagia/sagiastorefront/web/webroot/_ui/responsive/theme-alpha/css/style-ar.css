@@ -14153,10 +14153,24 @@ body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
        min-height: 0px !important;
        }
 }
-.col-md-12.card-wrapper.alternate {
+
+.col-md-12.alternate {
     background-color: rgba(191, 155, 46, 0.07);
     border-radius: 10px;
 }
+
+.box-white-background {
+	background-color: #fff;
+}
+
+.force-first-color {
+	color: var(--misaFirstColor)!important;
+}
+
+.pageLabel--sectors-opportunities-opportunities #tab6-container p, .general-info p, .main-content-area p, .sectors-content p, .grid-section p {
+	color: var(--misaFirstColor)!important;
+}
+
 @media (max-width: 767px) {
     .pageLabel--newseventslist .row  {
         margin-right: 0px;

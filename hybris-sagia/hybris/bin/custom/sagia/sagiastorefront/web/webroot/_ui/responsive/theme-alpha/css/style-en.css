@@ -7805,17 +7805,20 @@ figure h2 {
      top:105vh !important;
      right: 8vh !important;
 }
+
 @media (max-width: 768px) {
   .pageLabel--newseventslist .container.banner.homeLink {
    top:66vh !important;
    left: 19px!important;
   }
 }
+
 .container.banner.homeLink {
 	z-index: 9999;
 	font-weight: 400;
 	color: var(--misaSecondColor);
 }
+
 .pageLabel--newseventslist .newsName {
     font-family: '72';
     font-style: normal;
@@ -7825,6 +7828,7 @@ figure h2 {
     color: #00714D;
     margin-bottom: 10px;
 }
+
 .newsTitle{
     font-family: '72';
     font-style: normal;
@@ -7833,7 +7837,8 @@ figure h2 {
     color: #00714D;
     margin-bottom: 50px;
 }
-.col-md-12.card-wrapper.alternate {
+
+.col-md-12.alternate {
     background-color: rgba(191, 155, 46, 0.07);
     border-radius: 10px;
 }
@@ -11000,6 +11005,19 @@ body.page-living-in-saudi .content {
     padding: 30px;
      background: rgba(0, 113, 77, 0.05);
 }
+
+.box-white-background {
+	background-color: #fff;
+}
+
+.force-first-color {
+	color: var(--misaFirstColor)!important;
+}
+
+.pageLabel--sectors-opportunities-opportunities #tab6-container p, .general-info p, .main-content-area p, .sectors-content p, .grid-section p {
+	color: var(--misaFirstColor)!important;
+}
+
 .resourceInfo{
     font-family: '72' !important;
     font-style: normal;

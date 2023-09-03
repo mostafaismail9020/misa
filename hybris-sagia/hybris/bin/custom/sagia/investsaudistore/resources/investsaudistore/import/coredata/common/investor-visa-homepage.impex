@@ -155,15 +155,13 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]       ; name             ; c
                                ; investor-visa-navnode    ; Investment Visa  ; investor-visa-link      ; investor-visa-navnode    ; investor-guide-navnode ;                                         ;                                       ;                          ;
                                ; investor-journey-navnode ; Investment Guide ; investor-journey-link   ; investor-journey-navnode ; investor-guide-navnode ;                                         ;                                       ;                          ;
 
-
 ################################## Navigation Link ###########################################
 INSERT_UPDATE CMSLinkComponent; uid[unique = true] 				; name 							; linkName[lang = en] 		; linkName[lang = ar] 					; url									; $contentCV[unique = true]	;
-                              ; visiting-visa-link              ; Visiting Visa Link		    ; Visiting Investor  	        ; Visiting Investor  		                ; /en/visiting-investor						;							;
+                              ; visiting-visa-link              ; Visiting Investor Link		    ; Business Visit Visa "Visiting Investor"  	        ; تأشيرة زيارة عمل "مستثمر زائر"  		                ; /en/visiting-investor						;							;
 
 
 INSERT_UPDATE CMSNavigationNode	; uid[unique = true]			; name							; title[lang = en] 		; title[lang = ar] 				; cmsLink(uid, $contentCV) 	 	; &nodeRef 							; parent(uid, $contentCV) 	; children(uid, $contentCV)[mode = append]	; links(uid, $contentCV)[mode = replace]; $contentCV[unique = true]	;
-                                   ; visiting-visa-navnode 		; Visitinf Visa Nav Node		; Visiting Investor	; Visiting Investor			;visiting-visa-link				; visiting-visa-navnode 			; invest-in-saud-arabia-navnode ;  										; 									 	; 							;
-
+                                   ; visiting-visa-navnode 		; Visitinf Investor Nav Node		; Business Visit Visa "Visiting Investor"	; تأشيرة زيارة عمل "مستثمر زائر"			;visiting-visa-link				; visiting-visa-navnode 			; invest-in-saud-arabia-navnode ;  										; 									 	; 							;
 
 ################################## Government Service ###########################################
 

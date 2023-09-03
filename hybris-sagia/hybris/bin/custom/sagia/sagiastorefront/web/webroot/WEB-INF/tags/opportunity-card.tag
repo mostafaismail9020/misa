@@ -31,7 +31,7 @@
 		                 </p>
 		            </a>
 	            </div>
-	            <div class="col-md-4">
+	            <div class="col-md-4 mt-3 mt-md-0">
 	            	<a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
 		                <p class="force-first-color">Expected IRR: ~16%</p>
 		            </a>

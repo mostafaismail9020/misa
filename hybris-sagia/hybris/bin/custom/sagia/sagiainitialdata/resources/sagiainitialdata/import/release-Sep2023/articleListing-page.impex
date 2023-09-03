@@ -29,12 +29,14 @@ INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]      ;vis
                                                   ;generic-paragraph-article;true  ;
 
 INSERT_UPDATE ContentSlot; uid[unique = true]       ; name           ; active; cmsComponents($contentCV,uid); $contentCV[unique = true]
-                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; all-article-banner-container, generic-paragraph-article, sagia-article-list-result-component
+; PortalPageMainTopSlot-$page ; PortalPageMainTop ; true ; generic-paragraph-article
+; PortalPageMainSlot-$page    ; PortalPageMain    ; true ; sagia-article-list-result-component
 
 
 INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]
-								; PortalPageMainSlot-$page ; PortalPageMain 		; PortalPageMainSlot-$page 					;$page													;
+; PortalPageMainTopSlot-$page ; PortalPageMainTop ; PortalPageMainTopSlot-$page ; $page ;
+; PortalPageMainSlot-$page    ; PortalPageMain    ; PortalPageMainSlot-$page    ; $page ;
 
 
 INSERT_UPDATE InvestSaudiGenericParagraphComponent; uid[unique = true]        ; name                        ; &componentRef             ; description[lang = en]                                                                                                                                                                                                                                                                                       ; $contentCV[unique = true]
-                                                  ; generic-paragraph-article ; Article Paragraph Component ; generic-paragraph-article ; <div class="container"><p class="sectors-content">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu</p></div><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p> ;
+                                                  ; generic-paragraph-article ; Article Paragraph Component ; generic-paragraph-article ; <div class="container"><div class="row"><div class="col-md-12 mt-4 mb-4"><p class="article-listing-page-top-paragraph">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu</p></div></div></div> ;

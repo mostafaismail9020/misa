@@ -11,10 +11,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 breadcrumb-container">
-						<span class="breadcrumb-left-icon"></span>
-						<a href="${encodedContextPath}/newseventslist">
-							<span class="breadcrumb-page-info">News & Events</span>
-						</a>
+						<c:if test="${language eq 'en'}">
+							<a href="${encodedContextPath}/newseventslist">
+								<span class="breadcrumb-left-icon"></span>
+								<span class="breadcrumb-page-info"><spring:theme code="dashboard.newsevents"/></span>
+							</a>
+						</c:if>
+						<c:if test="${language eq 'ar'}">
+							<a href="${encodedContextPath}/newseventslist">
+								<span class="breadcrumb-page-info"><spring:theme code="dashboard.newsevents"/></span>
+								<span class="breadcrumb-left-icon"></span>
+							</a>
+						</c:if>
+
 					</div>
 				</div>
 			</div>

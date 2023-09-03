@@ -5382,6 +5382,69 @@ $(document).ready(function () {
 	}
 });
 
+$(document).ready(function () {
+    const events = $(".page-newsevents-list-page .events-container .event");
+    const showCount = 4;
+    let currentIndex = showCount;
+    $("#showEventLess").hide();
+    function toggleEvents() {
+        events.hide();
+        events.slice(0, currentIndex).show();
+    }
+
+    toggleEvents();
+
+    $("#loadEventMore").on('click', function (e) {
+        e.preventDefault();
+        currentIndex += showCount;
+        toggleEvents();
+
+        if (currentIndex >= events.length) {
+            $("#loadEventMore").hide();
+            $("#showEventLess").show(); // Show the "Show Less" button
+        }
+    });
+
+    $("#showEventLess").on('click', function (e) {
+        e.preventDefault();
+        currentIndex = showCount; // Reset the index to show the initial number of events
+        toggleEvents();
+        $("#showEventLess").hide(); // Hide the "Show Less" button again
+        $("#loadEventMore").show(); // Show the "Show More" button
+    });
+
+  const news = $(".page-newsevents-list-page .news-container .news");
+    const showNewsCount = 3;
+    let currentNewsIndex = showNewsCount;
+    $("#showNewsLess").hide();
+
+    function toggleNews() {
+        news.hide();
+        news.slice(0, currentNewsIndex).show();
+    }
+
+    toggleNews();
+
+    $("#loadNewsMore").on('click', function (e) {
+        e.preventDefault();
+        currentNewsIndex += showNewsCount;
+        toggleNews();
+
+        if (currentNewsIndex >= news.length) {
+            $("#loadNewsMore").hide();
+            $("#showNewsLess").show(); // Show the "Show Less" button
+        }
+    });
+
+    $("#showNewsLess").on('click', function (e) {
+        e.preventDefault();
+        currentNewsIndex = showNewsCount; // Reset the index to show the initial number of events
+        toggleNews();
+        $("#showNewsLess").hide(); // Hide the "Show Less" button again
+        $("#loadNewsMore").show(); // Show the "Show More" button
+    });
+});
+
 $( window ).on("load", function() {
 	var PageLang = document.getElementsByTagName("html")[0].getAttribute("lang");
 	
@@ -5509,3 +5572,6 @@ slidesPerView: 3,
 		},
 	},
   });
+
+
+

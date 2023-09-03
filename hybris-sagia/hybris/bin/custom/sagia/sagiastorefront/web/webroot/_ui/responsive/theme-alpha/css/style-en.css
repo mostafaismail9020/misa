@@ -489,7 +489,7 @@ box-shadow: 0px 2px var(--misaSecondColor);
     left: 0; /* Reset left */
     top: 50%; /* Vertically center the element */
     transform: translateY(-50%); /* Adjust for centering vertically */
-    font-family: '72';
+
     font-style: normal;
     font-weight: 600;
     font-size: 40px;
@@ -500,7 +500,7 @@ box-shadow: 0px 2px var(--misaSecondColor);
     color: #BF9B2E;
 }
 .page-newsevents-list-page .eventDescription{
-    font-family: '72';
+
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -7797,7 +7797,6 @@ figure h2 {
 }
 .pageLabel--newseventslist .container.banner.homeLink {
     color: #BF9B2E !important;
-    font-family: '72';
     font-weight: 400;
     font-size: 14px;
     position: absolute !important;
@@ -7820,18 +7819,13 @@ figure h2 {
 }
 
 .pageLabel--newseventslist .newsName {
-    font-family: '72';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    line-height: 18px;
     color: #00714D;
     margin-bottom: 10px;
 }
 
 .newsTitle{
-    font-family: '72';
-    font-style: normal;
     font-weight: 700;
     font-size: 24px;
     color: #00714D;
@@ -8927,7 +8921,7 @@ a.pvcy-policy:focus {
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	height: 100vh;
+	height: 76vh;
 }
 
 #News_press .rect {
@@ -8970,7 +8964,7 @@ a.pvcy-policy:focus {
         border-radius: 5px;
 }
 .page-newsevents-list-page #News_press .highlight_title {
-    font-family: '72';
+
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -8980,7 +8974,7 @@ a.pvcy-policy:focus {
     color: #FFFFFF;
 }
 .page-newsevents-list-page #News_press .carousel-item p {
-    font-family: '72';
+
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -9003,7 +8997,7 @@ a.pvcy-policy:focus {
 	border-radius: 5px;
 }
 .page-newsevents-list-page #News_press h4.date {
-    font-family: '72';
+
     font-style: normal;
     font-size: 16px;
     font-weight: 400;
@@ -9019,7 +9013,6 @@ a.pvcy-policy:focus {
 }
 .page-newsevents-list-page #News_press h6.date_name {
      font-size: 18px;
-     font-family: '72';
      font-style: normal;
      font-weight: 700;
      color: #FFFFFF;
@@ -9439,7 +9432,6 @@ a.pvcy-policy:focus {
     background-color: #00714D;
 }
 .eventDay{
-    font-family: '72' !important;;
     font-weight: 400;
     font-size: 14px !important;
     line-height: 16px !important;
@@ -9456,7 +9448,6 @@ a.pvcy-policy:focus {
     border-radius: 10px;
 }
 .eventMonth{
-    font-family: '72';
     font-weight: 700  !important;;
     font-size: 16px  !important;;
      line-height: 18px !important;
@@ -9499,21 +9490,21 @@ a.pvcy-policy:focus {
 	height: auto;
 }
 .eventName{
-    font-family: '72';
+
     font-weight: 600;
     font-style: normal;
     font-size: 1.1vw;
     color: #00714D;
 }
 .pageLabel--newseventslist .eventShortInformation{
-    font-family: '72';
+
     font-weight: 400;
     font-size: 12px;
     color: #00714D;
     white-space: nowrap;
 }
 .pageLabel--newseventslist .eventsName{
-    font-family: '72';
+
     font-weight: 400;
     font-size: 14px;
     color: #00714D;
@@ -10800,7 +10791,7 @@ body.page-living-in-saudi .content {
 	padding: 65px 0px 100px;
 }
 .pageLabel--newseventslist .newsDate{
-    font-family: '72';
+
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -11065,23 +11056,17 @@ body.page-living-in-saudi .content {
     cursor: pointer;
 }
 .get-updates-title{
-    font-family: '72';
     font-weight: 400;
     font-size: 16px;
-    line-height: 18px;
     color: #00714D;
 }
 .resourceDate{
-    font-family: '72';
-    font-style: normal;
+
     font-weight: 400;
     font-size: 14px;
-    line-height: 20px;
     color: #00714D;
 }
 .resourceTitle{
-    font-family: '72';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
@@ -11104,33 +11089,48 @@ body.page-living-in-saudi .content {
       padding: 10px !important;
  }
 .page-newsevents-list-page .video-inner-div h4 {
-    font-family: '72';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    color: #00714D;
+   font-weight: 700;
+   font-size: 16px;
+   color: #00714D;
    padding: 10px;
 }
 .page-newsevents-list-page .videoTitle{
-        font-family: '72';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 18px;
-        color: #00714D;
-       padding: 10px;
+
+   font-weight: 700;
+   font-size: 16px;
+   color: #00714D;
+   padding: 10px;
 }
 .page-newsevents-list-page .videoDate{
-    font-family: '72';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 16px;
     color: #00714D;
     padding: 10px;
     white-space: nowrap;
 }
+.page-newsevents-list-page .events-container .event{
+   display:none;
+}
+.page-newsevents-list-page .loadNewsEventShowLessButton{
+    background-color:var(--misaFirstColor);
+    padding:10px;
+    border:1px solid #ddd;
+    color:#fff;
+    border-radius:10px;
+    font-weight:700;
+}
+
+.page-newsevents-list-page .showMoreLessButtonContainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+.page-newsevents-list-page .news-container .news{
+   display:none;
+}
+
 .video-inner-div h4 {
 	font-size: 28px;
 	font-weight: 600;

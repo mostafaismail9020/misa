@@ -113,7 +113,7 @@
                               <div class="boxes">
                              <c:forEach items="${productData.sponsersPartners}" var="sponsorPartner">
                                 <div class="box">
-                                    <div class="icon sectors-icon">${sponsorPartner.imageUrl}</div>
+                                    <div class="icon" style="background-image: url(${sponsorPartner.url});background-repeat: no-repeat;background-position: center; background-size: cover;"></div>
                                     <p>${sponsorPartner.description}</p>
                                 </div>
                                  </c:forEach>

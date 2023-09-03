@@ -8770,7 +8770,7 @@ a.pvcy-policy:focus {
         border-radius: 5px;
 }
 .page-newsevents-list-page #News_press .highlight_title {
-    font-family: '72';
+    
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -8780,7 +8780,6 @@ a.pvcy-policy:focus {
     color: #FFFFFF;
 }
 .page-newsevents-list-page #News_press .carousel-item p {
-    font-family: '72';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -8806,7 +8805,6 @@ a.pvcy-policy:focus {
 	color: var(--misaFirstColor);
 	font-size: 37px;
 	font-weight: 600;
-
 	padding: 0px 10px;
 	margin: 0px;
 }
@@ -10995,7 +10993,7 @@ body.page-living-in-saudi .content {
     color: #00714D !important;
 }
 .resourceDate{
-    font-family: '72';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -11014,6 +11012,29 @@ body.page-living-in-saudi .content {
     color: #00714D;
     padding: 10px;
     white-space: nowrap;
+}
+
+.page-newsevents-list-page .events-container .event{
+   display:none;
+}
+
+.page-newsevents-list-page .loadNewsEventShowLessButton{
+    background-color:var(--misaFirstColor);
+    padding:10px;
+    border:1px solid #ddd;
+    color:#fff;
+    border-radius:10px;
+    font-weight:700;
+}
+
+.page-newsevents-list-page .showMoreLessButtonContainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.page-newsevents-list-page .news-container .news{
+   display:none;
 }
 @media (max-width: 768px) {
   .pageLabel--newseventslist .container.banner.homeLink {
@@ -14060,7 +14081,7 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 .pageLabel--newseventslist .container.banner.homeLink {
     color: #BF9B2E !important;
-    font-family: '72';
+    
     font-weight: 400;
     font-size: 14px;
     position: absolute !important;
@@ -14119,7 +14140,7 @@ body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
     left: 0; /* Reset left */
     top: 50%; /* Vertically center the element */
     transform: translateY(-50%); /* Adjust for centering vertically */
-    font-family: '72';
+    
     font-style: normal;
     font-weight: 600;
     font-size: 40px;
@@ -14130,7 +14151,7 @@ body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
     color: #BF9B2E;
 }
 .page-newsevents-list-page .eventDescription{
-    font-family: '72';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

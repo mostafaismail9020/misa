@@ -3543,6 +3543,29 @@
 		<property name="opportunitySubHeadings" type="java.util.Map&lt;String, String>"/>
 		<property name="opportunityHeadingsWithMedia" type="java.util.Map&lt;String, de.hybris.platform.commercefacades.product.data.ImageData>"/>
 		<property name="opportunityLead" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+		
+		<property name="expectedIRR" type="java.lang.String"/>
+		<property name="expectedInvestmentSize" type="java.lang.String"/>
+		<property name="plantCapacity" type="java.lang.String"/>
+		<property name="paybackPeriod" type="java.lang.Integer"/>
+		<property name="jobscreated" type="java.lang.Integer"/>
+		<property name="gdpContribution" type="java.lang.String"/>
+		<property name="locationRegionText" type="java.lang.String"/>
+		<property name="locationCityText" type="java.lang.String"/>
+		<property name="valuePropositionText" type="java.lang.String"/>
+		<property name="incentivesAndEnablersText" type="java.lang.String"/>
+		<property name="costOfDoingBusinessText" type="java.lang.String"/>
+		<property name="rawMaterialText" type="java.lang.String"/>
+		<property name="globalTrendsText" type="java.lang.String"/>
+		<property name="marketSizeText" type="java.lang.String"/>
+		<property name="keyDemandDriversText" type="java.lang.String"/>
+		<property name="valueChainText" type="java.lang.String"/>
+		<property name="importDependencyText" type="java.lang.String"/>
+		<property name="scalabilityAndLocalizationText" type="java.lang.String"/>
+		<property name="investmentType" type="java.lang.String"/>
+		<property name="capacityData" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.CapacityData&gt;"/>
+		
+
     </bean>
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ImageData">
@@ -3984,5 +4007,12 @@
 		<property name="events"
 		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ProductData>"/>	
 	</bean>
+	
+	<bean class="com.sap.ibso.eservices.facades.data.CapacityData">
+		<property name="measure" type="String"/>
+		<property name="value" type="String"/>
+		<property name="unit" type="String"/>
+	</bean>
+	
 
 </beans>

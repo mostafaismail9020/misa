@@ -1,6 +1,7 @@
 package com.investsaudi.portal.facades.product.populator;
 
 import com.google.common.collect.Lists;
+import com.investsaudi.portal.core.model.CapacityModel;
 import com.investsaudi.portal.core.model.InvestSaudiMediaModel;
 import com.investsaudi.portal.core.model.InvestmentOverviewModel;
 import com.investsaudi.portal.core.model.LocationModel;
@@ -25,6 +26,7 @@ import de.hybris.platform.servicelayer.dto.converter.ConversionException;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.i18n.I18NService;
 import com.sap.ibso.eservices.facades.data.OpportunityPartnerData;
+import com.sap.ibso.eservices.facades.data.CapacityData;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -125,6 +127,14 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
         productData.setOpportunityDetailGrid(getOpportunityDetailGrid(productModel, currentLocale));
         productData.setOpportunityLead(sagiaImageConverter.convert(productModel.getOpportunityLead(currentLocale)));
+        populateInvestmentHighlightFields(productModel,productData);
+        populateLocationText(productModel,productData);
+        populateInvestmentOverview(productModel,productData);
+        populateCostOfDoingBusiness(productModel,productData);
+        populateMarketOverview(productModel,productData);
+        populateDemand(productModel,productData);
+        populateSupply(productModel,productData);
+        
     }
 
 
@@ -293,6 +303,101 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
     	
     	return partnersMap;
     }
+    
+	private void populateInvestmentHighlightFields(OpportunityProductModel productModel, ProductData productData) {
+
+		if (null != productModel.getInvestmentOverview()
+				&& null != productModel.getInvestmentOverview().getInvestmentHighlights()) {
+
+			productData.setExpectedIRR(productModel.getInvestmentOverview().getInvestmentHighlights().getExpectedIRR());
+			productData.setExpectedInvestmentSize(
+					productModel.getInvestmentOverview().getInvestmentHighlights().getExpectedInvestmentSize());
+			productData.setPaybackPeriod(
+					productModel.getInvestmentOverview().getInvestmentHighlights().getPaybackPeriod());
+			productData.setJobscreated(productModel.getInvestmentOverview().getInvestmentHighlights().getJobscreated());
+			productData.setGdpContribution(productModel.getInvestmentOverview().getInvestmentHighlights().getGdpContribution());
+			productData.setInvestmentType(productModel.getInvestmentOverview().getInvestmentHighlights().getInvestmentType());
+			
+
+			if (productModel.getInvestmentOverview().getInvestmentHighlights().getCapacity() != null) {
+				List<CapacityData> capacityDatas = new ArrayList<>();
+				for (CapacityModel capacityModel : productModel.getInvestmentOverview().getInvestmentHighlights()
+						.getCapacity()) {
+					CapacityData capacityData = new CapacityData();
+					capacityData.setMeasure(capacityModel.getMeasure());
+					capacityData.setValue(capacityModel.getValue());
+					capacityData.setUnit(capacityModel.getUnit());
+					capacityDatas.add(capacityData);
+				}
+				productData.setCapacityData(capacityDatas);
+			}
+		}
+
+		
+		
+	}
+	
+	private void populateLocationText(OpportunityProductModel productModel, ProductData productData) {
+		
+		if(CollectionUtils.isNotEmpty(productModel.getLocation()) && Objects.nonNull(productModel.getLocation().iterator().next().getRegion()) && Objects.nonNull(productModel.getLocation().iterator().next().getCity()))
+			
+		{
+			productData.setLocationRegionText(productModel.getLocation().iterator().next().getRegion().getName());
+			productData.setLocationRegionText(productModel.getLocation().iterator().next().getCity().getName());
+			
+		}		
+	}
+	
+	private void populateInvestmentOverview(OpportunityProductModel productModel, ProductData productData) {
+
+		if (null != productModel.getInvestmentOverview()) {
+
+			productData.setValuePropositionText(productModel.getInvestmentOverview().getValueProposition()); 
+			productData.setIncentivesAndEnablersText(productModel.getInvestmentOverview().getIncentivesAndEnablers());			
+		}
+	}
+	
+	private void populateCostOfDoingBusiness(OpportunityProductModel productModel, ProductData productData) {
+
+		if (null != productModel.getInvestmentOverview() && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness())) {
+
+			// REVISIT FOR LIST IMPLEMENTATION
+			productData.setIncentivesAndEnablersText(productModel.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts().iterator().next().getValue());
+		}
+	}
+	
+	
+	private void populateMarketOverview(OpportunityProductModel productModel, ProductData productData) {
+
+		if (null != productModel.getMarketOverview() ) {
+
+			productData.setRawMaterialText(productModel.getMarketOverview().getRawMaterialsText());
+			productData.setRawMaterialText(productModel.getMarketOverview().getGlobalTrendsText());
+			
+		}
+	}
+	
+	
+	private void populateDemand(OpportunityProductModel productModel, ProductData productData) {
+
+		if (null != productModel.getDemand()) {
+
+			productData.setMarketSizeText(productModel.getDemand().getMarketSizeText());
+			productData.setKeyDemandDriversText(productModel.getDemand().getKeyDemandDrivers());
+		}
+	}
+	
+	private void populateSupply(OpportunityProductModel productModel, ProductData productData) {
+
+		if (null != productModel.getSupply()) {
+
+			// REVISIT FOR LIST IMPLEMENTATION
+			productData.setValueChainText(productModel.getSupply().getValueChainTexts().iterator().next().getFormattedText());
+			productData.setImportDependencyText(productModel.getSupply().getImportDependencyText());
+			productData.setScalabilityAndLocalizationText(productModel.getSupply().getScalabilityAndLocalizationText());
+		}
+	}
+	
     
     public Converter<MediaModel, ImageData> getImageConverter() {
         return imageConverter;

@@ -11093,6 +11093,21 @@ body.page-living-in-saudi .content {
 .page-newsevents-list-page .events-container .event{
    display:none;
 }
+.page-newsevents-list-page .loadNewsEventShowLessButton{
+    background-color:var(--misaFirstColor);
+    padding:10px;
+    border:1px solid #ddd;
+    color:#fff;
+    border-radius:10px;
+    font-weight:700;
+}
+
+.page-newsevents-list-page .showMoreLessButtonContainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
 
 .page-newsevents-list-page .news-container .news{
    display:none;

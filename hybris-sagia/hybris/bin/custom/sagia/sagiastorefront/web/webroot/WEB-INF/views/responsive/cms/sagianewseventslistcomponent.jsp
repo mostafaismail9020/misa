@@ -67,8 +67,8 @@
                     </div>
                     <div class="col-md-12">
                     <div class="showMoreLessButtonContainer">
-                      <button id="loadEventMore" class="loadNewsEventShowLessButton">Show More</button>
-                      <button id="showEventLess" class="loadNewsEventShowLessButton">Show Less</button>
+                      <button id="loadEventMore" class="loadNewsEventShowLessButton"> <spring:theme code="review.show.more"/></button>
+                      <button id="showEventLess" class="loadNewsEventShowLessButton"> <spring:theme code="review.show.less"/></button>
                     </div>
                     </div>
                 </c:when>
@@ -92,8 +92,8 @@
                     </div>
                    <div class="col-md-12">
                       <div class="showMoreLessButtonContainer">
-                     <button id="loadNewsMore" class="loadNewsEventShowLessButton">Show More</button>
-                     <button id="showNewsLess" class="loadNewsEventShowLessButton">Show Less</button>
+                     <button id="loadNewsMore" class="loadNewsEventShowLessButton"><spring:theme code="review.show.more"/></button>
+                     <button id="showNewsLess" class="loadNewsEventShowLessButton"><spring:theme code="review.show.less"/></button>
                      </div>
                    </div>
                 </c:when>

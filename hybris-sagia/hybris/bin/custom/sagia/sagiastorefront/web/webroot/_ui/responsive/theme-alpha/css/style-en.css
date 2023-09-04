@@ -8959,8 +8959,6 @@ a.pvcy-policy:focus {
         border-radius: 5px;
 }
 .page-newsevents-list-page #News_press .highlight_title {
-
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
@@ -8969,16 +8967,10 @@ a.pvcy-policy:focus {
     color: #FFFFFF;
 }
 .page-newsevents-list-page #News_press .carousel-item p {
-
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-    color: #FFFFFF;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 350px;
+    color: #FFFFFF!important;
 }
 
 #News_press .News_press_bgwhite {
@@ -8992,7 +8984,6 @@ a.pvcy-policy:focus {
 	border-radius: 5px;
 }
 .page-newsevents-list-page #News_press h4.date {
-
     font-style: normal;
     font-size: 16px;
     font-weight: 400;
@@ -24567,3 +24558,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	font-size: 14px;
 	font-weight: 400;
 }
+
+.page-article-list-page .article-listing-page-general-title{
+	font-size: 32px!important;
+	font-weight: 700!important;
+	color: #00714D!important;
+}
+

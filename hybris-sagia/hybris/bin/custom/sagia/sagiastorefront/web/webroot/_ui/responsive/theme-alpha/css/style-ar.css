@@ -14121,12 +14121,11 @@ body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
     display: none;
 }
 .newsTitle{
-    font-family: 'Arial';
-    font-style: normal;
     font-weight: 700;
     font-size: 24px;
     color: #00714D;
     margin-bottom: 50px;
+	text-align: right;
 }
 .page-newsevents-list-page .pageTitle {
     position: absolute;
@@ -23711,6 +23710,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-page {
 	position: relative;
+	text-align: right;
 }
 
 .article-details-page-banner {
@@ -23763,6 +23763,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	font-size: 32px!important;
 	font-weight: 700!important;
 	color: #00714D!important;
+	text-align: right;
 }
 
 .article-details-page ul {
@@ -24789,6 +24790,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-news-page {
 	position: relative;
+	text-align: right;
 }
 
 .article-details-news-page-banner {
@@ -24970,6 +24972,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-events-page {
 	position: relative;
+	text-align: right;
 }
 
 .article-details-events-page-banner {
@@ -24992,7 +24995,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	justify-content: flex-end;
 	align-items: start;
 	flex-direction: column;
-	text-align: left;
+	text-align: right;
 	z-index: 9;
 	margin-bottom: 15px;
 }
@@ -25267,6 +25270,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	font-size: 16px;
 	font-weight: 700;
 	margin-bottom: 10px;
+	text-align: left;
 }
 
 .event-top-info-box .event-description {
@@ -25882,6 +25886,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .page-article-list-page {
 	position: relative;
+	text-align: right;
 }
 
 .page-article-list-page .article-listing-page-top-paragraph {
@@ -25964,4 +25969,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	height: 16px;
 	display: inline-block;
 	cursor: pointer;
+}
+
+.page-article-list-page .article-listing-page-general-title{
+	font-size: 32px!important;
+	font-weight: 700!important;
+	color: #00714D!important;
+	text-align: right;
 }

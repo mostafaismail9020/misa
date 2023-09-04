@@ -11,9 +11,16 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 breadcrumb-container">
-						<span class="breadcrumb-left-icon"></span>
-						<span class="breadcrumb-page-info">Services</span>
-					</div>
+						<c:if test="${language eq 'en'}">
+							<span class="breadcrumb-left-icon"></span>
+							<span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+						</c:if>
+						<c:if test="${language eq 'ar'}">
+							<span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+							<span class="breadcrumb-left-icon"></span>
+						</c:if>
+
+						</div>
 					<div class="col-md-12">
 						<h1 class="article-detail-page-general-title">${fn:escapeXml(productData.articleTitle)}</h1>
 					</div>

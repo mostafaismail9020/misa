@@ -18,14 +18,24 @@
     <div class="article-listing-page-banner-container" data-aos="fade-up">
         <div class="container">
             <div class="row">
-                <a href="/${language}/">
-                    <div class="col-md-12 breadcrumb-container">
-                        <span class="breadcrumb-left-icon"></span>
-                        <span class="breadcrumb-page-info">Home</span>
-                    </div>
-                </a>
+                <c:if test="${language eq 'en'}">
+                    <a href="/${language}/">
+                        <div class="col-md-12 breadcrumb-container">
+                            <span class="breadcrumb-left-icon"></span>
+                            <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+                        </div>
+                    </a>
+                </c:if>
+                <c:if test="${language eq 'ar'}">
+                    <a href="/${language}/">
+                        <div class="col-md-12 breadcrumb-container">
+                            <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+                            <span class="breadcrumb-left-icon"></span>
+                        </div>
+                    </a>
+                </c:if>
                 <div class="col-md-12">
-                    <h1 class="article-detail-page-general-title">Article Listing</h1>
+                    <h1 class="article-listing-page-general-title">Article Listing</h1>
                 </div>
             </div>
         </div>

@@ -182,12 +182,18 @@
     							<h3 class="opportunity-statics-title text-center">Investment Highlights</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">Expected Investment size [Number or range]</p>
-								<p class="opportunity-statics-desc">Plant capacity [LIST] [LIST] [NUMBER]</p>
-								<p class="opportunity-statics-desc">Expected IRR [Number or range]</p>
-								<p class="opportunity-statics-desc">Payback period [Number]</p>
-								<p class="opportunity-statics-desc">Job Creation [Number]</p>
-								<p class="opportunity-statics-desc">GDP Impact [Number]</p>
+    							<p class="opportunity-statics-desc">Expected Investment size ${productData.expectedInvestmentSize}</p>
+								<p class="opportunity-statics-desc">Plant capacity
+									<ul>
+										<c:forEach var="plantCapacity" items="${productData.capacityData}">
+		                                    <li>${plantCapacity.measure} - ${plantCapacity.value} ${plantCapacity.unit}</li>
+		                                </c:forEach>
+	                                </ul>
+								</p>
+								<p class="opportunity-statics-desc">Expected IRR ${productData.expectedIRR}</p>
+								<p class="opportunity-statics-desc">Payback period ${productData.paybackPeriod}</p>
+								<p class="opportunity-statics-desc">Job Creation ${productData.jobscreated}</p>
+								<p class="opportunity-statics-desc">GDP Impact ${productData.gdpContribution}</p>
 								<p class="opportunity-statics-desc">Location (Region) [TEXT]</p>
     						</div>
     					</div>
@@ -200,7 +206,7 @@
     							<h3 class="opportunity-statics-title text-center">Value Proposition</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[TEXT] Summary of key differentiators that position KSA as a strategic choice over other regional/global peers</p>
+    							<p class="opportunity-statics-desc text-center">${productData.valuePropositionText} Summary of key differentiators that position KSA as a strategic choice over other regional/global peers</p>
     						</div>
     					</div>
     				</div>
@@ -214,7 +220,7 @@
     							<h3 class="opportunity-statics-title text-center">Incentives and Enablers</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[LIST] [TEXT] Factors that enable investment in the underlying opportunity such as General Incentive and financing</p>
+    							<p class="opportunity-statics-desc text-center">[LIST] ${productdata.incentivesAndEnablersText} Factors that enable investment in the underlying opportunity such as General Incentive and financing</p>
     						</div>
     					</div>
     				</div>

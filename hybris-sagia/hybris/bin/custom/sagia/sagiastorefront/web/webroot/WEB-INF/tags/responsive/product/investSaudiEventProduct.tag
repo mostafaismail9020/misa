@@ -34,6 +34,14 @@
             <!-- Article Details Events Page -->
             <section class="article-details-events-page">
                 <div class="container">
+                    <div class="row mt-2 mb-5">
+                        <a href="${encodedContextPath}/newseventslist">
+                            <div class="col-md-12 breadcrumb-container">
+                                <span class="breadcrumb-left-icon"></span>
+                                <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
+                            </div>
+                        </a>
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="event-time-location">
@@ -190,9 +198,19 @@
                             </div>
 
                             <div class="col-md-12 mt-4 navigation-icons">
-                                <span class="left-icon"></span>
-                                <span class="page-info">1 of 2</span>
-                                <span class="right-icon"></span>
+
+                                <c:if test="${language eq 'en'}">
+                                    <span class="left-icon"></span>
+                                    <span class="page-info">1 of 2</span>
+                                    <span class="right-icon"></span>
+                                </c:if>
+                                <c:if test="${language eq 'ar'}">
+                                    <span class="right-icon"></span>
+                                    <span class="page-info">1 of 2</span>
+                                    <span class="left-icon"></span>
+                                </c:if>
+
+
                             </div>
 
                         </div>

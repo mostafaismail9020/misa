@@ -332,9 +332,6 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 				productData.setCapacityData(capacityDatas);
 			}
 		}
-
-		
-		
 	}
 	
 	private void populateLocationText(OpportunityProductModel productModel, ProductData productData) {
@@ -374,7 +371,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 		if (null != productModel.getMarketOverview() ) {
 
 			productData.setRawMaterialText(productModel.getMarketOverview().getRawMaterialsText());
-			productData.setRawMaterialText(productModel.getMarketOverview().getGlobalTrendsText());
+			productData.setGlobalTrendsText(productModel.getMarketOverview().getGlobalTrendsText());
 			
 		}
 	}

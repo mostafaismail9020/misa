@@ -124,9 +124,9 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         productData.setOpportunityHighlights(getOpportunityHighlights(productModel));
         productData.setOpportunitySubHeadings(productModel.getOpportunitySubHeadings(currentLocale));
         productData.setOpportunityHeadingsWithMedia(getSubHeadingWithMedia(productModel, currentLocale));
-        productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
+        //productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
         productData.setOpportunityDetailGrid(getOpportunityDetailGrid(productModel, currentLocale));
-        productData.setOpportunityLead(sagiaImageConverter.convert(productModel.getOpportunityLead(currentLocale)));
+        //productData.setOpportunityLead(sagiaImageConverter.convert(productModel.getOpportunityLead(currentLocale)));
         populateInvestmentHighlightFields(productModel,productData);
         populateLocationText(productModel,productData);
         populateInvestmentOverview(productModel,productData);

@@ -194,7 +194,7 @@
 								<p class="opportunity-statics-desc">Payback period ${productData.paybackPeriod}</p>
 								<p class="opportunity-statics-desc">Job Creation ${productData.jobscreated}</p>
 								<p class="opportunity-statics-desc">GDP Impact ${productData.gdpContribution}</p>
-								<p class="opportunity-statics-desc">Location (Region) [TEXT]</p>
+								<p class="opportunity-statics-desc">Location (Region) ${productData.locationRegionText} - ${productData.locationCityText}</p>
     						</div>
     					</div>
     				</div>
@@ -220,7 +220,7 @@
     							<h3 class="opportunity-statics-title text-center">Incentives and Enablers</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[LIST] ${productdata.incentivesAndEnablersText} Factors that enable investment in the underlying opportunity such as General Incentive and financing</p>
+    							<p class="opportunity-statics-desc text-center">[LIST] ${productData.incentivesAndEnablersText} Factors that enable investment in the underlying opportunity such as General Incentive and financing</p>
     						</div>
     					</div>
     				</div>
@@ -232,7 +232,7 @@
     							<h3 class="opportunity-statics-title text-center">Cost of Doing Business</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[TEXT] Summary of key differentiators that position KSA as a strategic choice over other regional/global peers</p>
+    							<p class="opportunity-statics-desc text-center">${productData.costOfDoingBusinessText} Summary of key differentiators that position KSA as a strategic choice over other regional/global peers</p>
     						</div>
     					</div>
     				</div>
@@ -373,7 +373,7 @@
     							<h3 class="opportunity-statics-title text-center">Raw Materials</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[TEXT] Raw Materials</p>
+    							<p class="opportunity-statics-desc text-center">${productData.rawMaterialText} Raw Materials</p>
     						</div>
     					</div>
     				</div>
@@ -385,7 +385,7 @@
     							<h3 class="opportunity-statics-title text-center">Global Trends</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[TEXT] Latest business developments within the sector/product category</p>
+    							<p class="opportunity-statics-desc text-center">${productData.globalTrendsText} Latest business developments within the sector/product category</p>
     						</div>
     					</div>
     				</div>
@@ -399,7 +399,7 @@
     							<h3 class="opportunity-statics-title text-center">Market Size</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[TEXT] Summary of key differentiators that position KSA as a strategic choice over other regional/global peers</p>
+    							<p class="opportunity-statics-desc text-center">${productData.marketSizeText} Summary of key differentiators that position KSA as a strategic choice over other regional/global peers</p>
     						</div>
     					</div>
     				</div>
@@ -413,7 +413,7 @@
     							<h3 class="opportunity-statics-title text-center">Key Demand Drivers</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[TEXT] Selected number of factors that will influence future demand for the related product/service</p>
+    							<p class="opportunity-statics-desc text-center">${productData.keyDemandDriversText} Selected number of factors that will influence future demand for the related product/service</p>
     						</div>
     					</div>
     				</div>
@@ -436,7 +436,7 @@
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Value Chain [TEXT] [PICTURES]</h3>
+    							<h3 class="opportunity-statics-title text-center">Value Chain ${productData.valueChainText} [PICTURES]</h3>
     						</div>
     						<div class="col-md-12 col-12">
     							<p class="opportunity-statics-desc text-center">[TEXT] Selected number of factors that will influence future demand for the related product/service</p>
@@ -453,7 +453,7 @@
     							<h3 class="opportunity-statics-title text-center">Import Dependency</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">[TEXT] An overview of the countries from which Saudi Arabia is importing the product and their value/volume and share in total import</p>
+    							<p class="opportunity-statics-desc text-center">${productData.importDependencyText} An overview of the countries from which Saudi Arabia is importing the product and their value/volume and share in total import</p>
     						</div>
     					</div>
     				</div>

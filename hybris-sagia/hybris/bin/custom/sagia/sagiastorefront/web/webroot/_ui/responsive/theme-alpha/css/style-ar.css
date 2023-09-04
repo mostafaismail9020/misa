@@ -25903,7 +25903,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .page-article-list-page .article-listing-page-top-paragraph {
-	color: #00714D;
+	color: #00714D!important;
 	font-size: 24px;
 	font-weight: 400;
 }

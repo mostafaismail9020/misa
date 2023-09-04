@@ -21,7 +21,9 @@
 			      	<div class="col-lg-4 col-md-6 card-wrapper " data-aos="fade-up" data-aos-delay="${loopCount}">
 			        	<div class="flip-card">
 			            	<div class="card-img">
-			                	<img class="img-fluid" src="${fn:escapeXml(currentComponent.newsDetailsImage.url)}" alt="" loading="lazy">
+			            		<a href="${newsUrl}/${currentComponent.uid}">
+			                		<img class="img-fluid" src="${fn:escapeXml(currentComponent.newsDetailsImage.url)}" alt="" loading="lazy">
+			                	</a>
 			              	</div>
 			              	<div class="card-box p-3 pr-5 home-news-updates-content">
 			               		<span><fmt:formatDate value="${currentComponent.newsDate}" type="both" dateStyle="long" timeStyle="long" pattern="d MMMM yyyy" /></span>

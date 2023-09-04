@@ -316,7 +316,7 @@
 					<c:if test="${!originalLogo}">
 						<img class="hd-static" src="${fn:escapeXml(component.visionImage.url)}" />
 					</c:if>
-					<img class="hd-scroll" src="${fn:escapeXml(component.visionImage.url)}" />
+					<img class="hd-scroll hd-scroll-logo" src="${fn:escapeXml(component.visionImage.url)}" />
 				</a>
 			</div>
 			<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>

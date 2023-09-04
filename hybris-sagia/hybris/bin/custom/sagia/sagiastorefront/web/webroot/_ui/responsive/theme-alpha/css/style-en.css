@@ -1740,10 +1740,6 @@ svg #wheel {
 	color: var(--misaSecondColor);
 }
 
-.talk_item:hover {
-	transform: scale(1.1);
-}
-
 @media (min-width: 1200px) {
 	.where-to-invest-main-wrapper .hexagen-grid-wrapper {
 		width: 918px;
@@ -3044,12 +3040,17 @@ p.contowl {
 	#incentiveforinvestors .title-heading {
 		padding-bottom: 10px;
 	}
+	
 	#incentiveforinvestors .explore-btn {
 		position: static;
 		display: block;
 		margin-right: auto;
 		margin-left: auto;
 		margin-bottom: 30px;
+	}
+
+	.hd-scroll-logo {
+		margin-top: 15px;
 	}
 }
 

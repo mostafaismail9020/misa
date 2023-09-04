@@ -399,7 +399,9 @@
     							<h3 class="opportunity-statics-title text-center">Market Size</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.marketSizeText}</p>
+    							<p class="opportunity-statics-desc text-center">
+									<img class="img-fluid" src="${commonResourcePath}/images/marketsize.png" />
+								</p>
     						</div>
     					</div>
     				</div>
@@ -439,7 +441,9 @@
     							<h3 class="opportunity-statics-title text-center">Value Chain ${productData.valueChainText}</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center"><!-- to be done --></p>
+    							<p class="opportunity-statics-desc text-center">
+									<img class="img-fluid" src="${commonResourcePath}/images/valuechain.png" />
+								</p>
     						</div>
     					</div>
     				</div>

@@ -667,6 +667,10 @@ ul.dropdown-list li a {
 	transition: all 0.25s ease-in;
 }
 
+.mobile-nav .nav-item.dropdown .dropdown-toggle.login-btn-in-menu::after {
+	background: transparent;
+}
+
 .mobile-nav .nav-item.dropdown.show .dropdown-toggle::after {
 	transform: rotate(180deg);
 	transition: all 0.25s ease-out;
@@ -6408,6 +6412,10 @@ img.accountLogin-headline-logo {
 
 	.skype {
 		display: none!important;
+	}
+	
+	.mobile-nav-toggle {
+		filter: invert(100%) sepia(100%) saturate(7296%) hue-rotate(164deg) brightness(90%) contrast(103%);
 	}
 	
 	.page-portal-homepage .mobile-nav-toggle {

@@ -638,6 +638,10 @@ ul.dropdown-list li a {
 	transition: all 0.25s ease-in;
 }
 
+.mobile-nav .nav-item.dropdown .dropdown-toggle.login-btn-in-menu::after {
+	background: transparent;
+}
+
 .mobile-nav .nav-item.dropdown.show .dropdown-toggle::after {
 	transform: rotate(180deg);
 	transition: all 0.25s ease-out;

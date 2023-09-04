@@ -6123,10 +6123,6 @@ img.accountLogin-headline-logo {
 	.key-reason-invest .count-block {
 		width: 95% !important;
 	}
-
-	#newsandupdates .contentWrapper .card-wrapper .flip-card {
-		margin-bottom: 30px;
-	}
 }
 
 @media (max-width: 1024px) {
@@ -13055,6 +13051,14 @@ ul.INS_li_ul_under li {
 	.opportunity-article-section-body .jumbotron.jumbotron-main {
 	    margin-top: 20px;
 	}
+
+	.Header_vs_logo {
+		display: none!important;
+	}
+
+	.skype {
+		display: none!important;
+	}
 }
 
 @media (min-width:768px) and (max-width:769px) {
@@ -13174,7 +13178,6 @@ ul.INS_li_ul_under li {
 		background-image: url('../img/listView_blue.svg');
 		background-repeat: no-repeat;
 		top: 80px;
-		left: 37px;
 	}
 	.mobile-nav-active .mobile-nav-toggle {
 		background-image: url('../img/close_white.svg');
@@ -18936,16 +18939,12 @@ ul.INS_list_font li,
 		width: 107px;
 		height: auto;
 	}
-	.Header_vs_logo img {
-		width: 50px;
-	}
+	
 	#topbar .social-links a {
 		font-size: 8px;
 		margin-right: 8px;
 	}
-	.Header_vs_logo {
-		margin-right: 20px !important;
-	}
+	
 	#topbar {
 		top: 0px;
 		height: 50px;
@@ -22814,9 +22813,7 @@ ul.INS_list_font li,
 	.embed-responsive {
 		z-index: 9 !important;
 	}
-	.Header_vs_logo img {
-		width: 60px;
-	}
+	
 	#topbar .social-links a {
 		font-size: 8px;
 	}

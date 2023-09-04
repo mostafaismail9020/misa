@@ -6261,10 +6261,6 @@ img.accountLogin-headline-logo {
 	.key-reason-invest .count-block {
 		width: 95% !important;
 	}
-	
-	#newsandupdates .contentWrapper .card-wrapper .flip-card {
-		margin-bottom: 30px;
-	}
 }
 
 @media (max-width: 1024px) {
@@ -6404,6 +6400,14 @@ img.accountLogin-headline-logo {
 	.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .explore-keys-btn {
 		display:table;
 		margin:0 auto;
+	}
+
+	.Header_vs_logo {
+		display: none!important;
+	}
+
+	.skype {
+		display: none!important;
 	}
 }
 
@@ -13254,7 +13258,6 @@ ul.INS_li_ul_under li {
 		width: 30px;
 		background-image: url("../img/listView_blue.svg");
 		background-repeat: no-repeat;
-		top: 80px;
 		right: 37px;
 	}
 	.mobile-nav-active .mobile-nav-toggle {
@@ -19088,15 +19091,12 @@ padding-left: 40px;
 		width: 30px;
 		background-image: url("../img/listView_blue.svg");
 		background-repeat: no-repeat;
-		top: 55px;
 	}
 	.mobile-nav-active .mobile-nav-toggle {
 		background-image: url("../img/close_white.svg");
 		background-repeat: no-repeat;
 	}
-	.Header_vs_logo img {
-		width: 50px;
-	}
+	
 	#topbar {
 		top: 0px;
 		height: 50px;
@@ -19106,9 +19106,7 @@ padding-left: 40px;
 		font-size: 8px;
 		margin-left: 8px;
 	}
-	.Header_vs_logo {
-		margin-left: 20px !important;
-	}
+	
 	.nav-item.dropdown {
 		border-bottom: 1px solid #868686;
 	}
@@ -21484,9 +21482,7 @@ padding-left: 40px;
 		white-space: nowrap;
 		padding-left: 0 !important;
 	}
-	.Header_vs_logo img {
-		width: 60px;
-	}
+	
 	#topbar .social-links a {
 		font-size: 8px;
 	}

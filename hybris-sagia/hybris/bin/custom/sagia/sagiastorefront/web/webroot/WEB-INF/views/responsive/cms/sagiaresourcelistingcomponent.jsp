@@ -73,7 +73,6 @@
                     </div>
                 </c:otherwise>
             </c:choose>
-
             <div class="row wow fadeIn all-opportunity">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <ul class="pagination pg-darkgrey justify-content-center mt-4">
@@ -168,4 +167,58 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="resource-title no-border">
+                <h2>Upcoming Events</h2>
+                <div class="action">
+                    <a href="/" class="see-more">See More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">Events List (needs backend changes)</div>
+    <div>    
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="resource-title">
+                <h2>Opportunities</h2>
+            </div>
+        </div>
+        <div class="col-sm-12">Opportunities List (needs backend changes)</div>
+    <div>    
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="resource-title">
+                <h2>News</h2>
+            </div>
+        </div>
+        <div class="col-sm-12">News List (needs backend changes)</div>
+        <div class="col-sm-12">
+            <a href="/" class="button-large mt-5">See more updates</a>
+        </div>
+    <div>    
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="resource-title">
+                <h2>Articles</h2>
+                <div class="action">
+                    <a href="/" class="see-more">See More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">Articles  List (needs backend changes)</div>
+    <div>    
 </div>

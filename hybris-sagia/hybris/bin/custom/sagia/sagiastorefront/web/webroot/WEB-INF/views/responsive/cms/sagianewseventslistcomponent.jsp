@@ -53,8 +53,8 @@
 </section>
 
 <div class="container">
-    <div class="row p-2">
-        <div class="col-md-12 col-sm-12 page-main-content">
+    <div class="row">
+        <div class="col-md-12 mt-5">
             <c:choose>
                 <c:when test="${not empty eventSearchPageData.results}">
                     <h2 class="newsTitle">Upcoming Events</h2>
@@ -79,7 +79,7 @@
                 </c:otherwise>
             </c:choose>
         </div>
-        <div class="col-md-12 col-sm-12 page-main-content">
+        <div class="col-md-12 mt-5 mb-5">
             <c:choose>
                 <c:when test="${not empty searchPageData.results}">
                     <h2 class="newsTitle">Latest News</h2>
@@ -108,18 +108,20 @@
 
     <section class="Inc-mediaCenter-sectionwrapper pb-0">
         <div class="container">
-            <div class="row text-center">
+            <div class="row">
+              <div class="col-md-12">
                 <h2 class="newsTitle">Latest announcements from the ministry</h2>
+              </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container mb-4">
             <div class="row announcementsBox">
                 <div class="col-md-3">
                     <img class="img-fluid service-card-img resources-card-img"
                          src="${commonResourcePath}/images/default-product-image.png"
                          alt="" loading="lazy">
                 </div>
-                <div class="col-md-9 containerPadding">
+                <div class="col-md-9">
                     <div class="row">
                         <div class="col-md-6 resourceDate">
                             16 Mar 2023
@@ -134,14 +136,14 @@
                 </div>
             </div>
         </div>
-        <div class="container containerPadding ">
+        <div class="container mb-4">
             <div class="row announcementsBox">
                 <div class="col-md-3">
                     <img class="img-fluid service-card-img resources-card-img"
                          src="${commonResourcePath}/images/default-product-image.png"
                          alt="" loading="lazy">
                 </div>
-                <div class="col-md-9 containerPadding">
+                <div class="col-md-9">
                     <div class="row">
                         <div class="col-md-6 resourceDate">
                             16 Mar 2023
@@ -156,14 +158,14 @@
                 </div>
             </div>
         </div>
-        <div class="container  ">
+        <div class="container mb-4">
             <div class="row announcementsBox">
                 <div class="col-md-3">
                     <img class="img-fluid service-card-img resources-card-img"
                          src="${commonResourcePath}/images/default-product-image.png"
                          alt="" loading="lazy">
                 </div>
-                <div class="col-md-9 containerPadding">
+                <div class="col-md-9">
                     <div class="row">
                         <div class="col-md-6 resourceDate">
                             16 Mar 2023
@@ -189,59 +191,53 @@
                     </div>
                 </div>
             </section>
-       <section class="Inc-mediaCenter-sectionwrapper pb-3">
-           <div class="container">
-               <div class="row text-center col-md-12">
-                   <h2 class="newsTitle">Media Library </h2>
+<section class="Inc-mediaCenter-sectionwrapper pb-3">
+   <div class="container">
+      <div class="row text-center col-md-12">
+         <h2 class="newsTitle">Media Library </h2>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="">
+               <div class="">
+                  <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="194px" src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy">
+                  </iframe>
                </div>
-           </div>
-           <div class="container">
-               <div class="row">
-                   <div class="col-md-6">
-                       <div class="video-player-container video-inner-div border-0 p-0">
-                           <div class="embed-responsive embed-responsive-16by9 video-events" >
-                               <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
-                                       src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0"
-                                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
-                               </iframe>
-                           </div>
-                          <h4 class= "videoTitle">Saudi investment ministry signs four investment agreements</h4>
-                          <span class="videoDate">25 Oct 2022</span>
-                       </div>
-                   </div>
-                   <div class="col-md-6">
-                       <div class="row">
-                           <div class="col-md-10 news vedio_outer">
-                               <div class="video-player-container video-inner-div border-0 p-0">
-                                   <div class="embed-responsive embed-responsive-16by9 video-events">
-                                       <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
-                                               src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0"
-                                               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
-                                       </iframe>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="col-md-2 news vedio_outer">
-                            <h4 class= "videoTitle">Saudi investment ministry signs four investment agreements</h4>
-                            <span class="videoDate">25 Oct 2022</span>
-                             </div>
-                             <div class="col-md-10 news vedio_outer">
-                               <div class="video-player-container video-inner-div border-0 p-0">
-                                   <div class="embed-responsive embed-responsive-16by9 video-events">
-                                       <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="80%" height="100%"
-                                               src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0"
-                                               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy">
-                                       </iframe>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="col-md-2 news vedio_outer">
-                                                   <h4 class= "videoTitle" >Saudi investment ministry signs four investment agreements</h4>
-                                                   <span class="videoDate">25 Oct 2022</span>
-                                                    </div>
-                       </div>
-                   </div>
+               <h4 class="videoTitle">Saudi investment ministry signs four investment agreements</h4>
+               <span class="videoDate">25 Oct 2022</span>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="row">
+               <div class="col-md-6">
+                  <div>
+                     <div class="">
+                        <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="113" src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy">
+                        </iframe>
+                     </div>
+                  </div>
                </div>
-           </div>
-       </section>
+               <div class="col-md-6">
+                  <h4 class="videoTitle">Saudi investment ministry signs four investment agreements</h4>
+                  <span class="videoDate">25 Oct 2022</span>
+               </div>
+               <div class="col-md-6">
+                  <div class="video-player-container video-inner-div border-0 p-0">
+                     <div class="embed-responsive embed-responsive-16by9 video-events">
+                        <iframe class="video-fluid z-depth-1 vplayer embed-responsive-item" width="100%" height="113" src="https://www.youtube.com/embed/u3sQ7TDFUWs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy">
+                        </iframe>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <h4 class="videoTitle">Saudi investment ministry signs four investment agreements</h4>
+                  <span class="videoDate">25 Oct 2022</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
 </div>

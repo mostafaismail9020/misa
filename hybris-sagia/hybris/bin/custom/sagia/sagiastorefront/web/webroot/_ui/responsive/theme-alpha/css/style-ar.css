@@ -3796,10 +3796,6 @@ p.contowl {
 	height: 200px;
 }
 
-#newsandupdates .contentWrapper .card-wrapper .flip-card .card-img img:hover {
-	transform: scale(1.2);
-}
-
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-box {
 	background-color: #FAFAFA;
 	text-align: right;

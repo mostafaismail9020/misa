@@ -343,7 +343,8 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 			
 		{
 			productData.setLocationRegionText(productModel.getLocation().iterator().next().getRegion().getName());
-			productData.setLocationRegionText(productModel.getLocation().iterator().next().getCity().getName());
+			productData.setLocationCityText(productModel.getLocation().iterator().next().getCity().getName());
+			
 			
 		}		
 	}
@@ -362,7 +363,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 		if (null != productModel.getInvestmentOverview() && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness())) {
 
 			// REVISIT FOR LIST IMPLEMENTATION
-			productData.setCostOfDoingBusinessText(productModel.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts().iterator().next().getValue());
+			productData.setCostOfDoingBusinessText(productModel	.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts().iterator().next().getValue());
 
 		}
 	}

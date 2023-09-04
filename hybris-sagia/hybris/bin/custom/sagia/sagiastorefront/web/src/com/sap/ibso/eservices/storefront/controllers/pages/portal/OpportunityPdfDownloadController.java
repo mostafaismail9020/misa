@@ -73,7 +73,6 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	    }
 		List<File> secFiles = null;
 	   	if(Objects.nonNull(mediaModels)) {
-			LOG.info("Secondary PDF(s) are available");
 			secFiles = convertMediaListToFileList(mediaModels);
 		}
 	    File file = sagiaPDFChartGenerator.generatePdfFile(productModel, secFiles);

@@ -24,7 +24,7 @@ public class SagiaNewsEventsPageController extends SagiaSearchPageController
 {
     private static final Logger LOG = Logger.getLogger(SagiaNewsEventsPageController.class);
     private static final String NEWS_EVENTS_LIST_PAGE = "newsevents-list-page";
-	private static final int NUM_OF_RECORD_PER_PAGE = 9;
+	private static final int NUM_OF_RECORD_PER_PAGE = 60;
 	private static final String DEFAULT_SORT = ":creationTime";
 
     @Override

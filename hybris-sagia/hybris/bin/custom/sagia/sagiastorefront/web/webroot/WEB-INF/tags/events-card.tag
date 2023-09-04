@@ -14,19 +14,18 @@
             <a href="${encodedContextPath}${result.url}" class="know-more-link">
                 <div class="flip-card-front">
                     <div class="news-date text-center">
-                        <p class="eventDay"><fmt:formatDate value="${result.eventDate}" type="both" dateStyle="long" timeStyle="long" pattern="d" /></p>
-                        <p class="eventMonth"><fmt:formatDate value="${result.eventDate}" type="both" dateStyle="long" timeStyle="long" pattern="MMM" /></p>
+                        <span class="eventDay"><fmt:formatDate value="${result.eventDate}" type="both" dateStyle="long" timeStyle="long" pattern="d" /></span>
+                        <span class="eventMonth"><fmt:formatDate value="${result.eventDate}" type="both" dateStyle="long" timeStyle="long" pattern="MMM" /></span>
                     </div>
                     <div class="card-img">
                         <img class="img-fluid events-card-img" src="${result.imageUrl}" alt="${result.name}" loading="lazy">
                     </div>
                     <div class="flip-card-text">
-                        <div class="row justify-content-between">
-                            <p class="eventShortInformation col-md-6 col-6">${result.eventTiming}</p>
-                            <p class="eventShortInformation col-md-6 col-6">${result.eventLocation}</p>
-                        </div>
-                        <p class="eventsName">${result.name}</p>
+
+                        <span class="eventShortInformation mt-2 mb-2">${result.eventTiming}</span>
+                        <span class="eventShortInformation mt-2 mb-2">${result.eventLocation}</span>
                     </div>
+                     <span class="eventsName mt-2 mb-2">${result.name}</span>
                 </div>
             </a>
         </div>

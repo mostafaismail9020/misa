@@ -9416,12 +9416,14 @@ a.pvcy-policy:focus {
     height: 60px;
     width: 81px;
     background-color: #00714D;
+    color:#FFFFFF;
 }
 .eventDay{
     font-weight: 400;
     font-size: 14px !important;
     line-height: 16px !important;
     color: #FFFFFF !important;
+    display:block;
 }
 .media-card-img{
     width: 123px;
@@ -9482,6 +9484,14 @@ a.pvcy-policy:focus {
     font-size: 1.1vw;
     color: #00714D;
 }
+
+.pageLabel--newseventslist .flip-card-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
 .pageLabel--newseventslist .eventShortInformation{
 
     font-weight: 400;

@@ -9248,6 +9248,7 @@ a.pvcy-policy:focus {
     font-size: 14px !important;
     line-height: 16px !important;
     color: #FFFFFF !important;
+    display:block;
 }
 .eventMonth{
     font-family: 'Arial' !important;;
@@ -9295,6 +9296,14 @@ a.pvcy-policy:focus {
     color: #00714D;
     white-space: nowrap;
 }
+
+.pageLabel--newseventslist .flip-card-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
 .pageLabel--newseventslist .eventsName{
     font-family: 'Arial';
     font-weight: 400;
@@ -16852,6 +16861,7 @@ ul.INS_list_font li,
     height: 60px !important;
     width: 81px !important;
     background-color: #00714D;
+    color:#FFFFFF;
 }
 
 .news-date {

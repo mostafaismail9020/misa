@@ -195,25 +195,25 @@
 					<div class="col-md-3 mb-3">
 						<div>
 							<img class="recent-projects-card-img" alt=""
-								 src="/medias/industrial-manufacturing-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw2MDUxMXxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oMDYvaDhlLzg4MTE3MTU2OTA1MjYuanBnfGY4MGUwYmU2MGM0MGRjYzZhZmY1ZDRiMDZjYmNhNzhlNGExNDgyZWVlYzQyYzg0ZjEyY2M1M2Y5ZjRjNWFmNmQ"/>
+								 src="https://investsaudi.sa/medias/Banner-5-.jpg?context=bWFzdGVyfHJvb3R8MjY3ODAzfGltYWdlL2pwZWd8aDRjL2g1Mi84OTUyNzU4MzM3NTY2LmpwZ3xiYzVmM2Y1ZTVmZmNmMDUyNzE5YjE4YmI3YTI3MTkxM2NiNmE0NGEzZWY4YTQxMGFjOGFiNTgzNmU3NjE1YTNj"/>
 						</div>
 						<div class="recent-projects-card-title">Saudi investment ministry signs four investment agreements</div>
 					</div>
 					<div class="col-md-3 mb-3">
 						<div><img class="recent-projects-card-img" alt=""
-								  src="/medias/industrial-manufacturing-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw2MDUxMXxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oMDYvaDhlLzg4MTE3MTU2OTA1MjYuanBnfGY4MGUwYmU2MGM0MGRjYzZhZmY1ZDRiMDZjYmNhNzhlNGExNDgyZWVlYzQyYzg0ZjEyY2M1M2Y5ZjRjNWFmNmQ"/>
+								  src="https://investsaudi.sa/medias/Banner-5-.jpg?context=bWFzdGVyfHJvb3R8MjY3ODAzfGltYWdlL2pwZWd8aDRjL2g1Mi84OTUyNzU4MzM3NTY2LmpwZ3xiYzVmM2Y1ZTVmZmNmMDUyNzE5YjE4YmI3YTI3MTkxM2NiNmE0NGEzZWY4YTQxMGFjOGFiNTgzNmU3NjE1YTNj"/>
 						</div>
 						<div class="recent-projects-card-title">Saudi investment ministry signs four investment agreements</div>
 					</div>
 					<div class="col-md-3 mb-3">
 						<div><img class="recent-projects-card-img" alt=""
-								  src="/medias/industrial-manufacturing-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw2MDUxMXxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oMDYvaDhlLzg4MTE3MTU2OTA1MjYuanBnfGY4MGUwYmU2MGM0MGRjYzZhZmY1ZDRiMDZjYmNhNzhlNGExNDgyZWVlYzQyYzg0ZjEyY2M1M2Y5ZjRjNWFmNmQ"/>
+								  src="https://investsaudi.sa/medias/Banner-5-.jpg?context=bWFzdGVyfHJvb3R8MjY3ODAzfGltYWdlL2pwZWd8aDRjL2g1Mi84OTUyNzU4MzM3NTY2LmpwZ3xiYzVmM2Y1ZTVmZmNmMDUyNzE5YjE4YmI3YTI3MTkxM2NiNmE0NGEzZWY4YTQxMGFjOGFiNTgzNmU3NjE1YTNj"/>
 						</div>
 						<div class="recent-projects-card-title">Saudi investment ministry signs four investment agreements</div>
 					</div>
 					<div class="col-md-3 mb-3">
 						<div><img class="recent-projects-card-img" alt=""
-								  src="/medias/industrial-manufacturing-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw2MDUxMXxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oMDYvaDhlLzg4MTE3MTU2OTA1MjYuanBnfGY4MGUwYmU2MGM0MGRjYzZhZmY1ZDRiMDZjYmNhNzhlNGExNDgyZWVlYzQyYzg0ZjEyY2M1M2Y5ZjRjNWFmNmQ"/>
+								  src="https://investsaudi.sa/medias/Banner-5-.jpg?context=bWFzdGVyfHJvb3R8MjY3ODAzfGltYWdlL2pwZWd8aDRjL2g1Mi84OTUyNzU4MzM3NTY2LmpwZ3xiYzVmM2Y1ZTVmZmNmMDUyNzE5YjE4YmI3YTI3MTkxM2NiNmE0NGEzZWY4YTQxMGFjOGFiNTgzNmU3NjE1YTNj"/>
 						</div>
 						<div class="recent-projects-card-title">Saudi investment ministry signs four investment agreements</div>
 					</div>

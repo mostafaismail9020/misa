@@ -83,7 +83,7 @@
 						</div>
 						<div>
 							<img class="new-events-card-img" alt=""
-								 src="/medias/industrial-manufacturing-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw2MDUxMXxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oMDYvaDhlLzg4MTE3MTU2OTA1MjYuanBnfGY4MGUwYmU2MGM0MGRjYzZhZmY1ZDRiMDZjYmNhNzhlNGExNDgyZWVlYzQyYzg0ZjEyY2M1M2Y5ZjRjNWFmNmQ"/>
+								 src="https://investsaudi.sa/medias/real-estate-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0MzUxNDh8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI2L2hjMi84OTIzMjkwNTAxMTUwLmpwZ3xmMWRhMGJhMTI4Y2E2MTY2YmM1ZDBjNzlmOTdiNGQzZGZkMDI3ZmQ1YjMwNDk0MGY2YzJlYzBlMGEwYTMwOWMx"/>
 						</div>
 						<div class="new-events-time-location">
 							<span class="event-time">12:00 PM - 01:00 PM</span>
@@ -99,8 +99,7 @@
 							<span class="month">DEC</span>
 						</div>
 						<div>
-							<img class="new-events-card-img" alt=""
-								 src="/medias/industrial-manufacturing-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw2MDUxMXxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oMDYvaDhlLzg4MTE3MTU2OTA1MjYuanBnfGY4MGUwYmU2MGM0MGRjYzZhZmY1ZDRiMDZjYmNhNzhlNGExNDgyZWVlYzQyYzg0ZjEyY2M1M2Y5ZjRjNWFmNmQ"/>
+								 <img class="new-events-card-img" alt="" src="https://investsaudi.sa/medias/real-estate-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0MzUxNDh8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI2L2hjMi84OTIzMjkwNTAxMTUwLmpwZ3xmMWRhMGJhMTI4Y2E2MTY2YmM1ZDBjNzlmOTdiNGQzZGZkMDI3ZmQ1YjMwNDk0MGY2YzJlYzBlMGEwYTMwOWMx"/>
 						</div>
 						<div class="new-events-time-location">
 							<span class="event-time">12:00 PM - 01:00 PM</span>
@@ -116,8 +115,8 @@
 							<span class="month">DEC</span>
 						</div>
 						<div>
-							<img class="new-events-card-img" alt=""
-								 src="/medias/industrial-manufacturing-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw2MDUxMXxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oMDYvaDhlLzg4MTE3MTU2OTA1MjYuanBnfGY4MGUwYmU2MGM0MGRjYzZhZmY1ZDRiMDZjYmNhNzhlNGExNDgyZWVlYzQyYzg0ZjEyY2M1M2Y5ZjRjNWFmNmQ"/>
+								<img class="new-events-card-img" alt=""
+                            								 src="https://investsaudi.sa/medias/real-estate-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0MzUxNDh8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI2L2hjMi84OTIzMjkwNTAxMTUwLmpwZ3xmMWRhMGJhMTI4Y2E2MTY2YmM1ZDBjNzlmOTdiNGQzZGZkMDI3ZmQ1YjMwNDk0MGY2YzJlYzBlMGEwYTMwOWMx"/>
 						</div>
 						<div class="new-events-time-location">
 							<span class="event-time">12:00 PM - 01:00 PM</span>
@@ -133,8 +132,8 @@
 							<span class="month">DEC</span>
 						</div>
 						<div>
-							<img class="new-events-card-img" alt=""
-								 src="/medias/industrial-manufacturing-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw2MDUxMXxpbWFnZS9qcGVnfHBvcnRhbC1tZWRpYS9oMDYvaDhlLzg4MTE3MTU2OTA1MjYuanBnfGY4MGUwYmU2MGM0MGRjYzZhZmY1ZDRiMDZjYmNhNzhlNGExNDgyZWVlYzQyYzg0ZjEyY2M1M2Y5ZjRjNWFmNmQ"/>
+								<img class="new-events-card-img" alt=""
+                            								 src="https://investsaudi.sa/medias/real-estate-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0MzUxNDh8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI2L2hjMi84OTIzMjkwNTAxMTUwLmpwZ3xmMWRhMGJhMTI4Y2E2MTY2YmM1ZDBjNzlmOTdiNGQzZGZkMDI3ZmQ1YjMwNDk0MGY2YzJlYzBlMGEwYTMwOWMx"/>
 						</div>
 						<div class="new-events-time-location">
 							<span class="event-time">12:00 PM - 01:00 PM</span>

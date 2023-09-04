@@ -13059,6 +13059,10 @@ ul.INS_li_ul_under li {
 	.skype {
 		display: none!important;
 	}
+	
+	.page-portal-homepage .mobile-nav-toggle {
+		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(299deg) brightness(104%) contrast(300%);
+	}
 }
 
 @media (min-width:768px) and (max-width:769px) {
@@ -13177,7 +13181,6 @@ ul.INS_li_ul_under li {
 		width: 30px;
 		background-image: url('../img/listView_blue.svg');
 		background-repeat: no-repeat;
-		top: 80px;
 	}
 	.mobile-nav-active .mobile-nav-toggle {
 		background-image: url('../img/close_white.svg');
@@ -20346,7 +20349,6 @@ ul.INS_list_font li,
 		width: 30px;
 		background-image: url('../img/listView_blue.svg');
 		background-repeat: no-repeat;
-		top: 55px;
 	}
 	.mobile-nav-active .mobile-nav-toggle {
 		background-image: url('../img/close_white.svg');

@@ -6409,6 +6409,10 @@ img.accountLogin-headline-logo {
 	.skype {
 		display: none!important;
 	}
+	
+	.page-portal-homepage .mobile-nav-toggle {
+		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(299deg) brightness(104%) contrast(300%);
+	}
 }
 
 @media (min-width: 320px) and (max-width: 430px) {

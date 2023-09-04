@@ -12,65 +12,40 @@
 	<spring:param name="componentuid"  value="${component.uid}"/>
 </spring:url>
 <c:set var="hasPreviousPage" value="${searchPageData.pagination.currentPage > 0}"/>
-<c:set var="hasNextPage"
-       value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
-<div class="container-fluid">
-    <div class="row p-2">
+<c:set var="hasNextPage" value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
+
+<main>
+<div class="container">
+    <div class="row justify-content-center">
         <c:if test="${not empty searchPageData.results}">
-            <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-				<form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
-					<spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
-					<ycommerce:testId code="header_search_input">
-						<input type="text" id="js-site-search-input"
-						       data-test="asdfg"
-							   class="js-site-search-input" name="q" value="${fn:containsIgnoreCase(request.getParameter("q"), ':') ? '' : request.getParameter("q")}"
-							   maxlength="100" placeholder="${searchPlaceholder}"
-							   data-options='{"autocompleteUrl" : "${autocompleteUrl}","minCharactersBeforeRequest" : "3","waitTimeBeforeRequest" : "500","displayProductImages" : true}'>
-						<a class="a-search">
-							<img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
-						</a>
-					</ycommerce:testId>
-					<div class="opportunity-card total-results">
-						<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-					</div>
-				</form>
+            <div class="col-lg-6 col-md-8 opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
+                <div class="sector-search mb-5">
+                    <form name="search_form_${fn:escapeXml(component.uid)}" method="get" class="position-relative" action="${searchUrl}">
+                        <spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
+                        <ycommerce:testId code="header_search_input">
+                            <input type="text" id="js-site-search-input"
+                                data-test="asdfg"
+                                class="js-site-search-input" name="q" value="${fn:containsIgnoreCase(request.getParameter("q"), ':') ? '' : request.getParameter("q")}"
+                                maxlength="100" placeholder="${searchPlaceholder}"
+                                data-options='{"autocompleteUrl" : "${autocompleteUrl}","minCharactersBeforeRequest" : "3","waitTimeBeforeRequest" : "500","displayProductImages" : true}'>
+                            <a class="a-search">
+                                <img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
+                            </a>
+                        </ycommerce:testId>
+                        <div class="opportunity-card total-results">
+                            <spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+                        </div>
+                    </form>
+                </div>
             </div>
         </c:if>
-        <div class="col-md-12 col-sm-12 page-main-content">
-            <c:if test="${not empty searchPageData.results}">
-            <div class="opp-mobile-show text-center">
-            	<spring:theme code="portal.opportunity.search.modal.btn" var="btnModalTxt"/>
-				<button id="opp-open-modal-filter" class="btn btn-secondary-fill">${btnModalTxt}</button>
-				<div class="opportunity-card total-results" style="text-align: center; margin: 10px 0 5px 0px;">
-					<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-				</div>
-            </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-filter opp-mobile-show">
-                        <!-- Modal -->
-                        <div class="modal fade" id="facetFilterModal" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog opportunity-modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class='section-headline my-5 all-opportunity-filter'>
-                                            <spring:theme code="portal.opportunity.search.filter"/>
-                                        </h1>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <i class="fa fa-close"></i>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="opp-filter-container" style="padding: 20px;">
-                                        	<nav:facetNavRefinements pageData="${solrSearchPageData}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal End -->
+    </div>
+</div>
+</main>
 
-
-                </div>
-            </c:if>
+<div class="container mt-4">
+    <div class="row no-gutters">
+        <div class="col-md-12 col-sm-12">
             <c:choose>
                 <c:when test="${ not empty searchPageData.results}">
                     <div class="row">
@@ -100,7 +75,6 @@
             </c:choose>
 
             <div class="row wow fadeIn all-opportunity">
-
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <ul class="pagination pg-darkgrey justify-content-center mt-4">
 
@@ -109,10 +83,12 @@
                                 <spring:param name="page" value="${solrSearchPageData.pagination.currentPage - 1}"/>
                             </spring:url>
                             <li class="page-item previous-page">
-                                <a class="page-link waves-effect waves-light" href="${previousPageUrl}">
-                                    <img class="img-fluid previous-left-blue-icon" width="20" src="${commonResourcePath}/images/previous-arrow-left.png" alt=""/>
-                                    <img class="img-fluid previous-left-white-icon" style="display: none;" width="20"
-                                         src="${commonResourcePath}/images/previous-white-arrow-left.png" alt=""/>
+                                <a href="${previousPageUrl}">
+                                    <div class="prev-next-link">
+                                        <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.5625 11.1875C10.75 11.375 10.8438 11.6042 10.8438 11.875C10.8438 12.1042 10.75 12.3333 10.5625 12.5625C10.375 12.75 10.1458 12.8438 9.875 12.8438C9.64583 12.8438 9.41667 12.75 9.1875 12.5625L5.3125 8.6875C5.125 8.45833 5.03125 8.22917 5.03125 8C5.03125 7.72917 5.125 7.5 5.3125 7.3125L9.1875 3.4375C9.41667 3.25 9.64583 3.15625 9.875 3.15625C10.1458 3.15625 10.375 3.25 10.5625 3.4375C10.75 3.625 10.8438 3.85417 10.8438 4.125C10.8438 4.35417 10.75 4.58333 10.5625 4.8125L7.34375 8L10.5625 11.1875Z" fill="#BF9B2E"/>
+                                            </svg>     
+                                    </div>                                   
                                 </a>
                             </li>
                         </c:if>
@@ -178,10 +154,12 @@
                                 <spring:param name="page" value="${solrSearchPageData.pagination.currentPage + 1}"/>
                             </spring:url>
                             <li class="page-item next-page">
-                                <a class="page-link waves-effect waves-light" href="${nextPageUrl}"  style="padding-top: 10px;">
-                                    <img class="img-fluid arrow-left-blue-icon" width="20" src="${commonResourcePath}/images/Icon-feather-arrow-left.png" alt=""/>
-                                    <img class="img-fluid arrow-left-white-icon" style="display: none;" width="20"
-                                         src="${commonResourcePath}/images/Icon-white-arrow-left.png" alt=""/>
+                                <a href="${nextPageUrl}">
+                                    <div class="prev-next-link">
+                                    <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.3125 4.8125C5.125 4.58333 5.03125 4.35417 5.03125 4.125C5.03125 3.85417 5.125 3.625 5.3125 3.4375C5.54167 3.25 5.77083 3.15625 6 3.15625C6.27083 3.15625 6.5 3.25 6.6875 3.4375L10.5625 7.3125C10.75 7.5 10.8438 7.72917 10.8438 8C10.8438 8.22917 10.75 8.45833 10.5625 8.6875L6.6875 12.5625C6.5 12.75 6.27083 12.8438 6 12.8438C5.77083 12.8438 5.54167 12.75 5.3125 12.5625C5.125 12.3333 5.03125 12.1042 5.03125 11.875C5.03125 11.6042 5.125 11.375 5.3125 11.1875L8.53125 8L5.3125 4.8125Z" fill="#BF9B2E"/>
+                                        </svg>
+                                    </div>
                                 </a>
                             </li>
                         </c:if>

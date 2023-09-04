@@ -3543,8 +3543,39 @@
 		<property name="opportunitySubHeadings" type="java.util.Map&lt;String, String>"/>
 		<property name="opportunityHeadingsWithMedia" type="java.util.Map&lt;String, de.hybris.platform.commercefacades.product.data.ImageData>"/>
 		<property name="opportunityLead" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+		<property name="investmentHighlight" type="com.sap.ibso.eservices.facades.data.InvestmentHighlightData"/>
+		<property name="valueProposition" type="java.lang.String"/>
+		<property name="incentiveEnabler" type="java.util.List&lt;String>"/>
+		<property name="costOfBusiness" type="com.sap.ibso.eservices.facades.data.CostOfBusinessData"/>
+		<property name="keyStakeholders" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ImageData>"/>
+		<property name="rawMaterials" type="java.util.List&lt;String>"/>
+		<property name="globalTrends" type="java.util.List&lt;String>"/>
+		<property name="keyDemandDrivers" type="java.util.List&lt;String>"/>
+		<property name="scalabilityAndLocalization" type="java.util.List&lt;String>"/>
+		<property name="valueChain" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ImageData>"/>
+		<property name="marketSize" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+		<property name="importDependency" type="java.util.List&lt;String>"/>
     </bean>
 
+	<bean class="com.sap.ibso.eservices.facades.data.InvestmentHighlightData">
+		<property name="expectedInvestmentSize" type="java.lang.String"/>
+		<property name="plantCapacity" type="java.util.List&lt;String>"/>
+		<property name="expectdIRR" type="java.lang.String"/>
+		<property name="paybackPeriod" type="java.lang.String"/>
+		<property name="jobCreation" type="java.lang.String"/>
+		<property name="gdpImpact" type="java.lang.String"/>
+		<property name="location" type="java.lang.String"/>
+	</bean>
+
+
+	<bean class="com.sap.ibso.eservices.facades.data.CostOfBusinessData">
+		<property name="electricity" type="java.lang.String"/>
+		<property name="productivity" type="java.lang.String"/>
+		<property name="perfIndex" type="java.lang.String"/>
+		<property name="constuctionCost" type="java.lang.String"/>
+		<property name="logisticPerfIndex" type="java.lang.String"/>
+	</bean>
+	
 	<bean class="de.hybris.platform.commercefacades.product.data.ImageData">
 		<property name="description" type="java.lang.String"/>
 		<property name="descriptionText" type="java.lang.String"/>

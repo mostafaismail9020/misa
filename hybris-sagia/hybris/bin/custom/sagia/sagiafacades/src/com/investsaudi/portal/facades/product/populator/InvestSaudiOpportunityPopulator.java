@@ -1,7 +1,9 @@
 package com.investsaudi.portal.facades.product.populator;
 
 import com.google.common.collect.Lists;
+import com.investsaudi.portal.core.model.CostOfDoingBusinessModel;
 import com.investsaudi.portal.core.model.InvestSaudiMediaModel;
+import com.investsaudi.portal.core.model.InvestmentHighlightModel;
 import com.investsaudi.portal.core.model.InvestmentOverviewModel;
 import com.investsaudi.portal.core.model.LocationModel;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
@@ -36,6 +38,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.apache.commons.collections4.CollectionUtils.emptyIfNull;
+
+import com.sap.ibso.eservices.facades.data.CostOfBusinessData;
+import com.sap.ibso.eservices.facades.data.InvestmentHighlightData;
 
 
 public class InvestSaudiOpportunityPopulator implements Populator<ProductData, OpportunityProductModel> {
@@ -122,10 +127,59 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         productData.setOpportunityHighlights(getOpportunityHighlights(productModel));
         productData.setOpportunitySubHeadings(productModel.getOpportunitySubHeadings(currentLocale));
         productData.setOpportunityHeadingsWithMedia(getSubHeadingWithMedia(productModel, currentLocale));
-        productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
+        if (null != productModel.getParaWithMedia(currentLocale)) {
+            productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));	
+		}
         productData.setOpportunityDetailGrid(getOpportunityDetailGrid(productModel, currentLocale));
-        productData.setOpportunityLead(sagiaImageConverter.convert(productModel.getOpportunityLead(currentLocale)));
+        if (null != productModel.getOpportunityLeadDetails(currentLocale)) {
+            productData.setOpportunityLead(sagiaImageConverter.convert(productModel.getOpportunityLeadDetails(currentLocale)));	
+		}
+        
+        if (null != productModel.getInvestmentOverview()) {
+        	productData.setValueProposition(productModel.getInvestmentOverview().getValueProposition(currentLocale));
+        	productData.setIncentiveEnabler(Arrays.asList(StringUtils.split(productModel.getInvestmentOverview().getIncentivesAndEnablers(currentLocale), "|")));
+            productData.setCostOfBusiness(populateCostOfDoingBusiness(productModel.getInvestmentOverview().getCostOfDoingBusiness()));
+        	if (null != productModel.getInvestmentOverview().getInvestmentHighlights()) {
+            	productData.setInvestmentHighlight(populateInvestmentHighlights(productModel.getInvestmentOverview().getInvestmentHighlights(), currentLocale));
+            }
+		}
+        if (CollectionUtils.isNotEmpty(productModel.getOthers())) {
+            productData.setKeyStakeholders(imageConverter.convertAll(productModel.getKeyStakeholders()));	
+		}
+        if (null != productModel.getSupply() && CollectionUtils.isNotEmpty(productModel.getSupply().getValueChainTexts()) 
+        		&& CollectionUtils.isNotEmpty(productModel.getSupply().getValueChainTexts().iterator().next().getAttachment())) {
+            productData.setValueChain(imageConverter.convertAll(productModel.getSupply().getValueChainTexts().iterator().next().getAttachment()));	
+		}
+        if (null != productModel.getDemand() && null != productModel.getDemand().getMarketSizeMedia(currentLocale)) {
+            productData.setMarketSize(imageConverter.convert(productModel.getDemand().getMarketSizeMedia(currentLocale)));	
+		}
     }
+
+
+	private CostOfBusinessData populateCostOfDoingBusiness(CostOfDoingBusinessModel costOfDoingBusinessModel) {
+		final CostOfBusinessData costOfBusinessData = new CostOfBusinessData();
+		costOfBusinessData.setElectricity(costOfDoingBusinessModel.getElectricityTariffs());
+		costOfBusinessData.setProductivity(costOfDoingBusinessModel.getProductivityAdjustedWages());
+		costOfBusinessData.setLogisticPerfIndex(costOfDoingBusinessModel.getLogisticsPerformanceIndex());
+		costOfBusinessData.setConstuctionCost(costOfDoingBusinessModel.getConstructionCosts());
+		return costOfBusinessData;
+	}
+
+
+	private InvestmentHighlightData populateInvestmentHighlights(InvestmentHighlightModel investmentHighlightModel,
+			Locale currentLocale) {
+		InvestmentHighlightData investmentHighlightData = new InvestmentHighlightData();
+		investmentHighlightData.setExpectedInvestmentSize(investmentHighlightModel.getExpectedInvestmentSize());
+		investmentHighlightData.setExpectdIRR(investmentHighlightModel.getExpectedIRR());
+		if (CollectionUtils.isNotEmpty(investmentHighlightModel.getCapacity())) {
+			investmentHighlightData.setPlantCapacity(investmentHighlightModel.getCapacity().stream().map(c -> c.getUnit() + " " + c.getValue()).collect(Collectors.toList()));			
+		}
+		investmentHighlightData.setPaybackPeriod(String.valueOf(investmentHighlightModel.getPaybackPeriod()));
+		investmentHighlightData.setJobCreation(String.valueOf(investmentHighlightModel.getJobscreated()));
+		investmentHighlightData.setGdpImpact(String.valueOf(investmentHighlightModel.getGdpContribution()));
+		investmentHighlightData.setLocation(investmentHighlightData.getLocation());
+		return investmentHighlightData;
+	}
 
 
 	private List<String> getOpportunityDetailGrid(OpportunityProductModel productModel, Locale currentLocale) {

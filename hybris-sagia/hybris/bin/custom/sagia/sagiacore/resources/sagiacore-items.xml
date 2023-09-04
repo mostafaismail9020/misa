@@ -4058,7 +4058,7 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
-                    <attribute qualifier="opportunityLead" type="localized:InvestSaudiMedia">
+                    <attribute qualifier="opportunityLeadDetails" type="localized:InvestSaudiMedia">
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
@@ -11911,7 +11911,10 @@
 					</columntype>
 				</persistence>
 			</attribute>
-
+			<attribute qualifier="marketSizeMedia" type="localized:Media">
+				<modifiers optional="true" />
+				<persistence type="property" />
+			</attribute>
 			<attribute qualifier="keyDemandDrivers"
 				type="java.lang.String">
 				<modifiers optional="true" />

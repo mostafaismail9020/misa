@@ -360,7 +360,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 		if (null != productModel.getInvestmentOverview() && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness())) {
 
 			// REVISIT FOR LIST IMPLEMENTATION
-			productData.setCostOfDoingBusinessText(productModel	.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts().iterator().next().getValue());
+			productData.setCostOfDoingBusinessText(productModel.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts().iterator().next().getValue());
 
 		}
 	}

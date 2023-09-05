@@ -54,20 +54,22 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12 mt-4 breadcrumb-container">
-            <c:if test="${language eq 'en'}">
-                <a href="/${language}/">
+        <c:if test="${language eq 'en'}">
+            <a href="/${language}/">
+                <div class="col-md-12 mt-4 breadcrumb-container">
                     <span class="breadcrumb-left-icon"></span>
                     <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
-                </a>
-            </c:if>
-            <c:if test="${language eq 'ar'}">
+                </div>
+            </a>
+        </c:if>
+        <c:if test="${language eq 'ar'}">
+            <div class="col-md-12 mt-4 breadcrumb-container">
                 <a href="/${language}/">
                     <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
                     <span class="breadcrumb-left-icon"></span>
                 </a>
-            </c:if>
-        </div>
+            </div>
+        </c:if>
         <div class="col-md-12 mt-4">
             <c:choose>
                 <c:when test="${not empty eventSearchPageData.results}">
@@ -120,82 +122,41 @@
         </div>
     </div>
 
-    <section class="Inc-mediaCenter-sectionwrapper pb-0">
-        <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <h2 class="newsTitle"><spring:theme code="text.newsevents.listing.page.latest.announcements"/></h2>
-              </div>
-            </div>
+    <section class="latest-announcements">
+        <div class="header mt-3 mb-3">
+            <h2 class="title"><spring:theme code="text.newsevents.listing.page.latest.announcements"/></h2>
         </div>
-        <div class="container mb-4">
-            <div class="row announcementsBox">
-                <div class="col-md-3">
-                    <img class="img-fluid service-card-img resources-card-img"
-                         src="${commonResourcePath}/images/default-product-image.png"
-                         alt="" loading="lazy">
-                </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-6 resourceDate">
-                            16 Mar 2023
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="resourceTitle">Quarterly report template update</h3>
-                            <p class="resourceInfo">Cursus purus, diam, aliquet scelerisque dignissim tellus aenean viverra. In risus elit vel id tincidunt vel. Nunc ac ipsum.</p>
-                        </div>
-                    </div>
+        <div class="content">
+            <div class="announcement">
+                <img class="image" src="https://investsaudi.sa/medias/all-opportunity.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw4OTU5MzZ8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDljL2hiNC84OTA5NDE5MzQ3OTk4LmpwZ3xiZGM4NzA3ZTZmNDc5ZmJkZDJlZDQ5MjI2ODQ4YzQ1NWY0YTk4N2RlN2QxMTVlNTAyM2Q5NGQ4OWEyZjQ3MGY4" alt="" loading="lazy">
+                <div class="details">
+                    <span class="date mt-2">16 Mar 2023</span>
+                    <h3 class="headline">Discover the dynamism of Saudi Arabia's</h3>
+                    <span class="description mb-2">Discover the dynamism of Saudi Arabia's investment landscape with the launch of four new Special Economic Zones (SEZs), spanning across advanced manufacturing, ICT & logistics.</span>
                 </div>
             </div>
-        </div>
-        <div class="container mb-4">
-            <div class="row announcementsBox">
-                <div class="col-md-3">
-                    <img class="img-fluid service-card-img resources-card-img"
-                         src="${commonResourcePath}/images/default-product-image.png"
-                         alt="" loading="lazy">
-                </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-6 resourceDate">
-                            16 Mar 2023
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="resourceTitle">Quarterly report template update</h3>
-                            <p class="resourceInfo">Cursus purus, diam, aliquet scelerisque dignissim tellus aenean viverra. In risus elit vel id tincidunt vel. Nunc ac ipsum.</p>
-                        </div>
-                    </div>
+
+            <div class="announcement">
+                <img class="image" src="https://investsaudi.sa/medias/meet-the-Kingdom-Banner.png?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwzNzY2NXxpbWFnZS9wbmd8cG9ydGFsLW1lZGlhL2g5My9oOWQvODkyMzM1OTkwMzc3NC5wbmd8ZDU4ZDE0NzE1OGM1YjBkMzMxMTA1MjUzZGFmNzI2OTMxYTBlMmNjNDZlMGQ3MmUyYmNmYjcwZGUwMDEyNzcxZg" alt="" loading="lazy">
+                <div class="details">
+                    <span class="date mt-2">16 Mar 2023</span>
+                    <h3 class="headline">The Kingdom is embarking on a world-leading</h3>
+                    <span class="description mb-2">The Kingdom is embarking on a world-leading development program to unlock new sectors and diversify the economy through five major Giga-projects, and several mega-projects.</span>
                 </div>
             </div>
-        </div>
-        <div class="container mb-4">
-            <div class="row announcementsBox">
-                <div class="col-md-3">
-                    <img class="img-fluid service-card-img resources-card-img"
-                         src="${commonResourcePath}/images/default-product-image.png"
-                         alt="" loading="lazy">
-                </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-6 resourceDate">
-                            16 Mar 2023
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="resourceTitle">Quarterly report template update</h3>
-                            <p class="resourceInfo">Cursus purus, diam, aliquet scelerisque dignissim tellus aenean viverra. In risus elit vel id tincidunt vel. Nunc ac ipsum.</p>
-                        </div>
-                    </div>
+
+            <div class="announcement">
+                <img class="image" src="https://investsaudi.sa/medias/economic-Highlights-Banner.png?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwyMzkzMXxpbWFnZS9wbmd8cG9ydGFsLW1lZGlhL2gzMi9oMWYvODkyMzM1OTgzODIzOC5wbmd8MGY1YzUxNWE5NmY2NzJiZTNkYWFiOGI2N2FmOGMxYzhjOGY5OTQ3NDgwMTcwMDdmNmMxMGJmYzYyMDVmNzVhYw" alt="" loading="lazy">
+                <div class="details">
+                    <span class="date mt-2">16 Mar 2023</span>
+                    <h3 class="headline">Discover why Saudi Arabia</h3>
+                    <span class="description mb-2">Discover why Saudi Arabia is rapidly becoming the preferred global investment destination, fueled by the growth of non-oil activities.</span>
                 </div>
             </div>
         </div>
     </section>
-        <section class="newsletterSection">
+
+    <section class="newsletterSection">
                 <div class="container text-center get-updates-section">
                     <div class="row">
                         <div class="col-md-12">

@@ -80,7 +80,7 @@
                     <div class="row mt-5 mb-5">
                         <div class="col-md-12">
                             <div class="subjects-container">
-                                <h1 class="title mb-3">Subjects</h1>
+                                <h1 class="title mb-3"><spring:theme code="portal.event.details.subjects"/></h1>
                                 <ul>
 
                                    <c:forEach items="${productData.subjects}" var="subjects">
@@ -117,7 +117,7 @@
 
                     <div class="row mb-5 mt-5">
                         <div class="sponsors-partners-container">
-                            <h1 class="title mb-3">Sponsors & Partners</h1>
+                            <h1 class="title mb-3"><spring:theme code="portal.event.details.sponsors"/></h1>
                               <div class="boxes">
                              <c:forEach items="${productData.sponsersPartners}" var="sponsorPartner">
                                 <div class="box">

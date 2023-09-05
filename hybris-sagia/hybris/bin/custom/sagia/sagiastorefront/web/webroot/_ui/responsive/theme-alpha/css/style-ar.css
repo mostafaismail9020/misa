@@ -638,6 +638,10 @@ ul.dropdown-list li a {
 	transition: all 0.25s ease-in;
 }
 
+.nav-item.dropdown .dropdown-toggle.login-btn-in-menu {
+	display: none;
+}
+
 .mobile-nav .nav-item.dropdown .dropdown-toggle.login-btn-in-menu::after {
 	background: transparent;
 }
@@ -6278,6 +6282,10 @@ img.accountLogin-headline-logo {
 	.page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .explore-keys-btn {
 		display:table;
 		margin:0 auto;
+	}
+
+	.nav-item.dropdown .dropdown-toggle.login-btn-in-menu {
+		display: block;
 	}
 }
 

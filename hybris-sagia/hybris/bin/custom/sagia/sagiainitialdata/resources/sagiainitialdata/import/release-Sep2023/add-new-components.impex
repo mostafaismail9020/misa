@@ -18,7 +18,7 @@ INSERT_UPDATE CMSLinkComponent ;uid[unique = true] ; linkname[lang=en] ; linknam
                                ;viewopp-link       ;View Opportunities ; الفرص عرض          ;View Opportunities     ; /sectors-opportunities/opportunities ;viewopp-link        ;
                                ;login-link         ;Login              ; تسجيل الدخول       ;Login     ; /login                       ;login-link        ;
                                ;articles-link         ;Articles        ; مقالات      ;Articles     ; /articlesList                       ;articles-icon-link        ;
-                               ;resources-link         ;Resources      ; موارد       ;Resources     ; /resourcesList                       ;resources-icon-link        ;
+                               ;new-resources-link         ;Resources      ; موارد       ;Resources     ; /resourcesList                       ;new-resources-icon-link        ;
 
 
 INSERT_UPDATE InvestSaudiMedia ;code[unique = true];mime        ;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];link(&componentRef)   ;&componentRef   ; $contentCV[unique = true];                                
@@ -30,10 +30,10 @@ INSERT_UPDATE InvestSaudiMedia ;code[unique = true];mime        ;@media[translat
                                ; incentives-icon   ;text/png    ;$siteResource/incentives.png                                                                ; incentives-icon-link ; incentives-icon;    
                                ; guide-icon        ;text/png    ;$siteResource/guide.png                                                                    ; guide-icon-link       ; guide-icon     ;
                                ; articles-icon        ;text/png    ;$siteResource/articles.png; articles-icon-link ; articles-icon;
-                               ; resources-icon        ;text/png    ;$siteResource/resources.png; resources-icon-link       ; resources-icon     ;
+                               ; new-resources-icon        ;text/png    ;$siteResource/resources.png; new-resources-icon-link       ; new-resources-icon      ;
 
 INSERT_UPDATE InvestSaudiHomePageIconsComponent    ; uid[unique = true] ; name()                ; title()       ; description[lang = en]; clickableIcons(&componentRef)                                                                   ;  $contentCV[unique = true]    ;  
-                                                   ; home-page-icons     ; Home Page Icons         ; Invest Saudi     ;                         ; sectors-icon, news-icon, events-icon, reports-icon, services-icon, incentives-icon, guide-icon, articles-icon , resources-icon  ;                             ;
+                                                   ; home-page-icons     ; Home Page Icons         ; Invest Saudi     ;                         ; sectors-icon, news-icon, events-icon, reports-icon, services-icon, incentives-icon, guide-icon, articles-icon , new-resources-icon   ;                             ;
                                                    
          
 UPDATE InvestSaudiVideoBannerComponent ; uid[unique = true] ; viewOpportunities(&componentRef) ; login(&componentRef) ; $contentCV[unique = true] ;

@@ -329,6 +329,12 @@ color: var(--misaSecondColor);
 	}
 }
 
+@media (max-width: 992px) {
+  .page-newsevents-list-page #header .logo {
+		padding : 10px !important;
+	}
+}
+
 .header-inner-pages {
 	background: rgba(0, 0, 0, 0.9) !important;
 }

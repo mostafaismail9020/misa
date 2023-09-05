@@ -24244,11 +24244,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	align-items: end;
 	background: #F2F8F6;
 	height: 255px;
-
-	@media (min-width: 768px) {
-		height: 350px
+  }
+  @media (min-width: 768px) {
+	.page-link-and-title {
+	  height: 350px;
 	}
-}
+  }
 
 .page-link-and-title a.link {
 	display: flex;
@@ -24283,117 +24284,108 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
-
-	@media (min-width: 992px) {
-		flex-direction: row;
+  }
+  @media (min-width: 992px) {
+	.contact-details {
+	  flex-direction: row;
 	}
-
-	> div {
-		display: flex;
-		flex-direction: column;
-		gap: 35px;
-		align-items: center;
-		background-color: rgba(191, 155, 46, 0.05);
-		border-radius: 10px;
-		padding: 10px;	
-
-		@media (min-width: 576px) {
-			flex-direction: row;
-			padding: 16px 25px;
-		}
+  }
+  .contact-details > div {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+	align-items: center;
+	background-color: rgba(191, 155, 46, 0.05);
+	border-radius: 10px;
+	padding: 10px;
+  }
+  @media (min-width: 576px) {
+	.contact-details > div {
+	  flex-direction: row;
+	  padding: 16px 25px;
 	}
-
-	.icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 56px;
-		width: 56px;
-		border-radius: 100%;
-		background-color: var(--misaPrimaryBtnColor);
-
-		.svg {
-			height: 20px;
-			width: 20px;
-		}
+  }
+  .contact-details .icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 56px;
+	width: 56px;
+	border-radius: 100%;
+	background-color: var(--misaPrimaryBtnColor);
+  }
+  .contact-details .icon .svg {
+	height: 20px;
+	width: 20px;
+  }
+  .contact-details .contact-type {
+	color: var(--misaPrimaryBtnColor);
+	font-weight: 700;
+	font-size: 14px;
+  }
+  .contact-details .telephone-numbers {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+  }
+  .contact-details .telephone-numbers .number {
+	display: flex;
+	gap: 20px;
+  }
+  .contact-details .telephone-numbers .number :first-child {
+	font-size: 16px !important;
+	color: var(--misaPrimaryBtnColor);
+	font-weight: 700;
+  }
+  @media (min-width: 576px) {
+	.contact-details .telephone-numbers .number :first-child {
+	  font-size: 20px !important;
 	}
-
-	.contact-type {
-		color: var(--misaPrimaryBtnColor);
-		font-weight: 700;
-		font-size: 14px;
+  }
+  .contact-details .telephone-numbers .number :last-child {
+	margin-left: auto;
+	font-size: 16px !important;
+	color: var(--misaSecondColor);
+  }
+  @media (min-width: 576px) {
+	.contact-details .telephone-numbers .number :last-child {
+	  font-size: 20px !important;
 	}
-
-	.telephone-numbers {
-		display: flex;
-		flex-direction: column;
-		gap: 5px;
-
-		.number {
-			display: flex;
-			gap: 20px;
-
-			:first-child {
-				font-size: 16px !important;
-				color: var(--misaPrimaryBtnColor);
-				font-weight: 700;
-
-				@media (min-width: 576px) {
-					font-size: 20px !important;
-				}
-			}
-
-			:last-child {
-				margin-left: auto;
-				font-size: 16px !important;
-				color: var(--misaSecondColor);
-
-				@media (min-width: 576px) {
-					font-size: 20px !important;
-				}
-			}
-		}
+  }
+  .contact-details .email-addresses {
+	display: flex;
+  }
+  .contact-details .email-addresses .email a {
+	font-size: 16px;
+	color: var(--misaSecondColor);
+	text-decoration: underline;
+  }
+  @media (min-width: 576px) {
+	.contact-details .email-addresses .email a {
+	  font-size: 20px !important;
 	}
-
-	.email-addresses {
-		display: flex;
-
-		.email a {
-			font-size: 16px;
-			color: var(--misaSecondColor);
-			text-decoration: underline;
-
-			@media (min-width: 576px) {
-				font-size: 20px !important;
-			}
-
-			&:hover {
-				color: var(--misaSecondColor) !important;
-				text-decoration: none;
-			}
-		}
-	}
-}
-
-.locations {
+  }
+  .contact-details .email-addresses .email a:hover {
+	color: var(--misaSecondColor) !important;
+	text-decoration: none;
+  }
+  
+  .locations {
 	margin-top: 25px;
-	padding:0 20px;
+	padding: 0 20px;
 	background: #F2F8F6;
 	border-radius: 10px;
-
-	.location {
-		margin-bottom: 30px;
-		color: var(--misaSecondColor);
-	}
-
-	.name {
-		font-weight: 700;
-	}
-
-	.address {
-		margin-bottom: 8px;
-	}
-}
+  }
+  .locations .location {
+	margin-bottom: 30px;
+	color: var(--misaSecondColor);
+  }
+  .locations .name {
+	font-weight: 700;
+  }
+  .locations .address {
+	margin-bottom: 8px;
+  }
 
 .sagia-accordion {
 	display: flex;
@@ -24404,97 +24396,85 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	border: none;
 	outline: none;
 	transition: 0.4s;
-  
-	&:after {
-		position: absolute;
-		content: "+";
-		font-size: 30px;
-		right: 0;
-		top: 0;
-	}
-	
-	&.active::after {
-    	content: "-";
-	}
-
-	&.locations-accordion {
-		padding: 10px 0;
-		color: var(--misaSecondColor);
-		font-size: 20px;
-		font-weight: 700;
-		background: #F2F8F6;
-	}
-
-	&.faqs-accordion {
-		padding: 20px 10px 20px 50px;
-		font-size: 20px;
-		font-weight: 700;
-		background: #FCFAF5;
-		color: var(--misaFirstColor);
-		border-radius: 10px;
-		
-		&.no-background {
-			background: #fff !important;
-		}
-
-		&:after {
-			top: 12px;
-			left:20px;
-		}
-
-		.tag {
-			margin-left: auto;
-			font-size: 14px;
-			font-weight: 400;
-			border-radius: 125px;
-			color: var(--misaFirstColor);
-			background: #EADEB9;
-			padding: 5px 15px;
-		}
-	}
-}
+  }
+  .sagia-accordion:after {
+	position: absolute;
+	content: "+";
+	font-size: 30px;
+	right: 0;
+	top: 0;
+  }
+  .sagia-accordion.active::after {
+	content: "-";
+  }
+  .sagia-accordion.locations-accordion {
+	padding: 10px 0;
+	color: var(--misaSecondColor);
+	font-size: 20px;
+	font-weight: 700;
+	background: #F2F8F6;
+  }
+  .sagia-accordion.faqs-accordion {
+	padding: 20px 10px 20px 50px;
+	font-size: 20px;
+	font-weight: 700;
+	background: #FCFAF5;
+	color: var(--misaFirstColor);
+	border-radius: 10px;
+  }
+  .sagia-accordion.faqs-accordion.no-background {
+	background: #fff !important;
+  }
+  .sagia-accordion.faqs-accordion:after {
+	top: 12px;
+	left: 20px;
+  }
+  .sagia-accordion.faqs-accordion .tag {
+	margin-left: auto;
+	font-size: 14px;
+	font-weight: 400;
+	border-radius: 125px;
+	color: var(--misaFirstColor);
+	background: #EADEB9;
+	padding: 5px 15px;
+  }
   
 .sagia-accordion-panel {
 	padding: 10px 0;
 	display: none;
 	overflow: hidden;
+  }
+  .sagia-accordion-panel.faqs-accordion-panel {
+	padding: 0 20px 20px 20px;
+	background: rgba(191, 155, 46, 0.05);
+  }
+  .sagia-accordion-panel.faqs-accordion-panel.no-background {
+	background: #fff !important;
+  }
 
-	&.faqs-accordion-panel {
-		padding: 0 20px 20px 20px;
-		background: rgba(191, 155, 46, 0.05);
-
-		&.no-background {
-			background: #fff !important;
-		}
-	}
-}
-
-.contactpage-form {
-	.contact-form-title {
-		color: var(--misaFirstColor);
-		text-transform: unset !important;
-		font-size: 24px !important;
-		text-align: left !important;
-		margin-bottom: 14px;
-	}
-
-	.form-icon_browse {
-		border:1px solid #8396A8 !important;
-		background-color: #fff !important;
-		border-top-right-radius: 8px !important;
-		border-bottom-right-radius: 8px !important;
-	}
-
-	.submit-button {
-		width: 200px !important;
-		margin-top: 25px;
-		background-color: var(--misaFirstColor);
-		display: flex;
-		gap: 10px;
-		align-items: center;
-		justify-content: center;
-	}
-}
+.contactpage-form .contact-form-title {
+	color: var(--misaFirstColor);
+	text-transform: unset !important;
+	font-size: 24px !important;
+	text-align: left !important;
+	margin-bottom: 14px;
+  }
+  .contactpage-form .form-icon_browse {
+	border: 1px solid #8396A8 !important;
+	background-color: #fff !important;
+	border-top-right-radius: 8px !important;
+	border-bottom-right-radius: 8px !important;
+  }
+  .contactpage-form .submit-button {
+	width: 200px !important;
+	margin-top: 25px;
+	background-color: var(--misaFirstColor);
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+  }
+  
 
 .page-article-list-page {
 	position: relative;
@@ -24586,9 +24566,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	font-size: 32px!important;
 	font-weight: 700!important;
 	color: #00714D!important;
+}
 
 .page-resources-list-page .page-item .page-link {	
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .page-resources-list-page .pagination {
@@ -24601,11 +24582,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	margin-top: 8px;
 }
 
-
 .resource-title {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-top: 30px;
+	padding-top: 30px;
+	border-top: 1px solid #ccc;
+}
+
+.resource-title.no-border {
+	border-top: none;
 }
 
 .resource-title .action {
@@ -24834,3 +24820,19 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
     }
 }
 
+.button-large {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #BF9B2E;
+    color: #fff !important;
+    font-size: 20px;
+}
+
+.button-large:hover {
+	text-decoration: underline;
+}
+
+.resource-title .action .see-more:hover {
+    text-decoration: underline;
+}

@@ -95,7 +95,7 @@ section {
 }
 
 .section-title {
-	padding: 30px 0;
+	padding: 30px 0 0 0;
 	position: relative;
 }
 
@@ -1602,7 +1602,7 @@ svg #wheel {
 
 #when-number-talk {
 	position: relative;
-	padding: 90px 0px;
+	padding: 50px 0px;
 	padding-bottom: 48px;
 }
 
@@ -8416,7 +8416,6 @@ figure h2 {
 }
 
 .contact-accordion .card {
-	margin-bottom: 10px;
 	border-radius: 0;
 	border: none;
 }
@@ -10635,10 +10634,6 @@ body.page-living-in-saudi .content {
 	margin-top: 25px;
 }
 
-#accordion-explore .card {
-	border: 1px solid #fff;
-}
-
 #accordion-explore .card-header {
 	background-color: #fff;
 	border: none;
@@ -10660,10 +10655,10 @@ body.page-living-in-saudi .content {
 }
 
 #accordion-explore .card .card-body {
-	color: var(--misaGrayText);
-	font-size: 14px;
-	font-weight: 700;
-	line-height: 16px;
+	color: var(--misaDarkGrayText);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
 	letter-spacing: 0em;
 	margin-right: 25px;
 	margin-left: 25px;
@@ -14250,7 +14245,7 @@ body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
 
 #newsandupdates .flip-card {
 	padding-top: 5vh;
-	padding-bottom: 10vh;
+	padding-bottom: 2.5rem;
 }
 
 .pageLabel--sectors-opportunities-opportunities .flip-card strong {
@@ -26394,4 +26389,33 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .mobile-nav-active .mobile-nav-toggle {
 	left: 30px;
+}
+
+.misa-btn-special {
+	font-size: 18px;
+    padding: 0px 90px 0 90px;
+    text-align: center;
+    height: 50px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.misa-text-title {
+	font-size: 32px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0em;
+    text-transform: lowercase;
+}
+
+.misa-text-title:first-letter {
+    text-transform: uppercase;
+}
+
+.misa-text-description {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0em;
 }

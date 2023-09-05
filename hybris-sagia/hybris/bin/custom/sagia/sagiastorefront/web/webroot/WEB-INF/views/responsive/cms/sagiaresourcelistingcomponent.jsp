@@ -86,8 +86,8 @@
                                     <div class="prev-next-link">
                                         <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.5625 11.1875C10.75 11.375 10.8438 11.6042 10.8438 11.875C10.8438 12.1042 10.75 12.3333 10.5625 12.5625C10.375 12.75 10.1458 12.8438 9.875 12.8438C9.64583 12.8438 9.41667 12.75 9.1875 12.5625L5.3125 8.6875C5.125 8.45833 5.03125 8.22917 5.03125 8C5.03125 7.72917 5.125 7.5 5.3125 7.3125L9.1875 3.4375C9.41667 3.25 9.64583 3.15625 9.875 3.15625C10.1458 3.15625 10.375 3.25 10.5625 3.4375C10.75 3.625 10.8438 3.85417 10.8438 4.125C10.8438 4.35417 10.75 4.58333 10.5625 4.8125L7.34375 8L10.5625 11.1875Z" fill="#BF9B2E"/>
-                                            </svg>
-                                    </div>
+                                            </svg>     
+                                    </div>                                   
                                 </a>
                             </li>
                         </c:if>
@@ -180,7 +180,7 @@
             </div>
         </div>
         <div class="col-sm-12">Events List (needs backend changes)</div>
-    <div>
+    <div>    
 </div>
 
 <div class="container">
@@ -191,7 +191,7 @@
             </div>
         </div>
         <div class="col-sm-12">Opportunities List (needs backend changes)</div>
-    <div>
+    <div>    
 </div>
 
 <div class="container">
@@ -205,7 +205,7 @@
         <div class="col-sm-12">
             <a href="/" class="button-large mt-5">See more updates</a>
         </div>
-    <div>
+    <div>    
 </div>
 
 
@@ -220,5 +220,5 @@
             </div>
         </div>
         <div class="col-sm-12">Articles  List (needs backend changes)</div>
-    <div>
+    <div>    
 </div>

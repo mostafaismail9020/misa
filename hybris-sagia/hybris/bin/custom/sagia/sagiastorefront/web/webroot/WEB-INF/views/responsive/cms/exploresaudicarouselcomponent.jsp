@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="row reasons">
 			<div class="col-lg-12 pt-4 pt-lg-0 content mx-auto aos-init" data-aos="fade-right" data-aos-delay="100">
-				<h2 class="where_totitle">${component.carouselTitle}</h2>
+				<h2 class="where_totitle misa-text-title">${component.carouselTitle}</h2>
 			</div>
 			<div class="col-lg-12">
 				<div class="row">
@@ -77,7 +77,7 @@
 					</div>
 				</div>
 				<div class="row explore-keys-btn">
-					<a href="${portal.cmsLinkUrl(component.carouselExploreAllButton)}" class="btn btn-primary-fill btn-video">
+					<a href="${portal.cmsLinkUrl(component.carouselExploreAllButton)}" class="btn btn-primary-fill btn-video misa-btn-special">
 						${component.carouselExploreAllButton.linkName}
 					</a>
 				</div>

@@ -1298,9 +1298,9 @@ button:focus {
 	font-size: 20px;
 	margin: 0px 15px;
 }
+
 #hero {
 	width: 100%;
-	/*height: 70vh;*/
 	position: relative;
 }
 
@@ -1430,6 +1430,8 @@ button:focus {
 	letter-spacing: 0em;
 	margin-right: 25px;
 	margin-left: 25px;
+    margin-top: -25px;
+    margin-bottom: -15px;
 }
 
 .explore-keys-btn {
@@ -6367,12 +6369,12 @@ img.accountLogin-headline-logo {
 	}
 
 	#hero .container-home-hero {
-		padding-top: 450px;
+		padding-top: 270px;
 	}
 	
 	#hero {
 		overflow: unset;
-		height: 75vh
+		height: 45vh
 	}
 	
 	#hero img.home-banner {
@@ -6432,6 +6434,10 @@ img.accountLogin-headline-logo {
 	
 	#accordion-explore .card-header span {
 		font-size: 18px;
+	}
+
+	#home-page-global-search {
+	    top: 120px;
 	}
 }	
 
@@ -25003,6 +25009,13 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .misa-text-title:first-letter {
     text-transform: uppercase;
+}
+
+.misa-text-title * {
+	font-size: 32px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0em;
 }
 
 .misa-text-description {

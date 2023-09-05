@@ -1283,7 +1283,6 @@ button:focus {
 }
 #hero {
 	width: 100%;
-	/*height: 70vh;*/
 	position: relative;
 }
 
@@ -6256,12 +6255,12 @@ img.accountLogin-headline-logo {
 	}
 
 	#hero .container-home-hero {
-		padding-top: 450px;
+		padding-top: 270px;
 	}
 
 	#hero {
 		overflow: unset;
-		height: 75vh
+		height: 45vh
 	}
 
 	#hero img.home-banner {
@@ -6297,6 +6296,10 @@ img.accountLogin-headline-logo {
 	
 	#accordion-explore .card-header span {
 		font-size: 18px!important;
+	}
+
+	#home-page-global-search {
+	    top: 120px;
 	}
 }
 
@@ -10662,6 +10665,8 @@ body.page-living-in-saudi .content {
 	letter-spacing: 0em;
 	margin-right: 25px;
 	margin-left: 25px;
+    margin-top: -25px;
+    margin-bottom: -15px;
 }
 
 .sector-modal-dialog .opp-contact-buttons div.btns {
@@ -26411,6 +26416,13 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .misa-text-title:first-letter {
     text-transform: uppercase;
+}
+
+.misa-text-title * {
+	font-size: 32px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0em;
 }
 
 .misa-text-description {

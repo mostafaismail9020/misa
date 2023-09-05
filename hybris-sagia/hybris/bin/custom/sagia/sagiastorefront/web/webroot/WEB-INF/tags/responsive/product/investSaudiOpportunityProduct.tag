@@ -393,7 +393,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-12">
-					<div class="jumbotron jumbotron-statistics-box special-statistics-box">
+					<div class="jumbotron jumbotron-statistics-box special-statistics-box box-without-height ">
     					<div class="row">
     						<div class="col-md-12 col-12">
     							<h3 class="opportunity-statics-title text-center">Market Size</h3>
@@ -435,7 +435,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-12">
-					<div class="jumbotron jumbotron-statistics-box">
+					<div class="jumbotron jumbotron-statistics-box box-without-height ">
     					<div class="row">
     						<div class="col-md-12 col-12">
     							<h3 class="opportunity-statics-title text-center">Value Chain ${productData.valueChainText}</h3>
@@ -451,7 +451,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-12">
-					<div class="jumbotron jumbotron-statistics-box">
+					<div class="jumbotron jumbotron-statistics-box box-without-height ">
     					<div class="row">
     						<div class="col-md-12 col-12">
     							<h3 class="opportunity-statics-title text-center">Import Dependency</h3>

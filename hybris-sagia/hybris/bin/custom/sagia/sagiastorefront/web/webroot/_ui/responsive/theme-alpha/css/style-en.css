@@ -24231,6 +24231,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	color: var(--misaSecondColor);
 }
 
+.opportunity-article-section-statistics .box-without-height {
+    min-height: 0;
+}
+
 .page-contact-us .login-text span {
 	font-size: 12px !important;
 	color: var(--misaSecondColor) !important;

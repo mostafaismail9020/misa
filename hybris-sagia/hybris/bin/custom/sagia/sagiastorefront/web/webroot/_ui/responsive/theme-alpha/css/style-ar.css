@@ -25627,6 +25627,9 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	color: var(--misaSecondColor);
 }
 
+.opportunity-article-section-statistics .box-without-height {
+    min-height: 0;
+}
 
 .page-contact-us .login-text span {
 	font-size: 12px !important;

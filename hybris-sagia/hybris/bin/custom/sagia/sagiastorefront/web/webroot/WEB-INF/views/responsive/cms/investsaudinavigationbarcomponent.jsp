@@ -262,6 +262,50 @@
 <c:if test="${component.visible}">
 	<c:set var="pageLabel" value="${cmsPage.itemtype eq 'ContentPage' ? cmsPage.label : ''}" />
 	<!-- ======= Header ======= -->
+	<div id="topbar" class="d-flex align-items-center fixed-top ">
+		<div class="container d-flex">
+			<div class="social-links">
+				<!-- <a href="#" class="search_item"><img src="${commonResourcePath}/images/Search_icon.png" /></a>
+				<a href="#" class="Font_enlargment"><span class=" btn-trans"><img src="${commonResourcePath}/images/Aa.png"/></span></a>
+				 -->
+				 <!-- <a href="#" class="skype d-none d-sm-inline">
+					<span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
+					<span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				</a> -->
+				 <!-- <c:if test="${userLoggedIn eq 'false'}">
+					 <span class="language" id="font-decrement" onclick="decreaseFontSize()" dir="ltr">A-</span>
+					 <span class="language" id="font-increment" onclick="increaseFontSize()" dir="ltr">A+</span>
+				 </c:if> -->
+				<a href="#" class="skype text-decoration-none">
+					<span class="btn-group btn-group-toggle btn-trans language-toggle" data-toggle="buttons">
+						<c:if test="${currentLanguage.isocode eq 'ar'}">
+							<label class="lang-btn lang-en cursor-pointer" onclick="LanguageToggle('en')">EN</label>
+						</c:if>
+						<c:if test="${currentLanguage.isocode eq 'en'}">
+							<label class="lang-btn lang-en cursor-pointer" onclick="LanguageToggle('ar')">
+								<spring:theme code="header.arabic"/>
+							</label>
+						</c:if>
+						<label class="lang-btn cursor-pointer" onclick="navigateToLink('${encodedContextPath}/investsaudi-login')"><spring:theme code="portal.header.login.label"/></label>
+					</span>
+				</a>
+				<c:choose>
+					<c:when test="${userLoggedIn}">
+						<a href="${encodedContextPath}/my-sagia/sagia-profile" title="${user.name}"class="login-details sagiaNavigation-user d-none d-lg-inline">
+					      	<img class="" src="${commonResourcePath}/images/User-icon.svg" /><span class="header-user-name">${user.name}</span>
+					    </a>
+	                    <a data-toggle="modal" data-target="#logoutModal" title="<spring:theme code='text.logout'/>" class="login-details sagiaNavigation-logout cursor-pointer d-none d-lg-inline">
+	                    	<span><spring:theme code="dashboard.logout.label"/></span>
+	                    </a>
+					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+					</c:when>
+					<c:otherwise>
+					    <a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
+				    </c:otherwise>
+				</c:choose>
+			</div>
+		</div>
+	</div>
 	<header id="header" class="fixed-top ">
 		<div class="container d-flex align-items-center">
 			<div class="logo mr-auto">

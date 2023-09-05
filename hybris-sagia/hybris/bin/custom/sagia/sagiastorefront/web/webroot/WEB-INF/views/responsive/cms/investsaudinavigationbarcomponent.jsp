@@ -304,6 +304,7 @@
 				    </c:otherwise>
 				</c:choose>
 			</div>
+			<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
 		</div>
 	</div>
 	<header id="header" class="fixed-top ">
@@ -319,7 +320,6 @@
 					<img class="hd-scroll hd-scroll-logo" src="${fn:escapeXml(component.visionImage.url)}" />
 				</a>
 			</div>
-			<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
 			<nav class="nav-menu d-none d-lg-block ">
 				<div class="d-block d-lg-none">
 					<c:choose>
@@ -454,7 +454,9 @@
 						</c:choose>
 					</li>
 				</ul>
+				<a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo d-none"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 			</nav>
+			
 		</div>
 		<div id="user-icons" class="user-icons-header p-0 d-none">
 			<div class=" user-icon mr-1 mr-md-3">

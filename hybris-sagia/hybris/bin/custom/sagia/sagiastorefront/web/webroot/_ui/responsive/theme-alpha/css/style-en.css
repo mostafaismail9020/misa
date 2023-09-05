@@ -608,7 +608,6 @@ ul.dropdown-list li a {
 	border: 0;
 	background: none;
 	font-size: 24px;
-	transition: all 0.4s;
 	outline: none !important;
 	line-height: 1;
 	cursor: pointer;
@@ -625,7 +624,7 @@ ul.dropdown-list li a {
 	right: 0;
 	bottom: 15px;
 	left: 0px;
-	z-index: 9999;
+	z-index: 9998;
 	overflow-y: auto;
 	background: #fff;
 	transition: ease-in-out 0.2s;
@@ -705,7 +704,8 @@ ul.dropdown-list li a {
 
 .mobile-nav-active .mobile-nav-toggle {
 	z-index: 999999;
-	top: 30px;
+	top: 23px;
+	right: 12px;
 }
 
 .mobile-nav * {
@@ -6419,11 +6419,11 @@ img.accountLogin-headline-logo {
 	}
 	
 	.mobile-nav-toggle {
-		filter: invert(100%) sepia(100%) saturate(7296%) hue-rotate(164deg) brightness(90%) contrast(103%);
+		background-image: url("../img/toggle-menu.svg");
 	}
 	
 	.page-portal-homepage .mobile-nav-toggle {
-		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(299deg) brightness(104%) contrast(300%);
+		background-image: url("../img/toggle-menu-white.svg");
 	}
 
 	.nav-item.dropdown .dropdown-toggle.login-btn-in-menu {
@@ -11060,8 +11060,28 @@ body.page-living-in-saudi .content {
      padding-bottom: 30px;
 }
 .join-newsletter-btn{
-	background: #BF9B2E!important;
-	border-color: #BF9B2E;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 6px;
+    width: 183px !important;
+    height: 36px !important;
+    background: #BF9B2E;
+    border-radius: 5px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    width: 18px;
+    height: 18px;
+    width: 135px;
+    height: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #F8F9FB;
+    border: 2px solid #BF9B2E;
 }
 .join-newsletter-btn:hover {
     background: #D0B14E;
@@ -12794,10 +12814,12 @@ ul.INS_li_ul_under li {
 	.mobile-nav-toggle {
 		height: 50px;
 		width: 30px;
-		background-image: url("../img/listView_blue.svg");
+		background-image: url("../img/toggle-menu.svg");
 		background-repeat: no-repeat;
 	}
-	.mobile-nav-active .mobile-nav-toggle {
+	.mobile-nav-active .mobile-nav-toggle,
+	.mobile-nav-active .mobile-nav-toggle
+	{
 		background-image: url("../img/close_white.svg");
 		background-repeat: no-repeat;
 	}
@@ -13264,11 +13286,13 @@ ul.INS_li_ul_under li {
 	.mobile-nav-toggle {
 		height: 50px;
 		width: 30px;
-		background-image: url("../img/listView_blue.svg");
+		background-image: url("../img/toggle-menu.svg");
 		background-repeat: no-repeat;
 		right: 37px;
 	}
-	.mobile-nav-active .mobile-nav-toggle {
+	.mobile-nav-active .mobile-nav-toggle,
+	.mobile-nav-active .mobile-nav-toggle.page-scrolled
+	{
 		background-image: url("../img/close_white.svg");
 		background-repeat: no-repeat;
 	}
@@ -19097,10 +19121,11 @@ padding-left: 40px;
 	.mobile-nav-toggle {
 		height: 40px;
 		width: 30px;
-		background-image: url("../img/listView_blue.svg");
+		background-image: url("../img/toggle-menu.svg");
 		background-repeat: no-repeat;
 	}
-	.mobile-nav-active .mobile-nav-toggle {
+	.mobile-nav-active .mobile-nav-toggle,
+	.mobile-nav-active .mobile-nav-toggle.page-scrolled {
 		background-image: url("../img/close_white.svg");
 		background-repeat: no-repeat;
 	}
@@ -21597,10 +21622,16 @@ padding-left: 40px;
 	.page-investment-data .INID_for_header {
 		font-size: 27px;
 	}
+	.page-portal-homepage .mobile-nav-toggle {
+		height: 40px;
+		width: 30px;
+		background-image: url("../img/toggle-menu-white.svg");
+		background-repeat: no-repeat;
+	}
 	.mobile-nav-toggle {
 		height: 40px;
 		width: 30px;
-		background-image: url("../img/listView_blue.svg");
+		background-image: url("../img/toggle-menu.svg");
 		background-repeat: no-repeat;
 	}
 	.mobile-nav-active .mobile-nav-toggle {
@@ -24921,4 +24952,38 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 			}
 		}
 	}
+}
+
+.mobile-nav-toggle.page-scrolled {
+	background-image: url("../img/toggle-menu.svg");
+}
+
+
+.mobile-nav-toggle {
+	top: 20px;
+	height: 20px;
+}
+
+@media (max-width: 640px) {
+	#header .logo {
+		margin-top: -16px !important;
+		margin-left:0 !important;
+	}
+}
+
+@media (min-width: 640px) and (max-width: 992px) {
+	.mobile-nav-active .mobile-nav-toggle {
+		right: 29px;
+	}
+}
+
+.mobile-nav .Header_vs_logo {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	width: 90px;
+	display: block !important;
+	margin: 0 !important;
+	padding: 0;
+	text-align: right;
 }

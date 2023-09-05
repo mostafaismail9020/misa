@@ -357,7 +357,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 	
 	private void populateCostOfDoingBusiness(OpportunityProductModel productModel, ProductData productData) {
 
-		if (null != productModel.getInvestmentOverview() && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness())) {
+		if (null != productModel.getInvestmentOverview() && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness()) && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts())) {
 
 			// REVISIT FOR LIST IMPLEMENTATION
 			productData.setCostOfDoingBusinessText(productModel.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts().iterator().next().getValue());

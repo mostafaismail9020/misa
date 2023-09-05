@@ -54,10 +54,24 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12 mt-5">
+        <div class="col-md-12 mt-4 breadcrumb-container">
+            <c:if test="${language eq 'en'}">
+                <a href="/${language}/">
+                    <span class="breadcrumb-left-icon"></span>
+                    <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+                </a>
+            </c:if>
+            <c:if test="${language eq 'ar'}">
+                <a href="/${language}/">
+                    <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+                    <span class="breadcrumb-left-icon"></span>
+                </a>
+            </c:if>
+        </div>
+        <div class="col-md-12 mt-4">
             <c:choose>
                 <c:when test="${not empty eventSearchPageData.results}">
-                    <h2 class="newsTitle">Upcoming Events</h2>
+                    <h2 class="newsTitle"><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
                    <div class="col-md-12">
                     <div class="row events-container">
                         <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
@@ -82,7 +96,7 @@
         <div class="col-md-12 mt-5 mb-5">
             <c:choose>
                 <c:when test="${not empty searchPageData.results}">
-                    <h2 class="newsTitle">Latest News</h2>
+                    <h2 class="newsTitle"><spring:theme code="text.newsevents.listing.page.latest.news"/></h2>
                     <div class="col-md-12">
                     <div class="row news-container">
                         <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
@@ -110,7 +124,7 @@
         <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h2 class="newsTitle">Latest announcements from the ministry</h2>
+                <h2 class="newsTitle"><spring:theme code="text.newsevents.listing.page.latest.announcements"/></h2>
               </div>
             </div>
         </div>
@@ -194,7 +208,7 @@
 <section class="Inc-mediaCenter-sectionwrapper pb-3">
    <div class="container">
       <div class="row text-center col-md-12">
-         <h2 class="newsTitle">Media Library </h2>
+         <h2 class="newsTitle"><spring:theme code="text.newsevents.listing.page.media.library"/></h2>
       </div>
    </div>
    <div class="container">

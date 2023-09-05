@@ -24848,3 +24848,24 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 .resource-title .action .see-more:hover {
     text-decoration: underline;
 }
+
+.page-newsevents-list-page .breadcrumb-container {
+	display: flex;
+	align-items: center;
+}
+
+.page-newsevents-list-page .breadcrumb-container .breadcrumb-page-info {
+	color: #BF9B2E;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.page-newsevents-list-page .breadcrumb-container .breadcrumb-left-icon {
+	background-image: url('../img/article-details-events-left-arrow-icon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: pointer;
+}

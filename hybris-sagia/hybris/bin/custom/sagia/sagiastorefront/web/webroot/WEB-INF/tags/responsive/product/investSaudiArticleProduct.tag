@@ -12,12 +12,16 @@
 				<div class="row">
 					<div class="col-md-12 breadcrumb-container">
 						<c:if test="${language eq 'en'}">
-							<span class="breadcrumb-left-icon"></span>
-							<span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+							<a href="${encodedContextPath}/articlesList">
+								<span class="breadcrumb-left-icon"></span>
+								<span class="breadcrumb-page-info"><spring:theme code="text.article.listing.page.title"/></span>
+							</a>
 						</c:if>
 						<c:if test="${language eq 'ar'}">
-							<span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
-							<span class="breadcrumb-left-icon"></span>
+							<a href="${encodedContextPath}/articlesList">
+								<span class="breadcrumb-page-info"><spring:theme code="text.article.listing.page.title"/></span>
+								<span class="breadcrumb-left-icon"></span>
+							</a>
 						</c:if>
 
 						</div>

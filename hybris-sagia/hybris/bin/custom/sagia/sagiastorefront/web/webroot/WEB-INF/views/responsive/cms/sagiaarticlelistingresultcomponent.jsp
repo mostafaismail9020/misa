@@ -35,7 +35,7 @@
                     </a>
                 </c:if>
                 <div class="col-md-12">
-                    <h1 class="article-listing-page-general-title">Article Listing</h1>
+                    <h1 class="article-listing-page-general-title"><spring:theme code="text.article.listing.page.title"/></h1>
                 </div>
             </div>
         </div>

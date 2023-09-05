@@ -90,82 +90,7 @@ ACC.autocomplete = {
 							});
 						});
 					}*/
-					if(data.articles != null){
-						if (data.articles.length > 0)
-							autoSearchData.push({
-								value: "<strong class='title'>Articles</strong>",
-								code: null,
-								desc: null,
-								manufacturer: null,
-								url:  window.location.href + "mediaCenter/events",
-								type: "productResult",
-								image: null
-							});
-						$.each(data.articles, function (i, obj)
-						{
-							autoSearchData.push({
-								value: ACC.sanitizer.sanitize(obj.name),
-								code: obj.code,
-								desc: ACC.sanitizer.sanitize(obj.description),
-								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
-								url:  ACC.config.encodedContextPath + obj.url,
-								// price: obj.price.formattedValue,
-								type: "productResult",
-								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
-							});
-						});
-					}
-					if(data.events != null){
-						if (data.events.length > 0)
-							autoSearchData.push({
-								value: "<strong class='title'>Events</strong>",
-								code: null,
-								desc: null,
-								manufacturer: null,
-								url:  window.location.href + "mediaCenter/events",
-								type: "productResult",
-								image: null
-							});
-						$.each(data.events, function (i, obj)
-						{
-							autoSearchData.push({
-								value: ACC.sanitizer.sanitize(obj.name),
-								code: obj.code,
-								desc: ACC.sanitizer.sanitize(obj.description),
-								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
-								url:  ACC.config.encodedContextPath + obj.url,
-								// price: obj.price.formattedValue,
-								type: "productResult",
-								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
-							});
-						});
-					}
-					if(data.news != null){
-						if (data.news.length > 0)
-							autoSearchData.push({
-								value: "<strong class='title'>News</strong>",
-								code: null,
-								desc: null,
-								manufacturer: null,
-								url:  window.location.href + "mediaCenter/news",
-								type: "productResult",
-								image: null
-							});
-						$.each(data.news, function (i, obj)
-						{
-							autoSearchData.push({
-								value: ACC.sanitizer.sanitize(obj.name),
-								code: obj.code,
-								desc: ACC.sanitizer.sanitize(obj.description),
-								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
-								url:  ACC.config.encodedContextPath + obj.url,
-								// price: obj.price.formattedValue,
-								type: "productResult",
-								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
-							});
-						});
-					}
-					if(data.opportunities != null){
+					if (data.opportunities != null) {
 						if (data.opportunities.length > 0)
 							autoSearchData.push({
 								value: "<strong class='title'>Opportunities</strong>",
@@ -190,7 +115,82 @@ ACC.autocomplete = {
 							});
 						});
 					}
-					if(data.products != null){
+					if (data.news != null) {
+						if (data.news.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>News</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  window.location.href + "mediaCenter/news",
+								type: "productResult",
+								image: null
+							});
+						$.each(data.news, function (i, obj)
+						{
+							autoSearchData.push({
+								value: ACC.sanitizer.sanitize(obj.name),
+								code: obj.code,
+								desc: ACC.sanitizer.sanitize(obj.description),
+								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
+								url:  ACC.config.encodedContextPath + obj.url,
+								// price: obj.price.formattedValue,
+								type: "productResult",
+								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
+							});
+						});
+					}
+					if (data.events != null) {
+						if (data.events.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>Events</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  window.location.href + "mediaCenter/events",
+								type: "productResult",
+								image: null
+							});
+						$.each(data.events, function (i, obj)
+						{
+							autoSearchData.push({
+								value: ACC.sanitizer.sanitize(obj.name),
+								code: obj.code,
+								desc: ACC.sanitizer.sanitize(obj.description),
+								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
+								url:  ACC.config.encodedContextPath + obj.url,
+								// price: obj.price.formattedValue,
+								type: "productResult",
+								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
+							});
+						});
+					}
+					if (data.articles != null) {
+						if (data.articles.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>Articles</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  window.location.href + "mediaCenter/events",
+								type: "productResult",
+								image: null
+							});
+						$.each(data.articles, function (i, obj)
+						{
+							autoSearchData.push({
+								value: ACC.sanitizer.sanitize(obj.name),
+								code: obj.code,
+								desc: ACC.sanitizer.sanitize(obj.description),
+								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
+								url:  ACC.config.encodedContextPath + obj.url,
+								// price: obj.price.formattedValue,
+								type: "productResult",
+								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
+							});
+						});
+					}
+					if (data.products != null) {
 						if (data.products.length > 0)
 							autoSearchData.push({
 								value: "<strong class='title'>Opportunities</strong>",

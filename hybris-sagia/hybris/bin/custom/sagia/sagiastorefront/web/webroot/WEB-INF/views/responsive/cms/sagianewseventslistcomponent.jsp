@@ -172,8 +172,8 @@
     <div class="row mt-4 mb-4">
         <div class="col-md-12">
             <div class="get-the-latest-updates">
-                <h2 class="get-updates-title">Get the Latest Updates</h2>
-                <button class="btn btn-primary join-newsletter-btn misa-btn-special">Join Our Newsletter</button>
+                <h2 class="get-updates-title"><spring:theme code="text.newsevents.listing.page.get.the.latest.updates"/></h2>
+                <button class="btn btn-primary join-newsletter-btn misa-btn-special"><spring:theme code="text.newsevents.listing.page.join.our.newsletter"/></button>
             </div>
         </div>
     </div>

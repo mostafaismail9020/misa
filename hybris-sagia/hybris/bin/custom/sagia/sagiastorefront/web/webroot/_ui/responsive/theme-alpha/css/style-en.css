@@ -9434,8 +9434,7 @@ a.pvcy-policy:focus {
     border-radius: 10px;
 }
 .pageLabel--newseventslist .events-card-img{
-    height: 172px;
-    border-radius: 10px;
+    height: 200px;
 }
 .eventMonth{
     font-weight: 700  !important;;
@@ -9491,22 +9490,27 @@ a.pvcy-policy:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .pageLabel--newseventslist .eventShortInformation{
-
-    font-weight: 400;
-    font-size: 12px;
-    color: var(--misaDarkGrayText);
-    white-space: nowrap;
+	color: var(--misaDarkGrayText);
+	white-space: nowrap;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0;
 }
 .pageLabel--newseventslist .eventsName{
-
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--misaDarkGrayText);
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0;
+	color: var(--misaFirstColor);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 5px 0 5px 0;
 }
+
 @media (max-width: 767px) {
     .pageLabel--newseventslist .row  {
         margin-right: 0px;

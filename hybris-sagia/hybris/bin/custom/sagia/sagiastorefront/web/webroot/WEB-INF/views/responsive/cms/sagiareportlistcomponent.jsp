@@ -43,25 +43,6 @@
                                                <h2 class="pageTitle"><spring:theme code="portal.media.reportList"/></h2>
                                             </div>
                                       	</div>
-                                      	<div class="col-md-4 col-sm-12">
-                                        	<div class="News_press_bgwhite">
-                                                <a href="${encodedContextPath}${eventSearchPageData.results[0].url}">
-                                                    <div class="top_date position-absolute">
-                                                        <h4 class="date"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="d" /></h4>
-                                                        <h6 class="date_name"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="MMM" /></h6>
-                                                    </div>
-                                                    <div class="p-5 paddding_align">
-                                                        <div>
-                                                            <h3 class="highlight_title">${eventSearchPageData.results[0].name}</h3>
-                                                            <c:set var="description" value="${eventSearchPageData.results[0].description}" />
-                                                             <c:set var="start" value="${fn:indexOf(description, '<p>')}"/>
-                                                             <c:set var="end" value="${fn:indexOf(description, '</p>')}"/>
-                                                             <p class="eventDescription">${fn:substring(description, start + 3, end)}</p>
-                                                        </div>
-                                                    </div>
-                                               </a>
-											</div>
-										</div>
 	                             	</div>
 	                         	</div>
 	                     	</div>

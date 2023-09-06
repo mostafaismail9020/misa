@@ -24772,13 +24772,13 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-news-page .article-details-news-title {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 32px;
 	font-weight: 700;
 }
 
 .article-details-news-page p {
-	color: #BF9B2E;
+	color: var(--misaDarkGrayText);
 	font-size: 16px;
 	font-weight: 400;
 	margin-bottom: 10px;
@@ -24824,7 +24824,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-news-page .new-events .title {
-	color: #00714D;
+	color: var(--misaFirstColor);
 	font-size: 24px;
 	font-weight: 700;
 }
@@ -24835,7 +24835,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-news-page .new-events .new-events-card-bottom {
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 	font-size: 14px;
 	font-weight: 400;
 	margin-bottom: 30px;
@@ -24851,13 +24851,13 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-news-page .new-events .new-events-time-location .event-time {
 	font-size: 12px;
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 	font-weight: 400;
 }
 
 .article-details-news-page .new-events .new-events-time-location .event-location {
 	font-size: 12px;
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 	font-weight: 400;
 }
 

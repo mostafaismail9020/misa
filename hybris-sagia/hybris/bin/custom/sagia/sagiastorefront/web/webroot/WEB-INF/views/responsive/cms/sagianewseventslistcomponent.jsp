@@ -78,9 +78,9 @@
                 </div>
                 <div class="col-md-12">
                     <div class="showMoreLessButtonContainer">
-                        <button id="loadEventMore" class="loadNewsEventShowLessButton"><spring:theme
+                        <button id="loadEventMore" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme
                                 code="review.show.more"/></button>
-                        <button id="showEventLess" class="loadNewsEventShowLessButton"><spring:theme
+                        <button id="showEventLess" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme
                                 code="review.show.less"/></button>
                     </div>
                 </div>
@@ -104,8 +104,8 @@
                         </c:forEach>
                     </div>
                     <div class="showMoreLessButtonContainer mt-4">
-                        <button id="loadNewsMore" class="loadNewsEventShowLessButton"><spring:theme code="review.show.more"/></button>
-                        <button id="showNewsLess" class="loadNewsEventShowLessButton"><spring:theme code="review.show.less"/></button>
+                        <button id="loadNewsMore" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme code="review.show.more"/></button>
+                        <button id="showNewsLess" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme code="review.show.less"/></button>
                     </div>
                 </c:when>
                 <c:otherwise>
@@ -120,7 +120,7 @@
         <div class="col-md-12">
             <section class="latest-announcements">
                 <div class="header mt-3 mb-3">
-                    <h2 class="title"><spring:theme code="text.newsevents.listing.page.latest.announcements"/></h2>
+                    <h2 class="title latest-announcements-title"><spring:theme code="text.newsevents.listing.page.latest.announcements"/></h2>
                 </div>
                 <div class="content">
                     <div class="announcement">
@@ -164,7 +164,7 @@
         <div class="col-md-12">
             <div class="get-the-latest-updates">
                 <h2 class="get-updates-title">Get the Latest Updates</h2>
-                <button class="btn btn-primary join-newsletter-btn">Join Our Newsletter</button>
+                <button class="btn btn-primary join-newsletter-btn misa-btn-special">Join Our Newsletter</button>
             </div>
         </div>
     </div>

@@ -10959,12 +10959,7 @@ body.page-living-in-saudi .content {
 
 .page-newsevents-list-page .loadNewsEventShowLessButton{
 	background: #BF9B2E;
-	color: #ffffff;
-	font-size: 16px;
-	font-weight: 400;
-	border-radius: 10px;
-	padding: 10px;
-	border: none;
+	border:none;
 	cursor: pointer;
 }
 
@@ -26473,14 +26468,9 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	}
 
 	.join-newsletter-btn {
-		background: #BF9B2E;
-		color: #ffffff;
-		font-size: 16px;
-		font-weight: 400;
-		border-radius: 10px;
-		padding: 10px;
+		background: #BF9B2E!important;
 		border: none;
-		cursor: pointer;
+		height: 50px!important;
 	}
 
 	.media-library-title {
@@ -26566,6 +26556,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 
 	@media (max-width: 768px) {
+
+		.upcoming-events-title, .latest-news-title, .latest-announcements-title, .media-library-title {
+			text-align: center;
+		}
+
+		.loadNewsEventShowLessButton {
+			height: 50px!important;
+			padding: 10px!important;
+		}
+
 		.latest-news {
 			flex: 1 0 100%;
 			max-width: 100%;

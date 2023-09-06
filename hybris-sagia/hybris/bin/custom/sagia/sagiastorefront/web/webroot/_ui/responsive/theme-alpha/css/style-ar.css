@@ -14022,7 +14022,13 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
     display: none;
 }
-
+body.pageLabel--reportList .rhq-banner-content:nth-of-type(1) {
+    display: none;
+}
+.pageTitle-container{
+    background: rgba(0, 113, 77, 0.05);
+    height: 50vh;
+}
 .newsTitle{
     font-weight: 700;
     font-size: 24px;

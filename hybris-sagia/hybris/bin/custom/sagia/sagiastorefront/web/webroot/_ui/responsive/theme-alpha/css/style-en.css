@@ -533,7 +533,13 @@ color: var(--misaSecondColor);
 body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
     display: none;
 }
-
+body.pageLabel--reportList .rhq-banner-content:nth-of-type(1) {
+    display: none;
+}
+.pageTitle-container{
+    background: rgba(0, 113, 77, 0.05);
+    height: 50vh;
+}
 .nav-menu .drop-down ul a {
 	padding: 10px 20px;
 	font-size: 14px;

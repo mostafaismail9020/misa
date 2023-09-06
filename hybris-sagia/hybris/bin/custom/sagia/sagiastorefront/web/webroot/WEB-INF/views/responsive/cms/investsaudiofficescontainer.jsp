@@ -129,7 +129,7 @@
                                 </div>
 
                                                            <!--<div class="col-md-3"><button type="submit" class="btn btn-primary-fill btn-form-outline w-100" id="contact-us-form-cancel"><spring:theme code="portal.contactus.form.cancel.button"/></button></div>-->
-                                                           <div class="col-sm-12"><button type="submit" class="btn btn-primary-fill btn-form-fill w-100 submit-button"><spring:theme code="portal.contactus.form.submit.button"/>
+                                                           <div class="col-sm-12"><button type="submit" class="submit-button"><spring:theme code="portal.contactus.form.submit.button"/>
                                                             <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                               <path d="M5.08331 11H17M12.4166 5.5L17.2685 10.3518C17.6264 10.7098 17.6264 11.2902 17.2685 11.6482L12.4166 16.5" stroke="#F8F9FB" stroke-width="1.5" stroke-linecap="round"/>
                                                               </svg>

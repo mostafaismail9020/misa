@@ -58,6 +58,8 @@ border:2px solid #fff !important;
 }
 
 #sagiaRegisterFormQuickRegistration .register-contry-info {
+	padding-top: 12px !important;
+	font-size: 16px !important;
 	border-top-left-radius: 8px !important;
 	border-bottom-left-radius: 8px !important;
 	border-top-right-radius: 0 !important;
@@ -796,7 +798,6 @@ max-width :100% ;
 	text-transform: unset;
 	text-align: left;
 	margin-left: 10px;
-	text-transform: uppercase;
 	margin-top: 0 !important;
 }
 
@@ -860,7 +861,7 @@ max-width :100% ;
 .page-login .login-right-wrapper,
 .page-homepage .forgotPassword-wrapper,
 .page-homepage .reset-pw-wrapper-dt {
-	background-color: rgba(191, 155, 46, 0.75) !important;
+	background-color: rgba(120, 120, 120, 0.65) !important;
 	border: none !important;
 	border-radius: 0 !important;
 	margin: auto;
@@ -879,7 +880,7 @@ max-width :100% ;
 	margin-left: 0 !important;
 	text-transform: unset !important;
 	color: #fff !important;
-	font-size: 17px !important;
+	font-size: 16px !important;
 	transform: none !important;
 }
 
@@ -979,9 +980,14 @@ max-width :100% ;
 	display: flex;
 	gap: 10px;
 	align-items: center;
+	padding: 16px 0;
 	justify-content: center;
 	border-radius: 10px !important;
-	background: #00714D !important;
+	background: #BF9B2E !important;
+	text-transform: capitalize !important;
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	border: none !important;
 }
 
 .page-login button.login-btn,
@@ -993,6 +999,10 @@ max-width :100% ;
 	background: transparent !important;
 	border: 2px solid #fff !important;
 	color: #fff !important;
+	text-transform: capitalize !important;
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	height: auto !important;
 }
 
 .page-login .login-role-selection-box {
@@ -1007,7 +1017,7 @@ max-width :100% ;
 }
 
 .page-login .login-role-selection-box.active {
-	background: #00714D !important;
+	background: #BF9B2E !important;
 }
 
 .login-page .register-account-investor-screen3 {
@@ -1032,7 +1042,7 @@ max-width :100% ;
   }
 
   .page-login .register-progress-selection {
-	background: #00714D;
+	background: #BF9B2E;
   }
 
   .page-login .register-role-selection {
@@ -1069,12 +1079,11 @@ max-width :100% ;
 	top: 30px;
 }
 
-.page-login .register-terms {
-	color: #fff;
-}
 
+.page-login .register-terms,
 .page-login .register-terms-link {
 	color: #fff !important;
+	font-size: 16px;
 }
 
 .page-homepage .accountLogin-copyWrapper {
@@ -1099,4 +1108,25 @@ max-width :100% ;
 
 .page-homepage .accountLogin-copyWrapper p {
 	font-size: 17px;
+}
+
+.select2-dropdown .select2-results__option {
+	font-size: 16px !important;
+}
+
+.select2-dropdown .select2-results__option--highlighted {
+	color:#BF9B2E !important;
+}
+
+[dir] .reg-terms-checked {
+	padding-top: 3px !important;
+	background: #BF9B2E !important;
+}
+
+[dir] .register-user-info {
+	margin-top: 20px !important;
+}
+
+[dir] .verified {
+	background: #fff !important;
 }

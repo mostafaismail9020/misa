@@ -10,21 +10,26 @@
 		<div class="article-details-page-banner-container" data-aos="fade-up">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 breadcrumb-container">
-						<c:if test="${language eq 'en'}">
-							<a href="${encodedContextPath}/articlesList">
-								<span class="breadcrumb-left-icon"></span>
-								<span class="breadcrumb-page-info"><spring:theme code="text.article.listing.page.title"/></span>
-							</a>
-						</c:if>
-						<c:if test="${language eq 'ar'}">
-							<a href="${encodedContextPath}/articlesList">
-								<span class="breadcrumb-page-info"><spring:theme code="text.article.listing.page.title"/></span>
-								<span class="breadcrumb-left-icon"></span>
-							</a>
-						</c:if>
 
-						</div>
+					<c:if test="${language eq 'en'}">
+						<a href="${encodedContextPath}/articlesList">
+							<div class="col-md-12 breadcrumb-container">
+								<span class="breadcrumb-left-icon"></span>
+								<span class="breadcrumb-page-info"><spring:theme
+										code="text.article.listing.page.title"/></span>
+							</div>
+						</a>
+					</c:if>
+					<c:if test="${language eq 'ar'}">
+						<a href="${encodedContextPath}/articlesList">
+							<div class="col-md-12 breadcrumb-container">
+								<span class="breadcrumb-page-info"><spring:theme
+										code="text.article.listing.page.title"/></span>
+								<span class="breadcrumb-left-icon"></span>
+							</div>
+						</a>
+					</c:if>
+
 					<div class="col-md-12">
 						<h1 class="article-detail-page-general-title">${fn:escapeXml(productData.articleTitle)}</h1>
 					</div>
@@ -42,7 +47,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<p>${productData.description}</p>
+					<p>${fn:escapeXml(productData.description)}</p>
 
 				</div>
 				<div class="col-md-6 article-detail-page-video">
@@ -55,7 +60,7 @@
 			<!-- Summary Paragraph -->
 			<div class="row mt-4 mb-4">
 				<div class="col-md-12">
-					<p>${productData.summary}</p>
+					<p>${fn:escapeXml(productData.summary)}</p>
 				</div>
 			</div>
 
@@ -63,7 +68,7 @@
 				<c:if test="${status.index % 2 == 0}">
 					<div class="row mt-5 mb-5 our-goal-and-mission">
 						<div class="col-md-6 center-content our-goal">
-								${tile.value}
+								${fn:escapeXml(tile.value)}
 						</div>
 						<div class="col-md-6"></div>
 					</div>
@@ -72,7 +77,7 @@
 					<div class="row mt-5 mb-5 our-goal-and-mission">
 						<div class="col-md-6"></div>
 						<div class="col-md-6 center-content our-mission">
-								${tile.value}
+								${fn:escapeXml(tile.value)}
 						</div>
 					</div>
 				</c:if>
@@ -81,7 +86,7 @@
 			<!-- Paragraph -->
 			<div class="row mt-4 mb-4">
 				<div class="col-md-12">
-					<p>${productData.articleThirdPara}</p>
+					<p>${fn:escapeXml(productData.articleThirdPara)}</p>
 				</div>
 			</div>
 
@@ -91,7 +96,7 @@
 				<c:forEach items="${productData.subheadingWithMedia}" var="subheadingWithMedia">
 					<div class="row">
 						<div class="col-md-12 mb-4">
-							<h1 class="article-detail-page-subtitle">${subheadingWithMedia.key}</h1>
+							<h1 class="article-detail-page-subtitle">${fn:escapeXml(subheadingWithMedia.key)}</h1>
 						</div>
 					</div>
 					<div class="row">
@@ -131,7 +136,7 @@
 				<c:forEach items="${productData.paraWithMedia}" var="paraWithMedia">
 					<div class="row mt-2">
 						<div class="col-md-6">
-							<p>${paraWithMedia.value.descriptionText}</p>
+							<p>${fn:escapeXml(paraWithMedia.value.descriptionText)}</p>
 						</div>
 						<div class="col-md-6">
 							<img class="our-values-img" alt="" src="${paraWithMedia.value.url}" />
@@ -144,10 +149,10 @@
 				<div class="row">
 					<c:forEach items="${productData.subHeadings}" var="articleSubHeading">
 						<div class="col-md-12 mb-4">
-							<h1 class="article-detail-page-subtitle">${articleSubHeading.key}</h1>
+							<h1 class="article-detail-page-subtitle">${fn:escapeXml(articleSubHeading.key)}</h1>
 						</div>
 						<div class="col-md-12 mb-4">
-							<p>${articleSubHeading.value}</p>
+							<p>${fn:escapeXml(articleSubHeading.value)}</p>
 						</div>
 					</c:forEach>
 
@@ -158,8 +163,8 @@
 								<div class="what-we-do-box">
 									<div class="number-box">1</div>
 									<div class="box-content">
-										<p class="title">${articleSubDetails4Boxes.key}</p>
-										<p>${articleSubDetails4Boxes.value}</p>
+										<p class="title">${fn:escapeXml(articleSubDetails4Boxes.key)}</p>
+										<p>${fn:escapeXml(articleSubDetails4Boxes.value)}</p>
 									</div>
 								</div>
 							</div>
@@ -167,7 +172,7 @@
 					</div>
 
 					<div class="col-md-12 mb-4">
-						<p>${productData.articleSubDetails5}</p>
+						<p>${fn:escapeXml(productData.articleSubDetails5)}</p>
 					</div>
 
 				</div>
@@ -178,14 +183,17 @@
 				<div class="row">
 					<div class="col-md-12">
 						<button class="btn-download">
-							Download
+							<spring:theme code="facilityReopen.download.text"/>
+							<i class="icon-download"></i>
 						</button>
 						<button class="btn-share">
-							<i class="icon-share"></i> Share
+							<i class="icon-share"></i>
+							<spring:theme code="product.share.share"/>
 						</button>
 					</div>
 				</div>
 			</div>
+
 
 			<!-- Recent Projects -->
 			<div class="recent-projects mt-4">

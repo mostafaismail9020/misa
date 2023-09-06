@@ -390,8 +390,11 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 
 		if (null != productModel.getSupply()) {
 
-			// REVISIT FOR LIST IMPLEMENTATION
-			productData.setValueChainText(productModel.getSupply().getValueChainTexts().iterator().next().getFormattedText());
+			if (null != productModel.getSupply().getValueChainTexts()) {
+				// REVISIT FOR LIST IMPLEMENTATION
+				productData.setValueChainText(
+						productModel.getSupply().getValueChainTexts().iterator().next().getFormattedText());
+			}
 			productData.setImportDependencyText(productModel.getSupply().getImportDependencyText());
 			productData.setScalabilityAndLocalizationText(productModel.getSupply().getScalabilityAndLocalizationText());
 		}

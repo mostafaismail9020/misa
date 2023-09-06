@@ -23547,7 +23547,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .article-details-events-page-general-title {
-	color: #fff;
+	color: var(--misaFirstColor);
 	margin: 0 0 15px 10px;
 	line-height: 56px;
 	font-size: 40px;

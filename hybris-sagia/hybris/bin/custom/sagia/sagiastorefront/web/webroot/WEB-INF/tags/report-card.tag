@@ -1,5 +1,5 @@
 <%@ tag body-content="empty" trimDirectiveWhitespaces="true" %>
-<%@ attribute name="result" required="true" type="de.hybris.platform.commercefacades.product.data.ProductData" %>
+<%@ attribute name="result" required="true" type="de.hybris.platform.commercefacades.product.data.OpportunityData" %>
 <%@ attribute name="loopCount" required="true" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -9,7 +9,7 @@
 
  <div class="col-sm-12 col-md-12 col-lg-4 mb-5">
                              <div class="events-card">
-                                 <a href="${encodedContextPath}${result.url}">
+                                 <a href="${encodedContextPath}${result.opportunity.url}">
                                      <div class="row">
                                          <div class="col-sm-4">
                                              <div class="card-image">
@@ -19,9 +19,9 @@
 
                                          <div class="col-sm-8">
                                              <div class="card-text">
-                                                 <h3 class="reportName">${fn:toLowerCase(result.name)}</h3>
+                                                 <h3 class="reportName">${fn:toLowerCase(result.opportunity.name)}</h3>
                                                  <p class="reportDate d-report-update-date">
-                                                     <fmt:formatDate value="${result.reportDate}" pattern="d MMM yyyy" />
+                                                     <fmt:formatDate value="${result.opportunity.reportDate}" pattern="d MMM yyyy" />
                                                  </p>
                                              </div>
                                          </div>

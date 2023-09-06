@@ -31,6 +31,10 @@ UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[
   {{
   SELECT {PK} FROM {EventProduct}
   }}
+  UNION
+  {{
+  SELECT {PK} FROM {ReportProduct}
+  }}
 ) tbl"
                         ; $solrIndexedType                         ; $searchIndexNamePrefix-updateQuery ; update     ;"SELECT DISTINCT tbl.pk FROM (
   {{
@@ -47,6 +51,10 @@ UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[
   UNION
   {{
   SELECT {PK} FROM {EventProduct} WHERE {modifiedtime} >= ?lastIndexTime
+  }}
+  UNION
+  {{
+  SELECT {PK} FROM {ReportProduct} WHERE {modifiedtime} >= ?lastIndexTime
   }}
 ) tbl"
 

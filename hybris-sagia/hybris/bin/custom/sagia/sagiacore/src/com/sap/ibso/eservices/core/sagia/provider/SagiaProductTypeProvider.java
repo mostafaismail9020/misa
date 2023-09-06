@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import com.investsaudi.portal.core.model.ReportProductModel;
 import org.springframework.beans.factory.annotation.Required;
 
 import com.investsaudi.portal.core.model.ArticleProductModel;
@@ -59,6 +60,9 @@ public class SagiaProductTypeProvider extends AbstractPropertyFieldValueProvider
 		}
 		else if (model instanceof EventProductModel) {
 			return "Event";
+		}
+		else if (model instanceof ReportProductModel) {
+			return "Report";
 		}
 		return "Opportunity";
 	}

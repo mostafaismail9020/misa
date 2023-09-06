@@ -69,6 +69,7 @@ public class SagiaResourceListPageController extends SagiaSearchPageController
         return getViewForPage(model);
     }
 
+    @Override
 	@RequestMapping(method = RequestMethod.GET, params = "q")
 	public String refineSearch(@RequestParam("q") final String searchQuery,
 			@RequestParam(value = "page", defaultValue = "0") final int page,
@@ -87,12 +88,12 @@ public class SagiaResourceListPageController extends SagiaSearchPageController
         opportunitySearchPageData = performSearch(searchQuery + DEFAULT_SORT + "-desc:resource:Opportunity", 0, ShowMode.Page, "", NUM_OF_RECORD_PER_PAGE);
 
         storeContinueUrl(request);
-//        populateModel(model, newsSearchPageData, ShowMode.Page);
 
         model.addAttribute("newsSearchPageData", newsSearchPageData);
         model.addAttribute("eventSearchPageData", eventsSearchPageData);
         model.addAttribute("articleSearchPageData", articleSearchPageData);
         model.addAttribute("opportunitySearchPageData", opportunitySearchPageData);
+        LOG.debug("Added search results to model");
 
         opportunitySearchPageData.getResults().forEach(r -> r.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(r.getParentCategory()).getName()));
         

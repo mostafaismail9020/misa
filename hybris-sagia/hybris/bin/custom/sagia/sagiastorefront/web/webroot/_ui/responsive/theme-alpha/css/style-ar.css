@@ -8724,7 +8724,9 @@ a.pvcy-policy:focus {
 	position: absolute;
 	width: 100%;
 }
-
+.page-newsevents-list-page #News_press .toplist {
+    top: 40%;
+}
 @media (max-width: 992px) {
   .page-newsevents-list-page #header .logo {
 		padding : 10px !important;

@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="row reasons">
 			<div class="col-lg-12 pt-4 pt-lg-0 content mx-auto">
-				<h2 class="where_totitle misa-text-title">${fn:escapeXml(component.carouselTitle)}</h2>
+				<h2 class="misa-text-title">${fn:escapeXml(component.carouselTitle)}</h2>
 			</div>
 			<div class="col-lg-12">
 				<div class="row">

@@ -311,9 +311,9 @@
 		<div class="container d-flex align-items-center">
 			<div class="logo mr-auto">
 				<a href="/${language}/">
-					<c:if test="${fn:containsIgnoreCase(request.getServletPath(), 'homepage')}" var="originalLogo">
-						<img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" />
-					</c:if>
+					<c:if test="${fn:containsIgnoreCase(request.getServletPath(), 'homepage') || fn:containsIgnoreCase(pageLabel, 'newseventslist')}" var="originalLogo">
+                        <img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" />
+                    </c:if>
 					<c:if test="${!originalLogo}">
 						<img class="hd-static" src="${fn:escapeXml(component.visionImage.url)}" />
 					</c:if>

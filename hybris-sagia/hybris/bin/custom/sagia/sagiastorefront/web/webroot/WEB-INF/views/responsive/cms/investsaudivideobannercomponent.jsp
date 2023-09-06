@@ -8,10 +8,9 @@
 
 
 <section id="hero" class="d-flex align-items-center">
-    
 	<img class="home-banner" src="${component.backgroundBannerImage.url}" alt="homepage-banner" loading="lazy">
 	<div class="container container-home-hero" >
-  		<h1 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">${component.title}</h1>
+  		<h1 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">${fn:escapeXml(component.title)}</h1>
     	<div class="header-home-container-wrapper text-white d-flex justify-content-center justify-content-md-start">
 	    	<div class="header-home-container">
 	    		<p><spring:theme code="text.home.header.newinvestor"/></p>
@@ -31,6 +30,4 @@
 			</div>
 		</div>
 	</div>
-
 </section>
-

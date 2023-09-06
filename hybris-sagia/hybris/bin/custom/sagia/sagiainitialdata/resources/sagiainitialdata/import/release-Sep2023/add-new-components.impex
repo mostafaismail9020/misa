@@ -44,3 +44,9 @@ UPDATE CMSLinkComponent; uid[unique = true]                 ; $contentCV[unique 
 
 UPDATE ExploreSaudiCarouselComponent; uid[unique = true]   				    ; carouselTitle [lang = en]; carouselTitle [lang = ar]; $contentCV[unique = true];
 										   ; explore7KeyReasonsCarouselComponent	; A proven track record of delivering results;كن جزءًا من رؤية المستقبل;;
+
+UPDATE CMSLinkComponent; uid[unique = true]                ; $contentCV[unique = true] ; linkName[lang = en] ; linkName[lang = ar]; contentPage(uid, $contentCV) ;
+                       ; last-news-explore-all-link        ;                           ; See more news         ; شاهد المزيد من الأخبار; news                     ;
+
+UPDATE InvestSaudiLastNewsComponent; uid[unique = true]  ; name                ; title[lang = en]; title[lang = ar] ; exploreAllUrl(uid, $contentCV); $contentCV[unique = true] ;
+                                   ; last-news-component ; Last News Component ; News & Updates  ; أحدث الأخبار; last-news-explore-all-link;                           	 ;

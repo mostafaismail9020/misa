@@ -1602,7 +1602,10 @@ svg #wheel {
 
 #when-number-talk {
 	position: relative;
-	padding-bottom: 48px;
+}
+
+#when-number-talk .btn-video {
+	background-color: var(--misaSecondColor);
 }
 
 #when-number-talk:before {
@@ -6307,6 +6310,10 @@ img.accountLogin-headline-logo {
 	.misa-btn-special {
 		height: 35px!important;
     	padding: 10px!important;
+	}
+	
+	#accordion-explore .card .card-body {
+		margin-top: -35px;
 	}
 }
 

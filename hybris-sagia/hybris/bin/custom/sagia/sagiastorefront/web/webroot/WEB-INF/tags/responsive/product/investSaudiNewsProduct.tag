@@ -10,9 +10,7 @@
 
 	<div class="article-details-news-page-banner" style="background-image: url('https://investsaudi.sa/medias/home-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwxMTEzMTN8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaGM3L2hkOS84OTIzMzU4NjkxMzU4LmpwZ3w1YWJjYTA5NDY1MjM0NGZiYWJhZTMzOGJkZTc3MmVmYmFjYTg0MzBjODczZTVkOGM1MTgzZTJmN2VkZGY3NDhk');">
         <div class="article-details-news-page-banner-container" data-aos="fade-up">
-            <div class="container">
-                <h1 class="article-details-news-page-banner-title">${fn:escapeXml(productData.name)}</h1>
-            </div>
+
         </div>
     </div>
 

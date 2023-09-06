@@ -12,14 +12,14 @@
 <div class="articles-list mb-4 col-md-6">
 	<a href="${encodedContextPath}${result.opportunity.url}" title="${result.opportunity.name}">
 		<div class="articles-list-item ${className}">
-			${result.opportunity.name}
+			${fn:escapeXml(result.opportunity.name)}
 			<p>
 				<c:choose>
 					<c:when test="${fn:length(result.opportunity.description) gt 150}">
-						${fn:substring(result.opportunity.description, 0, 150)}...
+						${fn:escapeXml(fn:substring(result.opportunity.description, 0, 150))}...
 					</c:when>
 					<c:otherwise>
-						${result.opportunity.description}
+						${fn:escapeXml(result.opportunity.description)}
 					</c:otherwise>
 				</c:choose>
 			</p>

@@ -8997,6 +8997,9 @@ a.pvcy-policy:focus {
 	position: absolute;
 	width: 100%;
 }
+.page-newsevents-list-page #News_press .toplist {
+    top: 40%;
+}
 .page-newsevents-list-page #News_press .News_press_bgwhite {
 	background-color: #BF9B2E;
 	border-radius: 10px;

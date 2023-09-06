@@ -24954,7 +24954,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page-general-title {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin: 0 0 15px 10px;
 	line-height: 56px;
 	font-size: 40px;
@@ -24962,14 +24962,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page p {
-	color: #BF9B2E;
+	color: var(--misaDarkGrayText);
 	font-size: 16px;
 	font-weight: 400;
 	margin-bottom: 10px;
 }
 
 .article-details-events-page .article-details-event-title {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 32px;
 	font-weight: 700;
 }
@@ -24995,7 +24995,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .event-info-box-item {
-	background: rgba(0, 113, 77, 0.05);
+	background: rgba(120, 120, 120, 0.05);
 	color: #00714D;
 	padding: 3px;
 	flex-basis: calc(50% - 10px);
@@ -25027,23 +25027,23 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-events-page .event-time {
 	font-size: 16px;
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 }
 
 .article-details-events-page .event-location {
 	font-size: 16px;
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 }
 
 .article-details-events-page .subjects-container .title {
 	font-size: 20px;
 	font-weight: 700;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 }
 
 .article-details-events-page .subjects-container ul li {
 	list-style-type: disc !important;
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	margin-bottom: 15px;
 }
 
@@ -25082,14 +25082,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 .article-details-events-page .speaker h2 {
 	font-size: 20px;
 	font-weight: 400;
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 	margin: 0;
 }
 
 .article-details-events-page .speaker p {
 	font-size: 14px;
 	font-weight: 400;
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 	margin: 5px 0 0 0;
 }
 
@@ -25110,9 +25110,9 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	background: rgba(0, 113, 77, 0.05);
 }
 
-.article-details-events-page .sponsors-partners-container .title {
+.article-details-events-page .sponsors-partners-container-title {
 	font-size: 24px;
-	color: #00714D;
+	color: var(--misaFirstColor);
 	font-weight: 700;
 }
 

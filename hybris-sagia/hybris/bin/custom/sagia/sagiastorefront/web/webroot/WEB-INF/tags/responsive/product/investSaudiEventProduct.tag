@@ -23,7 +23,7 @@
                                         <span class="month">DEC</span>
                                     </div>
                                     <h2 class="event-title">${fn:escapeXml(productData.name)}</h2>
-                                    <p class="event-description">${productData.description}</p>
+                                    <p class="event-description">${fn:escapeXml(productData.description)}</p>
                                 </div>
                             </div>
                         </div>
@@ -45,8 +45,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="event-time-location">
-                                <span class="event-time"> ${productData.eventTiming}</span>
-                                <span class="event-location">${productData.eventLocation}</span>
+                                <span class="event-time"> ${fn:escapeXml(productData.eventTiming)}</span>
+                                <span class="event-location">${fn:escapeXml(productData.eventLocation)}</span>
                             </div>
                             <h1 class="article-details-event-title">${fn:escapeXml(productData.name)}</h1>
                             <p>${productData.summary}</p>
@@ -57,8 +57,8 @@
                                      <c:forEach items="${productData.eventDetailGrid}" var="eventDetailGrid">
 
                                         <div class="event-info-box-item">
-                                                <h2>${eventDetailGrid.key}</h2>
-                                                <p> ${eventDetailGrid.value}</p>
+                                                <h2> ${fn:escapeXml(eventDetailGrid.key)}</h2>
+                                                <p>  ${fn:escapeXml(eventDetailGrid.value)}</p>
                                             </div>
 
 
@@ -86,7 +86,7 @@
                                    <c:forEach items="${productData.subjects}" var="subjects">
 
                                    <li>
-                                       <p><b>${subjects.key}: </b>  ${subjects.value}
+                                       <p><b>${fn:escapeXml(subjects.key)} : </b>${fn:escapeXml(subjects.value)}
                                        </p>
                                    </li>
                                    </c:forEach>
@@ -104,8 +104,8 @@
                                     <c:forEach items="${productData.speakers}" var="speakers">
 
                                     <div class="speaker">
-                                            <h2>${speakers.key}</h2>
-                                            <p>${speakers.value}</p>
+                                            <h2>${fn:escapeXml(speakers.key)}</h2>
+                                            <p>${fn:escapeXml(speakers.value)}</p>
                                         </div>
 
                                     </c:forEach>
@@ -116,13 +116,14 @@
                     </div>
 
                     <div class="row mb-5 mt-5">
+                     <h1 class="sponsors-partners-container-title mb-3"><spring:theme code="portal.event.details.sponsors"/></h1>
                         <div class="sponsors-partners-container">
-                            <h1 class="title mb-3"><spring:theme code="portal.event.details.sponsors"/></h1>
+
                               <div class="boxes">
                              <c:forEach items="${productData.sponsersPartners}" var="sponsorPartner">
                                 <div class="box">
                                     <div class="icon" style="background-image: url(${sponsorPartner.url});background-repeat: no-repeat;background-position: center; background-size: cover;"></div>
-                                    <p>${sponsorPartner.description}</p>
+                                    <p>${fn:escapeXml(sponsorPartner.description)}</p>
                                 </div>
                                  </c:forEach>
 

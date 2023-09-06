@@ -7,51 +7,7 @@
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
-<div class="row mb-3">
-        <c:if test="${language eq 'en'}">
-            <a href="/${language}/">
-                <div class="col-md-12 mt-4 breadcrumb-container">
-                    <span class="breadcrumb-left-icon"></span>
-                    <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
-                </div>
-            </a>
-        </c:if>
 
-        <c:if test="${language eq 'ar'}">
-            <a href="/${language}/">
-                <div class="col-md-12 mt-4 breadcrumb-container">
-                    <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
-                    <span class="breadcrumb-left-icon"></span>
-                </div>
-            </a>
-        </c:if>
-    </div>
-
-<section class="News_press" id="News_press">
-	<div class="rect">
-    	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" id="carousel" data-interval="false">
-       		<div class="carousel-inner">
-            	<c:url value="/mediaCenter/events" var="eventUrl"/>
-                	<div class="carousel-item">
-                    	<img class="d-block w-100" src="${fn:escapeXml(eventSearchPageData.results[0].imageUrl)}" alt=" loading="lazy">
-                        <div class="toplist">
-                        	<div class="container">
-                            	<div class="mask flex-center">
-                                	<div class="row  align-items-center  ">
-                                    	<div class="container">
-                                        	<div class="col-md-12 col-sm-12">
-                                               <h2 class="pageTitle"><spring:theme code="portal.media.reportList"/></h2>
-                                            </div>
-                                      	</div>
-	                             	</div>
-	                         	</div>
-	                     	</div>
-	                 	</div>
-	            	</div>
-	 		</div>
-		</div>
-	</div>
-</section>
 
 <div class="container">
     <div class="row p-2">
@@ -61,7 +17,7 @@
                     <h2 class="newsTitle">Latest News</h2>
                     <div class="col-md-12">
                     <div class="row">
-                        <c:forEach var="result" items="${reportSearchPageData.results}" varStatus="status">
+                        <c:forEach var="result" items="${searchPageData.results}" varStatus="status">
                             <tags:report-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
                     </div>

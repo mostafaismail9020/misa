@@ -7,6 +7,26 @@
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
+<div class="row mb-3">
+        <c:if test="${language eq 'en'}">
+            <a href="/${language}/">
+                <div class="col-md-12 mt-4 breadcrumb-container">
+                    <span class="breadcrumb-left-icon"></span>
+                    <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+                </div>
+            </a>
+        </c:if>
+
+        <c:if test="${language eq 'ar'}">
+            <a href="/${language}/">
+                <div class="col-md-12 mt-4 breadcrumb-container">
+                    <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
+                    <span class="breadcrumb-left-icon"></span>
+                </div>
+            </a>
+        </c:if>
+    </div>
+
 <section class="News_press" id="News_press">
 	<div class="rect">
     	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" id="carousel" data-interval="false">

@@ -1443,6 +1443,7 @@ button:focus {
 .explore-keys-btn {
 	margin-top: 50px;
     margin-left: 0px;
+    margin-bottom: 3rem;
 }
 
 #homepage-icons {
@@ -1721,7 +1722,6 @@ svg #wheel {
 
 #when-number-talk {
 	position: relative;
-	padding: 50px 0px;
 	padding-bottom: 48px;
 }
 
@@ -3856,6 +3856,7 @@ p.contowl {
 #newsandupdates .titleContainer {
 	position: relative;
 	padding-bottom: 0;
+	padding-top: 0;
 }
 
 #newsandupdates .titleContainer .title-heading .section-title {
@@ -6348,6 +6349,7 @@ img.accountLogin-headline-logo {
 		line-height: 28px;
 		letter-spacing: 0em;
 		text-align: center;
+		margin-bottom: 30px;
 	}
 	
 	.number-talk-items-container .talk_item {
@@ -6388,7 +6390,7 @@ img.accountLogin-headline-logo {
 	}
 
 	#homepage-icons {
-		padding: 100px 0;
+		padding: 100px 0 0 0;
 	}
 	
 	.newsAndUpdateContainer .titleContainer .section-title {
@@ -6444,6 +6446,11 @@ img.accountLogin-headline-logo {
 
 	#home-page-global-search {
 	    top: 120px;
+	}
+	
+	.misa-btn-special {
+		height: 35px!important;
+    	padding: 10px!important;
 	}
 }	
 
@@ -7888,8 +7895,8 @@ figure h2 {
 }
 
 #newsandupdates .flip-card {
-	padding-top: 5vh;
-	padding-bottom: 2.5rem;
+	padding-top: 1.5rem;
+    padding-bottom: 2rem;
 }
 
 .pageLabel--sectors-opportunities-opportunities .flip-card strong {
@@ -18982,9 +18989,7 @@ padding-left: 40px;
 	.col-5.menu-img-item {
 		display: none;
 	}
-	.explore-key-section {
-		padding: 30px 0 !important;
-	}
+	
 	.sector-box .section-title h4 {
 		font-size: 25px;
 	}

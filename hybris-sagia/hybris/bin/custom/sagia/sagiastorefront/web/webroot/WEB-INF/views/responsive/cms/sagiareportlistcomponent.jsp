@@ -7,50 +7,7 @@
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
-<section class="News_press" id="News_press">
-	<div class="rect">
-    	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" id="carousel" data-interval="false">
-       		<div class="carousel-inner">
-            	<c:url value="/mediaCenter/events" var="eventUrl"/>
-                	<div class="carousel-item">
-                    	<img class="d-block w-100" src="${fn:escapeXml(eventSearchPageData.results[0].imageUrl)}" alt=" loading="lazy">
-                        <div class="toplist">
-                        	<div class="container">
-                            	<div class="mask flex-center">
-                                	<div class="row  align-items-center  ">
-                                    	<div class="container">
-                                        	<div class="col-md-12 col-sm-12">
-                                               <h2 class="pageTitle"><spring:theme code="portal.media.events" text = "Events"/></h2>
-                                            </div>
-                                      	</div>
-                                      	<div class="col-md-4 col-sm-12">
-                                        	<div class="News_press_bgwhite">
-                                                <a href="${encodedContextPath}${eventSearchPageData.results[0].url}">
-                                                    <div class="top_date position-absolute">
-                                                        <h4 class="date"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="d" /></h4>
-                                                        <h6 class="date_name"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="MMM" /></h6>
-                                                    </div>
-                                                    <div class="p-5 paddding_align">
-                                                        <div>
-                                                            <h3 class="highlight_title">${eventSearchPageData.results[0].name}</h3>
-                                                            <c:set var="description" value="${eventSearchPageData.results[0].description}" />
-                                                             <c:set var="start" value="${fn:indexOf(description, '<p>')}"/>
-                                                             <c:set var="end" value="${fn:indexOf(description, '</p>')}"/>
-                                                             <p class="eventDescription">${fn:substring(description, start + 3, end)}</p>
-                                                        </div>
-                                                    </div>
-                                               </a>
-											</div>
-										</div>
-	                             	</div>
-	                         	</div>
-	                     	</div>
-	                 	</div>
-	            	</div>
-	 		</div>
-		</div>
-	</div>
-</section>
+
 
 <div class="container">
     <div class="row p-2">
@@ -60,7 +17,7 @@
                     <h2 class="newsTitle">Latest News</h2>
                     <div class="col-md-12">
                     <div class="row">
-                        <c:forEach var="result" items="${reportSearchPageData.results}" varStatus="status">
+                        <c:forEach var="result" items="${searchPageData.results}" varStatus="status">
                             <tags:report-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
                     </div>

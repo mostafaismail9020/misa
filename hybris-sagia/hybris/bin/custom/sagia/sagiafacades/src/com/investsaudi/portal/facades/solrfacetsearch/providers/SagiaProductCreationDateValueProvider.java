@@ -5,6 +5,7 @@ import com.investsaudi.portal.core.model.EventProductModel;
 import com.investsaudi.portal.core.model.InvestSaudiResourceComponentModel;
 import com.investsaudi.portal.core.model.NewsProductModel;
 
+import com.investsaudi.portal.core.model.ReportProductModel;
 import de.hybris.platform.core.model.c2l.LanguageModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.solrfacetsearch.config.IndexConfig;
@@ -95,6 +96,9 @@ public class SagiaProductCreationDateValueProvider extends AbstractPropertyField
         else if (product instanceof EventProductModel) {
         	return dateFormat.format(((EventProductModel) product).getEventDate());
 		}
+        else if (product instanceof ReportProductModel) {
+            return dateFormat.format(((ReportProductModel) product).getReportDate());
+        }
 		return dateFormat.format(product.getCreationtime());
 	}
 

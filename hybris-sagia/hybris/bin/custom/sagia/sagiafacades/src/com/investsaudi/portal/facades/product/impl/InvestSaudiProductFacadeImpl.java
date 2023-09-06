@@ -30,6 +30,7 @@ import java.util.Collection;
 
 import org.apache.commons.collections.CollectionUtils;
 
+
 import static org.apache.commons.collections4.CollectionUtils.emptyIfNull;
 
 public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
@@ -52,6 +53,9 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
 
     @Resource
     private InvestSaudiEventPopulator investSaudiEventPopulator;
+
+    @Resource
+    private InvestSaudiReportPopulator investSaudiReportPopulator;
 
     @Resource
     private Populator<ProductModel, ProductData> productPopulator;
@@ -103,6 +107,13 @@ public class InvestSaudiProductFacadeImpl implements InvestSaudiProductFacade
                 EventProductModel eventProductModel = (EventProductModel) productService.getProductForCode(code);
                 if (eventProductModel != null) {
                     investSaudiEventPopulator.populate(productData, eventProductModel);
+                    return productData;
+                }
+            }
+            else if (productType.equals(ReportProductModel._TYPECODE)) {
+                ReportProductModel reportProductModel = (ReportProductModel) productService.getProductForCode(code);
+                if (reportProductModel != null) {
+                    investSaudiReportPopulator.populate(productData, reportProductModel);
                     return productData;
                 }
             }

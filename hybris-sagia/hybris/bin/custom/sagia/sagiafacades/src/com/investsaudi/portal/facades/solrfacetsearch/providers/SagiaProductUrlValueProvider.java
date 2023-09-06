@@ -1,9 +1,6 @@
 package com.investsaudi.portal.facades.solrfacetsearch.providers;
 
-import com.investsaudi.portal.core.model.ArticleProductModel;
-import com.investsaudi.portal.core.model.EventProductModel;
-import com.investsaudi.portal.core.model.NewsProductModel;
-import com.investsaudi.portal.core.model.OpportunityProductModel;
+import com.investsaudi.portal.core.model.*;
 import de.hybris.platform.category.model.CategoryModel;
 import de.hybris.platform.commerceservices.url.UrlResolver;
 import de.hybris.platform.core.model.ItemModel;
@@ -36,6 +33,7 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
     private static final String SECTOR_URL = "/sectors-opportunities/";
     private static final String EVENT_URL = "events/";
     private static final String NEWS_URL = "news/";
+    private static final String REPORT_URL = "reports/";
     private static final String ARTICLES_URL = "articles/";
 
 
@@ -144,6 +142,9 @@ public class SagiaProductUrlValueProvider extends AbstractPropertyFieldValueProv
     	else if (model instanceof NewsProductModel) {
     		return SECTOR_URL + NEWS_URL +  ((NewsProductModel) model).getCode();
     	}
+        else if (model instanceof ReportProductModel) {
+            return SECTOR_URL + REPORT_URL +  ((ReportProductModel) model).getCode();
+        }
         else
         {
             throw new FieldValueProviderException("Category structure not valid for :"+ ((ItemModel) model).getPk());

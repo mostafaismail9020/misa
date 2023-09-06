@@ -35,12 +35,23 @@
             <section class="article-details-events-page">
                 <div class="container">
                     <div class="row mt-2 mb-5">
-                        <a href="${encodedContextPath}/newseventslist">
-                            <div class="col-md-12 breadcrumb-container">
-                                <span class="breadcrumb-left-icon"></span>
-                                <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
-                            </div>
-                        </a>
+                         <c:if test="${language eq 'en'}">
+                             <a href="${encodedContextPath}/newseventslist">
+                                <div class="col-md-12 mt-4 breadcrumb-container">
+                                    <span class="breadcrumb-left-icon"></span>
+                                  <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
+                                </div>
+                            </a>
+                        </c:if>
+
+                        <c:if test="${language eq 'ar'}">
+                             <a href="${encodedContextPath}/newseventslist">
+                                <div class="col-md-12 mt-4 breadcrumb-container">
+                                   <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
+                                    <span class="breadcrumb-left-icon"></span>
+                                </div>
+                            </a>
+                        </c:if>
                     </div>
                     <div class="row">
                         <div class="col-md-6">

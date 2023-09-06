@@ -4311,6 +4311,25 @@
 					</attribute>
                 </attributes>
             </itemtype>
+
+            <itemtype code="ReportProduct" extends="Product"
+                      autocreate="true" generate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.ReportProduct">
+                <description>News product</description>
+                <attributes>
+                    <attribute qualifier="reportSubHeadings" type="localized:StringMap">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="videoUrl" type="java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="reportDate" type="java.util.Date">
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
              
             <itemtype code="Category" generate="false" autocreate="false">
                 <attributes>
@@ -11139,6 +11158,11 @@
                       extends="SimpleCMSComponent" autocreate="true"
                       jaloclass="com.investsaudi.portal.core.jalo.SagiaNewsEventsListComponent">
                 <description>Sagia News and Events Component</description>
+            </itemtype>
+            <itemtype code="SagiaReportListComponent" generate="true"
+                      extends="SimpleCMSComponent" autocreate="true"
+                      jaloclass="com.investsaudi.portal.core.jalo.SagiaReportListComponent">
+                <description>Sagia Report Component</description>
             </itemtype>
         </typegroup>
         

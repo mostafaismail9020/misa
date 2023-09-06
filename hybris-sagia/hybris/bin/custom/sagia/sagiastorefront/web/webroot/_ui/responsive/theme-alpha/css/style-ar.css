@@ -1573,12 +1573,7 @@ svg #wheel {
 }
 
 .when-number-talk-container h2 {
-	font-size: 32px;
-	font-weight: 600;
-	line-height: 37px;
-	letter-spacing: 0em;
 	color: var(--misaSecondColor);
-	text-align: right;
 }
 
 .when-number-talk-container .content ul {
@@ -1602,21 +1597,11 @@ svg #wheel {
 
 #when-number-talk {
 	position: relative;
+	background-color: rgba(0, 113, 77, 0.2);
 }
 
 #when-number-talk .btn-video {
 	background-color: var(--misaSecondColor);
-}
-
-#when-number-talk:before {
-	content: '';
-	position: absolute;
-	background-color: rgba(0, 113, 77, 0.2);
-	background-size: cover;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
 }
 
 .when-number-talk-container .talk_item-number {
@@ -1989,15 +1974,6 @@ p.contowl {
 .reasons div.backhight {
 	height: 400px;
 	background-color: #22D5EF;
-}
-
-.reasons h2.where_totitle {
-	font-size: 32px;
-	font-weight: 600;
-	line-height: 37px;
-	letter-spacing: 0em;
-    color: var(--misaFirstColor);
-    text-align: right;
 }
 
 .arrow-top .reasons {
@@ -3688,14 +3664,6 @@ p.contowl {
 	.logo-padding-bottom .success-logo-container .carousel-logos {
 		width: 90%;
 	}
-}
-.newsAndUpdateContainer .titleContainer .section-title {
-	font-size: 32px;
-	font-weight: 600;
-	line-height: 37px;
-	letter-spacing: 0em;
-	color: var(--misaFirstColor);
-	text-align: right;
 }
 
 .newsAndUpdateContainer .titleContainer .explore-btn {
@@ -6192,24 +6160,6 @@ img.accountLogin-headline-logo {
 		padding-top: 40px;
 	}
 
-	.when-number-talk-container h2 {
-		font-size: 24px;
-		font-weight: 600;
-		line-height: 28px;
-		letter-spacing: 0em;
-		text-align: center;
-
-	}
-
-	.reasons h2.where_totitle {
-		font-size: 24px;
-		font-weight: 600;
-		line-height: 28px;
-		letter-spacing: 0em;
-		text-align: center;
-		margin-bottom: 30px;
-	}
-
 	.number-talk-items-container .talk_item {
 		margin-bottom: 20px;
 	}
@@ -6265,12 +6215,6 @@ img.accountLogin-headline-logo {
 		padding: 100px 0 0 0;
 	}
 
-	.newsAndUpdateContainer .titleContainer .section-title {
-		font-size: 24px;
-		line-height: 28px;
-		text-align: center;
-	}
-
 	#newsandupdates .contentWrapper .card-wrapper .flip-card .card-box span {
 		font-size: 14px;
 	}
@@ -6303,6 +6247,11 @@ img.accountLogin-headline-logo {
 	
 	#accordion-explore .card .card-body {
 		margin-top: -35px;
+	}
+
+	.misa-text-title {
+		font-size: 25px;
+	    font-weight: 500;
 	}
 }
 
@@ -26306,11 +26255,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     font-weight: 600;
     line-height: 37px;
     letter-spacing: 0em;
-    text-transform: lowercase;
-}
-
-.misa-text-title:first-letter {
-    text-transform: uppercase;
+    text-transform: capitalize;
+    text-align: right;
 }
 
 .misa-text-title * {
@@ -26325,6 +26271,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	font-weight: 400;
 	line-height: 18px;
 	letter-spacing: 0em;
+    text-align: right;
 }
 
 .page-newsevents-list-page {

@@ -14,7 +14,7 @@
 <section id="home-page-global-search">
     <div class="container">
         <div class="row justify-content-center pos-rel">
-            <div class="col-md-5">
+            <div class="col-md-5 col-10">
                 <form name="search_form_${fn:escapeXml(component.uid)}" method="get" action="${searchUrl}">
 					<spring:theme code="text.home.globalsearch.placeholder" var="searchPlaceholder"/>
 

@@ -134,8 +134,8 @@ section {
 	}
 	
 	.page-portal-homepage .ui-widget-content {
-		width: 340px!important;
-    	left: 20px!important;
+		width: 300px!important;
+    	left: 40px!important;
 	}
 }
 @media screen and (max-width: 768px) {
@@ -3943,7 +3943,7 @@ p.contowl {
 	width: 100%;
 	overflow: hidden;
 	text-align: center;
-	border-radius: 0;
+	border-radius: 10px;
 }
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-img img {
@@ -3957,7 +3957,6 @@ p.contowl {
 }
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-box {
-	background-color: #fafafa;
 	height: 20vh;
 }
 
@@ -4034,11 +4033,6 @@ p.contowl {
 	.newsAndUpdateContainer .titleContainer .explore-btn img {
 		margin-top: -4px;
 	}
-	#newsandupdates .contentWrapper .card-wrapper .flip-card .card-box {
-		padding: 0 !important;
-		padding-right: 25px !important;
-		padding-left: 25px !important;
-	}
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -4062,12 +4056,7 @@ p.contowl {
 	#newsandupdates .titleContainer .secNavigation ul {
 		justify-content: center !important;
 	}
-	#newsandupdates .contentWrapper .card-wrapper .flip-card .card-box {
-		padding: 0 !important;
-		padding-left: 25px !important;
-		padding-right: 25px !important;
-		margin-bottom: 0 !important;
-	}
+	
 	.newsAndUpdateContainer .titleContainer .explore-btn {
 		position: static;
 		display: block;

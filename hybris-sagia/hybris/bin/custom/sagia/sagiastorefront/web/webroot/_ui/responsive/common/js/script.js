@@ -175,12 +175,12 @@ var SAGIA = SAGIA || {};
 		  $('#header').addClass('header-scrolled');
 		  $('#topbar').addClass('topbar-scrolled');
 		  $('#login-Navigation').addClass('login-scrolled');
-		  $('.mobile-nav-toggle').css('filter', 'invert(100%) sepia(100%) saturate(7296%) hue-rotate(164deg) brightness(90%) contrast(103%)');
+		  $('.mobile-nav-toggle').addClass('page-scrolled');
 		} else {
 		  $('#header').removeClass('header-scrolled');
 		  $('#topbar').removeClass('topbar-scrolled');
 		  $('#login-Navigation').removeClass('login-scrolled');
-		  $('.mobile-nav-toggle').css('filter', 'invert(100%) sepia(100%) saturate(0%) hue-rotate(299deg) brightness(104%) contrast(300%)');
+		  $('.mobile-nav-toggle').removeClass('page-scrolled');
 		}
 	  });
 	

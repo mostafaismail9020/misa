@@ -23672,7 +23672,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .article-details-events-page .highlighted-speakers-container .title {
 
-	color: #00714D;
+	color: var(--misaFirstColor);
 	font-size: 20px;
 	font-weight: 700;
 }

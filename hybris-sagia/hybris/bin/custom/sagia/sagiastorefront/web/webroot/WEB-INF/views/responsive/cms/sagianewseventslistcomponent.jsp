@@ -7,53 +7,41 @@
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
-<section class="News_press" id="News_press">
-	<div class="rect">
-    	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" id="carousel" data-interval="false">
-       		<div class="carousel-inner">
-            	<c:url value="/mediaCenter/events" var="eventUrl"/>
-                	<div class="carousel-item">
-                    	<img class="d-block w-100" src="${fn:escapeXml(eventSearchPageData.results[0].imageUrl)}" alt=" loading="lazy">
-                        <div class="toplist">
-                        	<div class="container">
-                            	<div class="mask flex-center">
-                                	<div class="row  align-items-center  ">
-                                    	<div class="container">
-                                        	<div class="col-md-12 col-sm-12">
-                                               <h2 class="pageTitle"><spring:theme code="portal.media.events" text = "Events"/></h2>
-                                            </div>
-                                      	</div>
-                                      	<div class="col-md-4 col-sm-12">
-                                        	<div class="News_press_bgwhite">
-                                                <a href="${encodedContextPath}${eventSearchPageData.results[0].url}">
-                                                    <div class="top_date position-absolute">
-                                                        <h4 class="date"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="d" /></h4>
-                                                        <h6 class="date_name"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="MMM" /></h6>
-                                                    </div>
-                                                    <div class="p-5 paddding_align">
-                                                        <div>
-                                                            <h3 class="highlight_title">${eventSearchPageData.results[0].name}</h3>
-                                                            <c:set var="description" value="${eventSearchPageData.results[0].description}" />
-                                                             <c:set var="start" value="${fn:indexOf(description, '<p>')}"/>
-                                                             <c:set var="end" value="${fn:indexOf(description, '</p>')}"/>
-                                                             <p class="eventDescription">${fn:substring(description, start + 3, end)}</p>
-                                                        </div>
-                                                    </div>
-                                               </a>
-											</div>
-										</div>
-	                             	</div>
-	                         	</div>
-	                     	</div>
-	                 	</div>
-	            	</div>
-	 		</div>
-		</div>
-	</div>
-</section>
+
+<div class="news-events-page-banner" style="background-image: url(${fn:escapeXml(eventSearchPageData.results[0].imageUrl)});">
+    <div class="news-events-page-banner-container" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="article-details-events-page-general-title"><spring:theme code="portal.media.events" text = "Events"/></h1>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4" style="position: relative;">
+                    <div class="event-top-info-box">
+                        <div class="date" style="position: absolute;">
+                            <span class="day"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="d" /></span>
+                            <span class="month"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="MMM" /></span>
+                        </div>
+                        <h2 class="event-title">${eventSearchPageData.results[0].name}</h2>
+                        <p class="event-description">
+                            <c:set var="description" value="${eventSearchPageData.results[0].description}"/>
+                            <c:set var="start" value="${fn:indexOf(description, '<p>')}"/>
+                            <c:set var="end" value="${fn:indexOf(description, '</p>')}"/>
+                            ${fn:substring(description, start + 3, end)}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-8"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
-    <div class="row">
+
+    <div class="row mb-3">
         <c:if test="${language eq 'en'}">
             <a href="/${language}/">
                 <div class="col-md-12 mt-4 breadcrumb-container">
@@ -71,29 +59,39 @@
                 </div>
             </a>
         </c:if>
+    </div>
 
-        <div class="col-md-12 mt-4">
-            <c:choose>
-                <c:when test="${not empty eventSearchPageData.results}">
-                    <h2 class="newsTitle"><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
-                    <div class="events-container">
-                        <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
-                            <tags:events-card result="${result}" loopCount="${status.index}"/>
-                        </c:forEach>
-                    </div>
-                    <div class="showMoreLessButtonContainer">
-                        <button id="loadEventMore" class="loadNewsEventShowLessButton"><spring:theme code="review.show.more"/></button>
-                        <button id="showEventLess" class="loadNewsEventShowLessButton"><spring:theme code="review.show.less"/></button>
-                    </div>
-                </c:when>
-                <c:otherwise>
-                    <div class="col-lg-12 col-md-12 mt-4 text-center">
-                        <spring:theme code="text.label.notFound"/>
-                    </div>
-                </c:otherwise>
-            </c:choose>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="upcoming-events-title"><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
         </div>
+        <c:choose>
+            <c:when test="${not empty eventSearchPageData.results}">
+                <div class="events-container">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
+                                <tags:events-card result="${result}" loopCount="${status.index}"/>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="showMoreLessButtonContainer">
+                        <button id="loadEventMore" class="loadNewsEventShowLessButton"><spring:theme
+                                code="review.show.more"/></button>
+                        <button id="showEventLess" class="loadNewsEventShowLessButton"><spring:theme
+                                code="review.show.less"/></button>
+                    </div>
+                </div>
+            </c:when>
+            <c:otherwise>
+                <spring:theme code="text.label.notFound"/>
+            </c:otherwise>
+        </c:choose>
+    </div>
 
+    <div class="row">
         <div class="col-md-12 mt-5">
             <div class="latest-news-header mt-3 mb-3">
                 <h2 class="latest-news-title"><spring:theme code="text.newsevents.listing.page.latest.news"/></h2>

@@ -9275,7 +9275,6 @@ a.pvcy-policy:focus {
 	padding: 14px 5px;
 }
 .pageLabel--newseventslist .events-card-img{
-    width: 259px;
     height: 172px;
     border-radius: 10px;
 }
@@ -9348,7 +9347,7 @@ a.pvcy-policy:focus {
     color: #00714D;
 }
 .pageLabel--newseventslist .flip-card{
-    padding-right: 30px;
+
 }
 .tabs-normal li a.nav-link {
 	font-size: 20px;
@@ -26353,6 +26352,45 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .page-newsevents-list-page {
 	text-align: right;
+
+
+	.news-events-page-banner {
+		width: 100%;
+		height: 50vh;
+		background-position: top center;
+		background-size: cover;
+		background-color: #f1f7f5;
+		position: relative;
+		z-index: 1;
+	}
+
+	.news-events-page-banner-container {
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: flex-end;
+		align-items: start;
+		flex-direction: column;
+		text-align: left;
+		z-index: 9;
+		margin-bottom: 15px;
+	}
+
+	.event-top-info-box .event-description {
+		font-size: 14px;
+		font-weight: 400;
+		color: #fff!important;
+	}
+
+	.upcoming-events-title {
+		font-weight: 700;
+		font-size: 24px;
+		color: #00714D;
+		margin-bottom: 70px;
+	}
 
 	.latest-news-header {
 		.latest-news-title {

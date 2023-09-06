@@ -24921,9 +24921,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .article-details-event-title {
-	color: var(--misaFirstColor);
 	font-size: 32px;
-	font-weight: 700;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaFirstColor);
 }
 
 .article-details-events-page .article-details-events-page-event-img {
@@ -24988,8 +24991,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .subjects-container .title {
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
 	color: var(--misaFirstColor);
 }
 
@@ -25011,10 +25017,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .highlighted-speakers-container .title {
-
-	color: #00714D;
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaFirstColor);
 }
 
 .article-details-events-page .highlighted-speakers {
@@ -25063,9 +25071,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .sponsors-partners-container-title {
-	font-size: 24px;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
 	color: var(--misaFirstColor);
-	font-weight: 700;
 }
 
 .article-details-events-page .sponsors-partners-container .boxes {
@@ -26569,5 +26580,49 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 			padding-left: 0;
 			align-items: start;
 		}
+	}
+}
+
+.event-detail-page-similar-opportunities {
+	padding-top: 0!important;
+}
+.event-detail-page-similar-opportunities .similar-opportunities-title span {
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	color: var(--misaFirstColor);
+}
+
+.event-detail-page-similar-opportunities .Inc-fearured-opp {
+	box-shadow: none;
+	border: 1px solid #ddd;
+}
+
+.event-detail-page-similar-opportunities .similar-opportunities-know-more-btn {
+	width: 100%;
+	display: block;
+	font-size: 18px;
+	height: 50px;
+	padding: 0 90px 0 90px;
+	text-align: center;
+	font-weight: 500;
+	color: #fff;
+}
+
+.event-detail-page-similar-opportunities .Inc-fearured-opp-headtitle {
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0;
+	color: var(--misaFirstColor);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 5px 0 0 0;
+}
+
+@media (max-width: 768px) {
+	.event-detail-page-similar-opportunities .similar-opportunities-know-more-btn{
+		height: 50px!important;
 	}
 }

@@ -80,7 +80,7 @@
                     <div class="row mt-5 mb-5">
                         <div class="col-md-12">
                             <div class="subjects-container">
-                                <h1 class="title mb-3"><spring:theme code="portal.event.details.subjects"/></h1>
+                                <h1 class="title mb-4"><spring:theme code="portal.event.details.subjects"/></h1>
                                 <ul>
 
                                    <c:forEach items="${productData.subjects}" var="subjects">
@@ -115,18 +115,23 @@
                         </div>
                     </div>
 
-                    <div class="row mb-5 mt-5">
-                     <h1 class="sponsors-partners-container-title mb-3"><spring:theme code="portal.event.details.sponsors"/></h1>
-                        <div class="sponsors-partners-container">
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <h1 class="sponsors-partners-container-title mb-4">
+                                <spring:theme code="portal.event.details.sponsors"/>
+                            </h1>
+                            <div class="sponsors-partners-container">
 
-                              <div class="boxes">
-                             <c:forEach items="${productData.sponsersPartners}" var="sponsorPartner">
-                                <div class="box">
-                                    <div class="icon" style="background-image: url(${sponsorPartner.url});background-repeat: no-repeat;background-position: center; background-size: cover;"></div>
-                                    <p>${fn:escapeXml(sponsorPartner.description)}</p>
+                                <div class="boxes">
+                                    <c:forEach items="${productData.sponsersPartners}" var="sponsorPartner">
+                                        <div class="box">
+                                            <div class="icon"
+                                                 style="background-image: url(${sponsorPartner.url});background-repeat: no-repeat;background-position: center; background-size: cover;"></div>
+                                            <p>${fn:escapeXml(sponsorPartner.description)}</p>
+                                        </div>
+                                    </c:forEach>
+
                                 </div>
-                                 </c:forEach>
-
                             </div>
                         </div>
                     </div>
@@ -135,7 +140,9 @@
                 </div>
             </section>
             <!-- Article Details Events Page -->
-        </main>
-<cms:pageSlot position="PortalPageBottom" var="slotComponent">
-    <cms:component component="${slotComponent}"/>
-</cms:pageSlot>
+
+            <!-- Similar Opportunities Component -->
+            <cms:pageSlot position="PortalPageBottom" var="slotComponent">
+               <cms:component component="${slotComponent}"/>
+            </cms:pageSlot>
+</main>

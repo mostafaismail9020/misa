@@ -4130,6 +4130,14 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
+                    <attribute qualifier="regionText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
+                    <attribute qualifier="cityText" type="localized:java.lang.String">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>
                 </attributes>
             </itemtype>
             

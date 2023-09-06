@@ -26317,6 +26317,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 		color: #fff!important;
 	}
 
+	.event-top-info-box .date {
+		top: -36px!important;
+	}
+
+	.event-top-info-box p  {
+		color: #fff!important;
+	}
+
 	.upcoming-events-title {
 		font-weight: 700;
 		font-size: 24px;

@@ -8,7 +8,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<div class="news-events-page-banner" style="background-image: url(${fn:escapeXml(eventSearchPageData.results[0].imageUrl)});">
+<div class="news-events-page-banner" style="background-image: url('https://sagia.local:9002/medias/home-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0NzI4MDV8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI1L2hjZS84ODExNzA0NzEzMjQ2LmpwZ3wxZGUxOTY0ZDJlOTIyNTUxNjY3OTM0ZTg3YzcwZWJjNzlhYzAxMmMyNmIxNTNkM2M0YjZiYWVmY2RkYWU2MWM4');">
     <div class="news-events-page-banner-container" data-aos="fade-up">
         <div class="container">
             <div class="row">
@@ -19,18 +19,27 @@
             <div class="row">
 
                 <div class="col-md-4" style="position: relative;">
-                    <div class="event-top-info-box">
+                    <div class="event-top-info-box mb-4">
                         <div class="date" style="position: absolute;">
                             <span class="day"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="d" /></span>
                             <span class="month"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="MMM" /></span>
                         </div>
                         <h2 class="event-title">${eventSearchPageData.results[0].name}</h2>
-                        <p class="event-description">
-                            <c:set var="description" value="${eventSearchPageData.results[0].description}"/>
-                            <c:set var="start" value="${fn:indexOf(description, '<p>')}"/>
-                            <c:set var="end" value="${fn:indexOf(description, '</p>')}"/>
-                            ${fn:substring(description, start + 3, end)}
-                        </p>
+
+                        <c:set var="description" value="${eventSearchPageData.results[0].description}"/>
+                        <c:choose>
+                            <c:when test="${fn:length(description) gt 100}">
+                                <p class="event-description">
+                                        ${fn:substring(description, 0, 100)}...
+                                </p>
+                            </c:when>
+                            <c:otherwise>
+                                <p class="event-description">
+                                        ${description}
+                                </p>
+                            </c:otherwise>
+                        </c:choose>
+
                     </div>
                 </div>
                 <div class="col-md-8"></div>

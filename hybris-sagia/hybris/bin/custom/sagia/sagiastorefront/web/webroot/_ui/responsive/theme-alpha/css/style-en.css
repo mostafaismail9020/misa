@@ -11002,7 +11002,7 @@ body.page-living-in-saudi .content {
 }
 
 .pageLabel--sectors-opportunities-opportunities #tab6-container p, .general-info p, .main-content-area p, .sectors-content p, .grid-section p {
-	color: var(--misaFirstColor)!important;
+	color: var(--misaFirstColor);
 }
 
 
@@ -24922,6 +24922,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	.event-top-info-box .event-description {
 		font-size: 14px;
 		font-weight: 400;
+		color: #fff!important;
+	}
+
+	.event-top-info-box p  {
 		color: #fff!important;
 	}
 

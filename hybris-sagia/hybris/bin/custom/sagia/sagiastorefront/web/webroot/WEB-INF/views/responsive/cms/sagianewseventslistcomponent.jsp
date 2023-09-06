@@ -8,7 +8,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<div class="news-events-page-banner" style="background-image: url('https://sagia.local:9002/medias/home-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0NzI4MDV8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI1L2hjZS84ODExNzA0NzEzMjQ2LmpwZ3wxZGUxOTY0ZDJlOTIyNTUxNjY3OTM0ZTg3YzcwZWJjNzlhYzAxMmMyNmIxNTNkM2M0YjZiYWVmY2RkYWU2MWM4');">
+<div class="news-events-page-banner" style="background-image: url(${fn:escapeXml(eventSearchPageData.results[0].imageUrl)});">
     <div class="news-events-page-banner-container" data-aos="fade-up">
         <div class="container">
             <div class="row">

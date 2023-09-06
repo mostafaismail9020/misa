@@ -122,7 +122,7 @@
         </c:choose>
 	
 		<c:if test="${not empty productData.productReferences}">
-			<section class="Inc-energyoppertunities">
+			<section class="Inc-energyoppertunities event-detail-page-similar-opportunities">
 			    <div class="container">
 			        <div class="similar-opportunities-header">
 			            <h1 class="similar-opportunities-title ">
@@ -140,11 +140,11 @@
 			                            <div class=" Inc-fearured-opp">
 			                                <h2 class="Inc-fearured-opp-headtitle" title="${references.target.name}">${references.target.name}</h2>
 			                                <h3 class="Inc-fearured-opp-type">${references.target.parentCategory}</h3>
-			                                <button class="btn btn-primary-fill mx-auto btn-video misa-btn-special">
+			                                <button class="btn btn-primary-fill mx-auto btn-video misa-btn-special similar-opportunities-know-more-btn">
 			                                	<spring:theme code="portal.opportunity.know.more.button"/>
 			                                	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
 			                                </button>
-			                                <button class="btn btn-secondary-fill mx-auto btn-video misa-btn-special">
+			                                <button class="btn btn-secondary-fill mx-auto btn-video misa-btn-special similar-opportunities-know-more-btn">
 			                                	<spring:theme code="portal.opportunity.iam.interested.button"/>
 			                                	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/btn-sector-outline.png" alt="">
 			                                </button>	                               

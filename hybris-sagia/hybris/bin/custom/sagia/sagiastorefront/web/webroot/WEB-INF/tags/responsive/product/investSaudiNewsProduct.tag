@@ -37,13 +37,13 @@
 				<div class="col-md-12">
 
 					<h1 class="article-details-news-title">${fn:escapeXml(productData.name)}</h1>
-					<p>${productData.description}</p>
+					<p>${fn:escapeXml(productData.description)}</p>
 
 					<div class="article-details-news-video">
 						<iframe width="100%" src="${productData.videoUrl}"
 								allowfullscreen></iframe>
 					</div>
-					<p>${productData.summary}</p>
+					<p>${fn:escapeXml(productData.summary)}</p>
 
 				</div>
 			</div>
@@ -52,8 +52,8 @@
 			<c:forEach items="${productData.subHeadings}" var="newsSubHeading">
 				<div class="row mt-5">
 					<div class="col-md-12">
-						<h2 class="article-details-news-sub-heading mt-3 mb-3">${newsSubHeading.key}</h2>
-						<p>${newsSubHeading.value}
+						<h2 class="article-details-news-sub-heading mt-3 mb-3">${fn:escapeXml(newsSubHeading.key)}</h2>
+						<p>${fn:escapeXml(newsSubHeading.value)}
 						</p>
 					</div>
 				</div>
@@ -63,7 +63,7 @@
 
 				<div class="row mt-5">
 					<div class="col-md-9">
-						<p>${paraWithMedia.value.descriptionText}</p>
+						<p>${fn:escapeXml(paraWithMedia.value.descriptionText)}</p>
 					</div>
 					<div class="col-md-3">
 						<img class="article-details-news-img" alt="" src="${paraWithMedia.value.url}"/>
@@ -74,7 +74,7 @@
 			<div class="new-events mt-5 mb-5">
 				<div class="row">
 					<div class="col-md-12 mb-4">
-						<h1 class="title">New Events</h1>
+						<h1 class="title">New events</h1>
 					</div>
 					<div class="col-md-3">
 						<div class="date" style="position: absolute;">

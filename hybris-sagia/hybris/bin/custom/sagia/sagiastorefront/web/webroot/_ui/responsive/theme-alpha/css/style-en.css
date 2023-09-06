@@ -9492,7 +9492,6 @@ a.pvcy-policy:focus {
     border-radius: 10px;
 }
 .pageLabel--newseventslist .events-card-img{
-    width: 259px;
     height: 172px;
     border-radius: 10px;
 }
@@ -9557,14 +9556,14 @@ a.pvcy-policy:focus {
 
     font-weight: 400;
     font-size: 12px;
-    color: #00714D;
+    color: var(--misaDarkGrayText);
     white-space: nowrap;
 }
 .pageLabel--newseventslist .eventsName{
 
     font-weight: 400;
     font-size: 14px;
-    color: #00714D;
+    color: var(--misaDarkGrayText);
 }
 @media (max-width: 767px) {
     .pageLabel--newseventslist .row  {
@@ -9573,7 +9572,7 @@ a.pvcy-policy:focus {
     }
 }
 .pageLabel--newseventslist .flip-card{
-    padding-right: 30px;
+
 }
 .tabs-normal li a.nav-link {
 	font-size: 20px;
@@ -11082,12 +11081,7 @@ body.page-living-in-saudi .content {
 }
 .page-newsevents-list-page .loadNewsEventShowLessButton{
 	background: #BF9B2E;
-	color: #ffffff;
-	font-size: 16px;
-	font-weight: 400;
-	border-radius: 10px;
-	padding: 10px;
-	border: none;
+	border:none;
 	cursor: pointer;
 }
 
@@ -23383,13 +23377,13 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .article-details-news-page .article-details-news-title {
-	color: #BF9B2E;
+	color: var(--misaFirstColor);
 	font-size: 32px;
 	font-weight: 700;
 }
 
 .article-details-news-page p {
-	color: #BF9B2E;
+	color: var(--misaDarkGrayText);
 	font-size: 16px;
 	font-weight: 400;
 	margin-bottom: 10px;
@@ -23435,7 +23429,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .article-details-news-page .new-events .title {
-	color: #00714D;
+	color: var(--misaFirstColor);
 	font-size: 24px;
 	font-weight: 700;
 }
@@ -23446,7 +23440,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .article-details-news-page .new-events .new-events-card-bottom {
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 	font-size: 14px;
 	font-weight: 400;
 	margin-bottom: 30px;
@@ -23462,13 +23456,13 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .article-details-news-page .new-events .new-events-time-location .event-time {
 	font-size: 12px;
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 	font-weight: 400;
 }
 
 .article-details-news-page .new-events .new-events-time-location .event-location {
 	font-size: 12px;
-	color: #00714D;
+	color: var(--misaDarkGrayText);
 	font-weight: 400;
 }
 
@@ -24830,7 +24824,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	.title {
 		font-weight: 700;
 		font-size: 24px;
-		color: #00714D;
+		color: var(--misaFirstColor);
 	}
 
 	.content {
@@ -24844,7 +24838,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 		display: flex;
 		gap: 1rem;
 		border-radius: 10px;
-		background: rgba(0, 113, 77, 0.05);
+		background: rgba(120, 120, 120, 0.05);
 
 		.image {
 			width: 100%;
@@ -24862,21 +24856,21 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 			.date {
 				font-weight: 400;
 				font-size: 14px;
-				color: #00714D;
+				color: var(--misaDarkGrayText);
 			}
 
 			.headline {
 				font-weight: 700;
 				font-size: 16px;
 				line-height: 24px;
-				color: #00714D;
+			    color: var(--misaDarkGrayText);
 			}
 
 			.description {
 				font-weight: 400;
 				font-size: 14px;
 				line-height: 20px;
-				color: #00714D;
+				color: var(--misaDarkGrayText);
 			}
 		}
 	}
@@ -24954,11 +24948,49 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .page-newsevents-list-page {
 
+	.news-events-page-banner {
+		width: 100%;
+		height: 50vh;
+		background-position: top center;
+		background-size: cover;
+		background-color: #f1f7f5;
+		position: relative;
+		z-index: 1;
+	}
+
+	.news-events-page-banner-container {
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: flex-end;
+		align-items: start;
+		flex-direction: column;
+		text-align: left;
+		z-index: 9;
+		margin-bottom: 15px;
+	}
+
+	.event-top-info-box .event-description {
+		font-size: 14px;
+		font-weight: 400;
+		color: #fff!important;
+	}
+
+	.upcoming-events-title {
+		font-weight: 700;
+		font-size: 24px;
+		color: var(--misaFirstColor);
+		margin-bottom: 70px;
+	}
+
 	.latest-news-header {
 		.latest-news-title {
 			font-weight: 700;
 			font-size: 24px;
-			color: #00714D;
+			color: var(--misaFirstColor);
 		}
 	}
 
@@ -25008,19 +25040,19 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 		.title {
 			font-size: 16px;
 			font-weight: 700;
-			color: #00714D;
+			color: var(--misaDarkGrayText);
 			margin: 0;
 		}
 
 		.date {
 			font-size: 16px;
 			font-weight: 400;
-			color: #BF9B2E;
+			color: var(--misaDarkGrayText)!important;
 		}
 	}
 
 	.get-the-latest-updates {
-		background: rgba(0, 113, 77, 0.05);
+		background: rgba(120, 120, 120, 0.05);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -25033,24 +25065,19 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 		margin-bottom: 20px;
 		font-size: 16px;
 		font-weight: 400;
-		color: #00714D;
+		color: var(--misaFirstColor);
 	}
 
 	.join-newsletter-btn {
-		background: #BF9B2E;
-		color: #ffffff;
-		font-size: 16px;
-		font-weight: 400;
-		border-radius: 10px;
-		padding: 10px;
+		background: #BF9B2E!important;
 		border: none;
-		cursor: pointer;
+		height: 50px!important;
 	}
 
 	.media-library-title {
 		font-weight: 700;
 		font-size: 24px;
-		color: #00714D;
+		color: var(--misaFirstColor);
 	}
 
 	.media-library {
@@ -25096,13 +25123,13 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	.videoTitle {
 		font-weight: 700;
 		font-size: 16px;
-		color: #00714D;
+		color: var(--misaDarkGrayText);
 	}
 
 	.videoDate {
 		font-weight: 400;
 		font-size: 14px;
-		color: #00714D;
+		color: var(--misaDarkGrayText);
 	}
 
 	.media-small {
@@ -25128,6 +25155,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 
 	@media (max-width: 768px) {
+
+		.upcoming-events-title, .latest-news-title, .latest-announcements-title, .media-library-title {
+			text-align: center;
+		}
+
+		.loadNewsEventShowLessButton {
+			height: 50px!important;
+			padding: 10px!important;
+		}
+
 		.latest-news {
 			flex: 1 0 100%;
 			max-width: 100%;

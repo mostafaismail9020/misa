@@ -8,8 +8,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <c:url value="/mediaCenter/events" var="eventsUrl" />
-<div class="col-12 col-md-3 mb-5 event">
-    <div class="row">
+<div class="col-md-3 mb-5 event">
         <div class="flip-card">
             <a href="${encodedContextPath}${result.url}" class="know-more-link">
                 <div class="flip-card-front">
@@ -29,5 +28,4 @@
                 </div>
             </a>
         </div>
-    </div>
 </div>

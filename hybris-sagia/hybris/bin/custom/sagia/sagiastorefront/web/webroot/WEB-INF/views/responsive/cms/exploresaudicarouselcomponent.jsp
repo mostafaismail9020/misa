@@ -8,7 +8,7 @@
 <section class="figures explore-key-section">
 	<div class="container">
 		<div class="row reasons">
-			<div class="col-lg-12 pt-4 pt-lg-0 content mx-auto">
+			<div class="col-lg-12 pt-4 pt-lg-0 content mx-auto mb-3">
 				<h2 class="misa-text-title">${fn:escapeXml(component.carouselTitle)}</h2>
 			</div>
 			<div class="col-lg-12">
@@ -42,7 +42,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row explore-keys-btn justify-content-center justify-content-md-between">
+				<div class="row explore-keys-btn justify-content-center justify-content-md-between mt-4">
 					<a href="${portal.cmsLinkUrl(component.carouselExploreAllButton)}" class="btn btn-primary-fill btn-video misa-btn-special">
 						${fn:escapeXml(component.carouselExploreAllButton.linkName)}
 					</a>

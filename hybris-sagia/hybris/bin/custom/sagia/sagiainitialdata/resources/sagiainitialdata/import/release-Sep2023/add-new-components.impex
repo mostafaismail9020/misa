@@ -50,3 +50,8 @@ UPDATE CMSLinkComponent; uid[unique = true]                ; $contentCV[unique =
 
 UPDATE InvestSaudiLastNewsComponent; uid[unique = true]  ; name                ; title[lang = en]; title[lang = ar] ; exploreAllUrl(uid, $contentCV); $contentCV[unique = true] ;
                                    ; last-news-component ; Last News Component ; News & Updates  ; أحدث الأخبار; last-news-explore-all-link;                           	 ;
+
+
+UPDATE InvestSaudiNumberTalkContainer ; uid[unique = true]          ; name                         ; title[lang = en]                         	 ; title[lang = ar]         	; $contentCV[unique = true] ;
+                                      ; numbertalk-container        ; Home Number Talk Container   ; A proven track record of delivering results ; سجل حافل في تحقيق النتائج    ;
+                                             

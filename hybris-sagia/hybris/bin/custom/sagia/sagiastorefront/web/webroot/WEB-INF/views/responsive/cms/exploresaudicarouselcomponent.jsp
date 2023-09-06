@@ -42,12 +42,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="row explore-keys-btn justify-content-center justify-content-md-between mt-4">
-					<a href="${portal.cmsLinkUrl(component.carouselExploreAllButton)}" class="btn btn-primary-fill btn-video misa-btn-special">
-						${fn:escapeXml(component.carouselExploreAllButton.linkName)}
-					</a>
-				</div>
 			</div>
+		</div>
+		<div class="row explore-keys-btn justify-content-center justify-content-md-between mt-4">
+			<a href="${portal.cmsLinkUrl(component.carouselExploreAllButton)}" class="btn btn-primary-fill btn-video misa-btn-special">
+				${fn:escapeXml(component.carouselExploreAllButton.linkName)}
+			</a>
 		</div>
 	</div>
 </section>

@@ -34,10 +34,12 @@
 					</div>
 				</c:forEach>
         	</div>
-			<div class="row explore-keys-btn justify-content-center justify-content-md-between mt-3" style="margin-top: 0;">
-				<a href="${portal.cmsLinkUrl(component.exploreAllUrl)}" class="btn btn-primary-fill btn-video misa-btn-special">
-					<spring:theme code="portal.seemoreupdates.button.text"/>
-				</a>
+        	<div class="col-md-12">
+				<div class="row explore-keys-btn justify-content-center justify-content-md-between mt-3" style="margin-top: 0;">
+					<a href="${portal.cmsLinkUrl(component.exploreAllUrl)}" class="btn btn-primary-fill btn-video misa-btn-special">
+						<spring:theme code="portal.seemoreupdates.button.text"/>
+					</a>
+				</div>
 			</div>
     	</div>
 	</section>

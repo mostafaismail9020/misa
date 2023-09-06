@@ -105,7 +105,7 @@
                     <div class="login-buttons mt-5 accountLogin-content-formSubmitSection row">
                         <div class="col-sm-12 justify-content-center">
                             <ycommerce:testId code="loginAndCheckoutButton">
-                                <button type="submit" class="button login-btn login-btn-next active" id="sagiaLoginBtn"><spring:theme code="${actionNameKey}"/> <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <button type="submit" class="button login-btn login-btn-next active submit-button" id="sagiaLoginBtn"><spring:theme code="${actionNameKey}"/> <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.58331 11H16.5M11.9166 5.5L16.7685 10.3518C17.1264 10.7098 17.1264 11.2902 16.7685 11.6482L11.9166 16.5" stroke="#F8F9FB" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
 </button>

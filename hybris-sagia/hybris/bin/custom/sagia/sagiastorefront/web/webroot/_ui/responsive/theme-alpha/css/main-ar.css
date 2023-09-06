@@ -3293,7 +3293,7 @@ li a.about-us-nav {
   }
 
   .page-investsaudi-login .login-right-wrapper {
-	background-color: rgba(191, 155, 46, 0.75) !important;
+	background: rgba(120, 120, 120, 0.65) !important;
 	border: none !important;
 	border-radius: 0 !important;
 	margin: auto;
@@ -3342,7 +3342,7 @@ li a.about-us-nav {
   }
   
   .page-login .login-role-selection-box.active {
-      background: #00714D !important;
+      background: #BF9B2E !important;
   }
   
   .login-role-selection-box img{
@@ -3378,14 +3378,9 @@ li a.about-us-nav {
 	display: flex;
 	gap: 10px;
   flex:1;
-  height: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
   border-color: transparent;
 	align-items: center;
 	justify-content: center;
-	border-radius: 10px !important;
-	background: #00714D !important;
 }
 
 .login-cancel{ 
@@ -3403,7 +3398,7 @@ li a.about-us-nav {
     cursor: pointer;
   }
   .login-btn-next.active,.login-role-selection-box.active{
-    background: #00714D 0% 0% no-repeat padding-box;
+    background: #BF9B2E 0% 0% no-repeat padding-box;
   }
   
   .login-role-selection-box.active .role-text{

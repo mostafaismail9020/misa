@@ -1441,12 +1441,6 @@ button:focus {
     margin-bottom: -15px;
 }
 
-.explore-keys-btn {
-	margin-top: 50px;
-    margin-left: 0px;
-    margin-bottom: 3rem;
-}
-
 #homepage-icons {
 	background-color: rgba(0, 113, 77, 0.2);
 }
@@ -3958,7 +3952,7 @@ p.contowl {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	padding: 5px 0 5px 0;
+	padding: 5px 0 0 0;
 }
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-box h2 a {
@@ -6410,6 +6404,7 @@ img.accountLogin-headline-logo {
 	.misa-text-title {
 		font-size: 25px;
 	    font-weight: 500;
+	    text-align: center;
 	}
 }	
 
@@ -7855,11 +7850,6 @@ figure h2 {
     height: 100%;
 }
 
-#newsandupdates .flip-card {
-	padding-top: 1.5rem;
-    padding-bottom: 2rem;
-}
-
 .pageLabel--sectors-opportunities-opportunities .flip-card strong {
 	color: var(--misaFirstColor);
 }
@@ -8627,6 +8617,7 @@ color: var(--misaFirstColor);
 
 .contact-accordion .card-header h5 button.btn.btn-link.collapsed {
 	color: var(--misaFirstColor);
+	text-transform: capitalize;
 }
 
 .contact-accordion .card-header h5 button.btn.btn-link:hover,

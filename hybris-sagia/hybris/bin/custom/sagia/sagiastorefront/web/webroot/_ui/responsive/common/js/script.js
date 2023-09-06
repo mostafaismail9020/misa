@@ -5415,7 +5415,7 @@ $(document).ready(function () {
         $("#loadEventMore").show(); // Show the "Show More" button
     });
 
-  const news = $(".page-newsevents-list-page .news-container .news");
+  const news = $(".page-newsevents-list-page .latest-news-container .latest-news");
     const showNewsCount = 3;
     let currentNewsIndex = showNewsCount;
     $("#showNewsLess").hide();

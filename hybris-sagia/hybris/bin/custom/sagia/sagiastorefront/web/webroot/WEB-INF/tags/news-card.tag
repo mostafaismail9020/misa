@@ -7,25 +7,21 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
- <div class="col-sm-12 col-md-12 col-lg-4 mb-5 news">
-     <div class="events-card">
-         <a href="${encodedContextPath}${result.url}">
-             <div class="row">
-                 <div class="col-sm-4">
-                     <div class="card-image">
-                         <img class="img-fluid media-card-img" src="${commonResourcePath}/images/default-product-image.png" alt="" loading="lazy">
-                     </div>
-                 </div>
-                 <div class="col-sm-8">
-                     <div class="card-text">
-                         <h3 class="newsName">${fn:toLowerCase(result.name)}</h3>
-                         <p class="newsDate d-news-update-date">
-                             <fmt:formatDate value="${result.newsDate}" pattern="d MMM yyyy" />
-                         </p>
-                     </div>
-                 </div>
-             </div>
-         </a>
-     </div>
- </div>
+
+<div class="latest-news">
+    <a href="${encodedContextPath}${result.url}" class="link">
+        <div class="image-wrapper">
+            <img class="image"
+                 src="https://investsaudi.sa/medias/all-opportunity.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw4OTU5MzZ8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDljL2hiNC84OTA5NDE5MzQ3OTk4LmpwZ3xiZGM4NzA3ZTZmNDc5ZmJkZDJlZDQ5MjI2ODQ4YzQ1NWY0YTk4N2RlN2QxMTVlNTAyM2Q5NGQ4OWEyZjQ3MGY4"
+                 alt="" loading="lazy">
+        </div>
+        <div class="text">
+            <h3 class="title mb-2">${fn:toLowerCase(result.name)}</h3>
+            <p class="date">
+                <fmt:formatDate value="${result.newsDate}" pattern="d MMM yyyy"/>
+            </p>
+        </div>
+    </a>
+</div>
+
 

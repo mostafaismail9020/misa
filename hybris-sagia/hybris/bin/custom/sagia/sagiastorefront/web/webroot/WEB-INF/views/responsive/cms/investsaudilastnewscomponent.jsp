@@ -10,7 +10,7 @@
 	    <div class="container">
 	        <div class="row titleContainer">
 	            <div class="col-lg-12 pt-4 pt-lg-0 content mx-auto aos-init" data-aos="fade-right" data-aos-delay="100">
-	                <h2 class="section-title misa-text-title">${component.title}</h2>
+	                <h2 class="section-title misa-text-title">${fn:escapeXml(component.title)}</h2>
 				</div>
 			</div>
 			
@@ -58,7 +58,7 @@
 					</div>
 				</c:forEach>
         	</div> -->
-			<div class="row explore-keys-btn" style="margin-top: 0;">
+			<div class="row explore-keys-btn justify-content-center justify-content-md-between" style="margin-top: 0;">
 				<a href="${portal.cmsLinkUrl(component.exploreAllUrl)}" class="btn btn-primary-fill btn-video misa-btn-special">
 					<spring:theme code="portal.seemoreupdates.button.text"/>&nbsp;
 				</a>

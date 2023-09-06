@@ -76,7 +76,7 @@
 						</div> -->
 					</div>
 				</div>
-				<div class="row explore-keys-btn">
+				<div class="row explore-keys-btn justify-content-center justify-content-md-between">
 					<a href="${portal.cmsLinkUrl(component.carouselExploreAllButton)}" class="btn btn-primary-fill btn-video misa-btn-special">
 						${component.carouselExploreAllButton.linkName}
 					</a>

@@ -14084,6 +14084,9 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 body.page-newsevents-list-page .rhq-banner-content:nth-of-type(1) {
     display: none;
 }
+body.pageLabel--reportList .rhq-banner-content:nth-of-type(1) {
+    display: none;
+}
 .newsTitle{
     font-weight: 700;
     font-size: 24px;

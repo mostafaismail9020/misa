@@ -371,7 +371,7 @@
 								<c:choose>
 									<c:when test="${not empty childlevel1link.url}">
 										<a class="nav-link dropdown-toggle" href="${childlevel1link.url}"
-											data-toggle="dropdown" title="${childLevel1.title}">${childLevel1.title}</a>
+											 title="${childLevel1.title}">${childLevel1.title}</a>
 									</c:when>
 									<c:otherwise>
 										<cms:component component="${childlevel1link}" evaluateRestriction="true" element="span"

@@ -1,0 +1,40 @@
+$contentCatalog = sagiaContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
+
+$mediafolder = portal-media
+$siteResource =jar:com.sagia.investsaudi.portal.core.setup.SagiainvestsaudistoreSystemSetup&/sagiainvestsaudistore/import/redesign/media
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms = $config-jarResourceCmsValue
+
+
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]	; name					; nodeImage(code, $contentCV); title[lang = en]   ; title[lang = ar] 	; &nodeRef 			; $contentCV[unique = true]	; nodeDescription[lang = en];
+								; root 					; Root 					; 							 ;					  ;						;					;							;					;
+
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]	; name					; nodeImage(code, $contentCV); title[lang = en]   ; title[lang = ar] 	; &nodeRef 			; $contentCV[unique = true]	; nodeDescription[lang = en];children(uid, $contentCV)
+								; header-menu 			; Portal Header Menu	;							 ; Portal Header Menu ; Portal Header Menu	; PortalHeaderMenu	;							;							;
+
+
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]	; name				; title				; cmsLink(uid, $contentCV) 	; &nodeRef 				; parent(uid, $contentCV) 	; children(uid, $contentCV)[mode = append]	; links(uid, $contentCV)[mode = replace]; $contentCV[unique = true]	;
+								; opportunities-navnode ; Opportunities 	; Opportunities 	; opportunities-link		; opportunities-navnode	; header-menu 				; 											; 										; 							;
+								; servies-navnode 		; Services 			; Services 			; services-link				; servies-navnode		; header-menu 				; 											; 										; 							;
+								; resources-navnode 	; Resources 		; Resources 		; resources-link			; resources-navnode		; header-menu 				; 											; 										; 							;
+								; whysaudi-navnode 		; Why Saudi? 		; Why Saudi? 		; whysaudi-link				; whysaudi-navnode		; header-menu 				; 											; 										; 							;
+								; newsevents-navnode 	; News and Events 	; News and Events 	; newsevents-link			; newsevents-navnode	; header-menu 				; 											; 										; 							;
+								; about-navnode 		; About 			; About 			; about-link				; about-navnode			; header-menu 				; 											; 										; 							;
+								; support-navnode 		; Support 			; Support 			; support-link				; support-navnode		; header-menu 				; 											; 										; 							;
+
+
+#UPDATE CMSNavigationNode; uid[unique = true]	; children(&nodeRef)[mode = replace]																									; $contentCV[unique = true];
+#						; header-menu 			; opportunities-link, services-link, resources-link,whysaudi-link, newsevents-link,	about-link,	support-link;							;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 			; linkName[lang = en] 	; linkName[lang = ar] 	; url									; $contentCV[unique = true]	;
+							  ; opportunities-link      ; Opportunities ; Opportunities 		; Opportunities 		;	/sectors-opportunities/opportunities;
+							  ; services-link      		; Servies 		; Services 				; Services 				;	/miza-homepage						;
+							  ; resources-link      	; resources 	; Resources 			; Resources 			;	/resourcesList						;
+							  ; whysaudi-link      		; whysaudi 		; Why Saudi 			; Why Saudi 			;	/why-saudi-arabia					;
+							  ; newsevents-link      	; newsevents 	; News and Events 		; News and Events 		;	/newseventslist						;
+							  ; about-link      		; about 		; About 				; About 				;	/aboutSaudi							;
+							  ; support-link      		; support 		; Support 				; Support 				;	/contactUs							;

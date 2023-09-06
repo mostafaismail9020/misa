@@ -20,11 +20,13 @@
 						</div>
 					</c:forEach>
 				</div>
-				<div class="row explore-keys-btn justify-content-center justify-content-md-between">
-					<a href="/aboutKindgom" class="btn btn-primary-fill btn-video misa-btn-special">
-						<spring:theme code="portal.read.more"/>
-					</a>
-				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="row explore-keys-btn justify-content-center justify-content-md-between">
+				<a href="/aboutKindgom" class="btn btn-primary-fill btn-video misa-btn-special">
+					<spring:theme code="portal.read.more"/>
+				</a>
 			</div>
 		</div>
 	</div>

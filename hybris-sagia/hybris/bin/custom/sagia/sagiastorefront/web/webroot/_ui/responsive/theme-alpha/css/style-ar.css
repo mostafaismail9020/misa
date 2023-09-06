@@ -26353,7 +26353,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .page-newsevents-list-page {
 	text-align: right;
+	
+	.nav-menu a {
+		color: #fff;
+	}
 
+	.btn-trans label.lang-btn {
+		color: #fff;
+	}
 
 	.news-events-page-banner {
 		width: 100%;

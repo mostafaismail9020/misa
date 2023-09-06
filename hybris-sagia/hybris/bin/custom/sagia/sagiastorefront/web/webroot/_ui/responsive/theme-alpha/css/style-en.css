@@ -24939,6 +24939,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .page-newsevents-list-page {
 
+	.nav-menu a {
+		color: #fff;
+	}
+
+	.btn-trans label.lang-btn {
+		color: #fff;
+	}
+
 	.news-events-page-banner {
 		width: 100%;
 		height: 50vh;

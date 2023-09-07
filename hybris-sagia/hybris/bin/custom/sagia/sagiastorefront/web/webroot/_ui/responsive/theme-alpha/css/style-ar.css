@@ -3772,7 +3772,7 @@ p.contowl {
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-box {
 	text-align: right;
-	height: 20vh;
+	height: 8rem;
 }
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-box span {
@@ -13913,7 +13913,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .custom-button {
-    font-family: 'Arial';
     font-style: normal;
     font-weight: 500;
     font-size: 12px;

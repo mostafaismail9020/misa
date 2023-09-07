@@ -3937,7 +3937,7 @@ font-size: 14px !important;
 }
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-box {
-	height: 20vh;
+	height: 8rem;
 }
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-box span {
@@ -14078,7 +14078,6 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 }
 
 .custom-button {
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 12px;

@@ -12,19 +12,19 @@
 	<div class="container container-home-hero" >
   		<h1 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="300">${fn:escapeXml(component.title)}</h1>
     	<div class="header-home-container-wrapper text-white d-flex justify-content-center justify-content-md-start">
-	    	<div class="header-home-container">
+	    	<div class="header-home-container position-relative">
 	    		<p><spring:theme code="text.home.header.newinvestor"/></p>
 	    		<h5>
 	    			<strong>
-	    				<a href="${portal.cmsLinkUrl(component.viewOpportunities)}"><spring:theme code="text.home.header.newinvestor.viewopportunities"/></a>
+	    				<a class="stretched-link" href="${portal.cmsLinkUrl(component.viewOpportunities)}"><spring:theme code="text.home.header.newinvestor.viewopportunities"/></a>
 	    			</strong>
 	    		</h5>
 	    	</div>
-	    	<div class="header-home-container">
+	    	<div class="header-home-container position-relative">
 				<p><spring:theme code="text.home.header.alreadyinvestor"/></p>
 				<h5>
 					<strong>
-						<a href="${portal.cmsLinkUrl(component.login)}"><spring:theme code="text.home.header.alreadyinvestor.login"/></a>
+						<a class="stretched-link" href="${portal.cmsLinkUrl(component.login)}"><spring:theme code="text.home.header.alreadyinvestor.login"/></a>
 					</strong>
 				</h5>
 			</div>

@@ -43,50 +43,6 @@
 
 <div class="container">
     <c:choose>
-        <c:when test="${not empty eventSearchPageData.results}">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="resource-title mt-5 mb-5">
-                        <h2><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
-                    </div>
-                </div>
-                <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
-                    <tags:events-card result="${result}" loopCount="${status.index}"/>
-                </c:forEach>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="action">
-                        <a href="/mediaCenter/events" class="submit-button mt-0"><spring:theme code="review.show.more"/></a>
-                    </div>                    
-                </div>
-            </div>
-        </c:when>
-    </c:choose>        
-
-    <c:choose>
-        <c:when test="${not empty newsSearchPageData.results}">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="resource-title mt-5 mb-5">
-                        <h2><spring:theme code="text.newsevents.listing.page.latest.news"/></h2>
-                    </div>
-                </div>
-                <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
-                    <tags:news-tile result="${result}" loopCount="${status.index}"/>
-                </c:forEach>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="action">
-                        <a href="/mediaCenter/news" class="submit-button mt-0"><spring:theme code="review.show.more"/></a>
-                    </div>                    
-                </div>
-            </div>            
-        </c:when>
-    </c:choose>
-
-    <c:choose>
         <c:when test="${ not empty opportunitySearchPageData.results}">
             <div class="row">
                 <div class="col-sm-12">
@@ -104,15 +60,62 @@
                         <a href="/sectors-opportunities/opportunities" class="submit-button mt-5"><spring:theme code="review.show.more"/></a>
                     </div>                    
                 </div>
-            </div>               
+            </div>   
+            <div class="section-break mt-5 mb-5"></div>  
         </c:when>
     </c:choose>
+
+    <c:choose>
+        <c:when test="${not empty newsSearchPageData.results}">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="resource-title mb-4">
+                        <h2><spring:theme code="text.newsevents.listing.page.latest.news"/></h2>
+                    </div>
+                </div>
+                <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
+                    <tags:news-tile result="${result}" loopCount="${status.index}"/>
+                </c:forEach>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="action">
+                        <a href="/mediaCenter/news" class="submit-button mt-0"><spring:theme code="review.show.more"/></a>
+                    </div>                    
+                </div>
+            </div>
+            <div class="section-break mt-5 mb-5"></div>          
+        </c:when>
+    </c:choose>    
+
+    <c:choose>
+        <c:when test="${not empty eventSearchPageData.results}">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="resource-title mb-5">
+                        <h2><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
+                    </div>
+                </div>
+                <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
+                    <tags:events-card result="${result}" loopCount="${status.index}"/>
+                </c:forEach>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="action">
+                        <a href="/mediaCenter/events" class="submit-button mt-0"><spring:theme code="review.show.more"/></a>
+                    </div>                    
+                </div>
+            </div>
+            <div class="section-break mt-5 mb-5"></div>
+        </c:when>
+    </c:choose>        
 
     <c:choose>
         <c:when test="${not empty articleSearchPageData.results}">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="resource-title">
+                    <div class="resource-title mb-4">
                         <h2>Articles</h2>
                     </div>
                 </div>

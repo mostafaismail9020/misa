@@ -23,8 +23,23 @@
                                      <span class="day"><fmt:formatDate value="${productData.eventDate}" pattern="d" /></span>
                                      <span class="month"><fmt:formatDate value="${productData.eventDate}" pattern="MMMM" /></span>
                                     </div>
-                                    <h2 class="event-title">${fn:escapeXml(productData.name)}</h2>
-                                    <p class="event-description">${fn:escapeXml(productData.description)}</p>
+                                    <c:choose>
+                                        <c:when test="${fn:length(productData.name) gt 20}">
+                                             <h2 class="event-title">${fn:substring(productData.name, 0, 20)}...</h2>
+                                        </c:when>
+                                        <c:otherwise>
+                                              <h2 class="event-title">${fn:escapeXml(productData.name)}</h2>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                      <c:choose>
+                                        <c:when test="${fn:length(productData.description) gt 150}">
+                                             <p class="event-description">${fn:substring(productData.description, 0, 150)}...</p>
+                                        </c:when>
+                                        <c:otherwise>
+                                             <p class="event-description">${fn:escapeXml(productData.description)}</p>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
                             </div>
                         </div>

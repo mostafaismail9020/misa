@@ -70,7 +70,7 @@
         </c:if>
     </div>
 
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-md-12">
             <h2 class="upcoming-events-title"><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
         </div>
@@ -101,7 +101,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12 mt-5">
+        <div class="col-md-12 mt-2">
             <div class="latest-news-header mt-3 mb-3">
                 <h2 class="latest-news-title"><spring:theme code="text.newsevents.listing.page.latest.news"/></h2>
             </div>
@@ -112,7 +112,7 @@
                             <tags:news-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
                     </div>
-                    <div class="showMoreLessButtonContainer mt-4">
+                    <div class="showMoreLessButtonContainer">
                         <button id="loadNewsMore" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme code="review.show.more"/></button>
                         <button id="showNewsLess" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme code="review.show.less"/></button>
                     </div>
@@ -124,10 +124,10 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-md-12">
             <section class="latest-announcements">
-                <div class="header mt-3 mb-3">
+                <div class="header mt-5 mb-3">
                     <h2 class="title latest-announcements-title"><spring:theme code="text.newsevents.listing.page.latest.announcements"/></h2>
                 </div>
                 <div class="content">
@@ -168,7 +168,7 @@
         </div>
     </div>
 
-    <div class="row mt-4 mb-4">
+    <div class="row mt-2">
         <div class="col-md-12">
             <div class="get-the-latest-updates">
                 <h2 class="get-updates-title"><spring:theme code="text.newsevents.listing.page.get.the.latest.updates"/></h2>
@@ -177,7 +177,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-md-12">
             <h2 class="media-library-title mt-3 mb-3"><spring:theme code="text.newsevents.listing.page.media.library"/></h2>
         </div>
@@ -186,8 +186,8 @@
                 <div class="media-content">
                     <div class="media-left">
                         <iframe width="100%" height="194" src="https://www.youtube.com/embed/GDyqFD4rhWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
-                        <h4 class="videoTitle mt-2">Saudi investment ministry signs four investment agreements</h4>
-                        <span class="videoDate">25 Oct 2022</span>
+                        <h4 class="videoTitle mt-2"><spring:theme code="text.newsevents.listing.page.media.library.title"/></h4>
+                        <span class="videoDate"><spring:theme code="text.newsevents.listing.page.media.library.date"/></span>
                     </div>
 
                     <div class="media-right">
@@ -196,8 +196,8 @@
                                 <iframe width="100%" height="113" src="https://www.youtube.com/embed/qWbrcmGRxW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                             <div class="media-text">
-                                <h4 class="videoTitle">Saudi investment ministry signs four investment agreements</h4>
-                                <span class="videoDate">25 Oct 2022</span>
+                                <h4 class="videoTitle mt-2"><spring:theme code="text.newsevents.listing.page.media.library.title"/></h4>
+                                <span class="videoDate"><spring:theme code="text.newsevents.listing.page.media.library.date"/></span>
                             </div>
                         </div>
                         <div class="media-small">
@@ -205,8 +205,8 @@
                                 <iframe width="100%" height="113" src="https://www.youtube.com/embed/qWbrcmGRxW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                             <div class="media-text">
-                                <h4 class="videoTitle">Saudi investment ministry signs four investment agreements</h4>
-                                <span class="videoDate">25 Oct 2022</span>
+                               <h4 class="videoTitle mt-2"><spring:theme code="text.newsevents.listing.page.media.library.title"/></h4>
+                               <span class="videoDate"><spring:theme code="text.newsevents.listing.page.media.library.date"/></span>
                             </div>
                         </div>
                     </div>

@@ -3036,7 +3036,6 @@ p.contowl {
 
 #mg .project-info ul li a:hover,
 .know-more-link:hover {
-	opacity: 0.5;
 	text-decoration: none;
 }
 
@@ -23531,11 +23530,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .sector-search input {
-    background-color: #F5F6F7;
+	background-color: #F5F6F7;
     color: #7B838C;
     outline: none;
     border: 1px solid var(--misaGrayText);
-    border-radius: 1.5rem;
+    border-radius: 10px;
     padding: 0.5rem 1rem;
     font-size: 14px;
     font-style: italic;
@@ -26040,9 +26039,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 .resource-title {
     display: flex;
     align-items: center;
-    margin-top: 30px;
-	padding-top: 30px;
-	border-top: 1px solid #ccc;
 }
 
 .resource-title h2 {
@@ -26809,4 +26805,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .page-resources-list-page .event {
 	margin-top: 25px !important;
+}
+
+.section-break {
+	border-top: 1px solid #ccc;
 }

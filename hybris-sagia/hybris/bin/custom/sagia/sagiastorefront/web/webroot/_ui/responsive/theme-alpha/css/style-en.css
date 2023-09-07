@@ -2183,6 +2183,14 @@ p.contowl {
 	position: absolute;
 	top: -300px;
 }
+.page-report-list-page .reportDate{
+font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 16px !important;
+    letter-spacing: 0em !important;
+    color: var(--misaDarkGrayText) !important;
+    padding:7px;
+}
 
 .fo-container .explore-all .get-explore-btn {
 	font-size: 16px;
@@ -11042,12 +11050,15 @@ body.page-living-in-saudi .content {
 
 }
 .pageLabel--reportList .reportName{
-    font-family: '72';
-    font-style: normal;
-    font-weight: 700;
-    color: var(--misaDarkGrayText);
+    font-family: 'Arial';
     font-size: 20px;
-    padding: 2px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: var(--misaFirstColor);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 0 0 0;
 }
 
 

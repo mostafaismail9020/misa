@@ -26393,10 +26393,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 .pageLabel--reportList .reportName{
     font-family: 'Arial';
-    font-style: normal;
-    font-weight: 700;
-    color: var(--misaDarkGrayText);
     font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: var(--misaFirstColor);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 0 0 0;
 }
 .page-newsevents-list-page .breadcrumb-container .breadcrumb-left-icon {
 	background-image: url('../img/article-details-events-left-arrow-icon.png');
@@ -26558,6 +26562,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 .page-report-list-page .media-card-img{
     width: 300px !important;
     height: 172px !important;
+}
+.page-report-list-page .reportDate{
+font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 16px !important;
+    letter-spacing: 0em !important;
+    color: var(--misaDarkGrayText) !important;
+    padding:7px;
 }
 
 .page-newsevents-list-page {

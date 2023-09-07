@@ -19,10 +19,10 @@
 
                                          <div class="col-md-12">
                                              <div class="card-text">
+                                             <p class="reportDate d-report-update-date">
+                                                        <fmt:formatDate value="${result.opportunity.reportDate}" pattern="d MMM yyyy" />
+                                                    </p>
                                                  <h3 class="reportName">${result.opportunity.name}</h3>
-                                                 <p class="reportDate d-report-update-date">
-                                                     <fmt:formatDate value="${result.opportunity.reportDate}" pattern="d MMM yyyy" />
-                                                 </p>
                                              </div>
                                          </div>
                                      </div>

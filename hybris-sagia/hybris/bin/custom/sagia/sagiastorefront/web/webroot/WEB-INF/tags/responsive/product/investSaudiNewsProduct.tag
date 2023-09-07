@@ -153,7 +153,7 @@
                         </c:if>
                         <c:if test="${language eq 'ar'}">
                           <span class="right-icon"></span>
-                        <span class="page-info">1 of 2</span>
+                        <span class="page-info">1 ل 2</span>
                         <span class="left-icon"></span>
                         </c:if>
 					</div>

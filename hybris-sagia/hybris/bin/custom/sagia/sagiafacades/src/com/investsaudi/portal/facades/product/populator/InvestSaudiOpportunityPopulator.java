@@ -397,10 +397,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 	
 	private void populateSegment(OpportunityProductModel productModel, ProductData productData) {
 
-		if (Objects.nonNull(productModel.getSagiaSegment())) {
-
-			productData.setSegmentName(productModel.getSagiaSegment().iterator().next().getSegmentName());
-		}
+			productData.setSegmentName(productModel.getSegmentText());
 	}
 	
     

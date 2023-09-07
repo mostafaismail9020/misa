@@ -24,13 +24,20 @@
                             <span class="day"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="d" /></span>
                             <span class="month"><fmt:formatDate value="${eventSearchPageData.results[0].eventDate}" pattern="MMM" /></span>
                         </div>
-                        <h2 class="event-title">${eventSearchPageData.results[0].name}</h2>
 
+                         <c:choose>
+                            <c:when test="${fn:length(eventSearchPageData.results[0].name) gt 20}">
+                                 <h2 class="event-title">${fn:substring(eventSearchPageData.results[0].name, 0, 20)}...</h2>
+                            </c:when>
+                            <c:otherwise>
+                                   <h2 class="event-title">${eventSearchPageData.results[0].name}</h2>
+                            </c:otherwise>
+                         </c:choose>
                         <c:set var="description" value="${eventSearchPageData.results[0].description}"/>
                         <c:choose>
-                            <c:when test="${fn:length(description) gt 100}">
+                            <c:when test="${fn:length(description) gt 150}">
                                 <p class="event-description">
-                                        ${fn:substring(description, 0, 100)}...
+                                        ${fn:substring(description, 0, 150)}...
                                 </p>
                             </c:when>
                             <c:otherwise>

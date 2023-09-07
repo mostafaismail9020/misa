@@ -10,10 +10,9 @@
 
 <section class="News_press pageTitle-container" id="News_press">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-12 col-sm-12">
-                <h2 class="pageTitle"><spring:theme code="portal.media.reportList"/></h2>
-                <div class="row mb-3">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="pageTitle"><spring:theme code="portal.media.reportList" text="Events"/></h1>
                     <c:if test="${language eq 'en'}">
                         <a href="/${language}/">
                             <div class="col-md-12 mt-4 breadcrumb-container">
@@ -33,8 +32,9 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
+
+
 
 <div class="container">
     <div class="row p-2">

@@ -14027,8 +14027,15 @@ body.pageLabel--reportList .rhq-banner-content:nth-of-type(1) {
 }
 .pageTitle-container{
     background: rgba(0, 113, 77, 0.05);
-    height: 50vh;
-}
+    height: 50vh !important;
+    }
+ .pageLabel--reportList .pageTitle{
+     	color: var(--misaFirstColor) !important;
+     	margin: 0 0 15px 10px !important;
+     	line-height: 56px !important;
+     	font-size: 40px !important;
+     	font-weight: 600 !important;
+ }
 .newsTitle{
     font-weight: 700;
     font-size: 24px;

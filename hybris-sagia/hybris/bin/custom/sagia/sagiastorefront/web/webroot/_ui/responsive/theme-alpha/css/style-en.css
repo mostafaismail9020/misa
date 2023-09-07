@@ -11034,7 +11034,13 @@ body.page-living-in-saudi .content {
    display:none;
 
 }
-
+.pageLabel--reportList .reportName{
+    font-family: '72';
+    font-style: normal;
+    font-weight: 700;
+    color: var(--misaDarkGrayText);
+    font-size: 20px;
+}
 
 
 .page-newsevents-list-page .loadNewsEventShowLessButton{

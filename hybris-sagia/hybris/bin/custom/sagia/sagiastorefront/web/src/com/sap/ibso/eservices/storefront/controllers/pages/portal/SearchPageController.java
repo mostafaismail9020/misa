@@ -304,6 +304,9 @@ public class SearchPageController extends AbstractSearchPageController
 				resultData.setEvents(subList(results.stream().filter(data ->  
 				StringUtils.isNotEmpty(data.getResource()) && data.getResource().equals("Event")).collect(Collectors.toList()), 
 						component.getMaxProducts()));
+				resultData.setReports(subList(results.stream().filter(data ->  
+				StringUtils.isNotEmpty(data.getResource()) && data.getResource().equals("Report")).collect(Collectors.toList()), 
+						component.getMaxProducts()));
 			}
 		}
 

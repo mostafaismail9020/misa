@@ -1,11 +1,17 @@
 package com.investsaudi.portal.facades.solrfacetsearch.providers;
 
-import com.investsaudi.portal.core.jalo.NewsProduct;
-import com.investsaudi.portal.core.model.EventProductModel;
-import com.investsaudi.portal.core.model.InvestSaudiResourceComponentModel;
-import com.investsaudi.portal.core.model.NewsProductModel;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Required;
+
+import com.investsaudi.portal.core.model.EventProductModel;
+import com.investsaudi.portal.core.model.NewsProductModel;
 import com.investsaudi.portal.core.model.ReportProductModel;
+
 import de.hybris.platform.core.model.c2l.LanguageModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.solrfacetsearch.config.IndexConfig;
@@ -15,13 +21,6 @@ import de.hybris.platform.solrfacetsearch.provider.FieldNameProvider;
 import de.hybris.platform.solrfacetsearch.provider.FieldValue;
 import de.hybris.platform.solrfacetsearch.provider.FieldValueProvider;
 import de.hybris.platform.solrfacetsearch.provider.impl.AbstractPropertyFieldValueProvider;
-import org.springframework.beans.factory.annotation.Required;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class SagiaProductCreationDateValueProvider extends AbstractPropertyFieldValueProvider implements FieldValueProvider
 {
@@ -90,14 +89,19 @@ public class SagiaProductCreationDateValueProvider extends AbstractPropertyField
 
     private String formatDate(ProductModel product) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        if (product instanceof NewsProductModel) {
-        	return dateFormat.format(((NewsProductModel) product).getNewsDate());
-		}
-        else if (product instanceof EventProductModel) {
-        	return dateFormat.format(((EventProductModel) product).getEventDate());
-		}
-        else if (product instanceof ReportProductModel) {
-            return dateFormat.format(((ReportProductModel) product).getReportDate());
+        try {
+	        if (product instanceof NewsProductModel) {
+	        	return dateFormat.format(((NewsProductModel) product).getNewsDate());
+			}
+	        else if (product instanceof EventProductModel) {
+	        	return dateFormat.format(((EventProductModel) product).getEventDate());
+			}
+	        else if (product instanceof ReportProductModel) {
+	            return dateFormat.format(((ReportProductModel) product).getReportDate());
+	        }
+        }
+        catch(Exception e) {
+    		return dateFormat.format(product.getCreationtime());        	
         }
 		return dateFormat.format(product.getCreationtime());
 	}

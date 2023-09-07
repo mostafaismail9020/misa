@@ -14,7 +14,7 @@ INSERT_UPDATE ContentPage; uid[unique = true]; name      ; title[lang = en]; tit
 
 
 INSERT_UPDATE InvestSaudiBannerComponent; uid[unique = true]     ; name                 ; descriptionText[lang = ar] ; descriptionText[lang = en]; buttonText[lang = en] ; buttonText[lang = ar] ; image(code, $contentCV) ; buttonURL(&linkRef); link  ; &componentRef          ; $contentCV[unique = true]
-                                        ; all-resources-banner-1 ; All resources Banner ;							 ; All Resources    		 ;         				 ;           		     ;                         ;  	  				; true  ; all-resources-banner-1 ;
+                                        ; all-resources-banner-1 ; All resources Banner ;							 ; Search Results    		 ;         				 ;           		     ;                         ;  	  				; true  ; all-resources-banner-1 ;
 
 
 INSERT_UPDATE InvestSaudiBannerContainer; uid[unique = true]      		; name                    		; simpleCMSComponents(&componentRef); &componentRef          		; $contentCV[unique = true]

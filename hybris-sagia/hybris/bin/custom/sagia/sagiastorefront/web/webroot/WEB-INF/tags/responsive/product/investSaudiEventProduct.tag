@@ -4,6 +4,7 @@
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/responsive/common/header"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <main>
@@ -19,8 +20,8 @@
                             <div class="col-md-4" style="position: relative;">
                                 <div class="event-top-info-box">
                                     <div class="date" style="position: absolute;">
-                                        <span class="day">30</span>
-                                        <span class="month">DEC</span>
+                                     <span class="day"><fmt:formatDate value="${productData.eventDate}" pattern="d" /></span>
+                                     <span class="month"><fmt:formatDate value="${productData.eventDate}" pattern="MMMM" /></span>
                                     </div>
                                     <h2 class="event-title">${fn:escapeXml(productData.name)}</h2>
                                     <p class="event-description">${fn:escapeXml(productData.description)}</p>

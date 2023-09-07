@@ -33,7 +33,7 @@
     		<div class="row justify-content-between">
     			<div class="col-md-7 col-12">
     				<div class="order-lg-1 order-md-1 order-1">
-	    				<p class="desc">${fn:escapeXml(productData.description)}</p>
+	    				<p class="desc">${productData.description}</p>
     				</div>
     			</div>
     			<div class="col-md-5 col-12 order-lg-3 order-md-3 order-2">
@@ -78,7 +78,7 @@
    								<div class="col-md-12 col-12 irr-sector-div text-center">
    									<div class="row">
    										<div class="col-md-12 col-12">
-   											<span class="title">${fn:escapeXml(productData.parentCategory)}</span>
+   											<span class="title">${fn:escapeXml(productData.segmentName)}</span>
    										</div>
    										<div class="col-md-7 col-7" style="display: none;">
    											<span class="badge badge-pill badge-irr-sector">37</span>

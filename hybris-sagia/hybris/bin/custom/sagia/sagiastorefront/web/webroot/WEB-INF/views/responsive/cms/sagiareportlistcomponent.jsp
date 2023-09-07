@@ -11,7 +11,7 @@
 <section class="News_press pageTitle-container" id="News_press">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12">
               <c:forEach var="i" begin="1" end="7">
                   <div class="col-md-12 mt-4"></div>
               </c:forEach>

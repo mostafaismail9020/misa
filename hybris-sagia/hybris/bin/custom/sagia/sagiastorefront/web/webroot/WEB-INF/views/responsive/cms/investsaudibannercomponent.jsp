@@ -12,7 +12,12 @@
     </c:if>
     <c:if test="${not empty buttonURL}">
         <a href="${fn:escapeXml(buttonURL.url)}" class="enquiry-btn">
-        	${buttonURL.linkName}
+        <c:if test="${language eq 'en'}">
+        	<span class="general-breadcrumb-left-icon"></span> ${buttonURL.linkName}
+        </c:if>
+           <c:if test="${language eq 'ar'}">
+               ${buttonURL.linkName} <span class="general-breadcrumb-left-icon"></span>
+           </c:if>
 		</a>
     </c:if>
     <c:if test="${not empty buttonText}">

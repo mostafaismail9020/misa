@@ -1,10 +1,10 @@
 $contentCatalog=sagiaContentCatalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online, unique=true]
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged, unique=true]
 
 
 
-INSERT_UPDATE CMSLinkComponent; uid[unique = true]           ; name                ; url    ; styleAttributes ; visible[default= true] ; linkName[lang = en]; $contentCV[unique = true];
-; sagiaHomepageLinkComponent ; Sagia Homepage Link ; "/"    ; class="container banner homeLink" ;                           ; "< Home"             ;
+INSERT_UPDATE CMSLinkComponent; uid[unique = true]           ; name                ; url    ; styleAttributes 					; visible[default= true] ; linkName[lang = en]; linkName[lang = ar]; $contentCV[unique = true];
+							  ; sagiaHomepageLinkComponent   ; Sagia Homepage Link ; "/"    ; class="container banner homeLink" ;                        ;  Home              ; الرئيسية;
 
 
 

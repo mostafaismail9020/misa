@@ -25427,6 +25427,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 /* Article Details Events Page CSS Code Finish */
 
+.general-breadcrumb-left-icon {
+	background-image: url('../img/article-details-breadcrumb-left-icon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: pointer;
+}
+
 .opportunity-article-section-header {
     background: rgba(0, 113, 77, 0.05);
 }

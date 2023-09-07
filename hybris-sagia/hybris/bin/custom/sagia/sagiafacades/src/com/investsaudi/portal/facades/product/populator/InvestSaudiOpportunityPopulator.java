@@ -134,6 +134,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         populateMarketOverview(productModel,productData);
         populateDemand(productModel,productData);
         populateSupply(productModel,productData);
+        populateSegment(productModel,productData);
         
     }
 
@@ -336,14 +337,8 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 	
 	private void populateLocationText(OpportunityProductModel productModel, ProductData productData) {
 		
-		if(CollectionUtils.isNotEmpty(productModel.getLocation()) && Objects.nonNull(productModel.getLocation().iterator().next().getRegion()) && Objects.nonNull(productModel.getLocation().iterator().next().getCity()))
-			
-		{
-			productData.setLocationRegionText(productModel.getLocation().iterator().next().getRegion().getName());
-			productData.setLocationCityText(productModel.getLocation().iterator().next().getCity().getName());
-			
-			
-		}		
+			productData.setLocationRegionText(productModel.getRegionText());
+			productData.setLocationCityText(productModel.getCityText());
 	}
 	
 	private void populateInvestmentOverview(OpportunityProductModel productModel, ProductData productData) {
@@ -357,11 +352,16 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 	
 	private void populateCostOfDoingBusiness(OpportunityProductModel productModel, ProductData productData) {
 
-		if (null != productModel.getInvestmentOverview() && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness()) && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts())) {
+		if (null != productModel.getInvestmentOverview() && Objects.nonNull(productModel.getInvestmentOverview().getCostOfDoingBusiness())) {
 
 			// REVISIT FOR LIST IMPLEMENTATION
-			productData.setCostOfDoingBusinessText(productModel.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts().iterator().next().getValue());
-
+			//productData.setCostOfDoingBusinessText(productModel.getInvestmentOverview().getCostOfDoingBusiness().getCostOfDoingBusinessTexts().iterator().next().getValue());
+			productData.setElectricityTariffs(productModel.getInvestmentOverview().getCostOfDoingBusiness().getElectricityTariffs());
+			productData.setLogisticsPerformanceIndex(productModel.getInvestmentOverview().getCostOfDoingBusiness().getLogisticsPerformanceIndex());
+			productData.setProductivityAdjustedWages(productModel.getInvestmentOverview().getCostOfDoingBusiness().getProductivityAdjustedWages());
+			productData.setLogisticsPerformanceIndex(productModel.getInvestmentOverview().getCostOfDoingBusiness().getLogisticsPerformanceIndex());
+			productData.setEaseOfGettingCredit(productModel.getInvestmentOverview().getCostOfDoingBusiness().getEaseOfGettingCredit());
+			productData.setConstructionCosts(productModel.getInvestmentOverview().getCostOfDoingBusiness().getConstructionCosts());
 		}
 	}
 	
@@ -390,13 +390,16 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 
 		if (null != productModel.getSupply()) {
 
-			if (null != productModel.getSupply().getValueChainTexts()) {
-				// REVISIT FOR LIST IMPLEMENTATION
-				productData.setValueChainText(
-						productModel.getSupply().getValueChainTexts().iterator().next().getFormattedText());
-			}
 			productData.setImportDependencyText(productModel.getSupply().getImportDependencyText());
 			productData.setScalabilityAndLocalizationText(productModel.getSupply().getScalabilityAndLocalizationText());
+		}
+	}
+	
+	private void populateSegment(OpportunityProductModel productModel, ProductData productData) {
+
+		if (Objects.nonNull(productModel.getSagiaSegment())) {
+
+			productData.setSegmentName(productModel.getSagiaSegment().iterator().next().getSegmentName());
 		}
 	}
 	

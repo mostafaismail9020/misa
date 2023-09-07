@@ -17,7 +17,7 @@
     <div class="row justify-content-center">
         <c:if test="${not empty opportunitySearchPageData.results}">
             <div class="col-lg-6 col-md-8 opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
-                <div class="sector-search mb-5">
+                <div class="sector-search mb-3">
                     <form name="search_form_${fn:escapeXml(component.uid)}" method="get" class="position-relative" action="${searchUrl}">
                         <spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
                         <ycommerce:testId code="header_search_input">
@@ -41,128 +41,102 @@
 </div>
 </main>
 
-
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 mt-4">
-            <c:choose>
-                <c:when test="${not empty eventSearchPageData.results}">
-                    <h2 class="newsTitle"><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
-                   <div class="col-md-12">
-                    <div class="row events-container">
-                        <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
-                            <tags:events-card result="${result}" loopCount="${status.index}"/>
-                        </c:forEach>
+    <c:choose>
+        <c:when test="${ not empty opportunitySearchPageData.results}">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="resource-title">
+                        <h2>Opportunities</h2>
                     </div>
-                    </div>
-                    <div class="col-md-12">
-                    <div class="showMoreLessButtonContainer">
-                      <button id="loadEventMore" class="loadNewsEventShowLessButton"> <spring:theme code="review.show.more"/></button>
-                      <button id="showEventLess" class="loadNewsEventShowLessButton"> <spring:theme code="review.show.less"/></button>
-                    </div>
-                    </div>
-                </c:when>
-                <c:otherwise>
-                    <div class="col-lg-12 col-md-12 mt-4 text-center">
-                        <spring:theme code="text.label.notFound"/>
-                    </div>
-                </c:otherwise>
-            </c:choose>
-        </div>
-    <div>    
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="resource-title">
-                <h2>Opportunities</h2>
+                </div>
+                <c:forEach var="result" items="${opportunitySearchPageData.results}" varStatus="status">
+                    <tags:opportunity-tile result="${result}" loopCount="${status.index}"/>
+                </c:forEach>  
             </div>
-        </div>
-        <div class="col-sm-12">
-            <c:choose>
-                <c:when test="${ not empty opportunitySearchPageData.results}">
-                    <div class="row">
-                        <c:forEach var="result" items="${opportunitySearchPageData.results}" varStatus="status">
-		                        	<tags:opportunity-tile result="${result}" loopCount="${status.index}"/>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="action">
+                        <a href="/sectors-opportunities/opportunities" class="submit-button mt-5"><spring:theme code="review.show.more"/></a>
+                    </div>                    
+                </div>
+            </div>   
+            <div class="section-break mt-5 mb-5"></div>  
+        </c:when>
+    </c:choose>
 
-                        </c:forEach>
+    <c:choose>
+        <c:when test="${not empty newsSearchPageData.results}">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="resource-title mb-4">
+                        <h2><spring:theme code="text.newsevents.listing.page.latest.news"/></h2>
                     </div>
-                </c:when>
-                <c:otherwise>
-                    <div class="col-lg-12 col-md-12 mt-4 text-center">
-                        <spring:theme code="text.label.notFound"/>
-                    </div>
-                </c:otherwise>
-            </c:choose>
-         </div>
-    <div>    
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 mt-5 mb-5">
-            <c:choose>
-                <c:when test="${not empty newsSearchPageData.results}">
-                    <h2 class="newsTitle"><spring:theme code="text.newsevents.listing.page.latest.news"/></h2>
-                    <div class="col-md-12">
-                    <div class="row news-container">
-                        <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
-                            <tags:news-card result="${result}" loopCount="${status.index}"/>
-                        </c:forEach>
-                    </div>
-                    </div>
-                   <div class="col-md-12">
-                      <div class="showMoreLessButtonContainer">
-                     <button id="loadNewsMore" class="loadNewsEventShowLessButton"><spring:theme code="review.show.more"/></button>
-                     <button id="showNewsLess" class="loadNewsEventShowLessButton"><spring:theme code="review.show.less"/></button>
-                     </div>
-                   </div>
-                </c:when>
-                <c:otherwise>
-                    <div class="col-lg-12 col-md-12 mt-4 text-center">
-                        <spring:theme code="text.label.notFound"/>
-                    </div>
-                </c:otherwise>
-            </c:choose>
-        </div>
-        <div class="col-sm-12">
-            <a href="/" class="button-large mt-5">See more updates</a>
-        </div>
-    <div>    
-</div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="resource-title">
-                <h2>Articles</h2>
-                <div class="action">
-                    <a href="/" class="see-more">See More</a>
+                </div>
+                <c:forEach var="result" items="${newsSearchPageData.results}" varStatus="status">
+                    <tags:news-tile result="${result}" loopCount="${status.index}"/>
+                </c:forEach>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="action">
+                        <a href="/mediaCenter/news" class="submit-button mt-0"><spring:theme code="review.show.more"/></a>
+                    </div>                    
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12">
-	       <c:choose>
-	           <c:when test="${not empty articleSearchPageData.results}">
-	               <c:forEach var="result" items="${articleSearchPageData.results}" varStatus="status">
-	                   <c:choose>
-	                       <c:when test="${status.index % 2 == 0}">
-	                           <tags:article-tile result="${result}" loopCount="${status.index}" className="evenColor"/>
-	                       </c:when>
-	                       <c:otherwise>
-	                           <tags:article-tile result="${result}" loopCount="${status.index}" className="oddColor"/>
-	                       </c:otherwise>
-	                   </c:choose>
-	               </c:forEach>
-	           </c:when>
-	           <c:otherwise>
-	               <div class="col-md-12 mt-4 text-center">
-	                   <spring:theme code="text.label.notFound"/>
-	               </div>
-	           </c:otherwise>
-	       </c:choose>
-        </div>
-    <div>    
+            <div class="section-break mt-5 mb-5"></div>          
+        </c:when>
+    </c:choose>    
+
+    <c:choose>
+        <c:when test="${not empty eventSearchPageData.results}">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="resource-title mb-5">
+                        <h2><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
+                    </div>
+                </div>
+                <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
+                    <tags:events-card result="${result}" loopCount="${status.index}"/>
+                </c:forEach>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="action">
+                        <a href="/mediaCenter/events" class="submit-button mt-0"><spring:theme code="review.show.more"/></a>
+                    </div>                    
+                </div>
+            </div>
+            <div class="section-break mt-5 mb-5"></div>
+        </c:when>
+    </c:choose>        
+
+    <c:choose>
+        <c:when test="${not empty articleSearchPageData.results}">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="resource-title mb-4">
+                        <h2>Articles</h2>
+                    </div>
+                </div>
+                <c:forEach var="result" items="${articleSearchPageData.results}" varStatus="status">
+                    <c:choose>
+                        <c:when test="${status.index % 2 == 0}">
+                            <tags:article-tile result="${result}" loopCount="${status.index}" className="evenColor"/>
+                        </c:when>
+                        <c:otherwise>
+                            <tags:article-tile result="${result}" loopCount="${status.index}" className="oddColor"/>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="action">
+                        <a href="articlesList" class="submit-button mt-4"><spring:theme code="review.show.more"/></a>
+                    </div>                    
+                </div>
+            </div>                
+        </c:when>
+    </c:choose>
 </div>

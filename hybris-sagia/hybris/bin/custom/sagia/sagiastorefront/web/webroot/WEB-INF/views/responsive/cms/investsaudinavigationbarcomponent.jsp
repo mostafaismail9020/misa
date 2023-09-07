@@ -311,9 +311,9 @@
 		<div class="container d-flex align-items-center">
 			<div class="logo mr-auto">
 				<a href="/${language}/">
-					<c:if test="${fn:containsIgnoreCase(request.getServletPath(), 'homepage')}" var="originalLogo">
-						<img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" />
-					</c:if>
+					<c:if test="${fn:containsIgnoreCase(request.getServletPath(), 'homepage') || fn:containsIgnoreCase(pageLabel, 'newseventslist')}" var="originalLogo">
+                        <img class="hd-static" src="${fn:escapeXml(component.logoImage.url)}" />
+                    </c:if>
 					<c:if test="${!originalLogo}">
 						<img class="hd-static" src="${fn:escapeXml(component.visionImage.url)}" />
 					</c:if>
@@ -371,7 +371,7 @@
 								<c:choose>
 									<c:when test="${not empty childlevel1link.url}">
 										<a class="nav-link dropdown-toggle" href="${childlevel1link.url}"
-											data-toggle="dropdown" title="${childLevel1.title}">${childLevel1.title}</a>
+											 title="${childLevel1.title}">${childLevel1.title}</a>
 									</c:when>
 									<c:otherwise>
 										<cms:component component="${childlevel1link}" evaluateRestriction="true" element="span"

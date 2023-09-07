@@ -33,86 +33,80 @@
     		<div class="row justify-content-between">
     			<div class="col-md-7 col-12">
     				<div class="order-lg-1 order-md-1 order-1">
-	    				<h3 class="sub-title">${productData.description}</h3>
-	    				<p class="desc">
-	    					In ut lacinia dui. Integer orci lacus, malesuada sit amet viverra et, consequat vitae massa.
-	    					Vestibulum sit amet auctor lacus. Sed rhoncus sed metus eu euismod.
-							Maecenas et velit eget magna lobortis auctor a a odio.
-							Nulla lorem sem, fringilla vitae lacinia in, semper a libero.
-							Nunc et sollicitudin augue, vitae faucibus justo. Ut vehicula nisi vel ultrices ullamcorper.
-	    				</p>
-    				</div>
-    				<div class="order-lg-2 order-md-2 order-3">
-	    				<h3 class="second-sub-title">Sector and market opportunity</h3>
-	    				<p class="desc">
-	    					In ut lacinia dui. Integer orci lacus, malesuada sit amet viverra et, consequat vitae massa.
-	    					Vestibulum sit amet auctor lacus. Sed rhoncus sed metus eu euismod.
-							Maecenas et velit eget magna lobortis auctor a a odio.
-							Nulla lorem sem, fringilla vitae lacinia in, semper a libero.
-							Nunc et sollicitudin augue, vitae faucibus justo. Ut vehicula nisi vel ultrices ullamcorper.
-	    				</p>
+	    				<p class="desc">${fn:escapeXml(productData.description)}</p>
     				</div>
     			</div>
     			<div class="col-md-5 col-12 order-lg-3 order-md-3 order-2">
     				<div class="jumbotron jumbotron-main">
     					<div class="row justify-content-center">
     						<div class="col-md-4 col-5 text-center irr-box">
-    							<p class="irr-title">${productData.expectedIRR}</p>
+    							<p class="irr-title">${fn:escapeXml(productData.expectedIRR)}</p>
     							<p class="irr-desc">Expected IRR</p>
     						</div>
     						<div class="col-md-2 col-2"></div>
     						<div class="col-md-4 col-5 text-center irr-box">
-    							<p class="irr-title">${productData.expectedInvestmentSize}</p>
+    							<p class="irr-title">${fn:escapeXml(productData.expectedInvestmentSize)}</p>
     							<p class="irr-desc">Investment size</p>
     						</div>
     					</div>
     					<div class="row">
     						<div class="col-md-6 col-6">
     							<p class="irr-location-title">Location</p>
-    							<p class="irr-location-desc">${productData.locationRegionText} - ${productData.locationCityText}</p>
+    							<p class="irr-location-desc">${fn:escapeXml(productData.locationRegionText)} - ${fn:escapeXml(productData.locationCityText)}</p>
     						</div>
     						<div class="col-md-6 col-6">
     							<p class="irr-location-title">Investment type</p>
-    							<p class="irr-location-desc">${productData.investmentType}</p>
+    							<p class="irr-location-desc">${fn:escapeXml(productData.investmentType)}</p>
     						</div>
     					</div>
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<p class="irr-location-title">Sector</p>
-    							<div class="d-flex justify-content-between">
-    								<div class="col-md-3 col-4 irr-sector-div text-center">
-    									<div class="row">
-    										<div class="col-md-5 col-5">
-    											<span class="title">${productData.parentCategory}</span>
-    										</div>
-    										<div class="col-md-7 col-7">
-    											<span class="badge badge-pill badge-irr-sector">37</span>
-    										</div>
-    									</div>
-    								</div>
-    								<div class="col-md-3 col-2">
-    									<button class="btn btn-download-pdf-opportunity" id="controllerButton" class="button" onclick="callController()">
-											<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
-										</button>
-										<button class="btn btn-download-pdf-opportunity" id="buttonWithText" class="button" style="display: none;">Processing...</button>
-  										<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
-    								</div>
-    							</div>
+    							<p class="irr-location-title mt-2">Sector</p>
+   								<div class="col-md-12 col-12 irr-sector-div text-center">
+   									<div class="row">
+   										<div class="col-md-12 col-12">
+   											<span class="title">${fn:escapeXml(productData.parentCategory)}</span>
+   										</div>
+   										<div class="col-md-7 col-7" style="display: none;">
+   											<span class="badge badge-pill badge-irr-sector">37</span>
+   										</div>
+   									</div>
+   								</div>
     						</div>
+    						<div class="col-md-12 col-12">
+    							<p class="irr-location-title mt-2">Segment</p>
+   								<div class="col-md-12 col-12 irr-sector-div text-center">
+   									<div class="row">
+   										<div class="col-md-12 col-12">
+   											<span class="title">${fn:escapeXml(productData.parentCategory)}</span>
+   										</div>
+   										<div class="col-md-7 col-7" style="display: none;">
+   											<span class="badge badge-pill badge-irr-sector">37</span>
+   										</div>
+   									</div>
+   								</div>
+    						</div>
+  							<div class="col-md-12 col-12 mt-3">
+  								<button class="btn btn-download-pdf-opportunity col" id="controllerButton" class="button" onclick="callController()">
+									<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
+								</button>
+								<button class="btn btn-download-pdf-opportunity col" id="buttonWithText" class="button" style="display: none;">Processing...</button>
+								<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
+  							</div>
     					</div>
     				</div>
     				<div class="jumbotron jumbotron-second">
     					<div class="row">
-    						<div class="col-md-3 col-3">
+    						<div class="col-md-3 col-3" style="display: none;">
     							<img class="img-fluid rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS78M1xPINkEl0df2wnbq3bro9Oz0rCHpWn284h5iT4tQ&s" />
     						</div>
-    						<div class="col-md-9 col-9">
+    						<div class="col-md-12 col-12">
     							<div class="row">
     								<div class="col-md-12 col-12">
-    									<p class="opportunity-owner">Ahmed Ali</p>
+    									<p class="opportunity-owner text-center">Ahmed Ali</p>
     								</div>
     								<div class="col-md-12 col-12">
-    									<p class="opportunity-owner-position">Opportunity lead</p>
+    									<p class="opportunity-owner-position text-center">Opportunity lead</p>
     								</div>
     							</div>
     						</div>
@@ -182,7 +176,7 @@
     							<h3 class="opportunity-statics-title text-center">Investment Highlights</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">Expected Investment size ${productData.expectedInvestmentSize}</p>
+    							<p class="opportunity-statics-desc">Expected Investment size ${fn:escapeXml(productData.expectedInvestmentSize)}</p>
 								<p class="opportunity-statics-desc">Plant capacity
 									<ul>
 										<c:forEach var="plantCapacity" items="${productData.capacityData}">
@@ -190,11 +184,11 @@
 		                                </c:forEach>
 	                                </ul>
 								</p>
-								<p class="opportunity-statics-desc">Expected IRR ${productData.expectedIRR}</p>
-								<p class="opportunity-statics-desc">Payback period ${productData.paybackPeriod}</p>
-								<p class="opportunity-statics-desc">Job Creation ${productData.jobscreated}</p>
-								<p class="opportunity-statics-desc">GDP Impact ${productData.gdpContribution}</p>
-								<p class="opportunity-statics-desc">Location (Region) ${productData.locationRegionText} - ${productData.locationCityText}</p>
+								<p class="opportunity-statics-desc">Expected IRR ${fn:escapeXml(productData.expectedIRR)}</p>
+								<p class="opportunity-statics-desc">Payback period ${fn:escapeXml(productData.paybackPeriod)}</p>
+								<p class="opportunity-statics-desc">Job Creation ${fn:escapeXml(productData.jobscreated)}</p>
+								<p class="opportunity-statics-desc">GDP Impact ${fn:escapeXml(productData.gdpContribution)}</p>
+								<p class="opportunity-statics-desc">Location (Region) ${fn:escapeXml(productData.locationRegionText)} - ${fn:escapeXml(productData.locationCityText)}</p>
     						</div>
     					</div>
     				</div>
@@ -206,7 +200,7 @@
     							<h3 class="opportunity-statics-title text-center">Value Proposition</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.valuePropositionText}</p>
+    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.valuePropositionText)}</p>
     						</div>
     					</div>
     				</div>
@@ -220,7 +214,7 @@
     							<h3 class="opportunity-statics-title text-center">Incentives and Enablers</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.incentivesAndEnablersText}</p>
+    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.incentivesAndEnablersText)}</p>
     						</div>
     					</div>
     				</div>
@@ -232,7 +226,26 @@
     							<h3 class="opportunity-statics-title text-center">Cost of Doing Business</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.costOfDoingBusinessText}</p>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Factor</div>
+    								<div class="col-md-5">Ranking amongst regional peers</div>
+    							</div>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Electricity tariffs for industrial players</div>
+    								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.electricityTariffs)}</span></div>
+    							</div>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Productivity adjusted wages</div>
+    								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.productivityAdjustedWages)}</span></div>
+    							</div>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Logistics Performance Index (1-5)</div>
+    								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.logisticsPerformanceIndex)}</span></div>
+    							</div>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Construction Costs (Indexed to US, %0 is cheapest</div>
+    								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">4${fn:escapeXml(productData.constructionCosts)}</span></div>
+    							</div>
     						</div>
     					</div>
     				</div>
@@ -385,13 +398,13 @@
     							<h3 class="opportunity-statics-title text-center">Global Trends</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.globalTrendsText}</p>
+    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.globalTrendsText)}</p>
     						</div>
     					</div>
     				</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" style="display: none;">
 				<div class="col-md-12 col-12">
 					<div class="jumbotron jumbotron-statistics-box special-statistics-box box-without-height ">
     					<div class="row">
@@ -415,7 +428,7 @@
     							<h3 class="opportunity-statics-title text-center">Key Demand Drivers</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.keyDemandDriversText}</p>
+    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.keyDemandDriversText)}</p>
     						</div>
     					</div>
     				</div>
@@ -427,18 +440,18 @@
     							<h3 class="opportunity-statics-title text-center">Scalability & Localization</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.scalabilityAndLocalizationText}</p>
+    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.scalabilityAndLocalizationText)}</p>
     						</div>
     					</div>
     				</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" style="display: none;">
 				<div class="col-md-12 col-12">
 					<div class="jumbotron jumbotron-statistics-box box-without-height ">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Value Chain ${productData.valueChainText}</h3>
+    							<h3 class="opportunity-statics-title text-center">Value Chain ${fn:escapeXml(productData.valueChainText)}</h3>
     						</div>
     						<div class="col-md-12 col-12">
     							<p class="opportunity-statics-desc text-center">
@@ -457,7 +470,7 @@
     							<h3 class="opportunity-statics-title text-center">Import Dependency</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.importDependencyText}</p>
+    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.importDependencyText)}</p>
     						</div>
     					</div>
     				</div>
@@ -469,8 +482,8 @@
 	<section id="newsandupdates" class="newsAndUpdateContainer">
 	    <div class="container">
 	        <div class="row titleContainer">
-	            <div class="col-lg-12 pt-4 pt-lg-0 content mx-auto aos-init" data-aos="fade-right" data-aos-delay="100">
-	                <h2 class="section-title">More ICT opportunities</h2>
+	            <div class="col-md-12 content mx-auto mb-3">
+	                <h2 class="misa-text-title">More ICT opportunities</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -523,10 +536,12 @@
 					</div>
 				</div>
         	</div>
-			<div class="row explore-keys-btn" style="margin-top: 0;">
-				<a href="" class="btn btn-primary-fill btn-video">
-					<spring:theme code="portal.seemoreupdates.button.text"/>&nbsp;
-				</a>
+			<div class="col-md-12">
+				<div class="row justify-content-center justify-content-md-between mt-4">
+					<a href="#" class="btn btn-primary-fill btn-video misa-btn-special">
+						<spring:theme code="portal.seemoreupdates.button.text"/>
+					</a>
+				</div>
 			</div>
     	</div>
 	</section>

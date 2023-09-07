@@ -3566,6 +3566,13 @@
 		<property name="investmentType" type="java.lang.String"/>
 		<property name="capacityData" type="java.util.List&lt;com.sap.ibso.eservices.facades.data.CapacityData&gt;"/>
 		
+		<property name="electricityTariffs" type="java.lang.String"/>
+		<property name="logisticsPerformanceIndex" type="java.lang.String"/>
+		<property name="productivityAdjustedWages" type="java.lang.String"/>
+		<property name="easeOfGettingCredit" type="java.lang.String"/>
+		<property name="constructionCosts" type="java.lang.String"/>
+		<property name="segmentName" type="java.lang.String"/>
+		
 
     </bean>
 

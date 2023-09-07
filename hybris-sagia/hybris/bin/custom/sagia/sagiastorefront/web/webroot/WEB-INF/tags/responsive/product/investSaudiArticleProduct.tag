@@ -182,14 +182,15 @@
 			<div class="download-share-buttons">
 				<div class="row">
 					<div class="col-md-12">
-						<button class="btn-download">
+						<a href="${productData.pdfUrl}" target="_blank" class="btn-download">
 							<spring:theme code="facilityReopen.download.text"/>
 							<i class="icon-download"></i>
-						</button>
-						<button class="btn-share">
+						</a>
+
+						<a class="btn-share">
 							<i class="icon-share"></i>
 							<spring:theme code="product.share.share"/>
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>

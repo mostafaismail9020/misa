@@ -22426,12 +22426,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 .article-details-page .btn-download {
 	background-color: var(--misaFirstColor);
 	color: #FFFFFF;
-	margin-right: 10px;
 }
 
 .article-details-page .btn-share {
 	background-color: #FFFFFF;
-	color: var(--misaFirstColor);
+	color: var(--misaFirstColor)!important;
 }
 
 .article-details-page .icon-download {
@@ -22448,8 +22447,9 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	background-image: url("../img/article-details-page-share-icon.png");
 	background-repeat: no-repeat;
 	width: 25px;
-	height: 25px;
-	margin-right: 10px;
+	background-size: contain;
+	height: 16px;
+	margin-left: 10px;
 }
 
 .article-details-page .download-share-buttons {

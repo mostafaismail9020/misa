@@ -25016,7 +25016,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page-general-title {
-	color: var(--misaFirstColor);
+	color: #fff;
 	margin: 0 0 15px 10px;
 	line-height: 56px;
 	font-size: 40px;

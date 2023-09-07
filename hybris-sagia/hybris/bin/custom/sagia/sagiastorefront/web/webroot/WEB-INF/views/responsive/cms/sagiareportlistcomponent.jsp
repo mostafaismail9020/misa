@@ -43,7 +43,7 @@
         <div class="col-md-12 col-sm-12 page-main-content">
             <c:choose>
                 <c:when test="${not empty searchPageData.results}">
-                     <h2 class="newsTitle"><spring:theme code="portal.media.reportTitle" /></h2>
+                     <h2 class="misa-text-title"><spring:theme code="portal.media.reportTitle" /></h2>
                     <div class="col-md-12">
                     <div class="row">
                         <c:forEach var="result" items="${searchPageData.results}" varStatus="status">

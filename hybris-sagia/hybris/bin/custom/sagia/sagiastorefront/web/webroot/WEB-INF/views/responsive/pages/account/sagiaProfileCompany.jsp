@@ -74,5 +74,5 @@
     <profile:sagia.profile.myProfile/>
     <profile:sagia.profile.security/>
     <profile:sagia.profile.enquiries/>
-    <!-- <profile:sagia.profile.questionnaires/> -->
+    <%-- <profile:sagia.profile.questionnaires/> --%>
 </div>

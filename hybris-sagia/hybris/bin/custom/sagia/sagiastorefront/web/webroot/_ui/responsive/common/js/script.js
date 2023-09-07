@@ -5446,7 +5446,37 @@ $(document).ready(function () {
         $("#loadNewsMore").show(); // Show the "Show More" button
     });
 });
+$(document).ready(function () {
+    const reports = $(".page-report-list-page .report-container .report");
+    const showCount = 3;
+    let currentIndex = showCount;
+    $("#showReportLess").hide();
+    function toggleReports() {
+        reports.hide();
+        reports.slice(0, currentIndex).show();
+    }
 
+    toggleReports();
+
+    $("#loadReportMore").on('click', function (e) {
+        e.preventDefault();
+        currentIndex += showCount;
+        toggleReports();
+
+        if (currentIndex >= reports.length) {
+            $("#loadReportMore").hide();
+            $("#showReportLess").show(); // Show the "Show Less" button
+        }
+    });
+
+    $("#showReportLess").on('click', function (e) {
+        e.preventDefault();
+        currentIndex = showCount; // Reset the index to show the initial number of events
+        toggleReports();
+        $("#showReportLess").hide(); // Hide the "Show Less" button again
+        $("#loadReportMore").show(); // Show the "Show More" button
+    });
+});
 $( window ).on("load", function() {
 	var PageLang = document.getElementsByTagName("html")[0].getAttribute("lang");
 	

@@ -43,6 +43,7 @@
         <div class="col-md-12 col-sm-12 page-main-content">
             <c:choose>
                 <c:when test="${not empty searchPageData.results}">
+                <div class="report-container">
                      <h2 class="misa-text-title"><spring:theme code="portal.media.reportTitle" /></h2>
                     <div class="col-md-12">
                     <div class="row">
@@ -51,11 +52,12 @@
                         </c:forEach>
                     </div>
                     </div>
+                    </div>
                     <div class="col-md-12">
                         <div class="showMoreLessButtonContainer">
-                            <button id="loadEventMore" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme
+                            <button id="loadReportMore" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme
                                     code="review.show.more"/></button>
-                            <button id="showEventLess" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme
+                            <button id="showReportLess" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme
                                     code="review.show.less"/></button>
                         </div>
                     </div>

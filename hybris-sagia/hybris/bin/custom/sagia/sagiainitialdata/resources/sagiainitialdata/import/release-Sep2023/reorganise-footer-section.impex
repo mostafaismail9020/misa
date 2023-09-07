@@ -7,15 +7,60 @@ $contentCatalog = sagiaContentCatalog
 $contentCVStaged = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
 $contentCVOnline = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Online])[unique=true, default=$contentCatalog:Online]
                                
-INSERT_UPDATE CMSNavigationNode; uid[unique = true] ; name                ; title[lang = en]   ; title[lang = ar]    ; parent(uid, $contentCVStaged)	; children(uid, $contentCVStaged) 																													; links(uid, $contentCVStaged); $contentCVStaged[unique = true]	;
-                               ; footer-menu        ; Portal Footer Menu  ; Portal Footer Menu ; Portal Footer Menu  ; root                   		 	; opportunities-navnode, media-center-resources-navnode, why-saudi-arabia-navnode, media-center-news-navnode, footer-about-navnode, contact-navnode ;                       	  ;
+INSERT_UPDATE CMSNavigationNode; uid[unique = true] ; name                ; title[lang = en]   ; title[lang = ar]    ; parent(uid, $contentCVStaged)	; children(uid, $contentCVStaged) 																																							; links(uid, $contentCVStaged); $contentCVStaged[unique = true]	;
+                               ; footer-menu        ; Portal Footer Menu  ; Portal Footer Menu ; Portal Footer Menu  ; root                   		 	; opportunities-footer-navnode, services-footer-navnode, resources-footer-navnode, why-saudi-arabia-footer-navnode, newsevents-footer-navnode, footer-about-navnode, contact-footer-navnode	;                       	  ;
 
-INSERT_UPDATE CMSNavigationNode; uid[unique = true] ; name                ; title[lang = en]   ; title[lang = ar]    ; parent(uid, $contentCVOnline)	; children(uid, $contentCVOnline) 																													; links(uid, $contentCVOnline); $contentCVOnline[unique = true]	;
-                               ; footer-menu        ; Portal Footer Menu  ; Portal Footer Menu ; Portal Footer Menu  ; root                   			; opportunities-navnode, media-center-resources-navnode, why-saudi-arabia-navnode, media-center-news-navnode, footer-about-navnode, contact-navnode ;                       	  ;
+INSERT_UPDATE CMSNavigationNode; uid[unique = true] ; name                ; title[lang = en]   ; title[lang = ar]    ; parent(uid, $contentCVOnline)	; children(uid, $contentCVOnline) 																																							; links(uid, $contentCVOnline); $contentCVOnline[unique = true]	;
+                               ; footer-menu        ; Portal Footer Menu  ; Portal Footer Menu ; Portal Footer Menu  ; root                   			; opportunities-footer-navnode, services-footer-navnode, resources-footer-navnode, why-saudi-arabia-footer-navnode, newsevents-footer-navnode, footer-about-navnode, contact-footer-navnode	;                       	  ;
         
 INSERT_UPDATE CMSNavigationNode; uid[unique = true][mode = replace]; name                 ; title[lang = en]     ; title[lang = ar]     ; parent(uid, $contentCVStaged); children(uid, $contentCVStaged)[mode = replace] ; links(uid, $contentCVStaged); $contentCVStaged[unique = true]
                                ; map-policy                        ; Sitemap and Policies ; Sitemap and Policies ; Sitemap and Policies ; root                   ; privacy-policy-navnode 					 ;                  	 ;
 
 INSERT_UPDATE CMSNavigationNode; uid[unique = true][mode = replace]; name                 ; title[lang = en]     ; title[lang = ar]     ; parent(uid, $contentCVOnline); children(uid, $contentCVOnline)[mode = replace] ; links(uid, $contentCVOnline); $contentCVOnline[unique = true]
                                ; map-policy                        ; Sitemap and Policies ; Sitemap and Policies ; Sitemap and Policies ; root                   ; privacy-policy-navnode 					 ;                  	 ;
-                               
+
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]				; name				; nodeImage(code, $contentCVStaged)	 ; title[lang = en] 	; title[lang = ar] 	; $contentCVStaged[unique = true]	; nodeDescription[lang = en];
+								; opportunities-footer-navnode 		; Opportunities 	;								     ; Opportunities 		; Opportunities 	; 									;  							;
+								; services-footer-navnode 			; Services 			;								     ; Services 			; Services 			; 									;  							;
+								; resources-footer-navnode 			; Resources 		;								     ; Resources 			; Resources 		; 									;  							;
+								; newsevents-footer-navnode 		; News & Events 	;								     ; News & Events 		; News & Events 	; 									;  							;
+								; why-saudi-arabia-footer-navnode	; Why Saudi? 		;								     ; Why Saudi?	 		; Why Saudi?	 	; 									;  							;
+								; contact-footer-navnode			; Contact	 		;								     ; Contact		 		; Contact		 	; 									;  							;
+
+
+INSERT_UPDATE CMSNavigationNode	; uid[unique = true]				; name				; nodeImage(code, $contentCVOnline)	 ; title[lang = en] 	; title[lang = ar] 	; $contentCVOnline[unique = true]	; nodeDescription[lang = en];
+								; opportunities-footer-navnode 		; Opportunities 	;								     ; Opportunities 		; Opportunities 	; 									;  							;
+								; services-footer-navnode 			; Services 			;								     ; Services 			; Services 			; 									;  							;
+								; resources-footer-navnode 			; Resources 		;								     ; Resources 			; Resources 		; 									;  							;
+								; newsevents-footer-navnode 		; News & Events 	;								     ; News & Events 		; News & Events 	; 									;  							;
+								; why-saudi-arabia-footer-navnode	; Why Saudi? 		;								     ; Why Saudi?	 		; Why Saudi?	 	; 									;  							;
+								; contact-footer-navnode			; Contact	 		;								     ; Contact		 		; Contact		 	; 									;  							;
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]	; name                  ; navigationNode(uid, $contentCVStaged)	; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCVStaged)	; $contentCVStaged[unique = true]
+                                ; opportunities-entry	; Opportunities	Entry	; opportunities-footer-navnode			; opportunities-link											;
+                                ; services-entry		; Services Entry  		; services-footer-navnode 				; services-link                              					;
+                                ; resources-entry		; Resources Entry       ; resources-footer-navnode   			; resources-link												;
+                                ; newsevents-entry		; Newsevents Entry      ; newsevents-footer-navnode             ; newsevents-link												;
+								; why-saudi-entry		; Why Saudi? 			; why-saudi-arabia-footer-navnode	    ; whysaudi-footer-link									 		;
+								; contact-entry			; Contact	 			; contact-footer-navnode			    ; contact-footer-link											;
+
+
+INSERT_UPDATE CMSNavigationEntry; uid[unique = true]	; name                  ; navigationNode(uid, $contentCVOnline)	; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCVOnline)	; $contentCVOnline[unique = true]
+                                ; opportunities-entry	; Opportunities	Entry	; opportunities-footer-navnode			; opportunities-link											;
+                                ; services-entry		; Services Entry  		; services-footer-navnode 				; services-link                              					;
+                                ; resources-entry		; Resources Entry       ; resources-footer-navnode   			; resources-link												;
+                                ; newsevents-entry		; Newsevents Entry      ; newsevents-footer-navnode             ; newsevents-footer-link										;
+								; why-saudi-entry		; Why Saudi? 			; why-saudi-arabia-footer-navnode	    ; whysaudi-footer-link									 		;
+								; contact-entry			; Contact	 			; contact-footer-navnode			    ; contact-footer-link											;
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 			; linkName[lang = en] 	; linkName[lang = ar] 	; url									; $contentCVStaged[unique = true]	;
+							  ; newsevents-footer-link	; News & Events	; News & Events			; News & Events			;	/newseventslist						;
+							  ; whysaudi-footer-link	; whysaudi 		; Why Saudi? 			; Why Saudi? 			;	/aboutSaudi							;
+							  ; contact-footer-link		; contact 		; Contact	 			; Contact	 			;	/contactUs							;
+
+
+INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 			; linkName[lang = en] 	; linkName[lang = ar] 	; url									; $contentCVOnline[unique = true]	;
+							  ; newsevents-footer-link	; News & Events	; News & Events			; الأنشطة والفعاليات		;	/newseventslist						;
+							  ; whysaudi-footer-link	; whysaudi 		; Why Saudi? 			; لماذا السعودية؟ 		;	/aboutSaudi							;
+							  ; contact-footer-link		; contact 		; Contact	 			; Contact	 			;	/contactUs							;

@@ -79,20 +79,20 @@
 			<div class="new-events mt-2">
 				<div class="row">
 					<div class="col-md-12 mb-4">
-						<h1 class="title">New events</h1>
+						<h1 class="title"><spring:theme code="text.newsevents.listing.page.news.events.title" /></h1>
 					</div>
 					<div class="col-md-3">
 						<div class="date" style="position: absolute;">
 							<span class="day">30</span>
-							<span class="month">DEC</span>
+							<span class="month"><spring:theme code="text.newsevents.listing.page.news.events.month" /></span>
 						</div>
 						<div>
 							<img class="new-events-card-img" alt=""
 								 src="https://investsaudi.sa/medias/real-estate-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0MzUxNDh8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI2L2hjMi84OTIzMjkwNTAxMTUwLmpwZ3xmMWRhMGJhMTI4Y2E2MTY2YmM1ZDBjNzlmOTdiNGQzZGZkMDI3ZmQ1YjMwNDk0MGY2YzJlYzBlMGEwYTMwOWMx"/>
 						</div>
 						<div class="new-events-time-location">
-							<span class="event-time">12:00 PM - 01:00 PM</span>
-							<span class="event-location">Location</span>
+							<span class="event-time"><spring:theme code="text.newsevents.listing.page.news.events.time"/></span>
+							<span class="event-location"><spring:theme code="text.newsevents.listing.page.news.events.location" /></span>
 						</div>
 						<div class="new-events-card-bottom"><spring:theme code="text.newsevents.listing.page.media.library.title" />
 						</div>
@@ -100,14 +100,14 @@
 					<div class="col-md-3">
 						<div class="date" style="position: absolute;">
 							<span class="day">30</span>
-							<span class="month">DEC</span>
+							<span class="month"><spring:theme code="text.newsevents.listing.page.news.events.month" /></span>
 						</div>
 						<div>
 								 <img class="new-events-card-img" alt="" src="https://investsaudi.sa/medias/real-estate-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0MzUxNDh8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI2L2hjMi84OTIzMjkwNTAxMTUwLmpwZ3xmMWRhMGJhMTI4Y2E2MTY2YmM1ZDBjNzlmOTdiNGQzZGZkMDI3ZmQ1YjMwNDk0MGY2YzJlYzBlMGEwYTMwOWMx"/>
 						</div>
 						<div class="new-events-time-location">
-							<span class="event-time">12:00 PM - 01:00 PM</span>
-							<span class="event-location">Location</span>
+							<span class="event-time"><spring:theme code="text.newsevents.listing.page.news.events.time" /></span>
+							<span class="event-location"><spring:theme code="text.newsevents.listing.page.news.events.location" /></span>
 						</div>
 						<div class="new-events-card-bottom"><spring:theme code="text.newsevents.listing.page.media.library.title" />
 						</div>
@@ -115,15 +115,15 @@
 					<div class="col-md-3">
 						<div class="date" style="position: absolute;">
 							<span class="day">30</span>
-							<span class="month">DEC</span>
+							<span class="month"><spring:theme code="text.newsevents.listing.page.news.events.month" /></span>
 						</div>
 						<div>
 								<img class="new-events-card-img" alt=""
                             								 src="https://investsaudi.sa/medias/real-estate-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0MzUxNDh8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI2L2hjMi84OTIzMjkwNTAxMTUwLmpwZ3xmMWRhMGJhMTI4Y2E2MTY2YmM1ZDBjNzlmOTdiNGQzZGZkMDI3ZmQ1YjMwNDk0MGY2YzJlYzBlMGEwYTMwOWMx"/>
 						</div>
 						<div class="new-events-time-location">
-							<span class="event-time">12:00 PM - 01:00 PM</span>
-							<span class="event-location">Location</span>
+							<span class="event-time"><spring:theme code="text.newsevents.listing.page.news.events.time" /></span>
+							<span class="event-location"><spring:theme code="text.newsevents.listing.page.news.events.location" /></span>
 						</div>
 						<div class="new-events-card-bottom"><spring:theme code="text.newsevents.listing.page.media.library.title" />
 						</div>
@@ -131,24 +131,31 @@
 					<div class="col-md-3">
 						<div class="date" style="position: absolute;">
 							<span class="day">30</span>
-							<span class="month">DEC</span>
+							<span class="month"><spring:theme code="text.newsevents.listing.page.news.events.month" /></span>
 						</div>
 						<div>
 								<img class="new-events-card-img" alt=""
                             								 src="https://investsaudi.sa/medias/real-estate-thumbnail.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw0MzUxNDh8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDI2L2hjMi84OTIzMjkwNTAxMTUwLmpwZ3xmMWRhMGJhMTI4Y2E2MTY2YmM1ZDBjNzlmOTdiNGQzZGZkMDI3ZmQ1YjMwNDk0MGY2YzJlYzBlMGEwYTMwOWMx"/>
 						</div>
 						<div class="new-events-time-location">
-							<span class="event-time">12:00 PM - 01:00 PM</span>
-							<span class="event-location">Location</span>
+							<span class="event-time"><spring:theme code="text.newsevents.listing.page.news.events.time" /></span>
+							<span class="event-location"><spring:theme code="text.newsevents.listing.page.news.events.location" /></span>
 						</div>
 						<div class="new-events-card-bottom"><spring:theme code="text.newsevents.listing.page.media.library.title" />
 						</div>
 					</div>
 
 					<div class="col-md-12 mt-2 navigation-icons">
-						<span class="left-icon"></span>
-						<span class="page-info">1 of 2</span>
-						<span class="right-icon"></span>
+                        <c:if test="${language eq 'en'}">
+                           <span class="left-icon"></span>
+                            <span class="page-info">1 of 2</span>
+                            <span class="right-icon"></span>
+                        </c:if>
+                        <c:if test="${language eq 'ar'}">
+                          <span class="right-icon"></span>
+                        <span class="page-info">1 of 2</span>
+                        <span class="left-icon"></span>
+                        </c:if>
 					</div>
 
 				</div>

@@ -71,15 +71,4 @@
         </div>
     </div>
 
-<div class="download-share-buttons">
-						<div class="row">
-							<div class="col-md-12">
-								<button class="btn-download">
-									Download
-								</button>
-								<button class="btn-share">
-									<i class="icon-share"></i> Share
-								</button>
-							</div>
-						</div>
-					</div>
+

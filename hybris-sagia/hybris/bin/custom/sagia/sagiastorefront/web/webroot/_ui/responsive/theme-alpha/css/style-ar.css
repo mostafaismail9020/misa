@@ -26416,6 +26416,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+      color: var(--misaDarkGrayText) !important;
      }
 .page-newsevents-list-page .breadcrumb-container .breadcrumb-left-icon {
 	background-image: url('../img/article-details-events-left-arrow-icon.png');

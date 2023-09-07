@@ -11070,6 +11070,7 @@ body.page-living-in-saudi .content {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    color: var(--misaDarkGrayText);
      }
 
 .page-newsevents-list-page .loadNewsEventShowLessButton{

@@ -16,7 +16,7 @@
                  	  <img class="img-fluid image" src="${result.imageUrl}" alt="" loading="lazy">
                    </c:when>
                    <c:otherwise>
-                 	  <img class="img-fluid image" src="${commonResourcePath}/images/default-product-image.png" alt="" loading="lazy">
+                 	  <img class="img-fluid image" src="${commonResourcePath}/images/default-news-image.png" alt="" loading="lazy">
                    </c:otherwise>
                 </c:choose>
             </a>

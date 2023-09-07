@@ -70,7 +70,7 @@
         </c:if>
     </div>
 
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-md-12">
             <h2 class="upcoming-events-title"><spring:theme code="text.newsevents.listing.page.upcoming.events"/></h2>
         </div>
@@ -101,7 +101,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12 mt-5">
+        <div class="col-md-12 mt-2">
             <div class="latest-news-header mt-3 mb-3">
                 <h2 class="latest-news-title"><spring:theme code="text.newsevents.listing.page.latest.news"/></h2>
             </div>
@@ -124,10 +124,10 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-md-12">
             <section class="latest-announcements">
-                <div class="header mt-3 mb-3">
+                <div class="header mt-5 mb-3">
                     <h2 class="title latest-announcements-title"><spring:theme code="text.newsevents.listing.page.latest.announcements"/></h2>
                 </div>
                 <div class="content">
@@ -168,7 +168,7 @@
         </div>
     </div>
 
-    <div class="row mt-4 mb-4">
+    <div class="row mt-2">
         <div class="col-md-12">
             <div class="get-the-latest-updates">
                 <h2 class="get-updates-title"><spring:theme code="text.newsevents.listing.page.get.the.latest.updates"/></h2>
@@ -177,7 +177,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-md-12">
             <h2 class="media-library-title mt-3 mb-3"><spring:theme code="text.newsevents.listing.page.media.library"/></h2>
         </div>

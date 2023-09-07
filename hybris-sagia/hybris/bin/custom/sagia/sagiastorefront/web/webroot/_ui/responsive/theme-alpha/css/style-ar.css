@@ -23879,6 +23879,58 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     position: relative;
 }
 
+.article-details-sector-page-banner {
+	width: 100%;
+	height: 50vh;
+	background-position: top center;
+	background-size: cover;
+	background-color: #f1f7f5;
+	position: relative;
+	z-index: 1;
+}
+
+.article-details-sector-page-banner .article-details-sector-page-banner-container {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: start;
+	flex-direction: column;
+	text-align: left;
+	z-index: 9;
+	margin-bottom: 15px;
+}
+
+.article-details-sector-page-banner .article-details-sector-page-banner-container .article-details-sector-page-general-title {
+	color: #00714D;
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.article-details-sector-page-banner .breadcrumb-container {
+	display: flex;
+	align-items: center;
+}
+
+.article-details-sector-page-banner .breadcrumb-container .breadcrumb-page-info {
+	color: #00714D;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.article-details-sector-page-banner .breadcrumb-container .breadcrumb-left-icon {
+	background-image: url('../img/article-details-events-left-arrow-icon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: pointer;
+}
+
 .article-details-sector-page-general-title {
     color: #00714D;
     font-size: 32px;
@@ -23913,15 +23965,15 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-sector-page-info-box-item {
-    background: rgba(0, 113, 77, 0.05);
-    color: #00714D;
-    padding: 3px;
-    flex-basis: calc(29% - 10px);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	background: rgba(0, 113, 77, 0.05);
+	color: #00714D;
+	padding: 10px;
+	flex-basis: calc(29% - 10px);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .article-details-sector-page-info-box-item h2 {
@@ -23931,9 +23983,43 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-sector-page-info-box-item p {
-    margin: 5px 0 0 0;
-    font-size: 14px;
-    color: #00714D!important;
+	margin: 5px 0 0 0;
+	font-size: 14px;
+	color: #00714D!important;
+	text-align: center;
+}
+
+.article-details-sector-page .success-stories-title {
+	color: #00714D;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.article-details-sector-page .success-stories-video iframe {
+	height: 208px;
+}
+
+.article-details-sector-page .success-stories-container .boxes {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+
+}
+
+.article-details-sector-page .success-stories-container .boxes .box {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.article-details-sector-page .success-stories-container .boxes .box p {
+	color: #00714D!important;
+	font-size: 12px!important;
+	font-weight: 400!important;
+}
+
+.article-details-sector-page .slider-carousel .carousel-inner .carousel-item {
+	min-height: auto!important;
 }
 
 .article-details-sector-page .value-proposition {
@@ -24196,15 +24282,29 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     background-position: center;
 }
 
-.article-details-sector-page .key-sectors-container .boxes .box .next-icon {
-    background-image: url('../img/right-regular.png');
-    background-repeat: no-repeat;
-    background-position: center;
-	background-color: #fff !important;
+.article-details-sector-page .success-stories-container .boxes .box .icon {
+	width: 50px;
+	height: 50px;
+	background-color: #E6E9EC;
+	border-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
 .article-details-sector-page .success-stories-container .boxes .box .left-icon {
-	background-color: #fff !important;
+	background-color: #fff!important;
+	background-image: url('../img/article-details-events-left-arrow-icon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.article-details-sector-page .success-stories-container .boxes .box .next-icon {
+	background-color: #fff!important;
+	background-image: url('../img/article-details-events-right-arrow-icon.png');
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 
@@ -24700,13 +24800,22 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-news-page-banner {
 	width: 100%;
-	height: 25vh;
+	height: 50vh;
 	background-position: top center;
 	background-size: cover;
 	background-color: #f1f7f5;
 	position: relative;
 	z-index: 1;
 }
+
+.article-details-news-page-banner-title {
+    color: #fff;
+    margin: 0 0 15px 10px;
+    line-height: 56px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
 
 .article-details-news-page-banner .article-details-news-page-banner-container {
 	position: absolute;
@@ -24726,7 +24835,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 .article-details-news-page .article-details-news-title {
 	color: var(--misaFirstColor);
 	font-size: 32px;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .article-details-news-page p {
@@ -24741,25 +24850,25 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	height: 278px;
 }
 
-.article-details-news-page-banner .breadcrumb-container {
+.article-details-news-page .breadcrumb-container {
 	display: flex;
-	align-items: center;
+    align-items: center;
 }
 
-.article-details-news-page-banner .breadcrumb-container .breadcrumb-page-info {
-	color: #00714D;
-	font-size: 14px;
-	font-weight: 400;
+.article-details-news-page .breadcrumb-container .breadcrumb-page-info {
+	color: #BF9B2E!important;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-.article-details-news-page-banner .breadcrumb-container .breadcrumb-left-icon {
-	background-image: url('../img/article-details-breadcrumb-left-icon.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 16px;
-	height: 16px;
-	display: inline-block;
-	cursor: pointer;
+.article-details-news-page .breadcrumb-container .breadcrumb-left-icon {
+	background-image: url('../img/article-details-events-left-arrow-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .article-details-news-page .article-details-news-video iframe {
@@ -24777,8 +24886,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-news-page .new-events .title {
 	color: var(--misaFirstColor);
-	font-size: 24px;
-	font-weight: 700;
+	font-size: 32px;
+	font-weight: 600;
 }
 
 .article-details-news-page .new-events .new-events-card-img {
@@ -24921,14 +25030,38 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .article-details-event-title {
-	color: var(--misaFirstColor);
 	font-size: 32px;
-	font-weight: 700;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaFirstColor);
 }
 
 .article-details-events-page .article-details-events-page-event-img {
 	height: 327px;
 	width: 100%;
+}
+
+.article-details-events-page .breadcrumb-container {
+	display: flex;
+	align-items: center;
+}
+
+.article-details-events-page .breadcrumb-container .breadcrumb-page-info {
+	color: #BF9B2E;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.article-details-events-page .breadcrumb-container .breadcrumb-left-icon {
+	background-image: url('../img/article-details-events-left-arrow-icon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: pointer;
 }
 
 .article-details-events-page .event-info-box-container {
@@ -24988,8 +25121,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .subjects-container .title {
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
 	color: var(--misaFirstColor);
 }
 
@@ -25011,10 +25147,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .highlighted-speakers-container .title {
-
-	color: #00714D;
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaFirstColor);
 }
 
 .article-details-events-page .highlighted-speakers {
@@ -25063,9 +25201,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .article-details-events-page .sponsors-partners-container-title {
-	font-size: 24px;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
 	color: var(--misaFirstColor);
-	font-weight: 700;
 }
 
 .article-details-events-page .sponsors-partners-container .boxes {
@@ -26312,7 +26453,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .page-newsevents-list-page {
 	text-align: right;
+	
+	.nav-menu a {
+		color: #fff;
+	}
 
+	.btn-trans label.lang-btn {
+		color: #fff;
+	}
 
 	.news-events-page-banner {
 		width: 100%;
@@ -26569,5 +26717,49 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 			padding-left: 0;
 			align-items: start;
 		}
+	}
+}
+
+.event-detail-page-similar-opportunities {
+	padding-top: 0!important;
+}
+.event-detail-page-similar-opportunities .similar-opportunities-title span {
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	color: var(--misaFirstColor);
+}
+
+.event-detail-page-similar-opportunities .Inc-fearured-opp {
+	box-shadow: none;
+	border: 1px solid #ddd;
+}
+
+.event-detail-page-similar-opportunities .similar-opportunities-know-more-btn {
+	width: 100%;
+	display: block;
+	font-size: 18px;
+	height: 50px;
+	padding: 0 90px 0 90px;
+	text-align: center;
+	font-weight: 500;
+	color: #fff;
+}
+
+.event-detail-page-similar-opportunities .Inc-fearured-opp-headtitle {
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0;
+	color: var(--misaFirstColor);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 5px 0 0 0;
+}
+
+@media (max-width: 768px) {
+	.event-detail-page-similar-opportunities .similar-opportunities-know-more-btn{
+		height: 50px!important;
 	}
 }

@@ -6,33 +6,38 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <main>
-	<div class="article-details-news-page-banner">
-		<div class="article-details-news-page-banner-container" data-aos="fade-up">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 breadcrumb-container">
-						<c:if test="${language eq 'en'}">
-							<a href="${encodedContextPath}/newseventslist">
-								<span class="breadcrumb-left-icon"></span>
-								<span class="breadcrumb-page-info"><spring:theme code="dashboard.newsevents"/></span>
-							</a>
-						</c:if>
-						<c:if test="${language eq 'ar'}">
-							<a href="${encodedContextPath}/newseventslist">
-								<span class="breadcrumb-page-info"><spring:theme code="dashboard.newsevents"/></span>
-								<span class="breadcrumb-left-icon"></span>
-							</a>
-						</c:if>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+	<div class="article-details-news-page-banner" style="background-image: url('https://investsaudi.sa/medias/home-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwxMTEzMTN8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaGM3L2hkOS84OTIzMzU4NjkxMzU4LmpwZ3w1YWJjYTA5NDY1MjM0NGZiYWJhZTMzOGJkZTc3MmVmYmFjYTg0MzBjODczZTVkOGM1MTgzZTJmN2VkZGY3NDhk');">
+        <div class="article-details-news-page-banner-container" data-aos="fade-up">
+
+        </div>
+    </div>
 
 	<!-- Article Details News Page -->
 	<section class="article-details-news-page">
 		<div class="container">
+		 <div class="row mt-2 mb-5">
+
+             <c:if test="${language eq 'en'}">
+                  <a href="${encodedContextPath}/newseventslist">
+                     <div class="col-md-12 mt-4 breadcrumb-container">
+                         <span class="breadcrumb-left-icon"></span>
+                       <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
+                     </div>
+                 </a>
+             </c:if>
+
+             <c:if test="${language eq 'ar'}">
+                  <a href="${encodedContextPath}/newseventslist">
+                     <div class="col-md-12 mt-4 breadcrumb-container">
+                        <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
+                         <span class="breadcrumb-left-icon"></span>
+                     </div>
+                 </a>
+             </c:if>
+
+         </div>
 			<div class="row mb-5">
 				<div class="col-md-12">
 

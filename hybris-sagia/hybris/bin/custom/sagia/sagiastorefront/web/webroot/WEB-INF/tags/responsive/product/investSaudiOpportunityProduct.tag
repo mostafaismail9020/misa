@@ -118,7 +118,7 @@
     					</div>
     					<div class="div-form-opportunity-lead">
     						<div class="row mt-5">
-								<div class="form-group col-md-6 col-12 form-normal-item">
+								<div class="form-group col-md-12 col-12 form-normal-item">
 									<label for="crName">
 										<spring:theme code="portal.sector.contact.expert.name.label"/> *
 									</label>
@@ -130,7 +130,7 @@
 								</div>
 							</div>
 	    					<div class="row">
-								<div class="form-group col-md-6 col-12 form-normal-item">
+								<div class="form-group col-md-12 col-12 form-normal-item">
 									<label for="crEmail">
 										<spring:theme code="portal.sector.contact.expert.email.label"/> *
 									</label>
@@ -142,7 +142,7 @@
 								</div>
 							</div>
 	    					<div class="row">
-								<div class="form-group col-md-6 col-12 form-normal-item">
+								<div class="form-group col-md-12 col-12 form-normal-item">
 									<label for="crCompany">
 										<spring:theme code="portal.sector.contact.expert.companyName.label"/> *
 									</label>
@@ -185,7 +185,7 @@
 	                                </ul>
 								</p>
 								<p class="opportunity-statics-desc">Expected IRR ${fn:escapeXml(productData.expectedIRR)}</p>
-								<p class="opportunity-statics-desc">Payback period ${fn:escapeXml(productData.paybackPeriod)}</p>
+								<p class="opportunity-statics-desc">Payback period ${fn:escapeXml(productData.paybackPeriod)} years</p>
 								<p class="opportunity-statics-desc">Job Creation ${fn:escapeXml(productData.jobscreated)}</p>
 								<p class="opportunity-statics-desc">GDP Impact ${fn:escapeXml(productData.gdpContribution)}</p>
 								<p class="opportunity-statics-desc">Location (Region) ${fn:escapeXml(productData.locationRegionText)} - ${fn:escapeXml(productData.locationCityText)}</p>

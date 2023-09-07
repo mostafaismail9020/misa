@@ -24921,8 +24921,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	}
 
 	.title {
-		font-weight: 700;
-		font-size: 24px;
+		font-weight: 600;
+		font-size: 32px;
 		color: var(--misaFirstColor);
 	}
 
@@ -25088,16 +25088,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	}
 
 	.upcoming-events-title {
-		font-weight: 700;
-		font-size: 24px;
+		font-weight: 600;
+		font-size: 32px;
 		color: var(--misaFirstColor);
 		margin-bottom: 70px;
 	}
 
 	.latest-news-header {
 		.latest-news-title {
-			font-weight: 700;
-			font-size: 24px;
+			font-weight: 600;
+            font-size: 32px;
 			color: var(--misaFirstColor);
 		}
 	}
@@ -25183,8 +25183,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	}
 
 	.media-library-title {
-		font-weight: 700;
-		font-size: 24px;
+		font-weight: 600;
+		font-size: 32px;
 		color: var(--misaFirstColor);
 	}
 

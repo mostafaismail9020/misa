@@ -23862,6 +23862,13 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	background-color: var(--misaFirstColor);
 	color: #FFFFFF;
 }
+    .page-report-list-page   .download-share-buttons {
+        text-align: center;
+    }
+
+    .page-report-list-page .download-share-buttons .col-md-12 {
+        display: inline-block;
+    }
 .page-report-list-page .icon-share {
 	display: inline-block;
 	background-image: url("../img/article-details-page-share-icon.png");

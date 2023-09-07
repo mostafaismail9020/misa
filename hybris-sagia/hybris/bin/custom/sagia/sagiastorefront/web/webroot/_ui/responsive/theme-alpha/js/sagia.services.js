@@ -87,9 +87,51 @@ $(function () {
         }
     });
 
+	$('.js-create-governamentalDocuments').validate({
+    	
+        highlight: function(element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function(element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        },
+        focusInvalid: false,
+        ignore: "",
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function(error, element) {
+            error.insertAfter(element);
+           
+        },
+        rules: {
+            
+            termsAndConditionsChecked : "required"
+
+        },
+        messages: {
+
+            termsAndConditionsChecked: {
+                required: getI18nText("legal.consulation.validation.termsAndConditions")
+            }
+        }
+
+    });
+    
+       $('#termsAndConditions').on('change', function (e) {
+        if ($(this).is(":checked")) {
+            if ($(this).parents('.form-item').find('#termsAndConditionsChecked-error').length > 0)
+                $(this).parents('.form-item').find('#termsAndConditionsChecked-error').remove();
+        }
+    });
 
     $('.js-create-governamentalDocuments').on("submit", function(){
-        $('.js-submit-governamentalDocuments').attr('disabled', true);
+		if($(this).valid()) {
+            $('.js-submit-governamentalDocuments').attr('disabled', true);
+            return true;
+        } else {
+            return false;
+        }
+        //$('.js-submit-governamentalDocuments').attr('disabled', true);
 
     });
 

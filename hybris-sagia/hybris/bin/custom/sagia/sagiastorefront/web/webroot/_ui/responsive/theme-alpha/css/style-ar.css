@@ -26878,3 +26878,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 .section-break {
 	border-top: 1px solid #ccc;
 }
+
+#pdf-en {
+	display: none;
+}

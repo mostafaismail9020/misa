@@ -25457,3 +25457,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 .section-break {
 	border-top: 1px solid #ccc;
 }
+
+#pdf-ar {
+	display: none;
+}

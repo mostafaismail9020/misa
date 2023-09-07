@@ -182,7 +182,11 @@
 			<div class="download-share-buttons">
 				<div class="row">
 					<div class="col-md-12">
-						<a href="${productData.pdfUrl}" target="_blank" class="btn-download">
+						<a href="${commonResourcePath}/pdf/resource-Economic-Investment-Monitor-Q2-2022-english.pdf" download class="btn-download" id="pdf-en">
+							<spring:theme code="facilityReopen.download.text"/>
+							<i class="icon-download"></i>
+						</a>
+						<a href="${commonResourcePath}/pdf/resource-Economic-Investment-Monitor-Q2-2022-arabic.pdf" download class="btn-download" id="pdf-ar">
 							<spring:theme code="facilityReopen.download.text"/>
 							<i class="icon-download"></i>
 						</a>

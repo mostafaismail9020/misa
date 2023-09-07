@@ -26553,6 +26553,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	letter-spacing: 0em;
     text-align: right;
 }
+.page-report-list-page .media-card-img{
+    width: 259px !important;
+    height: 172px !important;
+}
 
 .page-newsevents-list-page {
 	text-align: right;

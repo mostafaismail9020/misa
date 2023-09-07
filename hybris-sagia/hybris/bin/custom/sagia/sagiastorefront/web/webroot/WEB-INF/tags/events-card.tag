@@ -24,7 +24,16 @@
                         <span class="eventShortInformation mt-2 mb-2">${result.eventTiming}</span>
                         <span class="eventShortInformation mt-2 mb-2">${result.eventLocation}</span>
                     </div>
-                     <span class="eventsName mt-2 mb-2">${result.name}</span>
+
+                   <c:choose>
+                    <c:when test="${fn:length(result.name) gt 20}">
+                         <span class="eventsName mt-2 mb-2">${fn:substring(result.name, 0, 20)}...</span>
+                    </c:when>
+                    <c:otherwise>
+                          <span class="eventsName mt-2 mb-2">${result.name}</span>
+                    </c:otherwise>
+                 </c:choose>
+
                 </div>
             </a>
         </div>

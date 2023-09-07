@@ -4,6 +4,7 @@
 <%@ taglib prefix="header" tagdir="/WEB-INF/tags/responsive/common/header"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <main>
@@ -19,11 +20,26 @@
                             <div class="col-md-4" style="position: relative;">
                                 <div class="event-top-info-box">
                                     <div class="date" style="position: absolute;">
-                                        <span class="day">30</span>
-                                        <span class="month">DEC</span>
+                                     <span class="day"><fmt:formatDate value="${productData.eventDate}" pattern="d" /></span>
+                                     <span class="month"><fmt:formatDate value="${productData.eventDate}" pattern="MMMM" /></span>
                                     </div>
-                                    <h2 class="event-title">${fn:escapeXml(productData.name)}</h2>
-                                    <p class="event-description">${fn:escapeXml(productData.description)}</p>
+                                    <c:choose>
+                                        <c:when test="${fn:length(productData.name) gt 20}">
+                                             <h2 class="event-title">${fn:substring(productData.name, 0, 20)}...</h2>
+                                        </c:when>
+                                        <c:otherwise>
+                                              <h2 class="event-title">${fn:escapeXml(productData.name)}</h2>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                      <c:choose>
+                                        <c:when test="${fn:length(productData.description) gt 150}">
+                                             <p class="event-description">${fn:substring(productData.description, 0, 150)}...</p>
+                                        </c:when>
+                                        <c:otherwise>
+                                             <p class="event-description">${fn:escapeXml(productData.description)}</p>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
                             </div>
                         </div>

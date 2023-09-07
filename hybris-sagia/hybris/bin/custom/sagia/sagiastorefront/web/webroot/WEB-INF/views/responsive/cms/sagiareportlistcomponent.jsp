@@ -51,7 +51,15 @@
                         </c:forEach>
                     </div>
                     </div>
-                </c:when>
+                    <div class="col-md-12">
+                        <div class="showMoreLessButtonContainer">
+                            <button id="loadEventMore" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme
+                                    code="review.show.more"/></button>
+                            <button id="showEventLess" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme
+                                    code="review.show.less"/></button>
+                        </div>
+                    </div>
+                    </c:when>
                 <c:otherwise>
                     <div class="col-lg-12 col-md-12 mt-4 text-center">
                         <spring:theme code="text.label.notFound"/>

@@ -11042,13 +11042,22 @@ body.page-living-in-saudi .content {
 	border:none;
 	cursor: pointer;
 }
-
 .page-newsevents-list-page .showMoreLessButtonContainer{
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
+.pageLabel--reportList .loadNewsEventShowLessButton{
+	background: var(--misaFirstColor);
+	border:none;
+	cursor: pointer;
+}
+.pageLabel--reportList .showMoreLessButtonContainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
 .page-newsevents-list-page .news-container .news{
    display:none;

@@ -26377,7 +26377,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	font-size: 14px;
 	font-weight: 400;
 }
-
+.pageLabel--reportList .loadNewsEventShowLessButton{
+	background: var(--misaFirstColor);
+	border:none;
+	cursor: pointer;
+}
+.pageLabel--reportList .showMoreLessButtonContainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 .page-newsevents-list-page .breadcrumb-container .breadcrumb-left-icon {
 	background-image: url('../img/article-details-events-left-arrow-icon.png');
 	background-repeat: no-repeat;

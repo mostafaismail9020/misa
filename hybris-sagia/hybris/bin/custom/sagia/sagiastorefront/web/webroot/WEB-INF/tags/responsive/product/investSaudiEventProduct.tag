@@ -34,10 +34,10 @@
             <!-- Article Details Events Page -->
             <section class="article-details-events-page">
                 <div class="container">
-                    <div class="row mt-3">
+                    <div class="row mt-2 mb-5">
                          <c:if test="${language eq 'en'}">
                              <a href="${encodedContextPath}/newseventslist">
-                                <div class="col-md-12 mt-3 breadcrumb-container">
+                                <div class="col-md-12 mt-4 breadcrumb-container">
                                     <span class="breadcrumb-left-icon"></span>
                                   <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
                                 </div>
@@ -46,14 +46,14 @@
 
                         <c:if test="${language eq 'ar'}">
                              <a href="${encodedContextPath}/newseventslist">
-                                <div class="col-md-12 mt-3 breadcrumb-container">
+                                <div class="col-md-12 mt-4 breadcrumb-container">
                                    <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
                                     <span class="breadcrumb-left-icon"></span>
                                 </div>
                             </a>
                         </c:if>
                     </div>
-                    <div class="row mt-3">
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="event-time-location">
                                 <span class="event-time"> ${fn:escapeXml(productData.eventTiming)}</span>
@@ -62,7 +62,7 @@
                             <h1 class="article-details-event-title">${fn:escapeXml(productData.name)}</h1>
                             <p>${productData.summary}</p>
 
-                            <div class="event-info-box-container mt-3">
+                            <div class="event-info-box-container mt-5 mb-5">
                                 <div class="event-info-box">
 
                                      <c:forEach items="${productData.eventDetailGrid}" var="eventDetailGrid">
@@ -88,10 +88,10 @@
                         </div>
                     </div>
 
-                    <div class="row mt-3">
+                    <div class="row mt-5 mb-5">
                         <div class="col-md-12">
                             <div class="subjects-container">
-                                <h1 class="title "><spring:theme code="portal.event.details.subjects"/></h1>
+                                <h1 class="title mb-4"><spring:theme code="portal.event.details.subjects"/></h1>
                                 <ul>
 
                                    <c:forEach items="${productData.subjects}" var="subjects">
@@ -106,10 +106,10 @@
                         </div>
                     </div>
 
-                    <div class="row mt-3">
+                    <div class="row mt-5 mb-5">
                         <div class="col-md-12">
                             <div class="highlighted-speakers-container">
-                                <h1 class="title"><spring:theme code="portal.event.details.speakers"/></h1>
+                                <h1 class="title mb-4"><spring:theme code="portal.event.details.speakers"/></h1>
                                 <div class="highlighted-speakers">
 
                                     <c:forEach items="${productData.speakers}" var="speakers">
@@ -126,9 +126,9 @@
                         </div>
                     </div>
 
-                    <div class="row mt-3">
+                    <div class="row mt-5">
                         <div class="col-md-12">
-                            <h1 class="sponsors-partners-container-title">
+                            <h1 class="sponsors-partners-container-title mb-4">
                                 <spring:theme code="portal.event.details.sponsors"/>
                             </h1>
                             <div class="sponsors-partners-container">

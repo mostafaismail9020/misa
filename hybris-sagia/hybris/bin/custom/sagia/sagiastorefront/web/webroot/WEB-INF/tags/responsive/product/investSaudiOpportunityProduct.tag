@@ -35,16 +35,6 @@
     				<div class="order-lg-1 order-md-1 order-1">
 	    				<p class="desc">${fn:escapeXml(productData.description)}</p>
     				</div>
-    				<div class="order-lg-2 order-md-2 order-3">
-	    				<h3 class="second-sub-title">Sector and market opportunity</h3>
-	    				<p class="desc">
-	    					In ut lacinia dui. Integer orci lacus, malesuada sit amet viverra et, consequat vitae massa.
-	    					Vestibulum sit amet auctor lacus. Sed rhoncus sed metus eu euismod.
-							Maecenas et velit eget magna lobortis auctor a a odio.
-							Nulla lorem sem, fringilla vitae lacinia in, semper a libero.
-							Nunc et sollicitudin augue, vitae faucibus justo. Ut vehicula nisi vel ultrices ullamcorper.
-	    				</p>
-    				</div>
     			</div>
     			<div class="col-md-5 col-12 order-lg-3 order-md-3 order-2">
     				<div class="jumbotron jumbotron-main">
@@ -113,10 +103,10 @@
     						<div class="col-md-12 col-12">
     							<div class="row">
     								<div class="col-md-12 col-12">
-    									<p class="opportunity-owner">Ahmed Ali</p>
+    									<p class="opportunity-owner text-center">Ahmed Ali</p>
     								</div>
     								<div class="col-md-12 col-12">
-    									<p class="opportunity-owner-position">Opportunity lead</p>
+    									<p class="opportunity-owner-position text-center">Opportunity lead</p>
     								</div>
     							</div>
     						</div>
@@ -236,7 +226,26 @@
     							<h3 class="opportunity-statics-title text-center">Cost of Doing Business</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.costOfDoingBusinessText)}</p>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Factor</div>
+    								<div class="col-md-5">Ranking amongst regional peers</div>
+    							</div>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Electricity tariffs for industrial players</div>
+    								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.electricityTariffs)}</span></div>
+    							</div>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Productivity adjusted wages</div>
+    								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.productivityAdjustedWages)}</span></div>
+    							</div>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Logistics Performance Index (1-5)</div>
+    								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.logisticsPerformanceIndex)}</span></div>
+    							</div>
+    							<div class="row mt-3">
+    								<div class="col-md-7">Construction Costs (Indexed to US, %0 is cheapest</div>
+    								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">4${fn:escapeXml(productData.constructionCosts)}</span></div>
+    							</div>
     						</div>
     					</div>
     				</div>

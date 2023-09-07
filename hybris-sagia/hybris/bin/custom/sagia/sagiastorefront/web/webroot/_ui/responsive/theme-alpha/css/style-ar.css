@@ -25551,6 +25551,24 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	letter-spacing: -0.001em;
 }
 
+.special-badge-opportunity-details {
+	background-color: rgba(191, 155, 46, 0.15);
+	color: var(--misaDarkGrayText);
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.001em;
+}
+
+.special-badge-opportunity-details-green {
+	background-color: rgba(101, 220, 137, 0.5);
+	color: var(--misaDarkGrayText);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.001em;
+}
+
 .opportunity-article-section-body .jumbotron.jumbotron-main .btn-download-pdf-opportunity {
 	color: #fff;
     background-color: rgba(0, 113, 77, 0.05);

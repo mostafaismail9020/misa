@@ -190,6 +190,31 @@ ACC.autocomplete = {
 							});
 						});
 					}
+					if (data.reports != null) {
+						if (data.reports.length > 0)
+							autoSearchData.push({
+								value: "<strong class='title'>Reports</strong>",
+								code: null,
+								desc: null,
+								manufacturer: null,
+								url:  window.location.href + "mediaCenter/events",
+								type: "productResult",
+								image: null
+							});
+						$.each(data.reports, function (i, obj)
+						{
+							autoSearchData.push({
+								value: ACC.sanitizer.sanitize(obj.name),
+								code: obj.code,
+								desc: ACC.sanitizer.sanitize(obj.description),
+								manufacturer: ACC.sanitizer.sanitize(obj.manufacturer),
+								url:  ACC.config.encodedContextPath + obj.url,
+								// price: obj.price.formattedValue,
+								type: "productResult",
+								image: (obj.images!=null && self.options.displayProductImages) ? obj.images[0].url : null // prevent errors if obj.images = null
+							});
+						});
+					}
 					if (data.products != null) {
 						if (data.products.length > 0)
 							autoSearchData.push({

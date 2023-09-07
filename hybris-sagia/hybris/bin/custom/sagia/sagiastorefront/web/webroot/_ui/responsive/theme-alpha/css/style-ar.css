@@ -26584,56 +26584,57 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
+		gap: 20px;
 	}
 
 	.latest-news {
 		flex: 1 0 calc(33.333% - 1rem);
 		max-width: calc(33.333% - 1rem);
 		box-sizing: border-box;
-		display: flex;
 		overflow: hidden;
 		margin-bottom: 30px;
 
 		.link {
-			display: flex;
+			display: block;
 			width: 100%;
 			text-decoration: none;
 			color: inherit;
 		}
 
 		.image-wrapper {
-			flex: 0 0 30%;
-			max-width: 125px;
 			width: 100%;
-			height: 87px;
+			height: auto;
 			position: relative;
 		}
 
 		.image {
 			width: 100%;
-			height: 100%;
+			height: 200px;
 			border-radius: 10px;
 		}
 
 		.text {
-			flex: 1;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			padding: 0 20px 0 20px;
+			display: block;
+			padding: 10px 0 10px 0;
 		}
 
 		.title {
-			font-size: 16px;
-			font-weight: 700;
-			color: var(--misaDarkGrayText);
-			margin: 0;
+			font-size: 20px;
+			font-weight: 600;
+			letter-spacing: 0;
+			color: var(--misaFirstColor);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			padding: 5px 0 0 0;
+			margin-bottom: 10px;
 		}
 
 		.date {
 			font-size: 16px;
 			font-weight: 400;
 			color: var(--misaDarkGrayText)!important;
+			margin-top: 5px;
 		}
 	}
 

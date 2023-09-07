@@ -24963,7 +24963,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	cursor: pointer;
 }
 .pageLabel--reportList .breadcrumb-container .breadcrumb-page-info {
-	color: var(--misaSecondColor) !important;
+	color: var(--misaFirstColor) !important;
 	font-size: 14px;
 	font-weight: 400;
 }

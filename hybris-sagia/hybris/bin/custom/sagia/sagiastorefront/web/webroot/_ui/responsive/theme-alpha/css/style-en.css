@@ -25149,7 +25149,9 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
     text-transform: capitalize;
     color: var(--misaFirstColor);
 }
-
+.page-report-list-page  .misa-text-title{
+padding: 10px;
+}
 .misa-text-title * {
 	font-size: 32px;
     font-weight: 600;

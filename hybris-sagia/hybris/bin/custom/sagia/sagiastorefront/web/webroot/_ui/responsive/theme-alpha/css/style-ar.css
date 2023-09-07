@@ -26581,7 +26581,7 @@ padding: 10px;
     text-align: right;
 }
 .page-report-list-page .media-card-img{
-    width: 300px !important;
+    width: 100% !important;
     height: 172px !important;
 }
 .page-report-list-page .reportDate{

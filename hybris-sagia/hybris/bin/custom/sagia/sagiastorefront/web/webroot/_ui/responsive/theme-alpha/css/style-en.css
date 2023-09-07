@@ -2170,7 +2170,7 @@ p.contowl {
 	padding-bottom: 15px;
 }
 .page-report-list-page .media-card-img{
-    width: 300px !important;
+    width: 100% !important;
     height: 172px !important;
 }
 

@@ -134,6 +134,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         populateMarketOverview(productModel,productData);
         populateDemand(productModel,productData);
         populateSupply(productModel,productData);
+        populateSegment(productModel,productData);
         
     }
 
@@ -391,6 +392,14 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 
 			productData.setImportDependencyText(productModel.getSupply().getImportDependencyText());
 			productData.setScalabilityAndLocalizationText(productModel.getSupply().getScalabilityAndLocalizationText());
+		}
+	}
+	
+	private void populateSegment(OpportunityProductModel productModel, ProductData productData) {
+
+		if (Objects.nonNull(productModel.getSagiaSegment())) {
+
+			productData.setSegmentName(productModel.getSagiaSegment().iterator().next().getSegmentName());
 		}
 	}
 	

@@ -96,21 +96,21 @@
    									</div>
    								</div>
     						</div>
-  							<div class="col-md-12 col-12">
-  								<button class="btn btn-download-pdf-opportunity" id="controllerButton" class="button" onclick="callController()">
+  							<div class="col-md-12 col-12 mt-3">
+  								<button class="btn btn-download-pdf-opportunity col" id="controllerButton" class="button" onclick="callController()">
 									<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
 								</button>
-								<button class="btn btn-download-pdf-opportunity" id="buttonWithText" class="button" style="display: none;">Processing...</button>
+								<button class="btn btn-download-pdf-opportunity col" id="buttonWithText" class="button" style="display: none;">Processing...</button>
 								<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
   							</div>
     					</div>
     				</div>
     				<div class="jumbotron jumbotron-second">
     					<div class="row">
-    						<div class="col-md-3 col-3">
+    						<div class="col-md-3 col-3" style="display: none;">
     							<img class="img-fluid rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS78M1xPINkEl0df2wnbq3bro9Oz0rCHpWn284h5iT4tQ&s" />
     						</div>
-    						<div class="col-md-9 col-9">
+    						<div class="col-md-12 col-12">
     							<div class="row">
     								<div class="col-md-12 col-12">
     									<p class="opportunity-owner">Ahmed Ali</p>

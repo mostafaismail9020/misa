@@ -9216,7 +9216,8 @@ a.pvcy-policy:focus {
 	padding: 14px 5px;
 }
 .pageLabel--newseventslist .events-card-img{
-    height: 200px;
+  height: 200px;
+  border-radius: 10px;
 }
 .eventDay{
     font-family: 'Arial' !important;;

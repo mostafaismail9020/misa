@@ -9441,6 +9441,7 @@ a.pvcy-policy:focus {
 }
 .pageLabel--newseventslist .events-card-img{
     height: 200px;
+    border-radius: 10px;
 }
 .eventMonth{
     font-weight: 700  !important;;
@@ -11030,7 +11031,11 @@ body.page-living-in-saudi .content {
 
 .page-newsevents-list-page .events-container .event{
    display:none;
+
 }
+
+
+
 .page-newsevents-list-page .loadNewsEventShowLessButton{
 	background: #BF9B2E;
 	border:none;

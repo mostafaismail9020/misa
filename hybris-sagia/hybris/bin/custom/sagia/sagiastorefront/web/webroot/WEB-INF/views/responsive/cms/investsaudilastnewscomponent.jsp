@@ -28,7 +28,7 @@
 			              	<div class="card-box p-2 home-news-updates-content">
 			               		<span><fmt:formatDate value="${currentComponent.newsDate}" type="both" dateStyle="long" timeStyle="long" pattern="d MMMM yyyy" /></span>
 			                  	<h2><a href="${newsUrl}/${currentComponent.uid}">${fn:escapeXml(currentComponent.newsTitle)}</a></h2>
-			                  	<p class="home-news-updates-content-p">${fn:escapeXml(currentComponent.newsShortInformation)}</p>
+			                  	<p class="home-news-updates-content-p">${currentComponent.newsShortInformation}</p>
 	                      	</div>
 						</div>
 					</div>

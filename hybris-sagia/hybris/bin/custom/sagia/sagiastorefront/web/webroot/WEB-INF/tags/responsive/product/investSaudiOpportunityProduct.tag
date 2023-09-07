@@ -105,11 +105,16 @@
    								</div>
     						</div>
   							<div class="col-md-12 col-12 mt-3">
-  								<button class="btn btn-download-pdf-opportunity col" id="controllerButton" class="button" onclick="callController()">
-									<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
-								</button>
-								<button class="btn btn-download-pdf-opportunity col" id="buttonWithText" class="button" style="display: none;">Processing...</button>
-								<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
+  								<div class="row">
+  									<div class="col-md-5">
+  										<button class="btn btn-download-pdf-opportunity col" id="controllerButton" class="button" onclick="callController()">
+											<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
+										</button>
+										<button class="btn btn-download-pdf-opportunity col mt-2" id="buttonWithText" class="button" style="display: none;">Processing...</button>
+  									</div>
+  									<div class="col-md-7 mt-3 text-center">Download Opportunity</div>
+									<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
+  								</div>
   							</div>
     					</div>
     				</div>
@@ -203,7 +208,7 @@
 	                                </ul>
 								</p>
 								<p class="opportunity-statics-desc">Expected IRR ${fn:escapeXml(productData.expectedIRR)}</p>
-								<p class="opportunity-statics-desc">Payback period ${fn:escapeXml(productData.paybackPeriod)} years</p>
+								<p class="opportunity-statics-desc">Payback period ${fn:escapeXml(productData.paybackPeriod)} Years</p>
 								<p class="opportunity-statics-desc">Job Creation ${fn:escapeXml(productData.jobscreated)}</p>
 								<p class="opportunity-statics-desc">GDP Impact ${fn:escapeXml(productData.gdpContribution)}</p>
 								<p class="opportunity-statics-desc">Location (Region) ${fn:escapeXml(productData.locationRegionText)} - ${fn:escapeXml(productData.locationCityText)}</p>
@@ -218,7 +223,7 @@
     							<h3 class="opportunity-statics-title text-center">Value Proposition</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.valuePropositionText)}</p>
+    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.valuePropositionText)}</p>
     						</div>
     					</div>
     				</div>
@@ -232,7 +237,7 @@
     							<h3 class="opportunity-statics-title text-center">Incentives and Enablers</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.incentivesAndEnablersText)}</p>
+    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.incentivesAndEnablersText)}</p>
     						</div>
     					</div>
     				</div>
@@ -404,7 +409,7 @@
     							<h3 class="opportunity-statics-title text-center">Raw Materials</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${productData.rawMaterialText}</p>
+    							<p class="opportunity-statics-desc">${productData.rawMaterialText}</p>
     						</div>
     					</div>
     				</div>
@@ -416,7 +421,7 @@
     							<h3 class="opportunity-statics-title text-center">Global Trends</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.globalTrendsText)}</p>
+    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.globalTrendsText)}</p>
     						</div>
     					</div>
     				</div>
@@ -446,7 +451,7 @@
     							<h3 class="opportunity-statics-title text-center">Key Demand Drivers</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.keyDemandDriversText)}</p>
+    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.keyDemandDriversText)}</p>
     						</div>
     					</div>
     				</div>
@@ -458,7 +463,7 @@
     							<h3 class="opportunity-statics-title text-center">Scalability & Localization</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.scalabilityAndLocalizationText)}</p>
+    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.scalabilityAndLocalizationText)}</p>
     						</div>
     					</div>
     				</div>
@@ -488,7 +493,7 @@
     							<h3 class="opportunity-statics-title text-center">Import Dependency</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc text-center">${fn:escapeXml(productData.importDependencyText)}</p>
+    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.importDependencyText)}</p>
     						</div>
     					</div>
     				</div>

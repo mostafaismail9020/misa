@@ -13,7 +13,7 @@
                                      <div class="row">
                                          <div class="col-sm-4">
                                              <div class="card-image">
-                                                 <img class="img-fluid media-card-img" src="${commonResourcePath}/images/default-product-image.png" alt="" loading="lazy">
+                                                 <img class="img-fluid media-card-img" src="https://investsaudi.sa/medias/all-opportunity.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw4OTU5MzZ8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDljL2hiNC84OTA5NDE5MzQ3OTk4LmpwZ3xiZGM4NzA3ZTZmNDc5ZmJkZDJlZDQ5MjI2ODQ4YzQ1NWY0YTk4N2RlN2QxMTVlNTAyM2Q5NGQ4OWEyZjQ3MGY4" alt="" loading="lazy">
                                              </div>
                                          </div>
 

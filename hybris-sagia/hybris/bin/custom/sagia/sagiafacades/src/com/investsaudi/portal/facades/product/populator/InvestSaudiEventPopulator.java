@@ -121,6 +121,9 @@ public class InvestSaudiEventPopulator implements Populator<ProductData, EventPr
         if (CollectionUtils.isNotEmpty(productModel.getOthers())) {
             productData.setSponsersPartners(imageConverter.convertAll(productModel.getOthers()));	
 		}
+        if (CollectionUtils.isNotEmpty(productModel.getDetail())) {
+            productData.setPdfUrl(productModel.getDetail().iterator().next().getURL());
+		}
     }
 
 

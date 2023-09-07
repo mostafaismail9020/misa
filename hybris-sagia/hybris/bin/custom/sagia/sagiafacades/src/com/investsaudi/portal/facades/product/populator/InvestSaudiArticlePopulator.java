@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -118,6 +119,9 @@ public class InvestSaudiArticlePopulator implements Populator<ProductData, Artic
         if (null != productModel.getParaWithMedia(currentLocale)) {
             productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
         }
+        if (CollectionUtils.isNotEmpty(productModel.getDetail())) {
+            productData.setPdfUrl(productModel.getDetail().iterator().next().getURL());
+		}
     }
 
 

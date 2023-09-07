@@ -176,7 +176,7 @@
 						<div class="">
 						<c:forEach var="partnerMap" items="${productData.partnerMap}">
 							<c:if test="${partnerMap.value.size() gt 0}">
-								<div class="mt-5">
+								<div class="mt-2">
 									<h1 class="clr_gld text-center text-uppercase pb-3">${partnerMap.key}</h1>
 									<div class="d-flex justify-content-center">
 										<c:forEach var="partnerLogo" items="${partnerMap.value}">

@@ -11,7 +11,7 @@ INSERT_UPDATE CMSLinkComponent ;uid[unique = true] ; linkname[lang=en] ; linknam
                                ;sectors-icon-link  ; Sectors           ; القطاعات           ;Sectors   ; /sectors-opportunities       ;sectors-icon-link    ;
                                ;news-icon-link     ;News               ; الأخبار             ;News      ; /newseventslist              ;news-icon-link        ;
                                ;events-icon-link   ;Events             ; الأنشطة والفعاليات  ;Events    ; /newseventslist              ;events-icon-link        ;
-                               ;reports-icon-link  ;Reports            ; التقارير           ;Reports   ; /economic/investmentReports  ;reports-icon-link    ;
+                               ;reports-icon-link  ;Reports            ; التقارير           ;Reports   ; /reportList				  ;reports-icon-link    ;
                                ;services-icon-link ;Services           ; خدمات              ;Services  ; /aboutSaudi                  ;services-icon-link    ;
                                ;incentives-icon-link;Incentives        ; الحوافز            ;Incentives; /investor/incentives         ;incentives-icon-link ;    
                                ;guide-icon-link    ;Guide              ; دليل               ;Guide     ; /investor/guide              ;guide-icon-link        ;

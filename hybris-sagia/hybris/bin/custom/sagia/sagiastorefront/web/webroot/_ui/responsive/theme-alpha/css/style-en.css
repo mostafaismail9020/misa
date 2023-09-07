@@ -22488,6 +22488,45 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	border-radius: 10px;
 }
 
+.page-report-list-page .btn-share {
+	background-color: #FFFFFF;
+	color: var(--misaFirstColor)!important;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+}
+.page-report-list-page .btn-download {
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	background-color: var(--misaFirstColor);
+	color: #FFFFFF;
+}
+.page-report-list-page .icon-share {
+	display: inline-block;
+	background-image: url("../img/article-details-page-share-icon.png");
+	background-repeat: no-repeat;
+	width: 25px;
+	background-size: contain;
+	height: 16px;
+	margin-left: 10px;
+}
+    .page-report-list-page   .download-share-buttons {
+        text-align: center;
+    }
+
+    .page-report-list-page .download-share-buttons .col-md-12 {
+        display: inline-block;
+    }
 .article-details-page .recent-projects-card-title {
 	color: var(--misaDarkGrayText);
 	font-size: 14px;

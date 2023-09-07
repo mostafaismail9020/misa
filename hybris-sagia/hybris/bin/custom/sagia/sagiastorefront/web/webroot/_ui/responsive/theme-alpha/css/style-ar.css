@@ -23840,6 +23840,38 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	background-size: contain;
 	height: 16px;
 }
+.page-report-list-page .btn-share {
+	background-color: #FFFFFF;
+	color: var(--misaFirstColor)!important;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+} .page-report-list-page .btn-download {
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	background-color: var(--misaFirstColor);
+	color: #FFFFFF;
+}
+.page-report-list-page .icon-share {
+	display: inline-block;
+	background-image: url("../img/article-details-page-share-icon.png");
+	background-repeat: no-repeat;
+	width: 25px;
+	background-size: contain;
+	height: 16px;
+	margin-left: 10px;
+}
+
 
 .article-details-page .download-share-buttons {
 	display: flex;

@@ -19,7 +19,7 @@
 
                                          <div class="col-sm-8">
                                              <div class="card-text">
-                                                 <h3 class="reportName">${fn:toLowerCase(result.opportunity.name)}</h3>
+                                                 <h3 class="reportName">${result.opportunity.name}</h3>
                                                  <p class="reportDate d-report-update-date">
                                                      <fmt:formatDate value="${result.opportunity.reportDate}" pattern="d MMM yyyy" />
                                                  </p>

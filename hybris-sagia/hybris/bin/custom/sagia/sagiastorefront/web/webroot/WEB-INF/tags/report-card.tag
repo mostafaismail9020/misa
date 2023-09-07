@@ -11,13 +11,13 @@
                              <div class="events-card">
                                  <a href="${encodedContextPath}${result.opportunity.url}">
                                      <div class="row">
-                                         <div class="col-sm-4">
+                                         <div class="col-md-12">
                                              <div class="card-image">
                                                  <img class="img-fluid media-card-img" src="https://investsaudi.sa/medias/all-opportunity.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw4OTU5MzZ8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDljL2hiNC84OTA5NDE5MzQ3OTk4LmpwZ3xiZGM4NzA3ZTZmNDc5ZmJkZDJlZDQ5MjI2ODQ4YzQ1NWY0YTk4N2RlN2QxMTVlNTAyM2Q5NGQ4OWEyZjQ3MGY4" alt="" loading="lazy">
                                              </div>
                                          </div>
 
-                                         <div class="col-sm-8">
+                                         <div class="col-md-12">
                                              <div class="card-text">
                                                  <h3 class="reportName">${result.opportunity.name}</h3>
                                                  <p class="reportDate d-report-update-date">

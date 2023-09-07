@@ -24272,14 +24272,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	background-image: url("../img/arrow-down.svg") !important;
 }
 
-.page-link-and-title {
+.page-link-and-title,
+.page-resources-list-page .banner-section {
 	display: flex;
 	align-items: end;
 	background: #F2F8F6;
 	height: 255px;
   }
   @media (min-width: 768px) {
-	.page-link-and-title {
+	.page-link-and-title,
+	.page-resources-list-page .banner-section {
 	  height: 350px;
 	}
   }
@@ -24294,12 +24296,24 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	padding-left: 0 !important;	
 }
 
-.page-link-and-title h1 {
+
+.page-link-and-title h1,
+.page-resources-list-page .banner-section h1 {
 	margin-bottom: 10px !important;
 	font-size: 32px;
 	font-weight: 700;
 	color: var(--misaSecondColor);
 }
+
+.page-resources-list-page .banner-section h1 {
+	margin-top: 200px;
+}
+
+@media (min-width: 768px) {
+	.page-resources-list-page .banner-section h1 {
+		margin-top: 271px;
+	}
+  }
 
 .page-link-and-title .text {
 	margin-top: 14px;
@@ -24486,11 +24500,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	border-top-right-radius: 8px !important;
 	border-bottom-right-radius: 8px !important;
   }
+  a.submit-button, 
   .submit-button, .contactpage-form .submit-button {
 	min-width: 185px !important;
 	margin-top: 25px;
 	background-color: var(--misaFirstColor) !important;
-	color: #fff;
+	color: #fff !important;
 	text-transform: capitalize;
 	padding: 16px 0 !important;
 	cursor: pointer;
@@ -24501,6 +24516,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	border-radius: 8px !important;
 	border: 0 !important;
 	outline: 0 !important;
+  }
+
+  a.submit-button {
+	padding: 14px 0 !important;
+	display: inline-block;
+	text-align: center;
   }
 
   .submit-button.white {
@@ -24625,6 +24646,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	border-top: 1px solid #ccc;
 }
 
+.resource-title h2 {
+	font-size: 32px;
+	color: var(--misaFirstColor);
+}
+
 .resource-title.no-border {
 	border-top: none;
 }
@@ -24643,7 +24669,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 .article {
     display: flex;
     gap: 10px;
-    background-color: #F2F8F6;
+	padding: 10px;
+    background-color: #F8F8F8;
     border-radius: 10px;
 }
 
@@ -24660,19 +24687,20 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .article .information .date {
-    color:#00714D;
+    color:var(--misaDarkGrayText);
     margin-bottom: 10px;
 }
 
 .article .information .title {
     font-size: 16px;
     font-weight: 700;
-    color: #00714D;
+    color:var(--misaDarkGrayText);
 }
 
-.article .information .description {
+.article .information .description,
+.article .information .description p {
     margin-top: 5px;
-    color: #00714D;
+    color: var(--misaDarkGrayText) !important;
 }
 
 
@@ -24734,25 +24762,38 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .news {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+	flex-direction: column;
     margin-bottom: 35px;
 }
 
 .news .image {
     border:1px solid #ccc;
-    min-width: 125px;
-    height: 150px;
 	border-radius: 10px;
+	max-height: 220px;
 }
 
 .news .headline {
-    color: #00714D;
+	display: block;
+	font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: var(--misaFirstColor);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 0 5px 0;
+}
+
+.news a.headline:hover {
+	color: var(--misaFirstColor);
 }
 
 .news .date {
-    margin-top: 5px;
-    color:#BF9B2E;
+	font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: var(--misaDarkGrayText);	
 }
 
 .resources .button-large {
@@ -24805,11 +24846,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity .market-info {
+    color: var(--misaFirstColor);
 	text-align: left;
 }
 
+.opportunity p {
+	color: var(--misaFirstColor) !important;
+}
+
 .opportunity .link:hover p {
-	color: var(--misaSecondColor) !important;
+	color: var(--misaFirstColor) !important;
 }
 
 .opportunity .sector-name {
@@ -24841,10 +24887,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 @media (min-width: 992px) {
-    .news {
-        flex-direction: row;
-    }
-
     .opportunity .information {
         flex-direction: row;
     }
@@ -25339,8 +25381,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	padding: 5px 0 0 0;
 }
 
-@media (max-width: 768px) {
-	.event-detail-page-similar-opportunities .similar-opportunities-know-more-btn{
-		height: 50px!important;
-	}
+.page-resources-list-page .news-date {
+	background-color: var(--misaSecondColor);
+}
+
+.page-resources-list-page .event {
+	margin-top: 25px !important;
 }

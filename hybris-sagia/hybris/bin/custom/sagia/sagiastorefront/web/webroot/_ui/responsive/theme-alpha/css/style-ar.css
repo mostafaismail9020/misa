@@ -360,6 +360,7 @@ ul.sagiaNavigation-subNav li svg {
 }
 
 .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after {
+	display: none !important;
 	position: absolute;
 	top: 10px;
 	right: 1px;
@@ -628,6 +629,7 @@ ul.dropdown-list li a {
 }
 
 .mobile-nav .nav-item.dropdown .dropdown-toggle::after {
+	display: none !important;
 	content: '';
 	position: absolute;
 	top: 17px;

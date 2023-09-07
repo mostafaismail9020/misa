@@ -87,7 +87,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         
         final Optional<CategoryModel> parentCategory = emptyIfNull(productModel.getSupercategories()).stream().findFirst();
         if (parentCategory.isPresent()) {
-            productData.setParentCategory(parentCategory.get().getCode());
+            productData.setParentCategory(parentCategory.get().getName());
             productData.setUrl(SECTOR_URL + parentCategory.get().getCode() + "/" + productModel.getCode());
             
             final MediaModel logoImage = parentCategory.get().getPicture();

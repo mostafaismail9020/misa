@@ -8,7 +8,8 @@
 
 
 <main>
-            <div class="article-details-events-page-banner" style="background-image: url('https://investsaudi.sa/medias/home-banner.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwxMTEzMTN8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaGM3L2hkOS84OTIzMzU4NjkxMzU4LmpwZ3w1YWJjYTA5NDY1MjM0NGZiYWJhZTMzOGJkZTc3MmVmYmFjYTg0MzBjODczZTVkOGM1MTgzZTJmN2VkZGY3NDhk');">
+
+            <div class="article-details-events-page-banner" style="background-image: url(${fn:escapeXml(productData.overviewPicture.url)});">
                 <div class="article-details-events-page-banner-container" data-aos="fade-up">
                     <div class="container">
                         <div class="row">

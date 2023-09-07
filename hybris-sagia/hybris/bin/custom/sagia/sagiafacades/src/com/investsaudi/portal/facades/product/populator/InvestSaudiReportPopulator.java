@@ -17,6 +17,8 @@ import javax.annotation.Resource;
 
 import com.investsaudi.portal.core.model.NewsProductModel;
 import com.investsaudi.portal.core.model.ReportProductModel;
+
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -112,6 +114,9 @@ public class InvestSaudiReportPopulator implements Populator<ProductData, Report
         if (null != productModel.getParaWithMedia(currentLocale)) {
             productData.setParaWithMedia(extractParaWithMedia(productModel.getParaWithMedia(currentLocale)));
         }
+        if (CollectionUtils.isNotEmpty(productModel.getDetail())) {
+            productData.setPdfUrl(productModel.getDetail().iterator().next().getURL());
+		}
     }
 
 

@@ -31,10 +31,10 @@ INSERT_UPDATE CMSNavigationNode	; uid[unique = true]	; name				; title				; cmsL
 
 
 INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 			; linkName[lang = en] 	; linkName[lang = ar] 	; url									; $contentCV[unique = true]	;
-							  ; opportunities-link      ; Opportunities ; Opportunities 		; Opportunities 		;	/sectors-opportunities/opportunities;
-							  ; services-link      		; Servies 		; Services 				; Services 				;	/miza-homepage						;
-							  ; resources-link      	; resources 	; Resources 			; Resources 			;	/resourcesList						;
-							  ; whysaudi-link      		; whysaudi 		; Why Saudi 			; Why Saudi 			;	/why-saudi-arabia					;
-							  ; newsevents-link      	; newsevents 	; News and Events 		; News and Events 		;	/newseventslist						;
-							  ; about-link      		; about 		; About 				; About 				;	/aboutSaudi							;
+							  ; opportunities-link      ; Opportunities ; Opportunities 		; الفرص 				;	/sectors-opportunities/opportunities;
+							  ; services-link      		; Servies 		; Services 				; خدمات  				;	/miza-homepage						;
+							  ; resources-link      	; resources 	; Resources 			;  موارد  	 			;	/resourcesList						;
+							  ; whysaudi-link      		; whysaudi 		; Why Saudi 			; لماذا السعودية؟ 		;	/aboutSaudi							;
+							  ; newsevents-link      	; newsevents 	; News and Events 		; الأنشطة والفعاليات 	;	/newseventslist						;
+							  ; about-link      		; about 		; About 				; من نحن 				;	/aboutSaudi							;
 							  ; support-link      		; support 		; Support 				; Support 				;	/contactUs							;

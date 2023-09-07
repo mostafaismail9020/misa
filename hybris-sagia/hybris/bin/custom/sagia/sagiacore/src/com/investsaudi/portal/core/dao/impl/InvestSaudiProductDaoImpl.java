@@ -5,6 +5,7 @@ import com.investsaudi.portal.core.model.ArticleProductModel;
 import com.investsaudi.portal.core.model.EventProductModel;
 import com.investsaudi.portal.core.model.NewsProductModel;
 import com.investsaudi.portal.core.model.OpportunityProductModel;
+import com.investsaudi.portal.core.model.ReportProductModel;
 import com.investsaudi.portal.core.model.SuccessStoryProductModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.internal.dao.DefaultGenericDao;
@@ -38,6 +39,9 @@ public class InvestSaudiProductDaoImpl extends DefaultGenericDao<ProductModel> i
             }
             else if(productModel.get() instanceof EventProductModel) {
             	return EventProductModel._TYPECODE;
+            }
+            else if(productModel.get() instanceof ReportProductModel) {
+            	return ReportProductModel._TYPECODE;
             }
             else{
                 return SuccessStoryProductModel._TYPECODE;

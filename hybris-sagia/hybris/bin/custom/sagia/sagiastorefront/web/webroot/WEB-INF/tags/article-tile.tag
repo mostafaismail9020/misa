@@ -8,21 +8,20 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
-<div class="articles-list mb-4 col-md-6">
-	<a href="${encodedContextPath}${result.url}" title="${result.name}">
-		<div class="articles-list-item ${className}">
-			${result.name}
-			<p>
-				<c:choose>
-					<c:when test="${fn:length(result.description) gt 150}">
-						${fn:substring(result.description, 0, 150)}...
-					</c:when>
-					<c:otherwise>
-						${result.description}
-					</c:otherwise>
-				</c:choose>
-			</p>
+<div class="col-sm-12">
+	<div class="article mb-4">
+		<div class="information">
+			<a href="${encodedContextPath}${result.url}" title="${result.name}" class="title">${result.name}</a>
+			<c:choose>
+				<c:when test="${fn:length(result.description) gt 150}">
+					<div class="description">${fn:substring(result.description, 0, 150)}...</div>
+				</c:when>
+				<c:otherwise>
+					<div class="description">${result.description}</div>
+				</c:otherwise>
+			</c:choose>							
 		</div>
-	</a>
+	</div>
 </div>
+
+

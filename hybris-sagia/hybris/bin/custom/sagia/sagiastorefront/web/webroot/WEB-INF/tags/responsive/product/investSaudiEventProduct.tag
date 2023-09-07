@@ -35,12 +35,23 @@
             <section class="article-details-events-page">
                 <div class="container">
                     <div class="row mt-2 mb-5">
-                        <a href="${encodedContextPath}/newseventslist">
-                            <div class="col-md-12 breadcrumb-container">
-                                <span class="breadcrumb-left-icon"></span>
-                                <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
-                            </div>
-                        </a>
+                         <c:if test="${language eq 'en'}">
+                             <a href="${encodedContextPath}/newseventslist">
+                                <div class="col-md-12 mt-4 breadcrumb-container">
+                                    <span class="breadcrumb-left-icon"></span>
+                                  <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
+                                </div>
+                            </a>
+                        </c:if>
+
+                        <c:if test="${language eq 'ar'}">
+                             <a href="${encodedContextPath}/newseventslist">
+                                <div class="col-md-12 mt-4 breadcrumb-container">
+                                   <span class="breadcrumb-page-info"> <spring:theme code="dashboard.newsevents" /></span>
+                                    <span class="breadcrumb-left-icon"></span>
+                                </div>
+                            </a>
+                        </c:if>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -80,7 +91,7 @@
                     <div class="row mt-5 mb-5">
                         <div class="col-md-12">
                             <div class="subjects-container">
-                                <h1 class="title mb-3"><spring:theme code="portal.event.details.subjects"/></h1>
+                                <h1 class="title mb-4"><spring:theme code="portal.event.details.subjects"/></h1>
                                 <ul>
 
                                    <c:forEach items="${productData.subjects}" var="subjects">
@@ -115,18 +126,23 @@
                         </div>
                     </div>
 
-                    <div class="row mb-5 mt-5">
-                     <h1 class="sponsors-partners-container-title mb-3"><spring:theme code="portal.event.details.sponsors"/></h1>
-                        <div class="sponsors-partners-container">
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <h1 class="sponsors-partners-container-title mb-4">
+                                <spring:theme code="portal.event.details.sponsors"/>
+                            </h1>
+                            <div class="sponsors-partners-container">
 
-                              <div class="boxes">
-                             <c:forEach items="${productData.sponsersPartners}" var="sponsorPartner">
-                                <div class="box">
-                                    <div class="icon" style="background-image: url(${sponsorPartner.url});background-repeat: no-repeat;background-position: center; background-size: cover;"></div>
-                                    <p>${fn:escapeXml(sponsorPartner.description)}</p>
+                                <div class="boxes">
+                                    <c:forEach items="${productData.sponsersPartners}" var="sponsorPartner">
+                                        <div class="box">
+                                            <div class="icon"
+                                                 style="background-image: url(${sponsorPartner.url});background-repeat: no-repeat;background-position: center; background-size: cover;"></div>
+                                            <p>${fn:escapeXml(sponsorPartner.description)}</p>
+                                        </div>
+                                    </c:forEach>
+
                                 </div>
-                                 </c:forEach>
-
                             </div>
                         </div>
                     </div>
@@ -135,7 +151,9 @@
                 </div>
             </section>
             <!-- Article Details Events Page -->
-        </main>
-<cms:pageSlot position="PortalPageBottom" var="slotComponent">
-    <cms:component component="${slotComponent}"/>
-</cms:pageSlot>
+
+            <!-- Similar Opportunities Component -->
+            <cms:pageSlot position="PortalPageBottom" var="slotComponent">
+               <cms:component component="${slotComponent}"/>
+            </cms:pageSlot>
+</main>

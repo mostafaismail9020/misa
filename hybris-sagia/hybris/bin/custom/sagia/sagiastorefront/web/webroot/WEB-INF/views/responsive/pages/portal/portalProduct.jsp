@@ -122,19 +122,14 @@
         </c:choose>
 	
 		<c:if test="${not empty productData.productReferences}">
-			<section class="Inc-energyoppertunities">
+			<section class="Inc-energyoppertunities event-detail-page-similar-opportunities">
 			    <div class="container">
-			        <div class="Inc-title-header">
-			            <h1 class="Inc-secdetil-enop-header ">
+			        <div class="similar-opportunities-header">
+			            <h1 class="similar-opportunities-title ">
 			            	<span class="clr_gld"><spring:theme code="portal.similar.opportunities.text"/>&nbsp;</span>			            	
 			            </h1>			            
 			            <c:url value="/sectors-opportunities/opportunities/?q=&sectorIds=" var="exploreAllUrl"/>
-			            <button  class="btn btn-sector-primary responsive-btn-sector">
-			            	<a href="${exploreAllUrl}${categoryCode}"><spring:theme code="portal.exploreall.button.text"/>&nbsp;
-			            		<img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
-			            		<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
-			            	</a>
-			            </button>
+
 			        </div>			
 				
 					<div class="page-main-content mt-0">
@@ -145,11 +140,11 @@
 			                            <div class=" Inc-fearured-opp">
 			                                <h2 class="Inc-fearured-opp-headtitle" title="${references.target.name}">${references.target.name}</h2>
 			                                <h3 class="Inc-fearured-opp-type">${references.target.parentCategory}</h3>
-			                                <button class="btn btn-sector-primary mx-auto">
+			                                <button class="btn btn-primary-fill mx-auto btn-video misa-btn-special similar-opportunities-know-more-btn">
 			                                	<spring:theme code="portal.opportunity.know.more.button"/>
 			                                	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
 			                                </button>
-			                                <button class="btn btn-sector-outline mx-auto">
+			                                <button class="btn btn-secondary-fill mx-auto btn-video misa-btn-special similar-opportunities-know-more-btn">
 			                                	<spring:theme code="portal.opportunity.iam.interested.button"/>
 			                                	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/btn-sector-outline.png" alt="">
 			                                </button>	                               
@@ -157,8 +152,20 @@
 			                        </a>
 			                    </div>
 							</c:forEach>
+
+
 						</div>
-					</div>									
+						<div class="mt-2">
+						  <button  class="btn btn-primary-fill responsive-btn-sector btn-video misa-btn-special">
+                            <a href="${exploreAllUrl}${categoryCode}"><spring:theme code="portal.exploreall.button.text"/>&nbsp;
+                                <img src="${commonResourcePath}/images/explore-all-img.svg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw1NzF8aW1hZ2Uvc3ZnK3htbHxwb3J0YWwtbWVkaWEvaDYwL2hhOS84ODExMDczOTYyMDE0LnN2Z3w0ZTMyZDdlOGYwMWExMzU0YmM2Nzk0ZTZiZjhhMDRhMmMwZjA0NTZiZGU2YTMzMTBhMGYxMDU4MTBkMDZmYTM3" class="img-responsive">
+                                <img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
+                            </a>
+                          </button>
+                         </div>
+					</div>
+
+
 				</div>
 			</section>
 		</c:if>

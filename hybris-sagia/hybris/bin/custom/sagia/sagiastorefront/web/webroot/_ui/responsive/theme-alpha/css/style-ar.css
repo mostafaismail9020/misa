@@ -23679,7 +23679,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-page .article-detail-page-subtitle {
 	font-size: 24px;
-	font-weight: 400;
+	font-weight: 600;
 	color: #BF9B2E;
 }
 
@@ -23743,7 +23743,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	background-repeat: no-repeat;
 	width: 35px;
 	height: 35px;
-	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .article-details-page .what-we-do-box {
@@ -23825,7 +23825,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	background-repeat: no-repeat;
 	width: 20px;
 	height: 16px;
-	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .article-details-page .icon-share {
@@ -23834,7 +23834,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	background-repeat: no-repeat;
 	width: 25px;
 	height: 25px;
-	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .article-details-page .download-share-buttons {
@@ -25962,12 +25962,12 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .page-article-list-page .articles-list {
-	padding: 20px 10px 20px 10px;
+	padding: 10px
 }
 
 .page-article-list-page .articles-list-item {
 	color: var(--misaDarkGrayText)!important;
-	padding: 30px 10px 30px 10px;
+	padding: 10px;
 	border-radius: 10px;
 }
 

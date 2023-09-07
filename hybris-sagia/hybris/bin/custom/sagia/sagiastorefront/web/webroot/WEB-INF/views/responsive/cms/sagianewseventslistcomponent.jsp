@@ -124,7 +124,6 @@
         </div>
     </div>
 
-
     <div class="row">
         <div class="col-md-12">
             <section class="latest-announcements">
@@ -137,9 +136,9 @@
                              src="https://investsaudi.sa/medias/all-opportunity.jpg?context=bWFzdGVyfHBvcnRhbC1tZWRpYXw4OTU5MzZ8aW1hZ2UvanBlZ3xwb3J0YWwtbWVkaWEvaDljL2hiNC84OTA5NDE5MzQ3OTk4LmpwZ3xiZGM4NzA3ZTZmNDc5ZmJkZDJlZDQ5MjI2ODQ4YzQ1NWY0YTk4N2RlN2QxMTVlNTAyM2Q5NGQ4OWEyZjQ3MGY4"
                              alt="" loading="lazy">
                         <div class="details">
-                            <span class="date mt-2">16 Mar 2023</span>
-                            <h3 class="headline">Discover the dynamism of Saudi Arabia's</h3>
-                            <span class="description mb-2">Discover the dynamism of Saudi Arabia's investment landscape with the launch of four new Special Economic Zones (SEZs), spanning across advanced manufacturing, ICT & logistics.</span>
+                            <span class="date mt-2"><spring:theme code="text.newsevents.listing.page.latest.announcements.date"/></span>
+                            <h3 class="headline"><spring:theme code="text.newsevents.listing.page.latest.announcements.title"/></h3>
+                            <span class="description mb-2"><spring:theme code="text.newsevents.listing.page.latest.announcements.content"/></span>
                         </div>
                     </div>
 
@@ -148,9 +147,9 @@
                              src="https://investsaudi.sa/medias/meet-the-Kingdom-Banner.png?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwzNzY2NXxpbWFnZS9wbmd8cG9ydGFsLW1lZGlhL2g5My9oOWQvODkyMzM1OTkwMzc3NC5wbmd8ZDU4ZDE0NzE1OGM1YjBkMzMxMTA1MjUzZGFmNzI2OTMxYTBlMmNjNDZlMGQ3MmUyYmNmYjcwZGUwMDEyNzcxZg"
                              alt="" loading="lazy">
                         <div class="details">
-                            <span class="date mt-2">16 Mar 2023</span>
-                            <h3 class="headline">The Kingdom is embarking on a world-leading</h3>
-                            <span class="description mb-2">The Kingdom is embarking on a world-leading development program to unlock new sectors and diversify the economy through five major Giga-projects, and several mega-projects.</span>
+                             <span class="date mt-2"><spring:theme code="text.newsevents.listing.page.latest.announcements.date"/></span>
+                             <h3 class="headline"><spring:theme code="text.newsevents.listing.page.latest.announcements.title2"/></h3>
+                             <span class="description mb-2"><spring:theme code="text.newsevents.listing.page.latest.announcements.content2"/></span>
                         </div>
                     </div>
 
@@ -159,9 +158,9 @@
                              src="https://investsaudi.sa/medias/economic-Highlights-Banner.png?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwyMzkzMXxpbWFnZS9wbmd8cG9ydGFsLW1lZGlhL2gzMi9oMWYvODkyMzM1OTgzODIzOC5wbmd8MGY1YzUxNWE5NmY2NzJiZTNkYWFiOGI2N2FmOGMxYzhjOGY5OTQ3NDgwMTcwMDdmNmMxMGJmYzYyMDVmNzVhYw"
                              alt="" loading="lazy">
                         <div class="details">
-                            <span class="date mt-2">16 Mar 2023</span>
-                            <h3 class="headline">Discover why Saudi Arabia</h3>
-                            <span class="description mb-2">Discover why Saudi Arabia is rapidly becoming the preferred global investment destination, fueled by the growth of non-oil activities.</span>
+                             <span class="date mt-2"><spring:theme code="text.newsevents.listing.page.latest.announcements.date"/></span>
+                             <h3 class="headline"><spring:theme code="text.newsevents.listing.page.latest.announcements.title3"/></h3>
+                             <span class="description mb-2"><spring:theme code="text.newsevents.listing.page.latest.announcements.content3"/></span>
                         </div>
                     </div>
                 </div>

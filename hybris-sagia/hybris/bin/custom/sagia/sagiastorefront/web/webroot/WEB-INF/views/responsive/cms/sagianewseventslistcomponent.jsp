@@ -112,7 +112,7 @@
                             <tags:news-card result="${result}" loopCount="${status.index}"/>
                         </c:forEach>
                     </div>
-                    <div class="showMoreLessButtonContainer mt-4">
+                    <div class="showMoreLessButtonContainer">
                         <button id="loadNewsMore" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme code="review.show.more"/></button>
                         <button id="showNewsLess" class="loadNewsEventShowLessButton misa-btn-special"><spring:theme code="review.show.less"/></button>
                     </div>

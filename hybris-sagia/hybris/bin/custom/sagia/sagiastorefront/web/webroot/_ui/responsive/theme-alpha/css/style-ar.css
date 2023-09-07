@@ -14031,8 +14031,6 @@ body.pageLabel--reportList .rhq-banner-content:nth-of-type(1) {
     }
  .pageLabel--reportList .pageTitle{
      	color: var(--misaFirstColor) !important;
-     	margin: 0 0 15px 10px !important;
-     	line-height: 56px !important;
      	font-size: 40px !important;
      	font-weight: 600 !important;
  }

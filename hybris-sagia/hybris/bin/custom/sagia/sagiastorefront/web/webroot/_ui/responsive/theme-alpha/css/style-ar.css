@@ -332,9 +332,6 @@ ul.sagiaNavigation-subNav li svg {
 		padding: 15px 0;
 		background: transparent;
 	}
-	#header .logo {
-		font-size: 28px;
-	}
 }
 
 .header-inner-pages {
@@ -6248,6 +6245,11 @@ img.accountLogin-headline-logo {
 		font-size: 25px;
 	    font-weight: 500;
 	    text-align: center;
+	}
+	
+	#header .logo {
+		margin-top: -16px !important;
+		margin-left:0 !important;
 	}
 }
 
@@ -25602,7 +25604,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-main .btn-download-pdf-opportunity {
-	color: #fff;
+	color: var(--misaSecondColor);
     background-color: rgba(0, 113, 77, 0.05);
     border: 1px solid rgba(0, 113, 77, 0.5);
     border-radius: 10px;
@@ -26488,13 +26490,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 .mobile-nav-toggle {
 	top: 20px;
 	height: 20px;
-}
-
-@media (max-width: 640px) {
-	#header .logo {
-		margin-top: -16px;
-		margin-left:0;
-	}
 }
 
 @media (min-width: 640px) and (max-width: 992px) {

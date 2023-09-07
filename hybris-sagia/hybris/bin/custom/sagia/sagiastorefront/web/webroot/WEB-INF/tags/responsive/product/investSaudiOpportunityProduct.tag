@@ -71,27 +71,38 @@
     					</div>
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<p class="irr-location-title">Sector</p>
-    							<div class="d-flex justify-content-between">
-    								<div class="col-md-12 col-12 irr-sector-div text-center">
-    									<div class="row">
-    										<div class="col-md-12 col-12">
-    											<span class="title">${fn:escapeXml(productData.parentCategory)}</span>
-    										</div>
-    										<div class="col-md-7 col-7" style="display: none;">
-    											<span class="badge badge-pill badge-irr-sector">37</span>
-    										</div>
-    									</div>
-    								</div>
-    								<div class="col-md-3 col-2">
-    									<button class="btn btn-download-pdf-opportunity" id="controllerButton" class="button" onclick="callController()">
-											<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
-										</button>
-										<button class="btn btn-download-pdf-opportunity" id="buttonWithText" class="button" style="display: none;">Processing...</button>
-  										<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
-    								</div>
-    							</div>
+    							<p class="irr-location-title mt-2">Sector</p>
+   								<div class="col-md-12 col-12 irr-sector-div text-center">
+   									<div class="row">
+   										<div class="col-md-12 col-12">
+   											<span class="title">${fn:escapeXml(productData.parentCategory)}</span>
+   										</div>
+   										<div class="col-md-7 col-7" style="display: none;">
+   											<span class="badge badge-pill badge-irr-sector">37</span>
+   										</div>
+   									</div>
+   								</div>
     						</div>
+    						<div class="col-md-12 col-12">
+    							<p class="irr-location-title mt-2">Segment</p>
+   								<div class="col-md-12 col-12 irr-sector-div text-center">
+   									<div class="row">
+   										<div class="col-md-12 col-12">
+   											<span class="title">${fn:escapeXml(productData.parentCategory)}</span>
+   										</div>
+   										<div class="col-md-7 col-7" style="display: none;">
+   											<span class="badge badge-pill badge-irr-sector">37</span>
+   										</div>
+   									</div>
+   								</div>
+    						</div>
+  							<div class="col-md-12 col-12">
+  								<button class="btn btn-download-pdf-opportunity" id="controllerButton" class="button" onclick="callController()">
+									<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
+								</button>
+								<button class="btn btn-download-pdf-opportunity" id="buttonWithText" class="button" style="display: none;">Processing...</button>
+								<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
+  							</div>
     					</div>
     				</div>
     				<div class="jumbotron jumbotron-second">

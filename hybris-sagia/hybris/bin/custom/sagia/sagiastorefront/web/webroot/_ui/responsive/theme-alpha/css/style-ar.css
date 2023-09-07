@@ -26376,7 +26376,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	display: flex;
 	align-items: center;
 }
-
+.page-report-list-page .breadcrumb-container {
+	display: flex;
+	align-items: center;
+}
 .page-newsevents-list-page .breadcrumb-container .breadcrumb-page-info {
 	color: #BF9B2E;
 	font-size: 14px;

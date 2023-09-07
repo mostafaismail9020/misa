@@ -17,7 +17,7 @@
 	<!-- Article Details News Page -->
 	<section class="article-details-news-page">
 		<div class="container">
-		 <div class="row mt-2 mb-5">
+		 <div class="row mt-2">
 
              <c:if test="${language eq 'en'}">
                   <a href="${encodedContextPath}/newseventslist">
@@ -38,7 +38,7 @@
              </c:if>
 
          </div>
-			<div class="row mb-5">
+			<div class="row mt-2">
 				<div class="col-md-12">
 
 					<h1 class="article-details-news-title">${fn:escapeXml(productData.name)}</h1>
@@ -55,7 +55,7 @@
 
 
 			<c:forEach items="${productData.subHeadings}" var="newsSubHeading">
-				<div class="row mt-5">
+				<div class="row mt-2">
 					<div class="col-md-12">
 						<h2 class="article-details-news-sub-heading mt-3 mb-3">${fn:escapeXml(newsSubHeading.key)}</h2>
 						<p>${fn:escapeXml(newsSubHeading.value)}
@@ -66,7 +66,7 @@
 
 			<c:forEach items="${productData.paraWithMedia}" var="paraWithMedia">
 
-				<div class="row mt-5">
+				<div class="row mt-2">
 					<div class="col-md-9">
 						<p>${fn:escapeXml(paraWithMedia.value.descriptionText)}</p>
 					</div>
@@ -76,7 +76,7 @@
 				</div>
 			</c:forEach>
 
-			<div class="new-events mt-5 mb-5">
+			<div class="new-events mt-2">
 				<div class="row">
 					<div class="col-md-12 mb-4">
 						<h1 class="title">New events</h1>
@@ -94,8 +94,7 @@
 							<span class="event-time">12:00 PM - 01:00 PM</span>
 							<span class="event-location">Location</span>
 						</div>
-						<div class="new-events-card-bottom">Saudi investment ministry signs four investment
-							agreements
+						<div class="new-events-card-bottom"><spring:theme code="text.newsevents.listing.page.media.library.title" />
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -110,8 +109,7 @@
 							<span class="event-time">12:00 PM - 01:00 PM</span>
 							<span class="event-location">Location</span>
 						</div>
-						<div class="new-events-card-bottom">Saudi investment ministry signs four investment
-							agreements
+						<div class="new-events-card-bottom"><spring:theme code="text.newsevents.listing.page.media.library.title" />
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -127,8 +125,7 @@
 							<span class="event-time">12:00 PM - 01:00 PM</span>
 							<span class="event-location">Location</span>
 						</div>
-						<div class="new-events-card-bottom">Saudi investment ministry signs four investment
-							agreements
+						<div class="new-events-card-bottom"><spring:theme code="text.newsevents.listing.page.media.library.title" />
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -144,12 +141,11 @@
 							<span class="event-time">12:00 PM - 01:00 PM</span>
 							<span class="event-location">Location</span>
 						</div>
-						<div class="new-events-card-bottom">Saudi investment ministry signs four investment
-							agreements
+						<div class="new-events-card-bottom"><spring:theme code="text.newsevents.listing.page.media.library.title" />
 						</div>
 					</div>
 
-					<div class="col-md-12 mt-4 navigation-icons">
+					<div class="col-md-12 mt-2 navigation-icons">
 						<span class="left-icon"></span>
 						<span class="page-info">1 of 2</span>
 						<span class="right-icon"></span>

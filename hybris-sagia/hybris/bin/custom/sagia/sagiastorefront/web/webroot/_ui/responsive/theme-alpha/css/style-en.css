@@ -25211,10 +25211,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 		}
 
 		.date {
-			font-size: 16px;
-			font-weight: 400;
-			color: var(--misaDarkGrayText)!important;
-			margin-top: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 16px;
+            letter-spacing: 0em;
+            color: var(--misaDarkGrayText);
 		}
 	}
 

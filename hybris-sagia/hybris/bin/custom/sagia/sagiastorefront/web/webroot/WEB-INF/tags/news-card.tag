@@ -16,10 +16,11 @@
                  alt="" loading="lazy">
         </div>
         <div class="text">
-            <h3 class="title mb-2">${fn:toLowerCase(result.name)}</h3>
             <p class="date">
                 <fmt:formatDate value="${result.newsDate}" pattern="d MMM yyyy"/>
             </p>
+            <h3 class="title mb-2">${fn:toLowerCase(result.name)}</h3>
+
         </div>
     </a>
 </div>

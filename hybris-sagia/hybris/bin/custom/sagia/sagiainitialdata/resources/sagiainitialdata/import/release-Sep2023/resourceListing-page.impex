@@ -26,7 +26,7 @@ INSERT_UPDATE SagiaResourceListingComponent; uid[unique = true]                 
 
 
 INSERT_UPDATE ContentSlot; uid[unique = true]       ; name           ; active; cmsComponents($contentCV,uid); $contentCV[unique = true]
-                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; all-resources-banner-container, sagia-resources-search-result-component
+                         ; PortalPageMainSlot-$page ; PortalPageMain ; true  ; all-resources-banner-container, sagiaHomepageLinkComponent, sagia-resources-search-result-component
 
 
 INSERT_UPDATE ContentSlotForPage; uid[unique = true]       ; position[unique = true]; contentSlot(uid, $contentCV)[unique = true]; page(uid, $contentCV)[unique = true][default = $page]; $contentCV[unique = true]

@@ -26866,6 +26866,8 @@ font-size: 14px !important;
 
 .event-detail-page-similar-opportunities {
 	padding-top: 0!important;
+	text-align:right!important;
+
 }
 .event-detail-page-similar-opportunities .similar-opportunities-title span {
 	font-size: 32px;
@@ -26873,6 +26875,7 @@ font-size: 14px !important;
 	line-height: 37px;
 	letter-spacing: 0;
 	color: var(--misaFirstColor);
+
 }
 
 .event-detail-page-similar-opportunities .Inc-fearured-opp {

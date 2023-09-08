@@ -6,29 +6,31 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <main>
-	<div class="article-details-news-page-banner">
-		<div class="article-details-news-page-banner-container" data-aos="fade-up">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 breadcrumb-container">
-						<c:if test="${language eq 'en'}">
-							<a href="${encodedContextPath}/reportList">
-								<span class="breadcrumb-left-icon"></span>
-								<span class="breadcrumb-page-info"><spring:theme code="dashboard.reports"/></span>
-							</a>
-						</c:if>
-						<c:if test="${language eq 'ar'}">
-							<a href="${encodedContextPath}/reportList">
-								<span class="breadcrumb-page-info"><spring:theme code="dashboard.reports"/></span>
-								<span class="breadcrumb-left-icon"></span>
-							</a>
-						</c:if>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="page-link-and-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <c:if test="${language eq 'en'}">
+                        <div class="page-breadcrumb-container breadcrumb-container">
+							<a href="${encodedContextPath}/reportList">
+								<span class="breadcrumb-left-icon"></span>
+								<span class="breadcrumb-page-info"><spring:theme code="dashboard.reports"/></span>
+							</a>
+                        </div>
+                </c:if>
+                <c:if test="${language eq 'ar'}">
+                        <div class="page-breadcrumb-container breadcrumb-container">
+							<a href="${encodedContextPath}/reportList">
+								<span class="breadcrumb-page-info"><spring:theme code="dashboard.reports"/></span>
+								<span class="breadcrumb-left-icon"></span>
+							</a>
+                        </div>
+                </c:if>
+            </div>
+        </div>
+    </div>
+</section>
 
 	<!-- Article Details News Page -->
 	<section class="article-details-news-page">

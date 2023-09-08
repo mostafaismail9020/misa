@@ -26961,3 +26961,39 @@ font-size: 14px !important;
 	height: 16px;
 	margin-right: 10px;
 }
+
+.page-breadcrumb-container {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.pageLabel--reportList .page-breadcrumb-container .breadcrumb-left-icon {
+	background-position: 4px 1px;
+}
+
+.pageLabel--reportList .page-main-content {
+	margin-top: 25px;
+}
+
+.page-breadcrumb-container a {
+	display: flex;
+	align-items: center;
+	gap: 5px;	
+}
+
+.page-breadcrumb-container .breadcrumb-left-icon {
+	background-image: url(../img/article-details-events-left-arrow-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.page-breadcrumb-container .breadcrumb-page-info {
+	color: var(--misaFirstColor) !important;
+    font-size: 18px;
+    font-weight: 400;
+}

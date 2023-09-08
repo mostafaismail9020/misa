@@ -8,17 +8,14 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<section class="News_press pageTitle-container" id="News_press">
+
+<section class="page-link-and-title">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-              <c:forEach var="i" begin="1" end="7">
-                  <div class="col-md-12 mt-4"></div>
-              </c:forEach>
-                <h1 class="pageTitle"><spring:theme code="portal.media.reportList" text="Events"/></h1>
                 <c:if test="${language eq 'en'}">
                     <a href="/${language}/">
-                        <div class="col-md-12 mt-4 breadcrumb-container">
+                        <div class="page-breadcrumb-container breadcrumb-container">
                             <span class="breadcrumb-left-icon"></span>
                             <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
                         </div>
@@ -26,7 +23,7 @@
                 </c:if>
                 <c:if test="${language eq 'ar'}">
                     <a href="/${language}/">
-                        <div class="col-md-12 mt-4 breadcrumb-container">
+                        <div class="page-breadcrumb-container breadcrumb-container">
                             <span class="breadcrumb-page-info"><spring:theme code="text.link.home.label"/></span>
                             <span class="breadcrumb-left-icon"></span>
                         </div>

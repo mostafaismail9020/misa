@@ -7791,6 +7791,7 @@ figure h2 {
 	line-height: 16px;
 	letter-spacing: 0em;
 	margin-top: 8px;
+	color: var(--misaDarkGrayText);
 }
 
 .banner-section {
@@ -24375,13 +24376,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .opportunity-article-section-statistics .box-without-height {
     min-height: 0;
-}
-
-.opportunity-article-section-statistics .newsAndUpdateContainer .flip-card-custom .know-more-link * {
-    color: var(--misaDarkGrayText);
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0px;
 }
 
 .page-contact-us .login-text span {

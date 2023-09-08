@@ -25677,7 +25677,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .opportunity-article-section-statistics .jumbotron-statistics-box .opportunity-statics-desc {
-	color: var(--misaSecondColor);
+	color: var(--misaDarkGrayText);
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 18px;

@@ -42,7 +42,7 @@
 				<div class="col-md-12">
 
 					<h1 class="article-details-news-title">${fn:escapeXml(productData.name)}</h1>
-					<p>${fn:escapeXml(productData.description)}</p>
+					<p>${productData.description}</p>
 
 					<div class="article-details-news-video">
 						<iframe width="100%" src="${productData.videoUrl}"

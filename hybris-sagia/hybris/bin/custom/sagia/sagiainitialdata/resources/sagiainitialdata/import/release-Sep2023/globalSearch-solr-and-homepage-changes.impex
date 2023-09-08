@@ -9,6 +9,9 @@ INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; n
                                   ; $solrIndexedType                         ; eventLocation     ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
                                   ; $solrIndexedType                         ; eventTiming       ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
 
+UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; localized ;
+                           ; $solrIndexedType                         ; description       ; true      ;
+
 
 INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider ; facetSortProvider              ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType]
                                       ; resource:$solrIndexedType                                       ;                      ; MultiSelectOr  ; 1001     ; solrFieldNameProvider    ; facetNameSortProviderAscending ; defaultTopValuesProvider ;                                 ;

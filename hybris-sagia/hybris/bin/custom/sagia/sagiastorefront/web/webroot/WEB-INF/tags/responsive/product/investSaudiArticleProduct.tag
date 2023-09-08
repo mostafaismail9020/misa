@@ -107,26 +107,23 @@
 							<div class="value-item">
 								<div class="value-icon"></div>
 								<div class="value-content">
-									<h2>Wealth</h2>
-									<p>A powerful G20 economy with macroeconomic fundamentals that offer long-term
-										stability and provide a sustainable platform for investment.</p>
+									<h2><spring:theme code="text.article.detail.our.values.title.wealth"/></h2>
+									<p><spring:theme code="text.article.detail.our.values.title.wealth.text"/></p>
 								</div>
 							</div>
 
 							<div class="value-item">
 								<div class="value-icon"></div>
 								<div class="value-content">
-									<h2>Transparency</h2>
-									<p>Enabling a raft of business reforms aimed at easing investment and bolstering
-										investor support in the Kingdom.</p>
+									<h2><spring:theme code="text.article.detail.our.values.title.transparency"/></h2>
+									<p><spring:theme code="text.article.detail.our.values.title.transparency.text"/></p>
 								</div>
 							</div>
 							<div class="value-item">
 								<div class="value-icon"></div>
 								<div class="value-content">
-									<h2>Opportunity</h2>
-									<p>Creating unique opportunities in new sectors in the Kingdom that have
-										hitherto been restricted to international investment.</p>
+									<h2><spring:theme code="text.article.detail.our.values.title.opportunity"/></h2>
+									<p><spring:theme code="text.article.detail.our.values.title.opportunity.text"/></p>
 								</div>
 							</div>
 						</div>

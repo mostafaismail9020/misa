@@ -25479,3 +25479,34 @@ padding: 10px;
 .section-break {
 	border-top: 1px solid #ccc;
 }
+
+#pdf-ar {
+	display: none;
+}
+
+.btn-download {
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	background-color: var(--misaFirstColor);
+	color: #FFFFFF;
+	margin-right: 10px;
+}
+
+.btn-download:hover {
+	color: #FFFFFF;
+}
+
+.icon-download {
+	display: inline-block;
+	background-image: url("../img/article-details-page-download-icon.png");
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 16px;
+	margin-right: 10px;
+}

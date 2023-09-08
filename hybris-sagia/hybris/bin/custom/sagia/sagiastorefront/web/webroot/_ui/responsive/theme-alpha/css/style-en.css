@@ -7782,6 +7782,7 @@ figure h2 {
     white-space: nowrap;
     text-overflow: ellipsis;
     margin-top: -5px;
+    color: var(--misaDarkGrayText);
 }
 
 .page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .irr-value {

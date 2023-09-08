@@ -9298,6 +9298,7 @@ a.pvcy-policy:focus {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	padding: 5px 0 5px 0;
+	text-transform: capitalize;
 }
 .pageLabel--newseventslist .flip-card{
 
@@ -26515,6 +26516,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 				font-size: 16px;
 				line-height: 24px;
 				color: var(--misaDarkGrayText);
+				text-transform: capitalize;
 			}
 
 			.description {
@@ -26522,6 +26524,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 				font-size: 14px;
 				line-height: 20px;
 				color: var(--misaDarkGrayText);
+				text-transform: capitalize;
 			}
 		}
 	}
@@ -26722,6 +26725,7 @@ font-size: 14px !important;
 			text-overflow: ellipsis;
 			padding: 5px 0 0 0;
 			margin-bottom: 10px;
+			text-transform: capitalize;
 		}
 
 		.date {
@@ -26808,6 +26812,7 @@ font-size: 14px !important;
 		font-size: 16px;
 		color: var(--misaDarkGrayText);
 		padding-right: 10px;
+		text-transform: capitalize;
 	}
 
 	.videoDate {

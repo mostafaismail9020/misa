@@ -9509,13 +9509,16 @@ a.pvcy-policy:focus {
     color: #00714D;
 }
 
-.pageLabel--newseventslist .flip-card-text{
+.pageLabel--newseventslist .flip-card-text,
+.page-resources-list-page .flip-card-text {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.pageLabel--newseventslist .eventShortInformation{
+.pageLabel--newseventslist .eventShortInformation,
+.page-resources-list-page .eventShortInformation
+{
 	color: var(--misaDarkGrayText);
 	white-space: nowrap;
 	font-size: 14px;
@@ -9523,7 +9526,9 @@ a.pvcy-policy:focus {
 	line-height: 16px;
 	letter-spacing: 0;
 }
-.pageLabel--newseventslist .eventsName{
+.pageLabel--newseventslist .eventsName,
+.page-resources-list-page .eventsName
+{
 	font-size: 20px;
 	font-weight: 600;
 	letter-spacing: 0;
@@ -24945,6 +24950,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity p {
+	color: var(--misaDarkGrayText) !important;
+}
+
+.opportunity span {
 	color: var(--misaFirstColor) !important;
 }
 
@@ -25482,4 +25491,39 @@ padding: 10px;
 
 .section-break {
 	border-top: 1px solid #ccc;
+}
+
+#pdf-ar {
+	display: none;
+}
+
+.btn-download {
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	background-color: var(--misaFirstColor);
+	color: #FFFFFF;
+	margin-right: 10px;
+}
+
+.btn-download:hover {
+	color: #FFFFFF;
+}
+
+.icon-download {
+	display: inline-block;
+	background-image: url("../img/article-details-page-download-icon.png");
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 16px;
+	margin-right: 10px;
+}
+
+.page-resources-list-page .events-card-img {
+	border-radius: 10px;
 }

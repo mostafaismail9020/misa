@@ -71,6 +71,17 @@
 				</div>
 			</c:forEach>
 
+			<div class="col-sm-12 text-center">
+				<a href="${commonResourcePath}/pdf/Invest-Saudi-Quarterly-Magazine-Q1-23-english.pdf" download class="btn-download mt-5" id="pdf-en">
+					<spring:theme code="facilityReopen.download.text"/>
+					<i class="icon-download"></i>
+				</a>
+				<a href="${commonResourcePath}/pdf/Invest-Saudi-Quarterly-Magazine-Q1-23-arabic.pdf" download class="btn-download mt-5" id="pdf-ar">
+					<spring:theme code="facilityReopen.download.text"/>
+					<i class="icon-download"></i>
+				</a>
+			</div>
+
 			<div class="new-events mt-5 mb-5">
 				<div class="row">
 					<div class="col-md-12 mb-4">

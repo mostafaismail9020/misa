@@ -140,3 +140,10 @@
         </c:when>
     </c:choose>
 </div>
+
+
+<script>
+    $(document).ready(function() {
+        $(".homeLink").prependTo(".banner-container");
+    });
+</script>

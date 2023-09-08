@@ -7577,7 +7577,7 @@ figure h2 {
 }
 
 .page-portal.pageType-ProductPage.template-pages-portal-portalProduct .newsAndUpdateContainer .know-more-link h5 {
-	color: #32465A;
+	color: var(--misaDarkGrayText);
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 18px;

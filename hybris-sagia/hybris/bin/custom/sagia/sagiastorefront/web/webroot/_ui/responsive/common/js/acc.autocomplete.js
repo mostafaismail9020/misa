@@ -122,7 +122,7 @@ ACC.autocomplete = {
 								code: null,
 								desc: null,
 								manufacturer: null,
-								url:  window.location.href + "mediaCenter/news",
+								url:  window.location.href + "newseventslist",
 								type: "productResult",
 								image: null
 							});
@@ -147,7 +147,7 @@ ACC.autocomplete = {
 								code: null,
 								desc: null,
 								manufacturer: null,
-								url:  window.location.href + "mediaCenter/events",
+								url:  window.location.href + "newseventslist",
 								type: "productResult",
 								image: null
 							});
@@ -172,7 +172,7 @@ ACC.autocomplete = {
 								code: null,
 								desc: null,
 								manufacturer: null,
-								url:  window.location.href + "mediaCenter/events",
+								url:  window.location.href + "articlesList",
 								type: "productResult",
 								image: null
 							});
@@ -197,7 +197,7 @@ ACC.autocomplete = {
 								code: null,
 								desc: null,
 								manufacturer: null,
-								url:  window.location.href + "mediaCenter/events",
+								url:  window.location.href + "reportList",
 								type: "productResult",
 								image: null
 							});

@@ -25,7 +25,7 @@
 		<div class="information">
 			<div class="title-and-description">
 				<a href="${encodedContextPath}${result.url}" class="link">
-					<p class="title">${result.name}</p>
+					<span class="title">${result.name}</span>
 					<p>
 						<c:choose>
 							<c:when test="${fn:length(result.description) gt 50}">

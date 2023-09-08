@@ -193,8 +193,9 @@
                 <div class="media-content">
                     <div class="media-left">
                         <iframe width="100%" height="194" src="https://www.youtube.com/embed/GDyqFD4rhWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
+                         <span class="videoDate mt-2"><spring:theme code="text.newsevents.listing.page.media.library.date"/></span>
                         <h4 class="videoTitle mt-2"><spring:theme code="text.newsevents.listing.page.media.library.title"/></h4>
-                        <span class="videoDate"><spring:theme code="text.newsevents.listing.page.media.library.date"/></span>
+
                     </div>
 
                     <div class="media-right">
@@ -203,8 +204,9 @@
                                 <iframe width="100%" height="113" src="https://www.youtube.com/embed/qWbrcmGRxW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                             <div class="media-text">
-                                <h4 class="videoTitle mt-2"><spring:theme code="text.newsevents.listing.page.media.library.title"/></h4>
                                 <span class="videoDate"><spring:theme code="text.newsevents.listing.page.media.library.date"/></span>
+                                <h4 class="videoTitle mt-2"><spring:theme code="text.newsevents.listing.page.media.library.title"/></h4>
+
                             </div>
                         </div>
                         <div class="media-small">
@@ -212,8 +214,9 @@
                                 <iframe width="100%" height="113" src="https://www.youtube.com/embed/qWbrcmGRxW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                             <div class="media-text">
-                               <h4 class="videoTitle mt-2"><spring:theme code="text.newsevents.listing.page.media.library.title"/></h4>
                                <span class="videoDate"><spring:theme code="text.newsevents.listing.page.media.library.date"/></span>
+                               <h4 class="videoTitle mt-2"><spring:theme code="text.newsevents.listing.page.media.library.title"/></h4>
+
                             </div>
                         </div>
                     </div>

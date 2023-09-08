@@ -283,115 +283,38 @@
     						</div>
     						<div class="col-md-12 col-12">
     							<div class="row justify-content-center">
-									<div class="col-md-1 col-6">
+									<div class="col-md-2 col-6">
 										<div class="row">
-											<div class="col-md-12 text-center">
-												<a href="#">
-													<img src="https://tikkurila.com/sites/default/files/styles/thumbnail_800_auto/public/color_resources/%2345474B.png?itok=yOcFo8Fw" class="rounded-circle img-fluid" alt="" title="" style="" loading="lazy" width="65" height="65">
-												</a>
-											</div>
 											<div class="col-md-12">
-												<a href="#">
-													<p class="text-center">Org 1</p>
-												</a>
+												<p class="text-center stackholder-name">Org 1</p>
 											</div>
 										</div>
 									</div>
-						            <div class="col-md-1 col-6">
+						            <div class="col-md-2 col-6">
 										<div class="row">
-											<div class="col-md-12 text-center">
-												<a href="#">
-													<img src="https://tikkurila.com/sites/default/files/styles/thumbnail_800_auto/public/color_resources/%2345474B.png?itok=yOcFo8Fw" class="rounded-circle img-fluid" alt="" title="" style="" loading="lazy" width="65" height="65">
-												</a>
-											</div>
 											<div class="col-md-12">
-												<a href="#">
-													<p class="text-center">Org 2</p>
-												</a>
+												<p class="text-center stackholder-name">Org 2</p>
 											</div>
 										</div>
 									</div>
-						            <div class="col-md-1 col-6">
+						            <div class="col-md-2 col-6">
 										<div class="row">
-											<div class="col-md-12 text-center">
-												<a href="#">
-													<img src="https://tikkurila.com/sites/default/files/styles/thumbnail_800_auto/public/color_resources/%2345474B.png?itok=yOcFo8Fw" class="rounded-circle img-fluid" alt="" title="" style="" loading="lazy" width="65" height="65">
-												</a>
-											</div>
 											<div class="col-md-12">
-												<a href="#">
-													<p class="text-center">Org 3</p>
-												</a>
+												<p class="text-center stackholder-name">Org 3</p>
 											</div>
 										</div>
 									</div>
-						            <div class="col-md-1 col-6">
+						            <div class="col-md-2 col-6">
 										<div class="row">
-											<div class="col-md-12 text-center">
-												<a href="#">
-													<img src="https://tikkurila.com/sites/default/files/styles/thumbnail_800_auto/public/color_resources/%2345474B.png?itok=yOcFo8Fw" class="rounded-circle img-fluid" alt="" title="" style="" loading="lazy" width="65" height="65">
-												</a>
-											</div>
 											<div class="col-md-12">
-												<a href="#">
-													<p class="text-center">Org 4</p>
-												</a>
+												<p class="text-center stackholder-name">Org 4</p>
 											</div>
 										</div>
 									</div>
-						            <div class="col-md-1 col-6">
+						            <div class="col-md-2 col-6">
 										<div class="row">
-											<div class="col-md-12 text-center">
-												<a href="#">
-													<img src="https://tikkurila.com/sites/default/files/styles/thumbnail_800_auto/public/color_resources/%2345474B.png?itok=yOcFo8Fw" class="rounded-circle img-fluid" alt="" title="" style="" loading="lazy" width="65" height="65">
-												</a>
-											</div>
 											<div class="col-md-12">
-												<a href="#">
-													<p class="text-center">Org 5</p>
-												</a>
-											</div>
-										</div>
-									</div>
-						            <div class="col-md-1 col-6">
-										<div class="row">
-											<div class="col-md-12 text-center">
-												<a href="#">
-													<img src="https://tikkurila.com/sites/default/files/styles/thumbnail_800_auto/public/color_resources/%2345474B.png?itok=yOcFo8Fw" class="rounded-circle img-fluid" alt="" title="" style="" loading="lazy" width="65" height="65">
-												</a>
-											</div>
-											<div class="col-md-12">
-												<a href="#">
-													<p class="text-center">Org 6</p>
-												</a>
-											</div>
-										</div>
-									</div>
-						            <div class="col-md-1 col-6">
-										<div class="row">
-											<div class="col-md-12 text-center">
-												<a href="#">
-													<img src="https://tikkurila.com/sites/default/files/styles/thumbnail_800_auto/public/color_resources/%2345474B.png?itok=yOcFo8Fw" class="rounded-circle img-fluid" alt="" title="" style="" loading="lazy" width="65" height="65">
-												</a>
-											</div>
-											<div class="col-md-12">
-												<a href="#">
-													<p class="text-center">Org 7</p>
-												</a>
-											</div>
-										</div>
-									</div>
-						            <div class="col-md-1 col-6">
-										<div class="row">
-											<div class="col-md-12 text-center">
-												<a href="#">
-													<img src="https://tikkurila.com/sites/default/files/styles/thumbnail_800_auto/public/color_resources/%2345474B.png?itok=yOcFo8Fw" class="rounded-circle img-fluid" alt="" title="" style="" loading="lazy" width="65" height="65">
-												</a>
-											</div>
-											<div class="col-md-12">
-												<a href="#">
-													<p class="text-center">Org 8</p>
-												</a>
+												<p class="text-center stackholder-name">Org 5</p>
 											</div>
 										</div>
 									</div>

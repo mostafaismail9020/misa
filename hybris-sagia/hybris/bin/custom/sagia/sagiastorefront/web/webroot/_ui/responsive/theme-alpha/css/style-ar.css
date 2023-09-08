@@ -23613,7 +23613,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .article-details-page-banner {
 	width: 100%;
-	height: 40vh;
+	height: 286px;
 	background-position: top center;
 	background-size: cover;
 	background-color: #f1f7f5;
@@ -23839,6 +23839,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	width: 25px;
 	background-size: contain;
 	height: 16px;
+	margin-left: 5px;
 }
 
 
@@ -25997,6 +25998,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	padding: 10px
 }
 
+.page-article-list-page .articles-list:hover {
+	background: rgba(191, 155, 46, 0.05);
+}
+
 .page-article-list-page .articles-list-item {
 	color: var(--misaDarkGrayText)!important;
 	padding: 10px;
@@ -26004,11 +26009,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .page-article-list-page .articles-list .evenColor {
-	background: #fff;
+
 }
 
 .page-article-list-page .articles-list .oddColor {
-	background: #fff;
+
 }
 
 .page-article-list-page .articles-list a {
@@ -26026,7 +26031,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .page-article-list-page .article-listing-page-banner {
 	width: 100%;
-	height: 30vh;
+	height: 286px;
 	background-position: top center;
 	background-size: cover;
 	background-color: #f1f7f5;

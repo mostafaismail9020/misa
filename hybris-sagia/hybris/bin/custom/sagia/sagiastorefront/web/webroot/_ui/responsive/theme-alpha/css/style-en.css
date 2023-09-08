@@ -25057,6 +25057,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	flex-direction: column;
 	align-items: center;
 	padding-bottom: 0;
+	text-transform: capitalize;
 
 	.header {
 		width: 100%;
@@ -25229,6 +25230,7 @@ padding: 10px;
 		font-size: 32px;
 		color: var(--misaFirstColor);
 		margin-bottom: 70px;
+		text-transform: capitalize;
 	}
 
 	.latest-news-header {
@@ -25325,6 +25327,7 @@ padding: 10px;
 		font-weight: 600;
 		font-size: 32px;
 		color: var(--misaFirstColor);
+		text-transform: capitalize;
 	}
 
 	.media-library {
@@ -25405,6 +25408,7 @@ padding: 10px;
 
 		.upcoming-events-title, .latest-news-title, .latest-announcements-title, .media-library-title {
 			text-align: center;
+			text-transform: capitalize;
 		}
 
 		.loadNewsEventShowLessButton {

@@ -3958,6 +3958,7 @@ font-size: 14px !important;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
+	color: var(--misaDarkGrayText);
 }
 
 #newsandupdates .contentWrapper .card-wrapper .flip-card .card-box h2 {
@@ -24311,7 +24312,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity-article-section-statistics .jumbotron-statistics-box {
-	color: var(--misaSecondColor);
     background-color: rgba(0, 113, 77, 0.05);
     border-radius: 10px;
     padding: 25px;
@@ -24319,7 +24319,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity-article-section-statistics .jumbotron-statistics-box .opportunity-statics-title {
-	color: var(--misaSecondColor);
+	color: var(--misaDarkGrayText);
 	font-size: 24px;
 	font-weight: 700;
 	line-height: 28px;
@@ -24328,12 +24328,16 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity-article-section-statistics .jumbotron-statistics-box .opportunity-statics-desc {
-	color: var(--misaDarkGrayText);
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 18px;
 	letter-spacing: 0em;
 	margin-top: 15px;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-article-section-statistics .jumbotron-statistics-box .opportunity-statics-desc + ul * {
+	color: var(--misaDarkGrayText);
 }
 
 .opportunity-article-section-statistics .special-statistics-box {
@@ -24357,12 +24361,26 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	min-height: 0;
 }
 
+.opportunity-article-section-statistics .statistics-stackeholders .stackholder-name {
+	color: var(--misaDarkGrayText);
+	text-transform: capitalize;
+	font-size: 18px;
+	font-weight: 600;
+}
+
 .opportunity-article-section-statistics .statistics-stackeholders a p {
 	color: var(--misaSecondColor);
 }
 
 .opportunity-article-section-statistics .box-without-height {
     min-height: 0;
+}
+
+.opportunity-article-section-statistics .newsAndUpdateContainer .flip-card-custom .know-more-link * {
+    color: var(--misaDarkGrayText);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
 }
 
 .page-contact-us .login-text span {

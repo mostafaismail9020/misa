@@ -3,6 +3,7 @@ package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,7 +59,8 @@ public class SagiaResourceListPageController extends SagiaSearchPageController
         model.addAttribute("articleSearchPageData", articleSearchPageData);
         model.addAttribute("opportunitySearchPageData", opportunitySearchPageData);
 
-        opportunitySearchPageData.getResults().forEach(r -> r.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(r.getParentCategory()).getName()));
+        opportunitySearchPageData.getResults().stream().filter(r -> StringUtils.isNotEmpty(r.getParentCategory()))
+        			.forEach(r -> r.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(r.getParentCategory()).getName()));
         
         model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_FOLLOW);
@@ -95,7 +97,8 @@ public class SagiaResourceListPageController extends SagiaSearchPageController
         model.addAttribute("opportunitySearchPageData", opportunitySearchPageData);
         LOG.debug("Added search results to model");
 
-        opportunitySearchPageData.getResults().forEach(r -> r.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(r.getParentCategory()).getName()));
+        opportunitySearchPageData.getResults().stream().filter(r -> StringUtils.isNotEmpty(r.getParentCategory()))
+			.forEach(r -> r.setParentCategory(investSaudiCategoryFacade.getCategoryForCode(r.getParentCategory()).getName()));
         
         model.addAttribute("pageType", PageType.PRODUCTSEARCH.name());
         model.addAttribute(ThirdPartyConstants.SeoRobots.META_ROBOTS, ThirdPartyConstants.SeoRobots.NOINDEX_FOLLOW);

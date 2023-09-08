@@ -55,12 +55,12 @@ INSERT_UPDATE CMSNavigationEntry; uid[unique = true]	; name                  ; n
 								; contact-entry			; Contact	 			; contact-footer-navnode			    ; contact-footer-link											;
 
 INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 			; linkName[lang = en] 	; linkName[lang = ar] 	; url									; $contentCVStaged[unique = true]	;
-							  ; newsevents-footer-link	; News & Events	; News & Events			; News & Events			;	/newseventslist						;
-							  ; whysaudi-footer-link	; whysaudi 		; Why Saudi? 			; Why Saudi? 			;	/aboutSaudi							;
-							  ; contact-footer-link		; contact 		; Contact	 			; Contact	 			;	/contactUs							;
+							  ; newsevents-footer-link	; News & Events	; News & Events			; الأنشطة والفعاليات		;	/newseventslist						;
+							  ; whysaudi-footer-link	; whysaudi 		; Why Saudi? 			; لماذا السعودية؟ 		;	/aboutSaudi							;
+							  ; contact-footer-link		; contact 		; Contact	 			; تواصل معنا	 		;	/contactUs							;
 
 
 INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 			; linkName[lang = en] 	; linkName[lang = ar] 	; url									; $contentCVOnline[unique = true]	;
 							  ; newsevents-footer-link	; News & Events	; News & Events			; الأنشطة والفعاليات		;	/newseventslist						;
 							  ; whysaudi-footer-link	; whysaudi 		; Why Saudi? 			; لماذا السعودية؟ 		;	/aboutSaudi							;
-							  ; contact-footer-link		; contact 		; Contact	 			; Contact	 			;	/contactUs							;
+							  ; contact-footer-link		; contact 		; Contact	 			; تواصل معنا	 		;	/contactUs							;

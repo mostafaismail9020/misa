@@ -31,7 +31,7 @@
                             </a>
                         </ycommerce:testId>
                         <div class="opportunity-card total-results">
-                            <spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${opportunitySearchPageData.pagination.totalNumberOfResults}"/>
+                            <spring:message code="portal.resources.search.totalResults" arguments="${fn:length(opportunitySearchPageData.results) + fn:length(eventSearchPageData.results) + fn:length(newsSearchPageData.results) + fn:length(articleSearchPageData.results)}"/>
                         </div>
                     </form>
                 </div>

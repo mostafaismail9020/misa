@@ -30,7 +30,7 @@
 							<img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
 						</a>
 					</ycommerce:testId>
-					<div class="opportunity-card total-results">
+					<div class="opportunity-card total-results mt-1">
 						<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
 					</div>
 				</form>
@@ -45,7 +45,7 @@
             <div class="opp-mobile-show text-center">
             	<spring:theme code="portal.opportunity.search.modal.btn" var="btnModalTxt"/>
 				<button id="opp-open-modal-filter" class="btn btn-secondary-fill">${btnModalTxt}</button>
-				<div class="opportunity-card total-results" style="text-align: center; margin: 10px 0 5px 0px;">
+				<div class="opportunity-card total-results mt-2 mb-5">
 					<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
 				</div>
             </div>

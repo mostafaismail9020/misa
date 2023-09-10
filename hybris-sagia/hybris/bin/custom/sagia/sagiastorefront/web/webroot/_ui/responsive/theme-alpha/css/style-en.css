@@ -34,7 +34,7 @@ a:hover {
 }
 
 .btn-secondary-fill {
-	background-color: var(--misaSecondColor);
+	background-color: var(--misaFirstColor);
 	color: #fff;
 }
 
@@ -228,8 +228,8 @@ ul.sagiaNavigation-subNav li svg {
 	margin-left: 15px;
 }
 
-.pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
-color: var(--misaSecondColor);
+.pageLabel--sectors-opportunities-opportunities #topbar .social-links a {
+	color: var(--misaSecondColor);
 }
 
 #topbar .social-links a {
@@ -377,11 +377,13 @@ color: var(--misaSecondColor);
 	height: 6px;
 	border: none;
 }
+
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after{
     color: var(--misaSecondColor);
     filter: none;
     opacity: 1;
 }
+
 #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after {
 	filter: grayscale(0.9) brightness(0.4);
 	opacity: 0.9;
@@ -6660,7 +6662,7 @@ img.accountLogin-headline-logo {
 	gap: 6px;
 	width: 85%;
 	background: #F5F6F7;
-	border-radius: 80px;
+	border-radius: 10px;
 	order: 1;
 	color: #5B738B;
 	align-self: stretch;
@@ -7816,10 +7818,6 @@ figure h2 {
 	text-align: center;
 }
 
-.facet__name.js-facet-name.clr_gld.text-uppercase {
-	margin-top: 10px;
-	color: var(--misaSecondColor);
-}
 .pageLabel--newseventslist .container.banner.homeLink {
     color: #BF9B2E !important;
     font-weight: 400;
@@ -11035,15 +11033,6 @@ body.page-living-in-saudi .content {
 	background-color: #fff;
 }
 
-.force-first-color {
-	color: var(--misaFirstColor)!important;
-}
-
-.pageLabel--sectors-opportunities-opportunities #tab6-container p, .general-info p, .main-content-area p, .sectors-content p, .grid-section p {
-	color: var(--misaFirstColor);
-}
-
-
 .containerPadding{
     padding: 20px;
 }
@@ -14078,39 +14067,34 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .opportunity-card.total-results {
    	white-space: nowrap;
-    margin: 10px 0 20px 5px;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: var(--misaSecondColor);
+    color: var(--misaFirstColor);
 }
 
 .custom-button {
-    font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 13px;
     display: flex;
-    align-items: flex-end;
     border-radius: 10px;
-    color: #5F6D7E;
+    color: var(--misaDarkGrayText);
     align-items: center;
-    background: rgba(0, 113, 77, 0.05);
-     border: 0px solid;
+    background: rgba(120, 120, 120, 0.05);
+    border: none;
 }
 
 .parentCategory-button {
      font-style: normal;
      font-weight: 400;
-     font-size: 12px;
+     font-size: 14px;
      line-height: 18px;
      display: flex;
      align-items: flex-end;
      color: var(--misaFirstColor);
      background: rgba(191, 155, 46, 0.3);
      border-radius: 15px;
-     padding: 5px;
 }
 
 .custom-badge {
@@ -14699,9 +14683,7 @@ border-color: var(--misaPrimaryBtnColor);
 	.sectors-opportunity .search-placeholder {
 	    font-size: 13px !important;
 	}
-	.opportunity-card.total-results {
-	    text-align: left;
-	}
+	
 	.opp-mobile-show {
         display:  block;
     }
@@ -25602,7 +25584,6 @@ padding: 10px;
     position: absolute;
     left: 12px;
     bottom: 65px;
-	
 	background-image: url(../img/article-details-breadcrumb-left-icon.png);
     background-repeat: no-repeat;
     background-position: 0px 5px !important;
@@ -25629,3 +25610,43 @@ padding: 10px;
 	content:"";
 	background-color:rgba(0,0,0,0)
 }
+
+/* Opportunitites listing Start */
+
+.opportunity-item-title {
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-item-desc {
+	font-size: 16px;
+	text-transform: lowercase;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-item-desc * {
+	font-size: 16px;
+	text-transform: lowercase;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-item-desc::first-letter {
+	text-transform: capitalize;
+}
+
+.opportunity-item-irr {
+	font-size: 18px;
+	text-transform: capitalize;
+	font-weight: 400;
+	color: var(--misaDarkGrayText);
+}
+
+.opp-filter-container .js-product-facet .facet.js-facet .js-facet-name {
+	color: var(--misaFirstColor);
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+/* Opportunitites listing End */

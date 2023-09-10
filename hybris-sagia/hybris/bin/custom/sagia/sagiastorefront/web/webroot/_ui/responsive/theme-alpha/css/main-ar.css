@@ -1632,16 +1632,6 @@ p {
     line-height: 20px;
     font-weight: normal; }
 
-#tab6-container p, .general-info p, .main-content-area p, .sectors-content p, .grid-section p {
-    color: #7B838C;
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: 400;
-    width: 96%;
-    font-variant: proportional-width;
-    text-align: right;
-}
-
 .general-info a {
     color: #32465A; }
 .general-info a:hover {

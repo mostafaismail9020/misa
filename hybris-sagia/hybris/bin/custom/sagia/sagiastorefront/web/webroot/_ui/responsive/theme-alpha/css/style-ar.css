@@ -34,7 +34,7 @@ a:hover {
 }
 
 .btn-secondary-fill {
-	background-color: var(--misaSecondColor);
+	background-color: var(--misaFirstColor);
 	color: #fff;
 }
 
@@ -57,10 +57,7 @@ a:hover {
 	font-size: 16px;
 	font-weight: 600;
 }
- .facet__name.js-facet-name.clr_gld.text-uppercase {
-        margin-top: 10px;
-        color: var(--misaSecondColor);
-    }
+
 .btn-video {
 	padding: 5px 15px 5px 15px;
 	color: #fff;
@@ -6484,7 +6481,7 @@ img.accountLogin-headline-logo {
 	gap: 6px;
 	width: 85%;
 	background: #F5F6F7;
-	border-radius: 80px;
+	border-radius: 10px;
 	order: 1;
 	color: #5B738B;
 	align-self: stretch;
@@ -13912,27 +13909,23 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .opportunity-card.total-results {
     white-space: nowrap;
-    margin: 10px 5px 20px 0;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: var(--misaSecondColor);
+    color: var(--misaFirstColor);
     text-align: right;
 }
 
 .custom-button {
-    font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 13px;
     display: flex;
-    align-items: flex-end;
     border-radius: 10px;
-    color: #5F6D7E;
+    color: var(--misaDarkGrayText);
     align-items: center;
-    background: rgba(0, 113, 77, 0.05);
-     border: 0px solid;
+    background: rgba(120, 120, 120, 0.05);
+    border: none;
 }
 
 .custom-badge {
@@ -13979,14 +13972,13 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 .parentCategory-button {
      font-style: normal;
      font-weight: 400;
-     font-size: 12px;
+     font-size: 14px;
      line-height: 18px;
      display: flex;
      align-items: flex-end;
      color: var(--misaFirstColor);
      background: rgba(191, 155, 46, 0.3);
      border-radius: 15px;
-     padding: 5px;
 }
 .pageLabel--newseventslist .container.banner.homeLink {
     color: #BF9B2E !important;
@@ -14103,14 +14095,6 @@ body.pageLabel--reportList .rhq-banner-content:nth-of-type(1) {
 
 .box-white-background {
 	background-color: #fff;
-}
-
-.force-first-color {
-	color: var(--misaFirstColor)!important;
-}
-
-.pageLabel--sectors-opportunities-opportunities #tab6-container p, .general-info p, .main-content-area p, .sectors-content p, .grid-section p {
-	color: var(--misaFirstColor)!important;
 }
 
 @media (max-width: 767px) {
@@ -14387,7 +14371,7 @@ border-color: var(--misaFirstColor);
 }
 
 .opp-filter-container .facet ul li {
-    padding-left: 0;
+    padding-right: 0;
 }
 
 .opp-filter-container .facet ul li:before {

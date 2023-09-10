@@ -18,26 +18,26 @@
 	        <div class="row">
 	            <div class="col-md-4">
 	            	<a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
-		                <strong class="force-first-color">${fn:toLowerCase(result.opportunity.name)}</strong>
-		                 <p class="force-first-color">
+		                <span class="opportunity-item-title">${fn:toLowerCase(result.opportunity.name)}</span>
+		                 <div class="opportunity-item-desc">
 			                 <c:choose>
 				                 <c:when test="${fn:length(result.opportunity.description) gt 50}">
-				                 	<span class="force-first-color">${fn:substring({result.opportunity.description}, 1, 50)}...</span>
+				                 	${fn:substring({result.opportunity.description}, 1, 55)}...
 			                 	 </c:when>
 				                 <c:otherwise>
-				                 	<span class="force-first-color">${result.opportunity.description}</span>
+				                 	${result.opportunity.description}
 				                 </c:otherwise>
 			                 </c:choose>
-		                 </p>
+		                 </div>
 		            </a>
 	            </div>
 	            <div class="col-md-4 mt-3 mt-md-0">
 	            	<a href="${encodedContextPath}${result.opportunity.url}" class="know-more-link">
-		                <p class="force-first-color">Expected IRR: ~16%</p>
+		                <p class="opportunity-item-irr">Expected IRR: ~16%</p>
 		            </a>
 	            </div>
 	            <div class="col-md-4">
-	            	<button type="button" class="btn btn-primary parentCategory-button" onclick="redirectToLink('${result.parentCategory.url}')" style="border: none;">
+	            	<button type="button" class="btn btn-primary parentCategory-button mt-1 mt-md-0" onclick="redirectToLink('${result.parentCategory.url}')" style="border: none;">
 	                    ${fn:toLowerCase(result.parentCategory.name)}
 	                </button>
 	            </div>

@@ -94,7 +94,7 @@ INSERT_UPDATE InvestorVisaApplyTerms; uid[unique = true]        ; name          
                                     ; investor-visa-apply-terms ; Investor Visa Apply Terms ; <h1>GENERAL CONDITIONS</h1> ; coditionBg2.jpg                  ; investorvisaapplyterm-1,investorvisaapplyterm-2,investorvisaapplyterm-3,investorvisaapplyterm-4,investorvisaapplyterm-5,investorvisaapplyterm-6 ; investor-visa-apply-terms
 
 INSERT_UPDATE InvestorVisaApplyTerms; uid[unique = true]        ; name                      ; title[lang = ar]                                                                 ; $contentCV[unique = true];
-                                    ; investor-visa-apply-terms ; Investor Visa Apply Terms ; <h1>الشروط العامة للتقدم بطلب الحصول على تأشيرة زيارة أعمال ""مستثمر زائر""</h1> ;
+                                    ; investor-visa-apply-terms ; Investor Visa Apply Terms ; <h1>الشروط العامة</h1> ;
 ################################################### Investor Visa Apply Term Component  ################################################################
 
 ################################################### Investor Visa Following Component  ################################################################
@@ -117,7 +117,7 @@ INSERT_UPDATE InvestorVisaFollowing; uid[unique = true]      ; description[lang 
 INSERT_UPDATE InvestorVisaTermsFollowing; uid[unique = true]           ; name                         ; title[lang = en]                                                ; listOfFollowings(&componentRef)                                                                                                                 ; backgroundImage(code, $contentCV); &componentRef                ; $contentCV[unique = true];
                                         ; investor-visa-term-following ; Investor Visa Term Following ; <h1>THE INVESTOR MUST FULFILL THE FOLLOWING IN THE KINGDOM</h1> ; investorvisafollowing-1,investorvisafollowing-2,investorvisafollowing-3,investorvisafollowing-4,investorvisafollowing-5,investorvisafollowing-6 ; sectionBg6.jpg                   ; investor-visa-term-following ;
 INSERT_UPDATE InvestorVisaTermsFollowing; uid[unique = true]           ; name                         ; title[lang = ar]                                            ; $contentCV[unique = true];
-                                        ; investor-visa-term-following ; Investor Visa Term Following ; <h1>على المستثمر أثناء تواجده في المملكة العمل بالآتي:</h1> ;
+                                        ; investor-visa-term-following ; Investor Visa Term Following ; <h1>على المستثمر أثناء تواجده في المملكة الالتزام بالتالي</h1> ;
 ################################################### Investor Visa Following Component  ################################################################
 
 INSERT_UPDATE InvestorVisaApplyNowComponent; uid[unique = true]      ; name                    ; planeAnimation(code, $contentCV); insideVideoEn(code, $contentCV); insideVideoAr(code, $contentCV); defaultImageEn(code, $contentCV); defaultImageAr(code, $contentCV); $contentCV[unique = true];

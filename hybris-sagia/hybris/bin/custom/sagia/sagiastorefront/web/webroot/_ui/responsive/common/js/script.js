@@ -5526,8 +5526,7 @@ $('.visaBannerLoadMore').click(function(){
 
 const nationalityChange = () => {
 
-	var instantVisaCountry = ["AD", "AU", "NZ", "BN", "CN", "JP", "KZ", "MY", "SG", "SK", "AT", "BE", "HR", "CY", "CR", "DK", "EE", "FI", "FR", "DE", "GR", "NL", "HU", "IS", "IE", "IT", "LV", "LI", "LT", "LU", "MT", "MC", "ME", "NO", "PL", "PT", "RO", "RU", "SM", "SK", "SI", "ES", "SE", "CH", "UA", "GB", "CA", "US" , "CZ"
-	  ];
+      var instantVisaCountry = ["US", "GB", "CA", "AU", "NZ", "RU", "BN", "JP", "SG", "MY", "KR", "KZ", "MO", "CN", "TW", "HU", "IS", "IT", "LV", "RO", "SK", "HR", "CY", "ES", "SE", "DK", "ET", "FI", "NO", "LU", "FR", "DE", "GR", "SI", "SM", "CH", "IE", "LT", "MC", "MT", "SM", "UA", "PT", "PL", "AT", "BE", "BG", "ME", "AD", "LI", "CZ", "MV", "UZ", "AZ", "KG", "TJ", "AL", "GE", "ZA", "EE", "NL"];
 	  var nationalityChangeVal = $('#visaCountry').val();
 
 	  if (instantVisaCountry.includes(nationalityChangeVal)) {
@@ -5580,8 +5579,7 @@ const nationalityChange = () => {
 
 	const nationalityChangeAr = () => {
 
-		var instantVisaCountry = ["AD", "AU", "NZ", "BN", "CN", "JP", "KZ", "MY", "SG", "SK", "AT", "BE", "HR", "CY", "CR", "DK", "EE", "FI", "FR", "DE", "GR", "NL", "HU", "IS", "IE", "IT", "LV", "LI", "LT", "LU", "MT", "MC", "ME", "NO", "PL", "PT", "RO", "RU", "SM", "SK", "SI", "ES", "SE", "CH", "UA", "GB", "CA", "US" , "CZ"
-		  ];
+		  var instantVisaCountry = ["US", "GB", "CA", "AU", "NZ", "RU", "BN", "JP", "SG", "MY", "KR", "KZ", "MO", "CN", "TW", "HU", "IS", "IT", "LV", "RO", "SK", "HR", "CY", "ES", "SE", "DK", "ET", "FI", "NO", "LU", "FR", "DE", "GR", "SI", "SM", "CH", "IE", "LT", "MC", "MT", "SM", "UA", "PT", "PL", "AT", "BE", "BG", "ME", "AD", "LI", "CZ", "MV", "UZ", "AZ", "KG", "TJ", "AL", "GE", "ZA", "EE", "NL"];
 		  var nationalityChangeVal = $('#visaCountry').val();
 
 		  if (instantVisaCountry.includes(nationalityChangeVal)) {

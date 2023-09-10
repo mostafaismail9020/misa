@@ -14246,72 +14246,128 @@ box-shadow: 0 14px 28px rgb(0 0 0 / 45%), 0 10px 10px rgb(0 0 0 / 1%);
 }
   /* Investor-visa-program  End*/
 
-.invVisaProgram .aboutAdvantage{
+.visitingInvAdv .aboutAdvantage{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-top: 50px;
-    border: 2px dashed #00968830;
     min-height: 120px;
     border-radius: 15px;
-    padding: 0px 20px;
-    direction: rtl;
+    overflow: hidden;
+position: relative;
 }
-.invVisaProgram .aboutAdvantageItem{
+.visitingInvAdv .aboutAdvantageItem::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+}
+.visitingInvAdv .aboutAdvantageItem{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-left: 60px;
+   padding-right: 10px;
+   padding-left: 10px;
     cursor: default;
+        width: calc(100% / 2);
+    min-height: 180px;
+        justify-content: flex-start;
+    text-align: center;
+      justify-content: center;
+            background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+      transition: 0.2s all linear;
+      z-index: 1;
+      border-right: 1px solid #ffffff75;
 }
-.invVisaProgram .aboutAdvantageItem:last-child{
-    margin-left: 0;
+
+.visitingInvAdv .aboutAdvantageImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+     transition: 0.3s all linear;
+
 }
-.invVisaProgram .aboutAdvantageNum {
-   margin-left: 25px;
+.visitingInvAdv .aboutAdvantageImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.invVisaProgram .aboutAdvantageNum span{
+.visitingInvAdv .aboutAdvantageItem::after{
+      content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-image: linear-gradient(to bottom, #05547bbd, #04778bd1, #03a09ec7, #23b494c9, #3cbd89);
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+transition: 0.2s all linear;
+
+}
+.visitingInvAdv .aboutAdvantageItem:hover:after{
+height: 100%;
+transition: 0.2s all linear;
+}
+
+
+.visitingInvAdv .aboutAdvantageItem:last-child{
+    margin-right: 0;
+}
+.visitingInvAdv .aboutAdvantageNum {
+   margin-right: 5px;
+       position: relative;
+    z-index: 1;
+
+}
+.visitingInvAdv .aboutAdvantageNum span{
         width: 45px;
     height: 45px;
     border-radius: 50px;
-    background: #009688;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 35px;
+    font-weight: 500;
     color: #fff;
     transition: 0.3s all linear;
 }
-.invVisaProgram .aboutAdvantageTxt .aboutAdvantageTxtWrap{
+.visitingInvAdv .aboutAdvantageTxt .aboutAdvantageTxtWrap{
     position: relative;
+        display: flex;
+    align-items: center;
+    min-height: 96px;
 }
-.invVisaProgram .aboutAdvantageTxt .aboutAdvantageMark{
+
+.visitingInvAdv .aboutAdvantageTxt .aboutAdvantageMark{
    position: absolute;
-    color: #009688;
+    color:#fff;
     font-size: 24px;
     left: -16px;
     font-weight: bold;
-    top: -10px;
+    top: 22px;
     bottom: 0;
 }
-.invVisaProgram .aboutAdvantageItem:hover .aboutAdvantageNum span{
-    color: #ffffff8f;
-    transition: 0.3s all linear;
-}
-.invVisaProgram .aboutAdvantageTxt{
-    font-size: 18px;
+
+.visitingInvAdv .aboutAdvantageTxt{
+    font-size: 22px;
     font-weight: 500;
-    text-align: right;
+    color: #fff;
+    position: relative;
+    z-index: 1;
 }
-.invVisaProgram .aboutNotest{
+.visitingInvAdv .aboutNotest{
     position: relative;
     margin-bottom: 0;
     margin-top: 0px;
     font-size: 14px !important;
     font-weight: 500;
 }
-.invVisaProgram .aboutNotest span{
+.visitingInvAdv .aboutNotest span{
        font-size: 25px;
     color: #009688;
     margin-left: 10px;
@@ -14321,60 +14377,65 @@ box-shadow: 0 14px 28px rgb(0 0 0 / 45%), 0 10px 10px rgb(0 0 0 / 1%);
     font-weight: bold;
 }
  @media(min-width : 1400px) and (max-width:1642px){
-.invVisaProgram .aboutAdvantageTxt{
+.visitingInvAdv .aboutAdvantageTxt{
     font-size: 16px;
 }
- .invVisaProgram .aboutAdvantageItem{
-        margin-left: 45px;
+ .visitingInvAdv .aboutAdvantageItem{
+        margin-right:0px;
     }
-     .invVisaProgram .aboutAdvantageNum span{
+     .visitingInvAdv .aboutAdvantageNum span{
         width: 40px;
         height: 40px;
         font-size: 20px;
     }
-     .invVisaProgram .aboutAdvantageNum{
-        margin-left: 10px;
+     .visitingInvAdv .aboutAdvantageNum{
+        margin-right: 10px;
     }
 }
 
  @media(min-width : 1200px) and (max-width:1399px){
-    .invVisaProgram .aboutAdvantage{
+    .visitingInvAdv .aboutAdvantage{
         margin-top: 30px;
     }
-    .invVisaProgram .aboutAdvantageItem{
-        margin-left: 45px;
+    .visitingInvAdv .aboutAdvantageItem{
+        margin-right: 0px;
+        border: unset;
+        min-height: 120px;
     }
-    .invVisaProgram .aboutAdvantageNum{
-        margin-left: 10px;
+    .visitingInvAdv .aboutAdvantageNum{
+        margin-right: 10px;
     }
-    .invVisaProgram .aboutAdvantageNum span{
+    .visitingInvAdv .aboutAdvantageNum span{
         width: 40px;
         height: 40px;
         font-size: 20px;
     }
-    .invVisaProgram .aboutAdvantageTxt {
+    .visitingInvAdv .aboutAdvantageTxt {
     font-size: 15px;
     font-weight: 500;
 }
 }
 
  @media(min-width : 992px) and (max-width:1199px){
- .invVisaProgram .aboutAdvantage{
+ .visitingInvAdv .aboutAdvantage{
     display: block;
       padding: 20px 20px;
       margin-top: 30px;
 }
-.invVisaProgram .aboutAdvantageItem{
-    margin-bottom: 20px;
-    margin-left: 0;
+.visitingInvAdv .aboutAdvantageItem{
+    margin-bottom: 15px;
+    margin-right: 0;
+    min-height: 130px;
+    width: 100%;
+    border-radius: 15px;
 }
-.invVisaProgram .aboutAdvantageItem:last-child{
+.visitingInvAdv .aboutAdvantageItem:last-child{
     margin-bottom: 0;
 }
-.invVisaProgram .aboutAdvantageTxt{
+.visitingInvAdv .aboutAdvantageTxt{
     font-size: 18px;
 }
- .invVisaProgram .aboutAdvantageNum span{
+ .visitingInvAdv .aboutAdvantageNum span{
         width: 40px;
         height: 40px;
         font-size: 20px;
@@ -14383,68 +14444,72 @@ box-shadow: 0 14px 28px rgb(0 0 0 / 45%), 0 10px 10px rgb(0 0 0 / 1%);
 
 
  @media(min-width:768px) and (max-width :991px){
- .invVisaProgram .aboutAdvantage{
+ .visitingInvAdv .aboutAdvantage{
         margin-top: 30px;
     }
-    .invVisaProgram .aboutAdvantageItem{
-        margin-left: 70px;
+    .visitingInvAdv .aboutAdvantageItem{
+        margin-right: 0px;
+        border: unset;
     }
-    .invVisaProgram .aboutAdvantageNum{
-        margin-left: 10px;
+    .visitingInvAdv .aboutAdvantageNum{
+        margin-right: 10px;
     }
-    .invVisaProgram .aboutAdvantageNum span{
+    .visitingInvAdv .aboutAdvantageNum span{
         width: 40px;
         height: 40px;
         font-size: 18px;
     }
-    .invVisaProgram .aboutAdvantageTxt {
+    .visitingInvAdv .aboutAdvantageTxt {
     font-size: 18px;
     font-weight: 500;
 }
 }
  @media(min-width:543px) and (max-width :767px){
-    .invVisaProgram .aboutAdvantage{
+    .visitingInvAdv .aboutAdvantage{
         margin-top: 30px;
     }
-    .invVisaProgram .aboutAdvantageItem{
-        margin-left: 45px;
+    .visitingInvAdv .aboutAdvantageItem{
+        margin-right: 0px;
+        border: unset;
     }
-    .invVisaProgram .aboutAdvantageNum{
-        margin-left: 10px;
+    .visitingInvAdv .aboutAdvantageNum{
+        margin-right: 10px;
     }
-    .invVisaProgram .aboutAdvantageNum span{
+    .visitingInvAdv .aboutAdvantageNum span{
         width: 35px;
         height: 35px;
         font-size: 18px;
     }
-    .invVisaProgram .aboutAdvantageTxt {
+    .visitingInvAdv .aboutAdvantageTxt {
     font-size: 15px;
     font-weight: 500;
 }
 }
  @media(max-width:542px){
-.invVisaProgram .aboutAdvantage{
+.visitingInvAdv .aboutAdvantage{
     display: block;
       padding: 20px 20px;
       margin-top: 30px;
 }
-.invVisaProgram .aboutAdvantageItem{
-    margin-bottom: 20px;
-    margin-left: 0;
+.visitingInvAdv .aboutAdvantageItem{
+    margin-bottom: 15px;
+    margin-right: 0;
+    min-height: 130px;
+    width: 100%;
+    border-radius: 15px;
 }
-.invVisaProgram .aboutAdvantageItem:last-child{
+.visitingInvAdv .aboutAdvantageItem:last-child{
     margin-bottom: 0;
 }
-.invVisaProgram .aboutAdvantageTxt{
+.visitingInvAdv .aboutAdvantageTxt{
     font-size: 16px;
 }
- .invVisaProgram .aboutAdvantageNum span{
+ .visitingInvAdv .aboutAdvantageNum span{
         width: 35px;
         height: 35px;
         font-size: 18px;
     }
 }
-
 
 
 

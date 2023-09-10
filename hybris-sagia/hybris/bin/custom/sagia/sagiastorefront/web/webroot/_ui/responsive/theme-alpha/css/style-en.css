@@ -24190,7 +24190,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-main .irr-title {
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 600;
 	line-height: 28px;
 	letter-spacing: 0em;
@@ -24234,8 +24234,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-main .irr-sector-div .title {
-	font-size: 24px;
-	font-weight: 700;
+	font-size: 20px;
+	font-weight: 600;
 	line-height: 28px;
 	letter-spacing: 0em;
 }
@@ -25616,4 +25616,16 @@ padding: 10px;
 	.page-resources-list-page .homeLink {
 		bottom: 75px;
 	}
+}
+
+.stretched-link::after {
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:1;
+	pointer-events:auto;
+	content:"";
+	background-color:rgba(0,0,0,0)
 }

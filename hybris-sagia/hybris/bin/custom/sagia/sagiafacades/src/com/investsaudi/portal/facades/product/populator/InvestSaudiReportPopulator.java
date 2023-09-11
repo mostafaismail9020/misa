@@ -109,6 +109,7 @@ public class InvestSaudiReportPopulator implements Populator<ProductData, Report
         }
         productData.setKeywords(keywordSet);
 
+        productData.setReportType(productModel.getReportType());
         productData.setVideoUrl(productModel.getVideoUrl());
         productData.setSubHeadings(productModel.getReportSubHeadings(currentLocale));
         if (null != productModel.getParaWithMedia(currentLocale)) {

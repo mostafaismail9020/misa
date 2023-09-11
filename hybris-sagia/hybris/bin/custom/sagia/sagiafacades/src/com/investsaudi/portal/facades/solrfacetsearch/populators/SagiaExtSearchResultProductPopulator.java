@@ -55,6 +55,7 @@ public class SagiaExtSearchResultProductPopulator extends SearchResultProductPop
 		}
         else if (target.getResource().equals("Report")) {
             SimpleDateFormat reportDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            target.setReportType(this.getValue(source, "reportType"));
             try {
                 target.setReportDate(reportDateFormat.parse(this.getValue(source, "creationTime")));
             } catch (ParseException e) {

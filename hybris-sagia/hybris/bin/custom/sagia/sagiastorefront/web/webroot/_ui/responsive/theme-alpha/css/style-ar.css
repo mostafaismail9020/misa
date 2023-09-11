@@ -23604,7 +23604,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 .sector-search .a-search {
 	position: absolute;
     top: 3px;
-    left: 88%;
+    left: 20px;
     color: #7B838C;
 }
 
@@ -27080,4 +27080,8 @@ font-size: 14px !important;
 	.nav-menu a {
 		padding: 12px 20px !important;
 	}
+}
+
+.search-icon {
+	margin-top: 8px;
 }

@@ -3523,6 +3523,7 @@
 		<property name="eventTiming" type="java.lang.String"/>
 		<property name="newsDate" type="java.util.Date"/>
 		<property name="reportDate" type="java.util.Date"/>
+		<property name="reportType" type="java.lang.String"/>
 
 		<property name="subjects" type="java.util.Map&lt;String, String>"/>
 		<property name="speakers" type="java.util.Map&lt;String, String>"/>

@@ -4340,6 +4340,9 @@
                     <attribute qualifier="reportDate" type="java.util.Date">
                         <persistence type="property"/>
                     </attribute>
+                    <attribute qualifier="reportType" type="java.lang.String">
+                        <persistence type="property"/>
+                    </attribute>
                 </attributes>
             </itemtype>
              

@@ -24922,10 +24922,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
     padding: 20px;
     color:#BF9B2E;
     background-color: #FCFAF5;
+	border-radius: 10px;
 }
 
 .opportunity.alternate {
-	background-color: #fff;
+	background-color: rgba(191, 155, 46, 0.07);
 }
 
 .opportunity .information {
@@ -24947,7 +24948,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .opportunity .title {
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
 }
 
@@ -24956,7 +24957,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity .market-info {
-    color: var(--misaFirstColor);
+	flex:1;
+    color: var(--misaDarkGrayText);
 	text-align: left;
 }
 
@@ -24965,7 +24967,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity span {
-	color: var(--misaFirstColor) !important;
+	color: var(--misaDarkGrayText) !important;
 }
 
 .opportunity .link:hover p {
@@ -24995,8 +24997,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	}
 
 	.opportunity .title-and-description {
-		width: 350px;
-		max-width: 350px;
+		flex:1;
 	}
 }
 
@@ -25009,6 +25010,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
         margin-left: auto;
 		width: auto !important;
     }
+
+	.opportunity .market-info {
+		text-align: center;
+	}
 }
 
 .button-large {
@@ -25660,3 +25665,17 @@ padding: 10px;
 }
 
 /* Opportunitites listing End */
+
+
+.resource-list {
+	background: rgba(0, 113, 77, 0.2);
+}
+
+.resource-list .sector-search {
+	margin-top: 40px;
+	margin-bottom: 30px !important;
+}
+
+.resource-list .opportunity-card.total-results {
+	color: var(--misaSecondColor);
+}

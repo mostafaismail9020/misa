@@ -26291,10 +26291,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     padding: 20px;
     color:#BF9B2E;
     background-color: #FCFAF5;
+	border-radius: 10px;
 }
 
 .opportunity.alternate {
-	background-color: #fff;
+	background-color: rgba(191, 155, 46, 0.07);
 }
 
 .opportunity .information {
@@ -26316,7 +26317,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .opportunity .title {
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
 }
 
@@ -26325,7 +26326,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .opportunity .market-info {
-    color: var(--misaFirstColor);
+	flex:1;
+	color: var(--misaDarkGrayText);
 	text-align: left;
 }
 
@@ -26334,7 +26336,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 }
 
 .opportunity span {
-	color: var(--misaFirstColor) !important;
+	color: var(--misaDarkGrayText) !important;
 }
 
 .opportunity .link:hover p {
@@ -26364,8 +26366,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	}
 
 	.opportunity .title-and-description {
-		width: 350px;
-		max-width: 350px;
+		flex: 1;
 	}
 }
 

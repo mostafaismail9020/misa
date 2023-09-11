@@ -13,10 +13,10 @@
 </spring:url>
 
 <main>
-<div class="container">
+<div class="container-fluid resource-list mb-4">
     <div class="row justify-content-center">
         <c:if test="${not empty opportunitySearchPageData.results}">
-            <div class="col-lg-6 col-md-8 opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4 opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
                 <div class="sector-search mb-3">
                     <form name="search_form_${fn:escapeXml(component.uid)}" method="get" class="position-relative" action="${searchUrl}">
                         <spring:theme code="portal.opportunity.searchby.placeholder" var="searchPlaceholder"/>
@@ -30,7 +30,7 @@
                                 <img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
                             </a>
                         </ycommerce:testId>
-                        <div class="opportunity-card total-results">
+                        <div class="opportunity-card total-results mt-2">
                             <spring:message code="portal.resources.search.totalResults" arguments="${fn:length(opportunitySearchPageData.results) + fn:length(eventSearchPageData.results) + fn:length(newsSearchPageData.results) + fn:length(articleSearchPageData.results)}"/>
                         </div>
                     </form>
@@ -46,7 +46,7 @@
         <c:when test="${ not empty opportunitySearchPageData.results}">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="resource-title">
+                    <div class="resource-title mb-4">
                         <h2>Opportunities</h2>
                     </div>
                 </div>

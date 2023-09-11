@@ -290,7 +290,7 @@ ul.sagiaNavigation-subNav li svg {
 }
 
 #header .nav-menu {
-	margin-right: 135px;
+	margin-right: auto;
 }
 
 #header .logo {
@@ -348,8 +348,6 @@ ul.sagiaNavigation-subNav li svg {
 .nav-menu>ul>li {
 	position: relative;
 	white-space: nowrap;
-	padding: 20px 0px;
-	margin-right: 10px;
 	transition: 0.3s;
 }
 
@@ -463,9 +461,13 @@ ul.sagiaNavigation-subNav li svg {
 	color: var(--misaSecondColor);
 	transition: 0.3s;
 	font-size: 13px;
-	padding: 12px 12px 12px 28px;
+	padding: 12px 25px;
 	text-transform: uppercase;
 	font-weight: 600;
+}
+
+.nav-menu ul li:last-child a {
+	padding-left:0;
 }
 
 .nav-menu .drop-down ul {
@@ -12902,14 +12904,14 @@ ul.INS_li_ul_under li {
 }
 
 @media (min-width: 990px) and (max-width: 1120px) {
-	.nav-menu>ul>li:nth-child(4) {
+	/* .nav-menu>ul>li:nth-child(4) {
 		white-space: pre-wrap;
 		word-wrap: break-word;
 		word-break: break-all;
 		white-space: normal;
 		display: block;
 		min-width: 197px;
-	}
+	} */
 	.page-sectors-opportunities .investment-hub-container .yCmsComponent {
 		margin-bottom: 15px;
 	}
@@ -13351,14 +13353,14 @@ ul.INS_li_ul_under li {
 }
 
 @media (min-width: 990px) and (max-width: 1120px) {
-	.nav-menu>ul>li:nth-child(4) {
+	/* .nav-menu>ul>li:nth-child(4) {
 		white-space: pre-wrap;
 		word-wrap: break-word;
 		word-break: break-all;
 		white-space: normal;
 		display: block;
 		min-width: 197px;
-	}
+	} */
 	.page-sectors-opportunities .investment-hub-container .yCmsComponent {
 		margin-bottom: 15px;
 	}
@@ -27047,4 +27049,14 @@ font-size: 14px !important;
 	pointer-events:auto;
 	content:"";
 	background-color:rgba(0,0,0,0)
+}
+
+[dir=rtl] #topbar .social-links a {
+	margin-left: 0 !important;
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+	.nav-menu a {
+		padding: 12px 20px !important;
+	}
 }

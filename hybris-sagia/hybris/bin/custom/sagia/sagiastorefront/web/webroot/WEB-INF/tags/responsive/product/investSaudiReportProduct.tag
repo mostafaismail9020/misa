@@ -74,11 +74,11 @@
 			</c:forEach>
 
 			<div class="col-sm-12 text-center">
-				<a href="${commonResourcePath}/pdf/Invest-Saudi-Quarterly-Magazine-Q1-23-english.pdf" download class="btn-download mt-5" id="pdf-en">
+				<a href="${productData.pdfUrl}" download class="btn-download mt-5" id="pdf-en">
 					<spring:theme code="facilityReopen.download.text"/>
 					<i class="icon-download"></i>
 				</a>
-				<a href="${commonResourcePath}/pdf/Invest-Saudi-Quarterly-Magazine-Q1-23-arabic.pdf" download class="btn-download mt-5" id="pdf-ar">
+				<a href="${productData.pdfUrl}" download class="btn-download mt-5" id="pdf-ar">
 					<spring:theme code="facilityReopen.download.text"/>
 					<i class="icon-download"></i>
 				</a>

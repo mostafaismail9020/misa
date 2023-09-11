@@ -7311,6 +7311,7 @@ body.page-province-region-homepage .regions-title-container .region-title-data {
 	--misaGrayText: #A6A6A8;
 	--misaDarkGrayText: #787878;
 	--misaPrimaryBtnColor: #BF9B2E;
+	--misaThirdColor: #0097A9;
 	margin: 0;
 	padding: 0;
 	border: 0 none;
@@ -8376,12 +8377,21 @@ figure h2 {
 }
 
 .contact-accordion .card .card-header {
-	background-color: #F8F8F8;
+	background-color: #f8f8f8;
 	border-radius: 0;
+	padding-right:0;
 	border: none;
 }
 
+.contact-accordion .card .card-body {
+	padding-right: 5px;
+	text-align: right !important;
+	margin-right:0 !important;
+}
+
 .contact-accordion .card-header h5 button.btn.btn-link {
+	display: flex;
+	align-items: center;
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 23px;
@@ -8389,11 +8399,11 @@ figure h2 {
 	color: var(--misaFirstColor);
 	padding: 0px;
 	text-decoration: none;
+	text-transform: capitalize;
 }
 
 .contact-accordion .card-header h5 button.btn.btn-link.collapsed {
 	color: var(--misaFirstColor);
-	text-transform: capitalize;
 }
 
 .contact-accordion .card-header h5 button.btn.btn-link:hover,
@@ -8412,17 +8422,16 @@ figure h2 {
 	content: '';
 	position: absolute;
 	right: 0;
-	top: 18px;
-	width: 22px;
-	height: 22px;
-	background-image: url('../img/minus.png');
+	top: 10px;
+	width: 20px;
+	height: 2px;
+	background-image: url('../img/minus.svg');
 	background-repeat: no-repeat;
 }
 
 .contact-accordion .card-header h5 button.btn.btn-link.collapsed:after {
-	background-image: url('../img/plus.png');
+	background-image: url('../img/plus.svg');
 	background-repeat: no-repeat;
-	top: 8px;
 }
 
 .pvcy-policy {
@@ -10547,7 +10556,7 @@ body.page-living-in-saudi .content {
 
 .header-home-container {
 	width: 200px;
-    background-color: var(--misaFirstColor);
+    background-color: var(--misaThirdColor);
     padding: 10px;
     z-index: 1;
     border-radius: 10px;
@@ -25645,7 +25654,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     color: #fff;
     border-radius: 8px;
     height: 45px;
-    margin-top: 25px;
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-second .opportunity-owner {

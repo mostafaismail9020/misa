@@ -123,16 +123,6 @@
     						<div class="col-md-3 col-3" style="display: none;">
     							<img class="img-fluid rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS78M1xPINkEl0df2wnbq3bro9Oz0rCHpWn284h5iT4tQ&s" />
     						</div>
-    						<div class="col-md-12 col-12">
-    							<div class="row">
-    								<div class="col-md-12 col-12">
-    									<p class="opportunity-owner text-center">Ahmed Ali</p>
-    								</div>
-    								<div class="col-md-12 col-12">
-    									<p class="opportunity-owner-position text-center">Opportunity lead</p>
-    								</div>
-    							</div>
-    						</div>
     					</div>
     					<div class="row">
     						<div class="col text-center">
@@ -140,7 +130,7 @@
     						</div>
     					</div>
     					<div class="div-form-opportunity-lead">
-    						<div class="row mt-5">
+    						<div class="row">
 								<div class="form-group col-md-12 col-12 form-normal-item">
 									<label for="crName">
 										<spring:theme code="portal.sector.contact.expert.name.label"/> *
@@ -178,7 +168,7 @@
 							</div>
 	    					<div class="row">
 	    						<div class="col text-center">
-	    							<button type="button" class="btn btn-primary-fill btn-get-in-touch-opportunity" id="submit-opportunity-contact-form">Submit</button>
+	    							<button type="button" class="mt-4 btn btn-primary-fill btn-get-in-touch-opportunity" id="submit-opportunity-contact-form">Submit</button>
 	    						</div>
 	    					</div>
     					</div>

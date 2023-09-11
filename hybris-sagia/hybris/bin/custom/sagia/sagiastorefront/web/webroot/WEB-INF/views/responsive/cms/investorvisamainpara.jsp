@@ -37,18 +37,15 @@
       </div>
    </section> -->
 
-
-
-
-
    <section class="investorVisaAbout  reveal">
-  
+
       <div class="containerFluid">
       <div class="invVisaAboutWrap">
         <div class="invVisaAboutLeft">
             <div class="investorVisaTitle">
-          <h2 id="sectionTitle1"  class=" sectionTitle-animation"> <spring:theme code="investor.visa.main.para.heading"/></h2>
+          <h1 id="sectionTitle1" class=" sectionTitle-animation">${component.title}</h1>
         </div>
+
        <div class="investorVisaAbtContent">
         <p class="animated fadeInUp wow" data-wow-delay="0.2s" data-wow-duration="2s">${component.description} </p>
         <c:if test="${language eq 'en'}">
@@ -133,6 +130,7 @@
               </p>
            </div>
         </c:if>
+
       </div>
         </div>
       <div class="invVisaAboutRight">

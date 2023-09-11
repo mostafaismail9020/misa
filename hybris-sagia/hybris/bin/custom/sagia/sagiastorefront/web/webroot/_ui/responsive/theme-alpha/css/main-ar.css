@@ -13310,11 +13310,11 @@ body.page-visiting-investor-program {
     }
 
     .page-visiting-investor-program .invVisaAboutLgImg {
-        height: 650px;
+        height: 550px;
     }
 
     .page-visiting-investor-program .invVisaAboutRight {
-        min-height: 650px;
+        min-height: 550px;
     }
 
 
@@ -14670,4 +14670,8 @@ margin-top: 20px;
 .invVisaProgram.aboutAdvantageWrapper{
 width:97%
 }
+}
+
+.page-visiting-investor-program .invVisaAboutLeft {
+    direction: rtl;
 }

@@ -26771,10 +26771,15 @@ font-size: 14px !important;
 	}
 
 	.join-newsletter-btn {
-		background: #BF9B2E!important;
-		border: none;
-		height: 50px!important;
-	}
+        background: #BF9B2E!important;
+        border: none;
+        height: 50px!important;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.0015em;
+        color: #fff;
+    }
 
 	.media-library-title {
         font-weight: 600;

@@ -143,7 +143,7 @@
                         </div>
                     </div>
 
-                    <div class="row mt-5">
+                    <div class="row mt-5" style= "display: none;>
                         <div class="col-md-12">
                             <h1 class="sponsors-partners-container-title mb-4">
                                 <spring:theme code="portal.event.details.sponsors"/>

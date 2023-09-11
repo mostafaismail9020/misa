@@ -22305,7 +22305,9 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 .article-detail-page-general-title {
 	font-size: 32px!important;
 	font-weight: 700!important;
-	color: #00714D!important;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaSecondColor);
 }
 
 .article-details-page ul {
@@ -22320,15 +22322,21 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .article-details-page .article-detail-page-title {
-	font-size: 24px;
-	font-weight: 700;
-	color: #BF9B2E;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaFirstColor);
 }
 
 .article-details-page .article-detail-page-subtitle {
-	font-size: 24px;
+	font-size: 32px;
 	font-weight: 600;
-	color: #BF9B2E;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaFirstColor);
 }
 
 .article-details-page p {
@@ -22400,7 +22408,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	border-radius: 5px;
 	display: flex;
 	align-items: flex-start;
-	justify-content: center;
 }
 
 .article-details-page .number-box {
@@ -22424,7 +22431,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .article-details-page .box-content .title {
 	font-size: 12px;
-	font-weight: 400;
+	font-weight: 600;
 	padding-top: 10px;
 	color: var(--misaDarkGrayText);
 }
@@ -22493,7 +22500,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .article-details-page .recent-projects-card-img {
 	width: 100%;
-	height: 250px;
+	height: 172px;
 	margin-bottom: 10px;
 	border-radius: 10px;
 }

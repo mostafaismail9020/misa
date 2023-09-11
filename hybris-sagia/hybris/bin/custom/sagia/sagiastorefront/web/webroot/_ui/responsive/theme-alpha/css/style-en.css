@@ -34,7 +34,7 @@ a:hover {
 }
 
 .btn-secondary-fill {
-	background-color: var(--misaSecondColor);
+	background-color: var(--misaFirstColor);
 	color: #fff;
 }
 
@@ -228,8 +228,8 @@ ul.sagiaNavigation-subNav li svg {
 	margin-left: 15px;
 }
 
-.pageLabel--sectors-opportunities-opportunities #topbar .social-links a{
-color: var(--misaSecondColor);
+.pageLabel--sectors-opportunities-opportunities #topbar .social-links a {
+	color: var(--misaSecondColor);
 }
 
 #topbar .social-links a {
@@ -282,10 +282,6 @@ color: var(--misaSecondColor);
 
 #header.header-scrolled .nav-menu a {
 	color: #787878;
-}
-
-#header .nav-menu {
-	margin-right: -25px;
 }
 
 #header .logo {
@@ -349,8 +345,6 @@ color: var(--misaSecondColor);
 .nav-menu>ul>li {
 	position: relative;
 	white-space: nowrap;
-	padding: 20px 0px;
-	margin-left: 10px;
 	transition: 0.3s;
 }
 
@@ -377,11 +371,13 @@ color: var(--misaSecondColor);
 	height: 6px;
 	border: none;
 }
+
 .pageLabel--sectors-opportunities-opportunities #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after{
     color: var(--misaSecondColor);
     filter: none;
     opacity: 1;
 }
+
 #header.header-scrolled .nav-menu>ul>li.nav-item.dropdown a.nav-link.dropdown-toggle::after {
 	filter: grayscale(0.9) brightness(0.4);
 	opacity: 0.9;
@@ -457,9 +453,13 @@ color: var(--misaSecondColor);
 	color: var(--misaSecondColor);
 	transition: 0.3s;
 	font-size: 13px;
-	padding: 12px 28px 12px 12px;
+	padding: 12px 25px;
 	text-transform: uppercase;
 	font-weight: 600;
+}
+
+.nav-menu ul li:last-child a {
+	padding-right:0;
 }
 
 .nav-menu .drop-down ul {
@@ -1356,7 +1356,7 @@ button:focus {
 
 .header-home-container {
 	width: 200px;
-    background-color: var(--misaFirstColor);
+    background-color: var(--misaThirdColor);
     padding: 10px;
     z-index: 1;
     border-radius: 10px;
@@ -6660,7 +6660,7 @@ img.accountLogin-headline-logo {
 	gap: 6px;
 	width: 85%;
 	background: #F5F6F7;
-	border-radius: 80px;
+	border-radius: 10px;
 	order: 1;
 	color: #5B738B;
 	align-self: stretch;
@@ -7496,6 +7496,7 @@ body.page-province-region-homepage .regions-title-container .region-title-data {
 	--misaGrayText: #A6A6A8;
 	--misaDarkGrayText: #787878;
 	--misaPrimaryBtnColor: #BF9B2E;
+	--misaThirdColor: #0097A9;
 	margin: 0;
 	padding: 0;
 	border: 0 none;
@@ -7816,10 +7817,6 @@ figure h2 {
 	text-align: center;
 }
 
-.facet__name.js-facet-name.clr_gld.text-uppercase {
-	margin-top: 10px;
-	color: var(--misaSecondColor);
-}
 .pageLabel--newseventslist .container.banner.homeLink {
     color: #BF9B2E !important;
     font-weight: 400;
@@ -8626,10 +8623,18 @@ color: var(--misaFirstColor);
 .contact-accordion .card .card-header {
 	background-color: #f8f8f8;
 	border-radius: 0;
+	padding-left:0;
 	border: none;
 }
 
+.contact-accordion .card .card-body {
+	padding-left: 5px;
+}
+
+
 .contact-accordion .card-header h5 button.btn.btn-link {
+	display: flex;
+	align-items: center;
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 23px;
@@ -8637,11 +8642,11 @@ color: var(--misaFirstColor);
 	color: var(--misaFirstColor);
 	padding: 0px;
 	text-decoration: none;
+	text-transform: capitalize;
 }
 
 .contact-accordion .card-header h5 button.btn.btn-link.collapsed {
 	color: var(--misaFirstColor);
-	text-transform: capitalize;
 }
 
 .contact-accordion .card-header h5 button.btn.btn-link:hover,
@@ -8660,17 +8665,16 @@ color: var(--misaFirstColor);
 	content: "";
 	position: absolute;
 	right: 0;
-	top: 18px;
-	width: 22px;
-	height: 22px;
-	background-image: url("../img/minus.png");
+	top: 10px;
+	width: 20px;
+	height: 20px;
+	background-image: url("../img/minus.svg");
 	background-repeat: no-repeat;
 }
 
 .contact-accordion .card-header h5 button.btn.btn-link.collapsed:after {
-	background-image: url("../img/plus.png");
+	background-image: url("../img/plus.svg");
 	background-repeat: no-repeat;
-	top: 8px;
 }
 
 .pvcy-policy {
@@ -11034,15 +11038,6 @@ body.page-living-in-saudi .content {
 .box-white-background {
 	background-color: #fff;
 }
-
-.force-first-color {
-	color: var(--misaFirstColor)!important;
-}
-
-.pageLabel--sectors-opportunities-opportunities #tab6-container p, .general-info p, .main-content-area p, .sectors-content p, .grid-section p {
-	color: var(--misaFirstColor);
-}
-
 
 .containerPadding{
     padding: 20px;
@@ -14078,39 +14073,34 @@ body.page-regional-head-quarters .meetRegions_links .region-map {
 
 .opportunity-card.total-results {
    	white-space: nowrap;
-    margin: 10px 0 20px 5px;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: var(--misaSecondColor);
+    color: var(--misaFirstColor);
 }
 
 .custom-button {
-    font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 13px;
     display: flex;
-    align-items: flex-end;
     border-radius: 10px;
-    color: #5F6D7E;
+    color: var(--misaDarkGrayText);
     align-items: center;
-    background: rgba(0, 113, 77, 0.05);
-     border: 0px solid;
+    background: rgba(120, 120, 120, 0.05);
+    border: none;
 }
 
 .parentCategory-button {
      font-style: normal;
      font-weight: 400;
-     font-size: 12px;
+     font-size: 14px;
      line-height: 18px;
      display: flex;
      align-items: flex-end;
      color: var(--misaFirstColor);
      background: rgba(191, 155, 46, 0.3);
      border-radius: 15px;
-     padding: 5px;
 }
 
 .custom-badge {
@@ -14699,9 +14689,7 @@ border-color: var(--misaPrimaryBtnColor);
 	.sectors-opportunity .search-placeholder {
 	    font-size: 13px !important;
 	}
-	.opportunity-card.total-results {
-	    text-align: left;
-	}
+	
 	.opp-mobile-show {
         display:  block;
     }
@@ -22325,7 +22313,9 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 .article-detail-page-general-title {
 	font-size: 32px!important;
 	font-weight: 700!important;
-	color: #00714D!important;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaSecondColor);
 }
 
 .article-details-page ul {
@@ -22340,15 +22330,21 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .article-details-page .article-detail-page-title {
-	font-size: 24px;
-	font-weight: 700;
-	color: #BF9B2E;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaFirstColor);
 }
 
 .article-details-page .article-detail-page-subtitle {
-	font-size: 24px;
+	font-size: 32px;
 	font-weight: 600;
-	color: #BF9B2E;
+	line-height: 37px;
+	letter-spacing: 0;
+	text-transform: capitalize;
+	color: var(--misaFirstColor);
 }
 
 .article-details-page p {
@@ -22420,7 +22416,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	border-radius: 5px;
 	display: flex;
 	align-items: flex-start;
-	justify-content: center;
 }
 
 .article-details-page .number-box {
@@ -22444,7 +22439,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .article-details-page .box-content .title {
 	font-size: 12px;
-	font-weight: 400;
+	font-weight: 600;
 	padding-top: 10px;
 	color: var(--misaDarkGrayText);
 }
@@ -22513,7 +22508,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .article-details-page .recent-projects-card-img {
 	width: 100%;
-	height: 250px;
+	height: 172px;
 	margin-bottom: 10px;
 	border-radius: 10px;
 }
@@ -24190,7 +24185,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-main .irr-title {
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 600;
 	line-height: 28px;
 	letter-spacing: 0em;
@@ -24234,8 +24229,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-main .irr-sector-div .title {
-	font-size: 24px;
-	font-weight: 700;
+	font-size: 20px;
+	font-weight: 600;
 	line-height: 28px;
 	letter-spacing: 0em;
 }
@@ -24294,7 +24289,6 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
     color: #fff;
     border-radius: 8px;
     height: 45px;
-    margin-top: 25px;
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-second .opportunity-owner {
@@ -24935,10 +24929,11 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
     padding: 20px;
     color:#BF9B2E;
     background-color: #FCFAF5;
+	border-radius: 10px;
 }
 
 .opportunity.alternate {
-	background-color: #fff;
+	background-color: rgba(191, 155, 46, 0.07);
 }
 
 .opportunity .information {
@@ -24960,7 +24955,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 
 .opportunity .title {
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
 }
 
@@ -24969,7 +24964,8 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity .market-info {
-    color: var(--misaFirstColor);
+	flex:1;
+    color: var(--misaDarkGrayText);
 	text-align: left;
 }
 
@@ -24978,7 +24974,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 }
 
 .opportunity span {
-	color: var(--misaFirstColor) !important;
+	color: var(--misaDarkGrayText) !important;
 }
 
 .opportunity .link:hover p {
@@ -25008,8 +25004,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	}
 
 	.opportunity .title-and-description {
-		width: 350px;
-		max-width: 350px;
+		flex:1;
 	}
 }
 
@@ -25022,6 +25017,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
         margin-left: auto;
 		width: auto !important;
     }
+
+	.opportunity .market-info {
+		text-align: center;
+	}
 }
 
 .button-large {
@@ -25345,10 +25344,15 @@ padding: 10px;
 	}
 
 	.join-newsletter-btn {
-		background: #BF9B2E!important;
-		border: none;
-		height: 50px!important;
-	}
+        background: #BF9B2E!important;
+        border: none;
+        height: 50px!important;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.0015em;
+        color: #fff;
+    }
 
 	.media-library-title {
 		font-weight: 600;
@@ -25602,7 +25606,6 @@ padding: 10px;
     position: absolute;
     left: 12px;
     bottom: 65px;
-	
 	background-image: url(../img/article-details-breadcrumb-left-icon.png);
     background-repeat: no-repeat;
     background-position: 0px 5px !important;
@@ -25616,4 +25619,70 @@ padding: 10px;
 	.page-resources-list-page .homeLink {
 		bottom: 75px;
 	}
+}
+
+.stretched-link::after {
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:1;
+	pointer-events:auto;
+	content:"";
+	background-color:rgba(0,0,0,0)
+}
+
+/* Opportunitites listing Start */
+
+.opportunity-item-title {
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-item-desc {
+	font-size: 16px;
+	text-transform: lowercase;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-item-desc * {
+	font-size: 16px;
+	text-transform: lowercase;
+	color: var(--misaDarkGrayText);
+}
+
+.opportunity-item-desc::first-letter {
+	text-transform: capitalize;
+}
+
+.opportunity-item-irr {
+	font-size: 18px;
+	text-transform: capitalize;
+	font-weight: 400;
+	color: var(--misaDarkGrayText);
+}
+
+.opp-filter-container .js-product-facet .facet.js-facet .js-facet-name {
+	color: var(--misaFirstColor);
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+/* Opportunitites listing End */
+
+
+.resource-list {
+	background: rgba(0, 113, 77, 0.2);
+}
+
+.resource-list .sector-search {
+	margin-top: 40px;
+	margin-bottom: 30px !important;
+}
+
+.resource-list .opportunity-card.total-results {
+	color: var(--misaSecondColor);
 }

@@ -48,19 +48,12 @@
 			<div class="row">
 				<div class="col-md-6">
 					<p>${fn:escapeXml(productData.description)}</p>
-
+					<p>${fn:escapeXml(productData.summary)}</p>
 				</div>
 				<div class="col-md-6 article-detail-page-video">
 					<iframe width="100%" src="${productData.videoUrl}" frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							allowfullscreen></iframe>
-				</div>
-			</div>
-
-			<!-- Summary Paragraph -->
-			<div class="row mt-4 mb-4">
-				<div class="col-md-12">
-					<p>${fn:escapeXml(productData.summary)}</p>
 				</div>
 			</div>
 
@@ -155,10 +148,10 @@
 
 
 					<div class="col-md-12 boxes-container">
-						<c:forEach items="${productData.articleSubDetails4Boxes}" var="articleSubDetails4Boxes">
+						<c:forEach items="${productData.articleSubDetails4Boxes}" var="articleSubDetails4Boxes" varStatus="status">
 							<div class="col-md-5 mb-4">
 								<div class="what-we-do-box">
-									<div class="number-box">1</div>
+									<div class="number-box">${status.index + 1}</div>
 									<div class="box-content">
 										<p class="title">${fn:escapeXml(articleSubDetails4Boxes.key)}</p>
 										<p>${fn:escapeXml(articleSubDetails4Boxes.value)}</p>

@@ -9,6 +9,7 @@ INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; n
                                   ; $solrIndexedType                         ; eventLocation    ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  									;
                                   ; $solrIndexedType                         ; eventTiming      ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  									;
                                   ; $solrIndexedType                         ; pdf		       	; text       ; false               ;                 ;                 ;           ; true   ; false     ; sagiaPdfNameValueProvider			;
+                                  ; sagiaProductType                         ; reportType       ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
 
 
 UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code)	; localized ; useForAutocomplete; ftsQuery	; useForHighlighting; ftsQueryBoost	; &indexedProperty	;

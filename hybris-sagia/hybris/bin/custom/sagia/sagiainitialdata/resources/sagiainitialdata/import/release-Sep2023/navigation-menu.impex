@@ -16,13 +16,13 @@ INSERT_UPDATE CMSNavigationNode	; uid[unique = true]	; name					; nodeImage(code
 
 
 INSERT_UPDATE CMSNavigationNode	; uid[unique = true]	; name				; title[lang = en]	; title[lang = ar]	; cmsLink(uid, $contentCV) 	; &nodeRef 				; parent(uid, $contentCV) 	; children(uid, $contentCV)[mode = append]	; links(uid, $contentCV)[mode = replace]; $contentCV[unique = true]	;
-								; opportunities-navnode ; Opportunities 	; Opportunities 	; الفرص 			; opportunities-link		; opportunities-navnode	; header-menu 				; 											; 										; 							;
+								; opportunities-navnode ; Opportunities 	; Opportunities 	; الفرص 			; opportunities-link			; opportunities-navnode	; header-menu 				; 											; 										; 							;
 								; servies-navnode 		; Services 			; Services 			; خدمات  			; services-link				; servies-navnode		; header-menu 				; 											; 										; 							;
 								; resources-navnode 	; Resources 		; Resources 		;  موارد  	 		; resources-link			; resources-navnode		; header-menu 				; 											; 										; 							;
 								; whysaudi-navnode 		; Why Saudi? 		; Why Saudi? 		; لماذا السعودية؟ 	; whysaudi-link				; whysaudi-navnode		; header-menu 				; 											; 										; 							;
 								; newsevents-navnode 	; News and Events 	; News and Events 	; الأنشطة والفعاليات ; newsevents-link			; newsevents-navnode	; header-menu 				; 											; 										; 							;
 								; about-navnode 		; About 			; About 			; من نحن 			; about-link				; about-navnode			; header-menu 				; 											; 										; 							;
-								; support-navnode 		; Support 			; Support 			; Support 			; support-link				; support-navnode		; header-menu 				; 											; 										; 							;
+								; support-navnode 		; Support 			; Support 			; دعم 				; support-link				; support-navnode		; header-menu 				; 											; 										; 							;
 
 
 #UPDATE CMSNavigationNode; uid[unique = true]	; children(&nodeRef)[mode = replace]																									; $contentCV[unique = true];
@@ -34,6 +34,6 @@ INSERT_UPDATE CMSLinkComponent; uid[unique = true] 		; name 			; linkName[lang =
 							  ; services-link      		; Servies 		; Services 				; خدمات  				;	/miza-homepage						;
 							  ; resources-link      	; resources 	; Resources 			;  موارد  	 			;	/resourcesList						;
 							  ; whysaudi-link      		; whysaudi 		; Why Saudi 			; لماذا السعودية؟ 		;	/aboutSaudi							;
-							  ; newsevents-link      	; newsevents 	; News and Events 		; الأنشطة والفعاليات 	;	/newseventslist						;
+							  ; newsevents-link      	; newsevents 	; News and Events 		; الأنشطة والفعاليات 		;	/newseventslist						;
 							  ; about-link      		; about 		; About 				; من نحن 				;	/aboutSaudi							;
-							  ; support-link      		; support 		; Support 				; Support 				;	/contactUs							;
+							  ; support-link      		; support 		; Support 				; دعم 					;	/contactUs							;

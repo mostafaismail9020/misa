@@ -435,7 +435,7 @@
 							</ul>
 						</li>
 					</c:forEach>
-					<li class="nav-item dropdown">
+					<!--<li class="nav-item dropdown">
 						<c:choose>
 							<c:when test="${userLoggedIn}">
 								<a data-toggle="modal" data-target="#logoutModal" href="#" class="nav-link dropdown-toggle login-btn-in-menu" title="<spring:theme code='text.logout'/>">
@@ -452,7 +452,7 @@
 								</a>
 							</c:otherwise>
 						</c:choose>
-					</li>
+					</li>-->
 				</ul>
 				<a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo d-none"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 			</nav>

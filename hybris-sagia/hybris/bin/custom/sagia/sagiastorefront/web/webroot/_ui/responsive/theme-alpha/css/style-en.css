@@ -284,10 +284,6 @@ ul.sagiaNavigation-subNav li svg {
 	color: #787878;
 }
 
-#header .nav-menu {
-	margin-right: -25px;
-}
-
 #header .logo {
 	font-size: 32px;
 	margin: 0;
@@ -349,8 +345,6 @@ ul.sagiaNavigation-subNav li svg {
 .nav-menu>ul>li {
 	position: relative;
 	white-space: nowrap;
-	padding: 20px 0px;
-	margin-left: 10px;
 	transition: 0.3s;
 }
 
@@ -459,9 +453,13 @@ ul.sagiaNavigation-subNav li svg {
 	color: var(--misaSecondColor);
 	transition: 0.3s;
 	font-size: 13px;
-	padding: 12px 28px 12px 12px;
+	padding: 12px 25px;
 	text-transform: uppercase;
 	font-weight: 600;
+}
+
+.nav-menu ul li:last-child a {
+	padding-right:0;
 }
 
 .nav-menu .drop-down ul {

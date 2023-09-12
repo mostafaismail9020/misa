@@ -463,6 +463,12 @@ ul.sagiaNavigation-subNav li svg {
 	font-weight: 600;
 }
 
+@media (min-width: 992px) and (max-width: 1200px) {
+	.nav-menu a {
+		padding: 12px 16px;
+	}
+}
+
 .nav-menu ul li:last-child a {
 	padding-right:0;
 }

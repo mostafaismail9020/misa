@@ -65,7 +65,7 @@
 			</c:forEach>
 
 			<c:forEach items="${productData.paraWithMedia}" var="paraWithMedia">
-
+                <h2 class="article-details-news-sub-heading mt-3 mb-3">${fn:escapeXml(paraWithMedia.value.description)}</h2>
 				<div class="row mt-2">
 					<div class="col-md-9">
 						<p>${fn:escapeXml(paraWithMedia.value.descriptionText)}</p>

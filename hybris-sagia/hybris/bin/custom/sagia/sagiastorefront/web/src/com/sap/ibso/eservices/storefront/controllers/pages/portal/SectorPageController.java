@@ -25,6 +25,7 @@ import de.hybris.platform.servicelayer.session.SessionService;
 import de.hybris.platform.category.CategoryService;
 import de.hybris.platform.util.Config;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -102,23 +103,71 @@ public class SectorPageController extends AbstractCategoryPageController {
      * @return
      * @throws CMSItemNotFoundException
      */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET, params = "!q")
     public String opportunitiesSearch(final Model model, final HttpServletRequest request, final HttpServletResponse response)
     		throws CMSItemNotFoundException {
+		
+		model.addAttribute("mainCategories", getMainCategories());
 
+        return getSectorPage(model);
+    }
+
+    /**
+     * 
+     * @param model
+     * @param request
+     * @param q
+     * @param response
+     * @return
+     * @throws CMSItemNotFoundException
+     */
+	@RequestMapping(method = RequestMethod.GET, params = "q")
+    public String refineOpportunities(final Model model, final HttpServletRequest request, 
+    		@RequestParam("q") final String q,
+    		final HttpServletResponse response)
+    		throws CMSItemNotFoundException {
+		
+		model.addAttribute("mainCategories", filterCategories(q, getMainCategories()));
+
+        return getSectorPage(model);
+    }
+
+	
+	protected Collection<CategoryData> getMainCategories() {
 		final String parentSector = Config.getString("parent.sector", "sector-opportunities");
 
-		Collection<CategoryData> mainCategories = investSaudiCategoryFacade.getAllMainCategories(parentSector);
-		model.addAttribute("mainCategories", mainCategories);
-
-        ContentPageModel contentPageModel = getContentPageForLabelOrId(SECTORS_OPPORTUNITY_PAGE);
+		return investSaudiCategoryFacade.getAllMainCategories(parentSector);
+	}
+ 
+	
+	protected String getSectorPage(final Model model) throws CMSItemNotFoundException {
+		ContentPageModel contentPageModel = getContentPageForLabelOrId(SECTORS_OPPORTUNITY_PAGE);
         model.addAttribute(WebConstants.BREADCRUMBS_KEY, contentPageBreadcrumbBuilder.getBreadcrumbs(contentPageModel));
 
         storeCmsPageInModel(model, contentPageModel);
         storeContentPageTitleInModel(model, contentPageModel.getTitle());
         return getViewForPage(model);
-    }
+	}
 
+
+	protected Collection<CategoryData> filterCategories(String queryString, Collection<CategoryData> mainCategories) {
+		Collection<CategoryData> filteredCategories = mainCategories;
+		try {
+			filteredCategories = CollectionUtils.emptyIfNull(mainCategories).stream()
+					.filter(c -> c.getCode().contains(queryString)
+							|| (StringUtils.isNotEmpty(c.getName()) && c.getName().contains(queryString))
+							|| (StringUtils.isNotEmpty(c.getDescription()) && c.getDescription().contains(queryString))
+							|| (StringUtils.isNotEmpty(c.getShortOverview()) && c.getShortOverview().contains(queryString))
+							|| (StringUtils.isNotEmpty(c.getOverview()) && c.getOverview().contains(queryString))
+							)
+					.collect(Collectors.toList());
+		}
+		catch(Exception e) {
+			LOG.error("Error while filtering sectors for query : " + queryString, e);
+		}
+		return filteredCategories;
+	}
+	
 	/**
 	 * 
 	 * @param sectorCode

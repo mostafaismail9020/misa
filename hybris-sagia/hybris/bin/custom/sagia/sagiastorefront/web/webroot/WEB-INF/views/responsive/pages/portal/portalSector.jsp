@@ -53,7 +53,7 @@
 										</a>
 									</ycommerce:testId>
 									<div class="opportunity-card total-results mt-2">
-										<spring:message code="portal.sector.search.sectors.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+										<spring:message code="portal.sector.search.sectors.totalResults" arguments="${fn:length(mainCategories)}"/>
 									</div>
 								</form>
 								<!--<div class="dropdown dropright">

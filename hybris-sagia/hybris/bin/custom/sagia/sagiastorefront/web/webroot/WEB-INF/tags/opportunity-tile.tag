@@ -9,7 +9,7 @@
 
 
 <div class="col-sm-12">
-	<div class="opportunity <c:if test="${loopCount % 2 == 0 }">alternate</c:if>"">
+	<div class="opportunity search <c:if test="${loopCount % 2 == 0 }">alternate</c:if>"">
 		<div class="image">
             <a href="${encodedContextPath}${result.url}" class="link">
             	<c:choose>

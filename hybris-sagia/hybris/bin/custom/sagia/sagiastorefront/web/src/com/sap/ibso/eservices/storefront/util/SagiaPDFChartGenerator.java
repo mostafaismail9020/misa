@@ -396,7 +396,6 @@ public class SagiaPDFChartGenerator {
 				// Demand Bar Chart
 				createStackedBarChart(document, contentStream, opportunity);
 
-				contentStream.endText();
 				contentStream.close();
 			}
 			int totalPages = document.getNumberOfPages();

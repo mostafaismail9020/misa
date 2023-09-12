@@ -1065,6 +1065,12 @@
 		<property name="replacedInterceptors" ref="CsTicketPrepareInterceptor"/>
 	</bean>
 
+    <bean id="opporunityPrepareInterceptor" class="com.sap.ibso.eservices.core.interceptors.SagiaOpportunityPrepareInterceptor"/>
+    <bean id="opporunityPrepareInterceptorMapping"
+          class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="opporunityPrepareInterceptor"/>
+        <property name="typeCode" value="OpportunityProduct"/>
+    </bean>
 
 	<alias name="defaultSagiaTicketUpdateStrategy" alias="ticketUpdateStrategy"/>
 	<bean id="defaultSagiaTicketUpdateStrategy" class="com.sap.ibso.eservices.core.strategies.DefaultSagiaTicketUpdateStrategy"

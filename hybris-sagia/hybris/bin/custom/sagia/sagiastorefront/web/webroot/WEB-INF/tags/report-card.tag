@@ -24,7 +24,7 @@
                                                     </p>
                                                  <h3 class="reportName">${result.opportunity.name}</h3>
                                                  <!--<h3 class="reportType">${fn:substring(result.opportunity.description, 0, 45)}</h3>-->
-                                                 <h3 class="reportType">Investment Highlights, Saudi Arabia Report</h3>
+                                                 <h3 class="reportType">${result.opportunity.reportType}</h3>
                                              </div>
                                          </div>
                                      </div>

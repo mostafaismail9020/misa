@@ -14,7 +14,7 @@
 <c:set var="hasPreviousPage" value="${searchPageData.pagination.currentPage > 0}"/>
 <c:set var="hasNextPage"
        value="${(searchPageData.pagination.currentPage + 1) < searchPageData.pagination.numberOfPages}"/>
-<div class="container-fluid">
+<div class="container">
     <div class="row p-2">
         <c:if test="${not empty searchPageData.results}">
             <div class="col-md-3 col-sm-12 my-4 d-none d-md-block opp-filter-container opportunity-card <c:if test="${language eq 'ar' }"> text-right</c:if> <c:if test="${language eq 'en' }"> text-left</c:if>">
@@ -30,7 +30,7 @@
 							<img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
 						</a>
 					</ycommerce:testId>
-					<div class="opportunity-card total-results mt-1">
+					<div class="opportunity-card total-results mt-2">
 						<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
 					</div>
 				</form>
@@ -45,7 +45,7 @@
             <div class="opp-mobile-show text-center">
             	<spring:theme code="portal.opportunity.search.modal.btn" var="btnModalTxt"/>
 				<button id="opp-open-modal-filter" class="btn btn-secondary-fill">${btnModalTxt}</button>
-				<div class="opportunity-card total-results mt-2 mb-5">
+				<div class="opportunity-card total-results mt-2 mb-3">
 					<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
 				</div>
             </div>
@@ -73,24 +73,31 @@
                         <!-- Modal End -->
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-sort">
+                    <div class="opportunity-card opp-sort">
                         <div class="dashboardWidget-headline js-dashboardWidget-headline">
-                            <form id="sortForm1" name="sortForm1" method="get" action="#" class="form-group form-inline">
-                                <label for="opportunity-search" class="full"><spring:theme code="sagia.sort.sort.by"/>:&nbsp;</label>
-                                <select id="sortOptions1" name="sort" class="form-control--plp-sorting browser-default custom-select form-control" style=";padding: 6px 20px;">
-                                    <c:forEach items="${solrSearchPageData.sorts}" var="sort">
-                                        <option value="${fn:escapeXml(sort.code)}" ${sort.selected? 'selected="selected"' : ''}>
-                                            <c:choose>
-                                                <c:when test="${not empty sort.name}">
-                                                    ${fn:escapeXml(sort.name)}
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <spring:theme code="${themeMsgKey}.sort.${sort.code}"/>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </option>
-                                    </c:forEach>
-                                </select>
+                            <form id="sortForm1" name="sortForm1" method="get" action="#">
+                                <div class="sorting">
+                                    <div class="sortby">
+                                        <label for="opportunity-search" class="full"><spring:theme code="sagia.sort.sort.by"/></label>
+                                        <select id="sortOptions1" name="sort" class="form-control--plp-sorting browser-default custom-select form-control">
+                                            <c:forEach items="${solrSearchPageData.sorts}" var="sort">
+                                                <option value="${fn:escapeXml(sort.code)}" ${sort.selected? 'selected="selected"' : ''}>
+                                                    <c:choose>
+                                                        <c:when test="${not empty sort.name}">
+                                                            ${fn:escapeXml(sort.name)}
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <spring:theme code="${themeMsgKey}.sort.${sort.code}"/>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </option>
+                                            </c:forEach>
+                                        </select>                                         
+                                    </div>
+                                    <span class="item-count">
+                                        <spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
+                                    </span>
+                                </div>
                                 <c:catch var="errorException">
                                     <spring:eval expression="solrSearchPageData.currentQuery.query"
                                                  var="dummyVar"/><%-- This will throw an exception is it is not supported --%>
@@ -117,6 +124,7 @@
                     </div>
 
             </c:if>
+
             <c:choose>
                 <c:when test="${ not empty searchPageData.results}">
                     <div class="row">
@@ -132,96 +140,98 @@
                 </c:otherwise>
             </c:choose>
             </div>
-                
-            <div class="row wow fadeIn all-opportunity">
-
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <ul class="pagination pg-darkgrey justify-content-center mt-4">
-
-                        <c:if test="${hasPreviousPage}">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="previousPageUrl" htmlEscape="true">
-                                <spring:param name="page" value="${solrSearchPageData.pagination.currentPage - 1}"/>
-                            </spring:url>
-                            <li class="page-item previous-page">
-                                <a class="page-link waves-effect waves-light" href="${previousPageUrl}">
-                                    <img class="img-fluid previous-left-blue-icon" width="20" src="${commonResourcePath}/images/previous-arrow-left.png" alt=""/>
-                                    <img class="img-fluid previous-left-white-icon" style="display: none;" width="20"
-                                         src="${commonResourcePath}/images/previous-white-arrow-left.png" alt=""/>
-                                </a>
-                            </li>
-                        </c:if>
-
-                        <c:set var="limit" value="${numberPagesShown}"/>
-                        <c:set var="halfLimit"><fmt:formatNumber value="${limit/1}" maxFractionDigits="0"/></c:set>
-                        <c:set var="beginPage">
-                            <c:choose>
-                                <%-- Limit is higher than number of pages --%>
-                                <c:when test="${limit gt searchPageData.pagination.numberOfPages}">1</c:when>
-                                <%-- Start shifting page numbers once currentPage reaches halfway point--%>
-                                <c:when test="${searchPageData.pagination.currentPage + halfLimit ge limit}">
-                                    <c:choose>
-                                        <c:when test="${searchPageData.pagination.currentPage + halfLimit lt searchPageData.pagination.numberOfPages}">
-                                            <%-- Avoid rounding issue--%>
-                                            <c:choose>
-                                                <c:when test="${searchPageData.pagination.currentPage + 1 - halfLimit gt 0}">
-                                                    ${searchPageData.pagination.currentPage + 1 - halfLimit}
-                                                </c:when>
-                                                <c:otherwise>1</c:otherwise>
-                                            </c:choose>
-                                        </c:when>
-                                        <c:otherwise>${searchPageData.pagination.numberOfPages + 1 - limit}</c:otherwise>
-                                    </c:choose>
-                                </c:when>
-                                <c:otherwise>1</c:otherwise>
-                            </c:choose>
-                        </c:set>
-                        <c:set var="endPage">
-                            <c:choose>
-                                <c:when test="${limit gt searchPageData.pagination.numberOfPages}">
-                                    ${searchPageData.pagination.numberOfPages}
-                                </c:when>
-                                <c:when test="${hasNextPage}">
-                                    ${beginPage + limit - 1}
-                                </c:when>
-                                <c:otherwise>
-                                    ${searchPageData.pagination.numberOfPages}
-                                </c:otherwise>
-                            </c:choose>
-                        </c:set>
-
-                        <c:set var="startPagination" value="${beginPage}"/>
-                        <c:set var="endPagination" value="${endPage}"/>
-                        <c:forEach begin="${startPagination}" end="${endPagination}" var="currentPage">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="pageNumberUrl" htmlEscape="true">
-                                <spring:param name="page" value="${currentPage - 1}"/>
-                            </spring:url>
-
-                            <c:choose>
-                                <c:when test="${currentPage eq param.page + 1}">
-                                    <li class="page-item active"><a class="page-link waves-effect waves-light"
-                                                                    href=${pageNumberUrl}>${currentPage}</a></li>
-                                </c:when>
-                                <c:otherwise>
-                                    <li class="page-item"><a class="page-link waves-effect waves-light"
-                                                             href=${pageNumberUrl}>${currentPage}</a></li>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
-                        <c:if test="${hasNextPage}">
-                            <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="nextPageUrl" htmlEscape="true">
-                                <spring:param name="page" value="${solrSearchPageData.pagination.currentPage + 1}"/>
-                            </spring:url>
-                            <li class="page-item next-page">
-                                <a class="page-link waves-effect waves-light" href="${nextPageUrl}"  style="padding-top: 10px;">
-                                    <img class="img-fluid arrow-left-blue-icon" width="20" src="${commonResourcePath}/images/Icon-feather-arrow-left.png" alt=""/>
-                                    <img class="img-fluid arrow-left-white-icon" style="display: none;" width="20"
-                                         src="${commonResourcePath}/images/Icon-white-arrow-left.png" alt=""/>
-                                </a>
-                            </li>
-                        </c:if>
-                    </ul>
-                </div>
-            </div>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="row wow fadeIn all-opportunity">
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <ul class="pagination pg-darkgrey justify-content-center mt-4">
+
+                <c:if test="${hasPreviousPage}">
+                    <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="previousPageUrl" htmlEscape="true">
+                        <spring:param name="page" value="${solrSearchPageData.pagination.currentPage - 1}"/>
+                    </spring:url>
+                    <li class="page-item previous-page">
+                        <a class="page-link waves-effect waves-light" href="${previousPageUrl}">
+                            <img class="img-fluid previous-left-blue-icon" width="20" src="${commonResourcePath}/images/previous-arrow-left.png" alt=""/>
+                            <img class="img-fluid previous-left-white-icon" style="display: none;" width="20"
+                                 src="${commonResourcePath}/images/previous-white-arrow-left.png" alt=""/>
+                        </a>
+                    </li>
+                </c:if>
+
+                <c:set var="limit" value="${numberPagesShown}"/>
+                <c:set var="halfLimit"><fmt:formatNumber value="${limit/1}" maxFractionDigits="0"/></c:set>
+                <c:set var="beginPage">
+                    <c:choose>
+                        <%-- Limit is higher than number of pages --%>
+                        <c:when test="${limit gt searchPageData.pagination.numberOfPages}">1</c:when>
+                        <%-- Start shifting page numbers once currentPage reaches halfway point--%>
+                        <c:when test="${searchPageData.pagination.currentPage + halfLimit ge limit}">
+                            <c:choose>
+                                <c:when test="${searchPageData.pagination.currentPage + halfLimit lt searchPageData.pagination.numberOfPages}">
+                                    <%-- Avoid rounding issue--%>
+                                    <c:choose>
+                                        <c:when test="${searchPageData.pagination.currentPage + 1 - halfLimit gt 0}">
+                                            ${searchPageData.pagination.currentPage + 1 - halfLimit}
+                                        </c:when>
+                                        <c:otherwise>1</c:otherwise>
+                                    </c:choose>
+                                </c:when>
+                                <c:otherwise>${searchPageData.pagination.numberOfPages + 1 - limit}</c:otherwise>
+                            </c:choose>
+                        </c:when>
+                        <c:otherwise>1</c:otherwise>
+                    </c:choose>
+                </c:set>
+                <c:set var="endPage">
+                    <c:choose>
+                        <c:when test="${limit gt searchPageData.pagination.numberOfPages}">
+                            ${searchPageData.pagination.numberOfPages}
+                        </c:when>
+                        <c:when test="${hasNextPage}">
+                            ${beginPage + limit - 1}
+                        </c:when>
+                        <c:otherwise>
+                            ${searchPageData.pagination.numberOfPages}
+                        </c:otherwise>
+                    </c:choose>
+                </c:set>
+
+                <c:set var="startPagination" value="${beginPage}"/>
+                <c:set var="endPagination" value="${endPage}"/>
+                <c:forEach begin="${startPagination}" end="${endPagination}" var="currentPage">
+                    <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="pageNumberUrl" htmlEscape="true">
+                        <spring:param name="page" value="${currentPage - 1}"/>
+                    </spring:url>
+
+                    <c:choose>
+                        <c:when test="${currentPage eq param.page + 1}">
+                            <li class="page-item active"><a class="page-link waves-effect waves-light"
+                                                            href=${pageNumberUrl}>${currentPage}</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item"><a class="page-link waves-effect waves-light"
+                                                     href=${pageNumberUrl}>${currentPage}</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+                <c:if test="${hasNextPage}">
+                    <spring:url value="${fn:replace(solrSearchPageData.currentQuery.url,'search','sectors-opportunities/opportunities')}" var="nextPageUrl" htmlEscape="true">
+                        <spring:param name="page" value="${solrSearchPageData.pagination.currentPage + 1}"/>
+                    </spring:url>
+                    <li class="page-item next-page">
+                        <a class="page-link waves-effect waves-light" href="${nextPageUrl}"  style="padding-top: 10px;">
+                            <img class="img-fluid arrow-left-blue-icon" width="20" src="${commonResourcePath}/images/Icon-feather-arrow-left.png" alt=""/>
+                            <img class="img-fluid arrow-left-white-icon" style="display: none;" width="20"
+                                 src="${commonResourcePath}/images/Icon-white-arrow-left.png" alt=""/>
+                        </a>
+                    </li>
+                </c:if>
+            </ul>
+        </div>
+    </div>    
 </div>

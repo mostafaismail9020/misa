@@ -1,7 +1,7 @@
 # Macros / Replacement Parameter definitions
 
 $productCatalog = sagiaProductCatalog
-$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]
@@ -36,11 +36,12 @@ INSERT_UPDATE InvestSaudiHomePageIconsComponent    ; uid[unique = true] ; name()
                                                    ; home-page-icons    ; Home Page Icons      ; Invest Saudi     ;                         ; sectors-icon, news-icon, events-icon, reports-icon, services-icon, articles-icon , new-resources-icon   ;                             ;
                                                    
          
-UPDATE InvestSaudiVideoBannerComponent ; uid[unique = true] ; viewOpportunities(&componentRef) ; login(&componentRef) ; $contentCV[unique = true] ;
-									   ; banner-video      	; viewopp-link                     ; login-link           ;                           ;
+UPDATE InvestSaudiVideoBannerComponent ; uid[unique = true] ; viewOpportunities(&componentRef) ; login(&componentRef) ; $contentCV[unique = true] ; title[lang=en]			; title[lang=ar]					;
+									   ; banner-video      	; viewopp-link                     ; login-link           ;                           ; Invest in Saudi Arabia	; استثمر في المملكة العربية السعودية;
+
 
 UPDATE CMSLinkComponent; uid[unique = true]                 ; $contentCV[unique = true]; linkName[lang = en]	;linkName[lang = ar] ; contentPage(uid, $contentCV) ;
-                              ; key-reasons-exploreall-nav-link    ;                          ; Why Saudi?        	; لماذا السعودية؟   ;meet-the-kingdom;
+                       ; key-reasons-exploreall-nav-link    ;                          ; Why Saudi?        	; لماذا السعودية؟   ;meet-the-kingdom;
 
 UPDATE ExploreSaudiCarouselComponent; uid[unique = true]   				    ; carouselTitle [lang = en]; carouselTitle [lang = ar]; $contentCV[unique = true];
 										   ; explore7KeyReasonsCarouselComponent	; A proven track record of delivering results;كن جزءًا من رؤية المستقبل;;

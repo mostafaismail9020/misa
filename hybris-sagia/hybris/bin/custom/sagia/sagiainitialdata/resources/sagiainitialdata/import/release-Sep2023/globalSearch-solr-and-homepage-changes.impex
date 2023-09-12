@@ -3,15 +3,33 @@ $solrIndexedType=sagiaProductType
 $contentCatalog=sagiaContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged, unique=true]
 
-INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible ; localized ; fieldValueProvider       ;
-                                  ; $solrIndexedType                         ; resource          ; string     ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true   ; false     ; sagiaProductTypeProvider ;
-                                  ; sagiaProductType                         ; picture           ; string     ; false               ;                 ;                 ;           ; true   ; false     ; sagiaProductImageUrlValueProvider ;
-                                  ; sagiaProductType                         ; eventLocation     ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
-                                  ; sagiaProductType                         ; eventTiming       ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
-                                  ; sagiaProductType                         ; reportType         ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
+INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true]; type(code) ; facet[default=true] ; facetType(code) ; facetSort(code) ; priority ; visible ; localized ; fieldValueProvider       			;
+                                  ; $solrIndexedType                         ; resource         ; string     ;                     ; MultiSelectOr   ; Alpha           ;9999       ; true   ; false     ; sagiaProductTypeProvider 			;
+                                  ; $solrIndexedType                         ; picture          ; string     ; false               ;                 ;                 ;           ; true   ; false     ; sagiaProductImageUrlValueProvider ;
+                                  ; $solrIndexedType                         ; eventLocation    ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  									;
+                                  ; $solrIndexedType                         ; eventTiming      ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  									;
+                                  ; $solrIndexedType                         ; pdf		       	; text       ; false               ;                 ;                 ;           ; true   ; false     ; sagiaPdfNameValueProvider			;
+                                  ; sagiaProductType                         ; reportType       ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
 
-INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; facet[default=true] ; facetType(code) ; priority ; facetDisplayNameProvider ; facetSortProvider              ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType]
-                                      ; resource:$solrIndexedType                                       ;                      ; MultiSelectOr  ; 1001     ; solrFieldNameProvider    ; facetNameSortProviderAscending ; defaultTopValuesProvider ;                                 ;
+
+UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code)	; localized ; useForAutocomplete; ftsQuery	; useForHighlighting; ftsQueryBoost	; &indexedProperty	;
+                           ; $solrIndexedType                         ; description       ; text		; true      ; true				; true		; true				; 45			; description		;
+                           ; $solrIndexedType                         ; summary		      ; text		; true      ; true				; true		; true				; 44			; summary			;
+                           ; $solrIndexedType                         ; pdf			      ; string		; false     ; true				; true		; true				; 43			; pdf				;
+
+
+INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType] ; facet ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryFuzziness ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength ; includeInResponse[default=true] ; useForHighlighting[default=false]	;
+                                      ; pdf:$solrIndexedType	                                      	;                                                                                                   ;       ;                               ;                     ; true                    ; 43            ;                              ;                        ;                    ;                                 ;                                             ;                       ;                               ;                                 ; true								;
+
+
+UPDATE SolrSearchQueryProperty; indexedProperty(&indexedProperty)[unique=true]	; useForHighlighting; ftsQuery	; ftsQueryBoost	;
+							  ; description										; true				; true		; 45			;
+							  ; summary											; true				; true		; 44			;
+							  ; pdf												; true				; true		; 43			;
+
+
+INSERT_UPDATE SolrSearchQueryProperty	; indexedProperty(name, solrIndexedType(identifier))[unique=true]	; facet[default=true]	; facetType(code) ; priority ; facetDisplayNameProvider ; facetSortProvider              ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType]
+										; resource:$solrIndexedType											;						; MultiSelectOr  ; 1001     ; solrFieldNameProvider    ; facetNameSortProviderAscending ; defaultTopValuesProvider ;                                 ;
 
 
 UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[unique=true]            ; type(code) ; query ;
@@ -61,6 +79,7 @@ UPDATE SolrIndexerQuery ; solrIndexedType(identifier)[unique=true] ; identifier[
 
 INSERT_UPDATE SagiaGlobalSearchBarComponent; uid[unique = true]                     ; name                            ; maxProducts ; maxSuggestions ; displayProducts ; displaySuggestions ; displayProductImages ; $contentCV[unique = true] ; &componentRef                          ;
                                            ; SagiaGlobalSearchBarComponent-homepage ; Sagia Global SearchBar Component; 5           ; 5              ; true            ; true               ; false                ;                           ; SagiaGlobalSearchBarComponent-homepage ;
+
 
 UPDATE ContentSlot; uid[unique = true]                ; cmsComponents(uid, $contentCV)      											                                                        ; $contentCV[unique = true] ;
                   ; PortalPageTopSlot-portal-homepage ; SagiaGlobalSearchBarComponent-homepage, home-page-icons, explore7KeyReasonsCarouselComponent, numbertalk-container, last-news-component ;                           ;

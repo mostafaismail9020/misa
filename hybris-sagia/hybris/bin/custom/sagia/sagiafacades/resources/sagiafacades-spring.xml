@@ -2272,6 +2272,11 @@
 
 	<bean id="sagiaProductImageUrlValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaProductImageUrlValueProvider" parent="productUrlValueProvider">
 	</bean>
+
+	<bean id="sagiaPdfNameValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaPdfNameValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+
 	
 	<bean id="sagiaResourceComponentYearValueProvider" class="com.investsaudi.portal.facades.solrfacetsearch.providers.SagiaResourceComponentYearValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>

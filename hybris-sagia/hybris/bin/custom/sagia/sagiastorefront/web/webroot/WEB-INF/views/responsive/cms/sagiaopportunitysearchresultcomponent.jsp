@@ -71,9 +71,51 @@
                             </div>
                         </div>
                         <!-- Modal End -->
+                    </div>
 
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 opportunity-card opp-sort">
+                        <div class="dashboardWidget-headline js-dashboardWidget-headline">
+                            <form id="sortForm1" name="sortForm1" method="get" action="#" class="form-group form-inline">
+                                <label for="opportunity-search" class="full"><spring:theme code="sagia.sort.sort.by"/>:&nbsp;</label>
+                                <select id="sortOptions1" name="sort" class="form-control--plp-sorting browser-default custom-select form-control" style=";padding: 6px 20px;">
+                                    <c:forEach items="${solrSearchPageData.sorts}" var="sort">
+                                        <option value="${fn:escapeXml(sort.code)}" ${sort.selected? 'selected="selected"' : ''}>
+                                            <c:choose>
+                                                <c:when test="${not empty sort.name}">
+                                                    ${fn:escapeXml(sort.name)}
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <spring:theme code="${themeMsgKey}.sort.${sort.code}"/>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </option>
+                                    </c:forEach>
+                                </select>
+                                <c:catch var="errorException">
+                                    <spring:eval expression="solrSearchPageData.currentQuery.query"
+                                                 var="dummyVar"/><%-- This will throw an exception is it is not supported --%>
+                                    <input type="hidden" name="q" value="${solrSearchPageData.currentQuery.query.value}"/>
+                                </c:catch>
 
-                </div>
+                                <c:if test="${supportShowAll}">
+                                    <ycommerce:testId code="searchResults_showAll_link">
+                                        <input type="hidden" name="show" value="Page"/>
+                                    </ycommerce:testId>
+                                </c:if>
+                                <c:if test="${supportShowPaged}">
+                                    <ycommerce:testId code="searchResults_showPage_link">
+                                        <input type="hidden" name="show" value="All"/>
+                                    </ycommerce:testId>
+                                </c:if>
+                                <c:if test="${not empty additionalParams}">
+                                    <c:forEach items="${additionalParams}" var="entry">
+                                        <input type="hidden" name="${fn:escapeXml(entry.key)}" value="${fn:escapeXml(entry.value)}"/>
+                                    </c:forEach>
+                                </c:if>
+                            </form>
+                        </div>
+                    </div>
+
             </c:if>
             <c:choose>
                 <c:when test="${ not empty searchPageData.results}">
@@ -89,7 +131,8 @@
                     </div>
                 </c:otherwise>
             </c:choose>
-
+            </div>
+                
             <div class="row wow fadeIn all-opportunity">
 
                 <div class="col-lg-12 col-md-12 col-sm-12">

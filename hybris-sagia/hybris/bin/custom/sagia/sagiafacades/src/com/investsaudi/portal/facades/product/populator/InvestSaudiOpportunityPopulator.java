@@ -128,7 +128,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         productData.setOpportunityDetailGrid(getOpportunityDetailGrid(productModel, currentLocale));
         //productData.setOpportunityLead(sagiaImageConverter.convert(productModel.getOpportunityLead(currentLocale)));
         populateInvestmentHighlightFields(productModel,productData);
-        populateLocationText(productModel,productData);
+        populateLocationText(productModel,productData, currentLocale);
         populateInvestmentOverview(productModel,productData);
         populateCostOfDoingBusiness(productModel,productData);
         populateMarketOverview(productModel,productData);
@@ -335,10 +335,19 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 		}
 	}
 	
-	private void populateLocationText(OpportunityProductModel productModel, ProductData productData) {
-		
-			productData.setLocationRegionText(productModel.getRegionText());
-			productData.setLocationCityText(productModel.getCityText());
+	private void populateLocationText(OpportunityProductModel productModel, ProductData productData, Locale currentLocale) {
+		productData.setLocationRegionText(
+			CollectionUtils.emptyIfNull(productModel.getLocation()).stream()
+				.filter(loc -> null != loc.getRegion() && StringUtils.isNotEmpty(loc.getRegion().getName(currentLocale)))
+				.map(loc -> loc.getRegion().getName(currentLocale))
+				.collect(Collectors.joining(", "))
+			);
+		productData.setLocationCityText(
+			CollectionUtils.emptyIfNull(productModel.getLocation()).stream()
+				.filter(loc -> null != loc.getCity() && StringUtils.isNotEmpty(loc.getCity().getName(currentLocale)))
+				.map(loc -> loc.getCity().getName(currentLocale))
+				.collect(Collectors.joining(", "))
+			);
 	}
 	
 	private void populateInvestmentOverview(OpportunityProductModel productModel, ProductData productData) {
@@ -396,8 +405,11 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
 	}
 	
 	private void populateSegment(OpportunityProductModel productModel, ProductData productData) {
-
-			productData.setSegmentName(productModel.getSegmentText());
+		productData.setSegmentName(
+				CollectionUtils.emptyIfNull(productModel.getSagiaSegment()).stream()
+				.map(seg -> seg.getSegmentName())
+				.collect(Collectors.joining(", "))
+				);
 	}
 	
     

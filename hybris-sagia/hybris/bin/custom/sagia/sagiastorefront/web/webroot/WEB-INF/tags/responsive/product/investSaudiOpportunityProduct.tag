@@ -198,9 +198,15 @@
 	                                </ul>
 								</p>
 								<p class="opportunity-statics-desc">Expected IRR ${fn:escapeXml(productData.expectedIRR)}</p>
-								<p class="opportunity-statics-desc">Payback period ${fn:escapeXml(productData.paybackPeriod)} Years</p>
-								<p class="opportunity-statics-desc">Job Creation ${fn:escapeXml(productData.jobscreated)}</p>
-								<p class="opportunity-statics-desc">GDP Impact ${fn:escapeXml(productData.gdpContribution)}</p>
+								<c:if test="${productData.paybackPeriod != 0}">
+									<p class="opportunity-statics-desc">Payback period ${fn:escapeXml(productData.paybackPeriod)} Years</p>
+								</c:if>
+								<c:if test="${productData.jobscreated != 0}">
+									<p class="opportunity-statics-desc">Job Creation ${fn:escapeXml(productData.jobscreated)}</p>
+								</c:if>
+								<c:if test="${productData.gdpContribution != '0' and productData.gdpContribution != '0 SAR'}">
+									<p class="opportunity-statics-desc">GDP Impact ${fn:escapeXml(productData.gdpContribution)}</p>
+								</c:if>
 								<p class="opportunity-statics-desc">Location (Region) ${fn:escapeXml(productData.locationRegionText)} - ${fn:escapeXml(productData.locationCityText)}</p>
     						</div>
     					</div>

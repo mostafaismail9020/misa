@@ -28,12 +28,12 @@ public class SagiaOpportunityPrepareInterceptor implements PrepareInterceptor<Op
     	try {
         	final List<Locale> locales = Arrays.asList(new Locale("ar"), new Locale("en"));
 	    	for (Locale currentLocale : locales) {
-		        if(ctx.isModified(opportunityProductModel, OpportunityProductModel.SEGMENT)){
+		        if(ctx.isModified(opportunityProductModel, OpportunityProductModel.SAGIASEGMENT)){
 		        	opportunityProductModel.setSegmentText(
 		    				CollectionUtils.emptyIfNull(opportunityProductModel.getSagiaSegment()).stream()
 		    				.map(seg -> seg.getSegmentName())
 		    				.collect(Collectors.joining(", "))
-		    				);
+		    				, currentLocale);
 		        }
 		        if(ctx.isModified(opportunityProductModel, OpportunityProductModel.LOCATION)){
 		        	opportunityProductModel.setRegionText(
@@ -41,13 +41,13 @@ public class SagiaOpportunityPrepareInterceptor implements PrepareInterceptor<Op
 		    				.filter(loc -> null != loc.getRegion() && StringUtils.isNotEmpty(loc.getRegion().getName(currentLocale)))
 		    				.map(loc -> loc.getRegion().getName(currentLocale))
 		    				.collect(Collectors.joining(", "))
-		    			);
+		    			, currentLocale);
 		        	opportunityProductModel.setCityText(
 		        			CollectionUtils.emptyIfNull(opportunityProductModel.getLocation()).stream()
 		    				.filter(loc -> null != loc.getCity() && StringUtils.isNotEmpty(loc.getCity().getName(currentLocale)))
 		    				.map(loc -> loc.getCity().getName(currentLocale))
 		    				.collect(Collectors.joining(", "))
-		    			);
+		    			, currentLocale);
 		        }
 			}
     	}

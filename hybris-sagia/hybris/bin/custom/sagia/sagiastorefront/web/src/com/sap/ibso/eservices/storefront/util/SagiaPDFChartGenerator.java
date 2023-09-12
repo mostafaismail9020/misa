@@ -414,6 +414,7 @@ public class SagiaPDFChartGenerator {
 		// Extract Text from HTML tags and fill as Bulleted list
 		List<String> highlights = extractInnerText(text);
 
+		contentStream.beginText();
 		contentStream.setFont(PDType1Font.TIMES_ROMAN, getValue("opportunity.page2.highlights.font.size", 10));
 
 		contentStream.newLineAtOffset(getValue("opportunity.page2.highlights.posX", 65),
@@ -426,6 +427,7 @@ public class SagiaPDFChartGenerator {
 			contentStream.showText(highlight);
 			contentStream.newLineAtOffset(0, -10);
 		}
+		contentStream.endText();
 		LOG.info("Investment Highlights field is filled in page 2");
 	}
 
@@ -438,7 +440,6 @@ public class SagiaPDFChartGenerator {
 					getValue("opportunity.page2.CODB.image.posY", 55),
 					getValue("opportunity.page2.CODB.image.width", 260),
 					getValue("opportunity.page2.CODB.image.height", 200));
-			contentStream.close();
 			LOG.info("Cost of doing business field is filled in page 2");
 
 			InvestmentOverviewModel investmentOverview = opportunity.getInvestmentOverview();
@@ -528,17 +529,22 @@ public class SagiaPDFChartGenerator {
 			// Set position on pdf using x, y axis
 			contentStream.newLineAtOffset(posX, posY);
 
-			if (multiLineText && text.length() > maxFieldLength) {
-				// It determines the spacing between lines when writing multiple lines of text
-				contentStream.setLeading(14.5f);
-				/* If the field length exceeds the Max length allowed in slot,
-				split the text to multiple lines and write to the PDF */
-				String[] lines = splitLongString(text, maxFieldLength);
-				for (String line : lines) {
-					contentStream.showText(line);
-					contentStream.newLine();
+			if (multiLineText) {
+				if(text.length() > maxFieldLength) {
+					// It determines the spacing between lines when writing multiple lines of text
+					contentStream.setLeading(14.5f);
+					/* If the field length exceeds the Max length allowed in slot,
+					split the text to multiple lines and write to the PDF */
+					String[] lines = splitLongString(text, maxFieldLength);
+					for (String line : lines) {
+						contentStream.showText(line);
+						contentStream.newLine();
+					}
+				} else {
+					contentStream.showText(text);
 				}
-			} else if(!multiLineText){
+
+			} else {
 				if (fieldName != null && fieldName.equals("CODB")) {
 					String[] lines = text.split(" ");
 					for (String line : lines) {

@@ -401,6 +401,8 @@ public class SagiaPDFChartGenerator {
 			}
 			int totalPages = document.getNumberOfPages();
 			for(int pageIndex = 0; pageIndex < totalPages; pageIndex++) {
+				page = document.getPage(pageIndex);
+				contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
 				fillText(getCurrentDate(), contentStream, getValue("opportunity.timestamp.posX", 730),
 						getValue("opportunity.timestamp.posY", 20),
 						getValue("opportunity.timestamp.font.size", 10), null, 50, false);

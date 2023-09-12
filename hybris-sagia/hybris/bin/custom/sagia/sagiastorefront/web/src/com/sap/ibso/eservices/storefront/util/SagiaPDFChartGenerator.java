@@ -80,7 +80,6 @@ public class SagiaPDFChartGenerator {
 	private String keyDemandDrivers = "Selected number of factors that will influence future demand for the related product/service";
 	private String scalabilityAndLocalization = "Ease of scaling the business across the value chain or into new adjacent products or geographies that would maximize the opportunity’s investment returns and the ability and potential to locally manufacture the product and its components";
 	private String importDependency = "An overview of the countries from which Saudi Arabia is importing the product and their value/volume and share in total import";
-
 	private boolean isPrimaryPDF = false;
 
 	private boolean page1 = false;
@@ -319,13 +318,14 @@ public class SagiaPDFChartGenerator {
 
 				}
 				// Incentives & Enablers
+
 				fillText(incentivesAndEnablers, contentStream, getValue("opportunity.page2.incentives.posX", 490),
 						getValue("opportunity.page2.incentives.posY", 280),
-						getValue("opportunity.page2.incentives.font.size", 12), "Incentives & Enablers", (90 * 3), true);
+						getValue("opportunity.page2.incentives.font.size", 12), "Incentives & Enablers", 252, true);
 				// Value Proposition
 				fillText(valueProposition, contentStream, getValue("opportunity.page2.valueProposition.posX", 70),
 						getValue("opportunity.page2.valueProposition.posY", 190),
-						getValue("opportunity.page2.valueProposition.font.size", 12), "Value Proposition", (90 * 3), true);
+						getValue("opportunity.page2.valueProposition.font.size", 12), "Value Proposition", 246, true);
 				// Key Stakeholders
 				Set<MediaModel> keyStakeholdersList = opportunity.getKeyStakeholders();
 				if(Objects.nonNull(keyStakeholdersList)) {
@@ -336,7 +336,7 @@ public class SagiaPDFChartGenerator {
 				}
 				fillText(keyStakeholders, contentStream, getValue("opportunity.page2.keyStakeholders.posX", 70),
 						getValue("opportunity.page2.keyStakeholders.posY", 100),
-						getValue("opportunity.page2.keyStakeholders.font.size", 12), "Key Stakeholders", (90 * 3), true);
+						getValue("opportunity.page2.keyStakeholders.font.size", 12), "Key Stakeholders", 252, true);
 				// Cost of doing business
 				createCDB(document, contentStream, opportunity);
 
@@ -361,11 +361,11 @@ public class SagiaPDFChartGenerator {
 				// Raw Material
 				fillText(rawMaterials, contentStream, getValue("opportunity.page3.rawMaterials.posX", 70),
 						getValue("opportunity.page3.rawMaterials.posY", 420),
-						getValue("opportunity.page3.rawMaterials.font.size", 12), "Raw Material", (80 * 3), true);
+						getValue("opportunity.page3.rawMaterials.font.size", 12), "Raw Material", 240, true);
 				// Global Trends
 				fillText(globalTrends, contentStream, getValue("opportunity.page3.globalTrends.posX", 70),
 						getValue("opportunity.page3.globalTrends.posY", 345),
-						getValue("opportunity.page3.globalTrends.font.size", 12), "Global Trends", (80 * 3), true);
+						getValue("opportunity.page3.globalTrends.font.size", 12), "Global Trends", 240, true);
 				// Key Demand Drivers
 				DemandModel demand = opportunity.getDemand();
 				if(Objects.nonNull(demand) && !isNullOrBlank(demand.getKeyDemandDrivers())) {
@@ -373,7 +373,7 @@ public class SagiaPDFChartGenerator {
 				}
 				fillText(keyDemandDrivers, contentStream, getValue("opportunity.page3.demandDrivers.posX", 720),
 						getValue("opportunity.page3.demandDrivers.posY", 430),
-						getValue("opportunity.page3.demandDrivers.font.size", 12), "Demand", (40 * 6), true);
+						getValue("opportunity.page3.demandDrivers.font.size", 12), "Demand", 240, true);
 
 				SupplyModel supply = opportunity.getSupply();
 				if(Objects.nonNull(supply)) {
@@ -388,11 +388,11 @@ public class SagiaPDFChartGenerator {
 				// Scalability & Localization
 				fillText(scalabilityAndLocalization, contentStream, getValue("opportunity.page3.scalability.posX", 70),
 						getValue("opportunity.page3.scalability.posY", 210),
-						getValue("opportunity.page3.scalability.font.size", 12), "Scalability & Localization", (90 * 3), true);
+						getValue("opportunity.page3.scalability.font.size", 12), "Scalability & Localization", 252, true);
 				// Import Dependency
 				fillText(importDependency, contentStream, getValue("opportunity.page3.importDependency.posX", 490),
 						getValue("opportunity.page3.importDependency.posY", 210),
-						getValue("opportunity.page3.importDependency.font.size", 12), "Import Dependency", (80 * 3), true);
+						getValue("opportunity.page3.importDependency.font.size", 12), "Import Dependency", 240, true);
 				// Demand Bar Chart
 				createStackedBarChart(document, contentStream, opportunity);
 
@@ -532,12 +532,18 @@ public class SagiaPDFChartGenerator {
 			contentStream.newLineAtOffset(posX, posY);
 
 			if (multiLineText) {
-				if(text.length() > maxFieldLength) {
+				int maxLineLength;
+				if(fieldName != null && fieldName.equals("Demand")) {
+					maxLineLength = maxFieldLength / 6;
+				} else {
+					maxLineLength = maxFieldLength / 3;
+				}
+				if(text.length() > maxLineLength) {
 					// It determines the spacing between lines when writing multiple lines of text
 					contentStream.setLeading(14.5f);
 					/* If the field length exceeds the Max length allowed in slot,
 					split the text to multiple lines and write to the PDF */
-					String[] lines = splitLongString(text, maxFieldLength);
+					String[] lines = splitLongString(text, maxLineLength);
 					for (String line : lines) {
 						contentStream.showText(line);
 						contentStream.newLine();
@@ -683,6 +689,9 @@ public class SagiaPDFChartGenerator {
 		String demandCagr = "CAGR 3.6%";
 		if(Objects.nonNull(opportunity.getDemand()) && Objects.nonNull(opportunity.getDemand().getCagr())) {
 			String cagr = String.valueOf(opportunity.getDemand().getCagr());
+			if(!cagr.contains("%")) {
+				cagr = "CAGR " + cagr + "%";
+			}
 
 			fillText(isNullOrBlank(cagr) ? demandCagr: cagr, contentStream, getValue("opportunity.page3.cagr.posX", 560),
 					getValue("opportunity.page3.cagr.posY", 425),

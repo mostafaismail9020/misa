@@ -405,6 +405,7 @@ public class SagiaPDFChartGenerator {
 				fillText(getCurrentDate(), contentStream, getValue("opportunity.timestamp.posX", 730),
 						getValue("opportunity.timestamp.posY", 20),
 						getValue("opportunity.timestamp.font.size", 10), null, 50, false);
+				contentStream.close();
 			}
 
 			document.save(fileMerged);

@@ -147,7 +147,7 @@
 			                                	<spring:theme code="portal.opportunity.know.more.button"/>
 			                                	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/know-more.png" alt="">
 			                                </button>
-			                                <button class="btn btn-secondary-fill mx-auto btn-video misa-btn-special similar-opportunities-know-more-btn">
+			                                <button class="btn btn-misaSecondColor-fill mx-auto btn-video misa-btn-special similar-opportunities-know-more-btn">
 			                                	<spring:theme code="portal.opportunity.iam.interested.button"/>
 			                                	<img class="img-fluid arrow-icon" src="/sagiastorefront/_ui/responsive/common/images/btn-sector-outline.png" alt="">
 			                                </button>	                               

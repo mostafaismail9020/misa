@@ -235,7 +235,7 @@ public class SagiaSearchPageController extends AbstractSearchPageController
 			if(!searchQuery.contains(":")) {
 				searchQuery = searchQuery + getDefaultSort() + getFilterParam();
 			}
-			else {
+			else if (!searchQuery.contains(getFilterParam())) {
 				searchQuery = searchQuery + getFilterParam();
 			}
 		}

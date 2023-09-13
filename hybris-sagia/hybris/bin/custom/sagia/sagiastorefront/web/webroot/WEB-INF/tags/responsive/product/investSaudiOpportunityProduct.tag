@@ -284,7 +284,7 @@
     							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.value.proposition"/></h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.valuePropositionText)}</p>
+    							<p class="opportunity-statics-desc">${productData.valuePropositionText}</p>
     						</div>
     					</div>
     				</div>
@@ -298,7 +298,7 @@
     							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.incentives.enablers"/></h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.incentivesAndEnablersText)}</p>
+    							<p class="opportunity-statics-desc">${productData.incentivesAndEnablersText}</p>
     						</div>
     					</div>
     				</div>
@@ -405,7 +405,7 @@
     							<h3 class="opportunity-statics-title text-center">Global Trends</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.globalTrendsText)}</p>
+    							<p class="opportunity-statics-desc">${productData.globalTrendsText}</p>
     						</div>
     					</div>
     				</div>
@@ -435,7 +435,7 @@
     							<h3 class="opportunity-statics-title text-center">Key Demand Drivers</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.keyDemandDriversText)}</p>
+    							<p class="opportunity-statics-desc">${productData.keyDemandDriversText}</p>
     						</div>
     					</div>
     				</div>
@@ -447,7 +447,7 @@
     							<h3 class="opportunity-statics-title text-center">Scalability & Localization</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.scalabilityAndLocalizationText)}</p>
+    							<p class="opportunity-statics-desc">${productData.scalabilityAndLocalizationText}</p>
     						</div>
     					</div>
     				</div>
@@ -477,7 +477,7 @@
     							<h3 class="opportunity-statics-title text-center">Import Dependency</h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${fn:escapeXml(productData.importDependencyText)}</p>
+    							<p class="opportunity-statics-desc">${productData.importDependencyText}</p>
     						</div>
     					</div>
     				</div>

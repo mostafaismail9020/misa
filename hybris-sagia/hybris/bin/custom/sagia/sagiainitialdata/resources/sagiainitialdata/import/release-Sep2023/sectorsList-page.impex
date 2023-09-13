@@ -1,12 +1,12 @@
 $page = sectors-opportunities
 $template = portalSectorTemplate
-$pageName = Sectors & Opportunities
+$pageName = Sectors
 $pageTitleEn = Sectors
 $pageTitleAr = القطاعات
 $pageLabel = /sectors-opportunities
 
 $productCatalog = sagiaProductCatalog
-$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog':Staged']
+$catalogVersion = catalogVersion(catalog(id[default=$productCatalog]), version[default=Staged])[unique=true, default=$productCatalog:Staged]
 
 $contentCatalog = sagiaContentCatalog
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[unique=true, default=$contentCatalog:Staged]

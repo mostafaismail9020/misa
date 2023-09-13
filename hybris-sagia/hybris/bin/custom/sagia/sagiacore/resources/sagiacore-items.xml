@@ -4258,6 +4258,10 @@
                         <persistence type="property"/>
                         <modifiers/>
                     </attribute>
+                    <attribute qualifier="articleDate" type="java.util.Date">
+                        <persistence type="property"/>
+                        <modifiers/>
+                    </attribute>                    
                     <attribute qualifier="articleSubDetails5" type="localized:java.lang.String">
 	                    <persistence type="property">
 	                        <columntype database="oracle">

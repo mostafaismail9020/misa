@@ -4177,7 +4177,6 @@
                             </property>
                         </custom-properties>
                     </attribute>
-                    
                 </attributes>
             </itemtype>
 
@@ -12924,6 +12923,14 @@
 					<value>"thefield"</value>
 				</property>
 			</custom-properties>
+		</attribute>
+
+		<attribute qualifier="isKeyStakeholderLogo"
+			type="java.lang.Boolean">
+			<persistence type="property" />
+			<modifiers read="true" write="true" search="true"
+				optional="true" />
+			<defaultvalue>Boolean.FALSE</defaultvalue>
 		</attribute>
 	</attributes>
 </itemtype>

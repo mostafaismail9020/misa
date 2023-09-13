@@ -1691,7 +1691,7 @@
           <property name="indexerQueriesExecutor" ref="indexerQueriesExecutor"/>
       </bean>
   
-      <bean id="sagiakeyStakeholdersImageDecoderJob" class="com.sap.ibso.eservices.core.job.SagiakeyStakeholdersImageDecoderJob" parent="abstractJobPerformable">
+      <bean id="sagiaKeyStakeholdersImageGeneratorJob" class="com.sap.ibso.eservices.core.job.SagiaKeyStakeholdersImageGeneratorJob" parent="abstractJobPerformable">
             <property name="flexibleSearchService" ref="flexibleSearchService"/>
             <property name="modelService" ref="modelService"/>
             <property name="mediaService" ref="mediaService"/>

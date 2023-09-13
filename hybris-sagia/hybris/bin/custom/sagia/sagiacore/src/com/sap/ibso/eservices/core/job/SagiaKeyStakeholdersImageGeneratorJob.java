@@ -31,13 +31,14 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 
-public class SagiakeyStakeholdersImageDecoderJob extends AbstractJobPerformable<CronJobModel> {
+public class SagiaKeyStakeholdersImageGeneratorJob extends AbstractJobPerformable<CronJobModel> {
 
-	private static final Logger LOG = LoggerFactory.getLogger(SagiakeyStakeholdersImageDecoderJob.class);
+	private static final Logger LOG = LoggerFactory.getLogger(SagiaKeyStakeholdersImageGeneratorJob.class);
 	private static final String REAL_FILE_NAME = "keyStakeholders-";
 	private static final String SAGIA_PRODUCT_CATALOG = "sagiaProductCatalog";
 	private static final String CATALOG_VERSION_STAGED = "Staged";
-	private static final String JPG_MIME_TYPE = "application/png";
+	private static final String PNG_MIME_TYPE = "application/png";
+	private static final String PNG_FILE_TYPE = ".png";
 
 	private FlexibleSearchService flexibleSearchService;
 	private ModelService modelService;
@@ -51,43 +52,57 @@ public class SagiakeyStakeholdersImageDecoderJob extends AbstractJobPerformable<
 		LOG.info("Starting the process of converting encoded Media for OpportunityProduct...");
 
 		
-		final FlexibleSearchQuery queryOpportunity = new FlexibleSearchQuery("select {op.pk} from {Media as m},{OpportunityProduct as op} where  {op.systemOrigin} = 'C4C'");
-
+		final FlexibleSearchQuery queryOpportunity = new FlexibleSearchQuery("select {op.pk} from {Media as m},{OpportunityProduct as op} where  {op.systemOrigin} = 'C4C' and {m.isKeyStakeholderLogo} = 1");
+        LOG.info("Query is --> "+queryOpportunity.toString());
 		Set<MediaModel> mediaList = new HashSet<>();
 
 		SearchResult<OpportunityProductModel> searchResult = flexibleSearchService.search(queryOpportunity);
+		LOG.info("Eligible media count for key stakeholders image generation --> "+searchResult.getCount());
 		for (OpportunityProductModel product : searchResult.getResult()) {
 			for (MediaModel media : product.getKeyStakeholders()) {
 				try {
 					if (StringUtils.isNotBlank(media.getEncodedString())) {
-						byte[] decodedBytes = Base64.decodeBase64(media.getEncodedString());
-						Path tempFile = Files.createTempFile(media.getCode(), JPG_MIME_TYPE);
-						try {
-							Files.write(tempFile, decodedBytes);
+						
+						if (isPng(media.getEncodedString())) {
+							LOG.info("The encoded string is a PNG image for media --> "+media.getCode());
+							byte[] decodedBytes = Base64.decodeBase64(media.getEncodedString());
+							System.out.println("******************* Before creating temp file *******************");
+							Path tempFile = Files.createTempFile(media.getCode(), PNG_FILE_TYPE);
+							try {
+								System.out.println("******************* Before writing temp file *******************");
+								Files.write(tempFile, decodedBytes);
 
-							// Delete existing media if present
-							deleteExistingMedia(media.getCode());
+								// Delete existing media if present
+								System.out.println("******************* Before deleting existing media *******************");
+								deleteExistingMedia(media.getCode());
 
-							// Create a new media model and save it to the media storage
-							MediaModel newMedia = createAndSaveNewMedia(media, tempFile);
+								// Create a new media model and save it to the media storage
+								System.out.println("******************* Before creating and saving new media *******************");
+								MediaModel newMedia = createAndSaveNewMedia(media, tempFile);
 
-							// Import the file into media storage.
-							try (InputStream is = Files.newInputStream(tempFile)) {
-								mediaService.setStreamForMedia(newMedia, is);
+								// Import the file into media storage.
+								try (InputStream is = Files.newInputStream(tempFile)) {
+									System.out.println("******************* Before setting stream *******************");
+									mediaService.setStreamForMedia(newMedia, is);
+								}
+
+								mediaList.add(newMedia);
+							} finally {
+								Files.delete(tempFile);
 							}
-
-							mediaList.add(newMedia);
-						} finally {
-							Files.delete(tempFile);
+							product.setKeyStakeholders(mediaList);
+							LOG.info("Saving of decoded keyStakeholders Media for OpportunityProduct...");
+							modelService.save(product);
 						}
-
-						product.setKeyStakeholders(mediaList);
-						LOG.info("Saving of decoded keyStakeholders Media for OpportunityProduct...");
-						modelService.save(product);
+						
+						else
+						{
+							LOG.info("The encoded string is NOT a PNG image for media --> "+media.getCode());
+						}
 					}
 				} catch (Exception e) {
 					LOG.error("Error while processing media for OpportunityProduct with code " + product.getCode(),
-							e.getMessage());
+							e);
 				}
 			}
 		}
@@ -122,12 +137,26 @@ public class SagiakeyStakeholdersImageDecoderJob extends AbstractJobPerformable<
 		media.setCode(transientModel.getCode());
 		media.setRealFileName(REAL_FILE_NAME + getCurrentDateTime() + ".jpg");
 		media.setCatalogVersion(catalogVersionService.getCatalogVersion(SAGIA_PRODUCT_CATALOG, CATALOG_VERSION_STAGED));
-		media.setMime(JPG_MIME_TYPE);
-
+		media.setMime(PNG_MIME_TYPE);
+		System.out.println("******************* Before modelService.save(media) new media *******************");
 		modelService.save(media);
 
 		return media;
 	}
+	
+	public static boolean isPng(String encodedString) {
+        // Decode the Base64 encoded string
+		byte[] decodedBytes = Base64.decodeBase64(encodedString);
+
+        // Check the initial bytes for PNG's magic number
+        if (decodedBytes.length > 4) {
+            return decodedBytes[0] == (byte) 0x89 &&
+                   decodedBytes[1] == (byte) 0x50 &&
+                   decodedBytes[2] == (byte) 0x4E &&
+                   decodedBytes[3] == (byte) 0x47;
+        }
+        return false;
+    }
 
 	public String getCurrentDateTime() {
 		LocalDateTime now = LocalDateTime.now();

@@ -52,7 +52,7 @@ public class SagiaKeyStakeholdersImageGeneratorJob extends AbstractJobPerformabl
 		LOG.info("Starting the process of converting encoded Media for OpportunityProduct...");
 
 		
-		final FlexibleSearchQuery queryOpportunity = new FlexibleSearchQuery("select {op.pk} from {Media as m},{OpportunityProduct as op} where  {op.systemOrigin} = 'C4C' and {m.isKeyStakeholderLogo} = 1");
+		final FlexibleSearchQuery queryOpportunity = new FlexibleSearchQuery("select {op.pk} from {Media as m},{OpportunityProduct as op},{CatalogVersion as cv},{Catalog as c} where  {op.systemOrigin} = 'C4C' and {m.isKeyStakeholderLogo} = 1 and {op.catalogVersion} = {cv.pk} and {cv.catalog} = {c.pk} and {c.id} = 'sagiaProductCatalog' and {cv.version} = 'Staged'");
         LOG.info("Query is --> "+queryOpportunity.toString());
 		Set<MediaModel> mediaList = new HashSet<>();
 
@@ -138,6 +138,7 @@ public class SagiaKeyStakeholdersImageGeneratorJob extends AbstractJobPerformabl
 		media.setRealFileName(REAL_FILE_NAME + getCurrentDateTime() + ".jpg");
 		media.setCatalogVersion(catalogVersionService.getCatalogVersion(SAGIA_PRODUCT_CATALOG, CATALOG_VERSION_STAGED));
 		media.setMime(PNG_MIME_TYPE);
+		media.setIsKeyStakeholderLogo(true);
 		System.out.println("******************* Before modelService.save(media) new media *******************");
 		modelService.save(media);
 

@@ -24198,6 +24198,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	color: var(--misaDarkGrayText);
 }
 
+.opportunity-article-section-body p.desc ul li {
+	list-style-type: square;
+}
+
+.opportunity-article-section-body p.desc ~ ul li {
+	list-style-type: square;
+}
+
 .opportunity-article-section-body h3.second-sub-title {
 	margin-top: 50px;
 	font-size: 24px;

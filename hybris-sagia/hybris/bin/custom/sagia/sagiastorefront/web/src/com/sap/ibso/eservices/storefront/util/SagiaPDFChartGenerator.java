@@ -83,6 +83,7 @@ public class SagiaPDFChartGenerator {
 	private boolean isPrimaryPDF = false;
 
 	private boolean page1 = false;
+
 	@Resource
 	private CatalogVersionService catalogVersionService;
 
@@ -116,7 +117,7 @@ public class SagiaPDFChartGenerator {
 				return fileMerged;
 			}
 
-			fileMerged = mergeFiles(primaryPdf, secondaryConcatenatedFile);
+			mergeFiles(primaryPdf, secondaryConcatenatedFile, fileMerged);
 			addContentsToPdf(fileMerged, opportunity);
 
 		}
@@ -124,7 +125,7 @@ public class SagiaPDFChartGenerator {
 	}
 
 	private File getMedia(String mediaText, String mediaFormat) throws IOException {
-		File primaryPdfFileTemplate = null;
+		File templateFile = null;
 		LOG.info("Fetching medias from Category " + CATEGORY_SECTOR_OPPORTUNITY);
 		List<MediaModel> medias = categoryService.getCategoryForCode(catalogVersionService
 						.getCatalogVersion(SAGIA_PRODUCT_CATALOG, CATALOG_VERSION_ONLINE), CATEGORY_SECTOR_OPPORTUNITY)
@@ -133,12 +134,12 @@ public class SagiaPDFChartGenerator {
 		if(Objects.nonNull(medias)) {
 			for(MediaModel media: medias) {
 				if(Objects.nonNull(media.getCode()) && media.getCode().equalsIgnoreCase(mediaText)) {
-					primaryPdfFileTemplate = convertMediaToFile(media , mediaFormat);
+					templateFile = convertMediaToFile(media , mediaFormat);
 					break;
 				}
 			}
 		}
-		return primaryPdfFileTemplate;
+		return templateFile;
 	}
 
 	public File convertMediaToFile(MediaModel mediaModel, String mediaFormat) throws IOException {
@@ -177,28 +178,10 @@ public class SagiaPDFChartGenerator {
 		return outputFile;
 	}
 
-	private File mergeFiles(File primaryPDF, File secondaryPDF) throws IOException {
+	private void mergeFiles(File primaryPDF, File secondaryPDF, File mergedTempFile) throws IOException {
 		// Create a temporary file for the merged document
-		File mergedTempFile = File.createTempFile("merged_pdf_", ".pdf");
-		;
-		if(primaryPDF != null && secondaryPDF == null) {
-			isPrimaryPDF = true;
-			LOG.info("There is no Secondary PDF");
-			PDDocument primaryDocument = PDDocument.load(primaryPDF);
-
-			// Save the merged content to this temporary file
-			primaryDocument.save(mergedTempFile);
-			primaryDocument.close();
-
-			return mergedTempFile;
-		} else if (primaryPDF == null && secondaryPDF != null) {
-			LOG.info("There is no Primary PDF");
-			PDDocument secDocument = PDDocument.load(secondaryPDF);
-			secDocument.save(mergedTempFile);
-			secDocument.close();
-
-			return mergedTempFile;
-		} else if (primaryPDF != null){
+//		File mergedTempFile = File.createTempFile("merged_pdf_", ".pdf");
+		if(primaryPDF != null && secondaryPDF != null) {
 			isPrimaryPDF = true;
 			LOG.info("Primary & Secondary PDF's loaded");
 			PDDocument testDocument = PDDocument.load(primaryPDF);
@@ -214,10 +197,23 @@ public class SagiaPDFChartGenerator {
 			testDocument.close();
 			secDocument.close();
 
-			return mergedTempFile; // Return the temporary file with the merged content
+		} else if(primaryPDF != null) {
+			isPrimaryPDF = true;
+			LOG.info("There is no Secondary PDF");
+			PDDocument primaryDocument = PDDocument.load(primaryPDF);
+
+			// Save the merged content to this temporary file
+			primaryDocument.save(mergedTempFile);
+			primaryDocument.close();
+
+		} else if (secondaryPDF != null) {
+			LOG.info("There is no Primary PDF");
+			PDDocument secDocument = PDDocument.load(secondaryPDF);
+			secDocument.save(mergedTempFile);
+			secDocument.close();
+
 		}
 
-		return mergedTempFile;
 	}
 
 	private float getValue(String prop, float defaultValue) {
@@ -225,7 +221,7 @@ public class SagiaPDFChartGenerator {
 	}
 
 	private void addContentsToPdf(File fileMerged, OpportunityProductModel opportunity) throws IOException {
-		LOG.info("Adding contents to PDF started");
+		LOG.info("***** Adding contents to PDF started *******");
 		if(opportunity == null) {
 			opportunity = new OpportunityProductModel();
 		}
@@ -409,6 +405,7 @@ public class SagiaPDFChartGenerator {
 			}
 
 			document.save(fileMerged);
+			LOG.info("***** Adding contents to PDF end *******");
 		}
 	}
 
@@ -442,6 +439,7 @@ public class SagiaPDFChartGenerator {
 					getValue("opportunity.page2.CODB.image.posY", 55),
 					getValue("opportunity.page2.CODB.image.width", 260),
 					getValue("opportunity.page2.CODB.image.height", 200));
+
 			LOG.info("Cost of doing business field is filled in page 2");
 
 			InvestmentOverviewModel investmentOverview = opportunity.getInvestmentOverview();

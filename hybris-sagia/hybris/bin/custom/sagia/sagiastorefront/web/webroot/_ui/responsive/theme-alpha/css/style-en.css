@@ -25795,3 +25795,139 @@ padding: 10px;
 .lbError {
 	color: red;
 }
+
+.page-contact-us .international-address-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+
+.page-contact-us .international-address-section .international-address-block {
+	display: flex;
+	align-items: start;
+	border: 1px solid var(--misaGrayText);
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	width: calc(50% - 10px);
+}
+
+.page-contact-us .international-address-section .international-address-block .location-image {
+	width: 120px;
+	height: auto;
+	margin-right: 15px;
+}
+
+.page-contact-us .international-address-section .international-address-block .location-details {
+	flex-grow: 1;
+}
+
+.page-contact-us .international-address-section .international-address-block .main-location {
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0;
+	color: var(--misaFirstColor);
+	margin-bottom: 8px;
+}
+
+.page-contact-us .international-address-section .international-address-block .related-locations {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0;
+	color: var(--misaSecondColor);
+	margin-bottom: 10px;
+}
+
+.page-contact-us .international-address-section .international-address-block .phone-number {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0;
+	color: #00a6be;
+}
+
+.page-contact-us .local-address-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.page-contact-us .local-address-section .local-address-block {
+	display: flex;
+	align-items: start;
+	border: 1px solid var(--misaGrayText);
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	width: calc(50% - 10px);
+}
+
+.page-contact-us .local-address-section .local-address-block .location-image {
+	width: 120px;
+	height: auto;
+	margin-right: 15px;
+}
+
+.page-contact-us .local-address-section .local-address-block .location-details {
+	flex-grow: 1;
+}
+
+.page-contact-us .local-address-section .local-address-block .city {
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0;
+	color: var(--misaFirstColor);
+	margin-bottom: 8px;
+}
+
+.page-contact-us .local-address-section .local-address-block .building {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0;
+	color: var(--misaSecondColor);
+	margin-bottom: 10px;
+}
+
+.page-contact-us .local-address-section .local-address-block .address {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0;
+	color: var(--misaSecondColor);
+	margin-bottom: 10px;
+}
+
+.page-contact-us .local-address-section .local-address-block .postal-code {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0;
+	color: var(--misaSecondColor);
+	margin-bottom: 10px;
+}
+
+.page-contact-us .local-address-section .local-address-block .phone-number {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0;
+	color: #00a6be;
+}
+
+
+@media (max-width: 768px) {
+	.page-contact-us .international-address-section .international-address-block {
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.page-contact-us .local-address-section .local-address-block {
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+	}
+}

@@ -27197,3 +27197,10 @@ font-size: 14px !important;
 		display: block;
 	}
 }
+
+.opportunity-hidden,
+.news-hidden,
+.event-hidden,
+.article-hidden {
+	display: none;
+}

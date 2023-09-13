@@ -369,7 +369,7 @@ public class SagiaPDFChartGenerator {
 				}
 				fillText(keyDemandDrivers, contentStream, getValue("opportunity.page3.demandDrivers.posX", 720),
 						getValue("opportunity.page3.demandDrivers.posY", 430),
-						getValue("opportunity.page3.demandDrivers.font.size", 12), "Demand", 240, true);
+						getValue("opportunity.page3.demandDrivers.font.size", 12), "Demand", 204, true);
 
 				SupplyModel supply = opportunity.getSupply();
 				if(Objects.nonNull(supply)) {
@@ -512,6 +512,13 @@ public class SagiaPDFChartGenerator {
 		if (text != null) {
 			String MORE =  "...";
 
+			// To Extract text if there is formatted html in the input Text
+			String htmlRegex =  "<(.+)>.*</\\1>";
+			if(text.matches(htmlRegex)) {
+				Document descDocument = Jsoup.parse(text);
+				text = descDocument.text().trim();
+			}
+
 			// Truncate the string to max length available on pdf template
 			if(text.length() > maxFieldLength) {
 				text = text.substring(0, (maxFieldLength - 3)) + MORE;
@@ -608,7 +615,7 @@ public class SagiaPDFChartGenerator {
 				dataset = new DefaultCategoryDataset();
 				for (MarketModel market : marketList) {
 					// Assuming market codes are unique, we can use them as series identifiers
-					String marketCodeSeries = market.getCode(); // Replace getMarketCode() with your actual getter method
+					String marketCodeSeries = market.getName(); // Replace getMarketCode() with your actual getter method
 
 					// Split the years and market sizes
 					String[] years = market.getYears().split(",");

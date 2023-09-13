@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Required;
 
+import com.investsaudi.portal.core.model.ArticleProductModel;
 import com.investsaudi.portal.core.model.EventProductModel;
 import com.investsaudi.portal.core.model.NewsProductModel;
 import com.investsaudi.portal.core.model.ReportProductModel;
@@ -98,6 +99,9 @@ public class SagiaProductCreationDateValueProvider extends AbstractPropertyField
 			}
 	        else if (product instanceof ReportProductModel) {
 	            return dateFormat.format(((ReportProductModel) product).getReportDate());
+	        }
+	        else if (product instanceof ArticleProductModel) {
+	            return dateFormat.format(((ArticleProductModel) product).getArticleDate());
 	        }
         }
         catch(Exception e) {

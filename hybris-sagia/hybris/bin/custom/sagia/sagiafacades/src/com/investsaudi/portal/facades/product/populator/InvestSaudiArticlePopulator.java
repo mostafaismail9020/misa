@@ -122,6 +122,7 @@ public class InvestSaudiArticlePopulator implements Populator<ProductData, Artic
         if (CollectionUtils.isNotEmpty(productModel.getDetail())) {
             productData.setPdfUrl(productModel.getDetail().iterator().next().getURL());
 		}
+        productData.setArticleDate(productModel.getArticleDate());
     }
 
 

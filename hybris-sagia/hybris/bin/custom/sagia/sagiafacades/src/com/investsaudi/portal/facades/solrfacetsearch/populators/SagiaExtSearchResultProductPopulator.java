@@ -62,5 +62,13 @@ public class SagiaExtSearchResultProductPopulator extends SearchResultProductPop
                 LOG.error("Error while parsing report date for " + target.getCode() ,e);
             }
         }
+        else if (target.getResource().equals("Article")) {
+            SimpleDateFormat articleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            try {
+                target.setArticleDate(articleDateFormat.parse(this.getValue(source, "creationTime")));
+            } catch (ParseException e) {
+                LOG.error("Error while parsing report date for " + target.getCode() ,e);
+            }
+        }
     }
 }

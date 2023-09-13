@@ -19,10 +19,10 @@
                 </c:if>
                 <h1 class="title">
                     <c:if test="${language eq 'en'}">
-                        <span class="clr_gld">${category.name}</span><spring:theme code="portal.sector.opportunity.label"/>
+                        <span class="clr_gld">${category.name}</span><spring:theme code="portal.sector.list.label"/>
                     </c:if>
                     <c:if test="${language eq 'ar'}">
-                        <span class="clr_gld"><spring:theme code="portal.sector.featured.opportunity.label"/>{category.name}</span>
+                        <span class="clr_gld"><spring:theme code="portal.sector.list.arabic.label"/>{category.name}</span>
                     </c:if>                    
                 </h1>
             </div>

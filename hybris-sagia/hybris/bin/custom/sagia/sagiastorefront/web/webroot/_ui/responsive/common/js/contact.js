@@ -34,6 +34,10 @@ function onContactSubmit() {
             productCode: $("#hfProductCode").length > 0 ? $.trim($("#hfProductCode").val()) : 0
         }),
         success: function (data) {
+			$('.div-form-opportunity-lead').hide();
+			$('#toggle-opportunity-contact-form').css('display', 'initial');
+			$('#submit-opportunity-contact-form').hide();
+			$("input[type=text],textarea,input[type=email]").val('');
             console.log(data);
             if (data == "mir-robot") {
                 $("label.lbError").removeClass("d-none").html("<em><span>" + site.messages().mirRobot + "</span></em>");

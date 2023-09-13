@@ -124,54 +124,119 @@
     							<img class="img-fluid rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS78M1xPINkEl0df2wnbq3bro9Oz0rCHpWn284h5iT4tQ&s" />
     						</div>
     					</div>
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-12 text-center">
+                                <label class="lbError d-none"></label>
+                            </div>
+                        </div>
     					<div class="row">
     						<div class="col text-center">
     							<button type="button" class="btn btn-primary-fill btn-get-in-touch-opportunity" id="toggle-opportunity-contact-form"><spring:theme code="portal.opportunity.details.get.in.touch.btn"/></button>
     						</div>
     					</div>
-    					<div class="div-form-opportunity-lead">
-    						<div class="row">
-								<div class="form-group col-md-12 col-12 form-normal-item">
-									<label for="crName">
-										<spring:theme code="portal.sector.contact.expert.name.label"/> *
-									</label>
-									<input type="text" class="form-control required validate-name" data-val="true" 
-	                               		data-val-regex="Numbers and Special Characters are not allowed"
-		                                data-val-regex-pattern="^[A-Za-z\u0600-\u065F\u066A-\u06EF\u06FA-\u06FF\s]*$"
-		                                data-val-required="Required" id="crName" name="Name"/>
-									<small class="error-msg"></small>
+    					<form id="corForm">
+	    					<div class="div-form-opportunity-lead">
+	    						<div class="row">
+									<div class="form-group col-md-12 col-12 form-normal-item">
+										<label for="crName">
+											<spring:theme code="portal.sector.contact.expert.name.label"/> *
+										</label>
+										<input type="text" class="form-control required validate-name" data-val="true" 
+		                               		data-val-regex="Numbers and Special Characters are not allowed"
+			                                data-val-regex-pattern="^[A-Za-z\u0600-\u065F\u066A-\u06EF\u06FA-\u06FF\s]*$"
+			                                data-val-required="Required" id="crName" name="Name"/>
+										<small class="error-msg"></small>
+									</div>
 								</div>
-							</div>
-	    					<div class="row">
-								<div class="form-group col-md-12 col-12 form-normal-item">
-									<label for="crEmail">
-										<spring:theme code="portal.sector.contact.expert.email.label"/> *
-									</label>
-									<input type="text" class="form-control validate-email required" data-val="true"
-		                                data-val-regex="Invalid email address"
-		                                data-val-regex-pattern="[A-Za-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?"
-		                                data-val-required="Required" id="crEmail" name="Email"/>
-									<small class="error-msg"></small>
+		    					<div class="row">
+									<div class="form-group col-md-12 col-12 form-normal-item">
+										<label for="crCompany">
+											<spring:theme code="portal.sector.contact.expert.companyName.label"/> *
+										</label>
+										<input type="text" class="form-control required validate-name" data-val="true"
+			                                data-val-regex="Numbers and Special Characters are not allowed"
+			                                data-val-regex-pattern="^[A-Za-z\u0600-\u065F\u066A-\u06EF\u06FA-\u06FF\s]*$"
+			                                id="crCompany" name="Company"/>
+										<small class="error-msg"></small>
+									</div>
 								</div>
-							</div>
-	    					<div class="row">
-								<div class="form-group col-md-12 col-12 form-normal-item">
-									<label for="crCompany">
-										<spring:theme code="portal.sector.contact.expert.companyName.label"/> *
-									</label>
-									<input type="text" class="form-control required validate-name" data-val="true"
-		                                data-val-regex="Numbers and Special Characters are not allowed"
-		                                data-val-regex-pattern="^[A-Za-z\u0600-\u065F\u066A-\u06EF\u06FA-\u06FF\s]*$"
-		                                id="crCompany" name="Company"/>
-									<small class="error-msg"></small>
+								<div class="row">
+									<div class="form-group col-md-12 col-12 form-normal-item">
+										<label for="crMobile">
+											<spring:theme code="portal.sector.contact.expert.phoneNumber.label"/> *
+										</label>
+										<div class="row no-gutters">
+											<div class="col-md-4 col-4">
+												<input type="text" class="ddl-countryCode form-control" placeholder="+966" autocomplete="off"/>
+											</div>
+			                               <div class="col-md-8 col-8">
+			                                   <input type="text" class="form-control validate-mobile required mobile-number" id="crMobile" name="MobileNumber" type="number"/>
+			                                   <small class="error-msg"></small>
+			                               </div> 
+										</div>                               
+		                           </div>
 								</div>
-							</div>
-	    					<div class="row">
-	    						<div class="col text-center">
-	    							<button type="button" class="mt-4 btn btn-primary-fill btn-get-in-touch-opportunity" id="submit-opportunity-contact-form"><spring:theme code="portal.opportunity.details.submit.btn"/></button>
-	    						</div>
+								<div class="row">
+									<div class="form-group col-md-12 col-12 form-normal-item">
+										<label for="crJobTitle">
+											<spring:theme code="portal.sector.contact.expert.jobTitle.label"/> *
+										</label>
+										<input type="text" class="form-control required validate-name" data-val="true"
+			                                data-val-regex="Numbers and Special Characters are not allowed"
+			                                data-val-regex-pattern="^[A-Za-z\u0600-\u065F\u066A-\u06EF\u06FA-\u06FF\s]*$"
+			                                id="crJobTitle" name="JobTitle"/>
+										<small class="error-msg"></small>
+									</div>
+								</div>
+		    					<div class="row">
+									<div class="form-group col-md-12 col-12 form-normal-item">
+										<label for="crEmail">
+											<spring:theme code="portal.sector.contact.expert.email.label"/> *
+										</label>
+										<input type="text" class="form-control validate-email required" data-val="true"
+			                                data-val-regex="Invalid email address"
+			                                data-val-regex-pattern="[A-Za-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?"
+			                                data-val-required="Required" id="crEmail" name="Email"/>
+										<small class="error-msg"></small>
+									</div>
+								</div>
+	    						<div class="row">
+									<div class="form-group col-md-12 col-12 form-normal-item">
+										<label for="contactSubjectList">
+											<spring:theme code="portal.sector.contact.expert.purpose.label"/> *
+										</label>
+										<input type="text" class="form-control required error" data-val="true"
+			                                data-val-required="Required" id="contactSubjectList" name="contactSubjectList"/>
+										<small class="error-msg"></small>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group col-md-12">
+										<label for="crMessage">
+											<spring:theme code="portal.sector.contact.expert.message.label"/> *
+										</label>
+										<textarea class="form-control required" cols="10" style="border-radius: 10px;"
+				                            data-val-required="Required" id="crMessage" name="Message" rows="5">
+			                            </textarea>
+										<small class="error-msg"></small>
+									</div>
+								</div>
+		                        <div class="row">
+		                        	<div class="form-group col-md-12 col-12">
+			                        	<input type="hidden" id="recaptchaChallangeAnswered" value="${requestScope.recaptchaChallangeAnswered}" />
+			                         	<div class="form_field-elements control-group js-recaptcha-captchaaddon sector-page-captcha"></div>
+			                         	<span id="lblSectorPageErrorCaptcha" class="mandatory"></span>
+			                        </div>
+		                        </div>
+		    					<div class="row">
+		    						<div class="col text-center">
+		    							<button type="button" class="mt-2 btn btn-primary-fill btn-get-in-touch-opportunity" id="submit-opportunity-contact-form">
+		    								<spring:theme code="portal.opportunity.details.submit.btn"/>
+		    							</button>
+		    						</div>
+		    					</div>
 	    					</div>
-    					</div>
+    					</form>
     				</div>
     			</div>
     		</div>

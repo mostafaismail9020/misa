@@ -836,9 +836,11 @@ $('#toggle-opportunity-contact-form').on('click', function (e) {
 });
 
 $('#submit-opportunity-contact-form').on('click', function (e) {
-	$('.div-form-opportunity-lead').hide();
-	$('#toggle-opportunity-contact-form').css('display', 'initial');
-	$('#submit-opportunity-contact-form').hide();
+	if (validateForm($("#corForm")) == true) {
+		onContactSubmit();
+		return true;
+	}
+	return false;
 });
 
 /* END Script for Opportunity page */
@@ -1224,7 +1226,11 @@ $(document).ready(function () {
 			var value;
 			// debugger;
 			if($(this).attr("id") == "contactSubjectList"){
-				value = $('#contactSubjectList :selected').text();
+				if ($(this).tagName === 'SELECT') {
+					value = $('#contactSubjectList :selected').text();
+				} else {
+					value = $.trim($(this).val());
+				}
 			}
 			else {
 				value = $.trim($(this).val());
@@ -3954,7 +3960,7 @@ $(document).ready(function () {
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
-			headers : {"g-recaptcha-response": grecaptcha.getResponse(1)},
+			headers : {"g-recaptcha-response": grecaptcha.getResponse()},
 			data: JSON.stringify({
 				name: $.trim($("#crName").val()),
 				email: $.trim($("#crEmail").val()),
@@ -4018,6 +4024,7 @@ $(document).ready(function () {
 			onContactSubmit();
 			return true;
 		}
+		grecaptcha.reload();
 		return false;
 	}
 

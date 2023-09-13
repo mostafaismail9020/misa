@@ -8859,7 +8859,7 @@ a.pvcy-policy:focus {
 
 .form-normal-item-select select {
 	box-shadow: 0 0 5pt 0.5pt #d3d3d3;
-	height: 65px !important;
+	height: 55px !important;
 	border-radius: 10px;
 	padding: 15px 34px 14px;
 	color: #495057;
@@ -25790,4 +25790,8 @@ padding: 10px;
 .event-hidden,
 .article-hidden {
 	display: none;
+}
+
+.lbError {
+	color: red;
 }

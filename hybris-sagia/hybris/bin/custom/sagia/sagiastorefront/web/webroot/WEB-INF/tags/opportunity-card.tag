@@ -21,10 +21,10 @@
 					<p>
 						<c:choose>
 							<c:when test="${fn:length(result.opportunity.description) gt 50}">
-							${fn:substring({result.opportunity.description}, 1, 55)}...
+								${fn:substring({result.opportunity.description}, 1, 55)}...
 							</c:when>
 							<c:otherwise>
-							${result.opportunity.description}
+								${result.opportunity.description}
 							</c:otherwise>
 						</c:choose>
 					</p>

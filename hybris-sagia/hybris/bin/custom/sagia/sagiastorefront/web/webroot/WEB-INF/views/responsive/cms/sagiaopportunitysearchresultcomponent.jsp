@@ -164,7 +164,7 @@
                 </c:if>
 
                 <c:set var="limit" value="${numberPagesShown}"/>
-                <c:set var="halfLimit"><fmt:formatNumber value="${limit/1}" maxFractionDigits="0"/></c:set>
+                <c:set var="halfLimit"><fmt:formatNumber value="${limit/2}" maxFractionDigits="0"/></c:set>
                 <c:set var="beginPage">
                     <c:choose>
                         <%-- Limit is higher than number of pages --%>

@@ -8,7 +8,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<div class="col-sm-12">
+<div class="col-sm-12 show-article article-${loopCount + 1} <c:if test="${loopCount + 1 gt 5}"> article-hidden</c:if>">
 	<div class="article mb-4">
 		<div class="information">
 			<a href="${encodedContextPath}${result.url}" title="${result.name}" class="title">${result.name}</a>

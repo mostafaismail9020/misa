@@ -25784,3 +25784,10 @@ padding: 10px;
 		display: block;
 	}
 }
+
+.opportunity-hidden,
+.news-hidden,
+.event-hidden,
+.article-hidden {
+	display: none;
+}

@@ -8,8 +8,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
-<div class="col-sm-12">
-	<div class="opportunity search <c:if test="${loopCount % 2 == 0 }">alternate</c:if>"">
+<div class="col-sm-12 show-opportunity opportunity-${loopCount + 1} <c:if test="${loopCount + 1 gt 5}"> opportunity-hidden</c:if>">
+	<div class="opportunity search <c:if test="${loopCount % 2 == 0 }">alternate</c:if>">
 		<div class="image">
             <a href="${encodedContextPath}${result.url}" class="link">
             	<c:choose>

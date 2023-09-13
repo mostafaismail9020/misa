@@ -8,7 +8,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
-<div class="col-sm-12 col-md-6 col-lg-4">
+<div class="col-sm-12 col-md-6 col-lg-4 show-news news-${loopCount + 1} <c:if test="${loopCount + 1 gt 6}"> news-hidden</c:if>">
 	<div class="news">
              <a href="${encodedContextPath}${result.url}" class="know-more-link">
             	<c:choose>

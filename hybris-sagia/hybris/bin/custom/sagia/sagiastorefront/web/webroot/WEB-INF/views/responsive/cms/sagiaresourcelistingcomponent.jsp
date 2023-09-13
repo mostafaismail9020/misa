@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="action">
-                        <a href="/sectors-opportunities/opportunities" class="submit-button mt-5"><spring:theme code="review.show.more"/></a>
+                        <a href="/sectors-opportunities/opportunities" class="submit-button mt-5 show-more-opportunities"><spring:theme code="review.show.more"/></a>
                     </div>                    
                 </div>
             </div>   
@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="action">
-                        <a href="/mediaCenter/news" class="submit-button mt-0"><spring:theme code="review.show.more"/></a>
+                        <a href="/mediaCenter/news" class="submit-button show-more-news mt-0"><spring:theme code="review.show.more"/></a>
                     </div>                    
                 </div>
             </div>
@@ -97,13 +97,13 @@
                     </div>
                 </div>
                 <c:forEach var="result" items="${eventSearchPageData.results}" varStatus="status">
-                    <tags:events-card result="${result}" loopCount="${status.index}"/>
+                    <tags:event-tile result="${result}" loopCount="${status.index}"/>
                 </c:forEach>
             </div>
             <div class="row">
                 <div class="col-sm-12">
                     <div class="action">
-                        <a href="/mediaCenter/events" class="submit-button mt-0"><spring:theme code="review.show.more"/></a>
+                        <a href="/mediaCenter/events" class="submit-button show-more-events mt-0"><spring:theme code="review.show.more"/></a>
                     </div>                    
                 </div>
             </div>
@@ -133,17 +133,116 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="action">
-                        <a href="articlesList" class="submit-button mt-4"><spring:theme code="review.show.more"/></a>
+                        <a href="articlesList" class="submit-button show-more-articles mt-4"><spring:theme code="review.show.more"/></a>
                     </div>                    
                 </div>
             </div>                
-        </c:when>
+        </c:when>       
     </c:choose>
 </div>
-
 
 <script>
     $(document).ready(function() {
         $(".homeLink").prependTo(".banner-container");
+        
+        // load more opportunities
+        var totalOpportunities = $('.show-opportunity').length;
+        var opportunitiesResults = 5;
+        var opportunitiesCounter = 0;
+
+        while (opportunitiesCounter < opportunitiesResults){
+            $('.' + opportunitiesCounter).show();        
+            opportunitiesCounter++;
+        };
+
+        $(".show-more-opportunities").click(function(e){
+            e.preventDefault();
+            console.log('opportunitiesResults is undefined', opportunitiesResults)
+            var opportunitiesShowing = $('.show-opportunity:visible').length;
+            console.log(opportunitiesShowing); //5
+            var visibleOpportunitiesResults = opportunitiesShowing + 5
+            var opportunitiesCounter = 0;
+                      console.log('after setting as variable', opportunitiesResults)
+            while (opportunitiesCounter <= visibleOpportunitiesResults){
+                $('.opportunity-' + opportunitiesCounter).css('display', 'block');        
+                opportunitiesCounter++;
+            }
+            if (totalOpportunities == opportunitiesShowing) {
+                $(".show-more-opportunities").hide();
+            }               
+        })
+
+        // load more news
+        var totalNews = $('.show-news').length;
+        var newsResults = 6;
+        var newsCounter = 0;
+
+        while (newsCounter < newsResults){
+            $('.' + newsCounter).show();        
+            newsCounter++;
+        };
+
+        $(".show-more-news").click(function(e){
+            e.preventDefault();
+            var newsShowing = $('.show-news:visible').length;
+            var visibleNewsResults = newsShowing + 6
+            var newsCounter = 0;
+            while (newsCounter <= visibleNewsResults){
+                $('.news-' + newsCounter).css('display', 'block');        
+                newsCounter++;
+            }
+            if (totalNews == newsShowing) {
+                $(".show-more-news").hide();
+            }            
+        })          
+
+        // load more events
+        var totalEvents = $('.show-event').length;
+        var eventsResults = 8;
+        var eventsCounter = 0;
+
+        while (eventsCounter < eventsResults){
+            $('.' + eventsCounter).show();        
+            eventsCounter++;
+        };
+
+        $(".show-more-events").click(function(e){
+            e.preventDefault();
+            var eventsShowing = $('.show-event:visible').length;
+            var visibleEventsResults = eventsShowing + 8
+            var eventsCounter = 0;
+            while (eventsCounter <= visibleEventsResults){
+                $('.event-' + eventsCounter).css('display', 'block');        
+                eventsCounter++;
+            }
+            if (totalEvents == eventsShowing) {
+                $(".show-more-events").hide();
+            }            
+        })  
+        
+        // load more articles
+        var totalArticles = $('.show-article').length;
+        var articlesResults = 5;
+        var articlesCounter = 0;
+
+        while (articlesCounter < articlesResults){
+            $('.' + articlesCounter).show();        
+            articlesCounter++;
+        };
+
+        $(".show-more-articles").click(function(e){
+            e.preventDefault();
+            var articlesShowing = $('.show-article:visible').length;
+            var visibleArticlesResults = articlesShowing + 5
+            var articlesCounter = 0;
+            while (articlesCounter <= visibleArticlesResults){
+                $('.article-' + articlesCounter).css('display', 'block');        
+                articlesCounter++;
+            }
+            if (totalArticles == articlesShowing) {
+                $(".show-more-articles").hide();
+            }
+        })          
     });
+
 </script>

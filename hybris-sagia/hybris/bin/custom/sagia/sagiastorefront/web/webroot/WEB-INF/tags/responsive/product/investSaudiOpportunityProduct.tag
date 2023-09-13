@@ -31,7 +31,7 @@
 					<h1 class="page-title">${fn:escapeXml(productData.name)}</h1>
 				</div>
 			</div>
-			<div class="row opportunity-tags justify-content-center justify-content-md-start">
+			<div class="row opportunity-tags justify-content-center justify-content-md-start" style="display: none;">
 				<div class="col-md-2 col-5">
 					<span class="badge badge-pill badge-light">Promoting Tag 1</span>
 				</div>
@@ -59,27 +59,27 @@
     					<div class="row justify-content-center">
     						<div class="col-md-4 col-5 text-center irr-box">
     							<p class="irr-title">${fn:escapeXml(productData.expectedIRR)}</p>
-    							<p class="irr-desc">Expected IRR</p>
+    							<p class="irr-desc"><spring:theme code="portal.opportunity.details.expected.irr"/></p>
     						</div>
     						<div class="col-md-2 col-2"></div>
     						<div class="col-md-4 col-5 text-center irr-box">
     							<p class="irr-title">${fn:escapeXml(productData.expectedInvestmentSize)}</p>
-    							<p class="irr-desc">Investment size</p>
+    							<p class="irr-desc"><spring:theme code="portal.opportunity.details.expected.investment.size"/></p>
     						</div>
     					</div>
     					<div class="row">
     						<div class="col-md-6 col-6">
-    							<p class="irr-location-title">Location</p>
+    							<p class="irr-location-title"><spring:theme code="portal.opportunity.details.location"/></p>
     							<p class="irr-location-desc">${fn:escapeXml(productData.locationRegionText)} - ${fn:escapeXml(productData.locationCityText)}</p>
     						</div>
     						<div class="col-md-6 col-6">
-    							<p class="irr-location-title">Investment type</p>
+    							<p class="irr-location-title"><spring:theme code="portal.opportunity.details.investment.type"/></p>
     							<p class="irr-location-desc">${fn:escapeXml(productData.investmentType)}</p>
     						</div>
     					</div>
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<p class="irr-location-title mt-2">Sector</p>
+    							<p class="irr-location-title mt-2"><spring:theme code="portal.opportunity.details.sector"/></p>
    								<div class="col-md-12 col-12 irr-sector-div text-center">
    									<div class="row">
    										<div class="col-md-12 col-12">
@@ -92,7 +92,7 @@
    								</div>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="irr-location-title mt-2">Segment</p>
+    							<p class="irr-location-title mt-2"><spring:theme code="portal.opportunity.details.segment"/></p>
    								<div class="col-md-12 col-12 irr-sector-div text-center">
    									<div class="row">
    										<div class="col-md-12 col-12">
@@ -110,9 +110,9 @@
   										<button class="btn btn-download-pdf-opportunity col" id="controllerButton" class="button" onclick="callController()">
 											<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
 										</button>
-										<button class="btn btn-download-pdf-opportunity col mt-2" id="buttonWithText" class="button" style="display: none;">Processing...</button>
+										<button class="btn btn-download-pdf-opportunity col mt-2" id="buttonWithText" class="button" style="display: none;"><spring:theme code="portal.opportunity.details.download.processing"/></button>
   									</div>
-  									<div class="col-md-7 mt-3 text-center">Download Opportunity</div>
+  									<div class="col-md-7 mt-3 text-center"><spring:theme code="portal.opportunity.details.download.opportunity"/></div>
 									<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
   								</div>
   							</div>
@@ -126,7 +126,7 @@
     					</div>
     					<div class="row">
     						<div class="col text-center">
-    							<button type="button" class="btn btn-primary-fill btn-get-in-touch-opportunity" id="toggle-opportunity-contact-form">Get in touch</button>
+    							<button type="button" class="btn btn-primary-fill btn-get-in-touch-opportunity" id="toggle-opportunity-contact-form"><spring:theme code="portal.opportunity.details.get.in.touch.btn"/></button>
     						</div>
     					</div>
     					<div class="div-form-opportunity-lead">
@@ -168,7 +168,7 @@
 							</div>
 	    					<div class="row">
 	    						<div class="col text-center">
-	    							<button type="button" class="mt-4 btn btn-primary-fill btn-get-in-touch-opportunity" id="submit-opportunity-contact-form">Submit</button>
+	    							<button type="button" class="mt-4 btn btn-primary-fill btn-get-in-touch-opportunity" id="submit-opportunity-contact-form"><spring:theme code="portal.opportunity.details.submit.btn"/></button>
 	    						</div>
 	    					</div>
     					</div>
@@ -186,28 +186,28 @@
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Investment Highlights</h3>
+    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.investment.highlights"/></h3>
     						</div>
     						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">Expected Investment size ${fn:escapeXml(productData.expectedInvestmentSize)}</p>
-								<p class="opportunity-statics-desc">Plant capacity
+    							<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.expected.investment.size"/> ${fn:escapeXml(productData.expectedInvestmentSize)}</p>
+								<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.plant.capacity"/>
 									<ul>
 										<c:forEach var="plantCapacity" items="${productData.capacityData}">
 		                                    <li>${plantCapacity.measure} - ${plantCapacity.value} ${plantCapacity.unit}</li>
 		                                </c:forEach>
 	                                </ul>
 								</p>
-								<p class="opportunity-statics-desc">Expected IRR ${fn:escapeXml(productData.expectedIRR)}</p>
+								<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.expected.irr"/> ${fn:escapeXml(productData.expectedIRR)}</p>
 								<c:if test="${productData.paybackPeriod != 0}">
-									<p class="opportunity-statics-desc">Payback period ${fn:escapeXml(productData.paybackPeriod)} Years</p>
+									<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.payback.period"/> ${fn:escapeXml(productData.paybackPeriod)} Years</p>
 								</c:if>
 								<c:if test="${productData.jobscreated != 0}">
-									<p class="opportunity-statics-desc">Job Creation ${fn:escapeXml(productData.jobscreated)}</p>
+									<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.job.creation"/> ${fn:escapeXml(productData.jobscreated)}</p>
 								</c:if>
 								<c:if test="${productData.gdpContribution != '0' and productData.gdpContribution != '0 SAR'}">
-									<p class="opportunity-statics-desc">GDP Impact ${fn:escapeXml(productData.gdpContribution)}</p>
+									<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.gdp.impact"/> ${fn:escapeXml(productData.gdpContribution)}</p>
 								</c:if>
-								<p class="opportunity-statics-desc">Location (Region) ${fn:escapeXml(productData.locationRegionText)} - ${fn:escapeXml(productData.locationCityText)}</p>
+								<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.location.region"/> ${fn:escapeXml(productData.locationRegionText)} - ${fn:escapeXml(productData.locationCityText)}</p>
     						</div>
     					</div>
     				</div>
@@ -216,7 +216,7 @@
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Value Proposition</h3>
+    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.value.proposition"/></h3>
     						</div>
     						<div class="col-md-12 col-12">
     							<p class="opportunity-statics-desc">${fn:escapeXml(productData.valuePropositionText)}</p>
@@ -230,7 +230,7 @@
 					<div class="jumbotron jumbotron-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Incentives and Enablers</h3>
+    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.incentives.enablers"/></h3>
     						</div>
     						<div class="col-md-12 col-12">
     							<p class="opportunity-statics-desc">${fn:escapeXml(productData.incentivesAndEnablersText)}</p>
@@ -242,27 +242,27 @@
 					<div class="jumbotron jumbotron-statistics-box special-statistics-box">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Cost of Doing Business</h3>
+    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.cost.business"/></h3>
     						</div>
     						<div class="col-md-12 col-12">
     							<div class="row mt-3">
-    								<div class="col-md-7">Factor</div>
-    								<div class="col-md-5">Ranking amongst regional peers</div>
+    								<div class="col-md-7"><spring:theme code="portal.opportunity.details.factor"/></div>
+    								<div class="col-md-5"><spring:theme code="portal.opportunity.details.ranking.regional.peers"/></div>
     							</div>
     							<div class="row mt-3">
-    								<div class="col-md-7">Electricity tariffs for industrial players</div>
+    								<div class="col-md-7"><spring:theme code="portal.opportunity.details.electricity.tarifs"/></div>
     								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.electricityTariffs)}</span></div>
     							</div>
     							<div class="row mt-3">
-    								<div class="col-md-7">Productivity adjusted wages</div>
+    								<div class="col-md-7"><spring:theme code="portal.opportunity.details.productivity.adjusted.wages"/></div>
     								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.productivityAdjustedWages)}</span></div>
     							</div>
     							<div class="row mt-3">
-    								<div class="col-md-7">Logistics Performance Index (1-5)</div>
+    								<div class="col-md-7"><spring:theme code="portal.opportunity.details.logistics.performance.index"/></div>
     								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">${fn:escapeXml(productData.logisticsPerformanceIndex)}</span></div>
     							</div>
     							<div class="row mt-3">
-    								<div class="col-md-7">Construction Costs (Indexed to US, %0 is cheapest</div>
+    								<div class="col-md-7"><spring:theme code="portal.opportunity.details.construction.costs"/></div>
     								<div class="col-md-5 text-center"><span class="badge badge-pill special-badge-opportunity-details">4${fn:escapeXml(productData.constructionCosts)}</span></div>
     							</div>
     						</div>
@@ -425,7 +425,7 @@
 	    <div class="container">
 	        <div class="row titleContainer">
 	            <div class="col-md-12 content mx-auto mb-3">
-	                <h2 class="misa-text-title">More ICT opportunities</h2>
+	                <h2 class="misa-text-title"><spring:theme code="portal.opportunity.details.more.opportunities.text"/></h2>
 				</div>
 			</div>
 			<div class="row">

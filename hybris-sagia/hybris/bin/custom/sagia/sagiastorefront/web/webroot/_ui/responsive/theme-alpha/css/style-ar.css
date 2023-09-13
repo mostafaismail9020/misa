@@ -25560,6 +25560,14 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	text-align: right;
 }
 
+.opportunity-article-section-body p.desc * {
+	text-align: right;
+}
+
+.opportunity-article-section-body p.desc ~ * {
+	text-align: right;
+}
+
 .opportunity-article-section-body h3.second-sub-title {
 	margin-top: 50px;
 	font-size: 24px;
@@ -25676,6 +25684,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	display: none;
 }
 
+.opportunity-article-section-body .div-form-opportunity-lead label {
+	float: right;
+}
+
 .opportunity-article-section-body .jumbotron.jumbotron-second .btn-get-in-touch-opportunity {
 	font-size: 24px;
 	font-weight: 500;
@@ -25728,6 +25740,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 	letter-spacing: 0em;
 	margin-top: 15px;
 	color: var(--misaDarkGrayText);
+	text-align: right;
 }
 
 .opportunity-article-section-statistics .jumbotron-statistics-box .opportunity-statics-desc + ul * {

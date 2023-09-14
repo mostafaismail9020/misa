@@ -9,23 +9,24 @@ INSERT_UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; n
                                   ; $solrIndexedType                         ; eventLocation    ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  									;
                                   ; $solrIndexedType                         ; eventTiming      ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  									;
                                   ; $solrIndexedType                         ; pdf		       	; text       ; false               ;                 ;                 ;           ; true   ; false     ; sagiaPdfNameValueProvider			;
-                                  ; sagiaProductType                         ; reportType       ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
+                                  ; $solrIndexedType                         ; reportType       ; string     ; false               ;                 ;                 ;           ; true   ; true      ;  ;
+                                  ; $solrIndexedType                         ; expectedIRR      ; string     ; false               ;                 ;                 ;           ; true   ; false     ; sagiaExpectedIRRValueProvider		;
 
 
 UPDATE SolrIndexedProperty ; solrIndexedType(identifier)[unique=true] ; name[unique=true] ; type(code)	; localized ; useForAutocomplete; ftsQuery	; useForHighlighting; ftsQueryBoost	; &indexedProperty	;
-                           ; $solrIndexedType                         ; description       ; text		; true      ; true				; true		; true				; 45			; description		;
-                           ; $solrIndexedType                         ; summary		      ; text		; true      ; true				; true		; true				; 44			; summary			;
-                           ; $solrIndexedType                         ; pdf			      ; text		; false     ; true				; true		; true				; 43			; pdf				;
+                           ; $solrIndexedType                         ; description       ; text		; true      ; true				; true		; false				; 45			; description		;
+                           ; $solrIndexedType                         ; summary		      ; text		; true      ; true				; true		; false				; 44			; summary			;
+                           ; $solrIndexedType                         ; pdf			      ; text		; false     ; true				; true		; false				; 43			; pdf				;
 
 
 INSERT_UPDATE SolrSearchQueryProperty ; indexedProperty(name, solrIndexedType(identifier))[unique=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType] ; facet ; ftsPhraseQuery[default=false] ; ftsPhraseQueryBoost ; ftsQuery[default=false] ; ftsQueryBoost ; ftsFuzzyQuery[default=false] ; ftsFuzzyQueryFuzziness ; ftsFuzzyQueryBoost ; ftsWildcardQuery[default=false] ; ftsWildcardQueryType(code)[default=POSTFIX] ; ftsWildcardQueryBoost ; ftsWildcardQueryMinTermLength ; includeInResponse[default=true] ; useForHighlighting[default=false]	;
-                                      ; pdf:$solrIndexedType	                                      	;                                                                                                   ;       ;                               ;                     ; true                    ; 43            ;                              ;                        ;                    ;                                 ;                                             ;                       ;                               ;                                 ; true								;
+                                      ; pdf:$solrIndexedType	                                      	;                                                                                                   ;       ;                               ;                     ; true                    ; 43            ;                              ;                        ;                    ;                                 ;                                             ;                       ;                               ;                                 ; false								;
 
 
 UPDATE SolrSearchQueryProperty; indexedProperty(&indexedProperty)[unique=true]	; useForHighlighting; ftsQuery	; ftsQueryBoost	;
-							  ; description										; true				; true		; 45			;
-							  ; summary											; true				; true		; 44			;
-							  ; pdf												; true				; true		; 43			;
+							  ; description										; false				; true		; 45			;
+							  ; summary											; false				; true		; 44			;
+							  ; pdf												; false				; true		; 43			;
 
 
 INSERT_UPDATE SolrSearchQueryProperty	; indexedProperty(name, solrIndexedType(identifier))[unique=true]	; facet[default=true]	; facetType(code) ; priority ; facetDisplayNameProvider ; facetSortProvider              ; facetTopValuesProvider   ; includeInResponse[default=true] ; searchQueryTemplate(name, indexedType(identifier))[unique=true][default=DEFAULT:$solrIndexedType]

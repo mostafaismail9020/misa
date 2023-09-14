@@ -35,6 +35,7 @@ public class SagiaExtSearchResultProductPopulator extends SearchResultProductPop
         }
         target.setResource(this.getValue(source, "resource"));
         target.setImageUrl(this.getValue(source, "picture"));
+        target.setExpectedIRR(this.getValue(source, "expectedIRR"));
         if (target.getResource().equals("Event")) {
         	SimpleDateFormat eventDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             target.setEventLocation(this.getValue(source, "eventLocation"));

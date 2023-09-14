@@ -37,7 +37,11 @@
 					</p>
 				</a>
 			</div>
-			<div class="market-info">Expected IRR: ~16%</div>
+			<div class="market-info">
+				<c:if test="${fn:length(result.expectedIRR) gt 0}">
+					<spring:theme code="portal.opportunity.details.expected.irr"/>(In %): ${result.opportunity.expectedIRR}
+				</c:if>
+			</div>
 			<div class="sector-name">${result.parentCategory}</div>
 		</div>
 	</div>

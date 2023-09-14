@@ -1645,6 +1645,11 @@
 			class="com.sap.ibso.eservices.core.sagia.provider.SagiaProductTypeProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
     </bean>
+
+	<bean id="sagiaExpectedIRRValueProvider" parent="abstractPropertyFieldValueProvider"
+			class="com.sap.ibso.eservices.core.sagia.provider.SagiaExpectedIRRValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+    </bean>
 	
     <bean id="sagiaBrandCategorySource" parent="defaultCategorySource">
         <property name="rootCategory" value="brands"/> <!-- 'brands' is the root of the brands hierarchy -->

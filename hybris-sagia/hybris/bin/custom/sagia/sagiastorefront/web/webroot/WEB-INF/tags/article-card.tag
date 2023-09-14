@@ -7,12 +7,15 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="articles-list mb-4 col-md-6">
 	<a href="${encodedContextPath}${result.opportunity.url}" title="${result.opportunity.name}">
 		<div class="articles-list-item ${className}">
 			${fn:escapeXml(result.opportunity.name)}
+            <p class="date">
+                <fmt:formatDate value="${result.opportunity.articleDate}" pattern="d MMM yyyy"/>
+            </p>
 			<p>
 				<c:choose>
 					<c:when test="${fn:length(result.opportunity.description) gt 150}">

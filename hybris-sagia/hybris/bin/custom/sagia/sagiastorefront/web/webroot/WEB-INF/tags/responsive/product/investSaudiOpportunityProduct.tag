@@ -340,7 +340,7 @@
 					<div class="jumbotron jumbotron-statistics-box statistics-stackeholders">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Key Stakeholders</h3>
+    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.key.stakeholders"/></h3>
     						</div>
     						<div class="col-md-12 col-12">
     							<div class="row justify-content-center">
@@ -385,38 +385,40 @@
     				</div>
 				</div>
 			</div>
-			<div class="row justify-content-between">
-				<div class="col-md-6 col-12">
-					<div class="jumbotron jumbotron-statistics-box">
-    					<div class="row">
-    						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Raw Materials</h3>
-    						</div>
-    						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${productData.rawMaterialText}</p>
-    						</div>
-    					</div>
-    				</div>
+			<c:if test="${not empty productData.rawMaterialText || not empty productData.globalTrendsText}">
+				<div class="row justify-content-between">
+					<div class="col-md-6 col-12">
+						<div class="jumbotron jumbotron-statistics-box">
+	    					<div class="row">
+	    						<div class="col-md-12 col-12">
+	    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.raw.materials"/></h3>
+	    						</div>
+	    						<div class="col-md-12 col-12">
+	    							<p class="opportunity-statics-desc">${productData.rawMaterialText}</p>
+	    						</div>
+	    					</div>
+	    				</div>
+					</div>
+					<div class="col-md-6 col-12">
+						<div class="jumbotron jumbotron-statistics-box">
+	    					<div class="row">
+	    						<div class="col-md-12 col-12">
+	    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.global.trends"/></h3>
+	    						</div>
+	    						<div class="col-md-12 col-12">
+	    							<p class="opportunity-statics-desc">${productData.globalTrendsText}</p>
+	    						</div>
+	    					</div>
+	    				</div>
+					</div>
 				</div>
-				<div class="col-md-6 col-12">
-					<div class="jumbotron jumbotron-statistics-box">
-    					<div class="row">
-    						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Global Trends</h3>
-    						</div>
-    						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${productData.globalTrendsText}</p>
-    						</div>
-    					</div>
-    				</div>
-				</div>
-			</div>
+			</c:if>
 			<div class="row" style="display: none;">
 				<div class="col-md-12 col-12">
 					<div class="jumbotron jumbotron-statistics-box special-statistics-box box-without-height ">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Market Size</h3>
+    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.market.size"/></h3>
     						</div>
     						<div class="col-md-12 col-12">
     							<p class="opportunity-statics-desc text-center">
@@ -427,38 +429,40 @@
     				</div>
 				</div>
 			</div>
-			<div class="row justify-content-between">
-				<div class="col-md-6 col-12">
-					<div class="jumbotron jumbotron-statistics-box">
-    					<div class="row">
-    						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Key Demand Drivers</h3>
-    						</div>
-    						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${productData.keyDemandDriversText}</p>
-    						</div>
-    					</div>
-    				</div>
+			<c:if test="${not empty productData.keyDemandDriversText || not empty productData.scalabilityAndLocalizationText}">
+				<div class="row justify-content-between">
+					<div class="${empty productData.scalabilityAndLocalizationText ? 'col-md-12' : 'col-md-6'} col-12 ${empty productData.keyDemandDriversText ? 'd-none' : ''}" style="${empty productData.scalabilityAndLocalizationText ? 'min-height: auto;' : ''}">
+						<div class="jumbotron jumbotron-statistics-box">
+	    					<div class="row">
+	    						<div class="col-md-12 col-12">
+	    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.key.demand.drivers"/></h3>
+	    						</div>
+	    						<div class="col-md-12 col-12">
+	    							<p class="opportunity-statics-desc">${productData.keyDemandDriversText}</p>
+	    						</div>
+	    					</div>
+	    				</div>
+					</div>
+					<div class="${empty productData.keyDemandDriversText ? 'col-md-12' : 'col-md-6'} col-12 ${empty productData.scalabilityAndLocalizationText ? 'd-none' : ''}" style="${empty productData.keyDemandDriversText ? 'min-height: auto;' : ''}">
+						<div class="jumbotron jumbotron-statistics-box">
+	    					<div class="row">
+	    						<div class="col-md-12 col-12">
+	    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.scalability.localization"/></h3>
+	    						</div>
+	    						<div class="col-md-12 col-12">
+	    							<p class="opportunity-statics-desc">${productData.scalabilityAndLocalizationText}</p>
+	    						</div>
+	    					</div>
+	    				</div>
+					</div>
 				</div>
-				<div class="col-md-6 col-12">
-					<div class="jumbotron jumbotron-statistics-box">
-    					<div class="row">
-    						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Scalability & Localization</h3>
-    						</div>
-    						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${productData.scalabilityAndLocalizationText}</p>
-    						</div>
-    					</div>
-    				</div>
-				</div>
-			</div>
+			</c:if>
 			<div class="row" style="display: none;">
 				<div class="col-md-12 col-12">
 					<div class="jumbotron jumbotron-statistics-box box-without-height ">
     					<div class="row">
     						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Value Chain ${fn:escapeXml(productData.valueChainText)}</h3>
+    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.value.chain"/> ${fn:escapeXml(productData.valueChainText)}</h3>
     						</div>
     						<div class="col-md-12 col-12">
     							<p class="opportunity-statics-desc text-center">
@@ -469,20 +473,22 @@
     				</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12 col-12">
-					<div class="jumbotron jumbotron-statistics-box box-without-height ">
-    					<div class="row">
-    						<div class="col-md-12 col-12">
-    							<h3 class="opportunity-statics-title text-center">Import Dependency</h3>
-    						</div>
-    						<div class="col-md-12 col-12">
-    							<p class="opportunity-statics-desc">${productData.importDependencyText}</p>
-    						</div>
-    					</div>
-    				</div>
+			<c:if test="${not empty productData.importDependencyText}">
+				<div class="row">
+					<div class="col-md-12 col-12">
+						<div class="jumbotron jumbotron-statistics-box box-without-height ">
+	    					<div class="row">
+	    						<div class="col-md-12 col-12">
+	    							<h3 class="opportunity-statics-title text-center"><spring:theme code="portal.opportunity.details.import.dependency"/></h3>
+	    						</div>
+	    						<div class="col-md-12 col-12">
+	    							<p class="opportunity-statics-desc">${productData.importDependencyText}</p>
+	    						</div>
+	    					</div>
+	    				</div>
+					</div>
 				</div>
-			</div>
+			</c:if>
 		</div>
 	</section>
 	

@@ -6439,6 +6439,10 @@ img.accountLogin-headline-logo {
 		margin-top: -16px !important;
 		margin-left:0 !important;
 	}
+
+	.opportunity-article-section-statistics .jumbotron-statistics-box {
+	    min-height: auto!important;
+	}
 }	
 
 @media (min-width: 320px) and (max-width: 430px) {

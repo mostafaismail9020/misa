@@ -6262,6 +6262,10 @@ img.accountLogin-headline-logo {
 		margin-top: -16px !important;
 		margin-left:0 !important;
 	}
+
+	.opportunity-article-section-statistics .jumbotron-statistics-box {
+	    min-height: auto!important;
+	}
 }
 
 @media(min-width:320px) and (max-width:430px) {
@@ -25753,6 +25757,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .opportunity-article-section-statistics .jumbotron-statistics-box .opportunity-statics-desc + ul * {
 	color: var(--misaDarkGrayText);
+	text-align: right;
 }
 
 .opportunity-article-section-statistics .special-statistics-box {
@@ -25762,6 +25767,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     border-radius: 10px;
     padding: 25px;
     min-height: 22rem;
+    text-align: right;
 }
 
 .opportunity-article-section-statistics .special-statistics-box .opportunity-statics-title {

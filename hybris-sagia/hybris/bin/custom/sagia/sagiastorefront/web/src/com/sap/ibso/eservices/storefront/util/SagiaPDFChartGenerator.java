@@ -43,6 +43,9 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @Component("sagiaPDFChartGenerator")
 public class SagiaPDFChartGenerator {
 
@@ -496,6 +499,23 @@ public class SagiaPDFChartGenerator {
 
 	}
 
+	public String extractTextFromHtml(String formattedText) {
+		String htmlRegex =  "<[^>]+>";
+		// Define the regex pattern
+		Pattern pattern = Pattern.compile(htmlRegex);
+
+		// Create a matcher for the input text
+		Matcher matcher = pattern.matcher(formattedText);
+
+		// Check if any HTML tags are found
+		if(matcher.find()) {
+			Document descDocument = Jsoup.parse(formattedText);
+			formattedText = descDocument.text().trim();
+		}
+
+		return formattedText;
+	}
+
 	/**
 	 * To fill the provided text in the specified position with customization
 	 * @param text
@@ -511,13 +531,10 @@ public class SagiaPDFChartGenerator {
 						 float fontSize, String fieldName, int maxFieldLength, boolean multiLineText) throws IOException {
 		if (text != null) {
 			String MORE =  "...";
+			int numberOfLines = 0;
 
 			// To Extract text if there is formatted html in the input Text
-			String htmlRegex =  "<(.+)>.*</\\1>";
-			if(text.matches(htmlRegex)) {
-				Document descDocument = Jsoup.parse(text);
-				text = descDocument.text().trim();
-			}
+			text = extractTextFromHtml(text);
 
 			// Truncate the string to max length available on pdf template
 			if(text.length() > maxFieldLength) {
@@ -550,8 +567,11 @@ public class SagiaPDFChartGenerator {
 					split the text to multiple lines and write to the PDF */
 					String[] lines = splitLongString(text, maxLineLength);
 					for (String line : lines) {
+						if(numberOfLines == 3)
+							break;
 						contentStream.showText(line);
 						contentStream.newLine();
+						numberOfLines++;
 					}
 				} else {
 					contentStream.showText(text);

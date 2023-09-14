@@ -15,6 +15,7 @@ import de.hybris.platform.servicelayer.search.SearchResult;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
@@ -25,11 +26,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 
 public class SagiaKeyStakeholdersImageGeneratorJob extends AbstractJobPerformable<CronJobModel> {
 
@@ -50,10 +54,27 @@ public class SagiaKeyStakeholdersImageGeneratorJob extends AbstractJobPerformabl
 	@Override
 	public PerformResult perform(CronJobModel cronjob) {
 		LOG.info("Starting the process of converting encoded Media for OpportunityProduct...");
+		// Create a SimpleDateFormat instance with the desired format
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
+		// Get the current date and time
+		Date now = new Date();
+
+		// Subtract 20 days
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(now);
+		cal.add(Calendar.DATE, - 20);
+		Date someDaysAgo = cal.getTime();
+
+		// Convert to desired string format
+		String formattedSomeDaysAgo = sdf.format(someDaysAgo);
+
+		// Log or print for verification
+		LOG.info("Formatted date: " + formattedSomeDaysAgo);
 		
-		final FlexibleSearchQuery queryOpportunity = new FlexibleSearchQuery("select {op.pk} from {Media as m},{OpportunityProduct as op},{CatalogVersion as cv},{Catalog as c} where  {op.systemOrigin} = 'C4C' and {m.isKeyStakeholderLogo} = 1 and {op.catalogVersion} = {cv.pk} and {cv.catalog} = {c.pk} and {c.id} = 'sagiaProductCatalog' and {cv.version} = 'Staged'");
-        LOG.info("Query is --> "+queryOpportunity.toString());
+		final FlexibleSearchQuery queryOpportunity = new FlexibleSearchQuery("select {op.pk} from {Media as m},{OpportunityProduct as op},{CatalogVersion as cv},{Catalog as c} where  {op.systemOrigin} = 'C4C' and {m.isKeyStakeholderLogo} = 1 and {op.catalogVersion} = {cv.pk} and {cv.catalog} = {c.pk} and {c.id} = 'sagiaProductCatalog' and {cv.version} = 'Staged' and {op.creationtime} >= ?tenDaysAgo");
+		queryOpportunity.addQueryParameter("tenDaysAgo", formattedSomeDaysAgo);
+		LOG.info("Query is --> "+queryOpportunity.toString());
 		Set<MediaModel> mediaList = new HashSet<>();
 
 		SearchResult<OpportunityProductModel> searchResult = flexibleSearchService.search(queryOpportunity);

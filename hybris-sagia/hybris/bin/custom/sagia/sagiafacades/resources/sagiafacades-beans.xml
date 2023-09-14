@@ -3574,6 +3574,7 @@
 		<property name="easeOfGettingCredit" type="java.lang.String"/>
 		<property name="constructionCosts" type="java.lang.String"/>
 		<property name="segmentName" type="java.lang.String"/>
+		<property name="systemOrigin" type="java.lang.String"/>
 		
 
     </bean>

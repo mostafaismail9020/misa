@@ -78,6 +78,7 @@ public class InvestSaudiOpportunityPopulator implements Populator<ProductData, O
         productData.setProductType(TYPE);
         productData.setProductReferences(populateProductReference(productModel.getProductReferences()));
         productData.setPartnerMap(populateProductPartnerDetails(productModel.getPartner()));
+        productData.setSystemOrigin(productModel.getSystemOrigin());
         
         final MediaModel overviewImage = productModel.getPicture();
         if (overviewImage != null) {

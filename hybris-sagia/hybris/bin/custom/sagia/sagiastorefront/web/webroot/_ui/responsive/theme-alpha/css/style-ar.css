@@ -27346,3 +27346,11 @@ font-size: 14px !important;
 		width: 100%;
 	}
 }
+
+.rotate-img-180 {
+	-webkit-transform:rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}

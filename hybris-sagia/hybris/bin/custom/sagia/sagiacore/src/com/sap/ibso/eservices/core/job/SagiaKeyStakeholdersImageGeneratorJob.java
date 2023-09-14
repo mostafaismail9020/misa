@@ -69,15 +69,15 @@ public class SagiaKeyStakeholdersImageGeneratorJob extends AbstractJobPerformabl
 							System.out.println("******************* Before creating temp file *******************");
 							Path tempFile = Files.createTempFile(media.getCode(), PNG_FILE_TYPE);
 							try {
-								System.out.println("******************* Before writing temp file *******************");
+								LOG.info("******************* Before writing temp file *******************");
 								Files.write(tempFile, decodedBytes);
 
 								// Delete existing media if present
-								System.out.println("******************* Before deleting existing media *******************");
+								LOG.info("******************* Before deleting existing media *******************");
 								deleteExistingMedia(media.getCode());
 
 								// Create a new media model and save it to the media storage
-								System.out.println("******************* Before creating and saving new media *******************");
+								LOG.info("******************* Before creating and saving new media *******************");
 								MediaModel newMedia = createAndSaveNewMedia(media, tempFile);
 
 								// Import the file into media storage.

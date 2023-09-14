@@ -14454,6 +14454,7 @@ border-color: var(--misaPrimaryBtnColor);
 
 .opp-filter-container .facet ul li {
     padding-left: 0;
+    z-index: 1;
 }
 
 .opp-filter-container .facet ul li:before {

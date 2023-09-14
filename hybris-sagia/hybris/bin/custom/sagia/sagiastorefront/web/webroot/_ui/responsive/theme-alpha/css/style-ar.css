@@ -14418,6 +14418,7 @@ border-color: var(--misaFirstColor);
 
 .opp-filter-container .facet ul li {
     padding-right: 0;
+    z-index: 1;
 }
 
 .opp-filter-container .facet ul li:before {

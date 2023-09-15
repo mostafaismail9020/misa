@@ -39,7 +39,7 @@
 			</div>
 			<div class="market-info">
 				<c:if test="${fn:length(result.expectedIRR) gt 0}">
-					<spring:theme code="portal.opportunity.details.expected.irr"/>(In %): ${result.opportunity.expectedIRR}
+					<spring:theme code="portal.opportunity.details.expected.irr"/>(In %): ${result.expectedIRR}
 				</c:if>
 			</div>
 			<div class="sector-name">${result.parentCategory}</div>

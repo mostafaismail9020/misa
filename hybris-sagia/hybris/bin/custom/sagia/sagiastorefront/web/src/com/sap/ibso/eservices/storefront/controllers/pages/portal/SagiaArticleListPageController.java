@@ -3,7 +3,6 @@
  */
 package com.sap.ibso.eservices.storefront.controllers.pages.portal;
 
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/articlesList")
 public class SagiaArticleListPageController extends SagiaSearchPageController
 {
+	private static final String DEFAULT_SORT_TYPE = ":creationTime-desc";
 	private static final String ARTICLE_LIST_PAGE = "article-list-page";
-	private static final Logger LOG = Logger.getLogger(SagiaArticleListPageController.class);
 	
 	@Override
 	protected String getPageId() {
@@ -23,5 +22,9 @@ public class SagiaArticleListPageController extends SagiaSearchPageController
 	@Override
 	protected String getFilterParam() {
 		return ":resource:Article";
+	}
+	
+	protected String getDefaultSort() {
+		return DEFAULT_SORT_TYPE;
 	}
 }

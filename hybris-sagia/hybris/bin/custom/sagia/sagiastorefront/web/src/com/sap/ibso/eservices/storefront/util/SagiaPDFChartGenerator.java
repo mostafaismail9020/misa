@@ -65,24 +65,18 @@ public class SagiaPDFChartGenerator {
 
 	private static final String KSA_TIME_ZONE = "Asia/Riyadh";
 
-	private String title = "Invesment Opportunity Title";
-	private String desc = "Opportunity brief description";
-	private String sector = "Opportunity Sector";
-	private String segment = "Opportunity segment";
-	private String electricityTariffs = "48";
-	private String productivityAdjustedWages = "3.3";
-	private String logisticsPerformanceIndex = "3.2";
-	private String constructionCosts = "74";
-	private String tags = "List of key words linked to the investment opportunity";
-	private String investmentHighlights = "Expected Investment size, Plant capacity, Expected IRR, Payback period, Job Creation, GDP Impact, Location (Region):";
-	private String incentivesAndEnablers = "Factors that enable investment in the underlying opportunity such as General Incentive and financing";
-	private String valueProposition = "Summary of key differentiators that position KSA as a strategic choice over other regional/global peers";
-	private String keyStakeholders = "Government institutions, organizations, and/or authorities that participate or influence the market for the underlying product/service Logos";
-	private String rawMaterials = "Raw Materials";
-	private String globalTrends = "Latest business developments within the sector/product category";
-	private String keyDemandDrivers = "Selected number of factors that will influence future demand for the related product/service";
-	private String scalabilityAndLocalization = "Ease of scaling the business across the value chain or into new adjacent products or geographies that would maximize the opportunity’s investment returns and the ability and potential to locally manufacture the product and its components";
-	private String importDependency = "An overview of the countries from which Saudi Arabia is importing the product and their value/volume and share in total import";
+	private String sector = "";
+	private String segment = "";
+	private String incentivesAndEnablers = "";
+	private String valueProposition = "";
+	private String keyStakeholders = "";
+	private String rawMaterials = "";
+	private String globalTrends = "";
+	private String keyDemandDrivers = "";
+	private String scalabilityAndLocalization = "";
+	private String importDependency = "";
+	private String demandCagr = "";
+
 	private boolean isPrimaryPDF = false;
 
 	private boolean page1 = false;
@@ -240,8 +234,7 @@ public class SagiaPDFChartGenerator {
 				contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
 				page1 = true;
 				// Opportunity Title
-				fillText(isNullOrBlank(opportunity.getName()) ? title : opportunity.getName(), contentStream,
-						getValue("opportunity.page1.title.posX", 58),
+				fillText(opportunity.getName(), contentStream, getValue("opportunity.page1.title.posX", 58),
 						getValue("opportunity.page1.title.posY", 450),
 						getValue("opportunity.page1.title.font.size", 16),
 						"Opportunity Title", 60, false);
@@ -267,12 +260,12 @@ public class SagiaPDFChartGenerator {
 				page = document.getPage(1);
 				contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
 				// Opportunity Title
-				fillText(isNullOrBlank(opportunity.getName()) ? title : opportunity.getName(), contentStream,
+				fillText(opportunity.getName(), contentStream,
 						getValue("opportunity.page2.title.posX", 152),
 						getValue("opportunity.page2.title.posY", 462),
 						getValue("opportunity.page2.title.font.size", 12), "Opportunity Title", 63, false);
 				// Description
-				fillText(isNullOrBlank(opportunity.getDescription()) ? desc : opportunity.getDescription(), contentStream,
+				fillText(opportunity.getDescription(), contentStream,
 						getValue("opportunity.page2.description.posX", 152),
 						getValue("opportunity.page2.description.posY", 428),
 						getValue("opportunity.page2.description.font.size", 12), "Opportunity Description", 63, false);
@@ -292,7 +285,7 @@ public class SagiaPDFChartGenerator {
 						getValue("opportunity.page2.segment.posY", 428),
 						getValue("opportunity.page2.segment.font.size", 12), "Opportunity Segment", 63, false);
 				// Tags
-				fillText(isNullOrBlank(opportunity.getSagiaKeywords()) ? tags : opportunity.getSagiaKeywords(), contentStream,
+				fillText(opportunity.getSagiaKeywords(), contentStream,
 						getValue("opportunity.page2.tags.posX", 152),
 						getValue("opportunity.page2.tags.posY", 395),
 						getValue("opportunity.page2.tags.font.size", 12), "Tags", 155, false);
@@ -434,68 +427,60 @@ public class SagiaPDFChartGenerator {
 	}
 
 	private void createCDB(PDDocument document,PDPageContentStream contentStream, OpportunityProductModel opportunity) throws IOException {
-		File media = getMedia(Config.getString("opportunity.media.image.name", "CODB_IMAGE"), "png");
-		if(Objects.nonNull(media)) {
-			PDImageXObject pdImage = PDImageXObject.createFromFile(media.getPath(), document);
+		InvestmentOverviewModel investmentOverview = opportunity.getInvestmentOverview();
 
-			contentStream.drawImage(pdImage,getValue("opportunity.page2.CODB.image.posX", 620),
-					getValue("opportunity.page2.CODB.image.posY", 55),
-					getValue("opportunity.page2.CODB.image.width", 260),
-					getValue("opportunity.page2.CODB.image.height", 200));
+		if(Objects.nonNull(investmentOverview)) {
+			CostOfDoingBusinessModel costOfDoingBusiness = investmentOverview.getCostOfDoingBusiness();
 
-			LOG.info("Cost of doing business field is filled in page 2");
+			if(Objects.nonNull(costOfDoingBusiness)) {
+				String electricityTariffs = costOfDoingBusiness.getElectricityTariffs();
+				String productivityAdjustedWages = costOfDoingBusiness.getProductivityAdjustedWages();
+				String logisticsPerformanceIndex = costOfDoingBusiness.getProductivityAdjustedWages();
+				String constructionCosts = costOfDoingBusiness.getConstructionCosts();
 
-			InvestmentOverviewModel investmentOverview = opportunity.getInvestmentOverview();
-			if(Objects.nonNull(investmentOverview)) {
-				CostOfDoingBusinessModel costOfDoingBusiness = investmentOverview.getCostOfDoingBusiness();
-				if(Objects.nonNull(costOfDoingBusiness)) {
+				// Draw the image if atleast one stat is available
+				if (!isNullOrBlank(electricityTariffs) || !isNullOrBlank(productivityAdjustedWages)
+						|| !isNullOrBlank(logisticsPerformanceIndex) || !isNullOrBlank(constructionCosts)) {
+					File media = getMedia(Config.getString("opportunity.media.image.name", "CODB_IMAGE"), "png");
+					if(Objects.nonNull(media)) {
+						PDImageXObject pdImage = PDImageXObject.createFromFile(media.getPath(), document);
 
-					electricityTariffs = isNullOrBlank(costOfDoingBusiness
-							.getElectricityTariffs()) ? electricityTariffs : costOfDoingBusiness
-							.getElectricityTariffs();
+						contentStream.drawImage(pdImage,getValue("opportunity.page2.CODB.image.posX", 620),
+								getValue("opportunity.page2.CODB.image.posY", 55),
+								getValue("opportunity.page2.CODB.image.width", 260),
+								getValue("opportunity.page2.CODB.image.height", 200));
+					}
+					// Electricity Tariffs
+					if(!electricityTariffs.isBlank() && !electricityTariffs.contains("/MWh")) {
+						electricityTariffs = "$" + electricityTariffs + " /MWh";
+					}
+					fillText(electricityTariffs, contentStream, getValue("opportunity.page2.electricityTariffs.posX", 805),
+							getValue("opportunity.page2.electricityTariffs.posY", 218),
+							getValue("opportunity.page2.electricityTariffs.font.size", 10), "CODB", 10, false);
 
-					productivityAdjustedWages = isNullOrBlank(costOfDoingBusiness
-							.getProductivityAdjustedWages()) ? productivityAdjustedWages : costOfDoingBusiness
-							.getProductivityAdjustedWages();
+					// Productivity Adjusted Wages
+					if(!productivityAdjustedWages.isBlank() && !productivityAdjustedWages.contains("/hour")) {
+						productivityAdjustedWages = "$" + productivityAdjustedWages + " /hour";
+					}
+					fillText(productivityAdjustedWages, contentStream, getValue("opportunity.page2.productivityWages.posX", 845),
+							getValue("opportunity.page2.productivityWages.posY", 170),
+							getValue("opportunity.page2.productivityWages.font.size", 10), "CODB", 10, false);
 
-					logisticsPerformanceIndex = isNullOrBlank(costOfDoingBusiness
-							.getLogisticsPerformanceIndex()) ? logisticsPerformanceIndex : costOfDoingBusiness
-							.getLogisticsPerformanceIndex();
+					// Logistics Performance Index
+					fillText(logisticsPerformanceIndex, contentStream, getValue("opportunity.page2.logisticsPerformance.posX", 808),
+							getValue("opportunity.page2.logisticsPerformance.posY", 122),
+							getValue("opportunity.page2.logisticsPerformance.font.size", 10), "CODB", 10, false);
 
-					constructionCosts = isNullOrBlank(costOfDoingBusiness
-							.getConstructionCosts()) ? constructionCosts : costOfDoingBusiness
-							.getConstructionCosts();
+					// Construction Costs
+					fillText(constructionCosts, contentStream, getValue("opportunity.page2.constructionCosts.posX", 810),
+							getValue("opportunity.page2.constructionCosts.posY", 74),
+							getValue("opportunity.page2.constructionCosts.font.size", 10), "CODB", 10, false);
 
+					LOG.info("Cost of doing business Stats are filled in page 2");
 				}
 			}
 		}
-		// Electricity Tariffs
-		if(!electricityTariffs.contains("/MWh")) {
-			electricityTariffs = "$" + electricityTariffs + " /MWh";
-		}
-		fillText(electricityTariffs, contentStream, getValue("opportunity.page2.electricityTariffs.posX", 805),
-				getValue("opportunity.page2.electricityTariffs.posY", 218),
-				getValue("opportunity.page2.electricityTariffs.font.size", 10), "CODB", 10, false);
 
-		// Productivity Adjusted Wages
-		if(!productivityAdjustedWages.contains("/hour")) {
-			productivityAdjustedWages = "$" + productivityAdjustedWages + " /hour";
-		}
-		fillText(productivityAdjustedWages, contentStream, getValue("opportunity.page2.productivityWages.posX", 845),
-				getValue("opportunity.page2.productivityWages.posY", 170),
-				getValue("opportunity.page2.productivityWages.font.size", 10), "CODB", 10, false);
-
-		// Logistics Performance Index
-		fillText(logisticsPerformanceIndex, contentStream, getValue("opportunity.page2.logisticsPerformance.posX", 808),
-				getValue("opportunity.page2.logisticsPerformance.posY", 122),
-				getValue("opportunity.page2.logisticsPerformance.font.size", 10), "CODB", 10, false);
-
-		// Construction Costs
-		fillText(constructionCosts, contentStream, getValue("opportunity.page2.constructionCosts.posX", 810),
-				getValue("opportunity.page2.constructionCosts.posY", 74),
-				getValue("opportunity.page2.constructionCosts.font.size", 10), "CODB", 10, false);
-
-		LOG.info("Cost of doing business Stats are filled in page 2");
 
 	}
 
@@ -529,7 +514,7 @@ public class SagiaPDFChartGenerator {
 	 */
 	public void fillText(String text, PDPageContentStream contentStream, float posX, float posY,
 						 float fontSize, String fieldName, int maxFieldLength, boolean multiLineText) throws IOException {
-		if (text != null) {
+		if (text != null && !text.isBlank()) {
 			String MORE =  "...";
 			int numberOfLines = 0;
 
@@ -614,28 +599,19 @@ public class SagiaPDFChartGenerator {
 	}
 
 	private void createStackedBarChart(PDDocument document, PDPageContentStream contentStream, OpportunityProductModel opportunity) throws IOException {
-		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-		dataset.addValue(0.7, "KSA", "2018");
-		dataset.addValue(0.7,"KSA",  "2020");
-		dataset.addValue(0.9,"KSA", "2025");
-		dataset.addValue(1.1,"KSA", "2030");
-		dataset.addValue(1.3,"KSA", "2035");
-
-		dataset.addValue(0.8, "Rest Gcc", "2018");
-		dataset.addValue(0.8,"Rest Gcc",  "2020");
-		dataset.addValue(1,"Rest Gcc", "2025");
-		dataset.addValue(1.2,"Rest Gcc", "2030");
-		dataset.addValue(1.4,"Rest Gcc", "2035");
+		DefaultCategoryDataset dataset = null;
 
 		DemandModel demand = opportunity.getDemand();
 		if(Objects.nonNull(demand) && Objects.nonNull(demand.getMarkets())) {
 			Set<MarketModel> marketList = demand.getMarkets();
 
 			if(!marketList.isEmpty()) {
+				LOG.info("Market Data found to generate the graph.");
+
 				dataset = new DefaultCategoryDataset();
 				for (MarketModel market : marketList) {
 					// Assuming market codes are unique, we can use them as series identifiers
-					String marketCodeSeries = market.getName(); // Replace getMarketCode() with your actual getter method
+					String marketCodeSeries = market.getName();
 
 					// Split the years and market sizes
 					String[] years = market.getYears().split(",");
@@ -646,82 +622,85 @@ public class SagiaPDFChartGenerator {
 						double marketSizeValue = Double.parseDouble(marketSizes[i].trim());
 						dataset.addValue(marketSizeValue, marketCodeSeries, yearCategory);
 					}
-					LOG.info("Market Data found to generate graph.");
 				}
 			} else {
-				LOG.info("No Market Data found in Opportunity Demand object, using stock data to generate graph.");
+				LOG.info("No Market Data found in Opportunity Demand object.");
 			}
 		}
 
-		JFreeChart chart = ChartFactory.createBarChart(
-				"MARKET SIZE, USD",
-				"",
-				"",
-				dataset,
-				PlotOrientation.VERTICAL,
-				true,
-				true,
-				false
-		);
+		if(dataset != null) {
+			JFreeChart chart = ChartFactory.createBarChart(
+					"MARKET SIZE, USD",
+					"",
+					"",
+					dataset,
+					PlotOrientation.VERTICAL,
+					true,
+					true,
+					false
+			);
 
-		// Chart Customization
-		CategoryPlot plot = chart.getCategoryPlot();
-		plot.setRenderer(new CategoryItemRenderer());
-		plot.setBackgroundPaint(new Color(0, 0, 0, 0)); // Transparent background
-		BarRenderer renderer = (BarRenderer) plot.getRenderer();
-		renderer.setMaximumBarWidth(0.1);
+			// Chart Customization
+			CategoryPlot plot = chart.getCategoryPlot();
+			plot.setRenderer(new CategoryItemRenderer());
+			plot.setBackgroundPaint(new Color(0, 0, 0, 0)); // Transparent background
+			BarRenderer renderer = (BarRenderer) plot.getRenderer();
+			renderer.setMaximumBarWidth(0.1);
 
-		// Set the font size for the chart title
-		Font titleFont = chart.getTitle().getFont();
-		Font newTitleFont = titleFont.deriveFont(12f); // Change the font size to 18
-		chart.getTitle().setFont(newTitleFont);
-		chart.getTitle().setPaint(new Color(48, 135, 42));
+			// Set the font size for the chart title
+			Font titleFont = chart.getTitle().getFont();
+			Font newTitleFont = titleFont.deriveFont(12f); // Change the font size to 18
+			chart.getTitle().setFont(newTitleFont);
+			chart.getTitle().setPaint(new Color(48, 135, 42));
 
-		// Get the CategoryAxis object from the CategoryPlot object.
-		CategoryAxis axis = plot.getDomainAxis();
+			// Get the CategoryAxis object from the CategoryPlot object.
+			CategoryAxis axis = plot.getDomainAxis();
 
-		// Get the ValueAxis object from the CategoryPlot object.
-		NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
+			// Get the ValueAxis object from the CategoryPlot object.
+			NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 
-		// Set the font size of the CategoryAxis object and the ValueAxis object to 8pt.
-		axis.setTickLabelFont(new Font("Arial", Font.PLAIN, 8));
-		rangeAxis.setTickLabelFont(new Font("Arial", Font.PLAIN, 8));
+			// Set the font size of the CategoryAxis object and the ValueAxis object to 8pt.
+			axis.setTickLabelFont(new Font("Arial", Font.PLAIN, 8));
+			rangeAxis.setTickLabelFont(new Font("Arial", Font.PLAIN, 8));
 
-		// Set custom colors for each section of the bars
-		renderer.setSeriesPaint(0, new Color(89, 168, 110));
-		renderer.setSeriesPaint(1, new Color(145, 129, 64));
+			// Set custom colors for each section of the bars
+			renderer.setSeriesPaint(0, new Color(89, 168, 110));
+			renderer.setSeriesPaint(1, new Color(145, 129, 64));
 
-		// Set flat colors without gradients
-		renderer.setBarPainter(new StandardBarPainter());
-		// Set the outline visible to false for a flat appearance
-		renderer.setDrawBarOutline(false);
-		// Remove the shadow from the bars
-		renderer.setShadowVisible(false);
+			// Set flat colors without gradients
+			renderer.setBarPainter(new StandardBarPainter());
+			// Set the outline visible to false for a flat appearance
+			renderer.setDrawBarOutline(false);
+			// Remove the shadow from the bars
+			renderer.setShadowVisible(false);
 
-		ByteArrayOutputStream chartImageStream = new ByteArrayOutputStream();
-		ChartUtilities.writeChartAsPNG(chartImageStream, chart,
-				(int) getValue("opportunity.page3.marketSize.graph.width", 220),
-				(int) getValue("opportunity.page3.marketSize.graph.height", 200));
+			ByteArrayOutputStream chartImageStream = new ByteArrayOutputStream();
+			ChartUtilities.writeChartAsPNG(chartImageStream, chart,
+					(int) getValue("opportunity.page3.marketSize.graph.width", 220),
+					(int) getValue("opportunity.page3.marketSize.graph.height", 200));
 
-		PDImageXObject chartImage = PDImageXObject.createFromByteArray(document, chartImageStream.toByteArray(), "Chart Image");
+			PDImageXObject chartImage = PDImageXObject.createFromByteArray(document, chartImageStream.toByteArray(), "Chart Image");
 
-		contentStream.drawImage(chartImage,
-				getValue("opportunity.page3.marketSize.graph.posX", 493),
-				getValue("opportunity.page3.marketSize.graph.posY", 275));
+			contentStream.drawImage(chartImage,
+					getValue("opportunity.page3.marketSize.graph.posX", 493),
+					getValue("opportunity.page3.marketSize.graph.posY", 275));
 
-		LOG.info("Graph created with data set");
-		// Demand CAGR
-		String demandCagr = "CAGR 3.6%";
-		if(Objects.nonNull(opportunity.getDemand()) && Objects.nonNull(opportunity.getDemand().getCagr())) {
-			String cagr = String.valueOf(opportunity.getDemand().getCagr());
-			if(!cagr.contains("%")) {
-				cagr = "CAGR " + cagr + "%";
+			LOG.info("Graph created with data set");
+
+			// Demand CAGR
+			if(Objects.nonNull(demand.getCagr())) {
+				String cagr = String.valueOf(demand.getCagr());
+				if(!cagr.contains("%")) {
+					demandCagr = "CAGR " + cagr + "%";
+				}
+
+				fillText(demandCagr, contentStream, getValue("opportunity.page3.cagr.posX", 560),
+						getValue("opportunity.page3.cagr.posY", 425),
+						getValue("opportunity.page3.cagr.font.size", 9), "CAGR", 10, false);
 			}
-
-			fillText(isNullOrBlank(cagr) ? demandCagr: cagr, contentStream, getValue("opportunity.page3.cagr.posX", 560),
-					getValue("opportunity.page3.cagr.posY", 425),
-					getValue("opportunity.page3.cagr.font.size", 9), "CAGR", 10, false);
 		}
+
+
 
 	}
 

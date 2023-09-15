@@ -154,7 +154,7 @@ section {
 	font-size: 14px;
 	transition: all 1s;
 	color: rgba(255, 255, 255, 0.6);
-	z-index: 9999;
+	z-index: 9995;
 }
 
 #topbar.topbar-scrolled {
@@ -260,8 +260,12 @@ ul.sagiaNavigation-subNav li svg {
 #header {
 	background: transparent;
 	transition: all 0.5s;
-	z-index: 997;
+	z-index: 9999;
 	top: 75px;
+}
+
+.mobile-nav-active #header {
+	z-index: 9994;
 }
 
 #header .hd-scroll {
@@ -626,7 +630,7 @@ ul.dropdown-list li a {
 	position: fixed;
 	right: 15px;
 	top: 15px;
-	z-index: 9998;
+	z-index: 10000;
 	border: 0;
 	background: none;
 	font-size: 24px;

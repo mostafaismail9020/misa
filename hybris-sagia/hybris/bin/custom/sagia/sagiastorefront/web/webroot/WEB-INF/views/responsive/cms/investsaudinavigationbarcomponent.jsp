@@ -456,7 +456,6 @@
 				</ul>
 				<a href="http://vision2030.gov.sa/ar/" class="Header_vs_logo d-none"><img src="${commonResourcePath}/images/Header_VS_2030.svg" /></a>
 			</nav>
-			
 		</div>
 		<div id="user-icons" class="user-icons-header p-0 d-none">
 			<div class=" user-icon mr-1 mr-md-3">

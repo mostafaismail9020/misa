@@ -14604,3 +14604,42 @@ transition: 0.2s all linear;
 width:97%
 }
 }
+
+.visitingInvAdv .aboutAdvantageTxt{
+    font-size: 24px;
+}
+
+
+@media (min-width: 1400px) and (max-width: 1642px){
+.visitingInvAdv .aboutAdvantageTxt{
+    font-size: 20px;
+}
+}
+@media (min-width: 1200px) and (max-width: 1399px){
+.visitingInvAdv .aboutAdvantageTxt{
+font-size: 18px;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px){
+
+.visitingInvAdv .aboutAdvantageTxt{
+    font-size: 22px;
+
+}
+}
+@media (min-width: 768px) and (max-width: 991px){
+.visitingInvAdv .aboutAdvantageTxt {
+    font-size: 20px;
+}
+}
+@media (min-width: 543px) and (max-width: 767px){
+.visitingInvAdv .aboutAdvantageTxt{
+    font-size: 18px;
+}
+}
+
+@media (max-width: 542px){
+.visitingInvAdv .aboutAdvantageTxt {
+    font-size: 20px;
+}
+}

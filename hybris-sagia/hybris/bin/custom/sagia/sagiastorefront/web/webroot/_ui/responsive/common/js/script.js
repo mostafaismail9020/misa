@@ -902,7 +902,7 @@ $('body.page-economic-highlights .eh-page-breadcrums .toggle-div.container-fluid
 // ------------------------------------------------------------------------------------------------------------------------
 
 $(document).ready(function () {
-	try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
+	//try{am4core.addLicense("CH292550473");}catch(err){console.log(err);}
 	window.onbeforeunload = function () {
 		window.scrollTo(0, 0);
 	}
@@ -4465,11 +4465,11 @@ var script = document.createElement('script');
     script.type = 'application/javascript';
     script.src = 'https://unpkg.com/swiper/swiper-bundle.min.js';
     document.body.appendChild(script);
-    $(document).ready(function () {
+    /*$(document).ready(function () {
         setTimeout(function () {
             InitializeSwiper();
         }, 500);
-    })
+    })*/
 
     function InitializeSwiper() {
         var swiper = new Swiper('.swiper-container-invest', {
@@ -5577,7 +5577,7 @@ $('.form-icon_reset').click(function(){
          // Display Popup  - End
       // Investor Visa Js - End 
 			
-var swiper = new Swiper(".targetedMySwiper", {
+/*var swiper = new Swiper(".targetedMySwiper", {
 	slidesPerView: 1,
 	spaceBetween: 10,
 	pagination: {
@@ -5606,11 +5606,8 @@ var swiper = new Swiper(".targetedMySwiper", {
 		spaceBetween: 10,
 	  },
 	  1800: {
-slidesPerView: 3,
+		slidesPerView: 3,
 		spaceBetween: 50,
-		},
+	  },
 	},
-  });
-
-
-
+});*/

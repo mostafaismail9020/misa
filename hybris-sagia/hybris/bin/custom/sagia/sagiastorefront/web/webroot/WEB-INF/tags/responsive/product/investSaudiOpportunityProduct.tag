@@ -107,13 +107,13 @@
 									</div>
 									<div class="col-md-12 col-12 mt-3">
 										<div class="row">
-											<div class="col-md-5">
+											<div class="col-md-12 mt-1 mb-1"><spring:theme code="portal.opportunity.details.download.opportunity"/></div>
+											<div class="col-md-12">
 												<button class="btn btn-download-pdf-opportunity col" id="controllerButton" class="button" onclick="callController()">
 													<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
 												</button>
 												<button class="btn btn-download-pdf-opportunity col mt-2" id="buttonWithText" class="button" style="display: none;"><spring:theme code="portal.opportunity.details.download.processing"/></button>
 											</div>
-											<div class="col-md-7 mt-3 text-center"><spring:theme code="portal.opportunity.details.download.opportunity"/></div>
 											<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
 										</div>
 									</div>
@@ -218,7 +218,7 @@
 												</label>
 												<textarea class="form-control required" cols="10" style="border-radius: 10px;"
 														  data-val-required="Required" id="crMessage" name="Message" rows="5">
-			                            </textarea>
+			                            		</textarea>
 												<small class="error-msg"></small>
 											</div>
 										</div>
@@ -532,13 +532,13 @@
 									</div>
 									<div class="col-md-12 col-12 mt-3">
 										<div class="row">
-											<div class="col-md-5">
+											<div class="col-md-12 mt-1 mb-1"><spring:theme code="portal.opportunity.details.download.opportunity"/></div>
+											<div class="col-md-12">
 												<button class="btn btn-download-pdf-opportunity col" id="controllerButton" class="button" onclick="callController()">
 													<img class="img-fluid" src="${commonResourcePath}/images/download.png" alt="<spring:theme code="portal.sector.download.label"/>"/>
 												</button>
 												<button class="btn btn-download-pdf-opportunity col mt-2" id="buttonWithText" class="button" style="display: none;"><spring:theme code="portal.opportunity.details.download.processing"/></button>
 											</div>
-											<div class="col-md-7 mt-3 text-center"><spring:theme code="portal.opportunity.details.download.opportunity"/></div>
 											<form id="controllerForm" action="<c:url value='/merged-pdf-download/${productData.code}' />" method="get" style="display: none;"></form>
 										</div>
 									</div>
@@ -643,7 +643,7 @@
 												</label>
 												<textarea class="form-control required" cols="10" style="border-radius: 10px;"
 														  data-val-required="Required" id="crMessage" name="Message" rows="5">
-			                            </textarea>
+			                            		</textarea>
 												<small class="error-msg"></small>
 											</div>
 										</div>
@@ -671,7 +671,7 @@
 			<section class="opportunity-article-section-statistics">
 				<div class="container">
 					<div class="row justify-content-between">
-						<div class="col-md-6 col-12">
+						<div class="col-md-12 col-12 text-center">
 							<div class="jumbotron jumbotron-statistics-box">
 								<div class="row">
 									<div class="col-md-12 col-12">

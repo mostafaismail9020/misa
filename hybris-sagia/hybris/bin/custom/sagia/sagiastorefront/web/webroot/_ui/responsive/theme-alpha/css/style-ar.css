@@ -26414,6 +26414,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     font-size: 18px;
     font-weight: 600;
 	text-transform: capitalize;
+	font-style: normal;
 }
 
 .opportunity .description {
@@ -26427,6 +26428,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
 
 .opportunity p {
 	color: var(--misaDarkGrayText) !important;
+	font-style: normal;
 }
 
 .opportunity span {
@@ -26682,7 +26684,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     height: 50px;
     font-weight: 500;
     border-radius: 8px;
-    color: #fff;
+    color: #fff!important;
 }
 
 .misa-text-title {

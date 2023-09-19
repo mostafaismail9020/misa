@@ -30,9 +30,9 @@
 							<img class="img-fluid search-icon" width="20" src="${commonResourcePath}/images/Icon-awesome-search.png" alt=""/>
 						</a>
 					</ycommerce:testId>
-					<div class="opportunity-card total-results mt-2">
+					<!-- <div class="opportunity-card total-results mt-2">
 						<spring:message code="portal.opportunity.search.opportunities.totalResults" arguments="${searchPageData.pagination.totalNumberOfResults}"/>
-					</div>
+					</div> -->
 				</form>
                 <div id="product-facet" style="height: inherit" class="hidden-sm hidden-xs product__facet js-product-facet">
                     <!-- <nav:facetNavAppliedFilters pageData="${solrSearchPageData}"/> -->

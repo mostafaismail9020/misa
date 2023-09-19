@@ -29,7 +29,9 @@
                                         <input type="hidden" name="text" value="${solrSearchPageData.freeTextSearch}" />
                                         <label class="text-capitalize ${facetValue.selected ? 'selected' : ''}">
                                             <button type="button" class="btn btn-primary custom-button" onclick="redirectToLink('${fn:replace(facetValue.query.url,'/search','')}')">
-                                                ${fn:escapeXml(facetValue.name)}
+                                                <c:if test="${not empty facetValue.name}" >
+                                                   ${fn:toUpperCase(fn:substring(facetValue.name, 0, 1))}${fn:toLowerCase(fn:substring(facetValue.name, 1, fn:length(facetValue.name)))}
+                                                 </c:if>
                                                 &nbsp;
                                                 <span class="badge badge-danger custom-badge">${facetValue.count}</span>
                                             </button>

@@ -1702,5 +1702,8 @@
             <property name="mediaService" ref="mediaService"/>
             <property name="catalogVersionService" ref="catalogVersionService"/>
 	 </bean>
+	 
+	 <bean id="sagiaOpportunityPostPersistHook" class="com.sap.ibso.eservices.core.odata.persistence.hook.SagiaOpportunityPostPersistHook">
+    </bean>
 
 </beans>

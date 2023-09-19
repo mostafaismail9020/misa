@@ -26458,6 +26458,9 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"] .se-ctx-menu__
     line-height: 27px;
 	text-transform: capitalize;
 	font-size: 14px;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .opportunity .sector-name:hover {

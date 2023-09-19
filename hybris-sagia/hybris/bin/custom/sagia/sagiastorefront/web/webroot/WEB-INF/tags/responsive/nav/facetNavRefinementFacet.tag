@@ -30,9 +30,19 @@
                                         <label class="text-capitalize ${facetValue.selected ? 'selected' : ''}">
                                             <button type="button" class="btn btn-primary custom-button" onclick="redirectToLink('${fn:replace(facetValue.query.url,'/search','')}')">
                                                 <c:if test="${not empty facetValue.name}" >
-                                                   ${fn:toUpperCase(fn:substring(facetValue.name, 0, 1))}${fn:toLowerCase(fn:substring(facetValue.name, 1, fn:length(facetValue.name)))}
+
                                                  </c:if>
-                                                &nbsp;
+                                                     <c:if test="${not empty facetValue.name}">
+                                                         <c:set var="facetNames" value="${fn:split(facetValue.name, ' ')}" />
+                                                         <c:forEach items="${facetNames}" var="val" varStatus="loop">
+                                                             <c:if test="${loop.first}">
+                                                                 ${fn:toUpperCase(fn:substring(val, 0, 1))}${fn:toLowerCase(fn:substring(val, 1, fn:length(val)))}&nbsp;
+                                                             </c:if>
+                                                             <c:if test="${!loop.first}">
+                                                                 ${fn:toUpperCase(fn:substring(val, 0, 1))}${fn:toLowerCase(fn:substring(val, 1, fn:length(val)))}&nbsp;
+                                                             </c:if>
+                                                         </c:forEach>
+                                                     </c:if>
                                                 <span class="badge badge-danger custom-badge">${facetValue.count}</span>
                                             </button>
                                         </label>

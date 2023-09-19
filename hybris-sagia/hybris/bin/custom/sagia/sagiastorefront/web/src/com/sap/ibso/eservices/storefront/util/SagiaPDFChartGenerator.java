@@ -65,6 +65,10 @@ public class SagiaPDFChartGenerator {
 
 	private static final String KSA_TIME_ZONE = "Asia/Riyadh";
 
+	private static final String RAW_MATERIALS = "raw_materials";
+
+	private static final String DEMAND = "Demand";
+
 	private String sector = "";
 	private String segment = "";
 	private String incentivesAndEnablers = "";
@@ -353,7 +357,7 @@ public class SagiaPDFChartGenerator {
 				// Raw Material
 				fillText(rawMaterials, contentStream, getValue("opportunity.page3.rawMaterials.posX", 70),
 						getValue("opportunity.page3.rawMaterials.posY", 420),
-						getValue("opportunity.page3.rawMaterials.font.size", 12), "Raw Material", 240, true);
+						getValue("opportunity.page3.rawMaterials.font.size", 12), RAW_MATERIALS, 240, true);
 				// Global Trends
 				fillText(globalTrends, contentStream, getValue("opportunity.page3.globalTrends.posX", 70),
 						getValue("opportunity.page3.globalTrends.posY", 345),
@@ -365,7 +369,7 @@ public class SagiaPDFChartGenerator {
 				}
 				fillText(keyDemandDrivers, contentStream, getValue("opportunity.page3.demandDrivers.posX", 720),
 						getValue("opportunity.page3.demandDrivers.posY", 430),
-						getValue("opportunity.page3.demandDrivers.font.size", 12), "Demand", 204, true);
+						getValue("opportunity.page3.demandDrivers.font.size", 12), DEMAND, 204, true);
 
 				SupplyModel supply = opportunity.getSupply();
 				if(Objects.nonNull(supply)) {
@@ -380,7 +384,7 @@ public class SagiaPDFChartGenerator {
 				// Scalability & Localization
 				fillText(scalabilityAndLocalization, contentStream, getValue("opportunity.page3.scalability.posX", 70),
 						getValue("opportunity.page3.scalability.posY", 210),
-						getValue("opportunity.page3.scalability.font.size", 12), "Scalability & Localization", 252, true);
+						getValue("opportunity.page3.scalability.font.size", 12), "Scalability & Localization", 243, true);
 				// Import Dependency
 				fillText(importDependency, contentStream, getValue("opportunity.page3.importDependency.posX", 490),
 						getValue("opportunity.page3.importDependency.posY", 210),
@@ -540,14 +544,18 @@ public class SagiaPDFChartGenerator {
 
 			if (multiLineText) {
 				int maxLineLength;
-				if(fieldName != null && fieldName.equals("Demand")) {
+				if(fieldName != null && fieldName.equals(DEMAND)) {
 					maxLineLength = maxFieldLength / 6;
 				} else {
 					maxLineLength = maxFieldLength / 3;
 				}
 				if(text.length() > maxLineLength) {
 					// It determines the spacing between lines when writing multiple lines of text
-					contentStream.setLeading(14.5f);
+					if(fieldName != null && fieldName.equals(RAW_MATERIALS)) {
+						contentStream.setLeading(13f);
+					} else {
+						contentStream.setLeading(14.5f);
+					}
 					/* If the field length exceeds the Max length allowed in slot,
 					split the text to multiple lines and write to the PDF */
 					String[] lines = splitLongString(text, maxLineLength);

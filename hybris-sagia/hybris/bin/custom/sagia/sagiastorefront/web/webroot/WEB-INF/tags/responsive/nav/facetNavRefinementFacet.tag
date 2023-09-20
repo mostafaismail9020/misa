@@ -28,7 +28,8 @@
                                         <input type="hidden" name="q" value="${facetValue.query.query.value}" />
                                         <input type="hidden" name="text" value="${solrSearchPageData.freeTextSearch}" />
                                         <label class="text-capitalize ${facetValue.selected ? 'selected' : ''}">
-                                            <button type="button" class="btn btn-primary custom-button" onclick="redirectToLink('${fn:replace(facetValue.query.url,'/search','')}')">
+                                            <button type="button" class="btn btn-primary custom-button"
+													title="${facetValue.name}" onclick="redirectToLink('${fn:replace(facetValue.query.url,'/search','')}')">
                                                 <c:if test="${not empty facetValue.name}" >
 
                                                  </c:if>

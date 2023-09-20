@@ -31,10 +31,10 @@
                                             <button type="button" class="btn btn-primary custom-button"
 													title="${facetValue.name}" onclick="redirectToLink('${fn:replace(facetValue.query.url,'/search','')}')">
                                                 <c:if test="${not empty facetValue.name}" >
-
                                                  </c:if>
                                                      <c:if test="${not empty facetValue.name}">
-                                                         <c:set var="facetNames" value="${fn:split(facetValue.name, ' ')}" />
+                                                         <span class="truncate">
+                                                        <c:set var="facetNames" value="${fn:split(facetValue.name, ' ')}" />
                                                          <c:forEach items="${facetNames}" var="val" varStatus="loop">
                                                              <c:if test="${loop.first}">
                                                                  ${fn:toUpperCase(fn:substring(val, 0, 1))}${fn:toLowerCase(fn:substring(val, 1, fn:length(val)))}&nbsp;
@@ -42,7 +42,8 @@
                                                              <c:if test="${!loop.first}">
                                                                  ${fn:toUpperCase(fn:substring(val, 0, 1))}${fn:toLowerCase(fn:substring(val, 1, fn:length(val)))}&nbsp;
                                                              </c:if>
-                                                         </c:forEach>
+                                                         </c:forEach>                                                         
+                                                         </span>
                                                      </c:if>
                                                 <span class="badge badge-danger custom-badge">${facetValue.count}</span>
                                             </button>

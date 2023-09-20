@@ -17,6 +17,7 @@ import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collection;
 
@@ -98,10 +99,17 @@ public class SagiaOpportunityDetailPrePersistHook implements PrePersistHook {
 				existingSupercategories.stream().map(CategoryModel::getCode)
 						.forEach(code -> LOG.info("Existing Supercategory Code: " + code));
 				
-				Collection<CategoryModel> rootCategories = categoryService
-						.getRootCategoriesForCatalogVersion(catalogVersion);
+//				Collection<CategoryModel> rootCategories = categoryService
+//						.getRootCategoriesForCatalogVersion(catalogVersion);
+//				
+//				List<CategoryModel> rootSupercategoriesList = rootCategories.stream().collect(Collectors.toList());
 				
-				List<CategoryModel> rootSupercategoriesList = rootCategories.stream().collect(Collectors.toList());
+				// Fetch the category with code 'sector-opportunities' for the specified catalog version
+				CategoryModel sectorOpportunitiesCategory = categoryService.getCategoryForCode(catalogVersion, "sector-opportunities");
+
+				// Wrap it in a list
+				List<CategoryModel> rootSupercategoriesList = Arrays.asList(sectorOpportunitiesCategory);
+
 				
 				rootSupercategoriesList.stream().map(CategoryModel::getCode)
 				.forEach(code -> LOG.info("Supercategory Code: " + code));

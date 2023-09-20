@@ -8,6 +8,7 @@ import com.investsaudi.portal.core.model.OpportunityProductModel;
 import de.hybris.platform.core.model.ItemModel;
 import de.hybris.platform.odata2services.odata.persistence.hook.PostPersistHook;
 import com.sap.ibso.eservices.core.util.SagiaKeyStakeHoldersImageUtil;
+import com.sap.ibso.eservices.core.util.SagiaValueChainImageUtil;
 
 public class SagiaOpportunityPostPersistHook implements PostPersistHook {
 	
@@ -27,6 +28,17 @@ public class SagiaOpportunityPostPersistHook implements PostPersistHook {
 			    } catch (Exception e) {
 			        LOG.error("Keystakeholders Image Update in Opportunity failed with error: ", e);
 			    }
+			 
+			 //ValueChain attachment logic
+			 try {
+			 SagiaValueChainImageUtil sagiaValueChainImageUtil = new SagiaValueChainImageUtil();
+			 sagiaValueChainImageUtil.generateValueChainImages(opportunity);
+			 }
+			 
+			 catch (Exception e) {
+			        LOG.error("Value chain Image Update in Opportunity failed with error: ", e);
+			    }
+			 
 		}
 		
 	}

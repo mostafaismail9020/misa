@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.investsaudi.portal.core.model.OpportunityProductModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,8 @@ import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.http.ContentDisposition;
@@ -77,13 +80,24 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	    File file = sagiaPDFChartGenerator.generatePdfFile(productModel, secFiles);
 	    if (file.exists()) {
 	        try {
+				String filePrefix = "InvestSaudi_opportunity_";
+				String suffix = ".pdf";
+				String productId = productCode;
+				String sysOrigin = null;
 	            byte[] fileContent = Files.readAllBytes(file.toPath());
 	            HttpHeaders headers = new HttpHeaders();
 	            headers.setContentType(MediaType.APPLICATION_PDF);
-	            ContentDisposition contentDisposition = ContentDisposition.builder("inline")
-	                    .filename("Final_File_Name.pdf")
-	                    .build();
-	            headers.setContentDisposition(contentDisposition);
+
+				if (productModel instanceof OpportunityProductModel) {
+					OpportunityProductModel opportunity = (OpportunityProductModel) productModel;
+					sysOrigin = opportunity.getSystemOrigin();
+				}
+				// If the Opportunity ID consists solely of numbers or originates from C4C, we utilize the last 6 digits.
+				if(containsOnlyNumbers(productCode) || (sysOrigin != null && sysOrigin.equals("C4C"))) {
+					productId = productCode.substring(productCode.length() - 6);
+				}
+
+				headers.add("file-name", filePrefix + productId + suffix);
 	            
 	            // Calculate execution time
 	            long endTime = System.currentTimeMillis();
@@ -99,6 +113,17 @@ public class OpportunityPdfDownloadController extends AbstractPageController {
 	        LOG.warn("File does not exist");
 	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	    }
+	}
+
+	public boolean containsOnlyNumbers(String input) {
+		// Define the regex pattern
+		Pattern pattern = Pattern.compile("^[0-9]+$");
+
+		// Create a matcher for the input text
+		Matcher matcher = pattern.matcher(input);
+
+		// Check if the entire string consists of only numbers
+		return matcher.matches();
 	}
 	
 	public File concatenateFiles(List<File> files, File outputFile) throws IOException {

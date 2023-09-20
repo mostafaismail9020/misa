@@ -68,14 +68,14 @@
       xhrFields: {
         responseType: 'blob' // Set the response type to 'blob' for binary data
       },
-      success: function(response) {
+      success: function(response, status, request) {
         // Create a temporary URL for the downloaded file
         var url = window.URL.createObjectURL(new Blob([response]));
-
+        var fileName = request.getResponseHeader("file-name");
         // Create a link element and trigger the download
         var link = document.createElement('a');
         link.href = url;
-        link.download = 'opportunity.pdf'; // Set the desired file name
+        link.download = fileName;
         link.click();
 
         // Cleanup by revoking the temporary URL

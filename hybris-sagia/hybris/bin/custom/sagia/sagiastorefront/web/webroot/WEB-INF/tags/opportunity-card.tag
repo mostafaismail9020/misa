@@ -35,7 +35,7 @@
 					<spring:theme code="portal.opportunity.details.expected.irr"/> (%): ${result.opportunity.expectedIRR}
 				</c:if>
 			</div>
-			<div class="sector-name" onclick="redirectToLink('${result.parentCategory.url}')">${fn:toLowerCase(result.parentCategory.name)}</div>
+			<div class="sector-name" title="${fn:toLowerCase(result.parentCategory.name)}" onclick="redirectToLink('${result.parentCategory.url}')">${fn:toLowerCase(result.parentCategory.name)}</div>
 		</div>
 	</div>
 </div>

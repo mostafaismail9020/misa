@@ -255,13 +255,14 @@
 									</div>
 									<div class="col-md-12 col-12">
 										<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.expected.investment.size"/> ${fn:escapeXml(productData.expectedInvestmentSize)}</p>
-										<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.plant.capacity"/>
-										<ul>
-											<c:forEach var="plantCapacity" items="${productData.capacityData}">
-												<li>${plantCapacity.measure} - ${plantCapacity.value} ${plantCapacity.unit}</li>
-											</c:forEach>
-										</ul>
-										</p>
+										<c:if test="${not empty productData.capacityData && productData.capacityData.size() > 0}">
+											<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.plant.capacity"/></p>
+											<ul>
+												<c:forEach var="plantCapacity" items="${productData.capacityData}">
+													<li>${plantCapacity.measure} - ${plantCapacity.value} ${plantCapacity.unit}</li>
+												</c:forEach>
+											</ul>
+										</c:if>
 										<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.expected.irr"/> ${fn:escapeXml(productData.expectedIRR)}</p>
 										<c:if test="${productData.paybackPeriod != 0}">
 											<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.payback.period"/> ${fn:escapeXml(productData.paybackPeriod)} Years</p>
@@ -679,13 +680,14 @@
 									</div>
 									<div class="col-md-12 col-12">
 										<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.expected.investment.size"/> ${fn:escapeXml(productData.expectedInvestmentSize)}</p>
-										<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.plant.capacity"/>
-										<ul>
-											<c:forEach var="plantCapacity" items="${productData.capacityData}">
-												<li>${plantCapacity.measure} - ${plantCapacity.value} ${plantCapacity.unit}</li>
-											</c:forEach>
-										</ul>
-										</p>
+										<c:if test="${not empty productData.capacityData && productData.capacityData.size() > 0}">
+											<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.plant.capacity"/></p>
+											<ul>
+												<c:forEach var="plantCapacity" items="${productData.capacityData}">
+													<li>${plantCapacity.measure} - ${plantCapacity.value} ${plantCapacity.unit}</li>
+												</c:forEach>
+											</ul>
+										</c:if>
 										<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.expected.irr"/> ${fn:escapeXml(productData.expectedIRR)}</p>
 										<c:if test="${productData.paybackPeriod != 0}">
 											<p class="opportunity-statics-desc"><spring:theme code="portal.opportunity.details.payback.period"/> ${fn:escapeXml(productData.paybackPeriod)} Years</p>

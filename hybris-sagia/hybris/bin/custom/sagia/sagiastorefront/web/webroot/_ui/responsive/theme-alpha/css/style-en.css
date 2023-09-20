@@ -24270,6 +24270,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	letter-spacing: 0em;
 }
 
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-location-title-segment {
+	font-size: 14px;
+}
+
 .opportunity-article-section-body .jumbotron.jumbotron-main .irr-location-desc {
 	font-size: 20px;
 	font-weight: 700;
@@ -24289,6 +24293,10 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
 	font-weight: 600;
 	line-height: 28px;
 	letter-spacing: 0em;
+}
+
+.opportunity-article-section-body .jumbotron.jumbotron-main .irr-sector-div .title-segment {
+	font-size: 17px;
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-main .irr-sector-div .badge-irr-sector {
@@ -24323,6 +24331,7 @@ smartedit-element[data-smartedit-component-id="PortalHeaderSlot"][data-smart-edi
     background-color: rgba(0, 113, 77, 0.05);
     border: 1px solid rgba(0, 113, 77, 0.5);
     border-radius: 10px;
+    min-height: 53px;
 }
 
 .opportunity-article-section-body .jumbotron.jumbotron-second {

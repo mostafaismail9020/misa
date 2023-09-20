@@ -93,11 +93,11 @@
 										</div>
 									</div>
 									<div class="col-md-12 col-12">
-										<p class="irr-location-title mt-2"><spring:theme code="portal.opportunity.details.segment"/></p>
+										<p class="irr-location-title irr-location-title-segment mt-2"><spring:theme code="portal.opportunity.details.segment"/></p>
 										<div class="col-md-12 col-12 irr-sector-div text-center">
 											<div class="row">
 												<div class="col-md-12 col-12">
-													<span class="title">${fn:escapeXml(productData.segmentName)}</span>
+													<span class="title-segment">${fn:escapeXml(productData.segmentName)}</span>
 												</div>
 												<div class="col-md-7 col-7" style="display: none;">
 													<span class="badge badge-pill badge-irr-sector">37</span>
@@ -518,11 +518,11 @@
 										</div>
 									</div>
 									<div class="col-md-12 col-12">
-										<p class="irr-location-title mt-2"><spring:theme code="portal.opportunity.details.segment"/></p>
+										<p class="irr-location-title irr-location-title-segment mt-2"><spring:theme code="portal.opportunity.details.segment"/></p>
 										<div class="col-md-12 col-12 irr-sector-div text-center">
 											<div class="row">
 												<div class="col-md-12 col-12">
-													<span class="title">${fn:escapeXml(productData.segmentName)}</span>
+													<span class="title-segment">${fn:escapeXml(productData.segmentName)}</span>
 												</div>
 												<div class="col-md-7 col-7" style="display: none;">
 													<span class="badge badge-pill badge-irr-sector">37</span>
